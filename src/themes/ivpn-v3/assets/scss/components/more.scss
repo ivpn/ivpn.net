@@ -1,0 +1,56 @@
+.more {
+
+    &-info {
+        @include grid($gutter: $default-grid-gutter);
+        @include container();
+        flex-wrap: wrap;
+        width: calc(100% + 24px);
+        margin-top: 125px;
+        margin-left: -12px;
+
+        section {
+            @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
+            @include respond-to('small') {
+                @include grid-col($col: 6, $gutter: $default-grid-gutter);
+            }
+
+            display: flex;
+            flex-direction: column;
+            padding: 32px;
+            margin-top: 0;
+
+            @include light-theme((
+                background: $dark-mode-background
+            ));
+
+            @include dark-theme((
+                background: $dark-mode-alternative-background
+            ));
+
+            h4 {
+                margin-bottom: 15px;
+                color: $dark-mode-text;
+            }
+
+            p {
+                color: $dark-mode-text;
+                flex-grow: 2;
+            }
+
+            a {
+                display: block;
+                padding: 16px;
+                background: $dark-mode-alternative-2-background;
+                color: $blue-color;
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

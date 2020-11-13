@@ -1,0 +1,49 @@
+{{ define "main" }}
+<section class="content">
+    <div class="content__text content__help-article">
+        <div class="search" id="search">
+            <h1>Help Center</h1>
+            <form ref="form" class="form-horizontal" @submit.prevent="submitSearch">
+                <input name="search" type="text" placeholder="Search">
+                <input type="submit" value="">
+            </form>
+        </div>
+        <div class="listing">
+            <nav id="nav">
+                <a class="{{ if eq (index (.Params.Sections) 0) "general" }}active{{ end }}" href="/knowledgebase/general/">General</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "troubleshooting" }}active{{ end }}" href="/knowledgebase/troubleshooting/">Troubleshooting</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "billing" }}active{{ end }}" href="/knowledgebase/billing/">Billing</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "passwords" }}active{{ end }}" href="/knowledgebase/passwords/">Passwords</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "privacy" }}active{{ end }}" href="/knowledgebase/privacy/">Privacy</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "windows" }}active{{ end }}" href="/knowledgebase/windows/">Windows</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "macos" }}active{{ end }}" href="/knowledgebase/macos/">macOS</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "linux" }}active{{ end }}" href="/knowledgebase/linux/">GNU/Linux</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "ios" }}active{{ end }}" href="/knowledgebase/ios/">iPad/iPhone</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "android" }}active{{ end }}" href="/knowledgebase/android/">Android</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "routers" }}active{{ end }}" href="/knowledgebase/routers/">Routers</a>
+                <a class="{{ if eq (index (.Params.Sections) 0) "mp" }}active{{ end }}" href="/knowledgebase/mp/">Media Players</a>
+            </nav>
+            <main id="main">
+                <ul class="list"></ul>
+                {{ .Content | markdownify }}
+                <br><br>
+                <h3>Related Articles</h3>
+                <ul>
+                    {{ $pageH1 := .Params.h1 }}
+                    {{ range where (.Site.Pages | shuffle) ".Params.sections" "intersect" (slice (index (.Params.Sections) 0)) | first 5 }}
+                        {{ if isset .Params "h1" }}
+                            {{ if not (in .Params.h1 $pageH1) }}
+                            <li>
+                                <a href="{{ .Permalink }}">{{ .Params.h1 }}</a>
+                            </li>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </ul>
+                {{- partial "more-info-help.html" . -}}
+            </main>
+        </div>
+    </div>
+</section>
+<script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/search.js" }}"></script>
+{{ end }}

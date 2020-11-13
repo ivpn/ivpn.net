@@ -1,0 +1,87 @@
+h1, .h1 {
+    font-weight: bold;
+    font-size: $heading-size-h1;
+    line-height: 120%;
+    margin-bottom: 48px;
+
+    @include light-theme((
+        color: $light-mode-headings
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-headings
+    ));
+}
+
+h2, .h2 {
+    font-weight: bold;
+    font-size: $heading-size-h2;
+    line-height: 120%;
+    margin-bottom: 48px;
+
+    @include light-theme((
+        color: $light-mode-headings
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-headings
+    ));
+}
+
+h3, .h3 {
+    font-weight: 500;
+    font-size: $heading-size-h3;
+    line-height: 28px;
+    margin-bottom: 35px;
+
+    @include light-theme((
+        color: $light-mode-headings
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-headings
+    ));
+}
+
+h4, .h4 {
+    font-weight: 500;
+    font-size: $heading-size-h4;
+    line-height: 28px;
+
+    @include light-theme((
+        color: $light-mode-headings
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-headings
+    ));
+}
+
+h5, .h5 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 24px;
+    margin-top: 48px;
+
+    @include light-theme((
+        color: $light-mode-headings
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-headings
+    ));
+}
+
+h6, .h6 {
+    font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 64px;
+    margin-top: 0;
+}
+
+p + h2,
+ul + h2,
+ol + h2 {
+    margin-top: 55px;
+}

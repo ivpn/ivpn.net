@@ -1,0 +1,17 @@
+$container: 1080px;
+
+$default-grid-gutter: 24px;
+
+$breakpoints: (
+  'small':  ( min-width:  479px ),
+  'medium': ( min-width:  767px ),
+  'large': ( min-width:  1060px ),
+  'extra-large':  ( min-width: 1200px )
+);
+
+$breakpoints-max-width: (
+  'small':  ( max-width:  479px ),
+  'medium': ( max-width:  767px ),
+  'large': ( max-width:  1060px ),
+  'extra-large':  ( max-width: 1200px )
+);

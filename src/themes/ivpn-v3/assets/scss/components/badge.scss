@@ -1,0 +1,37 @@
+.badge {
+    font-weight: normal;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 4px 10px;
+    text-decoration: none;
+
+    @include light-theme((
+        color: $dark-mode-headings,
+        background: $dark-mode-background
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-text,
+        background: $dark-mode-alternative-2-background
+    ));
+
+    &--light {
+        @include light-theme((
+            color: $light-mode-text,
+            background: $light-mode-alternative-background
+        ));
+
+        @include dark-theme((
+            color: $dark-mode-text,
+            background: $dark-mode-alternative-2-background
+        ));
+    }
+}
+
+a.badge {
+    &:hover {
+        text-decoration: none;
+        opacity: 0.7;
+    }
+}

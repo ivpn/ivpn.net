@@ -1,0 +1,41 @@
+{{ define "main" }}
+<section class="content">
+    <div class="content__text">
+        <div class="search" id="search">
+            <h1>Help Center</h1>
+            <form ref="form" class="form-horizontal" @submit.prevent="submitSearch">
+                <input name="search" type="text" placeholder="Search">
+                <input type="submit" value="">
+            </form>
+        </div>
+        <div class="listing">
+            <nav id="nav">
+                <a class="{{ if eq .Params.section "general" }}active{{ end }}" href="/knowledgebase/general/">General</a>
+                <a class="{{ if eq .Params.section "troubleshooting" }}active{{ end }}" href="/knowledgebase/troubleshooting/">Troubleshooting</a>
+                <a class="{{ if eq .Params.section "billing" }}active{{ end }}" href="/knowledgebase/billing/">Billing</a>
+                <a class="{{ if eq .Params.section "passwords" }}active{{ end }}" href="/knowledgebase/passwords/">Passwords</a>
+                <a class="{{ if eq .Params.section "privacy" }}active{{ end }}" href="/knowledgebase/privacy/">Privacy</a>
+                <a class="{{ if eq .Params.section "windows" }}active{{ end }}" href="/knowledgebase/windows/">Windows</a>
+                <a class="{{ if eq .Params.section "macos" }}active{{ end }}" href="/knowledgebase/macos/">macOS</a>
+                <a class="{{ if eq .Params.section "linux" }}active{{ end }}" href="/knowledgebase/linux/">GNU/Linux</a>
+                <a class="{{ if eq .Params.section "ios" }}active{{ end }}" href="/knowledgebase/ios/">iPad/iPhone</a>
+                <a class="{{ if eq .Params.section "android" }}active{{ end }}" href="/knowledgebase/android/">Android</a>
+                <a class="{{ if eq .Params.section "routers" }}active{{ end }}" href="/knowledgebase/routers/">Routers</a>
+                <a class="{{ if eq .Params.section "mp" }}active{{ end }}" href="/knowledgebase/mp/">Media Players</a>
+            </nav>
+            <main id="main">
+                {{ .Content | markdownify }}
+                <ul class="list">
+                    {{ range where .Site.Pages ".Params.sections" "intersect" (slice .Params.section) }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ .Params.h1 }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{- partial "more-info-help.html" . -}}
+            </main>
+        </div>
+    </div>
+</section>
+<script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/search.js" }}"></script>
+{{ end }}

@@ -1,0 +1,27 @@
+<section class="stances">
+    <div class="stances__content">
+        {{ .content | markdownify }}
+    </div>
+
+    <div class="stances__heading">
+        <h3 class="stances__heading--acceptable">Acceptable stances</h3>
+    </div>
+    {{ range .acceptable_stances }}
+        <div class="stances__stance stances__stance--heading">{{ .stance }}</div>
+        <div class="stances__stance">{{ .description | markdownify }}</div>
+    {{ end }}
+    <div class="stances__heading">
+        <h3 class="stances__heading--depends">Depends</h3>
+    </div>
+    {{ range .depends }}
+        <div class="stances__stance stances__stance--heading">{{ .stance }}</div>
+        <div class="stances__stance">{{ .description | markdownify }}</div>
+    {{ end }}
+    <div class="stances__heading">
+        <h3 class="stances__heading--not-acceptable">Not acceptable</h3>
+    </div>
+    {{ range .not_acceptable }}
+        <div class="stances__stance stances__stance--heading">{{ .stance }}</div>
+        <div class="stances__stance">{{ .description | markdownify }}</div>
+    {{ end }}
+</section>

@@ -1,0 +1,31 @@
+.breadcrumb {
+    @include grid-col($col: 3, $grid-columns: 3);
+    margin-bottom: 32px;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    line-height: 28px;
+
+    @include light-theme((
+        color: rgba(34, 34, 38, 0.5)
+    ));
+
+    @include dark-theme((
+        color: rgba(255, 255, 255, 0.5)
+    ));
+
+    a {
+        @include light-theme((
+            color: rgba(34, 34, 38, 0.5)
+        ));
+
+        @include dark-theme((
+            color: rgba(255, 255, 255, 0.5)
+        ));
+    }
+
+    &-seperator {
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+}

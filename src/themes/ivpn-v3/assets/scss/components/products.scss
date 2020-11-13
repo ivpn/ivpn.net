@@ -1,0 +1,136 @@
+.products-nav {
+    padding: 10px 20px;
+    margin-bottom: 95px;
+    text-align: center;
+
+    a {
+        display: inline-flex;
+        text-decoration: none;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 60px;
+        margin: 0 18px;
+
+        svg {
+            display: inline-block;
+            width: 19px;
+            height: auto;
+            margin-right: 13px;
+            overflow: visible;
+        }
+    }
+
+    &, .light-theme & {
+        background: $light-mode-alternative-background;
+
+        a {
+            color: $light-mode-text;
+
+            &.active,
+            &:hover {
+                color: $blue-color;
+
+                svg {
+                    fill: $blue-color;
+                }
+            }
+
+            svg {
+                fill: $light-mode-headings;
+            }
+
+            &.stroke-svg {
+
+                svg {
+                    stroke: $light-mode-headings;
+
+                    path {
+                        stroke: $light-mode-headings;
+                    }
+                }
+
+                &.active,
+                &:hover {
+                    color: $blue-color;
+
+                    svg {
+                        stroke: $blue-color;
+
+                        path {
+                            stroke: $blue-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dark-theme & {
+        background: $light-mode-text;
+
+        a {
+            color: $dark-mode-headings;
+
+            &.active,
+            &:hover {
+                color: $blue-color;
+
+                svg {
+                    fill: $blue-color;
+                }
+            }
+
+            svg {
+                fill: $dark-mode-headings;
+            }
+
+            &.stroke-svg {
+
+                svg {
+                    stroke: $dark-mode-headings;
+
+                    path {
+                        stroke: $dark-mode-headings;
+                    }
+                }
+
+                &.active,
+                &:hover {
+                    color: $blue-color;
+
+                    svg {
+                        stroke: $blue-color;
+
+                        path {
+                            stroke: $blue-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: $light-mode-text;
+
+        a {
+            color: $dark-mode-headings;
+
+            svg {
+                fill: $dark-mode-headings;
+            }
+
+            &.stroke-svg {
+
+                svg {
+                    stroke: $dark-mode-headings;
+
+                    path {
+                        stroke: $dark-mode-headings;
+                    }
+                }
+            }
+        }
+    }
+}

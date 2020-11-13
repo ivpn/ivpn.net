@@ -1,0 +1,8 @@
+<section class="heading heading--text">
+    <div class="heading__content">
+        {{ .content | markdownify }}
+    </div>
+    <div class="heading__content">
+        <p><a href="{{ .cta_url }}" class="cta {{ if eq .cta_is_blue true }}cta--is-blue{{ end }}">{{ .cta_label }}</a></p>
+    </div>
+</section>

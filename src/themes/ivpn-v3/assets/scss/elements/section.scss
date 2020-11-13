@@ -1,0 +1,13 @@
+section {
+    & + section {
+        margin-top: 64px;
+    }
+
+    &:last-child {
+        margin-bottom: 100px;
+    }
+
+    &:first-child {
+        margin-top: 48px;
+    }
+}

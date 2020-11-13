@@ -1,0 +1,14 @@
+{{ define "main" }}
+    {{ range .Params.sections }}
+        {{ $widget := (printf "%s/%s" "blocks" .type ) }}
+        {{ partial $widget . }}
+    {{ end }}
+
+    {{ if gt (len .Content) 0}}
+        <section class="content content--narrow">
+            <div class="content__text">
+                {{ .Content | markdownify }}
+            </div>
+        </section>
+    {{ end }}
+{{ end }}

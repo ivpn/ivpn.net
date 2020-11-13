@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="content content--narrow">
+    <div class="content__text">
+        <p>
+            <a href="/privacy-guides/">Back to Privacy Guides</a>
+        </p>
+        <h1>{{ .Title }}</h1>
+        <p>
+            <code>{{ .Params.section }}</code>
+            {{ .Params.author }}
+        </p>
+        <br>
+        {{ .Content | markdownify }}
+        {{- partial "more-info.html" . -}}
+    </div>
+</section>
+{{ end }}

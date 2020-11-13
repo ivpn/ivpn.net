@@ -1,0 +1,124 @@
+{{ define "main" }}
+<section class="blog-article">
+    <div class="breadcrumb">
+        <a href="/blog/">IVPN Blog</a><span class="breadcrumb-seperator">></span>{{ range .Params.categories }}{{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}{{ end }}<span class="breadcrumb-seperator">></span>{{ .Title }}
+    </div>
+    <div class="blog-article__heading">
+        <h1>{{ .Title }}</h1>
+        <p>
+            {{ range .Params.categories }}
+                {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
+                    <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
+                {{ end }}
+            {{ end }}
+            {{ range .Params.authors }}
+                {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
+                    By <a href="{{ .Permalink }}">{{ .Title }}</a> |
+                {{ end }}
+            {{ end }}
+            Posted on {{ .Date.Format "January 2, 2006"}}
+        </p>
+    </div>
+</section>
+
+{{ if .Params.heroImage }}
+    <section class="blog-article__hero-image">
+        <img  src="{{ site.Params.cdnUrl }}{{ .Params.heroImage }}" alt="{{ .Title }}">
+    </section>
+{{ end }}
+
+<section class="blog-article">
+    {{ .Content }}
+</section>
+
+{{if gt (len .Params.tags) 0}}
+    <section class="blog-article">
+        {{ range .Params.tags }}
+            <a href="{{ printf "/blog/tags/%s" (. | urlize) }}" class="tag tag--inline" rel="noindex, dofollow">{{ humanize . }}</a>
+        {{ end }}
+    </section>
+{{ end }}
+
+<section class="blog-article">
+    <div class="blog-article__discuss">
+        We invite you to discuss this post in our <a href="{{ if .Params.socalUrls.redditUrl }}{{ .Params.socalUrls.redditUrl }}{{ else }}https://www.reddit.com/r/IVPN/{{ end }}">Reddit community</a> or on <a href="{{ if .Params.socalUrls.twitterUrl }}{{ .Params.socalUrls.twitterUrl }}{{ else }}https://twitter.com/ivpnnet{{ end }}">Twitter</a>. You can also send your feedback to <a href="mailto:blog@ivpn.net">blog@ivpn.net</a>.
+    </div>
+</section>
+
+<section class="blog-article">
+    {{ if isset .Params "comments"}}
+        <div class="blog-article__comments">
+            <h3>{{ len .Params.comments }} Comments</h3>
+            {{ range $index, $value := .Params.comments }}
+                <div class="blog-article__comment">
+                    <p class="blog-article__comment-author">{{ $value.author }}</p>
+                    <p class="blog-article__comment-date">{{ dateFormat "02.01.2006" $value.date}}</p>
+                    <div class="blog-article__comment-content">{{ $value.content | markdownify }}</div>
+                </div>
+            {{ end }}
+        </div>
+    {{ end }}
+</section>
+
+{{if gt (len (where .Site.Pages ".Params.highlighted" true)) 0}}
+    <section class="blog-article">
+        <p class="sidebar-header">Featured posts</p>
+        <div class="blog-article__highlighted-wrapper">
+            {{ range first 3 (where .Site.Pages ".Params.highlighted" true).ByLastmod }}
+                <div class="blog-article__highlighted">
+                    {{ range .Params.categories }}
+                        {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
+                            <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
+                        {{ end }}
+                    {{ end }}
+                    <h4><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h4>
+                    <p class="blog-article__highlighted-meta">
+                        {{ range .Params.authors }}
+                            {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
+                                By <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </p>
+                </div>
+            {{ end }}
+        </div>
+    </section>
+{{ end }}
+
+{{if gt (len (.Site.RegularPages.Related .)) 0}}
+    <section class="blog-article">
+        <p class="sidebar-header">Related posts</p>
+        <div class="blog-article__related-wrapper">
+            {{ range first 2 (.Site.RegularPages.Related .).ByDate.Reverse }}
+                <div class="blog-article__related">
+                    <div class="blog-article__related-image">
+                        {{ if .Params.thumbnailImage }}
+                            <a href="{{ .Page.Permalink }}">
+                                <img src="{{ site.Params.cdnUrl }}{{ .Params.thumbnailImage }}" alt="{{ .Title }}">
+                            </a>
+                        {{ end }}
+                        {{ range .Params.categories }}
+                            {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
+                                <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                    <h4><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h4>
+                    <p class="blog-article__related-meta">
+                        Posted on {{ .Date.Format "January 2, 2006"}} by
+                        {{ range .Params.authors }}
+                            {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
+                                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </p>
+                    <div class="blog-article__related-content">
+                        {{ .Summary }}
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </section>
+{{ end }}
+
+{{ end }}

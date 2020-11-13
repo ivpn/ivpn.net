@@ -1,0 +1,83 @@
+$spacing: 24px;
+
+.text-banner {
+    padding: $spacing;
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+
+    @include light-theme((
+        background: $light-mode-alternative-background
+    ));
+
+    @include dark-theme((
+        background: $dark-mode-alternative-background
+    ));
+
+    h4, h4 > a {
+        @include light-theme((
+            color: $light-mode-headings
+        ));
+
+        @include dark-theme((
+            color: $dark-mode-headings
+        ));
+
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    &--margin-top {
+        margin-top: 72px;
+    }
+
+    &--columns {
+        @include grid();
+        flex-wrap: wrap;
+    }
+
+    &__full-column {
+        box-sizing: border-box;
+
+        margin-left: -$spacing;
+        margin-right: -$spacing;
+        margin-bottom: $spacing;
+
+        &--offset-top {
+            margin-top: -$spacing;
+        }
+    }
+
+    &__column_one {
+        @include grid-col($col: 3, $grid-columns: 3);
+    }
+
+    &__column-one-third {
+        @include grid-col($col: 1, $grid-columns: 3);
+    }
+
+    &__column-half {
+        @include grid-col($col: 1.5, $grid-columns: 3);
+    }
+
+    &__column-two-third {
+        @include grid-col($col: 2, $grid-columns: 3);
+    }
+}
+
+a.text-banner {
+    text-decoration: none;
+
+    @include light-theme((
+        color: $light-mode-text
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-text
+    ));
+
+    &:hover, &:active {
+        text-decoration: none;
+        opacity: 0.7;
+    }
+}

@@ -1,0 +1,50 @@
+pre,
+code {
+    max-width: 780px;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    padding: 0 8px;
+    display: inline-block;
+
+    @include light-theme((
+        color: $light-mode-text,
+        background: $light-mode-alternative-background
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-text,
+        background: $dark-mode-alternative-2-background
+    ));
+}
+
+pre {
+    padding: 24px;
+    color: #B35A5A;
+    margin: 34px 0;
+
+    @include light-theme((
+        background: $light-mode-alternative-background
+    ));
+
+    @include dark-theme((
+        background: $dark-mode-alternative-background
+    ));
+
+    code {
+        background: none;
+        display: block;
+        color: #B35A5A;
+
+        @include light-theme((
+            background: none
+        ));
+
+        @include dark-theme((
+            background: none
+        ));
+    }
+}

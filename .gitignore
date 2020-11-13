@@ -1,0 +1,4 @@
+src/themes/*/node_modules
+src/public
+node_modules
+public

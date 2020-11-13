@@ -1,0 +1,44 @@
+{{ define "seo" }}
+  {{ $paginator := .Paginate .Pages }}
+
+  {{ if gt $paginator.Pages 0}}
+    <link rel="canonical" href="{{ .Paginator.URL }}">
+  {{else}}
+    <link rel="canonical" href="{{ .Permalink }}">
+  {{ end }}
+
+  {{ if $paginator.HasNext }}
+    <link rel="next" href="{{ .Paginator.Next.URL }}" />
+  {{end}}
+
+  {{ if $paginator.HasPrev }}
+    <link rel="prev" href="{{ .Paginator.Prev.URL }}" />
+  {{end}}
+{{ end }}
+
+{{ define "main" }}
+{{- partial "blog-categories.html" . -}}
+
+<section class="blog__wrapper">
+    <div class="breadcrumb">
+        <a href="/blog/">IVPN Blog</a><span class="breadcrumb-seperator">></span>{{ .Page.Title }}
+    </div>
+
+    <div class="blog__articles">
+        <div class="blog__taxonomy-content">
+            {{ .Content }}
+        </div>
+
+        {{ $paginator := .Paginate .Pages }}
+        {{ range $paginator.Pages }}
+            {{- partial "blog-article.html" . -}}
+        {{ end }}
+
+        {{ template "_internal/pagination.html" . }}
+    </div>
+    <div class="blog__side-bar">
+        {{- partial "blog-side-bar.html" . -}}
+    </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{- partial "products-nav.html" . -}}
+<script>
+(function () {
+    var userAgent = window.navigator.userAgent,
+    platform = window.navigator.platform,
+    macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+    windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+    iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+    os = null;
+
+    if (macosPlatforms.indexOf(platform) !== -1) {
+        window.location.href = '/apps-macos/';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+        window.location.href = '/apps-ios/';
+    } else if (/Android/.test(userAgent)) {
+        window.location.href = '/apps-android/';
+    } else if (!os && /Linux/.test(platform)) {
+        window.location.href = '/apps-linux/';
+    } else {
+        window.location.href = '/apps-windows/';
+    }
+})();
+</script>
+<section class="content content--narrow content--product">
+    <div class="content__text">
+        {{ .Content | markdownify }}
+    </div>
+</section>
+{{ end }}

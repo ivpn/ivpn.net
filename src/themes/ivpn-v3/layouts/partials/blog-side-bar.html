@@ -1,0 +1,41 @@
+<div>
+    <p class="sidebar-header">Tags</p>
+    {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}" rel="noindex, dofollow" class="tag">{{ .Page.Title }}</a>
+    {{ end }}
+</div>
+<div class="blog__highlighted">
+    <p class="sidebar-header">Featured posts</p>
+    {{ range first 3 (where .Site.Pages ".Params.highlighted" true).ByLastmod.Reverse }}
+        <div class="blog__highlighted-article blog__highlighted-article--border-top">
+            {{ range .Params.categories }}
+                {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
+                    <a href="{{ .Permalink }}" class="badge steel-badge">{{ .Title }}</a>
+                {{ end }}
+            {{ end }}
+            <h4><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h4>
+            <p class="blog__highlighted-meta">
+                {{ range .Params.authors }}
+                    {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
+                        By <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
+                {{ end }}
+            </p>
+        </div>
+    {{ end }}
+</div>
+<div class="text-banner text-banner--margin-top">
+    <h4>IVPN Privacy Guides</h4>
+    <p>Guides to understanding and improving privacy and anonymity online.</p>
+    <a href="/privacy-guides/">View all privacy guides</a>
+</div>
+<a href="https://theprivacyissue.com/" class="text-banner text-banner--columns text-banner--margin-top">
+    <div class="text-banner__full-column text-banner__full-column--offset-top">
+        <img src="{{ site.Params.cdnUrl }}/images/privacy-issue-banner.png" srcset="{{ site.Params.cdnUrl }}/images/privacy-issue-banner.png 1x, {{ site.Params.cdnUrl }}/images/privacy-issue-banner-2x.png 2x" alt="Privacy Issue"/>
+    </div>
+    <div class="text-banner__column-one-third">
+        <img src="{{ site.Params.cdnUrl }}/images/privacy-issue.svg" />
+    </div>
+    <div class="text-banner__column-two-third">Editorial platform covering privacy, surveillance and their impact on society.</div>
+</a>
+

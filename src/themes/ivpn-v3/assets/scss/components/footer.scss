@@ -1,0 +1,63 @@
+.footer {
+    padding: 100px 0;
+    color: $dark-mode-headings;
+
+    @include light-theme((
+        background: $light-mode-text
+    ));
+
+    @include dark-theme((
+        background: $dark-mode-alternative-background
+    ));
+
+    &__grid {
+        @include grid($gutter: $default-grid-gutter);
+        @include container();
+        flex-wrap: wrap;
+    }
+
+    &__column {
+        @include grid-col($col: 4, $grid-columns: 4, $gutter: $default-grid-gutter);
+
+        @include respond-to('medium') {
+            @include grid-col($col: 1, $grid-columns: 4, $gutter: $default-grid-gutter);
+        }
+    }
+
+    &__menu {
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 0;
+            margin: 0 0 12px 0;
+
+            &:before {
+                display: none;
+            }
+
+            a {
+                color: $dark-mode-headings;
+                font-size: 16px;
+            }
+
+            img {
+                max-width: 24px;
+                margin-right: 18px;
+            }
+        }
+    }
+
+    &__logo {
+        @include grid-col($col: 4, $grid-columns: 4, $gutter: $default-grid-gutter);
+
+    }
+
+    &__trademark {
+        @include grid-col($col: 4, $grid-columns: 4, $gutter: $default-grid-gutter);
+
+        margin-bottom: 0;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}

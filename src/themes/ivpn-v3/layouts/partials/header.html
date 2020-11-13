@@ -1,0 +1,84 @@
+<nav id="header">
+    
+    {{ if ne $.Site.Params.environment "development" }}
+        <esi:include src="/web/status" />
+    {{ else }}
+         {{ safeHTML "<!--#include file=\"/web/status\" -->" }}
+    {{ end }}
+
+    <ul class="navigation">
+        <li class="navigation__item navigation__item--contains-logo">
+            <a href="/">
+                <img class="navigation__logo" src="{{ site.Params.cdnUrl }}/images/logo.svg"/>
+            </a>
+        </li>
+        {{ range .Site.Menus.main }}
+            {{ if eq .Identifier "download" }} 
+                <li class="navigation__seperator">|</li>
+            {{ end }}
+            {{ if eq (urlize .Name) "my-account" }}
+            <div class='login-menu'>
+                <li class="navigation__item submenu" id="{{ urlize .Name }}" data-show="auth">
+                    <a class="navigation__link navigation__link--is-cta" href="{{ .URL }}">My Account</a><span class='dropdown_icon'></span>
+                    <ul class='submenu__items'>
+                        <li><a class='navigation__link' href='/account/'>My Account</a></li>
+                        <li><a class='navigation__link' href='/account/logout/' 
+                            onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a></li>
+                    </ul>
+                </li>
+                <li class="navigation__item" id="{{ urlize .Name }}" data-show="auth-legacy">
+                    <a class="navigation__link navigation__link--is-cta" href="/clientarea/">My Account</a></span>
+                </li>
+                <li class="navigation__item" data-hide="auth">
+                    <a class="navigation__link navigation__link--is-cta" href="/account/login/">Login</a></span>
+                </li>
+            </div>
+            {{ else }}
+                <li class="navigation__item navigation__item__{{ urlize .Name }}" id="{{ urlize .Name }}">
+                    <a class="navigation__link {{- with .Page -}}{{ if eq .Params.isMenuCta true }} navigation__link--is-cta {{ end }}{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+    <div class="mobile-navigation">
+
+        <input type="checkbox" class="mobile-navigation__checkbox" hidden id="ham_menu">
+        <div class="mobile-navigation__wrapper">
+            <a class="mobile-navigation__logo" href="/">
+                <img src="{{ site.Params.cdnUrl }}/images/logo.svg"/>
+            </a>
+            
+            <label for="ham_menu" class="mobile-navigation__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 6H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 18H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>        
+        <ul class="mobile-navigation__menu">
+            {{ range .Site.Menus.main }}
+                {{ if eq (urlize .Name) "my-account" }}
+                    <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-show="auth-legacy">
+                        <a class="mobile-navigation__menu-link" href="/clientarea/">{{ .Name }}</a>
+                    </li>
+                    <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-show="auth">
+                        <a class="mobile-navigation__menu-link" href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-show="auth">
+                        <a class="mobile-navigation__menu-link" href="/account/logout/" 
+                        onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a>
+                    </li>
+                    <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-hide="auth">
+                        <a class="mobile-navigation__menu-link" href="/account/login/">Login</a>
+                    </li>
+
+                {{ else }}
+                    <li class="mobile-navigation__menu-item navigation__item__{{ urlize .Name }}" id="{{ urlize .Name }}">
+                        <a class="mobile-navigation__menu-link {{- with .Page -}}{{ if eq .Params.isMenuCta true }} mobile-navigation__meni-link--is-cta {{ end }}{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,52 @@
+.submenu {
+
+    &:hover {
+        .submenu__items {
+            visibility: visible;             
+        }
+    }
+
+    &__items {
+        z-index: 1000;
+        visibility: hidden; 
+        padding: 15px 20px 15px 20px;
+        position: absolute;
+        top: 30px;
+        width: auto;
+        white-space: nowrap;
+
+        @include light-theme((
+            background: $light-mode-alternative-background,
+            border: 1px solid rgba($color: $light-mode-text, $alpha: 0.5),
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.1)
+        ));
+
+        @include dark-theme((
+            background: $dark-mode-alternative-background,
+            border: 1px solid $light-mode-text,
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.5)
+        ));
+
+        li {            
+            a.navigation__link {
+                padding: 0px;
+            }
+        }
+
+        .navigation {
+
+            &__link {
+                background: none;
+            }
+        }
+    }
+    
+    .dropdown_icon {
+        display: inline-block;        
+        width: 9px;
+        height: 6px;
+        margin-bottom: 2px;
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 1H1.5L4.5 5L7.5 1Z' fill='%23449CF8' stroke='%23449CF8'/%3E%3C/svg%3E%0A");
+    }
+
+}

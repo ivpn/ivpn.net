@@ -1,0 +1,84 @@
+<footer class="footer">
+    <div class="footer__grid">
+        <div class="footer__logo">
+            <a href="/">
+                <img class="navigation__logo" src="{{ site.Params.cdnUrl }}/images/logo.svg" />
+            </a>
+        </div>
+        <div class="footer__column">
+            <ul class="footer__menu">
+                {{ range .Site.Menus.footercolone }}
+                <li>
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="footer__column">
+            <ul class="footer__menu">
+                {{ range .Site.Menus.footercoltwo }}
+                <li>
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="footer__column">
+            <ul class="footer__menu">
+                {{ range .Site.Menus.footercolthree }}
+                <li>
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="footer__column">
+            <ul class="footer__menu">
+                {{ range .Site.Menus.footercolfour }}
+                <li>
+                    <img src="{{ site.Params.cdnUrl }}/images/{{ .Identifier }}.svg" /><a
+                        href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="footer__trademark">
+            WireGuard® is a registered trademark of Jason A. Donenfield
+        </div>
+    </div>
+    <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/menu.js" }}"></script>
+
+    {{ if $.Site.Params.piwikEnabled }}
+        <script type="text/javascript">
+            var _paq = window._paq = window._paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function () {
+                var u = "{{ $.Site.Params.piwikUrl }}/";
+                _paq.push(['setTrackerUrl', u + 'piwik.php']);
+                _paq.push(['setSiteId', {{ $.Site.Params.piwikSiteId }}]);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'piwik.js';
+            s.parentNode.insertBefore(g, s);
+        }) ();
+        </script>
+
+        <noscript>
+            <p><img src="{{ $.Site.Params.piwikUrl }}/piwik.php?idsite={{ $.Site.Params.piwikSiteId }}" style="border:0;" alt="" /></p>
+        </noscript>
+    {{ end }}
+
+    <!-- Start of Rocket.Chat Livechat Script -->
+    <script type="text/javascript">
+        (function (w, d, s, u) {
+            w.RocketChat = function (c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
+            var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
+            j.async = true; j.src = 'https://livechat.ivpn.net/livechat/rocketchat-livechat.min.js?_=201903270000';
+            h.parentNode.insertBefore(j, h);
+        })(window, document, 'script', 'https://livechat.ivpn.net/livechat');
+    </script>
+    <!-- End of Rocket.Chat Livechat Script -->
+</footer>

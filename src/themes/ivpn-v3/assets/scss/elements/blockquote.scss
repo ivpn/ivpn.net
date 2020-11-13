@@ -1,0 +1,45 @@
+blockquote {
+    padding: 24px;
+    margin-bottom: 24px;
+
+    @include light-theme((
+        background: $light-mode-alternative-background
+    ));
+
+    @include dark-theme((
+        background: $dark-mode-alternative-background
+    ));
+
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ol,
+    ul {
+        margin-bottom: 0;
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: $text-size;
+        font-weight: normal;
+        margin: 0;
+
+        @include light-theme((
+            color: $light-mode-text
+        ));
+
+        @include dark-theme((
+            color: $dark-mode-text
+        ));
+    }
+
+    h1::before {
+        content: '# ';
+    }
+}

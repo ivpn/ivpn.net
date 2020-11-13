@@ -1,0 +1,7 @@
+{{ define "main" }}
+    <div id="app"></div>
+{{ end }}
+
+{{ define "main-script" }}
+    <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/app.js" }}"></script>
+{{ end }}

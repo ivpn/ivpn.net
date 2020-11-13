@@ -1,0 +1,27 @@
+.team {
+    @include grid($gutter: $default-grid-gutter);
+    @include container();
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &-member {
+        @include grid-col($col: 12, $gutter: $default-grid-gutter);
+        @include respond-to('small') {
+            @include grid-col($col: 6, $gutter: $default-grid-gutter);
+        }
+        @include respond-to('medium') {
+            @include grid-col($col: 4, $gutter: $default-grid-gutter);
+        }
+
+        line-height: 28px;
+        letter-spacing: -0.5px;
+
+        &__image {
+            margin-bottom: 24px;
+        }
+
+        h4 {
+            margin-bottom: 12px;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<section class="team">
+    {{ range .members }}
+        <div class="team-member">
+            <img class="team-member__image" src="{{ site.Params.cdnUrl }}{{ .image }}" srcset="{{ site.Params.cdnUrl }}{{ .image }} 1x, {{ site.Params.cdnUrl }}{{ .image_retina }} 2x" width="140px" alt="{{ .name }}"/>
+            <h4>{{ .name }}</h4>
+            {{ .description | markdownify }}
+        </div>
+    {{ end }}
+</section>

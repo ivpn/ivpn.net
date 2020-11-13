@@ -1,0 +1,37 @@
+@mixin properties($properties) {
+    @each $property, $value in $properties {
+        #{$property}: $value;
+    }
+}
+
+@mixin light-theme-body($properties: ()) {
+    &, &.light-theme {
+        @include properties($properties)
+    }
+}
+
+@mixin dark-theme-body($properties: ()) {
+    &.dark-theme {
+        @include properties($properties)
+    }
+
+    @media (prefers-color-scheme: dark) {
+        @include properties($properties)
+    }
+}
+
+@mixin light-theme($properties: ()) {
+    &, .light-theme & {
+        @include properties($properties)
+    }
+}
+
+@mixin dark-theme($properties: ()) {
+    .dark-theme & {
+        @include properties($properties)
+    }
+
+    @media (prefers-color-scheme: dark) {
+        @include properties($properties)
+    }
+}

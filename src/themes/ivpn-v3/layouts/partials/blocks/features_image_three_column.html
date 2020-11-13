@@ -1,0 +1,20 @@
+<section class="features">
+    <div class="features__col features__col--first">
+        {{ range .features_col_one }}
+            <div class="feature">
+                {{ .description | markdownify }}
+            </div>
+        {{ end }}
+    </div>
+    <div class="features__col features__col--image">
+        <img class="features__image--light" src="{{ site.Params.cdnUrl }}{{ .light_image }}" srcset="{{ site.Params.cdnUrl }}{{ .light_image }} 1x, {{ site.Params.cdnUrl }}{{ .light_image_retina }} 2x" alt="Light features image"/>
+        <img class="features__image--dark" src="{{ site.Params.cdnUrl }}{{ .dark_image }}" srcset="{{ site.Params.cdnUrl }}{{ .dark_image }} 1x, {{ site.Params.cdnUrl }}{{ .dark_image_retina }} 2x" alt="Dark features image"/>
+    </div>
+    <div class="features__col">
+        {{ range .features_col_two }}
+            <div class="feature">
+                {{ .description | markdownify }}
+            </div>
+        {{ end }}
+    </div>
+</section>

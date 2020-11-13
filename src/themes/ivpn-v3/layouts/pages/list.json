@@ -1,0 +1,9 @@
+[
+    {{ range $index, $value := where .Site.Pages ".Params.layout" "help-details" }}
+    {{ if $index }}, {{ end }}
+    {
+        "url": "{{ .RelPermalink }}",
+        "title": {{ .Params.H1 | plainify | jsonify }}
+    }
+    {{ end }}
+]

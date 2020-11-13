@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{- partial "products-nav.html" . -}}
+<section class="content content--narrow content--product">
+    <div class="content__text">
+        <header>
+            <h1>{{ .Params.h1 }}</h1>
+            <div class="heading--text-image">
+                <div class="heading__content">
+                    <p>{{ .Params.subtitle }}</p>
+                </div>
+                {{ range .Params.releases }}
+                    {{ if isset . "title" }}
+                    <h2>{{ .title }}</h2>
+                    {{ end }}
+                    {{ if isset . "description" }}
+                    <p>{{ .description }}</p>
+                    {{ end }}
+                    <p>
+                        {{ if isset . "download" }}
+                        <a href="{{ .download }}" class="cta cta--is-blue">{{ .cta }}</a>
+                        {{ end }}
+                        {{ with .downloads }}
+                        <ul class="cta--menu">
+                            <li>
+                                <a class="cta cta--is-blue">Download</a>
+                                <ul>
+                                    {{ range . }}
+                                    <li>
+                                        <a href="{{ .url }}"
+                                            class="cta cta--is-blue">{{ .cta }}</a>
+                                    </li>
+                                    {{ end }}
+                                </ul>
+                            </li>
+                        </ul>
+                        {{ end }}
+                        <a href="{{ .github }}" class="cta ">View source on GitHub</a>
+                    </p>
+                    {{ with .checksum }}
+                    <p>
+                        {{ range . }}
+                        {{ .title }}: {{ .value }}<br>
+                        {{ end }}
+                    </p>
+                    {{ end }}
+                    {{ if isset . "changelog" }}
+                    <p>
+                        <a href="{{ .changelog }}">Changelog</a>
+                    </p>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </header>
+        {{ if isset .Params "image" }}
+        <figure>
+            <img class="features__image--light" src="{{site.Params.cdnUrl}}/images-static/uploads/{{ .Params.image }}-light.png"
+                srcset="{{site.Params.cdnUrl}}/images-static/uploads/{{ .Params.image }}-light.png 1x, {{site.Params.cdnUrl}}/images-static/uploads/{{ .Params.image }}-light@2x.png 2x"
+                alt="{{ .Title }}" />
+            <img class="features__image--dark" src="{{site.Params.cdnUrl}}/images-static/uploads/{{ .Params.image }}-dark.png"
+                srcset="{{site.Params.cdnUrl}}/images-static/uploads/{{ .Params.image }}-dark.png 1x, {{site.Params.cdnUrl}}/images-static/uploads/{{ .Params.image }}-dark@2x.png 2x"
+                alt="{{ .Title }}" />
+        </figure>
+        {{ end }}
+        {{ .Content | markdownify }}
+    </div>
+</section>
+{{ end }}

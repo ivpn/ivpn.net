@@ -1,0 +1,15 @@
+.notice {
+    padding: 16px 24px;
+    margin: 34px 0;
+    font-size: $text-size;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+
+    &--info {
+        background: rgba(57, 143, 230, 0.1);
+    }
+
+    &--warning {
+        background: rgba(255, 201, 51, 0.1);
+    }
+}

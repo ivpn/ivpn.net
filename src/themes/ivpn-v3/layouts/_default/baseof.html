@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">  
+  <head>
+    {{- partial "head.html" . -}}
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/pages.css" }}">
+    {{ block "main-style" . }}{{ end }}
+
+    {{ block "seo" . }}
+      <link rel="canonical" href="{{ .Permalink }}">
+    {{ end }}
+  </head>
+    <body>
+        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>       
+        {{- partial "header.html" . -}}
+
+        <main>
+            {{- block "main" . }}{{- end }}
+        </main>
+
+        {{partial "footer.html" . }}
+
+        {{ block "main-script" . }}{{ end }}
+    </body>
+</html>

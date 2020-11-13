@@ -1,0 +1,70 @@
+.search {
+    margin-bottom: 80px;
+    position:relative;
+
+    display: flex;
+    flex-direction: column;
+    
+    @include respond-to('large') {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    h1, h2 {
+        flex-grow: 1;
+        margin-bottom: 0px;
+        font-size: $heading-size-h1;
+    }
+
+    form {
+        position: relative;        
+        width: 100%;
+        max-width: 450px;
+        float: none;
+        margin-top: 30px;
+
+        @include respond-to('large') {
+            float: right;
+            margin-top: 0;
+        }
+    }
+
+    input[type=text] {
+        @include light-theme((
+            background: $light-mode-alternative-background,
+            border: 1px solid rgba(0, 0, 0, 0.1)
+        ));
+
+        @include dark-theme((
+            background: $dark-mode-alternative-background,
+            border: 1px solid rgba(255, 255, 255, 0.1)
+        ));
+
+        &:focus {
+            &,
+            .dark-theme &,
+            .light-theme & {
+                border-color: $blue-color;
+            }
+        }
+    }
+
+    input[type=submit] {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 49px;
+        height: 49px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        @include light-theme((
+            background: url("/images-static/uploads/icon-search-light.svg") no-repeat center
+        ));
+
+        @include dark-theme((
+            background-image: url("/images-static/uploads/icon-search-dark.svg")
+        ));
+    }
+}

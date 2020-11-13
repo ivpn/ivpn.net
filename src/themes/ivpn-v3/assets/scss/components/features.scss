@@ -1,0 +1,83 @@
+.features {
+    @include grid($gutter: $default-grid-gutter);
+    @include container();
+
+    @include max-width('small') {
+        display: block;
+    }
+
+    &__col {
+        @include grid-col($col: 3, $grid-columns: 3, $gutter: $default-grid-gutter);
+        @include respond-to('small') {
+            @include grid-col($col: 1.5, $grid-columns: 3, $gutter: $default-grid-gutter);
+        }
+        @include respond-to('medium') {
+            @include grid-col($col: 1, $grid-columns: 3, $gutter: $default-grid-gutter);
+        }
+
+        &--image {
+            display: none;
+            @include respond-to('medium') {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
+
+        &--first {
+            @include respond-to('medium') {
+                text-align: right;
+
+                .feature {
+                    &:before {
+                        right: 0;
+                        left: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+
+        &--light {
+            @include light-theme((
+                display: inline-block
+            ));
+
+            @include dark-theme((
+                display: none
+            ));
+        }
+        &--dark {
+            @include light-theme((
+                display: none
+            ));
+
+            @include dark-theme((
+                display: inline-block
+            ));
+        }
+    }
+}
+
+.feature {
+    padding-top: 24px;
+    font-size: 16px;
+    line-height: 28px;
+    position: relative;
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        height: 1px;
+        width: 75px;
+        left: 0;
+        top: 0;
+        background: $blue-color;
+    }
+
+    + .feature {
+        margin-top: 24px;
+    }
+}

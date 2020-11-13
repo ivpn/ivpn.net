@@ -1,0 +1,82 @@
+.guides {
+    @include grid($gutter: $default-grid-gutter);
+    @include container();
+    width: calc(100% + 24px);
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: -12px;
+    margin-bottom: 70px;
+
+    a {
+        @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
+        @include respond-to('small') {
+            @include grid-col($col: 6, $gutter: $default-grid-gutter);
+        }
+
+        @include respond-to('medium') {
+            @include grid-col($col: 4, $gutter: $default-grid-gutter);
+        }
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        line-height: 28px;
+        padding: 24px;
+        height: 175px;
+        font-size: 16px;
+        position: relative;
+
+        @include light-theme((
+            background: $light-mode-alternative-background,
+            color: $light-mode-text
+        ));
+
+        @include dark-theme((
+            background: $dark-mode-alternative-background,
+            color: $dark-mode-text
+        ));
+
+        span,
+        em {
+            display: block;
+        }
+
+        span {
+            font-weight: 500;
+            height: 90px;
+            overflow: hidden;
+        }
+
+        em {
+            color: $blue-color;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            display: none;
+            background: url('/images-static/uploads/arrow-left.svg') no-repeat;
+            right: 24px;
+            bottom: 24px;
+        }
+
+        &:hover {
+            text-decoration: none;
+            background: $blue-color;
+            color: $white-color;
+
+            em {
+                color: $white-color;
+            }
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+}

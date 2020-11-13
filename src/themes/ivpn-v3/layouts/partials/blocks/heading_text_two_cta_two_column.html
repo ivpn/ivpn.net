@@ -1,0 +1,18 @@
+<section class="heading heading--text-image">
+    <div class="heading__content">
+        {{ .content | markdownify }}
+        <p><a href="{{ .cta_one_url }}" class="cta {{ if eq .cta_one_is_blue true }}cta--is-blue{{ end }}">{{ .cta_one_label }}</a> <a href="{{ .cta_two_url }}" class="cta {{ if eq .cta_two_is_blue true }}cta--is-blue{{ end }}">{{ .cta_two_label }}</a></p>
+        <div>
+            <strong>Dark mode</strong>
+            <label class="switch">
+                <input type="checkbox" data-theme-switch>
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div class="heading__image">
+          
+        <img class="features__image--light"  src="{{ site.Params.cdnUrl }}{{ .light_image }}" srcset="{{ site.Params.cdnUrl }}{{ .light_image }} 1x, {{ site.Params.cdnUrl }}{{ .light_image_retina }} 2x" alt="Hero image"/>
+        <img class="features__image--dark" src="{{ site.Params.cdnUrl }}{{ .dark_image }}" srcset="{{ site.Params.cdnUrl }}{{ .dark_image }} 1x, {{ site.Params.cdnUrl }}{{ .dark_image_retina }} 2x" alt="Hero image"/>
+    </div>
+</section>

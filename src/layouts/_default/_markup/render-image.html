@@ -1,0 +1,1 @@
+<img src="{{if hasPrefix .Destination "http"}}{{ .Destination }}{{else}}{{site.Params.cdnUrl}}{{ .Destination }}{{end}}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}" {{ end }} />

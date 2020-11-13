@@ -1,0 +1,8 @@
+baseURL = "https://www.ivpn.net"
+
+[params]
+    cdnUrl = "https://cdn.ivpn.net"
+    environment = "production"     
+    piwikEnabled = true
+    piwikUrl = "https://stats.ivpn.net"
+    piwikSiteId = 1

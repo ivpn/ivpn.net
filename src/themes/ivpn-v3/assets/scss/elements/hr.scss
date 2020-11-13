@@ -1,0 +1,14 @@
+hr {
+    margin: 40px auto;
+    width: 15px;
+    height: 1px;
+    border: none;
+
+    @include light-theme((
+        background: $light-mode-headings
+    ));
+
+    @include dark-theme((
+        background: $dark-mode-headings
+    ));
+}

@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="content">
+    <div class="content__text">
+        {{ .Content | markdownify }}
+    </div>
+</section>
+<script>
+var navbar = document.getElementById("navbar");
+var sticky = document.getElementById("sticky");
+if (navbar && sticky) {
+    window.onscroll = function() {
+        evaluateStickyHeader()
+    };
+
+    var navbarYOffset = navbar.offsetTop;
+
+    function evaluateStickyHeader() {
+        if (window.pageYOffset >= navbarYOffset) {
+            sticky.classList.add("sticky")
+        } else {
+            sticky.classList.remove("sticky");
+        }
+    }
+}
+</script>
+{{ end }}

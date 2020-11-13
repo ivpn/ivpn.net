@@ -1,0 +1,39 @@
+.navbar {
+    position: relative;
+    height: 68px;
+
+    div {
+        background: cyan;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 68px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include light-theme((
+            background-color: $light-mode-background
+        ));
+
+        @include dark-theme((
+            background-color: $dark-mode-background
+        ));
+
+        &.sticky {
+            position: fixed;
+            top: 0;
+            width: calc(100% - 24px);
+            max-width: 1056px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h3 {
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+    }
+}

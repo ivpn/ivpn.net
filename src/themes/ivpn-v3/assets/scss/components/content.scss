@@ -1,0 +1,130 @@
+main {
+    overflow: hidden;
+}
+
+.content {
+    @include container();
+    @include grid();
+    flex-wrap: wrap;
+    font-size: $text-size;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+
+    &__text,
+    &__text-lead {
+        @include grid-col($col: 12, $gutter: $default-grid-gutter);
+        max-width: 100%;
+        overflow: auto;
+
+        h3 {
+            font-weight: bold;
+            margin-bottom: 16px;
+
+            @include light-theme((
+                color: #000
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-headings
+            ));
+        }
+
+        &--50 {
+            @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
+            @include respond-to('medium') {
+                @include grid-col($col: 6, $gutter: $default-grid-gutter);
+            }
+        }
+    }
+
+    &__text {
+        overflow: hidden;
+    }
+
+    &__text-lead {
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 60px;
+    }
+
+    &__help-article {
+        main {
+            h1 {
+                font-size: $heading-size-h2;
+            }
+        }
+    }
+
+    &__404 {
+        margin-bottom: 100px;
+
+        h1 {
+            margin-bottom: 15px;
+            font-size: 64px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    &--narrow {
+        max-width: 780px;
+    }
+
+    &+.content {
+        margin-top: 16px;
+    }
+
+    &--product {
+
+        h1,
+        h2,
+        header {
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        header {
+            margin-bottom: 35px;
+        }
+
+        .heading {
+
+            &--text-image {
+
+                p {
+                    margin-bottom: 30px;
+                    line-break: auto;
+                }
+
+                a {
+                    margin: 0 7px 10px 7px;
+                }
+            }
+        }
+    }
+
+    &--hidden-mobile {
+        display: none;
+
+        @include respond-to('medium') {
+            display: block;
+        }
+    }
+
+    &--hidden-desktop {
+        display: block;
+        
+        @include respond-to('medium') {
+            display: none;
+        }
+    }
+}

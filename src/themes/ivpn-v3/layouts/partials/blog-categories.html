@@ -1,0 +1,10 @@
+<section class="blog__categories">
+    {{ range sort .Site.Taxonomies.categories ".Page.Weight" "asc" }}
+        <div class="blog__category">
+            <a href="{{ .Page.Permalink }}">
+                <span class="title">{{ .Page.Title }}</span>
+                <span class="sub-title">({{ .Count }} {{ if eq .Count 1 }}article{{ else }}articles{{ end }})</span>
+            </a>
+        </div>
+    {{ end }}
+</section>

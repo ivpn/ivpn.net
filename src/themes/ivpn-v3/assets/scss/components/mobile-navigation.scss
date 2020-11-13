@@ -1,0 +1,152 @@
+.mobile-navigation {
+    display: flex;
+    @include respond-to('large') {
+        display: none;
+    }
+
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    padding: 12px;
+
+    &__account {
+        padding: 10px 10px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        display: block;
+        margin-right: 24px;
+    }
+
+    &__checkbox:checked ~ &__menu{
+        visibility: visible;
+    }
+
+    &__icon {
+        text-decoration: none;
+        cursor: pointer;
+        &:hover, &:active {
+            text-decoration: none;
+        }
+
+        path {
+            @include light-theme((
+                stroke: $light-mode-text
+            ));
+
+            @include dark-theme((
+                stroke: $dark-mode-text
+            ));
+        }
+    }
+
+    &__items {
+        display: flex;
+        padding: 0;
+    }
+
+    &__item {   
+        
+        &::before {
+            display: none;
+        }
+        
+        margin: 0;
+
+        &:last-child {
+            .mobile-navigation__link {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+
+        @include light-theme((
+            color: $light-mode-headings
+        ));
+
+        @include dark-theme((
+            color: $dark-mode-headings
+        ));
+
+        &:hover, &:active, &:focus {
+            text-decoration: underline;
+        }
+
+        &--is-cta {
+            color: $blue-color;
+        }
+    }
+
+    &__link, &__seperator {
+        display: inline-block;
+        padding: 0 12px;
+    }
+
+    &__menu {
+        visibility: hidden;
+        position: absolute;
+        top: 53px; // Logo height + padding
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        padding: 12px 12px 0 12px;
+
+        @include light-theme((
+            background: $light-mode-alternative-background
+        ));
+
+        @include dark-theme((
+            background: $dark-mode-alternative-background
+        ));
+
+        &-item {
+            &[data-show="auth"]:not([data-auth="auth"]) {
+                display: none;
+            }
+                    
+            &[data-show="auth-legacy"]:not([data-auth="auth-legacy"]) {
+                display: none;
+            }
+            
+            &[data-hide="auth"][data-auth] {
+                display: none;
+            }    
+    
+            &::before {
+                display: none;
+            }
+
+            margin-bottom: 0;
+
+            & + .mobile-navigation__menu-item {
+                border-top: 1px solid rgba(226, 226, 226, 0.1);
+
+                .mobile-navigation__menu-link {
+                    padding-top: 18px;
+                }
+            }
+        }
+
+        &-link {
+            display: block;
+            padding-bottom: 18px;
+            text-align: center;
+
+            @include light-theme((
+                color: $light-mode-headings
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-headings
+            ));
+        }
+    }
+}

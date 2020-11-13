@@ -1,0 +1,183 @@
+.blog-article {
+    @include container();
+    width: calc(100% - 24px);
+    max-width: 780px;
+
+    &__heading {
+        margin-bottom: 0 !important;
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__hero-image {
+        @include container();
+        text-align: center;
+    }
+
+    &__discuss {
+        padding: 24px;
+        font-size: 18px;
+        line-height: 32px;
+
+        @include light-theme((
+            color: $light-mode-headings,
+            background: $light-mode-alternative-background
+        ));
+
+        @include dark-theme((
+            color: $dark-mode-headings,
+            background: $dark-mode-alternative-background
+        ));
+    }
+
+    &__highlighted {
+        @include grid-col($col: 3, $grid-columns: 3, $gutter: $default-grid-gutter);
+        flex: 0 0 calc(100% - 11px);
+        
+        @include respond-to('medium') {
+            @include grid-col($col: 1, $grid-columns: 3, $gutter: $default-grid-gutter);
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        h4, h4 > a {
+            @include light-theme((
+                color: $light-mode-headings
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-headings
+            ));
+        }
+
+        &-meta {
+            font-size: 14px;
+        }
+
+        &-wrapper {
+            @include grid();
+
+            @include light-theme((
+                border-bottom: 1px solid #E2E2E2
+            ));
+
+            @include dark-theme((
+                border-bottom: 1px solid rgba(226, 226, 226, 0.1)
+            ));
+        }
+    }
+
+    &__related {
+        @include grid-col($col: 2, $grid-columns: 2, $gutter: $default-grid-gutter);
+        @include respond-to('medium') {
+            @include grid-col($col: 1, $grid-columns: 2, $gutter: $default-grid-gutter);
+        }
+
+        @include max-width('medium') {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        .badge {
+            position: absolute;
+            left: 24px;
+            top: 24px;
+
+            @include light-theme((
+                background-color: $dark-mode-background
+            ));
+
+            @include dark-theme((
+                background-color: rgb(61,61,66)
+            ));
+        }
+
+        h4, h4 > a {
+            margin-bottom: 16px;
+
+            @include light-theme((
+                color: $light-mode-headings
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-headings
+            ));
+        }
+
+        &-image {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        &-meta {
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        &-content {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        &-wrapper {
+            @include grid();
+
+            @include max-width('medium') {
+                display: block;
+            }
+        }
+    }
+
+    &__comment {
+        padding-bottom: 40px;
+
+        @include light-theme((
+            border-bottom: 1px solid #E2E2E2
+        ));
+
+        @include dark-theme((
+            border-bottom: 1px solid rgba(226, 226, 226, 0.1)
+        ));
+
+        &-author {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            margin: 0 0 16px 0;
+            
+            @include light-theme((
+                color: $light-mode-headings
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-headings
+            ));
+        }
+        &-date {
+            font-size: 13px;
+            margin: 0 0 8px 0;
+        }
+        &-content {
+            font-size: 16px;
+            line-height: 28px;
+
+            p {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        & + .blog-article__comment {
+            margin-top: 40px;
+        }
+    }
+}

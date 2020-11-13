@@ -1,0 +1,20 @@
+body {
+    overflow-x: hidden;
+    font-family: $font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include light-theme-body((
+        background: $light-mode-background,
+        color: $light-mode-text
+    ));
+
+    @include dark-theme-body((
+        background: $dark-mode-background,
+        color: $dark-mode-text
+    ));
+}
+
+.noscroll {
+    overflow: hidden;
+}

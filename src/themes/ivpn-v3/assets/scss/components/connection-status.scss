@@ -1,0 +1,120 @@
+.connection-status {
+    font-size: 12px;
+    line-height: 24px;    
+
+    &__container {
+        @include container();
+        padding: 4px 12px 4px 12px;        
+        display: flex;
+        align-items: center;
+
+        div:first-child {
+            flex-grow:1;
+        }
+    }
+    
+    .light-switch {
+        margin-left: 10px;
+
+        svg {
+            @include light-theme((
+                fill: #000
+            ));
+
+            @include dark-theme((
+                fill: #945C37
+            ));
+        }
+        
+
+        label {
+            margin-top: 5px;
+            margin-bottom: -5px;
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    @include light-theme((
+        color: $light-mode-text,
+        background-color: $light-mode-alternative-background
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-text,
+        background-color: $dark-mode-alternative-background
+    ));
+
+    &__content {
+        @include container();
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;        
+        align-items: flex-start;
+
+        padding: 8px 12px 8px 0;
+
+        div:first-child {
+            flex-grow: 1;            
+        }
+        div {
+            margin-right: 20px;
+        }
+
+        @include respond-to('medium') {
+            padding: 10px 12px 10px 0;
+        }        
+    }
+
+    em {
+        font-style: normal;
+
+        @include light-theme((
+            color: rgba(34, 34, 38, 0.5)
+        ));
+
+        @include dark-theme((
+            color: rgba(255, 255, 255, 0.5)
+        ));
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    .label {
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+
+            @include light-theme((
+                background: $light-mode-red-color
+            ));
+
+            @include dark-theme((
+                background: $dark-mode-red-color
+            ));
+        }
+    }
+
+    &--connected {
+
+        .label {
+
+            &::before {
+                @include light-theme((
+                    background: $light-mode-green-color
+                ));
+
+                @include dark-theme((
+                    background: $dark-mode-green-color
+                ));
+            }
+        }
+    }
+}

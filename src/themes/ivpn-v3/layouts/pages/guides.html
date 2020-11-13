@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section class="content">
+    <div class="content__text">
+        {{ .Content | markdownify }}
+        <h2>Get started</h2>
+        <section class="guides">
+            {{ range where .Pages "Params.section" "Basic" }}
+            <a href="{{ .Permalink }}">
+                <span>{{ .Title }}</span>
+                <em>Read more</em>
+            </a>
+            {{ end }}
+        </section>
+        <h2>Advanced Privacy and Anonymity</h2>
+        <section class="guides">
+            {{ range where .Pages "Params.section" "Advanced" }}
+            <a href="{{ .Permalink }}">
+                <span>{{ .Title }}</span>
+                <em>Read more</em>
+            </a>
+            {{ end }}
+        </section>
+        <h2>Misc</h2>
+        <section class="guides">
+            {{ range where .Pages "Params.section" "Misc" }}
+            <a href="{{ .Permalink }}">
+                <span>{{ .Title }}</span>
+                <em>Read more</em>
+            </a>
+            {{ end }}
+        </section>
+    </div>
+</section>
+{{ end }}

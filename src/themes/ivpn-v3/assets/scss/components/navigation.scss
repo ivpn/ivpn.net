@@ -1,0 +1,107 @@
+.navigation {
+    display: none;
+    @include respond-to('large') {
+        @include grid();
+    }
+    @include container();
+
+    
+    li {
+        margin-bottom: 0px;
+        position: relative;
+    }
+    
+    .login-menu {
+        width: 130px;
+        overflow: visible;
+        white-space: nowrap;
+    }
+
+    font-size: $text-size;
+    padding: 0 12px;
+    justify-content: space-between;
+    align-items: stretch;
+
+    &__item {
+        &[data-show="auth"]:not([data-auth="auth"]) {
+            display: none;
+        }
+                
+        &[data-show="auth-legacy"]:not([data-auth="auth-legacy"]) {
+            display: none;
+        }
+
+        &[data-hide="auth"][data-auth] {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+        &--contains-logo {
+            padding: 20px 20px 20px 0;
+            line-height: 40px;
+            flex-grow: 2;
+        }
+        &--is-hidden {
+            display: none;
+        }
+    }
+
+    &__seperator {
+        &::before {
+            display: none;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+
+        @include light-theme((
+            background: $light-mode-background,
+            color: $light-mode-headings
+        ));
+
+        @include dark-theme((
+            background: $dark-mode-background,
+            color: $dark-mode-headings
+        ));
+
+        &:hover, &:active, &:focus {
+            text-decoration: underline;
+        }
+
+        &--is-cta {
+            color: $blue-color;
+
+            @include light-theme((
+                color: $blue-color
+            ));
+
+            @include dark-theme((
+                color: $blue-color
+            ));
+        }
+        
+    }
+
+    &__link, &__seperator {
+        display: inline-block;
+        padding: 20px;
+        line-height: 40px;
+    }
+
+    li:last-child {
+
+        .navigation__link {
+            padding-right: 0;
+        }
+    }
+
+    &__logo {
+        vertical-align: middle;
+    }
+
+    
+
+}

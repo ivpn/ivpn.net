@@ -1,0 +1,129 @@
+.stances {
+    @include grid($gutter: $default-grid-gutter);
+    @include container();
+    flex-wrap: wrap;
+    max-width: 780px;
+
+    &__content {
+        @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
+        h2 {
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 36px;
+        }
+    }
+
+    &__stance {
+        @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
+        @include respond-to('medium') {
+            @include grid-col($col: 6, $gutter: $default-grid-gutter);
+        }
+
+        line-height: 28px;
+
+        &--heading {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 28px;
+
+            @include light-theme((
+                color: $light-mode-headings
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-headings
+            ));
+        }
+    }
+
+    &__heading {
+        @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
+        &--acceptable, &--depends, &--not-acceptable {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 28px;
+            padding-left: 24px;
+            margin-top: 24px;
+            margin-bottom: 0px;
+            position: relative;
+
+            &:before {
+                content: ' ';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+            }
+        }
+
+        &--acceptable {
+            @include light-theme((
+                $light-mode-green-color
+            ));
+
+            @include dark-theme((
+                $dark-mode-green-color
+            ));
+
+            &:before {
+                @include light-theme((
+                    background-color: $light-mode-green-color
+                ));
+
+                @include dark-theme((
+                    background-color: $dark-mode-green-color
+                ));
+            }
+        }
+
+        &--depends {
+            @include light-theme((
+                color: $light-mode-yellow-color
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-yellow-color
+            ));
+
+            &:before {
+                @include light-theme((
+                    background-color: $light-mode-yellow-color
+                ));
+
+                @include dark-theme((
+                    background-color: $dark-mode-yellow-color
+                ));
+            }
+        }
+
+        &--not-acceptable {
+            @include light-theme((
+                color: $light-mode-red-color
+            ));
+
+            @include dark-theme((
+                color: $dark-mode-red-color
+            ));
+
+            &:before {
+                @include light-theme((
+                    background-color: $light-mode-red-color
+                ));
+
+                @include dark-theme((
+                    background-color: $dark-mode-red-color
+                ));
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ block "title" . }}{{ .Params.Title | default .Site.Title }}{{ end }}</title>
+
+{{ if eq $.Site.Params.environment "production"  }}
+    {{ if in .Permalink "/tags/"}}
+        <meta name="robots" content="noindex, dofollow">
+    {{ else}}
+        <meta name="robots" content="index, follow">
+    {{ end }}
+{{ else }}
+    <meta name="robots" content="noindex, nofollow">
+{{ end }}
+
+{{ block "favicon" . }}
+    {{ partialCached "favicon.html" . }}
+{{ end }}
+
+{{ if .OutputFormats.Get "RSS" }}
+    {{ with .OutputFormats.Get "RSS" }}
+        <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+        <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{ end }}
+{{ end }}
+
+{{- template "_internal/opengraph.html" . -}}
+{{- template "_internal/schema.html" . -}}
+{{- template "_internal/twitter_cards.html" . -}}

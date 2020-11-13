@@ -1,0 +1,70 @@
+.btn {
+    text-align: center;
+    border-radius: 0px;    
+    
+    border: 1px solid $blue-color;
+    padding: 8px 20px;
+    font-size: 16px;    
+    font-weight: normal;
+    line-height: 22px;    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    &:active{
+        border: 1px solid $blue-color;
+        opacity: 0.7;
+    }
+
+    &.btn-icon {
+        background: none;
+        border: none;
+        color: $blue-color;
+        
+        svg, img {
+            margin-right: 8px;
+        }
+    }
+
+    &.btn-icon-red {
+        color: $light-mode-red-color;
+    }
+
+    &.btn-border {
+        background: none;
+        color: $blue-color;
+    }
+
+    &.btn-solid {
+        background-color: $blue-color;    
+        color: $white-color;
+    }  
+
+    &.btn-solid-red {
+        background-color: $light-mode-red-color;
+        border: 1px solid $light-mode-red-color;
+        color: $white-color;
+    }
+
+    &.btn-bold {
+        font-weight: 500;
+    }
+
+    &.btn-solid:disabled {        
+        color: $white-color;
+    }
+
+    &.btn-big {
+        font-weight: bold;
+        font-size: 18px;        
+        padding: 12px 28px;    
+    }
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
