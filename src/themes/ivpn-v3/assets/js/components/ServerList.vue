@@ -4,8 +4,8 @@
             <tr>
                 <th class="location">LOCATION</th>
                 <th>SERVER</th>
-                <!-- <th class="load">LOAD</th>
-                <th class="provider">PROVIDER</th> -->
+                <th class="load">LOAD</th>
+                <th class="provider">PROVIDER</th>
                 <th class="wg_public_key">WIREGUARD PUBLIC KEY</th>
             </tr>
         </thead>
@@ -35,14 +35,14 @@
                     ></i
                     >{{ server.gateway }}
                 </td>
-                <!-- <td class="load">
+                <td class="load">
                     <em>Load</em>
                     {{ server.load }}%
                 </td>
                 <td>
                     <em>Provider</em>
                     {{ server.isp }}
-                </td> -->
+                </td>
                 <td>
                     <em>WireGuard key</em>
                     {{ server.wg_public_key }}
