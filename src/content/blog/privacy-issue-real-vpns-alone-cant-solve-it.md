@@ -1,9 +1,7 @@
 ---
 title: The privacy issue is real and you can't solve it with just a VPN
-# Example: /blog/this-is-a-good-post
 url: /blog/privacy-issue-real-vpns-alone-cant-solve-it/
 highlighted: false
-draft: true
 authors:
   - Viktor Vecsei
 categories:
