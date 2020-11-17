@@ -1,7 +1,7 @@
 ---
 title: DD-WRT - How do I exclude hosts / bypass VPN tunnel? - IVPN Help
 h1: DD-WRT - How do I exclude hosts / bypass VPN tunnel?
-url: /knowledgebase/routers/dd-wrt---how-do-i-exclude-hosts-or-bypass-vpn-tunnel/
+url: /knowledgebase/routers/dd-wrt-how-do-i-exclude-hosts-or-bypass-vpn-tunnel/
 sections:
     - routers
     - troubleshooting

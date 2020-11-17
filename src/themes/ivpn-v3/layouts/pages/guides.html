@@ -5,7 +5,7 @@
         <h2>Get started</h2>
         <section class="guides">
             {{ range where .Pages "Params.section" "Basic" }}
-            <a href="{{ .Permalink }}">
+            <a href="{{ .URL }}">
                 <span>{{ .Title }}</span>
                 <em>Read more</em>
             </a>
@@ -14,7 +14,7 @@
         <h2>Advanced Privacy and Anonymity</h2>
         <section class="guides">
             {{ range where .Pages "Params.section" "Advanced" }}
-            <a href="{{ .Permalink }}">
+            <a href="{{ .URL }}">
                 <span>{{ .Title }}</span>
                 <em>Read more</em>
             </a>
@@ -23,7 +23,7 @@
         <h2>Misc</h2>
         <section class="guides">
             {{ range where .Pages "Params.section" "Misc" }}
-            <a href="{{ .Permalink }}">
+            <a href="{{ .URL }}">
                 <span>{{ .Title }}</span>
                 <em>Read more</em>
             </a>

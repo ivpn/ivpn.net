@@ -6,7 +6,7 @@
         <div class="listing">
             <nav id="nav">
                 {{ range .Pages }}
-                <a href="{{ .Permalink }}">{{ .Params.listItem }}</a>
+                <a href="{{ .URL }}">{{ .Params.listItem }}</a>
                 {{ end }}
             </nav>
             <main id="main">

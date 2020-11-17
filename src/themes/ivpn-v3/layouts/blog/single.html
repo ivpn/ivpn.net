@@ -1,19 +1,19 @@
 {{ define "main" }}
 <section class="blog-article">
     <div class="breadcrumb">
-        <a href="/blog/">IVPN Blog</a><span class="breadcrumb-seperator">></span>{{ range .Params.categories }}{{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}{{ end }}<span class="breadcrumb-seperator">></span>{{ .Title }}
+        <a href="/blog/">IVPN Blog</a><span class="breadcrumb-seperator">></span>{{ range .Params.categories }}{{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}<a href="{{ .URL }}">{{ .Title }}</a>{{ end }}{{ end }}<span class="breadcrumb-seperator">></span>{{ .Title }}
     </div>
     <div class="blog-article__heading">
         <h1>{{ .Title }}</h1>
         <p>
             {{ range .Params.categories }}
                 {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
-                    <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
+                    <a href="{{ .URL }}" class="badge">{{ .Title }}</a>
                 {{ end }}
             {{ end }}
             {{ range .Params.authors }}
                 {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
-                    By <a href="{{ .Permalink }}">{{ .Title }}</a> |
+                    By <a href="{{ .URL }}">{{ .Title }}</a> |
                 {{ end }}
             {{ end }}
             Posted on {{ .Date.Format "January 2, 2006"}}
@@ -68,14 +68,14 @@
                 <div class="blog-article__highlighted">
                     {{ range .Params.categories }}
                         {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
-                            <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
+                            <a href="{{ .URL }}" class="badge">{{ .Title }}</a>
                         {{ end }}
                     {{ end }}
-                    <h4><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h4>
+                    <h4><a href="{{ .Page.URL }}">{{ .Page.Title }}</a></h4>
                     <p class="blog-article__highlighted-meta">
                         {{ range .Params.authors }}
                             {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
-                                By <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                By <a href="{{ .URL }}">{{ .Title }}</a>
                             {{ end }}
                         {{ end }}
                     </p>
@@ -93,22 +93,22 @@
                 <div class="blog-article__related">
                     <div class="blog-article__related-image">
                         {{ if .Params.thumbnailImage }}
-                            <a href="{{ .Page.Permalink }}">
+                            <a href="{{ .Page.URL }}">
                                 <img src="{{ site.Params.cdnUrl }}{{ .Params.thumbnailImage }}" alt="{{ .Title }}">
                             </a>
                         {{ end }}
                         {{ range .Params.categories }}
                             {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
-                                <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
+                                <a href="{{ .URL }}" class="badge">{{ .Title }}</a>
                             {{ end }}
                         {{ end }}
                     </div>
-                    <h4><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h4>
+                    <h4><a href="{{ .Page.URL }}">{{ .Page.Title }}</a></h4>
                     <p class="blog-article__related-meta">
                         Posted on {{ .Date.Format "January 2, 2006"}} by
                         {{ range .Params.authors }}
                             {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
-                                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                <a href="{{ .URL }}">{{ .Title }}</a>
                             {{ end }}
                         {{ end }}
                     </p>

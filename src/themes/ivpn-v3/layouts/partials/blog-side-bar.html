@@ -1,7 +1,7 @@
 <div>
     <p class="sidebar-header">Tags</p>
     {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}" rel="noindex, dofollow" class="tag">{{ .Page.Title }}</a>
+        <a href="{{ .Page.URL }}" rel="noindex, dofollow" class="tag">{{ .Page.Title }}</a>
     {{ end }}
 </div>
 <div class="blog__highlighted">
@@ -10,14 +10,14 @@
         <div class="blog__highlighted-article blog__highlighted-article--border-top">
             {{ range .Params.categories }}
                 {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
-                    <a href="{{ .Permalink }}" class="badge steel-badge">{{ .Title }}</a>
+                    <a href="{{ .URL }}" class="badge steel-badge">{{ .Title }}</a>
                 {{ end }}
             {{ end }}
-            <h4><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h4>
+            <h4><a href="{{ .Page.URL }}">{{ .Page.Title }}</a></h4>
             <p class="blog__highlighted-meta">
                 {{ range .Params.authors }}
                     {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
-                        By <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        By <a href="{{ .URL }}">{{ .Title }}</a>
                     {{ end }}
                 {{ end }}
             </p>
