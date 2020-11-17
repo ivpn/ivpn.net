@@ -85,6 +85,6 @@ This guide will help you set up an IPSec connection using IKEv2
      ![](/images-static/uploads/windows-10-ipsec-with-ikev2-015.png)
 
 
-DNS may leak with this manual connection. Check out our guide on [setting DNS manually](/knowledgebase/windows/windows-10---set-ivpn-dns-servers-manually/).
+DNS may leak with this manual connection. Check out our guide on [setting DNS manually](/knowledgebase/windows/windows-10-set-ivpn-dns-servers-manually/).
 
-[Disabling IPv6](/knowledgebase/windows/windows-10---disable-ipv6/) may be another way to further tighten up your system.
+[Disabling IPv6](/knowledgebase/windows/windows-10-disable-ipv6/) may be another way to further tighten up your system.

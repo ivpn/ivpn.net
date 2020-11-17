@@ -136,9 +136,9 @@ platform: linux
 
     You can undo the changes to the `/etc/resolv.conf` file by editing it with the `nano` editor and reversing the changes. The file will also be restored to the original state if you reboot your computer system.
 
-8.  A more permanent DNS fix is available via [this guide](/knowledgebase/linux/linux---webpages-do-not-load-or-dns-leaks-when-connecting-via-networkmanager/).
+8.  A more permanent DNS fix is available via [this guide](/knowledgebase/linux/linux-webpages-do-not-load-or-dns-leaks-when-connecting-via-networkmanager/).
 
-9.  If you wish to have the OpenVPN connection establish automatically with the system start, please see the following guides for [Ubuntu](/knowledgebase/linux/linux---autostart-openvpn-in-systemd-ubuntu/) and [Fedora](/knowledgebase/linux/linux---autostart-openvpn-in-systemd-fedora/).
+9.  If you wish to have the OpenVPN connection establish automatically with the system start, please see the following guides for [Ubuntu](/knowledgebase/linux/linux-autostart-openvpn-in-systemd-ubuntu/) and [Fedora](/knowledgebase/linux/linux-autostart-openvpn-in-systemd-fedora/).
 
 10. Check your external IP to verify that you are connected:
 

@@ -110,5 +110,5 @@ We begin by considering threat models that are typical among prospective users o
 
  [1]: /privacy-guides/adversaries-and-anonymity-systems-the-basics/
  [2]: https://vpntesting.info/
- [3]: /knowledgebase/linux/linux---how-do-i-prevent-vpn-leaks-using-iptables/
+ [3]: /knowledgebase/linux/linux-how-do-i-prevent-vpn-leaks-using-iptables/
  [4]: /privacy-guides/how-to-perform-a-vpn-leak-test/
