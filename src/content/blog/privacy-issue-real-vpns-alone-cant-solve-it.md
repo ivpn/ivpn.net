@@ -9,7 +9,6 @@ categories:
 # Tags are seperated by comma. Ex. Open Source, Security, Subscriptions
 tags:
   - privacy
-  - ""
 date: 2020-08-13T11:25:00.000Z
 # 740px X 740px
 thumbnailImage: /images-static/uploads/screenshot-2020-08-13-at-14.57.09.png
