@@ -14,5 +14,5 @@ To connect to an IVPN server on KODI media player, follow the steps below:
 
 1. Download the latest OpenVPN for Kodi release [from GitHub](https://github.com/brianhornsby/script.openvpn/releases).
 2. In your Kodi system, head to `System -> Settings -> Add-ons -> Install from zip file`. Choose the file you downloaded in the previous step. For more info see the [Kodi wiki](http://kodi.wiki/view/HOW-TO:Install_an_Add-on_from_a_zip_file).
-3. Download the [IVPN .ovpn config files](releases/config/ivpn-openvpn-config.zip). Unzip the archive & upload them to your Kodi system.
+3. Download the [IVPN .ovpn config files](/releases/config/ivpn-openvpn-config.zip). Unzip the archive & upload them to your Kodi system.
 4. Launch OpenVPN for Kodi addon, choose the .ovpn config file with the desired server location, import & connect.
