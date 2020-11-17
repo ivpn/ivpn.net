@@ -22,7 +22,7 @@ The client software and server both send each other a cryptographically signed p
 2. Try WireGuard VPN protocol - available in all of our [native apps](/apps/) for macOS, iOS, Windows, Linux and Android.
 3. Try IPSec with IKEv2 VPN protocol. Setup guides can be found [here](/apps/).
 4. Try connecting to a different server, there may be an issue between your device and the server.
-5. If you are connecting from a location where you think your connection may be censored, try enabling obfsproxy from within the IVPN client. See [how to enable obfsproxy](/knowledgebase/troubleshooting/i-cant-connect-from-china-or-vietnam-or-iran-etc---how-do-i-enable-obfsproxy/). Instructions for Linux users are available [here](/knowledgebase/linux/linux-how-can-i-circumvent-vpn-censorship-by-masking-the-vpn-traffic/).
+5. If you are connecting from a location where you think your connection may be censored, try enabling obfsproxy from within the IVPN client. See [how to enable obfsproxy](/knowledgebase/troubleshooting/i-cant-connect-from-china-or-vietnam-or-iran-etc-how-do-i-enable-obfsproxy/). Instructions for Linux users are available [here](/knowledgebase/linux/linux-how-can-i-circumvent-vpn-censorship-by-masking-the-vpn-traffic/).
 6. Try connecting from another device to see if the issue is with the device. We support a large range of devices, see our [setup guides](/apps/).
 7. Restart your router device. Check if there are available updates to your router's firmware - they might contain various fixes and improve the general performance and quality of the connection after installing it.
 8. Try another internet connection as your connection may be unreliable, especially shared wireless connections (hotel, coffees shop), cellular (3G/4G) etc.
