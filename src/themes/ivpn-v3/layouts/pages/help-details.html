@@ -34,7 +34,7 @@
                         {{ if isset .Params "h1" }}
                             {{ if not (in .Params.h1 $pageH1) }}
                             <li>
-                                <a href="{{ .Permalink }}">{{ .Params.h1 }}</a>
+                                <a href="{{ .URL }}">{{ .Params.h1 }}</a>
                             </li>
                             {{ end }}
                         {{ end }}
