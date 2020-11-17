@@ -20,17 +20,17 @@ url: /trust/
 
     100% of revenue is generated from selling VPN consumer subscriptions.
 
-## Part II. Privacy: Logging/Data Collection Practices and Responding to Law Enforcement
+    ## Part II. Privacy: Logging/Data Collection Practices and Responding to Law Enforcement
 
-1.  ### Does the service store any data or metadata generated during a VPN session (from connection to disconnection) after the session is terminated? If so what data? (including data from Client / VPN app, APIs, VPN gateways).
-
-    No.
-
-2.  ### Does your company store (or share with others) any user browsing and/or network activity data, including DNS lookups and records of domain names and websites visited?
+4.  ### Does the service store any data or metadata generated during a VPN session (from connection to disconnection) after the session is terminated? If so what data? (including data from Client / VPN app, APIs, VPN gateways).
 
     No.
 
-3.  ### Do you have a clear process for responding to legitimate requests for data from law enforcement and courts?
+5.  ### Does your company store (or share with others) any user browsing and/or network activity data, including DNS lookups and records of domain names and websites visited?
+
+    No.
+
+6.  ### Do you have a clear process for responding to legitimate requests for data from law enforcement and courts?
 
     Yes, please see [Law Enforcement Legal Process Guidelines](/legal-process-guidelines/) and [transparency report](/transparency-report/).
 
@@ -40,9 +40,9 @@ url: /trust/
     * No storage of information relating to an IVPN user’s account i.e. authentication credentials are not stored locally.
     * 24/7 monitoring of all servers to alert IVPN of any suspicious activity or if a server is taken offline. If a server is offline and there no evidence from the data center that it is a hardware fault then procedures are followed to revoke the certificates on the server to prevent a potential MITM attack.
 
-## Part III. Security Protocols and Protections
+    ## Part III. Security Protocols and Protections
 
-1.  ### What do you do to protect against unauthorized access to customer data flows over the VPN?
+7.  ### What do you do to protect against unauthorized access to customer data flows over the VPN?
 
     #### Administrative controls  
     * Implementation of an Information Security Management System (ISMS) based on ISO 27001.
@@ -65,7 +65,7 @@ url: /trust/
     * Customer VPN connections are secured using OpenVPN with RSA-4096 / AES-256-GCM keys.
     * Full mesh multi-hop network – IVPN customers can choose to connect to any location in the IVPN infrastructure and have their VPN traffic exit in any other location. To enable this functionality, secure VPN tunnels are established between every server in the IVPN network. This makes it significantly more difficult for an adversary to gain access to a server as the servers would be in multiple jurisdictions. In addition, should the exit server be compromised the adversary would not be able to trace an IVPN customer’s connection other than to the entry VPN server.
 
-2.  ### What other controls does the service use to protect user data?
+8.  ### What other controls does the service use to protect user data?
 
     * IVPN accepts anonymous payments using cash since 2010. Customers are also able to pay anonymously using Bitcoin if they are able to source Bitcoins anonymously.
     * All VPN servers are built using Open Source software e.g. CentOS, OpenVPN, StrongSWAN etc.
