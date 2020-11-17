@@ -1,7 +1,7 @@
 ---
 title: DD-WRT - TLS errors - incoming plaintext read error etc. - IVPN Help
 h1: DD-WRT - TLS errors - incoming plaintext read error etc.
-url: /knowledgebase/routers/dd-wrt---tls-errors---incoming-plaintext-read-error-etc/
+url: /knowledgebase/routers/dd-wrt-tls-errors-incoming-plaintext-read-error-etc/
 sections:
     - routers
     - troubleshooting
