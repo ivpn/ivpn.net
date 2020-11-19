@@ -14,7 +14,7 @@ disableKinds = ["sitemap"]
 
 [params]
     environment = "development"    
-    images = ["/images-static/OG_image-square.jpg", "/images-static/OG_image.jpg"]
+    images = ["/images-static/uploads/og_1200-627.png"]
     cdnUrl = ""
     piwikEnabled = false
     piwikUrl = "https://stats.ivpn.net"
