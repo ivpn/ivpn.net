@@ -3,7 +3,7 @@
         <thead>
             <tr>
                 <th class="location">LOCATION</th>
-                <th>SERVER</th>
+                <th class="hostnames">HOSTNAMES</th>
                 <th class="load">LOAD</th>
                 <th class="provider">PROVIDER</th>
                 <th class="wg_public_key">WIREGUARD PUBLIC KEY</th>
@@ -12,28 +12,33 @@
         <tbody>
             <tr v-for="server in sortedList">
                 <td class="location">
-                    <i
-                        class="flag-icon"
-                        :class="
-                            'flag-icon-' + server.country_code.toLowerCase()
-                        "
-                    ></i>
-                    <strong>{{ server.country }}</strong>
-                    <div>
-                        <span
-                            v-for="protocol in server.protocols"
-                            class="badge badge--light spacing"
-                            >{{ renderProtocolName(protocol) }}</span
-                        >
+                    <div class="location__data">
+                        <i
+                            class="flag-icon"
+                            :class="
+                                'flag-icon-' + server.country_code.toLowerCase()
+                            "
+                        ></i>
+                        <span> {{ server.country }}, {{ server.city }} </span>
                     </div>
                 </td>
-                <td>
-                    <em>Server</em>
-                    <i
-                        class="status"
-                        :class="{ 'status--active': server.is_active }"
-                    ></i
-                    >{{ server.gateway }}
+                <td class="hostnames">
+                    <em>Hostnames</em>
+                    <ul>
+                        <li
+                            v-for="(host, protocol) in server.hostnames"
+                            :key="protocol"
+                        >
+                            <i
+                                class="status"
+                                :class="{ 'status--active': server.is_active }"
+                            ></i
+                            >{{ host }}
+                            <span class="badge badge--light spacing">{{
+                                protocol
+                            }}</span>
+                        </li>
+                    </ul>
                 </td>
                 <td class="load">
                     <em>Load</em>
@@ -86,7 +91,13 @@ export default {
     },
     computed: {
         sortedList: function () {
-            return this.servers.sort((a, b) => a.gateway > b.gateway);
+            return this.servers.sort((a, b) => {
+                if (a.gateway > b.gateway) {
+                    return 1
+                } else if (a.gateway < b.gateway)
+                    return -1
+                return 0
+            });
         },
     },
 };
@@ -107,22 +118,30 @@ export default {
     border-radius: 50%;
     vertical-align: middle;
 
-    @include light-theme((
-        background: $light-mode-yellow-color
-    ));
+    @include light-theme(
+        (
+            background: $light-mode-yellow-color,
+        )
+    );
 
-    @include dark-theme((
-        background: $dark-mode-yellow-color
-    ));
+    @include dark-theme(
+        (
+            background: $dark-mode-yellow-color,
+        )
+    );
 
     &--active {
-        @include light-theme((
-            background: $light-mode-green-color
-        ));
+        @include light-theme(
+            (
+                background: $light-mode-green-color,
+            )
+        );
 
-        @include dark-theme((
-            background: $dark-mode-green-color
-        ));
+        @include dark-theme(
+            (
+                background: $dark-mode-green-color,
+            )
+        );
     }
 }
 </style>
