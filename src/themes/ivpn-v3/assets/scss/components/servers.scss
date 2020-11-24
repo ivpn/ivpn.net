@@ -33,6 +33,9 @@
     
                 td {
 
+                    &.location {
+                        padding: 8px 0px;
+                    }
 
                     &.load {
                         
@@ -73,7 +76,7 @@
             ));
 
             &.location {
-                width: 23%;
+                width: 22%;
             }
 
             &.load {
@@ -86,7 +89,7 @@
             }
 
             &.wg_public_key {
-                width: 24%;
+                width: 18%;
             }
         }
 
@@ -108,13 +111,28 @@
             }
 
             &.location {
+                .location__data {
+                    display: flex;            
+                    align-items: baseline;
+                }
+                
+                font-weight: bold;
+                line-height: 24px;
+                
 
                 i {
+                    min-width: 24px;
                     border-radius: 2px;
+                    margin-right: 16px;
                 }
 
                 div {
                     padding-top: 2px;
+                }
+            }
+            &.hostnames {
+                ul {
+                    padding-left: 8px;
                 }
             }
 
