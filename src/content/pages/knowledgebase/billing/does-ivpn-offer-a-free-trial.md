@@ -11,4 +11,4 @@ weight: 10
 ---
 # Does IVPN offer a free trial?
 
-We do not have a free trial option, though we offer an affordable one week paid plan which can be used to test our service out. With our [30-day money-back guarantee](/refunds/), you can [sign up](/pricing/) and try IVPN with no risks.
+We do not have a free trial option. We offer an affordable one week paid plan which can be used to test our service out. With our [30-day money-back guarantee](/refunds/), you can [sign up](/pricing/) and try IVPN with no risks.
