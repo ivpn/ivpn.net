@@ -22,7 +22,7 @@ OpenVPN Connect is the official iOS client from OpenVPN Technologies.
 
 4.  Tap the green "+" button from within the OpenVPN Connect app to add the server.
 
-5.  Enter your account ID that begins with 'ivpn' and any password.
+5.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
 
     <div markdown="1" class="notice notice--info">
     Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.

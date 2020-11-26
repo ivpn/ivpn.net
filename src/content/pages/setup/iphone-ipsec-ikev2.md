@@ -18,7 +18,7 @@ This guide will help you set up an IPSec connection using IKEv2.
     **Remote ID** - Same as the Server field  
     **Local ID** - Empty  
     **User Authentication type** - Username  
-    **Username** - Your IVPN account ID (starts with ‘ivpnXXXXXXX’)  
+    **Username** - Your IVPN account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' 
     **Password** - ivpn  
     **Proxy settings** - Off  
 

@@ -59,7 +59,7 @@ platform: linux
     Note: Unless your Linux user account is called user the full path will likely be different on your computer system.
     </div>
 
-3.  You can initiate an OpenVPN connection by specifying the configuration file you wish to use. You will need to manually enter your account ID that begins with letters 'ivpn' and any password.
+3.  You can initiate an OpenVPN connection by specifying the configuration file you wish to use. You will need to manually enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
    
     <div markdown="1" class="notice notice--info">
     Only your account ID is used for the authentication. The password can be anything, like "ivpn", if your client requires a non-blank password.

@@ -32,7 +32,7 @@ The DD-WRT UI is constantly evolving and there are multiple variations depending
     *   **Encryption cipher:** AES-256 CBC
     *   **Hash Algorithm:** SHA1
     *   **User Pass Authentication:** Enable (If this option does not exist you will need to follow the steps in the appendix).  
-        Enter your account ID that begins with 'ivpn' and any password.     
+        Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.     
         <div markdown="1" class="notice notice--info">
         Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
         </div>

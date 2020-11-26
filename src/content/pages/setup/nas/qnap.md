@@ -27,7 +27,7 @@ This guide was produced using QTS v4.3.6
 
 5.  Use the file picker dialogue box to choose the VPN server location you prefer and click `OK`.
 
-6.  Enter your account ID that begins with 'ivpn' and any password in the credential fields and (optionally) change the **Profile Name** to something different. Click the `Apply` button.
+6.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password in the credential fields and (optionally) change the **Profile Name** to something different. Click the `Apply` button.
 
     <div markdown="1" class="notice notice--info">
     Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
