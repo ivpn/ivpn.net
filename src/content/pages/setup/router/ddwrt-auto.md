@@ -13,7 +13,7 @@ weight: 11
 
 2.  Navigate to the [DD-WRT auto installer script](/clientarea/ddwrt/) (You may need to login to the client area if you are not logged in).
 
-3.  Enter your account ID (starts with 'ivpn'), any password and select a server to connect to. Click `Download script`.
+3.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX', any password and select a server to connect to. Click `Download script`.
 
     <div markdown="1" class="notice notice--info">
     Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.

@@ -24,7 +24,7 @@ If you are using IVPN to protect your privacy/anonymity this software does not o
 
 6. Start the OpenVPN GUI by double-clicking the shortcut on the desktop. You must allow the application to run as administrator if it requests permission (This is required to update the local routing table).
 
-7. Right click on the OpenVPN system tray icon (two small monitors in bottom right corner, click the up arrow if icon is hidden) and select the server you wish to connect to and click on `Connect`. Enter your account ID that begins with 'ivpn' and any password when prompted.
+7. Right click on the OpenVPN system tray icon (two small monitors in bottom right corner, click the up arrow if icon is hidden) and select the server you wish to connect to and click on `Connect`. Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password when prompted.
 
    <div markdown="1" class="notice notice--info">
    Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
