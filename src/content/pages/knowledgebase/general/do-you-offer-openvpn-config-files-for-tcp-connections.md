@@ -10,6 +10,6 @@ weight: 230
 ---
 # Do you offer OpenVPN config files for TCP connections?
 
-Although we strongly recommend using UDP where possible we understand that in some cases TCP may be the only option.
+Although we strongly recommend using UDP where possible due to the efficiency of the UDP protocol, we understand that in some cases TCP may be the only option, like on restrictive networks.
 
-Download the [OpenVPN TCP config files](/releases/config/ivpn-openvpn-config.zip).
+Download the [OpenVPN TCP config files](/releases/config/ivpn-openvpn-config-tcp.zip).
