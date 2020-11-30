@@ -1,6 +1,6 @@
 ---
-title: VPN Service for Serious Privacy & Security | IVPN
-description: IVPN encrypts your Internet activity ensuring that hackers, ISP's and everyone else is unable to view, track and record your private data. Try IVPN for free!
+title: VPN for Privacy & Security | IVPN | Resist Online Surveillance
+description: Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup with 30 day money back guarantee.
 url: /
 isMenuCta: false
 hasSeperator: false
