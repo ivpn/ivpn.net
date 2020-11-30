@@ -73,7 +73,7 @@ weight: 30
     *   **Server port** - 2049
     *   **Description** - IVPN Canada
         ![](/images-static/uploads/install-openvpn-pfsense-2.4.3-020.png)
-    *   Enter your account ID (begins with 'ivpn') and any password under **User Authentication Settings**  
+    *   Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password under **User Authentication Settings**  
         <div markdown="1" class="notice notice--info">
         Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
         </div>

@@ -24,7 +24,7 @@ The following guide explains how to set up your Synology NAS based on DiskStatio
 4.  Fill in the following fields:
 
     **Profile name** - Give it any name you want, e.g. **IVPN_Germany**.  
-    **User name** - Your account ID (starts with 'ivpn').  
+    **User name** - Your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX'.  
     **Password** - Any password.  
 
     <div markdown="1" class="notice notice--info">

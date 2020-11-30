@@ -72,7 +72,7 @@ This guide will help you set up an IPSec connection using IKEv2
 
      ![](/images-static/uploads/windows-10-ipsec-with-ikev2-013c-150-connection-properties.png)
 
-16.  Enter your account ID (starts with 'ivpn') and the following password - `ivpn`, then click the `Save` button. Close all of the windows that have been opened during this process.
+16.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and the following password - `ivpn`, then click the `Save` button. Close all of the windows that have been opened during this process.
 
      ![](/images-static/uploads/windows-10-ipsec-with-ikev2-013d-160-ivpn-username-password.png)
 
