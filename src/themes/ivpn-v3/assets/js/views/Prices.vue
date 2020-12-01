@@ -89,11 +89,11 @@ export default {
     },
     async created() {
         if (
-            store.state.auth.isAuthenticated &&
-            !store.state.auth.isLegacy &&
-            !store.state.auth.isLoaded
+            this.$store.state.auth.isAuthenticated &&
+            !this.$store.state.auth.isLegacy &&
+            !this.$store.state.auth.isLoaded
         ) {
-            await store.dispatch("auth/load");
+            await this.$store.dispatch("auth/load");
         }
     },
     methods: {
@@ -123,7 +123,7 @@ export default {
                     return;
                 }
             }
-
+        
             await this.$store.dispatch("auth/createAccount", { product });
             matomo.recordAccountCreated();
             this.$router.push({ name: "account" });
