@@ -67,9 +67,10 @@ export default {
             price: "",
         };
     },
-    created() {
+    created() {    
         this.price = this.$store.state.payments.selectedPrice;
-        if (this.price == null) {
+                
+        if (this.price == null || !this.account.product.prices.includes(this.price)) {
             this.price = this.account.product.prices[2];
         }
     },
