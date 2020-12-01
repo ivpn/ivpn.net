@@ -44,28 +44,6 @@ const routes = [
         path: '/app', redirect: { name: 'prices' },
     },
     {
-        path: '/signup', 
-        beforeEnter: async (to, from, next) => {
-            if (!store.state.auth.isAuthenticated) {
-                next({ name: "prices" })
-                return
-            } 
-                            
-            if (store.state.auth.isLegacy) {
-                next({ name: "account" })
-                return
-            }
-
-            await store.dispatch("auth/load")
-            if (!store.state.auth.account.is_new) {
-                next({ name: "account" })
-                return
-            }
-
-            next({ name: "prices" })            
-        }
-    },
-    {
         path: '/', redirect: { name: 'prices' },
     },
     {
@@ -73,8 +51,8 @@ const routes = [
         name: 'prices',
         component: PricesView,
         meta: {
-            title: 'IVPN Pricing',
-        },         
+            title: 'IVPN Pricing - VPN subscription with anonymous registration',
+        }
     },
     {
         path: '/prices', redirect: { name: 'prices' }
@@ -125,7 +103,7 @@ const routes = [
         component: AccountView,
         meta: {
             title: 'IVPN Account',
-        },        
+        },
     },
     {
         path: '/account/change-product',

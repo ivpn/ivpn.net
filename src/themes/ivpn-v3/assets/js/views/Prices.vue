@@ -67,7 +67,7 @@
 import PriceBox from "@/components/PriceBox.vue";
 
 import { mapState } from "vuex";
-import matomo from "@/api/matomo.js"
+import matomo from "@/api/matomo.js";
 
 export default {
     name: "Prices",
@@ -84,11 +84,25 @@ export default {
         ...mapState({
             products: (state) => state.product.all,
             inProgress: (state) => state.auth.inProgress,
-            auth: (state) => state.auth,            
+            auth: (state) => state.auth,
         }),
+    },
+    async created() {
+        if (
+            store.state.auth.isAuthenticated &&
+            !store.state.auth.isLegacy &&
+            !store.state.auth.isLoaded
+        ) {
+            await store.dispatch("auth/load");
+        }
     },
     methods: {
         async selected(product) {
+            if (this.auth.isAuthenticated && this.auth.isLegacy) {
+                this.$router.push({ name: "account" });
+                return;
+            }
+
             this.selectedProduct = product;
 
             if (this.auth.isAuthenticated) {
@@ -98,20 +112,20 @@ export default {
                 }
 
                 if (!this.auth.isLoaded) {
-                    await this.$store.dispatch("auth/load")
+                    await this.$store.dispatch("auth/load");
                     if (this.auth.error) {
-                        return
-                    }                    
+                        return;
+                    }
                 }
 
                 if (!this.auth.account.is_new) {
-                    this.$router.push({ name: "account" });        
-                    return
+                    this.$router.push({ name: "account" });
+                    return;
                 }
             }
 
             await this.$store.dispatch("auth/createAccount", { product });
-            matomo.recordAccountCreated()
+            matomo.recordAccountCreated();
             this.$router.push({ name: "account" });
         },
     },
