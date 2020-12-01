@@ -357,6 +357,12 @@ export default {
         return account.account
     },
 
+    async applyGiftCard(code) {
+        let account = await this.Post('/web/accounts/apply-gift-card', {
+            card: code
+        })
+        return account.account
+    },
 
     async createBitcoinInvoice(priceID) {
 

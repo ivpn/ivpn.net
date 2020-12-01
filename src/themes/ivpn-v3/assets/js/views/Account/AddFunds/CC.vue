@@ -128,9 +128,6 @@ export default {
 .payment-form {
     max-width: 580px;
     margin-top: 1em;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
 
     form {
         display: flex;
