@@ -40,33 +40,15 @@
 import Spinner from "@/components/ProgressSpinner.vue";
 
 export default {
-    props: ["prices", "value", "onselect", "disabled", "current", "inProgress"],
+    props: ["prices", "onselect", "disabled", "current", "inProgress"],
     components: { Spinner },
     model: {
-        prop: "value",
         event: "change",
     },
-    data() {
-        return {
-            selectedPriceId: "",
-        };
-    },
 
-    mounted() {
-        this.selectedPriceId = this.value;
-    },
     methods: {
         selected() {
             this.$emit("selected");
-        },
-    },
-    watch: {
-        selectedPriceId: function () {
-            this.$emit("change", this.selectedPriceId);
-            this.$emit("priceChange", this.selectedPriceId);
-        },
-        value: function () {
-            this.selectedPriceId = this.value;
         },
     },
 };

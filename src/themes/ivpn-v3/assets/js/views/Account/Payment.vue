@@ -24,45 +24,10 @@ export default {
     components: {
         SelectPaymentMethod,
     },
-    data() {
-        return {
-            price: "",
-        };
-    },
-    created() {
-        this.price = this.$store.state.payments.selectedPrice;
-        if (this.price == null) {
-            this.price = this.account.product.prices[2];
-        }
-    },
-    watch: {
-        price: function () {
-            this.$store.commit("payments/setSelectedPrice", this.price);
-        },
-    },
     computed: {
         ...mapState({
             account: (state) => state.auth.account,
         }),
-
-        extendsUntil() {
-            let amount, period;
-            [amount, period] = this.price.duration.split(" ", 2);
-
-            let startDate = Date.now();
-
-            if (this.account.is_active) {
-                startDate = new Date(this.account.active_until);
-            }
-            console.log(
-                "Extending account: ",
-                amount,
-                period,
-                startDate,
-                add(startDate, { [period]: amount })
-            );
-            return add(startDate, { [period]: amount });
-        },
     },
 };
 </script>
@@ -85,10 +50,6 @@ export default {
 
     .recurring--description {
         flex-grow: 1;
-        label {
-            
-        }
-
         p {
             
 
