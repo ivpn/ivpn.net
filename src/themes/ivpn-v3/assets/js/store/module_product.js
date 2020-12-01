@@ -39,6 +39,7 @@ export default {
 
                 context.commit('done', { account })
                 context.commit('auth/updateAccount', { account }, { root: true })
+                context.commit('payments/setSelectedPrice', account.product.prices[2], {root: true })
             } catch (error) {
                 context.commit('failed', { error })
             }
