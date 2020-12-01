@@ -42,6 +42,13 @@
             >
                 <div class="cash-icon"></div>Cash
             </router-link>
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'add-funds-giftcard', params: { price: price.id }}"
+            >
+                <div class="giftcard-icon"></div>Gift Card
+            </router-link>
         </div>
     </div>
 </template>
