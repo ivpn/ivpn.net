@@ -42,6 +42,13 @@
             >
                 <div class="cash-icon"></div>Cash
             </router-link>
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'add-funds-giftcard', params: { price: price.id }}"
+            >
+                <div class="giftcard-icon"></div>Gift Card
+            </router-link>
         </div>
     </div>
 </template>
@@ -60,9 +67,10 @@ export default {
             price: "",
         };
     },
-    created() {
+    created() {    
         this.price = this.$store.state.payments.selectedPrice;
-        if (this.price == null) {
+                
+        if (this.price == null || !this.account.product.prices.includes(this.price)) {
             this.price = this.account.product.prices[2];
         }
     },

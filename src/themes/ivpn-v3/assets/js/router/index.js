@@ -10,6 +10,8 @@ import AddFundsCC from "@/views/Account/AddFunds/CC.vue"
 import AddFundsPayPal from "@/views/Account/AddFunds/PayPal.vue"
 import AddFundsBitcoin from "@/views/Account/AddFunds/BitCoin.vue"
 import AddFundsCash from "@/views/Account/AddFunds/Cash.vue"
+import AddFundsGiftCard from "@/views/Account/AddFunds/GiftCard.vue"
+
 
 
 import WireguardView from "@/views/Account/Wireguard.vue"
@@ -198,6 +200,12 @@ const routes = [
                 meta: {
                     title: 'IVPN Add Funds - Bitcoin',
                 }
+            }, {
+                path: 'giftcard', name: 'add-funds-giftcard',
+                component:  AddFundsGiftCard,
+                meta: {
+                    title: 'IVPN Add Funds - Gift Card',
+                }            
             }, {
                 path: 'applepay', name: 'add-funds-apple',
                 component: () => import('@/views/Account/AddFunds/ApplePay.vue'),

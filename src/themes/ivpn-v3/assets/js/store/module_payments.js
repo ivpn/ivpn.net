@@ -90,6 +90,22 @@ export default {
             return false
         },
 
+        async applyGiftCard(context, payload) {
+            context.commit('started')
+            try {
+                let account = await Api.applyGiftCard(payload.code)
+
+                context.commit('auth/updateAccount', { account }, { root: true })
+                context.commit('done')
+                return account
+    
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+            
+            return false
+        },
+
     },
     getters: {}
 
