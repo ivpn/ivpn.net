@@ -124,8 +124,12 @@ export default {
                 }
             }
         
+            let wasAuthenticated = this.auth.isAuthenticated
+
             await this.$store.dispatch("auth/createAccount", { product });
-            matomo.recordAccountCreated();
+            if (!wasAuthenticated) {
+                matomo.recordAccountCreated();
+            }
             this.$router.push({ name: "account" });
         },
     },
