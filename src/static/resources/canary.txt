@@ -6,7 +6,7 @@ Once per month IVPN will publish a 'warrant canary' in the form of a cryptograph
 - A declaration that, up to that point, no warrants have been served, nor have any searches or seizures taken place.
 - Headlines from a major news source demonstrating that the update could not have been created prior to that date.
 
-Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.  
+Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.
 
 The current message is here:
 
@@ -17,25 +17,25 @@ As of 2020-12-03 no warrants have ever been served to IVPN or IVPN employees. No
 
 (from http://www.ft.com/home/us)
 
-Nestlé to spend €3bn in 5 years on climate measures
-Chief executive of world’s largest food producer insists plan will not hurt margins
+Norwegian Air Shuttle launches emergency rescue plan to save company
+Airline to cut size of fleet and raise new money after filing for creditor protection
 
-City Bulletin: Sainsbury joins rush to return business rates relief
-Sainsbury to return £410m of tax relief, Pershing Square to join FTSE 100, Lex on vaccine winners
+Germany wakes up to the far-right terror threat
+New government measures aim to combat violent extremism
 
-Frozen Covid vaccines can reach developing nations, says DHL
-Logistics group can deliver to nations in sub-Saharan Africa, South America and South Asia
+Joe Biden’s team of economic reformers
+Without a Democratic Senate, Bidenomics will not get very far
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl/Io50ACgkQisFrnrZH
-umnL7wf+NTsHHiva2vNvwLUEt9LZd/KjUHpLBF4ICFaCjuX7gAOyNzkZzw7pJPUV
-Ek8AVsePPHgkXk1w7L1gSchG2576i5qRBDepXBVEKplXbIGO05Teuxvi3StFofHR
-X4IJJ/t90IQskqZKGNRBJu6O+bbPy8tLOtCL/MwDsT7JvVClsZBUnnNy4HOBzGJG
-tsa0L9VPxv7LZCGs1q8hSgXTPDJDvJXHuxLsRVrhOC5cyx8Ea10pCG5Ehv6LzsJp
-UuBGRf4oXiJZQQRjYKuRV1UTu9xRMaG7hyvPLmXGDmAjVSA/qqoUbERR58BLyVFW
-IsS3FcgvhLLT/I31MMF++dfEBYbFbw==
-=W8wA
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl/IvxAACgkQisFrnrZH
+ummR2gf+JjmgkbrIJOfCSlEHut+v6OHLO/B5K2uf4VUvj7ephOHqsZUNMwl+a7px
+xqHHWHRdXN1tm0vmBqKgcQlQdTRw7myvugu1mp06VOBTXolf0vDGluAEHDizU7wU
+G3Qlm12JhCkMdKfGH/+wZvxbvyNqojUXu6WB2lC148dF4y6eZAyMayFbltLqEpdg
+wHfN/ItxY+R3y6oWu+NkFRkMXOBVCydy7t82i5PiI9z61kDhsZzertrDPW3C5VWO
+YSKo38H+r+pxadQKj2nVcrLQsl/NA+8N94i4yT74vVXvOFTbY0szvzWjIJB7U0sb
+PjlyTxd7nJ5PtbH5P4xzHlrkQnl76g==
+=hcaU
 -----END PGP SIGNATURE-----
 
 
