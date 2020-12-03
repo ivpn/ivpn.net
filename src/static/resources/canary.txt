@@ -6,7 +6,7 @@ Once per month IVPN will publish a 'warrant canary' in the form of a cryptograph
 - A declaration that, up to that point, no warrants have been served, nor have any searches or seizures taken place.
 - Headlines from a major news source demonstrating that the update could not have been created prior to that date.
 
-Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.  
+Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.
 
 The current message is here:
 
