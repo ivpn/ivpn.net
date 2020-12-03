@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2020-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2020-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from http://www.ft.com/home/us)
 
-Saudi Aramco to proceed with dividend as profits drop 45%
-State-owned energy company warns oil market continues to face headwinds
+Nestlé to spend €3bn in 5 years on climate measures
+Chief executive of world’s largest food producer insists plan will not hurt margins
 
-Global stocks rise as Biden and Trump face off in US election
-Investors see ‘increased odds’ that Democratic candidate will beat incumbent
+City Bulletin: Sainsbury joins rush to return business rates relief
+Sainsbury to return £410m of tax relief, Pershing Square to join FTSE 100, Lex on vaccine winners
 
-Quest for Covid treatment spurs rise in preprint publishing
-Pandemic underscores attractiveness of platforms that allow researchers to bypass lengthy peer review process
+Frozen Covid vaccines can reach developing nations, says DHL
+Logistics group can deliver to nations in sub-Saharan Africa, South America and South Asia
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl+hCPQACgkQisFrnrZH
-umn4hgf/fqXgMLM2pHKHNB6aUzLqDdRyVvKg/qtPAJM2Dp0YjphyflMUxO1XSofJ
-2tUKevnwieTfOADpv9mn4e6W4U+2+G7CxdqLQlCY2EL7UX9Hg6kRLJ5YQL/qB6fH
-mSCNRz7p+oyr1eZHbDSbdgw7T7eQWxujw11KUsPmctSRk4Uv5yGO+9nt+1eNXrf2
-pvwRVwzAtOPGrdlc1dlWbtdxlOuiiYXOvoxfyEPw6jMRqrw3FCwpEK2fYcd/lcAw
-zNJSB4nz1HQ5Mfm5lyN3dSuPxF7pO8oT9RucygjTA19gG9LdLBShA08P8SNHYNav
-/pVcLIZX4cT4tCPtdXIHIWr6lsEHCA==
-=09UC
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl/Io50ACgkQisFrnrZH
+umnL7wf+NTsHHiva2vNvwLUEt9LZd/KjUHpLBF4ICFaCjuX7gAOyNzkZzw7pJPUV
+Ek8AVsePPHgkXk1w7L1gSchG2576i5qRBDepXBVEKplXbIGO05Teuxvi3StFofHR
+X4IJJ/t90IQskqZKGNRBJu6O+bbPy8tLOtCL/MwDsT7JvVClsZBUnnNy4HOBzGJG
+tsa0L9VPxv7LZCGs1q8hSgXTPDJDvJXHuxLsRVrhOC5cyx8Ea10pCG5Ehv6LzsJp
+UuBGRf4oXiJZQQRjYKuRV1UTu9xRMaG7hyvPLmXGDmAjVSA/qqoUbERR58BLyVFW
+IsS3FcgvhLLT/I31MMF++dfEBYbFbw==
+=W8wA
 -----END PGP SIGNATURE-----
 
 
