@@ -16,7 +16,7 @@ comments:
 
       There is now an official epetition site:-
 
-      <a href="http://epetitions.direct.gov.uk/petitions/29983" rel="nofollow ugc">http://epetitions.direct.gov.uk/petitions/29983</a>
+      <a href="https://petition.parliament.uk" rel="nofollow ugc">https://petition.parliament.uk</a>
 
 ---
 The UK government is edging ever closer to passing its draconian communications data bill, but new research from YouGov shows that the British public do not trust the coalition when it comes to keeping its private online data safe.
