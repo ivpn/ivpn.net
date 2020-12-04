@@ -45,7 +45,7 @@ ExpressVPN home page - "Stay secure and anonymous online"
 CyberGhost home page - Promises "total data anonymity across all apps and platforms"  
 ProtonVPN home page - "Our anonymous VPN service enables Internet without surveillance"
 
-![](/images-static/uploads/Screenshot-2020-11-18-at-17.44.14.png)
+{{< figure src="/images-static/uploads/Screenshot-2020-11-18-at-17.44.14.png" title="" >}}
 
 ## 2\. “Complete privacy”
 
@@ -62,7 +62,7 @@ Private Internet Access home page, black friday promo - "Full online privacy for
 SurfShark country promo pages - "allows you to surf in complete privacy"  
 VyprVPN (get vyprvpn page) - "Total Privacy and Security"
 
-![](/images-static/uploads/Screenshot-2020-12-02-at-17.33.47.png)
+{{< figure src="/images-static/uploads/Screenshot-2020-12-02-at-17.33.47.png" title="" >}}
 
 ## 3\. “Fastest VPN”
 
@@ -83,7 +83,7 @@ NordVPN Fast VPN page - "The fastest VPN experience on the planet"
 HotSpotShield Fastest VPN page - "Get the world’s fastest VPN experience"  
 TorGuard VPN and Proxy network page - "The fastest VPN and Proxy Network"
 
-![](/images-static/uploads/Screenshot-2020-11-18-at-18.14.00.png)
+{{< figure src="/images-static/uploads/Screenshot-2020-11-18-at-18.14.00.png" title="" >}}
 
 ## 4\. “Military grade encryption”
 
@@ -98,7 +98,7 @@ ExpressVPN Blog - "ExpressVPN for routers protects all your devices with militar
 Private Internet Access home page - "...to provide the highest speeds and most encryption."  
 SurfShark streaming promo - "all of your data is protected by a military-grade encryption system"
 
-![](/images-static/uploads/Screenshot-2020-12-01-at-16.46.51.png)
+{{< figure src="/images-static/uploads/Screenshot-2020-12-01-at-16.46.51.png" title="" >}}
 
 ## 5\. “The best VPN”
 
@@ -115,7 +115,7 @@ TorGuard country promo pages - "Don’t settle for second best. Use the best VPN
 NordVPN home page title - "NordVPN: Best VPN service. Online security starts with a click."  
 VyprVPN home page - "Get the best VPN for streaming with lightning-fast and reliable connections"
 
-![](/images-static/uploads/Screenshot-2020-12-01-at-16.45.31.png)
+{{< figure src="/images-static/uploads/Screenshot-2020-12-01-at-16.45.31.png" title="" >}}
 
 * * *
 
