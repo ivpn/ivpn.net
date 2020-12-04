@@ -141,7 +141,7 @@ SurfShark 3/5
 ProtonVPN 1/5  
 TunnelBear 0/5
 
-[Download](/resources/misleading_overpromise.xlsx) the full table to review scores
+[Download](/resources/misleading_overpromise.xlsx) the full table to review scores.
 
 All websites were observed during a period between 15 November and 1 December 2020.
 
