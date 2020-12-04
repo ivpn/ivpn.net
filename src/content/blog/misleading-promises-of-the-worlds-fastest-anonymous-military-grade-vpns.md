@@ -11,7 +11,7 @@ tags:
   - Privacy
   - Security
 date: 2020-12-04T08:41:00.000Z
-thumbnailImage:
+thumbnailImage: /images-static/uploads/greates_cereal.png
 images:
 ---
 Trust is hard to build and telling the truth is a valuable habit to support this process.
