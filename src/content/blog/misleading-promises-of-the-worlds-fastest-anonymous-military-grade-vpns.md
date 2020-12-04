@@ -1,5 +1,5 @@
 ---
-title: Misleading promises of the world's fastest anonymous military-grade VPNs
+title: Misleading promises of the world's fastest, anonymous, military-grade VPNs
 url: /blog/misleading-promises-of-the-worlds-fastest-anonymous-military-grade-vpns/
 highlighted: false
 draft: false
@@ -45,7 +45,7 @@ ExpressVPN home page - "Stay secure and anonymous online"
 CyberGhost home page - Promises "total data anonymity across all apps and platforms"  
 ProtonVPN home page - "Our anonymous VPN service enables Internet without surveillance"
 
-![](https://privatus.atlassian.net/wiki/download/attachments/2387869725/Screenshot%202020-11-18%20at%2017.44.14.png?api=v2)
+![](/images-static/uploads/Screenshot-2020-11-18-at-17.44.14.png)
 
 ## 2\. “Complete privacy”
 
@@ -62,7 +62,7 @@ Private Internet Access home page, black friday promo - "Full online privacy for
 SurfShark country promo pages - "allows you to surf in complete privacy"  
 VyprVPN (get vyprvpn page) - "Total Privacy and Security"
 
-![](https://privatus.atlassian.net/wiki/download/attachments/2387869725/Screenshot%202020-12-02%20at%2017.33.47.png?api=v2)
+![](/images-static/uploads/Screenshot-2020-12-02-at-17.33.47.png)
 
 ## 3\. “Fastest VPN”
 
@@ -83,7 +83,7 @@ NordVPN Fast VPN page - "The fastest VPN experience on the planet"
 HotSpotShield Fastest VPN page - "Get the world’s fastest VPN experience"  
 TorGuard VPN and Proxy network page - "The fastest VPN and Proxy Network"
 
-![](https://privatus.atlassian.net/wiki/download/attachments/2387869725/Screenshot%202020-11-18%20at%2018.14.00.png?api=v2)
+![](/images-static/uploads/Screenshot-2020-11-18-at-18.14.00.png)
 
 ## 4\. “Military grade encryption”
 
@@ -98,7 +98,7 @@ ExpressVPN Blog - "ExpressVPN for routers protects all your devices with militar
 Private Internet Access home page - "...to provide the highest speeds and most encryption."  
 SurfShark streaming promo - "all of your data is protected by a military-grade encryption system"
 
-![](https://privatus.atlassian.net/wiki/download/attachments/2387869725/Screenshot%202020-12-01%20at%2016.46.51.png?api=v2)
+![](/images-static/uploads/Screenshot-2020-12-01-at-16.46.51.png)
 
 ## 5\. “The best VPN”
 
@@ -115,7 +115,7 @@ TorGuard country promo pages - "Don’t settle for second best. Use the best VPN
 NordVPN home page title - "NordVPN: Best VPN service. Online security starts with a click."  
 VyprVPN home page - "Get the best VPN for streaming with lightning-fast and reliable connections"
 
-![](https://privatus.atlassian.net/wiki/download/attachments/2387869725/Screenshot%202020-12-01%20at%2016.45.31.png?api=v2)
+![](/images-static/uploads/Screenshot-2020-12-01-at-16.45.31.png)
 
 * * *
 
