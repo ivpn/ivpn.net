@@ -13,6 +13,7 @@ tags:
 date: 2020-12-04T08:41:00.000Z
 thumbnailImage: /images-static/uploads/greates_cereal.png
 images:
+  - /images-static/uploads/greatest_cereal_og.jpg
 ---
 Trust is hard to build and telling the truth is a valuable habit to support this process.
 
