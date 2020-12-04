@@ -87,7 +87,7 @@ TorGuard VPN and Proxy network page - "The fastest VPN and Proxy Network"
 
 ## 4\. “Military grade encryption”
 
-or "industry-leading encryption" and "most encryption"
+or "industry-leading encryption" and "most encryption".
 
 “Military grade encryption” is a popular marketing gimmick in the VPN provider sales vocabulary. There is no fixed standard set in militaries for encryption, and implementations vary across different segments of armed forces.
 
@@ -102,7 +102,7 @@ SurfShark streaming promo - "all of your data is protected by a military-grade e
 
 ## 5\. “The best VPN”
 
-or "market leading VPN" and “best VPN for X”
+or "market leading VPN" and “best VPN for X”.
 
 Eight out of ten VPN providers we looked at claimed they are the best for everyone or for a specific purpose. This number alone demonstrates the issue with this claim.
 
