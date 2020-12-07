@@ -48,26 +48,26 @@
     </div>
     <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/menu.js" }}"></script>
 
-    {{ if $.Site.Params.piwikEnabled }}
+    {{ if $.Site.Params.matomoEnabled }}
         <script type="text/javascript">
             var _paq = window._paq = window._paq || [];
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
             (function () {
-                var u = "{{ $.Site.Params.piwikUrl }}/";
-                _paq.push(['setTrackerUrl', u + 'piwik.php']);
-                _paq.push(['setSiteId', {{ $.Site.Params.piwikSiteId }}]);
+                var u = "{{ $.Site.Params.matomoUrl }}/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                _paq.push(['setSiteId', {{ $.Site.Params.matomoSiteId }}]);
             var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
             g.type = 'text/javascript';
             g.async = true;
             g.defer = true;
-            g.src = u + 'piwik.js';
+            g.src = u + 'matomo.js';
             s.parentNode.insertBefore(g, s);
         }) ();
         </script>
 
         <noscript>
-            <p><img src="{{ $.Site.Params.piwikUrl }}/piwik.php?idsite={{ $.Site.Params.piwikSiteId }}" style="border:0;" alt="" /></p>
+            <p><img src="{{ $.Site.Params.matomoUrl }}/matomo.php?idsite={{ $.Site.Params.matomoSiteId }}" style="border:0;" alt="" /></p>
         </noscript>
     {{ end }}
 

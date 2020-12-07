@@ -14,7 +14,7 @@ comments:
     content: |
       Then why use Google Analytics on your website? Isn't it weird for a VPN provider? Anonymity is it compatible with this Google tracking service?
   
-      Alternatives exist, Piwik for example (free software).
+      Alternatives exist, Matomo for example (free software).
 
 ---
 Two interesting Google-related news stories broke over the last few days. The first is that France's data protection authority, CNIL, has [issued the search giant with an 150,000 euro fine][1] after ruling its privacy policy violated the French Data Protection Act. And the second is that Google has confirmed the [$3.2 billion purchase of Nest][2], a company that develops internet connected home appliances and – in its own words – wants to "realize our vision of the conscious home." So we have a company that 's repeatedly violated privacy laws buying a company that wants to make your home "conscious" - sounds like the plot of a bad sci-fi movie.

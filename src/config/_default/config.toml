@@ -16,9 +16,9 @@ disableKinds = ["sitemap"]
     environment = "development"    
     images = ["/images-static/uploads/og_1200-627.png"]
     cdnUrl = ""
-    piwikEnabled = false
-    piwikUrl = "https://stats.ivpn.net"
-    piwikSiteId = 1
+    matomoEnabled = false
+    matomoUrl = "https://stats.ivpn.net"
+    matomoSiteId = 1
 
 [taxonomies]
   category = "categories"
