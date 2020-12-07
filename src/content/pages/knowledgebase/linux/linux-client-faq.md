@@ -40,10 +40,10 @@ weight: 120
 
     If you use Arch or an Arch-based distribution, official packages are available via the AUR:
 
-    * Base package with command-line (required):
+    * Base package with command-line (required):  
       [https://aur.archlinux.org/packages/ivpn/](https://aur.archlinux.org/packages/ivpn/)
 
-    * Graphical interface (optional):
+    * Graphical interface (optional):  
       [https://aur.archlinux.org/packages/ivpn-ui/](https://aur.archlinux.org/packages/ivpn-ui/)
 
 4.  #### How do I uninstall the IVPN Linux Client?
