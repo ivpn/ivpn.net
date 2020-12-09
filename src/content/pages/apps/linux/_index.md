@@ -11,6 +11,20 @@ In open beta - supports 64-bit Linux 3.10+
 {{< figure class="features__image--light" src="/images-static/uploads/apps/linux-app-light@2x.png" alt="IVPN for Linux - Open-source VPN app for Linux" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/apps/linux-app-dark@2x.png" alt="IVPN for Linux - Open-source VPN app for Linux" >}}
 
+### Base Package
+
+Base package contains everything you need to connect to IVPN with command line interface. IVPN GUI app is provided as a separate package you can find below.
+
+[View source on GitHub](https://github.com/ivpn/desktop-app-cli)  
+[Changelog](https://github.com/ivpn/desktop-app-cli/blob/master/CHANGELOG.md)  
+
+### IVPN GUI App
+
+Please note: base package is required to be installed prior to installing GUI app.
+
+[View source on GitHub](https://github.com/ivpn/desktop-app-ui2)  
+[Changelog](https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md)  
+
 ## Features
 
 * WireGuard or OpenVPN protocols.
