@@ -6,36 +6,36 @@ Once per month IVPN will publish a 'warrant canary' in the form of a cryptograph
 - A declaration that, up to that point, no warrants have been served, nor have any searches or seizures taken place.
 - Headlines from a major news source demonstrating that the update could not have been created prior to that date.
 
-Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.  
+Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.
 
 The current message is here:
 
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2020-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2020-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from http://www.ft.com/home/us)
 
-Saudi Aramco to proceed with dividend as profits drop 45%
-State-owned energy company warns oil market continues to face headwinds
+Norwegian Air Shuttle launches emergency rescue plan to save company
+Airline to cut size of fleet and raise new money after filing for creditor protection
 
-Global stocks rise as Biden and Trump face off in US election
-Investors see ‘increased odds’ that Democratic candidate will beat incumbent
+Germany wakes up to the far-right terror threat
+New government measures aim to combat violent extremism
 
-Quest for Covid treatment spurs rise in preprint publishing
-Pandemic underscores attractiveness of platforms that allow researchers to bypass lengthy peer review process
+Joe Biden’s team of economic reformers
+Without a Democratic Senate, Bidenomics will not get very far
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl+hCPQACgkQisFrnrZH
-umn4hgf/fqXgMLM2pHKHNB6aUzLqDdRyVvKg/qtPAJM2Dp0YjphyflMUxO1XSofJ
-2tUKevnwieTfOADpv9mn4e6W4U+2+G7CxdqLQlCY2EL7UX9Hg6kRLJ5YQL/qB6fH
-mSCNRz7p+oyr1eZHbDSbdgw7T7eQWxujw11KUsPmctSRk4Uv5yGO+9nt+1eNXrf2
-pvwRVwzAtOPGrdlc1dlWbtdxlOuiiYXOvoxfyEPw6jMRqrw3FCwpEK2fYcd/lcAw
-zNJSB4nz1HQ5Mfm5lyN3dSuPxF7pO8oT9RucygjTA19gG9LdLBShA08P8SNHYNav
-/pVcLIZX4cT4tCPtdXIHIWr6lsEHCA==
-=09UC
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl/IvxAACgkQisFrnrZH
+ummR2gf+JjmgkbrIJOfCSlEHut+v6OHLO/B5K2uf4VUvj7ephOHqsZUNMwl+a7px
+xqHHWHRdXN1tm0vmBqKgcQlQdTRw7myvugu1mp06VOBTXolf0vDGluAEHDizU7wU
+G3Qlm12JhCkMdKfGH/+wZvxbvyNqojUXu6WB2lC148dF4y6eZAyMayFbltLqEpdg
+wHfN/ItxY+R3y6oWu+NkFRkMXOBVCydy7t82i5PiI9z61kDhsZzertrDPW3C5VWO
+YSKo38H+r+pxadQKj2nVcrLQsl/NA+8N94i4yT74vVXvOFTbY0szvzWjIJB7U0sb
+PjlyTxd7nJ5PtbH5P4xzHlrkQnl76g==
+=hcaU
 -----END PGP SIGNATURE-----
 
 
