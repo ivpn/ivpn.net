@@ -3,6 +3,6 @@ baseURL = "https://ivpn.net"
 [params]
     cdnUrl = ""
     environment = "staging"     
-    piwikEnabled = false
-    piwikUrl = "https://stats.ivpn.net"
-    piwikSiteId = 1
+    matomoEnabled = false
+    matomoUrl = "https://stats.ivpn.net"
+    matomoSiteId = 1

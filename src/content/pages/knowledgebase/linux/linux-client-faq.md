@@ -38,7 +38,13 @@ weight: 120
     *   openSUSE:  
         `sudo zypper install /path/to/ivpn.rpm`
 
-    If you use Arch or an Arch-based distribution, our IVPN Linux client is available via the AUR: [https://aur.archlinux.org/packages/ivpn-git/](https://aur.archlinux.org/packages/ivpn-git/)
+    If you use Arch or an Arch-based distribution, official packages are available via the AUR:
+
+    * Base package with command-line (required):  
+      [https://aur.archlinux.org/packages/ivpn/](https://aur.archlinux.org/packages/ivpn/)
+
+    * Graphical interface (optional):  
+      [https://aur.archlinux.org/packages/ivpn-ui/](https://aur.archlinux.org/packages/ivpn-ui/)
 
 4.  #### How do I uninstall the IVPN Linux Client?
     Use your graphical package manager and search for ivpn and choose the option to remove or uninstall.  
