@@ -10,6 +10,7 @@ categories:
 tags:
   - Audit
   - Apps
+  - Transparency
 date: 2020-12-11T10:53:00.000Z
 thumbnailImage: /images-static/uploads/audit.png
 ---
