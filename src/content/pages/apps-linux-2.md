@@ -10,19 +10,20 @@ draft: true
 In open beta - supports 64-bit Linux 3.10+
 
 * [Ubuntu](#ubuntu)  
-* [Debian]()  
-* [Raspbian]()  
-* [Fedora]()  
-* [CentOS]()  
-* [RHEL]()  
-* [OpenSUSE]()  
-* [Arch Linux]()  
+* [Debian](#debian)  
+* [Raspbian](#raspbian)  
+* [Fedora](#fedora)  
+* [CentOS](#centos)  
+* [RHEL](#rhel)  
+* [OpenSUSE](#opensuse)  
+* [Arch Linux](#arch-linux)  
 * [Source Code and Changelog](#source)  
 * [Features](#features)  
 * [Manual configuration](#manual-configuration)  
 
 ## Ubuntu {#ubuntu}
 
+Instructions  
 ```
 curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | sudo apt-key add -
 curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
@@ -30,6 +31,81 @@ sudo apt-get update
 sudo apt-get install ivpn
 sudo apt-get install ivpn-ui
 ```
+
+## Debian {#debian}
+
+Instructions  
+```
+curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | sudo apt-key add -
+curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+sudo apt-get update
+sudo apt-get install ivpn
+sudo apt-get install ivpn-ui
+```
+
+## Raspbian {#raspbian}
+
+Instructions  
+```
+curl -fsSL https://repo.ivpn.net/stable/raspbian/generic.gpg | sudo apt-key add -
+curl -fsSL https://repo.ivpn.net/stable/raspbian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+sudo apt-get update
+sudo apt-get install ivpn
+sudo apt-get install ivpn-ui
+```
+
+## Fedora {#fedora}
+
+Repo file to install  
+```
+https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+```
+
+Instructions  
+```
+sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+sudo dnf install ivpn
+sudo dnf install ivpn-ui
+```
+
+## CentOS {#centos}
+
+Repo file to install  
+```
+https://repo.ivpn.net/stable/centos/generic/ivpn.repo
+```
+
+Instructions  
+```
+sudo yum install yum-utils
+sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
+sudo yum install ivpn
+sudo yum install libXScrnSaver
+sudo yum install ivpn-ui
+```
+
+## RHEL {#rhel}
+
+Repo file to install
+
+```
+https://repo.ivpn.net/stable/rhel/8/ivpn.repo
+```
+
+## OpenSUSE {#opensuse}
+
+Repo file to install
+
+```
+https://repo.ivpn.net/stable/opensuse/generic/ivpn.repo
+```
+
+## Arch Linux {#arch-linux}
+
+AUR - ArchLinux User Repository. Can be used by distributions based on ArchLinux: (e.g. ArchLinux, Manjaro ...)
+
+Base package: [ivpn](https://aur.archlinux.org/packages/ivpn/)  
+UI package [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)  
 
 ## Source Code and Changelog {#source}
 
