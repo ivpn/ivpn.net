@@ -5,6 +5,7 @@ url: /apps/linux/
 section: IVPN for Linux
 platform: linux
 layout: setup-list
+draft: true
 ---
 In open beta - supports 64-bit Linux 3.10+
 
