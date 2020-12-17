@@ -16,10 +16,10 @@
         </div>
     </div>
     <div class="heading__image">
-        <img class="features__image--light" src="{{ site.Params.cdnUrl }}{{ .light_image }}"
+        <img loading=lazy class="features__image--light" src="{{ site.Params.cdnUrl }}{{ .light_image }}"
             srcset="{{ site.Params.cdnUrl }}{{ .light_image }} 1x, {{ site.Params.cdnUrl }}{{ .light_image_retina }} 2x"
             alt="Hero image" />
-        <img class="features__image--dark" src="{{ site.Params.cdnUrl }}{{ .dark_image }}"
+        <img loading=lazy class="features__image--dark" src="{{ site.Params.cdnUrl }}{{ .dark_image }}"
             srcset="{{ site.Params.cdnUrl }}{{ .dark_image }} 1x, {{ site.Params.cdnUrl }}{{ .dark_image_retina }} 2x"
             alt="Hero image" />
     </div>
