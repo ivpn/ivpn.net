@@ -6,7 +6,7 @@ sections:
     - android
 sectionTitle: Android
 layout: help-details
-weight: 20
+weight: 30
 ---
 # Unable to click 'OK' on the connection request prompt, why?
 
