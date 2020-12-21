@@ -8,6 +8,44 @@ platform: linux
 layout: apps-single
 imageLight: /images-static/uploads/apps/linux-app-light@2x.png
 imageDark: /images-static/uploads/apps/linux-app-dark@2x.png
+contents:
+- item:
+    title: Features
+    anchor: features
+- item:
+    title: Changelog
+    anchor: changelog
+- item:
+    title: Install from IVPN Repository
+    anchor: install
+    subitems:
+    - item:
+        title: Ubuntu
+        anchor: ubuntu
+    - item:
+        title: Debian
+        anchor: debian
+    - item:
+        title: Mint
+        anchor: mint
+    - item:
+        title: Fedora
+        anchor: fedora
+    - item:
+        title: CentOS
+        anchor: centos
+    - item:
+        title: Arch Linux
+        anchor: arch
+- item:
+    title: Install from Binaries
+    anchor: binaries
+- item:
+    title: Source Code
+    anchor: source
+- item:
+    title: Useful Links
+    anchor: useful-links
 ---
 ## Features {#features}
 
