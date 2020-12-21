@@ -6,133 +6,47 @@ subtitle: In open beta - supports 64-bit Linux 3.10+
 url: /apps-linux/
 platform: linux
 layout: apps-single
+imageLight: /images-static/uploads/apps/linux-app-light@2x.png
+imageDark: /images-static/uploads/apps/linux-app-dark@2x.png
+contents:
+- item:
+    title: Features
+    anchor: features
+- item:
+    title: Changelog
+    anchor: changelog
+- item:
+    title: Install from IVPN Repository
+    anchor: install
+    subitems:
+    - item:
+        title: Ubuntu
+        anchor: ubuntu
+    - item:
+        title: Debian
+        anchor: debian
+    - item:
+        title: Mint
+        anchor: mint
+    - item:
+        title: Fedora
+        anchor: fedora
+    - item:
+        title: CentOS
+        anchor: centos
+    - item:
+        title: Arch Linux
+        anchor: arch
+- item:
+    title: Install from Binaries
+    anchor: binaries
+- item:
+    title: Source Code
+    anchor: source
+- item:
+    title: Useful Links
+    anchor: useful-links
 ---
-* [Ubuntu](#ubuntu)  
-* [Debian](#debian)  
-* [Raspbian](#raspbian)  
-* [Mint](#mint)  
-* [Fedora](#fedora)  
-* [CentOS](#centos)  
-* [RHEL](#rhel)  
-* [OpenSUSE](#opensuse)  
-* [Arch Linux](#arch-linux)  
-* [Source Code and Changelog](#source)  
-* [Features](#features)  
-* [Manual Configuration](#manual-configuration)  
-
-## Ubuntu {#ubuntu}
-
-**Instructions** 
-```
-curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | sudo apt-key add -
-curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
-sudo apt-get update
-sudo apt-get install ivpn
-sudo apt-get install ivpn-ui
-```
-
-## Debian {#debian}
-
-**Instructions**  
-```
-curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | sudo apt-key add -
-curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
-sudo apt-get update
-sudo apt-get install ivpn
-sudo apt-get install ivpn-ui
-```
-
-## Raspbian {#raspbian}
-
-**Instructions**  
-```
-curl -fsSL https://repo.ivpn.net/stable/raspbian/generic.gpg | sudo apt-key add -
-curl -fsSL https://repo.ivpn.net/stable/raspbian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
-sudo apt-get update
-sudo apt-get install ivpn
-sudo apt-get install ivpn-ui
-```
-
-## Mint {#mint}
-
-**Instructions**  
-```
-curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | sudo apt-key add -
-curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
-sudo apt-get update
-sudo apt-get install ivpn
-sudo apt-get install ivpn-ui
-```
-
-## Fedora {#fedora}
-
-**Repo file to install**  
-```
-https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
-```
-
-**Instructions**  
-```
-sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
-sudo dnf install ivpn
-sudo dnf install ivpn-ui
-```
-
-## CentOS {#centos}
-
-**Repo file to install**  
-```
-https://repo.ivpn.net/stable/centos/generic/ivpn.repo
-```
-
-**Instructions**  
-```
-sudo yum install yum-utils
-sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
-sudo yum install ivpn
-sudo yum install libXScrnSaver
-sudo yum install ivpn-ui
-```
-
-## RHEL {#rhel}
-
-**Repo file to install**
-
-```
-https://repo.ivpn.net/stable/rhel/8/ivpn.repo
-```
-
-## OpenSUSE {#opensuse}
-
-**Repo file to install**
-
-```
-https://repo.ivpn.net/stable/opensuse/generic/ivpn.repo
-```
-
-## Arch Linux {#arch-linux}
-
-AUR - ArchLinux User Repository. Can be used by distributions based on ArchLinux: (e.g. ArchLinux, Manjaro ...)
-
-Base package: [ivpn](https://aur.archlinux.org/packages/ivpn/)  
-UI package [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)  
-
-## Source Code and Changelog {#source}
-
-### Base Package
-
-Base package contains everything you need to connect to IVPN with command line interface. IVPN GUI app is provided as a separate package you can find below.
-
-[View source on GitHub](https://github.com/ivpn/desktop-app-cli)  
-[Changelog](https://github.com/ivpn/desktop-app-cli/blob/master/CHANGELOG.md)  
-
-### IVPN GUI App
-
-Please note: base package is required to be installed prior to installing GUI app.
-
-[View source on GitHub](https://github.com/ivpn/desktop-app-ui2)  
-[Changelog](https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md)  
-
 ## Features {#features}
 
 * WireGuard or OpenVPN protocols.
@@ -147,10 +61,131 @@ Please note: base package is required to be installed prior to installing GUI ap
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
 
-{{< figure class="features__image--light" src="/images-static/uploads/apps/linux-app-light@2x.png" alt="IVPN for Linux - Open-source VPN app for Linux" >}}
-{{< figure class="features__image--dark" src="/images-static/uploads/apps/linux-app-dark@2x.png" alt="IVPN for Linux - Open-source VPN app for Linux" >}}
+## Changelog {#changelog}
 
-## Manual Configuration {#manual-configuration}
+[Base package](https://github.com/ivpn/desktop-app-cli/blob/master/CHANGELOG.md)  
+[UI package](https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md)  
+
+## Install from IVPN Repository {#install}
+
+### Ubuntu {#ubuntu}
+
+{{< highlight shell >}}
+# Add IVPN's GPG key
+$ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | sudo apt-key add -
+
+# Add the IVPN repository
+$ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+
+# Update APT repo info
+$ sudo apt-get update
+
+# To install IVPN software (CLI and UI)
+$ sudo apt-get install ivpn-ui
+
+# To install only IVPN CLI
+$ sudo apt-get install ivpn
+{{< /highlight >}}
+
+### Debian {#debian}
+
+{{< highlight shell >}}
+# Add IVPN's GPG key
+$ curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | sudo apt-key add -
+
+# Add the IVPN repository
+$ curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+
+# Update APT repo info
+$ sudo apt-get update
+
+# To install IVPN software (CLI and UI)
+$ sudo apt-get install ivpn-ui
+
+# To install only IVPN CLI
+$ sudo apt-get install ivpn
+{{< /highlight >}}
+
+### Mint {#mint}
+
+{{< highlight shell >}}
+# Add IVPN's GPG key
+$ curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | sudo apt-key add -
+
+# Add the IVPN repository
+$ curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+
+# Update APT repo info
+$ sudo apt-get update
+
+# To install IVPN software (CLI and UI)
+$ sudo apt-get install ivpn-ui
+
+# To install only IVPN CLI
+$ sudo apt-get install ivpn
+{{< /highlight >}}
+
+### Fedora {#fedora}
+
+{{< highlight shell >}}
+# Add the IVPN repository
+$ sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+
+# To install IVPN software (CLI and UI)
+$ sudo dnf install ivpn-ui
+
+# To install only IVPN CLI
+$ sudo dnf install ivpn
+{{< /highlight >}}
+
+### CentOS {#centos}
+
+{{< highlight shell >}}
+# Install Yum-utils
+$ sudo yum install yum-utils
+
+# Add the IVPN repository
+$ sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
+
+# To install IVPN software (CLI and UI)
+$ sudo yum install ivpn-ui
+
+# To install only IVPN CLI
+$ sudo yum install ivpn
+
+# Required for CentOS 8
+$ sudo yum install libXScrnSaver
+{{< /highlight >}}
+
+### Arch Linux {#arch}
+
+AUR - ArchLinux User Repository. Can be used by distributions based on ArchLinux: (e.g. ArchLinux, Manjaro ...)
+
+Base package: [ivpn](https://aur.archlinux.org/packages/ivpn/)  
+UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)  
+
+## Install from Binaries {#binaries}
+
+### .DEB
+
+[Base package](/releases/linux/2.12.8/ivpn_2.12.8_amd64.deb)  
+[UI package](/releases/linux/ui/3.2.0/ivpn-ui_3.2.0_amd64.deb)  
+
+### .RPM
+
+[Base package](/releases/linux/2.12.8/ivpn-2.12.8-1.x86_64.rpm)  
+[UI package](/releases/linux/ui/3.2.0/ivpn-ui-3.2.0-1.x86_64.rpm)  
+
+### .AppImage
+
+[UI package](/releases/linux/ui/3.2.0/ivpn-ui-3.2.0.AppImage)  
+
+## Source Code {#source}
+
+[Base package on GitHub](https://github.com/ivpn/desktop-app-cli)  
+[UI package on GitHub](https://github.com/ivpn/desktop-app-ui2)  
+
+## Useful Links {#useful-links}
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 

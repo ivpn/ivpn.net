@@ -109,6 +109,14 @@ main {
                 }
             }
         }
+
+        .heading {
+            &__content {
+                ul {
+                    font-size: $text-size;
+                }
+            }
+        }
     }
 
     &--hidden-mobile {
