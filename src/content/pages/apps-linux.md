@@ -7,19 +7,6 @@ url: /apps-linux/
 platform: linux
 layout: apps-single
 ---
-* [Features](#features)  
-* [Changelog](#changelog)  
-* [Install from IVPN Repository](#install)  
-    * [Ubuntu](#ubuntu)  
-    * [Debian](#debian)  
-    * [Mint](#mint)  
-    * [Fedora](#fedora)  
-    * [CentOS](#centos)  
-    * [Arch Linux](#arch)  
-* [Install from Binaries](#binaries)  
-* [Source Code](#source)  
-* [Useful Links](#useful-links)  
-
 ## Features {#features}
 
 * WireGuard or OpenVPN protocols.
@@ -33,9 +20,6 @@ layout: apps-single
 * Port forwarding for OpenVPN, reserved on all servers.
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
-
-{{< figure class="features__image--light" src="/images-static/uploads/apps/linux-app-light@2x.png" alt="IVPN for Linux - Open-source VPN app for Linux" >}}
-{{< figure class="features__image--dark" src="/images-static/uploads/apps/linux-app-dark@2x.png" alt="IVPN for Linux - Open-source VPN app for Linux" >}}
 
 ## Changelog {#changelog}
 

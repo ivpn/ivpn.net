@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- partial "products-nav.html" . -}}
-<section class="content content--narrow content--product">
+<section class="content content--narrow content--product heading heading--text-image">
     <div class="content__text">
         <header>
             <h1>{{ .Params.h1 }}</h1>
@@ -10,6 +10,31 @@
                 </div>
             </div>
         </header>
+    </div>
+    <div class="heading__content">
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#changelog">Changelog</a></li>
+            <li><a href="#install">Install from IVPN Repository</a>
+                <ul>
+                    <li><a href="#ubuntu">Ubuntu</a></li>
+                    <li><a href="#debian">Debian</a></li>
+                    <li><a href="#mint">Mint</a></li>
+                    <li><a href="#fedora">Fedora</a></li>
+                    <li><a href="#centos">CentOS</a></li>
+                    <li><a href="#arch">Arch Linux</a></li>
+                </ul>
+            </li>
+            <li><a href="#binaries">Install from Binaries</a></li>
+            <li><a href="#source">Source Code</a></li>
+            <li><a href="#useful-links">Useful Links</a></li>
+        </ul>
+    </div>
+    <div class="heading__image">
+        <img class="features__image--light" src="/images-static/uploads/apps/linux-app-light@2x.png" alt="{{ .Title }}">
+        <img class="features__image--dark" src="/images-static/uploads/apps/linux-app-dark@2x.png" alt="{{ .Title }}">
+    </div>
+    <div class="content__text">
         {{ .Content | markdownify }}
     </div>
 </section>
