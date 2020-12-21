@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{- partial "products-nav.html" . -}}
+<section class="content content--narrow content--product">
+    <div class="content__text">
+        <header>
+            <h1>{{ .Params.h1 }}</h1>
+            <div class="heading--text-image">
+                <div class="heading__content">
+                    <p>{{ .Params.subtitle }}</p>
+                </div>
+            </div>
+        </header>
+        {{ .Content | markdownify }}
+    </div>
+</section>
+{{ end }}
