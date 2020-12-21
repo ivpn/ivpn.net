@@ -31,8 +31,8 @@
         </ul>
     </div>
     <div class="heading__image">
-        <img class="features__image--light" src="/images-static/uploads/apps/linux-app-light@2x.png" alt="{{ .Title }}">
-        <img class="features__image--dark" src="/images-static/uploads/apps/linux-app-dark@2x.png" alt="{{ .Title }}">
+        <img class="features__image--light" src="{{ .Params.ImageLight }}" alt="{{ .Title }}">
+        <img class="features__image--dark" src="{{ .Params.ImageDark }}" alt="{{ .Title }}">
     </div>
     <div class="content__text">
         {{ .Content | markdownify }}
