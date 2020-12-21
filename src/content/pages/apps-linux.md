@@ -10,6 +10,7 @@ layout: apps-single
 * [Ubuntu](#ubuntu)  
 * [Debian](#debian)  
 * [Raspbian](#raspbian)  
+* [Mint](#mint)  
 * [Fedora](#fedora)  
 * [CentOS](#centos)  
 * [RHEL](#rhel)  
@@ -47,6 +48,17 @@ sudo apt-get install ivpn-ui
 ```
 curl -fsSL https://repo.ivpn.net/stable/raspbian/generic.gpg | sudo apt-key add -
 curl -fsSL https://repo.ivpn.net/stable/raspbian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+sudo apt-get update
+sudo apt-get install ivpn
+sudo apt-get install ivpn-ui
+```
+
+## Mint {#mint}
+
+**Instructions**  
+```
+curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | sudo apt-key add -
+curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 sudo apt-get update
 sudo apt-get install ivpn
 sudo apt-get install ivpn-ui
