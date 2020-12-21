@@ -4,6 +4,10 @@ code {
     display: block;
     white-space: pre-wrap;
     word-wrap: break-word;
+
+    p {
+        margin: 0;
+    }
 }
 
 code {
@@ -12,12 +16,12 @@ code {
 
     @include light-theme((
         color: $light-mode-text,
-        background: $light-mode-alternative-background
+        background: $light-mode-alternative-background!important
     ));
 
     @include dark-theme((
         color: $dark-mode-text,
-        background: $dark-mode-alternative-2-background
+        background: $dark-mode-alternative-2-background!important
     ));
 }
 
@@ -27,24 +31,38 @@ pre {
     margin: 34px 0;
 
     @include light-theme((
-        background: $light-mode-alternative-background
+        background: $light-mode-alternative-background!important
     ));
 
     @include dark-theme((
-        background: $dark-mode-alternative-background
+        background: $dark-mode-alternative-background!important
     ));
 
     code {
-        background: none;
         display: block;
         color: #B35A5A;
 
         @include light-theme((
-            background: none
+            background: $light-mode-alternative-background!important
         ));
 
         @include dark-theme((
-            background: none
+            background: $dark-mode-alternative-background!important
         ));
+
+        p {
+            &:first-of-type {
+                margin-top: 24px;
+            }
+        }
+
+        a {
+            color: #B35A5A;
+
+            &:hover {
+                text-decoration: none;
+                cursor: text;
+            }
+        }
     }
 }
