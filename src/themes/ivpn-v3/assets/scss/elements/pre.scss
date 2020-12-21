@@ -64,5 +64,9 @@ pre {
                 cursor: text;
             }
         }
+
+        span {
+            color: rgba($white-color, 0.35)!important;
+        }
     }
 }
