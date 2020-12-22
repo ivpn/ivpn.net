@@ -13,8 +13,8 @@ contents:
     title: Features
     anchor: features
 - item:
-    title: Changelog
-    anchor: changelog
+    title: Packages
+    anchor: packages
 - item:
     title: Install from IVPN Repository
     anchor: install
@@ -41,7 +41,7 @@ contents:
     title: Install from Binaries
     anchor: binaries
 - item:
-    title: Source Code
+    title: Install from Source Code
     anchor: source
 - item:
     title: Useful Links
@@ -61,10 +61,17 @@ contents:
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
 
-## Changelog {#changelog}
+## Packages {#packages}
 
-[Base package](https://github.com/ivpn/desktop-app-cli/blob/master/CHANGELOG.md)  
-[UI package](https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md)  
+### Base Package  
+
+Base package contains everything you need to connect to IVPN with command line interface. IVPN GUI app is provided as a separate package you can find below.  
+[Changelog](https://github.com/ivpn/desktop-app-cli/blob/master/CHANGELOG.md)  
+
+### IVPN GUI App  
+
+Please note: base package is required to be installed prior to installing GUI app.  
+[Changelog](https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md)  
 
 ## Install from IVPN Repository {#install}
 
@@ -151,21 +158,28 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 ### .DEB
 
 [Base package](/releases/linux/2.12.8/ivpn_2.12.8_amd64.deb)  
-[UI package](/releases/linux/ui/3.2.0/ivpn-ui_3.2.0_amd64.deb)  
+SHA256: c2ff205408d7c3e4fe74310e9a19ea7617e68215986c01b499f329d7744ee83b  
+
+[UI package](//releases/linux/ui/3.2.0/ivpn-ui_3.2.0_amd64.deb)  
+SHA256: 2f1a33920ff6826be485c1d420083e2e2df45f220b903f8083bad5fea5940dab  
 
 ### .RPM
 
 [Base package](/releases/linux/2.12.8/ivpn-2.12.8-1.x86_64.rpm)  
+SHA256: bd7b7a16830013388f0f8712464fc1ed63d46f2fa3dc8704f5ba645df0e3ebc0  
+
 [UI package](/releases/linux/ui/3.2.0/ivpn-ui-3.2.0-1.x86_64.rpm)  
+SHA256: 6eaf4333be05c86a15f6eda442305484afef484214264dadc4005841c4866b00  
 
 ### .AppImage
 
 [UI package](/releases/linux/ui/3.2.0/ivpn-ui-3.2.0.AppImage)  
+SHA256: 537ea33aab4dd375700387d4187663c1551172e600dc68b9e5832f851e503de3  
 
-## Source Code {#source}
+## Install from Source Code {#source}
 
-[Base package on GitHub](https://github.com/ivpn/desktop-app-cli)  
-[UI package on GitHub](https://github.com/ivpn/desktop-app-ui2)  
+[Base package on GitHub](https://github.com/ivpn/desktop-app-cli#linux-1)  
+[UI package on GitHub](https://github.com/ivpn/desktop-app-ui2#installation)  
 
 ## Useful Links {#useful-links}
 
