@@ -73,16 +73,12 @@ contents:
 {{< highlight shell >}}
 # Add IVPN's GPG key
 $ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | sudo apt-key add -
-
 # Add the IVPN repository
 $ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
-
 # Update APT repo info
 $ sudo apt-get update
-
 # To install IVPN software (CLI and UI)
 $ sudo apt-get install ivpn-ui
-
 # To install only IVPN CLI
 $ sudo apt-get install ivpn
 {{< /highlight >}}
@@ -92,16 +88,12 @@ $ sudo apt-get install ivpn
 {{< highlight shell >}}
 # Add IVPN's GPG key
 $ curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | sudo apt-key add -
-
 # Add the IVPN repository
 $ curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
-
 # Update APT repo info
 $ sudo apt-get update
-
 # To install IVPN software (CLI and UI)
 $ sudo apt-get install ivpn-ui
-
 # To install only IVPN CLI
 $ sudo apt-get install ivpn
 {{< /highlight >}}
@@ -111,16 +103,12 @@ $ sudo apt-get install ivpn
 {{< highlight shell >}}
 # Add IVPN's GPG key
 $ curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | sudo apt-key add -
-
 # Add the IVPN repository
 $ curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
-
 # Update APT repo info
 $ sudo apt-get update
-
 # To install IVPN software (CLI and UI)
 $ sudo apt-get install ivpn-ui
-
 # To install only IVPN CLI
 $ sudo apt-get install ivpn
 {{< /highlight >}}
@@ -130,10 +118,8 @@ $ sudo apt-get install ivpn
 {{< highlight shell >}}
 # Add the IVPN repository
 $ sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
-
 # To install IVPN software (CLI and UI)
 $ sudo dnf install ivpn-ui
-
 # To install only IVPN CLI
 $ sudo dnf install ivpn
 {{< /highlight >}}
@@ -143,16 +129,12 @@ $ sudo dnf install ivpn
 {{< highlight shell >}}
 # Install Yum-utils
 $ sudo yum install yum-utils
-
 # Add the IVPN repository
 $ sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
-
 # To install IVPN software (CLI and UI)
 $ sudo yum install ivpn-ui
-
 # To install only IVPN CLI
 $ sudo yum install ivpn
-
 # Required for CentOS 8
 $ sudo yum install libXScrnSaver
 {{< /highlight >}}
