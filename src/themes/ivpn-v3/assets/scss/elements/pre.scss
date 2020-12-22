@@ -43,10 +43,12 @@ pre {
         color: #B35A5A;
 
         @include light-theme((
+            color: #B35A5A,
             background: $light-mode-alternative-background!important
         ));
 
         @include dark-theme((
+            color: #B35A5A,
             background: $dark-mode-alternative-background!important
         ));
 
