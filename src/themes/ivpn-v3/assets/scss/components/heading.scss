@@ -69,6 +69,7 @@
 
         .heading__image {
             @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
             @include respond-to('medium') {
                 @include grid-col($col: 6, $gutter: $default-grid-gutter);
             }

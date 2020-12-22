@@ -2,7 +2,7 @@
     <div class="footer__grid">
         <div class="footer__logo">
             <a href="/">
-                <img class="navigation__logo" src="{{ site.Params.cdnUrl }}/images/logo.svg" />
+                <img width="84" height="29" class="navigation__logo" src="{{ site.Params.cdnUrl }}/images/logo.svg" />
             </a>
         </div>
         <div class="footer__column">
@@ -36,7 +36,7 @@
             <ul class="footer__menu">
                 {{ range .Site.Menus.footercolfour }}
                 <li>
-                    <img src="{{ site.Params.cdnUrl }}/images/{{ .Identifier }}.svg" /><a
+                    <img width="24" height="25" src="{{ site.Params.cdnUrl }}/images/{{ .Identifier }}.svg" /><a
                         href="{{ .URL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
