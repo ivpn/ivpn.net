@@ -1,0 +1,13 @@
+.highlight {    
+    @include light-theme((
+        color: $light-mode-highlight
+    ));
+
+    @include dark-theme((
+        color: $dark-mode-highlight
+    ));
+}
+
+.bold {
+    font-weight: bold;
+}

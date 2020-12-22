@@ -382,6 +382,12 @@ export default {
         return response
     },
 
+    async getMoneroPaymentDetails(duration) {
+        return await this.Post('/web/accounts/monero-payment-details', {
+            duration
+        })        
+    },
+
     //
     // For not logged in users
     //
