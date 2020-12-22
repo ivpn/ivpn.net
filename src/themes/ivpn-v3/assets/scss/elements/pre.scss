@@ -68,6 +68,13 @@ pre {
         }
 
         span {
+            display: block;
+            margin-top: 24px;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
             @include light-theme((
                 color: rgba($light-mode-headings, 0.35)!important
             ));
@@ -76,5 +83,13 @@ pre {
                 color: rgba($dark-mode-headings, 0.35)!important
             ));
         }
+    }
+}
+
+.content--product {
+
+    code {
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
