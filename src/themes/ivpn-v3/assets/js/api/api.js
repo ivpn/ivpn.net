@@ -357,6 +357,15 @@ export default {
         return account.account
     },
 
+    async getPaymentsHistory(isRecent, paymentMethod) {
+        let resp = await this.Post('/web/accounts/payments', {
+            is_recent: isRecent,
+            payment_method: paymentMethod,
+        }) 
+
+        return resp.payments
+    },
+
     async applyGiftCard(code) {
         let account = await this.Post('/web/accounts/apply-gift-card', {
             card: code

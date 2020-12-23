@@ -5,12 +5,12 @@
                 style="width: 32px; height: 32px"
             ></progress-spinner>
         </div>
-        <div v-else class='payment-page'>
+        <div v-else class="payment-page">
             <p v-if="error" class="error-message">{{ error.message }}</p>
             <p>Please use the following payment details to transfer Monero:</p>
-            <div class="payment-form">
+            <div class="info-box payment-form">
                 <div class="qrcode" v-html="qrCode"></div>
-                <div style="padding: 14px;"></div>
+                <div style="padding: 14px"></div>
                 <div class="details">
                     <dl>
                         <dt class="highlight bold">Address:</dt>
@@ -18,16 +18,41 @@
 
                         <dt class="highlight bold">Amount:</dt>
                         <dd>{{ amountRounded }} XMR</dd>
-                    </dl>                    
+                    </dl>
                 </div>
             </div>
-            <p class='highlight'>Please note:</p>
-            <p>Your account will automatically be extended 
-                after the payment is confirmed. This may take couple of minutes.</p>
-            
-            <p>The address specified above is permanent for your account. 
-                You can use it to top up your account any time in the future.</p>
-            
+            <div class="info-box">
+                <div v-if="recentPayment">
+                    <p class="highlight">Payment received:</p>
+                    <div>
+                        {{ recentPayment.date | formatDate}},
+                        {{ recentPayment.product}}, extended until {{ recentPayment.applied_to | formatActiveUntil}}
+                    </div>                    
+                </div>
+                <div v-else>
+                <p class="highlight">
+                    <progress-spinner
+                        style="width: 32px; height: 32px"
+                    ></progress-spinner>
+                    Waiting for payment...
+                </p>
+
+                <p style="margin-top: 1em">
+                    Information about the last recent payment will be displayed
+                    here.
+                </p>
+                </div>
+            </div>
+            <p class="highlight">Please note:</p>
+            <p>
+                Your account will automatically be extended after the payment is
+                confirmed. This may take a couple of minutes.
+            </p>
+
+            <p>
+                The address specified above is permanent for your account. You
+                can use it to top up your account any time in the future.
+            </p>
         </div>
     </div>
 </template>
@@ -35,6 +60,7 @@
 <script>
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import qrcode from "qrcode-generator";
+import api from "@/api/api.js";
 
 import { mapState } from "vuex";
 
@@ -46,6 +72,7 @@ export default {
             amountRounded: 0,
             address: "",
             qrCode: "",
+            recentPayment: null,
         };
     },
     components: {
@@ -69,14 +96,27 @@ export default {
 
         this.address = resp.address;
         this.amount = resp.amount;
-        this.amountRounded = resp.amount_rounded
+        this.amountRounded = resp.amount_rounded;
 
         let qr = qrcode(0, "M");
         qr.addData(resp.payment_uri);
         qr.make();
         this.qrCode = qr.createSvgTag(2);
     },
-    methods: {},
+    async mounted() {
+        this.refreshTimer = setInterval(this.updateLastPayment, 10000);
+        await this.updateLastPayment()
+    },
+    beforeDestroy() {
+        clearInterval(this.refreshTimer);
+    },
+
+    methods: {
+        async updateLastPayment() {            
+            let payments = await api.getPaymentsHistory(true, "Monero");
+            this.recentPayment = payments.length > 0 ? payments[0] : null;        
+        }
+    },
 };
 </script>
 
@@ -84,26 +124,21 @@ export default {
 @import "@/styles/base.scss";
 
 .payment-page {
-    max-width: 640px;
+    max-width: 720px;
     line-height: 24px;
 
     p {
         margin-bottom: 16px;
     }
 }
-.payment-form {
-    display: flex;
+.info-box {
     padding: 32px;
     margin-bottom: 1em;
 
-    @media (max-width: $brk-mobile) {
-        flex-direction: column;
-    }
-
     @include light-theme(
         (
-            background: #eeeeee,
-            border: 1px solid #cccccc,
+            background: #f0f0f0,
+            border: 1px solid #eeeeee,
         )
     );
 
@@ -114,26 +149,33 @@ export default {
         )
     );
 
-    .qrcode {
-        
-    }
-
-    .details {
+    &.payment-form {
+        display: flex;
         text-align: left;
-        dl {
-            margin: 0px;
-            padding: 0px;
-        }
-        dd {
-            margin-inline-start: 0px;
-            margin-bottom: 8px;
 
-            &:last-child {
-                margin-bottom: 0px;
-            }
+        @media (max-width: $brk-mobile) {
+            flex-direction: column;
         }
-        .address {
-            word-break: break-all;
+
+        .qrcode {
+        }
+
+        .details {
+            dl {
+                margin: 0px;
+                padding: 0px;
+            }
+            dd {
+                margin-inline-start: 0px;
+                margin-bottom: 8px;
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+            .address {
+                word-break: break-all;
+            }
         }
     }
 }
