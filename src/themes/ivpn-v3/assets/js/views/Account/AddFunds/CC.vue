@@ -37,7 +37,7 @@
                                 fill="#FFFFFF"
                             />Continue
                         </button>
-                        <button class="btn btn-icon" @click="cancelCaptcha">
+                        <button class="btn btn-icon" @click.prevent="cancelCaptcha">
                             Cancel
                         </button>
                     </div>
@@ -114,9 +114,9 @@ export default {
             isRecurring: false,
 
             captchaID: null,
-            captchaImage: null,
-            captchaValue: null,
+            captchaImage: null,            
             captchaPaymentMethod: null,
+            captchaValue: "",
         };
     },
     async created() {
@@ -179,6 +179,7 @@ export default {
                     this.captchaImage = null;
                     this.captchaPaymentMethod = null;
                 }
+                this.captchaValue = "";
                 return;
             }
 
@@ -194,14 +195,14 @@ export default {
             this.$router.push({ name: "account" });
         },
 
-        hideError(error) {
-            console.log("Hide error?", error);
+        hideError(error) {            
             return error.status == 70001;
         },
         async cancelCaptcha() {
             this.captchaID = null;
             this.captchaImage = null;
             this.captchaPaymentMethod = null;
+            this.captchaValue = "";
             await this.$store.dispatch("braintree/clear");            
         },
     },
