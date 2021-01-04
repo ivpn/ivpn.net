@@ -9,10 +9,9 @@ import AddFundsView from "@/views/Account/AddFunds.vue"
 import AddFundsCC from "@/views/Account/AddFunds/CC.vue"
 import AddFundsPayPal from "@/views/Account/AddFunds/PayPal.vue"
 import AddFundsBitcoin from "@/views/Account/AddFunds/BitCoin.vue"
+import AddFundsMonero from "@/views/Account/AddFunds/Monero.vue"
 import AddFundsCash from "@/views/Account/AddFunds/Cash.vue"
 import AddFundsGiftCard from "@/views/Account/AddFunds/GiftCard.vue"
-
-
 
 import WireguardView from "@/views/Account/Wireguard.vue"
 import PortForwardingView from "@/views/Account/PortForwarding.vue"
@@ -178,6 +177,12 @@ const routes = [
                 meta: {
                     title: 'IVPN Add Funds - Bitcoin',
                 }
+            }, {
+                path: 'monero', name: 'add-funds-monero',
+                component: AddFundsMonero,
+                meta: {
+                    title: 'IVPN Add Funds - Monero',
+                }                
             }, {
                 path: 'giftcard', name: 'add-funds-giftcard',
                 component:  AddFundsGiftCard,

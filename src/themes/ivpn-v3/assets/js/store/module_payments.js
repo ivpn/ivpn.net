@@ -90,6 +90,19 @@ export default {
             return false
         },
 
+        async getMoneroPaymentDetails(context, payload) {
+            context.commit('started')
+            try {
+                let addr = await Api.getMoneroPaymentDetails(payload.duration)
+                context.commit('done')
+                return addr
+    
+            } catch (error) {
+                context.commit('failed', { error })                
+            }            
+            return false
+        },
+
         async applyGiftCard(context, payload) {
             context.commit('started')
             try {
