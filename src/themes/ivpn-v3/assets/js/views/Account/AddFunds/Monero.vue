@@ -5,54 +5,60 @@
                 style="width: 32px; height: 32px"
             ></progress-spinner>
         </div>
-        <div v-else class="payment-page">
+        <div>
             <p v-if="error" class="error-message">{{ error.message }}</p>
-            <p>Please use the following payment details to transfer Monero:</p>
-            <div class="info-box payment-form">
-                <div class="qrcode" v-html="qrCode"></div>
-                <div style="padding: 14px"></div>
-                <div class="details">
-                    <dl>
-                        <dt class="highlight bold">Address:</dt>
-                        <dd class="address">{{ address }}</dd>
+            <div v-if="address" class="payment-page">
+                <p>
+                    Please use the following payment details to transfer Monero:
+                </p>
+                <div class="info-box payment-form">
+                    <div class="qrcode" v-html="qrCode"></div>
+                    <div style="padding: 14px"></div>
+                    <div class="details">
+                        <dl>
+                            <dt class="highlight bold">Address:</dt>
+                            <dd class="address">{{ address }}</dd>
 
-                        <dt class="highlight bold">Amount:</dt>
-                        <dd>{{ amountRounded }} XMR</dd>
-                    </dl>
+                            <dt class="highlight bold">Amount:</dt>
+                            <dd>{{ amountRounded }} XMR</dd>
+                        </dl>
+                    </div>
                 </div>
-            </div>
-            <div class="info-box">
-                <div v-if="recentPayment">
-                    <p class="highlight">Payment received:</p>
-                    <div>
-                        {{ recentPayment.date | formatDate}},
-                        {{ recentPayment.product}}, extended until {{ recentPayment.applied_to | formatActiveUntil}}
-                    </div>                    
+                <div class="info-box">
+                    <div v-if="recentPayment">
+                        <p class="highlight">Payment received:</p>
+                        <div>
+                            {{ recentPayment.date | formatDate }},
+                            {{ recentPayment.product }}, extended until
+                            {{ recentPayment.applied_to | formatActiveUntil }}
+                        </div>
+                    </div>
+                    <div v-else>
+                        <p class="highlight">
+                            <progress-spinner
+                                style="width: 32px; height: 32px"
+                            ></progress-spinner>
+                            Waiting for payment...
+                        </p>
+
+                        <p style="margin-top: 1em">
+                            Information about the last recent payment will be
+                            displayed here.
+                        </p>
+                    </div>
                 </div>
-                <div v-else>
-                <p class="highlight">
-                    <progress-spinner
-                        style="width: 32px; height: 32px"
-                    ></progress-spinner>
-                    Waiting for payment...
+                <p class="highlight">Please note:</p>
+                <p>
+                    Your account will automatically be extended after the
+                    payment is confirmed. This may take a couple of minutes.
                 </p>
 
-                <p style="margin-top: 1em">
-                    Information about the last recent payment will be displayed
-                    here.
+                <p>
+                    The address specified above is permanent for your account.
+                    You can use it to top up your account at any time in the
+                    future.
                 </p>
-                </div>
             </div>
-            <p class="highlight">Please note:</p>
-            <p>
-                Your account will automatically be extended after the payment is
-                confirmed. This may take a couple of minutes.
-            </p>
-
-            <p>
-                The address specified above is permanent for your account. You
-                can use it to top up your account any time in the future.
-            </p>
         </div>
     </div>
 </template>
@@ -105,17 +111,17 @@ export default {
     },
     async mounted() {
         this.refreshTimer = setInterval(this.updateLastPayment, 10000);
-        await this.updateLastPayment()
+        await this.updateLastPayment();
     },
     beforeDestroy() {
         clearInterval(this.refreshTimer);
     },
 
     methods: {
-        async updateLastPayment() {            
+        async updateLastPayment() {
             let payments = await api.getPaymentsHistory(true, "Monero");
-            this.recentPayment = payments.length > 0 ? payments[0] : null;        
-        }
+            this.recentPayment = payments.length > 0 ? payments[0] : null;
+        },
     },
 };
 </script>
