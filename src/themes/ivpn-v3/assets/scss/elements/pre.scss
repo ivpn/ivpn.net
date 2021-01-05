@@ -88,9 +88,13 @@ pre {
 
 .content--product {
 
+    pre {
+        padding: 0;
+    }
+
     code {
-        overflow-x: auto;
+        overflow: scroll;
         white-space: nowrap;
-        padding: 20px 10px;
+        padding: 44px 34px;
     }
 }
