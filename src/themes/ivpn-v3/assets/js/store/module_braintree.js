@@ -85,7 +85,9 @@ export default {
                     data.paymentMethod,
                     context.state.instance.fraudData,
                     data.nonce,
-                    data.isRecurring
+                    data.isRecurring,
+                    data.captchaID,
+                    data.captchaValue,
                 );
                 
                 context.commit('auth/updateAccount', { account }, { root: true })
