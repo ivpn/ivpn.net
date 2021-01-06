@@ -82,7 +82,6 @@ main {
     &--product {
 
         h1,
-        h2,
         header {
             text-align: center;
         }
@@ -107,6 +106,14 @@ main {
 
                 a {
                     margin: 0 7px 10px 7px;
+                }
+            }
+        }
+
+        .heading {
+            &__content {
+                ul {
+                    font-size: $text-size;
                 }
             }
         }
