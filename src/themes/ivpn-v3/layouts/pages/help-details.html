@@ -46,4 +46,5 @@
     </div>
 </section>
 <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/search.js" }}"></script>
+{{- partial "suggest-an-edit.html" . -}}
 {{ end }}
