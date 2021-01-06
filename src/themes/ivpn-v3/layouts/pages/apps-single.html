@@ -34,4 +34,7 @@
         {{ .Content | markdownify }}
     </div>
 </section>
+
+{{- partial "suggest-an-edit.html" . -}}
+
 {{ end }}
