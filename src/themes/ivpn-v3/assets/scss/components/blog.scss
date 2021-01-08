@@ -184,7 +184,6 @@
                     img {
                         width: auto;
                         max-width: none;
-                        height: 100%;
                         position: absolute;
                         overflow: hidden;
                         left: 50%;
@@ -196,7 +195,14 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background: #F5F9FD;
+
+                    @include light-theme((
+                        background: #F5F9FD
+                    ));
+
+                    @include dark-theme((
+                        background: $dark-mode-alternative-background
+                    ));
                 }
             }
 
