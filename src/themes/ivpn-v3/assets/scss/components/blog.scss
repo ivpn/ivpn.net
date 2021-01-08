@@ -184,6 +184,7 @@
                     img {
                         width: auto;
                         max-width: none;
+                        height: 100%;
                         position: absolute;
                         overflow: hidden;
                         left: 50%;
@@ -203,6 +204,10 @@
                     @include dark-theme((
                         background: $dark-mode-alternative-background
                     ));
+
+                    img {
+                        height: auto!important;
+                    }
                 }
             }
 
