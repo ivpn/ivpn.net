@@ -2,9 +2,9 @@
 <html lang="{{ $.Site.LanguageCode | default "en" }}">  
   <head>
     {{- partial "head.html" . -}}
-    <link rel="preload" as="font" href="/fonts/roboto-mono-v11-latin-regular.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/fonts/roboto-mono-v11-latin-500.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/fonts/roboto-mono-v11-latin-700.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{ site.Params.cdnUrl }}/fonts/roboto-mono-v11-latin-regular.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{ site.Params.cdnUrl }}/fonts/roboto-mono-v11-latin-500.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{ site.Params.cdnUrl }}/fonts/roboto-mono-v11-latin-700.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/pages.css" }}">
     {{ block "main-style" . }}{{ end }}
 
