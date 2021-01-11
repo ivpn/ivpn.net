@@ -27,7 +27,7 @@ weight: 480
     <a href="http://cr.yp.to/chacha.html">ChaCha20</a> for symmetric encryption, authenticated with <a href="http://cr.yp.to/mac.html">Poly1305, using <a href="https://tools.ietf.org/html/rfc7539">RFC7539's AEAD construction</a><br>
     <a href="http://cr.yp.to/ecdh.html">Curve25519</a> for ECDH<br>
     <a href="https://blake2.net/">BLAKE2s</a> for hashing and keyed hashing, as described in <a href="https://tools.ietf.org/html/rfc7693">RFC7693</a><br>
-    <a href="https://131002.net/siphash/">SipHash24</a> for hashtable keys<br>
+    <a href="http://cr.yp.to/siphash/siphash-20120918.pdf">SipHash</a> for hashtable keys<br>
     <a href="https://eprint.iacr.org/2010/264">HKDF</a> for key derivation, as described in <a href="https://tools.ietf.org/html/rfc5869">RFC5869</a><br>
     <a href="https://www.wireguard.com/protocol/#key-exchange-and-data-packets">Noise_IK handshake</a> from <a href="http://noiseprotocol.org/noise.pdf">Noise</a>, building on the work of <a href="http://www.curvecp.org/">CurveCP</a>, <a href="http://cr.yp.to/highspeed/naclcrypto-20090310.pdf">NaCL</a>, <a href="http://research.microsoft.com/en-us/um/people/klauter/security_of_kea_ake_protocol.pdf">KEA+</a>, <a href="http://webee.technion.ac.il/~hugo/sigma-pdf.pdf">SIGMA</a>, <a href="https://eprint.iacr.org/2009/408.pdf">FHMQV</a>, and <a href="https://eprint.iacr.org/2010/638.pdf">HOMQV</a><br>
     All packets are sent over UDP
