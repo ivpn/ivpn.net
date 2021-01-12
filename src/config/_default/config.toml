@@ -10,7 +10,8 @@ disableKinds = ["sitemap", "taxonomyTerm"]
     unsafe= true
 
 [outputs]
-    section = ["JSON", "HTML"]
+    home = ["HTML"]
+    section = ["JSON", "HTML", "RSS"]
 
 [params]
     environment = "development"    
