@@ -142,6 +142,7 @@ export default {
     
     @include light-theme((
         border: 1px solid $dark-lighter
+        background: none
     ));
 
     @include dark-theme((
