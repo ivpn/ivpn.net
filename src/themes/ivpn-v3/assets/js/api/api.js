@@ -317,7 +317,7 @@ export default {
         return account.token
     },
 
-    async addBraintreeFunds(priceID, amount, paymentMethod, fraudData, nonce, isRecurring) {
+    async addBraintreeFunds(priceID, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
 
         let account = await this.Post(
             '/web/accounts/braintree/add-funds',
@@ -328,6 +328,8 @@ export default {
                 fraud_data: fraudData,
                 nonce: nonce,
                 is_recurring: isRecurring,
+                captcha_id: captchaID,
+                captcha: captchaValue
             }
         )
 

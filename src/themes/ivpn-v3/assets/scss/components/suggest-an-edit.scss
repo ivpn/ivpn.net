@@ -1,0 +1,18 @@
+.suggest-an-edit {
+    line-height: 1.5; 
+    padding: 1em; 
+    font-size: 12px; 
+    text-align: center;
+
+    a {
+        font-weight: bold;
+    }
+
+    @include light-theme((
+        background: $light-mode-alternative-background
+    ));
+
+    @include dark-theme((
+        background: $light-mode-text
+    ));
+}

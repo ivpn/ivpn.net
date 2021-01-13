@@ -94,7 +94,7 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspbian/">
         ```
         $ cd $GOPATH/src/github.com/ivpn
         $ git clone https://github.com/ivpn/desktop-app-daemon.git
-        $ cd desktop-app-daemon.git
+        $ cd desktop-app-daemon
         $ git checkout 49db2f3
         ```
 

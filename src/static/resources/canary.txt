@@ -6,36 +6,36 @@ Once per month IVPN will publish a 'warrant canary' in the form of a cryptograph
 - A declaration that, up to that point, no warrants have been served, nor have any searches or seizures taken place.
 - Headlines from a major news source demonstrating that the update could not have been created prior to that date.
 
-Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.
+Special note should be taken if these messages ever cease being updated, or are removed from this page. However this scheme is not infallible.  Although signing the declaration makes it impossible for a third party to produce arbitrary declarations, it does not prevent them from using force to coerce IVPN to produce false declarations.  
 
 The current message is here:
 
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2020-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from http://www.ft.com/home/us)
 
-Norwegian Air Shuttle launches emergency rescue plan to save company
-Airline to cut size of fleet and raise new money after filing for creditor protection
+Venezuela: how Maduro has strengthened his grip on power
+After failed efforts to dislodge the regime, the country will present Joe Biden with one of his biggest diplomatic challenges
 
-Germany wakes up to the far-right terror threat
-New government measures aim to combat violent extremism
+Default warning as US energy sector’s financial woes persist
+Fitch says the industry could account for one-third of junk bond defaults in 2021
 
-Joe Biden’s team of economic reformers
-Without a Democratic Senate, Bidenomics will not get very far
+How the pandemic will change the City office
+Many companies plan to downsize headquarters and push through a permanent shift to hybrid working models
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl/IvxAACgkQisFrnrZH
-ummR2gf+JjmgkbrIJOfCSlEHut+v6OHLO/B5K2uf4VUvj7ephOHqsZUNMwl+a7px
-xqHHWHRdXN1tm0vmBqKgcQlQdTRw7myvugu1mp06VOBTXolf0vDGluAEHDizU7wU
-G3Qlm12JhCkMdKfGH/+wZvxbvyNqojUXu6WB2lC148dF4y6eZAyMayFbltLqEpdg
-wHfN/ItxY+R3y6oWu+NkFRkMXOBVCydy7t82i5PiI9z61kDhsZzertrDPW3C5VWO
-YSKo38H+r+pxadQKj2nVcrLQsl/NA+8N94i4yT74vVXvOFTbY0szvzWjIJB7U0sb
-PjlyTxd7nJ5PtbH5P4xzHlrkQnl76g==
-=hcaU
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl/xZGsACgkQisFrnrZH
+umksnQgAs8JnB8a/of+elveZnI4yZIVecDhBggWGjNXgP4Uua7cfwyjFB5XdIQ41
+leA3h9R1raVT7HDLmw8oFwlawO1nAPpJHzUubV8PH+RkfSmH7uvyV6+cGGqfwVQ9
+j/kpXP729wBaunBnDcczvn6WSLXkevb/tSPU+8lVS5Zq7K4fNQqaO0E6iq+Ca4Sv
+z4IZAjb9gcSETnCmlqjH/D3FmR7yv12jE2J8hH1qgdWjKiqtowuo0cCFQ6upV3On
++GLCMpbIqh9AhrcYxAkHGsE0dt5NgJ2fBVCNdAOtRz5z9Ftl1mCRESyeBPJsB3F6
+g93+R9yX80ersCFwKDn9OJevb04YUw==
+=Ds/T
 -----END PGP SIGNATURE-----
 
 
