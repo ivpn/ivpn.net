@@ -46,6 +46,14 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
+                :to="{ name: 'add-funds-monero', params: { price: price.id } }"
+            >
+                <div class="monero-icon"></div>
+                Monero
+            </router-link>            
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-cash', params: { price: price.id } }"
             >
                 <div class="cash-icon"></div>

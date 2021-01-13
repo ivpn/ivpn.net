@@ -38,11 +38,12 @@ export default {
         let title = {
             "add-funds-cc": "Add time with a credit card",
             "add-funds-bitcoin": "Add time with Bitcoin",
+            "add-funds-monero": "Add time with Monero",
             "add-funds-cash": "Add time with Cash",
             "add-funds-paypal": "Add time with PayPal",
             "add-funds-apple": "Add time with ApplePay",
             "add-funds-google": "Add time with GooglePay",
-            "add-funds-giftcard": "Add time with a Gift Card",
+            "add-funds-giftcard": "Add time with a Gift Card",            
         };
 
         this.title = title[this.$route.name];
