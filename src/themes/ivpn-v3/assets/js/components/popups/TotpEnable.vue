@@ -141,7 +141,7 @@ export default {
     padding: 1em 1.4em;
     
     @include light-theme((
-        border: 1px solid $dark-lighter
+        border: 1px solid $dark-lighter,
         background: none
     ));
 
