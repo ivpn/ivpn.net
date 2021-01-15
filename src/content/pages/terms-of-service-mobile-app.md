@@ -2,7 +2,7 @@
 title: IVPN Terms of Service
 url: /tos-mobile-app/
 layout: mobile-app
-canonical: tos/
+canonical: /tos/
 ---
 ## Terms of Service
 
