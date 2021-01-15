@@ -13,7 +13,7 @@
             </a>
         </li>
         {{ range .Site.Menus.main }}
-            {{ if eq .Identifier "download" }} 
+            {{ if eq .Identifier "prices" }} 
                 <li class="navigation__seperator">|</li>
             {{ end }}
             {{ if eq (urlize .Name) "my-account" }}
