@@ -13,6 +13,7 @@ weight: 400
 IVPN accepts the following payment methods via our website:
 
 * Bitcoin (via our own BTCPay server)
+* Monero (self-hosted)
 * PayPal
 * Credit/Debit Cards (except American Express and any kind of Prepaid Cards)
 * Cash payments
@@ -20,3 +21,5 @@ IVPN accepts the following payment methods via our website:
 To pay with cash see [how can I pay with cash](/knowledgebase/billing/how-can-i-pay-with-cash/).
 
 We also accept in-app payments via our mobile apps for [iOS](/apps-ios/) and [Android](/apps-android/) (Play Store version only).
+
+We run our own nodes for both Bitcoin and Monero.
