@@ -61,7 +61,7 @@ disableKinds = ["sitemap", "taxonomyTerm"]
   
   [[menu.main]]
     identifier = "privacy"
-    name = "Privacy Policy"
+    name = "Privacy"
     url = "/privacy/"
     weight = 30
 
@@ -72,8 +72,15 @@ disableKinds = ["sitemap", "taxonomyTerm"]
     weight = 40
 
   [[menu.main]]
+    identifier = "prices"
+    name = "Pricing"
+    url = "/pricing/"
+    weight = 45
+
+
+  [[menu.main]]
     identifier = "download"
-    name = "Download"
+    name = "Apps"
     url = "/apps/"
     weight = 50
 
