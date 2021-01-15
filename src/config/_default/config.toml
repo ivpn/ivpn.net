@@ -73,7 +73,7 @@ disableKinds = ["sitemap", "taxonomyTerm"]
 
   [[menu.main]]
     identifier = "prices"
-    name = "Prices"
+    name = "Pricing"
     url = "/pricing/"
     weight = 45
 
