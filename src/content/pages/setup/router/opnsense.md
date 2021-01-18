@@ -47,11 +47,12 @@ This guide was produced using OPNSense 20.1.
 
 ### Add a Local Interface
 
-1.  In the OPNSense web interface, go to `VPN > WireGuard > Local` and click the `+` to add a local interface:
+1.  In the OPNSense web interface, go to `VPN > WireGuard > Local` and click the `+` to add a local interface. Toggle `advanced mode` on and enter the following:
 
     <div markdown="1" class="notice notice--info">
-    <strong>Name:</strong> A short interface name, like ivpn.<br>
+    <strong>Name:</strong> A short interface name, like ivpn or ivpnJapan.<br>
     <strong>Listen Port:</strong> Default value is likely fine.<br>
+    <strong>MTU:</strong> 1412<br>
     <strong>DNS Server:</strong> The DNS server can be one of three options:<br><br>
     <i>172.16.0.1</i> = regular DNS with no blocking<br>
     <i>10.0.254.2</i> = standard AntiTracker to block advertising and malware domains<br>
