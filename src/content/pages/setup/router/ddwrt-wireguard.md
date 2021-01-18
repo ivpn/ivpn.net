@@ -18,14 +18,16 @@ This guide was produced using DD-WRT v39715.
 
 2.  Go to `Setup` > `Tunnels` > and click the `Add Tunnel` button. Choose **Enable** and select WireGuard from the dropdown menu.
 
-3.  Click the `Generate Key` button and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the **IP address** we assign to your public key and add it to the IP address field and enter 255.255.255.255 in the **Subnet Mask** field.
+3.  Set the `MTU` value of the WireGuard tunnel to `1412`. 
+
+4.  Click the `Generate Key` button and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the **IP address** we assign to your public key and add it to the IP address field and enter 255.255.255.255 in the **Subnet Mask** field.
 
     <div markdown="1" class="notice notice--info">
     <strong>Hint:</strong> After clicking <code>Generate Key</code>, it may or may not be possible to copy the public key displayed on the <code>Tunnels</code> page. Click the <code>Save</code> and <code>Apply Settings</code> buttons, then go to <code>Administration</code>  > <code>Commands</code>  and enter wg in the <code>Commands</code>  box, then click <code>Run Commands</code> . This will display details of the WireGuard connection including the public key, which can be easily copied.<br><br>
     <img src="/images-static/uploads/install-openvpn-ddwrt-wireguard-010.png">
     </div>
 
-4.  Click the `Add Peer` button and enter the following peer configuration (as also shown in the screen shot below):
+5.  Click the `Add Peer` button and enter the following peer configuration (as also shown in the screen shot below):
 
     *   **Peer Tunnel IP:** 0.0.0.0
     *   **Peer Tunnel DNS:** 172.16.0.1
@@ -51,9 +53,9 @@ This guide was produced using DD-WRT v39715.
     <strong>Note:</strong> You are welcome to use whichever server you prefer. The <strong>Endpoint Address</strong> and <strong>Peer Public Key</strong> in the example above are specific to our server in Sweden.
     </div>
 
-5.  Click the `Save` button, then click the `Apply Settings` button.
+6.  Click the `Save` button, then click the `Apply Settings` button.
 
-6.  In `Administration` > `Commands`, enter the following:  
+7.  In `Administration` > `Commands`, enter the following:  
     
     #### Save Startup:
     ```
@@ -102,11 +104,11 @@ This guide was produced using DD-WRT v39715.
     echo "... Done route table update."
     ```
 
-7.  In `Setup` > `Basic Setup`, you might consider setting IVPN DNS servers in the **Network Address Server Settings (DHCP)** area:
+8.  In `Setup` > `Basic Setup`, you might consider setting IVPN DNS servers in the **Network Address Server Settings (DHCP)** area:
 
     * **Static DNS 1:** 172.16.0.1
     * **Static DNS 2:** 198.245.51.147
 
-8.  Click the `Save` button, then click the `Apply Settings` button.
+9.  Click the `Save` button, then click the `Apply Settings` button.
 
-9.  Reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.
+10.  Reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.
