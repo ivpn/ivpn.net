@@ -16,7 +16,7 @@ If information is power, and we’ve lost control of our information, what are w
 
 The internet once seemed like an endless horizon of possibility. A place for connection, for serendipity, for experimentation. A space not beholden to profit.
 
-Today’s internet looks very different – having been captured by the market forces of the surveillance economy, whose fuel is every detail our personal lives. Though companies claim the purpose of data collection is to improve their services, so we shrug it off as a compromise for convenience, and hope that the law will take care of it.
+Today’s internet looks very different – having been captured by the market forces of the surveillance economy, whose fuel is every detail of our personal lives. Though companies claim the purpose of data collection is to improve their services, so we shrug it off as a compromise for convenience, and hope that the law will take care of it.
 
 Yet governments around the world have been slow to regulate. And many have implemented their own mass surveillance programs in the name of national security – listening in on communications, coercing companies to open their data troves, automating policing and court processes, implementing social credit systems, and rolling out facial recognition programs. In the process, they have turned law-abiding citizens into suspects without cause.
 
