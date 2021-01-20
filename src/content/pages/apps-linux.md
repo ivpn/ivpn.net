@@ -185,7 +185,7 @@ SHA256: d4de9fb8e816d8fdfd7174a019c4fb76d024738947992ab51af5f1479cad839c
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
+If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
 * [OpenVPN using NetworkManager Setup Guide](/setup/linux-netman/)
 * [OpenVPN using terminal Setup Guide](/setup/linux-terminal/)
