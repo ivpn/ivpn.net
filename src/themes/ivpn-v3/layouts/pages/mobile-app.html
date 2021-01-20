@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">  
+  <head>
+    {{- partial "head.html" . -}}
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/pages.css" }}">
+    
+    {{ block "seo" . }}
+    <link rel="canonical" href="{{ .Site.BaseURL }}{{ .Params.Canonical }}">
+    {{ end }}
+  </head>
+    <body>
+        <main>
+          <section class="content content--narrow">
+              <div class="content__text">
+                  {{ .Content | markdownify }}
+              </div>
+          </section>
+        </main>
+    </body>
+</html>

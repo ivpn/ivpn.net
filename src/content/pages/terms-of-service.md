@@ -1,6 +1,8 @@
 ---
 title: IVPN Terms of Service
 url: /tos/
+layout:
+canonical:
 ---
 # Terms of Service
 
