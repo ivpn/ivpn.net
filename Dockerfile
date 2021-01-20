@@ -22,6 +22,16 @@ RUN apt-get update  \
 COPY ./src/themes/ivpn-v3/package.json ./src/themes/ivpn-v3/yarn.lock ./src/themes/ivpn-v3/
 RUN yarn --cwd ./src/themes/ivpn-v3/ --pure-lockfile
 
+COPY ./src/content/pages/privacy-policy.md  ./src/content/pages/privacy-policy-mobile.md
+RUN sed -i "s|url: \/privacy\/|url: \/privacy-mobile-app\/ |g" ./src/content/pages/privacy-policy-mobile.md
+RUN sed -i "s|layout:|layout: mobile-app |g" ./src/content/pages/privacy-policy-mobile.md
+RUN sed -i "s|canonical:|canonical: \/privacy\/ |g" ./src/content/pages/privacy-policy-mobile.md
+
+COPY ./src/content/pages/terms-of-service.md  ./src/content/pages/terms-of-service-mobile.md
+RUN sed -i "s|url: \/tos\/|url: \/tos-mobile-app\/ |g" ./src/content/pages/terms-of-service-mobile.md
+RUN sed -i "s|layout:|layout: mobile-app |g" ./src/content/pages/terms-of-service-mobile.md
+RUN sed -i "s|canonical:|canonical: \/tos\/ |g" ./src/content/pages/terms-of-service-mobile.md
+
 COPY ./src ./src
 RUN echo "MIX_APP_WEBAPI_URL=${BASE_URL}\nMIX_APP_API_URL=${API_URL}\nMIX_APP_PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}\n" > ./src/themes/ivpn-v3/.env
 RUN echo "Environment: $ENV\nBase URL: ${BASE_URL}\nAPI URL: ${API_URL}\nPayPal Client ID: ${PAYPAL_CLIENT_ID}\n"

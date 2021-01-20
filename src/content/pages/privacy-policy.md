@@ -2,6 +2,8 @@
 title: IVPN Privacy Policy
 description: Its important our customers fully understand what private information we collect, store and process. Read our clear and simple policy to get the facts you need.
 url: /privacy/
+layout:
+canonical:
 ---
 # Privacy Policy
 
