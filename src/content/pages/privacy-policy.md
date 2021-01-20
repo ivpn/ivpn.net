@@ -5,14 +5,14 @@ url: /privacy/
 ---
 # Privacy Policy
 
-We're built for privacy. Internally, we know what exactly that means; we use privacy as a filter for decision-making. If a choice needs to be made between one practice that deepens a user's privacy, and another that would diminish it but accelerate our growth, we'll always take the slower, more private option. If you'd like to know more about our principals and beliefs that drive our choices, please see our [team](/team/) and [ethics](/ethics/) pages.
+We're built for privacy. Internally, we know what exactly that means; we use privacy as a filter for decision-making. If a choice needs to be made between one practice that deepens a user's privacy, and another that would diminish it but accelerate our growth, we'll always take the slower, more private option. If you'd like to know more about our principles and beliefs that drive our choices, please see our [team](/team/) and [ethics](/ethics/) pages.
 
 We realize how important it is that our customers fully understand what we
 mean by privacy. This policy gives you an overview of;
 
 * What we mean by "logless"
 
-* What information we collect, how its stored, and how its used
+* What information we collect, how it's stored, and how it's used
 
 * What happens in the case we are subpoenaed, receive a court order or DMCA copyright infringement notice
 
@@ -68,7 +68,7 @@ When you add time to your account, the following information is stored:
 
 </div>
 
-Some payment information may be related to your account, for example, if PayPal is used a PayPal transaction ID will be associated with your account, as well as a subscription ID should you set up a PayPal subscription. If payment is made using our BTCPay server, then the BTCPay transaction ID will be associated with your account (note that we operate our own BTCPay server). For credit card payments, we use Braintree as our payment processor, and store a Braintree transaction ID against your account. If you elect to enable auto-renew for card payments, a subscription ID will also be stored.
+Some payment information may be related to your account, for example, if PayPal is used a PayPal transaction ID will be associated with your account, as well as a subscription ID to set up a PayPal subscription. If payment is made using our BTCPay server, then the BTCPay transaction ID will be associated with your account (note that we operate our own BTCPay server). For credit card payments, we use Braintree as our payment processor, and store a Braintree transaction ID against your account. If you elect to enable auto-renew for card payments, a subscription ID will also be stored.
 
 This is the data we store for a credit card payment:
 
@@ -94,7 +94,7 @@ To be able to process refunds for our 30-day money-back guarantee and resolve ot
 
 IVPN have selected [Matomo](https://matomo.org) as their web analytics platform. Web analytics allow us to understand our users engagement with our site to understand where it delivers value, and where it can be improved in terms of usability, simplicity and speed. It also helps us to understand where our site visitors originate, and audit those referring sites to ensure they aren't making unfounded or exaggerated claims.
 
-Matomo is open source software that is hosted on our own server infrastructure to ensure your privacy (unlike platforms such as Google Analytics). For example, the Center for Data Privacy Protection in France (CNIL) recommended Matomo as the only tool that can easily ensure full compliance with privacy regulations. Matamo is used to analyse in aggregate information about our website visitors.
+Matomo is open source software that is hosted on our own server infrastructure to ensure your privacy (unlike platforms such as Google Analytics). For example, the Center for Data Privacy Protection in France (CNIL) recommended Matomo as the only tool that can easily ensure full compliance with privacy regulations. Matomo is used to analyse in aggregate information about our website visitors.
 
 When your web browser loads a page on our site, a small snippet of JavaScript code is executed within your browser which submits information such as;
 
@@ -108,7 +108,7 @@ When your web browser loads a page on our site, a small snippet of JavaScript co
 
 * IP address.
 
-To ensure your privacy, IVPN discards the last two octets of the IP address. Matamo may also set a web cookie to facilitate the identification of users who revisit the site.
+To ensure your privacy, IVPN discards the last two octets of the IP address. Matomo may also set a web cookie to facilitate the identification of users who revisit the site.
 
 ### Where is my data stored and who has access to it?
 
@@ -120,7 +120,7 @@ No third-parties have access to any of your data. We always use first or third-p
 
 To authenticate customers, our VPN servers send a request to a central authentication server, containing the customers account ID. The authentication server holds a temporary record of all connected customer ID's. When a customer connects to a VPN gateway, the authentication server checks how many active authentication records are already in the table for the account ID, if it exceeds the allowed number of simultaneous connections, then authentication is denied. When a user disconnects, the relevant record is permanently deleted. If an adversary was able to gain access to this data, they could only determine which account ID's were logged into the VPN network at that exact moment in time.
 
-As this data is only stored for the duration of the VPN session, should you or anyone request to know how many connections you had at a specific time in the past, we couldn't tell you because we don't store it.
+As this data is only stored for the duration of the VPN session, if you or anyone requests to know how many connections you had at a specific time in the past, we couldn't tell you because we don't store it.
 
 ### What information is retained when I stop using your service?
 When a VPN account is terminated on our network due to the subscription ending, non-payment or for any other reason, all data associated with that VPN account including the account itself (with the exception of the accounting data below) is automatically deleted after 90 days. After the account is deleted, the remaining accounting data below has no link to any past account ID. If you want to delete your data immediately, simply click on the 'delete account' button within the client area.
