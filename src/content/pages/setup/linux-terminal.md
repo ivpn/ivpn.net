@@ -38,7 +38,11 @@ platform: linux
     zypper install openvpn
     ```
 
-2.  Download the [OpenVPN config files](/releases/config/ivpn-openvpn-config.zip) to your home directory and extract the contents to a known location.
+2.  Download the OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) config files to your home directory and extract the contents to a known location. 
+    <div markdown="1" class="notice notice--info">
+    Note: In most cases you want to use the UDP Protocol.
+    </div>
+
 
     ```
     wget -O ivpn.zip "https://www.ivpn.net/releases/config/ivpn-openvpn-config.zip"
@@ -58,6 +62,7 @@ platform: linux
     <div markdown="1" class="notice notice--info">
     Note: Unless your Linux user account is called user the full path will likely be different on your computer system.
     </div>
+    
 
 3.  You can initiate an OpenVPN connection by specifying the configuration file you wish to use. You will need to manually enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
    
