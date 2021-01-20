@@ -165,6 +165,30 @@ Crash logs for our desktop apps are only sent when the user manually confirms th
 
 Crash logs are sent to a server hosted and managed by IVPN and no third-party vendors or cloud services.
 
+### Device permissions for Personal Data access
+
+IVPN Android and iOS apps may request certain permissions that allow it to access the user's device data as described below.
+
+These permissions must be granted by the user before the respective information can be accessed. Once the permission has been given, it can be revoked by the user at any time in device settings.
+
+Please note that revoking of such permissions might impact the proper functioning of the app.
+
+#### Android App
+
+Background location permission (continuous):  
+Required to access the current Wi-Fi SSID, when the Network Protection feature is enabled.
+
+Camera permission:  
+Used to scan QR code with an account ID.
+
+#### iOS App
+
+Permission to save VPN profile:  
+Required to access the current Wi-Fi SSID, when the Network Protection feature is enabled.
+
+Camera permission:  
+Used to scan QR code with an account ID.
+
 ### Changes to policy
 
 IVPN reserves the right to change this privacy policy at any time. In such cases, we will take every reasonable step to ensure that these changes are brought to your attention by posting all changes prominently on the IVPN website for a reasonable period of time, before the new policy becomes effective as well as emailing our existing customers.
