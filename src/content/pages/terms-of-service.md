@@ -6,11 +6,11 @@ canonical:
 ---
 # Terms of Service
 
-###### Last updated: 19th May 2017
+###### Last updated: 21 January 2021
 
-These are the terms of service you are agreeing to when you subscribe and/or are using the services of IVPN.
+These are the terms of service you are agreeing to when you subscribe and/or are using the services of IVPN, operated by Privatus Limited.
 
-Please note that in this agreement, the term "You" means you the "Subscriber/User", and the term "We" or "Our" means IVPN, its owners, employees, agents and any others involved with IVPN.
+Please note that in this agreement, the term "You" means you the "Subscriber/User", and the term "We" or "Our" means Privatus Limited, its owners, employees, agents and any others involved with Privatus Limited.
 
 ##### As a subscriber of our services, you agree that:
 
@@ -42,15 +42,17 @@ Please note that in this agreement, the term "You" means you the "Subscriber/Use
 
 14. You agree not to pay for the service from a stolen credit card.
 
-15. The service that is offered to you is provided on an "as is" basis, with no warranties whatsoever. We are not liable for any direct, indirect, consequential, inconveniences, or whatsoever damages, or loss of profit, that may arise from the use of our services.
+15. You will not resell or attempt to resell IVPN accounts or services to any individual or entity for use or further resale without the express written permission of Privatus Limited.
 
-16. We cannot and do not guarantee the speed of our service. We also cannot and do not guarantee that you will have an uninterrupted service. We are not liable for any direct, indirect, consequential, inconveniences, or whatsoever damages, or loss of profit, that may arise from the use of our services.
+16. The service that is offered to you is provided on an "as is" basis, with no warranties whatsoever. We are not liable for any direct, indirect, consequential, inconveniences, or whatsoever damages, or loss of profit, that may arise from the use of our services.
 
-17. We are not in any shape or form liable for damages of any sort (realized or unrealized) resulting from the use of, or through the use of, or arising from the use of, or the inability to use the IVPN service pertaining to any registered user.
+17. We cannot and do not guarantee the speed of our service. We also cannot and do not guarantee that you will have an uninterrupted service. We are not liable for any direct, indirect, consequential, inconveniences, or whatsoever damages, or loss of profit, that may arise from the use of our services.
 
-18. In any event, IVPN shall never be liable for any monetary damages beyond what the user paid to IVPN and this will not include court costs or attorney fees irrespective of any statutes or laws that may be interpreted otherwise.
+18. We are not in any shape or form liable for damages of any sort (realized or unrealized) resulting from the use of, or through the use of, or arising from the use of, or the inability to use the IVPN service pertaining to any registered user.
 
-19. We reserve the right to make amendments or modifications to our Terms Of Use Agreement. If we make changes that are material, we will take every reasonable step to ensure that changes are brought to your attention by posting all changes prominently on the IVPN website and emailing our existing customers. The notice will designate a reasonable period of time after which the new Terms will take effect. If you disagree with our changes, then you should stop using the IVPN service within the designated notice period. Your continued use of the IVPN service will be subject to the new Terms. However, any dispute that arose before the changes shall be governed by the Terms that were in place when the dispute arose.
+19. In any event, IVPN shall never be liable for any monetary damages beyond what the user paid to IVPN and this will not include court costs or attorney fees irrespective of any statutes or laws that may be interpreted otherwise.
+
+20. We reserve the right to make amendments or modifications to our Terms Of Use Agreement. If we make changes that are material, we will take every reasonable step to ensure that changes are brought to your attention by posting all changes prominently on the IVPN website and emailing our existing customers. The notice will designate a reasonable period of time after which the new Terms will take effect. If you disagree with our changes, then you should stop using the IVPN service within the designated notice period. Your continued use of the IVPN service will be subject to the new Terms. However, any dispute that arose before the changes shall be governed by the Terms that were in place when the dispute arose.
 
 This is our binding agreement when you agree to these terms of service.
 
