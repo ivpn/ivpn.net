@@ -20,7 +20,7 @@ releases: [{
         },
         {
             cta: .APK file,
-            url: https://www.ivpn.net/releases/android/IVPNv2.1.0site.apk
+            url: https://www.ivpn.net/releases/android/IVPNv2.2.0_site.apk
         }
     ],
     github: https://github.com/ivpn/android-app,
@@ -28,7 +28,7 @@ releases: [{
     checksum: [
         {
             title: SHA256 .apk,
-            value: b07512e5e27b336bd7a9f5098b2f9db76ec481d40236416dc417671724c3e05e
+            value: c1c9b84a45c3ed98d4cce15f12c887cdbe84dcd00a3b8046ebfe6c75a073be67
         }
     ]
 }]
@@ -47,7 +47,7 @@ releases: [{
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
+If you are using OpenVPN download the latest [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
 
 - [OpenVPN for Android v4.0+ Setup Guide](/setup/android-openvpn-for-android/)  
 - [OpenVPN for Android v2.1+ Setup Guide](/setup/android-featvpn/)  
