@@ -52,7 +52,7 @@
                     and Linux
                 </li>
                 <li>Private DNS servers</li>
-                <li>Cash and bitcoin payment options for better anonymity</li>
+                <li>Cash, Monero and Bitcoin payment options for better anonymity</li>
                 <li>Money back guarantee for 30 days</li>
                 <li>
                     Killswitch/firewall and obfuscation methods where applicable
