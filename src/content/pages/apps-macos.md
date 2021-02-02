@@ -9,13 +9,13 @@ layout: apps
 image: apps/macos-app
 releases: [{
     cta: Download IVPN,
-    download: https://cdn.ivpn.net/releases/osx/IVPN-2.12.16.dmg,
+    download: https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg,
     github: https://github.com/ivpn/desktop-app-ui,
     changelog: https://github.com/ivpn/desktop-app-ui/blob/master/CHANGELOG_macos.md,
     checksum: [
         {
             title: SHA256,
-            value: 917da5511e17bce498cb47726363b29bb253b3b3a5711d49cb0367cb2108e471
+            value: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22
         }
     ]
 }]
