@@ -47,12 +47,11 @@ This guide was produced using OPNSense 20.1.
 
 ### Add a Local Interface
 
-1.  In the OPNSense web interface, go to `VPN > WireGuard > Local` and click the `+` to add a local interface. Toggle `advanced mode` on and enter the following:
+1.  In the OPNSense web interface, go to `VPN > WireGuard > Local` and click the `+` to add a local interface and enter the following:
 
     <div markdown="1" class="notice notice--info">
-    <strong>Name:</strong> A short interface name, like ivpn or ivpnJapan.<br>
+    <strong>Name:</strong> A short interface name, like ivpn.<br>
     <strong>Listen Port:</strong> Default value is likely fine.<br>
-    <strong>MTU:</strong> 1412<br>
     <strong>DNS Server:</strong> The DNS server can be one of three options:<br><br>
     <i>172.16.0.1</i> = regular DNS with no blocking<br>
     <i>10.0.254.2</i> = standard AntiTracker to block advertising and malware domains<br>
@@ -85,12 +84,14 @@ This guide was produced using OPNSense 20.1.
 
 1.  Go to the `VPN > WireGuard > General` tab and put a check mark beside **Enable WireGuard** on the General tab, then click the `Save` button.
 
-2.  Check the ``VPN > WireGuard > List Configuration`` and `Handshakes` tabs to see connection details.
+2.  Check the `VPN > WireGuard > List Configuration` and `Handshakes` tabs to see connection details.
 
-3.  To let you internal network clients go through the tunnel, add a **NAT entry**. Go to `Firewall > NAT > Outbound` and click `+Add` to add a rule. Check that rule generation is set to **Manual** or **Hybrid**. Add a rule and select **Wireguard** as `Interface`. `Source Address` should be **LAN net** and set `Translation / target` to **Interface address**.
+3.  Go to the `Interfaces > LAN` page and set the `MSS` value to `1412`.  Click the `Save` button at the bottom of the page, then click the `Apply changes` button at the top of the page.
+
+4.  To let you internal network clients go through the tunnel, add a **NAT entry**. Go to `Firewall > NAT > Outbound` and click `+Add` to add a rule. Check that rule generation is set to **Manual** or **Hybrid**. Add a rule and select **Wireguard** as `Interface`. `Source Address` should be **LAN net** and set `Translation / target` to **Interface address**.
 
     ![](/images-static/uploads/opns-wg-4-3-nat-rule.png)
 
-4.  Click the `Save` button, click the `Apply Changes` button, then reboot the OPNSense router.
+5.  Click the `Save` button, click the `Apply Changes` button, then reboot the OPNSense router.
 
-5.  Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com/) via one of the internal network clients attached to your OPNSense router.
+6.  Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com/) via one of the internal network clients attached to your OPNSense router.
