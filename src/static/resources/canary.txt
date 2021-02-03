@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2021-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from http://www.ft.com/home/us)
 
-Venezuela: how Maduro has strengthened his grip on power
-After failed efforts to dislodge the regime, the country will present Joe Biden with one of his biggest diplomatic challenges
+Exchanges compete to improve ETF investor experience
+Fee cuts and other measures have been made to attract and retain listings
 
-Default warning as US energy sector’s financial woes persist
-Fitch says the industry could account for one-third of junk bond defaults in 2021
+Alibaba to raise up to $5bn in dollar bond
+Downsized debt sale comes as regulators clamp down on Chinese ecommerce group
 
-How the pandemic will change the City office
-Many companies plan to downsize headquarters and push through a permanent shift to hybrid working models
+GSK and CureVac to develop vaccines to tackle Covid variants
+The €150m investment is to address various coronavirus strains in one jab
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAl/xZGsACgkQisFrnrZH
-umksnQgAs8JnB8a/of+elveZnI4yZIVecDhBggWGjNXgP4Uua7cfwyjFB5XdIQ41
-leA3h9R1raVT7HDLmw8oFwlawO1nAPpJHzUubV8PH+RkfSmH7uvyV6+cGGqfwVQ9
-j/kpXP729wBaunBnDcczvn6WSLXkevb/tSPU+8lVS5Zq7K4fNQqaO0E6iq+Ca4Sv
-z4IZAjb9gcSETnCmlqjH/D3FmR7yv12jE2J8hH1qgdWjKiqtowuo0cCFQ6upV3On
-+GLCMpbIqh9AhrcYxAkHGsE0dt5NgJ2fBVCNdAOtRz5z9Ftl1mCRESyeBPJsB3F6
-g93+R9yX80ersCFwKDn9OJevb04YUw==
-=Ds/T
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmAaW90ACgkQisFrnrZH
+ummA0QgAhIIl81aQZFtZkWnaBTH/dS1fEPCQjhg5jvp77n1SF1P2W8CPmjEiuv3D
+90bhdhZAzBqoA4opznI4H9jt2m/X15PmA99Yt7A2P6verCE0VoVrH9j4978JMpRd
+702rDftXbDlJKv6+nIpM2jkVdLyN7V/oXU8jTcgPOiOePN7Ddi2HiEr8UimRyIgb
+gc+ziMfaHOzS0pKzZP03cgTIBb2D85uSxCKlCaepb6vpfb6gzs3/RE343dxmiGSl
+3Qvu8H3tNwu/L1Qnr/xk9bwHASxPWqldMqsd0hZ+vNTcedxdHPd6WYbNNMA+UXxy
+DIqJn10vC7gaHBWdGNxNaqxxffdV9A==
+=/UyJ
 -----END PGP SIGNATURE-----
 
 
