@@ -186,4 +186,4 @@ It's also prudent to disable WebGL in browsers before using them online. Take th
  [19]: http://thenewtech.tv/it/openbsd-pf-on-mac-osx-lion
  [20]: https://github.com/adrelanos/VPN-Firewall
  [21]: https://en.wikipedia.org/wiki/PF_%28firewall%29
- [22]: https://www.ivpn.net/privacy-guides/advanced-privacy-and-anonymity-part-2
+ [22]: /privacy-guides/advanced-privacy-and-anonymity-part-2/
