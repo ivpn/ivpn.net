@@ -3,7 +3,7 @@
         <h1 class="app">Select IVPN Plan</h1>
         <p>
             We offer different plans to better suit your needs.
-            <br />You'll be able to switch it anytime in the future with one click.
+            <br />Please select one to create your account. You'll be able to switch it anytime in the future with one click.
         </p>
 
         <div class="prices">
