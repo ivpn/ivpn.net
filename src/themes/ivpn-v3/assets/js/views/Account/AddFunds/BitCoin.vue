@@ -1,13 +1,11 @@
 <template>
     <div style="text-align:center;">
         <p v-if="error" class="error-message">{{ error.message }}</p>
-        <!-- <p>We use BTCPay server to process Bitcoin payments. Press the button below to open your Bitcoin invoice on our BTCPay server.</p>
+        <p>We use BTCPay server to process Bitcoin payments. Press the button below to open your Bitcoin invoice on our BTCPay server.</p>
         <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress">
             <div class="bitcoin-icon"></div>
             <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />Pay with BTCPay
-        </button> -->
-
-        <p>Bitcoin payments are currently unavailable, we expect to restore this payment option within 24 hours.</p>        
+        </button>
     </div>
 </template>
 
