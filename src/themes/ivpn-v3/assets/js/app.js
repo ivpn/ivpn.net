@@ -19,7 +19,9 @@ let products = {
         prices: [
             { id: "standard-1week", name: "1 Week", price: 2 },
             { id: "standard-1month", name: "1 Month", price: 6 },
-            { id: "standard-1year", name: "12 Months", price: 60, discount: 20 },
+            { id: "standard-1year", name: "1 Year", price: 60, ref: 72 },
+            { id: "standard-2year", name: "2 Years", price: 100, ref: 144 },
+            { id: "standard-3year", name: "3 Years", price: 140, ref: 216 },
         ]
     },
     pro: {
@@ -31,7 +33,10 @@ let products = {
         prices: [
             { id: "pro-1week", name: "1 Week", price: 4 },
             { id: "pro-1month", name: "1 Month", price: 10 },
-            { id: "pro-1year", name: "12 Months", price: 100, discount: 20 },
+            { id: "pro-1year", name: "1 Year", price: 100, ref: 120 },
+            { id: "pro-2year", name: "2 Years", price: 160, ref: 240 },
+            { id: "pro-3year", name: "3 Years", price: 220, ref: 360 },
+
         ]
     }
 };

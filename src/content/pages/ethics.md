@@ -10,7 +10,7 @@ sections:
       We consider the effects of our choices with regarding to running our service. We follow a privacy-first mindset that goes beyond the basics.
 
 
-      Every decision matters: how and what we communicate to new customers, what we information we collect and what tools we use to improve our service.
+      Every decision matters: how and what we communicate to new customers, what information we collect and what tools we use to improve our service.
 
       We believe in leading by example, and commit to the following:
 

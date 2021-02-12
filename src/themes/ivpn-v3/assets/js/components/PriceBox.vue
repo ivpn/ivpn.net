@@ -10,11 +10,12 @@
                 <label>
                     {{ price.name }}
                 </label>
-                <br />
-                <div class="price">
-                    <span class="discount" v-if="price.discount">
-                        -{{ price.discount }}%</span
+                
+                <span class="discount" v-if="price.ref">
+                        ${{ price.ref }}</span
                     >
+                <div class="price">
+                    
                     {{ "$" + price.price }}
                 </div>
             </div>
@@ -130,24 +131,26 @@ label {
     border-bottom: 1px solid #334d6633;
     line-height: 42px;
     font-size: 16px;
+    display: flex;    
+
+    label {
+        flex-grow: 1;
+    }
 
     &:last-child {
         border-bottom: none;
     }
 
-    .discount {
-        background: $red;
-        border-radius: 3px;
-        font-size: 12px;
-        padding: 2px 4px 4px 4px;        
-        color: $white;
+    .discount {        
+        text-decoration: line-through;
+        padding: 2px 4px 4px 4px;
+        opacity: 0.6;
     }
 
-    .price {
-        position: absolute;
+    .price {        
         font-weight: 600;
-        top: 0px;
-        right: 0px;
+        min-width: 70px;
+        text-align: right;
 
         @include light-theme((
             color: $black

@@ -9,13 +9,13 @@ layout: apps
 image: apps/macos-app
 releases: [{
     cta: Download IVPN,
-    download: https://cdn.ivpn.net/releases/osx/IVPN-2.12.10.dmg,
+    download: https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg,
     github: https://github.com/ivpn/desktop-app-ui,
     changelog: https://github.com/ivpn/desktop-app-ui/blob/master/CHANGELOG_macos.md,
     checksum: [
         {
             title: SHA256,
-            value: b955b230977d64b45cb81b6f4a31b8f42dbc864b98bc91202f46a495c89b3d21
+            value: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22
         }
     ]
 }]
@@ -40,7 +40,7 @@ releases: [{
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
+If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
 - [WireGuard manual setup for macOS 10.14+](/setup/macos-wireguard/)
 - [Tunnelblick (OpenVPN) for macOS Setup Guide](/setup/macos-openvpn-tunnelblick/)  

@@ -28,7 +28,7 @@ releases: [{
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
+If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
 - [OpenVPN for iPhone Setup Guide](/setup/iphone-openvpn-connect/)  
 - [IPSec IKEv2 for iPhone Setup Guide](/setup/iphone-ipsec-ikev2/)  

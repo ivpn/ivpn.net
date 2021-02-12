@@ -1,10 +1,9 @@
 <template>
     <div>
-        <h1 class="app">Select IVPN Product</h1>
+        <h1 class="app">Select IVPN Plan</h1>
         <p>
-            We offer different products to better suit your needs.
-            <br />Please select one to create your account. You'll be able to
-            change it any time in the future.
+            We offer different plans to better suit your needs.
+            <br />Please select one to create your account. You'll be able to switch it anytime in the future with one click.
         </p>
 
         <div class="prices">
@@ -52,7 +51,7 @@
                     and Linux
                 </li>
                 <li>Private DNS servers</li>
-                <li>Cash and bitcoin payment options for better anonymity</li>
+                <li>Cash, Monero and Bitcoin payment options for better anonymity</li>
                 <li>Money back guarantee for 30 days</li>
                 <li>
                     Killswitch/firewall and obfuscation methods where applicable

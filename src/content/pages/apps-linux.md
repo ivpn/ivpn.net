@@ -157,24 +157,19 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 
 ### .DEB
 
-[Base package](/releases/linux/2.12.14/ivpn_2.12.14_amd64.deb)  
-SHA256: ae58c01ce4fe69edf49d3aacdb93c8cc0da4f57380b815862c0c451fbdc023c4  
+[Base package](/releases/linux/2.12.16/ivpn_2.12.16_amd64.deb)  
+SHA256: 63786e87c8bd2847d286d41ebde5ce5c099825a071e7c0b194c9ddd5ad0391d8  
 
 [UI package](/releases/linux/ui/3.2.3/ivpn-ui_3.2.3_amd64.deb)  
 SHA256: d956dfdf8341c6e135b5c4cd8d2d82ae501238dd2b0d5c8264936963cb318ca4  
 
 ### .RPM
 
-[Base package](/releases/linux/2.12.14/ivpn-2.12.14-1.x86_64.rpm)  
-SHA256: 2c42dac0654e01713a2d439cbea430f3463ad6730114382833c7da6fd4f736ab  
+[Base package](/releases/linux/2.12.16/ivpn-2.12.16-1.x86_64.rpm)  
+SHA256: 36bd6261d6bb7e35f26cc149d5d4ce56ab61e6073fd99ea27830f828561125aa  
 
 [UI package](/releases/linux/ui/3.2.3/ivpn-ui-3.2.3-1.x86_64.rpm)  
 SHA256: 28efe2eadd7a80a058fe2439c6fc005100b2b1ac58a6a498d27f2a981858bad4  
-
-### .AppImage
-
-[UI package](/releases/linux/ui/3.2.3/ivpn-ui-3.2.3.AppImage)  
-SHA256: d4de9fb8e816d8fdfd7174a019c4fb76d024738947992ab51af5f1479cad839c  
 
 ## Install from Source Code {#source}
 
@@ -185,7 +180,7 @@ SHA256: d4de9fb8e816d8fdfd7174a019c4fb76d024738947992ab51af5f1479cad839c
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
+If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
 * [OpenVPN using NetworkManager Setup Guide](/setup/linux-netman/)
 * [OpenVPN using terminal Setup Guide](/setup/linux-terminal/)

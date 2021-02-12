@@ -9,13 +9,13 @@ layout: apps
 image: apps/windows-app
 releases: [{
     cta: Download IVPN,
-    download: https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.9.exe,
+    download: https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.17.exe,
     github: https://github.com/ivpn/desktop-app-ui,
     changelog: https://github.com/ivpn/desktop-app-ui/blob/master/CHANGELOG_windows.md,
     checksum: [
         {
             title: SHA256,
-            value: 056093764da1f31db740db16528fb282a341cd5b26e3c6bb96e3805a200b86a1
+            value: 7dce2cd90a2828f308c5c9063776d05af6074d974c57ee69a7ea79030640149a
         }
     ]
 }]
@@ -40,7 +40,7 @@ releases: [{
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
+If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
 - [WireGuard Manual setup for Windows 10](/setup/windows-10-wireguard/)  
 - [OpenVPN Manual setup for Windows 10](/setup/windows-10-openvpn-community/)  

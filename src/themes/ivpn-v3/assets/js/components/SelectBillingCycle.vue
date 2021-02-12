@@ -14,14 +14,14 @@
                     {{ option.billing_cycle }}
                 </div>
                 <div class="price-item-name" v-else>{{ option.name }}</div>
-                <div class="discount" v-show="option.discount">
-                    -{{ option.discount }}%
+                <div class="discount" v-show="option.ref">
+                    ${{ option.ref }}
                 </div>
                 <div class="price-item-price">${{ option.price }}</div>
             </div>
         </template>
 
-        <template #selected-option="{ name, billing_cycle, price, discount }">
+        <template #selected-option="{ name, billing_cycle, price, ref }">
             <div class="option-element selected">
                 <div
                     class="price-item-name"
@@ -33,7 +33,7 @@
                 <div class="price-item-name" style="flex-grow: 1" v-else>
                     {{ name }}
                 </div>
-                <div class="discount" v-if="discount">-{{ discount }}%</div>
+                <div class="discount" v-if="ref">$ {{ ref }}</div>
                 <div class="price-item-price">${{ price }}</div>
             </div>
         </template>
@@ -158,14 +158,9 @@ export default {
         }
         .discount {
             font-weight: normal;
-            border: 1px solid $red;
-            border-radius: 3px;
-
-            font-size: 10px;
-            line-height: 12px;
-            padding: 2px 4px;
-            margin: 2px 8px 0px 8px;
-            color: $red;
+            opacity: 0.6;
+            padding: 0px 16px;
+            text-decoration: line-through;
         }
     }
 }
