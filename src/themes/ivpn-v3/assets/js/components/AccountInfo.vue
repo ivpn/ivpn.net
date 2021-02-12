@@ -191,8 +191,8 @@ export default {
             text-align: right;
             width: 200px;
             position: absolute;
-            top: 75px;
-            right: 5px;
+            top: 120px;
+            right: 0px;
         }
         @media (max-width: $brk-tablet) {
             padding: 0;
@@ -203,6 +203,11 @@ export default {
         &.qrnote {
             @media (max-width: $brk-tablet) {
                 display: none;
+            }
+
+            svg {
+                width: 112px;
+                height: 112px;
             }
         }
     }
