@@ -191,7 +191,7 @@ export default {
             text-align: right;
             width: 200px;
             position: absolute;
-            top: 120px;
+            top: 110px;
             right: 0px;
         }
         @media (max-width: $brk-tablet) {
