@@ -45,7 +45,7 @@ export default {
         let qr = qrcode(0, "M");
         qr.addData(this.account.id);
         qr.make();
-        this.qrCode = qr.createSvgTag(3.4);
+        this.qrCode = qr.createSvgTag(3);
     },
     methods: {
         async copyToClipboard() {
