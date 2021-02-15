@@ -159,7 +159,7 @@ export default {
             }
 
             let isNewAccount = this.account.is_new;
-            await this.$store.dispatch("braintree/addFunds", {
+            let result = await this.$store.dispatch("braintree/addFunds", {
                 nonce: paymentMethod.nonce,
                 priceId: this.price.id,
                 price: this.price.price,
@@ -185,14 +185,9 @@ export default {
 
             matomo.recordPurchase(isNewAccount, this.price.price);
 
-            this.$store.commit("setFlashMessage", {
-                type: "success",
-                message:
-                    `Your payment was successful. Service is extended until ` +
-                    this.$options.filters.formatDate(this.account.active_until),
-            });
-
-            this.$router.push({ name: "account" });
+            this.$router.push({ name: "payment-received",  params: {
+                refid: result.payment.ref_id                
+            }});
         },
 
         hideError(error) {            

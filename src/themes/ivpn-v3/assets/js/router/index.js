@@ -121,6 +121,22 @@ const routes = [
         }
     },
     {
+        path: '/account/payment/:refid/received',
+        name: 'payment-received',
+        component: () => import('@/views/Account/ThankYou.vue'),
+        meta: {
+            title: 'IVPN Account - Payment has been received',
+        }
+    },
+    {
+        path: '/account/payment/:refid/invoice',
+        name: 'payment-invoice',
+        component: () => import('@/views/Account/Invoice.vue'),
+        meta: {
+            title: 'IVPN Account - Invoice for payment',
+        }
+    },
+    {
         path: '/account/payment',
         component: PaymentView,
         name: 'payment',

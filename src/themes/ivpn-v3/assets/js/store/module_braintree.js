@@ -79,7 +79,7 @@ export default {
         async addFunds(context, data) {
             context.commit('started')
             try {
-                let account = await Api.addBraintreeFunds(
+                let result = await Api.addBraintreeFunds(
                     data.priceId,
                     data.price,
                     data.paymentMethod,
@@ -90,12 +90,14 @@ export default {
                     data.captchaValue,
                 );
                 
-                context.commit('auth/updateAccount', { account }, { root: true })
+                context.commit('auth/updateAccount', { account: result.account }, { root: true })
                 context.commit('done')
+
+                return result
                 
             } catch (error) {
                 context.commit('failed', { error })
-            }
+            }            
         },
 
         async savePaymentMethod(context, nonce) {
