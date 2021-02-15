@@ -11,6 +11,10 @@ h1, .h1 {
     @include dark-theme((
         color: $dark-mode-headings
     ));
+
+    @include max-width('small') {
+        font-size: $heading-size-h2;
+    }
 }
 
 h2, .h2 {
