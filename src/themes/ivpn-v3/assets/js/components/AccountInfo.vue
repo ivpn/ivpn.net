@@ -45,7 +45,7 @@ export default {
         let qr = qrcode(0, "M");
         qr.addData(this.account.id);
         qr.make();
-        this.qrCode = qr.createSvgTag(3.4);
+        this.qrCode = qr.createSvgTag(3);
     },
     methods: {
         async copyToClipboard() {
@@ -191,7 +191,7 @@ export default {
             text-align: right;
             width: 200px;
             position: absolute;
-            top: 120px;
+            top: 110px;
             right: 0px;
         }
         @media (max-width: $brk-tablet) {
