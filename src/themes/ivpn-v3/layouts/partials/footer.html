@@ -1,3 +1,4 @@
+{{ if not (isset .Params "hideheaders") }}
 <footer class="footer">
     <div class="footer__grid">
         <div class="footer__logo">
@@ -82,3 +83,4 @@
     </script>
     <!-- End of Rocket.Chat Livechat Script -->
 </footer>
+{{ end }}

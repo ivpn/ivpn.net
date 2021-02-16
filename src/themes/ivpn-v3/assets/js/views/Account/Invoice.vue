@@ -76,8 +76,6 @@ export default {
     },
 
     async created() {
-        this.hideHeaderAndFooter();
-
         console.log("RefID: ", this.$route.params.refid);
         this.refId = this.$route.params.refid;
 
@@ -87,20 +85,7 @@ export default {
 
         if (this.error) return;
         console.log("Payment", payment)
-        this.payment = payment
-    },
-    methods: {
-        hideHeaderAndFooter() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.style.display = "none";
-            }
-
-            let footer = document.getElementsByClassName("footer");
-            if (footer.length > 0) {
-                footer[0].style.display = "none";
-            }
-        },        
+        this.payment = payment    
     },
 };
 </script>
@@ -109,6 +94,16 @@ export default {
 .invoice {
     max-width: 700px;
     line-height: 2em;
+
+    @media print {
+        color: #000;
+
+        table th {
+            color: #666;
+            background-color: #EEE;
+            opacity: 1;
+        }
+    }
 
     .info {
         text-align: right;
