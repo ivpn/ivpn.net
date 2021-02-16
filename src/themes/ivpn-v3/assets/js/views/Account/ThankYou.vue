@@ -2,15 +2,14 @@
     <div>
         <div class="payment-received">
             <success-icon style="margin: 24px 0px" />
-            <h2>Your payment has been successfully received</h2>
+            <h2>Your payment has been received</h2>
 
             <p style="margin-bottom: 32px">
-                We received your payment. You account has been extended to
+                Your account has been extended to 
                 <b style="white-space: nowrap">{{
                     account.active_until | formatPaymentDate
                 }}</b
-                >. You can check your payment details and information about the
-                selected plan in your account&nbsp;page.
+                >. You can review your payment details and details about your selected plan on the <router-link :to="{name:'account'}">account</router-link> page
             </p>
 
             <button
