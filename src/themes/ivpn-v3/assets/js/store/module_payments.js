@@ -103,6 +103,18 @@ export default {
             return false
         },
 
+        async getPaymentByRefId(context, payload) {
+            context.commit('started')
+            try {
+                let payment = await Api.getPaymentByRefId(payload.refId)
+                context.commit('done')
+                return payment
+    
+            } catch (error) {
+                context.commit('failed', { error })                
+            }                        
+        },
+
         async applyGiftCard(context, payload) {
             context.commit('started')
             try {

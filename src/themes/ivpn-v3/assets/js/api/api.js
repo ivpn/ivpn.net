@@ -319,7 +319,7 @@ export default {
 
     async addBraintreeFunds(priceID, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
 
-        let account = await this.Post(
+        return await this.Post(
             '/web/accounts/braintree/add-funds',
             {
                 price_id: priceID,
@@ -332,8 +332,7 @@ export default {
                 captcha: captchaValue
             }
         )
-
-        return account.account
+        
     },
 
 
@@ -366,6 +365,12 @@ export default {
         }) 
 
         return resp.payments
+    },
+
+    async getPaymentByRefId(refId) {
+        return await this.Post('/web/accounts/payment', {
+            ref_id: refId,
+        }) 
     },
 
     async applyGiftCard(code) {
