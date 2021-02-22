@@ -1,6 +1,6 @@
 ---
-title: Linux - Kill-switch using the Uncomplicated Firewall (UFW) - IVPN Help
-h1: Linux - Kill-switch using the Uncomplicated Firewall (UFW)
+title: Linux - Kill Switch using the Uncomplicated Firewall (UFW) - IVPN Help
+h1: Linux - Kill Switch using the Uncomplicated Firewall (UFW)
 url: /knowledgebase/linux/linux-kill-switch-using-the-uncomplicated-firewall-ufw/
 sections:
     - linux
@@ -8,7 +8,7 @@ sectionTitle: Linux
 layout: help-details
 weight: 70
 ---
-# Linux - Kill-switch using the Uncomplicated Firewall (UFW)
+# Linux - Kill Switch using the Uncomplicated Firewall (UFW)
 
 <div markdown="1" class="notice notice--info">
 We recommend using our <a href="/apps-linux/">Linux CLI app</a> that offers an easy-to-use built-in Firewall solution that protects you from both IP and traffic leaks. Read on, if you would like to have a more granular Firewall configuration or prefer to use NetworkManager or a different VPN client.
