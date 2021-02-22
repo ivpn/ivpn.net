@@ -14,11 +14,11 @@ If you are unable to resolve a technical issue please submit your logs by follow
 
 ### Windows
 
-1. Open the IVPN application. Click on the `Settings` button.
-2. Navigate to the `Diagnostics` tab.
-3. Check on `Enable logging` and click `OK`.
+1. Open the IVPN App and click on the gear icon to access the `Settings` area.
+2. Navigate to the `General` tab.
+3. Check on `Enable logging` and click the `Save` button.
 4. Use the VPN software in such a way that the error may be logged e.g if you cannot connect then attempt to connect to the VPN.
-5. Click on the `Submit logs` button.
+5. Go back to `Settings` > `General` and click on the `Submit logs` button.
 
 ### macOS
 
@@ -31,17 +31,15 @@ If you are unable to resolve a technical issue please submit your logs by follow
 
 ### Android
 
-1. Launch the IVPN app.
-2. Tap on the `gear` icon to access the Settings menu.
-3. Click on the `VPN protocol` and select `OpenVPN`.
-4. Return one step back, scroll down and have the `Enable logging` option enabled.
-5. Use the VPN software in such a way that the error may be logged e.g if you cannot connect then attempt to connect to the VPN.
-6. Access the Settings menu once again and click on the `Send Logs` button.
+1. Launch the IVPN App and tap on the gear icon to access the `Settings` menu.
+2. Click on the `VPN protocol` and select `OpenVPN`.
+3. Return one step back, scroll down and toggle the `Enable logging` option **on**.
+4. Use the VPN software in such a way that the error may be logged e.g if you cannot connect then attempt to connect to the VPN.
+5. Access the `Settings` menu once again and click on the `Send Logs` button.
 
 ### iOS
 
-1. Launch the IVPN app.
-2. Tap on the `menu` icon on the top right side of the screen to access Settings.
+1. Launch the IVPN App and tap on the gear icon to access the `Settings` menu.
 3. Click on the `Protocol` and select `OpenVPN`.
 4. Return one step back, scroll down and have the `OpenVPN Logging` option enabled.
 5. Use the VPN software in such a way that the error may be logged e.g if you cannot connect then attempt to connect to the VPN.
@@ -49,7 +47,19 @@ If you are unable to resolve a technical issue please submit your logs by follow
 
 ### Linux
 
+#### GUI
+
+1. Open the IVPN App and click on the gear icon to access the `Settings` area.
+2. Navigate to the `General` tab.
+3. In the `Diagnostics` area`, check `Allow logging`, then click the back button.
+4. Use the VPN software in such a way that the error may be logged e.g if you cannot connect then attempt to connect to the VPN.
+5. Go back to `Settings` > `General` and click on the `Diagnostic logs ...` button to send.
+
+#### CLI
+
 IVPN CLI app stores logs in the following file - `/opt/ivpn/log/IVPN_Agent.log*`. Attach the file or files to your email message to our support department or copy/paste the file contents into your support request.
+
+#### Manual
 
 1.  If you are using a different VPN client, use 'grep' to filter the OpenVPN logs from the system log e.g.
     ```

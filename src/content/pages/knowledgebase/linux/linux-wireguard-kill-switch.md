@@ -1,6 +1,6 @@
 ---
-title: Linux - WireGuard Kill-switch - IVPN Help
-h1: Linux - WireGuard Kill-switch
+title: Linux - WireGuard Kill Switch - IVPN Help
+h1: Linux - WireGuard Kill Switch
 url: /knowledgebase/linux/linux-wireguard-kill-switch/
 sections:
     - linux
@@ -8,9 +8,9 @@ sectionTitle: Linux
 layout: help-details
 weight: 80
 ---
-# Linux - WireGuard Kill-switch
+# Linux - WireGuard Kill Switch
 
-To ensure no traffic leaks outside and your real IP address is revealed in case the WireGuard VPN tunnel accidentally goes down, you can set up the Kill-switch which is configured using the **PostUp** and **PreDown** WG syntax.
+To ensure no traffic leaks outside and your real IP address is revealed in case the WireGuard VPN tunnel accidentally goes down, you can set up the Kill Switch which is configured using the **PostUp** and **PreDown** WG syntax.
 
 1.  Open the WireGuard config file with any text editors:
 
