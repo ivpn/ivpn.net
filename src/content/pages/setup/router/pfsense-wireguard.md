@@ -102,7 +102,7 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
     - `Direction`: **Any**
     - `Address Family`: **IPv4+IPv6**
     - `Protocol`: **Any**
-    - `Destination` > `Single host or alias` > `91.207.174.237`
+    - `Destination` > `Single host or alias` > `176.103.57.129`
     - `Description`: **Allow traffic to VPN server**
     - `Save`
 3. Ensure that 'Reject' rule resides below the 'Allow' one, otherwise drag it down manually.
