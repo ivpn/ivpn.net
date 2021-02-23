@@ -1,6 +1,6 @@
 ---
 title: VPN Setup guide for pfsense
-listItem: PFSENSE
+listItem: pfSense
 url: /setup/router/pfsense/
 section: Router Setup
 platform: router
