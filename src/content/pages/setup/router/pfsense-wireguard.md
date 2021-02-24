@@ -84,7 +84,7 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
 
 ![](/images-static/uploads/pf-wg-30-fw-rules-lan.png)
 
-### Additional Killswitch configuration
+#### Additional Kill switch configuration
 
 1. Navigate to `Firewall` > `Rules` > `Floating`, click on the `Add` button and create the rule to block all traffic on WAN interface:
     - `Action`: **Reject**
@@ -95,7 +95,7 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
     - `Protocol`: **Any**
     - `Description`: **Block all WAN traffic**
     - `Save`
-2. Click on the `Add` button again and create another rule to allow the traffic from WAN interface to VPN server:
+2. Click on the `Add (top)` button again and create another rule to allow the traffic from WAN interface to VPN server:
     - `Action`: **Pass**
     - `Quick`: **Check**
     - `Interface`: **WAN**
@@ -112,13 +112,13 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
 
 ### Static routing
 
-1. Navigate to `System` > `Routing`, `Static routes` tab
+1. Navigate to `System` > `Routing` > `Static routes` tab
 2. Click the `Add` button and configure the routes as follows:
     - `Destination network`: The IP address of the WireGuard server `176.103.57.129`
     - `Gateway`: your router's `WAN` gateway
     - `Description`: "WAN to VPN"
     - Click `Save`
-3. Navigate to `System` > `Routing`, `Gateways` tab and set `Default gateway IPv4` to `WG_IVPN_WGV4`
+3. Navigate to `System` > `Routing` > `Gateways` tab and set `Default gateway IPv4` to `WG_IVPN_WGV4`
 4. Click `Save` and `Apply changes`.
 
 ![](/images-static/uploads/pf-wg-35-routing.png)
@@ -134,10 +134,11 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
     - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook
+5. Click `Save`.
 
 ### DNS Resolver
 
-1. Navigate to `Services` > `DNS Resolver` and uncheck `Enable DNSSEC`.
+1. Navigate to `Services` > `DNS Resolver` and have `Enable DNSSEC` checked.
 2. Check `Enable Forwarding Mode` beside `DNS Query Forwarding`.
 3. Click the `Save` button and click the `Apply Changes` button.
 
