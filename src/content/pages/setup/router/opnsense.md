@@ -1,6 +1,6 @@
 ---
 title: OPNSense WireGuard Setup Guide
-listItem: OPNsense
+listItem: OPNsense WireGuard
 url: /setup/router/opnsense/
 section: Router Setup
 platform: router

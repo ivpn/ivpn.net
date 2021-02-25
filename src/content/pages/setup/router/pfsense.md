@@ -1,6 +1,6 @@
 ---
-title: VPN Setup guide for pfsense
-listItem: PFSENSE
+title: OpenVPN Setup Guide for pfSense
+listItem: pfSense
 url: /setup/router/pfsense/
 section: Router Setup
 platform: router
@@ -12,9 +12,9 @@ weight: 30
 ### Basic pfSense Setup
 
 1.  **Add the CA.crt to the Certificate Manager**  
-    In your PfSense device click on `"System"` -> `"Cert manager"` -> `"CAs"` and then click on `"+Add"`  
+    In your pfSense device click on `"System"` -> `"Cert manager"` -> `"CAs"` and then click on `"+Add"`  
     Give it a name, i.e. **"IVPN CA"** 
-    Choose `"Import an existing Certificate Authority"` & past the following under **"Certificate data"**:  
+    Choose `"Import an existing Certificate Authority"` and paste the following under **"Certificate data"**:  
 
     ```
     -----BEGIN CERTIFICATE-----
