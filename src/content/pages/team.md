@@ -38,7 +38,7 @@ sections:
 
       We need tools enabled by strong encryption to protect ourselves against hostile adversaries. With the right set of protections we can once again control what we share with those we don’t know and can’t trust.
   - type: lead_text_one_column
-    content: Our current team is fully distributed, with 12 people from 7 countries.
+    content: Our current team is fully distributed, with 11 people from 7 countries.
   - type: team_three_column
     members:
       - image: /images-static/uploads/team-nick.png
