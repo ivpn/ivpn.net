@@ -32,7 +32,7 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
     * `Endpoint`: IP address of IVPN's WireGuard server, hostnames are available on the [IVPN server status page](https://www.ivpn.net/status).
 	- To turn the hostname for the Ukraine server (ua.wg.ivpn.net) into an IP address (176.103.57.129), for example, run `nslookup ua.wg.ivpn.net` in a **Command Prompt** on Windows or **Terminal** on macOS or Linux or via `Diagnostics` > `Command Prompt` > `Execute Shell Command` in the pfSense web interface:  
 	> $ nslookup ua.wg.ivpn.net  
-	> ...
+	> ...  
 	> Name:   ua.wg.ivpn.net  
 	> Address: 176.103.57.129  
     * `Endpoint Port`: Choose one of 53, 2049, 2050, 30587, 41893, 48574, or 58237, all are equally secure
@@ -84,23 +84,23 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
 
 ![](/images-static/uploads/pf-wg-30-fw-rules-lan.png)
 
-#### Additional Kill switch configuration
+#### Additional Kill Switch Configuration
 
-1. Navigate to `Firewall` > `Rules` > `Floating`, click on the `Add` button and create the rule to block all traffic on WAN interface:
+1. Navigate to `Firewall` > `Rules` > `Floating`, click on the `Add` button and create the rule to reject all traffic on WAN interface:
     - `Action`: **Reject**
     - `Quick`: **Check**
     - `Interface`: **WAN**
     - `Direction`: **Any**
     - `Address Family`: **IPv4+IPv6**
     - `Protocol`: **Any**
-    - `Description`: **Block all WAN traffic**
+    - `Description`: **Reject all WAN traffic**
     - `Save`
 2. Click on the `Add (top)` button again and create another rule to allow the traffic from WAN interface to VPN server:
     - `Action`: **Pass**
     - `Quick`: **Check**
     - `Interface`: **WAN**
     - `Direction`: **Any**
-    - `Address Family`: **IPv4+IPv6**
+    - `Address Family`: **IPv4**
     - `Protocol`: **Any**
     - `Destination` > `Single host or alias` > `176.103.57.129`
     - `Description`: **Allow traffic to VPN server**
@@ -110,30 +110,29 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
 
 ![](/images-static/uploads/pf-wg-50-killswitch.png)
 
-### Static routing
+### Static Routing
 
-1. Navigate to `System` > `Routing` > `Static routes` tab
+1. Navigate to `System` > `Routing` > `Static routes` tab.
 2. Click the `Add` button and configure the routes as follows:
     - `Destination network`: The IP address of the WireGuard server `176.103.57.129`
-    - `Gateway`: your router's `WAN` gateway
+    - `Gateway`: Your router's `WAN` gateway
     - `Description`: "WAN to VPN"
     - Click `Save`
-3. Navigate to `System` > `Routing` > `Gateways` tab and set `Default gateway IPv4` to `WG_IVPN_WGV4`
+3. Navigate to `System` > `Routing` > `Gateways` tab and set `Default gateway IPv4` to `WG_IVPN_WGV4`.
 4. Click `Save` and `Apply changes`.
 
 ![](/images-static/uploads/pf-wg-35-routing.png)
 
 ### DNS
 
-1. Navigate to `System` > `General Setup` > `DNS Server Settings` and set the `DNS Servers` > `Address` to `172.16.0.1`
-2. Set the `Gateway` to the WG_IVPN gateway **WG_IVPN_WGV4**
-3. Uncheck `DNS Server Override` and click the `Save` button.
-![](/images-static/uploads/pf-wg-40-dns.png)
-4. Navigate to `Services` > `DHCP Server` and set the `DNS Servers` > `DNS Server 1` to one of the three internal IVPN DNS server options:
-
+1. Navigate to `System` > `General Setup` > `DNS` and set the `DNS Servers` > `Address` to one of the three internal DNS server options:
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
     - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook
+2. Set the `Gateway` to the WG_IVPN gateway **WG_IVPN_WGV4**
+3. Uncheck `DNS Server Override` and click the `Save` button.
+![](/images-static/uploads/pf-wg-40-dns.png)
+4. Navigate to `Services` > `DHCP Server` and set the `DNS Servers` > `DNS Server 1` to the DNS server you chose in step #1 above.
 5. Click `Save`.
 
 ### DNS Resolver
