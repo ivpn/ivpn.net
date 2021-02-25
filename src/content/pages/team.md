@@ -69,10 +69,6 @@ sections:
         image_retina: /images-static/uploads/team-oleksandr-2x.png
         name: Oleksandr Mykhailenko
         description: Aleks gained experience working for Samsung and several software development teams before joining the IVPN team. He is now our resident Android expert, working on making the best privacy app in the Play store.
-      - image: /images-static/uploads/team-yaroslav.png
-        image_retina: /images-static/uploads/team-yaroslav-2x.png
-        name: Yaroslav Semeliak
-        description: As our versatile designer, Yaro not only composes new UI elements for our applications, but works on improving them from usability perspective and coming up with new designs for our website.
       - image: /images-static/uploads/team-stenya.png
         image_retina: /images-static/uploads/team-stenya-2x.png
         name: Oleksandr Stelnykovych

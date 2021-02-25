@@ -4,6 +4,14 @@
             <img class="team-member__image" src="{{ site.Params.cdnUrl }}{{ .image }}" srcset="{{ site.Params.cdnUrl }}{{ .image }} 1x, {{ site.Params.cdnUrl }}{{ .image_retina }} 2x" width="140px" alt="{{ .name }}"/>
             <h4>{{ .name }}</h4>
             {{ .description | markdownify }}
+            {{ if isset . "linkedin" }}
+            <br>
+            <a href="{{ .linkedin }}" target="_blank">LinkedIn</a>
+            {{ end }}
+            {{ if isset . "github" }}
+            <br>
+            <a href="{{ .github }}" target="_blank">GitHub</a>
+            {{ end }}
         </div>
     {{ end }}
 </section>
