@@ -23,10 +23,14 @@
         h4 {
             margin-bottom: 12px;
 
+            span {
+                display: inline-block;
+            }
+
             a {
 
                 img {
-                    margin-left: 2px;
+                    margin-right: 2px;
                 }
 
                 &:hover {
