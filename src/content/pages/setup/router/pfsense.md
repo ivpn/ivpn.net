@@ -1,6 +1,6 @@
 ---
 title: OpenVPN Setup Guide for pfSense
-listItem: pfSense
+listItem: pfSense OpenVPN
 url: /setup/router/pfsense/
 section: Router Setup
 platform: router
