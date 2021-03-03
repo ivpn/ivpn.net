@@ -9,7 +9,7 @@
                 <b style="white-space: nowrap">{{
                     account.active_until | formatPaymentDate
                 }}</b
-                >. You can review your payment details and details about your selected plan on the <router-link :to="{name:'account'}">account</router-link> page
+                >. You can review your payment details and details about your selected plan on the account page.
             </p>
 
             <button
