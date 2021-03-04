@@ -26,7 +26,7 @@ Some popular VPNs are owned by vertically integrated conglomerates that also ope
 When considering other reasons for obfuscated ownership, we can only contemplate the worst cases. We have no proof on any top VPN services being <a href="https://www.computerweekly.com/news/252466203/Top-VPNs-secretly-owned-by-Chinese-firms" target="_blank">secretly owned</a> by governments or malicious actors that use them as <a href="https://twitter.com/swiftonsecurity/status/977593310893236224?lang=en" target="_blank">honeypots</a>. This is something we cannot rule out either, and the consequences are grave.
 
 <figure>
-    <img src="/images-static/uploads/6a9bd8cf-eab4-4159-98c2-005d4c9b9983.png" style="width: 400px;"> 
+    <img width="400px" src="/images-static/uploads/6a9bd8cf-eab4-4159-98c2-005d4c9b9983.png"> 
 </figure>
 
 If you are evaluating VPN services, we suggest researching the owners of your top choices. 
