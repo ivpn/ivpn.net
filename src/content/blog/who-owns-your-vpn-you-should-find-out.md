@@ -11,6 +11,8 @@ tags:
   - Transparency
 date: 2021-03-03T14:55:00.000Z
 thumbnailImage: /images-static/uploads/98cac49a-146a-48a6-be26-3fd68d3b5448.png
+images:
+  - /images-static/uploads/who-owns-your-vpn-you-should-find-out.png
 ---
 Trust is, or should be, the number one factor in picking a VPN service. This is a point we have mentioned in [previous posts](/blog/misleading-promises-of-the-worlds-fastest-anonymous-military-grade-vpns/) in this series, but it's worth expanding on and taking a closer look at the why.
 
@@ -19,7 +21,7 @@ Can you trust the service to encrypt your connection and not log any information
 A common defense by companies hiding their ownership in the VPN industry is the following: "we are a privacy company, so our owners wish to remain anonymous". In other cases they reason anonymous operators can <a href="https://slate.com/technology/2019/02/best-vpn-companies-trust-privacy.html" target="_blank">fight government pressure better</a>. These are red herring arguments. Privacy protection services don't exist to serve their owners, they exist to serve their customers. If a government agency wants to pressure operators of large-scale VPN services, they have the means to find them.  
 If anything goes wrong and the VPN service bails on its promises, those in charge need to take responsibility. If a company that is supposed to protect you is registered in an obscure location, it shields the owner's identity, which is beneficial for them, but not for you. The chance for accountability is lost.
 
-A further reason to learn and understand who is behind the VPN service is to assess their motivation. Entrepreneurs motivated by financial gains can run services at a high quality and some may put principles before profits. Yet if those operators have a history of <a href="https://www.cnet.com/news/what-is-kape-technologies-what-you-need-to-know-about-the-parent-company-of-cyberghost-vpn/" target="_blank">running adware</a>, or investing in data mining services, their commitment to protect your privacy is less clear. If having some unwelcome connections is a reason for hiding their ownership, that is a cause for alarm.  
+A further reason to learn and understand who is behind the VPN service is to assess their motivation. Entrepreneurs motivated by financial gains can run services at a high quality and some may put principles before profits. Yet if those operators have a history of <a href="https://twitter.com/kennwhite/status/1201747679405105152?lang=en" target="_blank">running malware</a>, or investing in data mining services, their commitment to protect your privacy is less clear. If having some unwelcome connections is a reason for hiding their ownership, that is a cause for alarm.  
 
 Some popular VPNs are owned by vertically integrated conglomerates that also operate <a href="https://www.j2global.com/brands/technology" target="_blank">media companies</a> and run tech comparison websites. They are not breaking any laws, yet corporate visions rarely include activism motivated by the desire to challenge a new surveillance status quo. Rather, they tend to favor structures and decisions that prefer creating shareholder value and improving <a href="https://investor.j2global.com/corporate-information/overview/default.aspx" target="_blank">financial performance indicators</a>.
 
