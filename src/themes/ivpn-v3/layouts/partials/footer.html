@@ -74,6 +74,7 @@
     <!-- Start of Rocket.Chat Livechat Script -->
     <script type="text/javascript">
         (function (w, d, s, u) {
+            if (screen.width < 430) { return; } // Disable RocketChat LiveChat widget for mobile devices
             w.RocketChat = function (c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
             var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
             j.async = true; j.src = 'https://livechat.ivpn.net/livechat/rocketchat-livechat.min.js?_=201903270000';
