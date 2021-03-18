@@ -4,7 +4,7 @@ url: /blog/ivpn-for-ios-now-offers-dns-over-https/
 highlighted: false
 draft: false
 authors:
-  - Viktor Vecsei
+  - Juraj Hilje
 categories:
   - Releases
 tags:
