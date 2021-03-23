@@ -5,11 +5,12 @@
             <h2>Your payment has been received</h2>
 
             <p style="margin-bottom: 32px">
-                Your account has been extended to 
+                Your account has been extended to
                 <b style="white-space: nowrap">{{
                     account.active_until | formatPaymentDate
                 }}</b
-                >. You can review your payment details and details about your selected plan on the account page.
+                >. You can review your payment and details about your
+                selected plan on the account page.
             </p>
 
             <button
@@ -26,6 +27,28 @@
             <router-link class="btn btn-big btn-solid" :to="{ name: 'account' }"
                 >Go to your account</router-link
             >
+            <div class="promo-block">
+                <p>
+                    Join our community for news, product updates, and discussion:
+                </p>
+                <ul class="links">
+                    <li><a href="https://www.reddit.com/r/IVPN/">Reddit</a></li>
+                    <li>
+                        <a href="https://twitter.com/ivpnnet">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://mastodon.social/@ivpn">Mastodon</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="promo-block">
+                <p>Take the next step in improving your privacy:</p>
+                <ul class="links">
+                    <li><a href="/privacy-guides">IVPN Privacy Guides</a></li>
+                    <li><a href="/blog">IVPN Blog</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -57,7 +80,7 @@ export default {
             var top = window.screenY + window.innerHeight / 2 - h / 2;
 
             if (top < window.screenY + 20) {
-                top = window.screenY - 20
+                top = window.screenY - 20;
             }
 
             let routeData = this.$router.resolve({
@@ -97,7 +120,51 @@ export default {
     }
 
     p {
-        max-width: 550px;
+        max-width: 650px;
+    }
+
+    .promo-block {
+
+        &:first-of-type{
+            margin-top: 72px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 700px;
+        text-align: center;
+
+        border-top: 1px solid #99999940;
+        margin: 24px 0px 0px 0;
+        padding: 8px 0px 4px 0px;
+        width: 80%;        
+
+        p {
+            margin-bottom: 8px;
+            margin-top: 16px;
+        }
+
+        ul.links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                &:before {
+                    display: none;
+                }
+                a {
+                    padding: 0px 16px;
+                }
+                margin: 0px;
+            }
+
+            .social {
+                margin: 0px 10px;
+            }
+        }
     }
 }
 </style>
