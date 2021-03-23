@@ -9,7 +9,7 @@
                 <b style="white-space: nowrap">{{
                     account.active_until | formatPaymentDate
                 }}</b
-                >. You can review your payment and details about your
+                >. You can review your payment details and details about your
                 selected plan on the account page.
             </p>
 
@@ -32,12 +32,26 @@
                     Join our community for news, product updates, and discussion:
                 </p>
                 <ul class="links">
-                    <li><a href="https://www.reddit.com/r/IVPN/">Reddit</a></li>
-                    <li>
-                        <a href="https://twitter.com/ivpnnet">Twitter</a>
+                    <li class='social'>
+                        <img
+                            width="24"
+                            height="25"
+                            src="/images/reddit.svg"
+                        /><a href="https://www.reddit.com/r/IVPN/">Reddit</a>
                     </li>
-                    <li>
-                        <a href="https://mastodon.social/@ivpn">Mastodon</a>
+                    <li class='social'>
+                        <img
+                            width="24"
+                            height="25"
+                            src="/images/twitter.svg"
+                        /><a href="https://twitter.com/ivpnnet">Twitter</a>
+                    </li>
+                    <li class='social'>
+                        <img
+                            width="24"
+                            height="25"
+                            src="/images/mastodon.svg"
+                        /><a href="https://mastodon.social/@ivpn">Mastodon</a>
                     </li>
                 </ul>
             </div>
@@ -120,12 +134,11 @@ export default {
     }
 
     p {
-        max-width: 650px;
+        max-width: 550px;
     }
 
     .promo-block {
-
-        &:first-of-type{
+        &:first-of-type {
             margin-top: 72px;
         }
 
@@ -138,11 +151,12 @@ export default {
         border-top: 1px solid #99999940;
         margin: 24px 0px 0px 0;
         padding: 8px 0px 4px 0px;
-        width: 80%;        
+        width: 80%;
 
         p {
             margin-bottom: 8px;
             margin-top: 16px;
+            max-width: 650px;
         }
 
         ul.links {
@@ -155,9 +169,17 @@ export default {
                 &:before {
                     display: none;
                 }
-                a {
-                    padding: 0px 16px;
+
+                flex-grow: 1;
+                &.social {
+                    width: 135px;
                 }
+
+                a {
+                    padding: 0px 8px;
+                }
+
+                padding: 0px 8px;
                 margin: 0px;
             }
 
