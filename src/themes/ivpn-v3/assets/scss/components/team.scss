@@ -22,6 +22,21 @@
 
         h4 {
             margin-bottom: 12px;
+
+            span {
+                display: inline-block;
+            }
+
+            a {
+
+                img {
+                    margin-right: 2px;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
     }
 }

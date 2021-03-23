@@ -2,7 +2,25 @@
     {{ range .members }}
         <div class="team-member">
             <img class="team-member__image" src="{{ site.Params.cdnUrl }}{{ .image }}" srcset="{{ site.Params.cdnUrl }}{{ .image }} 1x, {{ site.Params.cdnUrl }}{{ .image_retina }} 2x" width="140px" alt="{{ .name }}"/>
-            <h4>{{ .name }}</h4>
+            <h4>
+                {{ .name }}
+                {{ if or .linkedin .github }}
+                <span>
+                    {{ if .linkedin }}
+                    <a href="{{ .linkedin }}" target="_blank">
+                        <img class="features__image--light" src="{{ site.Params.cdnUrl }}/images/icon-linkedin-light.svg" alt="LinkedIn">
+                        <img class="features__image--dark" src="{{ site.Params.cdnUrl }}/images/icon-linkedin-dark.svg" alt="LinkedIn">
+                    </a>
+                    {{ end }}
+                    {{ if .github }}
+                    <a href="{{ .github }}" target="_blank">
+                        <img class="features__image--light" src="{{ site.Params.cdnUrl }}/images/icon-github-light.svg" alt="GitHub">
+                        <img class="features__image--dark" src="{{ site.Params.cdnUrl }}/images/icon-github-dark.svg" alt="GitHub">
+                    </a>
+                    {{ end }}
+                </span>
+                {{ end }}
+            </h4>
             {{ .description | markdownify }}
         </div>
     {{ end }}

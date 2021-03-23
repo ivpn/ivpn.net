@@ -1,6 +1,6 @@
 ---
-title: Managing the IVPN Linux client at System Boot - IVPN Help
-h1: Managing the IVPN Linux client at System Boot
+title: Managing the IVPN Linux CLI client at System Boot - IVPN Help
+h1: Managing the IVPN Linux CLI client at System Boot
 url: /knowledgebase/linux/managing-the-ivpn-linux-client-at-system-boot/
 sections:
     - linux
@@ -8,9 +8,14 @@ sectionTitle: Linux
 layout: help-details
 weight: 130
 ---
-# Managing the IVPN Linux client at System Boot
+# Managing the IVPN Linux CLI client at System Boot
 
-The IVPN Linux client does not currently offer support for a persistent firewall or automatically connecting at system boot, though these features are planned for future releases.
+<div markdown="1" class="notice notice--warning">
+This article applies to the IVPN Linux CLI client.  The GUI client includes both Always-On and On-Demand firewall settings.
+</div>
+
+
+The IVPN Linux CLI client does not currently offer support for a persistent firewall or automatically connecting at system boot, though these features are planned for future releases.
 
 Using standard Linux features, it is possible to manage both the automatic connect and the firewall settings at system boot at either the user-level via **crontab** or the system-level using a **systemd unit file**.
 

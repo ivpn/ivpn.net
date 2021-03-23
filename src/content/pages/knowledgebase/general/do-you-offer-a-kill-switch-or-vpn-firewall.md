@@ -51,7 +51,7 @@ When the IVPN Firewall is enabled it is impossible for any IPv6 traffic to leak 
 
 WebRTC (Web Real-Time Communication) is an API drafted by the W3C that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing (without the need of either internal or external plugins). WebRTC implements STUN (Session Traversal Utilities for Nat), a protocol that allows the discovery of your externally assigned IP address (to facilitate the applications above).
 
-In some cases, the request to the STUN server may leak outside of the VPN and expose your ISP issued IP address. However, if you are using our Killswitch, then these leaks will be blocked.
+In some cases, the request to the STUN server may leak outside of the VPN and expose your ISP issued IP address. However, if you are using our kill switch, then these leaks will be blocked.
 
 ### Software stability and crashes
 

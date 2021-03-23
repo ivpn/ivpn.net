@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2021-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-03-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
-(from http://www.ft.com/home/us)
+(from https://www.ft.com/news-feed )
 
-Exchanges compete to improve ETF investor experience
-Fee cuts and other measures have been made to attract and retain listings
+Universities face big rise in pension contributions as deficit quadruples
+Shortfall in the Universities Superannuation Scheme rises to £14bn
 
-Alibaba to raise up to $5bn in dollar bond
-Downsized debt sale comes as regulators clamp down on Chinese ecommerce group
+US and Asia allies plan Covid vaccine strategy to counter China
+Biden administration in talks with Japan, India and Australia to distribute jabs across region
 
-GSK and CureVac to develop vaccines to tackle Covid variants
-The €150m investment is to address various coronavirus strains in one jab
+Brussels prepares to defend Europe’s social model as pandemic rages
+Commission lays out end-of-decade goals for EU employment and poverty reduction
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmAaW90ACgkQisFrnrZH
-ummA0QgAhIIl81aQZFtZkWnaBTH/dS1fEPCQjhg5jvp77n1SF1P2W8CPmjEiuv3D
-90bhdhZAzBqoA4opznI4H9jt2m/X15PmA99Yt7A2P6verCE0VoVrH9j4978JMpRd
-702rDftXbDlJKv6+nIpM2jkVdLyN7V/oXU8jTcgPOiOePN7Ddi2HiEr8UimRyIgb
-gc+ziMfaHOzS0pKzZP03cgTIBb2D85uSxCKlCaepb6vpfb6gzs3/RE343dxmiGSl
-3Qvu8H3tNwu/L1Qnr/xk9bwHASxPWqldMqsd0hZ+vNTcedxdHPd6WYbNNMA+UXxy
-DIqJn10vC7gaHBWdGNxNaqxxffdV9A==
-=/UyJ
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmA/QMEACgkQisFrnrZH
+ummPlwgAiziYe51Gcc791A0dJ/jj7XUx4SyGrlagWqmlyHjHTtJsk2rVCu5qc3Nl
+/yf+g4rAmy0aK/iPv9MYyrTERsvKFBiP4cgCEodXUy8tgHuKox6iOGTHYkAlu/Eg
+O/WYs+6xSJb2Uk/yzNW3evdSKwvOi6gqlXDUQ+lv2pxCAWS1OkHVdk9EHvpPUqMr
+qdu0P1VyrWCKW3GQE4oT9lOZ8WdlL/wLND0wi0V3XQSM8ScMO9Q0kgHj+ra7W2uy
+ZEh3p9Phvpyk5P8HlRg97BY0JgE4vP0DJjWolfr3wXFT0qBB9/RMXyxN+dHIglCb
+j7o2hgIHSgJdygj4oZeuoRYNi0ijHA==
+=m1ks
 -----END PGP SIGNATURE-----
 
 
