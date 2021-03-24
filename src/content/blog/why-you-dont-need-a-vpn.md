@@ -18,7 +18,13 @@ heroImage: ""
 images: ["/images-static/uploads/don-t-need-vpn.png"]
 # 740px X 740px
 thumbnailImage: /images-static/uploads/don-t-need-vpn.png
+socalUrls:
+  redditUrl: https://www.reddit.com/r/IVPN/comments/gmodf9/why_you_dont_need_a_vpn_first_post_in_vpn_worst/
 ---
+> Update: We have published a tool called ['Do I need a VPN'](https://www.doineedavpn.com).\
+> It builds on the key points of this blog posts to help evaluate whether a VPN is a right choice for you.\
+> The project is [open source](https://github.com/ivpn/doineedavpn.com) - please pass it along an help us improve it.
+
 If you have to ask: 'do I need a VPN for this problem?', the answer is no, most of the time.
 
 Let us forget the ‘Family Online Safety' TV inserts and the thirteen 'Best Fastest Secure VPN’ ads on a single search result page. They exist to answer this question with a loud "yes, definitely, all the time". They also want you to stop looking for the correct solution.
