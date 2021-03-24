@@ -1,5 +1,6 @@
-<nav id="header">
-    
+{{ if not (isset .Params "hideheaders") }}
+
+<nav id="header">    
     {{ if ne $.Site.Params.environment "development" }}
         <esi:include src="/web/status" />
     {{ else }}
@@ -82,3 +83,5 @@
         </ul>
     </div>
 </nav>
+
+{{ end }}

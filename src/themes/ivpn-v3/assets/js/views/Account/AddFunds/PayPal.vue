@@ -36,12 +36,13 @@
                                 id="login-captch"
                                 v-model="captchaValue"
                             />
-                            <button
-                                class="btn btn-solid btn-big make-payment"                                                            
-                            >
+                            <button class="btn btn-solid btn-big make-payment">
                                 Continue
                             </button>
-                            <button class="btn btn-icon" @click.prevent="cancelCaptcha">
+                            <button
+                                class="btn btn-icon"
+                                @click.prevent="cancelCaptcha"
+                            >
                                 Cancel
                             </button>
                         </div>
@@ -122,7 +123,7 @@ export default {
             isRecurring: false,
 
             captchaID: null,
-            captchaImage: null,            
+            captchaImage: null,
             captchaNonce: null,
             captchaValue: "",
         };
@@ -144,15 +145,15 @@ export default {
         BraintreePaypal,
     },
     methods: {
-        async submitCaptcha() {            
+        async submitCaptcha() {
             await this.proceed({
-                nonce: this.captchaNonce
-            })
+                nonce: this.captchaNonce,
+            });
         },
         async proceed({ nonce }) {
             let isNewAccount = this.account.is_new;
 
-            await this.$store.dispatch("braintree/addFunds", {
+            let result = await this.$store.dispatch("braintree/addFunds", {
                 nonce: nonce,
                 priceId: this.price.id,
                 price: this.price.price,
@@ -180,16 +181,14 @@ export default {
 
             matomo.recordPurchase(isNewAccount, this.price.price);
 
-            this.$store.commit("setFlashMessage", {
-                type: "success",
-                message:
-                    `Your payment was successful. Service is extended until ` +
-                    this.$options.filters.formatDate(this.account.active_until),
+            this.$router.push({
+                name: "payment-received",
+                params: {
+                    refid: result.payment.ref_id,
+                },
             });
-
-            this.$router.push({ name: "account" });
         },
-        hideError(error) {            
+        hideError(error) {
             return error.status == 70001;
         },
         async cancelCaptcha() {

@@ -38,7 +38,9 @@ export default {
             inProgress: state => state.payments.inProgress
         })
     },
-    created() {},
+    async created() {
+        await this.$store.dispatch("payments/clear");
+    },
     methods: {
         async disableRecurringPayments() {
             await this.$store.dispatch("payments/disableRecurring");
