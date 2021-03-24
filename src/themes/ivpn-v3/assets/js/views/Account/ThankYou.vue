@@ -37,21 +37,21 @@
                             width="24"
                             height="25"
                             src="/images/reddit.svg"
-                        /><a href="https://www.reddit.com/r/IVPN/">Reddit</a>
+                        /><a href="https://www.reddit.com/r/IVPN/" target="_blank">Reddit</a>
                     </li>
                     <li class='social'>
                         <img
                             width="24"
                             height="25"
                             src="/images/twitter.svg"
-                        /><a href="https://twitter.com/ivpnnet">Twitter</a>
+                        /><a href="https://twitter.com/ivpnnet" target="_blank">Twitter</a>
                     </li>
                     <li class='social'>
                         <img
                             width="24"
                             height="25"
                             src="/images/mastodon.svg"
-                        /><a href="https://mastodon.social/@ivpn">Mastodon</a>
+                        /><a href="https://mastodon.social/@ivpn" target="_blank">Mastodon</a>
                     </li>
                 </ul>
             </div>
@@ -59,8 +59,8 @@
             <div class="promo-block">
                 <p>Take the next step in improving your privacy:</p>
                 <ul class="links">
-                    <li><a href="/privacy-guides">IVPN Privacy Guides</a></li>
-                    <li><a href="/blog">IVPN Blog</a></li>
+                    <li><a href="/privacy-guides" target="_blank">IVPN Privacy Guides</a></li>
+                    <li><a href="/blog" target="_blank">IVPN Blog</a></li>
                 </ul>
             </div>
         </div>
