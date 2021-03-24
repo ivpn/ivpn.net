@@ -46,3 +46,8 @@ If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn
 - [OpenVPN Manual setup for Windows 10](/setup/windows-10-openvpn-community/)  
 - [Windows 10 IPSec IKEv2 Setup Guide](/setup/windows-10-ipsec-with-ikev2/)  
 - [OpenVPN Manual setup for Windows 8](/setup/windows-8-openvpn-community/)  
+
+## Download legacy version
+
+Download [IVPN-2.12.17.exe](https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.17.exe)  
+SHA256: 7dce2cd90a2828f308c5c9063776d05af6074d974c57ee69a7ea79030640149a  
