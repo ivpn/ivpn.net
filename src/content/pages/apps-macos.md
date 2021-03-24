@@ -9,25 +9,12 @@ layout: apps
 image: apps/macos-app
 releases: [{
     cta: Download,
-    downloads: [
-        {
-            cta: IVPN-3.3.0,
-            url: https://cdn.ivpn.net/releases/osx/IVPN-3.3.0.dmg
-        },
-        {
-            cta: IVPN-2.12.17,
-            url: https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg
-        }
-    ],
-    github: https://github.com/ivpn/desktop-app-ui,
-    changelog: https://github.com/ivpn/desktop-app-ui/blob/master/CHANGELOG_macos.md,
+    download: /releases/osx/IVPN-2.12.17.dmg,
+    github: https://github.com/ivpn/desktop-app-ui2,
+    changelog: https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md,
     checksum: [
         {
-            title: v3.3.0 SHA256,
-            value: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22
-        },
-        {
-            title: v2.12.17 SHA256,
+            title: SHA256,
             value: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22
         }
     ]
@@ -61,5 +48,5 @@ If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn
 
 ## Download legacy version
 
-Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
+Download [IVPN-2.12.17.dmg](/releases/osx/IVPN-2.12.17.dmg)  
 SHA256: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22  
