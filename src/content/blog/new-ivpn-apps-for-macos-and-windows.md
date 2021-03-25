@@ -38,8 +38,8 @@ An overview on the most important changes in the new IVPN desktop apps:
 3.  Dark theme is now available on IVPN for Windows.
 
     <figure>
-        <img width="650px" class="features__image--light" src="/images-static/uploads/windows-app-light@2x.png">
-        <img width="650px" class="features__image--dark" src="/images-static/uploads/windows-app-dark@2x.png">
+        <img width="650px" class="features__image--light" src="/images-static/uploads/apps/windows-app-light@2x.png">
+        <img width="650px" class="features__image--dark" src="/images-static/uploads/apps/windows-app-dark@2x.png">
     </figure>
 
 4.  New account page featuring a QR code for quick setup on other devices.
