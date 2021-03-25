@@ -8,14 +8,14 @@ platform: macos
 layout: apps
 image: apps/macos-app
 releases: [{
-    cta: Download IVPN,
-    download: https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg,
-    github: https://github.com/ivpn/desktop-app-ui,
-    changelog: https://github.com/ivpn/desktop-app-ui/blob/master/CHANGELOG_macos.md,
+    cta: Download,
+    download: https://repo.ivpn.net/macos/bin/IVPN-3.3.1.dmg,
+    github: https://github.com/ivpn/desktop-app-ui2,
+    changelog: https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22
+            value: cab5bb38adf88cd09312c6c1cbf8a3d2583dd30334e2b7afbd4d95b1a16015ef
         }
     ]
 }]
@@ -45,3 +45,8 @@ If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn
 - [WireGuard manual setup for macOS 10.14+](/setup/macos-wireguard/)
 - [Tunnelblick (OpenVPN) for macOS Setup Guide](/setup/macos-openvpn-tunnelblick/)  
 - [IPSec IKEv2 for macOS Setup Guide](/setup/macos-ipsec-with-ikev2/)   
+
+## Download legacy version
+
+Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
+SHA256: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22  
