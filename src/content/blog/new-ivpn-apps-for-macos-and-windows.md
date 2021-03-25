@@ -1,6 +1,6 @@
 ---
-title: New IVPN for macOS and Windows apps
-url: /blog/new-ivpn-for-macos-and-windows-apps/
+title: New IVPN apps for macOS and Windows
+url: /blog/new-ivpn-apps-for-macos-and-windows/
 highlighted: false
 draft: false
 authors:
