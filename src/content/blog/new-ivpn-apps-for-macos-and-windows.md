@@ -15,7 +15,7 @@ thumbnailImage: /images-static/uploads/macos_ivpn_map_thumb.png
 images:
   - /images-static/uploads/macos_ivpn_map.png
 ---
-Today marks the release of new macOS and Windows desktop apps that improve on the previous IVPN experience in a number of ways. It's easier to search for and discover servers to connect to, frequently used settings became more accessible and we provide better visual verifications of your connected status. A new QR code based setup method, first added to our [mobile apps](/blog/release-revamped-ivpn-app-iphones-ipads/), is now also available in the desktop apps
+Today marks the release of new macOS and Windows desktop apps that improve on the previous IVPN experience in a number of ways. It's easier to search for and discover servers to connect to, frequently used settings became more accessible and we provide better visual verifications of your connected status. A new QR code based setup method, first added to our [mobile apps](/blog/release-revamped-ivpn-app-iphones-ipads/), is now also available in the desktop apps.
 
 The goal with this project was to deliver a secure and intuitive app experience using a single unified code base for Linux, macOS and Windows. New IVPN for [macOS](/apps-macos) and [Windows](/apps-windows/) versions (v3.3.1) are now available to download and install from our website or through checking for updates in the apps manually.
 
