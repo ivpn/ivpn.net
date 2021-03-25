@@ -49,5 +49,5 @@ If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn
 
 ## Download legacy version
 
-Download [IVPN-2.12.17.exe](/releases/win/IVPN-Client-v2.12.17.exe)  
+Download [IVPN-2.12.17.exe](https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.17.exe)  
 SHA256: 7dce2cd90a2828f308c5c9063776d05af6074d974c57ee69a7ea79030640149a  
