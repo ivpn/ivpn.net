@@ -36,7 +36,7 @@ releases: [{
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.
 
-## Manual configuration
+## Manual Configuration
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
@@ -46,7 +46,26 @@ If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn
 - [Tunnelblick (OpenVPN) for macOS Setup Guide](/setup/macos-openvpn-tunnelblick/)  
 - [IPSec IKEv2 for macOS Setup Guide](/setup/macos-ipsec-with-ikev2/)   
 
-## Download legacy version
+## Signature Verification
+
+The OpenSSL public key file has to be used for verification:
+
+* `https://repo.ivpn.net/macos/keys/public.pem`
+
+Next steps should be performed, to verify the signature (example):
+
+1.  Download ‘installer' and it's signature (e.g. `https://repo.ivpn.net/macos/bin/IVPN-3.2.104.dmg` and `https://repo.ivpn.net/macos/bin/IVPN-3.2.104.dmg.sign.sha256.base64`)
+2.  Download OpenSSL public key for verification `https://repo.ivpn.net/macos/keys/public.pem`
+3.  Verification commands 
+
+    {{< highlight shell >}}
+    # Decode base64:
+    $ openssl base64 -d -in IVPN-3.2.104.dmg.sign.sha256.base64 -out IVPN-3.2.104.dmg.sign.sha256
+    # Check signature:
+    $ openssl dgst -sha256 -verify public.pem -signature IVPN-3.2.104.dmg.sign.sha256 IVPN-3.2.104.dmg
+    {{< /highlight >}}
+
+## Download Legacy Version
 
 Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
 SHA256: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22  

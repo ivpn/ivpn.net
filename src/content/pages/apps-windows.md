@@ -36,7 +36,7 @@ releases: [{
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.
 
-## Manual configuration
+## Manual Configuration
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
@@ -47,7 +47,26 @@ If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn
 - [Windows 10 IPSec IKEv2 Setup Guide](/setup/windows-10-ipsec-with-ikev2/)  
 - [OpenVPN Manual setup for Windows 8](/setup/windows-8-openvpn-community/)  
 
-## Download legacy version
+## Signature Verification
+
+The OpenSSL public key file has to be used for verification:
+
+* `https://repo.ivpn.net/windows/keys/public.pem`
+
+Next steps should be performed, to verify the signature (example):
+
+1.  Download ‘installer' and it's signature (e.g. `https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.1.exe` and `https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.1.exe.sign.sha256.base64`)
+2.  Download OpenSSL public key for verification `https://repo.ivpn.net/windows/keys/public.pem`
+3.  Verification commands 
+
+    {{< highlight shell >}}
+    # Decode base64:
+    $ openssl base64 -d -in IVPN-Client-v3.3.1.exe.sign.sha256.base64 -out IVPN-Client-v3.3.1.exe.sign.sha256
+    # Check signature:
+    $ openssl dgst -sha256 -verify public.pem -signature IVPN-Client-v3.3.1.exe.sign.sha256 IVPN-Client-v3.3.1.exe
+    {{< /highlight >}}
+
+## Download Legacy Version
 
 Download [IVPN-2.12.17.exe](https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.17.exe)  
 SHA256: 7dce2cd90a2828f308c5c9063776d05af6074d974c57ee69a7ea79030640149a  
