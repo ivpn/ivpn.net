@@ -54,15 +54,15 @@ The OpenSSL public key file has to be used for verification:
 
 Next steps should be performed, to verify the signature (example):
 
-1.  Download ‘installer' and it's signature (e.g. `https://repo.ivpn.net/macos/bin/IVPN-3.2.104.dmg` and `https://repo.ivpn.net/macos/bin/IVPN-3.2.104.dmg.sign.sha256.base64`)
+1.  Download ‘installer' and it's signature (e.g. `https://repo.ivpn.net/macos/bin/IVPN-3.3.1.dmg` and `https://repo.ivpn.net/macos/bin/IVPN-3.3.1.dmg.sign.sha256.base64`)
 2.  Download OpenSSL public key for verification `https://repo.ivpn.net/macos/keys/public.pem`
 3.  Verification commands 
 
     {{< highlight shell >}}
     # Decode base64:
-    $ openssl base64 -d -in IVPN-3.2.104.dmg.sign.sha256.base64 -out IVPN-3.2.104.dmg.sign.sha256
+    $ openssl base64 -d -in IVPN-3.3.1.dmg.sign.sha256.base64 -out IVPN-3.3.1.dmg.sign.sha256
     # Check signature:
-    $ openssl dgst -sha256 -verify public.pem -signature IVPN-3.2.104.dmg.sign.sha256 IVPN-3.2.104.dmg
+    $ openssl dgst -sha256 -verify public.pem -signature IVPN-3.3.1.dmg.sign.sha256 IVPN-3.3.1.dmg
     {{< /highlight >}}
 
 ## Download Legacy Version
