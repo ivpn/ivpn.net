@@ -47,6 +47,25 @@ If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn
 - [Windows 10 IPSec IKEv2 Setup Guide](/setup/windows-10-ipsec-with-ikev2/)  
 - [OpenVPN Manual setup for Windows 8](/setup/windows-8-openvpn-community/)  
 
+## Signature verification
+
+The OpenSSL public key file has to be used for verification:
+
+* `https://repo.ivpn.net/windows/keys/public.pem`
+
+Next steps should be performed, to verify the signature (example):
+
+1.  Download ‘installer' and it's signature (e.g. `https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.1.exe` and `https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.1.exe.sign.sha256.base64`)
+2.  Download OpenSSL public key for verification `https://repo.ivpn.net/windows/keys/public.pem`
+3.  Verification commands 
+
+    ```
+    Decode base64:
+    $ openssl base64 -d -in IVPN-Client-v3.3.1.exe.sign.sha256.base64 -out IVPN-Client-v3.3.1.exe.sign.sha256
+    Check signature:
+    $ openssl dgst -sha256 -verify public.pem -signature IVPN-Client-v3.3.1.exe.sign.sha256 IVPN-Client-v3.3.1.exe
+    ```
+
 ## Download legacy version
 
 Download [IVPN-2.12.17.exe](https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.17.exe)  
