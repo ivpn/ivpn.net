@@ -16,4 +16,4 @@ You can install the IVPN App on as many devices as you require and, by default, 
 Our terms of service do not permit the sharing of accounts with another person (including within a single household etc). You may wish to investigate the use of a VPN router for household access to allow many devices to share a single connection, though this does require some technical expertise to set up. See our <a href="/setup/router/ddwrt/">DD-WRT router page</a> for more info.
 </div>
 
-Our intention with this policy is to prevent large-scale abuse (sharing of credentials) and ensure fair access for all customers considering that VPN bandwidth is a shared limited resource. We firmly believe that customers should be able to connect simultaneously from as many devices as they own and if you have a need for more connections from your own devices, please contact our [support](/contactus/) team.
+Our intention with this policy is to prevent large-scale abuse (sharing of credentials) and ensure fair access for all customers considering that VPN bandwidth is a shared limited resource.
