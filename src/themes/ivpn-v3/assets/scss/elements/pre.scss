@@ -88,13 +88,16 @@ pre {
 
 .content--product {
 
-    pre {
-        padding: 0;
-    }
+    .highlight {
 
-    code {
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 44px 34px;
+        pre {
+            padding: 0;
+        }
+    
+        code {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 44px 34px;
+        }
     }
 }
