@@ -44,6 +44,9 @@ contents:
     title: Install from Source Code
     anchor: source
 - item:
+    title: Signature Verification
+    anchor: signature-verification
+- item:
     title: Useful Links
     anchor: useful-links
 ---
@@ -177,6 +180,15 @@ SHA256: 28efe2eadd7a80a058fe2439c6fc005100b2b1ac58a6a498d27f2a981858bad4
 [Base package Daemon on GitHub](https://github.com/ivpn/desktop-app-daemon#linux)  
 [Base package CLI on GitHub](https://github.com/ivpn/desktop-app-cli#linux-1)  
 [UI package on GitHub](https://github.com/ivpn/desktop-app-ui2#installation)  
+
+## Signature Verification {#signature-verification}
+
+Each Linux binary is signed by a GPG key.
+
+GPG key location:
+
+* for DEB files: `<repository path>/generic.gpg` (example: `https://repo.ivpn.net/stable/ubuntu/generic.gpg`)
+* for RPM files: `<repository path>/repo.gpg` (example: `https://repo.ivpn.net/stable/fedora/generic/repo.gpg`)
 
 ## Useful Links {#useful-links}
 
