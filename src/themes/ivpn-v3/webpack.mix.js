@@ -21,8 +21,8 @@ mix.webpackConfig({
     resolve: {
         alias: {
             vue$: 'vue/dist/vue.common.js',
-            'lunr': 'lunr/lunr.min.js',
-            '@': path.resolve('assets/js'),
+            'lunr': 'lunr/lunr.min.js',            
+            '@': path.resolve('assets/js'),            
             'scss': path.resolve('assets/scss'),
         }
     }
@@ -34,11 +34,15 @@ mix.webpackConfig({
 // }
 
 
+// mix.disableNotifications();
+
 mix.js('assets/js/app.js', 'static/js/')    
     .js('assets/js/servers.js', 'static/js/')
     .js('assets/js/search.js', 'static/js/')
     .js('assets/js/menu.js', 'static/js/')
-    .sass('assets/scss/pages.scss', 'static/css/')
+    .sass('assets/scss/pages.scss', 'static/css/')    
+    .copy('node_modules/flag-icon-css/flags', 'static/flags')
+    .copy('node_modules/flag-icon-css/css/flag-icon.min.css', 'static/css')
     .setPublicPath('static')
     .version()
     .then(() => {
@@ -49,3 +53,5 @@ mix.js('assets/js/app.js', 'static/js/')
         }).run();
       })
 
+
+      

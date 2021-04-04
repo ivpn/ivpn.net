@@ -54,6 +54,34 @@ const routes = [
         }
     },
     {
+        path: '/account/gencfg',        
+        component: () => import('@/views/GenCfg/GenCfg.vue'),
+        children: [
+            {
+                path: '',
+                name: 'gencfg-openvpn',
+                component: () => import('@/views/GenCfg/OpenVPN.vue'),
+                meta: {
+                    title: 'IVPN - Generate OpenVPN configuration',
+                }
+            },
+            {
+                path: 'wireguard', name: 'gencfg-wireguard',
+                component: () => import('@/views/GenCfg/WireGuard.vue'),
+                meta: {
+                    title: 'IVPN - Generate WireGuard configuration',
+                }
+            },
+            {
+                path: 'dd-wrt', name: 'gencfg-ddwrt',
+                component: () => import('@/views/GenCfg/DDWrt.vue'),
+                meta: {
+                    title: 'IVPN - Generate DD-WRT setup script',
+                }
+            },
+        ],
+    },
+    {
         path: '/prices', redirect: { name: 'prices' }
     },
     {
@@ -198,13 +226,13 @@ const routes = [
                 component: AddFundsMonero,
                 meta: {
                     title: 'IVPN Add Funds - Monero',
-                }                
+                }
             }, {
                 path: 'giftcard', name: 'add-funds-giftcard',
-                component:  AddFundsGiftCard,
+                component: AddFundsGiftCard,
                 meta: {
                     title: 'IVPN Add Funds - Gift Card',
-                }            
+                }
             }, {
                 path: 'applepay', name: 'add-funds-apple',
                 component: () => import('@/views/Account/AddFunds/ApplePay.vue'),
@@ -287,7 +315,12 @@ const router = new VueRouter({
 
 router.beforeEach(async (to, from, next) => {
 
-    if (to.path.startsWith('/account') && to.name != "login") {
+    let authNotRequired = ["login", "gencfg", "gencfg-openvpn", "gencfg-wireguard", "gencfg-ddwrt"]
+
+
+    if (!to.path.startsWith('/account') || authNotRequired.includes(to.name)) {
+        next()
+    } else {
 
         if (!store.state.auth.isAuthenticated) {
             next({ name: 'login' })
@@ -321,9 +354,6 @@ router.beforeEach(async (to, from, next) => {
             return
         }
 
-        next()
-
-    } else {
         next()
     }
 })

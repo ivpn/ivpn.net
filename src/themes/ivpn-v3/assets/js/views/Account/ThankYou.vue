@@ -71,7 +71,6 @@
 import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
-import Invoice from "@/views/Account/Invoice.vue";
 
 export default {
     components: { SuccessIcon, DownIcon },

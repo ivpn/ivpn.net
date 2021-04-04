@@ -67,7 +67,8 @@ export default {
         };
     },
     mounted() {
-        this.refreshServers();
+        console.log("refreshing servers")
+        this.refreshServers();        
     },
     methods: {
         async refreshServers() {
@@ -80,10 +81,8 @@ export default {
             switch (protocol) {
                 case "wireguard":
                     return "WireGuard";
-                    break;
                 case "openvpn":
                     return "OpenVPN";
-                    break;
                 default:
                     return protocol;
             }

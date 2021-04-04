@@ -75,49 +75,6 @@ export default {
 @import "@/styles/buttons.scss";
 
 @import "@/styles/tabs.scss";
+@import "@/styles/settings.scss";
 
-.table-kw {
-    @extend .paragraph;
-
-    .row {
-        display: flex;
-        align-items: center;
-        min-height: 80px;
-        padding: 10px;
-
-        @include light-theme((
-            border-bottom: 1px solid $border-gray
-        ));
-
-        @include dark-theme((
-            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2)
-        ));
-
-        &:last-child {
-            border-bottom: 0px;
-        }
-
-        .key {
-            display: flex;
-            align-items: center;
-            flex-grow: 1;
-        }
-
-        .value {
-            font-weight: 600;
-
-            @include light-theme((
-                color: $black
-            ));
-
-            @include dark-theme((
-                color: $white
-            ));
-        }
-
-        .action {
-            width: 65px;
-        }
-    }
-}
 </style>

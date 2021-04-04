@@ -14,6 +14,7 @@
     "braintree-web": "^3.63.0",
     "cross-env": "^7.0.2",
     "date-fns": "^2.15.0",
+    "flag-icon-css": "^3.5.0",
     "flexbox-grid-mixins": "^0.2.1",
     "js-cookie": "^2.2.1",
     "laravel-mix": "^5.0.4",
@@ -30,6 +31,5 @@
     "vue-select": "^3.10.7",
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.5.1"
-  },
-  "dependencies": {}
+  }
 }

@@ -435,4 +435,19 @@ export default {
         )
     },
 
+    //
+    // Generate Configuration
+    //
+    async genOpenVPNConfig(params) {
+        return await this.Post('/web/gencfg/openvpn', params)
+    },
+
+    async genWGConfig(params) {
+        return await this.Post('/web/gencfg/wg', params)
+    },
+
+    async genDDWRTSetupScript(params) {
+        return await this.Post('/web/gencfg/dd-wrt', params)
+    },
+
 }
