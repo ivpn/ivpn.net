@@ -18,18 +18,18 @@ Selecting IVPN as a mock location app allows fake information about your phone l
 
 To use this feature, go to **Settings > System > Advanced > Developer Options** and choose **Select mock location app** option in the **Debugging**.
 
-<figure>
+<figure class="center">
     <img width="390px" src="/images-static/uploads/mock-location-option-1.png"> 
 </figure>
 
 Now choose the IVPN app on the next opened screen.
 
-<figure>
+<figure class="center">
     <img width="390px" src="/images-static/uploads/mock-location-option-2.png"> 
 </figure>
 
 The alternative way to find **Select mock location app** option is to search for this option in your device's settings - just like in the screenshot below.
 
-<figure>
+<figure class="center">
     <img width="390px" src="/images-static/uploads/mock-location-option-3.png"> 
 </figure>
