@@ -22,7 +22,9 @@ On Android 4.1 and lower, the Developer options screen is available by default. 
 
 At the top of the Developer options screen, you can toggle the options on and off. 
 
-![](/images-static/uploads/developer-options-on-the-android-phone-1.png)
+<figure>
+    <img width="390px" src="/images-static/uploads/developer-options-on-the-android-phone-1.png"> 
+</figure>
 
 ### Device and Operating system specifics
 
