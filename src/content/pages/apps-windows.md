@@ -6,7 +6,7 @@ subtitle: For Windows 8 / 10
 url: /apps-windows/
 platform: windows
 layout: apps
-image: apps/windows-app
+image: apps/windows-app-3.3.7
 releases: [{
     cta: Download,
     download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.7.exe,
