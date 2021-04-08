@@ -6,16 +6,16 @@ subtitle: For Windows 8 / 10
 url: /apps-windows/
 platform: windows
 layout: apps
-image: apps/windows-app
+image: apps/windows-app-3.3.7
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.5.exe,
+    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.7.exe,
     github: https://github.com/ivpn/desktop-app-ui2,
     changelog: https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: 922e1d3db02d2a791a03880771173e22997dceab4106c31e3dff66c76778a7f9
+            value: bfc5bcc3dc77b12d18c6fb6f1c3862981bd70d937a1fa86f0245b1cae27b8481
         }
     ]
 }]
