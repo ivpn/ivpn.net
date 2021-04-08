@@ -33,7 +33,7 @@ export default {
 
         // Adding CSRF token when it exists to all 
         // POST requests
-        if (method == "POST" && overrideURI == null && CSRFToken) {            
+        if (method == "POST" && overrideURI == null && CSRFToken) {
             options.headers['Csrf-Token'] = CSRFToken
         }
 
@@ -107,7 +107,7 @@ export default {
     },
 
     async login(accountID, totpValue, captchaID, captchaValue) {
-                
+
         return await this.Post(
             '/web/accounts/login',
             {
@@ -332,7 +332,7 @@ export default {
                 captcha: captchaValue
             }
         )
-        
+
     },
 
 
@@ -362,7 +362,7 @@ export default {
         let resp = await this.Post('/web/accounts/payments', {
             is_recent: isRecent,
             payment_method: paymentMethod,
-        }) 
+        })
 
         return resp.payments
     },
@@ -370,7 +370,7 @@ export default {
     async getPaymentByRefId(refId) {
         return await this.Post('/web/accounts/payment', {
             ref_id: refId,
-        }) 
+        })
     },
 
     async applyGiftCard(code) {
@@ -401,7 +401,7 @@ export default {
     async getMoneroPaymentDetails(duration) {
         return await this.Post('/web/accounts/monero-payment-details', {
             duration
-        })        
+        })
     },
 
     //
@@ -439,15 +439,18 @@ export default {
     // Generate Configuration
     //
     async genOpenVPNConfig(params) {
-        return await this.Post('/web/gencfg/openvpn', params)
+        return await this.Post('/v4/gencfg/openvpn', params, process.env.MIX_APP_API_URL,
+            {
+                credentials: "omit"
+            })
     },
 
     async genWGConfig(params) {
-        return await this.Post('/web/gencfg/wg', params)
+        return await this.Post('/v4/gencfg/wg', params)
     },
 
     async genDDWRTSetupScript(params) {
-        return await this.Post('/web/gencfg/dd-wrt', params)
+        return await this.Post('/v4/gencfg/dd-wrt', params)
     },
 
 }

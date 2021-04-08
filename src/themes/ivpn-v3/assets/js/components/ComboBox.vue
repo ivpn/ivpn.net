@@ -51,6 +51,9 @@ export default {
         selected: function () {
             this.$emit("change", this.selected);
         },
+        value() {
+            this.selected = this.value;
+        }
     },
 };
 </script>
@@ -106,6 +109,10 @@ export default {
         }
     }
 
+    .vs__search {
+        position: absolute;
+    }
+
     .option-element {
         display: flex;
         align-items: center;
@@ -113,6 +120,8 @@ export default {
         line-height: 24px;
         margin: 0px 4px;
         padding: 0px;
+        // overflow: hidden;
+        // white-space: nowrap;
 
         @include light-theme(
             (
@@ -125,16 +134,6 @@ export default {
                 color: $white,
             )
         );
-
-        @media (max-width: $brk-mobile-xs) {
-            width: 220px;
-        }
-
-        &.selected {
-            @media (max-width: $brk-mobile-xs) {
-                width: 200px;
-            }
-        }
     }
 }
 </style>

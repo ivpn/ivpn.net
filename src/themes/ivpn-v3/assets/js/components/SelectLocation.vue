@@ -86,8 +86,8 @@ export default {
         )
     );
 
-    @media (max-width: $brk-mobile-xs) {
-        width: 280px;
+    .vs__search {
+        position: absolute;
     }
 
     ul {
@@ -138,16 +138,7 @@ export default {
                 color: $white,
             )
         );
-
-        @media (max-width: $brk-mobile-xs) {
-            width: 220px;
-        }
-
-        &.selected {
-            @media (max-width: $brk-mobile-xs) {
-                width: 200px;
-            }
-        }
+        
     }    
 }
 </style>

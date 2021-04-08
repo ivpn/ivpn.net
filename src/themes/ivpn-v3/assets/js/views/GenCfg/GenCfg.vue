@@ -2,8 +2,8 @@
     <div>
         <h1 class="app">Generate Configuration</h1>
         <p>
-            Generate excample configuration files for native OpenVPN and
-            WireGuard clients, as well as DD-WRT setup script.
+            Generate sample configuration files for native OpenVPN and
+            WireGuard clients, as well as setup script for DD-WRT routers.
         </p>
         <p class="error" v-if="error">{{ error.message }}</p>
         <div class="tabs sub-navigation">
