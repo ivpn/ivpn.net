@@ -22,7 +22,7 @@ releases: [{
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Port forwarding for OpenVPN, reserved on all servers.
-- Supports defining custom DNS servers.
+- Supports defining custom DNS servers with custom DoH url support.
 
 ## Manual configuration
 
