@@ -6,8 +6,8 @@ subtitle: In open beta - supports 64-bit Linux 3.10+
 url: /apps-linux/
 platform: linux
 layout: apps-single
-imageLight: /images-static/uploads/apps/linux-app-light@2x.png
-imageDark: /images-static/uploads/apps/linux-app-dark@2x.png
+imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png
+imageDark: /images-static/uploads/apps/linux-app-3.3.7-dark@2x.png
 contents:
 - item:
     title: Features
