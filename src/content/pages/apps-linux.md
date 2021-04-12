@@ -6,8 +6,8 @@ subtitle: In open beta - supports 64-bit Linux 3.10+
 url: /apps-linux/
 platform: linux
 layout: apps-single
-imageLight: /images-static/uploads/apps/linux-app-light@2x.png
-imageDark: /images-static/uploads/apps/linux-app-dark@2x.png
+imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png
+imageDark: /images-static/uploads/apps/linux-app-3.3.7-dark@2x.png
 contents:
 - item:
     title: Features
@@ -161,19 +161,19 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 
 ### .DEB
 
-[Base package](/releases/linux/2.12.16/ivpn_2.12.16_amd64.deb)  
-SHA256: 63786e87c8bd2847d286d41ebde5ce5c099825a071e7c0b194c9ddd5ad0391d8  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.3.7_amd64.deb)  
+SHA256: 6b32903eaedd3e5b922d1eb16cb97a88132cc7cce7a7793f31c50edbdadb1458  
 
-[UI package](/releases/linux/ui/3.2.3/ivpn-ui_3.2.3_amd64.deb)  
-SHA256: d956dfdf8341c6e135b5c4cd8d2d82ae501238dd2b0d5c8264936963cb318ca4  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.3.7_amd64.deb)  
+SHA256: 9e66966a7d0655e8b3054082fa7dc79db5e470e1c3b4ceb6adebf1761c9903bc  
 
 ### .RPM
 
-[Base package](/releases/linux/2.12.16/ivpn-2.12.16-1.x86_64.rpm)  
-SHA256: 36bd6261d6bb7e35f26cc149d5d4ce56ab61e6073fd99ea27830f828561125aa  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.3.7-1.x86_64.rpm)  
+SHA256: 49b3aabccb7a4324006b7de8607a0870dee34f84d98c8657809fbebe1fa5c6db  
 
-[UI package](/releases/linux/ui/3.2.3/ivpn-ui-3.2.3-1.x86_64.rpm)  
-SHA256: 28efe2eadd7a80a058fe2439c6fc005100b2b1ac58a6a498d27f2a981858bad4  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.7-1.x86_64.rpm)  
+SHA256: ae6ec9f24ccf0aed53bc7846723145da6b992cbf5a0b0bd13066c6766a4f26d5  
 
 ## Install from Source Code {#source}
 
