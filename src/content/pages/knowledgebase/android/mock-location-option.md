@@ -10,9 +10,9 @@ weight: 70
 ---
 # Mock Location Option
 
-Most of the Android devices have the inbuilt feature of mock locations. Though the feature is reserved for developers, and you need to enable the Developer Options beforehand. If you don't do it yet, please read this [guide](/knowledgebase/android/developer-options-on-the-android-phone/).
+Most Android devices have a built-in feature that helps you spoof your location with the ‘Mock location’ option. This feature is designed for developers, so to take advantage of it you need to enable Developer Options. We have prepared a [guide](/knowledgebase/android/developer-options-on-the-android-phone/) to do that - we suggest starting here. 
 
-Selecting IVPN as a mock location app allows fake information about your phone location by GPS and network operator. The fake location will match the gateway location you connected to.
+When you select IVPN as a mock location app you enable fake location information to be relayed to the GPS network and your phone network operator. The mock location will match the gateway location you connected to.
 
 ### Enable Mock Location
 
