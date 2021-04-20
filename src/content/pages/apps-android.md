@@ -43,6 +43,8 @@ releases: [{
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Port forwarding for OpenVPN, reserved on all servers.
 - Supports defining custom DNS servers.
+- Supports Mock location for GPS.
+- Tapjacking protection.
 
 ## Manual configuration
 
