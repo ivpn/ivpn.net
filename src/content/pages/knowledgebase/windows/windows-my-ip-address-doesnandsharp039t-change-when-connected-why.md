@@ -22,4 +22,4 @@ It really helps to have a basic understanding of the issue to resolve it. Your c
 
 3.  If you are using Windows 8.x there is an obscure bug that may cause the routes to not be correctly installed. To workaround this open the Network Adapter Applet (Control Panel\Network and Internet\Network Connections) before you start the VPN connection. This has to be done once after each reboot.
 
-4.   Check that the browser is using the system's proxy settings. You can open your browser and go to settings and search for "proxy" settings. For example, your IP might not be changing because the proxy setting is set to "No Proxy" (for Firefox). The IP will change after you change the setting to "Use system proxy settings".  
+4.  Proxy settings might be interfering.  To reset Windows 10 proxy settings, click the Start button, type *proxy*, click to open the `Proxy settings` app, toggle the `Use a proxy server` to *off* under `Manual proxy setup`.  Reset web browser proxy settings in [Mozilla Firefox](https://support.mozilla.org/en-US/kb/connection-settings-firefox) by choosing `No Proxy` or `Use system proxy settings`. 
