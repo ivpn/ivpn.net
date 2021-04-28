@@ -162,7 +162,7 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 SHA256: 6b32903eaedd3e5b922d1eb16cb97a88132cc7cce7a7793f31c50edbdadb1458  
 
 [UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.3.10_amd64.deb)  
-SHA256: 121bbd6fbe56e30bb5e0b8b29083838eea7ffb80133b6de2b8377d819f6a3453  
+SHA256: 6942ed6d18214b5767baa7145cdc05e6a2772d5eb2608c25e56ce4426224bd51  
 
 ### .RPM
 
@@ -170,7 +170,7 @@ SHA256: 121bbd6fbe56e30bb5e0b8b29083838eea7ffb80133b6de2b8377d819f6a3453
 SHA256: 49b3aabccb7a4324006b7de8607a0870dee34f84d98c8657809fbebe1fa5c6db  
 
 [UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.10-1.x86_64.rpm)  
-SHA256: 6942ed6d18214b5767baa7145cdc05e6a2772d5eb2608c25e56ce4426224bd51  
+SHA256: 98d897e5c988ca58f3195b542342bc0e8f0e5de5982713a190f4eab53b90f78e  
 
 ## Install from Source Code {#source}
 
