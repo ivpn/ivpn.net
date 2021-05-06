@@ -70,6 +70,7 @@ pre {
         span {
             display: block;
             margin-top: 24px;
+            margin-bottom: -20px;
 
             &:first-of-type {
                 margin-top: 0;
@@ -95,8 +96,6 @@ pre {
         }
     
         code {
-            overflow-x: auto;
-            white-space: nowrap;
             padding: 44px 34px;
         }
     }
