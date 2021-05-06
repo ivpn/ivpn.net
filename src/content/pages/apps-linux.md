@@ -80,7 +80,8 @@ Please note: base package is required to be installed prior to installing GUI ap
 
 {{< highlight shell >}}
 # Add IVPN's GPG key
-$ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | sudo apt-key add -
+$ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
+$ sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 # Add the IVPN repository
 $ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 # Update APT repo info
@@ -95,7 +96,8 @@ $ sudo apt-get install ivpn
 
 {{< highlight shell >}}
 # Add IVPN's GPG key
-$ curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | sudo apt-key add -
+$ curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
+$ sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 # Add the IVPN repository
 $ curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 # Update APT repo info
@@ -110,7 +112,8 @@ $ sudo apt-get install ivpn
 
 {{< highlight shell >}}
 # Add IVPN's GPG key
-$ curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | sudo apt-key add -
+$ curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
+$ sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 # Add the IVPN repository
 $ curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 # Update APT repo info
