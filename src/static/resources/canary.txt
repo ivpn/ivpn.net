@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2021-04-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-In a glass of its own: 140 years of Iittala designs
-A new exhibition celebrates the poetic and playful work of this Finnish aesthetic institution
+Europe to crank up regulatory pressure on China
+Proposals seek to restrict foreign subsidised companies and assert EU’s ‘strategic autonomy’
 
-Biden throws weight of US government behind clean energy
-President’s $2tn spending package represents unprecedented state effort on greener economy
+Berkshire after Buffett: ‘Greg will keep the culture’
+Investors get clearest look yet at frontrunner Abel, who could one day become CEO
 
-UK disrupter hopes to make Cazoo the vehicle to shake up used car sales
-Zoopla and Lovefilm entrepreneur Alex Chesterman vowed there would be no more start-ups, a pledge that was soon broken
+Commodities supercycle arrives as pandemic recedes
+Sector-wide bull market gathers momentum
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmBoT9oACgkQisFrnrZH
-umnuKAf8DmisvK1log3bGRVWgTWVfV/udNzvOhnjgKP3VbzPpGMZigXQlIt0LBIv
-jagr8FiwdSXLmFj0Ix3YnlYo7koAQ4Cl/7CzQtf4HaTB2X00DnxVEYxaX3tu5UpG
-KguSMzZ7+EsrDlycVq1UXk/UO8LV6Aqao2qifRQ9CClZPt5mqVHXhTGOzR7QUYKw
-NrTb+i+2JZLgrrcnH4iTZYvIyzgoAiLA00Au6AYyjolcrVRInFkFWVyNB1gyfi9Y
-0ZUinUmbA9PwdI+DvyW5Mt3QOHPbrOfsXT1GEg8tJDzHz/BTb05ZMeUhP9nerzXI
-qdCYUB2gSWtns71LvwRg9G0624lyWQ==
-=or9k
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmCPmHwACgkQisFrnrZH
+ummcpAf/TGEutbEhE3z0dRgBgpW6KxX1Ffp0t3vdEi5eJtKN8SRLrxguXWgeBSuh
+uDojjZRod9PUOoUMd5MrsL5QDI/sWYzmD8GQnSuWiZ4j5xzcCWyuQhqLI7ie+QeV
+AqvaYAQMPcAYQPkZnPTN62g9mrYSwhRUBYb28Q2qAWzbzk0X8p5L4HgGTOeOUI9a
+cA7c6lwPAgTGN4TykjsKXx9lm2N/NuCPP4wG+A6sR5+YDnGV5vaG41PKk2k3UaO9
+Ig76a+gjISkWepzkOKbXYQaE60QR5bjJevBsAaVcppBw8TV//5Xm1voTbBNh1TRt
+taPEHmsuBnjul7g5efb0hJ0GpdLwdA==
+=r+9R
 -----END PGP SIGNATURE-----
 
 

@@ -9,13 +9,13 @@ layout: apps
 image: apps/windows-app-3.3.7
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.7.exe,
+    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.10.exe,
     github: https://github.com/ivpn/desktop-app-ui2,
     changelog: https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: bfc5bcc3dc77b12d18c6fb6f1c3862981bd70d937a1fa86f0245b1cae27b8481
+            value: 83b60f784decce42fea6698328edb07c2a80add86bd34ce9ab242e5d49dfa7e2
         }
     ]
 }]
@@ -33,6 +33,7 @@ releases: [{
 - Port forwarding for OpenVPN, reserved on all servers.
 - Pause VPN for when disabling VPN connection temporarily is required.
 - Obfsproxy option to circumvent censorship.
+- Supports defining custom DNS servers.
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.
 
