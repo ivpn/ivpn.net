@@ -43,81 +43,56 @@ Then create new IPv4 rules for the VPN connection:
 # nano /etc/iptables/vpn-rules.v4
 ```
 
-> # You can delete all of these comments, if you like.
-> 
-> *filter
-> 
-> # You drop everything by default.
-> 
-> :INPUT DROP [0:0]
-> :FORWARD DROP [0:0]
-> :OUTPUT DROP [0:0]
-> 
-> # Some local processes need to hear from other ones.
-> 
-> -A INPUT -i lo -j ACCEPT
-> 
-> # If you are running a server on port N, and have enabled
-> # forwarding in your VPN account, you must allow inbound
-> # traffic on the VPN. You may also want to limit access to
-> # a particular IP address (a.b.c.d). There can be multiple
-> # rules, one for each permitted port and source address.
-> 
-> -A INPUT -i tun0 -s a.b.c.d --dport N -j ACCEPT
-> 
-> # You may need to allow traffic from local DHCP servers.
-> # If using Wi-Fi, use "wlan0" instead of "eth0". This isn't
-> # needed if your router provides persistent leases.
-> 
-> -A INPUT -i eth0 -s 255.255.255.255 -j ACCEPT
-> 
-> # Then you allow related/established traffic, and drop
-> # everything else, without acknowledgement to peers.
-> 
-> -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-> -A INPUT -j DROP
-> 
-> # Your device isn't a router, so don't allow forwarding.
-> # In any case, you'd also need to allow that using sysctl.
-> 
-> -A FORWARD -j DROP
-> 
-> # Some local processes need to talk to other ones.
-> 
-> -A OUTPUT -o lo -j ACCEPT
-> 
-> # You need rule(s) to allow connecting to VPN server(s).
-> # You must use IP addresses. If also using Wi-Fi, add
-> # another rule, with "-o wlan0", instead of "-o eth0".
-> # There can be multiple rules, one for each server.
-> 
-> -A OUTPUT -o eth0 -d e.f.g.h -j ACCEPT
-> 
-> # You need a rule to allow outbound traffic through the
-> # VPN tunnel.
-> 
-> -A OUTPUT -o tun0 -j ACCEPT
-> 
-> # You may want rule(s) to allow LAN access. There can
-> # be multiple rules, one for each LAN that you use. If
-> # also using Wi-Fi, add another rule, with "-o wlan0",
-> # instead of "-o eth0".
-> 
-> -A OUTPUT -o eth0 -d x.y.z.0/24 -j ACCEPT
-> 
-> # Allow outgoing traffic to local DHCP servers. If
-> # using Wi-Fi, use "wlan0" instead of "eth0". This isn't
-> # needed if your router provides persistent leases.
-> 
-> -A OUTPUT -o eth0 -d 255.255.255.255 -j ACCEPT
-> 
-> # Then you allow related/established traffic, and drop
-> # everything else, without acknowledgement to peers.
-> 
-> -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-> -A OUTPUT -j DROP
-> 
-> COMMIT
+<div class="highlight">
+<pre>
+<code class="language-shell" data-lang="shell">
+<span># You can delete all of these comments, if you like.</span>
+*filter
+
+<span># You drop everything by default.</span>
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+
+<span># Some local processes need to hear from other ones.</span>
+-A INPUT -i lo -j ACCEPT
+
+<span># If you are running a server on port N, and have enabled forwarding in your VPN account, you must allow inbound traffic on the VPN. You may also want to limit access to a particular IP address (a.b.c.d). There can be multiple rules, one for each permitted port and source address.</span>
+-A INPUT -i tun0 -s a.b.c.d –dport N -j ACCEPT
+
+<span># You may need to allow traffic from local DHCP servers. If using Wi-Fi, use “wlan0” instead of “eth0”. This isn’t needed if your router provides persistent leases.</span>
+-A INPUT -i eth0 -s 255.255.255.255 -j ACCEPT
+
+<span># Then you allow related/established traffic, and drop everything else, without acknowledgement to peers.</span>
+-A INPUT -m state –state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -j DROP
+
+<span># Your device isn’t a router, so don’t allow forwarding. In any case, you’d also need to allow that using sysctl.</span>
+-A FORWARD -j DROP
+
+<span># Some local processes need to talk to other ones.</span>
+-A OUTPUT -o lo -j ACCEPT
+
+<span># You need rule(s) to allow connecting to VPN server(s). You must use IP addresses. If also using Wi-Fi, add another rule, with “-o wlan0”, instead of “-o eth0”. There can be multiple rules, one for each server.</span>
+-A OUTPUT -o eth0 -d e.f.g.h -j ACCEPT
+
+<span># You need a rule to allow outbound traffic through the VPN tunnel.</span>
+-A OUTPUT -o tun0 -j ACCEPT
+
+<span># You may want rule(s) to allow LAN access. There can be multiple rules, one for each LAN that you use. If also using Wi-Fi, add another rule, with “-o wlan0”, instead of “-o eth0”.</span>
+-A OUTPUT -o eth0 -d x.y.z.0/24 -j ACCEPT
+
+<span># Allow outgoing traffic to local DHCP servers. If using Wi-Fi, use “wlan0” instead of “eth0”. This isn’t needed if your router provides persistent leases.</span>
+-A OUTPUT -o eth0 -d 255.255.255.255 -j ACCEPT
+
+<span># Then you allow related/established traffic, and drop everything else, without acknowledgement to peers.</span>
+-A OUTPUT -m state –state RELATED,ESTABLISHED -j ACCEPT
+-A OUTPUT -j DROP
+
+COMMIT
+</code>
+</pre>
+</div>
 
 Then load the IPv4 VPN rules:
 
