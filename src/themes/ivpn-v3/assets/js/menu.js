@@ -2,7 +2,7 @@
 (function () {    
 
     function updateAppsMenu() {
-        var downloadLinks = document.querySelectorAll('.navigation__item__download a');
+        var downloadLinks = document.querySelectorAll('.navigation__item__apps a');
 
         if (downloadLinks) {
             var userAgent = window.navigator.userAgent,
