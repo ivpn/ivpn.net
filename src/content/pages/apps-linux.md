@@ -66,13 +66,12 @@ contents:
 ### Base Package  
 
 Base package contains everything you need to connect to IVPN with command line interface. IVPN GUI app is provided as a separate package you can find below.  
-[Base Package Daemon Changelog](https://github.com/ivpn/desktop-app-daemon/blob/master/CHANGELOG.md)  
-[Base Package CLI Changelog](https://github.com/ivpn/desktop-app-cli/blob/master/CHANGELOG.md)  
+[Changelog](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
 
 ### IVPN GUI App  
 
 Please note: base package is required to be installed prior to installing GUI app.  
-[GUI App Changelog](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
+[Changelog](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
 
 ## Install from IVPN Repository {#install}
 
@@ -177,9 +176,8 @@ SHA256: 98d897e5c988ca58f3195b542342bc0e8f0e5de5982713a190f4eab53b90f78e
 
 ## Install from Source Code {#source}
 
-[Base package Daemon on GitHub](https://github.com/ivpn/desktop-app-daemon#linux)  
-[Base package CLI on GitHub](https://github.com/ivpn/desktop-app-cli#linux-1)  
-[UI package on GitHub](https://github.com/ivpn/desktop-app#installation)  
+[Daemon + CLI](https://github.com/ivpn/desktop-app#compilation_linux_daemon)  
+[UI](https://github.com/ivpn/desktop-app#compilation_linux_ui)  
 
 ## Useful Links {#useful-links}
 
