@@ -14,6 +14,7 @@ The Multi-hop network is compatible with any OpenVPN client, including Viscosity
 
 <div markdown="1" class="notice notice--info">
 These instructions are not required when using the official IVPN client. Simply select the Multi-hop tab on the main screen.
+<p>Multi-hop is available on IVPN Pro accounts and limited to OpenVPN connections at this time.</p>
 </div>
 
 To use Multi-hop, you need to modify the IVPN Account ID you enter when connecting. You simply need to append an '@' symbol and a location code and your traffic will be routed through the specified exit location (regardless of which server you connect to).

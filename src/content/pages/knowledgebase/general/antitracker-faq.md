@@ -20,11 +20,9 @@ weight: 200
     The AntiTracker feature uses a specially configured DNS server to block domains from the publicly curated and continuously expanded [GitHub project blacklist](https://github.com/StevenBlack/hosts).
 
 3.  #### How can I activate the AntiTracker?
-    - On desktop apps for **macOS**, **Windows** and **Linux**, the feature is enabled by toggling the AntiTracker switch on which is located right next to the IVPN Firewall switch.  
+    - On desktop apps for **macOS**, **Windows** and **Linux**, toggle the AntiTracker switch located below the IVPN Firewall switch on the right-side of the app.  
 
-    - On the **iOS** app, navigate to `Settings` by tapping on the 3 horizontal lines -> `AntiTracker` and toggle the `Enable AntiTracker` option on.  
-
-    - On the **Android** app, navigate to the `Settings` area by tapping on the Gear icon -> `AntiTracker` and toggle the `Enable AntiTracker` option on.  
+    - On mobile apps for **Android** and **iOS**, swipe up on the app's main window to toggle the AntiTracker switch.  
 
     - To activate AntiTracker using our desktop apps' **CLI** interface, type `ivpn antitracker -on` in a Terminal or include it with the **connect** command, like `ivpn connect -antitracker se.gw.ivpn.net`  
 
@@ -41,7 +39,7 @@ weight: 200
 6.  #### On which devices I can use AntiTracker?
     AntiTracker is available across all our [native apps](/apps/) for Windows, macOS, Linux, iOS and Android.  
 
-    Please, note, the feature is not included in the IVPN app for Android distributed via the Play Store as Google will most likely ban it for providing the tools that are focused on blocking their services in the first place. If you wish to use the feature on your Android device, feel free to [download the .apk file](/apps-android/) from our website. You will need to delete any previously installed version of IVPN app before installing from the .apk file.  
+    Please note: This feature is not included in the IVPN app for Android distributed via the Play Store as Google will most likely ban it for providing the tools that are focused on blocking their services in the first place. If you wish to use the feature on your Android device, feel free to [download the .apk file](/apps-android/) from our website or install via [F-Droid](https://f-droid.org/packages/net.ivpn.client/). You will need to uninstall any previously installed version of IVPN app before installing from the .apk file or from F-Droid.  
 
     The AntiTracker can also be enabled on routers and other manual connections by specifying the following DNS IP address - `10.0.254.2` (or `10.0.254.102` - when using the feature together with Multi-hop)
 
@@ -53,11 +51,9 @@ weight: 200
 8.  #### How do I activate the Hardcore Mode?
     If you are mentally prepared to fully cut any ties with those companies, follow the steps below:
 
-    - On the IVPN desktop clients for **macOS**, **Windows** and **Linux**, navigate to the `Settings/Preferences` - `AntiTracker` tab and have the **Hardcore Mode** checked.
+    - On desktop apps **macOS**, **Windows** and **Linux**, click the `Settings` gear icon at the top of the app's main window, click the AntiTracker tab on the left, then check **Hardcore Mode**.  
 
-    - On the **iOS** app, navigate to `Settings` by tapping on the 3 horizontal lines -> `AntiTracker` and have the `Hardcore Mode` toggled on.
-
-    - On the **Android** app, access the `Settings` area by tapping on the Gear icon -> `AntiTracker` and toggle the `Hardcore Mode` option on.
+    - On mobile apps for **Android** and **iOS**, tap the `Settings` gear icon at the top of the screen, tap the `AntiTracker` menu, enable the `AntiTracker` (if it is not enabled already), then toggle **Hardcore Mode** on.
 
     - If you are using our desktop apps' **CLI** interface, type `ivpn antitracker -on_hardcore` in a Terminal or include it with the **connect** command, like `ivpn connect -antitracker_hard fi.gw.ivpn.net`
 

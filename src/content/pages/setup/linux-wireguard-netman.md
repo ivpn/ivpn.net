@@ -36,15 +36,15 @@ WireGuard support was added to NetworkManager in v1.16. This guide was created w
 
 ### Setup WireGuard to use IVPN
 
-1.  Log in to the [IVPN Client Area](/account/login/).
+1.  Log in to the [IVPN Account Area](/account/login/).
 
-2.  On the `VPN Accounts` page, click the `WireGuard` tab. Go to `WireGuard Key Management` located under `Tools`. Click the `Add New Key` button. Copy the contents of the public key file and paste them into the `Public Key:` field. Add a comment, like `Linux` if you prefer, and click the `Add Key` button.
+2.  From the `Account` page, click the `WireGuard` tab. Go to `WireGuard Key Management` located under `Tools`. Click the `Add New Key` button. Copy the contents of the public key file and paste them into the `Public Key:` field. Add a comment, like `Linux` if you prefer, and click the `Add Key` button.
 
     <div markdown="1" class="notice notice--warning">
     Be sure to copy the PUBLIC key and not the PRIVATE key. The PRIVATE key must always be kept a carefully guarded secret.
     </div>
 
-3.  Make note of the `IP Address` beside your newly added public key on the WireGuard tab in the Client Area. This is the IP address your computer system will have on our internal network. It will be in the form `172.x.y.z`.
+3.  Make note of the `IP Address` beside your newly added public key on the WireGuard tab in the Account Area. This is the IP address your computer system will have on our internal network. It will be in the form `172.x.y.z`.
 
 4.  Open the NetworkManager `Configure network connections` window. This is often available via an icon in the system tray near the clock, though each Linux distribution may be different.
 
@@ -59,9 +59,9 @@ WireGuard support was added to NetworkManager in v1.16. This guide was created w
 7.  Click the `Peers...` button on the `WireGuard Interface` tab and add the following:
 
     <div markdown="1" class="notice notice--info">
-    <strong>Public key:</strong> = WireGuard server public key available on the <strong>WireGuard Server List</strong> page in the Client Area<br>
+    <strong>Public key:</strong> = WireGuard server public key available on the <strong>WireGuard Server List</strong> page in the Account Area<br>
     <strong>Allowed IPs:</strong> = 0.0.0.0/0<br>
-    <strong>Endpoint address:</strong> = WireGuard server IP address available on the <strong>WireGuard Server List</strong> page in the Client Area<br>
+    <strong>Endpoint address:</strong> = WireGuard server address available on the <strong>WireGuard Server List</strong> page in the Account Area<br>
     <strong>Endpoint port:</strong> = choose one of the ports we offer: 53, 2049, 2050, 30587, 41893, 48574, 58237
     </div>
 
