@@ -21,6 +21,7 @@ RUN apt-get update  \
     && rm /tmp/hugo.deb
 
 COPY ./src/themes/ivpn-v3/package.json ./src/themes/ivpn-v3/yarn.lock ./src/themes/ivpn-v3/
+RUN yarn cache clean --cwd ./src/themes/ivpn-v3/
 RUN yarn --cwd ./src/themes/ivpn-v3/ --pure-lockfile
 
 COPY ./src ./src
