@@ -97,6 +97,25 @@
            addSwitcherEvent(checkbox) 
         });
     }
+
+    function htmlToElement(html) {
+        var template = document.createElement('template');
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+    }
+
+    function updateConnectionInfo() {
+        fetch('/web/status').then(function (response) {
+            return response.text();
+        }).then(function (html) {
+            var container = document.querySelectorAll('.connection-status');
+            if (container.length) {
+                var responseElement = htmlToElement(html);
+                container[0].innerHTML = responseElement.innerHTML;
+            }
+        });
+    }
     
     window.getCurrentScheme = getCurrentScheme
     window.addSwitcherEvent = addSwitcherEvent
@@ -108,6 +127,7 @@
     updateCheckboxes(checkboxes, scheme.name == 'dark', null)
 
     updateAppsMenu();
+    updateConnectionInfo();
     
     window.updateLoginMenu = updateLoginMenu
 
