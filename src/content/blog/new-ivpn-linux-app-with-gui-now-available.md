@@ -41,7 +41,7 @@ A quick overview of the app:
 
 We have tested the app on current Debian and Red Hat based distributions including CentOS, Debian 64, Fedora and Ubuntu. Your mileage may vary - [let us know](https://www.ivpn.net/contactus/ "https\://www.ivpn.net/contactus/") if you encounter any issues.
 
-The app is open source - you can review its code and contribute [on GitHub](https://github.com/ivpn/desktop-app-ui2).
+The app is open source - you can review its code and contribute [on GitHub](https://github.com/ivpn/desktop-app).
 
 Download IVPN for Linux [here](https://www.ivpn.net/apps-linux/) to get started. [Contact us](https://www.ivpn.net/contactus/ "https\://www.ivpn.net/contactus/") if you have any feedback or suggestions.
 
