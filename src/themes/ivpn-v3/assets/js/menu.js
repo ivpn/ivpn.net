@@ -113,6 +113,7 @@
             if (container.length) {
                 var responseElement = htmlToElement(html);
                 container[0].innerHTML = responseElement.innerHTML;
+                container[0].className = responseElement.className;
             }
         });
     }
