@@ -21,7 +21,6 @@ RUN apt-get update  \
     && rm /tmp/hugo.deb
 
 COPY ./src/themes/ivpn-v3/package.json ./src/themes/ivpn-v3/yarn.lock ./src/themes/ivpn-v3/
-RUN yarn cache clean --cwd ./src/themes/ivpn-v3/
 RUN yarn --cwd ./src/themes/ivpn-v3/ --pure-lockfile
 
 COPY ./src ./src
@@ -29,6 +28,7 @@ RUN echo "MIX_APP_WEBAPI_URL=${BASE_URL}\nMIX_APP_API_URL=${API_URL}\nMIX_APP_PA
 RUN echo "Environment: $ENV\nBase URL: ${BASE_URL}\nAPI URL: ${API_URL}\nPayPal Client ID: ${PAYPAL_CLIENT_ID}\n"
 
 RUN yarn --cwd ./src/themes/ivpn-v3/ $ENV
+RUN yarn --cwd ./src/themes/ivpn-v3/ run copy:manifest
 
 RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
      -e 's/^url:(.*)$/url: \/privacy-mobile-app\//' \

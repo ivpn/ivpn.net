@@ -38,7 +38,4 @@ mix.setPublicPath('static')
     .js('assets/js/search.js', 'static/js/').vue()
     .js('assets/js/menu.js', 'static/js/')
     .sass('assets/scss/pages.scss', 'static/css/')
-    .version()
-    .then(() => {
-        mix.copy('static/mix-manifest.json', 'data/manifest.json');
-    })
+    .version();
