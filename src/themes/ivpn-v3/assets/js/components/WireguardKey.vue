@@ -9,11 +9,13 @@
         <div class="wireguard-key__row">
             <div class="wireguard-key__public-key">
                 <label>Public key</label>
-                <div>{{ publicKey }}</div>
+                <div><small>{{ publicKey }}}</small></div>
             </div>
             <div class="wireguard-key__ip-address">
-                <label>IP address</label>
-                <div>{{ ip }}</div>
+                <label>IPv4 address</label>
+                <div><small>{{ ip }}</small></div>
+                <label>IPv6 address</label>
+                <div><small>{{ ipv6Address }}</small></div>
             </div>
         </div>
     </div>
@@ -21,6 +23,7 @@
 
 <script>
 import IconTrash from "@/components/icons/btn/Trash";
+import { IPv4 } from "ip-num/IPNumber";
 
 export default {
     props: {
@@ -36,6 +39,16 @@ export default {
             required: true,
             type: String,
         },
+    },
+    data() {
+        return {
+            API_GATEWAYS_WG_LOCAL_IPV6: "fd00:4956:504e:ffff::",
+            ipv6Address: "",
+        };
+    },
+    created() {
+        let ipv4 = new IPv4(this.ip);
+        this.ipv6Address = this.API_GATEWAYS_WG_LOCAL_IPV6 + ipv4.toIPv4MappedIPv6().toString();
     },
     methods: {
         deleteKey() {
@@ -108,6 +121,11 @@ export default {
     &__ip-address {
         line-height: 28px;
         word-wrap: break-word;
+
+        small {
+            font-size: 15px;
+            opacity: 0.5;
+        }
     }
 
     &__public-key {
