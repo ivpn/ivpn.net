@@ -9,7 +9,7 @@
         <div class="wireguard-key__row">
             <div class="wireguard-key__public-key">
                 <label>Public key</label>
-                <div><small>{{ publicKey }}}</small></div>
+                <div><small>{{ publicKey }}</small></div>
             </div>
             <div class="wireguard-key__ip-address">
                 <label>IPv4 address</label>
