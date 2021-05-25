@@ -42,7 +42,7 @@ export default {
     },
     data() {
         return {
-            API_GATEWAYS_WG_LOCAL_IPV6: "fd00:4956:504e:ffff::",
+            API_GATEWAYS_WG_LOCAL_IPV6: "fd00:4956:504e:ffff:0000",
             ipv6Address: "",
         };
     },
