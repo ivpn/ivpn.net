@@ -42,13 +42,13 @@ export default {
     },
     data() {
         return {
-            API_GATEWAYS_WG_LOCAL_IPV6: "fd00:4956:504e:ffff:0000",
+            API_GATEWAYS_WG_LOCAL_IPV6: "fd00:4956:504e:ffff::",
             ipv6Address: "",
         };
     },
     created() {
         let ipv4 = new IPv4(this.ip);
-        this.ipv6Address = this.API_GATEWAYS_WG_LOCAL_IPV6 + ipv4.toIPv4MappedIPv6().toString();
+        this.ipv6Address = this.API_GATEWAYS_WG_LOCAL_IPV6 + ipv4.toIPv4MappedIPv6().toString().replace("::ffff:", "");
     },
     methods: {
         deleteKey() {
