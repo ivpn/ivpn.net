@@ -175,6 +175,7 @@ export default {
                         onLookupComplete: (data, next) => {
                             next();
                         },
+                        amount: payload.amount,
                         nonce: payload.nonce,
                         bin: payload.details.bin
                     })
