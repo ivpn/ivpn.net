@@ -170,14 +170,19 @@ export default {
 
         tokenize() {
             return new Promise((resolutionFunc, rejectionFunc) => {
-                this.hostedFields.tokenize((err, payload) => {
-                    if (err) {
-                        console.error("Hosted fields tokenization error", err);
-                        rejectionFunc(err);
-                        return;
-                    }
-
+                this.hostedFields.tokenize().then((payload) => {
+                    return this.threeDSecure.verifyCard({
+                        onLookupComplete: (data, next) => {
+                            next();
+                        },
+                        nonce: payload.nonce,
+                        bin: payload.details.bin
+                    })
+                }).then((payload) => {
                     resolutionFunc(payload);
+                }).catch((err) => {
+                    console.error(err);
+                    rejectionFunc(err);
                 });
             });
         },
