@@ -65,6 +65,7 @@ export default {
     data() {
         return {
             hostedFields: undefined,
+            threeDSecure: undefined,
             initialized: false,
 
             ccValid: false,
@@ -73,7 +74,8 @@ export default {
     },
 
     created() {
-        this.initFields();        
+        this.initFields();
+        this.initThreeDSecure();
     },
     methods: {
         initFields() {
@@ -127,6 +129,22 @@ export default {
                     this.hostedFields = hostedFieldsInstance;
                     this.hostedFields.on("validityChange", this.fieldUpdated);
                     this.$emit("fieldsInitialized", this.hostedFields);
+                }
+            );
+        },
+
+        initThreeDSecure() {
+            braintree.threeDSecure.create(
+                {
+                    version: 2,
+                    client: this.braintree.client
+                },
+                (err, threeDSecureInstance) => {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+                    this.threeDSecure = threeDSecureInstance;
                 }
             );
         },
