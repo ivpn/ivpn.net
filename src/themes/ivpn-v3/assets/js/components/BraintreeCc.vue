@@ -179,6 +179,11 @@ export default {
                         bin: payload.details.bin
                     })
                 }).then((payload) => {
+                    if (!payload.liabilityShifted) {
+                        console.error(err);
+                        rejectionFunc(err);
+                        return;
+                    }
                     resolutionFunc(payload);
                 }).catch((err) => {
                     console.error(err);
