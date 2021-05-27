@@ -57,7 +57,7 @@ import VisaIcon from "@/components/icons/cc/visa.vue";
 
 export default {
     components: { DiscoverIcon, VisaIcon },
-    props: ["braintree", "error"],
+    props: ["braintree", "amount", "error"],
     model: {
         prop: "hostedFields",
         event: "fieldsInitialized",
@@ -175,12 +175,13 @@ export default {
                         onLookupComplete: (data, next) => {
                             next();
                         },
-                        amount: payload.amount,
+                        amount: this.amount,
                         nonce: payload.nonce,
                         bin: payload.details.bin
                     })
                 }).then((payload) => {
                     if (!payload.liabilityShifted) {
+                        const err = new Error("verification failed");
                         console.error(err);
                         rejectionFunc(err);
                         return;
