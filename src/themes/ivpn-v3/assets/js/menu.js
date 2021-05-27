@@ -109,37 +109,41 @@
         fetch('/web/status').then(function (response) {
             return response.text();
         }).then(function (html) {
-            var container = document.querySelectorAll('.connection-status');
+            let container = document.querySelectorAll('.connection-status');
             if (container.length) {
-                var responseElement = htmlToElement(html);
+                let responseElement = htmlToElement(html);
                 container[0].innerHTML = responseElement.innerHTML;
                 container[0].className = responseElement.className;
 
                 // Reattach the click event for theme switcher in the main navigation
-                var themeSwitcher = document.getElementById('top-theme-switch');
+                let themeSwitcher = document.getElementById('top-theme-switch');
                 if (themeSwitcher && window.addSwitcherEvent) {
                     window.addSwitcherEvent(themeSwitcher);
                 }
+
+                let checkboxes = document.querySelectorAll('input[type=checkbox][data-theme-switch]');
+                let scheme = getCurrentScheme();
+                updateCheckboxes(checkboxes, scheme.name == 'dark', null);
             }
         });
     }
 
-    window.getCurrentScheme = getCurrentScheme
-    window.addSwitcherEvent = addSwitcherEvent
+    window.getCurrentScheme = getCurrentScheme;
+    window.addSwitcherEvent = addSwitcherEvent;
 
     let checkboxes = document.querySelectorAll('input[type=checkbox][data-theme-switch]');
-    setupHandler(checkboxes)
+    setupHandler(checkboxes);
 
-    let scheme = getCurrentScheme()
-    updateCheckboxes(checkboxes, scheme.name == 'dark', null)
+    let scheme = getCurrentScheme();
+    updateCheckboxes(checkboxes, scheme.name == 'dark', null);
 
     updateAppsMenu();
     updateConnectionInfo();
 
-    window.updateLoginMenu = updateLoginMenu
+    window.updateLoginMenu = updateLoginMenu;
 
-    let isAuth = document.cookie.indexOf("logged_in=1") != -1
-    let isLegacyAuth = document.cookie.indexOf("logged_in=l") != -1
+    let isAuth = document.cookie.indexOf("logged_in=1") != -1;
+    let isLegacyAuth = document.cookie.indexOf("logged_in=l") != -1;
 
     updateLoginMenu(isAuth, isLegacyAuth);
 })();
