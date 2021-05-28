@@ -66,11 +66,12 @@ Reboot the gateway Pi
 
 ## OpenVPN Setup
 
-Login to your iVPN account, download the latest config files from <https://www.ivpn.net/dl.php?type=d&id=80> and extract the archive to `/home/pi`.
+Download the latest OpenVPN configuration files from <https://www.ivpn.net/releases/config/ivpn-openvpn-config.zip> and extract the archive to `/home/pi`.
 
-    $ unzip /mnt/IVPN-config-linux-latest.zip -d /home/pi/
 
-Reconfigure openvpn so it doesn't start all valid VPNs at boot. That's necessary because iVPN requires entering username and password to connect, and the openvpn daemon doesn't have a mechanism for prompting for entering them.
+    $ unzip /mnt/ivpn-openvpn-config.zip -d /home/pi/
+
+Reconfigure openvpn so it doesn't start all valid VPNs at boot. That's necessary because IVPN requires entering username and password to connect, and the openvpn daemon doesn't have a mechanism for prompting for entering them.
 
     $ sudo nano /etc/default/openvpn
     ................
@@ -87,7 +88,7 @@ However, there's a workaround. At boot, create a temporary user-pass file in the
     password
     ........
 
-We will configure iptables to block all non-VPN Internet access, except to three groups of servers: 1) iVPN servers that we want to use; 2) Raspbian wheezy repository servers, for package updates; and 3) NTP timeservers, to insure that the Pi knows the correct time. No DNS servers are reachable via WAN (eth0) and so iVPN servers must be specified by IP addresses, or resolved locally. For iVPN servers, it's most straightforward to specify IP addresses in the config files. Choose the iVPN routes that you'll be using, and edit their config files. Also point to `/tmp/user-pass`, and change `verb 3` to `verb 5`.
+We will configure iptables to block all non-VPN Internet access, except to three groups of servers: 1) IVPN servers that we want to use; 2) Raspbian wheezy repository servers, for package updates; and 3) NTP timeservers, to insure that the Pi knows the correct time. No DNS servers are reachable via WAN (eth0) and so IVPN servers must be specified by IP addresses, or resolved locally. For IVPN servers, it's most straightforward to specify IP addresses in the config files. Choose the IVPN routes that you'll be using, and edit their config files. Also point to `/tmp/user-pass`, and change `verb 3` to `verb 5`.
 
 In this example, I'll do `IVPN-Singlehop-Netherlands` and `IVPN-Singlehop-Germany`. In one LXTerminal:
 
@@ -274,7 +275,7 @@ Now that OpenVPN is working, configure iptables. But first make sure that the de
 
 You want an iptables ruleset that blocks all non-VPN connections to the Internet. It drops all input, forward and output by default, so all desired traffic must be explicitly allowed. Further, various sorts of malformed packets are dropped early, as in adrelanos' VPN-Firewall.
 
-In the following ruleset, there are two placeholders: `IP-of-VPN-server` and `port-of-VPN-server`. They come from the OpenVPN configuration file. For `IVPN-Singlehop-Netherlands`, as we saw above, they are `85.12.8.104` and `2049`. For `IVPN-Singlehop-Germany`, they are `178.162.193.154` and `2049`. You will need a line for each iVPN server that you'll want to use.
+In the following ruleset, there are two placeholders: `IP-of-VPN-server` and `port-of-VPN-server`. They come from the OpenVPN configuration file. For `IVPN-Singlehop-Netherlands`, as we saw above, they are `85.12.8.104` and `2049`. For `IVPN-Singlehop-Germany`, they are `178.162.193.154` and `2049`. You will need a line for each IVPN server that you'll want to use.
 
     $ sudo nano /etc/iptables/vpn-rules.v4
     ...........................................................................................
@@ -344,7 +345,7 @@ In the following ruleset, there are two placeholders: `IP-of-VPN-server` and `po
     -A OUTPUT -o eth0 -p udp -m udp -d 193.219.61.110 --dport 123 -j ACCEPT
     -A OUTPUT -o eth0 -p udp -m udp -d 193.224.65.146 --dport 123 -j ACCEPT
     
-    #  -A OUTPUT -o eth0 -p udp -m udp -d IP-of-VPN-server/32 --dport port-of-VPN-server -j ACCEPT
+    \#  -A OUTPUT -o eth0 -p udp -m udp -d IP-of-VPN-server/32 --dport port-of-VPN-server -j ACCEPT
     -A OUTPUT -o eth0 -p udp -m udp -d 85.12.8.104/32 --dport 2049 -j ACCEPT
     -A OUTPUT -o eth0 -p udp -m udp -d 178.162.193.154/32 --dport 2049 -j ACCEPT
     
@@ -449,7 +450,7 @@ And now you can configure `/etc/resolv.conf` because DHCP won't be changing it.
     nameserver 10.20.0.1
     ....................
 
-You'll need a `nameserver` line for each of the iVPN routes that you'll be using.
+You'll need a `nameserver` line for each of the IVPN routes that you'll be using.
 
 Now that your iptables ruleset is working, you can rename it so it loads at bootup.
 
@@ -488,7 +489,7 @@ Now install and configure DHCP server on eth1.
 
 ## Test with Workspace Client
 
-Attach a computer to iVPN gateway Pi eth1, and test.
+Attach a computer to IVPN gateway Pi eth1, and test.
 
     $ sudo ifconfig
        => 192.168.2.10
@@ -507,15 +508,15 @@ Generate RSA key pair in workspace client.
 
     $ ssh-keygen
 
-SCP public key to iVPN gateway Pi.
+SCP public key to IVPN gateway Pi.
 
     $ scp /home/pi/.ssh/id_rsa.pub pi@192.168.2.1:/home/pi/
 
-SSH to the iVPN gateway Pi.
+SSH to the IVPN gateway Pi.
 
      $ ssh pi@192.168.2.1
 
-Working now on iVPN gateway Pi.
+Working now on IVPN gateway Pi.
 
     $ mkdir .ssh
     $ nano /home/pi/.ssh/authorized_keys
