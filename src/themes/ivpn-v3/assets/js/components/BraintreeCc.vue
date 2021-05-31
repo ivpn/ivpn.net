@@ -175,12 +175,24 @@ export default {
                         onLookupComplete: (data, next) => {
                             next();
                         },
-                        amount: this.amount,
+                        amount: this.amount || "0.0",
                         nonce: payload.nonce,
                         bin: payload.details.bin
                     })
                 }).then((payload) => {
                     if (!payload.liabilityShifted) {
+                        // "lookup_bypassed"
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'B') {
+                            resolutionFunc(payload);
+                            return;
+                        }
+
+                        // "authentication_unavailable"
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'U') {
+                            resolutionFunc(payload);
+                            return;
+                        }
+
                         const err = new Error("verification failed");
                         console.error(err);
                         rejectionFunc(err);
@@ -189,6 +201,11 @@ export default {
                     resolutionFunc(payload);
                 }).catch((err) => {
                     console.error(err);
+                    if (err.code == "THREEDS_CARDINAL_SDK_ERROR") {
+                        rejectionFunc(new Error("Error on Authentication. Please attempt the transaction again."));
+                        return;
+                    }
+
                     rejectionFunc(err);
                 });
             });
