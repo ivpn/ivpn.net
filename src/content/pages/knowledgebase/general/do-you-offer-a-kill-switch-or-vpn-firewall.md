@@ -33,20 +33,6 @@ A traditional kill switch solution needs to react to all of these events and do 
 
 Native and third-party Windows services can use your internet connection even before the system is fully booted. Any application installed on your system has the opportunity to connect to a server on the Internet and to exchange data long before you are able to connect to a VPN. However, the IVPN Firewall can be configured to protect your system all the time, ensuring that no traffic will leak outside the VPN tunnel even when the IVPN Client, its service, or even Windows is not fully booted. Such traffic will just be filtered out until everything finishes loading, and the connection with the VPN is established. When using a traditional kill switch, it is only effective once the operating system starts the application.
 
-### IPv6
-
-As IPv6 becomes more popular, more and more ISP’s and Wi-Fi hotspots around the world allocate an IPv6 subnetwork for their clients along with an IPv4 address.
-
-According to the Google IPv6 adoption statistics, 14.5% of all US traffic is IPv6. Some countries, such as Belgium have an adoption rate exceeding 30%.
-
-It is important to understand that when IPv6 is enabled on the network you are connected to it will take precedence over IPv4 for all of the connections to hosts with IPv6 support.
-
-This IPv6 traffic will most likely silently bypass your VPN tunnel.
-
-As a result if you have no control over the configuration of the router you are connected to (e.g. a public Wi-Fi hotspot), or when the default configuration of your router is set to announce any IPv6 network your ISP has allocated to you and you haven’t disabled IPv6 in your Windows OS (which is enabled by default), you may find that you have IPv6 support which is a major potential threat to your privacy.
-
-When the IVPN Firewall is enabled it is impossible for any IPv6 traffic to leak outside of the VPN tunnel, giving you absolute peace of mind.
-
 ### WebRTC
 
 WebRTC (Web Real-Time Communication) is an API drafted by the W3C that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing (without the need of either internal or external plugins). WebRTC implements STUN (Session Traversal Utilities for Nat), a protocol that allows the discovery of your externally assigned IP address (to facilitate the applications above).
@@ -63,4 +49,4 @@ The IVPN Firewall ensures that if the VPN client, any part of the tunnel or Wind
 
 ### Conclusion
 
-The IVPN firewall is the most secure solution available, far more than any 'kill switch' solution. From ensuring your privacy at boot time to blocking IPv6 and protecting against leaks during a software crash, you can always rely on the IVPN firewall to protect your privacy today and into the future.
+The IVPN firewall is the most secure solution available, far more than any 'kill switch' solution. From ensuring your privacy at boot time to protecting against leaks during a software crash, you can always rely on the IVPN firewall to protect your privacy today and into the future.

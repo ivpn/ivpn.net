@@ -27,7 +27,7 @@ This guide was produced using OPNSense 20.1.
 
 1.  Log in to the [IVPN Client Area](/account/).
 
-2.  Choose a WireGuard server to connect to from our list. To see our server list go to the `VPN Accounts` page in the Client Area, click the `WireGuard` tab. Go to `WireGuard Server List`, which is located under **Tools**. Make note of the hostname and the public key of the server.
+2.  Choose a WireGuard server to connect to from our [Server Status](/status/) page. Make note of the hostname and the public key of the server.
 
 3.  In the OPNSense web interface, go to `VPN > WireGuard > Endpoints` and click the `+` to add a VPN server location (Endpoint/Peer):
 
@@ -36,7 +36,7 @@ This guide was produced using OPNSense 20.1.
     <strong>Public Key:</strong> The server public key is available from the server list in the step above.<br>
     <strong>Shared Secret:</strong> Leave it blank.<br>
     <strong>Alloweb IPs:</strong> 0.0.0.0/0<br>
-    <strong>Endpoint Address:</strong> The server IP address is available from the server list in the step above.<br>
+    <strong>Endpoint Address:</strong> The server hostname is available from the server list in the step above.<br>
     <strong>Endpoint Port:</strong> IVPN offers different ports to connect on: 53, 2049, 2050, 30587, 41893, 48574, and 58237<br>
     <strong>Keepalive:</strong> 25
     </div>
@@ -72,7 +72,7 @@ This guide was produced using OPNSense 20.1.
     Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key</strong>. The <strong>Private Key</strong> must always be kept a carefully guarded secret.
     </div>
 
-4.  Make note of the IP Address beside your newly added public key on the WireGuard tab in the Client Area. This is the IP address your computer system will have on our internal network. It will be in the form **172.x.y.z**.
+4.  Make note of the IPv4 Address beside your newly added public key on the WireGuard tab in the Client Area. This is the IP address your computer system will have on our internal network. It will be in the form **172.x.y.z**.
 
 5.  Go back to the OPNSense web interface and the local interface that is being edited. Remove the temporary placeholder from the **Tunnel Address** field and enter the IP address from the step above plus the /32 netmask **(172.x.y.z/32)**.
 

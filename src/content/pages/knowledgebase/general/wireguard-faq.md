@@ -85,7 +85,7 @@ weight: 480
     Port Forwarding cannot be used with WireGuard at this time.
 
 13. Does WireGuard support IPv6?
-    IVPN does not support IPv6 across any VPN protocols, WireGuard included.
+    Yes.
 
 14. Can I use Multi-hop with WireGuard?
     Multi-hop is not available when used with WireGuard at this time.
