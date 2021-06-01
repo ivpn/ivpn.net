@@ -6,30 +6,33 @@
   "private": true,
   "scripts": {
     "watch": "npm run development -- --watch",
-    "development": "cross-env NODE_ENV=development ENV_FILE=./.env.development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "development": "cross-env NODE_ENV=development ENV_FILE=./.env.development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "copy:manifest": "cp static/mix-manifest.json data/manifest.json"
   },
   "devDependencies": {
-    "braintree-web": "^3.63.0",
+    "braintree-web": "^3.76.4",
     "cross-env": "^7.0.2",
-    "date-fns": "^2.15.0",
-    "flexbox-grid-mixins": "^0.2.1",
+    "date-fns": "^2.21.3",
+    "flexbox-grid-mixins": "^0.3.1",
     "js-cookie": "^2.2.1",
-    "laravel-mix": "^5.0.4",
+    "laravel-mix": "^6.0.19",
     "laravel-mix-bundle-analyzer": "^1.0.5",
     "lunr": "^2.3.9",
-    "mix-env-file": "^0.1.0",
-    "paypal-checkout": "^4.0.315",
+    "mix-env-file": "^0.1.1",
+    "paypal-checkout": "^4.0.328",
+    "postcss": "^8.2.15",
     "qrcode-generator": "^1.4.4",
-    "resolve-url-loader": "^3.1.0",
-    "sass": "^1.26.10",
-    "sass-loader": "^8.0.2",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.32.13",
+    "sass-loader": "^11.1.0",
     "vue": "^2.6.11",
-    "vue-router": "^3.3.4",
+    "vue-loader": "^15.9.7",
+    "vue-router": "^3.5.1",
     "vue-select": "^3.10.7",
     "vue-template-compiler": "^2.6.11",
-    "vuex": "^3.5.1"
+    "vuex": "^3.6.2"
   },
   "dependencies": {}
 }
