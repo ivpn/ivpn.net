@@ -171,6 +171,7 @@ export default {
         tokenize() {
             return new Promise((resolutionFunc, rejectionFunc) => {
                 this.hostedFields.tokenize().then((payload) => {
+                    console.log("tokenize.payload", payload);
                     return this.threeDSecure.verifyCard({
                         onLookupComplete: (data, next) => {
                             next();
@@ -180,6 +181,7 @@ export default {
                         bin: payload.details.bin
                     })
                 }).then((payload) => {
+                    console.log("verifyCard.payload", payload);
                     if (!payload.liabilityShifted) {
                         // "lookup_bypassed"
                         if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'B') {
