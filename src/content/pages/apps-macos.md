@@ -10,8 +10,8 @@ image: apps/macos-app
 releases: [{
     cta: Download,
     download: https://repo.ivpn.net/macos/bin/IVPN-3.3.10.dmg,
-    github: https://github.com/ivpn/desktop-app-ui2,
-    changelog: https://github.com/ivpn/desktop-app-ui2/blob/master/CHANGELOG.md,
+    github: https://github.com/ivpn/desktop-app,
+    changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
