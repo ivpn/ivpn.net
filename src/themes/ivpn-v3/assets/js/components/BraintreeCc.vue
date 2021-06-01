@@ -187,6 +187,12 @@ export default {
                             return;
                         }
 
+                        // "authentication_unavailable"
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'U') {
+                            rejectionFunc(new Error("Error on Authentication. Please attempt the transaction again."));
+                            return;
+                        }
+
                         const err = new Error("verification failed");
                         console.error(err);
                         rejectionFunc(err);
