@@ -187,12 +187,6 @@ export default {
                             return;
                         }
 
-                        // "authentication_unavailable"
-                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'U') {
-                            resolutionFunc(payload);
-                            return;
-                        }
-
                         const err = new Error("verification failed");
                         console.error(err);
                         rejectionFunc(err);
