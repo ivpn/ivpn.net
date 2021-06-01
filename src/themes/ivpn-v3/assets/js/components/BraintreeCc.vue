@@ -196,6 +196,8 @@ export default {
                     }
                     resolutionFunc(payload);
                 }).catch((err) => {
+                    console.log(err);
+                    console.log(err.code);
                     console.error(err);
                     if (err.code == "THREEDS_CARDINAL_SDK_ERROR") {
                         rejectionFunc(new Error("Error on Authentication. Please attempt the transaction again."));
