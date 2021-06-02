@@ -191,7 +191,7 @@ export default {
 
                         // "authentication_unavailable"
                         if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'U') {
-                            rejectionFunc(new Error("Authentication Not Available on Lookup. Please attempt the transaction again."));
+                            rejectionFunc(new Error("Authentication Not Available. Please attempt the transaction again."));
                             return;
                         }
 
