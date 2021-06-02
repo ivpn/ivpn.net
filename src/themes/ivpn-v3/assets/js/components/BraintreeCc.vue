@@ -205,6 +205,7 @@ export default {
                     console.log(err);
                     console.log(err.code);
                     console.error(err);
+                    // "authenticate_error"
                     if (err.code == "THREEDS_CARDINAL_SDK_ERROR") {
                         rejectionFunc(new Error("Error on Authentication. Please attempt the transaction again."));
                         return;
