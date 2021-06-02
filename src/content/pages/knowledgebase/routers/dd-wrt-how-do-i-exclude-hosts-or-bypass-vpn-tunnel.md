@@ -15,19 +15,24 @@ weight: 10
 We do not provide support in getting this functionality working on your DD-WRT router. You agree to use these scripts at your own risk.
 </div>
 
-## WireGuard
+### WireGuard
 
 1. Go to `SETUP` / `TUNNELS`
 
-1. Set **Advanced settings**: Enable
+2. Set **Advanced settings**: Enable
 
-1. Set **Policy Based Routing**: Enter IP list in CIDR notation.
+3. Set **Policy Based Routing**: Enter the IP address list in a CIDR notation.
 
-    <div markdown="1" class="notice notice--info">
-    <strong>Hint:</strong> The IP addresses are entered as a comma delimited list (no comma at the beginning and none at the end), CIDR notation is used.  When the list starts with a #, PBR is disabled (so you can preserve the list), entries starting with # are not added.  If you have set your DHCP client range from .64 - .127 (routers own IP address is the standard 192.168.1.1 ) you can easily set this range to use the VPN by entering: 192.168.1.64/26. If you also wanted addresses 192.168.1.20 and 192.168.1.40 and 192.168.1.41 the end result will look like this: <code>192.168.1.64/26, 192.168.1.20/32,192.168.1.40/31</code>
-    </div>
+![](/images-static/uploads/ddwrt-pbr.png)
 
-## OpenVPN
+<div markdown="1" class="notice notice--info">
+The hosts with the IP addresses specified in the Policy Based Routing (PBR) field will be routed via the WireGuard interface. Everything else will bypass the VPN tunnel and use the WAN interface instead.<br><br>
+The IP addresses are entered in a CIDR notation as a comma delimited list (no comma at the beginning and at the end).<br><br>
+When the list starts with a '#' symbol, all entries are ignored and PBR is disabled. This allows you to preserve the list for future use.<br><br>
+You can also specify a range of IPs by entering, e.g. - 192.168.1.64/26.
+</div>
+
+### OpenVPN
 
 1.  Go to `ADMINISTRATION` / `COMMANDS` / `COMMAND SHELL`. Enter the following commands whilst substituting the IP's you wish to bypass the VPN (each IP separated by a space character):
 

@@ -20,21 +20,21 @@ This guide was produced using DD-WRT v46772.
 
 3.  Set the `MTU` value of the WireGuard tunnel to `1412`. 
 
-4.  Click the `Generate Key` button and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the **IP address** we assign to your public key and add it to the IP address field followed by a `/32` subnet mask.
+4.  Click the `Generate Key` button and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the **IPv4 address** we assign to your public key and add it to the IP address field followed by a `/32` subnet mask.
 
     <div markdown="1" class="notice notice--info">
     <strong>Hint:</strong> After clicking <code>Generate Key</code>, it may or may not be possible to copy the public key displayed on the <code>Tunnels</code> page. Click the <code>Save</code> and <code>Apply Settings</code> buttons, then go to <code>Administration</code>  > <code>Commands</code>  and enter wg in the <code>Commands</code>  box, then click <code>Run Commands</code> . This will display details of the WireGuard connection including the public key, which can be easily copied.<br><br>
     <img src="/images-static/uploads/install-openvpn-ddwrt-wireguard-010.png">
     </div>
 
-5.  You might consider setting `Kill Switch` to `Enable`.  This will prevent out-bound traffic if the vpn connection is disconnected.
+5.  Set `Kill Switch` to `Enable`. This will prevent out-bound traffic when the VPN client is disconnected from the server.
 
 6.  Click the `Add Peer` button and enter the following peer configuration (as also shown in the screen shot below):
 
     *   **Peer Tunnel IP:** 0.0.0.0
     *   **Peer Tunnel DNS:** 172.16.0.1
     *   **Endpoint:** Enable
-    *   **Endpoint Address:** Enter an IVPN WireGuard server hostname (available via the **WireGuard Server List** in the Client Area) and choose a port:
+    *   **Endpoint Address:** Enter an IVPN WireGuard server hostname (available on the **[Server Status](/status/)** page) and choose a port:
         ```
         udp 2049
         udp 2050
@@ -44,10 +44,10 @@ This guide was produced using DD-WRT v46772.
         udp 48574
         udp 58237
         ```
-    *   **Allowed IPs:** 0.0.0.0/1,128.0.0.0/1
+    *   **Allowed IPs:** 0.0.0.0/0
     *   **Route Allowed IP's via tunnel**: Enable
     *   **Persistent Keepalive:** 25
-    *   **Peer Public Key:** Enter an IVPN WireGuard server public key (available via the **WireGuard Server List** in the Client Area)
+    *   **Peer Public Key:** Enter an IVPN WireGuard server public key (available on the **[Server Status](/status/)** page)
     *   **Use Pre-shared Key:** Disable
 
     ![](/images-static/uploads/install-openvpn-ddwrt-wireguard-020.png)
