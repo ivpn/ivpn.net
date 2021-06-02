@@ -50,7 +50,7 @@ This guide was produced using DD-WRT v46772.
     *   **Peer Public Key:** Enter an IVPN WireGuard server public key (available on the **[Server Status](/status/)** page)
     *   **Use Pre-shared Key:** Disable
 
-    ![](/images-static/uploads/install-openvpn-ddwrt-wireguard-020.png)
+    ![](/images-static/uploads/install-openvpn-ddwrt-wireguard-020-2.png)
 
     <div markdown="1" class="notice notice--info">
     <strong>Note:</strong> You are welcome to use whichever server you prefer. The <strong>Endpoint Address</strong> and <strong>Peer Public Key</strong> in the example above are specific to our server in Sweden.
