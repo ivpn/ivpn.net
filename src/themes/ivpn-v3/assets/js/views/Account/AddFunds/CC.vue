@@ -46,6 +46,7 @@
             <form v-else @submit.prevent="makePayment()">
                 <braintree-cc
                     :braintree="braintree"
+                    v-bind:amount="price.price"
                     :error="error"
                     ref="braintree"
                     @valid-changed="formValid = $event.value"

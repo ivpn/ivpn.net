@@ -117,7 +117,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 999999999999999999;
+    z-index: 100000;
 
     @include light-theme((
         background: rgba($color: #29292e, $alpha: 0.7)

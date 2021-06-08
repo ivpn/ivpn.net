@@ -57,7 +57,7 @@ import VisaIcon from "@/components/icons/cc/visa.vue";
 
 export default {
     components: { DiscoverIcon, VisaIcon },
-    props: ["braintree", "error"],
+    props: ["braintree", "amount", "error"],
     model: {
         prop: "hostedFields",
         event: "fieldsInitialized",
@@ -65,6 +65,7 @@ export default {
     data() {
         return {
             hostedFields: undefined,
+            threeDSecure: undefined,
             initialized: false,
 
             ccValid: false,
@@ -73,7 +74,8 @@ export default {
     },
 
     created() {
-        this.initFields();        
+        this.initFields();
+        this.initThreeDSecure();
     },
     methods: {
         initFields() {
@@ -131,6 +133,22 @@ export default {
             );
         },
 
+        initThreeDSecure() {
+            braintree.threeDSecure.create(
+                {
+                    version: 2,
+                    client: this.braintree.client
+                },
+                (err, threeDSecureInstance) => {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+                    this.threeDSecure = threeDSecureInstance;
+                }
+            );
+        },
+
         fieldUpdated(event) {
             var number = event.fields.number;
             var cvv = event.fields.cvv;
@@ -152,14 +170,44 @@ export default {
 
         tokenize() {
             return new Promise((resolutionFunc, rejectionFunc) => {
-                this.hostedFields.tokenize((err, payload) => {
-                    if (err) {
-                        console.error("Hosted fields tokenization error", err);
+                this.hostedFields.tokenize().then((payload) => {
+                    return this.threeDSecure.verifyCard({
+                        onLookupComplete: (data, next) => {
+                            next();
+                        },
+                        amount: this.amount || "0.0",
+                        nonce: payload.nonce,
+                        bin: payload.details.bin
+                    })
+                }).then((payload) => {
+                    if (!payload.liabilityShifted) {
+                        // "lookup_bypassed"
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'B') {
+                            resolutionFunc(payload);
+                            return;
+                        }
+
+                        // "authentication_unavailable"
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'U') {
+                            rejectionFunc(new Error("Authentication Not Available. Please attempt the transaction again."));
+                            return;
+                        }
+
+                        const err = new Error("verification failed");
+                        console.error(err);
                         rejectionFunc(err);
                         return;
                     }
-
                     resolutionFunc(payload);
+                }).catch((err) => {
+                    console.error(err);
+                    // "authenticate_error"
+                    if (err.code == "THREEDS_CARDINAL_SDK_ERROR") {
+                        rejectionFunc(new Error("Error on Authentication. Please attempt the transaction again."));
+                        return;
+                    }
+
+                    rejectionFunc(err);
                 });
             });
         },
