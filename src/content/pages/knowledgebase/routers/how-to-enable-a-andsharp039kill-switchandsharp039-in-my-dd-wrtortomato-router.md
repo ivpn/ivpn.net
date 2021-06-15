@@ -12,9 +12,25 @@ weight: 30
 
 To enhance your security and prevent any possible traffic leaking outside VPN tunnel whenever you are unexpectedly disconnected from IVPN, you need to slightly adjust firewall settings in a router you use:
 
-In **DD-WRT:**
+## DD-WRT
 
-1.  Go to 'Administration' - > 'Commands'
+### WireGuard:
+
+1.  Go to `Setup` - > `Tunnels`
+
+2.  Check **Kill Switch**
+
+3.  Click the `Save` button, then click the `Apply Settings` button.
+
+4.  Reboot your router.
+
+ <div markdown="1" class="notice notice--info">
+    This option will block the traffic only from clients connected via br0 interface. If you have made your own unbridged interfaces you have to add additional rules to your router's iptables firewall accordingly.<br><br>
+    If you use PBR (Policy Based Routing), the Killswitch rules will only apply to IP addresses you have specified in the PBR field. When PBR is disabled, then all LAN clients connected to br0 are blocked from accessing WAN.</div>
+
+### OpenVPN:
+
+1.  Go to `Administration` - > `Commands`
 
 2.  Add the following rules:
     ```
@@ -25,11 +41,11 @@ In **DD-WRT:**
     iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
     ```
 
-3.  Click on "Save Firewall" and Reboot router. 
+3.  Click on `Save Firewall` and Reboot router. 
 
-**Tomato**:
+## Tomato
 
-1.  Go to Administration -> Scripts > Firewall
+1.  Go to `Administration` -> `Scripts` > `Firewall`
 
 2.  Add the following rules:  
     ```

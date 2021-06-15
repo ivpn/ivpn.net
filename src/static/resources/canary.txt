@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2021-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-Europe to crank up regulatory pressure on China
-Proposals seek to restrict foreign subsidised companies and assert EU’s ‘strategic autonomy’
+Brexit commissioner develops thick skin in bruising talks with London
+Sefcovic-Frost relationship goes back to the Blair years
 
-Berkshire after Buffett: ‘Greg will keep the culture’
-Investors get clearest look yet at frontrunner Abel, who could one day become CEO
+Silicon Valley paves the way for a new kind of Wall Street
+Plus, the ecommerce deal betting big on Gen-Z and a seven-year international legal feud reaches a boiling point
 
-Commodities supercycle arrives as pandemic recedes
-Sector-wide bull market gathers momentum
+Modi’s Covid charity under scrutiny over faulty ventilators
+Indian recovery fund attracts donations from across the world but critics allege lack of transparency
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmCPmHwACgkQisFrnrZH
-ummcpAf/TGEutbEhE3z0dRgBgpW6KxX1Ffp0t3vdEi5eJtKN8SRLrxguXWgeBSuh
-uDojjZRod9PUOoUMd5MrsL5QDI/sWYzmD8GQnSuWiZ4j5xzcCWyuQhqLI7ie+QeV
-AqvaYAQMPcAYQPkZnPTN62g9mrYSwhRUBYb28Q2qAWzbzk0X8p5L4HgGTOeOUI9a
-cA7c6lwPAgTGN4TykjsKXx9lm2N/NuCPP4wG+A6sR5+YDnGV5vaG41PKk2k3UaO9
-Ig76a+gjISkWepzkOKbXYQaE60QR5bjJevBsAaVcppBw8TV//5Xm1voTbBNh1TRt
-taPEHmsuBnjul7g5efb0hJ0GpdLwdA==
-=r+9R
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmC4aNsACgkQisFrnrZH
+umnvWwf9G+8hTjomjmnr4yU62EVjjXbsfhtpbv/PGIsijzj7DQS++RZ1a23Pch+g
+BTliPTjr4rpaBrN9LZ0I9CaPOMX6ZNNnSyOXvS3xwTC+IHpN/c6SlYElYX9JZ4Uy
+Iyae3lVgX6e8EPydesqeYGJi+FbzJvpihMzZshWjbAAsuDcRRo3Mrp8uLyjhL3Vo
+Uqu3hjGJY6zTLDvGJ5LhZEezhFU77mEf42YhWYqpRx7IsjfIKUZW4imKnyNj+8yJ
+1MNUr6IVk27YwU6LSLV4tj6bzAZqAK5lRyOKmYuO9lKAQ0LSUmCLxsDS5gZh546p
+mErnPPsbmcN3nP/SB3RYHr9d+VfTgw==
+=nr2W
 -----END PGP SIGNATURE-----
 
 
