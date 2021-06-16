@@ -181,15 +181,9 @@ export default {
                     })
                 }).then((payload) => {
                     if (!payload.liabilityShifted) {
-                        // "lookup_bypassed"
-                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'B') {
+                        // "lookup_bypassed", "authentication_unavailable"
+                        if (!payload.liabilityShiftPossible && (payload.threeDSecureInfo.enrolled == 'B' || payload.threeDSecureInfo.enrolled == 'U')) {
                             resolutionFunc(payload);
-                            return;
-                        }
-
-                        // "authentication_unavailable"
-                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'U') {
-                            rejectionFunc(new Error("Authentication Not Available. Please attempt the transaction again."));
                             return;
                         }
 
