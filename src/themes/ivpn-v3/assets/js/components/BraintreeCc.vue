@@ -181,7 +181,7 @@ export default {
                     })
                 }).then((payload) => {
                     if (!payload.liabilityShifted) {
-                        // "lookup_bypassed"
+                        // "lookup_bypassed", "authentication_unavailable"
                         if (!payload.liabilityShiftPossible && (payload.threeDSecureInfo.enrolled == 'B' || payload.threeDSecureInfo.enrolled == 'U')) {
                             resolutionFunc(payload);
                             return;
