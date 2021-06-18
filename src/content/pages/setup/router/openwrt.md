@@ -1,7 +1,7 @@
 ---
-title: VPN Setup guide for OpenWrt
-listItem: OpenWrt
-url: /setup/router/openwrt/
+title: OpenVPN Setup guide for OpenWrt
+listItem: OpenWrt OpenVPN
+url: /setup/router/openwrt-openvpn/
 section: Router Setup
 platform: router
 layout: setup-article
@@ -10,132 +10,89 @@ weight: 20
 ## OpenWrt OpenVPN Setup Guide
 
 <div markdown="1" class="notice notice--warning">
-This guide was produced using OpenWrt v.18.06.2
+This guide was produced using OpenWrt v.19.07.2
 </div>
 
-1.  Open the terminal on your computer and log in to your router via the SSH:
+### Installing required packages
 
-    ```
-    # ssh root@192.168.1.1
-    ```
+1. In your router's webUI, navigate to `System` - `Software`, click `Update lists`
 
-    The router’s username and IP address above are default. Substitute accordingly if yours are different.
+2. In the **Filter** field, type **OpenVPN**, locate and install **openvpn-openssl** & **luci-app-openvpn** packages
 
-2.  Install OpenVPN package:
+<div markdown="1" class="notice notice--info">
+If you receive an error while attempting to install the 'luci-app-openvpn' package, check the 'Overwrite files from other package(s)' checkbox
+</div>
 
-    ```
-    # opkg update
-    # opkg install openvpn-openssl
-    ```
+![](/images-static/uploads/install-openvpn-openwrt-01.png)
 
-    ..and LuCI-component of OpenVPN (optional, if you prefer to manage OpenVPN profile from your router's Web UI later on):
+### Creating a VPN profile
 
-    ```
-    # opkg install install luci-app-openvpn
-    ```
+1. Download and extract our [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) config files to your computer
 
-3.  Enable OpenVPN to start on boot:
+2. In your router, navigate to `VPN` - `OpenVPN`
 
-    ```
-    # /etc/init.d/openvpn enable
-    ```
+3. Under the **OVPN configuration file upload** section, `Browse` for the .ovpn config file with the VPN server you would like to connect to, give it any name, then click `Upload`
 
-4.  Download and unzip [.IVPN config files](/releases/config/ivpn-openvpn-config.zip) to your computer. Open the .ovpn config file with the VPN server location you wish to connect to using any text editors and adjust `auth-user-pass` line to `auth-user-pass pass`. Save the changes.
+4. Click on the `Edit` button next to the created OpenVPN instance and enter your IVPN username and any password (e.g. ivpn) in 2 separate lines in the text box at the bottom
 
-5.  Change the extension of the .ovpn config file to .conf and transfer it over to your router’s **"/etc/openvpn/"** folder using **"scp"** command in the separate terminal instance (or WinSCP program for Windows):
+5. Append the credentials file path to the **auth-user-pass** line in the first text box. The full path is visible just above the second text box, e.g. - `auth-user-pass /etc/openvpn/Austria.auth`. Click `Save`<br></br>
+![](/images-static/uploads/install-openvpn-openwrt-02.png)
 
-    ```
-    # scp ~/Downloads/Germany.ovpn root@192.168.1.1:/etc/openvpn/Germany.ovpn
-    ```
+6. Return to main `OpenVPN` section, check the `Enabled` checkbox and click on the `Save & Apply` button. 
 
-    Adjust the path with your .ovpn file location and router’s username/ip address accordingly
+### Creating a VPN Interface
 
-6.  Back in the router’s CLI, create the file with your IVPN credentials:
+1. Navigate to `Network` - `Interfaces`
 
-    ```
-    # cat > /etc/openvpn/pass << EOF
-    # yourIVPNaccountID
-    # anyPasswordHere
-    # EOF
-    ```
+2. Click on the `Add new interface` button and enter the following configuration:
 
-    <div markdown="1" class="notice notice--info">
-    Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
-    </div>
+    * Name - Give it any name, e.g. **ivpnAustria**
+    * Protocol - **Unmanaged**
+    * Interface - **tun0**<br></br>
+![](/images-static/uploads/install-openvpn-openwrt-03.png)
 
-    Set correct permissions:
+3. `Create interface`
 
-    ```
-    # chmod 0400 /etc/openvpn/pass
-    ```
+4. In the interface properties window, ensure that **Bring up on boot** is checked, then click `Save` & `Save & Apply` buttons.
 
-7.  Specify the filename in **"/etc/config/openvpn"**:
+### Adding a Firewall zone
 
-    ```
-    # uci set openvpn.ivpn=openvpn
-    # uci set openvpn.ivpn.enabled='1'
-    # uci set openvpn.ivpn.config='/etc/openvpn/Germany.ovpn'
-    # uci commit openvpn
-    ```
+1. Navigate to `Network` - `Firewall`
 
-8.  Create network interface:
+2. Click on the `Add` button and enter the following configuration:
 
-    ```
-    # uci set network.ivpntun=interface
-    # uci set network.ivpntun.proto='none'
-    # uci set network.ivpntun.ifname='tun0'
-    # uci commit network
-    ```
+    * Name - Give it any name, e.g. **ivpn_fw**
+    * Input - **Reject**
+    * Output - **Accept**
+    * Forward - **Reject**
+    * Masquerading - **Checked**
+    * MSS clamping - **Checked**
+    * Covered networks - select the previously created VPN tunnel interface, e.g. **ivpnAustria**
+    * Allow forward to destination zones - **Unspecified**
+    * Allow forward from source zones - **lan**<br></br>
+![](/images-static/uploads/install-openvpn-openwrt-04.png)
 
-9.  Create Firewall zone and add forwarding rule from LAN to VPN:
+3. Click `Save` & `Save & Apply` buttons.
 
-    ```
-    # uci add firewall zone
-    # uci set firewall.@zone[-1].name='vpnfirewall'
-    # uci set firewall.@zone[-1].input='REJECT'
-    # uci set firewall.@zone[-1].output='ACCEPT'
-    # uci set firewall.@zone[-1].forward='REJECT'
-    # uci set firewall.@zone[-1].masq='1'
-    # uci set firewall.@zone[-1].mtu_fix='1'
-    # uci add_list firewall.@zone[-1].network='ivpntun'
-    # uci add firewall forwarding
-    # uci set firewall.@forwarding[-1].src='lan'
-    # uci set firewall.@forwarding[-1].dest='vpnfirewall'
-    # uci commit firewall
-    ```
+### Configuring a Kill-switch (optional)
 
-10. Configure IVPN DNS on your router’s WAN interface:
+To ensure the traffic on your LAN devices travels strictly via the VPN tunnel and prevent any possible leaks if the router disconnects from the VPN server for any reason, edit your lan firewall zone and remove **WAN** from the `Allow forward to destination zones` field, then click `Save` & `Save & Apply` buttons.<br></br>
+![](/images-static/uploads/install-openvpn-openwrt-05.png)
 
-    ```
-    # uci set network.wan.peerdns='0'
-    # uci del network.wan.dns
-    # uci add_list network.wan.dns='10.0.254.1'
-    # uci add_list network.wan.dns='198.245.51.147'
-    # uci commit
-    ```
+### DNS
 
-11. Enable a Kill-switch by adding the following script into the “/etc/firewall.user” file (under the commented lines) using any text editors (vi, ee, nano, etc..):
+1. Navigate to `Network` - `Interfaces`
 
-    ```
-    # This file is interpreted as shell script.
-    # Put your custom iptables rules here, they will
-    # be executed with each firewall (re-)start.
-    # Internal uci firewall chains are flushed and recreated on reload, so
-    # put custom rules into the root chains e.g. INPUT or FORWARD or into the
-    # special user chains, e.g. input_wan_rule or postrouting_lan_rule.
-    if (! ip a s tun0 up) && (! iptables -C forwarding_rule -j REJECT); then
-            iptables -I forwarding_rule -j REJECT
-    fi
-    ```
+2. Click on the `Edit` button next to the **LAN** interface and specify one of the following DNS servers:
 
-12. Connect to the VPN:
+    - *10.0.254.1* = regular DNS with no blocking
+    - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
+    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook<br></br>
+![](/images-static/uploads/install-openvpn-openwrt-06.png)
 
-    ```
-    # service openvpn start
-    ```
+3. Click `Save` & `Save & Apply` buttons.
 
-    Check the online status tool on our website to confirm you are connected to IVPN or visit [https://dnsleaktest.com](https://dnsleaktest.com)
+### Final Steps
 
-    You can now also manage the OpenVPN service in your router’s WebUI:
-
-    ![](/images-static/uploads/install-openvpn-openwrt-010.png)
+1. A device reboot is not required, though it may be useful to confirm that everything behaves as expected.
+2. Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) via one of the internal network clients attached to your OpenWRT router.
