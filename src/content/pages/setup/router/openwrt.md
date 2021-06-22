@@ -13,19 +13,19 @@ weight: 20
 This guide was produced using OpenWrt v.19.07.2
 </div>
 
-### Installing required packages
+### Install required packages
 
 1. In your router's webUI, navigate to `System` - `Software`, click `Update lists`
 
-2. In the **Filter** field, type **OpenVPN**, locate and install **openvpn-openssl** & **luci-app-openvpn** packages
-
-<div markdown="1" class="notice notice--info">
-If you receive an error while attempting to install the 'luci-app-openvpn' package, check the 'Overwrite files from other package(s)' checkbox
-</div>
-
+2. In the **Filter** field, type **OpenVPN**, locate and install **openvpn-openssl** & **luci-app-openvpn** packages<br></br>
 ![](/images-static/uploads/install-openvpn-openwrt-01.png)
+    
+3. Restart your router
+    <div markdown="1" class="notice notice--info">
+    If you receive an error while attempting to install the 'luci-app-openvpn' package, check the 'Overwrite files from other package(s)' checkbox
+    </div>
 
-### Creating a VPN profile
+### Create a VPN profile
 
 1. Download and extract our [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) config files to your computer
 
@@ -33,14 +33,21 @@ If you receive an error while attempting to install the 'luci-app-openvpn' packa
 
 3. Under the **OVPN configuration file upload** section, `Browse` for the .ovpn config file with the VPN server you would like to connect to, give it any name, then click `Upload`
 
-4. Click on the `Edit` button next to the created OpenVPN instance and enter your IVPN username and any password (e.g. ivpn) in 2 separate lines in the text box at the bottom
+4. Click the `Edit` button next to the created OpenVPN instance and enter your IVPN username and any password (e.g. ivpn) in 2 separate lines in the text box at the bottom
 
 5. Append the credentials file path to the **auth-user-pass** line in the first text box. The full path is visible just above the second text box, e.g. - `auth-user-pass /etc/openvpn/Austria.auth`. Click `Save`<br></br>
 ![](/images-static/uploads/install-openvpn-openwrt-02.png)
 
-6. Return to main `OpenVPN` section, check the `Enabled` checkbox and click on the `Save & Apply` button. 
+6. Replace the hostname of the VPN server in line 4 with its IP address - `remote 185.244.212.66 2049`.<br></br>
+To turn the hostname of the server into an IP address use, e.g. the `nslookup at.gw.ivpn.net` command in your computer's terminal:
+	> $ nslookup at.gw.ivpn.net  
+	> ...  
+	> Name:   at.gw.ivpn.net  
+	> Address: 185.244.212.66
 
-### Creating a VPN Interface
+7. Click `Save`. Return to main `OpenVPN` section, check the `Enabled` checkbox and click on the `Save & Apply` button. 
+
+### Create an Interface
 
 1. Navigate to `Network` - `Interfaces`
 
@@ -55,11 +62,11 @@ If you receive an error while attempting to install the 'luci-app-openvpn' packa
 
 4. In the interface properties window, ensure that **Bring up on boot** is checked, then click `Save` & `Save & Apply` buttons.
 
-### Adding a Firewall zone
+### Add a Firewall zone
 
 1. Navigate to `Network` - `Firewall`
 
-2. Click on the `Add` button and enter the following configuration:
+2. Click the `Add` button and enter the following configuration:
 
     * Name - Give it any name, e.g. **ivpn_fw**
     * Input - **Reject**
@@ -70,20 +77,21 @@ If you receive an error while attempting to install the 'luci-app-openvpn' packa
     * Covered networks - select the previously created VPN tunnel interface, e.g. **ivpnAustria**
     * Allow forward to destination zones - **Unspecified**
     * Allow forward from source zones - **lan**<br></br>
-![](/images-static/uploads/install-openvpn-openwrt-04.png)
-
+![](/images-static/uploads/install-openvpn-openwrt-04.png)<br></br>
 3. Click `Save` & `Save & Apply` buttons.
 
-### Configuring a Kill-switch (optional)
+### Configure a Kill-switch (optional)
 
-To ensure the traffic on your LAN devices travels strictly via the VPN tunnel and prevent any possible leaks if the router disconnects from the VPN server for any reason, edit your lan firewall zone and remove **WAN** from the `Allow forward to destination zones` field, then click `Save` & `Save & Apply` buttons.<br></br>
+To ensure the traffic on your LAN devices travels strictly via the VPN tunnel and to prevent any possible leaks if the router disconnects from the VPN server for any reason, edit your lan firewall zone and remove **WAN** from the `Allow forward to destination zones` field, then click `Save` & `Save & Apply` buttons.<br></br>
 ![](/images-static/uploads/install-openvpn-openwrt-05.png)
 
 ### DNS
 
 1. Navigate to `Network` - `Interfaces`
 
-2. Click on the `Edit` button next to the **LAN** interface and specify one of the following DNS servers:
+2. Click on the `Edit` button next to the **WAN** interface
+
+3. In the `Advanced Settings` tab, uncheck the `User DNS servers advertised by peer` and specify one of the following DNS servers in the `Use custom DNS servers` field:
 
     - *10.0.254.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
