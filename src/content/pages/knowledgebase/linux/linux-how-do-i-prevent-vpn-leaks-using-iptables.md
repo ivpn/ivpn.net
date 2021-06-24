@@ -15,7 +15,7 @@ weight: 30
 We recommend using our <a href="/apps-linux/">Linux CLI app</a> that offers an easy-to-use built-in Firewall solution that protects you from both IP and traffic leaks. Read on, if you would like to have a more granular Firewall configuration or prefer to use NetworkManager or a different VPN client.
 </div>
 
-If you're using stock OpenVPN in Linux, especially with Network Manager, leaks are possible if the VPN connection fails, or is temporarily interrupted. Given that, it's prudent to have firewall (iptables) rules that: 1) restrict traffic to the VPN tunnel; 2) allow direct connections only to the VPN server.
+If you're using stock OpenVPN in Linux, especially with Network Manager, leaks are possible if the VPN connection fails, or is temporarily interrupted. Also, if your ISP provides IPv6 connectivity, but your VPN service does not, traffic to IPv6-capable sites will bypass the VPN tunnel, and identify you to websites. Given that, it's prudent to have firewall (iptables) rules that: 1) restrict traffic to the VPN tunnel; 2) allow direct connections only to the VPN server; and 3) block IPv6 traffic.
 
 There are many ways to manage iptables rules. The old-school standard is shell scripting. And indeed, OpenVPN has hooks to run scripts, for routing and iptables, when the VPN connects and disconnects. That's convenient, certainly, but it's also complicated, and it requires editing VPN configuration files. Most VPN services use the "redirect-gateway def1" option to handle routing, but they don't touch iptables. So you need to disable "redirect-gateway def1", and handle routing changes in your scripts.
 
@@ -107,3 +107,36 @@ Now connect (or reconnect) the VPN. If it doesn't connect, restore the default r
 ```
 
 If the VPN connects now, there must be errors in the iptables rules.
+
+Once the basic IPv4 setup is working, you can deal with IPv6. If you have IPv6 service from your ISP, and want to use IPv6 when you're not using VPNs, just create new IPv6 rules for the VPN connection:
+
+```
+# nano /etc/iptables/vpn-rules.v6
+```
+
+> *filter
+> 
+> :INPUT DROP [0:0]
+> :FORWARD DROP [0:0]
+> :OUTPUT DROP [0:0]
+> 
+> COMMIT
+
+Then load the IPv6 VPN rules:
+
+```
+# ip6tables-restore < /etc/iptables/vpn-rules.v6
+```
+
+Using "iptables-restore" to restore "vpn-rules.v6" is a classic fail, by the way.
+
+If you don't use VPN services that route IPv6, and don't need it, you may want to just disable it:
+
+```
+# echo 'net.ipv6.conf.all.disable_ipv6=1' | sudo tee -a /etc/sysctl.conf
+# echo 'net.ipv6.conf.default.disable_ipv6=1' | sudo tee -a /etc/sysctl.conf
+# echo 'net.ipv6.conf.lo.disable_ipv6=1' | sudo tee -a /etc/sysctl.conf
+# sudo sysctl -p
+```
+
+You can reverse those changes by editing `/etc/sysctl.conf`, and deleting those lines.

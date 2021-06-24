@@ -10,4 +10,4 @@ weight: 210
 ---
 # Do you support IPv6?
 
-Yes, our service is fully compatible with IPv6.
+We provide the option to receive an IPv6 address when connecting to our servers using WireGuard (IPv6 over IPv4). This enables those with only an IPv4 address to access the IPv6 Internet. Access to IPv6 by connecting to our servers using IPv6 is currently under development.

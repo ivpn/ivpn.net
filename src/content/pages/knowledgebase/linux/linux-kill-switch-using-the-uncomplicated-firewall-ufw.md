@@ -72,3 +72,14 @@ This guide shows you how to setup a firewall (similar to a 'kill switch') using 
     ```
     # sudo ufw reset
     ```
+
+You can additionally disable IPv6:
+
+```
+# echo 'net.ipv6.conf.all.disable_ipv6=1' | sudo tee -a /etc/sysctl.conf
+# echo 'net.ipv6.conf.default.disable_ipv6=1' | sudo tee -a /etc/sysctl.conf
+# echo 'net.ipv6.conf.lo.disable_ipv6=1' | sudo tee -a /etc/sysctl.conf
+# sudo sysctl -p
+```
+
+...and reverse those changes by editing /etc/sysctl.conf, and deleting those lines.
