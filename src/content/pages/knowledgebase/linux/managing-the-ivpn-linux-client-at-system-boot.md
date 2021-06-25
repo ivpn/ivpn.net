@@ -103,10 +103,16 @@ Root-level or sudo-style access is required for this option.
     $ sudo nano /lib/systemd/system/ivpn-autoconnect.service
     [Unit]
     Description=IVPN autoconnect service.
-    After=network-online.target ivpn-service.service
+    After=network.target ivpn-service.service
+    Requires=network-online.target ivpn-service.service
+
     [Service]
-    Type=simple
+    Type=oneshot
+    ExecStartPre=sleep 2
     ExecStart=/bin/bash /usr/local/bin/ivpn-autoconnect.sh
+    ExecStop=ivpn disconnect
+    RemainAfterExit=yes
+
     [Install]
     WantedBy=multi-user.target
     ```
