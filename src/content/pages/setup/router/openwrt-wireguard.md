@@ -33,7 +33,7 @@ This guide was produced using OpenWrt v.19.07.2
     ># cat privatekey
     ># cat publickey
 
-### Obtaine WireGuard IP address
+### Obtain WireGuard IP address
 
 1. Log into the [Client Area](/account/login/#id)
 2. Navigate to `WireGuard` tab and click the `Add a new key` button<br></br>
@@ -108,7 +108,7 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
 2. Click on the `Edit` button next to the **WAN** interface
 
-3. In the `Advanced Settings` tab, uncheck the `User DNS servers advertised by peer` and specify one of the following DNS servers in the `Use custom DNS servers` field:
+3. In the `Advanced Settings` tab, uncheck the `Use DNS servers advertised by peer` and specify one of the following DNS servers in the `Use custom DNS servers` field:
 
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
