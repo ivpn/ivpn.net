@@ -33,7 +33,8 @@
     "vue-router": "^3.5.1",
     "vue-select": "^3.10.7",
     "vue-template-compiler": "^2.6.11",
-    "vuex": "^3.6.2"
+    "vuex": "^3.6.2",
+    "yarn-upgrade-all": "^0.5.4"
   },
   "dependencies": {}
 }
