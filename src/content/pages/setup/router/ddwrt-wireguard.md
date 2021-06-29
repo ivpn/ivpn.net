@@ -20,7 +20,7 @@ This guide was produced using DD-WRT v46772.
 
 3.  Set the `MTU` value of the WireGuard tunnel to `1412`. 
 
-4.  Click the `Generate Key` button and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the **IPv4 address** we assign to your public key and add it to the `IP address` field and `255.255.255.255` in the `Subnet Mask` field.
+4.  Click the `Generate Key` button and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the **IPv4 address** we assign to your public key and add it to the IP address field followed by a `/32` subnet mask.
 
     <div markdown="1" class="notice notice--info">
     <strong>Hint:</strong> After clicking <code>Generate Key</code>, it may or may not be possible to copy the public key displayed on the <code>Tunnels</code> page. Click the <code>Save</code> and <code>Apply Settings</code> buttons, then go to <code>Administration</code>  > <code>Commands</code>  and enter wg in the <code>Commands</code>  box, then click <code>Run Commands</code> . This will display details of the WireGuard connection including the public key, which can be easily copied.<br><br>
@@ -50,7 +50,7 @@ This guide was produced using DD-WRT v46772.
     *   **Peer Public Key:** Enter an IVPN WireGuard server public key (available on the **[Server Status](/status/)** page)
     *   **Use Pre-shared Key:** Disable
 
-    ![](/images-static/uploads/install-openvpn-ddwrt-wireguard-020.png)
+    ![](/images-static/uploads/install-openvpn-ddwrt-wireguard-020-2.png)
 
     <div markdown="1" class="notice notice--info">
     <strong>Note:</strong> You are welcome to use whichever server you prefer. The <strong>Endpoint Address</strong> and <strong>Peer Public Key</strong> in the example above are specific to our server in Sweden.

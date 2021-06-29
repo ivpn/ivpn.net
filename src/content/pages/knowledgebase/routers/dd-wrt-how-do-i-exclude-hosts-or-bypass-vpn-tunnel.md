@@ -15,6 +15,25 @@ weight: 10
 We do not provide support in getting this functionality working on your DD-WRT router. You agree to use these scripts at your own risk.
 </div>
 
+### WireGuard
+
+1. Go to `SETUP` / `TUNNELS`
+
+2. Set **Advanced settings**: Enable
+
+3. Set **Policy Based Routing**: Enter the IP address list in a CIDR notation.
+
+![](/images-static/uploads/ddwrt-pbr.png)
+
+<div markdown="1" class="notice notice--info">
+The hosts with the IP addresses specified in the Policy Based Routing (PBR) field will be routed via the WireGuard interface. Everything else will bypass the VPN tunnel and use the WAN interface instead.<br><br>
+The IP addresses are entered in a CIDR notation as a comma delimited list (no comma at the beginning and at the end).<br><br>
+When the list starts with a '#' symbol, all entries are ignored and PBR is disabled. This allows you to preserve the list for future use.<br><br>
+You can also specify a range of IPs by entering, e.g. - 192.168.1.64/26.
+</div>
+
+### OpenVPN
+
 1.  Go to `ADMINISTRATION` / `COMMANDS` / `COMMAND SHELL`. Enter the following commands whilst substituting the IP's you wish to bypass the VPN (each IP separated by a space character):
 
     ```

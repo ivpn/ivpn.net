@@ -47,16 +47,16 @@ weight: 480
     UDP 58237
     ```
 
-6.  What IP addresses are issued for WireGuard connections?
+6.  #### What IP addresses are issued for WireGuard connections?
     The IP address is randomly assigned from `172.16.0.0/12` range.
 
-7.  Which servers I can connect to with WireGuard?
+7.  #### Which servers I can connect to with WireGuard?
     The full list of our WireGuard servers can be viewed on the [Servers](/status/) page.
 
-8.  How many devices I can connect with WireGuard?
+8.  #### How many devices I can connect with WireGuard?
     2 on the Standard and 7 on the Pro plan.
 
-9.  Do I need to manually create and add public key in the Client Area when adding a new device?
+9.  #### Do I need to manually create and add public key in the Client Area when adding a new device?
     When using our native clients for Windows, macOS, Linux, iOS & Android, public keys are generated automatically the moment you select WireGuard protocol. They can be viewed & regenerated directly from the ‘WireGuard’ section within the IVPN client Settings area & deleted in the [Client Area](/account/) - [WireGuard](/account/wireguard/) page.
 
     For Linux, keys can be obtained via the following command:
@@ -65,7 +65,7 @@ weight: 480
     $ wg genkey | tee privatekey | wg pubkey > publickey
     ```
 
-10. What happens if I delete a public key?
+10. #### What happens if I delete a public key?
     If you purposefully or accidentally deleted public keys from the Client Area, new keys will be automatically generated upon selecting the WireGuard protocol in the IVPN Client.
 
     In case the public key was deleted while your device was connected to one of the WireGuard servers, the IVPN Client will stay connected, however, you will have no internet access. You will need to disconnect and either relog into the IVPN client or click on the ‘Re-generate Keys’ button under the ‘WireGuard’ details/configuration area.
@@ -78,17 +78,17 @@ weight: 480
 
     Your new public key has to be manually added in the [Client Area](/account/) - [WireGuard](/account/wireguard/) page.
 
-11. How do I verify that I am connected?
+11. #### How do I verify that I am connected?
     Our website shows a connection status at the top of the page or inside the 'Menu' on mobile devices. There is a blue 'Connected' or a red 'Disconnected', which indicates your status. Another way to ensure that you are properly connected to IVPN is to simply visit the [dns leak test](https://www.dnsleaktest.com/) website. As long as you see the revealed location matches the selected IVPN server & the IP address is different to the one provided by your ISP - this gives you reasonable assurance that your traffic is routed through the VPN service.
 
-12. Does Port Forwarding work with WireGuard?
+12. #### Does Port Forwarding work with WireGuard?
     Port Forwarding cannot be used with WireGuard at this time.
 
 13. Does WireGuard support IPv6?
     Yes.
 
-14. Can I use Multi-hop with WireGuard?
+14. #### Can I use Multi-hop with WireGuard?
     Multi-hop is not available when used with WireGuard at this time.
 
-15. What DNS server is used when connecting with WireGuard?
+15. #### What DNS server is used when connecting with WireGuard?
     We provide our own, secure and absolutely logless DNS server which is pushed and applied automatically to your device when you connect. The IP address of the standard DNS server is `172.16.0.1`. The AntiTracker DNS address is `10.0.254.2`. The AntiTracker's Hardcore Mode DNS address is `10.0.254.3`.
