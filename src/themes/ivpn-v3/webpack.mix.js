@@ -28,24 +28,14 @@ mix.webpackConfig({
     }
 });
 
-
 // if (mix.inProduction()) {
     // mix.bundleAnalyzer();
 // }
 
-
-mix.js('assets/js/app.js', 'static/js/')    
-    .js('assets/js/servers.js', 'static/js/')
-    .js('assets/js/search.js', 'static/js/')
+mix.setPublicPath('static')
+    .js('assets/js/app.js', 'static/js/').vue()
+    .js('assets/js/servers.js', 'static/js/').vue()
+    .js('assets/js/search.js', 'static/js/').vue()
     .js('assets/js/menu.js', 'static/js/')
     .sass('assets/scss/pages.scss', 'static/css/')
-    .setPublicPath('static')
-    .version()
-    .then(() => {
-        // Run Laravel Mix copy file method
-        new (require('laravel-mix/src/tasks/CopyFilesTask'))({
-          from: 'static/mix-manifest.json',
-          to: new File('data/manifest.json')
-        }).run();
-      })
-
+    .version();
