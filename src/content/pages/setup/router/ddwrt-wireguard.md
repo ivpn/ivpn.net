@@ -63,6 +63,4 @@ This guide was produced using DD-WRT v46772.
     * **Static DNS 1:** 172.16.0.1
     * **Static DNS 2:** 198.245.51.147
 
-9.  Click the `Save` button, then click the `Apply Settings` button.
-
-10.  Reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.
+9.  Save and Apply the changes, reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.

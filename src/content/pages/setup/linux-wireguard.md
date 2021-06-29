@@ -42,7 +42,7 @@ platform: linux
     Be sure to copy the PUBLIC key and not the PRIVATE key. The PRIVATE key must always be kept a carefully guarded secret.
     </div>
 
-3.  Make note of the `IP Address` beside your newly added public key on the WireGuard tab in the Client Area. This is the IP address your computer system will have on our internal network. It will be in the form `172.x.y.z`.
+3.  Make note of the `IPv4 address` and `IPv6 address` beside your newly added public key on the WireGuard tab in the Client Area. These are the IP addresses your computer system will have on our internal network that will be in the `172.x.y.z` & `fd00:4956:504e:ffff::aaaa:bbbb` format respectively.
 
 4.  WireGuard uses the UDP protocol and IVPN offers different ports to connect on. Choose a port:
 
@@ -56,7 +56,7 @@ platform: linux
     udp 58237
     ```
 
-5.  Choose a WireGuard server to connect to from our list. To see our server list go to the `VPN Accounts` page, click the `WireGuard` tab. Go to `WireGuard Server List` which is located under `Tools`. Remember the hostname and the public key of the server.
+5.  Choose a WireGuard server to connect to from our **[Server Status](/status/)** page. Remember the hostname and the public key of the server.
 
 6.  To create a WireGuard configuration file for the connection you will need the following information:
 
@@ -67,10 +67,10 @@ platform: linux
     abcdefghijklmnopqrstuvwxyz0123456789=
     ```
 
-    Your assigned IP address from step #3 above.
+    Your assigned IP addresses from step #3 above.
 
     ```
-    172.x.y.z
+    172.x.y.z, fd00:4956:504e:ffff::aaaa:bbbb
     ```
 
     The server port from step #4 above.
@@ -100,18 +100,18 @@ platform: linux
     ```
     [Interface]
     PrivateKey = abcdefghijklmnopqrstuvwxyz0123456789=
-    Address = 172.x.y.z/32
+    Address = 172.x.y.z/32, fd00:4956:504e:ffff::x:y/128
     DNS = 172.16.0.1
     [Peer]
     PublicKey = JPT1veXLmasj2uQDstX24mpR7VWD+GmV8JDkidkz91Q=
     Endpoint = us-tx1.wg.ivpn.net:2049
-    AllowedIPs = 0.0.0.0/0
+    AllowedIPs = 0.0.0.0/0, ::/0
     ```
 
     Press `Ctrl + x` to save the file and exit from the nano editor.
 
     <div markdown="1" class="notice notice--info">
-    - Add '/32' to the end of your assigned IP address.<br>
+    - Add '/32' & '/128' to the end of your assigned IPv4 and IPv6 addresses respectively.<br>
     - Add the chosen port at the end of the hostname with a prefix of ':'
     </div>
 
@@ -139,10 +139,11 @@ platform: linux
 
     Press `Ctrl + x` to save the file and exit from the nano editor.
 
-10. Check your external IP to verify that you are connected.
+10. Check your external IPv4 & IPv6 IP addresses to verify that you are connected to IVPN.
 
     ```
     $ curl ifconfig.co
+    $ curl -6 ifconfig.co
     ```
 
 11. To disconnect run:

@@ -22,7 +22,7 @@ To use WireGuard on macOS, we recommend downloading IVPN's <a href="/apps-macos/
     [Peer] 
     PublicKey = 
     Endpoint = 
-    AllowedIPs = 0.0.0.0/0 
+    AllowedIPs = 0.0.0.0/0, ::/0
     ```
 
     <div markdown="1" class="notice notice--warning">
@@ -31,11 +31,13 @@ To use WireGuard on macOS, we recommend downloading IVPN's <a href="/apps-macos/
 
 4. If you would like your computer to automatically connect to the WireGuard server as soon as either (or both) Ethernet or Wi-Fi network adapter becomes active, check the relevant <strong>'On-Demand'</strong> checkboxes.
 
-5.  Copy the <strong>Public key</strong> and go to the <strong>Client Area</strong> on the IVPN website to add the generated public key to the <strong>Key Management</strong> area. Make note of the IP address we assign to your public key. Beside the <strong>Address</strong> line in the new tunnel window, put a space after the <strong>'='</strong> sign, enter the IP address we have assigned, and add /32 to the end.
+5.  Copy the <strong>Public key</strong> and go to the <strong>Client Area</strong> on the IVPN website to add the generated public key to the <strong>Key Management</strong> area. Make note of the IP addresses we assign to your public key. Beside the <strong>Address</strong> line in the new tunnel window, put a space after the <strong>'='</strong> sign, enter the IPv4 and IPv6 IP addresses we have assigned separated with a comma and ending with /32 & /128 respectively.
 
-6.  Beside <strong>PublicKey</strong> in the <strong>[Peer]</strong> section, put a space after the <strong>'='</strong> sign, and enter an IVPN WireGuard server public key (available via the **WireGuard Server List** in the **Client Area**).
+6.  Beside <strong>PublicKey</strong> in the <strong>[Peer]</strong> section, put a space after the <strong>'='</strong> sign, and enter an IVPN WireGuard server public key (available on the **[Server Status](/status/)** page).
 
-7. Beside <strong>Endpoint</strong> in the <strong>[Peer]</strong> section, put a space after the <strong>'='</strong> sign, enter an IVPN WireGuard server <strong>IP address:port</strong>. The IP address of the server is available via the **WireGuard Server List** in the **Client Area**. You can choose any of the following Port numbers - **2049**, **2050**, **53**, **30587**, **41893**, **48574**, **58237**.
+7. Beside <strong>Endpoint</strong> in the <strong>[Peer]</strong> section, put a space after the <strong>'='</strong> sign, enter an IVPN WireGuard server <strong>hostname:port</strong>.
+The hostname of the servers can be found on the **[Server Status](/status/)** page. 
+You can use any of the following Port numbers - **2049**, **2050**, **53**, **30587**, **41893**, **48574**, **58237**.
 
     ![](/images-static/uploads/macos-wireguard-010.png)
 
