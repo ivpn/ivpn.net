@@ -1,5 +1,6 @@
 ---
 title: WireGuard Setup guide for pfsense
+h2: pfSense® WireGuard® Setup Guide
 listItem: pfSense WireGuard
 url: /setup/router/pfsense-wireguard/
 section: Router Setup
@@ -29,8 +30,6 @@ contents:
     title: Final Steps
     anchor: final
 ---
-## pfSense® WireGuard® Setup Guide
-
 <div markdown="1" class="notice notice--warning">
 This guide was produced using pfSense v2.5.2.
 </div>

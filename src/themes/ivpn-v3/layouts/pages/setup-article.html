@@ -11,6 +11,25 @@
                 {{ end }}
             </nav>
             <main id="main">
+                {{ if isset .Params "contents" }}
+                <h2>{{ .Params.h2 }}</h2>
+                {{ end }}
+                {{ if isset .Params "contents" }}
+                <ul>
+                    {{ range .Params.contents }}
+                    <li><a href="#{{ .item.anchor }}">{{ .item.title }}</a>
+                    {{ if isset .item "subitems" }}
+                        <ul>
+                            {{ range .item.subitems }}
+                            <li><a href="#{{ .item.anchor }}">{{ .item.title }}</a></li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+                <br>
+                {{ end }}
                 {{ .Content | markdownify }}
             </main>
         </div>
