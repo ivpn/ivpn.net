@@ -16,10 +16,10 @@ weight: 31
 1. In your pfSense device, navigate  to `VPN` > `WireGuard` and click `+ Add Tunnel`.
 2. Check `Enabled`.
 3. Enter a `Description`, like **IVPN WG**.
-4. Upload the **Private key** and obtain a client IP address:
+4. Upload the **Public key** and obtain a client IP address:
     - Click the `Generate` key button, copy the **Public key**, then go to the **IVPN Account Area** by logging in to the [ivpn.net website](https://www.ivpn.net/account/login/).
     - Click the `WireGuard` tab in the **IVPN Account Area** and click `Add a new key`.
-    - Paste the **Public key** and click the `Add` button to obtain a **172.x.y.z** client IP address.
+    - Paste the **Public key** and click the `Add` button to obtain a **172.x.y.z** client IPv4 address.
 5. Enter the client IP address into `Address` field with `/32` appended, like **172.x.y.z/32**
 <div markdown="1" class="notice notice--warning">
 Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key</strong>. The <strong>Private Key</strong> must always be kept a carefully guarded secret.

@@ -163,19 +163,19 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.3.7_amd64.deb)  
-SHA256: 6b32903eaedd3e5b922d1eb16cb97a88132cc7cce7a7793f31c50edbdadb1458  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.3.20_amd64.deb)  
+SHA256: 9972a0b55e1383df67357d046db238b29c70b7865dcba959037da17b7439f20a  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.3.10_amd64.deb)  
-SHA256: 6942ed6d18214b5767baa7145cdc05e6a2772d5eb2608c25e56ce4426224bd51  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.3.20_amd64.deb)  
+SHA256: a9cd6f2e2e1c7f981d0788b0f6e381c56e8b44f44daad217b66b652d5eead947  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.3.7-1.x86_64.rpm)  
-SHA256: 49b3aabccb7a4324006b7de8607a0870dee34f84d98c8657809fbebe1fa5c6db  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.3.20-1.x86_64.rpm)  
+SHA256: e9860206f386809501201a1a32362d07f955bec1f948a5199a91e78609421b29  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.10-1.x86_64.rpm)  
-SHA256: 98d897e5c988ca58f3195b542342bc0e8f0e5de5982713a190f4eab53b90f78e  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.20-1.x86_64.rpm)  
+SHA256: 68ff2ce3df8b01240857744b623d4fbb57833f79c98b8040f581f48cb389d727  
 
 ## Install from Source Code {#source}
 

@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2021-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-Brexit commissioner develops thick skin in bruising talks with London
-Sefcovic-Frost relationship goes back to the Blair years
+Birdsong is beautiful, but what does it mean?
+The concerts of blackbirds, thrushes and robins have helped lift pandemic gloom. Interpretation, however, is not straightforward
 
-Silicon Valley paves the way for a new kind of Wall Street
-Plus, the ecommerce deal betting big on Gen-Z and a seven-year international legal feud reaches a boiling point
+Let’s all please stop calling dollars ‘fiat money’
+Currencies are not memes that only have value because the governments say they do
 
-Modi’s Covid charity under scrutiny over faulty ventilators
-Indian recovery fund attracts donations from across the world but critics allege lack of transparency
+What I discovered on my quest to meet China’s most influential female chef
+Fuchsia Dunlop travelled to Shandong in search of an imperial cooking tradition and found a queen
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmC4aNsACgkQisFrnrZH
-umnvWwf9G+8hTjomjmnr4yU62EVjjXbsfhtpbv/PGIsijzj7DQS++RZ1a23Pch+g
-BTliPTjr4rpaBrN9LZ0I9CaPOMX6ZNNnSyOXvS3xwTC+IHpN/c6SlYElYX9JZ4Uy
-Iyae3lVgX6e8EPydesqeYGJi+FbzJvpihMzZshWjbAAsuDcRRo3Mrp8uLyjhL3Vo
-Uqu3hjGJY6zTLDvGJ5LhZEezhFU77mEf42YhWYqpRx7IsjfIKUZW4imKnyNj+8yJ
-1MNUr6IVk27YwU6LSLV4tj6bzAZqAK5lRyOKmYuO9lKAQ0LSUmCLxsDS5gZh546p
-mErnPPsbmcN3nP/SB3RYHr9d+VfTgw==
-=nr2W
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmDf9doACgkQisFrnrZH
+umkXuAf/XdoTBCWtuahUgoJnEIZ4dG7wpP8pvXN7MvYOoVbcCaDKW63LwbVtfcEe
+p7ZSpJabG1giriNdxLl3Rvqo+VC65JFNmkAMuokeiJJuQxLyVGypehsr3LcM1uGz
+JjKfWopuknP96z4Veu/8veUQ6ebRVNPqc+fTgjfjIiNce0vfquN8WNZmWpqVp0DZ
+A914W3h5pdYCmQBzc3Z3pR6YTv8QGfAB/WqqZodPZboNBZAh9AoojUsLiP/nwUvv
+X/V9TVxKG/skryt3WMuTThbZfg7gFinfUf/x6WGoL4Zso2o/6n6mbja7pQEUnST+
+pEjj2zazf8pxFlqhxgWiTp6J4HOF8g==
+=SGIY
 -----END PGP SIGNATURE-----
 
 

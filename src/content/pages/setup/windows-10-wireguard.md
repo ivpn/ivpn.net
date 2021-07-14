@@ -29,9 +29,9 @@ To use WireGuard on Windows, we recommend downloading IVPN's <a href="/apps-wind
     Warning: Keep the PrivateKey a closely guarded secret, do not share it with anyone, and do not post it on the Internet.
     </div>
 
-4.  Copy the `Public key` and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the IP address we assign to your public key. Beside the `Address` line in the new tunnel window, put a `space` after the = sign, enter the IP address we have assigned, and add /32 to the end.
+4.  Copy the `Public key` and go to the `Client Area` on the IVPN website to add the generated public key to the `Key Management` area. Make note of the IP addresses we assign to your public key. Beside the `Address` line in the new tunnel window, put a `space` after the = sign, enter the IPv4 and IPv6 IP addresses we have assigned separated with a comma and ending with /32 & /128 respectively.
 
-5.  Beside `Endpoint` in the `[Peer]` section, put a space after the = sign, enter an IVPN WireGuard server IP address (available via the **WireGuard Server List** in the Client Area), and choose a port:
+5.  Beside `Endpoint` in the `[Peer]` section, put a space after the = sign, enter an IVPN WireGuard server hostname (available on the **[Server Status](/status/)** page), and choose a port:
 
     ```
     udp 2049
@@ -43,7 +43,7 @@ To use WireGuard on Windows, we recommend downloading IVPN's <a href="/apps-wind
     udp 58237
     ```
 
-6.  Beside PublicKey in the [Peer] section, put a space after the = sign, and enter an IVPN WireGuard server public key (available via the WireGuard Server List in the Client Area).
+6.  Beside PublicKey in the [Peer] section, put a space after the = sign, and enter an IVPN WireGuard server public key (available on the **[Server Status](/status/)** page).
 
 7.  Choose whether or not you prefer to use the **kill-switch** feature by leaving or removing the check mark at the bottom of the new tunnel window and click the `Save` button.
 
