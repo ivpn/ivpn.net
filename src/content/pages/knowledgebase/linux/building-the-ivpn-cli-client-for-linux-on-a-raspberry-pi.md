@@ -11,17 +11,17 @@ weight: 140
 # Building the IVPN CLI Client for Linux on a Raspberry Pi
 
 <div markdown="1" class="notice notice--info">
-This was tested using <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian Buster February 2020</a> and the <a href="https://github.com/ivpn/desktop-app-cli/">Official IVPN CLI Client version 2.12.0</a> and <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">Raspberry Pi OS May 2020</a> and the <a href="https://github.com/ivpn/desktop-app-cli/">Official IVPN CLI Client version 2.12.5</a>.
+This was tested using <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">Raspberry Pi OS May 2021</a> and the <a href="https://github.com/ivpn/desktop-app">Official IVPN CLI Client version 3.3.20</a> on a 32-bit Raspberry Pi device (armv7l).
 </div>
 
 1.  Install packages for compiling, building, and connecting:
 
     ```
-    $ sudo apt install ruby ruby-dev ruby-full rpm curl git openvpn obfsproxy
+    $ sudo apt install ruby ruby-dev ruby-full rpm curl git openvpn obfsproxy libiw-dev
     ```
 
     <div markdown="1" class="notice notice--info">
-    <strong>Note:</strong> Install the <a href="https://www.wireguard.com/install/">WireGuard</a> package as required.
+    <strong>Note:</strong> Install <a href="https://www.wireguard.com/install/">WireGuard</a> as required.
     </div>
 
 2.  Install FPM:
@@ -30,19 +30,25 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspbian/">
     $ sudo gem install --no-document fpm
     Fetching ...
     ...
-    Successfully installed fpm-1.11.0
+    Successfully installed fpm-1.13.1
     ```
 
-3.  Install the most recent version of Go via [https://golang.org/dl/](https://golang.org/dl/) for the ARMv6 architecture:
+3.  Determine the ARM architecture for your Raspberry Pi device:
 
     ```
-    $ wget -O go1.14.2.linux-armv6l.tar.gz https://dl.google.com/go/go1.14.2.linux-armv6l.tar.gz
-    $ sudo tar -C /usr/local -xzf go1.14.2.linux-armv6l.tar.gz
-    $ rm -i go1.14.2.linux-armv6l.tar.gz
+    $ uname -m
+    ```
+
+    Install the most recent version of Go via [https://golang.org/dl/](https://golang.org/dl/) for your device's architecture:
+
+    ```
+    $ wget https://golang.org/dl/go1.16.6.linux-armv6l.tar.gz
+    $ sudo tar -C /usr/local -xzf go1.16.6.linux-armv6l.tar.gz
+    $ rm -i go1.16.6.linux-armv6l.tar.gz
     ```
 
     <div markdown="1" class="notice notice--info">
-    <strong>Note:</strong> Our IVPN Client requires Go version 1.13 or higher and the Raspbian repositories include an older version of the golang package:
+    <strong>Note:</strong> The IVPN Client requires Go version 1.13 or higher and the Raspberry Pi OS repositories include an older version of the golang package:
     <br><br>
     <code>$ apt-cache policy golang
     golang:
@@ -67,63 +73,27 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspbian/">
     mkdir: created directory '/home/pi/go'
     ```
 
-5.  Follow these steps for building the [Official IVPN Client for Linux](https://github.com/ivpn/desktop-app-cli#installation).
+5.  Follow the build instructions for the Linux base package (daemon + CLI) from the IVPN App's [GitHub page](https://github.com/ivpn/desktop-app#compilation_linux_daemon):
 
-    1.  Set the `$GOPATH` variable to your projects folder:
-
-        ```
-        $ export GOPATH=$HOME/go
-        ```
-    
-    2.  Create the folder structure:
-
-        ```
-        $ cd $GOPATH
-        $ mkdir -p src/github.com/ivpn
-        ```
-    
-    3.  Clone the CLI project repository:
-
-        ```
-        $ cd $GOPATH/src/github.com/ivpn
-        $ git clone https://github.com/ivpn/desktop-app-cli.git
-        ```
-    
-    4.  Clone daemon project repository:
-
-        ```
-        $ cd $GOPATH/src/github.com/ivpn
-        $ git clone https://github.com/ivpn/desktop-app-daemon.git
-        $ cd desktop-app-daemon
-        $ git checkout 49db2f3
-        ```
-
-        Note: desktop-app-daemon version 2.12.5 = git tag 49db2f3
-    
-
-    5.  Compile the code and build a .DEB package:
-
-        ```
-        $ cd $GOPATH/src/github.com/ivpn/desktop-app-cli
-        $ References/Linux/build-packages.sh -v 2.12.0
-        ...
-        ---------------------------
-        DEB package...
-        ...
-        Created package {:path=>"ivpn_2.12.0_armhf.deb"}
-        ---------------------------
-        ```
-
-    6.  Packages can be found in `$GOPATH/src/github.com/ivpn/desktop-app-cli/References/Linux/_out_bin/`.
-
-        ```
-        $ export GOPATH=$HOME/go
-        ```
+    ```
+    $ git clone https://github.com/ivpn/desktop-app.git
+    $ cd desktop-app/cli/References/Linux/
+    $ CL="https://raw.githubusercontent.com/ivpn/desktop-app/master/CHANGELOG.md"
+    $ VER=$(curl -s $CL | grep "## Version" | head -n 1 | awk '{ print $3 }')
+    $ ./build.sh -v $VER
+    ...
+    ---------------------------
+    DEB package...
+    Created package {:path=>"ivpn_3.3.20_armhf.deb"}
+    ---------------------------
+    ...
+    Copying compiled packages to '/home/pi/desktop-app/cli/References/Linux/_out_bin'...
+    ```
 
 6.  Install the new package:
 
     ```
-    $ sudo apt install $GOPATH/src/github.com/ivpn/desktop-app-cli/References/Linux/_out_bin/ivpn_2.12.0_armhf.deb
+    $ sudo apt install ./_out_bin/ivpn_3.3.20_armhf.deb
     ```
 
 7. Check our [Command Line Client FAQ](/knowledgebase/general/command-line-client-faq/) for the next steps.
