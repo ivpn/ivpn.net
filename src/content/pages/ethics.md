@@ -74,17 +74,35 @@ sections:
     content: >-
       ## How we attract new customers
 
-  Our mission supersedes making profit and we reinvest most of our revenue into improving our service and educational projects. Yet IVPN is a business and we are working on attracting new customers, while keeping our values and commitments in mind.
-  
-  | Method                                                                                                                                                              | Examples                                                                                                                                                                                                                                             |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Improving our service** <br>Consistent improvements to our service lead to customers recommend us to others.                                                      | WireGuard support<br>Linux CLI and GUI<br>App redesign<br>IPv6 support                                                                                                                                                                               |
-| **Educational projects**<br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.                                  | [Privacy Guides](https://www.ivpn.net/privacy-guides/)<br>[Educational blog posts](https://www.ivpn.net/blog/categories/vpn-worst-practices/)<br>[Do I need a VPN?](https://www.doineedavpn.com)<br>[The Privacy Issue](https://theprivacyissue.com) |
-| **Community and social channels**<br>We share information about our progress in dedicated IVPN communities.                                                         | [Mastodon](https://mastodon.social/@ivpn)<br>[Reddit](https://www.reddit.com/r/ivpn)<br>[Twitter](https://twitter.com/ivpnnet)                                                                                                                       |
-| **Journalists and reviewer cooperation**<br>We share progress updates and demo accounts with journalists and ethical VPN reviewers. No compensation is offered. | [Ars Technica](https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/)<br>PrivacyTools<br>Techlore                                                                                                             |
-| **Sponsorships**<br>We sponsor non-profit organisations and development projects that focus on privacy.                                                             | [EFF](https://www.eff.org)<br>[Tor Project](https://www.torproject.org)<br>[WireGuard](https://www.wireguard.com)                                                                                                                                    |
+      Our mission supersedes making profit and we reinvest most of our revenue into improving our service and educational projects. Yet IVPN is a business and we are working on attracting new customers, while keeping our values and commitments in mind.
+      
+      <table>
+        <tr>
+          <th>Method</th>
+          <th>Examples</th> 
+        </tr>
+        <tr>
+          <td>**Improving our service** <br>Consistent improvements to our service lead to customers recommend us to others.</td>
+          <td>WireGuard support<br>Linux CLI and GUI<br>App redesign<br>IPv6 support</td> 
+        </tr>
+        <tr>
+          <td>**Educational projects**<br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.</td>
+          <td><a href="https://www.ivpn.net/privacy-guides/">Privacy Guides</a><br><a href="https://www.ivpn.net/blog/categories/vpn-worst-practices/">Educational blog posts</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a><br><a href="https://theprivacyissue.com">The Privacy Issue</a></td> 
+        </tr>
+        <tr>
+          <td>**Community and social channels**<br>We share information about our progress in dedicated IVPN communities.</td>
+          <td><a href="https://mastodon.social/@ivpn">Mastodon</a><br><a href="https://www.reddit.com/r/ivpn">Reddit</a><br><a href="https://twitter.com/ivpnnet">Twitter</a></td> 
+        </tr>
+        <tr>
+          <td>**Journalists and reviewer cooperation**<br>We share progress updates and demo accounts with journalists and ethical VPN reviewers. No compensation is offered.</td>
+          <td><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Ars Technica</a><br>PrivacyTools<br>Techlore</td> 
+        </tr>
+        <tr>
+          <td>**Sponsorships**<br>We sponsor non-profit organisations and development projects that focus on privacy.</td>
+          <td><a href="https://www.eff.org">EFF</a><br><a href="https://www.torproject.org">Tor Project</a><br><a href="https://www.wireguard.com">WireGuard</a></td> 
+        </tr>
+      </table>
 
-
-If you have made it all the way to the end, and agree with our values, please consider sharing this page. That can help us stay within these defined boundaries and prove that growing a business is possible without resorting to unethical tools.  
+      If you have made it all the way to the end, and agree with our values, please consider sharing this page. That can help us stay within these defined boundaries and prove that growing a business is possible without resorting to unethical tools.  
 
 ---
