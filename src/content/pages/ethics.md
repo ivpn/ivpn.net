@@ -44,6 +44,7 @@ sections:
       
       We are committed to spreading the word about IVPN’s mission and help more people protect their privacy.  Considering the state of modern marketing, this is a challenging task.
 
+
       We consider most marketing methods harmful, and refuse to engage in them. The following list represents all tactics we have considered and either rejected or eliminated over the years.
       
       #### Paid reviews
@@ -78,27 +79,27 @@ sections:
       
       <table>
         <tr>
-          <th>Method</th>
-          <th>Examples</th> 
+          <th><h3 style="margin:0">Method</h3></th>
+          <th style="width:35%"><h3 style="margin:0">Examples</h3></th> 
         </tr>
         <tr>
-          <td>**Improving our service** <br>Consistent improvements to our service lead to customers recommend us to others.</td>
+          <td><strong>Improving our service</strong> <br>Consistent improvements to our service lead to customers recommend us to others.</td>
           <td>WireGuard support<br>Linux CLI and GUI<br>App redesign<br>IPv6 support</td> 
         </tr>
         <tr>
-          <td>**Educational projects**<br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.</td>
+          <td><strong>Educational projects</strong><br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.</td>
           <td><a href="https://www.ivpn.net/privacy-guides/">Privacy Guides</a><br><a href="https://www.ivpn.net/blog/categories/vpn-worst-practices/">Educational blog posts</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a><br><a href="https://theprivacyissue.com">The Privacy Issue</a></td> 
         </tr>
         <tr>
-          <td>**Community and social channels**<br>We share information about our progress in dedicated IVPN communities.</td>
+          <td><strong>Community and social channels</strong><br>We share information about our progress in dedicated IVPN communities.</td>
           <td><a href="https://mastodon.social/@ivpn">Mastodon</a><br><a href="https://www.reddit.com/r/ivpn">Reddit</a><br><a href="https://twitter.com/ivpnnet">Twitter</a></td> 
         </tr>
         <tr>
-          <td>**Journalists and reviewer cooperation**<br>We share progress updates and demo accounts with journalists and ethical VPN reviewers. No compensation is offered.</td>
+          <td><strong>Journalists and reviewer cooperation</strong><br>We share progress updates and demo accounts with journalists and ethical VPN reviewers. No compensation is offered.</td>
           <td><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Ars Technica</a><br>PrivacyTools<br>Techlore</td> 
         </tr>
         <tr>
-          <td>**Sponsorships**<br>We sponsor non-profit organisations and development projects that focus on privacy.</td>
+          <td><strong>Sponsorships</strong><br>We sponsor non-profit organisations and development projects that focus on privacy.</td>
           <td><a href="https://www.eff.org">EFF</a><br><a href="https://www.torproject.org">Tor Project</a><br><a href="https://www.wireguard.com">WireGuard</a></td> 
         </tr>
       </table>
