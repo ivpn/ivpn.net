@@ -14,15 +14,15 @@ tags:
 date: 2021-07-21T11:25:00.000Z
 thumbnailImage: /images-static/uploads/modern_marketing_thumb.png
 ---
-1. Modern marketing is surveillance. It enables anyone with funds to follow you around and pester you with ads for stuff you don't need. The surveillance economy forces companies to participate, since their competitors would outpace them otherwise.  The opt-out options are limited: most eyeballs and dollars are captured by a couple of companies that made online surveillance the new normal. Even companies who claim they stand for privacy help keep the status quo. 
+1. Modern marketing is surveillance. It enables anyone with funds to follow us around and pester us with ads for stuff we don't need. The surveillance economy forces companies to participate, since their competitors would outpace them otherwise.  Alternative options are limited: most eyeballs and dollars are captured by a couple of companies that made online surveillance the new normal. Even companies who claim they stand for privacy help keep the status quo. 
 
-2. Modern marketing is dark patterns. It locks down information and trials that should be accessible without having to give up your personal details. Social validation inserts and fake countdown timers push us to quick decisions, triggering our fear of missing out. Once we become a customer, it uses artificial rewards and puts up roadblocks so we don’t switch services. 
+2. Modern marketing is dark patterns. It locks down information and trials that should be accessible without having to give up our personal details. Social validation inserts and fake countdown timers push us to quick decisions, triggering our fear of missing out. Once we become a customer, it uses artificial rewards and puts up roadblocks so we don’t switch services. 
 
 3. Modern marketing is human experiments. Our actions are turned into funnels, relentlessly optimized for growth and profit without ethical considerations. Human actions become data to be used for achieving better key performance indicators. We are a billion guinea pigs, subject to billions of micro-experiments every day.
 
-4. Modern marketing is misinformation. Affiliate programs and paid editorials make writers and content creators push your product for a cut in profits, breaking the promise of honest reviews and editorial independence. Participants ignore the conflict of interest and share biased opinion.
+4. Modern marketing is misinformation. Affiliate programs and paid editorials make writers and content creators push products for a cut in profits, breaking the promise of honest reviews and editorial independence. Participants ignore the conflict of interest and share biased opinion.
 
-5. Modern marketing bribes you. To achieve virality and capture your data, apps ask for your permission to reveal your contacts and spam them with offers. You are beholden to sharing, inviting, liking and other compelled actions to get access and feel rewarded.
+5. Modern marketing bribes us. To achieve virality and capture our data, apps ask for our permission to reveal contacts and spam them with offers. We are beholden to sharing, inviting, liking and other compelled actions to get access and feel rewarded.
 
 6. Modern marketing over-promises. It allows companies to make lofty claims about the benefits of their products and announce they are the best choice for everyone. It incentivises brands to hide limitations and negative externalities, then use the fine print to escape criticism. 
 
@@ -33,7 +33,7 @@ thumbnailImage: /images-static/uploads/modern_marketing_thumb.png
 9. Modern marketing is buying influence. YouTubers who know little about information security advertise VPNs and endorse products they would never use themselves. Vodka, energy drink and flu pill brands spend millions per quarter to get carried into your attention via Instagram influencers.
 
 
-We refuse to take part in the surveillance economy, not as marketers, nor as subjects whose attention it captures. We say no to dark patterns and calculated experiments to improve our conversion funnel. We don’t want to buy influence and pay others to write favorable reviews of our service. We won’t pollute the internet with fake comments, made-up reviews and sales-focused content. This is why we don't do modern marketing.
+We refuse to take part in the surveillance economy, not as marketers, nor as subjects whose attention it captures. We say no to dark patterns and calculated experiments to improve our conversion funnel. We don’t want to buy influence and pay others to write favorable reviews of our service. We won’t pollute the internet with fake comments, made-up reviews and sales-focused content. 
 
 
 This is why we don't do modern marketing.
