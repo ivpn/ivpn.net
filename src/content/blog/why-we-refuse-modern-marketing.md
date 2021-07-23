@@ -1,19 +1,19 @@
 ---
- title: Why we refuse modern marketing, even when it hurts our growth
- url: /blog/why-we-refuse-modern-marketing/
- highlighted: true
- draft: false
- authors:
-   - Viktor Vecsei
- categories:
-   - Under the Hood
- tags:
-   - Privacy
-   - Subscriptions
-   - Transparency
- date: 2021-07-21T11:25:00.000Z
- thumbnailImage: /images-static/uploads/modern_marketing_thumb.png
- ---
+title: "Why we refuse modern marketing, even when it hurts our growth"
+url: /blog/why-we-refuse-modern-marketing/
+highlighted: true
+draft: false
+authors:
+  - Viktor Vecsei
+categories:
+  - Under the Hood
+tags:
+  - Privacy
+  - Subscriptions
+  - Transparency
+date: 2021-07-21T11:25:00.000Z
+thumbnailImage: /images-static/uploads/modern_marketing_thumb.png
+---
 1. Modern marketing is surveillance. It enables anyone with funds to follow you around and pester you with ads for stuff you don't need. The surveillance economy forces companies to participate, since their competitors would outpace them otherwise.  The opt-out options are limited: most eyeballs and dollars are captured by a couple of companies that made online surveillance the new normal. Even companies who claim they stand for privacy help keep the status quo. 
 
 2. Modern marketing is dark patterns. It locks down information and trials that should be accessible without having to give up your personal details. Social validation inserts and fake countdown timers push us to quick decisions, triggering our fear of missing out. Once we become a customer, it uses artificial rewards and puts up roadblocks so we don’t switch services. 
