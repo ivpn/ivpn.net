@@ -16,7 +16,7 @@ sections:
       
       #### No personal information
 
-      We aim for zero user information collected as defined in our concise [privacy policy](https://www.ivpn.net/ethics). We don’t ask for your email address or any other personal information.
+      We aim for zero user information collected as defined in our concise [privacy policy](https://www.ivpn.net/privacy). We don’t ask for your email address or any other personal information.
 
       #### No trackers
 
