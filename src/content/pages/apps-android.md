@@ -14,10 +14,10 @@ releases: [{
             cta: Google Play,
             url: "https://play.google.com/store/apps/details?id=net.ivpn.client"
         },
-        # {
-        #     cta: F-Droid,
-        #     url: https://f-droid.org/packages/net.ivpn.client/
-        # },
+        {
+            cta: F-Droid,
+            url: https://f-droid.org/packages/net.ivpn.client/
+        },
         {
             cta: .APK file,
             url: https://www.ivpn.net/releases/android/IVPNv2.6.0site.apk
