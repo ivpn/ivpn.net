@@ -16,7 +16,7 @@ releases: [{
         },
         {
             cta: F-Droid,
-            url: https://f-droid.org/packages/net.ivpn.client/
+            url: https://f-droid.org/en/packages/net.ivpn.client/
         },
         {
             cta: .APK file,
