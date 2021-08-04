@@ -9,10 +9,6 @@
     </section>
 {{ end }}
 
-{{ define "main-style" }}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"/>
-{{ end }}
-
 {{ define "main-script" }}
     <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/servers.js" }}"></script>
 {{ end }}

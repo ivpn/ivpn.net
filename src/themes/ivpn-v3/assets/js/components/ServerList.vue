@@ -13,12 +13,7 @@
             <tr v-for="server in sortedList">
                 <td class="location">
                     <div class="location__data">
-                        <i
-                            class="flag-icon"
-                            :class="
-                                'flag-icon-' + server.country_code.toLowerCase()
-                            "
-                        ></i>
+                        <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
                         <span> {{ server.country }}, {{ server.city }} </span>
                     </div>
                 </td>
