@@ -79,7 +79,7 @@ weight: 480
     Your new public key has to be manually added in the [Client Area](/account/) - [WireGuard](/account/wireguard/) page.
 
 11. #### How do I verify that I am connected?
-    Our website shows a connection status at the top of the page or inside the 'Menu' on mobile devices. There is a blue 'Connected' or a red 'Disconnected', which indicates your status. Another way to ensure that you are properly connected to IVPN is to simply visit the [dns leak test](https://www.dnsleaktest.com/) website. As long as you see the revealed location matches the selected IVPN server & the IP address is different to the one provided by your ISP - this gives you reasonable assurance that your traffic is routed through the VPN service.
+    Our website shows a connection status at the top of the page or inside the 'Menu' on mobile devices. There is a green 'Connected' or a red 'Disconnected' dot, which indicates your status. Another way to ensure that you are properly connected to IVPN is to simply visit the [dns leak test](https://www.dnsleaktest.com/) website. As long as you see the revealed location matches the selected IVPN server & the IP address is different to the one provided by your ISP - this gives you reasonable assurance that your traffic is routed through the VPN service.
 
 12. #### Does Port Forwarding work with WireGuard?
     Port Forwarding cannot be used with WireGuard at this time.
