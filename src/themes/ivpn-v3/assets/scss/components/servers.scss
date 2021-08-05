@@ -120,10 +120,14 @@
                 line-height: 24px;
                 
 
-                i {
-                    min-width: 24px;
+                img {
+                    display: inline-block;
+                    width: 24px;
+                    height: auto;
                     border-radius: 2px;
                     margin-right: 16px;
+                    position: relative;
+                    top: 3px;
                 }
 
                 div {
