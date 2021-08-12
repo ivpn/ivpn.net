@@ -14,7 +14,7 @@ IVPN proudly supports the following organizations and projects.
 [WireGuard](https://www.wireguard.com) is an open-source VPN protocol developed by Jason A. Donenfeld. Development of WireGuard is supported by donations from companies who deploy it to their networks. IVPN first supported the project in November 2018 before implementing the protocol to our service.
 {{< figure class="features__image--light" src="/images-static/uploads/torservers.svg" alt="Torservers.net" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/torservers-dark.svg" alt="Torservers.net" >}}
-[Torservers.net](https://torservers.net) is an independent, global network of organizations that help the Tor network by running high bandwidth Tor relays to make the TOR network faster and more reliable. IVPN have been sponsoring a TOR server through torservers.net since June 2014.
+[Torservers.net](https://torservers.net) is an independent, global network of organizations that help the Tor network by running high bandwidth Tor relays to make the Tor network faster and more reliable. IVPN have been sponsoring a Tor server through torservers.net since June 2014.
 {{< figure class="features__image--light" src="/images-static/uploads/tor.svg" alt="Tor" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/tor.svg" alt="Tor" >}}
 [The Tor Project](https://www.torproject.org/) works for advancing human rights and defending privacy online through free software and open networks. Tor directs Internet traffic through an overlay network consisting of thousands of relays to protect a user's location and usage from network surveillance or traffic analysis. IVPN started sponsoring Tor in November 2019.
