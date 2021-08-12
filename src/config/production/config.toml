@@ -1,7 +1,7 @@
 baseURL = "https://www.ivpn.net"
 
 [params]
-    cdnUrl = "https://cdn.ivpn.net"
+    cdnUrl = ""
     environment = "production"     
     matomoEnabled = true
     matomoUrl = "https://stats.ivpn.net"
