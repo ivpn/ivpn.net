@@ -64,7 +64,8 @@
         }
 
         th {
-            padding: 16px;
+            padding: 12px;
+            font-size: 13px;
             border-top: none;
 
             @include light-theme((
@@ -74,6 +75,10 @@
             @include dark-theme((
                 border: 1px solid #3C3C40
             ));
+
+            &.hostname {
+                width: 22%;
+            }
 
             &.location {
                 width: 22%;
@@ -88,13 +93,18 @@
                 width: 15%;
             }
 
+            &.port {
+                width: 10%;
+            }
+
             &.wg_public_key {
-                width: 18%;
+                width: 20%;
             }
         }
 
         td {
-            padding: 16px;
+            padding: 12px;
+            font-size: 15px;
             word-wrap: break-word;
             line-height: 1.4;
 
@@ -134,9 +144,17 @@
                     padding-top: 2px;
                 }
             }
-            &.hostnames {
+            &.hostname {
                 ul {
-                    padding-left: 8px;
+                    padding-left: 4px;
+
+                    li {
+                        margin-bottom: 10px;
+                    }
+
+                    li:last-child {
+                        margin-bottom: 0;
+                    }
                 }
             }
 
