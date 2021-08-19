@@ -13,7 +13,7 @@
         <tbody>
             <tr v-for="server in sortedList">
                 <td class="hostname">
-                    <em>Hostnames</em>
+                    <em>Hostname</em>
                     <ul>
                         <li>
                             <i class="status" :class="{ 'status--active': server.is_active }">
@@ -22,6 +22,7 @@
                     </ul>
                 </td>
                 <td class="location">
+                    <em>Location</em>
                     <div class="location__data">
                         <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
                         <span> {{ server.city }}, {{ server.country_code }} </span>
