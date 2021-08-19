@@ -16,7 +16,7 @@
                     <em>Hostname</em>
                     <ul>
                         <li>
-                            <i class="status" :class="{ 'status--active': server.is_active }">
+                            <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]">
                             </i>{{ server.gateway }}
                         </li>
                     </ul>
@@ -80,6 +80,17 @@ export default {
                     return protocol;
             }
         },
+        renderStatus(server) {
+            if (server.in_maintenance) {
+                return "Maintenance";
+            }
+
+            if (server.is_active) {
+                return "Online";
+            }
+
+            return "Offline";
+        },
     },
     computed: {
         sortedList: function () {
@@ -112,13 +123,13 @@ export default {
 
     @include light-theme(
         (
-            background: $light-mode-yellow-color,
+            background: $light-mode-red-color,
         )
     );
 
     @include dark-theme(
         (
-            background: $dark-mode-yellow-color,
+            background: $dark-mode-red-color,
         )
     );
 
@@ -132,6 +143,20 @@ export default {
         @include dark-theme(
             (
                 background: $dark-mode-green-color,
+            )
+        );
+    }
+
+    &--maintenance {
+        @include light-theme(
+            (
+                background: $light-mode-yellow-color,
+            )
+        );
+
+        @include dark-theme(
+            (
+                background: $dark-mode-yellow-color,
             )
         );
     }
