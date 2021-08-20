@@ -2,48 +2,45 @@
     <table>
         <thead>
             <tr>
+                <th class="hostname">HOSTNAME</th>
                 <th class="location">LOCATION</th>
-                <th class="hostnames">HOSTNAMES</th>
                 <th class="load">LOAD</th>
                 <th class="provider">PROVIDER</th>
+                <th class="port">MULTIHOP PORT</th>
                 <th class="wg_public_key">WIREGUARD PUBLIC KEY</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="server in sortedList">
-                <td class="location">
-                    <div class="location__data">
-                        <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
-                        <span> {{ server.country }}, {{ server.city }} </span>
-                    </div>
-                </td>
-                <td class="hostnames">
-                    <em>Hostnames</em>
+                <td class="hostname">
+                    <em>Hostname</em>
                     <ul>
-                        <li
-                            v-for="(host, protocol) in server.hostnames"
-                            :key="protocol"
-                        >
-                            <i
-                                class="status"
-                                :class="{ 'status--active': server.is_active }"
-                            ></i
-                            >{{ host }}
-                            <span class="badge badge--light spacing">{{
-                                protocol
-                            }}</span>
+                        <li>
+                            <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]">
+                            </i>{{ server.gateway }}
                         </li>
                     </ul>
+                </td>
+                <td class="location">
+                    <em>Location</em>
+                    <div class="location__data">
+                        <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
+                        <span> {{ server.city }}, {{ server.country_code }} </span>
+                    </div>
                 </td>
                 <td class="load">
                     <em>Load</em>
                     {{ server.load }}%
                 </td>
-                <td>
+                <td class="provider">
                     <em>Provider</em>
                     {{ server.isp }}
                 </td>
-                <td>
+                <td class="port">
+                    <em>MultiHop port</em>
+                    {{ server.multihop_port }}
+                </td>
+                <td class="wg_public_key">
                     <em>WireGuard key</em>
                     {{ server.wg_public_key }}
                 </td>
@@ -83,6 +80,17 @@ export default {
                     return protocol;
             }
         },
+        renderStatus(server) {
+            if (server.in_maintenance) {
+                return "Maintenance";
+            }
+
+            if (server.is_active) {
+                return "Online";
+            }
+
+            return "Offline";
+        },
     },
     computed: {
         sortedList: function () {
@@ -115,13 +123,13 @@ export default {
 
     @include light-theme(
         (
-            background: $light-mode-yellow-color,
+            background: $light-mode-red-color,
         )
     );
 
     @include dark-theme(
         (
-            background: $dark-mode-yellow-color,
+            background: $dark-mode-red-color,
         )
     );
 
@@ -135,6 +143,20 @@ export default {
         @include dark-theme(
             (
                 background: $dark-mode-green-color,
+            )
+        );
+    }
+
+    &--maintenance {
+        @include light-theme(
+            (
+                background: $light-mode-yellow-color,
+            )
+        );
+
+        @include dark-theme(
+            (
+                background: $dark-mode-yellow-color,
             )
         );
     }
