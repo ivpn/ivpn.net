@@ -34,7 +34,7 @@
 {{if gt (len .Params.tags) 0}}
     <section class="blog-article">
         {{ range .Params.tags }}
-            <a href="{{ printf "/blog/tags/%s/" (. | urlize) }}" class="tag tag--inline" rel="noindex, dofollow">{{ humanize . }}</a>
+            <a href="{{ printf "/blog/tags/%s/" (. | urlize) }}" class="tag tag--inline" rel="noindex, dofollow">{{ . }}</a>
         {{ end }}
     </section>
 {{ end }}
