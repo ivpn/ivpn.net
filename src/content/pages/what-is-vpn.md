@@ -23,6 +23,6 @@ Take a look at Alice’s case, as shown in the diagram. Her traffic is flowing t
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-bob-ivpn.svg" alt="What is a VPN - Bob IVPN" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-bob-ivpn-dark.svg" alt="What is a VPN - Bob IVPN" >}}
 
-With IVPN, you first connect to one of our secure servers through your ISP. As soon as you’re connected, all of your online activity is encrypted and untraceable. Nothing you do is monitored or logged, and your private data can’t be intercepted by spies or hackers.
+With IVPN, you first connect to one of our secure servers through your ISP. Once connected, all of your online activity is encrypted and cannot be monitored or logged by your ISP. In addition, your data is protected from eavesdroppers or hackers positioned between your computer and ISP.
 
 In Bob’s case, he is connected to an IVPN server and therefore all traffic going through his ISP is encrypted. The ISP can only record that Bob is connected to an IVPN server, nothing else. The servers he is connected to see only that the IVPN server is connected to them and therefore can only record the IP address of the IVPN server in their logs. The best VPN services will diligently ensure that they do not log any user connection data, ensuring their customers' privacy.
