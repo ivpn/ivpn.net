@@ -1,52 +1,42 @@
 <template>
-    <table>
-        <thead>
-            <tr>
-                <th class="hostname">HOSTNAME</th>
-                <th class="location">LOCATION</th>
-                <th class="load">LOAD</th>
-                <th class="provider">PROVIDER</th>
-                <th class="port">MULTIHOP PORT</th>
-                <th class="wg_public_key">WIREGUARD PUBLIC KEY</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="server in sortedList">
-                <td class="hostname">
-                    <em>Hostname</em>
-                    <ul>
-                        <li>
-                            <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]">
-                            </i>{{ server.gateway }}
-                        </li>
-                    </ul>
-                </td>
-                <td class="location">
-                    <em>Location</em>
+    <div class="servers">
+        <header class="row row__header">
+            <div class="col server">SERVER</div>
+            <div class="col country">COUNTRY</div>
+            <div class="col city">CITY</div>
+            <div class="col provider">PROVIDER</div>
+            <div class="col load">LOAD</div>
+            <div class="col action">&nbsp;</div>
+        </header>
+        <main>
+            <div class="row" v-for="server in servers">
+                <div class="col server">
+                    <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
+                    {{ server.gateway }}
+                </div>
+                <div class="col country">
                     <div class="location__data">
                         <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
-                        <span> {{ server.city }}, {{ server.country_code }} </span>
+                        <span> {{ server.country }} </span>
                     </div>
-                </td>
-                <td class="load">
-                    <em>Load</em>
-                    {{ server.load }}%
-                </td>
-                <td class="provider">
-                    <em>Provider</em>
+                </div>
+                <div class="col city">
+                    <div class="location__data">
+                        <span> {{ server.city }} </span>
+                    </div>
+                </div>
+                <div class="col provider">
                     {{ server.isp }}
-                </td>
-                <td class="port">
-                    <em>MultiHop port</em>
-                    {{ server.multihop_port }}
-                </td>
-                <td class="wg_public_key">
-                    <em>WireGuard key</em>
-                    {{ server.wg_public_key }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+                <div class="col load">
+                    {{ server.load }}%
+                </div>
+                <div class="col action">
+                    ^
+                </div>
+            </div>
+        </main>
+    </div>
 </template>
 
 <script>
@@ -109,15 +99,11 @@ export default {
 <style lang="scss" scoped>
 @import "scss/base";
 
-.spacing {
-    margin-right: 8px;
-}
-
 .status {
     width: 10px;
     height: 10px;
     display: inline-block;
-    margin-right: 12px;
+    margin-right: 2px;
     border-radius: 50%;
     vertical-align: middle;
 

@@ -1,11 +1,101 @@
 .servers {
     @include grid($gutter: $default-grid-gutter);
     @include container();
-
     flex-wrap: wrap;
+    display: block;
 
-    &__heading, &__list {
-        @include grid-col($col: 12, $gutter: $default-grid-gutter);
+    &__list {
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: -1px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+    
+            @include light-theme((
+                border: 1px solid #E2E2E2
+            ));
+    
+            @include dark-theme((
+                border: 1px solid #3C3C40
+            ));
+    
+            &__header {
+
+                &:last-of-type {
+                    margin-bottom: -1px;
+                }
+    
+                .col {
+                    padding: 19px 20px!important;
+                    font-size: 13px!important;
+                    font-weight: normal!important;
+                    line-height: normal!important;
+    
+                    @include light-theme((
+                        background-color: $light-mode-alternative-background,
+                        color: rgba(34, 34, 38, 0.5)
+                    ));
+            
+                    @include dark-theme((
+                        background-color: $dark-mode-alternative-background,
+                        color: rgba(255, 255, 255, 0.5)
+                    ));
+                }
+            }
+    
+            .col {
+                padding: 15px 20px;
+                font-size: 15px;
+    
+                &.server {
+                    width: 24%;
+                }
+    
+                &.country {
+                    width: 21%;
+                    font-weight: bold;
+                    line-height: 24px;
+
+                    .location__data {
+                        display: flex;            
+                        align-items: baseline;
+
+                        img {
+                            display: inline-block;
+                            width: 20px;
+                            height: auto;
+                            border-radius: 2px;
+                            margin-right: 12px;
+                            position: relative;
+                            top: 3px;
+                        }
+                    }
+                }
+    
+                &.city {
+                    width: 21%;
+                    font-weight: bold;
+                }
+    
+                &.provider {
+                    width: 17%;
+                }
+    
+                &.load {
+                    width: 11%;
+                }
+    
+                &.action {
+                    width: 6%;
+                    text-align: center;
+                }
+            }
+        }
     }
 
     table {
