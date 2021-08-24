@@ -1,11 +1,21 @@
 <template>
     <div class="servers">
         <header class="row row__header">
-            <div class="col server">SERVER</div>
-            <div class="col country">COUNTRY</div>
-            <div class="col city">CITY</div>
-            <div class="col provider">PROVIDER</div>
-            <div class="col load">LOAD</div>
+            <div class="col server">
+                <a>SERVER<i></i></a>
+            </div>
+            <div class="col country active">
+                <a>COUNTRY<i></i></a>
+            </div>
+            <div class="col city">
+                <a>CITY<i></i></a>
+            </div>
+            <div class="col provider">
+                <a>PROVIDER<i></i></a>
+            </div>
+            <div class="col load">
+                <a>LOAD<i></i></a>
+            </div>
             <div class="col action">&nbsp;</div>
         </header>
         <main>

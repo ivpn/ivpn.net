@@ -46,6 +46,42 @@
                         background-color: $dark-mode-alternative-background,
                         color: rgba(255, 255, 255, 0.5)
                     ));
+
+                    a {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        cursor: pointer;
+
+                        @include light-theme((
+                            color: $light-mode-text
+                        ));
+                
+                        @include dark-theme((
+                            color: $dark-mode-text
+                        ));
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+
+                        i {
+                            display: block;
+                            width: 16px;
+                            height: 10px;
+                            margin-left: 10px;
+                            background: url('/images-static/arrow-gray.svg');
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    &.active a i {
+                        background-image: url('/images-static/arrow-blue.svg');
+                    }
+
+                    &.desc a i {
+                        transform: rotate(0deg);
+                    }
                 }
             }
     
