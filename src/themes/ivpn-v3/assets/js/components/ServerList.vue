@@ -32,7 +32,9 @@
                     {{ server.load }}%
                 </div>
                 <div class="col action">
-                    ^
+                    <a href="#">
+                        <img src="/images-static/arrow-blue.svg">
+                    </a>
                 </div>
                 <div class="col details">
                     <div>

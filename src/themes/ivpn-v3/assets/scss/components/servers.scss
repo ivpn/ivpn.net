@@ -94,6 +94,21 @@
                 &.action {
                     width: 6%;
                     text-align: center;
+                    padding: 0;
+
+                    a {
+                        display: inline-block;
+                        padding: 15px;
+                        transform: rotate(180deg);
+
+                        &.active {
+                            transform: rotate(0deg);
+                        }
+                    }
+
+                    img {
+                        display: inline-block;
+                    }
                 }
 
                 &.details {
