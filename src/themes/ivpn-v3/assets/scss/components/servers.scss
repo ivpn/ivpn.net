@@ -9,6 +9,7 @@
         .row {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
             margin-bottom: -1px;
 
@@ -93,6 +94,41 @@
                 &.action {
                     width: 6%;
                     text-align: center;
+                }
+
+                &.details {
+                    width: 100%;
+                    display: none;
+                    flex-direction: row;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+
+                    &.active {
+                        display: flex;
+                    }
+
+                    div {
+                        margin-right: 30px;
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+
+                    em {
+                        display: block;
+                        font-size: 13px;
+                        font-style: normal;
+                        margin-bottom: 8px;
+
+                        @include light-theme((
+                            color: rgba(34, 34, 38, 0.5)
+                        ));
+
+                        @include dark-theme((
+                            color: rgba(255, 255, 255, 0.5)
+                        ));
+                    }
                 }
             }
         }

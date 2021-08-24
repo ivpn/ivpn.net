@@ -34,6 +34,16 @@
                 <div class="col action">
                     ^
                 </div>
+                <div class="col details">
+                    <div>
+                        <em>Public Key</em>
+                        83LUBnP97SFpnS0y1MpEAFcg8MIiQJgW1FRv/8Mc40g=
+                    </div>
+                    <div>
+                        <em>MultiHop Port</em>
+                        22541
+                    </div>
+                </div>
             </div>
         </main>
     </div>
