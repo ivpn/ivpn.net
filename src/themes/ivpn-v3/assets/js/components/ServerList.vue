@@ -32,7 +32,7 @@
                     {{ server.load }}%
                 </div>
                 <div class="col action">
-                    <a href="#">
+                    <a @click="toggleDetails">
                         <img src="/images-static/arrow-blue.svg">
                     </a>
                 </div>
@@ -92,6 +92,10 @@ export default {
             }
 
             return "Offline";
+        },
+        toggleDetails: (event) => {
+            event.target.classList.toggle('active');
+            event.target.parentNode.nextElementSibling.classList.toggle('active');
         },
     },
     computed: {
