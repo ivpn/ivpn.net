@@ -1,0 +1,41 @@
+.select {
+    position: relative;
+
+    select {
+        appearance: none;
+        font-size: 16px;
+        padding: 15px 20px 15px 20px;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        
+        @include light-theme((
+            background: $light-mode-alternative-background,
+            border: 1px solid rgba(0, 0, 0, 0.1),
+            color: $light-mode-text
+        ));
+    
+        @include dark-theme((
+            background: $dark-mode-alternative-background,
+            border: 1px solid rgba(255, 255, 255, 0.1),
+            color: $dark-mode-text
+        ));
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    i {
+        display: block;
+        width: 50px;
+        height: 100%;
+        background: url('/images-static/arrow-blue.svg') no-repeat center;
+        transform: rotate(180deg);
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        pointer-events: none;
+    }
+}

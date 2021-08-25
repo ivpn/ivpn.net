@@ -1,5 +1,35 @@
 <template>
     <div class="servers">
+        <div class="row row__filter">
+            <div class="col server">
+                <form class="search">
+                    <input name="search" type="text" placeholder="Search">
+                    <input type="submit" value="">
+                </form>
+            </div>
+            <div class="col country active">
+                <form class="select">
+                    <select name="country">
+                        <option>Country</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="United States">United States</option>
+                    </select>
+                    <i></i>
+                </form>
+            </div>
+            <div class="col city">
+                
+            </div>
+            <div class="col provider">
+                
+            </div>
+            <div class="col load">&nbsp;</div>
+            <div class="col action">
+                <a>Reset</a>
+            </div>
+        </div>
         <header class="row row__header">
             <div class="col server">
                 <a @click="sortBy" data-sort="gateway">SERVER<i></i></a>

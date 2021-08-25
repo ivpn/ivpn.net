@@ -24,6 +24,12 @@
             @include dark-theme((
                 border: 1px solid #3C3C40
             ));
+
+            &__filter {
+                .search {
+                    margin: 0;
+                }
+            }
     
             &__header {
 
