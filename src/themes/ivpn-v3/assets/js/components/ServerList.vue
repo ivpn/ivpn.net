@@ -19,7 +19,7 @@
             <div class="col action">&nbsp;</div>
         </header>
         <main>
-            <div class="row" v-for="server in sortedServers">
+            <div class="row" v-for="server in sortedServers" :key="server.gateway">
                 <div class="col server">
                     <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
                     {{ server.gateway }}
