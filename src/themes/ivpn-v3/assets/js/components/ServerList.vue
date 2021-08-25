@@ -2,19 +2,19 @@
     <div class="servers">
         <header class="row row__header">
             <div class="col server">
-                <a>SERVER<i></i></a>
+                <a @click="sortBy" data-sort="gateway">SERVER<i></i></a>
             </div>
             <div class="col country active">
-                <a>COUNTRY<i></i></a>
+                <a @click="sortBy" data-sort="country">COUNTRY<i></i></a>
             </div>
             <div class="col city">
-                <a>CITY<i></i></a>
+                <a @click="sortBy" data-sort="city">CITY<i></i></a>
             </div>
             <div class="col provider">
-                <a @click="sortByProvider">PROVIDER<i></i></a>
+                <a @click="sortBy" data-sort="isp">PROVIDER<i></i></a>
             </div>
             <div class="col load">
-                <a>LOAD<i></i></a>
+                <a @click="sortBy" data-sort="load">LOAD<i></i></a>
             </div>
             <div class="col action">&nbsp;</div>
         </header>
@@ -49,11 +49,11 @@
                 <div class="col details">
                     <div>
                         <em>Public Key</em>
-                        83LUBnP97SFpnS0y1MpEAFcg8MIiQJgW1FRv/8Mc40g=
+                        {{ server.wg_public_key }}
                     </div>
                     <div>
                         <em>MultiHop Port</em>
-                        22541
+                        {{ server.multihop_port }}
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers;
-                this.sortedServers = resp.servers;
+                this.sortServers("country", false);
             }
         },
         renderProtocolName(protocol) {
@@ -109,14 +109,15 @@ export default {
             event.target.classList.toggle("active");
             event.target.parentNode.nextElementSibling.classList.toggle("active");
         },
-        sortByProvider(event) {
+        sortBy(event) {
             if (event.target.parentNode.classList.contains("active")) {
                 event.target.parentNode.classList.toggle("desc");
             } else {
+                [...event.target.parentElement.parentElement.children].forEach(sib => sib.classList.remove("active"))
                 event.target.parentNode.classList.toggle("active");
             }
 
-            this.sortServers("isp", event.target.parentNode.classList.contains("desc"));
+            this.sortServers(event.target.getAttribute("data-sort"), event.target.parentNode.classList.contains("desc"));
         },
         sortServers(by, desc) {
             this.sortedServers = this.servers.sort((a, b) => {
