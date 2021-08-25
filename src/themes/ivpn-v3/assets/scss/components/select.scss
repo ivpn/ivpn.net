@@ -8,6 +8,7 @@
         cursor: pointer;
         display: block;
         width: 100%;
+        border-radius: 0;
         
         @include light-theme((
             background: $light-mode-alternative-background,
