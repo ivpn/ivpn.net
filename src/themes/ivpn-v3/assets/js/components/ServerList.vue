@@ -10,11 +10,8 @@
             <div class="col country active">
                 <form class="select">
                     <select name="country">
-                        <option>Country</option>
-                        <option value="Romania">Romania</option>
-                        <option value="Germany">Germany</option>
-                        <option value="Netherlands">Netherlands</option>
-                        <option value="United States">United States</option>
+                        <option>Country: All</option>
+                        <option v-for="country in countries" :value="country">{{ country }}</option>
                     </select>
                     <i></i>
                 </form>
@@ -22,11 +19,8 @@
             <div class="col city">
                 <form class="select">
                     <select name="country">
-                        <option>City</option>
-                        <option value="Sydney">Sydney</option>
-                        <option value="Vienna">Vienna</option>
-                        <option value="Brussels">Brussels</option>
-                        <option value="Franca">Franca</option>
+                        <option>City: All</option>
+                        <option v-for="city in cities" :value="city">{{ city }}</option>
                     </select>
                     <i></i>
                 </form>
@@ -34,11 +28,8 @@
             <div class="col provider">
                 <form class="select">
                     <select name="country">
-                        <option>Provider</option>
-                        <option value="M247">M247</option>
-                        <option value="Qnax">Qnax</option>
-                        <option value="Amanah">Amanah</option>
-                        <option value="Datapacket">Datapacket</option>
+                        <option>Provider: All</option>
+                        <option v-for="provider in providers" :value="provider">{{ provider }}</option>
                     </select>
                     <i></i>
                 </form>
@@ -117,6 +108,9 @@ export default {
         return {
             servers: [],
             sortedServers: [],
+            countries: [],
+            cities: [],
+            providers: [],
         };
     },
     mounted() {
@@ -127,6 +121,9 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers;
+                this.countries = [...new Set(resp.servers.map(server => server.country))].sort();
+                this.cities = [...new Set(resp.servers.map(server => server.city))].sort();
+                this.providers = [...new Set(resp.servers.map(server => server.isp))].sort();
                 this.sortServers("country", false);
             }
         },
@@ -168,7 +165,8 @@ export default {
             this.sortServers(event.target.getAttribute("data-sort"), event.target.parentNode.classList.contains("desc"));
         },
         sortServers(by, desc) {
-            this.sortedServers = this.servers.sort((a, b) => {
+            const servers = this.servers;
+            this.sortedServers = servers.sort((a, b) => {
                 if (a[by] > b[by]) {
                     return (desc ? -1 : 1)
                 } else if (a[by] < b[by])
@@ -178,15 +176,7 @@ export default {
         },
     },
     computed: {
-        sortedList: function () {
-            return this.servers.sort((a, b) => {
-                if (a.gateway > b.gateway) {
-                    return 1
-                } else if (a.gateway < b.gateway)
-                    return -1
-                return 0
-            });
-        },
+        
     },
 };
 </script>
