@@ -52,6 +52,7 @@
                         flex-direction: row;
                         align-items: center;
                         cursor: pointer;
+                        user-select: none;
 
                         @include light-theme((
                             color: $light-mode-text
@@ -70,7 +71,7 @@
                             width: 16px;
                             height: 10px;
                             margin-left: 10px;
-                            background: url('/images-static/arrow-gray.svg');
+                            background: url('/images-static/arrow-gray.svg') no-repeat center;
                             transform: rotate(180deg);
                         }
                     }

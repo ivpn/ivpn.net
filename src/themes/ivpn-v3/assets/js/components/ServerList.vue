@@ -11,7 +11,7 @@
                 <a>CITY<i></i></a>
             </div>
             <div class="col provider">
-                <a>PROVIDER<i></i></a>
+                <a @click="sortByProvider">PROVIDER<i></i></a>
             </div>
             <div class="col load">
                 <a>LOAD<i></i></a>
@@ -19,7 +19,7 @@
             <div class="col action">&nbsp;</div>
         </header>
         <main>
-            <div class="row" v-for="server in servers">
+            <div class="row" v-for="server in sortedServers">
                 <div class="col server">
                     <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
                     {{ server.gateway }}
@@ -68,6 +68,7 @@ export default {
     data() {
         return {
             servers: [],
+            sortedServers: [],
         };
     },
     mounted() {
@@ -78,6 +79,7 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers;
+                this.sortedServers = resp.servers;
             }
         },
         renderProtocolName(protocol) {
@@ -103,9 +105,27 @@ export default {
 
             return "Offline";
         },
-        toggleDetails: (event) => {
-            event.target.classList.toggle('active');
-            event.target.parentNode.nextElementSibling.classList.toggle('active');
+        toggleDetails(event) {
+            event.target.classList.toggle("active");
+            event.target.parentNode.nextElementSibling.classList.toggle("active");
+        },
+        sortByProvider(event) {
+            if (event.target.parentNode.classList.contains("active")) {
+                event.target.parentNode.classList.toggle("desc");
+            } else {
+                event.target.parentNode.classList.toggle("active");
+            }
+
+            this.sortServers("isp", event.target.parentNode.classList.contains("desc"));
+        },
+        sortServers(by, desc) {
+            this.sortedServers = this.servers.sort((a, b) => {
+                if (a[by] > b[by]) {
+                    return (desc ? -1 : 1)
+                } else if (a[by] < b[by])
+                    return (desc ? 1 : -1)
+                return 0
+            });
         },
     },
     computed: {
