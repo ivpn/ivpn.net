@@ -3,7 +3,7 @@
         <div class="row row__filter">
             <div class="col server">
                 <form class="search">
-                    <input name="search" type="text" placeholder="Search">
+                    <input name="search" type="text" placeholder="Server">
                     <input type="submit" value="">
                 </form>
             </div>
