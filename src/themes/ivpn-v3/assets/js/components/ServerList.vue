@@ -20,10 +20,28 @@
                 </form>
             </div>
             <div class="col city">
-                
+                <form class="select">
+                    <select name="country">
+                        <option>City</option>
+                        <option value="Sydney">Sydney</option>
+                        <option value="Vienna">Vienna</option>
+                        <option value="Brussels">Brussels</option>
+                        <option value="Franca">Franca</option>
+                    </select>
+                    <i></i>
+                </form>
             </div>
             <div class="col provider">
-                
+                <form class="select">
+                    <select name="country">
+                        <option>Provider</option>
+                        <option value="M247">M247</option>
+                        <option value="Qnax">Qnax</option>
+                        <option value="Amanah">Amanah</option>
+                        <option value="Datapacket">Datapacket</option>
+                    </select>
+                    <i></i>
+                </form>
             </div>
             <div class="col load">&nbsp;</div>
             <div class="col action">

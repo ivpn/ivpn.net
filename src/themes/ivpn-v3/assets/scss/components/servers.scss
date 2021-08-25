@@ -25,73 +25,6 @@
                 border: 1px solid #3C3C40
             ));
 
-            &__filter {
-                .search {
-                    margin: 0;
-                }
-            }
-    
-            &__header {
-
-                &:last-of-type {
-                    margin-bottom: -1px;
-                }
-    
-                .col {
-                    padding: 19px 20px!important;
-                    font-size: 13px!important;
-                    font-weight: normal!important;
-                    line-height: normal!important;
-    
-                    @include light-theme((
-                        background-color: $light-mode-alternative-background,
-                        color: rgba(34, 34, 38, 0.5)
-                    ));
-            
-                    @include dark-theme((
-                        background-color: $dark-mode-alternative-background,
-                        color: rgba(255, 255, 255, 0.5)
-                    ));
-
-                    a {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        cursor: pointer;
-                        user-select: none;
-
-                        @include light-theme((
-                            color: $light-mode-text
-                        ));
-                
-                        @include dark-theme((
-                            color: $dark-mode-text
-                        ));
-
-                        &:hover {
-                            text-decoration: none;
-                        }
-
-                        i {
-                            display: block;
-                            width: 16px;
-                            height: 10px;
-                            margin-left: 10px;
-                            background: url('/images-static/arrow-gray.svg') no-repeat center;
-                            transform: rotate(180deg);
-                        }
-                    }
-
-                    &.active a i {
-                        background-image: url('/images-static/arrow-blue.svg');
-                    }
-
-                    &.desc a i {
-                        transform: rotate(0deg);
-                    }
-                }
-            }
-    
             .col {
                 padding: 15px 20px;
                 font-size: 15px;
@@ -194,6 +127,117 @@
                         @include dark-theme((
                             color: rgba(255, 255, 255, 0.5)
                         ));
+                    }
+                }
+            }
+
+            &__filter {
+                &:last-of-type {
+                    margin-bottom: 25px;
+                }
+
+                @include light-theme((
+                    border: none
+                ));
+        
+                @include dark-theme((
+                    border: none
+                ));
+
+                .col {
+                    padding-top: 0;
+                    padding-bottom: 0;
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+
+                    &.load {
+                        width: 7%;
+                    }
+
+                    &.action {
+                        width: 10%;
+                        text-align: right;
+
+                        a {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+
+                .search {
+                    margin: 0;
+                    width: 220px;
+                    font-size: 14px;
+                }
+
+                .select {
+                    width: 170px;
+                }
+            }
+    
+            &__header {
+
+                &:last-of-type {
+                    margin-bottom: -1px;
+                }
+    
+                .col {
+                    padding: 19px 20px;
+                    font-size: 13px;
+                    font-weight: normal!important;
+                    line-height: normal!important;
+    
+                    @include light-theme((
+                        background-color: $light-mode-alternative-background,
+                        color: rgba(34, 34, 38, 0.5)
+                    ));
+            
+                    @include dark-theme((
+                        background-color: $dark-mode-alternative-background,
+                        color: rgba(255, 255, 255, 0.5)
+                    ));
+
+                    a {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        cursor: pointer;
+                        user-select: none;
+
+                        @include light-theme((
+                            color: $light-mode-text
+                        ));
+                
+                        @include dark-theme((
+                            color: $dark-mode-text
+                        ));
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+
+                        i {
+                            display: block;
+                            width: 16px;
+                            height: 10px;
+                            margin-left: 10px;
+                            background: url('/images-static/arrow-gray.svg') no-repeat center;
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    &.active a i {
+                        background-image: url('/images-static/arrow-blue.svg');
+                    }
+
+                    &.desc a i {
+                        transform: rotate(0deg);
+                    }
+
+                    &.action {
+                        padding: 19px 20px;
                     }
                 }
             }
