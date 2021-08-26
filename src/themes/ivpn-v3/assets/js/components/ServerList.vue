@@ -9,7 +9,7 @@
             </div>
             <div class="col country active">
                 <form class="select">
-                    <select name="country" @change="onChangeFilter($event)" data-filter="country">
+                    <select name="country" @change="onChangeFilter($event)" data-filter="country" ref="countryFilter">
                         <option value="">Country: Any</option>
                         <option v-for="country in countries" :value="country">{{ country }}</option>
                     </select>
@@ -18,7 +18,7 @@
             </div>
             <div class="col city">
                 <form class="select">
-                    <select name="city" @change="onChangeFilter($event)" data-filter="city">
+                    <select name="city" @change="onChangeFilter($event)" data-filter="city" ref="cityFilter">
                         <option value="">City: Any</option>
                         <option v-for="city in cities" :value="city">{{ city }}</option>
                     </select>
@@ -27,7 +27,7 @@
             </div>
             <div class="col provider">
                 <form class="select">
-                    <select name="provider" @change="onChangeFilter($event)" data-filter="isp">
+                    <select name="provider" @change="onChangeFilter($event)" data-filter="isp" ref="providerFilter">
                         <option value="">Provider: Any</option>
                         <option v-for="provider in providers" :value="provider">{{ provider }}</option>
                     </select>
@@ -36,7 +36,7 @@
             </div>
             <div class="col load">&nbsp;</div>
             <div class="col action">
-                <a>Reset</a>
+                <a @click="resetFilter">Reset</a>
             </div>
         </div>
         <header class="row row__header">
@@ -180,6 +180,13 @@ export default {
         onChangeFilter(event) {
             this.filters[event.target.getAttribute("data-filter")] = event.target.value;
             this.filterServers();
+        },
+        resetFilter() {
+            this.filters = [];
+            this.filterServers();
+            this.$refs.countryFilter.selectedIndex = 0;
+            this.$refs.cityFilter.selectedIndex = 0;
+            this.$refs.providerFilter.selectedIndex = 0;
         },
         filterServers() {
             let servers = this.sortedServers;
