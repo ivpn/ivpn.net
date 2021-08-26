@@ -2,8 +2,8 @@
     <div class="servers">
         <div class="row row__filter">
             <div class="col server">
-                <form class="search">
-                    <input name="search" type="text" placeholder="Server">
+                <form class="search" @submit.prevent autocomplete="off">
+                    <input name="search" type="text" placeholder="Server" @input="onChangeServerFilter($event)" ref="serverFilter">
                     <input type="submit" value="">
                 </form>
             </div>
@@ -113,6 +113,7 @@ export default {
             cities: [],
             providers: [],
             filters: [],
+            serverFilter: "",
         };
     },
     mounted() {
@@ -181,22 +182,35 @@ export default {
             this.filters[event.target.getAttribute("data-filter")] = event.target.value;
             this.filterServers();
         },
+        onChangeServerFilter(event) {
+            event.preventDefault();
+            this.serverFilter = event.target.value;
+            this.filterServers();
+        },
         resetFilter() {
             this.filters = [];
-            this.filterServers();
+            this.serverFilter = "";
+            this.$refs.serverFilter.value = "";
             this.$refs.countryFilter.selectedIndex = 0;
             this.$refs.cityFilter.selectedIndex = 0;
             this.$refs.providerFilter.selectedIndex = 0;
+            this.filterServers();
         },
         filterServers() {
             let servers = this.sortedServers;
             this.filteredServers = servers.filter((server) => {
                 let condition = true;
+
                 for (let key in this.filters) {
                     if (this.filters[key] != "" && server[key] != this.filters[key]) {
                         condition = false;
                     }
                 }
+
+                if (this.serverFilter != "" && server.gateway.indexOf(this.serverFilter) < 0) {
+                    condition = false;
+                }
+
                 return condition;
             });
         },
