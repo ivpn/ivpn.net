@@ -9,8 +9,8 @@
             </div>
             <div class="col country active">
                 <form class="select">
-                    <select name="country">
-                        <option>Country: All</option>
+                    <select name="country" @change="onChangeFilterCountry($event)">
+                        <option value="">Country: Any</option>
                         <option v-for="country in countries" :value="country">{{ country }}</option>
                     </select>
                     <i></i>
@@ -18,8 +18,8 @@
             </div>
             <div class="col city">
                 <form class="select">
-                    <select name="country">
-                        <option>City: All</option>
+                    <select name="city" @change="onChangeFilterCity($event)">
+                        <option value="">City: Any</option>
                         <option v-for="city in cities" :value="city">{{ city }}</option>
                     </select>
                     <i></i>
@@ -27,8 +27,8 @@
             </div>
             <div class="col provider">
                 <form class="select">
-                    <select name="country">
-                        <option>Provider: All</option>
+                    <select name="provider" @change="onChangeFilterProvider($event)">
+                        <option value="">Provider: Any</option>
                         <option v-for="provider in providers" :value="provider">{{ provider }}</option>
                     </select>
                     <i></i>
@@ -58,7 +58,7 @@
             <div class="col action">&nbsp;</div>
         </header>
         <main>
-            <div class="row" v-for="server in sortedServers" :key="server.gateway">
+            <div class="row" v-for="server in filteredServers" :key="server.gateway">
                 <div class="col server">
                     <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
                     {{ server.gateway }}
@@ -108,9 +108,14 @@ export default {
         return {
             servers: [],
             sortedServers: [],
+            filteredServers: [],
             countries: [],
             cities: [],
             providers: [],
+            filterServer: "",
+            filterCountry: "",
+            filterCity: "",
+            filterProvider: "",
         };
     },
     mounted() {
@@ -173,6 +178,42 @@ export default {
                     return (desc ? 1 : -1)
                 return 0
             });
+            this.filterServers();
+        },
+        onChangeFilterCountry(event) {
+            this.filterCountry = event.target.value;
+            this.filterServers();
+        },
+        onChangeFilterCity(event) {
+            this.filterCity = event.target.value;
+            this.filterServers();
+        },
+        onChangeFilterProvider(event) {
+            this.filterProvider = event.target.value;
+            this.filterServers();
+        },
+        filterServers() {
+            let servers = this.sortedServers;
+
+            if (this.filterCountry != "") {
+                servers = servers.filter((server) => {
+                    return server.country == this.filterCountry
+                });
+            }
+
+            if (this.filterCity != "") {
+                servers = servers.filter((server) => {
+                    return server.city == this.filterCity
+                });
+            }
+
+            if (this.filterProvider != "") {
+                servers = servers.filter((server) => {
+                    return server.isp == this.filterProvider
+                });
+            }
+
+            this.filteredServers = servers;
         },
     },
     computed: {
