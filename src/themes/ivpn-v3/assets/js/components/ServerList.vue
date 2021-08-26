@@ -9,7 +9,7 @@
             </div>
             <div class="col country active">
                 <form class="select">
-                    <select name="country" @change="onChangeFilterCountry($event)">
+                    <select name="country" @change="onChangeFilter($event)" data-filter="country">
                         <option value="">Country: Any</option>
                         <option v-for="country in countries" :value="country">{{ country }}</option>
                     </select>
@@ -18,7 +18,7 @@
             </div>
             <div class="col city">
                 <form class="select">
-                    <select name="city" @change="onChangeFilterCity($event)">
+                    <select name="city" @change="onChangeFilter($event)" data-filter="city">
                         <option value="">City: Any</option>
                         <option v-for="city in cities" :value="city">{{ city }}</option>
                     </select>
@@ -27,7 +27,7 @@
             </div>
             <div class="col provider">
                 <form class="select">
-                    <select name="provider" @change="onChangeFilterProvider($event)">
+                    <select name="provider" @change="onChangeFilter($event)" data-filter="isp">
                         <option value="">Provider: Any</option>
                         <option v-for="provider in providers" :value="provider">{{ provider }}</option>
                     </select>
@@ -112,10 +112,7 @@ export default {
             countries: [],
             cities: [],
             providers: [],
-            filterServer: "",
-            filterCountry: "",
-            filterCity: "",
-            filterProvider: "",
+            filters: [],
         };
     },
     mounted() {
@@ -180,23 +177,20 @@ export default {
             });
             this.filterServers();
         },
-        onChangeFilterCountry(event) {
-            this.filterCountry = event.target.value;
-            this.filterServers();
-        },
-        onChangeFilterCity(event) {
-            this.filterCity = event.target.value;
-            this.filterServers();
-        },
-        onChangeFilterProvider(event) {
-            this.filterProvider = event.target.value;
+        onChangeFilter(event) {
+            this.filters[event.target.getAttribute("data-filter")] = event.target.value;
             this.filterServers();
         },
         filterServers() {
             let servers = this.sortedServers;
-
             this.filteredServers = servers.filter((server) => {
-                return ((this.filterCountry != "") ? server.country == this.filterCountry : true) && ((this.filterCity != "") ? server.city == this.filterCity : true) && ((this.filterProvider != "") ? server.isp == this.filterProvider : true)
+                let condition = true;
+                for (let key in this.filters) {
+                    if (this.filters[key] != "" && server[key] != this.filters[key]) {
+                        condition = false;
+                    }
+                }
+                return condition;
             });
         },
     },
