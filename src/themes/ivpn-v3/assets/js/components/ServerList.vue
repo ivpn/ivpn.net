@@ -195,25 +195,9 @@ export default {
         filterServers() {
             let servers = this.sortedServers;
 
-            if (this.filterCountry != "") {
-                servers = servers.filter((server) => {
-                    return server.country == this.filterCountry
-                });
-            }
-
-            if (this.filterCity != "") {
-                servers = servers.filter((server) => {
-                    return server.city == this.filterCity
-                });
-            }
-
-            if (this.filterProvider != "") {
-                servers = servers.filter((server) => {
-                    return server.isp == this.filterProvider
-                });
-            }
-
-            this.filteredServers = servers;
+            this.filteredServers = servers.filter((server) => {
+                return ((this.filterCountry != "") ? server.country == this.filterCountry : true) && ((this.filterCity != "") ? server.city == this.filterCity : true) && ((this.filterProvider != "") ? server.isp == this.filterProvider : true)
+            });
         },
     },
     computed: {
