@@ -220,6 +220,9 @@ export default {
             this.$refs.countryFilter.selectedIndex = 0;
             this.$refs.cityFilter.selectedIndex = 0;
             this.$refs.providerFilter.selectedIndex = 0;
+            this.countries = [...new Set(this.servers.map(server => server.country))].sort();
+            this.cities = [...new Set(this.servers.map(server => server.city))].sort();
+            this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
             this.filterServers();
         },
         filterServers() {
