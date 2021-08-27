@@ -1,13 +1,13 @@
 ---
 title: VPN Setup guide for DD-WRT routers using the manual method
-listItem: DD-WRT manual
+listItem: DD-WRT OpenVPN manual
 url: /setup/router/ddwrt-manual/
 section: Router Setup
 platform: router
 layout: setup-article
 weight: 12
 ---
-## DD-WRT Manual Setup Guide
+## DD-WRT OpenVPN Manual Setup Guide
 
 <div markdown="1" class="notice notice--warning">
 The DD-WRT UI is constantly evolving and there are multiple variations depending on the specific build and version of the firmware. You may not see the exact same options in the same order as below.
