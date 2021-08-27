@@ -1,6 +1,6 @@
 ---
-title: VPN Setup guide for a Tomato router
-listItem: Tomato manual
+title: OpenVPN Setup guide for a Tomato router
+listItem: Tomato OpenVPN
 url: /setup/router/tomato-manual/
 section: Router Setup
 platform: router

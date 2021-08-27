@@ -1,97 +1,88 @@
 ---
-title: OPNSense WireGuard Setup Guide
-listItem: OPNsense WireGuard
-url: /setup/router/opnsense/
+title: OPNSense OpenVPN Setup Guide
+listItem: OPNsense OpenVPN
+url: /setup/router/opnsense-openvpn/
 section: Router Setup
 platform: router
 layout: setup-article
 weight: 60
 ---
-## OPNSense WireGuard Setup Guide
+## OPNSense OpenVPN Setup Guide
 
 <div markdown="1" class="notice notice--warning">
-This guide was produced using OPNSense 20.1.
+This guide was produced using OPNSense 21.7.1
 </div>
 
-### Configure Your Environment
+### Add a Certificate
 
-1.  Navigate to the home page of your router - By default `192.168.1.1`.
+1. In your router's webUI, navigate to `System` > `Trust` > `Authorities` and click on the `+` button
 
-2.  Install system updates: `System > Firmware > Updates`
+2. Give it any name, i.e. "IVPN CA", select `Import an existing Certificate Authority`, then copy and paste the contents of our [ca.crt](/releases/config/ca.crt) file into the `Certificate Data` field
 
-3.  Install the WireGuard plugin via `System > Firmware > Plugins` and scroll down to **os-wireguard**, then click the `+` to install. Reboot via `Power > Reboot` to make sure WireGuard is applied to the system.
+3. Click `Save`.
 
-    ![](/images-static/uploads/opns-wg-1-3-wg-plugin.png)
+    ![](/images-static/uploads/install-openvpn-opnsense-01.png)
 
-### Add an Endpoint (Server Location /Peer)
+### Configure an OpenVPN Client
 
-1.  Log in to the [IVPN Client Area](/account/).
+1. Choose an OpenVPN server from our [Server Status](/status/) page and make note of its hostname (this guide uses Ukranian server as an example - ua1.gw.ivpn.net)
 
-2.  Choose a WireGuard server to connect to from our [Server Status](/status/) page. Make note of the hostname and the public key of the server.
+2. Navigate to `VPN` > `OpenVPN` > `Clients`, click on the `+` button and enter the following configuration:
 
-3.  In the OPNSense web interface, go to `VPN > WireGuard > Endpoints` and click the `+` to add a VPN server location (Endpoint/Peer):
+    *   Disabled - **Unchecked**
+    *   Description - Give it any name, i.e. **IVPN Ukraine**
+    *   Server Mode - **Peer to Peer (SSL/TLS)**
+    *   Protocol - **UDP** or **TCP**
+    *   Device mode - **tun**
+    *   Interface - **WAN**
+    *   Remote server - IVPN's server hostname, i.e. **ua1.gw.ivpn.net**
+    *   Port - **2049** (or 2050, 53, 1194 for UDP and 443, 1443, 80 for TCP. All ports are equally secure)
+    *   Username - Your IVPN account ID (**i-XXXX-XXXX-XXXX** or **ivpnXXXXXXXX**)
+    *   Password - any string, i.e. **ivpn** <br></br>![](/images-static/uploads/install-openvpn-opnsense-02.png)<br></br>
+    *   TLS Authentication - check the `Enable authentication of TLS packets` option then copy and paste the contents of our [ta.key](/releases/config/ta.key) file
+    *   Peer Certificate Authority - **IVPN CA**
+    *   Client Certificate - **None (Username and Password required)**
+    *   Encryption algorithm - **CHACHA20-POLY1305 (256 bit key)** (AES-256-GCM & AES-256-CBC are also supported)
+    *   Auth Digest Algorithm - **SHA1 (160bit)**
+    *   Compression - **Legacy - Disabled LZO algorithm (--comp-lzo no)**<br></br>![](/images-static/uploads/install-openvpn-opnsense-03.png)<br></br>
 
-    <div markdown="1" class="notice notice--info">
-    <strong>Name:</strong> A short interface name, like ivpnJapan or ivpnSeattle.<br>
-    <strong>Public Key:</strong> The server public key is available from the server list in the step above.<br>
-    <strong>Shared Secret:</strong> Leave it blank.<br>
-    <strong>Alloweb IPs:</strong> 0.0.0.0/0<br>
-    <strong>Endpoint Address:</strong> The server hostname is available from the server list in the step above.<br>
-    <strong>Endpoint Port:</strong> IVPN offers different ports to connect on: 53, 2049, 2050, 30587, 41893, 48574, and 58237<br>
-    <strong>Keepalive:</strong> 25
-    </div>
+3. Click `Save`.
 
-    ![](/images-static/uploads/opns-wg-2-3-edit-endpoint.png)
+### Create an Interface
 
-4.  Click the `Save` button to add the **Endpoint** to your OPNSense system.
+1. Navigate to `Interfaces` > `Assignments`
 
-### Add a Local Interface
+2. Look for the interface with `ovpnc1` name, give it any description, i.e. "IVPNUkraine", then click on the `+` button and `Save`<br></br>![](/images-static/uploads/install-openvpn-opnsense-04.png)
 
-1.  In the OPNSense web interface, go to `VPN > WireGuard > Local` and click the `+` to add a local interface and enter the following:
+3. Click on the newly added interface name, have the `Enable Interface` option checked and `Save` the changes.
 
-    <div markdown="1" class="notice notice--info">
-    <strong>Name:</strong> A short interface name, like ivpn.<br>
-    <strong>Listen Port:</strong> Default value is likely fine.<br>
-    <strong>DNS Server:</strong> The DNS server can be one of three options:<br><br>
-    <i>172.16.0.1</i> = regular DNS with no blocking<br>
-    <i>10.0.254.2</i> = standard AntiTracker to block advertising and malware domains<br>
-    <i>10.0.254.3</i> = Hardcore Mode AntiTracker to also block Google and Facebook<br><br>
-    <strong>Tunnel Address:</strong> Enter a temporary placeholder address, like 10.9.9.9<br>
-    <strong>Peers:</strong> Choose the <strong>Endpoint</strong> (VPN server location) you created in the previous step.
-    </div>
+### Configure Firewall
 
-    Click the `Save` button to generate your **Public** and **Private** keys.
+1. Navigate to `Firewall` > `NAT` > `Outbound`, select `Manual outbound NAT rule generation` and click `Save`
 
-2.  Click the pencil icon to edit the local interface you created in the previous step and make note of your **Public Key**.
+2. Click on the `+` button to add a new rule and fill in the following configuration:
 
-    ![](/images-static/uploads/opns-wg-3-2-local-interface.png)
+    *   Disabled - **Unchecked**
+    *   Interface - select the created earlier interface, i.e. **IVPNUkraine**
+    *   Source Address - **LAN net**
+    *   Translation / target - **Interface address**
 
-3.  On the `VPN Accounts` page in the Client Area on our website, click the `WireGuard` tab. Go to `WireGuard Key Management` located under **Tools**. Click the `Add New Key` button. Copy the contents of the **Public Key** from OPNSense and paste them into the **Public Key**: field. Add a comment, like OPNSense if you prefer, and click the `Add Key button`.
+3. Click `Save` and `Apply Changes`.<br></br>![](/images-static/uploads/install-openvpn-opnsense-06.png)
 
-    <div markdown="1" class="notice notice--warning">
-    Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key</strong>. The <strong>Private Key</strong> must always be kept a carefully guarded secret.
-    </div>
+### DNS
 
-4.  Make note of the IPv4 Address beside your newly added public key on the WireGuard tab in the Client Area. This is the IP address your computer system will have on our internal network. It will be in the form **172.x.y.z**.
+1. Navigate to `Services` > `DHCPv4` > `[LAN]`
 
-5.  Go back to the OPNSense web interface and the local interface that is being edited. Remove the temporary placeholder from the **Tunnel Address** field and enter the IP address from the step above plus the /32 netmask **(172.x.y.z/32)**.
+2. In the `DNS servers` field, specify one of the following DNS servers:
 
-    ![](/images-static/uploads/opns-wg-3-5-edit-local-interface.png)
+    * *10.0.254.1* = redular DNS with no blocking
+    * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
+    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
 
-6.  Click the `Save` button.
+3. Click `Save`.<br></br>![](/images-static/uploads/install-openvpn-opnsense-08.png)
 
-### Connecting
+### Final Steps
 
-1.  Go to the `VPN > WireGuard > General` tab and put a check mark beside **Enable WireGuard** on the General tab, then click the `Save` button.
+1. Restart your router device and check the status of the OpenVPN client in the `VPN` - `OpenVPN` - `Connection Status` area.<br></br>![](/images-static/uploads/install-openvpn-opnsense-10.png)
 
-2.  Check the `VPN > WireGuard > List Configuration` and `Handshakes` tabs to see connection details.
-
-3.  Go to the `Interfaces > LAN` page and set the `MSS` value to `1412`.  Click the `Save` button at the bottom of the page, then click the `Apply changes` button at the top of the page.
-
-4.  To let you internal network clients go through the tunnel, add a **NAT entry**. Go to `Firewall > NAT > Outbound` and click `+Add` to add a rule. Check that rule generation is set to **Manual** or **Hybrid**. Add a rule and select **Wireguard** as `Interface`. `Source Address` should be **LAN net** and set `Translation / target` to **Interface address**.
-
-    ![](/images-static/uploads/opns-wg-4-3-nat-rule.png)
-
-5.  Click the `Save` button, click the `Apply Changes` button, then reboot the OPNSense router.
-
-6.  Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com/) via one of the internal network clients attached to your OPNSense router.
+2. Check the conenction status and the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your OPNsense router.<br></br>![](/images-static/uploads/install-openvpn-opnsense-11.png)
