@@ -11,7 +11,7 @@
                 <form class="select">
                     <select name="country" @change="onChangeFilter($event)" data-filter="country" ref="countryFilter">
                         <option value="">Country: Any</option>
-                        <option v-for="country in countries" :value="country">{{ country }}</option>
+                        <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
                     </select>
                     <i></i>
                 </form>
@@ -20,7 +20,7 @@
                 <form class="select">
                     <select name="city" @change="onChangeFilter($event)" data-filter="city" ref="cityFilter">
                         <option value="">City: Any</option>
-                        <option v-for="city in cities" :value="city">{{ city }}</option>
+                        <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
                     </select>
                     <i></i>
                 </form>
@@ -29,7 +29,7 @@
                 <form class="select">
                     <select name="provider" @change="onChangeFilter($event)" data-filter="isp" ref="providerFilter">
                         <option value="">Provider: Any</option>
-                        <option v-for="provider in providers" :value="provider">{{ provider }}</option>
+                        <option v-for="provider in providers" :value="provider" :key="provider">{{ provider }}</option>
                     </select>
                     <i></i>
                 </form>
@@ -181,11 +181,37 @@ export default {
         onChangeFilter(event) {
             this.filters[event.target.getAttribute("data-filter")] = event.target.value;
             this.filterServers();
+            this.filterFilters(event.target.getAttribute("data-filter"), event.target.value);
         },
         onChangeServerFilter(event) {
             event.preventDefault();
             this.serverFilter = event.target.value;
             this.filterServers();
+        },
+        filterFilters(filter, value) {
+            if (filter != "country" || value == "") {
+                if (this.filters["city"] != "" || this.filters["isp"] != "") {
+                    this.countries = [...new Set(this.filteredServers.map(server => server.country))].sort();
+                } else {
+                    this.countries = [...new Set(this.servers.map(server => server.country))].sort();
+                }
+            }
+
+            if (filter != "city" || value == "") {
+                if (this.filters["country"] != "" || this.filters["isp"] != "") {
+                    this.cities = [...new Set(this.filteredServers.map(server => server.city))].sort();
+                } else {
+                    this.cities = [...new Set(this.servers.map(server => server.city))].sort();
+                }
+            }
+
+            if (filter != "isp" || value == "") {
+                if (this.filters["country"] != "" || this.filters["city"] != "") {
+                    this.providers = [...new Set(this.filteredServers.map(server => server.isp))].sort();
+                } else {
+                    this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
+                }
+            }
         },
         resetFilter() {
             this.filters = [];
