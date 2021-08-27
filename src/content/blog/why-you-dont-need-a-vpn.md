@@ -21,9 +21,6 @@ thumbnailImage: /images-static/uploads/don-t-need-vpn.png
 socalUrls:
   redditUrl: https://www.reddit.com/r/IVPN/comments/gmodf9/why_you_dont_need_a_vpn_first_post_in_vpn_worst/
 ---
-> Update: We have published a tool called ['Do I need a VPN'](https://www.doineedavpn.com).\
-> It builds on the key points of this blog posts to help evaluate whether a VPN is a right choice for you.\
-> The project is [open source](https://github.com/ivpn/doineedavpn.com) - please pass it along an help us improve it.
 
 If you have to ask: 'do I need a VPN for this problem?', the answer is no, most of the time.
 
@@ -75,6 +72,10 @@ So when do you need a VPN?\
 That's it.
 
 One last note: please remember that if you use a commercial VPN, your internet traffic goes through the VPN provider’s network. Whoever is in control of the servers can see and log anything you do online, if they choose to. You better trust the service you are signing up for - we will get to that in a future post of VPN Worst Practices.
+
+> Update: We have published a tool called ['Do I need a VPN'](https://www.doineedavpn.com).\
+> It builds on the key points of this blog posts to help evaluate whether a VPN is a right choice for you.\
+> The project is [open source](https://github.com/ivpn/doineedavpn.com) - please pass it along an help us improve it.
 
 - - -
 

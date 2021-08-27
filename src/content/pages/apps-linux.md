@@ -2,7 +2,7 @@
 title: IVPN for Linux - Open-source VPN app for Linux
 description: IVPN for Linux offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for Linux
-subtitle: In open beta - supports 64-bit Linux 3.10+
+subtitle: supports 64-bit Linux 3.10+
 url: /apps-linux/
 platform: linux
 layout: apps-single
@@ -172,10 +172,10 @@ SHA256: a9cd6f2e2e1c7f981d0788b0f6e381c56e8b44f44daad217b66b652d5eead947
 ### .RPM
 
 [Base package](https://repo.ivpn.net/stable/pool/ivpn-3.3.20-1.x86_64.rpm)  
-SHA256: e9860206f386809501201a1a32362d07f955bec1f948a5199a91e78609421b29  
+SHA256: 469d5b41b2092612cf82a9b269e4205ca4ebbcc651b5fbd196be8e138f005487  
 
 [UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.20-1.x86_64.rpm)  
-SHA256: 68ff2ce3df8b01240857744b623d4fbb57833f79c98b8040f581f48cb389d727  
+SHA256: 80e37b4c2c00fa89411e6bf403b72c60b66c09c2bd0ec0f0cdf264e76de00492  
 
 ## Install from Source Code {#source}
 
