@@ -427,7 +427,7 @@ export default {
     async getServerStats() {
         return await this.Get(
             '/v4/servers/stats',
-            process.env.MIX_APP_API_URL,
+            'https://api.ivpn.net',
             {
                 credentials: "omit"
             },
