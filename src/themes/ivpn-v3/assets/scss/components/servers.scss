@@ -28,6 +28,7 @@
             .col {
                 padding: 15px 20px;
                 font-size: 15px;
+                pointer-events: none;
     
                 &.server {
                     width: 24%;
@@ -78,6 +79,7 @@
                         padding: 15px;
                         transform: rotate(180deg);
                         cursor: pointer;
+                        pointer-events: all;
 
                         &.active {
                             transform: rotate(0deg);
