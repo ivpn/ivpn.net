@@ -1,13 +1,13 @@
 ---
 title: VPN Setup guide for DD-WRT routers using our automated setup script
-listItem: DD-WRT auto
+listItem: DD-WRT OpenVPN auto
 url: /setup/router/ddwrt-auto/
 section: Router Setup
 platform: router
 layout: setup-article
 weight: 11
 ---
-## DD-WRT Auto Setup Guide
+## DD-WRT OpenVPN Automatic Setup
 
 1.  Navigate to the home page of your router - By default `192.168.1.1`. If required enter your username and password, by default username is 'root' and password is 'admin'. Click on the `Administration` tab and then the `Commands` tab.
 
