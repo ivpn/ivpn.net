@@ -10,9 +10,9 @@ platform: windows
 To use WireGuard on Windows, we recommend downloading IVPN's <a href="/apps-windows/">Windows client</a>, which supports the protocol. Please follow the steps below if you would prefer to use the official WireGuard for Windows app instead:
 </div>
 
-1.  Download and install the WireGuard installer from the official WireGuard website.  
+1.  Download and install the WireGuard installer from the [official WireGuard website](https://www.wireguard.com/install/).  
 
-2.  Launch the WireGuard application and click the `down arrow` beside the `Add Tunnel` button and click `Add empty tunnel`...  
+2.  Launch the WireGuard application and click the `down arrow` beside the `Add Tunnel` button and click `Add empty tunnel...`.  
 
 3.  Give the new tunnel a `Name` with alphanumeric characters only (no spaces or punctuation) and add the following text below the `PrivateKey` entry in the new tunnel window.
 
