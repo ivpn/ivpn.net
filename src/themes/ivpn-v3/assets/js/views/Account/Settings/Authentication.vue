@@ -50,7 +50,7 @@
                 </div>
                 <div></div>
             </div>
-            <div class="row">
+            <div class="row row__checkbox">
                 <div class="key">
                     <input
                         type="checkbox"

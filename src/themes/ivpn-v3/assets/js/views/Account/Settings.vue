@@ -131,6 +131,11 @@ export default {
                 color: rgba(255, 255, 255, 0.5)
             ));
         }
+
+        &__checkbox {
+            flex-flow: column;
+            align-items: baseline;
+        }
     }
 }
 </style>
