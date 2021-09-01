@@ -334,6 +334,7 @@
                             margin-left: 10px;
                             background: url('/images-static/arrow-gray.svg') no-repeat center;
                             transform: rotate(180deg);
+                            pointer-events: none;
                         }
                     }
 
