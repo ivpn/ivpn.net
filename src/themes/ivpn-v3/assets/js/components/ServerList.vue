@@ -58,7 +58,7 @@
             <div class="col action">&nbsp;</div>
         </header>
         <main>
-            <div class="row" v-for="server in filteredServers" :key="server.gateway">
+            <div class="row" v-for="server in filteredServers" :key="server.gateway" @click="toggleDetailsRow">
                 <div class="col server">
                     <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
                     {{ server.gateway }}
@@ -80,8 +80,20 @@
                 <div class="col load">
                     {{ server.load }}%
                 </div>
+                <div class="col single">
+                    <div>
+                        <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
+                        {{ server.gateway }}
+                    </div>
+                    <div>
+                        {{ server.country }}, {{ server.city }}
+                    </div>
+                    <div>
+                        {{ server.isp }}, Load: {{ server.load }}%
+                    </div>
+                </div>
                 <div class="col action">
-                    <a @click="toggleDetails">
+                    <a class="action-button" @click="toggleDetails">
                         <img src="/images-static/arrow-blue.svg">
                     </a>
                 </div>
@@ -156,6 +168,14 @@ export default {
         toggleDetails(event) {
             event.target.classList.toggle("active");
             event.target.parentNode.nextElementSibling.classList.toggle("active");
+        },
+        toggleDetailsRow(event) {
+            if (event.target.querySelector(".action-button")) {
+                event.target.querySelector(".action-button").classList.toggle("active");
+            }
+            if (event.target.querySelector(".details")) {
+                event.target.querySelector(".details").classList.toggle("active");
+            }
         },
         sortBy(event) {
             if (event.target.parentNode.classList.contains("active")) {

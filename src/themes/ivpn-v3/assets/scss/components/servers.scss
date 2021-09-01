@@ -25,12 +25,21 @@
                 border: 1px solid #3C3C40
             ));
 
+            @include max-width('medium-large') {
+                justify-content: space-between;
+            }
+
             .col {
                 padding: 15px 20px;
                 font-size: 15px;
+                pointer-events: none;
     
                 &.server {
                     width: 24%;
+
+                    @include max-width('medium-large') {
+                        display: none;
+                    }
                 }
     
                 &.country {
@@ -38,33 +47,34 @@
                     font-weight: bold;
                     line-height: 24px;
 
-                    .location__data {
-                        display: flex;            
-                        align-items: baseline;
-
-                        img {
-                            display: inline-block;
-                            width: 20px;
-                            height: auto;
-                            border-radius: 2px;
-                            margin-right: 12px;
-                            position: relative;
-                            top: 3px;
-                        }
+                    @include max-width('medium-large') {
+                        display: none;
                     }
                 }
     
                 &.city {
                     width: 21%;
                     font-weight: bold;
+
+                    @include max-width('medium-large') {
+                        display: none;
+                    }
                 }
     
                 &.provider {
                     width: 17%;
+
+                    @include max-width('medium-large') {
+                        display: none;
+                    }
                 }
     
                 &.load {
                     width: 11%;
+
+                    @include max-width('medium-large') {
+                        display: none;
+                    }
                 }
     
                 &.action {
@@ -72,12 +82,14 @@
                     text-align: center;
                     padding: 0;
                     user-select: none;
+                    min-width: 55px;
 
                     a {
                         display: inline-block;
                         padding: 15px;
                         transform: rotate(180deg);
                         cursor: pointer;
+                        pointer-events: all;
 
                         &.active {
                             transform: rotate(0deg);
@@ -104,13 +116,26 @@
 
                     &.active {
                         display: flex;
+
+                        @include max-width('medium-large') {
+                            display: block;
+                        }
                     }
 
                     div {
                         margin-right: 30px;
+                        word-break: break-all;
 
                         &:last-of-type {
                             margin-right: 0;
+                        }
+
+                        @include max-width('medium-large') {
+                            margin-bottom: 15px;
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
                         }
                     }
 
@@ -127,6 +152,38 @@
                         @include dark-theme((
                             color: rgba(255, 255, 255, 0.5)
                         ));
+                    }
+                }
+
+                &.single {
+                    width: 85%;
+                    display: none;
+
+                    @include max-width('medium-large') {
+                        display: block;
+                    }
+
+                    div {
+                        margin-bottom: 8px;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .location__data {
+                    display: flex;            
+                    align-items: baseline;
+
+                    img {
+                        display: inline-block;
+                        width: 20px;
+                        height: auto;
+                        border-radius: 2px;
+                        margin-right: 12px;
+                        position: relative;
+                        top: 3px;
                     }
                 }
             }
@@ -147,9 +204,43 @@
                 .col {
                     padding-top: 0;
                     padding-bottom: 0;
+                    pointer-events: all;
 
                     &:first-of-type {
                         padding-left: 0;
+                    }
+
+                    @include max-width('medium-large') {
+                        margin-bottom: 20px;
+                        padding-left: 0;
+                    }
+
+                    &.server {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &.country {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &.city {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &.provider {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
                     }
 
                     &.load {
@@ -159,6 +250,10 @@
                     &.action {
                         width: 10%;
                         text-align: right;
+
+                        @include max-width('medium-large') {
+                            text-align: left;
+                        }
 
                         a {
                             padding: 0;
@@ -171,14 +266,26 @@
                     margin: 0;
                     width: 222px;
                     font-size: 14px;
+
+                    @include max-width('medium-large') {
+                        width: 300px;
+                    }
                 }
 
                 .select {
                     width: 170px;
+
+                    @include max-width('medium-large') {
+                        width: 300px;
+                    }
                 }
             }
     
             &__header {
+
+                @include max-width('medium-large') {
+                    display: none;
+                }
 
                 &:last-of-type {
                     margin-bottom: -1px;
@@ -189,6 +296,7 @@
                     font-size: 13px;
                     font-weight: normal!important;
                     line-height: normal!important;
+                    pointer-events: all;
     
                     @include light-theme((
                         background-color: $light-mode-alternative-background,
