@@ -86,10 +86,7 @@
                         {{ server.gateway }}
                     </div>
                     <div>
-                        <div class="location__data">
-                            <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
-                            <span>{{ server.country }}, {{ server.city }}</span>
-                        </div>
+                        {{ server.country }}, {{ server.city }}
                     </div>
                     <div>
                         {{ server.isp }}, Load: {{ server.load }}%

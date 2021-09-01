@@ -25,6 +25,10 @@
                 border: 1px solid #3C3C40
             ));
 
+            @include max-width('medium') {
+                justify-content: space-between;
+            }
+
             .col {
                 padding: 15px 20px;
                 font-size: 15px;
@@ -78,7 +82,7 @@
                     text-align: center;
                     padding: 0;
                     user-select: none;
-                    min-width: 50px;
+                    min-width: 55px;
 
                     a {
                         display: inline-block;
@@ -120,6 +124,7 @@
 
                     div {
                         margin-right: 30px;
+                        word-break: break-all;
 
                         &:last-of-type {
                             margin-right: 0;
@@ -151,7 +156,7 @@
                 }
 
                 &.single {
-                    width: 90%;
+                    width: 85%;
                     display: none;
 
                     @include max-width('medium') {
@@ -231,6 +236,10 @@
             }
     
             &__header {
+
+                @include max-width('medium') {
+                    display: none;
+                }
 
                 &:last-of-type {
                     margin-bottom: -1px;
