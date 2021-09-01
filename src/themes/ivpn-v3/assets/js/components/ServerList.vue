@@ -80,6 +80,21 @@
                 <div class="col load">
                     {{ server.load }}%
                 </div>
+                <div class="col single">
+                    <div>
+                        <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
+                        {{ server.gateway }}
+                    </div>
+                    <div>
+                        <div class="location__data">
+                            <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
+                            <span>{{ server.country }}, {{ server.city }}</span>
+                        </div>
+                    </div>
+                    <div>
+                        {{ server.isp }}, Load: {{ server.load }}%
+                    </div>
+                </div>
                 <div class="col action">
                     <a class="action-button" @click="toggleDetails">
                         <img src="/images-static/arrow-blue.svg">
