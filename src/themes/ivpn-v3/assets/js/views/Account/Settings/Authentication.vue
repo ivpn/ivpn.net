@@ -61,7 +61,7 @@
                     />
                     <label for="cb_recurring" style="cursor:pointer">2-factor authentication</label>
                 </div>
-                <p>When enabled, 2-factor authentication will be required in the client area and IVPN clients.</p>
+                <p>When enabled, 2-factor authentication will be required in the client area and IVPN apps.</p>
             </div>
             <div></div>
         </div>
