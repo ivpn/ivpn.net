@@ -25,7 +25,7 @@
                 border: 1px solid #3C3C40
             ));
 
-            @include max-width('medium') {
+            @include max-width('medium-large') {
                 justify-content: space-between;
             }
 
@@ -37,7 +37,7 @@
                 &.server {
                     width: 24%;
 
-                    @include max-width('medium') {
+                    @include max-width('medium-large') {
                         display: none;
                     }
                 }
@@ -47,7 +47,7 @@
                     font-weight: bold;
                     line-height: 24px;
 
-                    @include max-width('medium') {
+                    @include max-width('medium-large') {
                         display: none;
                     }
                 }
@@ -56,7 +56,7 @@
                     width: 21%;
                     font-weight: bold;
 
-                    @include max-width('medium') {
+                    @include max-width('medium-large') {
                         display: none;
                     }
                 }
@@ -64,7 +64,7 @@
                 &.provider {
                     width: 17%;
 
-                    @include max-width('medium') {
+                    @include max-width('medium-large') {
                         display: none;
                     }
                 }
@@ -72,7 +72,7 @@
                 &.load {
                     width: 11%;
 
-                    @include max-width('medium') {
+                    @include max-width('medium-large') {
                         display: none;
                     }
                 }
@@ -117,7 +117,7 @@
                     &.active {
                         display: flex;
 
-                        @include max-width('medium') {
+                        @include max-width('medium-large') {
                             display: block;
                         }
                     }
@@ -130,7 +130,7 @@
                             margin-right: 0;
                         }
 
-                        @include max-width('medium') {
+                        @include max-width('medium-large') {
                             margin-bottom: 15px;
 
                             &:last-of-type {
@@ -159,7 +159,7 @@
                     width: 85%;
                     display: none;
 
-                    @include max-width('medium') {
+                    @include max-width('medium-large') {
                         display: block;
                     }
 
@@ -204,9 +204,43 @@
                 .col {
                     padding-top: 0;
                     padding-bottom: 0;
+                    pointer-events: all;
 
                     &:first-of-type {
                         padding-left: 0;
+                    }
+
+                    @include max-width('medium-large') {
+                        margin-bottom: 20px;
+                        padding-left: 0;
+                    }
+
+                    &.server {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &.country {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &.city {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &.provider {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
                     }
 
                     &.load {
@@ -216,6 +250,10 @@
                     &.action {
                         width: 10%;
                         text-align: right;
+
+                        @include max-width('medium-large') {
+                            text-align: left;
+                        }
 
                         a {
                             padding: 0;
@@ -228,16 +266,24 @@
                     margin: 0;
                     width: 222px;
                     font-size: 14px;
+
+                    @include max-width('medium-large') {
+                        width: 300px;
+                    }
                 }
 
                 .select {
                     width: 170px;
+
+                    @include max-width('medium-large') {
+                        width: 300px;
+                    }
                 }
             }
     
             &__header {
 
-                @include max-width('medium') {
+                @include max-width('medium-large') {
                     display: none;
                 }
 
@@ -250,6 +296,7 @@
                     font-size: 13px;
                     font-weight: normal!important;
                     line-height: normal!important;
+                    pointer-events: all;
     
                     @include light-theme((
                         background-color: $light-mode-alternative-background,
