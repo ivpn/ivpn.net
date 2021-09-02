@@ -205,7 +205,7 @@ export default {
         },
         onChangeServerFilter(event) {
             event.preventDefault();
-            this.serverFilter = event.target.value;
+            this.serverFilter = event.target.value.toLowerCase();
             this.filterServers();
         },
         filterFilters(filter, value) {
