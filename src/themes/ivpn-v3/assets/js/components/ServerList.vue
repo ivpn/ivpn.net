@@ -280,6 +280,7 @@ export default {
     margin-right: 2px;
     border-radius: 50%;
     vertical-align: middle;
+    pointer-events: all;
 
     @include light-theme(
         (
