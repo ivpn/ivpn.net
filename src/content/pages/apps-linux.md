@@ -2,7 +2,7 @@
 title: IVPN for Linux - Open-source VPN app for Linux
 description: IVPN for Linux offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for Linux
-subtitle: In open beta - supports 64-bit Linux 3.10+
+subtitle: supports 64-bit Linux 3.10+
 url: /apps-linux/
 platform: linux
 layout: apps-single
@@ -160,19 +160,19 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.3.20_amd64.deb)  
-SHA256: 9972a0b55e1383df67357d046db238b29c70b7865dcba959037da17b7439f20a  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.3.30_amd64.deb)  
+SHA256: 89d20099b8e36b704106074c60a89ff189ff6e99e999a3ae748801b3ba76bd07  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.3.20_amd64.deb)  
-SHA256: a9cd6f2e2e1c7f981d0788b0f6e381c56e8b44f44daad217b66b652d5eead947  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.3.30_amd64.deb)  
+SHA256: 229d70cfcb7bee5a7a888b5864797a5fec09cbd320f4d1a0c374cd30b17b2452  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.3.20-1.x86_64.rpm)  
-SHA256: e9860206f386809501201a1a32362d07f955bec1f948a5199a91e78609421b29  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.3.30-1.x86_64.rpm)  
+SHA256: 7b432c77c85bee2267bbbb218ee761b8c036208b14350476afa7179b133ad0a3  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.20-1.x86_64.rpm)  
-SHA256: 68ff2ce3df8b01240857744b623d4fbb57833f79c98b8040f581f48cb389d727  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.30-1.x86_64.rpm)  
+SHA256: f7a77300bcc261af44e0d146970a89a4598d54be3161b2913516051d57f13a52  
 
 ## Install from Source Code {#source}
 
