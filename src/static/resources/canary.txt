@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2021-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-09-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-FirstFT: Boris Johnson abandons ‘amber watchlist’
-Plus, Goldman Sachs boosts junior salaries, IMF’s crypto warning and Russia’s Olympics success
+Can new lenders save Brazil’s struggling farmers?
+High interest rates and an over-complicated credit system have led to a loans crisis for those most in need
 
-Iran official cautions against ‘escalating’ fallout from tanker drone attack
-Ambassador to UK seeks to ease diplomatic row amid moves to revive nuclear deal
+BlackRock ETF helps drive jump in Europe-based China bond fund flows
+The iShares China CNY Bond ETF has attracted net inflows of €4.5bn in first seven months of 2021
 
-IMF warns on crypto as national currency ahead of El Salvador launch
-Lender reiterates concerns as Latin American nation prepares for September switch-on
+Inside the huge effort to fly Afghans to the US on commercial jets
+Pentagon invoked rarely used provision from the second world war compelling carriers to ferry evacuees
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmEI1FsACgkQisFrnrZH
-ummAhQf/Yus7YYG5lKT1hqsbkRXNhOs4+GFAZLREQS1ciUqgMsqOm0TdXIlBjPeK
-oQzMAc+C597XQ2AmLqpMzPhi2aePCcmhuDbgMVYSSOzU+maiv1GLynZbIygH5Ltv
-M5tE5tOxqiE895vjQnMQkELHowJCkawjch44rBZKm5hgyGMvc9bvCY0DwamAj2JJ
-3yqqHiqgj4MB+3JIoN4KbokM/AV1FCUMgNrj/cGo50PhRb2NazAVcPribxcOyJif
-rVngmqccdO93HTRfX5TRS2JHZMaBvuovPAXiyBRZHTjTeEktQST5vB2CwdMk3wv5
-5TTjPe3EwereI1FaGU7IraZNqCoFMA==
-=vxfn
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmExstoACgkQisFrnrZH
+umledgf/SGciC09SFSpU4py8KpKFjGTCypEQqkT/QAZgeRCOvSj0eDlabtkrzu+3
+7dkSWxHtOrDHAvG2BtS2mRTZVmey+paT3YySfXoZCIH17pjfeqZyi53/oJcDTYm9
+foY0U3cSI2fTxbHPHFeSzU2jalXH84fvMpyo/XuWeoqa4Ap5qp/NPAm6+tlia4Oj
+VYX7E2S0ZOjCAwXJSxJhdzULRu/UfEGsVdQdPisapwpxXj8recXagHm9f37hU6zj
+1DMkamSgtl56ed0YrtzI8TLUt4VLMI2+rCK7gku+65SjAwSLDKfc/4UuhEjBkGX/
+5++n7iy7/bZOnR+AEIGCrYHO+wWFQg==
+=KEQ/
 -----END PGP SIGNATURE-----
 
 
