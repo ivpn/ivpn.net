@@ -18,7 +18,7 @@ Last year we have added two-factor authentication (2FA) option for [web-based ac
 A couple of notes about this change:
 
 1. We will activate this feature on 9th September 2021 for all IVPN apps: Android, iOS, and both CLI and GUI versions on Linux, macOS and Windows.
-2. 2FA for apps is only available for accounts that were created after November 2020, the release of our revamped (ID based) account system. If you wish to use 2FA for apps and have an IVPN account with email identifier, contact our customer service to help you make the switch. 
+2. 2FA for apps is only available for accounts that were created after November 2020 (account ID format: i-XXXX-XXXX-XXXX). If you wish to use 2FA for apps and have an IVPN subscription created before this date (account ID format: ivpnXXXXXXXX), contact our customer service to help you make the switch. 
 3. If you don't have 2FA enabled, these changes don't affect you and no further action is required. If you plan to enable 2FA now, you can do so by logging into the client dashboard on [https://ivpn.net](https://ivpn.net).
 
 If you have any questions or issues about this change, [contact us](/contactus/) for help.
