@@ -37,7 +37,7 @@ This guide was produced using OPNSense 21.7.1
     *   Interface - **WAN**
     *   Remote server - IVPN's server hostname, i.e. **ua1.gw.ivpn.net**
     *   Port - **2049** (or 2050, 53, 1194 for UDP and 443, 1443, 80 for TCP. All ports are equally secure)
-    *   Username - Your IVPN account ID (**i-XXXX-XXXX-XXXX** or **ivpnXXXXXXXX**)
+    *   Username - Your IVPN account ID (**i-XXXX-XXXX-XXXX** or **ivpnXXXXXXXX** case-sensitive)
     *   Password - any string, i.e. **ivpn** <br></br>![](/images-static/uploads/install-openvpn-opnsense-02.png)<br></br>
     *   TLS Authentication - check the `Enable authentication of TLS packets` option then copy and paste the contents of our [ta.key](/releases/config/ta.key) file
     *   Peer Certificate Authority - **IVPN CA**

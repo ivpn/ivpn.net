@@ -39,7 +39,7 @@ platform: android
 9.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
 
     <div markdown="1" class="notice notice--info">
-    Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
+    Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
     </div>
 
     Tap the `Save Password` box if you do not wish to enter credentials everytime you connect. Tap the `OK` button.

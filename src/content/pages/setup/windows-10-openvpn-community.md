@@ -27,7 +27,7 @@ If you are using IVPN to protect your privacy/anonymity this software does not o
 7.  Right click on the OpenVPN system tray icon (two small monitors in bottom right corner, click the up arrow if icon is hidden) and select the server you wish to connect to and click on `Connect`. Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password when prompted.
 
     <div markdown="1" class="notice notice--info">
-    Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
+    Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
     </div>
 
 8.  When the tray icon turns green you are connected to the IVPN network. Right click to disconnect.

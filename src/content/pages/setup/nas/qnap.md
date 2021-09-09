@@ -30,7 +30,7 @@ This guide was produced using QTS v4.3.6
 6.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password in the credential fields and (optionally) change the **Profile Name** to something different. Click the `Apply` button.
 
     <div markdown="1" class="notice notice--info">
-    Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
+    Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
     </div>
 
     ![](/images-static/uploads/install-qnap-3.png)

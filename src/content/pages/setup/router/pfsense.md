@@ -75,7 +75,7 @@ weight: 30
         ![](/images-static/uploads/install-openvpn-pfsense-2.4.3-020.png)
     *   Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password under **User Authentication Settings**  
         <div markdown="1" class="notice notice--info">
-        Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
+        Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
         </div>
     *   Check **Use a TLS Key** option under **TLS Configuration** -> uncheck the **Automatically generate a TLS Key** option and past the following & past the following under **TLS Key**  
         ```

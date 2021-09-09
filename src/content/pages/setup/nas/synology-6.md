@@ -28,7 +28,7 @@ The following guide explains how to set up your Synology NAS based on DiskStatio
     **Password** - Any password.  
 
     <div markdown="1" class="notice notice--info">
-    Only your account ID is used for authentication. Enter anything into the password field. !IMPORTANT! The password field cannot be left empty.
+    Only your account ID is used for authentication and is case-sensitive. Enter anything into the password field. !IMPORTANT! The password field cannot be left empty.
     </div>
 
     **Import .ovpn file** - specify the location of the VPN profile file you adjusted in the first step.  
