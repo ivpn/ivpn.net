@@ -50,7 +50,7 @@
                 </div>
                 <div></div>
             </div>
-            <div class="row">
+            <div class="row row__checkbox">
                 <div class="key">
                     <input
                         type="checkbox"
@@ -61,6 +61,7 @@
                     />
                     <label for="cb_recurring" style="cursor:pointer">2-factor authentication</label>
                 </div>
+                <p>When enabled, 2-factor authentication will be required in the client area and IVPN apps.</p>
             </div>
             <div></div>
         </div>

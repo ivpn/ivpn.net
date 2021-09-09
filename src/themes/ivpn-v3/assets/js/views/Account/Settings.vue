@@ -118,6 +118,24 @@ export default {
         .action {
             width: 65px;
         }
+
+        p {
+            margin: 8px 5px 5px 5px;
+            font-size: 14px;
+            
+            @include light-theme((
+                color: rgba(0, 0, 0, 0.5)
+            ));
+
+            @include dark-theme((
+                color: rgba(255, 255, 255, 0.5)
+            ));
+        }
+
+        &__checkbox {
+            flex-flow: column;
+            align-items: baseline;
+        }
     }
 }
 </style>
