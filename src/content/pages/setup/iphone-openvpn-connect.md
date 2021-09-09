@@ -27,7 +27,7 @@ OpenVPN Connect is the official iOS client from OpenVPN Technologies.
 5.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
 
     <div markdown="1" class="notice notice--info">
-    Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
+    Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
     </div>
 
     Click on the `save` slider if you wish to save your credentials. Click on the `Connection` slider (under the disconnected button) to initiate the connection.

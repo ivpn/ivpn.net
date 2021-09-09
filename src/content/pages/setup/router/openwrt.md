@@ -33,7 +33,7 @@ This guide was produced using OpenWrt v.19.07.2
 
 3. Under the **OVPN configuration file upload** section, `Browse` for the .ovpn config file with the VPN server you would like to connect to, give it any name, then click `Upload`
 
-4. Click the `Edit` button next to the created OpenVPN instance and enter your IVPN username and any password (e.g. ivpn) in 2 separate lines in the text box at the bottom
+4. Click the `Edit` button next to the created OpenVPN instance and enter your IVPN account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' (case-sensitive) and any password (e.g. ivpn) in 2 separate lines in the text box at the bottom
 
 5. Append the credentials file path to the **auth-user-pass** line in the first text box. The full path is visible just above the second text box, e.g. - `auth-user-pass /etc/openvpn/Austria.auth`. Click `Save`<br></br>
 ![](/images-static/uploads/install-openvpn-openwrt-02.png)

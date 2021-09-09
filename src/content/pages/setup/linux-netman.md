@@ -31,7 +31,7 @@ Therefore, to ensure that you have no leaks when using OpenVPN with Network Mana
 6. Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
 
    <div markdown="1" class="notice notice--info">
-   Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
+   Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
    </div>
 
 7. Click on the Network Manager icon in the toolbar and select the newly configured server under `VPN Connections`.
