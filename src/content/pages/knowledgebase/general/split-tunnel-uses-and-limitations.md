@@ -12,7 +12,7 @@ weight: 590
 
 The IVPN App split tunnel feature offers a way to bypass the VPN tunnel for select applications and services e.g. to access video streaming services or for gaming. This is a convenient way to protect your privacy while offering the convenience of accessing content and services that may not be friendly to VPN server IP addresses.
 
-With any convenience, there is often a trade-off. For the split tunnel feature, the trade-off is an intentional leak. The IVPN App has been designed to prevent leaks, so please be aware that these intentional leaks present with the split tunnel feature may include un behaviours. These are detailed below.
+With any convenience, there is often a trade-off. For the split tunnel feature, the trade-off is an intentional leak. The IVPN App has been designed to prevent leaks, so please be aware that these intentional leaks present with the split tunnel feature may include unexpected behaviours. These are detailed below.
 
 **Active Applications and Connections**
 
@@ -39,6 +39,8 @@ The Domain Name System (DNS) offers a way to turn a network hostname, like [ivpn
 An application that uses the split tunnel feature in the IVPN App will likely rely on the operating system's DNS service, which is likely protected by the IVPN App's VPN connection. DNS queries from a web browser that uses the split tunnel, for example, may appear to come from the VPN server, which may have an impact on accessing some online content. Run a [DNS leak test](https://www.dnsleaktest.com/) to be certain.
 
 Using an application's built-in DNS option, like [Mozilla Firefox's DNS-over-HTTPS feature](https://support.mozilla.org/en-US/kb/firefox-dns-over-https#w_manually-enabling-and-disabling-dns-over-https), offers a way to correct unexpected DNS-related issues.
+
+The IVPN App includes a [Custom DNS](https://www.ivpn.net/knowledgebase/general/custom-dns/) feature that handles DNS requests for all applications on the system, whether they use the VPN tunnel or bypass it via the split tunnel.  Switching to a Custom DNS server in the IVPN App might help with applications that do not behave as expected, though please consider that all requests on the system will use this DNS and not the VPN server's DNS. 
 
 **Multicast and UDP**
 
