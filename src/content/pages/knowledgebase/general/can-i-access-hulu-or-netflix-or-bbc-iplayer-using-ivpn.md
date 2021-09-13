@@ -18,11 +18,11 @@ IVPN, however, is focused specifically on protecting the privacy of our customer
 Most streaming services are currently on an active campaign to block all VPN and Proxy connections. They are targeting massive amounts of IPv4 addresses at this time. Due to the exhaustion of the IPv4 space and strict registrar reporting requirements, it is quickly becoming impossible to get around this block.
 </div>
 
-In case you want to access your local streaming content while routing everything else via the VPN, this is achievable with our Split Tunnell feature by excluding the streaming application from the VPN tunnel. 
+In case you want to access your local streaming content while routing everything else via the VPN, this is achievable with our Split Tunnel feature by excluding the streaming application from the VPN tunnel. 
 
 The feature is currently available in our Windows, Linux and Android apps. 
 <div markdown="1" class="notice notice--info">
-Split Tunnell rules cannot be applied on apps installed from the Microsoft Store. As a workaround, Windows users can use Split Tunnell feature to exclude the web browser from the VPN and use it to watch the streaming content instead.
+Split Tunnel rules cannot be applied on apps installed from the Microsoft Store. As a workaround, Windows users can use Split Tunnel feature to exclude the web browser from the VPN and use it to watch the streaming content instead.
 </div>
 
 [Split Tunnel uses and limitations](/knowledgebase/general/split-tunnel-uses-and-limitations/)
