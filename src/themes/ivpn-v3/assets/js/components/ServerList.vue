@@ -104,6 +104,9 @@
                         {{ server.country }}, {{ server.city }}
                     </div>
                     <div>
+                        Protocol: {{ server.protocol }}
+                    </div>
+                    <div>
                         {{ server.isp }}, Load: {{ server.load }}%
                     </div>
                 </div>
