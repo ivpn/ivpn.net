@@ -100,7 +100,7 @@
                 <div class="col details">
                     <div>
                         <em>Public Key</em>
-                        {{ server.wg_public_key }}
+                        {{ server.wg_public_key || "N/A" }}
                     </div>
                 </div>
             </div>
