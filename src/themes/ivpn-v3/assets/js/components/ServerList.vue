@@ -102,10 +102,6 @@
                         <em>Public Key</em>
                         {{ server.wg_public_key }}
                     </div>
-                    <div>
-                        <em>MultiHop Port</em>
-                        {{ server.multihop_port }}
-                    </div>
                 </div>
             </div>
         </main>
