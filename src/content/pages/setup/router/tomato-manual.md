@@ -30,7 +30,7 @@ This guide was produced using FreshTomato version 2020.3
     * **Inbound Firewall:** Check
     * **Authorization Mode:** TLS
     * **TLS control channel:** Outgoing Auth (1)
-    * **Username/Password Authentication:** Check. Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
+    * **Username/Password Authentication:** Check. Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' (case-sensitive) and any password (ie. `ivpn`).
     * **Auth digest:** SHA1
     * Click `Save`.
 

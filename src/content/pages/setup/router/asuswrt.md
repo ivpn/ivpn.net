@@ -28,7 +28,7 @@ The list of supported models can be viewed <a href="https://asuswrt.lostrealm.ca
 5.  Enter your IVPN account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password in the **Username** & **Password** fields accordingly.
 
     <div markdown="1" class="notice notice--info">
-    Only your account ID is used for the authentication. The password field can be empty or set to anything, like <strong>"ivpn"</strong>, if your client requires a non-blank password.
+    Only your account ID is used for the authentication and is case-sensitive. The password field can be empty or set to anything, like <strong>"ivpn"</strong>, if your client requires a non-blank password.
     </div>
 
 6.  Set the **Accept DNS Configuration** to **Strict**. In the **Custom Configuration** fill in the following:

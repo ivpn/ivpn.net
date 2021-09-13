@@ -24,7 +24,7 @@ The following Strogswan configuration is known to work:
         dpdaction=restart
     ```
 
-    Change the right= and rightid= as appropriate for the server you want to connect to.
+    Change the right= and rightid= as appropriate for the server you want to connect to.  The `ivpnaccountID` is case-sensitive.
 
 2.  Create a .secrets file e.g. ivpn.secrets in the strongswan ipsec.d directory e.g. ivpn.secrets with the following
 
