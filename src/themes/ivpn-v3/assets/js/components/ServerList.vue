@@ -1,55 +1,129 @@
 <template>
-    <table>
-        <thead>
-            <tr>
-                <th class="location">LOCATION</th>
-                <th class="hostnames">HOSTNAMES</th>
-                <th class="load">LOAD</th>
-                <th class="provider">PROVIDER</th>
-                <th class="wg_public_key">WIREGUARD PUBLIC KEY</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="server in sortedList">
-                <td class="location">
+    <div class="servers">
+        <div class="row row__filter">
+            <div class="col server">
+                <form class="search" @submit.prevent autocomplete="off">
+                    <input name="search" type="text" placeholder="Server" @input="onChangeServerFilter($event)" ref="serverFilter">
+                    <input type="submit" value="">
+                </form>
+            </div>
+            <div class="col country active">
+                <form class="select">
+                    <select name="country" @change="onChangeFilter($event)" data-filter="country" ref="countryFilter">
+                        <option value="">Country: Any</option>
+                        <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
+                    </select>
+                    <i></i>
+                </form>
+            </div>
+            <div class="col city">
+                <form class="select">
+                    <select name="city" @change="onChangeFilter($event)" data-filter="city" ref="cityFilter">
+                        <option value="">City: Any</option>
+                        <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
+                    </select>
+                    <i></i>
+                </form>
+            </div>
+            <div class="col provider">
+                <form class="select">
+                    <select name="provider" @change="onChangeFilter($event)" data-filter="isp" ref="providerFilter">
+                        <option value="">Provider: Any</option>
+                        <option v-for="provider in providers" :value="provider" :key="provider">{{ provider }}</option>
+                    </select>
+                    <i></i>
+                </form>
+            </div>
+            <div class="col protocol">
+                <form class="select">
+                    <select name="protocol" @change="onChangeFilter($event)" data-filter="protocol" ref="protocolFilter">
+                        <option value="">Protocol: Any</option>
+                        <option v-for="protocol in protocols" :value="protocol" :key="protocol">{{ protocol }}</option>
+                    </select>
+                    <i></i>
+                </form>
+            </div>
+            <div class="col load">&nbsp;</div>
+            <div class="col action">
+                <a @click="resetFilter">Reset</a>
+            </div>
+        </div>
+        <header class="row row__header">
+            <div class="col server">
+                <a @click="sortBy" data-sort="gateway">SERVER<i></i></a>
+            </div>
+            <div class="col country active">
+                <a @click="sortBy" data-sort="country">COUNTRY<i></i></a>
+            </div>
+            <div class="col city">
+                <a @click="sortBy" data-sort="city">CITY<i></i></a>
+            </div>
+            <div class="col provider">
+                <a @click="sortBy" data-sort="isp">PROVIDER<i></i></a>
+            </div>
+            <div class="col protocol">
+                <a @click="sortBy" data-sort="protocol">PROTOCOL<i></i></a>
+            </div>
+            <div class="col load">
+                <a @click="sortBy" data-sort="load">LOAD<i></i></a>
+            </div>
+            <div class="col action">&nbsp;</div>
+        </header>
+        <main>
+            <div class="row" v-for="server in filteredServers" :key="server.gateway" @click="toggleDetailsRow">
+                <div class="col server">
+                    <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
+                    {{ server.gateway }}
+                </div>
+                <div class="col country">
                     <div class="location__data">
                         <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
-                        <span> {{ server.country }}, {{ server.city }} </span>
+                        <span> {{ server.country }} </span>
                     </div>
-                </td>
-                <td class="hostnames">
-                    <em>Hostnames</em>
-                    <ul>
-                        <li
-                            v-for="(host, protocol) in server.hostnames"
-                            :key="protocol"
-                        >
-                            <i
-                                class="status"
-                                :class="{ 'status--active': server.is_active }"
-                            ></i
-                            >{{ host }}
-                            <span class="badge badge--light spacing">{{
-                                protocol
-                            }}</span>
-                        </li>
-                    </ul>
-                </td>
-                <td class="load">
-                    <em>Load</em>
-                    {{ server.load }}%
-                </td>
-                <td>
-                    <em>Provider</em>
+                </div>
+                <div class="col city">
+                    <div class="location__data">
+                        <span> {{ server.city }} </span>
+                    </div>
+                </div>
+                <div class="col provider">
                     {{ server.isp }}
-                </td>
-                <td>
-                    <em>WireGuard key</em>
-                    {{ server.wg_public_key }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+                <div class="col protocol">
+                    {{ server.protocol }}
+                </div>
+                <div class="col load">
+                    {{ server.load }}%
+                </div>
+                <div class="col single">
+                    <div>
+                        <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
+                        {{ server.gateway }}
+                    </div>
+                    <div>
+                        {{ server.country }}, {{ server.city }}
+                    </div>
+                    <div>
+                        Protocol: {{ server.protocol }}
+                    </div>
+                    <div>
+                        {{ server.isp }}, Load: {{ server.load }}%
+                    </div>
+                </div>
+                <div class="col action">
+                    <a class="action-button" @click="toggleDetails">
+                        <img src="/images-static/arrow-blue.svg">
+                    </a>
+                </div>
+                <div class="col details">
+                    <div>
+                        <em>Public Key</em>
+                        {{ server.wg_public_key || "N/A" }}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </template>
 
 <script>
@@ -59,6 +133,14 @@ export default {
     data() {
         return {
             servers: [],
+            sortedServers: [],
+            filteredServers: [],
+            countries: [],
+            cities: [],
+            providers: [],
+            protocols: [],
+            filters: [],
+            serverFilter: "",
         };
     },
     mounted() {
@@ -69,31 +151,135 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers;
+                this.countries = [...new Set(resp.servers.map(server => server.country))].sort();
+                this.cities = [...new Set(resp.servers.map(server => server.city))].sort();
+                this.providers = [...new Set(resp.servers.map(server => server.isp))].sort();
+                this.protocols = [...new Set(resp.servers.map(server => server.protocol))].sort();
+                this.sortServers("country", false);
             }
         },
-        renderProtocolName(protocol) {
-            switch (protocol) {
-                case "wireguard":
-                    return "WireGuard";
-                    break;
-                case "openvpn":
-                    return "OpenVPN";
-                    break;
-                default:
-                    return protocol;
+        renderStatus(server) {
+            if (server.in_maintenance) {
+                return "Maintenance";
             }
+
+            if (server.is_active) {
+                return "Online";
+            }
+
+            return "Offline";
+        },
+        toggleDetails(event) {
+            event.target.classList.toggle("active");
+            event.target.parentNode.nextElementSibling.classList.toggle("active");
+        },
+        toggleDetailsRow(event) {
+            if (event.target.querySelector(".action-button")) {
+                event.target.querySelector(".action-button").classList.toggle("active");
+            }
+            if (event.target.querySelector(".details")) {
+                event.target.querySelector(".details").classList.toggle("active");
+            }
+        },
+        sortBy(event) {
+            if (event.target.parentNode.classList.contains("active")) {
+                event.target.parentNode.classList.toggle("desc");
+            } else {
+                [...event.target.parentElement.parentElement.children].forEach(sib => sib.classList.remove("active"))
+                event.target.parentNode.classList.toggle("active");
+            }
+
+            this.sortServers(event.target.getAttribute("data-sort"), event.target.parentNode.classList.contains("desc"));
+        },
+        sortServers(by, desc) {
+            const servers = this.servers;
+            this.sortedServers = servers.sort((a, b) => {
+                if (a[by] > b[by]) {
+                    return (desc ? -1 : 1)
+                } else if (a[by] < b[by])
+                    return (desc ? 1 : -1)
+                return 0
+            });
+            this.filterServers();
+        },
+        onChangeFilter(event) {
+            this.filters[event.target.getAttribute("data-filter")] = event.target.value;
+            this.filterServers();
+            this.filterFilters(event.target.getAttribute("data-filter"), event.target.value);
+        },
+        onChangeServerFilter(event) {
+            event.preventDefault();
+            this.serverFilter = event.target.value.toLowerCase();
+            this.filterServers();
+        },
+        filterFilters(filter, value) {
+            if (filter != "country" || value == "") {
+                if (this.filters["city"] != "" || this.filters["isp"] != "" || this.filters["protocol"] != "") {
+                    this.countries = [...new Set(this.filteredServers.map(server => server.country))].sort();
+                } else {
+                    this.countries = [...new Set(this.servers.map(server => server.country))].sort();
+                }
+            }
+
+            if (filter != "city" || value == "") {
+                if (this.filters["country"] != "" || this.filters["isp"] != "" || this.filters["protocol"] != "") {
+                    this.cities = [...new Set(this.filteredServers.map(server => server.city))].sort();
+                } else {
+                    this.cities = [...new Set(this.servers.map(server => server.city))].sort();
+                }
+            }
+
+            if (filter != "isp" || value == "") {
+                if (this.filters["country"] != "" || this.filters["city"] != "" || this.filters["protocol"] != "") {
+                    this.providers = [...new Set(this.filteredServers.map(server => server.isp))].sort();
+                } else {
+                    this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
+                }
+            }
+
+            if (filter != "protocol" || value == "") {
+                if (this.filters["country"] != "" || this.filters["city"] != "" || this.filters["isp"] != "") {
+                    this.protocols = [...new Set(this.filteredServers.map(server => server.protocol))].sort();
+                } else {
+                    this.protocols = [...new Set(this.servers.map(server => server.protocol))].sort();
+                }
+            }
+        },
+        resetFilter() {
+            this.filters = [];
+            this.serverFilter = "";
+            this.$refs.serverFilter.value = "";
+            this.$refs.countryFilter.selectedIndex = 0;
+            this.$refs.cityFilter.selectedIndex = 0;
+            this.$refs.providerFilter.selectedIndex = 0;
+            this.$refs.protocolFilter.selectedIndex = 0;
+            this.countries = [...new Set(this.servers.map(server => server.country))].sort();
+            this.cities = [...new Set(this.servers.map(server => server.city))].sort();
+            this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
+            this.protocols = [...new Set(this.servers.map(server => server.protocol))].sort();
+            this.filterServers();
+        },
+        filterServers() {
+            let servers = this.sortedServers;
+            this.filteredServers = servers.filter((server) => {
+                let condition = true;
+
+                for (let key in this.filters) {
+                    if (this.filters[key] != "" && server[key] != this.filters[key]) {
+                        condition = false;
+                    }
+                }
+
+                if (this.serverFilter != "" && server.gateway.indexOf(this.serverFilter) < 0) {
+                    condition = false;
+                }
+
+                return condition;
+            });
         },
     },
     computed: {
-        sortedList: function () {
-            return this.servers.sort((a, b) => {
-                if (a.gateway > b.gateway) {
-                    return 1
-                } else if (a.gateway < b.gateway)
-                    return -1
-                return 0
-            });
-        },
+        
     },
 };
 </script>
@@ -101,27 +287,24 @@ export default {
 <style lang="scss" scoped>
 @import "scss/base";
 
-.spacing {
-    margin-right: 8px;
-}
-
 .status {
     width: 10px;
     height: 10px;
     display: inline-block;
-    margin-right: 12px;
+    margin-right: 2px;
     border-radius: 50%;
     vertical-align: middle;
+    pointer-events: all;
 
     @include light-theme(
         (
-            background: $light-mode-yellow-color,
+            background: $light-mode-red-color,
         )
     );
 
     @include dark-theme(
         (
-            background: $dark-mode-yellow-color,
+            background: $dark-mode-red-color,
         )
     );
 
@@ -135,6 +318,20 @@ export default {
         @include dark-theme(
             (
                 background: $dark-mode-green-color,
+            )
+        );
+    }
+
+    &--maintenance {
+        @include light-theme(
+            (
+                background: $light-mode-yellow-color,
+            )
+        );
+
+        @include dark-theme(
+            (
+                background: $dark-mode-yellow-color,
             )
         );
     }
