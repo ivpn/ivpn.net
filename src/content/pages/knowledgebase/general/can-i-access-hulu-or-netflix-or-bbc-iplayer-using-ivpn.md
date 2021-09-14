@@ -20,7 +20,7 @@ Most streaming services are currently on an active campaign to block all VPN and
 
 In case you want to access your local streaming content while routing everything else via the VPN, this is achievable with our Split Tunnel feature by excluding the streaming application from the VPN tunnel. 
 
-The feature is currently available in our Windows, Linux and Android apps. 
+The feature is currently available in our Windows and Android apps. 
 <div markdown="1" class="notice notice--info">
 Split Tunnel rules cannot be applied on apps installed from the Microsoft Store. As a workaround, Windows users can use Split Tunnel feature to exclude the web browser from the VPN and use it to watch the streaming content instead.
 </div>
