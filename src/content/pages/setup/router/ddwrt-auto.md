@@ -16,7 +16,7 @@ weight: 11
 3.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX', any password and select a server to connect to. Click `Download script`.
 
     <div markdown="1" class="notice notice--info">
-    Only your account ID is used for authentication. The password field can be left empty or set to anything if your client software requires a non-blank password.
+    Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
     </div>
 
 4.  Open the downloaded text file and copy and paste into the `Commands` text area.

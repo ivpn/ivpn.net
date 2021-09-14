@@ -26,7 +26,7 @@ This guide will help you set up an IPSec connection using IKEv2
 
    ![](/images-static/uploads/mac-osx-ipsec-with-ikev2-005.png)
 
-6. Click `Authentication Settings ...`. Select `Username`. Fill in your IVPN Account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and the following password - `ivpn`. Click `OK`
+6. Click `Authentication Settings ...`. Select `Username`. Fill in your IVPN Account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' (case-sensitive) and the following password - `ivpn`. Click `OK`
 
    ![](/images-static/uploads/mac-osx-ipsec-with-ikev2-006.png)
 

@@ -12,7 +12,7 @@ platform: android
 
     **Server** - choose any from the [server list](/status/) (i.e. **gb.gw.ivpn.net**)  
     **VPN Type** – IKEv2 EAP (Username/Password).  
-    **Username** – your IVPN account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX'.  
+    **Username** – your IVPN account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' (case-sensitive).  
     **Password** – `ivpn`.  
     **CA certificate** – check `Select automatically`.  
     **Profile name** – give it any name you prefer.  
