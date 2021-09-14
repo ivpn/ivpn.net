@@ -10,7 +10,7 @@ categories:
 tags:
   - Apps
   - Privacy
-date: 2021-09-12T09:00:00.000Z
+date: 2021-09-14T05:00:00.000Z
 thumbnailImage: /images-static/uploads/split.png
 ---
 Split tunnels enable you to remain connected to your VPN while simultaneously accessing specific apps and services directly, bypassing the VPN tunnel.  With this solution you can protect your privacy and connect to services that restrict or block customers who use commercial VPNs. This can be very useful when you need to access banking, streaming or gaming providers using your personal IP address.
