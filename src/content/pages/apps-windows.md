@@ -34,6 +34,7 @@ releases: [{
 - Pause VPN for when disabling VPN connection temporarily is required.
 - Obfsproxy option to circumvent censorship.
 - Supports defining custom DNS servers.
+- Split tunneling.
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.
 
