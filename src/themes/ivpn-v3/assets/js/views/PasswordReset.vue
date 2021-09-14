@@ -8,12 +8,8 @@
         <div class="form" v-if="done">
             <h1>Reset Password</h1>
             <p>
-                We have sent an email to the specified address
-                with further instructions if account with such email address exists.
-            </p>
-            <p>
-                Please check your email and follow the
-                instructions on what to do next.
+                If an account with the specified email address exists we will send an email 
+                with further instructions on how to reset your password.
             </p>
         </div>
         <div class="form" v-else>
