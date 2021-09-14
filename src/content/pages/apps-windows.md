@@ -9,13 +9,13 @@ layout: apps
 image: apps/windows-app-3.3.7
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.30.exe,
+    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.3.40.exe,
     github: https://github.com/ivpn/desktop-app,
     changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: 981bce29c543df2485687edcc9383e1fe5acc343cba0d8b8ea8beada8c57a3e6
+            value: 9875bc8ee2124464b66fa70555270865caf03c827e4323fdf6fb2a7a83589606
         }
     ]
 }]
@@ -34,6 +34,7 @@ releases: [{
 - Pause VPN for when disabling VPN connection temporarily is required.
 - Obfsproxy option to circumvent censorship.
 - Supports defining custom DNS servers.
+- Split tunneling.
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.
 

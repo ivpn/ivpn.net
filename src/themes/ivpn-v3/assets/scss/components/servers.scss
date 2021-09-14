@@ -30,12 +30,12 @@
             }
 
             .col {
-                padding: 15px 20px;
+                padding: 15px;
                 font-size: 15px;
                 pointer-events: none;
     
                 &.server {
-                    width: 24%;
+                    width: 23%;
 
                     @include max-width('medium-large') {
                         display: none;
@@ -43,7 +43,7 @@
                 }
     
                 &.country {
-                    width: 21%;
+                    width: 15%;
                     font-weight: bold;
                     line-height: 24px;
 
@@ -53,7 +53,7 @@
                 }
     
                 &.city {
-                    width: 21%;
+                    width: 15%;
                     font-weight: bold;
 
                     @include max-width('medium-large') {
@@ -62,7 +62,15 @@
                 }
     
                 &.provider {
-                    width: 17%;
+                    width: 15%;
+
+                    @include max-width('medium-large') {
+                        display: none;
+                    }
+                }
+
+                &.protocol {
+                    width: 15%;
 
                     @include max-width('medium-large') {
                         display: none;
@@ -156,7 +164,7 @@
                 }
 
                 &.single {
-                    width: 85%;
+                    width: 84%;
                     display: none;
 
                     @include max-width('medium-large') {
@@ -243,6 +251,13 @@
                         }
                     }
 
+                    &.protocol {
+                        @include max-width('medium-large') {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
                     &.load {
                         width: 7%;
                     }
@@ -264,8 +279,14 @@
 
                 .search {
                     margin: 0;
-                    width: 222px;
+                    width: 246px;
                     font-size: 14px;
+
+                    input[type=email],
+                    input[type=text],
+                    input[type=password] {
+                        padding: 0 15px;
+                    }
 
                     @include max-width('medium-large') {
                         width: 300px;
@@ -273,7 +294,7 @@
                 }
 
                 .select {
-                    width: 170px;
+                    width: 150px;
 
                     @include max-width('medium-large') {
                         width: 300px;
@@ -292,7 +313,7 @@
                 }
     
                 .col {
-                    padding: 19px 20px;
+                    padding: 19px 15px;
                     font-size: 13px;
                     font-weight: normal!important;
                     line-height: normal!important;

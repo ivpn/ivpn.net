@@ -4,7 +4,7 @@
     select {
         appearance: none;
         font-size: 14px;
-        padding: 15px 20px 15px 20px;
+        padding: 15px;
         cursor: pointer;
         display: block;
         width: 100%;
@@ -29,7 +29,7 @@
 
     i {
         display: block;
-        width: 50px;
+        width: 42px;
         height: 100%;
         background: url('/images-static/arrow-blue.svg') no-repeat center;
         transform: rotate(180deg);

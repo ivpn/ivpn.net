@@ -34,6 +34,15 @@
                     <i></i>
                 </form>
             </div>
+            <div class="col protocol">
+                <form class="select">
+                    <select name="protocol" @change="onChangeFilter($event)" data-filter="protocol" ref="protocolFilter">
+                        <option value="">Protocol: Any</option>
+                        <option v-for="protocol in protocols" :value="protocol" :key="protocol">{{ protocol }}</option>
+                    </select>
+                    <i></i>
+                </form>
+            </div>
             <div class="col load">&nbsp;</div>
             <div class="col action">
                 <a @click="resetFilter">Reset</a>
@@ -51,6 +60,9 @@
             </div>
             <div class="col provider">
                 <a @click="sortBy" data-sort="isp">PROVIDER<i></i></a>
+            </div>
+            <div class="col protocol">
+                <a @click="sortBy" data-sort="protocol">PROTOCOL<i></i></a>
             </div>
             <div class="col load">
                 <a @click="sortBy" data-sort="load">LOAD<i></i></a>
@@ -77,6 +89,9 @@
                 <div class="col provider">
                     {{ server.isp }}
                 </div>
+                <div class="col protocol">
+                    {{ server.protocol }}
+                </div>
                 <div class="col load">
                     {{ server.load }}%
                 </div>
@@ -87,6 +102,9 @@
                     </div>
                     <div>
                         {{ server.country }}, {{ server.city }}
+                    </div>
+                    <div>
+                        Protocol: {{ server.protocol }}
                     </div>
                     <div>
                         {{ server.isp }}, Load: {{ server.load }}%
@@ -100,7 +118,7 @@
                 <div class="col details">
                     <div>
                         <em>Public Key</em>
-                        {{ server.wg_public_key }}
+                        {{ server.wg_public_key || "N/A" }}
                     </div>
                 </div>
             </div>
@@ -120,6 +138,7 @@ export default {
             countries: [],
             cities: [],
             providers: [],
+            protocols: [],
             filters: [],
             serverFilter: "",
         };
@@ -135,19 +154,8 @@ export default {
                 this.countries = [...new Set(resp.servers.map(server => server.country))].sort();
                 this.cities = [...new Set(resp.servers.map(server => server.city))].sort();
                 this.providers = [...new Set(resp.servers.map(server => server.isp))].sort();
+                this.protocols = [...new Set(resp.servers.map(server => server.protocol))].sort();
                 this.sortServers("country", false);
-            }
-        },
-        renderProtocolName(protocol) {
-            switch (protocol) {
-                case "wireguard":
-                    return "WireGuard";
-                    break;
-                case "openvpn":
-                    return "OpenVPN";
-                    break;
-                default:
-                    return protocol;
             }
         },
         renderStatus(server) {
@@ -206,7 +214,7 @@ export default {
         },
         filterFilters(filter, value) {
             if (filter != "country" || value == "") {
-                if (this.filters["city"] != "" || this.filters["isp"] != "") {
+                if (this.filters["city"] != "" || this.filters["isp"] != "" || this.filters["protocol"] != "") {
                     this.countries = [...new Set(this.filteredServers.map(server => server.country))].sort();
                 } else {
                     this.countries = [...new Set(this.servers.map(server => server.country))].sort();
@@ -214,7 +222,7 @@ export default {
             }
 
             if (filter != "city" || value == "") {
-                if (this.filters["country"] != "" || this.filters["isp"] != "") {
+                if (this.filters["country"] != "" || this.filters["isp"] != "" || this.filters["protocol"] != "") {
                     this.cities = [...new Set(this.filteredServers.map(server => server.city))].sort();
                 } else {
                     this.cities = [...new Set(this.servers.map(server => server.city))].sort();
@@ -222,10 +230,18 @@ export default {
             }
 
             if (filter != "isp" || value == "") {
-                if (this.filters["country"] != "" || this.filters["city"] != "") {
+                if (this.filters["country"] != "" || this.filters["city"] != "" || this.filters["protocol"] != "") {
                     this.providers = [...new Set(this.filteredServers.map(server => server.isp))].sort();
                 } else {
                     this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
+                }
+            }
+
+            if (filter != "protocol" || value == "") {
+                if (this.filters["country"] != "" || this.filters["city"] != "" || this.filters["isp"] != "") {
+                    this.protocols = [...new Set(this.filteredServers.map(server => server.protocol))].sort();
+                } else {
+                    this.protocols = [...new Set(this.servers.map(server => server.protocol))].sort();
                 }
             }
         },
@@ -236,9 +252,11 @@ export default {
             this.$refs.countryFilter.selectedIndex = 0;
             this.$refs.cityFilter.selectedIndex = 0;
             this.$refs.providerFilter.selectedIndex = 0;
+            this.$refs.protocolFilter.selectedIndex = 0;
             this.countries = [...new Set(this.servers.map(server => server.country))].sort();
             this.cities = [...new Set(this.servers.map(server => server.city))].sort();
             this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
+            this.protocols = [...new Set(this.servers.map(server => server.protocol))].sort();
             this.filterServers();
         },
         filterServers() {
