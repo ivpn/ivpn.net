@@ -130,7 +130,7 @@ Experienced and motivated people actively work on privacy and surveillance relat
 
 **Using tools of resistance** 
 
-As highlighted above, you can counter various privacy harms by using tools designed for your problems. Use open-source and paid products, donate to their creators. The best place to find alternatives to your current setup is the [PrivacyTools](https://www.privacytools.io/ "https\://www.privacytools.io/") website and their [community](https://www.reddit.com/r/privacytoolsIO/ "https\://www.reddit.com/r/privacytoolsIO/"). Techlore also has great [guides](https://www.youtube.com/c/Techlore/playlists "https\://www.youtube.com/c/Techlore/playlists") (and a Discord channel) if video is your preferred format for learning.\
+As highlighted above, you can counter various privacy harms by using tools designed for your problems. Use open-source and paid products, donate to their creators. The best place to find alternatives to your current setup is the [PrivacyGuides](https://www.privacyguides.org/ "https\://www.privacyguides.org/") website and their [community](https://www.reddit.com/r/privacyguides/ "https\://www.reddit.com/r/privacyguides/"). Techlore also has great [guides](https://www.youtube.com/c/Techlore/playlists "https\://www.youtube.com/c/Techlore/playlists") (and a Discord channel) if video is your preferred format for learning.\
 Are you working on privacy enhancing tools and services? Contact us and we will do our best to amplify them.
 
 - - -
