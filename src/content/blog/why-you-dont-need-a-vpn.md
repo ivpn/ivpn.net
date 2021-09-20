@@ -79,7 +79,7 @@ One last note: please remember that if you use a commercial VPN, your internet t
 
 - - -
 
-*Disclaimer: This post addresses commercial VPNs marketed for 'regular users'. Corporate VPNs set up by organizations for their staff serve a different purpose; use them when required by your company. This post is not applicable for users with non-regular threat models: journalists, activists living under repressive regimes, or anyone at risk of being targeted by resourceful individuals or state actors. If any of that applies to you, you need a VPN as part of your security and privacy toolkit. We recommend starting [here](<https://freedom.press/training/>) and using tools recommended by[ PrivacyTools.io](http://PrivacyTools.io) to protect yourself.*
+*Disclaimer: This post addresses commercial VPNs marketed for 'regular users'. Corporate VPNs set up by organizations for their staff serve a different purpose; use them when required by your company. This post is not applicable for users with non-regular threat models: journalists, activists living under repressive regimes, or anyone at risk of being targeted by resourceful individuals or state actors. If any of that applies to you, you need a VPN as part of your security and privacy toolkit. We recommend starting [here](<https://freedom.press/training/>) and using tools recommended by [PrivacyGuides](http://www.privacyguides.org) to protect yourself.*
 
 Useful resources in this matter (not always correct):\
 <https://schub.wtf/blog/2019/04/08/very-precarious-narrative.html>\
