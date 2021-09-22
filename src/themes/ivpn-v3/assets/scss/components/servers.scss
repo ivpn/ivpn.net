@@ -121,6 +121,7 @@
                     flex-direction: row;
                     padding-top: 20px;
                     padding-bottom: 20px;
+                    pointer-events: all;
 
                     &.active {
                         display: flex;
