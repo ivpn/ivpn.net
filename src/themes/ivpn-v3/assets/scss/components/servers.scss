@@ -35,7 +35,7 @@
                 pointer-events: none;
     
                 &.server {
-                    width: 30%;
+                    width: 31%;
                     display: flex;
                     align-items: center;
                     flex-direction: row;
@@ -48,7 +48,7 @@
                 }
     
                 &.country {
-                    width: 18%;
+                    width: 17%;
                     font-weight: bold;
                     line-height: 24px;
 
@@ -58,7 +58,7 @@
                 }
     
                 &.city {
-                    width: 18%;
+                    width: 17%;
                     font-weight: bold;
 
                     @include max-width('medium-large') {
@@ -83,7 +83,7 @@
                 }
     
                 &.action {
-                    width: 6%;
+                    width: 7%;
                     text-align: center;
                     padding: 0;
                     user-select: none;
