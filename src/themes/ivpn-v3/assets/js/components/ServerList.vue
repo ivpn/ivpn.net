@@ -250,8 +250,12 @@ export default {
                     }
                 }
 
-                if (this.serverFilter != "" && server.gateway.indexOf(this.serverFilter) < 0) {
-                    condition = false;
+                if (this.serverFilter != "") {
+                    let openvpnGateway = server.hostnames.openvpn || "";
+                    let wireguardGateway = server.hostnames.wireguard || "";
+                    if (openvpnGateway.indexOf(this.serverFilter) < 0 && wireguardGateway.indexOf(this.serverFilter) < 0) {
+                        condition = false;
+                    }
                 }
 
                 return condition;
