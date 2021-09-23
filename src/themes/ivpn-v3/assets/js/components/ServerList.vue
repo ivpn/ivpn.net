@@ -151,10 +151,10 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers;
-                this.countries = [...new Set(resp.servers.map(server => server.country))].sort();
-                this.cities = [...new Set(resp.servers.map(server => server.city))].sort();
-                this.providers = [...new Set(resp.servers.map(server => server.isp))].sort();
-                this.protocols = [...new Set(resp.servers.map(server => server.protocol))].sort();
+                this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
+                this.cities = [...new Set(resp.servers.map(server => server.city))].filter(String).sort();
+                this.providers = [...new Set(resp.servers.map(server => server.isp))].filter(String).sort();
+                this.protocols = [...new Set(resp.servers.map(server => server.protocol))].filter(String).sort();
                 this.sortServers("country", false);
             }
         },
@@ -253,10 +253,10 @@ export default {
             this.$refs.cityFilter.selectedIndex = 0;
             this.$refs.providerFilter.selectedIndex = 0;
             this.$refs.protocolFilter.selectedIndex = 0;
-            this.countries = [...new Set(this.servers.map(server => server.country))].sort();
-            this.cities = [...new Set(this.servers.map(server => server.city))].sort();
-            this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
-            this.protocols = [...new Set(this.servers.map(server => server.protocol))].sort();
+            this.countries = [...new Set(this.servers.map(server => server.country))].filter(String).sort();
+            this.cities = [...new Set(this.servers.map(server => server.city))].filter(String).sort();
+            this.providers = [...new Set(this.servers.map(server => server.isp))].filter(String).sort();
+            this.protocols = [...new Set(this.servers.map(server => server.protocol))].filter(String).sort();
             this.filterServers();
         },
         filterServers() {
