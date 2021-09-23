@@ -34,15 +34,6 @@
                     <i></i>
                 </form>
             </div>
-            <div class="col protocol">
-                <form class="select">
-                    <select name="protocol" @change="onChangeFilter($event)" data-filter="protocol" ref="protocolFilter">
-                        <option value="">Protocol: Any</option>
-                        <option v-for="protocol in protocols" :value="protocol" :key="protocol">{{ protocol }}</option>
-                    </select>
-                    <i></i>
-                </form>
-            </div>
             <div class="col load">&nbsp;</div>
             <div class="col action">
                 <a @click="resetFilter">Reset</a>
@@ -61,9 +52,6 @@
             <div class="col provider">
                 <a @click="sortBy" data-sort="isp">PROVIDER<i></i></a>
             </div>
-            <div class="col protocol">
-                <a @click="sortBy" data-sort="protocol">PROTOCOL<i></i></a>
-            </div>
             <div class="col load">
                 <a @click="sortBy" data-sort="load">LOAD<i></i></a>
             </div>
@@ -73,7 +61,12 @@
             <div class="row" v-for="server in filteredServers" :key="server.gateway" @click="toggleDetailsRow">
                 <div class="col server">
                     <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
-                    {{ server.gateway }}
+                    <ul class="hosts-list">
+                        <li v-for="(host, protocol) in server.hostnames" :key="protocol">
+                            {{ host }}
+                            <span class="badge badge--light spacing">{{ protocol }}</span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="col country">
                     <div class="location__data">
@@ -89,22 +82,21 @@
                 <div class="col provider">
                     {{ server.isp }}
                 </div>
-                <div class="col protocol">
-                    {{ server.protocol }}
-                </div>
                 <div class="col load">
                     {{ server.load }}%
                 </div>
                 <div class="col single">
-                    <div>
+                    <div class="hosts">
                         <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
-                        {{ server.gateway }}
+                        <ul class="hosts-list">
+                            <li v-for="(host, protocol) in server.hostnames" :key="protocol">
+                                {{ host }}
+                                <span class="badge badge--light spacing">{{ protocol }}</span>
+                            </li>
+                        </ul>
                     </div>
                     <div>
                         {{ server.country }}, {{ server.city }}
-                    </div>
-                    <div>
-                        Protocol: {{ server.protocol }}
                     </div>
                     <div>
                         {{ server.isp }}, Load: {{ server.load }}%
@@ -138,7 +130,6 @@ export default {
             countries: [],
             cities: [],
             providers: [],
-            protocols: [],
             filters: [],
             serverFilter: "",
         };
@@ -154,7 +145,6 @@ export default {
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
                 this.cities = [...new Set(resp.servers.map(server => server.city))].filter(String).sort();
                 this.providers = [...new Set(resp.servers.map(server => server.isp))].filter(String).sort();
-                this.protocols = [...new Set(resp.servers.map(server => server.protocol))].filter(String).sort();
                 this.sortServers("country", false);
             }
         },
@@ -214,7 +204,7 @@ export default {
         },
         filterFilters(filter, value) {
             if (filter != "country" || value == "") {
-                if (this.filters["city"] != "" || this.filters["isp"] != "" || this.filters["protocol"] != "") {
+                if (this.filters["city"] != "" || this.filters["isp"] != "") {
                     this.countries = [...new Set(this.filteredServers.map(server => server.country))].sort();
                 } else {
                     this.countries = [...new Set(this.servers.map(server => server.country))].sort();
@@ -222,7 +212,7 @@ export default {
             }
 
             if (filter != "city" || value == "") {
-                if (this.filters["country"] != "" || this.filters["isp"] != "" || this.filters["protocol"] != "") {
+                if (this.filters["country"] != "" || this.filters["isp"] != "") {
                     this.cities = [...new Set(this.filteredServers.map(server => server.city))].sort();
                 } else {
                     this.cities = [...new Set(this.servers.map(server => server.city))].sort();
@@ -230,18 +220,10 @@ export default {
             }
 
             if (filter != "isp" || value == "") {
-                if (this.filters["country"] != "" || this.filters["city"] != "" || this.filters["protocol"] != "") {
+                if (this.filters["country"] != "" || this.filters["city"] != "") {
                     this.providers = [...new Set(this.filteredServers.map(server => server.isp))].sort();
                 } else {
                     this.providers = [...new Set(this.servers.map(server => server.isp))].sort();
-                }
-            }
-
-            if (filter != "protocol" || value == "") {
-                if (this.filters["country"] != "" || this.filters["city"] != "" || this.filters["isp"] != "") {
-                    this.protocols = [...new Set(this.filteredServers.map(server => server.protocol))].sort();
-                } else {
-                    this.protocols = [...new Set(this.servers.map(server => server.protocol))].sort();
                 }
             }
         },
@@ -252,11 +234,9 @@ export default {
             this.$refs.countryFilter.selectedIndex = 0;
             this.$refs.cityFilter.selectedIndex = 0;
             this.$refs.providerFilter.selectedIndex = 0;
-            this.$refs.protocolFilter.selectedIndex = 0;
             this.countries = [...new Set(this.servers.map(server => server.country))].filter(String).sort();
             this.cities = [...new Set(this.servers.map(server => server.city))].filter(String).sort();
             this.providers = [...new Set(this.servers.map(server => server.isp))].filter(String).sort();
-            this.protocols = [...new Set(this.servers.map(server => server.protocol))].filter(String).sort();
             this.filterServers();
         },
         filterServers() {

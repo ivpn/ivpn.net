@@ -30,12 +30,17 @@
             }
 
             .col {
-                padding: 15px;
+                padding: 15px 19px;
                 font-size: 15px;
                 pointer-events: none;
     
                 &.server {
-                    width: 23%;
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    pointer-events: all;
+                    user-select: text;
 
                     @include max-width('medium-large') {
                         display: none;
@@ -43,7 +48,7 @@
                 }
     
                 &.country {
-                    width: 15%;
+                    width: 18%;
                     font-weight: bold;
                     line-height: 24px;
 
@@ -53,7 +58,7 @@
                 }
     
                 &.city {
-                    width: 15%;
+                    width: 18%;
                     font-weight: bold;
 
                     @include max-width('medium-large') {
@@ -62,15 +67,7 @@
                 }
     
                 &.provider {
-                    width: 15%;
-
-                    @include max-width('medium-large') {
-                        display: none;
-                    }
-                }
-
-                &.protocol {
-                    width: 15%;
+                    width: 17%;
 
                     @include max-width('medium-large') {
                         display: none;
@@ -179,6 +176,14 @@
                             margin-bottom: 0;
                         }
                     }
+
+                    .hosts {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                        pointer-events: all;
+                        user-select: text;
+                    }
                 }
 
                 .location__data {
@@ -193,6 +198,18 @@
                         margin-right: 12px;
                         position: relative;
                         top: 3px;
+                    }
+                }
+
+                .hosts-list {
+                    padding-left: 12px;
+
+                    li {
+                        margin-bottom: 8px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
                     }
                 }
             }
@@ -252,13 +269,6 @@
                         }
                     }
 
-                    &.protocol {
-                        @include max-width('medium-large') {
-                            display: block;
-                            width: 100%;
-                        }
-                    }
-
                     &.load {
                         width: 7%;
                     }
@@ -280,13 +290,13 @@
 
                 .search {
                     margin: 0;
-                    width: 246px;
+                    width: 280px;
                     font-size: 14px;
 
                     input[type=email],
                     input[type=text],
                     input[type=password] {
-                        padding: 0 15px;
+                        padding: 0 19px;
                     }
 
                     @include max-width('medium-large') {
@@ -295,7 +305,7 @@
                 }
 
                 .select {
-                    width: 150px;
+                    width: 160px;
 
                     @include max-width('medium-large') {
                         width: 300px;
@@ -314,7 +324,7 @@
                 }
     
                 .col {
-                    padding: 19px 15px;
+                    padding: 19px;
                     font-size: 13px;
                     font-weight: normal!important;
                     line-height: normal!important;
