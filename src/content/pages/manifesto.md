@@ -34,4 +34,5 @@ What we can do is claim our agency. To equip ourselves with digital tools that a
 
 Around the world, a growing movement of individuals and organizations is coming together to counter the status quo. To assert their rights, and to speak up for those who can’t. To resist the relentless data economy. To hold accountable those who abuse their power. And to keep fighting: For a human-centred internet, for the thriving of democracy, and for a future free from surveillance.
 
-#### Join us
+<h4 class="eof">Join us</h4>
+<br>

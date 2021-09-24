@@ -1,0 +1,21 @@
+.eof {
+
+    &:after {
+        content: "";
+        display: inline-block;
+        position: relative;
+        top: 4px;
+        margin: 0 10px;
+        width: 14px;
+        height: 20px;
+        @include blink-me;
+
+        @include light-theme((
+            background-color: $light-mode-text
+        ));
+
+        @include dark-theme((
+            background-color: $dark-mode-text
+        ));
+    }
+}
