@@ -20,7 +20,7 @@ sections:
     cta_two_label: IVPN on GitHub
     cta_two_is_blue: false
     cta_two_url: https://github.com/ivpn
-  - type: usps_three_column
+  - type: usps_three_column_home
     usps:
       - name: No logs
         description: We do not log any user activity relating to the use of the VPN service as verified by a [3rd party audit](/blog/ivpn-no-logging-claim-verified-by-independent-audit/) (although only a snapshot in time).
