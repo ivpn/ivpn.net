@@ -1,0 +1,8 @@
+<section class="team team__home">
+    {{ range .usps }}
+        <div class="team-member">
+            <h4>{{ .name }}</h4>
+            {{ .description | markdownify }}
+        </div>
+    {{ end }}
+</section>
