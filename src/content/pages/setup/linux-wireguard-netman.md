@@ -4,7 +4,7 @@ url: /setup/linux-wireguard-netman/
 layout: setup
 platform: linux
 ---
-# WireGuard using NetworkManager Setup Guide
+# WireGuard NetworkManager setup guide
 
 WireGuard support was added to NetworkManager in v1.16. This guide was created with NetworkManager v1.20.4-1 on Manjaro with KDE and verified on openSUSE Tumbleweed with KDE with NetworkManager v1.18.2-1.1. Generally, KDE's implementation of NetworkManager supports WireGuard, though other desktop environments might not.
 

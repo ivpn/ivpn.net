@@ -4,7 +4,7 @@ url: /setup/linux-wireguard/
 layout: setup
 platform: linux
 ---
-# Linux WireGuard terminal Setup Guide
+# WireGuard terminal setup guide
 
 ### Configure your environment
 

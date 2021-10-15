@@ -1,10 +1,10 @@
 ---
-title: IPSec IKEv2 for iPad Setup Guide
-url: /setup/iphone-ipsec-ikev2/
+title: IPSec IKEv2 for iOS Setup Guide
+url: /setup/ios-ipsec-ikev2/
 layout: setup
 platform: ios
 ---
-# iPhone IKEv2 Setup Guide
+# IPSec with IKEv2 setup guide
 
 This guide will help you set up an IPSec connection using IKEv2.
 

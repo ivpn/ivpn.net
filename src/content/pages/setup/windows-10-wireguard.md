@@ -4,10 +4,10 @@ url: /setup/windows-10-wireguard/
 layout: setup
 platform: windows
 ---
-# WireGuard Manual setup for Windows 10
+# WireGuard setup guide for Windows 10
 
 <div markdown="1" class="notice notice--warning">
-To use WireGuard on Windows, we recommend downloading IVPN's <a href="/apps-windows/">Windows client</a>, which supports the protocol. Please follow the steps below if you would prefer to use the official WireGuard for Windows app instead:
+To use WireGuard on Windows, we recommend downloading IVPN's <a href="/apps-windows/">Windows client</a>, which supports the protocol. Please follow the steps below if you would prefer to use the official WireGuard app for Windows instead:
 </div>
 
 1.  Download and install the WireGuard installer from the [official WireGuard website](https://www.wireguard.com/install/).  

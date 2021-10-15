@@ -197,8 +197,8 @@ If you prefer not to use the IVPN app please follow the relevant setup guide bel
 
 If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
-* [OpenVPN using NetworkManager Setup Guide](/setup/linux-netman/)
-* [OpenVPN using terminal Setup Guide](/setup/linux-terminal/)
-* [Linux IPSec with IKEv2 Setup Guide](/setup/linux-ipsec-with-ikev2/)
-* [WireGuard using terminal Setup Guide](/setup/linux-wireguard/)
-* [WireGuard using NetworkManager Setup Guide](/setup/linux-wireguard-netman/)
+* [WireGuard using terminal](/setup/linux-wireguard/)
+* [WireGuard using NetworkManager](/setup/linux-wireguard-netman/)
+* [OpenVPN using terminal](/setup/linux-terminal/)
+* [OpenVPN using NetworkManager](/setup/linux-netman/)
+* [IPSec with IKEv2](/setup/linux-ipsec-with-ikev2/)

@@ -4,11 +4,17 @@
     flex-wrap: wrap;
     justify-content: center;
 
+    &__home {
+        margin-top: 32px;
+    }
+
     &-member {
         @include grid-col($col: 12, $gutter: $default-grid-gutter);
+
         @include respond-to('small') {
             @include grid-col($col: 6, $gutter: $default-grid-gutter);
         }
+
         @include respond-to('medium') {
             @include grid-col($col: 4, $gutter: $default-grid-gutter);
         }

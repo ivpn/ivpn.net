@@ -1,10 +1,10 @@
 ---
-title: OpenVPN Manual setup for Windows 8
+title: OpenVPN GUI setup guide for Windows 8
 url: /setup/windows-8-openvpn-community/
 layout: setup
 platform: windows
 ---
-# Windows 8 - OpenVPN Manual Installation
+# OpenVPN GUI setup guide for Windows 8
 
 This guide demonstrates how to install the community edition of OpenVPN for Windows.
 

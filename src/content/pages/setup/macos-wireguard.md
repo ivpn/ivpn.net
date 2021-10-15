@@ -4,10 +4,10 @@ url: /setup/macos-wireguard/
 layout: setup
 platform: macos
 ---
-# WireGuard Manual setup for macOS 10.14+
+# WireGuard setup guide for macOS 10.14+
 
 <div markdown="1" class="notice notice--warning">
-To use WireGuard on macOS, we recommend downloading IVPN's <a href="/apps-macos/">macOS client</a>, which supports the protocol. Please follow the steps below if you would prefer to use the official WireGuard for macOS app instead:
+To use WireGuard on macOS, we recommend downloading IVPN's <a href="/apps-macos/">macOS client</a>, which supports the protocol. Please follow the steps below if you would prefer to use the official WireGuard app for macOS instead:
 </div>
 
 1.  Download and install the latest version of WireGuard from the [App Store](https://itunes.apple.com/us/app/wireguard/id1451685025?ls=1&mt=12).
