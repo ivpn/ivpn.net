@@ -4,7 +4,7 @@ url: /setup/linux-netman/
 layout: setup
 platform: linux
 ---
-# OpenVPN using NetworkManager Setup Guide
+# OpenVPN NetworkManager setup guide
 
 <div markdown="1" class="notice notice--warning">
 Network Manager is designed to provide automatic connectivity, through whatever channels are available. Once a VPN connection is established, all traffic is routed through the tunnel. After network interruptions, Network Manager will normally automatically restart OpenVPN to reconnect.

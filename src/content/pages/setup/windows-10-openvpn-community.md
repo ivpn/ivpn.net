@@ -4,7 +4,7 @@ url: /setup/windows-10-openvpn-community/
 layout: setup
 platform: windows
 ---
-# Windows 10 - OpenVPN Manual Installation
+# OpenVPN GUI setup guide for Windows 10
 
 This guide demonstrates how to install the community edition of OpenVPN for Windows.
 

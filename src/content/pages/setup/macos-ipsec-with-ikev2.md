@@ -4,7 +4,7 @@ url: /setup/macos-ipsec-with-ikev2/
 layout: setup
 platform: macos
 ---
-# macOS - IPSec with IKEv2 Setup Guide
+# IPSec with IKEv2 setup guide
 
 This guide will help you set up an IPSec connection using IKEv2
 
