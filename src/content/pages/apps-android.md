@@ -52,5 +52,6 @@ If you prefer not to use the IVPN app please follow the relevant setup guide bel
 
 If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
-- [OpenVPN for Android v4.0+ Setup Guide](/setup/android-openvpn-for-android/)  
-- [Android IPSec with IKEv2 Setup Guide](/setup/android-ipsec-with-ikev2/)  
+- [WireGuard](/setup/android-wireguard/)
+- [OpenVPN for Android](/setup/android-openvpn-for-android/)  
+- [IPSec with IKEv2](/setup/android-ipsec-with-ikev2/)  

@@ -4,7 +4,7 @@ url: /setup/windows-10-ipsec-with-ikev2/
 layout: setup
 platform: windows
 ---
-# Windows 10 IPSec with IKEv2 Setup Guide
+# IPSec with IKEv2 setup guide for Windows 10
 
 This guide will help you set up an IPSec connection using IKEv2
 

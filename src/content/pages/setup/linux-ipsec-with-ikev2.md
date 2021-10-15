@@ -4,7 +4,7 @@ url: /setup/linux-ipsec-with-ikev2/
 layout: setup
 platform: linux
 ---
-# Linux IPSec with IKEv2 Setup
+# IPSec with IKEv2 setup guide
 
 The following Strogswan configuration is known to work:
 

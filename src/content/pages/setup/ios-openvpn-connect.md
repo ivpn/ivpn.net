@@ -1,18 +1,18 @@
 ---
-title: OpenVPN for iPad Setup Guide
-url: /setup/ipad-openvpn-connect/
+title: OpenVPN for iOS Setup Guide
+url: /setup/ios-openvpn-connect/
 layout: setup
 platform: ios
 ---
-# iPad - OpenVPN Setup Guide
+# OpenVPN Connect setup guide
 
 OpenVPN Connect is the official iOS client from OpenVPN Technologies.
 
 1.  Install app from the [iTunes store](https://apps.apple.com/us/app/openvpn-connect/id590379981).
 
-    ![](/images-static/uploads/install-openvpn-connect-ipad-010-800x600.jpg)
+    ![](/images-static/uploads/install-openvpn-connect-iphone-010-320x480.png)
 
-2.  Download the [IVPN config files](/releases/config/ivpn-openvpn-config.zip) to your Mac/PC and unzip. Within the extracted folder are the config files which represent each server in the IVPN network. You will need one or more of these files in the next step depending on whether you want to connect to a server in a single location or wish to have all the locations available on your iPad.
+2.  Download the [IVPN config files](/releases/config/ivpn-openvpn-config.zip) to your Mac/PC and unzip. Within the extracted folder are the config files which represent each server in the IVPN network. You will need one or more of these files in the next step depending on whether you want to connect to a server in a single location or wish to have all the locations available on your iPhone.
 
 3.  To upload the configurations file/s into OpenVPN Connect, you have to either upload them to a cloud storage service such as dropbox or email them to yourself (or use AirDrop if you know how to use it).
 
@@ -20,7 +20,9 @@ OpenVPN Connect is the official iOS client from OpenVPN Technologies.
 
     To email, send the config file/s to an email address that is accessible on your device. Open the email and tap the icon of the configuration file in your email. Choose the option `Copy to OpenVPN`.
 
-4.  Tap the green "+" button from within the OpenVPN Connect app to add the server.
+4.  Tap the green "+" button to add the server.
+
+    ![](/images-static/uploads/install-openvpn-connect-iphone-020-320x480.png)
 
 5.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password.
 
@@ -30,8 +32,12 @@ OpenVPN Connect is the official iOS client from OpenVPN Technologies.
 
     Click on the `save` slider if you wish to save your credentials. Click on the `Connection` slider (under the disconnected button) to initiate the connection.
 
-    ![](/images-static/uploads/install-openvpn-connect-ipad-070-800x600.jpg)
+    ![](/images-static/uploads/install-openvpn-connect-iphone-030-320x480.png)
 
-6.  Once connected you will see the new status `Connected` and also a VPN status bar icon. You can click on the `+` symbol to see more information about your connection.
+6.  If you see a message asking you whether to "Allow OpenVPN to enable VPN connection" click `Yes`.
 
-    ![](/images-static/uploads/install-openvpn-connect-ipad-080-800x600.jpg)
+    ![](/images-static/uploads/install-openvpn-connect-iphone-040-320x480.png)
+
+7.  Once connected you will see the new status `Connected` and also a VPN status bar icon. You can click on the `+` symbol to see more information about your connection.
+
+    ![](/images-static/uploads/install-openvpn-connect-iphone-050-320x480.png)

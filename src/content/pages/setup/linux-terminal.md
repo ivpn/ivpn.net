@@ -4,7 +4,7 @@ url: /setup/linux-terminal/
 layout: setup
 platform: linux
 ---
-# Linux OpenVPN Terminal Setup Guide
+# OpenVPN Terminal setup guide
 
 1.  Install OpenVPN using your package manager if it is not installed already:
 

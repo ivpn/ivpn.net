@@ -4,7 +4,7 @@ url: /setup/android-openvpn-for-android/
 layout: setup
 platform: android
 ---
-# OpenVPN for Android v4.0+ Setup Guide
+# OpenVPN for Android setup guide
 
 [OpenVPN for Android](https://play.google.com/store/apps/details?id=de.blinkt.openvpn&hl=en) is an open source client compatible with all versions of Android 4.x (Ice Cream Sandwich) and later. Most devices released since 2012 are running Android 4.x or later.
 

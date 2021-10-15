@@ -4,7 +4,7 @@ url: /setup/android-ipsec-with-ikev2/
 layout: setup
 platform: android
 ---
-# Android IPSec with IKEv2 Setup
+# IPSec with IKEv2 setup guide
 
 1.  On your Android device, go to `Google Play`, search and install `strongSwan VPN Client` app.
 

@@ -4,7 +4,7 @@ url: /setup/macos-openvpn-tunnelblick/
 layout: setup
 platform: macos
 ---
-# macOS - OpenVPN Tunnelblick Setup Guide
+# Tunnelblick setup guide
 
 1. Download the [latest stable release](https://tunnelblick.net/downloads.html). If you are using a pre-release version of macOS then you may need to download the beta release. Unless your version of macOS is not supported by the current stable release we always recommend using the stable release.
 

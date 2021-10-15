@@ -44,10 +44,10 @@ If you prefer not to use the IVPN app please follow the relevant setup guide bel
 
 If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
 
-- [WireGuard Manual setup for Windows 10](/setup/windows-10-wireguard/)  
-- [OpenVPN Manual setup for Windows 10](/setup/windows-10-openvpn-community/)  
-- [Windows 10 IPSec IKEv2 Setup Guide](/setup/windows-10-ipsec-with-ikev2/)  
-- [OpenVPN Manual setup for Windows 8](/setup/windows-8-openvpn-community/)  
+- [WireGuard (Windows 10)](/setup/windows-10-wireguard/)  
+- [OpenVPN GUI (Windows 10)](/setup/windows-10-openvpn-community/)
+- [OpenVPN GUI (Windows 8)](/setup/windows-8-openvpn-community/)
+- [IPSec with IKEv2 (Windows 10)](/setup/windows-10-ipsec-with-ikev2/)
 
 ## Download legacy version
 
