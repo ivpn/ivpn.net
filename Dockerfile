@@ -12,11 +12,9 @@ RUN apt-get update  \
     && apt-get install -y gnupg gnupg2 gnupg1 \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y nodejs \
-    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
-    && apt-get install yarn \
-    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.76.3/hugo_0.76.3_Linux-64bit.deb -o /tmp/hugo.deb \
+    && npm install --global yarn \
+    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_0.88.1_Linux-ARM64.deb -o /tmp/hugo.deb \
     && dpkg -i /tmp/hugo.deb \
     && rm /tmp/hugo.deb
 
