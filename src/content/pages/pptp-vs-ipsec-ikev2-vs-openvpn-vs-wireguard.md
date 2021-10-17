@@ -123,7 +123,7 @@ layout: full-width
         </th>
     </tr>
     <tr>
-        <td>PPTP is not as realiable, nor does it recover as quickly as OpenVPN over unstable network connections. Minor compatibility issues with the GRE protocol and some routers.</td>
+        <td>PPTP is not as reliable, nor does it recover as quickly as OpenVPN over unstable network connections. Minor compatibility issues with the GRE protocol and some routers.</td>
         <td>IPSec is more complex than OpenVPN and can require additional configuration between devices behind NAT routers. However as long as both the server and client support NAT traversal there shouldn't be any issues.</td>
         <td>Very stable and fast over wireless, cellular and other non reliable networks where packet loss and congestion is common. OpenVPN has a TCP mode for highly unreliable connections but this mode sacrifices significant performance due to the inefficiency of encapsulating TCP within TCP.</td>
         <td>Extremely stable and robust. More stable than OpenVPN when roaming across networks. Uses an initial endpoint for connections and can switch servers while maintaining the connection. Client can also change networks without dropping the connection.</td>
