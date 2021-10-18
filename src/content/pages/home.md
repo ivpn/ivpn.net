@@ -17,6 +17,7 @@ sections:
     cta_one_label: Generate IVPN account
     cta_one_is_blue: true
     cta_one_url: /signup/
+    cta_one_note: no email required
     cta_two_label: IVPN on GitHub
     cta_two_is_blue: false
     cta_two_url: https://github.com/ivpn
@@ -106,4 +107,5 @@ sections:
     cta_label: Generate IVPN account
     cta_is_blue: true
     cta_url: /signup/
+    cta_note: no email required
 ---
