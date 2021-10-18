@@ -14,7 +14,7 @@ sections:
       # Resist Online Surveillance
 
       What you do online can be tracked by organizations you may not know or trust and become part of a permanent record. A VPN can’t solve this on its own, but can prevent your ISP from being able to share or sell your data.
-    cta_one_label: Generate your account
+    cta_one_label: Generate IVPN account
     cta_one_is_blue: true
     cta_one_url: /signup/
     cta_two_label: IVPN on GitHub
@@ -103,7 +103,7 @@ sections:
   - type: heading_text_cta_one_column
     content: >-
       Using a VPN should be part of an overall strategy to protect your privacy - **but only if you trust the VPN provider more than your ISP**.
-    cta_label: Generate an account ID
+    cta_label: Generate IVPN account
     cta_is_blue: true
     cta_url: /signup/
 ---
