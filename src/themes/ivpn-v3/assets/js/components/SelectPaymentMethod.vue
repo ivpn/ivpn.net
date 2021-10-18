@@ -6,7 +6,7 @@
                     <div class="plan-name">{{ account.product.name }}</div>
                     <div class="plan-change">
                         <router-link :to="{ name: 'prices' }"
-                            >Change product</router-link
+                            >Change plan</router-link
                         >
                     </div>
                 </div>
