@@ -97,7 +97,7 @@ sections:
 
       * Increasing your security on untrusted public networks by preventing MITM attacks.
 
-      * Hiding your IP address from connected server.
+      * Masking your IP address from websites and servers you connect to.
 
       * Circumventing censorship or geographical blocks on websites and content. 
   - type: heading_text_cta_one_column
