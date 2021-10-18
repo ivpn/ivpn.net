@@ -9,7 +9,6 @@ WORKDIR /opt/build
 
 # Install nodejs, yarn and hugo
 RUN apt-get update  \
-    && dpkg --add-architecture amd64 \
     && apt-get install -y gnupg gnupg2 gnupg1 \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y nodejs \
