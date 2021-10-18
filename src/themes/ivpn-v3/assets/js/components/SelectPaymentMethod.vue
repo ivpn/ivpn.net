@@ -78,7 +78,7 @@
                 }"
             >
                 <div class="giftcard-icon"></div>
-                IVPN Gift Card
+                Gift Code
             </router-link>    
         </div>
     </div>
