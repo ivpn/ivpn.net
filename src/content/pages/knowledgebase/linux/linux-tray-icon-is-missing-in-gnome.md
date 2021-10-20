@@ -17,4 +17,4 @@ In the GNOME desktop environment version 40, tray icons have been mostly removed
 $ sudo dnf install gnome-extensions-app gnome-shell-extension-appindicator
 ```
 
-After installing, launch the `Extensions` application and toggle the `KStatusNotifierItem` switch to **on**.
+After installing, launch the `Extensions` application and toggle the `KStatusNotifierItem` switch to **on**.  You may have to log out from the GNOME desktop, then log back in for the `Extesions` application to update.
