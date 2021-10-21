@@ -2,10 +2,13 @@
     <div class="heading__content">
         {{ .content | markdownify }}
         <p>
-            <a href="{{ .cta_one_url }}"
-                class="cta {{ if eq .cta_one_is_blue true }}cta--is-blue{{ end }}">{{ .cta_one_label }}</a> <a
-                href="{{ .cta_two_url }}"
-                class="cta {{ if eq .cta_two_is_blue true }}cta--is-blue{{ end }}">{{ .cta_two_label }}</a>
+            <span>
+                <a href="{{ .cta_one_url }}" class="cta {{ if eq .cta_one_is_blue true }}cta--is-blue{{ end }}">{{ .cta_one_label }}</a>
+                {{ if isset . "cta_one_note" }}
+                <br><small>{{ .cta_one_note }}</small>
+                {{ end }}
+            </span>
+            <a href="{{ .cta_two_url }}" class="cta {{ if eq .cta_two_is_blue true }}cta--is-blue{{ end }}">{{ .cta_two_label }}</a>
         </p>
         {{/*
         <div>
