@@ -87,5 +87,5 @@ This guide was produced using FreshTomato version 2020.3
 ### Configuring a Kill-Switch
 
 1. Navigate to `Administration` > `Scripts` > `Firewall`
-2. Enter the following: `iptables -I FORWARD -i br0 -o `nvram get wan_iface` -j DROP`
+2. Enter the following: ``iptables -I FORWARD -i br0 -o `nvram get wan_iface` -j DROP``
 3. Click `Save` and reboot your router.
