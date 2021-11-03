@@ -159,6 +159,15 @@ AUR - ArchLinux User Repository. Can be used by distributions based on ArchLinux
 Base package: [ivpn](https://aur.archlinux.org/packages/ivpn/)  
 UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)  
 
+Using a AUR helper/Pacman wrapper  automates the installation process:
+
+{{< highlight shell >}}
+$ yay -S ivpn
+$ yay -S ivpn-ui
+{{< /highlight >}}
+
+Note: Other AUR helper/Pacman wrapper utilities are available.
+
 ## Install from Binaries {#binaries}
 
 ### .DEB

@@ -10,14 +10,14 @@ weight: 21
 ## OpenWrt WireGuard Setup Guide
 
 <div markdown="1" class="notice notice--warning">
-This guide was produced using OpenWrt v.19.07.2
+This guide was produced using OpenWrt v.19.07.8 and v.21.02.0
 </div>
 
 ### Install required packages
 
 1. In your router's webUI, navigate to `System` - `Software`, click `Update lists`
 
-2. In the **Filter** field, type **WireGuard**, locate and install **wireguard** & **luci-app-wireguard** packages<br></br>
+2. In the **Filter** field, type **WireGuard**, locate and install the **wireguard**, **wireguard-tools**, **kmod-wireguard**, and **luci-app-wireguard** packages.  Note: The **wireguard** package is included in version 21.02.<br></br>
 ![](/images-static/uploads/install-wireguard-openwrt-01.png)
 
 3. Restart your router
@@ -115,7 +115,11 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
     - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook<br></br>
 ![](/images-static/uploads/install-wireguard-openwrt-08.png)
 
-3. Click `Save` & `Save & Apply` buttons.
+4. Click the `Save` button.
+
+5. For firmware version 21.02, repeat steps 2 to 4 for the **IVPN WireGuard** and **WAN6** interfaces.  For firmware version 19.07, repeat steps 2 to 4 for the **WAN6** interface.
+
+6. Click the `Save & Apply` button.
 
 ### Final Steps
 
