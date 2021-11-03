@@ -40,6 +40,10 @@
             td {
                 padding-left: 0;
                 padding-right: 0;
+
+                @include light-theme((
+                    border-bottom: 1px solid #334d6633
+                ));
             }
 
             &:last-child {
