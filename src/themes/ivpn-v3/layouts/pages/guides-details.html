@@ -11,7 +11,18 @@
         </p>
         <br>
         {{ .Content | markdownify }}
-        {{- partial "more-info.html" . -}}
+        {{ if isset .Params "articles" }}
+        <br><br>
+        <h3>Related Articles</h3>
+        <ul>
+            {{ range .Params.articles }}
+            <li>
+                <a href="{{ .url }}">{{ .title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        <br>
+        {{ end }}
     </div>
 </section>
 
