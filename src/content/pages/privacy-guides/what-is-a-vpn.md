@@ -4,9 +4,16 @@ author: mirimir (gpg key 0x17C2E43E)
 url: /privacy-guides/what-is-a-vpn/
 section: Basic
 weight: 70
-nextArticles:
-  - /privacy-guides/why-use-tor-with-a-vpn-service/
-  - /privacy-guides/will-a-vpn-protect-me/
+articles: [
+  {
+    title: "Why use Tor with a VPN service?",
+    url: "/privacy-guides/why-use-tor-with-a-vpn-service/"
+  },
+  {
+    title: "Will a VPN Protect Me? Defining Your Threat Model",
+    url: "/privacy-guides/will-a-vpn-protect-me/"
+  }
+]
 date: 2015-09-30T07:41:31+00:00
 layout: guides-details
 ---

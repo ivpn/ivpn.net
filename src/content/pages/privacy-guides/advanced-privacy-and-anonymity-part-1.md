@@ -4,10 +4,20 @@ author: mirimir (gpg key 0x17C2E43E)
 url: /privacy-guides/advanced-privacy-and-anonymity-part-1/
 section: Advanced
 weight: 10
-nextArticles:
-  - /privacy-guides/advanced-privacy-and-anonymity-part-2/
-  - /privacy-guides/advanced-privacy-and-anonymity-part-3/
-  - /privacy-guides/advanced-privacy-and-anonymity-part-4/
+articles: [
+  {
+    title: "Advanced Privacy and Anonymity Using VMs, VPN’s, Tor – Part 2",
+    url: "/privacy-guides/advanced-privacy-and-anonymity-part-2/"
+  },
+  {
+    title: "Advanced Privacy and Anonymity Using VMs, VPN’s, Tor – Part 3",
+    url: "/privacy-guides/advanced-privacy-and-anonymity-part-3/"
+  },
+  {
+    title: "Advanced Privacy and Anonymity Using VMs, VPN’s, Tor – Part 4",
+    url: "/privacy-guides/advanced-privacy-and-anonymity-part-4/"
+  }
+]
 date: 2013-10-23T12:33:33+00:00
 layout: guides-details
 ---
