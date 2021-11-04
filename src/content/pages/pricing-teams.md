@@ -48,7 +48,7 @@ IVPN Pro Pricing for businesses:
 </table>
 </div>
 
-Email us [team-support@ivpn.net](mailto:team-support@ivpn.net) to purchase IVPN team accounts for your business.
+[Email us](mailto:team-support@ivpn.net) to purchase IVPN team accounts for your business.
 
 ---
 
@@ -79,7 +79,7 @@ IVPN Pro Pricing for nonprofits:
 
 To qualify for this discount, your organisation must be a verified nonprofit.
 
-Email us [team-support@ivpn.net](mailto:team-support@ivpn.net) to purchase IVPN non-profit team accounts.
+[Email us](mailto:team-support@ivpn.net) to purchase IVPN non-profit team accounts.
 
 ## IVPN Pro team account benefits
 
@@ -105,6 +105,6 @@ Email us [team-support@ivpn.net](mailto:team-support@ivpn.net) to purchase IVPN 
 * Transparent ownership and team
 * Strong ethics: no trackers, no false promises, no surveillance ads
 
-Any questions remaining? Contact [team-support@ivpn.net](mailto:team-support@ivpn.net) us.
+Any questions remaining? [Contact us](mailto:team-support@ivpn.net).
 
 These offers are valid for businesses and organisations purchasing IVPN accounts for their team members. Reselling of IVPN accounts is prohibited as per our Terms of Service. 
