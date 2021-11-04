@@ -4,8 +4,12 @@ author: mirimir (gpg key 0x17C2E43E)
 url: /privacy-guides/online-privacy-through-opsec-and-compartmentalization-part-3/
 section: Advanced
 weight: 110
-nextArticles:
-  - /privacy-guides/online-privacy-through-opsec-and-compartmentalization-part-4/
+articles: [
+  {
+    title: "Online Privacy Through OPSEC and Compartmentalization: Part 4",
+    url: "/privacy-guides/online-privacy-through-opsec-and-compartmentalization-part-4/"
+  }
+]
 date: 2017-09-05T11:59:24+00:00
 layout: guides-details
 ---

@@ -4,8 +4,12 @@ author: Ed Holden
 url: /privacy-guides/why-use-tor-with-a-vpn-service/
 section: Basic
 weight: 80
-nextArticles:
-  - /privacy-guides/will-a-vpn-protect-me/
+articles: [
+  {
+    title: "Will a VPN Protect Me? Defining Your Threat Model",
+    url: "/privacy-guides/will-a-vpn-protect-me/"
+  }
+]
 date: 2013-10-23T13:55:43+00:00
 layout: guides-details
 ---
