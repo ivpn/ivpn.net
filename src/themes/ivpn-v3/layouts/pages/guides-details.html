@@ -13,7 +13,7 @@
         {{ .Content | markdownify }}
         {{ if isset .Params "articles" }}
         <br><br>
-        <h3>Related Articles</h3>
+        <h3>Next Articles</h3>
         <ul>
             {{ range .Params.articles }}
             <li>
@@ -21,8 +21,14 @@
             </li>
             {{ end }}
         </ul>
-        <br>
         {{ end }}
+        <div class="more-info more-info__privacy-guides">
+            <section>
+                <h4>Here to learn?</h4>
+                <p>Consult our guides for increasing your privacy and anonymity.</p>
+                <a href="/privacy-guides/">IVPN Privacy Guides</a>
+            </section>
+        </div>
     </div>
 </section>
 

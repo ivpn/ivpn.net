@@ -4,10 +4,20 @@ author: Ed Holden
 url: /privacy-guides/an-introduction-to-privacy-anonymity/
 section: Basic
 weight: 30
-nextArticles: 
-  - /privacy-guides/an-introduction-to-tor-vs-i2p/
-  - /privacy-guides/applying-risk-management-to-privacy/
-  - /privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/
+articles: [
+  {
+    title: "An Introduction to Tor vs I2P",
+    url: "/privacy-guides/an-introduction-to-tor-vs-i2p/"
+  },
+  {
+    title: "Applying Risk Management to Privacy",
+    url: "/privacy-guides/applying-risk-management-to-privacy/"
+  },
+  {
+    title: "Creating a VM within a hidden truecrypt partition",
+    url: "/privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/"
+  }
+]
 date: 2013-10-23T12:42:14+00:00
 layout: guides-details
 ---

@@ -8,6 +8,10 @@
         margin-top: 125px;
         margin-left: -12px;
 
+        &__privacy-guides {
+            margin-top: 75px;
+        }
+
         section {
             @include grid-col($col: 12, $gutter: $default-grid-gutter);
 
