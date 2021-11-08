@@ -67,9 +67,28 @@ export default {
             hostedFields: undefined,
             threeDSecure: undefined,
             initialized: false,
-
             ccValid: false,
             formValid: false,
+            errorMessages: {
+                "authenticate_error": "An error occurred within the 3D Secure authentication system. Please try again.",
+                "authenticate_failed": "Incorrect 3D Secure password or 3D Secure authentication timed out. Please try again.",
+                "authenticate_signature_verification_failed": "An error occurred during the lookup and the returned authentication message is no longer secure. Please try again.",
+                "authenticate_unable_to_authenticate": "A downstream error occurred with the card-issuing bank that caused the 3D Secure authentication to fail. Please try again.",
+                "authentication_unavailable": "The card network is unavailable to verify the card or 3D Secure authentication timed out. Please try again.",
+                "lookup_error": "An error occurred during the lookup and caused 3D Secure authentication to fail.",
+                "lookup_not_enrolled": "Card is not enrolled in 3D Secure.",
+                "unsupported_card": "Unsuported card type for 3D Secure authentication.",
+                "unsupported_account_type": "Unsuported card type for 3D Secure authentication.",
+                "unsupported_three_d_secure_version": "Required 3D Secure version is not supported.",
+                "authentication_bypassed": "Card was issued by a bank where 3D Secure authentication steps are bypassed.",
+                "challenge_required": "The issuer is requiring a challenge to complete the 3D Secure authentication.",
+                "authenticate_rejected": "The issuer has rejected the 3D Secure authentication without issuing a challenge.",
+                "authenticate_frictionless_failed": "The issuer is not allowing the customer to complete a 3D Secure challenge.",
+                "lookup_failed_acs_error": "An error ocurred in the issuer's system during the 3D Secure lookup and caused the authentication to fail.",
+                "authenticate_failed_acs_error": "An error ocurred in the issuer's system during the 3D Secure challenge and caused the authentication to fail.",
+                "lookup_card_error": "There was an issue with validating card by mpi provider.",
+                "lookup_server_error": "There was an issue with directory server."
+            },
         };
     },
 
@@ -189,7 +208,12 @@ export default {
                             return;
                         }
 
-                        const err = new Error("verification failed");
+                        var errorMessage = "verification failed";
+                        if (this.errorMessages[payload.threeDSecureInfo.status]) {
+                            errorMessage = "verification failed - " + this.errorMessages[payload.threeDSecureInfo.status];
+                        }
+
+                        const err = new Error(errorMessage);
                         console.error(err);
                         rejectionFunc(err);
                         return;
