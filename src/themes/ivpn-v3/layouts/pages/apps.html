@@ -37,7 +37,7 @@
                         <a href="{{ .github }}" class="cta ">View source on GitHub</a>
                     </p>
                     {{ with .checksum }}
-                    <p>
+                    <p class="checksum">
                         {{ range . }}
                         {{ .title }}: {{ .value }}<br>
                         {{ end }}
