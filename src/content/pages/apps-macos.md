@@ -9,13 +9,13 @@ layout: apps
 image: apps/macos-app
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/macos/bin/IVPN-3.3.30.dmg,
+    download: https://repo.ivpn.net/macos/bin/IVPN-3.4.0.dmg,
     github: https://github.com/ivpn/desktop-app,
     changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: 7155967dda8f53580ab2d158fa57b447efe0c40a29f28b884bf33fc0f8fcb12d
+            value: ca9d45f7df2eb95fa5f57ada9012d6add95113635b74f21df36c40725687b3f2
         }
     ]
 }]
