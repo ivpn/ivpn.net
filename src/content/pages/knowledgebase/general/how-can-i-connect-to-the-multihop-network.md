@@ -10,12 +10,35 @@ weight: 170
 ---
 # How can I connect to the Multi-hop network?
 
-The Multi-hop network is compatible with any OpenVPN client, including Viscosity, Tunnelblick, OpenVPN Connect for iOS/Android etc.
-
 <div markdown="1" class="notice notice--info">
-These instructions are not required when using the official IVPN client. Simply select the Multi-hop tab on the main screen.
-<p>Multi-hop is available on IVPN Pro accounts and limited to OpenVPN connections at this time.</p>
+These instructions are not required when using the official <a href="/apps/">IVPN client</a>. Simply select the Multi-hop tab on the main screen. The Multi-hop feature is available in our Pro plan.
 </div>
+
+The Multi-hop network is compatible with any WireGuard and OpenVPN clients.
+
+### WireGuard
+
+Every WireGuard server has a unique port number reserved for Multi-hop connections which can be found on our [server status](/status/) page.
+
+Choose an Exit-hop server for your Multi-hop connection and note its port number and public key.
+
+![](/images-static/uploads/wireguard-multihop.jpg)
+
+In your WireGuard config **[Peer]** section, **Endpoint** field, specify the hostname of the selected Entry-hop server with the noted previously port number and the public key of the Exit-hop server in the **PublicKey** field.
+
+Below, is an example of the WireGuard multi-hop connection config with Entry server in Ukraine and Exit server in Austria:
+
+>[Interface]<br>
+>PrivateKey = *****<br>
+>Address = 172.x.y.z/32, fd00:4956:504e:ffff::x.y.z/128<br>
+>DNS = 172.16.0.1<br><p>
+>[Peer]<br>
+>PublicKey = 83LUBnP97SFpnS0y1MpEAFcg8MIiQJgW1FRv/8Mc40g=<br>
+>AllowedIPs = 0.0.0.0/0, ::/0<br>
+>Endpoint = ua.wg.ivpn.net:25601<br>
+>PersistentKeepalive = 25
+
+### OpenVPN
 
 To use Multi-hop, you need to modify the IVPN Account ID you enter when connecting. You simply need to append an '@' symbol and a location code and your traffic will be routed through the specified exit location (regardless of which server you connect to).
 

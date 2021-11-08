@@ -88,7 +88,7 @@ weight: 480
     Yes.
 
 14. #### Can I use Multi-hop with WireGuard?
-    Multi-hop is not available when used with WireGuard at this time.
+    Yes.
 
 15. #### What DNS server is used when connecting with WireGuard?
     We provide our own, secure and absolutely logless DNS server which is pushed and applied automatically to your device when you connect. The IP address of the standard DNS server is `172.16.0.1`. The AntiTracker DNS address is `10.0.254.2`. The AntiTracker's Hardcore Mode DNS address is `10.0.254.3`.
