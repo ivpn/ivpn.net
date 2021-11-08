@@ -9,13 +9,26 @@ layout: apps
 image: apps/macos-app
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/macos/bin/IVPN-3.4.0.dmg,
+    downloads: [
+        {
+            cta: Intel,
+            url: "https://repo.ivpn.net/macos/bin/IVPN-3.4.0.dmg"
+        },
+        {
+            cta: Apple Silicon,
+            url: https://repo.ivpn.net/macos/bin/IVPN-3.4.0-arm64.dmg
+        }
+    ],
     github: https://github.com/ivpn/desktop-app,
     changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
         {
-            title: SHA256,
+            title: SHA256 Intel,
             value: ca9d45f7df2eb95fa5f57ada9012d6add95113635b74f21df36c40725687b3f2
+        },
+        {
+            title: SHA256 Apple Silicon,
+            value: 8a1f4bb2c01f289b2ca241b86c0b5eec4b1225de06777d076d2ef534e20e7481
         }
     ]
 }]
