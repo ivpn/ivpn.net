@@ -112,6 +112,10 @@
                         <em>Public Key</em>
                         {{ server.wg_public_key || "N/A" }}
                     </div>
+                    <div>
+                        <em>MultiHop Port</em>
+                        {{ server.multihop_port || "N/A" }}
+                    </div>
                 </div>
             </div>
         </main>
