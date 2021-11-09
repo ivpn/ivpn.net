@@ -3,7 +3,9 @@ title: IVPN business and nonprofit teams pricing
 description: We offer discounts for businesses and nonprofit organizations that need a trustworthy VPN for their teams.
 url: /pricing-teams/
 ---
-# IVPN for businesses
+# IVPN for teams
+
+## IVPN for businesses
 
 IVPN is well suited for distributed team members to improve their privacy from unwanted data collection and data security on untrusted networks. We offer volume discounts, administrative tools and 2FA on demand. We cannot provide dedicated servers/IPs or facilitate access to corporate networks.
 
@@ -50,9 +52,7 @@ IVPN Pro Pricing for businesses:
 
 [Email us](mailto:team-support@ivpn.net) to purchase IVPN team accounts for your business.
 
----
-
-# IVPN for nonprofit organisations
+## IVPN for nonprofit organisations
 
 We offer steep discounts for nonprofit organizations that need a trustworthy VPN for their members.
 
