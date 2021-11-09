@@ -5,11 +5,9 @@ url: /pricing-teams/
 ---
 # IVPN for teams
 
-## IVPN for businesses
-
 IVPN is well suited for distributed team members to improve their privacy from unwanted data collection and data security on untrusted networks. We offer volume discounts, administrative tools and 2FA on demand. We cannot provide dedicated servers/IPs or facilitate access to corporate networks.
 
-IVPN Pro Pricing for businesses:
+IVPN Pro pricing for companies:
 
 <div class="price-box">
 <table>
@@ -50,7 +48,7 @@ IVPN Pro Pricing for businesses:
 </table>
 </div>
 
-[Email us](mailto:team-support@ivpn.net) to purchase IVPN team accounts for your business.
+[Email us](mailto:team-support@ivpn.net) to purchase IVPN team accounts for your company.
 
 ## IVPN for nonprofit organisations
 
