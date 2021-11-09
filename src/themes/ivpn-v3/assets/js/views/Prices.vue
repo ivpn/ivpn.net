@@ -40,6 +40,7 @@
                 </div>
             </price-box>
         </div>
+        <p>Review pricing for business or nonprofit teams <a href="/pricing-teams/">here</a>.</p>
         <section>
             <h2>All IVPN plans include:</h2>
             <ul>
