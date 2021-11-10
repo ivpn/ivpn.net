@@ -10,7 +10,7 @@ categories:
   - Under the Hood	
 tags:
   - Apps
-date: 2021-11-11T09:35:00.000Z
+date: 2021-11-10T09:35:00.000Z
 thumbnailImage: /images-static/uploads/silicon.png
 ---
 We have tested the battery consumption rate of the IVPN app with constant VPN connectivity using two protocols (WireGuard and OpenVPN) on two different app builds (M1 and Intel). We concluded that using a dedicated Apple silicon app build with WireGuard protocol can offer up to 22% increase in battery life over OpenVPN on Intel build version when bandwidth is not limited. This translates to up to 2,5 hours of extra use time on an M1 Macbook Air. In contrast, a test with artificial speed limits demonstrated only a modest (2%) improvement. Read on for detailed results. 
