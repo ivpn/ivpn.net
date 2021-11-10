@@ -10,7 +10,7 @@ categories:
 tags:
   - Apps
   - Security
-date: 2021-11-08T08:00:00.000Z
+date: 2021-11-09T08:00:00.000Z
 thumbnailImage: /images-static/uploads/thumb-2x.png
 ---
 Kill switch and WireGuard Multi-hop options are now available in the latest version of our iOS app (v2.5.0).  
