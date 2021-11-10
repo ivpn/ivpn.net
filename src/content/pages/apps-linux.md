@@ -156,23 +156,32 @@ AUR - ArchLinux User Repository. Can be used by distributions based on ArchLinux
 Base package: [ivpn](https://aur.archlinux.org/packages/ivpn/)  
 UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)  
 
+Using a AUR helper/Pacman wrapper  automates the installation process:
+
+{{< highlight shell >}}
+$ yay -S ivpn
+$ yay -S ivpn-ui
+{{< /highlight >}}
+
+Note: Other AUR helper/Pacman wrapper utilities are available.
+
 ## Install from Binaries {#binaries}
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.3.30_amd64.deb)  
-SHA256: 89d20099b8e36b704106074c60a89ff189ff6e99e999a3ae748801b3ba76bd07  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.4.0_amd64.deb)  
+SHA256: fad328c95679c983d162d117e909c4c0b5eacd7b5dd54b8de7e1a1c4dbeca64c  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.3.30_amd64.deb)  
-SHA256: 229d70cfcb7bee5a7a888b5864797a5fec09cbd320f4d1a0c374cd30b17b2452  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.4.0_amd64.deb)  
+SHA256: 7e50c58ed16c5817e79b253e7b198a76c4660218a1e236598a59a288eaaf89e3  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.3.30-1.x86_64.rpm)  
-SHA256: 7b432c77c85bee2267bbbb218ee761b8c036208b14350476afa7179b133ad0a3  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.4.0-1.x86_64.rpm)  
+SHA256: 933c397078be24eba87cce63c3d49b507e62efb623a34f9349725461de719130  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.3.30-1.x86_64.rpm)  
-SHA256: f7a77300bcc261af44e0d146970a89a4598d54be3161b2913516051d57f13a52  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.4.0-1.x86_64.rpm)  
+SHA256: cf95c4e07912aa03c7596d56b31d323664efbf44469cc9fee54771800d96d1db  
 
 ## Install from Source Code {#source}
 

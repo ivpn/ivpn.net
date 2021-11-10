@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2021-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2021-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-Rwanda flexes muscles in fight against terror in Mozambique
-Kigali has turned around conflict that held up Total LNG project but there is unease over its motives
+Brussels to weaken its sustainable finance ‘green standard’
+EU taxonomy is likely to include nuclear power and natural gas, which will fuel allegations of greenwashing
 
-Global IB exam chief: how jazz provides lessons in management
-The International Baccalaureate’s Olli-Pekka Heinonen believes that leadership centres on implementation, not strategy
+Zillow was not smarter than the housing market
+The future proves hard to predict, again
 
-‘Fat finger’ $24m charge exposes fragility in crypto market
-Erroneous fee is refunded, in proof to DeFi proponents of shared community values
+Financing the fight against climate change
+Gulf states plan for net zero but want to keep oil flowing, and banks are under fire for greenwashing
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmFZP9oACgkQisFrnrZH
-umlEGAgAoCyPnhZEQemxRf8SX3OHZ7INJp32KHPUA3MwEC1BiEve8EWHngx3WhQs
-gWGcU1gGkx36jA2h8FrKQuGUOTJR6fV9LwLWvQz3D2NhWCpfNZ3wbgaYNCZOfpyz
-UZarXHF2ARF9kTOMKA1Z4/RYfGsQQcD1xVqNcEyeADwojkl1KGHIlHlOwv4BAzsy
-lxIJeYmoVR4XeGNFgSwzeMR0W4hiFIl9Nd4g9RE8Cuh5r7AOC98h+gSc81RTSZiB
-Sav33Yn83qgmkjQRaATKAzMbp8NKTvL+RaTOiHeMu8TghYT8LPAlPYt+G+ufuH14
-k4XU6hrohnVSJrPe4DtRUNxmwsxKrQ==
-=l9H3
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmGCLGsACgkQisFrnrZH
+umnukwgAtsq5PonyskGxo3UhmPI+F6V8O/IU8+HMTcReOqZCCePdPDTgmlHX8HKo
+hf7q0YLxCdZcy4at+/o7cdBR8pgN+pjItH2LxtXsixExeeBF2XcwwG2KAZC0437C
+WUwtMUVoISkbmln3lF9uVrVZ/V3fmrbVUbsjyr7ROVOIkdLG4XQ1wtfxJxFkzVuV
+PsBF8hLekGoWsCedg2fNiFM0Xfnn+y9rsmPqRyeiewMVmhtRCeep6Je0eZ37jTYU
+29y00SM6ojz9g8Uopa4zXvrs/atP08BBXv7Rwz4h+fDa/iaMAIZGhEGXmc1M4Rex
+QCzXjl34hMfGJlzHynF7fRKH7I+BCg==
+=0hfx
 -----END PGP SIGNATURE-----
 
 

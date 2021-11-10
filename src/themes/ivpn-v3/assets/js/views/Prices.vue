@@ -2,8 +2,7 @@
     <div>
         <h1 class="app">Select IVPN Plan</h1>
         <p>
-            We offer different plans to better suit your needs.
-            <br />Please select one to create your account. You'll be able to switch it anytime in the future with one click.
+            Select a plan to create your account instantly. You can switch between IVPN Standard and Pro any time in the future.
         </p>
 
         <div class="prices">
@@ -41,22 +40,26 @@
                 </div>
             </price-box>
         </div>
+        <p>Review pricing for business or nonprofit teams <a href="/pricing-teams/">here</a>.</p>
         <section>
             <h2>All IVPN plans include:</h2>
             <ul>
                 <li>Anonymous registration - no email required</li>
-                <li>No logs, audited VPN service</li>
-                <li>
-                    Open-source applications for Android, iOS, macOS, Windows
-                    and Linux
-                </li>
+                <li>Open-source applications for Android, iOS, macOS, Windows and Linux</li>
                 <li>Private DNS servers</li>
                 <li>Cash, Monero and Bitcoin payment options for better anonymity</li>
-                <li>Money back guarantee for 30 days</li>
-                <li>
-                    Killswitch/firewall and obfuscation methods where applicable
-                </li>
+                <li>Money-back guarantee for 30 days</li>
+                <li>Killswitch/firewall and obfuscation methods where applicable</li>
                 <li>Router, NAS support</li>
+            </ul>
+            <br>
+            <h2>Why trust IVPN?</h2>
+            <ul>
+                <li>No logs, regularly audited VPN service</li>
+                <li>No customer data stored</li>
+                <li>Clear privacy policy</li>
+                <li>Transparent ownership and team</li>
+                <li>Strong ethics: no trackers, no false promises, no surveillance ads</li>
             </ul>
         </section>
     </div>

@@ -10,11 +10,11 @@ weight: 150
 ---
 # Do you offer a kill switch or VPN firewall?
 
-Yes, the IVPN client software (Windows, macOS X 10.10+, Linux, iOS and Android) has an integrated firewall that offers the most advanced 'kill switch' solution on the market, ensuring your privacy is protected in every possible scenario. If you are interested in understanding why our solution is so much more secure than a traditional kill switch please continue reading.
+Yes, the IVPN desktop client software (Windows, macOS & Linux) has an integrated firewall that offers the 'kill switch' solution ensuring your privacy is protected in every possible scenario. If you are interested in knowing more about our kill switch please continue reading.
 
 An Internet kill switch is a mechanism to prevent data from leaking outside of the VPN tunnel when the tunnel fails for any reason. Traditionally the kill switch software will monitor the Internet connection of the computer on which it is running and either block all traffic or disconnect the network connection if it detects that the VPN has failed.
 
-IVPN has implemented a mechanism called the IVPN firewall that is more secure and robust than any traditional kill switch. Once enabled the IVPN Firewall integrates deep into the operating system (using Microsoft’s own WFP API on Windows ) and filters all network packets. The Firewall is independent of the IVPN client, so even if a component of the IVPN Client crashes filtering will continue uninterrupted. The IVPN Firewall can be configured to switch on automatically during a VPN connection, or you can enable it manually when you need it. You can also set the 'always-on' IVPN Firewall to protect the system all the time , even before Windows is booted. This will ensure that no traffic will bypass the VPN tunnel even during the boot-up phase.
+IVPN has implemented a secure and robust mechanism called the IVPN firewall. Once enabled the IVPN Firewall integrates deep into the operating system (using Microsoft’s own WFP API on Windows, pf on macOS & iptables on Linux) and filters all network packets. The Firewall is independent of the IVPN client, so even if a component of the IVPN Client crashes filtering will continue uninterrupted. The IVPN Firewall can be configured to switch on automatically during a VPN connection, or you can enable it manually when you need it. You can also set the 'always-on' IVPN Firewall to protect the system all the time, even before the OS is booted. This will ensure that no traffic will bypass the VPN tunnel even during the boot-up phase.
 
 Many events could cause the network to be reconfigured suddenly and without notice which could expose your personal IP address. For example;
 
@@ -31,7 +31,7 @@ A traditional kill switch solution needs to react to all of these events and do 
 
 ### Boot time protection
 
-Native and third-party Windows services can use your internet connection even before the system is fully booted. Any application installed on your system has the opportunity to connect to a server on the Internet and to exchange data long before you are able to connect to a VPN. However, the IVPN Firewall can be configured to protect your system all the time, ensuring that no traffic will leak outside the VPN tunnel even when the IVPN Client, its service, or even Windows is not fully booted. Such traffic will just be filtered out until everything finishes loading, and the connection with the VPN is established. When using a traditional kill switch, it is only effective once the operating system starts the application.
+Native and third-party services can use your internet connection even before the system is fully booted. Any application installed on your system has the opportunity to connect to a server on the Internet and to exchange data long before you are able to connect to a VPN. However, the IVPN Firewall can be configured to protect your system all the time, ensuring that no traffic will leak outside the VPN tunnel even when the IVPN Client, its service, or even the operating system is not fully booted. Such traffic will just be filtered out until everything finishes loading, and the connection with the VPN is established. When using a traditional kill switch, it is only effective once the operating system starts the application.
 
 ### IPv6
 
@@ -43,9 +43,17 @@ It is important to understand that when IPv6 is enabled on the network you are c
 
 This IPv6 traffic will most likely silently bypass your VPN tunnel.
 
-As a result if you have no control over the configuration of the router you are connected to (e.g. a public Wi-Fi hotspot), or when the default configuration of your router is set to announce any IPv6 network your ISP has allocated to you and you haven’t disabled IPv6 in your Windows OS (which is enabled by default), you may find that you have IPv6 support which is a major potential threat to your privacy.
+As a result if you have no control over the configuration of the router you are connected to (e.g. a public Wi-Fi hotspot), or when the default configuration of your router is set to announce any IPv6 network your ISP has allocated to you and you haven’t disabled IPv6 in your OS (which is enabled by default), you may find that you have IPv6 support which is a major potential threat to your privacy.
 
 When the IVPN Firewall is enabled it is impossible for any IPv6 traffic to leak outside of the VPN tunnel, giving you absolute peace of mind.
+
+### DNS
+
+When you connect using our native apps your system's DNS is replaced with IVPN DNS servers. This is done to ensure that neither your ISP nor anyone else can eavesdrop on what websites you visit.
+
+However, some 3rd-party applications or web browsers are configured to use their own DNS. When using such apps, your system's DNS is generally ignored, essentially causing a DNS leak. 
+
+The IVPN Firewall adds rules to your system to block all DNS queries that are sent to a non-IVPN DNS server making any DNS leaks impossible.
 
 ### WebRTC
 
@@ -59,8 +67,8 @@ All software has bugs and may crash for a variety of reasons. For example, out o
 
 Software designed for security must fail-safe in the event of a crash, fully maintaining the security of the host system.
 
-The IVPN Firewall ensures that if the VPN client, any part of the tunnel or Windows OS crashes, no traffic will leave the computer until IVPN Firewall is disabled manually or a new VPN tunnel is established.
+The IVPN Firewall ensures that if the VPN client, any part of the tunnel or your desktop OS crashes, no traffic will leave the computer until IVPN Firewall is disabled manually or a new VPN tunnel is established.
 
 ### Conclusion
 
-The IVPN firewall is the most secure solution available, far more than any 'kill switch' solution. From ensuring your privacy at boot time to blocking IPv6 and protecting against leaks during a software crash, you can always rely on the IVPN firewall to protect your privacy today and into the future.
+Using the IVPN firewall enhances your security and privacy steps further. From ensuring your privacy at boot time to blocking IPv6 and protecting against IP, DNS and traffic leaks during a software crash.

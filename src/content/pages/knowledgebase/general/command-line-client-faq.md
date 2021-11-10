@@ -104,7 +104,7 @@ weight: 610
     ```
 
     <div markdown="1" class="notice notice--warning">
-    Entry and exit servers must be in different countries.  Multi-hop is available for OpenVPN connections.
+    Entry and exit servers must be in different countries.
     </div>
 
     Multi-hop is available with IVPN Pro plans. [Upgrade](/signup/) today.

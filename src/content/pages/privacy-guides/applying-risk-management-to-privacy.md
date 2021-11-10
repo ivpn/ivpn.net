@@ -4,10 +4,20 @@ author: Ed Holden
 url: /privacy-guides/applying-risk-management-to-privacy/
 section: Basic
 weight: 50
-nextArticles:
-  - /privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/
-  - /privacy-guides/how-to-perform-a-vpn-leak-test/
-  - /privacy-guides/how-to-verify-physical-locations-of-internet-servers/
+articles: [
+  {
+    title: "Creating a VM within a hidden truecrypt partition",
+    url: "/privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/"
+  },
+  {
+    title: "How to perform a VPN leak test",
+    url: "/privacy-guides/how-to-perform-a-vpn-leak-test/"
+  },
+  {
+    title: "How to verify physical locations of Internet servers",
+    url: "/privacy-guides/how-to-verify-physical-locations-of-internet-servers/"
+  }
+]
 date: 2013-10-23T13:53:54+00:00
 layout: guides-details
 ---

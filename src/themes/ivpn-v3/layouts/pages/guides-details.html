@@ -11,7 +11,24 @@
         </p>
         <br>
         {{ .Content | markdownify }}
-        {{- partial "more-info.html" . -}}
+        {{ if isset .Params "articles" }}
+        <br><br>
+        <h3>Next Articles</h3>
+        <ul>
+            {{ range .Params.articles }}
+            <li>
+                <a href="{{ .url }}">{{ .title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+        <div class="more-info more-info__privacy-guides">
+            <section>
+                <h4>Here to learn?</h4>
+                <p>Consult our guides for increasing your privacy and anonymity.</p>
+                <a href="/privacy-guides/">IVPN Privacy Guides</a>
+            </section>
+        </div>
     </div>
 </section>
 

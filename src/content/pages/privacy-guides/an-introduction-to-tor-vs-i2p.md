@@ -4,10 +4,20 @@ author: Ed Holden
 url: /privacy-guides/an-introduction-to-tor-vs-i2p/
 section: Basic
 weight: 40
-nextArticles: 
-  - /privacy-guides/applying-risk-management-to-privacy/
-  - /privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/
-  - /privacy-guides/how-to-perform-a-vpn-leak-test/
+articles: [
+  {
+    title: "Applying Risk Management to Privacy",
+    url: "/privacy-guides/applying-risk-management-to-privacy/"
+  },
+  {
+    title: "Creating a VM within a hidden truecrypt partition",
+    url: "/privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/"
+  },
+  {
+    title: "How to perform a VPN leak test",
+    url: "/privacy-guides/how-to-perform-a-vpn-leak-test/"
+  }
+]
 date: 2013-10-23T13:48:54+00:00
 layout: guides-details
 ---

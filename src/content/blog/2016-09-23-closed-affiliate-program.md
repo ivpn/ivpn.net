@@ -80,7 +80,7 @@ comments:
   - author: parbriz bmw seria 3 2013
     date: 2020-04-16T02:16:30+02:00
     content: |
-      Thanks for another great post. Where else may anybody get that kind of information in such an ideal means of writing? I've a presentation subsequent week, and I'm on the search for such info. <a href="https://anunturi-parbrize.ro/parbriz-bmw-7.html" rel="nofollow ugc">https://anunturi-parbrize.ro/parbriz-bmw-7.html</a>
+      Thanks for another great post. Where else may anybody get that kind of information in such an ideal means of writing? I've a presentation subsequent week, and I'm on the search for such info.</a>
 
 ---
 A few weeks ago, we communicated to affiliates that our affiliate program would be closing. For those interested, this post provides some background on how we reached that decision.
@@ -93,11 +93,10 @@ One of the most offensive practices is the offer to pay for top rankings. In som
 
 Why does this matter? When someone goes to Google and asks for the 'Best VPN' they expect to find information aiding them in identifying the best VPN for their needs. Not only would the above practices compromise this, but in some cases, people are using VPNs in circumstances where compromising their anonymity could be life threatening. For this reason alone, its imperative that companies advertising VPN services are honest about their relationship with the brands they are advocating. In the USA this principle is encoded in [FTC guidelines][1]. 
 
-In May of this year, we were contacted by [That one privacy site][2] stating that they had found that several of our affiliates had not implemented a clear and conspicuous disclaimer, even though it was required in our terms of service. We proceeded to audit our affiliates, and discovered that less than 5% were in compliance. It was a major failing on our part to have not caught this earlier. 
+In May of this year, we were contacted by That One Privacy Site stating that they had found that several of our affiliates had not implemented a clear and conspicuous disclaimer, even though it was required in our terms of service. We proceeded to audit our affiliates, and discovered that less than 5% were in compliance. It was a major failing on our part to have not caught this earlier. 
 
 We sent out an email asking all affiliates to implement the disclosure within 6 weeks. The response was depressing, with only a handful willing to comply, and many on the offensive. Indeed, too few compliant affiliates remained to justify the overhead of running an affiliate program. We would rather focus on building a better VPN service. 
 
 We would like to thank all honest and hard working affiliates who worked with us over the last five years, and helped to grow IVPN into the service it is today.
 
  [1]: https://www.ftc.gov/sites/default/files/attachments/press-releases/ftc-publishes-final-guides-governing-endorsements-testimonials/091005revisedendorsementguides.pdf
- [2]: https://thatoneprivacysite.net/
