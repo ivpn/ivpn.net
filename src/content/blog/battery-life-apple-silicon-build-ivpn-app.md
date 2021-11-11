@@ -30,7 +30,7 @@ Conducting eight test runs with active VPN connection, combination of:
 - Protocol a/b: OpenVPN, WireGuard
 - Speed limit a/b: Yes (21 Mbps), No 
 - Build a/b: Intel, m1 Apple Silicone  
-` `
+<br>
 
 Further notes for testing environment:
 - Results are derived from total seconds measured until battery is fully discharged 
