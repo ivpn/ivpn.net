@@ -22,7 +22,7 @@ layout: guides-details
 The [Tor network][1] has been a useful tool for the privacy-aware internet users since 2002. While it has shown itself to be an invaluable tool in protecting one's privacy through anonymity, it is anything but a panacea. Today we are going to examine two of the known vulnerabilities in the Tor system and then see how using a trustworthy VPN service in conjunction with Tor can mitigate many of those vulnerabilities thus substantially reducing your privacy risk surface.
 
 > Note: While Tor is decentralized and designed in a way that you don't have to trust a single entity, most VPN services are run by centralized organizations. This article assumes you have picked a VPN service after carefully vetting them and you trust its operators to honor no-logs promises. 
-> See our guide on vetting VPN providers [here].(https://www.ivpn.net/privacy-guides/18-questions-to-ask-your-vpn-service-provider/).  
+> See our guide on vetting VPN providers [here](https://www.ivpn.net/privacy-guides/18-questions-to-ask-your-vpn-service-provider/).  
 > For an in-depth guide on using Tor with a VPN see [Advanced Privacy and Anonymity - Part 3](https://www.ivpn.net/privacy-guides/advanced-privacy-and-anonymity-part-3/). 
 
 
