@@ -85,7 +85,7 @@ In contacting providers with presales questions, start with basic questions, suc
 
 How prospective VPN providers answer your questions can be as informative as the answers they give. You want answers that are prompt, complete, clear and accurate. Vague or incorrect answers to technical questions imply dishonesty and/or incompetence. Delayed answers don't bode well for future customer support.
 
-Here are some additional questions that you might ask, followed by expected answers and explanations. For technical questions, the OpenVPN [manual][9] and [How-to][10], and WireGuard's (official page)[https://www.wireguard.com] are useful resources.
+Here are some additional questions that you might ask, followed by expected answers and explanations. For technical questions, the OpenVPN [manual][9] and [How-to][10], and WireGuard's [official page](https://www.wireguard.com) are useful resources.
 
   1. [Is there a monthly bandwidth-usage limit?][11]
   2. [Do you throttle connections that use excessive bandwidth?][12]
