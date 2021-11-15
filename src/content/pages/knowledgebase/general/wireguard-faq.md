@@ -84,7 +84,7 @@ weight: 480
 12. #### Does Port Forwarding work with WireGuard?
     Port Forwarding cannot be used with WireGuard at this time.
 
-13. Does WireGuard support IPv6?
+13. #### Does WireGuard support IPv6?
     Yes.
 
 14. #### Can I use Multi-hop with WireGuard?
