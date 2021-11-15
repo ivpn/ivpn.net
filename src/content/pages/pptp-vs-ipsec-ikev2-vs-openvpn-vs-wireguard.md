@@ -189,8 +189,8 @@ layout: full-width
     <tr>
         <td>Due to the major security flaws, there is no good reason to choose PPTP other than device compatibility. If you have a device on which only PPTP is supported then you should consider how to encrypt data at other layers e.g. HTTPS.</td>
         <td>IKEv2 is an excellent choice, it is extremely fast, secure and reliable. In addition unlike OpenVPN it requires no additional software to be installed (in most cases) and is therefor the quickest to configure. If you have a threat model that includes sophisticated adversaries then you may want to consider OpenVPN due to the leaked NSA presentations discussed above.</td>
-        <td>OpenVPN is an excellent choice for all platforms. It is extremely fast, secure and reliable. Additionally, the IVPN Multi-hop network and port forwarding is only available when connecting via OpenVPN.</td>
-        <td>WireGuard® is an excellent choice and may be the best protocol for high speeds if you don't use the IVPN multi-hop network or port-forwarding. WireGuard® promises better security and faster speeds compared to existing solutions. Since its merge into Linux Kernel (v5.6) and the release of v1.0, we consider WireGuard® to be ready for wide-scale use.</td>
+        <td>OpenVPN is an excellent choice for all platforms. It is extremely fast, secure and reliable. Additionally, the IVPN port forwarding is only available when connecting via OpenVPN.</td>
+        <td>WireGuard® is an excellent choice and may be the best protocol for high speeds if you don't use the IVPN port forwarding. WireGuard® promises better security and faster speeds compared to existing solutions. Since its merge into Linux Kernel (v5.6) and the release of v1.0, we consider WireGuard® to be ready for wide-scale use.</td>
     </tr>
 </table>
 {{< / raw-html >}}
