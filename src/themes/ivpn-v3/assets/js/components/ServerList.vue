@@ -116,6 +116,10 @@
                         <em>MultiHop Port</em>
                         {{ server.multihop_port || "N/A" }}
                     </div>
+                    <div>
+                        <em>Line Speed / Configured Speed</em>
+                        {{ server.server_speed }}
+                    </div>
                 </div>
             </div>
         </main>
