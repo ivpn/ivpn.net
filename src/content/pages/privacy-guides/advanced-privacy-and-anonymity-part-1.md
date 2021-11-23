@@ -96,7 +96,7 @@ The key threats, and corresponding defenses, are:
       Forensic detection of encrypted data
     </td>
     <td>
-      Use <a title="Creating a VM within a hidden truecrypt partition" href="/privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/" target="_blank" rel="noopener noreferrer">hidden Truecrypt volumes</a> for plausible deniability (not included in these guides).
+      Use hidden VeraCrypt volumes for plausible deniability (not included in these guides).
     </td>
   </tr>
 </table>
@@ -112,9 +112,9 @@ However, it's unlikely that even the full setup described here would protect aga
 
 ### Using Tor
 
-As I write this, the Tor network is under extreme stress. Since August 20, [the number of Tor clients][6] has increased from about 0.5 million to over 4.0 million. Based on reports from [Fox-IT][7] and [TrendLabs][8], it appears that the approximately 3.5 million new Tor clients are part of a Mevade botnet. So far, these Mevade bots are not sending much traffic, and are stressing Tor primarily by querying its directory servers. See [this Tor Project blog post][9] for more.
+As I write this, the Tor network is under extreme stress. Since August 20, [the number of Tor clients][6] has increased from about 0.5 million to over 4.0 million (as of November 2021, 2.0 million per day on average). Based on reports from [Fox-IT][7] and [TrendLabs][8], it appears that the approximately 3.5 million new Tor clients are part of a Mevade botnet. So far, these Mevade bots are not sending much traffic, and are stressing Tor primarily by querying its directory servers. 
 
-At this point, this has probably not reduced the level of anonymity that Tor can provide. It's just made Tor slower and less reliable. However, if more than a few thousand of these bots were to become [relays][10], there would be cause for concern, because they could collude to deanonymize other Tor users. A recent paper by Tor researchers, [Johnson et al (2013) Users Get Routed: Traffic Correlation on Tor by Realistic Adversaries][11] analyzes the network's vulnerability to potential adversaries. I recommend periodically checking [the Tor Project blog][12] for status updates, and also checking Tor [client][6] and [relay][13] counts.
+At this point, this has probably not reduced the level of anonymity that Tor can provide. It's just made Tor slower and less reliable. However, if more than a few thousand of these bots were to become relays, there would be cause for concern, because they could collude to deanonymize other Tor users. A paper by Tor researchers, [Johnson et al (2013) Users Get Routed: Traffic Correlation on Tor by Realistic Adversaries][11] analyzes the network's vulnerability to potential adversaries. I recommend periodically checking [the Tor Project blog][12] for status updates, and also checking [Tor metrics][6] of client and relay counts.
 
 ### Summary
 
@@ -195,9 +195,9 @@ At this point, this has probably not reduced the level of anonymity that Tor can
 
 ### Acknowledgement
 
-These guides reflect my participation at [Wilders Security Forums][14] for the past few years. I acknowledge the administrators and moderators for the venue, and for their care and guidance. But mostly I acknowledge the Wilders' user community (especially fellow privacy lovers) for great answers, tough questions, and lively discussions.
+These guides reflect my participation at [Wilders Security Forums][13] for the past few years. I acknowledge the administrators and moderators for the venue, and for their care and guidance. But mostly I acknowledge the Wilders' user community (especially fellow privacy lovers) for great answers, tough questions, and lively discussions.
 
-I also acknowledge [IVPN][15] for invaluable support and encouragement.
+I also acknowledge [IVPN][14] for invaluable support and encouragement.
 
 Finally, I acknowledge the global open source community, without which none of this would have been possible.
 
@@ -206,13 +206,12 @@ Finally, I acknowledge the global open source community, without which none of t
  [3]: http://theinvisiblethings.blogspot.ru/2008/09/three-approaches-to-computer-security.html
  [4]: https://en.wikipedia.org/wiki/Threat_model
  [5]: /privacy-guides/applying-risk-management-to-privacy/
- [6]: https://metrics.torproject.org/users.html?graph=direct-users&start=2013-01-01&end=2013-12-31&country=all&events=off#direct-users
+ [6]: https://metrics.torproject.org
  [7]: http://blog.fox-it.com/2013/09/05/large-botnet-cause-of-recent-tor-network-overload/
  [8]: http://blog.trendmicro.com/trendlabs-security-intelligence/the-mysterious-mevade-malware/
  [9]: https://blog.torproject.org/blog/how-to-handle-millions-new-tor-clients
  [10]: https://metrics.torproject.org/network.html?graph=networksize&start=2013-01-01&end=2013-12-31#networksize
  [11]: http://www.ohmygodel.com/publications/usersrouted-ccs13.pdf
  [12]: https://blog.torproject.org/blog/
- [13]: https://metrics.torproject.org/network.html?graph=networksize&start=2013-01-01&end=2013-12-31#networksize
- [14]: https://www.wilderssecurity.com/
- [15]: /
+ [13]: https://www.wilderssecurity.com/
+ [14]: /

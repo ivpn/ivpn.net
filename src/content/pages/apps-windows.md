@@ -2,20 +2,20 @@
 title: IVPN for Windows - Open-source VPN app for your Windows PC
 description: IVPN for Windows offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for Windows
-subtitle: For Windows 8 / 10 (64-bit)
+subtitle: For Windows 8 / 10 / 11 (64-bit)
 url: /apps-windows/
 platform: windows
 layout: apps
 image: apps/windows-app-3.3.7
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.4.0.exe,
+    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.4.5.exe,
     github: https://github.com/ivpn/desktop-app,
     changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: 01d876ad506ccf9def6c8ded2c104b740bb3093d728ad52168aecf597113f7d4
+            value: 6569254e6368a20e306ff36d7bd49d90197f93a4dc71a98de56a5f23b48bdfda
         }
     ]
 }]

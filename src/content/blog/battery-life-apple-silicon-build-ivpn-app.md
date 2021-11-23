@@ -29,7 +29,7 @@ Testing battery drain time (100% to 0%) with machine unplugged
 Conducting eight test runs with active VPN connection, combination of:
 - Protocol a/b: OpenVPN, WireGuard
 - Speed limit a/b: Yes (21 Mbps), No 
-- Build a/b: Intel, m1 Apple Silicone  
+- Build a/b: Intel, M1 Apple silicon  
 <br>
 
 Further notes for testing environment:
