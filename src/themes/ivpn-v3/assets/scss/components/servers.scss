@@ -143,6 +143,15 @@
                                 margin-bottom: 0;
                             }
                         }
+
+                        .port-speed-label {
+                            display: inline-block;
+                            min-width: 88px;
+
+                            &:last-child {
+                                margin-left: 10px;
+                            }
+                        }
                     }
 
                     em {
