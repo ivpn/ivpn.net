@@ -117,8 +117,10 @@
                         {{ server.multihop_port || "N/A" }}
                     </div>
                     <div>
-                        <em>Port Speed / Configured Speed</em>
-                        {{ server.server_speed }}
+                        <em>
+                            <span class="port-speed-label">Port Speed</span>/<span class="port-speed-label">Configured Speed</span>
+                        </em>
+                        <span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[0] }}</span>/<span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[1] }}</span>
                     </div>
                 </div>
             </div>
