@@ -40,8 +40,7 @@ If you are unable to resolve a technical issue please submit your logs by follow
 ### iOS
 
 1. Launch the IVPN App and tap on the gear icon to access the `Settings` menu.
-3. Click on the `Protocol` and select `OpenVPN`.
-4. Return one step back, scroll down and have the `OpenVPN Logging` option enabled.
+2. Toggle `Diagnostic logs` switch On.
 5. Use the VPN software in such a way that the error may be logged e.g if you cannot connect then attempt to connect to the VPN.
 6. Access the Settings menu once again and click on the `Send Logs` button.
 

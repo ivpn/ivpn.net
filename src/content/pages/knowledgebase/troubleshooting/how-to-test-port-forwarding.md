@@ -22,7 +22,7 @@ You will need netcat installed on both computer A and computer B. Computer A and
 2.  Navigate to the client area and note the port assigned to you e.g. 40197
 3.  Note the IP address of the VPN server you are connected to using a website such as [dnsleaktest.com](https://www.dnsleaktest.com/).
 4.  Type the command below to have netcat listen on the first available port using the example range above (if you are using Windows firewall you may be prompted to allow netcat to communicate with public networks which you must approve for the test to work).
-    *   On linux:
+    *   On linux & macOS:
         ```
         nc -l 40197
         ```
