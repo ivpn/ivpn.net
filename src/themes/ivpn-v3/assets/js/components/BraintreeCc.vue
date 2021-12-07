@@ -206,6 +206,18 @@ export default {
                             return;
                         }
 
+                        // "lookup_not_enrolled"
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'N') {
+                            resolutionFunc(payload);
+                            return;
+                        }
+
+                        // "unsupported_card"
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled === null) {
+                            resolutionFunc(payload);
+                            return;
+                        }
+
                         var errorMessage = "verification failed";
                         if (this.errorMessages[payload.threeDSecureInfo.status]) {
                             errorMessage = "verification failed - " + this.errorMessages[payload.threeDSecureInfo.status];
