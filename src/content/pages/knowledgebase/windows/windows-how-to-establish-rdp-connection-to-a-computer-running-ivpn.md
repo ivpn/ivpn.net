@@ -16,7 +16,7 @@ If you would like to expose RDP on a system that is connected to our VPN you nee
 
 2.  Choose a server to connect to from our [server list](/status/). Connect to the VPN server and identify the IP address you are assigned when VPN connection is established. You can do this by visiting a site such as [dnsleaktest.com](https://www.dnsleaktest.com/). For example lets say it is `178.162.222.40`.
 
-3.  Change the RDP listening port on your host from the standard port of 3089 to the port you were assigned above (44897 in our example).
+3.  Change the RDP listening port on your host from the standard port of 3389 to the port you were assigned above (44897 in our example).
 
 4.  Click the Windows button. Type `regedit`. Navigate to `HKEY_LOCAL_MACHINES\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp`. Right-click `Port Number` and click `Modify`. Fill in new port number value.
 
