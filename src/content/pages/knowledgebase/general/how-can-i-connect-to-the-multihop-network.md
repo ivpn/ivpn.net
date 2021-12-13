@@ -11,7 +11,8 @@ weight: 170
 # How can I connect to the Multi-hop network?
 
 <div markdown="1" class="notice notice--info">
-These instructions are not required when using the official <a href="/apps/">IVPN client</a>. Simply select the Multi-hop tab on the main screen. The Multi-hop feature is available in our Pro plan.
+These instructions are not required when using the official <a href="/apps/">IVPN client</a>. Simply select the Multi-hop tab on the main screen.<br>
+The Multi-hop feature is available in our Pro plan. Entry and Exit-hop servers must be in different countries.
 </div>
 
 The Multi-hop network is compatible with any WireGuard and OpenVPN clients.
