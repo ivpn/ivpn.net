@@ -17,7 +17,7 @@ weight: 200
     See our in-depth [blog post](/blog/block-ads-and-beat-data-surveillance-with-ivpns-antitracker/) for more info on the subject.
 
 2.  #### How does it work?
-    The AntiTracker feature uses a specially configured DNS server to block domains from the publicly curated and continuously expanded [GitHub project blacklist](https://github.com/StevenBlack/hosts).
+    The AntiTracker feature uses a specially configured DNS server to block domains from a continuously updated block list ([OISD full](https://oisd.nl)).
 
 3.  #### How can I activate the AntiTracker?
     - On desktop apps for **macOS**, **Windows** and **Linux**, toggle the AntiTracker switch located below the IVPN Firewall switch on the right-side of the app.  
@@ -44,12 +44,12 @@ weight: 200
     The AntiTracker can also be enabled on routers and other manual connections by specifying the following DNS IP address - `10.0.254.2` (or `10.0.254.102` - when using the feature together with Multi-hop)
 
 7.  #### What is “Hardcore Mode”?
-    Hardcore Mode extends the AntiTracker feature further by completely blocking all IP addresses and services owned by the flagship bearers of the surveillance economy, such as Google and Facebook.
+    Hardcore Mode extends the AntiTracker feature further by completely blocking all IP addresses and services owned by the flagship bearers of the surveillance economy, Google and Facebook. 
 
     Do not be surprised to discover that everything linked to those corporations, starting from Youtube, Facebook, Instagram, Gmail and down to the widely used Google Search and services using their IP addresses will not work once you switch to Hardcore Mode.
 
 8.  #### How do I activate the Hardcore Mode?
-    If you are mentally prepared to fully cut any ties with those companies, follow the steps below:
+    If you are mentally prepared to fully any ties with those companies, follow the steps below:
 
     - On desktop apps **macOS**, **Windows** and **Linux**, click the `Settings` gear icon at the top of the app's main window, click the AntiTracker tab on the left, then check **Hardcore Mode**.  
 
