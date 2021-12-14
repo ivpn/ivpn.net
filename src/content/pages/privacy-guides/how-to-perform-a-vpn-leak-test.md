@@ -4,12 +4,12 @@ author: mirimir (gpg key 0x17C2E43E)
 url: /privacy-guides/how-to-perform-a-vpn-leak-test/
 section: Misc
 weight: 20
-date: 2016-02-24T13:48:40+00:00
+date: 2021-12-14T00:00:00+00:00
 layout: guides-details
 ---
 OK, so you've setup your VPN client. It runs, and there are no error messages. You can reach the Internet. But how can you ensure that all of your traffic is routed through the VPN tunnel? And even if everything seems OK now, what will happen if the machine sleeps, and then resumes? What if there's an interruption in network connectivity? Or what if you're using Wi-Fi, and switch to a new access point and network? Or if you connect to a network that's fully IPv6 capable? This guide demonstrates how you can conduct a comprehensive VPN leak test.
 
-First, verify that your computer has configured a VPN tunnel. In Windows, open a command prompt, and run `ipconfig /all`. You'll see an ethernet adapter section with the Description "TAP-Windows Adapter V9". The IPv4 Address will be something like `10.x.y.z`. In OSX and Linux, open a terminal, and run `ifconfig`. The VPN tunnel adapter is `utun0` in OSX, and `tun0` in Linux.
+First, verify that your computer has configured a VPN tunnel. In Windows, open a command prompt, and run `ipconfig /all`. You'll see an ethernet adapter section with the Description "WireGuard Tunnel" or "TAP-Windows Adapter V9". The IPv4 Address will be something like `172.x.y.z` or `10.x.y.z`. In macOS and Linux, open a terminal, and run `ifconfig`. The VPN tunnel adapter is `utun0` in macOS, and `wg0` or `tun0` in Linux.
 
 ## Risks from Browser Fingerprinting and IPv6 Leaks
 
@@ -17,7 +17,7 @@ The only way to know whether all traffic is using the VPN tunnel is through test
 
 WebGL fingerprinting and IPv6 leaks are far worse. WebGL uses the GPU via the OS graphics driver. On a given system, it appears that all browsers with WebGL enabled will have the same WebGL fingerprint. When using VPN services, I recommend blocking WebGL. In Firefox, for example, open "about:config" and toggle "webgl.disabled" to "true". In NoScript options, check "Forbid WebGL" in the "Embeddings" tab.
 
-It appears that systems using a given graphics driver can have the same WebGL fingerprint on hardware with a given GPU. So reinstalling a given OS, or even switching to another OS that uses the same graphics driver, won't change the WebGL fingerprint. This is clearly the case for VirtualBox VMs using the default virtual GPU. For example, browsers on Debian and Lubuntu VMs have the same WebGL fingerprint. But browsers on other OS (unrelated Linux distros, FreeBSD, Windows and OSX) have different WebGL fingerprints. However, the host and VMs use different GPUs (real vs virtual) so there is no overlap in WebGL fingerprints.
+It appears that systems using a given graphics driver can have the same WebGL fingerprint on hardware with a given GPU. So reinstalling a given OS, or even switching to another OS that uses the same graphics driver, won't change the WebGL fingerprint. This is clearly the case for VirtualBox VMs using the default virtual GPU. For example, browsers on Debian and Lubuntu VMs have the same WebGL fingerprint. But browsers on other OS (unrelated Linux distros, FreeBSD, Windows and macOS) have different WebGL fingerprints. However, the host and VMs use different GPUs (real vs virtual) so there is no overlap in WebGL fingerprints.
 
 It's not uncommon for VPN clients to [leak IPv6 traffic][2]. That's serious, because IPv6 addresses are typically device-specific. And so it's prudent to disable IPv6 in both your OS and your LAN router. It's also prudent to use VPN clients that block IPv6 traffic, or block IPv6 in your firewall. And whenever you first connect through a new LAN or Wi-Fi network, [check IPv6 connectivity][3].
 
@@ -25,13 +25,13 @@ By the way, WebGL fingerprinting is a crucial issue when compartmentalizing acro
 
 ## VPN Leak Test
 
-While doing your VPN leak test, you can use tcpdump to check for traffic that's not using the VPN tunnel. In Windows, you'll need [wintee][4]. Just put a copy in your user folder. Now list network interface numbers:
+While doing your VPN leak test, you can use tcpdump to check for traffic that's not using the VPN tunnel. In Windows, you'll need [Wireshark][22] and [wintee][4]. Just put a copy in your user folder. Now list network interface numbers:
 
 Windows:
 
-    WinDump -D
+    tshark -D
 
-OSX:
+macOS:
 
     sudo tcpdump -D
 
@@ -43,15 +43,15 @@ You want the physical network interface. It's typically "1". So to start capturi
 
 Windows: 
 
-    WinDump -n -i 1 not host a.b.c.d 2&gt;&1 | wtee tcpdump.log
+    tshark -i 1 -n -T text -w "C:\tshark-capture.log" -f "not host a.b.c.d" 2>&1 | wtee tcpdump.log
 
-OSX: 
+macOS: 
 
-    sudo tcpdump -n -i 1 not host a.b.c.d 2&gt;&1 | tee tcpdump.log
+    sudo tcpdump -n -i 1 not host a.b.c.d 2>&1 | tee tcpdump.log
 
 Linux: 
 
-    sudo tcpdump -n -i 1 not host a.b.c.d 2&gt;&1 | tee tcpdump.log
+    sudo tcpdump -n -i 1 not host a.b.c.d 2>&1 | tee tcpdump.log
 
 Host a.b.c.d is the VPN server that you're using. Keep the command/terminal window open while you do the following tests, and look for packets with addresses outside your local LAN and/or Wi-Fi networks.
 
@@ -61,33 +61,33 @@ You also want an ongoing source of network traffic. In a second command/terminal
 
 Windows:
 
-    ping -t a.b.c.d 2&gt;&1 | wtee ping.log
+    ping -t a.b.c.d 2>&1 | wtee ping.log
 
-OSX:
+macOS:
 
-    ping -n a.b.c.d 2&gt;&1 | tee ping.log
+    ping -n a.b.c.d 2>&1 | tee ping.log
 
 Linux: 
 
-    ping -n a.b.c.d 2&gt;&1 | tee ping.log
+    ping -n a.b.c.d 2>&1 | tee ping.log
 
-If you want pinging with timestamps in Windows or OSX, hacks (more or less ugly) are required:
+If you want pinging with timestamps in Windows or macOS, hacks (more or less ugly) are required:
 
 [Windows:][6]
 
-    ping -t a.b.c.d | cmd /q /v /c "(pause&pause)&gt;nul & for /l %a in () do (set /p "data=" && echo(!time! !data!)&ping -n 2 localhost&gt;nul" 2&gt;&1 | wtee ping.log
+    ping -t a.b.c.d | cmd /q /v /c "(pause&pause)>nul & for /l %a in () do (set /p "data=" && echo(!time! !data!)&ping -n 2 localhost>nul" 2>&1 | wtee ping.log
   
-[OSX:][7]
+[macOS:][7]
   
-    ping -n a.b.c.d | while read pong; do echo "$(date): $pong"; done 2&gt;&1 | tee ping.log
+    ping -n a.b.c.d | while read pong; do echo "$(date): $pong"; done 2>&1 | tee ping.log
     
 Linux:
 
-    ping -D -n a.b.c.d 2&gt;&1 | tee ping.log
+    ping -D -n a.b.c.d 2>&1 | tee ping.log
       
-Custom clients of some VPN providers block pings to their servers through their VPN tunnels. If you see no output, hit Ctrl-C and try pinging a.b.c.1 instead. If that also doesn't work, try 38.229.72.16 (torproject.org). In the traffic capture window, you should see no packets with addresses outside your local LAN and/or Wi-Fi networks (i.e., no non-local traffic captures).
+Custom clients of some VPN providers block pings to their servers through their VPN tunnels. If you see no output, hit Ctrl-C and try pinging a.b.c.1 instead. If that also doesn't work, try 38.229.82.25 (torproject.org). In the traffic capture window, you should see no packets with addresses outside your local LAN and/or Wi-Fi networks (i.e., no non-local traffic captures).
       
-Now disconnect the machine from the network. That will prevent pings from completing. In Windows, you will see "Request timed out." In IOS and Linux, ping output will just stop. Then reconnect the machine to the network. If all goes well, ping replies should start appearing again. Refresh the IP-check site in your browser. You should still see your VPN exit address. In the traffic capture window, you should still see no non-local captures. In Windows, you may see lots of local traffic. To check more thoroughly, you can view tcpdump.log in a test editor.
+Now disconnect the machine from the network. That will prevent pings from completing. In Windows, you will see "Request timed out." In macOS and Linux, ping output will just stop. Then reconnect the machine to the network. If all goes well, ping replies should start appearing again. Refresh the IP-check site in your browser. You should still see your VPN exit address. In the traffic capture window, you should still see no non-local captures. In Windows, you may see lots of local traffic. To check more thoroughly, you can view tcpdump.log in a test editor.
       
 ## Failure Modes and Options
       
@@ -99,13 +99,13 @@ Plain vanilla OpenVPN tends to fail in a way that's somewhat easier to manage, b
       
 You can use the same approach to see how your VPN client responds to other perturbations. Sleep and resume. Change Wi-Fi access points. Use a network with full IPv6 connectivity. Whatever. Inspection of tcpdump.log and ping.log should reveal any leaks.
       
-If you find that your VPN client leaks, one option is to try another VPN provider, and test their client. I haven't managed to make iVPN's Windows and IOS clients leak. But iVPN doesn't have a Linux client. However, blocking leaks in Linux is easy with [adrelanos' vpn-firewall][8]. I recommend using it with the built-in openvpn service, not Network Manager. Basically, it allows all apps to use the VPN tunnel, and blocks everything on the physical interface except for connections to the VPN server. You can use the same firewall logic in Windows and OSX. In Windows, you can just use Windows Firewall. In OSX, you can use [IceFloor][9], which is a GUI front end for OpenBSD's PF firewall.
+If you find that your VPN client leaks, one option is to try another VPN provider, and test their client. However, blocking leaks in Linux is easy with [adrelanos' vpn-firewall][8]. I recommend using it with the built-in openvpn service, not Network Manager. Basically, it allows all apps to use the VPN tunnel, and blocks everything on the physical interface except for connections to the VPN server. You can use the same firewall logic in Windows and macOS. In Windows, you can just use Windows Firewall. In macOS, you can use [IceFloor][9], which is a GUI front end for OpenBSD's PF firewall.
       
 ## Other Kinds of Leaks
       
 Even if all traffic is being routed through your VPN, it's possible that [DNS requests][10] are going to a DNS server that's operated by, or associated with, your ISP. Even though your requests are coming from the VPN exit, an adversary observing both the DNS server and your ISP traffic could correlate activity. If the VPN server uses the same IP address for access and exit, correlation becomes trivial. Now the adversary knows what sites you are accessing.
       
-The HTML5 Geolocation API enables a potentially serious leak. It caches and reports available location data. Perhaps you've provided your location, in order to get local weather information. If you use Wi-Fi, your location can be triangulated from accessible access points. If you're using a smartphone, the ID of the base station locates you approximately. And maybe you have GPS turned on. But there's no problem as long as only IP address information is available. The simplest option is to disable geolocation, as explained at [Digital Adda][11].
+The HTML5 Geolocation API enables a potentially serious leak. It caches and reports available location data. Perhaps you've provided your location, in order to get local weather information. If you use Wi-Fi, your location can be triangulated from accessible access points. If you're using a smartphone, the ID of the base station locates you approximately. And maybe you have GPS turned on. But there's no problem as long as only IP address information is available. The simplest option is to disable geolocation, as explained the [IVPN knowledge base][11].
       
 WebRTC is another indiscreet HTML5 feature. If enabled in the browser, it reports local IP address. And if IPv6 is functional, it reports local IPv6 address, which is typically device-specific. So it's prudent to prevent WebRTC leaks by installing the "WebRTC Control" browser addon. Also, as noted above, it's prudent to disable IPv6 in the OS, and to block all IPv6 traffic in the firewall.
       
@@ -119,7 +119,7 @@ It's true that you can't investigate WebGL and other fingerprinting using Tor br
       
 Bottom line, here are the key tests, and the results that you should get:
 
-* [IPv6 address test][14]: browser unable to connect
+* [IPv6 address test][14]: No IPv6 address detected
 * [IP address test][15]: expected IP addresses with and without VPN connected
 * [Geolocation test][16]: browser doesn't support geolocation API
 * [Java test][17]: not found, or disabled
@@ -129,19 +129,19 @@ Bottom line, here are the key tests, and the results that you should get:
 * [DNS Leak Test (use extended test)][21]: different DNS server(s) with and without VPN connected
 
  [1]: https://w3c.github.io/fingerprinting-guidance/
- [2]: http://www.eecs.qmul.ac.uk/%7Ehamed/papers/PETS2015VPN.pdf
- [3]: http://whatismyv6.com/
+ [2]: https://haddadi.github.io/papers/PETS2015VPN.pdf
+ [3]: https://test-ipv6.com/
  [4]: https://code.google.com/archive/p/wintee/
  [5]: https://check.torproject.org/
  [6]: https://stackoverflow.com/questions/24906268/ping-with-timestamp
  [7]: https://stackoverflow.com/questions/10679807/how-to-timestamp-every-ping-result
  [8]: https://github.com/adrelanos/VPN-Firewall
- [9]: http://www.hanynet.com/icefloor/
+ [9]: https://www.hanynet.com/icefloor/
  [10]: https://en.wikipedia.org/wiki/Domain_Name_System
- [11]: http://www.baatkar.com/2015/04/how-to-fake-your-location-in-google.html
+ [11]: https://www.ivpn.net/knowledgebase/troubleshooting/my-real-location-is-detected-when-connected-to-vpn-how-to-disable-geolocation/
  [12]: https://www.torproject.org/download/download
  [13]: https://check.torproject.org/
- [14]: http://ipv6.whatismyv6.com/
+ [14]: https://test-ipv6.com/
  [15]: https://www.browserleaks.com/whois
  [16]: https://www.browserleaks.com/geo
  [17]: https://www.browserleaks.com/java
@@ -149,3 +149,4 @@ Bottom line, here are the key tests, and the results that you should get:
  [19]: https://www.browserleaks.com/webrtc
  [20]: https://panopticlick.eff.org/
  [21]: https://dnsleaktest.com/
+ [22]: https://www.wireshark.org/
