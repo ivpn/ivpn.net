@@ -186,14 +186,14 @@ It's also prudent to disable WebGL in browsers before using them online. Take th
  [9]: https://en.wikipedia.org/wiki/Sphere_of_influence
  [10]: https://www.torproject.org/
  [11]: https://www.torproject.org/projects/torbrowser.html.en
- [12]: https://blog.torproject.org/blog/tor-weekly-news-%E2%80%94-august-7th-2013
+ [12]: https://blog.torproject.org/tor-weekly-news-august-7th-2013/
  [13]: https://tails.boum.org/
  [14]: https://www.whonix.org/wiki/Main_Page
  [15]: https://bitbucket.org/ra_/
- [16]: https://www.torproject.org/docs/bridges
- [17]: https://www.torproject.org/docs/bridges#PluggableTransports
+ [16]: https://support.torproject.org/#censorship-7
+ [17]: https://support.torproject.org/#operators-6
  [18]: https://forums.comodo.com/firewall-help-cis/configuring-to-block-all-nonvpn-traffic-t91413.15.html
- [19]: http://thenewtech.tv/it/openbsd-pf-on-mac-osx-lion
+ [19]: https://en.wikipedia.org/wiki/PF_%28firewall%29
  [20]: https://github.com/adrelanos/VPN-Firewall
  [21]: https://en.wikipedia.org/wiki/PF_%28firewall%29
  [22]: /privacy-guides/advanced-privacy-and-anonymity-part-2/
