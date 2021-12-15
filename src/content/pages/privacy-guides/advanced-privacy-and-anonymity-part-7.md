@@ -39,7 +39,7 @@ Use disposable gloves to avoid fingerprints. Although it's probably overkill, yo
 
 Many VPN providers now accept Bitcoin payments. However, contrary to what you might have read, Bitcoins are not at all anonymous, unless you use them prudently. First, to comply with laws against money laundering, mainstream exchanges and purchasing channels now typically require documented identification. Second, the Bitcoin network by design records every transaction in a public accounting log, called the [blockchain][2].
 
-Another risk in using Bitcoins is [price volatility][3]. While that has been profitable for some speculators, it discourages routine use. For now, it's safest to limit Bitcoin holdings to current requirements.
+Another risk in using Bitcoins is price volatility. While that has been profitable for some speculators, it discourages routine use. For now, it's safest to limit Bitcoin holdings to current requirements.
 
 #### Buying Bitcoins
 
@@ -105,7 +105,7 @@ The best place for setting up the first transfer depends on the location of the 
 
 As noted above, it's best to use multiple sending and receiving addresses (or even multiple wallets) for transfers via mixing services. For each transfer from one client to another through a mixing service, you randomly spread the Bitcoins among several address combinations. That increases the anonymity that each transfer provides, by reducing correlation based on quantities transferred.
 
-There's no need to create a wallet at [BitLaundry][13]. Create a separate mixing scheme for Bitcoins from each of the appropriate Send addresses in your wallet(s). For destination addresses, use the Request (receiving) addresses of the next wallet(s) in your mixing chain. Specify the desired number of days, and transactions per recipient per day. After reviewing and confirming the scheme, send your Bitcoins to the funding address provided by BitLaundry. Repeat for each sending address.
+There's no need to create a wallet at BitLaundry. Create a separate mixing scheme for Bitcoins from each of the appropriate Send addresses in your wallet(s). For destination addresses, use the Request (receiving) addresses of the next wallet(s) in your mixing chain. Specify the desired number of days, and transactions per recipient per day. After reviewing and confirming the scheme, send your Bitcoins to the funding address provided by BitLaundry. Repeat for each sending address.
 
 [Bitcoin Fog][14] requires an account, but not an email address. [Blockchain][15] requires both. You send your Bitcoins from MultiBit to the deposit address for your mixing-service account. After (at least) several hours, send your Bitcoins to the Request (receiving) addresses for the next client in your mixing chain. With Bitcoin Fog, transfers are split over time (by at least six hours) and you can delay them. For increased anonymity, you can use multiple Bitcoin Fog accounts, one for each of your sending addresses.
 
@@ -137,19 +137,17 @@ It's important to stop Tor before clearing /var/lib/tor. Otherwise, it may all g
 You should now see a different set of entry guards.
 
  [1]: http://en.wikipedia.org/wiki/Printer_steganography
- [2]: http://blockchain.info/
- [3]: http://bitcoincharts.com/charts/mtgoxUSD#rg360ztgSzm1g10zm2g25zv
- [4]: http://blockchain.info/wallet/
+ [2]: https://www.blockchain.com/explorer
+ [4]: https://www.blockchain.com/wallet
  [5]: http://bitcoin.org/en/choose-your-wallet
- [6]: http://blockchain.info/charts/blocks-size
+ [6]: https://www.blockchain.com/charts/blocks-size
  [7]: https://en.bitcoin.it/wiki/Buying_bitcoins
  [8]: https://localbitcoins.com/
  [9]: https://bitcointalk.org/index.php?board=53.0
  [10]: http://bitcoin-otc.com/
  [11]: https://www.whonix.org/wiki/Main_Page
- [12]: https://blockchain.info/
- [13]: http://bitlaundry.appspot.com/
+ [12]: https://www.blockchain.com/explorer
  [14]: http://fogcore5n3ov3tui.onion/
- [15]: https://blockchain.info/wallet/
- [16]: https://blog.torproject.org/category/tags/entry-guards
+ [15]: https://www.blockchain.com/wallet
+ [16]: https://support.torproject.org/about/entry-guards/
  [17]: http://www.ohmygodel.com/publications/usersrouted-ccs13.pdf
