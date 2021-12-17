@@ -19,6 +19,6 @@ For stronger protection against the leaders of the surveillance economy, you can
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-antitracker.svg" alt="What is a VPN - Antitracker" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-antitracker-dark.svg" alt="What is a VPN - Antitracker" >}}
 
-Each IVPN plan includes AntiTracker, it works on every device supported by our service and uses an [open-source block list](https://github.com/StevenBlack/hosts) maintained by volunteers.
+Each IVPN plan includes AntiTracker, it works on every device supported by our service and uses a continuously updated block list ([OISD full](https://oisd.nl)).
 
 To learn more about IVPN’s AntiTracker visit our dedicated [FAQ](/knowledgebase/general/antitracker-faq/). 
