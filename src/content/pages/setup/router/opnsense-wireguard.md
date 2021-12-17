@@ -55,7 +55,7 @@ This guide was produced using OPNSense 20.1.
     <strong>DNS Server:</strong> The DNS server can be one of three options:<br><br>
     <i>172.16.0.1</i> = regular DNS with no blocking<br>
     <i>10.0.254.2</i> = standard AntiTracker to block advertising and malware domains<br>
-    <i>10.0.254.3</i> = Hardcore Mode AntiTracker to also block Google and Facebook<br><br>
+    <i>10.0.254.3</i> = Hardcore Mode AntiTracker to also block Google and Facebook domains<br><br>
     <strong>Tunnel Address:</strong> Enter a temporary placeholder address, like 10.9.9.9<br>
     <strong>Peers:</strong> Choose the <strong>Endpoint</strong> (VPN server location) you created in the previous step.
     </div>

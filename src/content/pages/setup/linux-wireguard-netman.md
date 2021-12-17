@@ -74,7 +74,7 @@ WireGuard support was added to NetworkManager in v1.16. This guide was created w
     <div markdown="1" class="notice notice--info">
     <strong>172.16.0.1</strong> = regular DNS with no blocking<br>
     <strong>10.0.254.2</strong> = standard AntiTracker to block advertising and malware domains<br>
-    <strong>10.0.254.3</strong> = Hardcore Mode AntiTracker to also block Google and Facebook
+    <strong>10.0.254.3</strong> = Hardcore Mode AntiTracker to also block Google and Facebook domains
     </div>
 
     Click the `+ Add` button to add the IP address we have assigned your account in step 3 above. The Netmask is 255.255.255.255 and the Gateway is 0.0.0.0.

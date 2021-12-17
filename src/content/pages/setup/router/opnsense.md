@@ -77,7 +77,7 @@ This guide was produced using OPNSense 21.7.1
 
     * *10.0.254.1* = redular DNS with no blocking
     * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
+    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook domains
 
 3. Click `Save`.<br></br>![](/images-static/uploads/install-openvpn-opnsense-08.png)
 

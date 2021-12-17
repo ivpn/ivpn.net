@@ -49,7 +49,7 @@ Syntax may differ depending on your Linux distro, substitute where required
     Using a different Internal IP addresses activates the AntiTracker:  
     * 10.0.254.1 = regular DNS with no blocking (OpenVPN)
     * 10.0.254.2 = standard AntiTracker to block advertising and malware domains
-    * 10.0.254.3 = Hardcore Mode AntiTracker to also block Google and Facebook
+    * 10.0.254.3 = Hardcore Mode AntiTracker to also block Google and Facebook domains 
 
 4.  Confirm that your system is now using IVPN DNS. Running the, e.g. **nslookup ivpn.net** command should provide you with the following output.  
     When disconnected from IVPN, your system should use `198.245.51.147` IP address:
