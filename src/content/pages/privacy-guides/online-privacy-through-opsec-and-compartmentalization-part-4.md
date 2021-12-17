@@ -4,7 +4,7 @@ author: mirimir (gpg key 0x17C2E43E)
 url: /privacy-guides/online-privacy-through-opsec-and-compartmentalization-part-4/
 section: Advanced
 weight: 120
-date: 2017-09-05T11:59:32+00:00
+date: 2021-12-16T00:00:00+00:00
 layout: guides-details
 ---
 ## OPSEC Countermeasures
@@ -21,17 +21,17 @@ Allen Dulles' [73 Rules of Spycraft][2] begins with common sense:
 
 He goes on to emphasize the importance of security mindedness:
 
-> 2. Security consists not only in avoiding big risks. It consists in carrying out daily tasks with painstaking remembrance of the tiny things that security demands. The little things are in many ways more important than the big ones. It is they which oftenest give the game away. It is consistent care in them, which form the habit and characteristic of security mindedness.
+> #2. Security consists not only in avoiding big risks. It consists in carrying out daily tasks with painstaking remembrance of the tiny things that security demands. The little things are in many ways more important than the big ones. It is they which oftenest give the game away. It is consistent care in them, which form the habit and characteristic of security mindedness.
 
-> 3. In any case, the man or woman who does not indulge in the daily security routine, boring and useless though it may sometimes appear, will be found lacking in the proper instinctive reaction when dealing with the bigger stuff.
+> #3. In any case, the man or woman who does not indulge in the daily security routine, boring and useless though it may sometimes appear, will be found lacking in the proper instinctive reaction when dealing with the bigger stuff.
 
 He also warns against carelessness:
 
-> 9. The greatest vice in the game is that of carelessness. Mistakes made generally cannot be rectified.
+> #9. The greatest vice in the game is that of carelessness. Mistakes made generally cannot be rectified.
 
-> 8. Never leave things lying about unattended or lay them down where you are liable to forget them. Learn to write lightly; the `blank` page underneath has often been read. Be wary of your piece of blotting paper. If you have to destroy a document, do so thoroughly. Carry as little written matter as possible, and for the shortest possible time. Never carry names or addresses en clair. If you cannot carry them for the time being in your head, put them in a species of personal code, which only you understand. Small papers and envelopes or cards and photographs, ought to be clipped on to the latter, otherwise they are liable to get lost. But when you have conducted an interview or made arrangements for a meeting, write it all down and put it safely away for reference. Your memory can play tricks.
+> #8. Never leave things lying about unattended or lay them down where you are liable to forget them. Learn to write lightly; the `blank` page underneath has often been read. Be wary of your piece of blotting paper. If you have to destroy a document, do so thoroughly. Carry as little written matter as possible, and for the shortest possible time. Never carry names or addresses en clair. If you cannot carry them for the time being in your head, put them in a species of personal code, which only you understand. Small papers and envelopes or cards and photographs, ought to be clipped on to the latter, otherwise they are liable to get lost. But when you have conducted an interview or made arrangements for a meeting, write it all down and put it safely away for reference. Your memory can play tricks.
 
-> 17. The greatest material curse to the profession, despite all its advantages, is undoubtedly the telephone. It is a constant source of temptation to slackness. And even if you do not use it carelessly yourself, the other fellow, very often will, so in any case, warn him. Always act on the principle that every conversation is listened to, that a call may always give the enemy a line. Naturally, always unplug during confidential conversations. Even better is it to have no phone in your room, or else have it in a box or cupboard.
+> #17. The greatest material curse to the profession, despite all its advantages, is undoubtedly the telephone. It is a constant source of temptation to slackness. And even if you do not use it carelessly yourself, the other fellow, very often will, so in any case, warn him. Always act on the principle that every conversation is listened to, that a call may always give the enemy a line. Naturally, always unplug during confidential conversations. Even better is it to have no phone in your room, or else have it in a box or cupboard.
 
 Much of this may seem pointlessly old-school. But for those who work with computers and the Internet, there are now far more opportunities to be careless and leave traces for adversaries to find. Traces on our computers. Traces of online connectivity. Traces from browsing, email and messaging. Strong encryption is widely available now, at least. But there's still the risk from metadata (URLs, email addresses, IP addresses, etc). Smartphones are ubiquitous, and are vulnerable to surveillance and tracking. And people still write on paper, sometimes. There are just so many ways to fail.
 
@@ -66,9 +66,9 @@ As Allen Dulles notes, it's the `little things`. Rigorous anonymity may not seem
 
 [Allen Dulles][2] observes:
 
-> 10. The next greatest vice [after carelessness] is that of vanity. Its offshoots are multiple and malignant.
+> #10. The next greatest vice [after carelessness] is that of vanity. Its offshoots are multiple and malignant.
 
-> 11. Besides, the man with a swelled head never learns. And there is always a great deal to be learned.
+> #11. Besides, the man with a swelled head never learns. And there is always a great deal to be learned.
 
 However, according to Jane Austen, in [_Pride and Prejudice_][7]:
 
@@ -92,9 +92,9 @@ Another trap is greed. Consider [Tomáš Jiříkovský][14]. I mean, what else c
 
 [Dulles][2] also warns about sex and alcohol:
 
-> 12. Booze is naturally dangerous. So also is an undisciplined attraction for the other sex. The first loosens the tongue. The second does likewise. It also distorts vision and promotes indolence. They both provide grand weapons to an enemy.
+> #12. Booze is naturally dangerous. So also is an undisciplined attraction for the other sex. The first loosens the tongue. The second does likewise. It also distorts vision and promotes indolence. They both provide grand weapons to an enemy.
 
-> 13. It has been proved time and again, in particular, that sex and business do not mix.
+> #13. It has been proved time and again, in particular, that sex and business do not mix.
 
 OK, so Ross Ulbricht did tell his off-and-on girlfriend Julia Tourianski about Silk Road, and she apparently told one of her friends, who then [posted][15] about it on his Facebook wall:
 
@@ -120,13 +120,13 @@ And yes, compartmentalization is a crucial component of [Information Security (I
 
 From [Allen Dulles][2]:
 
-> 51. If you have several groups, keep them separate unless the moment comes for concerted action. Keep your lines separate; and within the bounds of reason and security, try to multiply them. Each separation and each multiplication minimizes the danger of total loss. Multiplication of lines also gives the possibility of resting each line, which is often a very desirable thing.
+> #51. If you have several groups, keep them separate unless the moment comes for concerted action. Keep your lines separate; and within the bounds of reason and security, try to multiply them. Each separation and each multiplication minimizes the danger of total loss. Multiplication of lines also gives the possibility of resting each line, which is often a very desirable thing.
 
-> 64. Away from the job, among your other contacts, never know too much. Often you will have to bite down on your vanity, which would like to show what you know. This is especially hard when you hear a wrong assertion being made or a misstatement of events.
+> #64. Away from the job, among your other contacts, never know too much. Often you will have to bite down on your vanity, which would like to show what you know. This is especially hard when you hear a wrong assertion being made or a misstatement of events.
 
-> 65. Not knowing too much does not mean not knowing anything. Unless there is a special reason for it, it is not good either to appear a nitwit or a person lacking in discretion. This does not invite the placing of confidence in you.
+> #65. Not knowing too much does not mean not knowing anything. Unless there is a special reason for it, it is not good either to appear a nitwit or a person lacking in discretion. This does not invite the placing of confidence in you.
 
-> 66. Show your intelligence, but be quiet on anything along the line you are working. Make others do the speaking. A good thing sometimes is to be personally interested as `a good patriot and anxious to pass along anything useful to official channels in the hope that it may eventually get to the right quarter.`
+> #66. Show your intelligence, but be quiet on anything along the line you are working. Make others do the speaking. A good thing sometimes is to be personally interested as `a good patriot and anxious to pass along anything useful to official channels in the hope that it may eventually get to the right quarter.`
 
 And from [the grugq][22]:
 
@@ -182,7 +182,7 @@ That's true. But using multiple layers of personas helps protect against catastr
 
 [Allen Dulles][2] suggests an analogous approach:
 
-> 39. When you have made a contact, till you are absolutely sure of your man — and perhaps even then — be a small but eager intermediary. Have a `They` in the background for whom you act and to whom you are responsible. If `They` are harsh, if `They` decide to break it off, it is never any fault of yours, and indeed you can pretend to have a personal grievance about it. `They` are always great gluttons for results and very stingy with cash until `They` get them. When the results come along, `They` always send messages of congratulation and encouragement.
+> #39. When you have made a contact, till you are absolutely sure of your man — and perhaps even then — be a small but eager intermediary. Have a `They` in the background for whom you act and to whom you are responsible. If `They` are harsh, if `They` decide to break it off, it is never any fault of yours, and indeed you can pretend to have a personal grievance about it. `They` are always great gluttons for results and very stingy with cash until `They` get them. When the results come along, `They` always send messages of congratulation and encouragement.
 
 Using multiple online personas is useful for more than privacy and anonymity. It can be an expression of playfulness. And it can help you be [more creative][39]:
 
@@ -232,10 +232,10 @@ Say that you use n=10 and k=3. So now you have ten strings to hide somewhere. Ea
 
 Only three of the strings are needed to recover the original data, and two of those can be known by the adversary. To obscure the sequence numbers, you could replace `01-` with `a`, and so on. So that gives you ten 257-character strings to hide. You might [post][53] them to discussion forums. Or tweet them. Or use [Deep Sound][54] to hide them in audio tracks, using [steganography][55]. Or print them, embed in plastic, and [geocache][56] them (using a passive ‎GPS receiver‎, to avoid pwnage). Whatever you like.
 
- [1]: https://www.OPSECprofessionals.org/official/081103_DOD_OPSEC_Manual.pdf
+ [1]: https://www.hsdl.org/?view&did=233829
  [2]: https://blog.cyberwar.nl/2016/02/some-elements-of-intelligence-work-73-rules-of-spycraft-allen-dulles-1960s/
- [3]: http://www.vipassana.com/meditation/mindfulness_in_plain_english_5.php
- [4]: http://www.opsecprofessionals.org/training/OPSEC_Training.pdf
+ [3]: https://www.vipassana.com/meditation/mindfulness_in_plain_english_5.html
+ [4]: https://security.pae.com/Documents/OPSEC/OPSEC_Training.pdf
  [5]: https://www.quora.com/Which-video-games-feature-God-mode
  [6]: https://www.wired.com/2015/01/heres-secret-silk-road-journal-laptop-ross-ulbricht/
  [7]: https://www.goodreads.com/quotes/21824-vanity-and-pride-are-different-things-though-the-words-are
@@ -243,23 +243,23 @@ Only three of the strings are needed to recover the original data, and two of th
  [9]: https://en.wikipedia.org/wiki/Jonah_Lehrer
  [10]: http://www.newyorker.com/tech/frontal-cortex/why-smart-people-are-stupid
  [11]: https://en.wikipedia.org/wiki/List_of_cognitive_biases
- [12]: http://kernelmag.dailydot.com/issue-sections/headline-story/13945/sabu-hector-monsegur-interview/
+ [12]: https://web.archive.org/web/20201114055349/https://kernelmag.dailydot.com/issue-sections/headline-story/13945/sabu-hector-monsegur-interview/
  [13]: http://pastebin.com/raw/fSdTyJSw
  [14]: https://www.deepdotweb.com/wp-content/uploads/2015/03/2.png
  [15]: https://motherboard.vice.com/en_us/article/friend-testifies-in-silk-road-trial-richard-bates
- [16]: https://dollarvigilante.com/blog/2015/01/14/julia-tourianski-on-the-most-important-trial-of-our-generati.html
+ [16]: https://dollarvigilante.com/blog/2015/01/14/julia-tourianski-on-the-most-important-trial-of-our-generati/
  [17]: http://www.globalsecurity.org/military/intro/images/revetment-dfst9209119.jpg
  [18]: https://en.wikipedia.org/wiki/Firewall_%28construction%29
  [19]: http://profwelday.weebly.com/uploads/2/3/0/0/23005790/_ch_03_lecture_presentation.pdf
  [20]: https://en.wikipedia.org/wiki/Compartmentalization_%28information_security%29
- [21]: http://thefifthcolumnnews.com/2017/03/tradecraft-introduction-to-opsec/
+ [21]: https://web.archive.org/web/20200523214818/https://thefifthcolumnnews.com/2017/03/tradecraft-introduction-to-opsec/
  [22]: https://grugq.github.io/blog/2013/06/13/ignorance-is-strength/
  [23]: https://3.bp.blogspot.com/_4X_vI_fIqHg/TTnNVC47g-I/AAAAAAAAB8E/L5LEmS0vcBI/s1600/Be%2BDo%2BHave.jpg
  [24]: http://static.boredpanda.com/blog/wp-content/uploads/2014/11/the-soldier-art-project-military-photography-devin-mitchell-47.jpg
  [25]: http://www.advancedfictionwriting.com/articles/snowflake-method/
  [26]: https://writers.stackexchange.com/questions/26748/how-to-make-sure-that-you-dont-end-up-writing-a-self-insert
  [27]: https://www.reddit.com/r/writing/comments/3mi6en/is_it_a_common_practice_to_base_characters_on/
- [28]: http://www.chadpearce.com/Home/BOOKS/112327702-Am-a-Strange-Loop-Douglas-R-Hofstadter.pdf
+ [28]: https://archive.org/details/iamstrangeloop00hofs
  [29]: http://tvtropes.org/pmwiki/pmwiki.php/Main/ConvenientlyUnverifiableCoverStory
  [30]: https://en.wikipedia.org/wiki/Bud%C5%8D
  [31]: http://aeternalae.wikia.com/wiki/Aeternal_Pledged
@@ -267,7 +267,7 @@ Only three of the strings are needed to recover the original data, and two of th
  [33]: https://www.facebook.com/mirimirimir
  [34]: http://mirim.ir/
  [35]: https://www.youtube.com/watch?v=XfAvB2BWdLs
- [36]: http://www.b3rn3d.com/blog/2014/03/09/cia-spycraft-psychology/
+ [36]: https://web.archive.org/web/20180413140653/http://www.b3rn3d.com/blog/2014/03/09/cia-spycraft-psychology/
  [37]: http://blogsofwar.com/hacker-OPSEC-with-the-grugq/
  [38]: https://arxiv.org/pdf/1505.07370.pdf
  [39]: https://hbr.org/2017/05/your-brain-can-only-take-so-much-focus
@@ -281,10 +281,11 @@ Only three of the strings are needed to recover the original data, and two of th
  [47]: https://arstechnica.com/tech-policy/2017/03/man-jailed-indefinitely-for-refusing-to-decrypt-hard-drives-loses-appeal/
  [48]: https://www.eff.org/wp/digital-privacy-us-border-2017
  [49]: http://www.madirish.net/366
- [50]: http://www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA069397
+ [50]: https://apps.dtic.mil/sti/pdfs/ADA069397.pdf
  [51]: http://amturing.acm.org/award_winners/shamir_2327856.cfm
  [52]: http://point-at-infinity.org/ssss/
  [53]: https://www.wilderssecurity.com/threads/test.394408/
  [54]: https://null-byte.wonderhowto.com/how-to/hacks-mr-robot-hide-data-audio-files-0164136/
  [55]: https://tag.wonderhowto.com/steganography/
  [56]: https://en.wikipedia.org/wiki/Geocaching
+
