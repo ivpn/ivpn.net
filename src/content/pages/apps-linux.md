@@ -79,74 +79,74 @@ Please note: base package is required to be installed prior to installing GUI ap
 
 {{< highlight shell >}}
 # Add IVPN's GPG key
-$ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
-$ sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
+curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
+sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 # Add the IVPN repository
-$ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 # Update APT repo info
-$ sudo apt-get update
+sudo apt-get update
 # To install IVPN software (CLI and UI)
-$ sudo apt-get install ivpn-ui
+sudo apt-get install ivpn-ui
 # To install only IVPN CLI
-$ sudo apt-get install ivpn
+sudo apt-get install ivpn
 {{< /highlight >}}
 
 ### Debian {#debian}
 
 {{< highlight shell >}}
 # Add IVPN's GPG key
-$ curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
-$ sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
+curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
+sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 # Add the IVPN repository
-$ curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 # Update APT repo info
-$ sudo apt-get update
+sudo apt-get update
 # To install IVPN software (CLI and UI)
-$ sudo apt-get install ivpn-ui
+sudo apt-get install ivpn-ui
 # To install only IVPN CLI
-$ sudo apt-get install ivpn
+sudo apt-get install ivpn
 {{< /highlight >}}
 
 ### Mint {#mint}
 
 {{< highlight shell >}}
 # Add IVPN's GPG key
-$ curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
-$ sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
+curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
+sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 # Add the IVPN repository
-$ curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 # Update APT repo info
-$ sudo apt-get update
+sudo apt-get update
 # To install IVPN software (CLI and UI)
-$ sudo apt-get install ivpn-ui
+sudo apt-get install ivpn-ui
 # To install only IVPN CLI
-$ sudo apt-get install ivpn
+sudo apt-get install ivpn
 {{< /highlight >}}
 
 ### Fedora {#fedora}
 
 {{< highlight shell >}}
 # Add the IVPN repository
-$ sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
 # To install IVPN software (CLI and UI)
-$ sudo dnf install ivpn-ui
+sudo dnf install ivpn-ui
 # To install only IVPN CLI
-$ sudo dnf install ivpn
+sudo dnf install ivpn
 {{< /highlight >}}
 
 ### CentOS {#centos}
 
 {{< highlight shell >}}
 # Install Yum-utils
-$ sudo yum install yum-utils
+sudo yum install yum-utils
 # Add the IVPN repository
-$ sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
+sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
 # To install IVPN software (CLI and UI)
-$ sudo yum install ivpn-ui
+sudo yum install ivpn-ui
 # To install only IVPN CLI
-$ sudo yum install ivpn
+sudo yum install ivpn
 # Required for CentOS 8
-$ sudo yum install libXScrnSaver
+sudo yum install libXScrnSaver
 {{< /highlight >}}
 
 ### Arch Linux {#arch}
@@ -159,8 +159,8 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 Using a AUR helper/Pacman wrapper  automates the installation process:
 
 {{< highlight shell >}}
-$ yay -S ivpn
-$ yay -S ivpn-ui
+yay -S ivpn
+yay -S ivpn-ui
 {{< /highlight >}}
 
 Note: Other AUR helper/Pacman wrapper utilities are available.
