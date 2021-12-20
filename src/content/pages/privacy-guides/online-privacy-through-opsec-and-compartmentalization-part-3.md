@@ -158,15 +158,15 @@ With that in mind, how might NSA data been used in my pwnage examples? There's b
 
 OK, what else? Well, consider Operation Onymous. Perhaps the FBI might have known, from public sources, that DOD had funded research at CMU on Tor vulnerabilities. But how would the FBI have known that CMU researchers had identified numerous illegal Tor onion services, such as Silk Road 2.0? Perhaps they saw the announced Black Hat talk, subpoenaed the results, and imposed a protective order. But in that case, why did the FBI enigmatically refer questions about Silk Road 2.0 to CMU? Evasiveness creates suspicion. Especially because this was a drug case, and the role of SOD is always hidden through [parallel construction][28].
 
- [1]: https://www.OPSECprofessionals.org/official/081103_DOD_OPSEC_Manual.pdf
- [2]: http://www.opsecprofessionals.org/training/OPSEC_Training.pdf
+ [1]: https://web.archive.org/web/20171009123733/https://www.OPSECprofessionals.org/official/081103_DOD_OPSEC_Manual.pdf
+ [2]: https://web.archive.org/web/20160327105648/http://www.opsecprofessionals.org/training/OPSEC_Training.pdf
  [3]: https://www.slideshare.net/grugq/OPSEC-for-hackers
  [4]: http://blogsofwar.com/hacker-OPSEC-with-the-grugq/
  [5]: http://privacy-pc.com/articles/hackers-guide-to-stay-out-of-jail-opsec-for-freedom-fighters.html
  [6]: https://blog.cyberwar.nl/2016/02/some-elements-of-intelligence-work-73-rules-of-spycraft-allen-dulles-1960s/
  [8]: http://www.afio.com/22_intelligencer.htm
  [10]: http://www.motherjones.com/media/2015/10/book-review-devils-chessboard-david-talbot
- [11]: https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/csi-studies/studies/vol-60-no-3/seeger-the-devils-chessboard.html
+ [11]: https://web.archive.org/web/20200717231747/https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/csi-studies/studies/vol-60-no-3/seeger-the-devils-chessboard.html
  [12]: http://www.huffingtonpost.com/joseph-a-palermo/the-devils-chessboard-all_b_8959302.html
  [13]: https://theintercept.com/2015/11/12/edward-snowden-explains-how-to-reclaim-your-privacy/
  [14]: https://www.mindtools.com/pages/article/newPPM_78.htm
