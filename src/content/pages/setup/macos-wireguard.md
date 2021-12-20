@@ -37,7 +37,7 @@ To use WireGuard on macOS, we recommend downloading IVPN's <a href="/apps-macos/
 
 7. Beside <strong>Endpoint</strong> in the <strong>[Peer]</strong> section, put a space after the <strong>'='</strong> sign, enter an IVPN WireGuard server <strong>hostname:port</strong>.
 The hostname of the servers can be found on the **[Server Status](/status/)** page. 
-You can use any of the following Port numbers - **2049**, **2050**, **53**, **30587**, **41893**, **48574**, **58237**.
+You can use any of the following Port numbers - **53**, **80**, **443**, **1194**, **2049**, **2050**, **30587**, **41893**, **48574**, **58237**.
 
     ![](/images-static/uploads/macos-wireguard-010.png)
 

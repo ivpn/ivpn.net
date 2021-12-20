@@ -34,9 +34,12 @@ To use WireGuard on Windows, we recommend downloading IVPN's <a href="/apps-wind
 5.  Beside `Endpoint` in the `[Peer]` section, put a space after the = sign, enter an IVPN WireGuard server hostname (available on the **[Server Status](/status/)** page), and choose a port:
 
     ```
+    udp 53
+    udp 80
+    udp 443
+    udp 1194
     udp 2049
     udp 2050
-    udp 53
     udp 30587
     udp 41893
     udp 48574

@@ -47,9 +47,12 @@ platform: linux
 4.  WireGuard uses the UDP protocol and IVPN offers different ports to connect on. Choose a port:
 
     ```
+    udp 53
+    udp 80
+    udp 443
+    udp 1194
     udp 2049
     udp 2050
-    udp 53
     udp 30587
     udp 41893
     udp 48574

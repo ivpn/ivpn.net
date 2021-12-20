@@ -33,7 +33,7 @@ Copy and paste the **Public key** obtained previously, give it any name, then cl
 7. Select the WireGuard server from our [Server Status](/status/) page and note its hostname and public key<br></br>
 ![](/images-static/uploads/install-wireguard-android-02.png)
 
-8. Tap on the `Add peer` button and paste the selected server's public key into the `Public key` field and its hostname, ending with port `:2049`, into the `Endpoint` field.<div markdown="1" class="notice notice--info">The following ports are also available - 53, 2050, 30587, 41893, 48574, or 58237. All ports are equally secure</div>
+8. Tap on the `Add peer` button and paste the selected server's public key into the `Public key` field and its hostname, ending with port `:2049`, into the `Endpoint` field.<div markdown="1" class="notice notice--info">The following ports are also available - 53, 80, 443, 1194, 2050, 30587, 41893, 48574, or 58237. All ports are equally secure</div>
 
 9. Enter **0.0.0.0/0** & **::/0** into the `Allowed IPs` field separated with a comma.
 

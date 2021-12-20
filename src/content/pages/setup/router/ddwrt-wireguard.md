@@ -36,9 +36,12 @@ This guide was produced using DD-WRT v46772.
     *   **Endpoint:** Enable
     *   **Endpoint Address:** Enter an IVPN WireGuard server hostname (available on the **[Server Status](/status/)** page) and choose a port:
         ```
+        udp 53
+        udp 80
+        udp 443
+        udp 1194
         udp 2049
         udp 2050
-        udp 53
         udp 30587
         udp 41893
         udp 48574

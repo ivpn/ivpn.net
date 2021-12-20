@@ -72,7 +72,7 @@ Yes.
 
 #### What ports do you use for WireGuard?
 
-UDP ports 2049, 2050, 53, 30587, 41893, 48574, 58237.
+UDP ports 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, 58237.
 
 #### Do I need to manually create and add a public key in the IVPN Client Area when adding a new device?
 

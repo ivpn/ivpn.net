@@ -72,7 +72,7 @@ This guide was produced using OpenWrt v.19.07.8 and v.21.02.0
 	> ...  
 	> Name:   at1.wg.ivpn.net  
 	> Address: 185.244.212.69 
-    * Endpoint Port - **53**, **2049**, **2050**, **30587**, **41893**, **48574**, or **58237**. All ports are equally secure
+    * Endpoint Port - **53**, **80**, **443**, **1194**, **2049**, **2050**, **30587**, **41893**, **48574** or **58237**. All ports are equally secure
     * Persistent Keep Alive - **25** seconds is reasonable<br></br>
 ![](/images-static/uploads/install-wireguard-openwrt-05.png)
 
