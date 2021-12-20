@@ -37,7 +37,7 @@ This guide was produced using OPNSense 20.1.
     <strong>Shared Secret:</strong> Leave it blank.<br>
     <strong>Alloweb IPs:</strong> 0.0.0.0/0<br>
     <strong>Endpoint Address:</strong> The server hostname is available from the server list in the step above.<br>
-    <strong>Endpoint Port:</strong> IVPN offers different ports to connect on: 53, 2049, 2050, 30587, 41893, 48574, and 58237<br>
+    <strong>Endpoint Port:</strong> IVPN offers different ports to connect on: 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, and 58237<br>
     <strong>Keepalive:</strong> 25
     </div>
 

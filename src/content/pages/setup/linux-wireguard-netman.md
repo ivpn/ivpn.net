@@ -62,7 +62,7 @@ WireGuard support was added to NetworkManager in v1.16. This guide was created w
     <strong>Public key:</strong> = WireGuard server public key available on the <strong>WireGuard Server List</strong> page in the Account Area<br>
     <strong>Allowed IPs:</strong> = 0.0.0.0/0<br>
     <strong>Endpoint address:</strong> = WireGuard server address available on the <strong>WireGuard Server List</strong> page in the Account Area<br>
-    <strong>Endpoint port:</strong> = choose one of the ports we offer: 53, 2049, 2050, 30587, 41893, 48574, 58237
+    <strong>Endpoint port:</strong> = choose one of the ports we offer: 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, 58237
     </div>
 
     Click `OK`.
