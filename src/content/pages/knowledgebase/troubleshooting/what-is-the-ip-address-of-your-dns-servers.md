@@ -16,6 +16,6 @@ When you connect using our [native apps](/apps/), IVPN DNS is automatically appl
 
 * **10.0.254.1** = regular DNS with no blocking (OpenVPN only) (use **10.0.254.101** for Multi-hop connections).
 * **10.0.254.2** = standard AntiTracker to block advertising and malware domains (OpenVPN + WireGuard) (use **10.0.254.102** for Multi-hop connections).
-* **10.0.254.3** = Hardcore Mode AntiTracker to also block Google and Facebook (OpenVPN + WireGuard) (use **10.0.254.103** for Multi-hop connections).
+* **10.0.254.3** = Hardcore Mode AntiTracker to also block Google and Facebook domains (OpenVPN + WireGuard) (use **10.0.254.103** for Multi-hop connections).
 
 We also provide a public, validating, non-logging, recursive DNS server available at **`198.245.51.147`**.  No IVPN connection -- or account -- required.

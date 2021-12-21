@@ -180,7 +180,7 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
 1. Navigate to `System` > `General Setup` > `DNS` and set the `DNS Servers` > `Address` to one of the three internal DNS server options:
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook
+    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook domains
 2. Set the `Gateway` to the WG_IVPN gateway **WG_IVPN_WGV4**
 3. Uncheck `DNS Server Override` and click the `Save` button.
 ![](/images-static/uploads/pf-wg-40-dns.png)

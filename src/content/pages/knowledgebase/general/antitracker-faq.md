@@ -44,9 +44,9 @@ weight: 200
     The AntiTracker can also be enabled on routers and other manual connections by specifying the following DNS IP address - `10.0.254.2` (or `10.0.254.102` - when using the feature together with Multi-hop)
 
 7.  #### What is “Hardcore Mode”?
-    Hardcore Mode extends the AntiTracker feature further by completely blocking all IP addresses and services owned by the flagship bearers of the surveillance economy, Google and Facebook. 
+    Hardcore Mode extends the AntiTracker feature further by completely blocking all domains owned by the flagship bearers of the surveillance economy, Google and Facebook. 
 
-    Do not be surprised to discover that everything linked to those corporations, starting from Youtube, Facebook, Instagram, Gmail and down to the widely used Google Search and services using their IP addresses will not work once you switch to Hardcore Mode.
+    Do not be surprised to discover that the majority of services linked to those corporations, starting from Youtube, Facebook, Instagram, Gmail and down to the widely used Google Search and services using their domains will not work once you switch to Hardcore Mode.
 
 8.  #### How do I activate the Hardcore Mode?
     If you are mentally prepared to fully any ties with those companies, follow the steps below:
@@ -58,3 +58,9 @@ weight: 200
     - If you are using our desktop apps' **CLI** interface, type `ivpn antitracker -on_hardcore` in a Terminal or include it with the **connect** command, like `ivpn connect -antitracker_hard fi.gw.ivpn.net`
 
     - To enable the Hardcore Mode on routers and other manual connections, use the following DNS IP address - `10.0.254.3` (or `10.0.254.103` - when using the feature together with Multi-hop)
+
+9.  #### Are there limitations to Hardcore Mode?
+    Hardcore mode uses autonomous system numbers (ASN) to detect extra domains based on Facebook and Google IP addresses.  The IP addresses themselves are not blocked, but any domains associated with those addresses that are not already part of the AntiTracker's block list will be blocked.  As a result, if an app or service uses a IP address directly, like if it is hard-coded into an app, access to Facebook and Google services will be available. 
+
+    For example, Whatsapp uses IP addresses directly and access to messages and services may be available when Hardcore Mode is active.  This is likely a feature to bypass network restrictions that try to block Whatsapp content.
+

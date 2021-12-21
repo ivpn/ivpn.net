@@ -112,7 +112,7 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook<br></br>
+    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook domains<br></br>
 ![](/images-static/uploads/install-wireguard-openwrt-08.png)
 
 4. Click the `Save` button.

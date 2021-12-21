@@ -95,7 +95,7 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
     - *10.0.254.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook<br></br>
+    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook domains<br></br>
 ![](/images-static/uploads/install-openvpn-openwrt-06.png)
 
 3. Click `Save` & `Save & Apply` buttons.

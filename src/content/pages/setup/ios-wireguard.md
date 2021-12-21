@@ -28,7 +28,7 @@ Copy and paste the **Public key** obtained previously, give it any name, then cl
 
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook 
+    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook domains 
 
 7. Select the WireGuard server from our [Server Status](/status/) page and note its hostname and public key<br></br>
 ![](/images-static/uploads/install-wireguard-android-02.png)
