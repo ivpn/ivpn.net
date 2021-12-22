@@ -104,3 +104,5 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
 1. A device reboot is not required, though it may be useful to confirm that everything behaves as expected.
 2. Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) via one of the internal network clients attached to your OpenWRT router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes in the .ovpn config file. 

@@ -95,3 +95,5 @@ This guide was produced using OPNSense 20.1.
 5.  Click the `Save` button, click the `Apply Changes` button, then reboot the OPNSense router.
 
 6.  Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com/) via one of the internal network clients attached to your OPNSense router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes to the `Endpoint Address` port and `Peer Public Key`. 
