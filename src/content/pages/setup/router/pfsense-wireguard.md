@@ -202,3 +202,5 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
     - For IPv4, enter `curl -4 ifconfig.co` in the `Execute Shell Command` box, then press `Execute`.
     - For IPv6, enter `curl -6 ifconfig.co` in the `Execute Shell Command` box, then press `Execute`.
     - In both cases, the IP address on the last line of the shell output is the VPN server.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes to the `Endpoint Address` port and `Peer Public Key`. 

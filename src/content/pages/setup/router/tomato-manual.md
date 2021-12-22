@@ -24,7 +24,10 @@ This guide was produced using FreshTomato version 2020.3
     * **Start with WAN:** Check
     * **Interface Type:** TUN
     * **Protocol:** UDP
-    * **Server Address/Port:** Enter a server name from the [server status](/status/) page, e.g. ua.gw.ivpn.net and Port 2049
+    * **Server Address/Port:** Enter a server name from the [server status](/status/) page, e.g. `ua.gw.ivpn.net` and Port `2049`
+
+    <div markdown="1" class="notice notice--info">You can also use ports UDP: 53, 80, 443, 1194, 2050 & TCP: 80, 443, 1443</div>
+
     * **Firewall:** Automatic
     * **Create NAT on tunnel:** Check
     * **Inbound Firewall:** Check
@@ -35,10 +38,6 @@ This guide was produced using FreshTomato version 2020.3
     * Click `Save`.
 
     ![](/images-static/uploads/install-openvpn-tomato-010.png)
-
-    <div markdown="1" class="notice notice--info">
-    <strong>Please note:</strong> If you plan to use a Multi-hop setup please read <a href="/knowledgebase/general/how-can-i-connect-to-the-multihop-network/">this guide</a> and make the correct changes to your username in the steps above. IVPN Pro subscription is required to use Multi-hop.
-    </div>
 
 4.  Navigate to `Advanced` tab and enter the following configuration:
 
@@ -81,7 +80,15 @@ This guide was produced using FreshTomato version 2020.3
 ### Configuring DNS
 
 1. Navigate to `Basic` - `Network`
-2. Under **WAN Setting** set **DNS Server** to **Manual** and specify the following IVPN DNS IP addresses in the **DNS 1** & **DNS 2** fields respectively: `10.0.254.1` & `198.245.51.147`
+
+2. Specify one of the following DNS servers in the `DNS 1` field:
+
+    * *10.0.254.1* = redular DNS with no blocking
+    * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
+    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
+
+    ..and *198.245.51.147* in the `DNS 2` field.
+
 3. Click `Save`.
 
 ### Configuring a Kill-Switch
@@ -89,3 +96,11 @@ This guide was produced using FreshTomato version 2020.3
 1. Navigate to `Administration` > `Scripts` > `Firewall`
 2. Enter the following: ``iptables -I FORWARD -i br0 -o `nvram get wan_iface` -j DROP``
 3. Click `Save` and reboot your router.
+
+### Final steps
+
+1. Reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.
+
+2. Check the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your Tomato router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and replace the port number in *Step 3* with the chosen Exit-hop server Multi-hop port. 

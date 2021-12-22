@@ -14,6 +14,8 @@ The DD-WRT UI is constantly evolving and there are multiple variations depending
 This guide was produced using DD-WRT v46772.
 </div>
 
+### Configuring the VPN tunnel
+
 1.  Navigate to the home page of your router - By default `192.168.1.1`.
 
 2.  Go to `Setup` > `Tunnels` > and click the `Add Tunnel` button. Choose **Enable** and select WireGuard from the dropdown menu.
@@ -32,7 +34,10 @@ This guide was produced using DD-WRT v46772.
 6.  Click the `Add Peer` button and enter the following peer configuration (as also shown in the screen shot below):
 
     *   **Peer Tunnel IP:** 0.0.0.0
-    *   **Peer Tunnel DNS:** 172.16.0.1
+    *   **Peer Tunnel DNS:** Specify one of the following DNS servers:
+        * *172.16.0.1* = redular DNS with no blocking
+        * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
+        * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
     *   **Endpoint:** Enable
     *   **Endpoint Address:** Enter an IVPN WireGuard server hostname (available on the **[Server Status](/status/)** page) and choose a port:
         ```
@@ -58,9 +63,24 @@ This guide was produced using DD-WRT v46772.
 
 7.  Click the `Save` button, then click the `Apply Settings` button.
 
-8.  In `Setup` > `Basic Setup`, you might consider setting IVPN DNS servers in the **Network Address Server Settings (DHCP)** area:
+### DNS
 
-    * **Static DNS 1:** 172.16.0.1
-    * **Static DNS 2:** 198.245.51.147
+1. Navigate to `Setup` > `Basic Setup`.
 
-9.  Save and Apply the changes, reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.
+2. Specify one of the following DNS servers in the `Static DNS 1` field:
+
+    * *172.16.0.1* = redular DNS with no blocking
+    * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
+    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
+
+    ..and *198.245.51.147* in the `Static DNS 2` field.
+
+3. Click `Save` & `Apply Settings`.
+
+### Final steps
+
+1. Reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.
+
+2. Check the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your DD-WRT router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required adjustments to the port in the `Endpoint Address` & public key in the `Peer Public Key` fields. 

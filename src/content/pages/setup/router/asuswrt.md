@@ -51,17 +51,37 @@ The list of supported models can be viewed <a href="https://asuswrt.lostrealm.ca
 ### Configuring DNS
 
 1. On your router, navigate to `WAN` - `Internet Connection`
+
 2. Under **WAN DNS Setting** set **Connect to DNS Server automatically** to **No**
-3. Specify the following IVPN DNS IP addresses in the **DNS Server1** & **DNS Server2** fields accordingly: `10.0.254.1` & `198.245.51.147`
+
+3. Specify one of the following DNS servers in the `DNS Server1` field:
+
+    * *10.0.254.1* = redular DNS with no blocking
+    * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
+    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
+
+    ..and *198.245.51.147* in the `DNS Server2` field.
+
 4. Hit `Apply` to save the changes.
 
 ### Configuring a Kill-Switch
 
 1.  Navigate to `VPN` -> `OpenVPN Client`
+
 2.  Under **Advanced Settings** select **Redirect Internet Traffic: Policy Rules**
+
 3.  Have the **Block routed clients if tunnel goes down** option **Enabled**
+
 4.  In the **Rules for routing client traffic through the tunnel** add your local network:  
     * **Description** - give it any name
     * **Source IP** - e.g. 192.168.1.0/24 (substitute with your real local network's IP address)
     * **Destination IP** - blank
     * **Iface** - VPN
+
+### Final steps
+
+1. Reboot your router and wait for a minute or two for everything to settle, then reboot your computer system.
+
+2. Check the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your AsusWRT router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes in the .ovpn config file. 
