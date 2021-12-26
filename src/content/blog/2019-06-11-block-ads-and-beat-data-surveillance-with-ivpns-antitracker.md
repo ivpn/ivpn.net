@@ -84,16 +84,16 @@ Adding an ad blocker to our core service provides multiple benefits. First, it m
 
 This feature also has the added benefit of blocking the data trackers that companies use to build a profile of you by tracking your browsing behavior. An enhanced privacy protection is what we work towards at IVPN, we consider this even more valuable than ad blocking; so naming the tool 'AntiTracker' seemed a logical choice. This way every user of our VPN service can block not only unwanted ads, adware and malicious websites, but also data tracking operations.
 
-### Hardcore Mode: block Google and Facebook
+### Hardcore Mode: block Google and Facebook domains
 
 Privacy-conscious individuals are becoming increasingly frustrated by the complete disregard for, and empty promises about privacy from the flagship bearers of the surveillance economy: Google and Facebook. As an ethical [Tracking Free company][1] we strive to support anyone who plans to cut ties with them.
 
-One major step towards that goal is enabling the optional 'Hardcore Mode' of our AntiTracker feature to make their services inaccessible, and completely block all requests to sites owned by them. This is particularly useful in two scenarios:
+One major step towards that goal is enabling the optional 'Hardcore Mode' of our AntiTracker feature to make the majority of their services inaccessible, and block domains for Facebook and Google services. This is particularly useful in two scenarios:
 
   1. To receive the best protection available against their tracking methods and trying to go 'off the grid' from their pervasive scanning.
   2. To wean yourself off their services and start looking for alternatives, contributing to a profiling-free and more competitive Internet.
 
-Keep in mind that URLs, services and dependencies from these two companies will not work when you go 'all in' with Hardcore Mode.
+Keep in mind that URLs, services and dependencies from these two companies will likely not work when you go 'all in' with Hardcore Mode.
 
 We believe our solution has arrived at a critical time, not only due to the overwhelming success of data surveillance business models - which make it ever harder to preserve your privacy online without extra safeguards - but because the key players are [making it increasingly harder][2] to fight back with conventional methods. IVPN's AntiTracker feature goes one step towards a future in which no one can be surveilled, profiled and discriminated against by governments [based on what they do online][3].
 
