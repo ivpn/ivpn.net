@@ -12,10 +12,6 @@ weight: 550
 
 Yes, and it can be easily enabled in just a few steps:
 
-<div markdown="1" class="notice notice--warning">
-Note, 2FA adds an additional authentication step to the Client Area on our website, not IVPN apps.
-</div>
-
 1. Login to your [Client Area](/account/login/)
 
 2. Navigate to `Account settings` and check the `2-factor authentication` checkbox.
@@ -25,3 +21,7 @@ Note, 2FA adds an additional authentication step to the Client Area on our websi
 4. Enter the generated 6-digit code and click on the `Enable` button to confirm the 2FA activation.
 
 5. Store **Backup Codes** you will see on the next page somewhere safe - it can be used to disable the 2FA in the future.
+
+<div markdown="1" class="notice notice--warning">
+2FA for IVPN apps is only available for accounts that were created after November 2020 (account ID format: i-XXXX-XXXX-XXXX). If you wish to use 2FA for apps and have an IVPN subscription created before this date (account ID format: ivpnXXXXXXXX), contact our customer service to help you make the switch.
+</div>
