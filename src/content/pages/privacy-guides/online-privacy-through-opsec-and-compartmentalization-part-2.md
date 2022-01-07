@@ -71,7 +71,7 @@ Before researching this, based on casual reading, I had assumed that Hector had 
 
 ### Example #5: Sheep Marketplace
 
-It's arguable whether Tomáš Jiříkovský operated Sheep Marketplace, or merely provided hosting for the VPS that it ran on. But it's pretty clear that he stole 96000 BTC from it, and then [pwned himself][39] when he cashed out. The story is instructive, and it illustrates how pride and greed can lead to stupidity and pwnage. [Sheep Marketplace][40] was created in March 2013. It grew modestly after Silk Road was pwned in October 2013. But before long, Tomáš had been [doxxed][41] as the alleged owner. [Gwern Branwen][42] [bet][43] that Sheep Marketplace would be dead within the year. In a later paste, Gwern [alleged][44] that someone had alerted the FBI that Tomáš had complained on sheepmarketplace.com in 2013 `about the problems of running a Bitcoin-using hidden service`. Also see [this paste][45], perhaps from Gwern's source. Anyway, Sheep Marketplace had started as a clearnet site, and then migrated quite obviously to Tor. And it was dead in far less than a year. Sheep Marketplace [shut down][46] less than two months later, on 03 December 2013, after claims of hacking and Bitcoin theft. But it's more than a little suspicious that the Bitcoin price jumped from $200 to $1000 during November 2013. If one had been planning to take the money and run, that was arguably a good time.
+It's arguable whether Tomáš Jiříkovský operated Sheep Marketplace, or merely provided hosting for the VPS that it ran on. But it's pretty clear that he stole 96000 BTC from it, and then [pwned himself][39] when he cashed out. The story is instructive, and it illustrates how pride and greed can lead to stupidity and pwnage. [Sheep Marketplace][40] was created in March 2013. It grew modestly after Silk Road was pwned in October 2013. But before long, Tomáš had been [doxxed][41] as the alleged owner. [Gwern Branwen][42] [bet][43] that Sheep Marketplace would be dead within the year. In a later paste, Gwern [alleged][44] that someone had alerted the FBI that Tomáš had complained on sheepmarketplace.com in 2013 `about the problems of running a Bitcoin-using hidden service`. ~~Also see [this paste][45], perhaps from Gwern's source.~~ Anyway, Sheep Marketplace had started as a clearnet site, and then migrated quite obviously to Tor. And it was dead in far less than a year. Sheep Marketplace [shut down][46] less than two months later, on 03 December 2013, after claims of hacking and Bitcoin theft. But it's more than a little suspicious that the Bitcoin price jumped from $200 to $1000 during November 2013. If one had been planning to take the money and run, that was arguably a good time.
 
 In a vain attempt to recover lost Bitcoins, or at least to identify the thief, some redditors [tracked suspicious Bitcoin][47] through the [blockchain][48]. Although the thief apparently [used Bitcoin Fog][49] for obfuscation, 96000 Bitcoin predictably overwhelmed the mixer. So the stolen Bitcoin was traced to a wallet owned by BTC-e, a digital currency exchange. But there, the trail went dead. The BTC-e wallet identified by redditors was used generally in BTC-e operations. So it seemed likely that the thief had already cashed out. However, in contrast to the Bitcoin blockchain, BTC-e's financial operations are [anything but public][50]. And now, the US has [taken it down, and arrested one Alexander Vinnik][51]. Allegations include money laundering and facilitation of criminal activity, such as ransomware and theft from Mt Gox. But maybe BTC-e [isn't yet entirely dead][52].
 
@@ -107,8 +107,8 @@ No, [Brian Krebs][64] has **not** been pwned for something delicious. But doxxin
   * [Who Ran Leakedsource.com?][69]
   * [Four Men Charged With Hacking 500M Yahoo Accounts][70]
 
- [1]: https://www.schneier.com/cgi-bin/mt/mt-search.cgi?tag=de-anonymization
- [2]: http://www.reuters.com/article/us-dea-sod-idUSBRE97409R20130805
+ [1]: https://www.schneier.com/tag/de-anonymization/
+ [2]: https://www.reuters.com/article/us-dea-sod-idUSBRE97409R20130805
  [3]: https://www.documentcloud.org/documents/801103-172770276-ulbricht-criminal-complaint.html
  [4]: https://www.shroomery.org/forums/showflat.php/Number/13860995
  [5]: https://bitcointalk.org/index.php?topic=175.70
@@ -141,28 +141,28 @@ No, [Brian Krebs][64] has **not** been pwned for something delicious. But doxxin
  [32]: https://www.anarplex.net/hosted/files/Toward_A_Private_Digital_Economy/
  [33]: https://www.engadget.com/2016/07/21/kickasstorrents-apple-facebook-homeland-security/
  [34]: https://www.theguardian.com/society/2016/jul/13/shining-a-light-on-the-dark-web-how-the-police-ended-up-running-a-paedophile-site
- [35]: http://kernelmag.dailydot.com/issue-sections/headline-story/13945/sabu-hector-monsegur-interview/
+ [35]: https://web.archive.org/web/20201114055349/https://kernelmag.dailydot.com/issue-sections/headline-story/13945/sabu-hector-monsegur-interview/
  [36]: https://www.theregister.co.uk/2012/03/07/lulzsec_takedown_analysis/
  [37]: https://sites.google.com/site/avalonlogsefnet/
  [38]: https://arstechnica.com/tech-policy/2012/03/doxed-how-sabu-was-outed-by-former-anons-long-before-his-arrest/
- [39]: https://www.deepdotweb.com/2015/03/27/breaking-sheep-marketplace-owner-arrested/
+ [39]: https://web.archive.org/web/20170621171706/https://www.deepdotweb.com/2015/03/27/breaking-sheep-marketplace-owner-arrested/
  [40]: https://en.wikipedia.org/wiki/Sheep_Marketplace
  [41]: https://www.reddit.com/r/SheepMarketplace/comments/1nsmzx/a_friendly_warning_sheepmarketplacecoms_owner/
  [42]: https://www.gwern.net/index
  [43]: https://www.reddit.com/r/SilkRoad/comments/1pko9y/the_bet_bmr_and_sheep_to_die_in_a_year/
- [44]: http://pastebin.com/raw/9spTATw6
+ [44]: https://web.archive.org/web/20161020000638/http://pastebin.com/raw/9spTATw6
  [45]: http://pastebin.com/raw/ZFS1Jdmn
  [46]: https://www.theguardian.com/technology/2013/dec/03/online-drugs-marketplace-shut-down-bitcoin-hack-sheep
  [47]: https://www.theguardian.com/technology/2013/dec/09/recovering-stolen-bitcoin-sheep-marketplace-trading-digital-currency-money
  [48]: https://www.reddit.com/r/SheepMarketplace/comments/1t0ueq/sheep_marketplace_scam_scheme_figured_out_scammer/
  [49]: https://www.reddit.com/r/SheepMarketplace/comments/1rvlft/i_just_chased_him_through_a_bitcoin_tumbler_and/
- [50]: http://invezz.com/analysis/forex/147-btc-e-anonymity-reigns-at-worlds-second-largest-bitcoin-exchange
+ [50]: https://web.archive.org/web/20180925093132/http://invezz.com/analysis/forex/147-btc-e-anonymity-reigns-at-worlds-second-largest-bitcoin-exchange
  [51]: https://www.theverge.com/2017/7/29/16060344/btce-bitcoin-exchange-takedown-mt-gox-theft-law-enforcement
  [52]: https://www.coindesk.com/troubled-btc-e-exchange-claims-control-of-databases-and-bitcoin-wallets/
  [53]: http://byznys.lidovky.cz/obral-drogove-dealery-o-miliony-cech-jsem-nevinny-brani-se-programator-1md-/firmy-trhy.aspx?c=A131206_112108_firmy-trhy_mev
  [54]: https://motherboard.vice.com/en_us/article/the-fbis-deep-web-raid-seized-a-bunch-of-fake-sites
  [55]: https://motherboard.vice.com/en_us/article/silk-road-2-has-been-seized-by-the-fbi
- [56]: https://www.nikcub.com/posts/onymous-part1/
+ [56]: https://web.archive.org/web/20150330194839/https://www.nikcub.com/posts/onymous-part1/
  [57]: https://www.theregister.co.uk/2014/07/22/legal_wrecking_balls_break_budget_tor_popping_talk/
  [58]: https://blog.torproject.org/blog/tor-security-advisory-relay-early-traffic-confirmation-attack
  [59]: https://arstechnica.com/tech-policy/2015/01/alleged-right-hand-man-to-silk-road-2-0-leader-arrested-in-seattle/
