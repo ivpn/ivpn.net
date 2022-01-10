@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <div class="content__text">
+        <section id="openvpn-config">
+            <openvpn-config></openvpn-config>
+        </section>
+    </div>
+{{ end }}
+
+{{ define "main-script" }}
+    <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/openvpn-config.js" }}"></script>
+{{ end }}
