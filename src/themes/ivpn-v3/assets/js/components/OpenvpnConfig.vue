@@ -6,12 +6,24 @@
             </header>
             <div>
                 <h2>1. Select platform</h2>
-                <div>
-                    <a href="">Windows</a>
-                    <a href="">macOS</a>
-                    <a href="">Linux</a>
-                    <a href="">iOS</a>
-                    <a href="">Android</a>
+                <div class="apps-block">
+                    <div class="apps-buttons">
+                        <a href="">
+                            <icon-windows />Windows
+                        </a>
+                        <a href="">
+                            <icon-macos />macOS
+                        </a>
+                        <a href="">
+                            <icon-linux />Linux
+                        </a>
+                        <a href="">
+                            <icon-ios />iOS
+                        </a>
+                        <a href="">
+                            <icon-android />Android
+                        </a>
+                    </div>
                 </div>
                 <h2>2. Select location</h2>
                 <div class="select">
@@ -74,6 +86,12 @@
 </template>
 
 <script>
+import IconWindows from "@/components/icons/os/windows.vue";
+import IconAndroid from "@/components/icons/os/android.vue";
+import IconIos from "@/components/icons/os/ios.vue";
+import IconLinux from "@/components/icons/os/linux.vue";
+import IconMacos from "@/components/icons/os/macos.vue";
+
 export default {
     data() {
         return {}
@@ -87,9 +105,44 @@ export default {
     computed: {
         
     },
+    components: {
+        IconWindows,
+        IconAndroid,
+        IconIos,
+        IconLinux,
+        IconMacos
+    }
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/_vars.scss";
 
+.apps-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    
+    a {
+        font-family: $font-main-mono;
+        font-size: 18px;
+        line-height: 36px;        
+        display: flex;
+        align-items: center;
+        width: 180px;
+        height: 80px;   
+
+        svg {
+            width: 34px;
+            height: 34px;
+            fill: grey;
+            margin: 10px 20px;
+        }
+
+        &:hover {            
+            svg {
+                fill: $blue;   
+            }
+        }
+    }
+}
 </style>
