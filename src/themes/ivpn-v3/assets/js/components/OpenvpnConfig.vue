@@ -16,29 +16,44 @@
                 <h2>2. Select location</h2>
                 <div class="select">
                     <select name="" id="">
-                        <option value="">All countries</option>
+                        <option value="">Select country</option>
                     </select>
                 </div>
                 <div class="select">
                     <select name="" id="">
-                        <option value="">All cities</option>
+                        <option value="">Select city</option>
                     </select>
                 </div>
                 <h2>3. Configuration</h2>
+                <h3>Multihop</h3>
+                <div class="checkbox">
+                    <div>
+                        <input type="checkbox" name="multihop" id="multihop" checked>
+                        <label for="multihop">Enable</label>
+                    </div>
+                </div>
+                <h3>Select entry server</h3>
+                <div class="select">
+                    <select name="" id="">
+                        <option value="">Select country</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <select name="" id="">
+                        <option value="">Select city</option>
+                    </select>
+                </div>
                 <h3>Port</h3>
-                <div class="radio">
-                    <div>
-                        <input type="radio" name="port" id="udp-2049" value="udp-2049" checked>
-                        <label for="udp-2049">UDP 2049</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="port" id="udp-2050" value="udp-2050">
-                        <label for="udp-2050">UDP 2050</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="port" id="udp-53" value="udp-53">
-                        <label for="udp-53">UDP 53</label>
-                    </div>
+                <div class="select">
+                    <select name="port" id="port">
+                        <option value="udp-2049" selected>UDP 2049</option>
+                        <option value="udp-2050">UDP 2050</option>
+                        <option value="udp-53">UDP 53</option>
+                        <option value="udp-1194">UDP 1194</option>
+                        <option value="tcp-443">TCP 443</option>
+                        <option value="tcp-1443">TCP 1443</option>
+                        <option value="tcp-80">TCP 80</option>
+                    </select>
                 </div>
                 <h3>Hostnames or IP addresses</h3>
                 <div class="radio">
