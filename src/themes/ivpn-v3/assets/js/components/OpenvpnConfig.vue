@@ -20,7 +20,7 @@
                 </a>
             </div>
         </div>
-        <h2>2. Select location</h2>
+        <h2>2. Select server</h2>
         <div class="select">
             <select name="" id="">
                 <option value="">Select country</option>
