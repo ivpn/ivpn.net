@@ -3,19 +3,19 @@
         <h2>1. Select platform</h2>
         <div class="apps-block">
             <div class="apps-buttons">
-                <a class="active" href="">
+                <a @click="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
                     <icon-windows />Windows
                 </a>
-                <a href="">
+                <a @click="selectPlatform" data-platform="macos" v-bind:class="{ active: query.platform == 'macos' }" href="">
                     <icon-macos />macOS
                 </a>
-                <a href="">
+                <a @click="selectPlatform" data-platform="linux" v-bind:class="{ active: query.platform == 'linux' }" href="">
                     <icon-linux />Linux
                 </a>
-                <a href="">
+                <a @click="selectPlatform" data-platform="ios" v-bind:class="{ active: query.platform == 'ios' }" href="">
                     <icon-ios />iOS
                 </a>
-                <a href="">
+                <a @click="selectPlatform" data-platform="android" v-bind:class="{ active: query.platform == 'android' }" href="">
                     <icon-android />Android
                 </a>
             </div>
@@ -23,7 +23,7 @@
         <h2>2. Select server</h2>
         <div class="select">
             <select name="" id="">
-                <option value="">All countries</option>
+                <option value="">All servers</option>
                 <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
@@ -37,23 +37,23 @@
         </div>
         <h2>3. Configuration</h2>
         <h3>Multihop</h3>
-        <div class="checkbox">
+        <div class="checkbox disabled">
             <div>
-                <input type="checkbox" name="multihop" id="multihop">
+                <input type="checkbox" name="multihop" id="multihop" disabled>
                 <label for="multihop">Enable</label>
             </div>
         </div>
         <h3>Select entry server</h3>
-        <div class="select">
-            <select name="" id="">
-                <option value="">All countries</option>
+        <div class="select disabled">
+            <select name="" id="" disabled>
+                <option value="">Select country</option>
                 <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
-        <div class="select">
-            <select name="" id="">
-                <option value="">All cities</option>
+        <div class="select disabled">
+            <select name="" id="" disabled>
+                <option value="">Select city</option>
                 <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
@@ -110,6 +110,9 @@ export default {
             sortedServers: [],
             countries: [],
             cities: [],
+            query: {
+                platform: "windows"
+            },
         };
     },
     mounted() {
@@ -134,6 +137,10 @@ export default {
                     return (desc ? 1 : -1)
                 return 0
             });
+        },
+        selectPlatform(event) {
+            event.preventDefault();
+            this.query.platform = event.target.getAttribute("data-platform");
         },
     },
     computed: {
@@ -188,6 +195,17 @@ export default {
         }
     }
 
+    .disabled {
+        opacity: 0.5;
+
+        input,
+        select {
+            &:hover {
+                cursor: default;
+            }
+        }
+    }
+
     .apps-buttons {
         display: flex;
         flex-wrap: wrap;
@@ -207,6 +225,7 @@ export default {
                 height: 34px;
                 fill: $grey;
                 margin: 10px 15px 10px 0;
+                pointer-events: none;
             }
 
             &:hover {   
