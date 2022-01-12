@@ -100,7 +100,7 @@ import Api from "@/api/api";
 import IconWindows from "@/components/icons/os/windows.vue";
 import IconAndroid from "@/components/icons/os/android.vue";
 import IconIos from "@/components/icons/os/ios.vue";
-import IconLinux from "@/components/icons/os/linux.vue";
+import IconLinux from "@/components/icons/os/linux2.vue";
 import IconMacos from "@/components/icons/os/macos.vue";
 
 export default {
@@ -178,6 +178,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/styles/_vars.scss";
+@import "@/styles/base.scss";
 @import "@/styles/buttons.scss";
 
 .vpn-configuration {
@@ -233,19 +234,34 @@ export default {
         a {
             font-family: $font-main-mono;
             font-size: 18px;
-            color: $grey;
             line-height: 36px;        
             display: flex;
             align-items: center;
             height: 60px;   
-            margin: 0 25px 0 0;
+            margin: 0 30px 0 0;
+            opacity: 0.5;
+
+            @include light-theme((
+                color: $dark
+            ));
+
+            @include dark-theme((
+                color: $white
+            ));
 
             svg {
                 width: 34px;
                 height: 34px;
-                fill: $grey;
-                margin: 10px 15px 10px 0;
+                margin: 10px 10px 10px 0;
                 pointer-events: none;
+
+                @include light-theme((
+                    fill: $dark
+                ));
+
+                @include dark-theme((
+                    fill: $white
+                ));
             }
 
             &:hover {   
@@ -255,6 +271,7 @@ export default {
             &.active {
                 color: $blue;
                 font-weight: bold;
+                opacity: 1;
                 
                 svg {
                     fill: $blue;   
