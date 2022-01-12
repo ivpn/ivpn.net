@@ -54,9 +54,9 @@
             </select>
             <i></i>
         </div>
-        <h3>Port</h3>
+        <h3>Protocol / Port</h3>
         <div class="select">
-            <select name="port" id="port">
+            <select name="proto-port" id="proto-port">
                 <option value="udp-2049" selected>UDP 2049</option>
                 <option value="udp-2050">UDP 2050</option>
                 <option value="udp-53">UDP 53</option>
@@ -64,6 +64,14 @@
                 <option value="tcp-443">TCP 443</option>
                 <option value="tcp-1443">TCP 1443</option>
                 <option value="tcp-80">TCP 80</option>
+            </select>
+            <i></i>
+        </div>
+        <h3>Protocol</h3>
+        <div class="select">
+            <select name="proto" id="proto">
+                <option value="udp" selected>UDP</option>
+                <option value="tcp">TCP</option>
             </select>
             <i></i>
         </div>
