@@ -23,13 +23,15 @@
         <h2>2. Select server</h2>
         <div class="select">
             <select name="" id="">
-                <option value="">Select country</option>
+                <option value="">All countries</option>
+                <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
         <div class="select">
             <select name="" id="">
-                <option value="">Select city</option>
+                <option value="">All cities</option>
+                <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
@@ -37,20 +39,22 @@
         <h3>Multihop</h3>
         <div class="checkbox">
             <div>
-                <input type="checkbox" name="multihop" id="multihop" checked>
+                <input type="checkbox" name="multihop" id="multihop">
                 <label for="multihop">Enable</label>
             </div>
         </div>
         <h3>Select entry server</h3>
         <div class="select">
             <select name="" id="">
-                <option value="">Select country</option>
+                <option value="">All countries</option>
+                <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
         <div class="select">
             <select name="" id="">
-                <option value="">Select city</option>
+                <option value="">All cities</option>
+                <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
@@ -92,6 +96,7 @@
 </template>
 
 <script>
+import Api from "@/api/api";
 import IconWindows from "@/components/icons/os/windows.vue";
 import IconAndroid from "@/components/icons/os/android.vue";
 import IconIos from "@/components/icons/os/ios.vue";
@@ -100,13 +105,36 @@ import IconMacos from "@/components/icons/os/macos.vue";
 
 export default {
     data() {
-        return {}
+        return {
+            servers: [],
+            sortedServers: [],
+            countries: [],
+            cities: [],
+        };
     },
     mounted() {
-        
+        this.refreshServers();
     },
     methods: {
-
+        async refreshServers() {
+            let resp = await Api.getServerStats();
+            if (resp.servers) {
+                this.servers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.gateway === v.gateway)) === i);
+                this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
+                this.cities = [...new Set(resp.servers.map(server => server.city))].filter(String).sort();
+                this.sortServers("country", false);
+            }
+        },
+        sortServers(by, desc) {
+            const servers = this.servers;
+            this.sortedServers = servers.sort((a, b) => {
+                if (a[by] > b[by]) {
+                    return (desc ? -1 : 1)
+                } else if (a[by] < b[by])
+                    return (desc ? 1 : -1)
+                return 0
+            });
+        },
     },
     computed: {
         
