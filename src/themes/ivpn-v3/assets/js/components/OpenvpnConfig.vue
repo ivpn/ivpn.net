@@ -20,18 +20,18 @@
                 </a>
             </div>
         </div>
-        <h2>2. Select server</h2>
+        <h2>2. Select server location</h2>
         <div class="select">
-            <select name="" id="">
+            <select name="exitCountry" @change="selectExitCountry($event)">
                 <option value="">All servers</option>
                 <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
-        <div class="select">
-            <select name="" id="">
+        <div class="select" v-bind:class="{ disabled: validation.exitCity }" @change="selectExitCity($event)">
+            <select name="" :disabled="validation.exitCity">
                 <option value="">All cities</option>
-                <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
+                <option v-for="city in exitCities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
@@ -43,18 +43,18 @@
                 <label for="multihop">Enable</label>
             </div>
         </div>
-        <h3>Select entry server</h3>
+        <h3>Select entry server location</h3>
         <div class="select disabled">
-            <select name="" id="" disabled>
+            <select name="" disabled>
                 <option value="">Select country</option>
                 <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
         <div class="select disabled">
-            <select name="" id="" disabled>
+            <select name="" disabled>
                 <option value="">Select city</option>
-                <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
+                <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
@@ -109,9 +109,13 @@ export default {
             servers: [],
             sortedServers: [],
             countries: [],
-            cities: [],
+            exitCities: [],
+            entryCities: [],
             query: {
                 platform: "windows"
+            },
+            validation: {
+                exitCity: true
             },
         };
     },
@@ -124,7 +128,6 @@ export default {
             if (resp.servers) {
                 this.servers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.gateway === v.gateway)) === i);
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
-                this.cities = [...new Set(resp.servers.map(server => server.city))].filter(String).sort();
                 this.sortServers("country", false);
             }
         },
@@ -141,6 +144,23 @@ export default {
         selectPlatform(event) {
             event.preventDefault();
             this.query.platform = event.target.getAttribute("data-platform");
+        },
+        selectExitCountry(event) {
+            let value = event.target.value;
+            this.query.country = value;
+            this.validation.exitCity = value == "";
+
+            if (value == "") {
+                this.exitCities = [];
+            } else {
+                let filteredServers = this.servers.filter((server) => {
+                    return server.country == value;
+                });
+                this.exitCities = [...new Set(filteredServers.map(server => server.city))].sort();
+            }
+        },
+        selectExitCity(event) {
+            this.query.city = event.target.value;
         },
     },
     computed: {
