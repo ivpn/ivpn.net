@@ -67,7 +67,7 @@
         </div>
         <div class="select" v-bind:class="{ disabled: validation.entryServer }" @change="selectEntryServer($event)">
             <select name="entryServer" :disabled="validation.entryServer">
-                <option value="">All servers</option>
+                <option value="">Select server</option>
                 <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
             </select>
             <i></i>
@@ -168,7 +168,7 @@ export default {
             let value = event.target.value;
             this.query.country = value;
             this.validation.exitCity = value == "";
-            this.validation.exitServer = false;
+            this.validation.exitServer = true;
             this.exitServers = [];
 
             if (value == "") {
@@ -201,7 +201,7 @@ export default {
             let value = event.target.value;
             this.query.country = value;
             this.validation.entryCity = value == "";
-            this.validation.entryServer = false;
+            this.validation.entryServer = true;
             this.entryServers = [];
 
             if (value == "") {
