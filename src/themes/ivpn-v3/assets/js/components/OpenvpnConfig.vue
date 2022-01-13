@@ -23,21 +23,21 @@
         <h2>2. Select server location</h2>
         <div class="select">
             <select name="exitCountry" @change="selectExitCountry($event)">
-                <option value="">All servers</option>
+                <option value="">All countries</option>
                 <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
         <div class="select" v-bind:class="{ disabled: validation.exitCity }" @change="selectExitCity($event)">
-            <select name="" :disabled="validation.exitCity">
+            <select name="exitCity" :disabled="validation.exitCity">
                 <option value="">All cities</option>
                 <option v-for="city in exitCities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
         <div class="select" v-bind:class="{ disabled: validation.exitServer }" @change="selectExitServer($event)">
-            <select name="" :disabled="validation.exitServer">
-                <option value="">Select server</option>
+            <select name="exitServer" :disabled="validation.exitServer">
+                <option value="">All servers</option>
                 <option v-for="server in exitServers" :value="server" :key="server">{{ server }}</option>
             </select>
             <i></i>
@@ -51,17 +51,24 @@
             </div>
         </div>
         <h3>Select entry server location</h3>
-        <div class="select disabled">
-            <select name="" disabled>
+        <div class="select">
+            <select name="entryCountry" @change="selectEntryCountry($event)">
                 <option value="">Select country</option>
                 <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
-        <div class="select disabled">
-            <select name="" disabled>
+        <div class="select" v-bind:class="{ disabled: validation.entryCity }" @change="selectEntryCity($event)">
+            <select name="entryCity" :disabled="validation.entryCity">
                 <option value="">Select city</option>
                 <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
+            </select>
+            <i></i>
+        </div>
+        <div class="select" v-bind:class="{ disabled: validation.entryServer }" @change="selectEntryServer($event)">
+            <select name="entryServer" :disabled="validation.entryServer">
+                <option value="">All servers</option>
+                <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
             </select>
             <i></i>
         </div>
@@ -119,12 +126,15 @@ export default {
             exitCities: [],
             exitServers: [],
             entryCities: [],
+            entryServers: [],
             query: {
                 platform: "windows"
             },
             validation: {
                 exitCity: true,
-                exitServer: true
+                exitServer: true,
+                entryCity: true,
+                entryServer: true
             },
         };
     },
@@ -158,6 +168,8 @@ export default {
             let value = event.target.value;
             this.query.country = value;
             this.validation.exitCity = value == "";
+            this.validation.exitServer = false;
+            this.exitServers = [];
 
             if (value == "") {
                 this.exitCities = [];
@@ -184,6 +196,38 @@ export default {
         },
         selectExitServer(event) {
             this.query.host = event.target.value;
+        },
+        selectEntryCountry(event) {
+            let value = event.target.value;
+            this.query.country = value;
+            this.validation.entryCity = value == "";
+            this.validation.entryServer = false;
+            this.entryServers = [];
+
+            if (value == "") {
+                this.entryCities = [];
+            } else {
+                let filteredServers = this.servers.filter((server) => {
+                    return server.country == value;
+                });
+                this.entryCities = [...new Set(filteredServers.map(server => server.city))].sort();
+            }
+        },
+        selectEntryCity(event) {
+            let value = event.target.value;
+            this.query.city = event.target.value;
+            this.validation.entryServer = value == "";
+
+            if (value == "") {
+                this.entryServers = [];
+            } else {
+                this.entryServers = this.servers.filter((server) => {
+                    return server.city == value;
+                });
+            }
+        },
+        selectEntryServer(event) {
+            this.query.port = event.target.value;
         },
     },
     computed: {
