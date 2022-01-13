@@ -250,7 +250,7 @@ export default {
         },
         selectProtocolPort(event) {
             this.query.proto = event.target.value.split("-")[0];
-            this.query.port = Int(event.target.value.split("-")[1]);
+            this.query.port = parseInt(event.target.value.split("-")[1]);
         },
         selectUseIPAddress(event) {
             this.query.use_ip_address = event.target.value
