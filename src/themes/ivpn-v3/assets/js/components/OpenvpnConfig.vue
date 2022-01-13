@@ -22,21 +22,21 @@
         </div>
         <h2>2. Select server location</h2>
         <div class="select">
-            <select name="exitCountry" @change="selectExitCountry($event)">
+            <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
                 <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
             </select>
             <i></i>
         </div>
         <div class="select" v-bind:class="{ disabled: validation.exitCity }">
-            <select name="exitCity" :disabled="validation.exitCity" @change="selectExitCity($event)">
+            <select :disabled="validation.exitCity" @change="selectExitCity($event)">
                 <option value="">All cities</option>
                 <option v-for="city in exitCities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
         <div class="select" v-bind:class="{ disabled: validation.exitServer }">
-            <select name="exitServer" :disabled="validation.exitServer" @change="selectExitServer($event)">
+            <select :disabled="validation.exitServer" @change="selectExitServer($event)">
                 <option value="">All servers</option>
                 <option v-for="server in exitServers" :value="server" :key="server">{{ server }}</option>
             </select>
@@ -46,28 +46,28 @@
         <h3>Multihop</h3>
         <div class="checkbox" v-bind:class="{ disabled: validation.multihop }">
             <div>
-                <input type="checkbox" name="multihop" id="multihop" :disabled="validation.multihop" @change="toggleMultihop($event)">
+                <input type="checkbox" id="multihop" :disabled="validation.multihop" @change="toggleMultihop($event)">
                 <label for="multihop">Enable</label>
             </div>
         </div>
         <div v-if="multihop">
             <h3>Select entry server location</h3>
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
-                <select name="entryCountry" :disabled="validation.multihop" @change="selectEntryCountry($event)">
+                <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
                     <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
                 </select>
                 <i></i>
             </div>
             <div class="select" v-bind:class="{ disabled: validation.entryCity || validation.multihop }">
-                <select name="entryCity" :disabled="validation.entryCity || validation.multihop" @change="selectEntryCity($event)">
+                <select :disabled="validation.entryCity || validation.multihop" @change="selectEntryCity($event)">
                     <option value="">Select city</option>
                     <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
                 </select>
                 <i></i>
             </div>
             <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
-                <select name="entryServer" :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
+                <select :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
                     <option value="">Select server</option>
                     <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
                 </select>
@@ -75,7 +75,7 @@
             </div>
             <h3>Protocol</h3>
             <div class="select">
-                <select name="proto" id="proto">
+                <select>
                     <option value="udp" selected>UDP</option>
                     <option value="tcp">TCP</option>
                 </select>
@@ -85,7 +85,7 @@
         <div v-if="!multihop">
             <h3>Protocol / Port</h3>
             <div class="select">
-                <select name="proto-port" id="proto-port">
+                <select>
                     <option value="udp-2049" selected>UDP 2049</option>
                     <option value="udp-2050">UDP 2050</option>
                     <option value="udp-53">UDP 53</option>
@@ -240,8 +240,7 @@ export default {
             this.query.port = event.target.value;
         },
         toggleMultihop(event) {
-            console.log("toggleMultihop event.target.value", event.target.value);
-            this.multihop = event.target.value;
+            this.multihop = event.target.checked;
         },
     },
     computed: {
