@@ -35,6 +35,13 @@
             </select>
             <i></i>
         </div>
+        <div class="select" v-bind:class="{ disabled: validation.exitServer }" @change="selectExitServer($event)">
+            <select name="" :disabled="validation.exitServer">
+                <option value="">Select server</option>
+                <option v-for="server in exitServers" :value="server" :key="server">{{ server }}</option>
+            </select>
+            <i></i>
+        </div>
         <h2>3. Configuration</h2>
         <h3>Multihop</h3>
         <div class="checkbox disabled">
@@ -110,12 +117,14 @@ export default {
             sortedServers: [],
             countries: [],
             exitCities: [],
+            exitServers: [],
             entryCities: [],
             query: {
                 platform: "windows"
             },
             validation: {
-                exitCity: true
+                exitCity: true,
+                exitServer: true
             },
         };
     },
@@ -160,7 +169,21 @@ export default {
             }
         },
         selectExitCity(event) {
+            let value = event.target.value;
             this.query.city = event.target.value;
+            this.validation.exitServer = value == "";
+
+            if (value == "") {
+                this.exitServers = [];
+            } else {
+                let filteredServers = this.servers.filter((server) => {
+                    return server.city == value;
+                });
+                this.exitServers = [...new Set(filteredServers.map(server => server.gateway))].sort();
+            }
+        },
+        selectExitServer(event) {
+            this.query.host = event.target.value;
         },
     },
     computed: {
@@ -192,7 +215,7 @@ export default {
     }
 
     .select {
-        width: 250px;
+        width: 235px;
         display: inline-block;
         margin: 0 10px 10px 0;
     }
