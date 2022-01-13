@@ -28,15 +28,15 @@
             </select>
             <i></i>
         </div>
-        <div class="select" v-bind:class="{ disabled: validation.exitCity }" @change="selectExitCity($event)">
-            <select name="exitCity" :disabled="validation.exitCity">
+        <div class="select" v-bind:class="{ disabled: validation.exitCity }">
+            <select name="exitCity" :disabled="validation.exitCity" @change="selectExitCity($event)">
                 <option value="">All cities</option>
                 <option v-for="city in exitCities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
-        <div class="select" v-bind:class="{ disabled: validation.exitServer }" @change="selectExitServer($event)">
-            <select name="exitServer" :disabled="validation.exitServer">
+        <div class="select" v-bind:class="{ disabled: validation.exitServer }">
+            <select name="exitServer" :disabled="validation.exitServer" @change="selectExitServer($event)">
                 <option value="">All servers</option>
                 <option v-for="server in exitServers" :value="server" :key="server">{{ server }}</option>
             </select>
@@ -44,54 +44,58 @@
         </div>
         <h2>3. Configuration</h2>
         <h3>Multihop</h3>
-        <div class="checkbox disabled">
+        <div class="checkbox" v-bind:class="{ disabled: validation.multihop }">
             <div>
-                <input type="checkbox" name="multihop" id="multihop" disabled>
+                <input type="checkbox" name="multihop" id="multihop" :disabled="validation.multihop" @change="toggleMultihop($event)">
                 <label for="multihop">Enable</label>
             </div>
         </div>
-        <h3>Select entry server location</h3>
-        <div class="select">
-            <select name="entryCountry" @change="selectEntryCountry($event)">
-                <option value="">Select country</option>
-                <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
-            </select>
-            <i></i>
+        <div v-if="multihop">
+            <h3>Select entry server location</h3>
+            <div class="select" v-bind:class="{ disabled: validation.multihop }">
+                <select name="entryCountry" :disabled="validation.multihop" @change="selectEntryCountry($event)">
+                    <option value="">Select country</option>
+                    <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
+                </select>
+                <i></i>
+            </div>
+            <div class="select" v-bind:class="{ disabled: validation.entryCity || validation.multihop }">
+                <select name="entryCity" :disabled="validation.entryCity || validation.multihop" @change="selectEntryCity($event)">
+                    <option value="">Select city</option>
+                    <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
+                </select>
+                <i></i>
+            </div>
+            <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
+                <select name="entryServer" :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
+                    <option value="">Select server</option>
+                    <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
+                </select>
+                <i></i>
+            </div>
+            <h3>Protocol</h3>
+            <div class="select">
+                <select name="proto" id="proto">
+                    <option value="udp" selected>UDP</option>
+                    <option value="tcp">TCP</option>
+                </select>
+                <i></i>
+            </div>
         </div>
-        <div class="select" v-bind:class="{ disabled: validation.entryCity }" @change="selectEntryCity($event)">
-            <select name="entryCity" :disabled="validation.entryCity">
-                <option value="">Select city</option>
-                <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
-            </select>
-            <i></i>
-        </div>
-        <div class="select" v-bind:class="{ disabled: validation.entryServer }" @change="selectEntryServer($event)">
-            <select name="entryServer" :disabled="validation.entryServer">
-                <option value="">Select server</option>
-                <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
-            </select>
-            <i></i>
-        </div>
-        <h3>Protocol / Port</h3>
-        <div class="select">
-            <select name="proto-port" id="proto-port">
-                <option value="udp-2049" selected>UDP 2049</option>
-                <option value="udp-2050">UDP 2050</option>
-                <option value="udp-53">UDP 53</option>
-                <option value="udp-1194">UDP 1194</option>
-                <option value="tcp-443">TCP 443</option>
-                <option value="tcp-1443">TCP 1443</option>
-                <option value="tcp-80">TCP 80</option>
-            </select>
-            <i></i>
-        </div>
-        <h3>Protocol</h3>
-        <div class="select">
-            <select name="proto" id="proto">
-                <option value="udp" selected>UDP</option>
-                <option value="tcp">TCP</option>
-            </select>
-            <i></i>
+        <div v-if="!multihop">
+            <h3>Protocol / Port</h3>
+            <div class="select">
+                <select name="proto-port" id="proto-port">
+                    <option value="udp-2049" selected>UDP 2049</option>
+                    <option value="udp-2050">UDP 2050</option>
+                    <option value="udp-53">UDP 53</option>
+                    <option value="udp-1194">UDP 1194</option>
+                    <option value="tcp-443">TCP 443</option>
+                    <option value="tcp-1443">TCP 1443</option>
+                    <option value="tcp-80">TCP 80</option>
+                </select>
+                <i></i>
+            </div>
         </div>
         <h3>Hostnames or IP addresses</h3>
         <div class="radio">
@@ -134,8 +138,10 @@ export default {
                 exitCity: true,
                 exitServer: true,
                 entryCity: true,
-                entryServer: true
+                entryServer: true,
+                multihop: true
             },
+            multihop: false,
         };
     },
     mounted() {
@@ -169,6 +175,7 @@ export default {
             this.query.country = value;
             this.validation.exitCity = value == "";
             this.validation.exitServer = true;
+            this.validation.multihop = true;
             this.exitServers = [];
 
             if (value == "") {
@@ -184,6 +191,7 @@ export default {
             let value = event.target.value;
             this.query.city = event.target.value;
             this.validation.exitServer = value == "";
+            this.validation.multihop = true;
 
             if (value == "") {
                 this.exitServers = [];
@@ -195,7 +203,9 @@ export default {
             }
         },
         selectExitServer(event) {
-            this.query.host = event.target.value;
+            let value = event.target.value;
+            this.query.host = value;
+            this.validation.multihop = value == "";
         },
         selectEntryCountry(event) {
             let value = event.target.value;
@@ -228,6 +238,10 @@ export default {
         },
         selectEntryServer(event) {
             this.query.port = event.target.value;
+        },
+        toggleMultihop(event) {
+            console.log("toggleMultihop event.target.value", event.target.value);
+            this.multihop = event.target.value;
         },
     },
     computed: {
@@ -273,6 +287,12 @@ export default {
 
             input {
                 margin-right: 15px;
+            }
+        }
+
+        &.disabled {
+            input {
+                color: gray;
             }
         }
     }
