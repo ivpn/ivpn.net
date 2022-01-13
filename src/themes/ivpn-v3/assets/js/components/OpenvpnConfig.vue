@@ -75,9 +75,9 @@
             </div>
             <h3>Protocol</h3>
             <div class="select">
-                <select>
-                    <option value="udp" selected>UDP</option>
-                    <option value="tcp">TCP</option>
+                <select @change="selectProtocol($event)">
+                    <option value="udp" :selected="query.proto == 'udp' || !query.proto">UDP</option>
+                    <option value="tcp" :selected="query.proto == 'tcp'">TCP</option>
                 </select>
                 <i></i>
             </div>
@@ -85,14 +85,14 @@
         <div v-if="!multihop">
             <h3>Protocol / Port</h3>
             <div class="select">
-                <select>
-                    <option value="udp-2049" selected>UDP 2049</option>
-                    <option value="udp-2050">UDP 2050</option>
-                    <option value="udp-53">UDP 53</option>
-                    <option value="udp-1194">UDP 1194</option>
-                    <option value="tcp-443">TCP 443</option>
-                    <option value="tcp-1443">TCP 1443</option>
-                    <option value="tcp-80">TCP 80</option>
+                <select @change="selectProtocolPort($event)">
+                    <option value="udp-2049" :selected="(query.proto == 'udp' && query.port == 2049) || !query.port">UDP 2049</option>
+                    <option value="udp-2050" :selected="(query.proto == 'udp' && query.port == 2050)">UDP 2050</option>
+                    <option value="udp-53" :selected="(query.proto == 'udp' && query.port == 53)">UDP 53</option>
+                    <option value="udp-1194" :selected="(query.proto == 'udp' && query.port == 1194)">UDP 1194</option>
+                    <option value="tcp-443" :selected="(query.proto == 'tcp' && query.port == 443)">TCP 443</option>
+                    <option value="tcp-1443" :selected="(query.proto == 'tcp' && query.port == 1443)">TCP 1443</option>
+                    <option value="tcp-80" :selected="(query.proto == 'tcp' && query.port == 80)">TCP 80</option>
                 </select>
                 <i></i>
             </div>
@@ -100,16 +100,16 @@
         <h3>Hostnames or IP addresses</h3>
         <div class="radio">
             <div>
-                <input type="radio" name="use_ip_address" id="use_hostnames" value="false" checked>
+                <input type="radio" name="use_ip_address" id="use_hostnames" value="false" checked @change="selectUseIPAddress($event)">
                 <label for="use_hostnames">Use hostnames</label>
             </div>
             <div>
-                <input type="radio" name="use_ip_address" id="use_ip_address" value="true">
+                <input type="radio" name="use_ip_address" id="use_ip_address" value="true" @change="selectUseIPAddress($event)">
                 <label for="use_ip_address">Use IP addresses</label>
             </div>
         </div>
         <h2>4. Download configuration</h2>
-        <a class="btn btn-big btn-border" href="">Download zip archive</a>
+        <a class="btn btn-big btn-border" href="" @click="updateQuery($event)">Download zip archive</a>
     </div>
 </template>
 
@@ -132,7 +132,9 @@ export default {
             entryCities: [],
             entryServers: [],
             query: {
-                platform: "windows"
+                platform: "windows",
+                proto: "udp",
+                port: 2049
             },
             validation: {
                 exitCity: true,
@@ -142,6 +144,7 @@ export default {
                 multihop: true
             },
             multihop: false,
+            multihop_port: null,
         };
     },
     mounted() {
@@ -237,10 +240,24 @@ export default {
             }
         },
         selectEntryServer(event) {
-            this.query.port = event.target.value;
+            this.multihop_port = event.target.value;
         },
         toggleMultihop(event) {
             this.multihop = event.target.checked;
+        },
+        selectProtocol(event) {
+            this.query.proto = event.target.value;
+        },
+        selectProtocolPort(event) {
+            this.query.proto = event.target.value.split("-")[0];
+            this.query.port = Int(event.target.value.split("-")[1]);
+        },
+        selectUseIPAddress(event) {
+            this.query.use_ip_address = event.target.value
+        },
+        updateQuery(event) {
+            event.preventDefault();
+            console.log(this.query);
         },
     },
     computed: {
