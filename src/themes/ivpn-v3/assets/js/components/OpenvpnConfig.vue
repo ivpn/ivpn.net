@@ -133,6 +133,10 @@ export default {
             entryServers: [],
             query: {
                 platform: "windows",
+                country: null,
+                city: null,
+                host: null,
+                use_ip_address: false,
                 proto: "udp",
                 port: 2049
             },
@@ -146,6 +150,14 @@ export default {
             multihop: false,
             multihop_port: null,
         };
+    },
+    watch: {
+        query: {
+            handler: function (after, before) {
+                
+            },
+            deep: true
+        }
     },
     mounted() {
         this.refreshServers();
