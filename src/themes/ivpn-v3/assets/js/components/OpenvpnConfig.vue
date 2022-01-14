@@ -109,7 +109,7 @@
             </div>
         </div>
         <h2>4. Download configuration</h2>
-        <a class="btn btn-big btn-border" href="" @click="updateQuery($event)">Download zip archive</a>
+        <a class="btn btn-big btn-border" :href="queryString.toString()">Download zip archive</a>
     </div>
 </template>
 
@@ -149,18 +149,20 @@ export default {
             },
             multihop: false,
             multihop_port: null,
+            queryString: new URLSearchParams(),
         };
     },
     watch: {
         query: {
             handler: function (after, before) {
-                
+                this.updateQuery();
             },
             deep: true
         }
     },
     mounted() {
         this.refreshServers();
+        this.updateQuery();
     },
     methods: {
         async refreshServers() {
@@ -201,6 +203,8 @@ export default {
                 });
                 this.exitCities = [...new Set(filteredServers.map(server => server.city))].sort();
             }
+
+            this.updateQuery();
         },
         selectExitCity(event) {
             let value = event.target.value;
@@ -216,15 +220,17 @@ export default {
                 });
                 this.exitServers = [...new Set(filteredServers.map(server => server.gateway))].sort();
             }
+
+            this.updateQuery();
         },
         selectExitServer(event) {
             let value = event.target.value;
             this.query.host = value;
             this.validation.multihop = value == "";
+            this.updateQuery();
         },
         selectEntryCountry(event) {
             let value = event.target.value;
-            this.query.country = value;
             this.validation.entryCity = value == "";
             this.validation.entryServer = true;
             this.entryServers = [];
@@ -240,7 +246,6 @@ export default {
         },
         selectEntryCity(event) {
             let value = event.target.value;
-            this.query.city = event.target.value;
             this.validation.entryServer = value == "";
 
             if (value == "") {
@@ -253,6 +258,7 @@ export default {
         },
         selectEntryServer(event) {
             this.multihop_port = event.target.value;
+            this.updateQuery();
         },
         toggleMultihop(event) {
             this.multihop = event.target.checked;
@@ -272,13 +278,20 @@ export default {
         selectUseIPAddress(event) {
             this.query.use_ip_address = event.target.value
         },
-        updateQuery(event) {
-            event.preventDefault();
-            console.log(this.query);
+        updateQuery() {
+            let query = this.query;
+            Object.keys(query).forEach(key => {
+                if (query[key] === null || query[key] === undefined) {
+                    delete query[key];
+                }
+            });
+
+            if (this.multihop && this.multihop_port) {
+                query.port = this.multihop_port;
+            }
+
+            this.queryString = new URLSearchParams(query);
         },
-    },
-    computed: {
-        
     },
     components: {
         IconWindows,
