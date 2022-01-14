@@ -244,6 +244,11 @@ export default {
         },
         toggleMultihop(event) {
             this.multihop = event.target.checked;
+
+            if (!event.target.checked) {
+                this.query.proto = "udp";
+                this.query.port = "2049";
+            }
         },
         selectProtocol(event) {
             this.query.proto = event.target.value;
