@@ -4,7 +4,7 @@ author: mirimir (gpg key 0x17C2E43E)
 url: /privacy-guides/advanced-privacy-and-anonymity-part-8/
 section: Advanced
 weight: 80
-date: 2013-10-23T12:40:34+00:00
+date: 2022-01-14T00:00:00+00:00
 layout: guides-details
 ---
 ## Creating Nested Chains of VPNs and Tor
@@ -116,7 +116,7 @@ As everything else does, VPN connections will probably take longer to establish 
 
 #### OpenWRT Tor gateway
 
-To use ra's OpenWRT Tor gateway VM, first download the latest version, currently [Tor gateway 0.5.4.ova][3]. Import it using `File / Import Appliance` in VirtualBox (reinitializing MAC addresses). As with the Whonix gateway VM, edit its first (WAN) adapter from NAT to a internal network sourced by one of your pfSense VPN-gateway VMs, and uniquely rename the internal network attached to its second (LAN) adapter. That's it.
+To use ra's OpenWRT Tor gateway VM, first download the latest version, currently [Tor gateway 0.6.3.ova][3]. Import it using `File / Import Appliance` in VirtualBox (reinitializing MAC addresses). As with the Whonix gateway VM, edit its first (WAN) adapter from NAT to a internal network sourced by one of your pfSense VPN-gateway VMs, and uniquely rename the internal network attached to its second (LAN) adapter. That's it.
 
 Because ra's Tor gateway VM is (like pfSense) a router running a DHCP server, you can attach any workstation VM to the internal network attached to its second (LAN) adapter, and so reach the Internet through Tor. As with the Whonix workstation, workstation VMs can only reach the Internet through the Tor gateway, so there's negligible risk that improperly configured applications will bypass Tor. However, given that Tor only routes TCP traffic, applications that depend on UDP traffic will not work properly. Also, browsing with stock Firefox is far less anonymous than with the Tor-optimized version in the Tor Browser Bundle, Tails and Whonix.
 
@@ -130,7 +130,7 @@ The various VirtualBox VMs that you create – pfSense VPN-client, OpenWRT Tor g
 
 It's best to start with a simple setup. Once it's usable and reliable, you'll have a reliable core that you can build on, and you will also have acquired requisite experience and skills. For the setup suggested in the section `Planning Initial Setup` of [Planning Advanced VM and VPN Setup](/privacy-guides/advanced-privacy-and-anonymity-part-3/), which is pictured at the top of this page, it's best to start with just two VPNs: VPN{{< sub >}}1{{< / sub >}} and VPN{{< sub >}}2{{< / sub >}}. If you're running the direct-connect VPN (VPN{{< sub >}}1{{< / sub >}}) in the host machine, start with just one pfSense VPN-client VM (VPN{{< sub >}}2{{< / sub >}}).
 
-To provide context for testing your nested VPN chain(s), periodically check the latency (ping) and speed of your native ISP connection at [Speedtest][4]. If at all possible, don't use your VM host machine for that. Also, avoid checking your ISP connection while actively testing nested VPN chain(s), because that would associate their IP addresses in Speedtest's logs. For the same reason, don't check multiple VPN-chain nodes simultaneously. Wait at least several minutes between tests from different IP addresses.
+To provide context for testing your nested VPN chain(s), periodically check the latency (ping) and speed of your native ISP connection at [Speedtest][4] and [Fast][6]. If at all possible, don't use your VM host machine for that. Also, avoid checking your ISP connection while actively testing nested VPN chain(s), because that would associate their IP addresses in Speedtest's logs. For the same reason, don't check multiple VPN-chain nodes simultaneously. Wait at least several minutes between tests from different IP addresses.
 
 If you're running the direct-connect VPN in the host machine, and have gotten this far, it's probably working well enough. If there are connection problems, review the Network Manager connection log, as described in the section `Viewing Network Manager OpenVPN Logs` of [Part 4. Setting Up Secure Host Machines](/privacy-guides/advanced-privacy-and-anonymity-part-4/). You'll need a Linux LiveCD VM for testing each VPN that you're running in a pfSense VM, which you attach to that pfSense VM's internal network. I recommend using multiple LiveCD VMs here for two reasons: 1) to avoid leaking VPN account information from pfSense to workspace VMs; and 2) to limit access to pfSense from potentially-compromised workspace VMs. If you have added `verb 5` in the `Advanced` box in OpenVPN client setup at `VPN: OpenVPN: Client`, a detailed connection log is available at `Status: System logs: OpenVPN`.
 
@@ -209,6 +209,7 @@ There are instructions for killing the openvpn process in the sections of Part 4
 
  [1]: https://bitbucket.org/ra_/tor-gateway
  [2]: https://www.whonix.org/wiki/Main_Page
- [3]: https://bitbucket.org/ra_/tor-gateway/downloads/Tor%20gateway%200.5.4.ova
- [4]: http://www.speedtest.net/
- [5]: http://www.wilderssecurity.com/forumdisplay.php?f=41
+ [3]: https://bitbucket.org/ra_/tor-gateway/downloads/Tor%20gateway%200.6.3.ova
+ [4]: https://www.speedtest.net/
+ [5]: https://www.wilderssecurity.com/forumdisplay.php?f=41
+ [6]: https://fast.com/
