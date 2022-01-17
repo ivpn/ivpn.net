@@ -264,7 +264,8 @@ export default {
             }
         },
         selectEntryServer(event) {
-            this.multihop_port = event.target.value;
+            let value = event.target.value;
+            this.multihop_port = value;
             this.validation.download = value == "";
             this.updateQuery();
         },
