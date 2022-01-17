@@ -109,7 +109,7 @@
             </div>
         </div>
         <h2>4. Download configuration</h2>
-        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
+        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
 
@@ -151,6 +151,7 @@ export default {
             multihop: false,
             multihop_port: null,
             queryString: new URLSearchParams(),
+            apiURL: process.env.MIX_APP_API_URL,
         };
     },
     watch: {
