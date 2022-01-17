@@ -180,7 +180,7 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
 1. Navigate to `System` > `General Setup` > `DNS` and set the `DNS Servers` > `Address` to one of the three internal DNS server options:
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook
+    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook domains
 2. Set the `Gateway` to the WG_IVPN gateway **WG_IVPN_WGV4**
 3. Uncheck `DNS Server Override` and click the `Save` button.
 ![](/images-static/uploads/pf-wg-40-dns.png)
@@ -202,3 +202,5 @@ Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key<
     - For IPv4, enter `curl -4 ifconfig.co` in the `Execute Shell Command` box, then press `Execute`.
     - For IPv6, enter `curl -6 ifconfig.co` in the `Execute Shell Command` box, then press `Execute`.
     - In both cases, the IP address on the last line of the shell output is the VPN server.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes to the `Endpoint Address` port and `Peer Public Key`. 

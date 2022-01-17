@@ -72,7 +72,7 @@ This guide was produced using OpenWrt v.19.07.8 and v.21.02.0
 	> ...  
 	> Name:   at1.wg.ivpn.net  
 	> Address: 185.244.212.69 
-    * Endpoint Port - **53**, **2049**, **2050**, **30587**, **41893**, **48574**, or **58237**. All ports are equally secure
+    * Endpoint Port - **53**, **80**, **443**, **1194**, **2049**, **2050**, **30587**, **41893**, **48574** or **58237**. All ports are equally secure
     * Persistent Keep Alive - **25** seconds is reasonable<br></br>
 ![](/images-static/uploads/install-wireguard-openwrt-05.png)
 
@@ -112,7 +112,7 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
     - *172.16.0.1* = regular DNS with no blocking
     - *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook<br></br>
+    - *10.0.254.3* = Hardcore Mode AntiTracker to also block Google and Facebook domains<br></br>
 ![](/images-static/uploads/install-wireguard-openwrt-08.png)
 
 4. Click the `Save` button.
@@ -125,3 +125,5 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
 1. A device reboot is not required, though it may be useful to confirm that everything behaves as expected.
 2. Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) via one of the internal network clients attached to your OpenWRT router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes to the `Endpoint Address` port and `Peer Public Key`.

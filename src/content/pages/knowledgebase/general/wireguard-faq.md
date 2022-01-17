@@ -38,9 +38,12 @@ weight: 480
 
 5.  #### What ports do you use for WireGuard?
     ```
+    UDP 53
+    UDP 80
+    UDP 443
+    UDP 1194
     UDP 2049
     UDP 2050
-    UDP 53
     UDP 30587
     UDP 41893
     UDP 48574

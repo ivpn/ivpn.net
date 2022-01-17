@@ -87,8 +87,8 @@ weight: 610
 10. ### How do I use a different protocol and port?
     Different combinations are available for different VPN protocols.
 
-    - **OpenVPN**: UDP:2049, UDP:2050, UDP:53, UDP:1194, TCP:443, TCP:1443, TCP:80
-    - **WireGuard**: UDP:2049, UDP:2050, UDP:53, UDP:1194, UDP:30587, UDP:41893, UDP:48574, UDP:58237
+    - **OpenVPN**: UDP:53, UDP:80, UDP:443, UDP:1194, UDP:2049, UDP:2050, TCP:80, TCP:443, TCP:1443
+    - **WireGuard**: UDP:53, UDP:80, UDP:443, UDP:1194, UDP:2049, UDP:2050, UDP:30587, UDP:41893, UDP:48574, UDP:58237
 
     ```
     ivpn connect -protocol OpenVPN -port TCP:443 de.gw.ivpn.net

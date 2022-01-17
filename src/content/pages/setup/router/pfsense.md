@@ -129,10 +129,13 @@ weight: 30
 
 5.  **Configure DNS**
 
-    * Navigate to `System` - `General setup` and add the following IVPN DNS servers: `10.0.254.1` & `198.245.51.147`. Hit `Save` to apply the changes.
+    * Navigate to `System` - `General setup`
+    * and add the following IVPN DNS servers: `10.0.254.1` & `198.245.51.147`. Hit `Save` to apply the changes.
     * Finally, navigate to `Status` -> `OpenVPN` & click on the `Restart openvpn Service` button.
     * Open the [dnsleaktest.com](https://dnsleaktest.com/) to verify that you are connected to IVPN.
 
     <div markdown="1" class="notice notice--warning">
     Sometimes, you might need to additionally reboot pfSense to apply the new configuration.
     </div>
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) nd replace the port number in *Step 2* with the chosen Exit-hop server Multi-hop port. 

@@ -14,8 +14,8 @@ Changing the port/protocol you use to connect to the VPN can increase your perfo
 
 Different combinations are available for different VPN protocols.
 
-1. OpenVPN: UDP:2049, UDP:2050, UDP:53, UDP:1194, TCP:443, TCP:1443, TCP:80
-2. WireGuard: UDP:2049, UDP:2050, UDP:53, UDP:1194, UDP:30587, UDP:41893, UDP:48574, UDP:58237
+1. OpenVPN: UDP:53, UDP:80, UDP:443, UDP:1194, UDP:2049, UDP:2050, TCP:443, TCP:1443, TCP:80
+2. WireGuard: UDP:53, UDP:80, UDP:443, UDP:1194, UDP:2049, UDP:2050, UDP:30587, UDP:41893, UDP:48574, UDP:58237
 
 ### For Windows, macOS, Linux, iOS, and Android:
 
@@ -33,6 +33,6 @@ Add the `-port` command argument `ivpn connect -port TCP:443 de.gw.ivpn.net` and
 ### For manual connection on any other platforms that you connect using our .ovpn config files:
 
 1. Open .ovpn config file you use to connect with any text editor and find line 3 `proto udp` & line 4 `remote xx.gw.ivpn.net 2049`
-2. Adjust those values to, e.g. `proto tcp` & `remote xx.gw.ivpn.net 443` (you can also use tcp 80, tcp 1443, udp 2050, udp 1194 or udp 53).
+2. Adjust those values to, e.g. `proto tcp` & `remote xx.gw.ivpn.net 443` (you can also use tcp 80, tcp 1443, udp 53, udp 80, udp 443, udp 1194 or udp 2050).
 3. Save the file, create a new VPN profile in your OpenVPN client and reconnect.
 4. In case the issue persists, go back to step 1 and try a different port.

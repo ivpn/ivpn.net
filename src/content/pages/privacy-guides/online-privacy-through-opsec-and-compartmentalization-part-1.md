@@ -63,7 +63,7 @@ That's arguably not very surprising. It's just what people do. Or at least, that
 
 ![Compartmentalization: Isolation of Military Aircraft Using Blast Walls aka Revetments](/images-static/uploads/revetment.jpg)
 
-That's excellent advice, for sure. But pseudonymity alone is a fragile defense. Once one has been de-anonymized in any context, everything is de-anonymized, because it's all tied together. There is no forward security. Far more robust is to [fragment][19] and [compartmentalize][20] one's online activity across multiple unlinked [personas][21]. With effective compartmentalization, damage is isolated and limited. And overall, it's essential to implement and practice strong [Operations Security (OPSEC)][22]. But first, before getting into specifics, it's instructive to consider some examples, showing how easily and spectacularly online anonymity can fail.
+That's excellent advice, for sure. But pseudonymity alone is a fragile defense. Once one has been de-anonymized in any context, everything is de-anonymized, because it's all tied together. There is no forward security. Far more robust is to fragment and compartmentalize one's online activity across multiple unlinked personas. With effective compartmentalization, damage is isolated and limited. And overall, it's essential to implement and practice strong Operations Security (OPSEC). But first, before getting into specifics, it's instructive to consider some examples, showing how easily and spectacularly online anonymity can fail.
 
  [1]: http://knowyourmeme.com/memes/eternal-september
  [2]: http://knowyourmeme.com/memes/on-the-internet-nobody-knows-youre-a-dog
@@ -83,7 +83,3 @@ That's excellent advice, for sure. But pseudonymity alone is a fragile defense. 
  [16]: https://www.theatlantic.com/technology/archive/2017/02/browsing-history-identity/515763/
  [17]: http://randomwalker.info/publications/browsing-history-deanonymization.pdf
  [18]: http://www.theverge.com/2017/3/20/14985328/internet-providers-web-browsing-history-fcc-privacy-rules
- [19]: http://www.jdubuzz.com/files/2017/01/fight-club.jpg
- [20]: http://www.globalsecurity.org/military/intro/images/revetment-dfst9209119.jpg
- [21]: https://3.bp.blogspot.com/-ct6yKOCjxBc/Uc8xKS_qj2I/AAAAAAAAANA/TYCa_uWm08U/
- [22]: https://www.OPSECprofessionals.org/official/081103_DOD_OPSEC_Manual.pdf

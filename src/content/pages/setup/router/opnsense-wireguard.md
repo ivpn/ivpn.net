@@ -37,7 +37,7 @@ This guide was produced using OPNSense 20.1.
     <strong>Shared Secret:</strong> Leave it blank.<br>
     <strong>Alloweb IPs:</strong> 0.0.0.0/0<br>
     <strong>Endpoint Address:</strong> The server hostname is available from the server list in the step above.<br>
-    <strong>Endpoint Port:</strong> IVPN offers different ports to connect on: 53, 2049, 2050, 30587, 41893, 48574, and 58237<br>
+    <strong>Endpoint Port:</strong> IVPN offers different ports to connect on: 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, and 58237<br>
     <strong>Keepalive:</strong> 25
     </div>
 
@@ -55,7 +55,7 @@ This guide was produced using OPNSense 20.1.
     <strong>DNS Server:</strong> The DNS server can be one of three options:<br><br>
     <i>172.16.0.1</i> = regular DNS with no blocking<br>
     <i>10.0.254.2</i> = standard AntiTracker to block advertising and malware domains<br>
-    <i>10.0.254.3</i> = Hardcore Mode AntiTracker to also block Google and Facebook<br><br>
+    <i>10.0.254.3</i> = Hardcore Mode AntiTracker to also block Google and Facebook domains<br><br>
     <strong>Tunnel Address:</strong> Enter a temporary placeholder address, like 10.9.9.9<br>
     <strong>Peers:</strong> Choose the <strong>Endpoint</strong> (VPN server location) you created in the previous step.
     </div>
@@ -95,3 +95,5 @@ This guide was produced using OPNSense 20.1.
 5.  Click the `Save` button, click the `Apply Changes` button, then reboot the OPNSense router.
 
 6.  Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com/) via one of the internal network clients attached to your OPNSense router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes to the `Endpoint Address` port and `Peer Public Key`. 

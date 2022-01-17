@@ -29,6 +29,9 @@ The DD-WRT UI is constantly evolving and there are multiple variations depending
     *   **Port:** 2049
     *   **Tunnel Device:** TUN
     *   **Tunnel Protocol:** UDP
+
+    <div markdown="1" class="notice notice--info">You can also use ports UDP: 53, 80, 443, 1194, 2050 & TCP: 80, 443, 1443</div>
+
     *   **Encryption cipher:** AES-256 CBC
     *   **Hash Algorithm:** SHA1
     *   **User Pass Authentication:** Enable (If this option does not exist you will need to follow the steps in the appendix).  
@@ -61,10 +64,30 @@ The DD-WRT UI is constantly evolving and there are multiple variations depending
 
     ![](/images-static/uploads/install-dd-wrt-manual-010-579x1450.png)
 
-5.  Click on the `Management` tab and then on the `Reboot router` button at the bottom of the page. The router will reboot and then automatically attempt to connect to the VPN gateway. This may take up to 5 mins from the time you reboot depending on the speed of the router. You can view the status of the OpenVPN connection by navigating to `Status` > `OpenVPN`.  
-    The router will route all traffic through the VPN. You must configure clients with trusted DNS servers or you can configure the DHCP server on the DD-WRT router to enable this configuration automatically on all clients.  
-    **Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the correct changes to your account ID in *Step 6*.
+5.  Click the `Save` button, then click the `Apply Settings` button.
 
+### DNS
+
+1. Navigate to `Setup` > `Basic Setup`.
+
+2. Specify one of the following DNS servers in the `Static DNS 1` field:
+
+    * *10.0.254.1* = redular DNS with no blocking
+    * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
+    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
+
+    ..and *198.245.51.147* in the `Static DNS 2` field.
+
+3. Click `Save` & `Apply Settings`.
+
+### Final steps
+
+1. Reboot your router and wait for a minute or two for everything to settle, then reboot your computer system and check the status of the OpenVPN client in the `Status` > `OpenVPN` area.
+
+2. Check the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your DD-WRT router.
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and replace the port number in *Step 4* with the chosen Exit-hop server Multi-hop port. 
+    
 ### Appendix
 
 If you do not have the **User Pass Authentication** field in your DD-WRT version please follow the steps below:
@@ -77,7 +100,7 @@ If you do not have the **User Pass Authentication** field in your DD-WRT version
 
 2.  Save your configuration by clicking on the `save` button.
 
-3.  Click on the `Adminstration` tab and then the `Commands` tab. Enter the text shown in the box below **replacing the username and password in quotes with your account ID (starts with 'ivpn') and any password**. Click on `Save startup` to continue.
+3.  Click on the `Adminstration` tab and then the `Commands` tab. Enter the text shown in the box below **replacing the username and password in quotes with your account ID ('ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX') and any password**. Click on `Save startup` to continue.
 
     ```
     #!/bin/sh

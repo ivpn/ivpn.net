@@ -36,7 +36,7 @@ This guide was produced using OPNSense 21.7.1
     *   Device mode - **tun**
     *   Interface - **WAN**
     *   Remote server - IVPN's server hostname, i.e. **ua1.gw.ivpn.net**
-    *   Port - **2049** (or 2050, 53, 1194 for UDP and 443, 1443, 80 for TCP. All ports are equally secure)
+    *   Port - **2049** (or 53, 80, 443, 1194, 2050 for UDP and 80, 443, 1443 for TCP. All ports are equally secure)
     *   Username - Your IVPN account ID (**i-XXXX-XXXX-XXXX** or **ivpnXXXXXXXX** case-sensitive)
     *   Password - any string, i.e. **ivpn** <br></br>![](/images-static/uploads/install-openvpn-opnsense-02.png)<br></br>
     *   TLS Authentication - check the `Enable authentication of TLS packets` option then copy and paste the contents of our [ta.key](/releases/config/ta.key) file
@@ -77,7 +77,7 @@ This guide was produced using OPNSense 21.7.1
 
     * *10.0.254.1* = redular DNS with no blocking
     * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
-    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook
+    * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook domains
 
 3. Click `Save`.<br></br>![](/images-static/uploads/install-openvpn-opnsense-08.png)
 
@@ -86,3 +86,5 @@ This guide was produced using OPNSense 21.7.1
 1. Restart your router device and check the status of the OpenVPN client in the `VPN` - `OpenVPN` - `Connection Status` area.<br></br>![](/images-static/uploads/install-openvpn-opnsense-10.png)
 
 2. Check the conenction status and the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your OPNsense router.<br></br>![](/images-static/uploads/install-openvpn-opnsense-11.png)
+
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) nd replace the port number in *Step 2* of *Configure an OpenVPN Client* section with the chosen Exit-hop server Multi-hop port. 

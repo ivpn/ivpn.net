@@ -14,11 +14,11 @@ Most websites and apps either run ads or pass on user data to third parties, ena
 
 With AntiTracker enabled in the IVPN apps, network connection requests by third-party trackers are stopped. This prevents companies from profiling you based on the actions you have taken in a browser or in apps. Since AntiTracker blocks advertising services, they won't collect your personal information, and ads targeted to you won’t follow you around.
 
-For stronger protection against the leaders of the surveillance economy, you can also block every connection request from Facebook and Google services by enabling AntiTracker's Hardcore mode.
+For stronger protection against the leaders of the surveillance economy, you can also block domains for Facebook and Google services by enabling AntiTracker's Hardcore mode.
 
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-antitracker.svg" alt="What is a VPN - Antitracker" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-antitracker-dark.svg" alt="What is a VPN - Antitracker" >}}
 
-Each IVPN plan includes AntiTracker, it works on every device supported by our service and uses an [open-source block list](https://github.com/StevenBlack/hosts) maintained by volunteers.
+Each IVPN plan includes AntiTracker, it works on every device supported by our service and uses a continuously updated block list ([OISD full](https://oisd.nl)).
 
 To learn more about IVPN’s AntiTracker visit our dedicated [FAQ](/knowledgebase/general/antitracker-faq/). 

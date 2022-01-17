@@ -11,22 +11,25 @@ weight: 170
 # How can I connect to the Multi-hop network?
 
 <div markdown="1" class="notice notice--info">
-These instructions are not required when using the official <a href="/apps/">IVPN client</a>. Simply select the Multi-hop tab on the main screen. The Multi-hop feature is available in our Pro plan.
+These instructions are not required when using the official <a href="/apps/">IVPN client</a>. Simply select the Multi-hop tab on the main screen.<br></br>
+The Multi-hop feature is available in our Pro plan and can be used with any WireGuard and OpenVPN clients.<br></br>
+Entry and Exit-hop servers must be in different countries.
 </div>
 
-The Multi-hop network is compatible with any WireGuard and OpenVPN clients.
-
-### WireGuard
-
-Every WireGuard server has a unique port number reserved for Multi-hop connections which can be found on our [server status](/status/) page.
-
-Choose an Exit-hop server for your Multi-hop connection and note its port number and public key.
+Every server has a unique port number reserved for Multi-hop connections which can be found on our [server status](/status/) page.
 
 ![](/images-static/uploads/wireguard-multihop.jpg)
 
-In your WireGuard config **[Peer]** section, **Endpoint** field, specify the hostname of the selected Entry-hop server with the noted previously port number and the public key of the Exit-hop server in the **PublicKey** field.
+Choose the Exit-hop server for your Multi-hop connection, note its **Multi-hop Port** number, **Public key** and follow the instructions relevant to the VPN protocol you use below:
 
-Below, is an example of the WireGuard multi-hop connection config with Entry server in Ukraine and Exit server in Austria:
+### WireGuard
+
+In your WireGuard config '**[Peer]**' section, specify the **Entry-hop server hostname** with the **Exit-hop server Multi-hop port** separated with a colon in the '**Endpoint**' field, and the **Exit-hop server Public key** in the '**PublicKey**' field.
+
+*Endpoint = [Entry-hop server address]**:**[Exit-hop server Multi-hop port]<br>
+PublicKey = [Exit-hop server Public Key]*
+
+Below, is an example of the WireGuard Multi-hop connection config with Entry server in Ukraine and Exit server in Austria:
 
 >[Interface]<br>
 >PrivateKey = *****<br>
@@ -35,19 +38,24 @@ Below, is an example of the WireGuard multi-hop connection config with Entry ser
 >[Peer]<br>
 >PublicKey = 83LUBnP97SFpnS0y1MpEAFcg8MIiQJgW1FRv/8Mc40g=<br>
 >AllowedIPs = 0.0.0.0/0, ::/0<br>
->Endpoint = ua.wg.ivpn.net:25601<br>
+>Endpoint = ua1.wg.ivpn.net:25601<br>
 >PersistentKeepalive = 25
 
 ### OpenVPN
 
-To use Multi-hop, you need to modify the IVPN Account ID you enter when connecting. You simply need to append an '@' symbol and a location code and your traffic will be routed through the specified exit location (regardless of which server you connect to).
+1. Download and extract the archive with our [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) config files
+2. Using any text editor, open the .ovpn config file with the location of the **Entry-hop server**
+2. Replace port number in line 4 (*remote xx.gw.ivpn.net <u>**2049**</u>*) with the **Exit-hop server Multi-hop port**
+3. Replace the location code in line 16 (*verify-x509-name <u>**XX**</u> name-prefix*) with the **Exit-hop server location code**
 
-For example, if you want your traffic to enter via the Romania server (ro.gw.ivpn.net) and exit via Switzerland, you would append **@ch** to your IVPN Account ID (e.g. **ivpnXXXXXXXX@ch** or **i-XXXX-XXXX-XXXX@ch**) and connect to Romania - that's it! If you connect to France with the same **@ch** IVPN Account ID,  the traffic will still exit in Switzerland.
+To lookup the location codes, open the [server status](/status/) page. Note the server names are in the format XY.gw.ivpn.net where X is the location code and Y is a number uniquely identifying the server. Ignore the number and use the code before it:
 
-To lookup the location codes, open the [server status](/status/) page. Note the server names are in the format XY.gw.ivpn.net where X is the location code and Y is a number uniquely identifying the server. Ignore the number (the entry server will automatically connect to the least loaded exit server) and use the code before the number. Below are some examples:
-
-| Server | Location |
+| Server | Location code|
 |---|---|
-| ro1.gw.ivpn.net | ro |
-| gb2.gw.ivpn.net | gb |
-| us-nj1.gw.ivpn.net | 	us-nj |
+| at1.gw.ivpn.net | **at** |
+| ua1.gw.ivpn.net | **ua** |
+| us-nj1.gw.ivpn.net | 	**us-nj** | 
+
+Below, is an example of the OpenVPN Multi-hop connection config file with Entry server in Ukraine and Exit server in Austria:
+
+![](/images-static/uploads/openvpn-multihop.png)

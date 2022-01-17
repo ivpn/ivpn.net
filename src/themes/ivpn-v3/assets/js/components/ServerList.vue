@@ -151,7 +151,7 @@ export default {
         async refreshServers() {
             let resp = await Api.getServerStats();
             if (resp.servers) {
-                this.servers = resp.servers;
+                this.servers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.gateway === v.gateway)) === i);
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
                 this.cities = [...new Set(resp.servers.map(server => server.city))].filter(String).sort();
                 this.providers = [...new Set(resp.servers.map(server => server.isp))].filter(String).sort();
