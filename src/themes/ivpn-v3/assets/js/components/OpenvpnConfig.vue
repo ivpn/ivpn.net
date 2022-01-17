@@ -109,7 +109,7 @@
             </div>
         </div>
         <h2>4. Download configuration</h2>
-        <a class="btn btn-big btn-border" :href="queryString.toString()">Download zip archive</a>
+        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
 
@@ -258,14 +258,23 @@ export default {
         },
         selectEntryServer(event) {
             this.multihop_port = event.target.value;
+            this.validation.download = false;
             this.updateQuery();
         },
         toggleMultihop(event) {
             this.multihop = event.target.checked;
 
-            if (!event.target.checked) {
+            if (event.target.checked) {
+                this.validation.download = this.multihop_port === null;
+            } else {
                 this.query.proto = "udp";
                 this.query.port = "2049";
+                this.multihop_port = null;
+                this.validation.entryCity = true;
+                this.validation.entryServer = true;
+                this.validation.download = false;
+                this.entryCities = [];
+                this.entryServers = [];
             }
         },
         selectProtocol(event) {
@@ -291,6 +300,11 @@ export default {
             }
 
             this.queryString = new URLSearchParams(query);
+        },
+        handleDownload(event) {
+            if (this.validation.download) {
+                event.preventDefault();
+            }
         },
     },
     components: {
@@ -356,6 +370,19 @@ export default {
         select {
             &:hover {
                 cursor: default;
+            }
+        }
+    }
+
+    .btn {
+        &.disabled {
+            opacity: 1;
+            color: gray;
+            border-color: gray;
+
+            &:hover {
+                cursor: not-allowed;
+                text-decoration: none;
             }
         }
     }
