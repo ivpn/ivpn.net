@@ -109,7 +109,7 @@
             </div>
         </div>
         <h2>4. Download configuration</h2>
-        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
+        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
 
