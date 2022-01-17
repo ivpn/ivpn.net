@@ -55,7 +55,7 @@
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
-                    <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
+                    <option v-for="country in multihopCountries" :value="country" :key="country">{{ country }}</option>
                 </select>
                 <i></i>
             </div>
@@ -127,6 +127,7 @@ export default {
             servers: [],
             sortedServers: [],
             countries: [],
+            multihopCountries: [],
             exitCities: [],
             exitServers: [],
             entryCities: [],
@@ -202,6 +203,9 @@ export default {
                     return server.country == value;
                 });
                 this.exitCities = [...new Set(filteredServers.map(server => server.city))].sort();
+                this.multihopCountries = this.countries.filter((country) => {
+                    return country != value;
+                });
             }
 
             this.updateQuery();
@@ -233,10 +237,12 @@ export default {
             let value = event.target.value;
             this.validation.entryCity = value == "";
             this.validation.entryServer = true;
+            this.validation.download = true;
             this.entryServers = [];
 
             if (value == "") {
                 this.entryCities = [];
+                this.multihopCountries = this.countries;
             } else {
                 let filteredServers = this.servers.filter((server) => {
                     return server.country == value;
@@ -247,6 +253,7 @@ export default {
         selectEntryCity(event) {
             let value = event.target.value;
             this.validation.entryServer = value == "";
+            this.validation.download = true;
 
             if (value == "") {
                 this.entryServers = [];
@@ -258,7 +265,7 @@ export default {
         },
         selectEntryServer(event) {
             this.multihop_port = event.target.value;
-            this.validation.download = false;
+            this.validation.download = value == "";
             this.updateQuery();
         },
         toggleMultihop(event) {
