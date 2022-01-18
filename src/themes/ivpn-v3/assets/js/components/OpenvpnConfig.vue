@@ -108,7 +108,7 @@
                 <label for="use_ip_address">Use IP addresses</label>
             </div>
         </div>
-        <h2>4. Download configuration</h2>
+        <h2>4. Download</h2>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
