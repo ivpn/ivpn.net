@@ -5,7 +5,7 @@ highlighted: false
 authors:
   - Viktor Vecsei
 categories:
-  - VPN worst practices
+  - Industry Insights
 # Tags are seperated by comma. Ex. Open Source, Security, Subscriptions
 tags:
   - privacy

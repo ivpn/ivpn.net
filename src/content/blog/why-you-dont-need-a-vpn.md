@@ -7,7 +7,7 @@ draft: false
 authors:
   - Viktor Vecsei
 categories:
-  - VPN worst practices
+  - Industry Insights
 # Tags are seperated by comma. Ex. Open Source, Security, Subscriptions
 tags:
   - privacy
@@ -71,7 +71,7 @@ So when do you need a VPN?\
 
 That's it.
 
-One last note: please remember that if you use a commercial VPN, your internet traffic goes through the VPN provider’s network. Whoever is in control of the servers can see and log anything you do online, if they choose to. You better trust the service you are signing up for - we will get to that in a future post of VPN Worst Practices.
+One last note: please remember that if you use a commercial VPN, your internet traffic goes through the VPN provider’s network. Whoever is in control of the servers can see and log anything you do online, if they choose to. You better trust the service you are signing up for - we will get to that in a future post of Industry Insights.
 
 > Update: We have published a tool called ['Do I need a VPN'](https://www.doineedavpn.com).\
 > It builds on the key points of this blog posts to help evaluate whether a VPN is a right choice for you.\
