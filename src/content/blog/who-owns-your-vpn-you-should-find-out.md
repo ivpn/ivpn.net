@@ -6,7 +6,7 @@ draft: false
 authors:
   - Viktor Vecsei
 categories:
-  - VPN worst practices
+  - Industry Insights
 tags:
   - Transparency
 date: 2021-03-03T14:55:00.000Z

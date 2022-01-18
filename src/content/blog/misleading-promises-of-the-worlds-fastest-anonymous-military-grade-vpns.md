@@ -6,7 +6,7 @@ draft: false
 authors:
   - Viktor Vecsei
 categories:
-  - VPN worst practices
+  - Industry Insights
 tags:
   - Privacy
   - Security
