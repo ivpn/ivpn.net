@@ -24,7 +24,7 @@
         <div class="select">
             <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
-                <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
+                <option v-for="server in filteredServers" :value="server.country_code" :key="server.country_code">{{ server.country }}</option>
             </select>
             <i></i>
         </div>
@@ -55,7 +55,7 @@
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
-                    <option v-for="country in multihopCountries" :value="country" :key="country">{{ country }}</option>
+                    <option v-for="server in multihopServers" :value="server.country_code" :key="server.country_code">{{ server.country }}</option>
                 </select>
                 <i></i>
             </div>
@@ -125,9 +125,9 @@ export default {
     data() {
         return {
             servers: [],
-            sortedServers: [],
+            filteredServers: [],
             countries: [],
-            multihopCountries: [],
+            multihopServers: [],
             exitCities: [],
             exitServers: [],
             entryCities: [],
@@ -171,19 +171,9 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.gateway === v.gateway)) === i);
+                this.filteredServers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
-                this.sortServers("country", false);
             }
-        },
-        sortServers(by, desc) {
-            const servers = this.servers;
-            this.sortedServers = servers.sort((a, b) => {
-                if (a[by] > b[by]) {
-                    return (desc ? -1 : 1)
-                } else if (a[by] < b[by])
-                    return (desc ? 1 : -1)
-                return 0
-            });
         },
         selectPlatform(event) {
             event.preventDefault();
@@ -200,12 +190,12 @@ export default {
             if (value == "") {
                 this.exitCities = [];
             } else {
-                let filteredServers = this.servers.filter((server) => {
-                    return server.country == value;
+                let filterCities = this.servers.filter((server) => {
+                    return server.country_code == value;
                 });
-                this.exitCities = [...new Set(filteredServers.map(server => server.city))].sort();
-                this.multihopCountries = this.countries.filter((country) => {
-                    return country != value;
+                this.exitCities = [...new Set(filterCities.map(server => server.city))].sort();
+                this.multihopServers = this.filteredServers.filter((server) => {
+                    return server.country_code != value;
                 });
             }
 
@@ -243,10 +233,10 @@ export default {
 
             if (value == "") {
                 this.entryCities = [];
-                this.multihopCountries = this.countries;
+                this.multihopServers = this.filteredServers;
             } else {
                 let filteredServers = this.servers.filter((server) => {
-                    return server.country == value;
+                    return server.country_code == value;
                 });
                 this.entryCities = [...new Set(filteredServers.map(server => server.city))].sort();
             }
