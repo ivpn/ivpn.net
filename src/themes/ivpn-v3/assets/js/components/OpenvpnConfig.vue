@@ -170,10 +170,19 @@ export default {
         async refreshServers() {
             let resp = await Api.getServerStats();
             if (resp.servers) {
-                this.servers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.gateway === v.gateway)) === i);
-                this.filteredServers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
+                this.servers = resp.servers.filter((server) => server.hostnames.openvpn != null);
+                this.filteredServers = this.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
             }
+        },
+        sortBy(array, by, desc) {
+            return array.sort((a, b) => {
+                if (a[by] > b[by]) {
+                    return (desc ? -1 : 1)
+                } else if (a[by] < b[by])
+                    return (desc ? 1 : -1)
+                return 0
+            });
         },
         selectPlatform(event) {
             event.preventDefault();
@@ -190,13 +199,9 @@ export default {
             if (value == "") {
                 this.exitCities = [];
             } else {
-                let filterCities = this.servers.filter((server) => {
-                    return server.country_code == value;
-                });
+                let filterCities = this.servers.filter((server) => server.country_code == value);
                 this.exitCities = [...new Set(filterCities.map(server => server.city))].sort();
-                this.multihopServers = this.filteredServers.filter((server) => {
-                    return server.country_code != value;
-                });
+                this.multihopServers = this.filteredServers.filter((server) => server.country_code != value);
             }
 
             this.updateQuery();
@@ -210,9 +215,7 @@ export default {
             if (value == "") {
                 this.exitServers = [];
             } else {
-                let filteredServers = this.servers.filter((server) => {
-                    return server.city == value;
-                });
+                let filteredServers = this.servers.filter((server) => server.city == value);
                 this.exitServers = [...new Set(filteredServers.map(server => server.gateway))].sort();
             }
 
@@ -235,9 +238,7 @@ export default {
                 this.entryCities = [];
                 this.multihopServers = this.filteredServers;
             } else {
-                let filteredServers = this.servers.filter((server) => {
-                    return server.country_code == value;
-                });
+                let filteredServers = this.servers.filter((server) => server.country_code == value);
                 this.entryCities = [...new Set(filteredServers.map(server => server.city))].sort();
             }
         },
@@ -249,9 +250,8 @@ export default {
             if (value == "") {
                 this.entryServers = [];
             } else {
-                this.entryServers = this.servers.filter((server) => {
-                    return server.city == value;
-                });
+                this.entryServers = this.servers.filter((server) => server.city == value);
+                this.entryServers = this.sortBy(this.entryServers, 'gateway', false);
             }
         },
         selectEntryServer(event) {
