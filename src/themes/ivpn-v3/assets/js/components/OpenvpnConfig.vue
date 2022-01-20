@@ -20,7 +20,7 @@
                 </a>
             </div>
         </div>
-        <h2>2. Select server location</h2>
+        <h2>2. Select one or multiple exit servers</h2>
         <div class="select">
             <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
@@ -38,7 +38,7 @@
         <div class="select" v-bind:class="{ disabled: validation.exitServer }">
             <select :disabled="validation.exitServer" @change="selectExitServer($event)">
                 <option value="">All servers</option>
-                <option v-for="server in exitServers" :value="server" :key="server">{{ server }}</option>
+                <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
             </select>
             <i></i>
         </div>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div v-if="multihop">
-            <h3>Select exit server location</h3>
+            <h3>Select entry server location</h3>
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
@@ -69,7 +69,7 @@
             <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
                 <select :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
                     <option value="">Select server</option>
-                    <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
+                    <option v-for="server in entryServers" :value="server.gateway" :key="server.gateway">{{ server.gateway }}</option>
                 </select>
                 <i></i>
             </div>
@@ -108,6 +108,17 @@
                 <label for="use_ip_address">Use IP addresses</label>
             </div>
         </div>
+        <h3>OpenVPN version</h3>
+        <div class="radio">
+            <div>
+                <input type="radio" name="latest_version" id="default_version" value="false" checked @change="selectVersion($event)">
+                <label for="default_version">OpenVPN all versions</label>
+            </div>
+            <div>
+                <input type="radio" name="latest_version" id="latest_version" value="true" @change="selectVersion($event)">
+                <label for="latest_version">OpenVPN 2.5</label>
+            </div>
+        </div>
         <h2>4. Download</h2>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
@@ -138,6 +149,7 @@ export default {
                 city: null,
                 host: null,
                 use_ip_address: false,
+                latest_version: false,
                 proto: "udp",
                 port: 2049
             },
@@ -150,6 +162,8 @@ export default {
             },
             multihop: false,
             multihop_port: null,
+            verify_x509_name: null,
+            entry_host: null,
             queryString: new URLSearchParams(),
             apiURL: process.env.MIX_APP_API_URL,
         };
@@ -215,15 +229,17 @@ export default {
             if (value == "") {
                 this.exitServers = [];
             } else {
-                let filteredServers = this.servers.filter((server) => server.city == value);
-                this.exitServers = [...new Set(filteredServers.map(server => server.gateway))].sort();
+                this.exitServers = this.servers.filter((server) => server.city == value);
+                this.exitServers = this.sortBy(this.exitServers, 'gateway', false);
             }
 
             this.updateQuery();
         },
         selectExitServer(event) {
             let value = event.target.value;
-            this.query.host = value;
+            this.query.host = value.split("_")[0];
+            this.multihop_port = value.split("_")[1];
+            this.verify_x509_name = this.query.host.split(".")[0].replace(/[0-9]/g, "");
             this.validation.multihop = value == "";
             this.updateQuery();
         },
@@ -256,7 +272,7 @@ export default {
         },
         selectEntryServer(event) {
             let value = event.target.value;
-            this.multihop_port = value;
+            this.entry_host = value;
             this.validation.download = value == "";
             this.updateQuery();
         },
@@ -275,6 +291,8 @@ export default {
                 this.entryCities = [];
                 this.entryServers = [];
             }
+
+            this.updateQuery();
         },
         selectProtocol(event) {
             this.query.proto = event.target.value;
@@ -284,7 +302,10 @@ export default {
             this.query.port = parseInt(event.target.value.split("-")[1]);
         },
         selectUseIPAddress(event) {
-            this.query.use_ip_address = event.target.value
+            this.query.use_ip_address = event.target.value;
+        },
+        selectVersion(event) {
+            this.query.latest_version = event.target.value;
         },
         updateQuery() {
             let query = this.query;
@@ -294,8 +315,16 @@ export default {
                 }
             });
 
-            if (this.multihop && this.multihop_port) {
-                query.port = this.multihop_port;
+            if (this.multihop) {
+                if (this.multihop_port) {
+                    query.port = this.multihop_port;
+                }
+                if (this.verify_x509_name) {
+                    query.verify_x509_name = this.verify_x509_name;
+                }
+                if (this.entry_host) {
+                    query.host = this.entry_host;
+                }
             }
 
             this.queryString = new URLSearchParams(query);
@@ -317,126 +346,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
-@import "@/styles/base.scss";
-@import "@/styles/buttons.scss";
-
-.vpn-configuration {
-
-    h2 {
-        margin: 40px 0 30px 0;
-    }
-
-    h3 {
-        margin-top: 30px;
-    }
-
-    .select {
-        width: 235px;
-        display: inline-block;
-        margin: 0 10px 10px 0;
-    }
-
-    .checkbox {
-        
-        & > div {
-            align-items: center;
-            display: flex;
-            flex-grow: 1;
-
-            input {
-                margin-right: 15px;
-            }
-        }
-
-        &.disabled {
-            input {
-                color: gray;
-            }
-        }
-    }
-
-    .radio {
-        & > div {
-            margin: 10px 0;
-        }
-    }
-
-    .disabled {
-        opacity: 0.5;
-
-        input,
-        select {
-            &:hover {
-                cursor: default;
-            }
-        }
-    }
-
-    .btn {
-        &.disabled {
-            opacity: 1;
-            color: gray;
-            border-color: gray;
-
-            &:hover {
-                cursor: not-allowed;
-                text-decoration: none;
-            }
-        }
-    }
-
-    .apps-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        
-        a {
-            font-family: $font-main-mono;
-            font-size: 18px;
-            line-height: 36px;        
-            display: flex;
-            align-items: center;
-            height: 60px;   
-            margin: 0 30px 0 0;
-            opacity: 0.5;
-
-            @include light-theme((
-                color: $dark
-            ));
-
-            @include dark-theme((
-                color: $white
-            ));
-
-            svg {
-                width: 34px;
-                height: 34px;
-                margin: 10px 10px 10px 0;
-                pointer-events: none;
-
-                @include light-theme((
-                    fill: $dark
-                ));
-
-                @include dark-theme((
-                    fill: $white
-                ));
-            }
-
-            &:hover {   
-                text-decoration: none;
-            }
-
-            &.active {
-                color: $blue;
-                font-weight: bold;
-                opacity: 1;
-                
-                svg {
-                    fill: $blue;   
-                }
-            }
-        }
-    }
-}
+@import "@/styles/vpn-configuration.scss";
 </style>
