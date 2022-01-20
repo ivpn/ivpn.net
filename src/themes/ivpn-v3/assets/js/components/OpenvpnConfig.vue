@@ -38,7 +38,7 @@
         <div class="select" v-bind:class="{ disabled: validation.exitServer }">
             <select :disabled="validation.exitServer" @change="selectExitServer($event)">
                 <option value="">All servers</option>
-                <option v-for="server in exitServers" :value="server" :key="server">{{ server }}</option>
+                <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
             </select>
             <i></i>
         </div>
@@ -69,7 +69,7 @@
             <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
                 <select :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
                     <option value="">Select server</option>
-                    <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
+                    <option v-for="server in entryServers" :value="server.gateway" :key="server.gateway">{{ server.gateway }}</option>
                 </select>
                 <i></i>
             </div>
@@ -150,6 +150,7 @@ export default {
             },
             multihop: false,
             multihop_port: null,
+            verify_x509_name: null,
             queryString: new URLSearchParams(),
             apiURL: process.env.MIX_APP_API_URL,
         };
@@ -215,15 +216,17 @@ export default {
             if (value == "") {
                 this.exitServers = [];
             } else {
-                let filteredServers = this.servers.filter((server) => server.city == value);
-                this.exitServers = [...new Set(filteredServers.map(server => server.gateway))].sort();
+                this.exitServers = this.servers.filter((server) => server.city == value);
+                this.exitServers = this.sortBy(this.exitServers, 'gateway', false);
             }
 
             this.updateQuery();
         },
         selectExitServer(event) {
             let value = event.target.value;
-            this.query.host = value;
+            this.query.host = value.split("_")[0];
+            this.multihop_port = value.split("_")[1];
+            this.verify_x509_name = "at";
             this.validation.multihop = value == "";
             this.updateQuery();
         },
@@ -256,7 +259,8 @@ export default {
         },
         selectEntryServer(event) {
             let value = event.target.value;
-            this.multihop_port = value;
+            console.log(value);
+            this.query.host = value;
             this.validation.download = value == "";
             this.updateQuery();
         },
@@ -294,8 +298,13 @@ export default {
                 }
             });
 
-            if (this.multihop && this.multihop_port) {
-                query.port = this.multihop_port;
+            if (this.multihop) {
+                if (this.multihop_port) {
+                    query.port = this.multihop_port;
+                }
+                if (this.verify_x509_name) {
+                    query.verify_x509_name = this.verify_x509_name;
+                }
             }
 
             this.queryString = new URLSearchParams(query);
