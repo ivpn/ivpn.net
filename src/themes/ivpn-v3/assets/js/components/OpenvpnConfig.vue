@@ -108,6 +108,17 @@
                 <label for="use_ip_address">Use IP addresses</label>
             </div>
         </div>
+        <h3>OpenVPN version</h3>
+        <div class="radio">
+            <div>
+                <input type="radio" name="latest_version" id="default_version" value="false" checked @change="selectVersion($event)">
+                <label for="default_version">OpenVPN all versions</label>
+            </div>
+            <div>
+                <input type="radio" name="latest_version" id="latest_version" value="true" @change="selectVersion($event)">
+                <label for="latest_version">OpenVPN 2.5</label>
+            </div>
+        </div>
         <h2>4. Download</h2>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
@@ -138,6 +149,7 @@ export default {
                 city: null,
                 host: null,
                 use_ip_address: false,
+                latest_version: false,
                 proto: "udp",
                 port: 2049
             },
@@ -290,7 +302,10 @@ export default {
             this.query.port = parseInt(event.target.value.split("-")[1]);
         },
         selectUseIPAddress(event) {
-            this.query.use_ip_address = event.target.value
+            this.query.use_ip_address = event.target.value;
+        },
+        selectVersion(event) {
+            this.query.latest_version = event.target.value;
         },
         updateQuery() {
             let query = this.query;
