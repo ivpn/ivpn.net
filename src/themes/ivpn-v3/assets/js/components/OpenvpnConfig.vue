@@ -279,6 +279,8 @@ export default {
                 this.entryCities = [];
                 this.entryServers = [];
             }
+
+            this.updateQuery();
         },
         selectProtocol(event) {
             this.query.proto = event.target.value;
