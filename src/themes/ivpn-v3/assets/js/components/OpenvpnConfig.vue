@@ -20,7 +20,7 @@
                 </a>
             </div>
         </div>
-        <h2>2. Select server location</h2>
+        <h2>2. Select one or multiple exit servers</h2>
         <div class="select">
             <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div v-if="multihop">
-            <h3>Select exit server location</h3>
+            <h3>Select entry server location</h3>
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
