@@ -151,6 +151,7 @@ export default {
             multihop: false,
             multihop_port: null,
             verify_x509_name: null,
+            entry_host: null,
             queryString: new URLSearchParams(),
             apiURL: process.env.MIX_APP_API_URL,
         };
@@ -226,7 +227,7 @@ export default {
             let value = event.target.value;
             this.query.host = value.split("_")[0];
             this.multihop_port = value.split("_")[1];
-            this.verify_x509_name = "at";
+            this.verify_x509_name = this.query.host.split(".")[0].replace(/[0-9]/g, "");
             this.validation.multihop = value == "";
             this.updateQuery();
         },
@@ -259,8 +260,7 @@ export default {
         },
         selectEntryServer(event) {
             let value = event.target.value;
-            console.log(value);
-            this.query.host = value;
+            this.entry_host = value;
             this.validation.download = value == "";
             this.updateQuery();
         },
@@ -304,6 +304,9 @@ export default {
                 }
                 if (this.verify_x509_name) {
                     query.verify_x509_name = this.verify_x509_name;
+                }
+                if (this.entry_host) {
+                    query.host = this.entry_host;
                 }
             }
 
