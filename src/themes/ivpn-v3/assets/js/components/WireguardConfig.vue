@@ -162,7 +162,7 @@ export default {
         async refreshServers() {
             let resp = await Api.getServerStats();
             if (resp.servers) {
-                this.servers = resp.servers.filter((server) => server.hostnames.openvpn != null);
+                this.servers = resp.servers.filter((server) => server.hostnames.wireguard != null);
                 this.filteredServers = this.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
             }
