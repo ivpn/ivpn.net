@@ -20,7 +20,7 @@
                 </a>
             </div>
         </div>
-        <h2>2. Select server location</h2>
+        <h2>2. Select one or multiple exit servers</h2>
         <div class="select">
             <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
@@ -38,7 +38,7 @@
         <div class="select" v-bind:class="{ disabled: validation.exitServer }">
             <select :disabled="validation.exitServer" @change="selectExitServer($event)">
                 <option value="">All servers</option>
-                <option v-for="server in exitServers" :value="server" :key="server">{{ server }}</option>
+                <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
             </select>
             <i></i>
         </div>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div v-if="multihop">
-            <h3>Select exit server location</h3>
+            <h3>Select entry server location</h3>
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
@@ -69,15 +69,7 @@
             <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
                 <select :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
                     <option value="">Select server</option>
-                    <option v-for="server in entryServers" :value="server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
-                </select>
-                <i></i>
-            </div>
-            <h3>Protocol</h3>
-            <div class="select">
-                <select @change="selectProtocol($event)">
-                    <option value="udp" :selected="query.proto == 'udp' || !query.proto">UDP</option>
-                    <option value="tcp" :selected="query.proto == 'tcp'">TCP</option>
+                    <option v-for="server in entryServers" :value="server.gateway" :key="server.gateway">{{ server.gateway }}</option>
                 </select>
                 <i></i>
             </div>
@@ -90,9 +82,10 @@
                     <option value="udp-2050" :selected="(query.proto == 'udp' && query.port == 2050)">UDP 2050</option>
                     <option value="udp-53" :selected="(query.proto == 'udp' && query.port == 53)">UDP 53</option>
                     <option value="udp-1194" :selected="(query.proto == 'udp' && query.port == 1194)">UDP 1194</option>
-                    <option value="tcp-443" :selected="(query.proto == 'tcp' && query.port == 443)">TCP 443</option>
-                    <option value="tcp-1443" :selected="(query.proto == 'tcp' && query.port == 1443)">TCP 1443</option>
-                    <option value="tcp-80" :selected="(query.proto == 'tcp' && query.port == 80)">TCP 80</option>
+                    <option value="udp-30587" :selected="(query.proto == 'udp' && query.port == 30587)">UDP 30587</option>
+                    <option value="udp-41893" :selected="(query.proto == 'udp' && query.port == 41893)">UDP 41893</option>
+                    <option value="udp-48574" :selected="(query.proto == 'udp' && query.port == 48574)">UDP 48574</option>
+                    <option value="udp-58237" :selected="(query.proto == 'udp' && query.port == 58237)">UDP 58237</option>
                 </select>
                 <i></i>
             </div>
