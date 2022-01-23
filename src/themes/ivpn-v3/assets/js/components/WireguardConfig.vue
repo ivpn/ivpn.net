@@ -78,14 +78,14 @@
             <h3>Protocol / Port</h3>
             <div class="select">
                 <select @change="selectProtocolPort($event)">
-                    <option value="udp-2049" :selected="(query.proto == 'udp' && query.port == 2049) || !query.port">UDP 2049</option>
-                    <option value="udp-2050" :selected="(query.proto == 'udp' && query.port == 2050)">UDP 2050</option>
-                    <option value="udp-53" :selected="(query.proto == 'udp' && query.port == 53)">UDP 53</option>
-                    <option value="udp-1194" :selected="(query.proto == 'udp' && query.port == 1194)">UDP 1194</option>
-                    <option value="udp-30587" :selected="(query.proto == 'udp' && query.port == 30587)">UDP 30587</option>
-                    <option value="udp-41893" :selected="(query.proto == 'udp' && query.port == 41893)">UDP 41893</option>
-                    <option value="udp-48574" :selected="(query.proto == 'udp' && query.port == 48574)">UDP 48574</option>
-                    <option value="udp-58237" :selected="(query.proto == 'udp' && query.port == 58237)">UDP 58237</option>
+                    <option value="2049" :selected="(query.port == 2049) || !query.port">UDP 2049</option>
+                    <option value="2050" :selected="(query.port == 2050)">UDP 2050</option>
+                    <option value="53" :selected="(query.port == 53)">UDP 53</option>
+                    <option value="1194" :selected="(query.port == 1194)">UDP 1194</option>
+                    <option value="30587" :selected="(query.port == 30587)">UDP 30587</option>
+                    <option value="41893" :selected="(query.port == 41893)">UDP 41893</option>
+                    <option value="48574" :selected="(query.port == 48574)">UDP 48574</option>
+                    <option value="58237" :selected="(query.port == 58237)">UDP 58237</option>
                 </select>
                 <i></i>
             </div>
@@ -107,18 +107,92 @@
 </template>
 
 <script>
+import Api from "@/api/api";
+import IconWindows from "@/components/icons/os/windows.vue";
+import IconAndroid from "@/components/icons/os/android.vue";
+import IconIos from "@/components/icons/os/ios.vue";
+import IconLinux from "@/components/icons/os/linux2.vue";
+import IconMacos from "@/components/icons/os/macos.vue";
+
 export default {
     data() {
-        return {};
+        return {
+            servers: [],
+            filteredServers: [],
+            countries: [],
+            multihopServers: [],
+            exitCities: [],
+            exitServers: [],
+            entryCities: [],
+            entryServers: [],
+            query: {
+                platform: "windows",
+                country: null,
+                city: null,
+                host: null,
+                port: 2049
+            },
+            validation: {
+                exitCity: true,
+                exitServer: true,
+                entryCity: true,
+                entryServer: true,
+                multihop: true
+            },
+            multihop: false,
+            multihop_port: null,
+            entry_host: null,
+            queryString: new URLSearchParams(),
+            apiURL: process.env.MIX_APP_API_URL,
+        };
+    },
+    watch: {
+        query: {
+            handler: function (after, before) {
+                this.updateQuery();
+            },
+            deep: true
+        }
     },
     mounted() {
-        
+        this.refreshServers();
+        this.updateQuery();
     },
     methods: {
+        async refreshServers() {
+            let resp = await Api.getServerStats();
+            if (resp.servers) {
+                this.servers = resp.servers.filter((server) => server.hostnames.openvpn != null);
+                this.filteredServers = this.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
+                this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
+            }
+        },
+        updateQuery() {
+            let query = this.query;
+            Object.keys(query).forEach(key => {
+                if (query[key] === null || query[key] === undefined) {
+                    delete query[key];
+                }
+            });
 
+            if (this.multihop) {
+                if (this.multihop_port) {
+                    query.port = this.multihop_port;
+                }
+                if (this.entry_host) {
+                    query.host = this.entry_host;
+                }
+            }
+
+            this.queryString = new URLSearchParams(query);
+        },
     },
     components: {
-        
+        IconWindows,
+        IconAndroid,
+        IconIos,
+        IconLinux,
+        IconMacos
     }
 };
 </script>
