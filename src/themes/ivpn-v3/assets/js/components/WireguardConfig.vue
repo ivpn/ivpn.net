@@ -75,19 +75,34 @@
             </div>
         </div>
         <div v-if="!multihop">
-            <h3>Protocol / Port</h3>
+            <h3>Port</h3>
             <div class="select">
                 <select @change="selectPort($event)">
-                    <option value="2049" :selected="(query.port == 2049) || !query.port">UDP 2049</option>
-                    <option value="2050" :selected="(query.port == 2050)">UDP 2050</option>
-                    <option value="53" :selected="(query.port == 53)">UDP 53</option>
-                    <option value="1194" :selected="(query.port == 1194)">UDP 1194</option>
-                    <option value="30587" :selected="(query.port == 30587)">UDP 30587</option>
-                    <option value="41893" :selected="(query.port == 41893)">UDP 41893</option>
-                    <option value="48574" :selected="(query.port == 48574)">UDP 48574</option>
-                    <option value="58237" :selected="(query.port == 58237)">UDP 58237</option>
+                    <option value="2049" :selected="(query.port == 2049) || !query.port">2049</option>
+                    <option value="2050" :selected="(query.port == 2050)">2050</option>
+                    <option value="53" :selected="(query.port == 53)">53</option>
+                    <option value="1194" :selected="(query.port == 1194)">1194</option>
+                    <option value="30587" :selected="(query.port == 30587)">30587</option>
+                    <option value="41893" :selected="(query.port == 41893)">41893</option>
+                    <option value="48574" :selected="(query.port == 48574)">48574</option>
+                    <option value="58237" :selected="(query.port == 58237)">58237</option>
                 </select>
                 <i></i>
+            </div>
+        </div>
+        <h3>VPN tunnel traffic</h3>
+        <div class="radio">
+            <div>
+                <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv4_ipv6" value="ipv4_ipv6" checked @change="selectTrafficProtocol($event)">
+                <label for="traffic_protocol_ipv4_ipv6">IPv4 and IPv6</label>
+            </div>
+            <div>
+                <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv4" value="ipv4" @change="selectTrafficProtocol($event)">
+                <label for="traffic_protocol_ipv4">IPv4</label>
+            </div>
+            <div>
+                <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv6" value="ipv6" @change="selectTrafficProtocol($event)">
+                <label for="traffic_protocol_ipv6">IPv6</label>
             </div>
         </div>
         <h2>4. Download</h2>
@@ -261,6 +276,9 @@ export default {
         },
         selectPort(event) {
             this.query.port = event.target.value;
+        },
+        selectTrafficProtocol(event) {
+            
         },
         updateQuery() {
             let query = this.query;
