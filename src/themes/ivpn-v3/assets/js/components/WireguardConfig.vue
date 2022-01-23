@@ -77,7 +77,7 @@
         <div v-if="!multihop">
             <h3>Protocol / Port</h3>
             <div class="select">
-                <select @change="selectProtocolPort($event)">
+                <select @change="selectPort($event)">
                     <option value="2049" :selected="(query.port == 2049) || !query.port">UDP 2049</option>
                     <option value="2050" :selected="(query.port == 2050)">UDP 2050</option>
                     <option value="53" :selected="(query.port == 53)">UDP 53</option>
@@ -167,6 +167,112 @@ export default {
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
             }
         },
+        sortBy(array, by, desc) {
+            return array.sort((a, b) => {
+                if (a[by] > b[by]) {
+                    return (desc ? -1 : 1)
+                } else if (a[by] < b[by])
+                    return (desc ? 1 : -1)
+                return 0
+            });
+        },
+        selectPlatform(event) {
+            event.preventDefault();
+            this.query.platform = event.target.getAttribute("data-platform");
+        },
+        selectExitCountry(event) {
+            let value = event.target.value;
+            this.query.country = value;
+            this.validation.exitCity = value == "";
+            this.validation.exitServer = true;
+            this.validation.multihop = true;
+            this.exitServers = [];
+
+            if (value == "") {
+                this.exitCities = [];
+            } else {
+                let filterCities = this.servers.filter((server) => server.country_code == value);
+                this.exitCities = [...new Set(filterCities.map(server => server.city))].sort();
+                this.multihopServers = this.filteredServers.filter((server) => server.country_code != value);
+            }
+
+            this.updateQuery();
+        },
+        selectExitCity(event) {
+            let value = event.target.value;
+            this.query.city = event.target.value;
+            this.validation.exitServer = value == "";
+            this.validation.multihop = true;
+
+            if (value == "") {
+                this.exitServers = [];
+            } else {
+                this.exitServers = this.servers.filter((server) => server.city == value);
+                this.exitServers = this.sortBy(this.exitServers, 'gateway', false);
+            }
+
+            this.updateQuery();
+        },
+        selectExitServer(event) {
+            let value = event.target.value;
+            this.query.host = value.split("_")[0];
+            this.multihop_port = value.split("_")[1];
+            this.validation.multihop = value == "";
+            this.updateQuery();
+        },
+        selectEntryCountry(event) {
+            let value = event.target.value;
+            this.validation.entryCity = value == "";
+            this.validation.entryServer = true;
+            this.validation.download = true;
+            this.entryServers = [];
+
+            if (value == "") {
+                this.entryCities = [];
+                this.multihopServers = this.filteredServers;
+            } else {
+                let filteredServers = this.servers.filter((server) => server.country_code == value);
+                this.entryCities = [...new Set(filteredServers.map(server => server.city))].sort();
+            }
+        },
+        selectEntryCity(event) {
+            let value = event.target.value;
+            this.validation.entryServer = value == "";
+            this.validation.download = true;
+
+            if (value == "") {
+                this.entryServers = [];
+            } else {
+                this.entryServers = this.servers.filter((server) => server.city == value);
+                this.entryServers = this.sortBy(this.entryServers, 'gateway', false);
+            }
+        },
+        selectEntryServer(event) {
+            let value = event.target.value;
+            this.entry_host = value;
+            this.validation.download = value == "";
+            this.updateQuery();
+        },
+        toggleMultihop(event) {
+            this.multihop = event.target.checked;
+
+            if (event.target.checked) {
+                this.validation.download = this.multihop_port === null;
+            } else {
+                this.query.port = "2049";
+                this.multihop_port = null;
+                this.validation.entryCity = true;
+                this.validation.entryServer = true;
+                this.validation.download = false;
+                this.entryCities = [];
+                this.entryServers = [];
+            }
+
+            this.updateQuery();
+        },
+        selectPort(event) {
+            this.query.port = event.target.value;
+        },
         updateQuery() {
             let query = this.query;
             Object.keys(query).forEach(key => {
@@ -185,6 +291,11 @@ export default {
             }
 
             this.queryString = new URLSearchParams(query);
+        },
+        handleDownload(event) {
+            if (this.validation.download) {
+                event.preventDefault();
+            }
         },
     },
     components: {
