@@ -90,17 +90,6 @@
                 <i></i>
             </div>
         </div>
-        <h3>Hostnames or IP addresses</h3>
-        <div class="radio">
-            <div>
-                <input type="radio" name="use_ip_address" id="use_hostnames" value="false" checked @change="selectUseIPAddress($event)">
-                <label for="use_hostnames">Use hostnames</label>
-            </div>
-            <div>
-                <input type="radio" name="use_ip_address" id="use_ip_address" value="true" @change="selectUseIPAddress($event)">
-                <label for="use_ip_address">Use IP addresses</label>
-            </div>
-        </div>
         <h2>4. Download</h2>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" :href="apiURL + '/v5/config/ivpn-wireguard-config?' + queryString.toString()" @click="handleDownload($event)">Download</a>
     </div>
