@@ -134,7 +134,9 @@ export default {
                 country: null,
                 city: null,
                 host: null,
-                port: 2049
+                port: 2049,
+                ipv4: true,
+                ipv6: true,
             },
             validation: {
                 exitCity: true,
@@ -278,7 +280,18 @@ export default {
             this.query.port = event.target.value;
         },
         selectTrafficProtocol(event) {
-            
+            if (event.target.value == "ipv4_ipv6") {
+                this.query.ipv4 = true;
+                this.query.ipv6 = true;
+            }
+            if (event.target.value == "ipv4") {
+                this.query.ipv4 = true;
+                this.query.ipv6 = null;
+            }
+            if (event.target.value == "ipv6") {
+                this.query.ipv4 = null;
+                this.query.ipv6 = true;
+            }
         },
         updateQuery() {
             let query = this.query;
