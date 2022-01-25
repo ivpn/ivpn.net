@@ -392,7 +392,10 @@ export default {
 
     async getBitcoinURL(invoice, hmac) {
 
-        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, process.env.MIX_APP_WEBAPI_URL, {
+        // let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, process.env.MIX_APP_WEBAPI_URL, {
+        //     credentials: "omit"
+        // })
+        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, "", {
             credentials: "omit"
         })
 
