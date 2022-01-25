@@ -13,7 +13,8 @@ export default {
 
     fetch(method, url, data = null, overrideURI = null, overrideOptions = {}) {
 
-        let baseURI = process.env.MIX_APP_WEBAPI_URL
+        // let baseURI = process.env.MIX_APP_WEBAPI_URL
+        let baseURI = ""
 
         let options = {
             method: method,
