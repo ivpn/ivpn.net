@@ -1,6 +1,6 @@
 ---
 title: Comparing dVPNs and centralized VPNs for privacy protection
-url: /blog/privacy-issue-real-vpns-alone-cant-solve-it/
+url: /blog/comparing-dvpns-centralized-vpns-privacy-protection/
 highlighted: true
 authors:
   - Viktor Vecsei
