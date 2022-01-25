@@ -174,7 +174,21 @@ export default {
             }
         },
         async fetchConfigurations() {
-            let resp = await Api.getWireGuardConfigurations();
+            let resp = await Api.getWireGuardConfigurations(this.queryString);
+            let self = this;
+            resp.forEach(function (config) {
+                console.log(self.configString(config));
+            });
+        },
+        configString(config) {
+            return "[Interface]" +
+            "\nPrivateKey = " +
+            "\nAddress = " + config.interface.address +
+            "\nDNS = " + config.interface.dns +
+            "\n\n[Peer]" +
+            "\nPublicKey = " + config.peer.public_key +
+            "\nAllowedIPs = " + config.peer.allowed_ips +
+            "\nEndpoint = " + config.peer.endpoint;
         },
         sortBy(array, by, desc) {
             return array.sort((a, b) => {
