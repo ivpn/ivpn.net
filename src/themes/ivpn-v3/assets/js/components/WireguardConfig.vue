@@ -161,17 +161,20 @@ export default {
         }
     },
     mounted() {
-        this.refreshServers();
+        this.fetchServers();
         this.updateQuery();
     },
     methods: {
-        async refreshServers() {
+        async fetchServers() {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers.filter((server) => server.hostnames.wireguard != null);
                 this.filteredServers = this.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
             }
+        },
+        async fetchConfigurations() {
+            let resp = await Api.getWireGuardConfigurations();
         },
         sortBy(array, by, desc) {
             return array.sort((a, b) => {
@@ -313,8 +316,10 @@ export default {
             this.queryString = new URLSearchParams(query);
         },
         handleDownload(event) {
-            if (this.validation.download) {
-                event.preventDefault();
+            event.preventDefault();
+
+            if (!this.validation.download) {
+                this.fetchConfigurations()
             }
         },
     },

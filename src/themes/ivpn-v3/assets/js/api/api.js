@@ -435,4 +435,14 @@ export default {
         )
     },
 
+    async getWireGuardConfigurations() {
+        return await this.Get(
+            '/v5/config/ivpn-wireguard-config',
+            process.env.MIX_APP_API_URL,
+            {
+                credentials: "omit"
+            },
+        )
+    },
+
 }
