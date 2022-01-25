@@ -106,12 +106,14 @@
             </div>
         </div>
         <h2>4. Download</h2>
-        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" :href="apiURL + '/v5/config/ivpn-wireguard-config?' + queryString.toString()" @click="handleDownload($event)">Download</a>
+        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click="handleDownload($event)">Download</a>
     </div>
 </template>
 
 <script>
 import Api from "@/api/api";
+import JSZip from "jszip";
+import FileSaver from "file-saver";
 import IconWindows from "@/components/icons/os/windows.vue";
 import IconAndroid from "@/components/icons/os/android.vue";
 import IconIos from "@/components/icons/os/ios.vue";
@@ -149,7 +151,6 @@ export default {
             multihop_port: null,
             entry_host: null,
             queryString: new URLSearchParams(),
-            apiURL: process.env.MIX_APP_API_URL,
         };
     },
     watch: {
