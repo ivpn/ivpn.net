@@ -182,18 +182,21 @@ export default {
     },
     methods: {
         async fetchServers() {
-            let resp = await Api.getServerStats();
-            if (resp.servers) {
-                this.servers = resp.servers.filter((server) => server.hostnames.wireguard != null);
+            let res = await Api.getServerStats();
+            if (res.servers) {
+                this.servers = res.servers.filter((server) => server.hostnames.wireguard != null);
                 this.filteredServers = this.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
-                this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
+                this.countries = [...new Set(res.servers.map(server => server.country))].filter(String).sort();
             }
         },
         async fetchConfigurations() {
-            let resp = await Api.getWireGuardConfigurations(this.queryString);
+            let res = await Api.getWireGuardConfigurations(this.queryString);
+            this.downloadArchive(res);
+        },
+        downloadArchive(res) {
             let self = this;
             let zip = new JSZip();
-            resp.forEach(function (config) {
+            res.forEach(function (config) {
                 zip.file(config.basename, self.configString(config));
             });
             zip.generateAsync({ type: "blob" }).then(function(content) {
