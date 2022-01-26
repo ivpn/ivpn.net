@@ -177,8 +177,12 @@ export default {
         async fetchConfigurations() {
             let resp = await Api.getWireGuardConfigurations(this.queryString);
             let self = this;
+            let zip = new JSZip();
             resp.forEach(function (config) {
-                console.log(self.configString(config));
+                zip.file(config.basename, self.configString(config));
+            });
+            zip.generateAsync({ type: "blob" }).then(function(content) {
+                FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
             });
         },
         configString(config) {
