@@ -361,11 +361,7 @@ export default {
         },
         generateKey(event) {
             event.preventDefault();
-            let wg = wireguard.generateKeypair();
-            this.wgInterface = {
-                publicKey: wg.publicKey,
-                privateKey: wg.privateKey
-            };
+            this.wgInterface = wireguard.generateKeypair();
             this.validation.download = false;
         },
     },
