@@ -154,7 +154,8 @@ export default {
                 exitServer: true,
                 entryCity: true,
                 entryServer: true,
-                multihop: true
+                multihop: true,
+                download: true,
             },
             multihop: false,
             multihop_port: null,
@@ -362,6 +363,7 @@ export default {
                 publicKey: wg.publicKey,
                 privateKey: wg.privateKey
             };
+            this.validation.download = false;
         },
     },
     components: {
