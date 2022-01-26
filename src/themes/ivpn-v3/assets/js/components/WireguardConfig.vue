@@ -20,7 +20,15 @@
                 </a>
             </div>
         </div>
-        <h2>2. Select one or multiple exit servers</h2>
+        <h2>2. Generate WireGuard key</h2>
+        <p>
+            <a class="btn btn-border" href="" @click="generateKey($event)">Generate key</a>
+        </p>
+        <p v-if="wgInterface.publicKey">
+            <strong>Public key:</strong><br>
+            {{ wgInterface.publicKey }}
+        </p>
+        <h2>3. Select one or multiple exit servers</h2>
         <div class="select">
             <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
@@ -42,7 +50,7 @@
             </select>
             <i></i>
         </div>
-        <h2>3. Configuration</h2>
+        <h2>4. Configuration</h2>
         <h3>Multihop</h3>
         <div class="checkbox" v-bind:class="{ disabled: validation.multihop }">
             <div>
@@ -105,13 +113,14 @@
                 <label for="traffic_protocol_ipv6">IPv6</label>
             </div>
         </div>
-        <h2>4. Download</h2>
-        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click="handleDownload($event)">Download</a>
+        <h2>5. Download</h2>
+        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
 
 <script>
 import Api from "@/api/api";
+import wireguard from '@/wireguard';
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import IconWindows from "@/components/icons/os/windows.vue";
@@ -151,6 +160,11 @@ export default {
             multihop_port: null,
             entry_host: null,
             queryString: new URLSearchParams(),
+            wgInterface: {
+                publicKey: null,
+                privateKey: null,
+                ipAddress: null,
+            },
         };
     },
     watch: {
@@ -340,6 +354,14 @@ export default {
             if (!this.validation.download) {
                 this.fetchConfigurations()
             }
+        },
+        generateKey(event) {
+            event.preventDefault();
+            let wg = wireguard.generateKeypair();
+            this.wgInterface = {
+                publicKey: wg.publicKey,
+                privateKey: wg.privateKey
+            };
         },
     },
     components: {

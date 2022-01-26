@@ -39,5 +39,6 @@ mix.setPublicPath('static')
     .js('assets/js/wireguard-config.js', 'static/js/').vue()
     .js('assets/js/search.js', 'static/js/').vue()
     .js('assets/js/menu.js', 'static/js/')
+    .js('assets/js/wireguard.js', 'static/js/')
     .sass('assets/scss/pages.scss', 'static/css/')
     .version();
