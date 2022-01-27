@@ -21,7 +21,7 @@
             </div>
         </div>
         <h2>2. Generate WireGuard key</h2>
-        <p>
+        <p v-if="!wgInterface.publicKey">
             <a class="btn btn-border" href="" @click="generateKey($event)">Generate key</a>
         </p>
         <p v-if="wgInterface.publicKey">
