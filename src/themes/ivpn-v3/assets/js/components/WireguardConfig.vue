@@ -1,6 +1,7 @@
 <template>
     <div class="vpn-configuration">
-        <h2>1. Select platform</h2>
+        <h2>WireGuard Configuration</h2>
+        <h3>1. Select platform</h3>
         <div class="apps-block">
             <div class="apps-buttons">
                 <a @click="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
@@ -20,7 +21,7 @@
                 </a>
             </div>
         </div>
-        <h2>2. Generate WireGuard key</h2>
+        <h3>2. Generate WireGuard key</h3>
         <p v-if="!wgInterface.publicKey">
             <a class="btn btn-border" href="" @click="generateKey($event)">Generate key</a>
         </p>
@@ -28,7 +29,7 @@
             <strong>Public key:</strong><br>
             {{ wgInterface.publicKey }}
         </p>
-        <h2>3. Select one or multiple exit servers</h2>
+        <h3>3. Select one or multiple exit servers</h3>
         <div class="select">
             <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
@@ -50,8 +51,8 @@
             </select>
             <i></i>
         </div>
-        <h2>4. Configuration</h2>
-        <h3>Multihop</h3>
+        <h3>4. Configuration</h3>
+        <h4>Multihop</h4>
         <div class="checkbox" v-bind:class="{ disabled: validation.multihop }">
             <div>
                 <input type="checkbox" id="multihop" :disabled="validation.multihop" @change="toggleMultihop($event)">
@@ -59,7 +60,7 @@
             </div>
         </div>
         <div v-if="multihop">
-            <h3>Select entry server location</h3>
+            <h4>Select entry server location</h4>
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
@@ -83,7 +84,7 @@
             </div>
         </div>
         <div v-if="!multihop">
-            <h3>Port</h3>
+            <h4>Port</h4>
             <div class="select">
                 <select @change="selectPort($event)">
                     <option value="2049" :selected="(query.port == 2049) || !query.port">2049</option>
@@ -98,7 +99,7 @@
                 <i></i>
             </div>
         </div>
-        <h3>VPN tunnel traffic</h3>
+        <h4>VPN tunnel traffic</h4>
         <div class="radio">
             <div>
                 <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv4_ipv6" value="ipv4_ipv6" checked @change="selectTrafficProtocol($event)">
@@ -113,7 +114,7 @@
                 <label for="traffic_protocol_ipv6">IPv6</label>
             </div>
         </div>
-        <h2>5. Download</h2>
+        <h3>5. Download</h3>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
