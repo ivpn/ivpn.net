@@ -23,7 +23,7 @@
         </div>
         <h3>2. Generate WireGuard key</h3>
         <p v-if="!wgInterface.publicKey">
-            <a class="btn btn-border" href="" @click="generateKey($event)">Generate key</a>
+            <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
         </p>
         <p v-if="wgInterface.publicKey">
             <strong>Public key:</strong><br>
@@ -115,7 +115,7 @@
             </div>
         </div>
         <h3>5. Download</h3>
-        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click="handleDownload($event)">Download zip archive</a>
+        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click.prevent="handleDownload()">Download zip archive</a>
     </div>
 </template>
 
@@ -353,15 +353,14 @@ export default {
 
             this.queryString = new URLSearchParams(query);
         },
-        handleDownload(event) {
-            event.preventDefault();
-
-            if (!this.validation.download) {
-                this.fetchConfigurations()
+        handleDownload() {
+            if (this.validation.download) {
+                return;
             }
+
+            this.fetchConfigurations()
         },
-        generateKey(event) {
-            event.preventDefault();
+        generateKey() {
             this.wgInterface = wireguard.generateKeypair();
             this.validation.download = false;
             this.addNewKey();
