@@ -206,7 +206,7 @@ export default {
         },
         configString(config) {
             return "[Interface]" +
-            "\nPrivateKey = " +
+            "\nPrivateKey = " + this.wgInterface.privateKey +
             "\nAddress = " + config.interface.address +
             "\nDNS = " + config.interface.dns +
             "\n\n[Peer]" +
@@ -364,6 +364,12 @@ export default {
             event.preventDefault();
             this.wgInterface = wireguard.generateKeypair();
             this.validation.download = false;
+            this.addNewKey();
+        },
+        addNewKey() {
+            // TODO: Set new this.wgInterface.publicKey and get the local IP address from the response
+            this.wgInterface.ipAddress = "192.168.1.1";
+            this.query.address = this.wgInterface.ipAddress;
         },
     },
     components: {
