@@ -18,7 +18,7 @@ articles: [
     url: "/privacy-guides/advanced-privacy-and-anonymity-part-7/"
   }
 ]
-date: 2013-10-23T12:37:29+00:00
+date: 2020-01-28T00:00:00+00:00
 layout: guides-details
 ---
 ## Setting Up Secure Host Machines
@@ -65,7 +65,7 @@ Linux is the best choice for a secure and private host OS. It's open-source and 
 
 Unless carefully configured, all operating systems leave disk caches and logs behind. With Windows or OS X, which are closed-source, it's very difficult to even know what's being left behind. Knowledge of Windows shellbags, for example, was until recently largely restricted to the computer forensics community.
 
-Ubuntu is a good choice for new Linux users. The Ubuntu Software Center simplifies package management. And the alternate install ISO provides full access to Debian's disk partitioning tools, including LUKS full-disk encryption, and LVM for flexible partition management. It's best to use releases with long-term support (currently 12.04). For those who dislike the Unity desktop, Xubuntu (based on Ubuntu) is the best alternative. Mint (also based on Ubuntu) doesn't provide an alternate install ISO. Debian is probably the most secure option, and Debian 7.0 was just released. As noted above, there is no 4GB memory limit with a 64-bit OS, so use that if your hardware supports it.
+Ubuntu is a good choice for new Linux users. The Ubuntu Software Center simplifies package management. And the alternate install ISO provides full access to Debian's disk partitioning tools, including LUKS full-disk encryption, and LVM for flexible partition management. It's best to use releases with long-term support (currently 20.04 LTS). For those who dislike the Unity desktop, Xubuntu (based on Ubuntu) is the best alternative. Mint (also based on Ubuntu) doesn't provide an alternate install ISO. Debian is probably the most secure option, and Debian 7.0 was just released. As noted above, there is no 4GB memory limit with a 64-bit OS, so use that if your hardware supports it.
 
 Although the high-privacy option (explained below) is written for Ubuntu 12.04.2, it should work for any Linux distribution, if suitably tweaked. In principle, an analogous approach should work for Windows and OS X, but avoiding compromise through required authentication would be problematic.
 
@@ -87,7 +87,7 @@ This tutorial uses Linux with LUKS and dm-crypt full-disk encryption. That may b
 
 ### Installing Ubuntu with RAID, LUKS Encryption and LVM
 
-First download the [Ubuntu 12.04.2 alternate (64-bit) installer image](http://www.ubuntu.com/download/alternative-downloads), using the BitTorrent link or the nearest mirror. Use another machine that's protected by a VPN service and/or Tor for all of these downloads. If you don't have them already, download the credentials for your direct-connect VPN service. Also download [adrelanos](https://github.com/adrelanos/VPN-Firewall) `VPN-Firewall` scripts.
+First download the [Ubuntu 12.04.2 alternate (64-bit) installer image](http://www.ubuntu.com/download/alternative-downloads), using the BitTorrent link or the nearest mirror. Use another machine that's protected by a VPN service and/or Tor for all of these downloads. If you don't have them already, download the credentials for your direct-connect VPN service. Also download [adrelanos][12] `VPN-Firewall` scripts.
 
 If you'll be going with the high-privacy option, you'll also need the package files required for setting up Network Manager with OpenVPN. Get them through a VPN service and/or Tor. The installer would normally download them from the Ubuntu repository, but that won't be possible without Internet connectivity. There are seven files to get:
 
@@ -306,13 +306,13 @@ Some VPN services (such as IVPN) provide ca.key, client.crt, client.key and ta.k
 
 ### Installing and Checking VPN-Firewall
 
-Install adrelanos' VPN-Firewall scripts as described at <https://github.com/adrelanos/VPN-Firewall>. You want the firewall (iptables rules) to load at bootup, so install both the firewall and init scripts. Reboot the machine, and check VPN-Firewall status by running `sudo service vpnfirewall status` in a Terminal window. It should reply ``.
+Install adrelanos' VPN-Firewall scripts as described at [https://github.com/adrelanos/VPN-Firewall][12]. You want the firewall (iptables rules) to load at bootup, so install both the firewall and init scripts. Reboot the machine, and check VPN-Firewall status by running `sudo service vpnfirewall status` in a Terminal window. It should reply ``.
 
 If you've chosen the high-privacy option, now restore Internet connectivity to your new VM host. Then verify that your new machine has no Internet connectivity by trying to visit <https://duckduckgo.com/>. If it connects, there's something wrong with the VPN-Firewall setup.
 
-Now use Network Manager to establish your direct-connect VPN connection, and verify that it works by visiting <http://whatismyipaddress.com>. If it doesn't connect, recheck the configuration. If it does connect, test VPN-Firewall by killing the openvpn process (run `sudo killall openvpn` in a Terminal window) and verifying that the machine has no Internet connectivity. Then use Network Manager to reestablish the VPN connection, and verify that it works again by visiting <http://whatismyipaddress.com>.
+Now use Network Manager to establish your direct-connect VPN connection, and verify that it works by visiting [https://www.dnsleaktest.com/][10]. If it doesn't connect, recheck the configuration. If it does connect, test VPN-Firewall by killing the openvpn process (run `sudo killall openvpn` in a Terminal window) and verifying that the machine has no Internet connectivity. Then use Network Manager to reestablish the VPN connection, and verify that it works again by visiting [https://www.dnsleaktest.com/][10].
 
-Check your DNS servers by running the standard DNS leak test at <https://www.grc.com/dns/>. It should report only the DNS servers that your direct-connect VPN service specified. And it should not report any DNS servers associated with your ISP, or specified by your LAN router. If it does, there's something wrong with the VPN setup.
+Check your DNS servers by running the standard DNS leak test at [https://www.grc.com/dns/][11]. It should report only the DNS servers that your direct-connect VPN service specified. And it should not report any DNS servers associated with your ISP, or specified by your LAN router. If it does, there's something wrong with the VPN setup.
 
 You can also check for leaks using Wireshark. To install Wireshark, open a Terminal window, and run these commands:
 
@@ -324,7 +324,7 @@ Then configure wireshark to allow a non-root user to sniff packets. As described
     user@ubuntu:~$ sudo dpkg-reconfigure wireshark-common
     user@ubuntu:~$ sudo adduser $USER wireshark
 
-Reboot the machine, and establish your direct-connect VPN connection. Then open Wireshark, and start capturing on eth0. Use Firefox to check <http://whatismyipaddress.com>, run the DNS test at <https://www.grc.com/dns/>, etc. Now stop the capture, and run Statistics/Endpoints. You should only see only local non-public IPs and the VPN server that you're connected to.
+Reboot the machine, and establish your direct-connect VPN connection. Then open Wireshark, and start capturing on eth0. Use Firefox to check [https://www.dnsleaktest.com/][10], run the DNS test at [https://www.grc.com/dns/][11], etc. Now stop the capture, and run Statistics/Endpoints. You should only see only local non-public IPs and the VPN server that you're connected to.
 
 Now kill the openvpn process (run `sudo killall openvpn` in a Terminal window) and start a fresh capture on eth0. Verify that Firefox can't see anything. The iptables setup blocks pings, by the way. Stop the capture after about 10 minutes, and run Statistics/Endpoints. You should only see traffic with local non-public IPs, and reconnection attempts from the VPN server that you were connected to.
 
@@ -355,12 +355,15 @@ You're almost done. If desired, activate proprietary drivers and reboot. Then st
 
 Your VM host machine will have no Internet connectivity whenever it boots, given that VPN-Firewall is active and no VPN is running. That's arguably the best default, because you must actively choose how to proceed.
 
- [1]: http://us.archive.ubuntu.com/ubuntu/pool/main/o/openvpn/openvpn_2.2.1-8ubuntu1.1_amd64.deb
- [2]: http://us.archive.ubuntu.com/ubuntu/pool/universe/n/network-manager-openvpn/network-manager-openvpn-gnome_0.9.4.0-0ubuntu1_amd64.deb
- [3]: http://us.archive.ubuntu.com/ubuntu/pool/universe/o/openconnect/openconnect_3.15-0ubuntu2_amd64.deb
- [4]: http://us.archive.ubuntu.com/ubuntu/pool/universe/o/openconnect/libopenconnect1_3.15-0ubuntu2_amd64.deb
- [5]: http://us.archive.ubuntu.com/ubuntu/pool/universe/n/network-manager-openconnect/network-manager-openconnect_0.9.4.0-0ubuntu1_amd64.deb
- [6]: http://us.archive.ubuntu.com/ubuntu/pool/main/l/lzo2/liblzo2-2_2.06-1_amd64.deb
- [7]: http://us.archive.ubuntu.com/ubuntu/pool/main/p/pkcs11-helper/libpkcs11-helper1_1.09-1_amd64.deb
- [8]: https://openvpn.net/index.php/open-source/documentation/security-overview.html
+ [1]: https://packages.ubuntu.com/search?keywords=openvpn&searchon=names&suite=all&section=all
+ [2]: https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=network-manager-openvpn-gnome&searchon=names
+ [3]: https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=openconnect&searchon=names
+ [4]: https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=libopenconnect5&searchon=names
+ [5]: https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=network-manager-openconnect&searchon=names
+ [6]: https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=liblzo2-2&searchon=names
+ [7]: https://packages.ubuntu.com/search?suite=all&section=all&arch=any&keywords=libpkcs11-helper1&searchon=names
+ [8]: https://community.openvpn.net/openvpn/wiki/SecurityOverview
  [9]: http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
+ [10]: https://www.dnsleaktest.com/
+ [11]: https://www.grc.com/dns/
+ [12]: https://github.com/adrelanos/VPN-Firewall
