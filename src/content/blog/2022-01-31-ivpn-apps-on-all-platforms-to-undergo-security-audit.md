@@ -9,7 +9,8 @@ authors:
 categories:
   - IVPN News
 # Tags are seperated by comma. Ex. Open Source, Security, Subscriptions
-tags: []
+tags:
+  - Audit
 date: 2022-01-31T13:11:33.085Z
 thumbnailImage: /images-static/uploads/audit.png
 ---
