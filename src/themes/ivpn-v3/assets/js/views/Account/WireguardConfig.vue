@@ -195,6 +195,7 @@ export default {
     },
     computed: {
         ...mapState({
+            key: (state) => state.wireguard.key,
             account: (state) => state.auth.account,
         }),
     },
@@ -397,8 +398,8 @@ export default {
                 return
             }
 
-            console.log("this.$store", this.$store);
-            console.log("this.$store.key", this.$store.key);
+            console.log("this.account", this.account);
+            console.log("this.key", this.key);
             this.wgInterface.ipAddress = "192.168.1.1";
         },
     },
