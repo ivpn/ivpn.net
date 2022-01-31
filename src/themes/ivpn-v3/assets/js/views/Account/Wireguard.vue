@@ -15,6 +15,14 @@
 
         <div v-if="account.is_active">
             <section>
+                <h2>WireGuard Configuration</h2>
+                <p>
+                    Start WireGuard configuration file generator.
+                </p>
+                <a class="btn btn-solid btn-big" href="/account/wireguard-config">Start Configuration</a>
+            </section>
+
+            <section>
                 <h2>WireGuard Keys</h2>
                 <p>
                     Managing WireGuard keys is necessary when using native

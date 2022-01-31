@@ -13,7 +13,6 @@ export default {
     error: null,
 
     keys: {},
-    key: {},
   }),
 
   mutations: {
