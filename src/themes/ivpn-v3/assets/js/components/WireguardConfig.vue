@@ -130,6 +130,8 @@ import IconIos from "@/components/icons/os/ios.vue";
 import IconLinux from "@/components/icons/os/linux2.vue";
 import IconMacos from "@/components/icons/os/macos.vue";
 
+import { mapState } from "vuex";
+
 export default {
     data() {
         return {
@@ -351,6 +353,7 @@ export default {
                 }
             }
 
+            this.query.address = this.wgInterface.ipAddress;
             this.queryString = new URLSearchParams(query);
         },
         handleDownload() {
@@ -365,10 +368,19 @@ export default {
             this.validation.download = false;
             this.addNewKey();
         },
-        addNewKey() {
-            // TODO: Set new this.wgInterface.publicKey and get the local IP address from the response
+        async addNewKey() {
+            await this.$store.dispatch("wireguard/add", {
+                public_key: this.wgInterface.publicKey,
+                comment: "IVPN WireGuard configuration page",
+            });
+
+            if (this.error) {
+                return
+            }
+
+            console.log("this.$store", this.$store);
+            console.log("this.$store.key", this.$store.key);
             this.wgInterface.ipAddress = "192.168.1.1";
-            this.query.address = this.wgInterface.ipAddress;
         },
     },
     components: {
