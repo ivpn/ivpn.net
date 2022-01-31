@@ -18,4 +18,3 @@ Last year in March 2021 we published a comprehensive 3rd party audit of our IVPN
 Nick Pestell  
 CEO  
 IVPN  
-
