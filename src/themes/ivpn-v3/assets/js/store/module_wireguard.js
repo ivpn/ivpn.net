@@ -85,6 +85,9 @@ export default {
         
         try {
             let key = await Api.addWireguardKey(payload)
+            console.log("payload", payload);
+            console.log("key", key);
+            state.key = key;
 
             context.commit('done', {
                 key: key,
