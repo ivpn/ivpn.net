@@ -389,7 +389,7 @@ export default {
             this.addNewKey();
         },
         async addNewKey() {
-            await this.$store.dispatch("wireguard/add", {
+            let wgInterface = await this.$store.dispatch("wireguard/add", {
                 public_key: this.wgInterface.publicKey,
                 comment: "IVPN WireGuard configuration page",
             });
@@ -398,9 +398,10 @@ export default {
                 return
             }
 
+            console.log("wgInterface", wgInterface);
             console.log("this.state", this.state);
             console.log("this.key", this.key);
-            this.wgInterface.ipAddress = "192.168.1.1";
+            this.wgInterface.ipAddress = wgInterface.ip_address;
         },
     },
     components: {
