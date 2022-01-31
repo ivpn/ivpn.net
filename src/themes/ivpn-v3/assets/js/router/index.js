@@ -14,6 +14,7 @@ import AddFundsCash from "@/views/Account/AddFunds/Cash.vue"
 import AddFundsGiftCard from "@/views/Account/AddFunds/GiftCard.vue"
 
 import WireguardView from "@/views/Account/Wireguard.vue"
+import WireguardConfigView from "@/views/Account/WireguardConfig.vue"
 import PortForwardingView from "@/views/Account/PortForwarding.vue"
 import Settings from "@/views/Account/Settings.vue"
 import LoginView from "@/views/Login.vue"
@@ -240,6 +241,14 @@ const routes = [
         component: WireguardView,
         meta: {
             title: 'IVPN Account - WireGuard',
+        }
+    },
+    {
+        path: '/account/wireguard-config',
+        name: 'wireguard-config',
+        component: WireguardConfigView,
+        meta: {
+            title: 'IVPN Account - WireGuard Configuration',
         }
     },
     {
