@@ -37,7 +37,7 @@ export default {
             return this.$route.path;
         },
         shouldDisplay() {
-            return ["account", "port-forwarding", "wireguard"].includes(
+            return ["account", "port-forwarding", "wireguard", "wireguard-config"].includes(
                 this.$route.name
             );
         },

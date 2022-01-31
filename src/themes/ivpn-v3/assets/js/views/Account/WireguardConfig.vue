@@ -14,8 +14,8 @@
         </div>
         <div v-if="account.is_active">
             <div class="back-link">
-                <router-link :to="{ name: 'account/wireguard' }">
-                    <span class="icon-back"></span>Back to WireGuard Settings
+                <router-link :to="{ name: 'wireguard' }">
+                    <span class="icon-back"></span>Back to WireGuard
                 </router-link>
             </div>
             <section>
