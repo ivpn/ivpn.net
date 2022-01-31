@@ -19,7 +19,11 @@
                 <p>
                     Start WireGuard configuration file generator.
                 </p>
-                <a class="btn btn-solid btn-big" href="/account/wireguard-config">Start Configuration</a>
+                <router-link
+                    :to="{ name: 'wireguard-config' }"
+                    class="btn btn-solid btn-big"
+                    >Start Configuration</router-link
+                >
             </section>
 
             <section>
