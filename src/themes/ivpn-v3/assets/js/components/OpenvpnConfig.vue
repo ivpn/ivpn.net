@@ -1,6 +1,6 @@
 <template>
     <div class="vpn-configuration">
-        <h2>1. Select platform</h2>
+        <h3>1. Select platform</h3>
         <div class="apps-block">
             <div class="apps-buttons">
                 <a @click="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
@@ -20,7 +20,7 @@
                 </a>
             </div>
         </div>
-        <h2>2. Select one or multiple exit servers</h2>
+        <h3>2. Select one or multiple exit servers</h3>
         <div class="select">
             <select @change="selectExitCountry($event)">
                 <option value="">All countries</option>
@@ -42,8 +42,8 @@
             </select>
             <i></i>
         </div>
-        <h2>3. Configuration</h2>
-        <h3>Multihop</h3>
+        <h3>3. Configuration</h3>
+        <h4>Multihop</h4>
         <div class="checkbox" v-bind:class="{ disabled: validation.multihop }">
             <div>
                 <input type="checkbox" id="multihop" :disabled="validation.multihop" @change="toggleMultihop($event)">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div v-if="multihop">
-            <h3>Select entry server location</h3>
+            <h4>Select entry server location</h4>
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                     <option value="">Select country</option>
@@ -73,7 +73,7 @@
                 </select>
                 <i></i>
             </div>
-            <h3>Protocol</h3>
+            <h4>Protocol</h4>
             <div class="select">
                 <select @change="selectProtocol($event)">
                     <option value="udp" :selected="query.proto == 'udp' || !query.proto">UDP</option>
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div v-if="!multihop">
-            <h3>Protocol / Port</h3>
+            <h4>Protocol / Port</h4>
             <div class="select">
                 <select @change="selectProtocolPort($event)">
                     <option value="udp-2049" :selected="(query.proto == 'udp' && query.port == 2049) || !query.port">UDP 2049</option>
@@ -97,7 +97,7 @@
                 <i></i>
             </div>
         </div>
-        <h3>Hostnames or IP addresses</h3>
+        <h4>Hostnames or IP addresses</h4>
         <div class="radio">
             <div>
                 <input type="radio" name="use_ip_address" id="use_hostnames" value="false" checked @change="selectUseIPAddress($event)">
@@ -108,7 +108,7 @@
                 <label for="use_ip_address">Use IP addresses</label>
             </div>
         </div>
-        <h3>OpenVPN version</h3>
+        <h4>OpenVPN version</h4>
         <div class="radio">
             <div>
                 <input type="radio" name="latest_version" id="default_version" value="false" checked @change="selectVersion($event)">
@@ -119,7 +119,7 @@
                 <label for="latest_version">OpenVPN 2.5</label>
             </div>
         </div>
-        <h2>4. Download</h2>
+        <h3>4. Download</h3>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
