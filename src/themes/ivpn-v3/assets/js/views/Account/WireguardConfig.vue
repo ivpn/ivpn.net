@@ -136,6 +136,9 @@
                 <h3>5. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click.prevent="handleDownload()">Download zip archive</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download || validation.singleConfiguration }" target="_blank" href="" @click.prevent="generateQRCode()">Generate QR code</a>
+                <div class="note qrnote">
+                    <div class="qrcode" v-html="qrCode"></div>
+                </div>
             </section>
         </div>
     </div>
@@ -146,6 +149,7 @@ import Api from "@/api/api";
 import wireguard from '@/wireguard';
 import JSZip from "jszip";
 import FileSaver from "file-saver";
+import qrcode from "qrcode-generator";
 import IconWindows from "@/components/icons/os/windows.vue";
 import IconAndroid from "@/components/icons/os/android.vue";
 import IconIos from "@/components/icons/os/ios.vue";
@@ -192,6 +196,7 @@ export default {
                 privateKey: null,
                 ipAddress: null,
             },
+            qrCode: "",
         };
     },
     watch: {
@@ -237,6 +242,11 @@ export default {
 
             let configString = this.configString(res[0]);
             console.log(configString);
+
+            let qr = qrcode(0, "L");
+            qr.addData(configString);
+            qr.make();
+            this.qrCode = qr.createSvgTag(5);
         },
         configString(config) {
             return "[Interface]" +
