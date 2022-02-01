@@ -240,11 +240,12 @@ export default {
             }
 
             let configString = this.configString(res[0]);
+            console.log(configString);
 
             let qr = qrcode(0, "M");
             qr.addData(configString);
             qr.make();
-            this.qrCode = qr.createSvgTag(5);
+            this.qrCode = qr.createSvgTag(4);
         },
         configString(config) {
             return "[Interface]" +
