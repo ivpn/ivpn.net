@@ -66,7 +66,7 @@
                 <div class="select" v-bind:class="{ disabled: validation.exitServer }">
                     <select :disabled="validation.exitServer" @change="selectExitServer($event)">
                         <option value="">All servers</option>
-                        <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
+                        <option v-for="server in exitServers" :value="server.hostnames.wireguard + '_' + server.multihop_port" :key="server.hostnames.wireguard">{{ server.hostnames.wireguard }}</option>
                     </select>
                     <i></i>
                 </div>
@@ -97,7 +97,7 @@
                     <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
                         <select :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
                             <option value="">Select server</option>
-                            <option v-for="server in entryServers" :value="server.gateway" :key="server.gateway">{{ server.gateway }}</option>
+                            <option v-for="server in entryServers" :value="server.hostnames.wireguard" :key="server.hostnames.wireguard">{{ server.hostnames.wireguard }}</option>
                         </select>
                         <i></i>
                     </div>
