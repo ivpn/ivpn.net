@@ -135,6 +135,7 @@
                 </div>
                 <h3>5. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click.prevent="handleDownload()">Download zip archive</a>
+                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download || validation.singleConfiguration }" target="_blank" href="" @click.prevent="generateQRCode()">Generate QR code</a>
             </section>
         </div>
     </div>
@@ -180,6 +181,7 @@ export default {
                 entryServer: true,
                 multihop: true,
                 download: true,
+                singleConfiguration: true,
             },
             multihop: false,
             multihop_port: null,
@@ -218,10 +220,6 @@ export default {
                 this.countries = [...new Set(res.servers.map(server => server.country))].filter(String).sort();
             }
         },
-        async fetchConfigurations() {
-            let res = await Api.getWireGuardConfigurations(this.queryString);
-            this.downloadArchive(res);
-        },
         downloadArchive(res) {
             let self = this;
             let zip = new JSZip();
@@ -231,6 +229,14 @@ export default {
             zip.generateAsync({ type: "blob" }).then(function(content) {
                 FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
             });
+        },
+        generateQRCode(res) {
+            if (!res.length) {
+                return;
+            }
+
+            let configString = this.configString(res[0]);
+            console.log(configString);
         },
         configString(config) {
             return "[Interface]" +
@@ -385,12 +391,21 @@ export default {
             this.query.address = this.wgInterface.ipAddress;
             this.queryString = new URLSearchParams(query);
         },
-        handleDownload() {
+        async handleDownload() {
             if (this.validation.download) {
                 return;
             }
 
-            this.fetchConfigurations()
+            let res = await Api.getWireGuardConfigurations(this.queryString);
+            this.downloadArchive(res);
+        },
+        async handleGenerateQRCode() {
+            if (this.validation.download || this.validation.singleConfiguration) {
+                return;
+            }
+
+            let res = await Api.getWireGuardConfigurations(this.queryString);
+            this.generateQRCode(res);
         },
         generateKey() {
             this.wgInterface = wireguard.generateKeypair();
