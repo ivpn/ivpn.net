@@ -134,8 +134,8 @@
                     </div>
                 </div>
                 <h3>5. Download</h3>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" target="_blank" href="" @click.prevent="handleDownload()">Download zip archive</a>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download || validation.singleConfiguration }" target="_blank" href="" @click.prevent="generateQRCode()">Generate QR code</a>
+                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
+                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download && query.host }" href="" @click.prevent="generateQRCode()">Generate QR code</a>
                 <div class="note qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
@@ -185,7 +185,6 @@ export default {
                 entryServer: true,
                 multihop: true,
                 download: true,
-                singleConfiguration: true,
             },
             multihop: false,
             multihop_port: null,
@@ -410,7 +409,7 @@ export default {
             this.downloadArchive(res);
         },
         async handleGenerateQRCode() {
-            if (this.validation.download || this.validation.singleConfiguration) {
+            if (this.validation.download && this.query.host) {
                 return;
             }
 
