@@ -205,6 +205,8 @@ export default {
         selectExitCountry(event) {
             let value = event.target.value;
             this.query.country = value;
+            this.query.city = null;
+            this.query.host = null;
             this.validation.exitCity = value == "";
             this.validation.exitServer = true;
             this.validation.multihop = true;
@@ -223,6 +225,7 @@ export default {
         selectExitCity(event) {
             let value = event.target.value;
             this.query.city = event.target.value;
+            this.query.host = null;
             this.validation.exitServer = value == "";
             this.validation.multihop = true;
 
@@ -310,7 +313,7 @@ export default {
         updateQuery() {
             let query = this.query;
             Object.keys(query).forEach(key => {
-                if (query[key] === null || query[key] === undefined) {
+                if (query[key] === null || query[key] === undefined || query[key] == "") {
                     delete query[key];
                 }
             });
