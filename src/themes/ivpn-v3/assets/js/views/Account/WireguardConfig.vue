@@ -135,7 +135,7 @@
                 </div>
                 <h3>5. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download && query.host }" href="" @click.prevent="generateQRCode()">Generate QR code</a>
+                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download && query.host }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
                 <div class="note qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
@@ -240,7 +240,7 @@ export default {
             }
 
             let configString = this.configString(res[0]);
-            console.log(configString);
+            console.log("configString", configString);
 
             let qr = qrcode(0, "L");
             qr.addData(configString);
@@ -414,6 +414,7 @@ export default {
             }
 
             let res = await Api.getWireGuardConfigurations(this.queryString);
+            console.log("res", res);
             this.generateQRCode(res);
         },
         generateKey() {
