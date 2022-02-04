@@ -156,8 +156,8 @@ So hey, enjoy your hosts. But do recall that your VPS providers and intervening 
  [6]: https://en.wikipedia.org/wiki/Kevin_Mitnick
  [7]: https://shinnok.com/rants/2009/01/27/kevin-mitnicks-hacking-telnet-session-transcripts/
  [8]: https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor
- [9]: https://www.torproject.org/docs/hidden-services.html.en
- [10]: https://www.torproject.org/docs/faq.html.en#ChoosePathLength
+ [9]: https://web.archive.org/web/20120505002508/https://www.torproject.org/docs/hidden-services.html.en
+ [10]: https://web.archive.org/web/20141225122111/https://www.torproject.org/docs/faq.html.en#ChoosePathLength
  [11]: https://svn.torproject.org/svn/projects/design-paper/tor-design.html#subsec:threat-model
  [12]: https://trac.torproject.org/projects/tor/ticket/2667
  [13]: https://www.whonix.org/wiki/DoNot
