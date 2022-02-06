@@ -49,6 +49,17 @@
                     {{ wgInterface.publicKey }}
                 </p>
                 <h3>3. Select one or multiple exit servers</h3>
+                <div class="tabs">
+                    <ul>
+                        <li v-bind:class="{ 'is-active': !multihop }">
+                            <a @click.prevent="toggleMultihop" data-multihop="false" href="">Single-Hop</a>
+                        </li>
+                        <li v-bind:class="{ 'is-active': multihop }">
+                            <a @click.prevent="toggleMultihop" data-multihop="true" href="">Multi-Hop</a>
+                        </li>
+                    </ul>
+                </div>
+                <h4>Select exit server location</h4>
                 <div class="select">
                     <select @change="selectExitCountry($event)">
                         <option value="">All countries</option>
@@ -69,14 +80,6 @@
                         <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
                     </select>
                     <i></i>
-                </div>
-                <h3>4. Configuration</h3>
-                <h4>Multihop</h4>
-                <div class="checkbox" v-bind:class="{ disabled: validation.multihop }">
-                    <div>
-                        <input type="checkbox" id="multihop" :disabled="validation.multihop" @change="toggleMultihop($event)">
-                        <label for="multihop">Enable</label>
-                    </div>
                 </div>
                 <div v-if="multihop">
                     <h4>Select entry server location</h4>
@@ -102,6 +105,7 @@
                         <i></i>
                     </div>
                 </div>
+                <h3>4. Configuration</h3>
                 <div v-if="!multihop">
                     <h4>Port</h4>
                     <div class="select">
@@ -350,9 +354,9 @@ export default {
             this.updateQuery();
         },
         toggleMultihop(event) {
-            this.multihop = event.target.checked;
+            this.multihop = event.target.getAttribute("data-multihop") == "true";
 
-            if (event.target.checked) {
+            if (this.multihop) {
                 this.validation.download = this.multihop_port === null;
             } else {
                 this.query.port = "2049";
@@ -449,5 +453,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/base.scss";
+@import "@/styles/tabs.scss";
 @import "@/styles/vpn-configuration.scss";
 </style>
