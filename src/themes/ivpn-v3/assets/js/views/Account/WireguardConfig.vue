@@ -23,19 +23,19 @@
                 <h3>1. Select platform</h3>
                 <div class="apps-block">
                     <div class="apps-buttons">
-                        <a @click="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
+                        <a @click.prevent="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
                             <icon-windows />Windows
                         </a>
-                        <a @click="selectPlatform" data-platform="macos" v-bind:class="{ active: query.platform == 'macos' }" href="">
+                        <a @click.prevent="selectPlatform" data-platform="macos" v-bind:class="{ active: query.platform == 'macos' }" href="">
                             <icon-macos />macOS
                         </a>
-                        <a @click="selectPlatform" data-platform="linux" v-bind:class="{ active: query.platform == 'linux' }" href="">
+                        <a @click.prevent="selectPlatform" data-platform="linux" v-bind:class="{ active: query.platform == 'linux' }" href="">
                             <icon-linux />Linux
                         </a>
-                        <a @click="selectPlatform" data-platform="ios" v-bind:class="{ active: query.platform == 'ios' }" href="">
+                        <a @click.prevent="selectPlatform" data-platform="ios" v-bind:class="{ active: query.platform == 'ios' }" href="">
                             <icon-ios />iOS
                         </a>
-                        <a @click="selectPlatform" data-platform="android" v-bind:class="{ active: query.platform == 'android' }" href="">
+                        <a @click.prevent="selectPlatform" data-platform="android" v-bind:class="{ active: query.platform == 'android' }" href="">
                             <icon-android />Android
                         </a>
                     </div>
@@ -271,7 +271,6 @@ export default {
             });
         },
         selectPlatform(event) {
-            event.preventDefault();
             this.query.platform = event.target.getAttribute("data-platform");
         },
         selectExitCountry(event) {
