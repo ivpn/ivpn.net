@@ -52,7 +52,7 @@
                     </ul>
                 </div>
                 <div v-if="isKeyGenerated">
-                    <p v-if="!publicKey">
+                    <p>
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
                     <p v-if="publicKey">
@@ -69,6 +69,10 @@
                         <input id="private_key" v-model="privateKey" type="text">
                         <button class="btn btn-border">Add</button>
                     </form>
+                    <p v-if="publicKey">
+                        <strong>Public key:</strong><br>
+                        {{ publicKey }}
+                    </p>
                 </div>
                 <h3>3. Select one or multiple exit servers</h3>
                 <div class="tabs">
