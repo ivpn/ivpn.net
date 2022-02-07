@@ -43,15 +43,15 @@
                 <h3>2. Generate WireGuard key</h3>
                 <div class="tabs">
                     <ul>
-                        <li v-bind:class="{ 'is-active': generateKey }">
+                        <li v-bind:class="{ 'is-active': isKeyGenerated }">
                             <a @click.prevent="toggleGenerateKey" data-multihop="false" href="">Generate key</a>
                         </li>
-                        <li v-bind:class="{ 'is-active': !generateKey }">
+                        <li v-bind:class="{ 'is-active': !isKeyGenerated }">
                             <a @click.prevent="toggleGenerateKey" data-multihop="true" href="">Upload key</a>
                         </li>
                     </ul>
                 </div>
-                <div v-if="generateKey">
+                <div v-if="isKeyGenerated">
                     <p v-if="!publicKey">
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
@@ -60,7 +60,7 @@
                         {{ publicKey }}
                     </p>
                 </div>
-                <div v-if="!generateKey">
+                <div v-if="!isKeyGenerated">
                     <form @submit.prevent="addKey">
                         <h3>Add WireGuard Key</h3>
                         <label for="public_key">Public Key:</label>
@@ -212,7 +212,7 @@ export default {
                 multihop: true,
                 download: true,
             },
-            generateKey: true,
+            isKeyGenerated: true,
             multihop: false,
             multihop_port: null,
             entry_host: null,
