@@ -41,13 +41,35 @@
                     </div>
                 </div>
                 <h3>2. Generate WireGuard key</h3>
-                <p v-if="!wgInterface.publicKey">
-                    <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
-                </p>
-                <p v-if="wgInterface.publicKey">
-                    <strong>Public key:</strong><br>
-                    {{ wgInterface.publicKey }}
-                </p>
+                <div class="tabs">
+                    <ul>
+                        <li v-bind:class="{ 'is-active': generateKey }">
+                            <a @click.prevent="toggleGenerateKey" data-multihop="false" href="">Generate key</a>
+                        </li>
+                        <li v-bind:class="{ 'is-active': !generateKey }">
+                            <a @click.prevent="toggleGenerateKey" data-multihop="true" href="">Upload key</a>
+                        </li>
+                    </ul>
+                </div>
+                <div v-if="generateKey">
+                    <p v-if="!publicKey">
+                        <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
+                    </p>
+                    <p v-if="publicKey">
+                        <strong>Public key:</strong><br>
+                        {{ publicKey }}
+                    </p>
+                </div>
+                <div v-if="!generateKey">
+                    <form @submit.prevent="addKey">
+                        <h3>Add WireGuard Key</h3>
+                        <label for="public_key">Public Key:</label>
+                        <input id="public_key" v-model="publicKey" type="text" autofocus>
+                        <label for="private_key">Private Key:</label>
+                        <input id="private_key" v-model="privateKey" type="text">
+                        <button :disabled="inProgress" class="btn btn-big btn-solid mt-2">Add</button>
+                    </form>
+                </div>
                 <h3>3. Select one or multiple exit servers</h3>
                 <div class="tabs">
                     <ul>
@@ -190,15 +212,14 @@ export default {
                 multihop: true,
                 download: true,
             },
+            generateKey: true,
             multihop: false,
             multihop_port: null,
             entry_host: null,
             queryString: new URLSearchParams(),
-            wgInterface: {
-                publicKey: null,
-                privateKey: null,
-                ipAddress: null,
-            },
+            publicKey: null,
+            privateKey: null,
+            ipAddress: null,
             qrCode: "",
         };
     },
@@ -257,7 +278,7 @@ export default {
         },
         configString(config) {
             return "[Interface]" +
-            "\nPrivateKey = " + this.wgInterface.privateKey +
+            "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
             "\nDNS = " + config.interface.dns +
             "\n\n[Peer]" +
@@ -404,7 +425,7 @@ export default {
                 }
             }
 
-            this.query.address = this.wgInterface.ipAddress;
+            this.query.address = this.ipAddress;
             this.queryString = new URLSearchParams(query);
         },
         async handleDownload() {
@@ -424,13 +445,19 @@ export default {
             this.generateQRCode(res);
         },
         generateKey() {
-            this.wgInterface = wireguard.generateKeypair();
+            let keypair = wireguard.generateKeypair();
+            this.publicKey = keypair.publicKey;
+            this.privateKey = keypair.privateKey;
             this.validation.download = false;
-            this.addNewKey();
+            this.setKey(keypair.publicKey);
         },
-        async addNewKey() {
+        addKey() {
+            this.validation.download = false;
+            this.setKey(this.publicKey);
+        },
+        async setKey(publicKey) {
             let res = await Api.addWireguardKey({
-                public_key: this.wgInterface.publicKey,
+                public_key: publicKey,
                 comment: "IVPN WireGuard configuration page",
             });
 
@@ -438,7 +465,7 @@ export default {
                 return
             }
 
-            this.wgInterface.ipAddress = res.ip_address;
+            this.ipAddress = res.ip_address;
             this.updateQuery();
         },
     },
