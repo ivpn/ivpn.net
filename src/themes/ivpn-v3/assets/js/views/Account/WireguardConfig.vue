@@ -63,16 +63,10 @@
                 <div v-if="!generateKey">
                     <form @submit.prevent="addKey">
                         <h3>Add WireGuard Key</h3>
-
-                        <p class="error" v-if="isInvalid && !error">Public key is required!</p>
-                        <p class="error" v-if="!isInvalid && hasError" v-html="errorMessage"></p>
-
-                        <label for="inp_key">Public Key:</label>
-                        <input id="inp_key" v-model="publicKey" type="text" autofocus />
-
-                        <label for="inp_comment" class='mt-1'>Comment (optional):</label>
-                        <input id="comment" v-model="comment" type="text" />
-
+                        <label for="public_key">Public Key:</label>
+                        <input id="public_key" v-model="publicKey" type="text" autofocus>
+                        <label for="private_key">Private Key:</label>
+                        <input id="private_key" v-model="privateKey" type="text">
                         <button :disabled="inProgress" class="btn btn-big btn-solid mt-2">Add</button>
                     </form>
                 </div>
@@ -452,16 +446,18 @@ export default {
         },
         generateKey() {
             let keypair = wireguard.generateKeypair();
+            this.publicKey = keypair.publicKey;
             this.privateKey = keypair.privateKey;
             this.validation.download = false;
-            this.setKey(keypair);
+            this.setKey(keypair.publicKey);
         },
         addKey() {
-
+            this.validation.download = false;
+            this.setKey(this.publicKey);
         },
-        async setKey(keypair) {
+        async setKey(publicKey) {
             let res = await Api.addWireguardKey({
-                public_key: keypair.publicKey,
+                public_key: publicKey,
                 comment: "IVPN WireGuard configuration page",
             });
 
