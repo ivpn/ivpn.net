@@ -44,10 +44,10 @@
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': isKeyGenerated }">
-                            <a @click.prevent="toggleGenerateKey" data-multihop="false" href="">Generate key</a>
+                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="true" href="">Generate key</a>
                         </li>
                         <li v-bind:class="{ 'is-active': !isKeyGenerated }">
-                            <a @click.prevent="toggleGenerateKey" data-multihop="true" href="">Upload key</a>
+                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="false" href="">Upload key</a>
                         </li>
                     </ul>
                 </div>
@@ -373,6 +373,9 @@ export default {
             this.entry_host = value;
             this.validation.download = value == "";
             this.updateQuery();
+        },
+        toggleGenerateKey(event) {
+            this.isKeyGenerated = event.target.getAttribute("data-isKeyGenerated") == "true";
         },
         toggleMultihop(event) {
             this.multihop = event.target.getAttribute("data-multihop") == "true";
