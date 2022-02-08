@@ -47,7 +47,7 @@
                             <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="true" href="">Generate key</a>
                         </li>
                         <li v-bind:class="{ 'is-active': !isKeyGenerated }">
-                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="false" href="">Upload key</a>
+                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="false" href="">Add key</a>
                         </li>
                     </ul>
                 </div>
@@ -62,13 +62,12 @@
                 </div>
                 <div v-if="!isKeyGenerated">
                     <form @submit.prevent="addKey">
-                        <h3>Add WireGuard Key</h3>
                         <label for="public_key">Public Key:</label>
                         <input id="public_key" v-model="publicKey" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
                         <input id="private_key" v-model="privateKey" type="text">
                         <p>
-                            <button class="btn btn-border">Add</button>
+                            <button class="btn btn-border">Add key</button>
                         </p>
                     </form>
                     <p v-if="publicKey">
