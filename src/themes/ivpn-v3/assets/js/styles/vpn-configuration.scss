@@ -59,6 +59,10 @@
     }
 
     .btn {
+        &:hover {
+            text-decoration: none;
+        }
+
         &.disabled {
             opacity: 1;
             color: gray;
@@ -66,7 +70,6 @@
 
             &:hover {
                 cursor: not-allowed;
-                text-decoration: none;
             }
         }
     }

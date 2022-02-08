@@ -67,7 +67,9 @@
                         <input id="public_key" v-model="publicKey" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
                         <input id="private_key" v-model="privateKey" type="text">
-                        <button class="btn btn-border">Add</button>
+                        <p>
+                            <button class="btn btn-border">Add</button>
+                        </p>
                     </form>
                     <p v-if="publicKey">
                         <strong>Public key:</strong><br>
