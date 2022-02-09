@@ -52,7 +52,7 @@
                     </ul>
                 </div>
                 <div v-if="isKeyGenerated">
-                    <p>
+                    <p v-if="!publicKey">
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
                     <p v-if="publicKey">
@@ -61,7 +61,7 @@
                     </p>
                 </div>
                 <div v-if="!isKeyGenerated">
-                    <form @submit.prevent="addKey">
+                    <form v-if="!publicKey" @submit.prevent="addKey">
                         <label for="public_key">Public Key:</label>
                         <input id="public_key" v-model="publicKey" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
@@ -395,6 +395,10 @@ export default {
             this.updateQuery();
         },
         toggleGenerateKey(event) {
+            if (this.publicKey) {
+                return;
+            }
+
             this.isKeyGenerated = event.target.getAttribute("data-isKeyGenerated") == "true";
         },
         toggleMultihop(event) {
