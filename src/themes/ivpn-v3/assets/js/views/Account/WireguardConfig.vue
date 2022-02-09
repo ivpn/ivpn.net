@@ -52,7 +52,7 @@
                     </ul>
                 </div>
                 <div v-if="isKeyGenerated">
-                    <p>
+                    <p v-if="!publicKey">
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
                     <p v-if="publicKey">
@@ -61,7 +61,7 @@
                     </p>
                 </div>
                 <div v-if="!isKeyGenerated">
-                    <form @submit.prevent="addKey">
+                    <form v-if="!publicKey" @submit.prevent="addKey">
                         <label for="public_key">Public Key:</label>
                         <input id="public_key" v-model="publicKey" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
@@ -75,6 +75,7 @@
                         {{ publicKey }}
                     </p>
                 </div>
+                <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
                 <h3>3. Select one or multiple exit servers</h3>
                 <div class="tabs">
                     <ul>
@@ -217,6 +218,9 @@ export default {
                 multihop: true,
                 download: true,
                 downloadQR: true,
+            },
+            error: {
+                addKey: null,
             },
             isKeyGenerated: true,
             multihop: false,
@@ -395,6 +399,10 @@ export default {
             this.updateQuery();
         },
         toggleGenerateKey(event) {
+            if (this.publicKey) {
+                return;
+            }
+
             this.isKeyGenerated = event.target.getAttribute("data-isKeyGenerated") == "true";
         },
         toggleMultihop(event) {
@@ -480,17 +488,17 @@ export default {
             this.setKey(this.publicKey);
         },
         async setKey(publicKey) {
-            let res = await Api.addWireguardKey({
-                public_key: publicKey,
-                comment: "IVPN WireGuard configuration page",
-            });
-
-            if (this.error) {
-                return
+            try {
+                let res = await Api.addWireguardKey({
+                    public_key: publicKey,
+                    comment: "IVPN WireGuard configuration page",
+                });
+                this.ipAddress = res.ip_address;
+                this.error.addKey = null;
+                this.updateQuery();
+            } catch (error) {
+                this.error.addKey = error.message;
             }
-
-            this.ipAddress = res.ip_address;
-            this.updateQuery();
         },
     },
     components: {
