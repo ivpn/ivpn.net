@@ -352,6 +352,7 @@ export default {
             }
             
             this.updateQuery();
+            vm.$forceUpdate();
         },
         selectEntryCountry(event) {
             let value = event.target.value;
