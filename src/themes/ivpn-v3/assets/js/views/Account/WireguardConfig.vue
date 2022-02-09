@@ -166,7 +166,7 @@
                 </div>
                 <h3>5. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download || !query.host }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
+                <a v-if="!validation.download && query.host != null" class="btn btn-big btn-border" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
                 <div class="note qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
