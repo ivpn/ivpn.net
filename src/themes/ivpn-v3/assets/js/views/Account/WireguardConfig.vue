@@ -341,9 +341,16 @@ export default {
         },
         selectExitServer(event) {
             let value = event.target.value;
-            this.query.host = value.split("_")[0];
-            this.multihop_port = value.split("_")[1];
             this.validation.multihop = value == "";
+
+            if (value == "") {
+                this.query.host = null;
+                this.multihop_port = null;
+            } else {
+                this.query.host = value.split("_")[0];
+                this.multihop_port = value.split("_")[1];
+            }
+            
             this.updateQuery();
         },
         selectEntryCountry(event) {
