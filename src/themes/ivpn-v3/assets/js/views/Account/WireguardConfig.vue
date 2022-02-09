@@ -75,6 +75,7 @@
                         {{ publicKey }}
                     </p>
                 </div>
+                <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
                 <h3>3. Select one or multiple exit servers</h3>
                 <div class="tabs">
                     <ul>
@@ -217,6 +218,9 @@ export default {
                 multihop: true,
                 download: true,
                 downloadQR: true,
+            },
+            error: {
+                addKey: null,
             },
             isKeyGenerated: true,
             multihop: false,
@@ -484,17 +488,17 @@ export default {
             this.setKey(this.publicKey);
         },
         async setKey(publicKey) {
-            let res = await Api.addWireguardKey({
-                public_key: publicKey,
-                comment: "IVPN WireGuard configuration page",
-            });
-
-            if (this.error) {
-                return
+            try {
+                let res = await Api.addWireguardKey({
+                    public_key: publicKey,
+                    comment: "IVPN WireGuard configuration page",
+                });
+                this.ipAddress = res.ip_address;
+                this.error.addKey = null;
+                this.updateQuery();
+            } catch (error) {
+                this.error.addKey = error.message;
             }
-
-            this.ipAddress = res.ip_address;
-            this.updateQuery();
         },
     },
     components: {
