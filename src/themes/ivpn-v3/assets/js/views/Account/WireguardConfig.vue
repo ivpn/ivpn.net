@@ -166,7 +166,7 @@
                 </div>
                 <h3>5. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
-                <a v-if="!validation.download && query.host != null" class="btn btn-big btn-border" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
+                <a v-if="!validation.download && query.host != null" class="btn btn-big btn-border" href="" @click.prevent="handleGenerateQRCode()" :key="query.host">Generate QR code</a>
                 <div class="note qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
@@ -340,7 +340,6 @@ export default {
             this.updateQuery();
         },
         selectExitServer(event) {
-            let port = this.query.port;
             let value = event.target.value;
             this.validation.multihop = value == "";
 
@@ -353,7 +352,8 @@ export default {
             }
             
             this.updateQuery();
-            this.query.port = port;
+            console.log("validation.download", this.validation.download);
+            console.log("query.host", this.query.host);
         },
         selectEntryCountry(event) {
             let value = event.target.value;
