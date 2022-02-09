@@ -340,6 +340,7 @@ export default {
             this.updateQuery();
         },
         selectExitServer(event) {
+            let port = this.query.port;
             let value = event.target.value;
             this.validation.multihop = value == "";
 
@@ -352,7 +353,7 @@ export default {
             }
             
             this.updateQuery();
-            vm.$forceUpdate();
+            this.query.port = port;
         },
         selectEntryCountry(event) {
             let value = event.target.value;
