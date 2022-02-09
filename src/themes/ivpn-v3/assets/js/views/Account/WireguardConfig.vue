@@ -166,7 +166,7 @@
                 </div>
                 <h3>5. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
-                <a v-if="!validation.downloadQR" class="btn btn-big btn-border" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
+                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
                 <div class="note qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
@@ -232,6 +232,12 @@ export default {
     },
     watch: {
         query: {
+            handler: function (after, before) {
+                this.updateQuery();
+            },
+            deep: true
+        },
+        validation: {
             handler: function (after, before) {
                 this.updateQuery();
             },
