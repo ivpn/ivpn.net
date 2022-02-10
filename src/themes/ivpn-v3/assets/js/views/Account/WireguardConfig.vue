@@ -478,7 +478,6 @@ export default {
         },
         generateKey() {
             let keypair = wireguard.generateKeypair();
-            this.publicKey = keypair.publicKey;
             this.privateKey = keypair.privateKey;
             this.validation.download = false;
             this.setKey(keypair.publicKey);
@@ -494,10 +493,13 @@ export default {
                     comment: "IVPN WireGuard configuration page",
                 });
                 this.ipAddress = res.ip_address;
+                this.publicKey = publicKey;
                 this.error.addKey = null;
                 this.updateQuery();
             } catch (error) {
                 this.error.addKey = error.message;
+                this.publicKey = null;
+                this.private = null;
             }
         },
     },
