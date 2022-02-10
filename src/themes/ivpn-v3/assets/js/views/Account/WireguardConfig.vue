@@ -65,7 +65,7 @@
                         <label for="public_key">Public Key:</label>
                         <input id="public_key" v-model="publicKeyAdd" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
-                        <input id="private_key" v-model="privateKey" type="text">
+                        <input id="private_key" v-model="privateKeyAdd" type="text">
                         <p>
                             <button class="btn btn-border">Add key</button>
                         </p>
@@ -228,8 +228,9 @@ export default {
             entry_host: null,
             queryString: new URLSearchParams(),
             publicKey: null,
-            publicKeyAdd: null,
             privateKey: null,
+            publicKeyAdd: null,
+            privateKeyAdd: null,
             ipAddress: null,
             qrCode: "",
             hostKey: 0,
@@ -485,6 +486,7 @@ export default {
         },
         addKey() {
             this.validation.download = false;
+            this.privateKey = this.privateKeyAdd;
             this.setKey(this.publicKeyAdd);
         },
         async setKey(publicKey) {
@@ -500,7 +502,7 @@ export default {
             } catch (error) {
                 this.error.addKey = error.message;
                 this.publicKey = null;
-                this.private = null;
+                this.privateKey = null;
             }
         },
     },
