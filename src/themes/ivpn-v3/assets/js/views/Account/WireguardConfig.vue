@@ -481,13 +481,7 @@ export default {
             }
         },
     },
-    components: {
-        IconWindows,
-        IconAndroid,
-        IconIos,
-        IconLinux,
-        IconMacos
-    }
+    components: {}
 };
 </script>
 
