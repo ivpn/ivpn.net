@@ -63,7 +63,7 @@
                 <div v-if="!isKeyGenerated">
                     <form v-if="!publicKey" @submit.prevent="addKey">
                         <label for="public_key">Public Key:</label>
-                        <input id="public_key" v-model="publicKey" type="text" autofocus>
+                        <input id="public_key" v-model="publicKeyAdd" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
                         <input id="private_key" v-model="privateKey" type="text">
                         <p>
@@ -228,6 +228,7 @@ export default {
             entry_host: null,
             queryString: new URLSearchParams(),
             publicKey: null,
+            publicKeyAdd: null,
             privateKey: null,
             ipAddress: null,
             qrCode: "",
@@ -484,7 +485,7 @@ export default {
         },
         addKey() {
             this.validation.download = false;
-            this.setKey(this.publicKey);
+            this.setKey(this.publicKeyAdd);
         },
         async setKey(publicKey) {
             try {
