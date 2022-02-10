@@ -21,6 +21,7 @@
             <section>
                 <h2>WireGuard Configuration</h2>
                 <h3>1. Select platform</h3>
+                <p class="note">Generates correct file extension for configuration files.</p>
                 <div class="apps-block">
                     <div class="apps-buttons">
                         <a @click.prevent="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
@@ -41,6 +42,7 @@
                     </div>
                 </div>
                 <h3>2. Generate WireGuard key</h3>
+                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. You can review the code on this page on <a href="https://github.com/ivpn/ivpn.net/blob/feature/wireguard-configuration-files-multihop-tabs/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a></p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': isKeyGenerated }">
@@ -77,6 +79,7 @@
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
                 <h3>3. Select one or multiple exit servers</h3>
+                <p class="note">A separate configuration file will be generated for each location that you include.</p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': !multihop }">
@@ -136,6 +139,7 @@
                 <h3>4. Configuration</h3>
                 <div v-if="!multihop">
                     <h4>Port</h4>
+                    <p class="note">You may need to configure a custom port if you are behind a restrictive firewall.</p>
                     <div class="select">
                         <select @change="selectPort($event)">
                             <option value="2049" :selected="(query.port == 2049) || !query.port">2049</option>
@@ -151,6 +155,7 @@
                     </div>
                 </div>
                 <h4>VPN tunnel traffic</h4>
+                <p class="note">By default you will receive both an IPv4 and IPv6 address. You can specificy if you wish to receive only IPv4 or IPv6 address.</p>
                 <div class="radio">
                     <div>
                         <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv4_ipv6" value="ipv4_ipv6" checked @change="selectTrafficProtocol($event)">
@@ -168,7 +173,7 @@
                 <h3>5. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
-                <div class="note qrnote">
+                <div class="qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
             </section>
