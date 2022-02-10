@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <h3>2. Generate WireGuard key</h3>
-                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. You can review the code on this page on <a href="https://github.com/ivpn/ivpn.net/blob/feature/wireguard-configuration-files-multihop-tabs/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a></p>
+                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. Only the public key is sent to our server. You can review the code on this page on <a href="https://github.com/ivpn/ivpn.net/blob/feature/wireguard-configuration-files-multihop-tabs/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': isKeyGenerated }">
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <h4>VPN tunnel traffic</h4>
-                <p class="note">By default you will receive both an IPv4 and IPv6 address. You can specificy if you wish to receive only IPv4 or IPv6 address.</p>
+                <p class="note">By default, you will receive both an IPv4 and IPv6 address. You can specify if you wish to receive only IPv4 or IPv6 address.</p>
                 <div class="radio">
                     <div>
                         <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv4_ipv6" value="ipv4_ipv6" checked @change="selectTrafficProtocol($event)">

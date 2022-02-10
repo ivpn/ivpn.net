@@ -144,6 +144,7 @@
 
     p.note {
         font-size: 14px;
+        margin-top: -10px;
         
         @include light-theme((
             color: rgba(0, 0, 0, 0.5)
