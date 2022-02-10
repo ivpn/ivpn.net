@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <h3>2. Generate WireGuard key</h3>
-                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. You can review the code on this page on <a href="https://github.com/ivpn/ivpn.net/blob/feature/wireguard-configuration-files-multihop-tabs/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a></p>
+                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. You can review the code on this page on <a href="https://github.com/ivpn/ivpn.net/blob/feature/wireguard-configuration-files-multihop-tabs/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': isKeyGenerated }">
