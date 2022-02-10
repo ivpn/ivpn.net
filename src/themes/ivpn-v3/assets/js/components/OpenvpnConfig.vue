@@ -1,6 +1,7 @@
 <template>
     <div class="vpn-configuration">
         <h3>1. Select platform</h3>
+        <p class="note">Generates correct file extension for configuration files.</p>
         <div class="apps-block">
             <div class="apps-buttons">
                 <a @click.prevent="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
@@ -21,6 +22,7 @@
             </div>
         </div>
         <h3>2. Select one or multiple exit servers</h3>
+        <p class="note">A separate configuration file will be generated for each location that you include.</p>
         <div class="tabs">
             <ul>
                 <li v-bind:class="{ 'is-active': !multihop }">
@@ -90,6 +92,7 @@
         </div>
         <div v-if="!multihop">
             <h4>Protocol / Port</h4>
+            <p class="note">You may need to configure a custom port if you are behind a restrictive firewall.</p>
             <div class="select">
                 <select @change="selectProtocolPort($event)">
                     <option value="udp-2049" :selected="(query.proto == 'udp' && query.port == 2049) || !query.port">UDP 2049</option>
