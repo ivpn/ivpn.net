@@ -20,28 +20,7 @@
             </div>
             <section>
                 <h2>WireGuard Configuration</h2>
-                <h3>1. Select platform</h3>
-                <p class="note">Generates correct file extension for configuration files.</p>
-                <div class="apps-block">
-                    <div class="apps-buttons">
-                        <a @click.prevent="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
-                            <icon-windows />Windows
-                        </a>
-                        <a @click.prevent="selectPlatform" data-platform="macos" v-bind:class="{ active: query.platform == 'macos' }" href="">
-                            <icon-macos />macOS
-                        </a>
-                        <a @click.prevent="selectPlatform" data-platform="linux" v-bind:class="{ active: query.platform == 'linux' }" href="">
-                            <icon-linux />Linux
-                        </a>
-                        <a @click.prevent="selectPlatform" data-platform="ios" v-bind:class="{ active: query.platform == 'ios' }" href="">
-                            <icon-ios />iOS
-                        </a>
-                        <a @click.prevent="selectPlatform" data-platform="android" v-bind:class="{ active: query.platform == 'android' }" href="">
-                            <icon-android />Android
-                        </a>
-                    </div>
-                </div>
-                <h3>2. Generate WireGuard key</h3>
+                <h3>1. Generate WireGuard key</h3>
                 <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. Only the public key is sent to our server. You can review the code on this page on <a href="https://github.com/ivpn/ivpn.net/blob/feature/wireguard-configuration-files-multihop-tabs/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
                 <div class="tabs">
                     <ul>
@@ -78,7 +57,7 @@
                     </p>
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
-                <h3>3. Select one or multiple exit servers</h3>
+                <h3>2. Select one or multiple exit servers</h3>
                 <p class="note">A separate configuration file will be generated for each location that you include.</p>
                 <div class="tabs">
                     <ul>
@@ -136,7 +115,7 @@
                         <i></i>
                     </div>
                 </div>
-                <h3>4. Configuration</h3>
+                <h3>3. Configuration</h3>
                 <div v-if="!multihop">
                     <h4>Port</h4>
                     <p class="note">You may need to configure a custom port if you are behind a restrictive firewall.</p>
@@ -170,7 +149,7 @@
                         <label for="traffic_protocol_ipv6">IPv6</label>
                     </div>
                 </div>
-                <h3>5. Download</h3>
+                <h3>4. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
                 <div class="qrnote">
@@ -187,11 +166,6 @@ import wireguard from '@/wireguard';
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import qrcode from "qrcode-generator";
-import IconWindows from "@/components/icons/os/windows.vue";
-import IconAndroid from "@/components/icons/os/android.vue";
-import IconIos from "@/components/icons/os/ios.vue";
-import IconLinux from "@/components/icons/os/linux2.vue";
-import IconMacos from "@/components/icons/os/macos.vue";
 
 import { mapState } from "vuex";
 
@@ -207,7 +181,6 @@ export default {
             entryCities: [],
             entryServers: [],
             query: {
-                platform: "windows",
                 country: null,
                 city: null,
                 host: null,
@@ -318,9 +291,6 @@ export default {
                     return (desc ? 1 : -1)
                 return 0
             });
-        },
-        selectPlatform(event) {
-            this.query.platform = event.target.getAttribute("data-platform");
         },
         selectExitCountry(event) {
             let value = event.target.value;
