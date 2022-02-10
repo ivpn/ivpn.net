@@ -141,4 +141,16 @@
             margin-top: 24px;
         }
     }
+
+    p.note {
+        font-size: 14px;
+        
+        @include light-theme((
+            color: rgba(0, 0, 0, 0.5)
+        ));
+
+        @include dark-theme((
+            color: rgba(255, 255, 255, 0.5)
+        ));
+    }
 }
