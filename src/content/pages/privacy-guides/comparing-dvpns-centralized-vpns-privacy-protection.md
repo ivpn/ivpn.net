@@ -1,7 +1,7 @@
 ---
 title: "Comparing dVPNs and centralized VPNs for privacy protection"
 author: Viktor Vecsei
-url: /blog/comparing-dvpns-centralized-vpns-privacy-protection/
+url: /privacy-guides/comparing-dvpns-centralized-vpns-privacy-protection/
 section: Basic
 weight: 10
 articles: [
