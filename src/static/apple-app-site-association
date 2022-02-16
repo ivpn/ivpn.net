@@ -1,10 +1,14 @@
 {
+    "activitycontinuation": {
+        "apps": ["WQXXM75BYN.net.ivpn.clients.ios"]
+    },
     "applinks": {
         "apps": [],
         "details": [
             {
+                "appIDs": ["WQXXM75BYN.net.ivpn.clients.ios"],
                 "appID": "WQXXM75BYN.net.ivpn.clients.ios",
-                "paths": [ "*", "/" ]
+                "paths": ["*", "/"]
             }
         ]
     }
