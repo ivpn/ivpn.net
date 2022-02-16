@@ -4,7 +4,7 @@
         "details": [
             {
                 "appID": "WQXXM75BYN.net.ivpn.clients.ios",
-                "paths": ["/app/*"]
+                "paths": [ "*", "/" ]
             }
         ]
     }
