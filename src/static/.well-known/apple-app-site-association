@@ -3,9 +3,27 @@
         "apps": [],
         "details": [
             {
+                "appIDs": [
+                    "WQXXM75BYN.net.ivpn.clients.ios"
+                ],
+                "components": [
+                    {
+                        "/": "/app/*",
+                        "comment": "Matches any URL whose path starts with /buy/"
+                    }
+                ]
+            },
+            {
                 "appID": "WQXXM75BYN.net.ivpn.clients.ios",
-                "paths": ["/app/*" ]
+                "paths": [
+                    "/app/*"
+                ]
             }
+        ]
+    },
+    "activitycontinuation": {
+        "apps": [
+            "WQXXM75BYN.net.ivpn.clients.ios"
         ]
     }
 }
