@@ -17,5 +17,5 @@ weight: 70
 4. Click on the `Enable` button. Your port number will be displayed, this is the port number you must use to connect to your device once connected to the VPN.
 
 <div markdown="1" class="notice notice--info">
-Your port number will be reserved on all servers and will only expire if you do not connect to the VPN for 14 days. Port Forward is available on IVPN Pro accounts, works only with OpenVPN connections and is disabled across all US-based servers.
+Your port number will be reserved on all servers and will only expire if you do not connect to the VPN for 14 days. Port Forward is available on IVPN Pro accounts, and is disabled across all US-based servers.
 </div>
