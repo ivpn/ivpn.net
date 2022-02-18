@@ -49,7 +49,7 @@ weight: 200
     Do not be surprised to discover that the majority of services linked to those corporations, starting from Youtube, Facebook, Instagram, Gmail and down to the widely used Google Search and services using their domains will not work once you switch to Hardcore Mode.
 
 8.  #### How do I activate the Hardcore Mode?
-    If you are mentally prepared to fully any ties with those companies, follow the steps below:
+    If you are mentally prepared to fully cut any ties with those companies, follow the steps below:
 
     - On desktop apps **macOS**, **Windows** and **Linux**, click the `Settings` gear icon at the top of the app's main window, click the AntiTracker tab on the left, then check **Hardcore Mode**.  
 

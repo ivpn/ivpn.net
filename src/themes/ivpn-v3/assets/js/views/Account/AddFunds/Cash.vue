@@ -1,6 +1,10 @@
 <template>
     <div>
         <div v-if="price.price >= 60">
+            <p>
+                <a href="" class="btn btn-border btn-print" @click.prevent="printPage()">Print this page</a>
+            </p>
+            
             <p style="font-size: 20px; line-height: 36px;">
                 To make a payment please send an envelope containing
                 <strong>{{ price.price }} USD</strong> or
@@ -52,6 +56,11 @@ export default {
             account: (state) => state.auth.account,
         }),
     },
+    methods: {
+        printPage() {
+            print();
+        },
+    },
 };
 </script>
 
@@ -81,4 +90,21 @@ address {
     padding: 5px 10px;
 }
 </style>
-    
+
+<style>
+@media print {
+    header,
+    footer,
+    nav,
+    .back-link,
+    .btn-print,
+    div[class^='screen_'], div[class*='screen_'] {
+        display: none!important;
+    }
+
+    * {
+        color: #000!important;
+        background: none!important;
+    }
+}
+</style>

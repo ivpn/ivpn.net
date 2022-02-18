@@ -93,6 +93,7 @@ To qualify for this discount, your organisation must be a verified nonprofit.
 * Credit card
 * PayPal
 * Bitcoin
+* Monero
 * Wire transfer (50+ accounts)
 
 ## Why trust IVPN?

@@ -18,7 +18,7 @@ articles: [
     url: "/privacy-guides/advanced-privacy-and-anonymity-part-5/"
   }
 ]
-date: 2013-10-23T12:34:45+00:00
+date: 2022-02-04T00:00:00+00:00
 layout: guides-details
 ---
 ## Basic Setup Using VMs, VPNs and Tor
@@ -167,17 +167,17 @@ The host and VMs use different GPUs (real vs virtual) so there is no overlap in 
 
  [1]: https://www.whonix.org/wiki/Main_Page
  [2]: https://en.wikipedia.org/wiki/Network_address_translation
- [3]: https://torrentfreak.com/vpn-services-that-take-your-anonymity-seriously-2013-edition-130302/
+ [3]: https://torrentfreak.com/best-vpn-anonymous-no-logging/
  [4]: https://www.wikileaks.org/wiki/Alternative_DNS
  [5]: https://forums.comodo.com/firewall-help-cis/configuring-to-block-all-nonvpn-traffic-t91413.15.html
- [6]: https://thenewtech.tv/it/openbsd-pf-on-mac-osx-lion
+ [6]: https://web.archive.org/web/20120827084446/https://thenewtech.tv/it/openbsd-pf-on-mac-osx-lion
  [7]: https://kudithipudi.org/2009/07/17/how-to-install-wireshark-on-window-7/
  [8]: https://networkstatic.net/wireshark-install-on-mac-os-x/
  [9]: https://www.ubuntu.com/download/desktop
  [10]: https://xubuntu.org/getxubuntu/
  [11]: https://www.linuxmint.com/download.php
  [12]: https://www.debian.org/CD/netinst/
- [13]: https://openvpn.net/index.php/open-source/documentation/security-overview.html
+ [13]: https://community.openvpn.net/openvpn/wiki/SecurityOverview
  [14]: https://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
  [15]: https://en.wikipedia.org/wiki/Private_network
- [16]: https://en.wikipedia.org/wiki/IP_address#Public_addresses
+ [16]: https://en.wikipedia.org/wiki/IP_address#Public_address

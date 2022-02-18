@@ -9,7 +9,7 @@ layout: guides-details
 ---
 ## Introduction
 
-VPN services compete in many ways. On speed, torrent-friendliness, privacy and no-logging, edginess, price, technical elegance, multi-hop routing, customer support, and so on. However, choice of server locations remains a major issue for many users. IVPN has 37 servers in 22 cities in 13 countries. AirVPN has appreciably more, with 216 servers in 35 cities in 19 countries. But HideMyAss (HMA) is mind-bogglingly huge, with over 700 servers in over 280 locations, in over 210 countries. That's basically every country on the planet. And it costs less than either IVPN or AirVPN.
+VPN services compete in many ways. On speed, torrent-friendliness, privacy and no-logging, edginess, price, technical elegance, multi-hop routing, customer support, and so on. However, choice of server locations remains a major issue for many users. IVPN has 77 servers in 44 cities in 31 countries. AirVPN has appreciably more, with 216 servers in 35 cities in 19 countries. But HideMyAss (HMA) is mind-bogglingly huge, with over 700 servers in over 280 locations, in over 210 countries. That's basically every country on the planet. And it costs less than either IVPN or AirVPN.
 
 OK, but how do users know whether VPN servers are located where providers claim? People commonly use such sites as [whatismyipaddress.com][1], [ipinfo.io][2], [browserleaks.com][3] or [mycurrentlocation.net][4]. But they just provide information from various geolocation databases, such as [maxmind.com][5]. And if you're connected through a VPN server, you can search [google.com][6] for `my location` to see where Google considers it to be.
 
