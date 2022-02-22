@@ -119,7 +119,7 @@ address {
         .address {
             text-align: center;
             font-size: 15px;
-            padding: 150px 50px;
+            padding: 140px 50px;
         }
 
         .ref-id {
@@ -155,7 +155,8 @@ address {
     }
 
     .page-centered {
-        max-width: 100%;
+        max-width: 100%!important;
+        width: 100%!important;
     }
 
     * {
