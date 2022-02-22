@@ -30,7 +30,7 @@ releases: [{
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Allow LAN traffic when connected to VPN.
-- Port forwarding for OpenVPN, reserved on all servers.
+- Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 - Pause VPN for when disabling VPN connection temporarily is required.
 - Obfsproxy option to circumvent censorship.
 - Supports defining custom DNS servers.
