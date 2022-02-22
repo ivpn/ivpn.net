@@ -10,7 +10,7 @@
                     Germany
                 </p>
                 <hr>
-                <p class="ref-id">YTDKAOD78</p>
+                <p class="ref-id">{{ account.ref_id }}</p>
             </div>
             <article>
                 <p>
@@ -126,6 +126,7 @@ address {
             text-align: center;
             font-size: 48px;
             padding: 160px 50px 0 50px;
+            border: none;
         }
 
         hr {
@@ -147,8 +148,14 @@ address {
     footer,
     nav,
     .back-link,
-    div.screen__sskEr {
+    .payment-details,
+    .payment-page-header > h1,
+    .screen__sskEr {
         display: none!important;
+    }
+
+    .page-centered {
+        max-width: 100%;
     }
 
     * {
