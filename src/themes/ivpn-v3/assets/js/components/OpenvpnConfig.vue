@@ -320,7 +320,7 @@ export default {
             this.query.latest_version = event.target.value;
         },
         updateQuery() {
-            let query = this.query;
+            var query = Object.assign({}, this.query);
             Object.keys(query).forEach(key => {
                 if (query[key] === null || query[key] === undefined || query[key] == "") {
                     delete query[key];
