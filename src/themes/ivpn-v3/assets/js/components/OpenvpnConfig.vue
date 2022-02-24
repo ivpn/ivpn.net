@@ -301,6 +301,7 @@ export default {
                 this.validation.download = false;
                 this.entryCities = [];
                 this.entryServers = [];
+                this.entry_host = null;
             }
 
             this.updateQuery();
