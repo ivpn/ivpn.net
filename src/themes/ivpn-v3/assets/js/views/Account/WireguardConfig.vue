@@ -389,7 +389,6 @@ export default {
                 this.validation.download = this.multihop_port === null;
             } else {
                 this.query.port = "2049";
-                this.multihop_port = null;
                 this.validation.entryCity = true;
                 this.validation.entryServer = true;
                 this.validation.download = false;

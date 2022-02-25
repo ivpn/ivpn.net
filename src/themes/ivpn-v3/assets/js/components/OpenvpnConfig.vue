@@ -295,7 +295,6 @@ export default {
             } else {
                 this.query.proto = "udp";
                 this.query.port = "2049";
-                this.multihop_port = null;
                 this.validation.entryCity = true;
                 this.validation.entryServer = true;
                 this.validation.download = false;
