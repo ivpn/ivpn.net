@@ -13,15 +13,12 @@
                 <p class="ref-id">{{ account.ref_id }}</p>
             </div>
             <article>
-                <p>
-                    <a href="" class="btn btn-border btn-print" @click.prevent="printPage()">Print reference number</a>
-                </p>
-                
                 <p style="font-size: 20px; line-height: 36px;">
-                    To make a payment please send an envelope containing
-                    <strong>{{ price.price }} USD</strong> or
-                    <strong>{{ price.price }} EUR</strong> and reference number
-                    <span class="ref-id">{{ account.ref_id }}</span> to the address:
+                    Please send an envelope containing {{ price.price }} USD or {{ price.price }} EUR and reference number {{ account.ref_id }} to the address below. We recommend clicking on the button below to print the address label and reference number.
+                </p>
+
+                <p>
+                    <a href="" class="btn btn-border btn-print" @click.prevent="printPage()">Print address & reference number</a>
                 </p>
 
                 <div class="print">
