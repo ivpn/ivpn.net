@@ -1,27 +1,6 @@
 <template>
     <div class="vpn-configuration">
-        <h3>1. Select platform</h3>
-        <p class="note">Generates correct file extension for configuration files.</p>
-        <div class="apps-block">
-            <div class="apps-buttons">
-                <a @click.prevent="selectPlatform" data-platform="windows" v-bind:class="{ active: query.platform == 'windows' }" href="">
-                    <icon-windows />Windows
-                </a>
-                <a @click.prevent="selectPlatform" data-platform="macos" v-bind:class="{ active: query.platform == 'macos' }" href="">
-                    <icon-macos />macOS
-                </a>
-                <a @click.prevent="selectPlatform" data-platform="linux" v-bind:class="{ active: query.platform == 'linux' }" href="">
-                    <icon-linux />Linux
-                </a>
-                <a @click.prevent="selectPlatform" data-platform="ios" v-bind:class="{ active: query.platform == 'ios' }" href="">
-                    <icon-ios />iOS
-                </a>
-                <a @click.prevent="selectPlatform" data-platform="android" v-bind:class="{ active: query.platform == 'android' }" href="">
-                    <icon-android />Android
-                </a>
-            </div>
-        </div>
-        <h3>2. Select one or multiple exit servers</h3>
+        <h3>1. Select one or multiple exit servers</h3>
         <p class="note">A separate configuration file will be generated for each location that you include.</p>
         <div class="tabs">
             <ul>
@@ -79,7 +58,7 @@
                 <i></i>
             </div>
         </div>
-        <h3>3. Configuration</h3>
+        <h3>2. Configuration</h3>
         <div v-if="multihop">
             <h4>Protocol</h4>
             <div class="select">
@@ -128,18 +107,13 @@
                 <label for="latest_version">OpenVPN 2.5</label>
             </div>
         </div>
-        <h3>4. Download</h3>
+        <h3>3. Download</h3>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
 </template>
 
 <script>
 import Api from "@/api/api";
-import IconWindows from "@/components/icons/os/windows.vue";
-import IconAndroid from "@/components/icons/os/android.vue";
-import IconIos from "@/components/icons/os/ios.vue";
-import IconLinux from "@/components/icons/os/linux2.vue";
-import IconMacos from "@/components/icons/os/macos.vue";
 
 export default {
     data() {
@@ -153,7 +127,6 @@ export default {
             entryCities: [],
             entryServers: [],
             query: {
-                platform: "windows",
                 country: null,
                 city: null,
                 host: null,
@@ -206,9 +179,6 @@ export default {
                     return (desc ? 1 : -1)
                 return 0
             });
-        },
-        selectPlatform(event) {
-            this.query.platform = event.target.getAttribute("data-platform");
         },
         selectExitCountry(event) {
             let value = event.target.value;
@@ -346,13 +316,7 @@ export default {
             }
         },
     },
-    components: {
-        IconWindows,
-        IconAndroid,
-        IconIos,
-        IconLinux,
-        IconMacos
-    }
+    components: {}
 };
 </script>
 
