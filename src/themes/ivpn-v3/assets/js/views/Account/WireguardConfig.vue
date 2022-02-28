@@ -87,7 +87,7 @@
                 <div class="select" v-bind:class="{ disabled: validation.exitServer }">
                     <select :disabled="validation.exitServer" @change="selectExitServer($event)">
                         <option value="">All servers</option>
-                        <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
+                        <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port + '_' + server.wg_public_key" :key="server.gateway">{{ server.gateway }}</option>
                     </select>
                     <i></i>
                 </div>
@@ -203,6 +203,7 @@ export default {
             isKeyGenerated: true,
             multihop: false,
             multihop_port: null,
+            wg_public_key: null,
             entry_host: null,
             queryString: new URLSearchParams(),
             publicKey: null,
@@ -274,12 +275,20 @@ export default {
             this.qrCode = qr.createSvgTag(4);
         },
         configString(config) {
+            let publicKey = config.peer.public_key;
+
+            if (this.multihop) {
+                if (this.wg_public_key) {
+                    publicKey = this.wg_public_key;
+                }
+            }
+
             return "[Interface]" +
             "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
             "\nDNS = " + config.interface.dns +
             "\n\n[Peer]" +
-            "\nPublicKey = " + config.peer.public_key +
+            "\nPublicKey = " + publicKey +
             "\nAllowedIPs = " + config.peer.allowed_ips +
             "\nEndpoint = " + config.peer.endpoint;
         },
@@ -335,9 +344,11 @@ export default {
             if (value == "") {
                 this.query.host = null;
                 this.multihop_port = null;
+                this.wg_public_key = null;
             } else {
                 this.query.host = value.split("_")[0];
                 this.multihop_port = value.split("_")[1];
+                this.wg_public_key = value.split("_")[2];
             }
             
             this.updateQuery();
