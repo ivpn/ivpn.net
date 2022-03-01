@@ -251,7 +251,7 @@ export default {
         downloadArchive(res) {
             let self = this;
             let zip = new JSZip();
-            let basename = this.multihop ? (this.query.multihop_basename + ".conf") : null
+            let basename = this.multihop ? (this.multihop_basename + ".conf") : null
             res.forEach(function (config) {
                 zip.file(basename || config.basename, self.configString(config));
             });
