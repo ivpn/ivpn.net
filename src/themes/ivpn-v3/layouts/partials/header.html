@@ -1,5 +1,10 @@
 {{ if not (isset .Params "hideheaders") }}
 
+<div class="header-note">
+    <p>
+        <a href="/blog/in-support-of-ukraine">Solidarity with Ukraine - free VPN access for those in Ukraine and Russia -></a>
+    </p>
+</div>
 <nav id="header">    
     {{ if ne $.Site.Params.environment "development" }}
         <esi:include src="/web/status" />
