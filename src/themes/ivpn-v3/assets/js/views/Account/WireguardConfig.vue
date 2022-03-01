@@ -250,8 +250,9 @@ export default {
         downloadArchive(res) {
             let self = this;
             let zip = new JSZip();
+            let basename = this.multihop ? (this.query.country + ".conf") : null
             res.forEach(function (config) {
-                zip.file(config.basename, self.configString(config));
+                zip.file(basename || config.basename, self.configString(config));
             });
             zip.generateAsync({ type: "blob" }).then(function(content) {
                 FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
