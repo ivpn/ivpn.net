@@ -100,3 +100,20 @@
         }
     }
 }
+
+.header-note {
+    padding: 6px 16px;
+    background-color: $blue-color;
+
+    p {
+        color: $white-color;
+        text-align: center;
+        margin: 0;
+        max-width: 100%;
+
+        a {
+            color: $white-color;
+            display: block;
+        }
+    }
+}
