@@ -73,7 +73,7 @@
                 <div class="select">
                     <select @change="selectExitCountry($event)">
                         <option value="">All countries</option>
-                        <option v-for="server in filteredServers" :value="server.country_code" :key="server.country_code">{{ server.country }}</option>
+                        <option v-for="server in filteredServers" :value="server.country_code + '_' + server.country" :key="server.country_code">{{ server.country }}</option>
                     </select>
                     <i></i>
                 </div>
@@ -203,6 +203,7 @@ export default {
             isKeyGenerated: true,
             multihop: false,
             multihop_port: null,
+            multihop_basename: null,
             wg_public_key: null,
             entry_host: null,
             queryString: new URLSearchParams(),
@@ -250,7 +251,7 @@ export default {
         downloadArchive(res) {
             let self = this;
             let zip = new JSZip();
-            let basename = this.multihop ? (this.query.country + ".conf") : null
+            let basename = this.multihop ? (this.query.multihop_basename + ".conf") : null
             res.forEach(function (config) {
                 zip.file(basename || config.basename, self.configString(config));
             });
@@ -303,10 +304,11 @@ export default {
             });
         },
         selectExitCountry(event) {
-            let value = event.target.value;
+            let value = event.target.value.split("_")[0];
             this.query.country = value;
             this.query.city = null;
             this.query.host = null;
+            this.multihop_basename = event.target.value.split("_")[1];
             this.validation.exitCity = value == "";
             this.validation.exitServer = true;
             this.validation.multihop = true;
