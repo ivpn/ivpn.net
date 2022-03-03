@@ -12,17 +12,15 @@ This guide will help you set up an IPSec connection using IKEv2.
 
 2.  Enter the following configuration:
 
-    **Type** - IKEv2  
-    **Description** - Any description to identify VPN server  
-    **Server** - Choose any from the server list (i.e. gb.gw.ivpn.net)  
-    **Remote ID** - Same as the Server field  
-    **Local ID** - Empty  
-    **User Authentication type** - Username  
-    **Username** - Your IVPN account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' (case-sensitive) 
-    **Password** - ivpn  
-    **Proxy settings** - Off  
-
-    ![](/images-static/uploads/ios-ipsec-with-ikev2-01.jpg)
+    - **Type** = IKEv2  
+    - **Description** = Any description to identify VPN server  
+    - **Server** = Choose a server from the <a href="/status/" target="_blank">Server Status</a> page. It must be a server with 'gw' in the name. (e.g. pl1.gw.ivpn.net for Warsaw, Poland).
+    - **Remote ID** = Same value as the **Server** field above
+    - **Local ID** = Empty  
+    - **User Authentication type** = Username  
+    - **Username** = Your IVPN account ID that begins like 'i-XXXX-XXXX-XXXX' or 'ivpnXXXXXXXX' (case-sensitive).
+    - **Password** = ivpn
+    - **Proxy settings** = Off  
 
 3.  Tap `Done` to finalize the setup.
 
