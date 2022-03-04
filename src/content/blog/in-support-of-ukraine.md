@@ -14,8 +14,7 @@ date: 2022-02-28T07:56:15.000Z
 # 740px X 740px
 thumbnailImage: /images-static/uploads/ukrflag.png
 ---
-**NOTE: Our offer for free VPN service as described in this post is currently on hold. We aim to resume distributing free IVPN access soon.**
----
+### **NOTE: Our offer for free VPN service as described in this post is currently on hold. We aim to resume distributing free IVPN access soon.**
 
 IVPN has multiple team members hailing from Ukraine. Their reality has shifted from living and working in a  peaceful environment to fleeing the country and hiding in bomb shelters in a matter of days. We are standing up for the right of self-determination and sovereignty of our colleagues and all Ukrainians. We will do our best as individuals and as a company to support them.
 
