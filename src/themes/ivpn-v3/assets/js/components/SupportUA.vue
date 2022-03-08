@@ -40,10 +40,41 @@ export default {
             error: (state) => state.contact.error,
         }),
         formValid() {
-            return this.email != "" && this.email != "";
+            return (this.email != "" && this.email != "");
         },
     },
-    methods: {},
+    methods: {
+        async send() {
+            if (this.inProgress) {
+                return;
+            }
+
+            let data = {
+                email: this.email,
+                message: this.message,
+                captchaID: this.captchaID,
+                captchaValue: this.captchaValue,
+            };
+
+            this.captchaImage = "";
+
+            try {
+                await this.$store.dispatch("contact/contactSupportUA", data);
+            } catch (error) {
+                this.processError(error);
+            }
+        },
+        processError(error) {
+            if (error.captcha_id) {
+                this.captchaID = error.captcha_id;
+                this.captchaImage = error.captcha_image;
+                this.captchaValue = "";
+            } else {
+                this.captchaID = "";
+                this.captchaImage = "";
+            }
+        },
+    },
     components: { ProgressSpinner },
 };
 </script>
