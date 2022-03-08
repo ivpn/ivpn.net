@@ -424,6 +424,10 @@ export default {
             })
     },
 
+    //
+    // Servers information
+    //
+
     async getServerStats() {
         return await this.Get(
             '/v4/servers/stats',
@@ -432,6 +436,20 @@ export default {
                 credentials: "omit"
             },
             '/web/servers',
+        )
+    },
+
+    //
+    // Contact
+    //
+
+    async contactSupportUA(email, message) {
+        await this.Post(
+            '/contact/supportua',
+            {
+                email: email,
+                message: message
+            }
         )
     },
 
