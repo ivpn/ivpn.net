@@ -12,11 +12,13 @@
                 <label for="login-captch">Please enter the captcha you see above:</label>
                 <input type="text" id="login-captch" v-model="captchaValue">
             </div>
+            <br>
             <p v-if="error" class="error">{{ error.message }}</p>
-            <br><br>
-            <button class="btn btn-big btn-solid login-btn" :disabled="!formValid">
-                <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>Submit
-            </button>
+            <p>
+                <button class="btn btn-big btn-solid login-btn" :disabled="!formValid">
+                    <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>Submit
+                </button>
+            </p>
         </form>
     </div>
 </template>
@@ -36,7 +38,7 @@ export default {
         };
     },
     mounted() {
-        // this.send();
+        this.send();
     },
     computed: {
         ...mapState({

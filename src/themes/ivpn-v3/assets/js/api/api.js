@@ -445,7 +445,7 @@ export default {
 
     async contactSupportUA(email, message) {
         await this.Post(
-            '/contact/supportua',
+            '/web/contact/supportua',
             {
                 email: email,
                 message: message
