@@ -23,13 +23,22 @@
 <script>
 import Api from "@/api/api";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
+import { mapState } from "vuex";
 
 export default {
     data() {
-        return {};
+        return {
+            captchaID: "",
+            captchaImage: "",
+            captchaValue: "",
+        };
     },
     mounted() {},
     computed: {
+        ...mapState({
+            inProgress: (state) => state.contact.inProgress,
+            error: (state) => state.contact.error,
+        }),
         formValid() {
             return this.email != "" && this.email != "";
         },
