@@ -13,7 +13,8 @@
                 <input type="text" id="login-captch" v-model="captchaValue">
             </div>
             <p v-if="error" class="error">{{ error.message }}</p>
-            <button class="btn btn-big btn-solid login-btn" :disabled="inProgress || !formValid">
+            <br><br>
+            <button class="btn btn-big btn-solid login-btn" :disabled="!formValid">
                 <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>Submit
             </button>
         </form>
@@ -21,26 +22,29 @@
 </template>
 
 <script>
-import Api from "@/api/api";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
 
 export default {
     data() {
         return {
+            email: "",
+            message: "",
             captchaID: "",
             captchaImage: "",
             captchaValue: "",
         };
     },
-    mounted() {},
+    mounted() {
+        // this.send();
+    },
     computed: {
         ...mapState({
             inProgress: (state) => state.contact.inProgress,
             error: (state) => state.contact.error,
         }),
         formValid() {
-            return (this.email != "" && this.email != "");
+            return (this.email != "" || this.email != "");
         },
     },
     methods: {
