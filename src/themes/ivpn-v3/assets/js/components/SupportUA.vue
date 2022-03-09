@@ -14,7 +14,7 @@
                     <input type="text" id="login-captch" v-model="captchaValue">
                 </div>
             </div>
-            <p v-if="error" class="error">{{ error.message }}</p>
+            <p v-if="error && error.message != 'Captcha Required'" class="error">{{ error.message }}</p>
             <p>
                 <button class="btn btn-big btn-solid login-btn" :disabled="!formValid">
                     <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>Submit
@@ -119,7 +119,7 @@ textarea {
 .captcha {
     padding: 15px 0 0 0;
 
-    .image-block {
+    .image-block img {
         background: white;
     }
 }
