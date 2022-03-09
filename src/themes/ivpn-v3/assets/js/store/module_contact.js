@@ -28,6 +28,7 @@ export default {
                 context.commit('done')
             } catch (error) {
                 context.commit('failed', { error })
+                throw error
             }
         },
     },
