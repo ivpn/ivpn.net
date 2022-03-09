@@ -47,7 +47,7 @@ export default {
             error: (state) => state.contact.error,
         }),
         formValid() {
-            return (this.email != "" || this.email != "");
+            return (this.email != "" && this.message != "");
         },
     },
     methods: {
@@ -91,6 +91,11 @@ export default {
 
 .form-input {
     margin-bottom: 24px;
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
 }
 
 .error {
