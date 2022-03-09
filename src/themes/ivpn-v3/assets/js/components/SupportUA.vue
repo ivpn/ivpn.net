@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form @submit.prevent="send()">
+        <form v-if="!messageSent" @submit.prevent="send()">
             <div class="form-input">
                 <label for="email">Email:</label>
                 <input type="email" id="email" v-model="email">
@@ -21,6 +21,7 @@
                 </button>
             </p>
         </form>
+        <p v-if="messageSent">Message is sent.</p>
     </div>
 </template>
 
@@ -36,6 +37,7 @@ export default {
             captchaID: "",
             captchaImage: "",
             captchaValue: "",
+            messageSent: false
         };
     },
     mounted() {
@@ -47,7 +49,7 @@ export default {
             error: (state) => state.contact.error,
         }),
         formValid() {
-            return (this.email != "" && this.message != "");
+            return (this.email != "" && this.message != "" && this.captchaValue != "");
         },
     },
     methods: {
@@ -71,7 +73,10 @@ export default {
             } catch (error) {
                 console.log("catch().error", error);
                 this.processError(error);
+                return;
             }
+
+            this.messageSent = true;
         },
         processError(error) {
             console.log("processError().error", error);
@@ -109,5 +114,13 @@ textarea {
     height: 150px;
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.captcha {
+    padding: 15px 0 0 0;
+
+    .image-block {
+        background: white;
+    }
 }
 </style>

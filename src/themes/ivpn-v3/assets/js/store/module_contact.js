@@ -24,7 +24,7 @@ export default {
         async contactSupportUA(context, payload) {
             context.commit('started')
             try {
-                await Api.contactSupportUA(payload.email, payload.message)
+                await Api.contactSupportUA(payload)
                 context.commit('done')
             } catch (error) {
                 context.commit('failed', { error })
