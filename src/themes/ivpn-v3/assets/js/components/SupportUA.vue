@@ -119,7 +119,7 @@ textarea {
 .captcha {
     padding: 15px 0 0 0;
 
-    .image-block {
+    .image-block img {
         background: white;
     }
 }
