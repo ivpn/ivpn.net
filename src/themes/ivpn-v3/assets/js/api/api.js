@@ -443,12 +443,14 @@ export default {
     // Contact
     //
 
-    async contactSupportUA(email, message) {
+    async contactSupportUA(payload) {
         await this.Post(
             '/web/contact/supportua',
             {
-                email: email,
-                message: message
+                email: payload.email,
+                message: payload.message,
+                captcha_id: payload.captchaID,
+                captcha: payload.captchaValue
             }
         )
     },

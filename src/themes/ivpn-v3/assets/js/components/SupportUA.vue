@@ -47,7 +47,7 @@ export default {
             error: (state) => state.contact.error,
         }),
         formValid() {
-            return (this.email != "" && this.message != "");
+            return (this.email != "" && this.message != "" && this.captchaValue != "");
         },
     },
     methods: {
@@ -109,5 +109,13 @@ textarea {
     height: 150px;
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.captcha {
+    padding: 15px 0 0 0;
+
+    .image-block {
+        background: white;
+    }
 }
 </style>
