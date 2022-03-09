@@ -52,6 +52,7 @@ export default {
     },
     methods: {
         async send() {
+            console.log("send()");
             if (this.inProgress) {
                 return;
             }
@@ -68,10 +69,12 @@ export default {
             try {
                 await this.$store.dispatch("contact/contactSupportUA", data);
             } catch (error) {
+                console.log("catch().error", error);
                 this.processError(error);
             }
         },
         processError(error) {
+            console.log("processError().error", error);
             if (error.captcha_id) {
                 this.captchaID = error.captcha_id;
                 this.captchaImage = error.captcha_image;
