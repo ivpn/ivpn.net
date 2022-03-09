@@ -1,18 +1,19 @@
 <template>
     <div>
         <form @submit.prevent="send()">
-            <label for="email">Email:</label>
-            <input type="text" id="email" v-model="email">
-            <label for="message">Message:</label>
-            <input type="text" id="message" v-model="message">
-            <div class="captcha" v-if="captchaImage">
-                <div class="image-block">
-                    <img :src="captchaImage">
+            <div class="form-input">
+                <label for="email">Email:</label>
+                <input type="email" id="email" v-model="email">
+                <label for="message">Message:</label>
+                <textarea id="message" v-model="message"></textarea>
+                <div class="captcha" v-if="captchaImage">
+                    <div class="image-block">
+                        <img :src="captchaImage">
+                    </div>
+                    <label for="login-captch">Please enter the captcha you see above:</label>
+                    <input type="text" id="login-captch" v-model="captchaValue">
                 </div>
-                <label for="login-captch">Please enter the captcha you see above:</label>
-                <input type="text" id="login-captch" v-model="captchaValue">
             </div>
-            <br>
             <p v-if="error" class="error">{{ error.message }}</p>
             <p>
                 <button class="btn btn-big btn-solid login-btn" :disabled="!formValid">
@@ -87,4 +88,18 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/styles/base.scss";
+
+.form-input {
+    margin-bottom: 24px;
+}
+
+.error {
+    color: $red;
+}
+
+textarea {
+    height: 150px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
 </style>
