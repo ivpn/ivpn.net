@@ -23,10 +23,10 @@
                 </button>
             </p>
         </form>
-        <p v-if="messageSent">We have received your request. Thank you!</p>
         <p>Why do we do this? Read our and share our blog post - <a href="/blog/in-support-of-ukraine">"In support of Ukraine"</a></p>
         <h4>About IVPN</h4>
         <p>IVPN is an audited, open-source, privacy focused VPN service with strong security measures. We do not guarantee access to streaming apps, and our service might be inaccessible in certain areas.</p>
+        <h3 v-if="messageSent">We have received your request. Thank you!</h3>
     </div>
 </template>
 
