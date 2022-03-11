@@ -42,7 +42,8 @@ export default {
             captchaID: "",
             captchaImage: "",
             captchaValue: "",
-            messageSent: false
+            messageSent: false,
+            lang: supportuaLang
         };
     },
     mounted() {

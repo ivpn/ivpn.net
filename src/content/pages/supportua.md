@@ -1,5 +1,5 @@
 ---
 title: Support UA
-url: /supportua/
+url: /supportua/ua/
 layout: supportua
 ---
