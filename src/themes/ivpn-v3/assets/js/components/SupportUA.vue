@@ -31,7 +31,7 @@
                     <input type="text" id="login-captch" v-model="captchaValue">
                 </div>
             </div>
-            <p v-if="error && error.message != 'Captcha Required'" class="error">{{ error.message }}</p>
+            <p v-if="error && error.message != 'Captcha Required'" class="error">{{ errors[lang][error.message] }}</p>
             <p>
                 <button class="btn btn-big btn-solid login-btn" :disabled="!formValid">
                     <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>
@@ -68,7 +68,21 @@ export default {
             captchaImage: "",
             captchaValue: "",
             messageSent: false,
-            lang: supportuaLang
+            lang: supportuaLang,
+            errors: {
+                "ua": {
+                    "Failed to fetch": "Failed to load captcha",
+                    "Incomplete request": "Fill in to submit your request.",
+                    "You have already requested a free account.": "You have already requested a free account.",
+                    "There was an error with sending message": "There was an error with sending message",
+                },
+                "ru": {
+                    "Failed to fetch": "Failed to load captcha",
+                    "Incomplete request": "Fill in to submit your request.",
+                    "You have already requested a free account.": "You have already requested a free account.",
+                    "There was an error with sending message": "There was an error with sending message",
+                }
+            }
         };
     },
     mounted() {
