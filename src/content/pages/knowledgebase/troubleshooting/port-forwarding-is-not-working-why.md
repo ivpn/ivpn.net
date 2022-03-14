@@ -10,8 +10,6 @@ weight: 180
 ---
 # Port forwarding is not working, why?
 
-Port forwarding is only available when connecting using the OpenVPN protocol. If you are using **WireGuard** then you will not be able to forward ports.
-
 If port forwarding is enabled while the VPN is connected, you will have to restart the VPN connection for the port to be accessible.
 
 In addition, port forwarding is **disabled on all USA exit servers** to discourage file sharing on USA servers which results in our servers being disconnected by our upstream network providers.

@@ -85,7 +85,7 @@ weight: 480
     Our website shows a connection status at the top of the page or inside the 'Menu' on mobile devices. There is a green 'Connected' or a red 'Disconnected' dot, which indicates your status. Another way to ensure that you are properly connected to IVPN is to simply visit the [dns leak test](https://www.dnsleaktest.com/) website. As long as you see the revealed location matches the selected IVPN server & the IP address is different to the one provided by your ISP - this gives you reasonable assurance that your traffic is routed through the VPN service.
 
 12. #### Does Port Forwarding work with WireGuard?
-    Port Forwarding cannot be used with WireGuard at this time.
+    Yes.
 
 13. #### Does WireGuard support IPv6?
     Yes.

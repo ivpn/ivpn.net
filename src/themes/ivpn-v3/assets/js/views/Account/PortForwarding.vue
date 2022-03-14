@@ -40,7 +40,7 @@
             <section v-if="account.product.capabilities.has_port_forwarding">
                 <h2>Port Forwarding</h2>
                 <p>
-                    Your port number will be reserved on all servers (excluding USA) when connected using the OpenVPN protocol. 
+                    Your port number will be reserved on all servers (excluding USA) when connected using the OpenVPN or WireGuard protocols.
                     Your reservation will expire if you don't connect to the VPN for 14 days.
                 </p>
             </section>

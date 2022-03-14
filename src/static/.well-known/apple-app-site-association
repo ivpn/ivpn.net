@@ -1,0 +1,29 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appIDs": [
+                    "WQXXM75BYN.net.ivpn.clients.ios"
+                ],
+                "components": [
+                    {
+                        "/": "/app/*",
+                        "comment": "Matches any URL whose path starts with /app/"
+                    }
+                ]
+            },
+            {
+                "appID": "WQXXM75BYN.net.ivpn.clients.ios",
+                "paths": [
+                    "/app/*"
+                ]
+            }
+        ]
+    },
+    "activitycontinuation": {
+        "apps": [
+            "WQXXM75BYN.net.ivpn.clients.ios"
+        ]
+    }
+}

@@ -50,7 +50,7 @@ If you are unable to resolve a technical issue please submit your logs by follow
 
 1. Open the IVPN App and click on the gear icon to access the `Settings` area.
 2. Navigate to the `General` tab.
-3. In the `Diagnostics` area`, check `Allow logging`, then click the back button.
+3. In the `Diagnostics` area, check `Allow logging`, then click the back button.
 4. Use the VPN software in such a way that the error may be logged e.g if you cannot connect then attempt to connect to the VPN.
 5. Go back to `Settings` > `General` and click on the `Diagnostic logs ...` button to send.
 
