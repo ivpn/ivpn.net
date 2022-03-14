@@ -308,6 +308,10 @@ export default {
                 }
             }
 
+            if (query.city) {
+                query.city = this.query.city.split(",")[0];
+            }
+
             this.queryString = new URLSearchParams(query);
         },
         handleDownload(event) {

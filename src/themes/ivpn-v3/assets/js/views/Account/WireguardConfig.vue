@@ -445,6 +445,10 @@ export default {
                 }
             }
 
+            if (query.city) {
+                query.city = this.query.city.split(",")[0];
+            }
+
             this.query.address = this.ipAddress;
             this.queryString = new URLSearchParams(query);
             this.validation.downloadQR = this.validation.download || !this.query.host;
