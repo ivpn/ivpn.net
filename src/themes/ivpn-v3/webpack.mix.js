@@ -35,7 +35,9 @@ mix.webpackConfig({
 mix.setPublicPath('static')
     .js('assets/js/app.js', 'static/js/').vue()
     .js('assets/js/servers.js', 'static/js/').vue()
+    .js('assets/js/openvpn-config.js', 'static/js/').vue()
     .js('assets/js/search.js', 'static/js/').vue()
     .js('assets/js/menu.js', 'static/js/')
+    .js('assets/js/wireguard.js', 'static/js/')
     .sass('assets/scss/pages.scss', 'static/css/')
     .version();

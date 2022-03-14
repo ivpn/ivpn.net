@@ -1,0 +1,161 @@
+@import "@/styles/_vars.scss";
+@import "@/styles/base.scss";
+@import "@/styles/buttons.scss";
+
+.vpn-configuration {
+
+    h2 {
+        margin: 40px 0 30px 0;
+    }
+
+    h3 {
+        margin: 30px 0 20px 0;
+    }
+
+    h4 {
+        margin: 20px 0 15px 0;
+    }
+
+    .select {
+        width: 235px;
+        display: inline-block;
+        margin: 0 10px 10px 0;
+    }
+
+    .checkbox {
+        
+        & > div {
+            align-items: center;
+            display: flex;
+            flex-grow: 1;
+
+            input {
+                margin-right: 15px;
+            }
+        }
+
+        &.disabled {
+            input {
+                color: gray;
+            }
+        }
+    }
+
+    .radio {
+        & > div {
+            margin: 10px 0;
+        }
+    }
+
+    .disabled {
+        opacity: 0.5;
+
+        input,
+        select {
+            &:hover {
+                cursor: default;
+            }
+        }
+    }
+
+    .btn {
+        &:hover {
+            text-decoration: none;
+        }
+
+        &.disabled {
+            opacity: 1;
+            color: gray;
+            border-color: gray;
+
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+
+        &.btn-big {
+            margin-bottom: 20px;
+        }        
+    }
+
+    .apps-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        
+        a {
+            font-family: $font-main-mono;
+            font-size: 18px;
+            line-height: 36px;        
+            display: flex;
+            align-items: center;
+            height: 60px;   
+            margin: 0 30px 0 0;
+            opacity: 0.5;
+
+            @include light-theme((
+                color: $dark
+            ));
+
+            @include dark-theme((
+                color: $white
+            ));
+
+            svg {
+                width: 34px;
+                height: 34px;
+                margin: 10px 10px 10px 0;
+                pointer-events: none;
+
+                @include light-theme((
+                    fill: $dark
+                ));
+
+                @include dark-theme((
+                    fill: $white
+                ));
+            }
+
+            &:hover {   
+                text-decoration: none;
+            }
+
+            &.active {
+                color: $blue;
+                font-weight: bold;
+                opacity: 1;
+                
+                svg {
+                    fill: $blue;   
+                }
+            }
+        }
+    }
+
+    .tabs {
+        margin-bottom: 15px;
+    }
+
+    .qrnote {
+        text-align: center;
+        padding: 50px 25px 0 25px;
+    }
+
+    form {
+        p {
+            margin-top: 24px;
+        }
+    }
+
+    p.note {
+        font-size: 14px;
+        margin-top: -10px;
+        
+        @include light-theme((
+            color: rgba(0, 0, 0, 0.5)
+        ));
+
+        @include dark-theme((
+            color: rgba(255, 255, 255, 0.5)
+        ));
+    }
+}

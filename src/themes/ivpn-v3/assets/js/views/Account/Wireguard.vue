@@ -15,19 +15,20 @@
 
         <div v-if="account.is_active">
             <section>
-                <h2>WireGuard Keys</h2>
-                <p>
-                    Managing WireGuard keys is necessary when using native
-                    WireGuard client.
-                </p>
-                <p>
-                    If you are using IVPN Client Apps (for Windows, macOS,
-                    Linux, Android, and iOS), WireGuard keys are managed
-                    automatically, just select WireGuard protocol in app
-                    settings.
-                </p>
+                <h2>WireGuard</h2>
+                <p>If you are using the IVPN Apps for Windows, macOS, Linux, Android or iOS, WireGuard keys are managed automatically, simply select the WireGuard protocol in the app settings.</p>
+                <!-- <p>If you are using the native WireGuard client then you need to manually create your keys and the necessary configuration files. We provide a configuration file generator that will generate WireGuard keys, allow you to specify the servers you require and other parameters. You simply import the configuration file and are ready to connect.</p>
+                <router-link
+                    :to="{ name: 'wireguard-config' }"
+                    class="btn btn-solid btn-big"
+                    >Configuration file generator</router-link
+                > -->
+            </section>
+
+            <section>
+                <p>If you wish to manually configure WireGuard and just need to submit a new public key then use the form below.</p>
                 <a class="btn btn-solid btn-big" @click.prevent="addKey"
-                    >Add a new key</a
+                    >Add new public key</a
                 >
             </section>
 
