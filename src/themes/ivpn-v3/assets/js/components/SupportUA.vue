@@ -1,23 +1,23 @@
 <template>
     <div>
         <div v-if="lang == 'ua'">
-            <p>Welcome!</p>
-            <p>On this page, you can request a free IVPN account. This offer is available to anyone in Ukraine, Belarus and Russia. Fill in the form below and we will respond within 48 hours.</p>
+            <p>Вітаємо!</p>
+            <p>На цій сторінці ви можете надіслати запит на безкоштовний обліковий запис IVPN. Ця пропозиція доступна кожному в Україні, Білорусі та Росії. Заповніть форму нижче і ми відповімо протягом 48 годин.</p>
         </div>
         <div v-if="lang == 'ru'">
-            <p>Welcome!</p>
-            <p>On this page, you can request a free IVPN account. This offer is available to anyone in Ukraine, Belarus and Russia. Fill in the form below and we will respond within 48 hours.</p>
+            <p>Добро пожаловать!</p>
+            <p>На этой странице вы можете запросить бесплатную учетную запись IVPN. Это предложение доступно для всех в Украине, Беларуси и России. Заполните форму ниже и мы ответим в течение 48 часов.</p>
         </div>
         <form v-if="!messageSent" @submit.prevent="send()">
             <div class="form-input">
                 <label for="email">
-                    <span v-if="lang == 'ua'">Email address:</span>
-                    <span v-if="lang == 'ru'">Email address:</span>
+                    <span v-if="lang == 'ua'">Адреса електронної пошти</span>
+                    <span v-if="lang == 'ru'">Адрес электронной почты</span>
                 </label>
                 <input type="email" id="email" v-model="email">
                 <label for="message">
-                    <span v-if="lang == 'ua'">For what purpose do you need a VPN service? (brief explanation in English, Ukrainian, Russian):</span>
-                    <span v-if="lang == 'ru'">For what purpose do you need a VPN service? (brief explanation in English, Ukrainian, Russian):</span>
+                    <span v-if="lang == 'ua'">Для якої мети вам потрібен сервіс VPN? (коротке пояснення англійською, українською або російською мовами):</span>
+                    <span v-if="lang == 'ru'">Для каких целей вам нужен VPN сервис? (краткое объяснение на английском, украинском или русском языках):</span>
                 </label>
                 <textarea id="message" v-model="message"></textarea>
                 <div class="captcha" v-if="captchaImage">
@@ -25,8 +25,8 @@
                         <img :src="captchaImage">
                     </div>
                     <label for="login-captch">
-                        <span v-if="lang == 'ua'">Please enter the captcha you see above:</span>
-                        <span v-if="lang == 'ru'">Please enter the captcha you see above:</span>
+                        <span v-if="lang == 'ua'">Будь ласка, введіть капчу, яку ви бачите вище:</span>
+                        <span v-if="lang == 'ru'">Пожалуйста, введите капчу, которую вы видите выше:</span>
                     </label>
                     <input type="text" id="login-captch" v-model="captchaValue">
                 </div>
@@ -35,22 +35,22 @@
             <p>
                 <button class="btn btn-big btn-solid login-btn" :disabled="!formValid">
                     <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>
-                        <span v-if="lang == 'ua'">Send request</span>
-                        <span v-if="lang == 'ru'">Send request</span>
+                        <span v-if="lang == 'ua'">Відправити запит</span>
+                        <span v-if="lang == 'ru'">Отправить запрос</span>
                 </button>
             </p>
         </form>
         <div v-if="lang == 'ua'">
-            <p>Why do we do this? Read our and share our blog post - <a href="/blog/in-support-of-ukraine">"In support of Ukraine"</a></p>
-            <h4>About IVPN</h4>
-            <p>IVPN is an audited, open-source, privacy focused VPN service with strong security measures. We do not guarantee access to streaming apps, and our service might be inaccessible in certain areas.</p>
-            <h3 v-if="messageSent">We have received your request. Thank you!</h3>
+            <p>Чому ми це робимо? Читайте та поширюйте наш допис у блозі - <a href="/blog/in-support-of-ukraine">"In support of Ukraine"</a></p>
+            <h4>Про IVPN</h4>
+            <p>IVPN — це аудійований сервіс VPN з відкритим вихідним кодом, орієнтований на конфіденційність, з суворими заходами безпеки. Ми не гарантуємо доступ до стрімінгових сервісів, робота IVPN може бути недоступна в певних областях.</p>
+            <h3 v-if="messageSent">Ми отримали ваш запит. Дякуємо!</h3>
         </div>
         <div v-if="lang == 'ru'">
-            <p>Why do we do this? Read our and share our blog post - <a href="/blog/in-support-of-ukraine">"In support of Ukraine"</a></p>
-            <h4>About IVPN</h4>
-            <p>IVPN is an audited, open-source, privacy focused VPN service with strong security measures. We do not guarantee access to streaming apps, and our service might be inaccessible in certain areas.</p>
-            <h3 v-if="messageSent">We have received your request. Thank you!</h3>
+            <p>Почему мы это делаем? Читайте и делитесь нашим постом в блоге - <a href="/blog/in-support-of-ukraine">"In support of Ukraine"</a></p>
+            <h4>Об IVPN:</h4>
+            <p>IVPN — проверенный независимым аудитом VPN сервис с открытым исходным кодом, ориентированный на конфиденциальность, со строгими мерами безопасности. Мы не гарантируем доступ ко стриминговым приложениям и наш сервис может быть недоступен в определенных регионах.</p>
+            <h3 v-if="messageSent">Мы получили ваш запрос. Спасибо!</h3>
         </div>
     </div>
 </template>
@@ -71,16 +71,16 @@ export default {
             lang: supportuaLang,
             errors: {
                 "ua": {
-                    "Failed to fetch": "Failed to load captcha",
-                    "Incomplete request": "Fill in to submit your request.",
-                    "You have already requested a free account.": "You have already requested a free account.",
-                    "There was an error with sending message": "There was an error with sending message",
+                    "Failed to fetch": "Не вдалося завантажити капчу",
+                    "Incomplete request": "Заповніть, щоб надіслати запит.",
+                    "You have already requested a free account.": "Ви вже запросили безкоштовний обліковий запис.",
+                    "There was an error with sending message": "Під час надсилання повідомлення сталася помилка",
                 },
                 "ru": {
-                    "Failed to fetch": "Failed to load captcha",
-                    "Incomplete request": "Fill in to submit your request.",
-                    "You have already requested a free account.": "You have already requested a free account.",
-                    "There was an error with sending message": "There was an error with sending message",
+                    "Failed to fetch": "Не удалось загрузить капчу",
+                    "Incomplete request": "Заполните, чтобы отправить запрос.",
+                    "You have already requested a free account.": "Вы уже запросили бесплатную учетную запись.",
+                    "There was an error with sending message": "Произошла ошибка при отправке сообщения",
                 }
             }
         };
