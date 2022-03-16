@@ -398,7 +398,7 @@ export default {
             this.multihop = event.target.getAttribute("data-multihop") == "true";
 
             if (this.multihop) {
-                this.validation.download = this.multihop_port === null;
+                this.validation.download = this.multihop_port == null || this.entry_host == null;
             } else {
                 this.query.port = "2049";
                 this.validation.entryCity = true;
@@ -472,11 +472,9 @@ export default {
         generateKey() {
             let keypair = wireguard.generateKeypair();
             this.privateKey = keypair.privateKey;
-            this.validation.download = false;
             this.setKey(keypair.publicKey);
         },
         addKey() {
-            this.validation.download = false;
             this.privateKey = this.privateKeyAdd;
             this.setKey(this.publicKeyAdd);
         },
@@ -494,7 +492,10 @@ export default {
                 this.error.addKey = error.message;
                 this.publicKey = null;
                 this.privateKey = null;
+                return;
             }
+
+            this.validation.download = false;
         },
     },
     components: {}

@@ -261,7 +261,7 @@ export default {
             this.multihop = event.target.getAttribute("data-multihop") == "true";
 
             if (this.multihop) {
-                this.validation.download = this.multihop_port === null;
+                this.validation.download = this.multihop_port == null || this.entry_host == null;
             } else {
                 this.query.proto = "udp";
                 this.query.port = "2049";
