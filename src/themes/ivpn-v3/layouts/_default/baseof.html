@@ -6,7 +6,10 @@
     {{ block "main-style" . }}{{ end }}
 
     {{ block "seo" . }}
-      <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if isset .Params "hreflang" }}
+    <link rel="alternate" href="{{ .Params.AlternateURL }}" hreflang="{{ .Params.Hreflang }}">
+    {{ end }}
     {{ end }}
   </head>
     <body onclick="">{{/* onclick="" fixes iOS Safari :hover touch events */}}

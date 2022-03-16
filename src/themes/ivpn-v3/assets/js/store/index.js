@@ -12,6 +12,7 @@ import product from "./module_product.js"
 import deleteAccount from "./module_delete_account.js"
 import braintree from "./module_braintree.js"
 import account from "./module_account.js"
+import contact from "./module_contact.js"
 
 Vue.use(Vuex);
 
@@ -26,6 +27,7 @@ export default new Vuex.Store({
         product,
         braintree,
         account,
+        contact,
     },
 
     state: {        
