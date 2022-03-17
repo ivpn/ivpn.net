@@ -16,6 +16,10 @@
         margin: 20px 0 15px 0;
     }
 
+    p {
+        word-break: break-all;
+    }
+
     .select {
         width: 235px;
         display: inline-block;
