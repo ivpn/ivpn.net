@@ -16,8 +16,8 @@
                 </label>
                 <input type="email" id="email" v-model="email">
                 <label for="message">
-                    <span v-if="lang == 'ua'">Для якої мети вам потрібен сервіс VPN? (коротке пояснення англійською, українською або російською мовами):</span>
-                    <span v-if="lang == 'ru'">Для каких целей вам нужен VPN сервис? (краткое объяснение на английском, украинском или русском языках):</span>
+                    <span v-if="lang == 'ua'">Для якої мети вам потрібен сервіс VPN? (коротке пояснення українською або російською мовою):</span>
+                    <span v-if="lang == 'ru'">Для каких целей вам нужен VPN сервис? (краткое объяснение на украинском или русском языке):</span>
                 </label>
                 <textarea id="message" v-model="message"></textarea>
                 <div class="captcha" v-if="captchaImage">
