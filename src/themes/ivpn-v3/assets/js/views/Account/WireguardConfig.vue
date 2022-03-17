@@ -449,6 +449,10 @@ export default {
                 query.city = this.query.city.split(",")[0];
             }
 
+            if (!this.validation.download) {
+                this.validation.download = this.publicKey == null || this.privateKey == null;
+            }
+
             this.query.address = this.ipAddress;
             this.queryString = new URLSearchParams(query);
             this.validation.downloadQR = this.validation.download || !this.query.host;
