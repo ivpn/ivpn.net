@@ -16,7 +16,7 @@ If you are using IVPN to protect your privacy/anonymity this software does not o
 
 2. Run the installer and answer the required prompts to install the software. Select the default set of components to install. If you have not installed OpenVPN before you may be asked to install the TAP drivers. Check the box "Always trust software from OpenVPN" and click `Install`.
 
-3. Download the [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
+3. Download the [OpenVPN configuration files](/openvpn-config).
 
 4. Extract the zip file and copy the contents of the `ivpn-openvpn-config` folder (the .ovpn files) to the `config` folder within the OpenVPN installation directory (Usually C:\Program Files (x86)\OpenVPN\config on 32-bit systems and C:\Program Files\OpenVPN\config on 64-bit systems).
 

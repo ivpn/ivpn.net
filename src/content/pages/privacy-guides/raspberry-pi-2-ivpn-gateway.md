@@ -66,7 +66,7 @@ Reboot the gateway Pi
 
 ## OpenVPN Setup
 
-Download the latest OpenVPN configuration files from <https://www.ivpn.net/releases/config/ivpn-openvpn-config.zip> and extract the archive to `/home/pi`.
+Download the latest [OpenVPN configuration files](/openvpn-config) and extract the archive to `/home/pi`.
 
 
     $ unzip /mnt/ivpn-openvpn-config.zip -d /home/pi/

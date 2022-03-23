@@ -91,8 +91,6 @@ releases: [
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip).
-
 - [OpenVPN using NetworkManager Setup Guide](/setup/linux-netman/)  
 - [OpenVPN using terminal Setup Guide](/setup/linux-terminal/)  
 - [Linux IPSec with IKEv2 Setup Guide](/setup/linux-ipsec-with-ikev2/)  

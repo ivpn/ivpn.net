@@ -1,15 +1,15 @@
 ---
-title: Do you offer OpenVPN config files for TCP connections? - IVPN Help
-h1: Do you offer OpenVPN config files for TCP connections?
-url: /knowledgebase/general/do-you-offer-openvpn-config-files-for-tcp-connections/
+title: Do you offer OpenVPN, WireGuard config files? - IVPN Help
+h1: Do you offer OpenVPN, WireGuard config files?
+url: /knowledgebase/general/do-you-offer-openvpn-wireguard-config-files/
 sections:
     - general
 sectionTitle: General
 layout: help-details
 weight: 230
 ---
-# Do you offer OpenVPN config files for TCP connections?
+# Do you offer OpenVPN, WireGuard config files?
 
-Although we strongly recommend using UDP where possible due to the efficiency of the UDP protocol, we understand that in some cases TCP may be the only option, like on restrictive networks.
+OpenVPN config files can be generated and downloaded [here](/openvpn-config).
 
-Download the [OpenVPN TCP config files](/releases/config/ivpn-openvpn-config-tcp.zip).
+WireGuard config file generator is available in the [Client Area](/account/wireguard-config).
