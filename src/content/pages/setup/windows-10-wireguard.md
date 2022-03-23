@@ -10,7 +10,7 @@ platform: windows
 To use WireGuard on Windows, we recommend downloading IVPN's <a href="/apps-windows/">Windows client</a>, which supports the protocol. Please follow the steps below if you would prefer to use the official WireGuard app for Windows instead:
 </div>
 
-1.  [Download](https://www.wireguard.com/install/) and install the latest version of the WireGuard client
+1.  [Download](https://www.wireguard.com/install/) and install the latest version of the WireGuard client from the official WireGuard website
 
 2.  Navigate to our [config file generator](/account/wireguard-config)
 
