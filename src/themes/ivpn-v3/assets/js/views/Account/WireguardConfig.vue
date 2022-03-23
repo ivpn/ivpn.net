@@ -124,6 +124,8 @@
                             <option value="2049" :selected="(query.port == 2049) || !query.port">2049</option>
                             <option value="2050" :selected="(query.port == 2050)">2050</option>
                             <option value="53" :selected="(query.port == 53)">53</option>
+                            <option value="80" :selected="(query.port == 80)">80</option>
+                            <option value="443" :selected="(query.port == 443)">443</option>
                             <option value="1194" :selected="(query.port == 1194)">1194</option>
                             <option value="30587" :selected="(query.port == 30587)">30587</option>
                             <option value="41893" :selected="(query.port == 41893)">41893</option>
