@@ -10,7 +10,7 @@ platform: macos
 To use WireGuard on macOS, we recommend downloading IVPN's <a href="/apps-macos/">macOS client</a>, which supports the protocol. Please follow the steps below if you would prefer to use the official WireGuard app for macOS instead:
 </div>
 
-1.  [Download](https://itunes.apple.com/us/app/wireguard/id1451685025?ls=1&mt=12) and install the latest version of WireGuard client.
+1.  [Download](https://itunes.apple.com/us/app/wireguard/id1451685025?ls=1&mt=12) and install the latest version of WireGuard client
 
 2.  Navigate to our [config file generator](/account/wireguard-config)
 
