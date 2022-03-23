@@ -27,7 +27,7 @@ This guide was produced using OpenWrt v.19.07.2
 
 ### Create a VPN profile
 
-1. Download and extract our [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) config files to your computer
+1. Download and extract our [config files](/openvpn-config) to your computer
 
 2. In your router, navigate to `VPN` - `OpenVPN`
 

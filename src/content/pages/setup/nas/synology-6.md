@@ -11,7 +11,7 @@ weight: 10
 
 The following guide explains how to set up your Synology NAS based on DiskStation Manager (DSM) v.6.1.
 
-1.  Download and extract the archive with our [.ovpn config files](/releases/config/ivpn-openvpn-config.zip).
+1.  Download and extract the archive with our [.ovpn config files](/openvpn-config).
 
 2.  Log into your Synology device, navigate to `Control Panel` - `Network` - `Network Interface` & click on the `Create` - `Create VPN Profile`.
 

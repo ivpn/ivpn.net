@@ -21,7 +21,7 @@ If your router does not have one of the types firmware mentioned above, it may b
 * [FlashRouters](https://www.flashrouters.com/vpn-types/ivpn)
 * [VPN Routers](https://www.vpnrouters.com/vpn-providers/ivpn-vpn-routers.html)
 
-Some routers feature a built-in OpenVPN client and we offer [OpenVPN configuration files](/releases/config/ivpn-openvpn-config.zip), so it is possible to connect to our servers this way.
+Some routers feature a built-in OpenVPN client and we offer [OpenVPN configuration files](/openvpn-config), so it is possible to connect to our servers this way.
 
 Vilfo offers a dedicated VPN router with IVPN pre-configured. When you receive the router all you need to do is enter your IVPN Account ID (starts with ivpn) to connect.
 

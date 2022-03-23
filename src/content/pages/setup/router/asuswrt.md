@@ -15,7 +15,7 @@ weight: 50
 The list of supported models can be viewed <a href="https://asuswrt.lostrealm.ca/about">here</a>
 </div>
 
-1.  Download and extract the IVPN [.ovpn config files](/releases/config/ivpn-openvpn-config.zip) to your PC.
+1.  Download and extract the IVPN [.ovpn config files](/openvpn-config) to your PC.
 
 2.  Launch the web browser and enter the IP address of your router, which is usually `192.168.1.1`.
 
