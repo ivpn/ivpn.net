@@ -45,8 +45,8 @@ platform: linux
 
 
     ```
-    unzip ivpn.zip
-    Archive:  ivpn.zip
+    unzip ivpn-openvpn-config.zip
+    Archive:  ivpn-openvpn-config.zip
         creating: ivpn-openvpn-config/
         inflating: ivpn-openvpn-config/Austria.ovpn
         inflating: ivpn-openvpn-config/Australia.ovpn
