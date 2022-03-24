@@ -21,7 +21,7 @@
             <section>
                 <h2>WireGuard Configuration</h2>
                 <h3>1. Generate WireGuard key</h3>
-                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. Only the public key is sent to our server. You can review the code on <a href="https://github.com/ivpn/ivpn.net/blob/feature/wireguard-configuration-files-multihop-tabs/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
+                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. Only the public key is sent to our server. You can review the code on <a href="https://github.com/ivpn/ivpn.net/blob/main/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': isKeyGenerated }">
@@ -36,7 +36,7 @@
                     <p v-if="!publicKey">
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
-                    <p v-if="publicKey">
+                    <p class="key" v-if="publicKey">
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
                     </p>
