@@ -10,7 +10,7 @@ platform: macos
 
 2. Double-click the downloaded `.dmg` file to open the disk image. Double-click the `Tunnelblick.app` icon to install into your applications folder. You may see a warning about Tunnelblick being downloaded from the Internet - Click `open` to continue. When the installer asks if you want to launch or quit Tunnelblick, click `Quit`.
 
-3. Download the [IVPN config files](/releases/config/ivpn-openvpn-config.zip). Unzip the downloaded file and then open the new `ivpn-openvpn-config` folder. Select all the files, right-click one of them and select `open with` / `tunnelblick.app`.
+3. Download the [IVPN config files](/openvpn-config). Unzip the downloaded file and then open the new `ivpn-openvpn-config` folder. Select all the files, right-click one of them and select `open with` / `tunnelblick.app`.
 
 4. Select whether you want to enable the connections for only yourself or for all users of your computer. Next you will be asked to enter your macOS password to import the configurations.
 

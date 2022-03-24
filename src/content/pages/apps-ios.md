@@ -28,8 +28,6 @@ releases: [{
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
-
 - [WireGuard](/setup/ios-wireguard/)
 - [OpenVPN Connect](/setup/ios-openvpn-connect/)  
 - [IPSec with IKEv2](/setup/ios-ipsec-ikev2/)

@@ -28,7 +28,7 @@ Our IVPN Linux client includes obfsproxy support. Check it out <a href="/apps-li
     pip install obfsproxy
     ```
 
-3.  For Obfsproxy our servers listen to port TCP 5145. Open [.ovpn config file](/releases/config/ivpn-openvpn-config.zip) you use to connect with any text editor and adjust line 3 from `proto udp` to `proto tcp` & port in the line 4 from `2049` to `5145`.  
+3.  For Obfsproxy our servers listen to port TCP 5145. Open [.ovpn config file](/openvpn-config) you use to connect with any text editor and adjust line 3 from `proto udp` to `proto tcp` & port in the line 4 from `2049` to `5145`.  
     Resolve the server name specified in line 4:
 
     ```

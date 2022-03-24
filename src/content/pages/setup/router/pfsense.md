@@ -138,4 +138,4 @@ weight: 30
     Sometimes, you might need to additionally reboot pfSense to apply the new configuration.
     </div>
 
-**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) nd replace the port number in *Step 2* with the chosen Exit-hop server Multi-hop port. 
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and replace the port number in *Step 2* with the chosen Exit-hop server Multi-hop port. 

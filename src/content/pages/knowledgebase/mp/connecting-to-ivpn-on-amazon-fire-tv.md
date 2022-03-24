@@ -21,7 +21,7 @@ The IVPN App is not currently compatible with the Amazon implementation of Andro
 ### Transfer the OpenVPN configuration files
 
 1. Install an FTP client on your computer system.
-2. Download the [IVPN configuration files](/releases/config/ivpn-openvpn-config.zip) on your computer system and extract the .ovpn files from the .zip file into a sub-folder.
+2. Generate and download the [IVPN configuration files](/openvpn-config) on your computer system and extract the .ovpn files from the .zip file into a sub-folder.
 3. Open ES File Explorer on the Fire device and navigate to `Network` -> `Remote Manager` on the sidebar.
 4. Enable `Remote Manager` and make sure it gives an IP address for the FTP server.
 5. Enter the FTP server IP address from Remote Manager into the FTP client on the computer system. It may work best if the Fire device and the computer system are on the same network.
