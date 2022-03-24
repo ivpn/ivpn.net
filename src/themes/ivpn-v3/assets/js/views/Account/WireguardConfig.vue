@@ -36,7 +36,7 @@
                     <p v-if="!publicKey">
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
-                    <p v-if="publicKey">
+                    <p class="key" v-if="publicKey">
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
                     </p>
