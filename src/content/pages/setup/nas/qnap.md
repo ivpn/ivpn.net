@@ -13,7 +13,7 @@ weight: 20
 This guide was produced using QTS v4.3.6
 </div>
 
-1.  Download and extract the IVPN [.ovpn config files](/releases/config/ivpn-openvpn-config.zip) to your computer system.
+1.  Download and extract the IVPN [.ovpn config files](/openvpn-config) to your computer system.
 
 2.  In the QNAP web interface, open the `AppCenter` and search for **qvpn**.
 

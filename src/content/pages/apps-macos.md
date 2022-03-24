@@ -53,8 +53,6 @@ releases: [{
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
-
 - [WireGuard](/setup/macos-wireguard/)
 - [Tunnelblick (OpenVPN)](/setup/macos-openvpn-tunnelblick/)  
 - [IPSec with IKEv2](/setup/macos-ipsec-with-ikev2/)   

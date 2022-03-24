@@ -8,7 +8,7 @@ platform: android
 
 [OpenVPN for Android](https://play.google.com/store/apps/details?id=de.blinkt.openvpn&hl=en) is an open source client compatible with all versions of Android 4.x (Ice Cream Sandwich) and later. Most devices released since 2012 are running Android 4.x or later.
 
-1.  Download the [OpenVPN config files](/releases/config/ivpn-openvpn-config.zip) either directly to your android device or to a seperate PC and unzip the file. If using a PC, transfer the contents to your Android device via USB/SD-card/Dropbox.
+1.  Download the [OpenVPN config files](/openvpn-config) either directly to your android device or to a seperate PC and unzip the file. If using a PC, transfer the contents to your Android device via USB/SD-card/Dropbox.
 
 2.  Open the Google Play Store and install `openvpn for android` by Arne Schwabe. When the installation is complete tap `Open`.
 

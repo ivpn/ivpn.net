@@ -42,8 +42,6 @@ releases: [{
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
-
 - [WireGuard (Windows 10)](/setup/windows-10-wireguard/)  
 - [OpenVPN GUI (Windows 10)](/setup/windows-10-openvpn-community/)
 - [OpenVPN GUI (Windows 8)](/setup/windows-8-openvpn-community/)

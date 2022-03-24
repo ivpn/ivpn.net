@@ -77,6 +77,8 @@
                     <option value="udp-2049" :selected="(query.proto == 'udp' && query.port == 2049) || !query.port">UDP 2049</option>
                     <option value="udp-2050" :selected="(query.proto == 'udp' && query.port == 2050)">UDP 2050</option>
                     <option value="udp-53" :selected="(query.proto == 'udp' && query.port == 53)">UDP 53</option>
+                    <option value="udp-80" :selected="(query.proto == 'udp' && query.port == 80)">UDP 80</option>
+                    <option value="udp-443" :selected="(query.proto == 'udp' && query.port == 443)">UDP 443</option>
                     <option value="udp-1194" :selected="(query.proto == 'udp' && query.port == 1194)">UDP 1194</option>
                     <option value="tcp-443" :selected="(query.proto == 'tcp' && query.port == 443)">TCP 443</option>
                     <option value="tcp-1443" :selected="(query.proto == 'tcp' && query.port == 1443)">TCP 1443</option>

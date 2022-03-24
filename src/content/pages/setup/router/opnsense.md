@@ -87,4 +87,4 @@ This guide was produced using OPNSense 21.7.1
 
 2. Check the conenction status and the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your OPNsense router.<br></br>![](/images-static/uploads/install-openvpn-opnsense-11.png)
 
-**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) nd replace the port number in *Step 2* of *Configure an OpenVPN Client* section with the chosen Exit-hop server Multi-hop port. 
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and replace the port number in *Step 2* of *Configure an OpenVPN Client* section with the chosen Exit-hop server Multi-hop port. 

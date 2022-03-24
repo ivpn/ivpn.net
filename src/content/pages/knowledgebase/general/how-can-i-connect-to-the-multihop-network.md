@@ -16,6 +16,8 @@ The Multi-hop feature is available in our Pro plan and can be used with any Wire
 Entry and Exit-hop servers must be in different countries.
 </div>
 
+Multi-hop-ready config files for WireGuard can be generated in the [Client Area](/account/wireguard-config). OpenVPN config file generator is available [here](/openvpn-config). Read on if you prefer to create configuration file manually  or simply want to understand how our port based Multi-hop solution works.
+
 Every server has a unique port number reserved for Multi-hop connections which can be found on our [server status](/status/) page.
 
 ![](/images-static/uploads/wireguard-multihop.jpg)
@@ -43,8 +45,7 @@ Below, is an example of the WireGuard Multi-hop connection config with Entry ser
 
 ### OpenVPN
 
-1. Download and extract the archive with our [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) config files
-2. Using any text editor, open the .ovpn config file with the location of the **Entry-hop server**
+1. [Download](/openvpn-config) and open the .ovpn config file with the location of the **Entry-hop server** using any text editor
 2. Replace port number in line 4 (*remote xx.gw.ivpn.net <u>**2049**</u>*) with the **Exit-hop server Multi-hop port**
 3. Replace the location code in line 16 (*verify-x509-name <u>**XX**</u> name-prefix*) with the **Exit-hop server location code**
 

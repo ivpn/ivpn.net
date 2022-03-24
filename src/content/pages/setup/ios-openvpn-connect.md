@@ -12,7 +12,7 @@ OpenVPN Connect is the official iOS client from OpenVPN Technologies.
 
     ![](/images-static/uploads/install-openvpn-connect-iphone-010-320x480.png)
 
-2.  Download the [IVPN config files](/releases/config/ivpn-openvpn-config.zip) to your Mac/PC and unzip. Within the extracted folder are the config files which represent each server in the IVPN network. You will need one or more of these files in the next step depending on whether you want to connect to a server in a single location or wish to have all the locations available on your iPhone.
+2.  Download the [IVPN config files](/openvpn-config) to your Mac/PC and unzip. Within the extracted folder are the config files which represent each server in the IVPN network. You will need one or more of these files in the next step depending on whether you want to connect to a server in a single location or wish to have all the locations available on your iPhone.
 
 3.  To upload the configurations file/s into OpenVPN Connect, you have to either upload them to a cloud storage service such as dropbox or email them to yourself (or use AirDrop if you know how to use it).
 

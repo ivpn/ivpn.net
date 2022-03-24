@@ -20,7 +20,7 @@ Therefore, to ensure that you have no leaks when using OpenVPN with Network Mana
    sudo apt-get install openvpn network-manager-openvpn
    ```
 
-2. Download the [latest config files](/releases/config/ivpn-openvpn-config.zip) and extract contents to a temporary directory.
+2. Download the [latest config files](/openvpn-config) and extract contents to a temporary directory.
 
 3. Click on the Network Manager icon (normally top right menubar) and select `Edit connections..` > `"+"` > `Import a saved VPN configuration..` > `Create`.
 

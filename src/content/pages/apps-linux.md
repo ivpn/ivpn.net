@@ -204,8 +204,6 @@ GPG key location:
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
 
-If you are using OpenVPN download the latest OpenVPN [UDP](/releases/config/ivpn-openvpn-config.zip) or [TCP](/releases/config/ivpn-openvpn-config-tcp.zip) configuration files. In most cases, you want to use the UDP Protocol.
-
 * [WireGuard using terminal](/setup/linux-wireguard/)
 * [WireGuard using NetworkManager](/setup/linux-wireguard-netman/)
 * [OpenVPN using terminal](/setup/linux-terminal/)
