@@ -34,7 +34,7 @@
                 </div>
                 <div v-if="isKeyGenerated">
                     <p v-if="!publicKey">
-                        <label for="key_comment_generated">Comment (optional):</label>
+                        <label for="key_comment_generated">Key comment (optional):</label>
                         <input id="key_comment_generated" v-model="keyComment" type="text">
                     </p>
                     <p v-if="!publicKey">
@@ -44,8 +44,8 @@
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
                     </p>
-                    <p v-if="keyComment">
-                        <strong>Comment:</strong><br>
+                    <p v-if="keyComment && publicKey">
+                        <strong>Key comment:</strong><br>
                         {{ keyComment }}
                     </p>
                 </div>
@@ -55,7 +55,7 @@
                         <input id="public_key" v-model="publicKeyAdd" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
                         <input id="private_key" v-model="privateKeyAdd" type="text">
-                        <label for="key_comment">Comment (optional):</label>
+                        <label for="key_comment">Key comment (optional):</label>
                         <input id="key_comment" v-model="keyComment" type="text">
                         <p>
                             <button class="btn btn-border">Add key</button>
@@ -65,8 +65,8 @@
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
                     </p>
-                    <p v-if="keyComment">
-                        <strong>Comment:</strong><br>
+                    <p v-if="keyComment && publicKey">
+                        <strong>Key comment:</strong><br>
                         {{ keyComment }}
                     </p>
                 </div>
