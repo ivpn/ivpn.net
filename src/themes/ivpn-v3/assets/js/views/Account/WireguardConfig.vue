@@ -34,15 +34,19 @@
                 </div>
                 <div v-if="isKeyGenerated">
                     <p v-if="!publicKey">
-                        <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
-                    </p>
-                    <p>
                         <label for="key_comment_generated">Comment (optional):</label>
                         <input id="key_comment_generated" v-model="keyComment" type="text">
+                    </p>
+                    <p v-if="!publicKey">
+                        <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
                     <p class="key" v-if="publicKey">
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
+                    </p>
+                    <p v-if="keyComment">
+                        <strong>Comment:</strong><br>
+                        {{ keyComment }}
                     </p>
                 </div>
                 <div v-if="!isKeyGenerated">
@@ -60,6 +64,10 @@
                     <p v-if="publicKey">
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
+                    </p>
+                    <p v-if="keyComment">
+                        <strong>Comment:</strong><br>
+                        {{ keyComment }}
                     </p>
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
