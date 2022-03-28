@@ -6,26 +6,10 @@
                 height="24"
                 src="/images/icon-payment-mastercard.svg"
             />
-            <discover-icon width="36" height="24" />
             <img
                 width="36"
                 height="24"
                 src="/images/icon-payment-maestro.svg"
-            />
-            <img
-                width="36"
-                height="24"
-                src="/images/icon-payment-jcb.svg"
-            />
-            <img
-                width="36"
-                height="24"
-                src="/images/icon-payment-unionpay.svg"
-            />
-            <img
-                width="36"
-                height="24"
-                src="/images/icon-payment-dinersclub.svg"
             />
             <visa-icon width="36" height="24" />
         </div>
