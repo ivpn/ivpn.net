@@ -11,6 +11,7 @@
                 height="24"
                 src="/images/icon-payment-maestro.svg"
             />
+            <discover-icon width="36" height="24" />
             <visa-icon width="36" height="24" />
         </div>
 
