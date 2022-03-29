@@ -10,7 +10,7 @@
 {{ if ne $.Site.Params.environment "development" }}
     <esi:include src="/web/header" />
 {{ else }}
-        {{ safeHTML "<!--#include file=\"/web/header\" -->" }}
+    {{ safeHTML "<!--#include file=\"/web/header\" -->" }}
 {{ end }}
 
 <nav id="header">    
