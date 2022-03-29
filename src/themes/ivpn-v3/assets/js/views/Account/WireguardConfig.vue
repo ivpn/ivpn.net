@@ -34,11 +34,19 @@
                 </div>
                 <div v-if="isKeyGenerated">
                     <p v-if="!publicKey">
+                        <label for="key_comment_generated">Key comment (optional):</label>
+                        <input id="key_comment_generated" v-model="keyComment" type="text">
+                    </p>
+                    <p v-if="!publicKey">
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
                     </p>
                     <p class="key" v-if="publicKey">
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
+                    </p>
+                    <p v-if="keyComment && publicKey">
+                        <strong>Key comment:</strong><br>
+                        {{ keyComment }}
                     </p>
                 </div>
                 <div v-if="!isKeyGenerated">
@@ -47,6 +55,8 @@
                         <input id="public_key" v-model="publicKeyAdd" type="text" autofocus>
                         <label for="private_key">Private Key:</label>
                         <input id="private_key" v-model="privateKeyAdd" type="text">
+                        <label for="key_comment">Key comment (optional):</label>
+                        <input id="key_comment" v-model="keyComment" type="text">
                         <p>
                             <button class="btn btn-border">Add key</button>
                         </p>
@@ -54,6 +64,10 @@
                     <p v-if="publicKey">
                         <strong>Public key:</strong><br>
                         {{ publicKey }}
+                    </p>
+                    <p v-if="keyComment && publicKey">
+                        <strong>Key comment:</strong><br>
+                        {{ keyComment }}
                     </p>
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
@@ -211,6 +225,7 @@ export default {
             queryString: new URLSearchParams(),
             publicKey: null,
             privateKey: null,
+            keyComment: "",
             publicKeyAdd: null,
             privateKeyAdd: null,
             ipAddress: null,
@@ -478,17 +493,17 @@ export default {
         generateKey() {
             let keypair = wireguard.generateKeypair();
             this.privateKey = keypair.privateKey;
-            this.setKey(keypair.publicKey);
+            this.setKey(keypair.publicKey, this.keyComment);
         },
         addKey() {
             this.privateKey = this.privateKeyAdd;
-            this.setKey(this.publicKeyAdd);
+            this.setKey(this.publicKeyAdd, this.keyComment);
         },
-        async setKey(publicKey) {
+        async setKey(publicKey, keyComment) {
             try {
                 let res = await Api.addWireguardKey({
                     public_key: publicKey,
-                    comment: "IVPN WireGuard configuration page",
+                    comment: keyComment,
                 });
                 this.ipAddress = res.ip_address;
                 this.publicKey = publicKey;
