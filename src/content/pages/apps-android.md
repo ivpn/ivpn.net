@@ -28,7 +28,7 @@ releases: [{
     checksum: [
         {
             title: SHA256 .apk,
-            value: 851b010671df8d1c0fd069111118f48d591d5a2060d966526d2f8ca359c6692d
+            value: 229e3d5f64cf892f48d59473413e18375527939550634804637da70303b321aa
         }
     ]
 }]
