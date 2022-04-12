@@ -116,7 +116,7 @@ Decentralized VPNs offer a vision where trust in a single entity is not required
 [10]:https://www.orchid.com/whitepaper/english.pdf
 [11]:https://blog.orchid.com/orchids-network-random-selection-stake-weighting/
 [12]:https://www.mysteriumvpn.com/post/unblocking-the-internet
-[13]:https://privacyguides.org/providers/vpn/
+[13]:https://privacyguides.org/vpn/
 [14]:https://support.torproject.org/tbb/tbb-22/
 [15]:https://www.nngroup.com/articles/law-of-bandwidth/
 [16]:https://deeper-network.medium.com/a-101-on-dpns-bd5e2b7c9e25
