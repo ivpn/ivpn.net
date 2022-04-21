@@ -33,7 +33,7 @@
 
         <div id="hosted-fields-error"></div>
 
-        <div v-if="error">
+        <div v-if="error || is3DSParameters">
             <div class="recurring--payments">
                 <div class="checkbox">
                     <input
@@ -89,7 +89,6 @@ export default {
             ccValid: false,
             formValid: false,
             is3DSParameters: false,
-            threeDSecureParameters: {},
             email: null,
             name: null,
             surname: null,
