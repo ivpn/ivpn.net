@@ -32,6 +32,38 @@
         </div>
 
         <div id="hosted-fields-error"></div>
+
+        <div class="recurring--payments">
+            <div class="checkbox">
+                <input
+                    type="checkbox"
+                    id="cb_threed_secure_parameters"
+                    style="margin-left: 24px; margin-right: 8px"
+                    v-model="is3DSParameters"
+                />
+            </div>
+            <div class="recurring--description">
+                <label for="cb_threed_secure_parameters">
+                    Provide additional parameters
+                </label>
+                <p>
+                    The bank will decide if a challenge is necessary. Sending all additional parameters will result in the best chance for a frictionless experience.
+                </p>
+            </div>
+            <div v-if="is3DSParameters">
+                <div class="card-line">
+                    <input class="cc-field" id="cc-email" v-model="email" placeholder="Email"/>
+                </div>
+                <div class="card-line">
+                    <input class="cc-field" id="cc-name" v-model="name" placeholder="First name"/>
+                    <input class="cc-field" id="cc-surname" v-model="surname" placeholder="Last name"/>
+                </div>
+                <div class="card-line">
+                    <input class="cc-field" id="cc-address" v-model="address" placeholder="Address"/>
+                    <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="Postal code"/>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -54,6 +86,12 @@ export default {
             initialized: false,
             ccValid: false,
             formValid: false,
+            is3DSParameters: false,
+            threeDSecureParameters: {},
+            name: null,
+            surname: null,
+            address: null,
+            postalCode: null,
             errorMessages: {
                 "authenticate_error": "An error occurred within the 3D Secure authentication system. Please try again.",
                 "authenticate_failed": "Incorrect 3D Secure password or 3D Secure authentication timed out. Please try again.",
@@ -175,15 +213,23 @@ export default {
         tokenize() {
             return new Promise((resolutionFunc, rejectionFunc) => {
                 this.hostedFields.tokenize().then((payload) => {
-                    console.log("tokenize.payload", payload);
-                    return this.threeDSecure.verifyCard({
+                    var threeDSecureParameters = {
                         onLookupComplete: (data, next) => {
                             next();
                         },
                         amount: this.amount || "0.0",
                         nonce: payload.nonce,
                         bin: payload.details.bin
-                    })
+                    };
+
+                    if (is3DSParameters) {
+                        threeDSecureParameters["name"] = this.name;
+                        threeDSecureParameters["surname"] = this.surname;
+                        threeDSecureParameters["address"] = this.address;
+                        threeDSecureParameters["postalCode"] = this.postalCode;
+                    }
+
+                    return this.threeDSecure.verifyCard(threeDSecureParameters);
                 }).then((payload) => {
                     console.log("verifyCard.payload", payload);
                     if (!payload.liabilityShifted) {
