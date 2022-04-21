@@ -50,18 +50,18 @@
                     The bank will decide if a challenge is necessary. Sending all additional parameters will result in the best chance for a frictionless experience.
                 </p>
             </div>
-            <div v-if="is3DSParameters">
-                <div class="card-line">
-                    <input class="cc-field" id="cc-email" v-model="email" placeholder="Email"/>
-                </div>
-                <div class="card-line">
-                    <input class="cc-field" id="cc-name" v-model="name" placeholder="First name"/>
-                    <input class="cc-field" id="cc-surname" v-model="surname" placeholder="Last name"/>
-                </div>
-                <div class="card-line">
-                    <input class="cc-field" id="cc-address" v-model="address" placeholder="Address"/>
-                    <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="Postal code"/>
-                </div>
+        </div>
+        <div v-if="is3DSParameters">
+            <div class="card-line">
+                <input class="cc-field" id="cc-email" v-model="email" placeholder="Email"/>
+            </div>
+            <div class="card-line">
+                <input class="cc-field" id="cc-name" v-model="name" placeholder="First name"/>
+                <input class="cc-field" id="cc-surname" v-model="surname" placeholder="Last name"/>
+            </div>
+            <div class="card-line">
+                <input class="cc-field" id="cc-address" v-model="address" placeholder="Address"/>
+                <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="Postal code"/>
             </div>
         </div>
     </div>
@@ -88,6 +88,7 @@ export default {
             formValid: false,
             is3DSParameters: false,
             threeDSecureParameters: {},
+            email: null,
             name: null,
             surname: null,
             address: null,
@@ -149,7 +150,10 @@ export default {
                     selector: "#card-number",
                     placeholder: "Card Number",
                 },
-                cvv: { selector: "#cvv", placeholder: "CVV" },
+                cvv: {
+                    selector: "#cvv",
+                    placeholder: "CVV"
+                },
                 expirationDate: {
                     selector: "#expiration-date",
                     placeholder: "MM / YYYY",
@@ -223,6 +227,7 @@ export default {
                     };
 
                     if (is3DSParameters) {
+                        threeDSecureParameters["email"] = this.email;
                         threeDSecureParameters["name"] = this.name;
                         threeDSecureParameters["surname"] = this.surname;
                         threeDSecureParameters["address"] = this.address;
@@ -324,21 +329,33 @@ export default {
     border-radius: 1px;
     border: solid 1px $dark;
     padding-left: 16px;
+    font-size: 20px;
+    font-family: "Roboto Mono", monospace;
 
     @include light-theme((
-        background: $white
+        background: $white,
+        color: rgb(34, 34, 38)
     ));
 
     @include dark-theme((
-        background: rgba($color: $white, $alpha: 0.1)
+        background: rgba($color: $white, $alpha: 0.1),
+        color: rgba(255, 255, 255, 0.8)
     ));
+
+    &:focus {
+        outline: 0;
+    }
 }
 
-.cc-field#expiration-date {
+.cc-field#expiration-date,
+.cc-fiel#cc-name,
+.cc-fiel#cc-address {
     display: inline-block;
     margin-right: 4px;
 }
-.cc-field#cvv {
+.cc-field#cvv,
+.cc-fiel#cc-surname,
+.cc-fiel#cc-postal-code {
     margin-left: 4px;
     display: inline-block;
 }
