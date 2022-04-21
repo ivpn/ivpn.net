@@ -226,7 +226,7 @@ export default {
                         bin: payload.details.bin
                     };
 
-                    if (is3DSParameters) {
+                    if (this.is3DSParameters) {
                         threeDSecureParameters["email"] = this.email;
                         threeDSecureParameters["name"] = this.name;
                         threeDSecureParameters["surname"] = this.surname;
@@ -326,7 +326,7 @@ export default {
     border-radius: 1px;
     border: solid 1px $dark;
     padding-left: 16px;
-    font-size: 20px;
+    font-size: 16px;
     font-family: "Roboto Mono", monospace;
 
     @include light-theme((
@@ -344,15 +344,15 @@ export default {
     }
 }
 
-.cc-field#expiration-date,
-.cc-fiel#cc-name,
-.cc-fiel#cc-address {
+#expiration-date,
+#cc-name,
+#cc-address {
     display: inline-block;
     margin-right: 4px;
 }
-.cc-field#cvv,
-.cc-fiel#cc-surname,
-.cc-fiel#cc-postal-code {
+#cvv,
+#cc-surname,
+#cc-postal-code {
     margin-left: 4px;
     display: inline-block;
 }
