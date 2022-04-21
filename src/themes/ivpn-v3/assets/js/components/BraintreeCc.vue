@@ -33,7 +33,7 @@
 
         <div id="hosted-fields-error"></div>
 
-        <div class="recurring--payments" v-if="error">
+        <div class="recurring--payments">
             <div class="checkbox">
                 <input
                     type="checkbox"
@@ -88,6 +88,10 @@ export default {
             formValid: false,
             is3DSParameters: false,
             threeDSecureParameters: {},
+            name: null,
+            surname: null,
+            address: null,
+            postalCode: null,
             errorMessages: {
                 "authenticate_error": "An error occurred within the 3D Secure authentication system. Please try again.",
                 "authenticate_failed": "Incorrect 3D Secure password or 3D Secure authentication timed out. Please try again.",
@@ -209,14 +213,23 @@ export default {
         tokenize() {
             return new Promise((resolutionFunc, rejectionFunc) => {
                 this.hostedFields.tokenize().then((payload) => {
-                    return this.threeDSecure.verifyCard({
+                    var threeDSecureParameters = {
                         onLookupComplete: (data, next) => {
                             next();
                         },
                         amount: this.amount || "0.0",
                         nonce: payload.nonce,
                         bin: payload.details.bin
-                    })
+                    };
+
+                    if (is3DSParameters) {
+                        threeDSecureParameters["name"] = this.name;
+                        threeDSecureParameters["surname"] = this.surname;
+                        threeDSecureParameters["address"] = this.address;
+                        threeDSecureParameters["postalCode"] = this.postalCode;
+                    }
+
+                    return this.threeDSecure.verifyCard(threeDSecureParameters);
                 }).then((payload) => {
                     if (!payload.liabilityShifted) {
                         // "lookup_bypassed"
