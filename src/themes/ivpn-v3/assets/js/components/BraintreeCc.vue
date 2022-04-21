@@ -228,10 +228,12 @@ export default {
 
                     if (this.is3DSParameters) {
                         threeDSecureParameters["email"] = this.email;
-                        threeDSecureParameters["name"] = this.name;
-                        threeDSecureParameters["surname"] = this.surname;
-                        threeDSecureParameters["address"] = this.address;
-                        threeDSecureParameters["postalCode"] = this.postalCode;
+                        threeDSecureParameters["billingAddress"] = {
+                            givenName: this.name,
+                            surname: this.surname,
+                            streetAddress: this.address,
+                            postalCode: this.postalCode
+                        };
                     }
 
                     return this.threeDSecure.verifyCard(threeDSecureParameters);
