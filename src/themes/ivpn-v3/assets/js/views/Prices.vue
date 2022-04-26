@@ -53,6 +53,15 @@
                 <li>Router, NAS support</li>
             </ul>
             <br>
+            <h2>Supported payment methods:</h2>
+            <ul>
+                <li>Credit Card</li>
+                <li>PayPal</li>
+                <li>Bitcoin</li>
+                <li>Monero</li>
+                <li>Cash</li>
+            </ul>
+            <br>
             <h2>Why trust IVPN?</h2>
             <ul>
                 <li>No logs, regularly audited VPN service</li>
