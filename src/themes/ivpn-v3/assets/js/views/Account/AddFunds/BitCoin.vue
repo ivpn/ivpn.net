@@ -4,7 +4,11 @@
         <p>We use BTCPay server to process Bitcoin payments. Press the button below to open your Bitcoin invoice on our BTCPay server.</p>
         <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress">
             <div class="bitcoin-icon"></div>
-            <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />Pay with BTCPay
+            <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />Pay with Bitcoin
+        </button>
+        <button class="btn btn-solid" @click.prevent="submitLightning()" :disabled="inProgressLightning">
+            <div class="bitcoin-lightning-icon"></div>
+            <progress-spinner v-if="inProgressLightning" width="32" height="32" fill="#FFFFFF" />Pay with Bitcoin Lightning
         </button>
     </div>
 </template>
@@ -21,6 +25,7 @@ export default {
     data() {
         return {
             inProgress: false,
+            inProgressLightning: false,
         }
     },
     components: {
@@ -45,6 +50,21 @@ export default {
 
             if (!URL) {                
                 this.inProgress = false
+                return
+            }
+
+            window.location = URL
+        },
+        async submitLightning() {
+            this.inProgressLightning = true
+
+            let URL = await this.$store.dispatch("account/createBitcoinInvoice", {
+                priceID: this.price.id,
+                paymentMethodId: "BTC_LightningLike"              
+            });
+
+            if (!URL) {                
+                this.inProgressLightning = false
                 return
             }
 
