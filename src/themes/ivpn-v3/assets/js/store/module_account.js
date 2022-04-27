@@ -196,11 +196,11 @@ export default {
             }
         },
 
-        async createBitcoinInvoice(context, { priceID }) {
+        async createBitcoinInvoice(context, { priceID, paymentMethodId }) {
             context.commit('started')
             try {
                 let invoice = await Api.createBitcoinInvoice(priceID)
-                let resp = await Api.getBitcoinURL(invoice.invoice, invoice.hmac)
+                let resp = await Api.getBitcoinURL(invoice.invoice, invoice.hmac, paymentMethodId)
 
                 context.commit('done')
                 return resp.url
