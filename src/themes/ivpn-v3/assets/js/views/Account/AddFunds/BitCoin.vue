@@ -34,13 +34,13 @@ export default {
     },
     methods: {
         async submit() {
-
             // We do not use state.account.inProgress here, because "inProgress" has to stay true 
             // while we're redirecting to payment page
             this.inProgress = true
 
             let URL = await this.$store.dispatch("account/createBitcoinInvoice", {
-                priceID: this.price.id                
+                priceID: this.price.id,
+                paymentMethodId: "BTC"              
             });
 
             if (!URL) {                
