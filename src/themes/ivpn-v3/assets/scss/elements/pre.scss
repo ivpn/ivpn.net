@@ -92,9 +92,24 @@ pre {
 
     pre {
         padding: 0;
+
+        p {
+
+            code {
+                padding-top: 0!important;
+            }
+        }
     }
 
     code {
-        padding: 44px 34px;
+        padding: 0 34px 0 34px;
+
+        &:first-child {
+            padding-top: 44px;
+        }
+
+        &:last-child {
+            padding-bottom: 44px;
+        }
     }
 }
