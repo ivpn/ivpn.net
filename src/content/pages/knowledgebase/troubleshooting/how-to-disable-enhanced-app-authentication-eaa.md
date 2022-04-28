@@ -33,5 +33,5 @@ Two options are available:
 
     **File locations:**  
     Windows: `C:\Program Files\IVPN Client\etc\eaa`  
-    macOS: `/Library/Application Support/IVPN/OpenVPN/eaa`  
+    macOS: `/Library/Application Support/IVPN/eaa`  
     Linux: `/opt/ivpn/mutable/eaa`  
