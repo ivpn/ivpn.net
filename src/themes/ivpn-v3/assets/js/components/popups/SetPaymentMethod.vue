@@ -162,4 +162,8 @@ export default {
     align-items: center;
     justify-content: center;
 }
+
+.tab-content {
+    max-width: 532px;
+}
 </style>
