@@ -9,9 +9,9 @@
         <div v-else>            
             <tabs v-model="type">
                 <tab tabid="cc" name="Credit Card">
-                    <p class='error' v-if="error"> {{ error.message }}</p>
                     <braintree-cc
-                        :braintree="braintree"                        
+                        :braintree="braintree"   
+                        :error="error"                     
                         ref="braintreeCC"
                         @valid-changed="ccValid = $event.value"
                     ></braintree-cc>
