@@ -309,6 +309,7 @@ export default {
         },
         configString(config) {
             let publicKey = config.peer.public_key;
+            let dns = config.interface.dns;
 
             if (this.multihop) {
                 if (this.wg_public_key) {
@@ -316,10 +317,14 @@ export default {
                 }
             }
 
+            if (this.dns) {
+                dns = this.dns;
+            }
+
             return "[Interface]" +
             "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
-            "\nDNS = " + config.interface.dns +
+            "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
             "\nAllowedIPs = " + config.peer.allowed_ips +
