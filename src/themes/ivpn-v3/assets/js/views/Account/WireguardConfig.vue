@@ -323,6 +323,8 @@ export default {
                 dns = this.dns;
             }
 
+            console.log("configString().dns", dns)
+
             return "[Interface]" +
             "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
@@ -469,6 +471,7 @@ export default {
             }
         },
         selectDNS(event) {
+            console.log("selectDNS()", event.target.value);
             if (event.target.value == "standard") {
                 this.dns = null;
             }
@@ -486,6 +489,7 @@ export default {
                     this.dns = "10.0.254.3";
                 }
             }
+            console.log("this.dns", this.dns);
         },
         updateQuery() {
             var query = Object.assign({}, this.query);
