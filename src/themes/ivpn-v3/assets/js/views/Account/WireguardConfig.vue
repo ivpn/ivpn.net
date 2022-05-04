@@ -165,6 +165,21 @@
                         <label for="traffic_protocol_ipv6">IPv6</label>
                     </div>
                 </div>
+                <h4>DNS settings</h4>
+                <div class="radio">
+                    <div>
+                        <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
+                        <label for="dns_standard">Standard</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                        <label for="dns_antitracker">AntiTracker</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
+                        <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
+                    </div>
+                </div>
                 <h3>4. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
@@ -444,6 +459,9 @@ export default {
                 this.query.ipv4 = null;
                 this.query.ipv6 = true;
             }
+        },
+        selectDNS(event) {
+            
         },
         updateQuery() {
             var query = Object.assign({}, this.query);
