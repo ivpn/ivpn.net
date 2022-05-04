@@ -26,6 +26,12 @@ A total of 8 vulnerabilities (1 high, 6 medium, 1 info) were discovered. All exc
 
 12 miscellaneous issues were discovered, 9 of which have already been resolved and 3 of which we deemed to be very low risk and have accepted it. The [Cure53 report][1] is available for those interested in the details. For transparency we decided to publish the full report with only potentially sensitive information removed (internal hostnames, code snippets etc).
 
+*Update: 
+We have addressed a vulnerability (IVP-04-014 WP) mentioned in the audit report relating to how the daemon authenticates requests (from the UI), which could lead to a malicious app being able to manipulate the VPN tunnel e.g. disconnect without the users consent. We believe the probability of this being exploited is low, but we committed to finding a solution. Today we’re releasing a new version of the desktop app (3.8.7) with Enhanced App Authentication (EAA) which significantly mitigates this vulnerability.* 
+
+*EAA implements an additional authentication factor between the IVPN app (UI) and the daemon that manages the VPN tunnel. To enable it you will be required to define a separate password and will then be required to manually enter this password when starting the app. This functionality can be configured from the new ‘Advanced’ tab within the GUI or Command-line interface (see 'ivpn eaa --help).*
+
+
 ## Commitments going forward 
 
 We believe that extensive regular audits are necessary to ensure our customer’s security and continued trust. We are committed to conducting an annual security audit where we will focus on those parts of our infrastructure and apps that we believe to be the most important.
