@@ -17,7 +17,7 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspberry-p
 1.  Install packages for compiling, building, and connecting:
 
     ```
-    $ sudo apt install ruby ruby-dev ruby-full rpm curl git openvpn obfsproxy libiw-dev
+    $ sudo apt install ruby ruby-dev ruby-full rpm curl git openvpn obfs4proxy libiw-dev
     ```
 
     <div markdown="1" class="notice notice--info">

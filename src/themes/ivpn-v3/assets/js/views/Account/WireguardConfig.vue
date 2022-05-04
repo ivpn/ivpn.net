@@ -165,6 +165,23 @@
                         <label for="traffic_protocol_ipv6">IPv6</label>
                     </div>
                 </div>
+                <h4>DNS settings</h4>
+                <p class="note">AntiTracker uses our private DNS to block ads, malicious website and third-party trackers such as Google Analytics. Supported only for OpenVPN and WireGuard protocols. <a href="/antitracker/">Learn more</a></p>
+                <p class="note">Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook). <a href="/knowledgebase/general/antitracker-faq/">Learn more</a></p>
+                <div class="radio">
+                    <div>
+                        <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
+                        <label for="dns_standard">Standard</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                        <label for="dns_antitracker">AntiTracker</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
+                        <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
+                    </div>
+                </div>
                 <h3>4. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
@@ -231,6 +248,7 @@ export default {
             ipAddress: null,
             qrCode: "",
             hostKey: 0,
+            dns: null,
         };
     },
     watch: {
@@ -293,6 +311,7 @@ export default {
         },
         configString(config) {
             let publicKey = config.peer.public_key;
+            let dns = config.interface.dns;
 
             if (this.multihop) {
                 if (this.wg_public_key) {
@@ -300,10 +319,14 @@ export default {
                 }
             }
 
+            if (this.dns) {
+                dns = this.dns;
+            }
+
             return "[Interface]" +
             "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
-            "\nDNS = " + config.interface.dns +
+            "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
             "\nAllowedIPs = " + config.peer.allowed_ips +
@@ -443,6 +466,25 @@ export default {
             if (event.target.value == "ipv6") {
                 this.query.ipv4 = null;
                 this.query.ipv6 = true;
+            }
+        },
+        selectDNS(event) {
+            if (event.target.value == "standard") {
+                this.dns = null;
+            }
+            if (event.target.value == "antitracker") {
+                if (this.multihop) {
+                    this.dns = "10.0.254.102";
+                } else {
+                    this.dns = "10.0.254.2";
+                }
+            }
+            if (event.target.value == "hardcore") {
+                if (this.multihop) {
+                    this.dns = "10.0.254.103";
+                } else {
+                    this.dns = "10.0.254.3";
+                }
             }
         },
         updateQuery() {
