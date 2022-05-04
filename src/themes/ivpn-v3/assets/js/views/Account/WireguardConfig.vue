@@ -246,6 +246,7 @@ export default {
             ipAddress: null,
             qrCode: "",
             hostKey: 0,
+            dns: null,
         };
     },
     watch: {
@@ -461,7 +462,23 @@ export default {
             }
         },
         selectDNS(event) {
-            
+            if (event.target.value == "standard") {
+                this.dns = null;
+            }
+            if (event.target.value == "antitracker") {
+                if (this.multihop) {
+                    this.dns = "10.0.254.102";
+                } else {
+                    this.dns = "10.0.254.2";
+                }
+            }
+            if (event.target.value == "hardcore") {
+                if (this.multihop) {
+                    this.dns = "10.0.254.103";
+                } else {
+                    this.dns = "10.0.254.3";
+                }
+            }
         },
         updateQuery() {
             var query = Object.assign({}, this.query);
