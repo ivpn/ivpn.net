@@ -175,19 +175,19 @@ Note: Other AUR helper/Pacman wrapper utilities are available.
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.7.0_amd64.deb)  
-SHA256: 7603e2c2edd2355068f34afceaf7d3ef6f0bfff2310b341faa8bd16933f077f6  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.8.7_amd64.deb)  
+SHA256: 0ada7f81f7525ce6352535754a12f74b32437e5725c95c4fedd696fa2620a051  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.7.0_amd64.deb)  
-SHA256: 012f7ff53c0c42e94f53963cdbe1e5354222fedc1611c380b3e8f06fab2302a9  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.8.7_amd64.deb)  
+SHA256: 27b9b5365569ae177878eea17a390facc522333839a5ae91b564829ce0e67fe3  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.7.0-1.x86_64.rpm)  
-SHA256: bf99eaac31708978d98412fdbeeb5be544f91737f2423804b40851d98be59676  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.8.7-1.x86_64.rpm)  
+SHA256: 9661b837e3873bb4ea8ba24d4f54057086186531f23cec4a7c0ff7f7e178bb84  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.7.0-1.x86_64.rpm)  
-SHA256: 94351142da24e75ed97fca4721a5d871b638a9f648cd89394089d5bb0af2827a  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.8.7-1.x86_64.rpm)  
+SHA256: be63d92659d1f5268e7edb53b4635886705589a5440ba19b2b7a6c588a87f4b8  
 
 ## Install from Source Code {#source}
 
