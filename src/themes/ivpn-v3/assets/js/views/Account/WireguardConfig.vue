@@ -166,6 +166,8 @@
                     </div>
                 </div>
                 <h4>DNS settings</h4>
+                <p class="note">AntiTracker uses our private DNS to block ads, malicious website and third-party trackers such as Google Analytics. Supported only for OpenVPN and WireGuard protocols. <a href="/antitracker/">Learn more</a></p>
+                <p class="note">Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook). <a href="/knowledgebase/general/antitracker-faq/">Learn more</a></p>
                 <div class="radio">
                     <div>
                         <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
