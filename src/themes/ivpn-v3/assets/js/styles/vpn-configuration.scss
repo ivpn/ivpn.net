@@ -162,4 +162,14 @@
             color: rgba(255, 255, 255, 0.5)
         ));
     }
+
+    .search {
+        display: block;
+
+        input[type=text] {
+            display: block;
+            max-width: 250px;
+            margin-top: 10px;
+        }
+    }
 }

@@ -125,6 +125,11 @@
                 <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
                 <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
             </div>
+            <div class="search">
+                <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
+                <label for="dns_custom">Custom DNS</label>
+                <input v-if="dnsType == 'custom'" v-model="customDNS" name="search" type="text">
+            </div>
         </div>
         <h3>3. Download</h3>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
@@ -166,6 +171,8 @@ export default {
             multihop_port: null,
             verify_x509_name: null,
             entry_host: null,
+            dnsType: "standard",
+            customDNS: null,
             queryString: new URLSearchParams(),
             apiURL: process.env.MIX_APP_API_URL,
         };
@@ -176,6 +183,11 @@ export default {
                 this.updateQuery();
             },
             deep: true
+        },
+        customDNS: {
+            handler: function (after, before) {
+                this.updateQuery();
+            }
         }
     },
     mounted() {
@@ -309,6 +321,8 @@ export default {
             this.query.latest_version = event.target.value;
         },
         selectDNS(event) {
+            this.dnsType = event.target.value;
+
             if (event.target.value == "standard") {
                 this.query.dns = null;
             }
@@ -326,6 +340,8 @@ export default {
                     this.query.dns = "10.0.254.3";
                 }
             }
+
+            this.updateQuery();
         },
         updateQuery() {
             var query = Object.assign({}, this.query);
@@ -349,6 +365,10 @@ export default {
 
             if (query.city) {
                 query.city = this.query.city.split(",")[0];
+            }
+
+            if (this.dnsType == "custom" && this.customDNS) {
+                query.dns = this.customDNS;
             }
 
             this.queryString = new URLSearchParams(query);
