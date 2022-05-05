@@ -109,6 +109,23 @@
                 <label for="latest_version">OpenVPN 2.5</label>
             </div>
         </div>
+        <h4>DNS settings</h4>
+        <p class="note">AntiTracker uses our private DNS to block ads, malicious website and third-party trackers such as Google Analytics. Supported only for OpenVPN and WireGuard protocols. <a href="/antitracker/">Learn more</a></p>
+        <p class="note">Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook). <a href="/knowledgebase/general/antitracker-faq/">Learn more</a></p>
+        <div class="radio">
+            <div>
+                <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
+                <label for="dns_standard">Standard</label>
+            </div>
+            <div>
+                <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                <label for="dns_antitracker">AntiTracker</label>
+            </div>
+            <div>
+                <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
+                <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
+            </div>
+        </div>
         <h3>3. Download</h3>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
@@ -135,7 +152,8 @@ export default {
                 use_ip_address: false,
                 latest_version: false,
                 proto: "udp",
-                port: 2049
+                port: 2049,
+                dns: null
             },
             validation: {
                 exitCity: true,
@@ -289,6 +307,25 @@ export default {
         },
         selectVersion(event) {
             this.query.latest_version = event.target.value;
+        },
+        selectDNS(event) {
+            if (event.target.value == "standard") {
+                this.query.dns = null;
+            }
+            if (event.target.value == "antitracker") {
+                if (this.multihop) {
+                    this.query.dns = "10.0.254.102";
+                } else {
+                    this.query.dns = "10.0.254.2";
+                }
+            }
+            if (event.target.value == "hardcore") {
+                if (this.multihop) {
+                    this.query.dns = "10.0.254.103";
+                } else {
+                    this.query.dns = "10.0.254.3";
+                }
+            }
         },
         updateQuery() {
             var query = Object.assign({}, this.query);
