@@ -335,6 +335,10 @@ export default {
                 dns = this.dns;
             }
 
+            if (this.dnsType == "custom" && this.customDNS) {
+                dns = this.customDNS;
+            }
+
             return "[Interface]" +
             "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
@@ -500,8 +504,6 @@ export default {
                     this.dns = "10.0.254.3";
                 }
             }
-
-            this.updateQuery();
         },
         updateQuery() {
             var query = Object.assign({}, this.query);
@@ -522,10 +524,6 @@ export default {
 
             if (query.city) {
                 query.city = this.query.city.split(",")[0];
-            }
-
-            if (this.dnsType == "custom" && this.customDNS) {
-                query.dns = this.customDNS;
             }
 
             if (!this.validation.download) {
