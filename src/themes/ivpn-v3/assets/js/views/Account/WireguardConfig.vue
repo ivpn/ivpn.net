@@ -181,6 +181,11 @@
                         <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
                         <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
                     </div>
+                    <div class="search">
+                        <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
+                        <label for="dns_custom">Custom DNS</label>
+                        <input v-if="dnsType == 'custom'" v-model="customDNS" name="search" type="text">
+                    </div>
                 </div>
                 <h3>4. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
@@ -239,6 +244,8 @@ export default {
             multihop_basename: null,
             wg_public_key: null,
             entry_host: null,
+            dnsType: "standard",
+            customDNS: null,
             queryString: new URLSearchParams(),
             publicKey: null,
             privateKey: null,
@@ -263,7 +270,12 @@ export default {
                 this.updateQuery();
             },
             deep: true
-        }
+        },
+        customDNS: {
+             handler: function (after, before) {
+                 this.updateQuery();
+             }
+         }
     },
     computed: {
         ...mapState({
@@ -469,6 +481,8 @@ export default {
             }
         },
         selectDNS(event) {
+            this.dnsType = event.target.value;
+
             if (event.target.value == "standard") {
                 this.dns = null;
             }
@@ -486,6 +500,8 @@ export default {
                     this.dns = "10.0.254.3";
                 }
             }
+
+            this.updateQuery();
         },
         updateQuery() {
             var query = Object.assign({}, this.query);
@@ -506,6 +522,10 @@ export default {
 
             if (query.city) {
                 query.city = this.query.city.split(",")[0];
+            }
+
+            if (this.dnsType == "custom" && this.customDNS) {
+                query.dns = this.customDNS;
             }
 
             if (!this.validation.download) {
