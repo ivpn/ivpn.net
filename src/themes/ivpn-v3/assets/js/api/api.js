@@ -380,10 +380,11 @@ export default {
         return account.account
     },
 
-    async createBitcoinInvoice(priceID) {
+    async createBitcoinInvoice(priceID, paymentMethodId) {
 
         let response = await this.Post('/web/accounts/btc/create-invoice', {
-            price_id: priceID
+            price_id: priceID,
+            paymentMethodId: paymentMethodId
         })
 
         return response
