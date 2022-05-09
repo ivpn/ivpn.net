@@ -380,18 +380,19 @@ export default {
         return account.account
     },
 
-    async createBitcoinInvoice(priceID) {
+    async createBitcoinInvoice(priceID, paymentMethodId) {
 
         let response = await this.Post('/web/accounts/btc/create-invoice', {
-            price_id: priceID
+            price_id: priceID,
+            paymentMethodId: paymentMethodId
         })
 
         return response
     },
 
-    async getBitcoinURL(invoice, hmac) {
+    async getBitcoinURL(invoice, hmac, paymentMethodId) {
 
-        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, process.env.MIX_APP_WEBAPI_URL, {
+        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac, paymentMethodId }, process.env.MIX_APP_WEBAPI_URL, {
             credentials: "omit"
         })
 
