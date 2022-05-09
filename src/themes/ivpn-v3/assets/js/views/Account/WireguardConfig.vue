@@ -487,17 +487,17 @@ export default {
         selectDNS(event) {
             this.dnsType = event.target.value;
 
-            if (event.target.value == "standard") {
+            if (this.dnsType == "standard" || this.dnsType == "custom") {
                 this.dns = null;
             }
-            if (event.target.value == "antitracker") {
+            if (this.dnsType == "antitracker") {
                 if (this.multihop) {
                     this.dns = "10.0.254.102";
                 } else {
                     this.dns = "10.0.254.2";
                 }
             }
-            if (event.target.value == "hardcore") {
+            if (this.dnsType == "hardcore") {
                 if (this.multihop) {
                     this.dns = "10.0.254.103";
                 } else {
