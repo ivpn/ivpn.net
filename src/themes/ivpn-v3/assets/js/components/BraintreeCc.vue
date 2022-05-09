@@ -60,7 +60,7 @@
                 <input class="cc-field" id="cc-surname" v-model="surname" placeholder="Last name"/>
             </div>
             <div class="card-line">
-                <input class="cc-field" id="cc-address" v-model="address" placeholder="Address"/>
+                <input class="cc-field" id="cc-address" v-model="address" placeholder="Street address"/>
                 <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="Postal code"/>
             </div>
         </div>
