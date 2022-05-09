@@ -323,17 +323,17 @@ export default {
         selectDNS(event) {
             this.dnsType = event.target.value;
 
-            if (event.target.value == "standard") {
+            if (this.dnsType == "standard" || this.dnsType == "custom") {
                 this.query.dns = null;
             }
-            if (event.target.value == "antitracker") {
+            if (this.dnsType == "antitracker") {
                 if (this.multihop) {
                     this.query.dns = "10.0.254.102";
                 } else {
                     this.query.dns = "10.0.254.2";
                 }
             }
-            if (event.target.value == "hardcore") {
+            if (this.dnsType == "hardcore") {
                 if (this.multihop) {
                     this.query.dns = "10.0.254.103";
                 } else {
