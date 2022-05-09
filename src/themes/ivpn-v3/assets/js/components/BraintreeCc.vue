@@ -44,10 +44,10 @@
             </div>
             <div class="recurring--description">
                 <label for="cb_threed_secure_parameters">
-                    Provide additional parameters
+                    Additional card information
                 </label>
                 <p>
-                    The bank will decide if a challenge is necessary. Sending all additional parameters will result in the best chance for a frictionless experience.
+                    By design we always request the minimum information from customers to process their payment however some card issuers require more information than just the card number. e.g. Name, Email, Address. You may optionally submit this information by completing the form below. This data is sent directly from your browser to Braintree servers (our payment processor) and is never seen by IVPN.
                 </p>
             </div>
         </div>
