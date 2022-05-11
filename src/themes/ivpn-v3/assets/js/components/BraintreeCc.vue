@@ -15,7 +15,7 @@
             <visa-icon width="36" height="24" />
         </div>
 
-        <div class="card-line">
+        <div class="card-line block">
             <p v-if="error" class="error-message">
                 <b>Error:</b>
                 {{ error.message }}
@@ -361,19 +361,17 @@ export default {
     display: inline-block;
 }
 
+.block {
+    display: block;
+}
+
 .error-message {
     margin: 1em 0em 2em 0em;
 }
 
 p.note {
-    font-size: 14px;
-    
-    @include light-theme((
-        color: rgba(0, 0, 0, 0.5)
-    ));
-
-    @include dark-theme((
-        color: rgba(255, 255, 255, 0.5)
-    ));
+    font-size: 13px;
+    margin-top: -15px;
+    opacity: 0.5;
 }
 </style>
