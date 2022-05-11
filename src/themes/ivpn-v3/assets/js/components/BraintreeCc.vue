@@ -20,6 +20,9 @@
                 <b>Error:</b>
                 {{ error.message }}
             </p>
+            <p v-if="error" class="note">
+                The above error message comes directly from Braintree, our credit card payment processor. You may update your card details and/or add additional information and try again.
+            </p>
         </div>
 
         <div class="card-line">
@@ -360,5 +363,17 @@ export default {
 
 .error-message {
     margin: 1em 0em 2em 0em;
+}
+
+p.note {
+    font-size: 14px;
+    
+    @include light-theme((
+        color: rgba(0, 0, 0, 0.5)
+    ));
+
+    @include dark-theme((
+        color: rgba(255, 255, 255, 0.5)
+    ));
 }
 </style>
