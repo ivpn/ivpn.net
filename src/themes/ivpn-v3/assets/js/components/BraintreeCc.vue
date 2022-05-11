@@ -20,6 +20,9 @@
                 <b>Error:</b>
                 {{ error.message }}
             </p>
+            <p v-if="error" class="note">
+                The above error message comes directly from Braintree, our credit card payment processor. You may update your card details and/or add additional information and try again.
+            </p>
         </div>
 
         <div class="card-line">
@@ -44,10 +47,10 @@
             </div>
             <div class="recurring--description">
                 <label for="cb_threed_secure_parameters">
-                    Provide additional parameters
+                    Additional card information
                 </label>
                 <p>
-                    The bank will decide if a challenge is necessary. Sending all additional parameters will result in the best chance for a frictionless experience.
+                    By design we always request the minimum information from customers to process their payment however some card issuers require more information than just the card number. e.g. Name, Email, Address. You may optionally submit this information by completing the form below. This data is sent directly from your browser to Braintree servers (our payment processor) and is never seen by IVPN.
                 </p>
             </div>
         </div>
@@ -60,7 +63,7 @@
                 <input class="cc-field" id="cc-surname" v-model="surname" placeholder="Last name"/>
             </div>
             <div class="card-line">
-                <input class="cc-field" id="cc-address" v-model="address" placeholder="Address"/>
+                <input class="cc-field" id="cc-address" v-model="address" placeholder="Street address"/>
                 <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="Postal code"/>
             </div>
         </div>
@@ -363,5 +366,17 @@ export default {
 
 .error-message {
     margin: 1em 0em 2em 0em;
+}
+
+p.note {
+    font-size: 14px;
+    
+    @include light-theme((
+        color: rgba(0, 0, 0, 0.5)
+    ));
+
+    @include dark-theme((
+        color: rgba(255, 255, 255, 0.5)
+    ));
 }
 </style>
