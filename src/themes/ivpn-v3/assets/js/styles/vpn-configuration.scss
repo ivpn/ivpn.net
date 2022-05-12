@@ -161,6 +161,10 @@
         @include dark-theme((
             color: rgba(255, 255, 255, 0.5)
         ));
+
+        &--input {
+            margin-top: 5px;
+        }
     }
 
     .search {
