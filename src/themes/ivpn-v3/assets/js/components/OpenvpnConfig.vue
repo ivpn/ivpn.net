@@ -129,6 +129,7 @@
                 <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
                 <label for="dns_custom">Custom DNS</label>
                 <input v-if="dnsType == 'custom'" v-model="customDNS" name="search" type="text">
+                <p v-if="dnsType == 'custom'" class="note note--input">Please enter a valid IPv4 or IPv6 address.</p>
             </div>
         </div>
         <h3>3. Download</h3>
