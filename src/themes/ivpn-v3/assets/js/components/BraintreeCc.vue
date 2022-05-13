@@ -50,7 +50,7 @@
                     Additional card information
                 </label>
                 <p>
-                    By design we always request the minimum information from customers to process their payment however some card issuers require more information than just the card number. e.g. Name, Email, Address. You may optionally submit this information by completing the form below. This data is sent directly from your browser to Braintree servers (our payment processor) and is never seen by IVPN.
+                    By design we always request the minimum information however some card issuers require more than just the card number. e.g. Name, Email. You may optionally submit this information to increase the chances that your payment is successful. This data is sent directly from your browser to our payment processor (braintreepayments.com) and is never seen by IVPN.
                 </p>
             </div>
         </div>

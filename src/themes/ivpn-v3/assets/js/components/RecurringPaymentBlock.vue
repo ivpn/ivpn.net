@@ -11,7 +11,7 @@
         <div class="recurring--description">
             <label for="cb_recurring">Automatic renewal</label>
             <p>
-                Automatic renewals are always off by default. You may choose to turn this on if it is more convenient for you. In this case your card data will be stored by Braintree however you can cancel automatic renewal at any time from within the client area.
+                Automatic renewals are always off by default. You may enable this if it is more convenient for you. Your card data will be stored by Braintree however you can cancel automatic renewal at any time from your account page.
             </p>
         </div>
     </div>
