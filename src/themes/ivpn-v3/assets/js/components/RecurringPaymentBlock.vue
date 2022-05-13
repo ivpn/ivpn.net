@@ -9,10 +9,9 @@
             />
         </div>
         <div class="recurring--description">
-            <label for="cb_recurring">Automatically renew at the end of period</label>
+            <label for="cb_recurring">Automatic renewal</label>
             <p>
-                Enabling this checkbox will make your payment method saved and
-                automatically billed at the end of period. You will be able to cancel automatic renewal any time.
+                Automatic renewals are always off by default. You may enable this if it is more convenient for you. Your card data will be stored by Braintree however you can cancel automatic renewal at any time from your account page.
             </p>
         </div>
     </div>

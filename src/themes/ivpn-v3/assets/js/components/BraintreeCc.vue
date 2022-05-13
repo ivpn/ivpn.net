@@ -15,10 +15,13 @@
             <visa-icon width="36" height="24" />
         </div>
 
-        <div class="card-line">
+        <div class="card-line block">
             <p v-if="error" class="error-message">
                 <b>Error:</b>
                 {{ error.message }}
+            </p>
+            <p v-if="error" class="note">
+                The above error message comes directly from Braintree, our credit card payment processor. You may update your card details and/or add additional information and try again.
             </p>
         </div>
 
@@ -32,6 +35,38 @@
         </div>
 
         <div id="hosted-fields-error"></div>
+
+        <div v-if="error || is3DSParameters" class="recurring--payments">
+            <div class="checkbox">
+                <input
+                    type="checkbox"
+                    id="cb_threed_secure_parameters"
+                    style="margin-left: 24px; margin-right: 8px"
+                    v-model="is3DSParameters"
+                />
+            </div>
+            <div class="recurring--description">
+                <label for="cb_threed_secure_parameters">
+                    Additional card information
+                </label>
+                <p>
+                    By design we always request the minimum information however some card issuers require more than just the card number. e.g. Name, Email. You may optionally submit this information to increase the chances that your payment is successful. This data is sent directly from your browser to our payment processor (braintreepayments.com) and is never seen by IVPN.
+                </p>
+            </div>
+        </div>
+        <div v-if="is3DSParameters">
+            <div class="card-line">
+                <input class="cc-field" id="cc-email" v-model="email" placeholder="Email"/>
+            </div>
+            <div class="card-line">
+                <input class="cc-field" id="cc-name" v-model="name" placeholder="First name"/>
+                <input class="cc-field" id="cc-surname" v-model="surname" placeholder="Last name"/>
+            </div>
+            <div class="card-line">
+                <input class="cc-field" id="cc-address" v-model="address" placeholder="Street address"/>
+                <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="Postal code"/>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -54,6 +89,12 @@ export default {
             initialized: false,
             ccValid: false,
             formValid: false,
+            is3DSParameters: false,
+            email: null,
+            name: null,
+            surname: null,
+            address: null,
+            postalCode: null,
             errorMessages: {
                 "authenticate_error": "An error occurred within the 3D Secure authentication system. Please try again.",
                 "authenticate_failed": "Incorrect 3D Secure password or 3D Secure authentication timed out. Please try again.",
@@ -111,7 +152,10 @@ export default {
                     selector: "#card-number",
                     placeholder: "Card Number",
                 },
-                cvv: { selector: "#cvv", placeholder: "CVV" },
+                cvv: {
+                    selector: "#cvv",
+                    placeholder: "CVV"
+                },
                 expirationDate: {
                     selector: "#expiration-date",
                     placeholder: "MM / YYYY",
@@ -175,14 +219,26 @@ export default {
         tokenize() {
             return new Promise((resolutionFunc, rejectionFunc) => {
                 this.hostedFields.tokenize().then((payload) => {
-                    return this.threeDSecure.verifyCard({
+                    var threeDSecureParameters = {
                         onLookupComplete: (data, next) => {
                             next();
                         },
                         amount: this.amount || "0.0",
                         nonce: payload.nonce,
                         bin: payload.details.bin
-                    })
+                    };
+
+                    if (this.is3DSParameters) {
+                        threeDSecureParameters["email"] = this.email;
+                        threeDSecureParameters["billingAddress"] = {
+                            givenName: this.name,
+                            surname: this.surname,
+                            streetAddress: this.address,
+                            postalCode: this.postalCode
+                        };
+                    }
+
+                    return this.threeDSecure.verifyCard(threeDSecureParameters);
                 }).then((payload) => {
                     if (!payload.liabilityShifted) {
                         // "lookup_bypassed"
@@ -274,26 +330,48 @@ export default {
     border-radius: 1px;
     border: solid 1px $dark;
     padding-left: 16px;
+    font-size: 16px;
+    font-family: "Roboto Mono", monospace;
 
     @include light-theme((
-        background: $white
+        background: $white,
+        color: rgb(34, 34, 38)
     ));
 
     @include dark-theme((
-        background: rgba($color: $white, $alpha: 0.1)
+        background: rgba($color: $white, $alpha: 0.1),
+        color: rgba(255, 255, 255, 0.8)
     ));
+
+    &:focus {
+        outline: 0;
+    }
 }
 
-.cc-field#expiration-date {
+#expiration-date,
+#cc-name,
+#cc-address {
     display: inline-block;
     margin-right: 4px;
 }
-.cc-field#cvv {
+#cvv,
+#cc-surname,
+#cc-postal-code {
     margin-left: 4px;
     display: inline-block;
 }
 
+.block {
+    display: block;
+}
+
 .error-message {
     margin: 1em 0em 2em 0em;
+}
+
+p.note {
+    font-size: 13px;
+    margin-top: -15px;
+    opacity: 0.5;
 }
 </style>
