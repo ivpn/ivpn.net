@@ -165,6 +165,29 @@
                         <label for="traffic_protocol_ipv6">IPv6</label>
                     </div>
                 </div>
+                <h4>DNS settings</h4>
+                <p class="note">When AntiTracker is enabled, IVPN blocks ads, malicious websites, and third-party trackers using our private DNS servers. <a href="/antitracker/">Learn more</a> about how IVPN AntiTracker is implemented.</p>
+                <p class="note">Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook). <a href="/knowledgebase/general/antitracker-faq/">Learn more</a></p>
+                <div class="radio">
+                    <div>
+                        <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
+                        <label for="dns_standard">Standard</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                        <label for="dns_antitracker">AntiTracker</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
+                        <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
+                    </div>
+                    <div class="search">
+                        <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
+                        <label for="dns_custom">Custom DNS</label>
+                        <input v-if="dnsType == 'custom'" v-model="customDNS" name="search" type="text">
+                        <p v-if="dnsType == 'custom'" class="note note--input">Please enter a valid IPv4 or IPv6 address.</p>
+                    </div>
+                </div>
                 <h3>4. Download</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
@@ -222,6 +245,8 @@ export default {
             multihop_basename: null,
             wg_public_key: null,
             entry_host: null,
+            dnsType: "standard",
+            customDNS: null,
             queryString: new URLSearchParams(),
             publicKey: null,
             privateKey: null,
@@ -231,6 +256,7 @@ export default {
             ipAddress: null,
             qrCode: "",
             hostKey: 0,
+            dns: null,
         };
     },
     watch: {
@@ -245,7 +271,12 @@ export default {
                 this.updateQuery();
             },
             deep: true
-        }
+        },
+        customDNS: {
+             handler: function (after, before) {
+                 this.updateQuery();
+             }
+         }
     },
     computed: {
         ...mapState({
@@ -293,6 +324,7 @@ export default {
         },
         configString(config) {
             let publicKey = config.peer.public_key;
+            let dns = config.interface.dns;
 
             if (this.multihop) {
                 if (this.wg_public_key) {
@@ -300,10 +332,18 @@ export default {
                 }
             }
 
+            if (this.dns) {
+                dns = this.dns;
+            }
+
+            if (this.dnsType == "custom" && this.customDNS && this.isValidIP(this.customDNS)) {
+                dns = this.customDNS;
+            }
+
             return "[Interface]" +
             "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
-            "\nDNS = " + config.interface.dns +
+            "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
             "\nAllowedIPs = " + config.peer.allowed_ips +
@@ -445,6 +485,27 @@ export default {
                 this.query.ipv6 = true;
             }
         },
+        selectDNS(event) {
+            this.dnsType = event.target.value;
+
+            if (this.dnsType == "standard" || this.dnsType == "custom") {
+                this.dns = null;
+            }
+            if (this.dnsType == "antitracker") {
+                if (this.multihop) {
+                    this.dns = "10.0.254.102";
+                } else {
+                    this.dns = "10.0.254.2";
+                }
+            }
+            if (this.dnsType == "hardcore") {
+                if (this.multihop) {
+                    this.dns = "10.0.254.103";
+                } else {
+                    this.dns = "10.0.254.3";
+                }
+            }
+        },
         updateQuery() {
             var query = Object.assign({}, this.query);
             Object.keys(query).forEach(key => {
@@ -517,6 +578,11 @@ export default {
             }
 
             this.validation.download = false;
+        },
+        isValidIP(ip) {
+            let ipv46_regex = /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/gm;
+
+            return ipv46_regex.test(ip);
         },
     },
     components: {}

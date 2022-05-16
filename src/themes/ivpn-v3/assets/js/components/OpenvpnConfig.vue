@@ -109,6 +109,29 @@
                 <label for="latest_version">OpenVPN 2.5</label>
             </div>
         </div>
+        <h4>DNS settings</h4>
+        <p class="note">When AntiTracker is enabled, IVPN blocks ads, malicious websites, and third-party trackers using our private DNS servers. <a href="/antitracker/">Learn more</a> about how IVPN AntiTracker is implemented.</p>
+        <p class="note">Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook). <a href="/knowledgebase/general/antitracker-faq/">Learn more</a></p>
+        <div class="radio">
+            <div>
+                <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
+                <label for="dns_standard">Standard</label>
+            </div>
+            <div>
+                <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                <label for="dns_antitracker">AntiTracker</label>
+            </div>
+            <div>
+                <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
+                <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
+            </div>
+            <div class="search">
+                <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
+                <label for="dns_custom">Custom DNS</label>
+                <input v-if="dnsType == 'custom'" v-model="customDNS" name="search" type="text">
+                <p v-if="dnsType == 'custom'" class="note note--input">Please enter a valid IPv4 address.</p>
+            </div>
+        </div>
         <h3>3. Download</h3>
         <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
     </div>
@@ -135,7 +158,8 @@ export default {
                 use_ip_address: false,
                 latest_version: false,
                 proto: "udp",
-                port: 2049
+                port: 2049,
+                dns: null
             },
             validation: {
                 exitCity: true,
@@ -148,6 +172,8 @@ export default {
             multihop_port: null,
             verify_x509_name: null,
             entry_host: null,
+            dnsType: "standard",
+            customDNS: null,
             queryString: new URLSearchParams(),
             apiURL: process.env.MIX_APP_API_URL,
         };
@@ -158,6 +184,11 @@ export default {
                 this.updateQuery();
             },
             deep: true
+        },
+        customDNS: {
+            handler: function (after, before) {
+                this.updateQuery();
+            }
         }
     },
     mounted() {
@@ -290,6 +321,29 @@ export default {
         selectVersion(event) {
             this.query.latest_version = event.target.value;
         },
+        selectDNS(event) {
+            this.dnsType = event.target.value;
+
+            if (this.dnsType == "standard" || this.dnsType == "custom") {
+                this.query.dns = null;
+            }
+            if (this.dnsType == "antitracker") {
+                if (this.multihop) {
+                    this.query.dns = "10.0.254.102";
+                } else {
+                    this.query.dns = "10.0.254.2";
+                }
+            }
+            if (this.dnsType == "hardcore") {
+                if (this.multihop) {
+                    this.query.dns = "10.0.254.103";
+                } else {
+                    this.query.dns = "10.0.254.3";
+                }
+            }
+
+            this.updateQuery();
+        },
         updateQuery() {
             var query = Object.assign({}, this.query);
             Object.keys(query).forEach(key => {
@@ -314,12 +368,21 @@ export default {
                 query.city = this.query.city.split(",")[0];
             }
 
+            if (this.dnsType == "custom" && this.customDNS && this.isValidIP(this.customDNS)) {
+                query.dns = this.customDNS;
+            }
+
             this.queryString = new URLSearchParams(query);
         },
         handleDownload(event) {
             if (this.validation.download) {
                 event.preventDefault();
             }
+        },
+        isValidIP(ip) {
+            let ipv4_regex = /^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$/gm;  
+
+            return ipv4_regex.test(ip);
         },
     },
     components: {}

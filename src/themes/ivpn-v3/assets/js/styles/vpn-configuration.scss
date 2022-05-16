@@ -161,5 +161,19 @@
         @include dark-theme((
             color: rgba(255, 255, 255, 0.5)
         ));
+
+        &--input {
+            margin-top: 5px;
+        }
+    }
+
+    .search {
+        display: block;
+
+        input[type=text] {
+            display: block;
+            max-width: 235px;
+            margin-top: 10px;
+        }
     }
 }
