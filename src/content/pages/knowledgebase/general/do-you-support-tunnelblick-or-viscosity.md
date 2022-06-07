@@ -10,7 +10,7 @@ weight: 420
 ---
 # Do you support Tunnelblick / Viscosity?
 
-Yes. Both Tunnelbrick and Viscosity are software packages designed for macOS which allow you to connect to VPN services like IVPN.
+Yes. Both Tunnelblick and Viscosity are software packages designed for macOS which allow you to connect to VPN services like IVPN.
 
 See our [Tunnelblick setup guide](/setup/macos-openvpn-tunnelblick/) for more details.
 
