@@ -328,18 +328,10 @@ export default {
                 this.query.dns = null;
             }
             if (this.dnsType == "antitracker") {
-                if (this.multihop) {
-                    this.query.dns = "10.0.254.102";
-                } else {
-                    this.query.dns = "10.0.254.2";
-                }
+                this.query.dns = "10.0.254.2";
             }
             if (this.dnsType == "hardcore") {
-                if (this.multihop) {
-                    this.query.dns = "10.0.254.103";
-                } else {
-                    this.query.dns = "10.0.254.3";
-                }
+                this.query.dns = "10.0.254.3";
             }
 
             this.updateQuery();
