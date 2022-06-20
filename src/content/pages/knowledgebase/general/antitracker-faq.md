@@ -41,7 +41,7 @@ weight: 200
 
     Please note: This feature is not included in the IVPN app for Android distributed via the Play Store as Google will most likely ban it for providing the tools that are focused on blocking their services in the first place. If you wish to use the feature on your Android device, feel free to [download the .apk file](/apps-android/) from our website or install via [F-Droid](https://f-droid.org/packages/net.ivpn.client/). You will need to uninstall any previously installed version of IVPN app before installing from the .apk file or from F-Droid.  
 
-    The AntiTracker can also be enabled on routers and other manual connections by specifying the following DNS IP address - `10.0.254.2` (or `10.0.254.102` - when using the feature together with Multi-hop)
+    The AntiTracker can also be enabled on routers and other manual connections by specifying the following DNS IP address - `10.0.254.2`
 
 7.  #### What is “Hardcore Mode”?
     Hardcore Mode extends the AntiTracker feature further by completely blocking all domains owned by the flagship bearers of the surveillance economy, Google and Facebook. 
@@ -57,7 +57,7 @@ weight: 200
 
     - If you are using our desktop apps' **CLI** interface, type `ivpn antitracker -on_hardcore` in a Terminal or include it with the **connect** command, like `ivpn connect -antitracker_hard fi.gw.ivpn.net`
 
-    - To enable the Hardcore Mode on routers and other manual connections, use the following DNS IP address - `10.0.254.3` (or `10.0.254.103` - when using the feature together with Multi-hop)
+    - To enable the Hardcore Mode on routers and other manual connections, use the following DNS IP address - `10.0.254.3`
 
 9.  #### Are there limitations to Hardcore Mode?
     Hardcore mode uses autonomous system numbers (ASN) to detect extra domains based on Facebook and Google IP addresses.  The IP addresses themselves are not blocked, but any domains associated with those addresses that are not already part of the AntiTracker's block list will be blocked.  As a result, if an app or service uses a IP address directly, like if it is hard-coded into an app, access to Facebook and Google services will be available. 
