@@ -492,18 +492,10 @@ export default {
                 this.dns = null;
             }
             if (this.dnsType == "antitracker") {
-                if (this.multihop) {
-                    this.dns = "10.0.254.102";
-                } else {
-                    this.dns = "10.0.254.2";
-                }
+                this.dns = "10.0.254.2";
             }
             if (this.dnsType == "hardcore") {
-                if (this.multihop) {
-                    this.dns = "10.0.254.103";
-                } else {
-                    this.dns = "10.0.254.3";
-                }
+                this.dns = "10.0.254.3";
             }
         },
         updateQuery() {
