@@ -117,6 +117,10 @@
                         {{ server.multihop_port || "N/A" }}
                     </div>
                     <div>
+                        <em>Socks5</em>
+                        {{ server.socks5 || "N/A" }}
+                    </div>
+                    <div>
                         <em>
                             <span class="port-speed-label">Port Speed</span>/<span class="port-speed-label">Configured Speed</span>
                         </em>
