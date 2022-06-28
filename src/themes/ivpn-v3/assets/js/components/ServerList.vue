@@ -120,12 +120,12 @@
                         <em>Socks5</em>
                         {{ server.socks5 || "N/A" }}
                     </div>
-                    <div>
+                    <!-- <div>
                         <em>
                             <span class="port-speed-label">Port Speed</span>/<span class="port-speed-label">Configured Speed</span>
                         </em>
                         <span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[0] }}</span>/<span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[1] }}</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>
