@@ -116,6 +116,10 @@
                         <em>MultiHop Port</em>
                         {{ server.multihop_port || "N/A" }}
                     </div>
+                    <div>
+                        <em>Socks5</em>
+                        {{ server.socks5 || "N/A" }}
+                    </div>
                 </div>
             </div>
         </main>
