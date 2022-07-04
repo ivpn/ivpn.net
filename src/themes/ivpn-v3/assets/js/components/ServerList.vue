@@ -118,7 +118,7 @@
                     </div>
                     <div>
                         <em>Socks5</em>
-                        {{ server.socks5 || "N/A" }}
+                        {{ renderSocks5(server) }}
                     </div>
                 </div>
             </div>
@@ -166,6 +166,14 @@ export default {
             }
 
             return "Offline";
+        },
+        renderSocks5(server) {
+            if (!server.socks5) {
+                return "N/A";
+            }
+
+            const parts = server.socks5.split(":");
+            return parts[0] + " (" + parts[1] + ")";
         },
         toggleDetails(event) {
             event.target.classList.toggle("active");
