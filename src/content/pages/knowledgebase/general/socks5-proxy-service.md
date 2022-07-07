@@ -91,7 +91,7 @@ Remove the added `--proxy-server=socks5://...` text from the end of the `Target:
 
 1. Click the `Apply` button on the `Network` screen
 
-Remove the check mark beside `SOCKS Proxy` in the `Network > Advanced > Proxies` area, then click `OK` and `Apply' to disable the proxy settings.
+Remove the check mark beside `SOCKS Proxy` in the `Network > Advanced > Proxies` area, then click `OK` and `Apply` to disable the proxy settings.
 
 ![](/images-static/uploads/sock5-macos.png)
 
@@ -109,7 +109,7 @@ Remove the check mark beside `SOCKS Proxy` in the `Network > Advanced > Proxies`
 
 1. Click the `Apply` button on the `Network` screen
 
-Remove the check mark beside `SOCKS Proxy` in the `Network > Advanced > Proxies` area, then click `OK` and `Apply' to disable the proxy settings.
+Remove the check mark beside `SOCKS Proxy` in the `Network > Advanced > Proxies` area, then click `OK` and `Apply` to disable the proxy settings.
 
 ### Android and iOS
 
