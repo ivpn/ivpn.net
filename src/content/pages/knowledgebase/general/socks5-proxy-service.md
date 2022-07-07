@@ -53,6 +53,8 @@ Set one web browser to Paris and another web browser to Singapore and each web b
 
 1. Click `OK`
 
+![](/images-static/uploads/socks5-firefox.png)
+
 Select `No Proxy` at the top of the `Connection Settings` area to disable the proxy settings.
 
 ### Windows: [Chromium-based browsers](https://en.wikipedia.org/wiki/Chromium_(web_browser)), like Brave, Google Chrome, Microsoft Edge, Opera
@@ -68,6 +70,8 @@ Select `No Proxy` at the top of the `Connection Settings` area to disable the pr
     ` --proxy-server=socks5://socks5.fr1.gw.ivpn.net` (proxy on `fr1` server in France)
 
 1.   Click `OK` to apply and save the changes
+
+![](/images-static/uploads/socks5-edge.png)
 
 Remove the added `--proxy-server=socks5://...` text from the end of the `Target:` field to disable the proxy settings.
 
@@ -88,6 +92,8 @@ Remove the added `--proxy-server=socks5://...` text from the end of the `Target:
 1. Click the `Apply` button on the `Network` screen
 
 Remove the check mark beside `SOCKS Proxy` in the `Network > Advanced > Proxies` area, then click `OK` and `Apply' to disable the proxy settings.
+
+![](/images-static/uploads/sock5-macos.png)
 
 ### macOS: [Chromium-based browsers](https://en.wikipedia.org/wiki/Chromium_(web_browser)), like Brave, Google Chrome, Microsoft Edge, Opera
 
