@@ -24,4 +24,4 @@ The most common reason you cannot browse the internet when connected to the VPN 
 4. If you have configured a proxy, please ensure that it is disabled.  This usually needs to be done via your browser settings.
 5. If you have another browser installed (Firefox, Chrome, Safari, Opera, Brave, Edge) try browsing with that browser and see if you have the same issue. You should also attempt to start your browser in 'safe mode' with all addons/plugins disabled. In Chrome, you simply have to open an 'incognito' window. If any of these methods allow you to browse the Internet then the issue lies with your Internet browser configuration. 
 
-Still can't connect? Please see [how to submit VPN diagnostic logs to IVPN](/knowledgebase/troubleshooting/how-to-submit-openvpn-diagnostic-data-to-ivpn/) so we can help you diagnose the issue.
+Still can't connect? Please see [how to submit VPN diagnostic logs to IVPN](/knowledgebase/troubleshooting/how-to-submit-vpn-diagnostic-logs-to-ivpn/) so we can help you diagnose the issue.

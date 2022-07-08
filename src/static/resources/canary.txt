@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2022-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2022-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-FirstFT: Global investors return to Chinese stocks after sell-off
-Opec to pump more oil and how the Queen built her reign on duty and detachment
+Labour shortfall leading to ‘catastrophic’ food waste, UK farmers warn
+Limited numbers of visas for seasonal worker threatens contraction of sector and risks some farms going bust
 
-Biden forced into Saudi thaw amid rising oil prices
-Meeting with Crown Prince would cement U-turn for a US president who labelled kingdom a ‘pariah’
+War costs Russia its influence with Ukraine’s Orthodox believers
+Church has split with Moscow’s pro-Putin patriarch as new national identity grows
 
-Can Africa grow without fossil fuels?
-Global investors are returning to China’s stock markets after a big sell-off earlier this year
+Scrutiny of ESG claims for private investments grows
+Sector ‘at a transparency tipping point’ over disclosures as billions pour in
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmKZlY0ACgkQisFrnrZH
-umkB/wf/fEP5ziX2SEIIMfsRzbAW4fV3vbAltw5t69GhDe7Ir4hTstiB5UX9vLkT
-AFzwiSSxBCNMdezg9s763/66vrWRMxXXylqkUfogWcoQGr3tSW45xY32lW5dZJ+3
-VSFuS2MzVN+tAluFkJuHKiPX60+JDW9TPoggXZMS/dQzjlC6d50Lk5rc/ROtiCIe
-D1hiMW68tbTXn/zlXKMp0EHytNe9AcSxVo5Np+oCKydAq3/L/NtP1KvmcghTHKCL
-MWlYPejkrfwX1NBb2+j5k9BC8SKXfgoeg2R+Uu8ySNQTDgi7iX12U4gHP7zFf05r
-er0qWjrkH/Lz6PfNOQAgxhx4X9bJkA==
-=uII1
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmLBIo0ACgkQisFrnrZH
+umm9Egf/Uu06QlnUs2EreXuDCy54CweoeqA3pHVbv/hBuwPZh0qYpKaZ2E2+gm9H
+clwkuOIoTQrrQaAb+hE7U8kK3lqeITlKkPDbn+hMCma8UgkiLBJPFaENhqCC2ses
+SR2CpeqNU9vd6Jji0G+jaxfYYwp3s0yfY5AJRQ7KyfNGC/HLXWPTKi8JI2pilTto
+L0l+F04CaC8KT7iHaKOMAqFGVkx0K/v3MDE/cP2jXlWLVdyspkJPlnHvJklSp9AA
+MW2vOEqyaQBdSB2RkHSTVUa5KQ3sRpD8ybU/8yu/uVWzjqK1tTbM/RSX4xkF0g4F
+yuw1c9a2zt7PGfMi1x6yqCVkDa4gUA==
+=6ql6
 -----END PGP SIGNATURE-----
 
 
