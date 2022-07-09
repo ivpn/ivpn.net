@@ -22,22 +22,24 @@ Our IVPN Linux client includes obfsproxy support. Check it out <a href="/apps-li
     sudo apt-get install python2.7 python-pip python-dev build-essential
     ```
 
-2.  Install Obfsproxy:
+    If `python-dev` is not available, try `python2-dev`.
+
+1.  Install Obfsproxy:
 
     ```
     pip install obfsproxy
     ```
 
-3.  For Obfsproxy our servers listen to port TCP 5145. Open [.ovpn config file](/openvpn-config) you use to connect with any text editor and adjust line 3 from `proto udp` to `proto tcp` & port in the line 4 from `2049` to `5145`.  
-    Resolve the server name specified in line 4:
-
+    or
     ```
-    nslookup xx.gw.ivpn.net 
+    pip2  install obfsproxy
     ```
 
-    and replace `xx.gw.ivpn.net` with the IP address from the output.
+1.  Generate an [OpenVPN configuration file](https://www.ivpn.net/openvpn-config) choosing **Protocol / Port** = any `TCP` port and **Hostnames or IP addresses** = `Use IP addresses`.  Choose whichever location and DNS setting you prefer and whicheven OpenVPN version your device supports.
 
-3.  In the same .ovpn file add the following lines in the bottom:
+1. Single-hop connections use TCP port `5145` for obfsproxy and the port in the generated file needs to adjusted.  Open the .ovpn configuration file from the generator with any text editor and change the port on line 4 to `5145`.
+
+1.  In the same .ovpn file add the following lines in the bottom:
 
     ```
     socks-proxy-retry
@@ -45,22 +47,42 @@ Our IVPN Linux client includes obfsproxy support. Check it out <a href="/apps-li
     route xx.xx.xx.xx 255.255.255.255 yy.yy.yy.yy
     ```
 
-    Where "xx.xx.xx.xx" - the resolved IP address from the previous step, & "yy.yy.yy.yy" - the IP address of your default gateway, which can be identified by running the following command:
+    Where "xx.xx.xx.xx" is the VPN server IP address from line 4 of the .ovpn file and "yy.yy.yy.yy" is the IP address of your default gateway, which can be identified by running the following command:
 
     ```
     ip route | grep default
     ```
 
-5.  Save the changes, start Obfsproxy, and keep this Terminal window open:
+1.  Save the changes, start Obfsproxy, and keep this Terminal window open:
 
     ```
     sudo obfsproxy obfs3 socks 127.0.0.1:1050
     ```
 
-6.  Connect to IVPN with the Obfsproxy applied and keep this Terminal window open:
+    or
+    ```
+    /path/to/obfsproxy obfs3 socks 127.0.0.1:1050
+    ```
+
+1.  Connect to IVPN with the Obfsproxy applied and keep this Terminal window open:
 
     ```
     sudo openvpn --config Servername.ovpn
     ```
 
-7.  Press Ctrl+c inside each Terminal window to close the OpenVPN and obfsproxy connections when finished.
+1.  Press Ctrl+c inside each Terminal window to close the OpenVPN and obfsproxy connections when finished.
+
+
+## Obfsproxy with Multi-hop
+
+Follow step 3 above to generate an OpenVPN configuration file for the entry server location and make two changes to the generated file:
+
+1. For Multi-hop, check the [server status page](https://www.ivpn.net/status), locate the exit server you wish to use, expand the server's details, and identify the **MultiHop Port**.  Add one to the port number, then replace the port number on line 4 of in the generated configuration file with the new port.
+
+    For example, to exit in France using obfsproxy, use port `23402`.  To exit in Las Vegas, US, use port `26502`.
+
+1. Locate the line in the generated configuration file that begins with `verify-x509-name`.  For a single-hop connection, the VPN server's `name-prefix` is listed, like `de` or `us-fl`.  This `name-prefix` needs to be changed to match the exit server.
+
+    For example, if the generated configuration file uses an entry VPN server in Germany, the entry looks like `verify-x509-name de name-prefix` with `de` as the server name.  Change this to `verify-x509-name fr name-prefix` to exit in France or `verify-x509-name us-nv name-prefix` to exit in Las Vegas, US.
+
+1. Complete step 5 above, then proceed to step 6 above to initiate the obfsproxy connection.
