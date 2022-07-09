@@ -60,3 +60,9 @@ To lookup the location codes, open the [server status](/status/) page. Note the 
 Below, is an example of the OpenVPN Multi-hop connection config file with Entry server in Ukraine and Exit server in Austria:
 
 ![](/images-static/uploads/openvpn-multihop.png)
+
+### Obfsproxy (via OpenVPN)
+
+Obfsproxy changes the way the VPN packets look and can offer a way through restrictive networks.  Follow all of the step for OpenVPN above with one change: add one to the **MultiHop Port** number from the [server status](/status/) page.
+
+For example, to exit in Austria using obfsproxy, use port `25602` (instead of `25601` for standard Multi-hop).
