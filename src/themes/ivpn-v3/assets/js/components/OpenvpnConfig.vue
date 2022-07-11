@@ -253,7 +253,7 @@ export default {
             let value = event.target.value;
             this.query.host = value.split("_")[0];
             this.multihop_port = value.split("_")[1];
-            this.verify_x509_name = this.query.host.split(".")[0].replace(/[0-9]/g, "").split("-")[0];
+            this.verify_x509_name = this.query.host.split(".")[0].replace(/[0-9]/g, "");
             this.validation.multihop = value == "";
             this.updateQuery();
         },
