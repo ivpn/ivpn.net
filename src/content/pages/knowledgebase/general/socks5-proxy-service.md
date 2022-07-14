@@ -10,34 +10,26 @@ weight: 210
 ---
 # SOCKS5 Proxy Service
 
-A proxy service offers a way to further encapsulate the traffic for one application, like a web browser, to change the IP address and location for that one application when the VPN is connected.  
-
-
 ## Overview
+
+Our SOCKS v5 proxy service enables you to configure an application, e.g. a web browser to:
+
+1. Route its traffic through a different VPN server than the one you are connected to. This enables you to effectively setup VPN connections to multiple VPN servers at the same time. For example you could connect to the Paris VPN server but configure your Firefox web browser to exit the Singapore VPN server. All your traffic will exit the Paris server except for traffic from the Firefox web browser which will exit the Singapore VPN server. With the Firefox Multi-account Containers addon you can even configure different VPN servers for each tab of the Firefox browser.
+1. Force traffic to be unrouteable if the VPN connection is terminated (application killswitch). The IVPN app firewall already prevents any traffic leaking outside of the VPN connection whilst connected however you may want an additional killswitch if you need to disable the IVPN firewall to access local or remote resources. This works because our SOCKS5 proxies are only available when the VPN is connected, so if the VPN is disconnected, the proxy is not available and no traffic can leak from the application.
+
+## How to use the SOCKS5 service
 
 All IVPN VPN servers offer a SOCKS v5 proxy service.  The service is available on port `1080` when the VPN is connected.  SOCKS5 proxy services are not available when the VPN is disconnected.
 
-The local IP address for the proxy service is `10.1.0.1` and this address is associated with the DNS name `socks5.gw.ivpn.net`, which is the VPN server hosting the client device's connection.
+The local IP address for the proxy service is `10.1.0.1` and this address is associated with the DNS name `socks5.gw.ivpn.net`, which is the VPN server hosting the client device's connection. This is helpful if you want to configure an application to always sends it traffic to the SOCKS5 proxy on the same server that you are connected to giving you the additional kill-switch functionality described in the overview above.
 
 Hostnames are available on our [server status page](https://www.ivpn.net/status), though typically follow the rule of adding `socks5.` at the beginning of the VPN server's hostname, like `socks5.es1.gw.ivpn.net` or `socks5.nl1.wg.ivpn.net`.
 
 No authentication (username/password) is required for the proxy connection.
 
-
-## Benefits
-
-### Another Way to Stop Leaks
-
-The IVPN App's Kill Switch Firewall stops all traffic from exiting the system when the VPN is disconnected, though it might be convenient to disable the VPN and the kill switch firewall to access local or remote resources.  An application with proxy settings enabled will only pass traffic when the proxy is available.  Our SOCKS5 proxies are only available when the VPN is connected, so if the VPN is disconnected, the proxy is not available and no traffic will leak from the application.
-
-### Each Application Has a Different IP Address
-
-Set one web browser to Paris and another web browser to Singapore and each web browser's traffic is independent of the other and the current VPN location.
-
-
 ## Add SOCKS5 Proxy Settings
 
-### Mozilla Firefox (all platforms)
+### All platforms: Mozilla Firefox
 
 1. Go to the Firefox `Settings/Preferences` area, search for **proxy**, then click the `Settings...` button
 
@@ -56,6 +48,23 @@ Set one web browser to Paris and another web browser to Singapore and each web b
 ![](/images-static/uploads/socks5-firefox.png)
 
 Select `No Proxy` at the top of the `Connection Settings` area to disable the proxy settings.
+
+
+### All platforms: Firefox Multi-Account containers
+
+The Firefox Multi-Account container addon allows you to associate tabs with a specific container. Tabs in different containers use separate website storage areas which limits 3rd party tracking and also enables other features such as being able to sign-in to the same account (e.g. Gmail) with two different identities in the same browser. Another feature of these containers is that they can be configured with their own SOCKS5 proxy so we can create one or multiple containers each associated with different exit VPN servers. For example, you could be connected to the London server with the IVPN app but have three tabs open, one sending traffic to the Amsterdam VPN server, one to the Singapore VPN server and one to the Kyiv VPN server (all via the SOCKS5 proxy on those servers).
+
+1. Install the [Firefox Multi-Account Containers addon](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
+
+1. Click the extension icon in the toolbar and select `Manage Containers` and then `New Container`
+
+1. Give the container a name e.g. `IVPN - Amsterdam` and a color to easily identify tabs in this container and click `OK`
+
+1. Click on the extension icon in the toolbar again and select `Manage Containers` and select the container you just created
+
+1. Click on the link at the bottom `Advanced proxy settings`, enter the proxy address as shown in the instructions at the beginning of this article and click `Apply to container`
+
+1. Open a new tab in this container by selecting the extension icon and selecting the container name and navigate to [DNSleaktest.com](https://www.dnsleaktest.com) to verify that the VPN traffic is exiting in the location you configured
 
 ### Windows: [Chromium-based browsers](https://en.wikipedia.org/wiki/Chromium_(web_browser)), like Brave, Google Chrome, Microsoft Edge, Opera
 
