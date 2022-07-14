@@ -145,7 +145,9 @@ IPv6 sites and services are available through the proxy connection, though a pur
 
 ### Multi-Hop
 
-Yes.  Add a proxy to a web browser and it results in a triple-hop connection: **entry server** to **exit server** to **proxy server**.
+Yes, with port-based Multi-Hop.  Add a proxy to a web browser and it results in a triple-hop connection: **entry server** to **exit server** to **proxy server**.
+
+The original Multi-Hop system used a suffix on the IVPN Account ID, like `@fr` to exit in France, and this original system is not 100% compatible with the SOCKS5 proxy service.  For a triple-hop connection and access to all proxy servers, please switch from this original suffix-based system to the port-based system.  This [knowledge base article](https://www.ivpn.net/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) offers details on switching to port-based Multi-Hop.
 
 ### Obfsproxy
 
