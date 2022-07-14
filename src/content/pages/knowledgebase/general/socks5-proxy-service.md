@@ -61,7 +61,7 @@ The Firefox Multi-Account Containers add-on allows you to associate tabs with a 
 
 1. Click on the extension icon in the toolbar again and select `Manage Containers` and select the container you just created
 
-1. Click on the link at the bottom `Advanced proxy settings`, enter the proxy address as shown in the instructions at the beginning of this article, and click `Apply to container`
+1. Click on the link at the bottom `Advanced proxy settings`, enter the proxy address (e.g. `socks://socks5.nl8.gw.ivpn.net:1080` or `socks://socks5.sg1.gw.ivpn.net:1080`) and click `Apply to container`
 
 1. Open a new tab in this container by selecting the extension icon and selecting the container name and navigate to [DNSleaktest.com](https://www.dnsleaktest.com) to verify that the VPN traffic is exiting in the location you configured
 
