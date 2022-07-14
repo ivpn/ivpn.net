@@ -83,7 +83,7 @@
                     {{ server.isp }}
                 </div>
                 <div class="col load">
-                    {{ server.load }}%
+                    {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
                 </div>
                 <div class="col single">
                     <div class="hosts">
@@ -99,7 +99,7 @@
                         {{ server.country }}, {{ server.city }}
                     </div>
                     <div>
-                        {{ server.isp }}, Load: {{ server.load }}%
+                        {{ server.isp }}, Load: {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
                     </div>
                 </div>
                 <div class="col action">
