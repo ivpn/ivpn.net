@@ -84,11 +84,11 @@ sections:
         </tr>
         <tr>
           <td><strong>Improving our service</strong> <br>Consistent improvements to our service lead to customers recommend us to others.</td>
-          <td>WireGuard support<br>Linux CLI and GUI<br>App redesign<br>IPv6 support</td> 
+          <td>WireGuard support<br>Linux CLI and GUI<br>IPv6 support</td> 
         </tr>
         <tr>
           <td><strong>Educational projects</strong><br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.</td>
-          <td><a href="https://www.ivpn.net/privacy-guides/">Privacy Guides</a><br><a href="https://www.ivpn.net/blog/categories/industry-insights/">Educational blog posts</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a><br><a href="https://theprivacyissue.com">The Privacy Issue</a></td> 
+          <td><a href="https://www.ivpn.net/privacy-guides/">IVPN Privacy Guides</a><br><a href="https://www.ivpn.net/blog/categories/industry-insights/">Educational blog posts</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a><br><a href="https://theprivacyissue.com">The Privacy Issue</a></td> 
         </tr>
         <tr>
           <td><strong>Community and social channels</strong><br>We share information about our progress in dedicated IVPN communities.</td>
@@ -96,11 +96,15 @@ sections:
         </tr>
         <tr>
           <td><strong>Journalists and reviewer cooperation</strong><br>We share progress updates and demo accounts with journalists and ethical VPN reviewers. No compensation is offered.</td>
-          <td><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Ars Technica</a><br>PrivacyTools<br>Techlore</td> 
+          <td><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Ars Technica</a><br><a href="https://themarkup.org/the-breakdown/2021/08/12/how-private-is-my-vpn">The Markup</a><br>Techlore<br>Privacy Guides</td> 
         </tr>
         <tr>
           <td><strong>Sponsorships</strong><br>We sponsor non-profit organisations and development projects that focus on privacy.</td>
           <td><a href="https://www.eff.org">EFF</a><br><a href="https://www.torproject.org">Tor Project</a><br><a href="https://www.wireguard.com">WireGuard</a></td> 
+        </tr>
+          <tr>
+          <td><strong>Supporting privacy educators</strong><br>We financially support ethical content creators, who possess the necessary background to evaluate and endorse VPNs.</td>
+          <td><a href="https://optoutpod.com">Seth For Privacy</a><br><a href="https://www.thenewoil.org">The New Oil</a><br><a href="https://www.monerotalk.live">Monero Talk</a></td> 
         </tr>
       </table>
 
