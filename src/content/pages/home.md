@@ -6,10 +6,10 @@ isMenuCta: false
 hasSeperator: false
 sections:
   - type: heading_text_two_cta_two_column
-    light_image: /images-static/uploads/home-hero.png
-    light_image_retina: /images-static/uploads/home-hero-2x.png
-    dark_image: /images-static/uploads/home-hero-dark.png
-    dark_image_retina: /images-static/uploads/home-hero-dark@2x.png
+    light_image: /images-static/uploads/ivpn-home.png
+    light_image_retina: /images-static/uploads/ivpn-home@2x.png
+    dark_image: /images-static/uploads/ivpn-home-dark.png
+    dark_image_retina: /images-static/uploads/ivpn-home-dark@2x.png
     content: >-
       # Resist Online Surveillance
 
