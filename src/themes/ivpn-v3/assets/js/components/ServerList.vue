@@ -116,6 +116,10 @@
                         <em>MultiHop Port</em>
                         {{ server.multihop_port || "N/A" }}
                     </div>
+                    <div>
+                        <em>Socks5</em>
+                        {{ renderSocks5(server) }}
+                    </div>
                 </div>
             </div>
         </main>
@@ -162,6 +166,14 @@ export default {
             }
 
             return "Offline";
+        },
+        renderSocks5(server) {
+            if (!server.socks5) {
+                return "N/A";
+            }
+
+            const parts = server.socks5.split(":");
+            return parts[0] + " (" + parts[1] + ")";
         },
         toggleDetails(event) {
             event.target.classList.toggle("active");
