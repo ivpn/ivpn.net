@@ -44,6 +44,9 @@ contents:
     title: Install from Source Code
     anchor: source
 - item:
+    title: Install the Snap
+    anchor: snap
+- item:
     title: Useful Links
     anchor: useful-links
 ---
@@ -53,13 +56,14 @@ contents:
 * GUI or CLI (command-line interface).
 * WireGuard privacy controls - Define automatic key and IP address rotation schedule.
 * AntiTracker that blocks ads, adware, malicious websites and data harvesting trackers.
-* Firewall / killswitch - Ability to configure as on-demand or always-on. Offers comprehensive protection against DNS, IPv6, disconnection and WebRTC leaks.
+* Firewall / kill switch - Ability to configure as on-demand or always-on. Offers comprehensive protection against DNS, IPv6, disconnection and WebRTC leaks.
 * Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 * Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 * Allow LAN traffic when connected to VPN.
 * Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
+* Split Tunnel to allow designated apps to bypass the VPN tunnel.
 
 ## Packages {#packages}
 
@@ -193,6 +197,16 @@ SHA256: 1fcf3cd1d86a9dfd5a1e4181f5cbfe62aad3308ddb69aec6347382a7dc4ec94a
 
 [Daemon + CLI](https://github.com/ivpn/desktop-app#compilation_linux_daemon)  
 [UI](https://github.com/ivpn/desktop-app#compilation_linux_ui)  
+
+## Install the Snap {#snap}
+
+Get the IVPN App from the [Snap Store](https://snapcraft.io/ivpn).  
+
+### Snap Notes:
+
+* The [snapd](https://snapcraft.io/docs/installing-snapd) daemon is required.
+* Uninstall prior versions (DEB, RPM, etc.) of the IVPN App before switching to the snap release channel and vice versa.
+* The **Split Tunnel** feature is not available due to strong restrictions of the snap environment.
 
 ## Useful Links {#useful-links}
 
