@@ -200,7 +200,7 @@ SHA256: 1fcf3cd1d86a9dfd5a1e4181f5cbfe62aad3308ddb69aec6347382a7dc4ec94a
 
 ## Install the Snap {#snap}
 
-Get the IVPN App from the [Snap Store](https://snapcraft.io/ivpn).  
+Get the IVPN App from the [Snap Store](https://snapcraft.io/ivpn) by typing `sudo snap install ivpn`.  
 
 ### Snap Notes:
 
