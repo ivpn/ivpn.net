@@ -202,6 +202,13 @@ SHA256: 1fcf3cd1d86a9dfd5a1e4181f5cbfe62aad3308ddb69aec6347382a7dc4ec94a
 
 Get the IVPN App from the [Snap Store](https://snapcraft.io/ivpn) by typing `sudo snap install ivpn`.  
 
+<p>
+    <a href="https://snapcraft.io/ivpn">
+        <img class="features__image--light" src="/images-static/uploads/snap-store-white@2x.png" alt="Get it from the Snap Store" width="182">
+        <img class="features__image--dark" src="/images-static/uploads/snap-store-black@2x.png" alt="Get it from the Snap Store"  width="182">
+    </a>
+</p>
+
 ### Snap Notes:
 
 * The [snapd](https://snapcraft.io/docs/installing-snapd) daemon is required.
