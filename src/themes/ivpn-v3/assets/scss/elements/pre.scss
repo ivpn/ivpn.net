@@ -101,15 +101,18 @@ pre {
         }
     }
 
-    code {
-        padding: 0 34px 0 34px;
+    .highlight {
 
-        &:first-child {
-            padding-top: 44px;
-        }
-
-        &:last-child {
-            padding-bottom: 44px;
+        code {
+            padding: 0 34px 0 34px;
+    
+            &:first-child {
+                padding-top: 44px;
+            }
+    
+            &:last-child {
+                padding-bottom: 44px;
+            }
         }
     }
 }
