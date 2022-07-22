@@ -47,6 +47,9 @@ contents:
     title: Signature Verification
     anchor: signature-verification
 - item:
+    title: Install the Snap
+    anchor: snap
+- item:
     title: Useful Links
     anchor: useful-links
 ---
@@ -56,13 +59,14 @@ contents:
 * GUI or CLI (command-line interface).
 * WireGuard privacy controls - Define automatic key and IP address rotation schedule.
 * AntiTracker that blocks ads, adware, malicious websites and data harvesting trackers.
-* Firewall / killswitch - Ability to configure as on-demand or always-on. Offers comprehensive protection against DNS, IPv6, disconnection and WebRTC leaks.
+* Firewall / kill switch - Ability to configure as on-demand or always-on. Offers comprehensive protection against DNS, IPv6, disconnection and WebRTC leaks.
 * Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 * Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 * Allow LAN traffic when connected to VPN.
 * Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
+* Split Tunnel to allow designated apps to bypass the VPN tunnel.
 
 ## Packages {#packages}
 
@@ -211,19 +215,19 @@ Note: Other AUR helper/Pacman wrapper utilities are available.
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.8.20_amd64.deb)  
-SHA256: 7b1037aa224b785c84b44531cc0d5454a328e21082f3011c6d4308de231a007a  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.9.0_amd64.deb)  
+SHA256: 9278a40f9afc8d0bf92a03c8fc00a216162e5ce1a7858e19f176806f0c581496  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.8.20_amd64.deb)  
-SHA256: 4949949d219bb746fc0d5b9d9eb3e7e6a0f26aa01d32d9cda687b5461d82119c  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.9.0_amd64.deb)  
+SHA256: 05152ab69c8388ce75182e48c2b63fc48874a0467cd96952477f804d4b3b6488  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.8.20-1.x86_64.rpm)  
-SHA256: 831e7845361574ff5a7529fc47b54405002a209c66e6da7ea3d8bba2d902cc79  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.9.0-1.x86_64.rpm)  
+SHA256: 317a7ec94f3e473f2b9b034d0e807f27e38a9e0d29464809158a979eccab8c9b  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.8.20-1.x86_64.rpm)  
-SHA256: e01180b5325ccb2c21eb714bae7b74203d1e3947c9b38c88d08a039fcf1fed64  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.9.0-1.x86_64.rpm)  
+SHA256: 1fcf3cd1d86a9dfd5a1e4181f5cbfe62aad3308ddb69aec6347382a7dc4ec94a  
 
 ## Install from Source Code {#source}
 
@@ -238,6 +242,16 @@ GPG key location:
 
 * for DEB files: `<repository path>/generic.gpg` (example: `https://repo.ivpn.net/stable/ubuntu/generic.gpg`)
 * for RPM files: `<repository path>/repo.gpg` (example: `https://repo.ivpn.net/stable/fedora/generic/repo.gpg`)
+
+## Install the Snap {#snap}
+
+Get the IVPN App from the [Snap Store](https://snapcraft.io/ivpn) by typing `sudo snap install ivpn`.  
+
+### Snap Notes:
+
+* The [snapd](https://snapcraft.io/docs/installing-snapd) daemon is required.
+* Uninstall prior versions (DEB, RPM, etc.) of the IVPN App before switching to the snap release channel and vice versa.
+* The **Split Tunnel** feature is not available due to strong restrictions of the snap environment.
 
 ## Useful Links {#useful-links}
 
