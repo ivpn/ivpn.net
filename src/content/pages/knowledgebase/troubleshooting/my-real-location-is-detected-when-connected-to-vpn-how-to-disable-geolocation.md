@@ -10,7 +10,7 @@ weight: 30
 ---
 # My real location is detected when connected to VPN. How to disable geolocation?
 
-Most modern browsers implement the [geolocation API](http://dev.w3.org/geo/api/spec-source.html) aas defined by the W3C which enables browsers to detect the geographic location of the device. This enables web services that rely on location information to function correctly. The specification doesn't define the location sources but the following are commonly used:
+Most modern browsers implement the [geolocation API](http://dev.w3.org/geo/api/spec-source.html) as defined by the W3C which enables browsers to detect the geographic location of the device. This enables web services that rely on location information to function correctly. The specification doesn't define the location sources but the following are commonly used:
 
 1. Global Positioning System (GPS)
 2. Available Wi-Fi networks and signal strengths
