@@ -70,7 +70,8 @@
                         {{ keyComment }}
                     </p>
                 </div>
-                <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
+                <p v-if="error.addKey != null" class="error" aria-live="polite">{{ error.addKey }}</p>
+                <p v-if="error.noKey != null" ref="errorNoKey" class="error" aria-live="polite">{{ error.noKey }}</p>
                 <h3>2. Select one or multiple exit servers</h3>
                 <p class="note">A separate configuration file will be generated for each location that you include.</p>
                 <div class="tabs">
@@ -129,6 +130,7 @@
                         <i></i>
                     </div>
                 </div>
+                <p v-if="error.exitLocation != null" ref="errorExitLocation" class="error" aria-live="polite">{{ error.exitLocation }}</p>
                 <h3>3. Configuration</h3>
                 <div v-if="!multihop">
                     <h4>Port</h4>
@@ -189,8 +191,8 @@
                     </div>
                 </div>
                 <h3>4. Download</h3>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
+                <a class="btn btn-big btn-border" href="" @click.prevent="handleDownload()">Download zip archive</a>
+                <a class="btn btn-big btn-border" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
                 <div class="qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
@@ -238,6 +240,8 @@ export default {
             },
             error: {
                 addKey: null,
+                noKey: null,
+                exitLocation: null,
             },
             isKeyGenerated: true,
             multihop: false,
@@ -404,6 +408,7 @@ export default {
                 this.multihop_port = null;
                 this.wg_public_key = null;
             } else {
+                this.error.exitLocation = null;
                 this.query.host = value.split("_")[0];
                 this.multihop_port = value.split("_")[1];
                 this.wg_public_key = value.split("_")[2];
@@ -529,6 +534,7 @@ export default {
         },
         async handleDownload() {
             if (this.validation.download) {
+                this.handleErrorsOnDownload();
                 return;
             }
 
@@ -537,11 +543,28 @@ export default {
         },
         async handleGenerateQRCode() {
             if (this.validation.downloadQR) {
+                this.handleErrorsOnDownload();
                 return;
             }
 
             let res = await Api.getWireGuardConfigurations(this.queryString);
             this.generateQRCode(res);
+        },
+        handleErrorsOnDownload() {
+            const isWireguardKeyProvided = this.publicKey != null && this.privateKey != null;
+            const isExitServerSelected = this.host != null && this.host != "";
+            // First all errors are set, only then we proceed to focus them in their markup order
+            if (!isWireguardKeyProvided) {
+                this.error.noKey = "WireGuard key is required for the download.";
+            }
+            if (!isExitServerSelected) {
+                this.error.exitLocation = "Exit server is required for the download.";
+            }
+            if (!isWireguardKeyProvided) {
+                this.$refs.errorNoKey.focus();
+            } else if (!isExitServerSelected) {
+                this.$refs.errorExitLocation.focus();
+            }
         },
         generateKey() {
             let keypair = wireguard.generateKeypair();
@@ -553,6 +576,7 @@ export default {
             this.setKey(this.publicKeyAdd, this.keyComment);
         },
         async setKey(publicKey, keyComment) {
+            this.error.noKey = null;
             try {
                 let res = await Api.addWireguardKey({
                     public_key: publicKey,
