@@ -10,4 +10,4 @@ weight: 20
 ---
 # Do you allow P2P / BitTorrent / torrents downloading?
 
-Yes, however, our upstream providers in the USA have threatened to disconnect our servers on multiple occasions as a result of the high number of DMCA notices we receive. **We kindly request that customers avoid USA based servers for P2P (including USA exit servers on Multi-hop)**.
+We do not restrict the use of any protocols, however, our upstream providers in the USA have threatened to disconnect our servers on multiple occasions as a result of the high number of DMCA notices we receive. **We kindly request that customers avoid USA based servers for P2P (including USA exit servers on Multi-hop)**.
