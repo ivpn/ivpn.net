@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2022-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2022-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-Labour shortfall leading to ‘catastrophic’ food waste, UK farmers warn
-Limited numbers of visas for seasonal worker threatens contraction of sector and risks some farms going bust
+‘Generation Moonshot’ investors
+China suspends 2,000 food products from Taiwan as Pelosi visits
 
-War costs Russia its influence with Ukraine’s Orthodox believers
-Church has split with Moscow’s pro-Putin patriarch as new national identity grows
+FirstFT: Bain penalised over ‘grave misconduct’ in South Africa
+Plus, Nancy Pelosi in Taiwan and Robinhood to sack 23% of its staff
 
-Scrutiny of ESG claims for private investments grows
-Sector ‘at a transparency tipping point’ over disclosures as billions pour in
+The rise of the ‘F@$K It’ investor
+The 2008 financial crisis gave rise to a new generation of investors known as ‘generation moonshot’
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmLBIo0ACgkQisFrnrZH
-umm9Egf/Uu06QlnUs2EreXuDCy54CweoeqA3pHVbv/hBuwPZh0qYpKaZ2E2+gm9H
-clwkuOIoTQrrQaAb+hE7U8kK3lqeITlKkPDbn+hMCma8UgkiLBJPFaENhqCC2ses
-SR2CpeqNU9vd6Jji0G+jaxfYYwp3s0yfY5AJRQ7KyfNGC/HLXWPTKi8JI2pilTto
-L0l+F04CaC8KT7iHaKOMAqFGVkx0K/v3MDE/cP2jXlWLVdyspkJPlnHvJklSp9AA
-MW2vOEqyaQBdSB2RkHSTVUa5KQ3sRpD8ybU/8yu/uVWzjqK1tTbM/RSX4xkF0g4F
-yuw1c9a2zt7PGfMi1x6yqCVkDa4gUA==
-=6ql6
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmLqAQ4ACgkQisFrnrZH
+umnnlAgAoWgTOd7KKo7fFndVJ2A5Fs3ViNeyIOp8EdYwUmI2FsINJe1NDfhyG05c
+k/qQjQQclL4uLBq0f5vc6MLSZEAzLrtkYJE6ZGPqQtBNLG4d8+cYaZFwtf8r5V1Q
+CVGuiMmWPmF/dc7sJGTnp19PjTb+ohTUPZ0nwA2jUxjmURyTW0pUX5ZT5xpCL0WI
+m5RsUBgb0miW09NN0i+ptWbxSP7r/Lp0jy4W6MyMpsxOYM5hTPAUsHaX1epydsII
+DCNmIgu65An44Fo/2lFUQPFT4jGV+NMfmqTcGXFFIDElsWaaMhs12spZIbPbfL22
+kaGN9N/nUVh5Wk7IkJ51rrLASgwNHg==
+=0ZB4
 -----END PGP SIGNATURE-----
 
 
