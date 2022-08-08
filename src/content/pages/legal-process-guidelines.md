@@ -30,7 +30,7 @@ When government or law enforcement has served legal process on Privatus by email
 
 **Privatus Limited, 5 Secretary’s lane, GX11 1AA, Gibraltar.**
 
-Privatus will notify IVPN users when their IVPN account information is being sought in response to legal process from government, law enforcement, or third parties, except where providing notice is explicitly prohibited by the legal process itself, by a court order Privatus receives.
+Where possible, Privatus will notify IVPN users when their IVPN account information is being sought in response to legal process from government, law enforcement, or third parties, except where providing notice is explicitly prohibited by the legal process itself, by a court order Privatus receives.
 
 ### Information available from Privatus
 
