@@ -12,7 +12,7 @@ weight: 550
 
 Yes, and it can be easily enabled in just a few steps:
 
-1. Login to your [Client Area](/account/login/)
+1. Login to your [Client Area](/account/login/#id)
 
 2. Navigate to `Account settings` and check the `2-factor authentication` checkbox.
 
