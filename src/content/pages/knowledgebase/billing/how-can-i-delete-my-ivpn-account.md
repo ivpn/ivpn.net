@@ -12,4 +12,4 @@ weight: 120
 
 We respect your privacy & understand the importance of being able to have a full control over your personal information. You can permanently delete your account and purge our database of any related information.
 
-To delete your IVPN account, login to the [Client Area](/account/login/), navigate to `Account settings` area, click on the `Delete account` button and confirm the action. Note, this process is irreversible.
+To delete your IVPN account, login to the [Client Area](/account/login/#id), navigate to `Account settings` area, click on the `Delete account` button and confirm the action. Note, this process is irreversible.
