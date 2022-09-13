@@ -45,4 +45,4 @@ sudo systemctl restart ivpn-service.service
 ```
 
 
-If the IVPN App's daemon/service error persists on Windows, macOS, or Linux, reinstalling the app might help.  Generally, we uninstalling the app, rebooting the computer system, then [reinstalling](https://www.ivpn.net/apps/) the app.
+If the IVPN App's daemon/service error persists on Windows, macOS, or Linux, reinstalling the app might help.  Generally, we recommend uninstalling the app, rebooting the computer system, then [reinstalling](https://www.ivpn.net/apps/) the app.
