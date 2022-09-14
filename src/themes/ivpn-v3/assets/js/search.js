@@ -1,10 +1,8 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import lunr from 'lunr'
-
 import matomo from '@/api/matomo.js'
 
-new Vue({
-    el: "#search",
+const app = createApp({
     collection: [],
     mounted() {
         this.collection = []
@@ -90,3 +88,4 @@ new Vue({
         }
     }
 })
+app.mount('#search')

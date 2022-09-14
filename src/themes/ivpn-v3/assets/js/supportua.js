@@ -1,12 +1,7 @@
-import Vue from 'vue';
+import { createApp } from 'vue'
 import store from './store'
+import SupportUa from './components/SupportUA'
 
-import SupportUa from './components/SupportUA';
-
-new Vue({
-    store,
-    el: "#supportua",
-    components: {
-        SupportUa,
-    }
-})
+const app = createApp(SupportUa)
+app.use(store)
+app.mount('#supportua')
