@@ -1,23 +1,23 @@
-import { createWebHistory, createRouter } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-import PricesView from "@/views/Prices.vue"
-import ChangeProductView from "@/views/Account/ChangeProduct/ChangeProduct.vue"
-import AccountView from "@/views/Account/Account.vue"
-import PaymentView from "@/views/Account/Payment.vue"
-import AddFundsView from "@/views/Account/AddFunds.vue"
-import AddFundsCC from "@/views/Account/AddFunds/CC.vue"
-import AddFundsPayPal from "@/views/Account/AddFunds/PayPal.vue"
-import AddFundsBitcoin from "@/views/Account/AddFunds/BitCoin.vue"
-import AddFundsMonero from "@/views/Account/AddFunds/Monero.vue"
-import AddFundsCash from "@/views/Account/AddFunds/Cash.vue"
-import AddFundsGiftCard from "@/views/Account/AddFunds/GiftCard.vue"
+import PricesView from '@/views/Prices.vue'
+import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
+import AccountView from '@/views/Account/Account.vue'
+import PaymentView from '@/views/Account/Payment.vue'
+import AddFundsView from '@/views/Account/AddFunds.vue'
+import AddFundsCC from '@/views/Account/AddFunds/CC.vue'
+import AddFundsPayPal from '@/views/Account/AddFunds/PayPal.vue'
+import AddFundsBitcoin from '@/views/Account/AddFunds/BitCoin.vue'
+import AddFundsMonero from '@/views/Account/AddFunds/Monero.vue'
+import AddFundsCash from '@/views/Account/AddFunds/Cash.vue'
+import AddFundsGiftCard from '@/views/Account/AddFunds/GiftCard.vue'
 
-import WireguardView from "@/views/Account/Wireguard.vue"
-import WireguardConfigView from "@/views/Account/WireguardConfig.vue"
-import PortForwardingView from "@/views/Account/PortForwarding.vue"
-import Settings from "@/views/Account/Settings.vue"
-import LoginView from "@/views/Login.vue"
-import NotFoundView from "@/views/404.vue"
+import WireguardView from '@/views/Account/Wireguard.vue'
+import WireguardConfigView from '@/views/Account/WireguardConfig.vue'
+import PortForwardingView from '@/views/Account/PortForwarding.vue'
+import Settings from '@/views/Account/Settings.vue'
+import LoginView from '@/views/Login.vue'
+import NotFoundView from '@/views/404.vue'
 
 import InternalErrorView from '../views/500.vue'
 
@@ -26,10 +26,10 @@ import store from '@/store'
 async function notAuthenticatedGuard(to, from, next) {
     if (store.state.auth.isAuthenticated) {
         if (store.state.auth.isLegacy) {
-            window.location = "/clientarea";
+            window.location = '/clientarea'
             next(false)
         } else {
-            next({ name: "account" })
+            next({ name: 'account' })
         }
     } else {
         next()
@@ -87,10 +87,10 @@ const routes = [
         beforeEnter: async (to, from, next) => {
             try {
                 await store.dispatch('auth/logout')
-                next({ name: "login" })
+                next({ name: 'login' })
             } catch (error) {
                 console.error(error)
-                next({ name: "500" })
+                next({ name: '500' })
             }
         }
     },
@@ -196,13 +196,13 @@ const routes = [
                 component: AddFundsMonero,
                 meta: {
                     title: 'IVPN Add Funds - Monero',
-                }                
+                }
             }, {
                 path: 'giftcard', name: 'add-funds-giftcard',
-                component:  AddFundsGiftCard,
+                component: AddFundsGiftCard,
                 meta: {
                     title: 'IVPN Add Funds - Gift Card',
-                }            
+                }
             }, {
                 path: 'applepay', name: 'add-funds-apple',
                 component: () => import('@/views/Account/AddFunds/ApplePay.vue'),
@@ -273,13 +273,12 @@ const routes = [
         }
     },
     {
-        path: '*',
+        path: '/:catchAll(.*)',
         redirect: { name: '404' }
     }
 ]
 
 const router = createRouter({
-    mode: 'history',
     history: createWebHistory(),
     routes,
     store,
@@ -294,24 +293,24 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
 
-    if (to.path.startsWith('/account') && to.name != "login") {
+    if (to.path.startsWith('/account') && to.name != 'login') {
 
         if (!store.state.auth.isAuthenticated) {
             next({ name: 'login' })
-            return;
+            return
         }
 
         if (store.state.auth.isLegacy) {
-            window.location = "/clientarea";
-            return;
+            window.location = '/clientarea'
+            return
         }
 
-        await store.dispatch("auth/load")
+        await store.dispatch('auth/load')
 
         if (!store.state.auth.isAuthenticated) {
             // Go to login page in case account could not be loaded
             next({ name: 'login' })
-            return;
+            return
         }
 
         // Show error if there was any non-authentication issue while loading the account
@@ -319,12 +318,12 @@ router.beforeEach(async (to, from, next) => {
 
         // We don't want user to think that they are logged out
         // when there is an underlying network issues. Otherwise, a proper 
-        // "error" page have to be displayed, so user can refresh the page. 
+        // 'error' page have to be displayed, so user can refresh the page. 
 
         // Probably, all of this code have to be moved to an app initialization component
 
         if (store.state.auth.error != null) {
-            next({ name: "500" })
+            next({ name: '500' })
             return
         }
 
