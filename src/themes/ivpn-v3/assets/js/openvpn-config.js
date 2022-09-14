@@ -1,10 +1,5 @@
-import Vue from 'vue';
-
+import { createApp } from 'vue';
 import OpenvpnConfig from './components/OpenvpnConfig';
 
-new Vue({
-    el: "#openvpn-config",
-    components: {
-        OpenvpnConfig,
-    }
-})
+const app = createApp(OpenvpnConfig);
+app.mount('#openvpn-config');
