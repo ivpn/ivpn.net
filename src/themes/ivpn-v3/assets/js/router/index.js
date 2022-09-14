@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 import PricesView from "@/views/Prices.vue"
 import ChangeProductView from "@/views/Account/ChangeProduct/ChangeProduct.vue"
@@ -23,8 +22,6 @@ import NotFoundView from "@/views/404.vue"
 import InternalErrorView from '../views/500.vue'
 
 import store from '@/store'
-
-Vue.use(VueRouter)
 
 async function notAuthenticatedGuard(to, from, next) {
     if (store.state.auth.isAuthenticated) {
@@ -281,8 +278,9 @@ const routes = [
     }
 ]
 
-const router = new VueRouter({
+const router = createRouter({
     mode: 'history',
+    history: createWebHistory(),
     routes,
     store,
     scrollBehavior(to, from, savedPosition) {

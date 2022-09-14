@@ -1,7 +1,4 @@
-
-import Vue from "vue"
-import Vuex from "vuex";
-
+import Vuex from "vuex"
 
 import auth from "./module_auth.js"
 import popup from "./module_popup.js"
@@ -13,8 +10,6 @@ import deleteAccount from "./module_delete_account.js"
 import braintree from "./module_braintree.js"
 import account from "./module_account.js"
 import contact from "./module_contact.js"
-
-Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
@@ -56,4 +51,4 @@ export default new Vuex.Store({
         }
     
     }
-});
+})
