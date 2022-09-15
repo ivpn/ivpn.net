@@ -9,13 +9,13 @@ layout: apps
 image: apps/windows-app-3.3.7
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.9.9.exe,
+    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.9.32.exe,
     github: https://github.com/ivpn/desktop-app,
     changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: c433289eb2b7d0661e5d68d0776b536670f7cc7524b40de17130af73fb7c1fa5
+            value: 2b2df9a1e560b186e333d1020b0dc32d6879dbf00492cdb7b92603b458c4fcb9
         }
     ]
 }]
