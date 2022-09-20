@@ -4,6 +4,7 @@
 
 <script>
 export default {
+    name: 'Tab',
     props: {
         name: { required: true },
         selected: { default: false },

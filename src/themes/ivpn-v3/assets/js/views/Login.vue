@@ -3,7 +3,7 @@
         <div class="login-box">
             <form @submit.prevent="login()">
                 <h1>Log In</h1>  
-                <tabs>
+                <tabs @onTabChanged="updateLoginType">
                     <tab :selected="loginType == 'email'" :tabid="'email'" :name="'With Email & Password'" class="login-tab">
                         <div class="login-fields">
                             
@@ -63,20 +63,10 @@
                         </div>
                     </tab>
                 </tabs>
-                <button
-                    class="btn btn-big btn-solid login-btn"
-                    :disabled="inProgress || !formValid"
-                >
-                    <progress-spinner
-                        v-if="inProgress"
-                        id="btn-progress"
-                        width="32"
-                        height="32"
-                        fill="#FFFFFF"
-                    />Log In
+                <button class="btn btn-big btn-solid login-btn" :disabled="inProgress || !formValid">
+                    <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>Log In
                 </button>
             </form>
-
             <router-link
                 :to="{name:'prices'}"
                 id="createnew"
@@ -201,7 +191,6 @@ export default {
 
             this.$router.push({ name: "account" });
         },
-
         processError(error) {
             this.totpRequired =
                 error.status == StatusTotpRequired ||
@@ -217,7 +206,6 @@ export default {
                 return;
             }
         },
-
         async playCaptcha() {
             let wave = await Api.getCaptchaWave(this.captchaID);
             if (wave) {
@@ -225,6 +213,9 @@ export default {
                 snd.play();
             }
         },
+        updateLoginType(value) {
+            this.loginType = value
+        }
     },
 };
 </script>

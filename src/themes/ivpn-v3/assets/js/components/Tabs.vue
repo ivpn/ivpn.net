@@ -15,6 +15,7 @@
 
 <script>
 export default {
+    name: 'Tabs',
     data() {
         return {
             tabs: []
@@ -25,6 +26,7 @@ export default {
             this.tabs.forEach(tab => {
                 tab.isActive = (tab.name == selectedTab.name)
             })
+            this.$emit('onTabChanged', selectedTab.tabid)
         }
     },
     watch: {
