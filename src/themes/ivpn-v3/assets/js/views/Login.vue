@@ -2,9 +2,9 @@
     <div class="login-form-container">                
         <div class="login-box">
             <form @submit.prevent="login()">
-                <h1>Log In</h1>                
-                <tabs v-model="loginType">
-                    <tab tabid="email" name="With Email & Password" class="login-tab">
+                <h1>Log In</h1>  
+                <tabs>
+                    <tab :selected="loginType == 'email'" :tabid="'email'" :name="'With Email & Password'" class="login-tab">
                         <div class="login-fields">
                             
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </tab>
-                    <tab tabid="id" name="With Account ID" class="login-tab">
+                    <tab :selected="loginType == 'id'" :tabid="'id'" :name="'With Account ID'" class="login-tab">
                         <div class="login-fields">
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
                             <label for="accountid">Account ID:</label>
