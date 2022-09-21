@@ -35,7 +35,7 @@ sections:
         description: All servers managing the IVPN service are self-hosted
           and operated by IVPN, including email and live chat.
       - name: Independent security audits
-        description: We commit to annual security audits to improve our security
+        description: We commit to [annual security audits](/blog/tags/audit/) to improve our security
           practices and transparency.
       - name: No fake reviews
         description: We never pay for reviews and do not have an affiliate program, so

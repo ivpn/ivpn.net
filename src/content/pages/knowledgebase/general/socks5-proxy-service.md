@@ -65,6 +65,8 @@ The Firefox Multi-Account Containers add-on allows you to associate tabs with a 
 
 1. Open a new tab in this container by selecting the extension icon and selecting the container name and navigate to [DNSleaktest.com](https://www.dnsleaktest.com) to verify that the VPN traffic is exiting in the location you configured
 
+{{< video src="/images-static/uploads/firefox-multi-account-containers-ivpn-demo.mp4" type="video/mp4" preload="auto" >}}
+
 ### Windows: [Chromium-based browsers](https://en.wikipedia.org/wiki/Chromium_(web_browser)), like Brave, Google Chrome, Microsoft Edge, Opera
 
 1. Edit the browser shortcut properties by clicking the desktop icon and pressing `Alt + Enter`

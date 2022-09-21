@@ -75,7 +75,7 @@ This guide was produced using OPNSense 21.7.1
 
 2. In the `DNS servers` field, specify one of the following DNS servers:
 
-    * *10.0.254.1* = redular DNS with no blocking
+    * *10.0.254.1* = regular DNS with no blocking
     * *10.0.254.2* = standard AntiTracker to block advertising and malware domains
     * *10.0.254.3* = AntiTracker Hardcore Mode to also block Google and Facebook domains
 
