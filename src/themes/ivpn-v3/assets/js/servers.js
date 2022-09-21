@@ -1,10 +1,5 @@
-import Vue from 'vue';
+import { createApp } from 'vue'
+import ServerList from './components/ServerList'
 
-import ServerList from './components/ServerList';
-
-new Vue({
-    el: "#servers",
-    components: {
-        ServerList,
-    }
-})
+const app = createApp(ServerList)
+app.mount('#servers')

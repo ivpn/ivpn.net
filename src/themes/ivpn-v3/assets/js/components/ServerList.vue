@@ -1,92 +1,69 @@
 <template>
     <div class="servers">
-        <div class="row row__filter">
-            <div class="col server">
-                <form class="search" @submit.prevent autocomplete="off">
-                    <input name="search" type="text" placeholder="Server" @input="onChangeServerFilter($event)" ref="serverFilter">
-                    <input type="submit" value="">
-                </form>
-            </div>
-            <div class="col country active">
-                <form class="select">
-                    <select name="country" @change="onChangeFilter($event)" data-filter="country" ref="countryFilter">
-                        <option value="">Country: Any</option>
-                        <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
-                    </select>
-                    <i></i>
-                </form>
-            </div>
-            <div class="col city">
-                <form class="select">
-                    <select name="city" @change="onChangeFilter($event)" data-filter="city" ref="cityFilter">
-                        <option value="">City: Any</option>
-                        <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
-                    </select>
-                    <i></i>
-                </form>
-            </div>
-            <div class="col provider">
-                <form class="select">
-                    <select name="provider" @change="onChangeFilter($event)" data-filter="isp" ref="providerFilter">
-                        <option value="">Provider: Any</option>
-                        <option v-for="provider in providers" :value="provider" :key="provider">{{ provider }}</option>
-                    </select>
-                    <i></i>
-                </form>
-            </div>
-            <div class="col load">&nbsp;</div>
-            <div class="col action">
-                <a @click="resetFilter">Reset</a>
-            </div>
+        <div class="servers__heading">
+            <h1>IVPN Servers</h1>
         </div>
-        <header class="row row__header">
-            <div class="col server">
-                <a @click="sortBy" data-sort="gateway">SERVER<i></i></a>
-            </div>
-            <div class="col country active">
-                <a @click="sortBy" data-sort="country">COUNTRY<i></i></a>
-            </div>
-            <div class="col city">
-                <a @click="sortBy" data-sort="city">CITY<i></i></a>
-            </div>
-            <div class="col provider">
-                <a @click="sortBy" data-sort="isp">PROVIDER<i></i></a>
-            </div>
-            <div class="col load">
-                <a @click="sortBy" data-sort="load">LOAD<i></i></a>
-            </div>
-            <div class="col action">&nbsp;</div>
-        </header>
-        <main>
-            <div class="row" v-for="server in filteredServers" :key="server.gateway" @click="toggleDetailsRow">
+        <div class="servers__list">
+            <div class="row row__filter">
                 <div class="col server">
-                    <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
-                    <ul class="hosts-list">
-                        <li v-for="(host, protocol) in server.hostnames" :key="protocol">
-                            {{ host }}
-                            <span class="badge badge--light spacing">{{ protocol }}</span>
-                        </li>
-                    </ul>
+                    <form class="search" @submit.prevent autocomplete="off">
+                        <input name="search" type="text" placeholder="Server" @input="onChangeServerFilter($event)" ref="serverFilter">
+                        <input type="submit" value=" ">
+                    </form>
                 </div>
-                <div class="col country">
-                    <div class="location__data">
-                        <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
-                        <span> {{ server.country }} </span>
-                    </div>
+                <div class="col country active">
+                    <form class="select">
+                        <select name="country" @change="onChangeFilter($event)" data-filter="country" ref="countryFilter">
+                            <option value="">Country: Any</option>
+                            <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
+                        </select>
+                        <i></i>
+                    </form>
                 </div>
                 <div class="col city">
-                    <div class="location__data">
-                        <span> {{ server.city }} </span>
-                    </div>
+                    <form class="select">
+                        <select name="city" @change="onChangeFilter($event)" data-filter="city" ref="cityFilter">
+                            <option value="">City: Any</option>
+                            <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
+                        </select>
+                        <i></i>
+                    </form>
                 </div>
                 <div class="col provider">
-                    {{ server.isp }}
+                    <form class="select">
+                        <select name="provider" @change="onChangeFilter($event)" data-filter="isp" ref="providerFilter">
+                            <option value="">Provider: Any</option>
+                            <option v-for="provider in providers" :value="provider" :key="provider">{{ provider }}</option>
+                        </select>
+                        <i></i>
+                    </form>
+                </div>
+                <div class="col load">&nbsp;</div>
+                <div class="col action">
+                    <a @click="resetFilter">Reset</a>
+                </div>
+            </div>
+            <header class="row row__header">
+                <div class="col server">
+                    <a @click="sortBy" data-sort="gateway">SERVER<i></i></a>
+                </div>
+                <div class="col country active">
+                    <a @click="sortBy" data-sort="country">COUNTRY<i></i></a>
+                </div>
+                <div class="col city">
+                    <a @click="sortBy" data-sort="city">CITY<i></i></a>
+                </div>
+                <div class="col provider">
+                    <a @click="sortBy" data-sort="isp">PROVIDER<i></i></a>
                 </div>
                 <div class="col load">
-                    {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
+                    <a @click="sortBy" data-sort="load">LOAD<i></i></a>
                 </div>
-                <div class="col single">
-                    <div class="hosts">
+                <div class="col action">&nbsp;</div>
+            </header>
+            <main>
+                <div class="row" v-for="server in filteredServers" :key="server.gateway" @click="toggleDetailsRow">
+                    <div class="col server">
                         <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
                         <ul class="hosts-list">
                             <li v-for="(host, protocol) in server.hostnames" :key="protocol">
@@ -95,40 +72,62 @@
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        {{ server.country }}, {{ server.city }}
+                    <div class="col country">
+                        <div class="location__data">
+                            <img :src="'/images-static/flags/' + server.country_code.toLowerCase() + '.svg'" :alt="server.country_code.toUpperCase()">
+                            <span> {{ server.country }} </span>
+                        </div>
                     </div>
-                    <div>
-                        {{ server.isp }}, Load: {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
+                    <div class="col city">
+                        <div class="location__data">
+                            <span> {{ server.city }} </span>
+                        </div>
+                    </div>
+                    <div class="col provider">
+                        {{ server.isp }}
+                    </div>
+                    <div class="col load">
+                        {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
+                    </div>
+                    <div class="col single">
+                        <div class="hosts">
+                            <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
+                            <ul class="hosts-list">
+                                <li v-for="(host, protocol) in server.hostnames" :key="protocol">
+                                    {{ host }}
+                                    <span class="badge badge--light spacing">{{ protocol }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            {{ server.country }}, {{ server.city }}
+                        </div>
+                        <div>
+                            {{ server.isp }}, Load: {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
+                        </div>
+                    </div>
+                    <div class="col action">
+                        <a class="action-button" @click="toggleDetails">
+                            <img src="/images-static/arrow-blue.svg">
+                        </a>
+                    </div>
+                    <div class="col details">
+                        <div>
+                            <em>Public Key</em>
+                            {{ server.wg_public_key || "N/A" }}
+                        </div>
+                        <div>
+                            <em>MultiHop Port</em>
+                            {{ server.multihop_port || "N/A" }}
+                        </div>
+                        <div>
+                            <em>Socks5</em>
+                            {{ renderSocks5(server) }}
+                        </div>
                     </div>
                 </div>
-                <div class="col action">
-                    <a class="action-button" @click="toggleDetails">
-                        <img src="/images-static/arrow-blue.svg">
-                    </a>
-                </div>
-                <div class="col details">
-                    <div>
-                        <em>Public Key</em>
-                        {{ server.wg_public_key || "N/A" }}
-                    </div>
-                    <div>
-                        <em>MultiHop Port</em>
-                        {{ server.multihop_port || "N/A" }}
-                    </div>
-                    <div>
-                        <em>Socks5</em>
-                        {{ renderSocks5(server) }}
-                    </div>
-                    <!-- <div>
-                        <em>
-                            <span class="port-speed-label">Port Speed</span>/<span class="port-speed-label">Configured Speed</span>
-                        </em>
-                        <span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[0] }}</span>/<span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[1] }}</span>
-                    </div> -->
-                </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
 </template>
 

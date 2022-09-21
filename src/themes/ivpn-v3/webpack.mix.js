@@ -20,7 +20,7 @@ mix.env(process.env.ENV_FILE);
 mix.webpackConfig({
     resolve: {
         alias: {
-            vue$: 'vue/dist/vue.common.js',
+            // vue$: 'vue/dist/vue.common.js',
             'lunr': 'lunr/lunr.min.js',
             '@': path.resolve('assets/js'),
             'scss': path.resolve('assets/scss'),
