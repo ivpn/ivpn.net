@@ -12,6 +12,8 @@
     "copy:manifest": "cp static/mix-manifest.json data/manifest.json"
   },
   "devDependencies": {
+    "@vue/compat": "^3.2.39",
+    "@vue/compiler-sfc": "^3.2.39",
     "braintree-web": "^3.88.1",
     "cross-env": "^7.0.2",
     "date-fns": "^2.29.3",
@@ -31,11 +33,9 @@
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
     "vue": "^3.2.39",
-    "@vue/compat": "^3.2.39",
     "vue-loader": "^17.0.0",
     "vue-router": "^4.1.5",
-    "vue-select": "^3.20.0",
-    "@vue/compiler-sfc": "^3.2.39",
+    "vue-select": "^4.0.0-beta.5",
     "vuex": "^4.0.2",
     "yarn-upgrade-all": "^0.7.1"
   },

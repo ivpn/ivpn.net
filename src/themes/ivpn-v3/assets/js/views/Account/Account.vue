@@ -124,7 +124,7 @@ export default {
 @import "@/styles/icons.scss";
 @import "@/styles/buttons.scss";
 @import "@/styles/base.scss";
-@import "vue-select/src/scss/vue-select.scss";
+// @import "vue-select/src/scss/vue-select.scss";
 
 .greetings {
     padding: 25px 25px 25px 25px;
