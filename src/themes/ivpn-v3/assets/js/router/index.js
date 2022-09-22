@@ -16,6 +16,9 @@ import WireguardView from '@/views/Account/Wireguard.vue'
 import WireguardConfigView from '@/views/Account/WireguardConfig.vue'
 import PortForwardingView from '@/views/Account/PortForwarding.vue'
 import Settings from '@/views/Account/Settings.vue'
+import SettingsAuthentication from '@/views/Account/Settings/Authentication.vue'
+import SettingsBilling from '@/views/Account/Settings/Billing.vue'
+import SettingsDelete from '@/views/Account/Settings/Delete.vue'
 import LoginView from '@/views/Login.vue'
 import NotFoundView from '@/views/404.vue'
 
@@ -146,22 +149,25 @@ const routes = [
         component: Settings,
         children: [
             {
-                path: '', name: 'settings-main',
-                component: () => import('@/views/Account/Settings/Authentication.vue'),
+                path: '',
+                name: 'settings-main',
+                component: SettingsAuthentication,
                 meta: {
                     title: 'Account settings - Authentication',
                 }
             },
             {
-                path: 'billing', name: 'settings-billing',
-                component: () => import('@/views/Account/Settings/Billing.vue'),
+                path: 'billing',
+                name: 'settings-billing',
+                component: SettingsBilling,
                 meta: {
                     title: 'Account settings - Billing',
                 }
             },
             {
-                path: 'delete', name: 'settings-delete',
-                component: () => import('@/views/Account/Settings/Delete.vue'),
+                path: 'delete',
+                name: 'settings-delete',
+                component: SettingsDelete,
                 meta: {
                     title: 'Account settings - Delete account',
                 }
