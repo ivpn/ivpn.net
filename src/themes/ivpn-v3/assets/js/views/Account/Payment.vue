@@ -36,7 +36,7 @@ export default {
 @import "@/styles/_vars.scss";
 @import "@/styles/icons.scss";
 @import "@/styles/buttons.scss";
-@import "vue-select/src/scss/vue-select.scss";
+// @import "vue-select/src/scss/vue-select.scss";
 @import "@/styles/base.scss";
 
 .payment-page {
