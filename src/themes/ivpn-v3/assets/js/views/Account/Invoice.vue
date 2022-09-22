@@ -11,10 +11,10 @@
                     <b>Invoice #{{ payment.ref_id }}</b>
                 </div>
                 <div>
-                    <b>Invoice Date:</b> {{ payment.date | formatPaymentDate }}
+                    <b>Invoice Date:</b> {{ $filters.formatPaymentDate(payment.date) }}
                 </div>
                 <div v-if="payment.is_successful">
-                    <b>Paid:</b> {{ payment.date | formatPaymentDate }}
+                    <b>Paid:</b> {{ $filters.formatPaymentDate(payment.date) }}
                 </div>
             </div>
             <div class="sides">

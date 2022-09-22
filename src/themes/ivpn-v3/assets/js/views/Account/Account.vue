@@ -59,7 +59,7 @@
                             <label v-if="account.is_active">Paid Until</label>
                             <label v-else>Was Active Until</label>
                             <div class="value">
-                                {{ account.active_until | formatActiveUntil }}
+                                {{ $filters.formatActiveUntil(account.active_until) }}
                             </div>
                         </div>
                         <div
