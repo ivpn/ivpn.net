@@ -22,6 +22,14 @@ import SettingsDelete from '@/views/Account/Settings/Delete.vue'
 import LoginView from '@/views/Login.vue'
 import NotFoundView from '@/views/404.vue'
 
+import PasswordResetView from '@/views/PasswordReset.vue'
+import PasswordResetCommitView from '@/views/PasswordResetCommit.vue'
+import ThankYouBTCView from '@/views/Account/ThankYouBTC.vue'
+import ThankYouView from '@/views/Account/ThankYou.vue'
+import InvoiceView from '@/views/Account/Invoice.vue'
+import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
+import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
+
 import InternalErrorView from '../views/500.vue'
 
 import store from '@/store'
@@ -69,7 +77,7 @@ const routes = [
     {
         path: '/recover/password',
         name: 'recover-password',
-        component: () => import('@/views/PasswordReset.vue'),
+        component: PasswordResetView,
         meta: {
             title: 'Recover Password',
         },
@@ -78,7 +86,7 @@ const routes = [
     {
         path: '/recover/password/:token',
         name: 'recover-password-commit',
-        component: () => import('@/views/PasswordResetCommit.vue'),
+        component: PasswordResetCommitView,
         meta: {
             title: 'Recover Password',
         },
@@ -116,7 +124,7 @@ const routes = [
     {
         path: '/account/payment/btc/thank-you',
         name: 'btc-thank-you',
-        component: () => import('@/views/Account/ThankYouBTC.vue'),
+        component: ThankYouBTCView,
         meta: {
             title: 'IVPN Account - Thank You',
         }
@@ -124,7 +132,7 @@ const routes = [
     {
         path: '/account/payment/:refid/received',
         name: 'payment-received',
-        component: () => import('@/views/Account/ThankYou.vue'),
+        component: ThankYouView,
         meta: {
             title: 'IVPN Account - Payment has been received',
         }
@@ -132,7 +140,7 @@ const routes = [
     {
         path: '/account/payment/:refid/invoice',
         name: 'payment-invoice',
-        component: () => import('@/views/Account/Invoice.vue'),
+        component: InvoiceView,
         meta: {
             title: 'IVPN Account - Invoice for payment',
         }
@@ -211,13 +219,13 @@ const routes = [
                 }
             }, {
                 path: 'applepay', name: 'add-funds-apple',
-                component: () => import('@/views/Account/AddFunds/ApplePay.vue'),
+                component: ApplePayView,
                 meta: {
                     title: 'IVPN Add Funds - ApplePay',
                 }
             }, {
                 path: 'googlepay', name: 'add-funds-google',
-                component: () => import('@/views/Account/AddFunds/GooglePay.vue'),
+                component: GooglePayView,
                 meta: {
                     title: 'IVPN Add Funds - GooglePay',
                 }
