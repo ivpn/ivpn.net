@@ -43,6 +43,7 @@
 <script>
 import vSelect from "vue-select";
 import VueSelectCaret from "@/components/VueSelectCaret.vue";
+import "vue-select/dist/vue-select.css";
 
 vSelect.props.components.default = () => ({
     OpenIndicator: VueSelectCaret,
