@@ -7,7 +7,7 @@
             <p style="margin-bottom: 32px">
                 Your account has been extended to
                 <b style="white-space: nowrap">{{
-                    $filter.formatPaymentDate(account.active_until)
+                    $filters.formatPaymentDate(account.active_until)
                 }}</b
                 >. You can review your payment details and details about your
                 selected plan on the account page.
