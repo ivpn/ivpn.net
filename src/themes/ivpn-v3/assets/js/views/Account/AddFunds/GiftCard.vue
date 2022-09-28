@@ -70,7 +70,7 @@ export default {
                 type: "success",
                 message:
                     `Gift card applied successfully. Service is extended until ` +
-                    this.$options.filters.formatDate(
+                    this.$filters.formatDate(
                         this.account.active_until
                     )
             });

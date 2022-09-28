@@ -36,7 +36,7 @@
                         <div class="label" v-else>Will be active until:</div>
 
                         <div class="value">
-                            {{ activeUntilStandard | formatActiveUntil}}
+                            {{ $filters.formatActiveUntil(activeUntilStandard) }}
                             <sup
                                 v-if="account.product.name != 'IVPN Standard'"
                             >*</sup>
@@ -67,7 +67,7 @@
                         <div class="label" v-else>Will be active until:</div>
 
                         <div class="value">
-                            {{ activeUntilPro | formatActiveUntil}}
+                            {{ $filters.formatActiveUntil(activeUntilPro) }}
                             <sup
                                 v-if="account.product.name != 'IVPN Pro'"
                             >*</sup>

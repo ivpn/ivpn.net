@@ -28,9 +28,9 @@
                     <div v-if="recentPayment">
                         <p class="highlight">Payment received:</p>
                         <div>
-                            {{ recentPayment.date | formatDate }},
+                            {{ $filters.formatDate(recentPayment.date) }},
                             {{ recentPayment.product }}, extended until
-                            {{ recentPayment.applied_to | formatActiveUntil }}
+                            {{ $filters.formatActiveUntil(recentPayment.applied_to) }}
                         </div>
                     </div>
                     <div v-else>

@@ -14,10 +14,7 @@
 </template>
 
 <script>
-
-
 import progressSpinner from "@/components/ProgressSpinner.vue";
-
 import { mapState } from "vuex";
 
 export default {
@@ -31,7 +28,6 @@ export default {
     components: {
         progressSpinner,
     },
-
     computed: {
         ...mapState({            
             error: (state) => state.account.error,
@@ -74,3 +70,8 @@ export default {
 };
 </script>
     
+<style lang="scss" scoped>
+.btn {
+    margin: 0 5px;
+}
+</style>

@@ -23,7 +23,7 @@
 
         <p
             style="margin-top: 2em;"
-        >New billing cycle will be applied at the end of the current billing period ({{ account.active_until | formatPaymentDate }}).</p>
+        >New billing cycle will be applied at the end of the current billing period ({{ $filters.formatPaymentDate(account.active_until) }}).</p>
 
         <div class="popup-buttons">
             <button

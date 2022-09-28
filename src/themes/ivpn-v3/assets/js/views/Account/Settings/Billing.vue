@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="key" v-if="account.is_active">Paid until</div>
                     <div class="key" v-else>Was Active until</div>
-                    <div class="value">{{ account.active_until | formatPaymentDate }}</div>
+                    <div class="value">{{ $filters.formatPaymentDate(account.active_until) }}</div>
                     <div class="action"></div>
                 </div>
                 <div
@@ -53,7 +53,7 @@
                     <div class="key">Last payment</div>
                     <div
                         class="value"
-                    >{{ account.subscription.last_payment.date | formatDate }} | ${{ account.subscription.last_payment.amount }}</div>
+                    >{{ $filters.formatDate(account.subscription.last_payment.date) }} | ${{ account.subscription.last_payment.amount }}</div>
                     <div class="action">
                         <!-- <button class='btn btn-icon' @click.prevent="downloadReceipt()"><download-icon /></button> -->
                     </div>
@@ -68,7 +68,7 @@
                             <p v-if="error" style="color: red;" v-html="error.message"></p>
                             <p>
                                 Automatic recurring payment failed on
-                                <b>{{ account.subscription.last_payment.date | formatDate }}</b>
+                                <b>{{ $filters.formatDate(account.subscription.last_payment.date) }}</b>
                                 (${{account.subscription.last_payment.amount}})
                             </p>
                             <p>Please check or update your payment method and try again.</p>
