@@ -115,7 +115,7 @@
                 &.details {
                     width: 100%;
                     display: none;
-                    flex-direction: row;
+                    flex-direction: column;
                     padding-top: 20px;
                     padding-bottom: 20px;
                     pointer-events: all;
@@ -146,10 +146,10 @@
                     }
 
                     em {
-                        display: block;
+                        display: inline-block;
                         font-size: 13px;
                         font-style: normal;
-                        margin-bottom: 8px;
+                        margin-bottom: 12px;
 
                         @include light-theme((
                             color: rgba(34, 34, 38, 0.5)

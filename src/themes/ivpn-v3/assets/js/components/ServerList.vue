@@ -113,15 +113,35 @@
                     </div>
                     <div class="col details">
                         <div>
-                            <em>Public Key</em>
+                            <em>WireGuard Public Key:</em>
                             {{ server.wg_public_key || "N/A" }}
                         </div>
                         <div>
-                            <em>MultiHop Port</em>
+                            <em>MultiHop Port:</em>
                             {{ server.multihop_port || "N/A" }}
                         </div>
+                        <div v-if="config.ports">
+                            <em>OBFS 3 SingleHop Port:</em>
+                            {{ config.ports.obfs3.port || "N/A" }}
+                        </div>
+                        <div v-if="server.obfs">
+                            <em>OBFS 3 MultiHop Port:</em>
+                            {{ server.obfs.obfs3_multihop_port || "N/A" }}
+                        </div>
+                        <div v-if="config.ports">
+                            <em>OBFS 4 SingleHop Port:</em>
+                            {{ config.ports.obfs4.port || "N/A" }}
+                        </div>
+                        <div v-if="server.obfs">
+                            <em>OBFS 4 MultiHop Port:</em>
+                            {{ server.obfs.obfs4_multihop_port || "N/A" }}
+                        </div>
+                        <div v-if="server.obfs">
+                            <em>OBFS 4 Public Key:</em>
+                            {{ server.obfs.obfs4_key || "N/A" }}
+                        </div>
                         <div>
-                            <em>Socks5</em>
+                            <em>Socks5:</em>
                             {{ renderSocks5(server) }}
                         </div>
                     </div>
@@ -138,6 +158,7 @@ export default {
     data() {
         return {
             servers: [],
+            config: {},
             sortedServers: [],
             filteredServers: [],
             countries: [],
@@ -155,6 +176,7 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.gateway === v.gateway)) === i);
+                this.config = resp.config;
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
                 this.cities = [...new Set(resp.servers.map(server => server.city))].filter(String).sort();
                 this.providers = [...new Set(resp.servers.map(server => server.isp))].filter(String).sort();
