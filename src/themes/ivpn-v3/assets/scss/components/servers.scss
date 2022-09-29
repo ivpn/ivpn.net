@@ -129,12 +129,7 @@
                     }
 
                     div {
-                        margin-right: 30px;
                         word-break: break-all;
-
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
 
                         @include max-width('medium-large') {
                             margin-bottom: 15px;
