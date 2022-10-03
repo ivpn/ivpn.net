@@ -10,7 +10,7 @@ WORKDIR /opt/build
 # Install nodejs, yarn and hugo
 RUN apt-get update  \
     && apt-get install -y gnupg gnupg2 gnupg1 \
-    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
     && apt-get install -y nodejs \
     && apt-get update \
     && npm install --global yarn \
@@ -19,7 +19,7 @@ RUN apt-get update  \
     && rm /tmp/hugo.deb
 
 COPY ./src/themes/ivpn-v3/package.json ./src/themes/ivpn-v3/yarn.lock ./src/themes/ivpn-v3/
-RUN yarn --cwd ./src/themes/ivpn-v3/ --pure-lockfile
+RUN yarn --cwd ./src/themes/ivpn-v3/
 
 COPY ./src ./src
 RUN echo "MIX_APP_WEBAPI_URL=${BASE_URL}\nMIX_APP_API_URL=${API_URL}\nMIX_APP_PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}\n" > ./src/themes/ivpn-v3/.env

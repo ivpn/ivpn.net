@@ -93,7 +93,7 @@ export default {
                     type: "success",
                     message:
                         `Your payment was successful. Service is extended until ` +
-                        this.$options.filters.formatDate(account.active_until)
+                        this.$filters.formatDate(account.active_until)
                 });
                 this.$router.push({ name: "account" });
             } catch (error) {

@@ -155,7 +155,11 @@ export default {
 @import "@/styles/base.scss";
 
 .radio-section {    
-    line-height: 36px; 
+    line-height: 36px;
+
+    input[type=radio] {
+        margin-right: 12px;
+    }
 }
 
 .key {

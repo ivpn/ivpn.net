@@ -55,7 +55,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/styles/_vars.scss";
 @import "@/styles/base.scss";
 
@@ -72,7 +72,8 @@ label {
     display: inline-block;
 }
 
-.price-box {
+.price-box,
+.app-content .price-box {
     top: 0px;
     flex-grow: 1;
     display: flex;
@@ -94,9 +95,11 @@ label {
         background: $dark
     ));
 
-    li {
-        &:before {
-            display: none;
+    ul {
+        li {
+            &:before {
+                display: none;
+            }
         }
     }
 }
