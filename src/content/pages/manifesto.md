@@ -2,7 +2,7 @@
 title: Manifesto
 url: /manifesto/
 ---
-# For a future free from surveillance
+# Resist Online Surveillance
 
 The 21st century has been profoundly shaped by the silent infrastructure of the surveillance economy, which sweeps up every last crumb of data our daily lives leave behind. These data points are collected and pieced together to create individual profiles of us. Profiles that can be leased to advertisers hungry for our attention, shared with governments for investigative purposes, and sold on to shady data brokers.
 
