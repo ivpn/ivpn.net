@@ -58,8 +58,17 @@
             >
                 <div class="cash-icon"></div>
                 Cash
-            </router-link>            
+            </router-link>
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'add-funds-giftcard', params: { price: price.id } }"
+            >
+                <div class="giftcard-icon"></div>
+                Gift Code
+            </router-link>
         </div>
+        <!--
         <div class="pay-buttons">
             <div class="more-methods">
                 <a @click.prevent="toggleMoreOptions()" v-if="!more" href='#'
@@ -68,19 +77,9 @@
                 <a @click.prevent="toggleMoreOptions()" v-else href='#'
                     >Hide additional payment options</a
                 >
-            </div>        
-            <router-link v-if="more"
-                tag="button"
-                class="btn btn-solid pay-button"
-                :to="{
-                    name: 'add-funds-giftcard',
-                    params: { price: price.id },
-                }"
-            >
-                <div class="giftcard-icon"></div>
-                Gift Code
-            </router-link>    
+            </div>  
         </div>
+        -->
     </div>
 </template>
 
