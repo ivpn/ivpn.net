@@ -2,7 +2,7 @@
     <div>
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <form @submit.prevent="submit()">            
-            <label for="gift-card-code">Code from a Gift Card issued by IVPN:</label>
+            <label for="gift-card-code">Code from a Voucher issued by IVPN:</label>
                 <input
                     id='gift-card-code'
                     type="text"
@@ -69,7 +69,7 @@ export default {
             this.$store.commit("setFlashMessage", {
                 type: "success",
                 message:
-                    `Gift card applied successfully. Service is extended until ` +
+                    "Voucher applied successfully. Service is extended until " +
                     this.$filters.formatDate(
                         this.account.active_until
                     )
