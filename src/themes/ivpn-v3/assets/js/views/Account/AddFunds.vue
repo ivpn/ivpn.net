@@ -9,7 +9,7 @@
             </router-link>
         </div>
         <h1>{{ title }}</h1>
-        <ul class="payment-details" v-if="$route.name != 'add-funds-giftcard'">
+        <ul class="payment-details" v-if="$route.name != 'add-funds-voucher'">
             <li>{{ account.product.name }}</li>
             <li>{{ price.name }}</li>
             <li>${{ price.price }}</li>
@@ -43,7 +43,7 @@ export default {
             "add-funds-paypal": "Add time with PayPal",
             "add-funds-apple": "Add time with ApplePay",
             "add-funds-google": "Add time with GooglePay",
-            "add-funds-giftcard": "Add time with a Gift Card",            
+            "add-funds-voucher": "Add time with a Voucher",            
         };
 
         this.title = title[this.$route.name];
