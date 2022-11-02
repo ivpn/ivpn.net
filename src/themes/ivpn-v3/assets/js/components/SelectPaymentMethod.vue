@@ -62,10 +62,7 @@
         </div>
         <div>
             Have a voucher code?
-            <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">
-                Redeem it here
-            </router-link>
-            .
+            <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">Redeem it here</router-link>.
         </div>
         <!--
         <div class="pay-buttons">
