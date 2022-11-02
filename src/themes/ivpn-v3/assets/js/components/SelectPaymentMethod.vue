@@ -63,8 +63,9 @@
         <div>
             Have a voucher code?
             <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">
-                Redeem it here.
+                Redeem it here
             </router-link>
+            .
         </div>
         <!--
         <div class="pay-buttons">
@@ -168,6 +169,7 @@ export default {
 }
 .pay-buttons {
     margin-top: 12px;
+    margin-bottom: 32px;
     .pay-button {
         width: 220px;
         line-height: 28px;
