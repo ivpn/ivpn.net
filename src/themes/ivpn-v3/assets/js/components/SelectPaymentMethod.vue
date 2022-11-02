@@ -59,13 +59,11 @@
                 <div class="cash-icon"></div>
                 Cash
             </router-link>
-            <router-link
-                tag="button"
-                class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-voucher', params: { price: price.id } }"
-            >
-                <div class="giftcard-icon"></div>
-                Voucher
+        </div>
+        <div>
+            Have a voucher code?
+            <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">
+                Redeem it here.
             </router-link>
         </div>
         <!--
