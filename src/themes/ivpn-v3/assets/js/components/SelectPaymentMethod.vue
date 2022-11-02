@@ -62,10 +62,10 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-giftcard', params: { price: price.id } }"
+                :to="{ name: 'add-funds-voucher', params: { price: price.id } }"
             >
                 <div class="giftcard-icon"></div>
-                Gift Code
+                Voucher
             </router-link>
         </div>
         <!--
