@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2022-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2022-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-FirstFT: Kwarteng in defence mode
-Plus, Opec+ plans to slash oil output to prop up prices and what to do about bullies at work
+Art Basel/UBS art market report predicts an all-time high in 2022
+Despite a slowdown in the global economy, art spending is headed for record levels
 
-China’s Communist party congress
-Chinese president Xi Jinping is poised to win a third term as head of the party and military
+Italy’s leader looks to mend EU fences in visit to Brussels
+Giorgia Meloni has toned down her anti-EU rhetoric since becoming prime minister
 
-The best of TV and streaming this week
-An award-winning chef takes on a debt-ridden Chicago diner in exhilarating new series ‘The Bear’; Jeff Bridges and John Lithgow are stellar leads in CIA/FBI thriller ‘The Old Man’; Michael Winterbottom’s pandemic drama ‘This England’ turns the former prime minister Boris Johnson into a tragic theatrical hero — and more. Reviews by Dan Einav
+Canada orders Chinese companies to divest stake in lithium mines
+Ottawa says it will ‘act decisively when investments threaten our national security’
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmM6bI4ACgkQisFrnrZH
-umlw5AgAq/XqJUyRMOZIG8qkAoBUxzRGoG1zgWLpvnqkmB0cBlIOU43wBOZ46r32
-FMFiZbFYtL+G/bTjRCeHG9oIWGMCrOBae6n+AM6gv3VpqxBzdEujE81TIC5bCO2I
-g0zLedyPb1TH/5DXQEVFfYzUHAkSxEVeo7lQWzMuuZ8bcPIhVXxy4/uPT7Kus0Wh
-kC/7pkfHuOe4OaBUK10AlBMUQbeJPZbiZdo9z3KN5ZlzoTEUAyroMUUxeLuvdBfg
-KJMaaxHJ+6wCw5ngpwHp4V5Xo6TUWruSMmb75Md4fgqDvRGlmg7Dd6NxthpnxXy+
-6+8cywBuG9Lyv/1SjgQz2fu+P83gQg==
-=JuRk
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmNjWR4ACgkQisFrnrZH
+umk+lAgAmmD41GLKsk/XAYo4WqU+9AdZyOZ6ber7MXSRMRD71Z6VU8x96X5izSyZ
+KWg2valnyV4r0HQ5DWaR3COr9BBKSKcoxjb2r7XCZH2oQ4qPLdcwXS2Q36c5mrdi
+fq5Mr4vZIYU28ItlosFe2fUJFWh7DFLtnTXQHtXSVD/RFIBP9bwZLXn19pEdPbrj
+8E7jLA0WM3c1nWTHtcg4rXCMO4qkvKppsJjhxX9pO2WvBFOKHmVJmBxK+BvNB+8W
+3V/9NEo51ojneUstB5nHCJB2bKwHXW0EKqjUUByQzl9Zg4zpvs4AVoIRND8ZuOvs
+0dQ8OEtMmejxGNvQdeAZ+DC88E4s2A==
+=Nl+s
 -----END PGP SIGNATURE-----
 
 
