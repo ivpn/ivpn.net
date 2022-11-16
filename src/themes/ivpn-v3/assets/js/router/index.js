@@ -212,10 +212,10 @@ const routes = [
                     title: 'IVPN Add Funds - Monero',
                 }
             }, {
-                path: 'giftcard', name: 'add-funds-giftcard',
+                path: 'voucher', name: 'add-funds-voucher',
                 component: AddFundsGiftCard,
                 meta: {
-                    title: 'IVPN Add Funds - Gift Card',
+                    title: 'IVPN Add Funds - Voucher',
                 }
             }, {
                 path: 'applepay', name: 'add-funds-apple',
