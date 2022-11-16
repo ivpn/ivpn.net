@@ -7,7 +7,7 @@
         </div>
 
         <h1>Change Product</h1>
-        <p>Changing product can be done at any time. If your account is active, changing product will change the amount of time left on your account.</p>
+        <p>You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.</p>
         <p v-if="error" class="error">
             <b>Error:</b>
             {{ error.message }}
@@ -77,8 +77,7 @@
             </price-box>
         </div>
         <p>
-            <sup style="color:red" v-if="account.is_active">*</sup> This date is calculated based on the time left on your account and price difference between products.
-            No additional payments is required. You can change products as often as you need.
+            <sup style="color:red" v-if="account.is_active">*</sup> This date is calculated based on the current time left on your account, and the price difference between product types. Long-term discounts are not applicable. No additional payment is required.
         </p>
     </div>
 </template>
