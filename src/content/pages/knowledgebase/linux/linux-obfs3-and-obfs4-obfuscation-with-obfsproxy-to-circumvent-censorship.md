@@ -85,7 +85,7 @@ Our IVPN Linux client includes obfsproxy support. Check it out <a href="/apps-li
 
 1. **OBFS4 Only** - Create a  `socks5_auth` file:
 
-    This file contains the VPN server's public key/certificate and the Inter-Arrival Timing (IAT) mode (elapsed time after receipt of a packet until the next packat arrives).
+    This file contains the VPN server's public key/certificate and the Inter-Arrival Timing (IAT) mode (elapsed time after receipt of a packet until the next packet arrives).
 
     **cert=...;** use the `OBFS 4 Public Key` from the [server status page](https://www.ivpn.net/status) for the server your traffic exits from.  A semi-colon at end of line is required.
 
