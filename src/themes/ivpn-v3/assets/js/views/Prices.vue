@@ -40,6 +40,7 @@
                 </div>
             </price-box>
         </div>
+        <p>All prices are in U.S. dollars.</p>
         <p>Review pricing for business or nonprofit teams <a href="/pricing-teams/">here</a>.</p>
         <section>
             <h2>All IVPN plans include:</h2>
@@ -58,6 +59,7 @@
                 <li>Credit Card</li>
                 <li>PayPal</li>
                 <li>Bitcoin</li>
+                <li>Bitcoin Lightning</li>
                 <li>Monero</li>
                 <li>Cash</li>
             </ul>
