@@ -1,6 +1,8 @@
 table {
     width: 100%;
     margin-bottom: 24px;
+    overflow-x: auto;
+    display: block;
 
     th {
         padding: 20px;
