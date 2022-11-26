@@ -7,13 +7,13 @@
                 {{ if or .linkedin .github }}
                 <span>
                     {{ if .linkedin }}
-                    <a href="{{ .linkedin }}" target="_blank">
+                    <a href="{{ .linkedin }}" rel="noopener" target="_blank">
                         <img class="features__image--light" src="{{ site.Params.cdnUrl }}/images/icon-linkedin-light.svg" alt="LinkedIn">
                         <img class="features__image--dark" src="{{ site.Params.cdnUrl }}/images/icon-linkedin-dark.svg" alt="LinkedIn">
                     </a>
                     {{ end }}
                     {{ if .github }}
-                    <a href="{{ .github }}" target="_blank">
+                    <a href="{{ .github }}" rel="noopener" target="_blank">
                         <img class="features__image--light" src="{{ site.Params.cdnUrl }}/images/icon-github-light.svg" alt="GitHub">
                         <img class="features__image--dark" src="{{ site.Params.cdnUrl }}/images/icon-github-dark.svg" alt="GitHub">
                     </a>
