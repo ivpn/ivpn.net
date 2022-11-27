@@ -5,6 +5,7 @@
 * [Security Policy](#security)
 * [License](#license)
 * [Authors](#authors)
+* [Installation Guide](#installation)
 
 <a name="about-repo"></a>
 ## About this Repo
