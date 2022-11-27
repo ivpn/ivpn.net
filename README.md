@@ -35,11 +35,11 @@ See the [Authors](/AUTHORS) file for the list of contributors who participated i
 <a name="installation"></a>
 ## Installation Guide
 
-> This is a installation summary for running IVPN's static website locally.
+> This is an installation summary for running IVPN's static website locally.
 
 **Windows:**
 
-1. Install [Windows Subystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)
+1. Install [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)
 2. Upgrade [WSL to WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
 3. Change the Default Version of WSL to WSL 2
 
