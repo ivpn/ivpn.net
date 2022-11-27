@@ -35,7 +35,7 @@ See the [Authors](/AUTHORS) file for the list of contributors who participated i
 <a name="installation"></a>
 ## Installation Guide
 
-> This is a installation summary for running IVPN's static website locally on your system.
+> This is a installation summary for running IVPN's static website locally.
 
 **Windows:**
 
