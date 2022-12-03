@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2022-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2022-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-Art Basel/UBS art market report predicts an all-time high in 2022
-Despite a slowdown in the global economy, art spending is headed for record levels
+Fast fashion: easy to buy, easier to throw away
+Industry solutions include lab-grown fibres; reduced consumption would have a bigger impact
 
-Italy’s leader looks to mend EU fences in visit to Brussels
-Giorgia Meloni has toned down her anti-EU rhetoric since becoming prime minister
+Winter of discontent
+Britain is seeing a swelling wave of industrial action this winter, from nurses to rail workers — will it face a de facto general strike?
 
-Canada orders Chinese companies to divest stake in lithium mines
-Ottawa says it will ‘act decisively when investments threaten our national security’
+Eleanor Jackson Piel, US civil rights lawyer, 1920-2022
+She made her name as a criminal defence attorney by overturning wrongful convictions
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmNjWR4ACgkQisFrnrZH
-umk+lAgAmmD41GLKsk/XAYo4WqU+9AdZyOZ6ber7MXSRMRD71Z6VU8x96X5izSyZ
-KWg2valnyV4r0HQ5DWaR3COr9BBKSKcoxjb2r7XCZH2oQ4qPLdcwXS2Q36c5mrdi
-fq5Mr4vZIYU28ItlosFe2fUJFWh7DFLtnTXQHtXSVD/RFIBP9bwZLXn19pEdPbrj
-8E7jLA0WM3c1nWTHtcg4rXCMO4qkvKppsJjhxX9pO2WvBFOKHmVJmBxK+BvNB+8W
-3V/9NEo51ojneUstB5nHCJB2bKwHXW0EKqjUUByQzl9Zg4zpvs4AVoIRND8ZuOvs
-0dQ8OEtMmejxGNvQdeAZ+DC88E4s2A==
-=Nl+s
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmOK5h4ACgkQisFrnrZH
+umkzPQgAqonVVItjqlgaRFNRi5i5E3nUQGaE3wn2HSeSsNjbi3PvkEgVo9vzJMDr
+UlH4Xem1RWGy0fOIvPUYfqUPNO9WTDYFuBcEOGDvyCYSW2z+Q7Sqbf9p+9BQMLUt
+oEWMK3HII1ejzT1PqpAcXB7wtlHGHY/5nOwCaAgUybKHA7TSSOWlVla9KEWe5g/y
+YaQOmF10WUVMXN/0R/TKpzdndnLH9Z60LcFq/sxp9VrCxj6CJhwSZAjI3kraqgys
+3SaRoP0EazP2q+euqrBuegFOULUQUDmlkuHqWV2X9q7pbZjtNrLGGYll9xlRrRC4
+UrRMn78CONaz2OYTgNN1qktseJYXjg==
+=ROh8
 -----END PGP SIGNATURE-----
 
 
