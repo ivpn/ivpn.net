@@ -17,7 +17,7 @@
                     <ul>
                         <li>All protocols</li>
                         <li>2 devices</li>
-                        <li>Anti-tracker</li>
+                        <li>AntiTracker</li>
                     </ul>
                 </div>
             </price-box>
@@ -33,7 +33,7 @@
                     <ul>
                         <li>All protocols</li>
                         <li>7 devices</li>
-                        <li>Anti-tracker</li>
+                        <li>AntiTracker</li>
                         <li>Port forwarding</li>
                         <li>Multi-hop</li>
                     </ul>
