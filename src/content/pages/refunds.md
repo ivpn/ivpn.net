@@ -8,19 +8,19 @@ IVPN strives to meet the expectations of all new users and offers unlimited supp
 
 If you are unsatisfied for any reason, you can request **a full refund within 30 days** of your service being activated.
 
-Below is the information that needs to be <a href="mailto:support@ivpn.net">emailed</a> to us or submitted via live chat for each payment method:
+Below is the information you need to <a href="mailto:support@ivpn.net">email</a>, or submit via live chat to us for each payment method:
 
 <h2>Credit Card</h2>
 
 - Your IVPN Account safe reference (XXXXXXXX) or the IVPN Account ID (i-XXXX-XXXX-XXXX / ivpnXXXXXXXX).
 
-If you do not remember what your account details are, provide us with the first 6 digits of the card number, the last 4 digits of the card number, the date of the payment, and the amount paid.
+If you do not remember your account details, provide us with the first 6 digits of the card number, the last 4 digits of the card number, the date of the payment, and the amount paid.
 
 <h2>PayPal</h2>
 
 - Your IVPN Account safe reference (XXXXXXXX) or the IVPN Account ID (i-XXXX-XXXX-XXXX / ivpnXXXXXXXX).
 
-If you do not remember what your account details are, provide us with your PayPal account email address and the transaction ID associated with the purchase.
+If you do not remember your account details, provide us with your PayPal account email address and the transaction ID associated with the purchase.
 
 <h2>Bitcoin and Monero</h2>
 
@@ -28,7 +28,7 @@ If you do not remember what your account details are, provide us with your PayPa
 
 - Your Bitcoin / Monero wallet address to receive the refund.
 
-If you do not remember what your account details are, provide us with the transaction ID for your Bitcoin or Monero payment, the payment date, and the amount paid.
+If you do not remember your account details, provide us with the transaction ID for your Bitcoin or Monero payment, the payment date, and the amount paid.
 
 <h2>Android In-App Purchase</h2>
 
