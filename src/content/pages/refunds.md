@@ -4,9 +4,9 @@ url: /refunds/
 ---
 # Refunds
 
-IVPN strives to meet the expectations of all new users and offers unlimited support to help users with any problems they may face. 
+IVPN strives to meet the expectations of all users and offers unlimited support to help users with any problems they may face. 
 
-If you are unsatisfied for any reason, you can request **a full refund within 30 days** of your service being activated.
+If you are unsatisfied for any reason, you can request **a full refund within 30 days** of your payment.
 
 Below is the information you need to <a href="mailto:support@ivpn.net">email</a>, or submit via live chat to us for each payment method:
 
