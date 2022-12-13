@@ -1,8 +1,8 @@
 ---
-title: IVPN Refund Policy
+title: IVPN Refund Policy and Process
 url: /refunds/
 ---
-# Refund Policy
+# Refunds
 
 IVPN strives to meet the expectations of all new users and offers unlimited support to help users with any problems they may face. 
 
