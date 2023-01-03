@@ -13,29 +13,29 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2022-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 (from https://www.ft.com/news-feed )
 
-Fast fashion: easy to buy, easier to throw away
-Industry solutions include lab-grown fibres; reduced consumption would have a bigger impact
+Time to scrap ‘financing assurances’?
+The policy to safeguard IMF’s resources has become a hot mess
 
-Winter of discontent
-Britain is seeing a swelling wave of industrial action this winter, from nurses to rail workers — will it face a de facto general strike?
+FirstFT: UK faces longest recession in G7, survey shows
+Also in today’s newsletter, more strike chaos on Britain’s railways and the EU offers free Covid vaccines to China
 
-Eleanor Jackson Piel, US civil rights lawyer, 1920-2022
-She made her name as a criminal defence attorney by overturning wrongful convictions
+Money Clinic podcast: Where to invest in 2023
+Four FT investment experts debate the best opportunities for investors in the year ahead
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmOK5h4ACgkQisFrnrZH
-umkzPQgAqonVVItjqlgaRFNRi5i5E3nUQGaE3wn2HSeSsNjbi3PvkEgVo9vzJMDr
-UlH4Xem1RWGy0fOIvPUYfqUPNO9WTDYFuBcEOGDvyCYSW2z+Q7Sqbf9p+9BQMLUt
-oEWMK3HII1ejzT1PqpAcXB7wtlHGHY/5nOwCaAgUybKHA7TSSOWlVla9KEWe5g/y
-YaQOmF10WUVMXN/0R/TKpzdndnLH9Z60LcFq/sxp9VrCxj6CJhwSZAjI3kraqgys
-3SaRoP0EazP2q+euqrBuegFOULUQUDmlkuHqWV2X9q7pbZjtNrLGGYll9xlRrRC4
-UrRMn78CONaz2OYTgNN1qktseJYXjg==
-=ROh8
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmOzxJ4ACgkQisFrnrZH
+ummrJQgAl2PbHtbFrItj+jDweU5EvC8jgApS185O4vk1ND8oALb0JoSCXkwKtrrF
+1Au/vTEurerGkWniIBAU0d3O0319Fla5mED86GbhI0+bQNijMolE7ZKtvAr08P8M
+NkMP0jO0T81r6axKMeMvIgIBTAaXCmytacBgH8AoDCkQuX3eDRw/zidJoJMUrU2O
+1Z6tgfGk3/znzbSgID+BZEOiNG10pEn41FGPfxXYzNoFFXuGede/wv3ZgQOxfc4S
+R1Whkom56SPEDDEcR56QmV2vn4fam11kO04NOUWykFDn3z6EfPU4PfKPzFXL2DQP
+uJdnMcAtklQo/BVr6aLnIYxA19fNsw==
+=+78v
 -----END PGP SIGNATURE-----
 
 
