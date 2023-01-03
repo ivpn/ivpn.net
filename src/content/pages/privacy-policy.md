@@ -58,7 +58,7 @@ When a new account is created, we store the following data: (please note that we
 
 </div>
 
-### What information is logged when making a payment using a credit card, PayPal, Cash or cryptocurrency?
+### What information is logged when making a payment using a credit card, PayPal, Cash, cryptocurrency or voucher code?
 
 When you add time to your account, the following information is stored:
 
@@ -70,7 +70,9 @@ When you add time to your account, the following information is stored:
 
 </div>
 
-Some payment information may be related to your account, for example, if PayPal is used a PayPal transaction ID will be associated with your account, as well as a subscription ID to set up a PayPal subscription. If payment is made using our BTCPay server, then the BTCPay transaction ID will be associated with your account (note that we operate our own BTCPay server). For credit card payments, we use Braintree as our payment processor, and store a Braintree transaction ID against your account. If you elect to enable auto-renew for card payments, a subscription ID will also be stored.
+Some payment information may be related to your account, for example, if PayPal is used a PayPal transaction ID will be associated with your account, as well as a subscription ID to set up a PayPal subscription. If payment is made using our BTCPay server, then the BTCPay transaction ID will be associated with your account (note that we operate our own BTCPay server). If you add time with voucher code, it is stored in our system and associated with your account ID for 30 days after redemption, then deleted. 
+
+For credit card payments, we use Braintree as our payment processor, and store a Braintree transaction ID against your account. If you elect to enable auto-renew for card payments, a subscription ID will also be stored.
 
 This is the data we store for a credit card payment:
 
