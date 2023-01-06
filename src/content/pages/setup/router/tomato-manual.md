@@ -7,7 +7,7 @@ platform: router
 layout: setup-article
 weight: 41
 ---
-## Tomato Setup Guide
+## Tomato OpenVPN Setup Guide
 
 ### Basic Tomato Setup
 
