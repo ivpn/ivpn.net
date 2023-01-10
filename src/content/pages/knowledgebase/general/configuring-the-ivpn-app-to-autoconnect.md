@@ -18,11 +18,12 @@ The basic autoconnect functionality can be enabled in the app’s `Settings` - `
 
 By additionally enabling the `Allow background daemon to manage autoconnect` option, the connection to the VPN server will be established as soon as the IVPN app’s daemon is started:
 
-* Linux: during system boot up 
+* Linux: during system boot up
 * macOS: user is logged into the system
-* Windows: user is logged into the system 
+* Windows: during system boot up (on Cold Startup) or user session is started
  
 This option can also be enabled via the following CLI/terminal command:
 ```
 ivpn autoconnect -on_launch on
 ```
+The same logic is applied when using the Wi-Fi Control feature (Trusted Networks) together with the `Allow background daemon to apply WiFi Control settings` option enabled.
