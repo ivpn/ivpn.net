@@ -63,6 +63,5 @@ Below, is an example of the OpenVPN Multi-hop connection config file with Entry 
 
 ### Obfsproxy (via OpenVPN)
 
-Obfsproxy changes the way the VPN packets look and can offer a way through restrictive networks.  Follow all of the step for OpenVPN above with two changes: choose a TCP port in the configuration generator and add one to the **MultiHop Port** number from the [server status](/status/) page.
-
-For example, to exit in Austria using obfsproxy, use port `25602` (instead of `25601` for standard Multi-hop).
+Check our article on manual Linux connections for details:
+[Linux - OBFS3 and OBFS4 Obfuscation with Obfsproxy to Circumvent Censorship](https://www.ivpn.net/knowledgebase/linux/linux-obfs3-and-obfs4-obfuscation-with-obfsproxy-to-circumvent-censorship/)
