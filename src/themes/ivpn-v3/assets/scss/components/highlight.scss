@@ -6,6 +6,10 @@
     @include dark-theme((
         color: $dark-mode-highlight
     ));
+
+    pre code span {
+        display: inline;
+    }
 }
 
 .bold {
