@@ -60,3 +60,8 @@ To lookup the location codes, open the [server status](/status/) page. Note the 
 Below, is an example of the OpenVPN Multi-hop connection config file with Entry server in Ukraine and Exit server in Austria:
 
 ![](/images-static/uploads/openvpn-multihop.png)
+
+### Obfsproxy (via OpenVPN)
+
+Check our article on manual Linux connections for details:
+[Linux - OBFS3 and OBFS4 Obfuscation with Obfsproxy to Circumvent Censorship](https://www.ivpn.net/knowledgebase/linux/linux-obfs3-and-obfs4-obfuscation-with-obfsproxy-to-circumvent-censorship/)
