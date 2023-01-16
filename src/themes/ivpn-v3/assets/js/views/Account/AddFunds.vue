@@ -89,7 +89,8 @@ export default {
         display: flex;
         padding: 0px;
         font-family: $font-main-mono;
-        font-size: 20px;
+        font-size: 21px;
+        font-weight: bold;
 
         @media (max-width: $brk-mobile) {
             font-size: 12px;
