@@ -22,6 +22,7 @@
                     fill="#FFFFFF"
                 />Add Time
             </button>
+            <p>Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period.</p>
         </form>
     </div>
 </template>
@@ -88,7 +89,13 @@ export default {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
+
+    p {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 15px;
+    }
 }
 
 input#gift-card-code{
