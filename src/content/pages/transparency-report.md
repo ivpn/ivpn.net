@@ -11,6 +11,7 @@ For more information about how requests are processed please see the [legal proc
 
 |   | # Requests received | # Valid requests received | # Valid requests received where data was provided |
 |---|---|---|---|
+| 2023 | 0 | 0 | 0 |
 | 2022 | 0 | 0 | 0 |
 | 2021 | 1 | 1 | 0 |
 | 2020 | 0 | 0 | 0 |
