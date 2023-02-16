@@ -23,7 +23,11 @@ We understand that in some cases, one can benefit more from using a custom DNS I
 ### Android and iOS
 - Access the `Settings` area by tapping on the “gear” icon and navigate to `Custom DNS`. Toggle the `Use Custom DNS` switch on and enter the preferred IP address.
 
-The iOS app also supports DNS-over-HTTPS and DNS-over-TLS for queries when the VPN is connected or disconnected.  These settings are available in the app's `Settings` area.
+### DNS-over-HTTPS
+
+iOS app supports DNS-over-HTTPS and DNS-over-TLS for queries when the VPN is connected or disconnected.  These settings are available in the app's `Settings`.
+
+Windows, macOS, and Linux apps support DNS-over-HTTPS for queries when the VPN is connected.  These settings are available in the app's `Settings->DNS`.
 
 DNS requests made to public DNS servers will first pass through the VPN tunnel, so there is still a level of privacy and security in place when using a Custom DNS server.
 
