@@ -203,7 +203,7 @@ layout: guides-details
       <strong>Conclusion</strong>
     </td>
     <td>
-      VPN services are an excellent choice where speed, and privacy from local adversaries, are most important. They also provide limited anonymity on the Internet, but that's vulnerable to adversaries who can coerce providers, or snoop on their servers. See <a href="privacy-guides/will-a-vpn-protect-me/">Will a VPN Protect Me?</a> and <a href="privacy-guides/adversaries-and-anonymity-systems-the-basics/">Adversaries and Anonymity Systems</a>. They're easy to install and use. Once setup properly, they reliably handle all Internet traffic.
+      VPN services are an excellent choice where speed, and privacy from local adversaries, are most important. They also provide limited anonymity on the Internet, but that's vulnerable to adversaries who can coerce providers, or snoop on their servers. See <a href="/privacy-guides/will-a-vpn-protect-me/">Will a VPN Protect Me?</a> and <a href="/privacy-guides/adversaries-and-anonymity-systems-the-basics/">Adversaries and Anonymity Systems</a>. They're easy to install and use. Once setup properly, they reliably handle all Internet traffic.
     </td>
     <td>
       When the Tor client starts, it displays a warning: `This is experimental software. Do not rely on it for strong anonymity.` But there's arguably no better alternative. See <a href="/privacy-guides/adversaries-and-anonymity-systems-the-basics/">Adversaries and Anonymity Systems</a>. And so Tor is the best choice when anonymity is most important. But Tor is much slower than VPN services. And you must <a href="https://www.torproject.org/download/download-easy.html.en#warning">use it properly</a>.
