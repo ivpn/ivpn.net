@@ -63,6 +63,7 @@ contents:
 * Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
+* Custom DNS servers, with DoH.
 * Split Tunnel to allow designated apps to bypass the VPN tunnel.
 
 ## Packages {#packages}
