@@ -52,7 +52,7 @@ App VM/s -> Proxy VM (with IVPN) -> Internet
 
 2. Open **ivpn-proxy** terminal (`Main menu` -> `Service: ivpn-proxy` -> `ivpn-proxy: Terminal`)
 
-3. Install IVPN client (refer to <a href="/apps-linux/#fedora" target="_blank">Fedora setup instructions</a>)
+3. Install IVPN client (CLI and UI; refer to <a href="/apps-linux/#fedora" target="_blank">Fedora setup instructions</a>)
 
 4. Add IVPN client to **ivpn-proxy** VM menu: 
 
