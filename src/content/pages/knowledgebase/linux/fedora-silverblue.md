@@ -21,7 +21,7 @@ Commands to install the IVPN client on Fedora Silverblue:
 <code class="language-shell" data-lang="shell">
 <span># Add the IVPN repository</span>
 cd /etc/yum.repos.d/
-3sudo wget https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+sudo wget https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
 
 <span># install IVPN client</span>
 rpm-ostree install ivpn
