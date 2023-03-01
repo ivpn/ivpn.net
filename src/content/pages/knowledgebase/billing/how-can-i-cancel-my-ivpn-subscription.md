@@ -10,7 +10,7 @@ weight: 30
 ---
 # How can I cancel my IVPN subscription?
 
-1. Login to the [Client area](/account/login/).
+1. Login to the [Client area](/account/login/#id).
 
 2. Navigate to `Billing Settings`.
 

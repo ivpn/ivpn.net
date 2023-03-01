@@ -20,15 +20,15 @@ releases: [{
         },
         {
             cta: .APK file,
-            url: https://www.ivpn.net/releases/android/IVPNv2.8.3site.apk
+            url: https://www.ivpn.net/releases/android/IVPNv2.8.4site.apk
         }
     ],
     github: https://github.com/ivpn/android-app,
-    changelog: https://github.com/ivpn/android-app/blob/master/CHANGELOG.md,
+    changelog: https://github.com/ivpn/android-app/blob/main/CHANGELOG.md,
     checksum: [
         {
             title: SHA256 .apk,
-            value: 8569cff849bcf27667f95a8f9f89ac1ca297376b6f77e68608f85438fea4fa26
+            value: b78256459903fef2ec23608792ad030a9581fd0e34620080270005222524fdac
         }
     ]
 }]

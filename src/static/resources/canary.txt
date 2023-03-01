@@ -13,29 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
-(from https://www.ft.com/news-feed )
+Source: mempool.space (https://mempool.space/blocks)
 
-Time to scrap ‘financing assurances’?
-The policy to safeguard IMF’s resources has become a hot mess
+height: 774831
+hash: 00000000000000000000c44dfd065c271372bb85a7f55c85bac3b9dc8632708b
 
-FirstFT: UK faces longest recession in G7, survey shows
-Also in today’s newsletter, more strike chaos on Britain’s railways and the EU offers free Covid vaccines to China
 
-Money Clinic podcast: Where to invest in 2023
-Four FT investment experts debate the best opportunities for investors in the year ahead
+Source: FT (https://www.ft.com/news-feed)
+
+LDI: What happens now?
+Lessons from the UK’s near-meltdown
+
+A Spell of Good Things — Ayọ̀bámi Adébáyọ̀’s heart-rending second novel
+In a follow-up to her acclaimed ‘Stay With Me’, the Nigerian writer has crafted a powerful state-of-the-nation saga
+
+FirstFT: Big Tech shares slip on Apple, Amazon and Google results
+Also in today’s newsletter, Blinken to meet Xi and Ukraine allies push IMF to lend billions
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmOzxJ4ACgkQisFrnrZH
-ummrJQgAl2PbHtbFrItj+jDweU5EvC8jgApS185O4vk1ND8oALb0JoSCXkwKtrrF
-1Au/vTEurerGkWniIBAU0d3O0319Fla5mED86GbhI0+bQNijMolE7ZKtvAr08P8M
-NkMP0jO0T81r6axKMeMvIgIBTAaXCmytacBgH8AoDCkQuX3eDRw/zidJoJMUrU2O
-1Z6tgfGk3/znzbSgID+BZEOiNG10pEn41FGPfxXYzNoFFXuGede/wv3ZgQOxfc4S
-R1Whkom56SPEDDEcR56QmV2vn4fam11kO04NOUWykFDn3z6EfPU4PfKPzFXL2DQP
-uJdnMcAtklQo/BVr6aLnIYxA19fNsw==
-=+78v
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmPcox4ACgkQisFrnrZH
+ummxzggAljKtoPxMaybVecwN07QwYSAsSjUfKMuBtFIAkpEjJgsvjRYdg0Qw5aMh
+xlOUKn0fWNjWMNC2Rf3nXgp6oGnJDCwaGV5B7RdcPLhQCJgYABPBs3kdHRxkN+K0
+Ri+NZs7i3j3OgSkywLMiiwzj9tq1Q6UQyrV77mL0FSzTWhPB6jtMYz9bGWBlpTsF
+rEXLJ6LklCbx0scrIlbYiE4zHd0n3RSE1IqB5jzfckOiCPb2JKnKE27AL5GR1D7t
+zY5kDKhhpnLSMU8JRC2cxdAw1h5e+LWdpg/pVS/SCg3ktGZGm7+YBboBTV+8QoOu
++0RK6TnKJUhCYMDk0X4HE733lF1jYQ==
+=WBfs
 -----END PGP SIGNATURE-----
 
 

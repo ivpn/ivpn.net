@@ -22,9 +22,8 @@ Different combinations are available for different VPN protocols.
 1. Open the IVPN client.
 2. Click the `Settings` / `Preferences` button. 
 3. Go to the `Connection` tab (`VPN protocol` on mobile clients).
-4. (macOS/Windows) Uncheck the `Automatically change port...` option.
-5. Select a different Port/Protocol combination.
-6. Retry the connection and repeat steps 1-5 as necessary.
+4. Select a different Port/Protocol combination.
+5. Retry the connection and repeat steps 1-4 as necessary.
 
 ### For the Linux CLI app:
 
