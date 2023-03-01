@@ -1,14 +1,14 @@
 ---
-title: Linux - Autostart OpenVPN in systemd (Fedora) - IVPN Help
-h1: Linux - Autostart OpenVPN in systemd (Fedora)
+title: Autostart OpenVPN in systemd (Fedora) - IVPN Help
+h1: Autostart OpenVPN in systemd (Fedora)
 url: /knowledgebase/linux/linux-autostart-openvpn-in-systemd-fedora/
 sections:
     - linux
 sectionTitle: Linux
 layout: help-details
-weight: 100
+weight: 17
 ---
-# Linux - Autostart OpenVPN in systemd (Fedora)
+# Autostart OpenVPN in systemd (Fedora)
 
 In order to configure OpenVPN to autostart for systemd, complete the following steps:
 

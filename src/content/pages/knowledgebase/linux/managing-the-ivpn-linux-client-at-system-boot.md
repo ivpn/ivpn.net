@@ -6,7 +6,7 @@ sections:
     - linux
 sectionTitle: Linux
 layout: help-details
-weight: 130
+weight: 10
 ---
 # Managing the IVPN Linux CLI client at System Boot
 
