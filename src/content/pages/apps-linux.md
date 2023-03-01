@@ -37,6 +37,9 @@ contents:
     - item:
         title: Arch Linux
         anchor: arch
+    - item:
+        title: Fedora Silverblue
+        anchor: silverblue
 - item:
     title: Install from Binaries
     anchor: binaries
@@ -207,6 +210,10 @@ yay -S ivpn-ui
 ```
 
 Note: Other AUR helper/Pacman wrapper utilities are available.
+
+### Fedora Silverblue {#silverblue}
+
+IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-silverblue/).
 
 ## Install from Binaries {#binaries}
 
