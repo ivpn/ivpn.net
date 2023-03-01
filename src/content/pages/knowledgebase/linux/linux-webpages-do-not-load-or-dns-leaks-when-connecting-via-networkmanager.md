@@ -1,6 +1,6 @@
 ---
-title: Linux - Webpages do not load or DNS leaks when connecting via NetworkManager - IVPN Help
-h1: Linux - Webpages do not load or DNS leaks when connecting via NetworkManager
+title: Webpages do not load or DNS leaks when connecting via NetworkManager - IVPN Help
+h1: Webpages do not load or DNS leaks when connecting via NetworkManager
 url: /knowledgebase/linux/linux-webpages-do-not-load-or-dns-leaks-when-connecting-via-networkmanager/
 sections:
     - linux
@@ -8,7 +8,7 @@ sectionTitle: Linux
 layout: help-details
 weight: 110
 ---
-# Linux - Webpages do not load or DNS leaks when connecting via NetworkManager
+# Webpages do not load or DNS leaks when connecting via NetworkManager
 
 When you connect to a VPN server using the NetworkManager, you might discover that it does not apply IVPN DNS IP address automatically. This may lead to either websites' domain names not resolving or your real DNS is being used, which is considered as a leak.
 

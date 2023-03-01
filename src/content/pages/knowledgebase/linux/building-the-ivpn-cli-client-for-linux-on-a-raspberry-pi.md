@@ -6,7 +6,7 @@ sections:
     - linux
 sectionTitle: Linux
 layout: help-details
-weight: 140
+weight: 11
 ---
 # Building the IVPN CLI Client for Linux on a Raspberry Pi
 
