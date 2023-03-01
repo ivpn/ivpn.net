@@ -6,9 +6,9 @@ sections:
     - linux
 sectionTitle: Linux
 layout: help-details
-weight: 90
+weight: 9
 ---
-# Linux - OBFS3 and OBFS4 Obfuscation with Obfsproxy to Circumvent Censorship
+# OBFS3 and OBFS4 Obfuscation with Obfsproxy to Circumvent Censorship
 
 In some countries (like China, Iran, Vietnam, etc.), the government utilizes a very restrictive firewall and enforces local ISPs to throttle and block the traffic via Deep Packet Inspection. Work around these restrictions with the help of obfs4proxy by masking the VPN traffic.  This article offers details on using OBFS3 or OBFS4 with a single-hop or Multi-hop OpenVPN connection over TCP.
 

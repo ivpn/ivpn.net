@@ -1,14 +1,14 @@
 ---
-title: Linux - Autostart WireGuard in systemd - IVPN Help
-h1: Linux - Autostart WireGuard in systemd
+title: Autostart WireGuard in systemd - IVPN Help
+h1: Autostart WireGuard in systemd
 url: /knowledgebase/linux/linux-autostart-wireguard-in-systemd/
 sections:
     - linux
 sectionTitle: Linux
 layout: help-details
-weight: 40
+weight: 15
 ---
-# Linux - Autostart WireGuard in systemd
+# Autostart WireGuard in systemd
 
 These steps are mostly distribution agnostic and have been tested on Debian unstable and Fedora.
 
