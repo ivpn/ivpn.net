@@ -21,7 +21,7 @@ You can though, use tools available on the internet to help verify the approxima
 | UK | us-tx1.gw.ivpn.net (Texas, USA) | 152 |
 | UK | us-ut1.gw.ivpn.net (Utah, USA) | 186 |
 
-From the above, we can tell that the servers in Utah and Texas are further away than the ones in the UK and France but we can't really distinguish between the UK and France. We would need to ping the servers from a number of locations and compare the results to get a more accurate result. This is where internet based tools are useful. We will use the CA Technologies [Ping Test tool](https://asm.ca.com/en/ping.php). This uses over 90 global locations to ping a server and displays the response time. Using the tool we can see (selected results)
+From the above, we can tell that the servers in Utah and Texas are further away than the ones in the UK and France but we can't really distinguish between the UK and France. We would need to ping the servers from a number of locations and compare the results to get a more accurate result. This is where internet based tools are useful. We will use the CA Technologies [Ping Test tool](https://asm.saas.broadcom.com/). This uses over 90 global locations to ping a server and displays the response time. (Note: The Ping Test tool was available previously, circa 2020, though seems to be behind a paywall/trial. This [ping test](https://www.wormly.com/test-remote-ping) may offer a similar experience without the paywall/trial.) Using the tool we can see (selected results)
 
 | Server: gb1.gw.ivpn.net (London,UK) |   | Server: fr1.gw.ivpn.net (Paris, Fr) |
 |---|---|---|---|
