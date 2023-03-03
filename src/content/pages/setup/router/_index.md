@@ -16,5 +16,5 @@ It is now possible to purchase a VPN router with IVPN pre-configured. When you r
 
 If your router includes a VPN client, use one of our configuration file generators and import it into your device:
 
-* [OpenVPN](https://www.ivpn.net/openvpn-config)
+* [OpenVPN](https://www.ivpn.net/openvpn-config) - Authenication: username = IVPN Account ID, password = any non-blank string (ie. `ivpn` or `i`)
 * [WireGuard](https://www.ivpn.net/account/wireguard-config) - website login required
