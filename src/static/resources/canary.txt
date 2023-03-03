@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-03-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 774831
-hash: 00000000000000000000c44dfd065c271372bb85a7f55c85bac3b9dc8632708b
+height: 779077
+hash: 0000000000000000000047bed46868434f6f17da15a2d5c1fa3e71c71da5e805
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-LDI: What happens now?
-Lessons from the UK’s near-meltdown
+US adds two dozen Chinese groups to trade blacklist
+Targeted companies include chipmakers accused of assisting China’s military and surveillance tech exporters
 
-A Spell of Good Things — Ayọ̀bámi Adébáyọ̀’s heart-rending second novel
-In a follow-up to her acclaimed ‘Stay With Me’, the Nigerian writer has crafted a powerful state-of-the-nation saga
+Best of: Chef Mashama Bailey on reclaiming African-American food
+Chef Mashama Bailey, winner of the 2022 James Beard Award for outstanding chef
 
-FirstFT: Big Tech shares slip on Apple, Amazon and Google results
-Also in today’s newsletter, Blinken to meet Xi and Ukraine allies push IMF to lend billions
+FirstFT: Future of London market in doubt after SoftBank and CRH shun City
+Also in today’s newsletter, US renews crackdown on sanctions dodging and is France the new Britain?
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmPcox4ACgkQisFrnrZH
-ummxzggAljKtoPxMaybVecwN07QwYSAsSjUfKMuBtFIAkpEjJgsvjRYdg0Qw5aMh
-xlOUKn0fWNjWMNC2Rf3nXgp6oGnJDCwaGV5B7RdcPLhQCJgYABPBs3kdHRxkN+K0
-Ri+NZs7i3j3OgSkywLMiiwzj9tq1Q6UQyrV77mL0FSzTWhPB6jtMYz9bGWBlpTsF
-rEXLJ6LklCbx0scrIlbYiE4zHd0n3RSE1IqB5jzfckOiCPb2JKnKE27AL5GR1D7t
-zY5kDKhhpnLSMU8JRC2cxdAw1h5e+LWdpg/pVS/SCg3ktGZGm7+YBboBTV+8QoOu
-+0RK6TnKJUhCYMDk0X4HE733lF1jYQ==
-=WBfs
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmQBjR4ACgkQisFrnrZH
+umnH5Af/aHZsAZi0Pf1tfeYjQFk5hGk6BF18Zq2YQok5ei2DDCoGg/qxg9kjThAC
+cZdSGS3ER4AN8Sev5pR056521vL0HUygRsHS2uvCC1sEH42rfO1Yv26LU6YSZwqf
+2s1NuQ5sqKhgY8zm2rLTlxGjoxJuLvTDS1/EhxkX0okixeFveRSrQeyUQOwJyZqA
+1u9r3uffvz9wQDEG4sH9FbFx5qNPlC/XWpjc+YIeDGpD/QTnR6w+dd/Haj25DBhs
+Fv7a00VOFntdBdGNx0BLaFH8tMAXKKlz5QpEqGW74kx5wH+ZZHs5K4VpU89gAlXo
+iBoCKOGpRIrpQAmhO+azZpdDBcBeyw==
+=4/lO
 -----END PGP SIGNATURE-----
 
 
