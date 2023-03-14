@@ -42,6 +42,6 @@ App Store purchases are refunded by Apple. Details on how to submit the refund c
 
 <h2>Cash and Vouchers</h2>
 
-Cash and Voucher purchases are not refundable.
+Cash and Voucher payments are non-refundable.
 
 **Please note**: We do not offer prorated refunds.
