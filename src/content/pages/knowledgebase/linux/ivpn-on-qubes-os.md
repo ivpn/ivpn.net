@@ -20,7 +20,7 @@ Qubes OS uses a ProxyVM as an intermediary between other VMs in the system and t
 
 In Qubes OS, each VM is assigned a specific role, such as a NetVM (for networking) or an AppVM (for running applications). When an AppVM needs to connect to the internet, it sends its network traffic to the designated NetVM.
 
-Alternatively, an AppVM can send its network traffic directly to a ProxyVM for processing. This configuration, known as a "ProxyVM-based NetVM," allows the ProxyVM to enforce various security policies, such as blocking certain types of traffic or limiting access to specific resources. It also allows the use of a Virtual Private Network (VPN) connection, which can provide additional privacy and security for network traffic.
+Alternatively, an AppVM can send its network traffic directly to a ProxyVM for processing. This configuration, known as a "ProxyVM-based NetVM", allows the ProxyVM to enforce various security policies, such as blocking certain types of traffic or limiting access to specific resources. It also allows the use of a Virtual Private Network (VPN) connection, which can provide additional privacy and security for network traffic.
 
 By configuring a ProxyVM to use a VPN connection, all network traffic from the other VMs in the system can be routed through the VPN, ensuring that the traffic is encrypted and anonymized before it leaves the system. This approach can be especially useful when accessing sensitive or confidential information over untrusted networks.
 
@@ -52,7 +52,7 @@ App VM/s -> Proxy VM (with IVPN) -> Internet
 
 2. Open **ivpn-proxy** terminal (`Main menu` -> `Service: ivpn-proxy` -> `ivpn-proxy: Terminal`)
 
-3. Install IVPN client (refer to <a href="/apps-linux/#fedora" target="_blank">Fedora setup instructions</a>)
+3. Install IVPN client (CLI and UI; refer to <a href="/apps-linux/#fedora" target="_blank">Fedora setup instructions</a>)
 
 4. Add IVPN client to **ivpn-proxy** VM menu: 
 

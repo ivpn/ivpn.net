@@ -14,15 +14,19 @@ Fedora Silverblue is unique because it uses an immutable filesystem and an ostre
 
 IVPN client can be installed on Fedora Silverblue using `rpm-ostree`.
 
-Commands to install the IVPN client on Fedora Silverblue (this is an example, use correct file names):
+Commands to install the IVPN client on Fedora Silverblue:
 
 <div class="highlight">
 <pre>
 <code class="language-shell" data-lang="shell">
-<span># install IVPN client (use here required file name!)</span>
-rpm-ostree install ivpn-3.10.14-1.x86_64.rpm
-<span># install UI for IVPN client, if required (use here required file name!)</span>
-rpm-ostree install ivpn-ui-3.10.14-1.x86_64.rpm
+<span># Add the IVPN repository</span>
+cd /etc/yum.repos.d/
+sudo wget https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+
+<span># install IVPN client</span>
+rpm-ostree install ivpn
+<span># install UI for IVPN client, if required</span>
+rpm-ostree install ivpn-ui
 
 <span># reboot system</span>
 systemctl reboot
@@ -35,7 +39,7 @@ sudo systemctl start ivpn-service
 </pre>
 </div>
 
-To correctly uninstall 'ivpn' package on Fedora Silverblue, extra steps should be performed manually  (example):
+To correctly uninstall 'ivpn' package on Fedora Silverblue, extra steps should be performed manually:
 
 <div class="highlight">
 <pre>
