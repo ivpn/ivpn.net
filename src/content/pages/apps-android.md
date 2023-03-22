@@ -32,7 +32,7 @@ releases: [{
         },
         {
             title: SHA256 signing cert,
-            value: 067a40c4193aad51ac87f9ddfdebb15e24a1850babfa4821c28c5c25c3fdc071
+            value: 88a6b40fc97fdc842f231f50eb12de116f5b759e3c5b38aaccaf6a7b393c85bb
         }
     ]
 }]
