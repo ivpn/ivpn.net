@@ -29,6 +29,10 @@ releases: [{
         {
             title: SHA256 .apk,
             value: b78256459903fef2ec23608792ad030a9581fd0e34620080270005222524fdac
+        },
+        {
+            title: SHA256 signing cert,
+            value: 067a40c4193aad51ac87f9ddfdebb15e24a1850babfa4821c28c5c25c3fdc071
         }
     ]
 }]
