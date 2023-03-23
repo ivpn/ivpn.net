@@ -27,3 +27,5 @@ IVPN proudly supports the following organizations and projects.
 {{< figure class="features__image--light" src="/images-static/uploads/logo-org.svg" alt="The Open Rights Group" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/logo-org.svg" alt="The Open Rights Group" >}}
 [The Open Rights Group](https://www.openrightsgroup.org) is the UK's only digital campaigning organization working to protect the rights to privacy and free speech online. With almost 3,000 active supporters, the ORG is a grassroots organization with local groups across the UK. IVPN are corporate sponsors of the ORG since April 2016.
+
+https://foundation.btcpayserver.org/ i wont do your job, but adding it would be nice promo and i consider getting this vpn just because i saw this
