@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import PricesView from '@/views/Prices.vue'
+import OnePageCheckoutView from '@/views/OnePageCheckout.vue'
 import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
 import AccountView from '@/views/Account/Account.vue'
 import PaymentView from '@/views/Account/Payment.vue'
@@ -53,6 +54,14 @@ const routes = [
     },
     {
         path: '/', redirect: { name: 'prices' },
+    },
+    {
+        path: '/light',
+        name: 'light',
+        component: OnePageCheckoutView,
+        meta: {
+            title: 'IVPN one page checkout',
+        }
     },
     {
         path: '/pricing',

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="content content--narrow">
+    <div class="content__text">
+        <div id="light">
+            <support-ua></support-ua>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "main-script" }}
+    <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/light.js" }}"></script>
+{{ end }}

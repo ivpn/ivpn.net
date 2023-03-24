@@ -39,5 +39,7 @@
     "vuex": "^4.0.2",
     "yarn-upgrade-all": "^0.7.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue-country-flag-next": "^2.3.2"
+  }
 }
