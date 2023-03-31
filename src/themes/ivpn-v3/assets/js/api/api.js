@@ -390,6 +390,16 @@ export default {
         return response
     },
 
+    async createLightInvoice(priceID, data) {
+
+        let response = await this.Post('/web/accounts/btc/create-light-invoice', {
+            price_id: priceID,
+            data: btoa(JSON.stringify(data))
+        })
+
+        return response
+    },
+
     async getMoneroPaymentDetails(duration) {
         return await this.Post('/web/accounts/monero-payment-details', {
             duration
@@ -453,6 +463,20 @@ export default {
                 message: payload.message,
                 captcha_id: payload.captchaID,
                 captcha: payload.captchaValue
+            }
+        )
+    },
+
+    //
+    // Light
+    //
+
+    async submitLightPayment(payload) {
+        await this.Post(
+            '/web/btc/invoice/create',
+            {
+                privateKey: payload.privateKey,
+                publicKey: payload.publicKey,
             }
         )
     },

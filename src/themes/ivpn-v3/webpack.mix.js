@@ -39,6 +39,5 @@ mix.setPublicPath('static')
     .js('assets/js/supportua.js', 'static/js/').vue()
     .js('assets/js/menu.js', 'static/js/')
     .js('assets/js/wireguard.js', 'static/js/')
-    .js('assets/js/light.js', 'static/js/').vue()
     .sass('assets/scss/pages.scss', 'static/css/')
     .version();

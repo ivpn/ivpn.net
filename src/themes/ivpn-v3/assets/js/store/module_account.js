@@ -197,9 +197,22 @@ export default {
         },
 
         async createBitcoinInvoice(context, { priceID, paymentMethodId }) {
+            
             context.commit('started')
             try {
                 let resp= await Api.createBitcoinInvoice(priceID, paymentMethodId)
+
+                context.commit('done')
+                return resp.invoice
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+
+        async createLightInvoice(context, { priceID, data }) {
+            context.commit('started')
+            try {
+                let resp= await Api.createLightInvoice(priceID, data)
 
                 context.commit('done')
                 return resp.invoice
