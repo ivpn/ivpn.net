@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-03-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-04-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 779077
-hash: 0000000000000000000047bed46868434f6f17da15a2d5c1fa3e71c71da5e805
+height: 783720
+hash: 00000000000000000002eeac33d2c46826b9933e74d131e54bd59c1942728bc0
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-US adds two dozen Chinese groups to trade blacklist
-Targeted companies include chipmakers accused of assisting China’s military and surveillance tech exporters
+Oil prices surge as Opec+ makes unexpected production cut
+Goldman Sachs raises year-end Brent forecast to $95 a barrel
 
-Best of: Chef Mashama Bailey on reclaiming African-American food
-Chef Mashama Bailey, winner of the 2022 James Beard Award for outstanding chef
+There is no US deposit flight
+And it’s OK to own emerging market equities
 
-FirstFT: Future of London market in doubt after SoftBank and CRH shun City
-Also in today’s newsletter, US renews crackdown on sanctions dodging and is France the new Britain?
+FTAV’s further reading
+Central banks; blue checks; the Gulf; abandoned children; ChatGPT; English; the Fed; poetry; gay banks; and chess
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmQBjR4ACgkQisFrnrZH
-umnH5Af/aHZsAZi0Pf1tfeYjQFk5hGk6BF18Zq2YQok5ei2DDCoGg/qxg9kjThAC
-cZdSGS3ER4AN8Sev5pR056521vL0HUygRsHS2uvCC1sEH42rfO1Yv26LU6YSZwqf
-2s1NuQ5sqKhgY8zm2rLTlxGjoxJuLvTDS1/EhxkX0okixeFveRSrQeyUQOwJyZqA
-1u9r3uffvz9wQDEG4sH9FbFx5qNPlC/XWpjc+YIeDGpD/QTnR6w+dd/Haj25DBhs
-Fv7a00VOFntdBdGNx0BLaFH8tMAXKKlz5QpEqGW74kx5wH+ZZHs5K4VpU89gAlXo
-iBoCKOGpRIrpQAmhO+azZpdDBcBeyw==
-=4/lO
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmQqae4ACgkQisFrnrZH
+umnTAQgAg28baBXgcQUqppUBAf5mzC2FDncrn3k9nzPEsPkvvzy1cT+rQRhh+ytV
+3Lm4JdOnMwIFr6QTpglrNaFxLn7d1XJUsn9s2KXsjChzWIL1oW1KKX/NzjXBXRnZ
+DgDxPufHBqjUG6HxGfIdsadNsu2iuNlVWciJXRfapbso4Y6V+NpkSV9SwGhJx4GU
+SDfvIm3Gj8cs7gQYhjZo1A/HC+ZruEawY2hu1hWVsR+mVovHzqgx1PzftXEUsYiP
+SN+ooxqRxdjQMOCUlWS/DluKvvxHIS/56Z/jAWRPPxfqHGRa7q4ZDNfgIxy0hgDm
+pVkfUqMV12RYW96WR3c5fbejcH3KRg==
+=rDrq
 -----END PGP SIGNATURE-----
 
 
