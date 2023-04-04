@@ -22,7 +22,7 @@ DNS requests made to public DNS servers will first pass through the VPN tunnel, 
 Supported address types: IPv4, DNS-over-HTTPS
 </div>
 
-- **GUI:** Access the `Settings` area by tapping on the “gear” icon and navigate to the `DNS` tab.  Check the `Use Custom DNS` box and enter the preferred IPv4 or DoH address.
+- **GUI:** Access the `Settings` area by tapping on the “gear” icon and navigate to the `DNS` tab.  Check the `Use Custom DNS` box and enter the preferred IPv4 address or the DNS-over-HTTPS URI string plus that DoH provider's corresponding IPv4 address.
 
 - **Command Line:** Open a Terminal window and run, e.g.: `ivpn dns 1.1.1.1` or `ivpn dns -doh https://cloudflare-dns.com/dns-query 1.1.1.1`. Type `ivpn dns -off` to revert back to using IVPN DNS.
 

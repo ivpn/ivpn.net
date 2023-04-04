@@ -10,6 +10,6 @@ weight: 310
 ---
 # Do you allow SMTP (email) whilst connected to IVPN?
 
-We do allow SMTP traffic to be sent through our servers. As this opens up the possibility to spam millions of people from behind our IP's we've had to implement various non-invasive controls to mitigate this threat.
+We do not allow SMTP port 25 traffic to be sent through our servers. As this opens up the possibility to spam millions of people from behind our VPN servers, we have decided to block SMTP port 25 as a way to keep the reputation of our IP addresses in a cleaner state.
 
-As a normal email user, none of these controls should affect your ability to send emails. However, if you are a bulk email marketer, then these controls will likely block your SMTP connections.
+To send mail while connected to our VPN servers, consider using a secure mail connection. When mail comes is sent over a secure connection, there may be a higher level of trust and the mail may be accepted by the email service provider. Port 25 is the default outgoing mail port, but this offers no security.  Ports available for secure SMTP are 465 and 587, which include SSL or TLS. Check your mail provider's support documentation for details about which ports are available secure outgoing messages.
