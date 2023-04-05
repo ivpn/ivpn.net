@@ -9,7 +9,7 @@ sectionTitle: Linux
 layout: help-details
 weight: 30
 ---
-# Linux - How do I prevent VPN leaks using nftables and OpenVPN?
+# How do I prevent VPN leaks using nftables and OpenVPN?
 
 <div markdown="1" class="notice notice--info">
 We recommend using our <a href="/apps-linux/">Linux app</a> that offers an easy-to-use built-in Firewall solution that protects you from both IP and traffic leaks. Read on, if you would like to have a more granular Firewall configuration or prefer to use NetworkManager or a different VPN client.

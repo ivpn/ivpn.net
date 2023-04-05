@@ -12,14 +12,14 @@
     "copy:manifest": "cp static/mix-manifest.json data/manifest.json"
   },
   "devDependencies": {
-    "@vue/compat": "^3.2.39",
-    "@vue/compiler-sfc": "^3.2.39",
-    "braintree-web": "^3.88.1",
+    "@vue/compat": "^3.2.47",
+    "@vue/compiler-sfc": "^3.2.47",
+    "braintree-web": "^3.92.1",
     "cross-env": "^7.0.2",
     "date-fns": "^2.29.3",
     "file-saver": "^2.0.5",
-    "flexbox-grid-mixins": "^0.3.3",
-    "ip-num": "^1.4.1",
+    "flexbox-grid-mixins": "^0.3.4",
+    "ip-num": "^1.5.1",
     "js-cookie": "^3.0.1",
     "jszip": "^3.10.1",
     "laravel-mix": "^6.0.49",
@@ -32,12 +32,12 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
-    "vue": "^3.2.39",
-    "vue-loader": "^17.0.0",
-    "vue-router": "^4.1.5",
+    "vue": "^3.2.47",
+    "vue-loader": "^17.0.1",
+    "vue-router": "^4.1.6",
     "vue-select": "^4.0.0-beta.5",
-    "vuex": "^4.0.2",
-    "yarn-upgrade-all": "^0.7.1"
+    "vuex": "^4.1.0",
+    "yarn-upgrade-all": "^0.7.2"
   },
   "dependencies": {
     "vue-country-flag-next": "^2.3.2"

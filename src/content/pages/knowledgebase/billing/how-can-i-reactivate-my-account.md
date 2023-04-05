@@ -12,4 +12,4 @@ weight: 110
 
 To reactivate your inactive account, login to the [Client Area](/account/login/) - click on `Billing Settings` - `Extend your account`, select time you would like to add and checkout with the preferred payment method.
 
-If your IVPN account has been suspended for 3 months it will be automatically deleted from our systems. If you have discovered that your old IVPN account is deleted, you can generate a new one [here](/pricing/).
+If your IVPN account has been inactive for 3 months it will be automatically deleted from our systems. If you have discovered that your old IVPN account is deleted, you can generate a new one [here](/pricing/).
