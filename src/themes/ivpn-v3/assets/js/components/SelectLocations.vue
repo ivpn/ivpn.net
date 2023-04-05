@@ -3,16 +3,17 @@
         v-model="selectedLocation"
         :options="options"
         :getOptionLabel="getOptionLabel"
-        :clearable="false"
-        :searchable="false"
-        :filterable="false"
         class="select-location-control"
-        placeholder="Select a location"
+        :selectable="() => this.selectedLocation.length < 5"
+        :multiple = "multiple"
+        :clearable="clearable"
+        :searchable="searchable"
+        :filterable="filterable"
     >
         <template v-slot:option="option">
             <div class="option-element">
                 <div class="price-item-name" >
-                    <country-flag :country="option.country_code" size='normal'/> {{ option.city }},{{ option.country }}
+                    <country-flag :country="option.country_code" size='normal'/> {{ option.country }},{{ option.city }}
                 </div>
             </div>
         </template>
@@ -20,7 +21,7 @@
         <template #selected-option="{ country, city, country_code}">
             <div class="option-element selected">
                 <div class="price-item-name" style="flex-grow: 1">
-                    <country-flag :country="country_code" size='normal'/> {{ city }},{{ country }}
+                    <country-flag :country="country_code" size='normal'/> {{ country }},{{ city }}
                 </div>
             </div>
         </template>
@@ -47,19 +48,17 @@ export default {
         prop: "value",
         event: "change",
     },
-    props: ["options", "value", "mode"],
+    props: ["options", "value", "mode","multiple","clearable","searchable","filterable","selectable"],
     data() {
         return {
-            selectedPrice: null,
-            selectedLocation: null,
+            selectedLocation: [],
         };
     },
     mounted() {
-        this.selectedPrice = this.value;
     },
     watch: {
-        selectedPrice: function () {
-            this.$emit("change", this.selectedPrice);
+        selectedLocation: function () {
+            this.$emit("changeLocation", this.selecteLocation);
         },
     },
 
@@ -154,6 +153,37 @@ export default {
             padding: 0px 16px;
             text-decoration: line-through;
         }
+    }
+    .vs__selected {
+        width: 100%;
+        @media (max-width: $brk-mobile-xs) {
+            width: 100%;
+        }
+        @include light-theme((
+            background: $white,
+            color: $black
+        ));
+
+        @include dark-theme((
+            background: #202020,
+            color: $white
+        ));
+    }
+
+    .vs__dropdown-option--disabled{
+        width: 100%;
+        @media (max-width: $brk-mobile-xs) {
+            width: 100%;
+        }
+        @include light-theme((
+            background: $white,
+            color: $black
+        ));
+
+        @include dark-theme((
+            background: #202020,
+            color: $white
+        ));
     }
 }
 </style>

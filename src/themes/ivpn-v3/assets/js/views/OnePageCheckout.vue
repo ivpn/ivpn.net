@@ -58,8 +58,6 @@
                         </div>
                      </div>
                      <div>
-                      <h3>2. Select one or multiple exit servers</h3>
-                      <p class="note">A separate configuration file will be generated for each location that you include.</p>
                       <div class="tabs">
                           <ul>
                           <li v-bind:class="{ 'is-active': !multihop }">
@@ -70,7 +68,21 @@
                           </li>
                           </ul>
                        </div>
+                       <div v-if="!multihop">
                        <h4>Select exit server location</h4>
+
+                       <SelectLocations 
+                       :options="filteredServers"
+                       v-model="selectedExitLocation"
+                       multiple
+                       placeholder="Select a location"
+                       :clearable="false"
+                       :searchable="false"
+                       :filterable="false"
+                       >
+                       </SelectLocations>
+                       </div>
+<!--
                        <div class="select">
                     <select @change="selectExitCountry($event)">
                         <option value="">All countries</option>
@@ -85,8 +97,34 @@
                     </select>
                     <i></i>
                 </div>
+            -->
                 <div v-if="multihop">
                     <h4>Select entry server location</h4>
+
+                    <SelectLocations 
+                       :options="filteredServers"
+                       v-model="selectedEntryLocation"
+                       placeholder="Select a location"
+                       :clearable="true"
+                       :searchable="false"
+                       :filterable="false"
+                       :multiple= "false"
+                       >
+                    </SelectLocations>
+                    <h4>Select exit server location</h4>
+
+                    <SelectLocations 
+                       :options="filteredServers"
+                       v-model="selectedMultihopExitLocation"
+                       placeholder="Select a location"
+                       :clearable="true"
+                       :searchable="false"
+                       :filterable="false"
+                       :multiple= "false"
+                       >
+                    </SelectLocations>
+
+                    <!--
                     <div class="select" v-bind:class="{ disabled: validation.multihop }">
                         <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
                             <option value="">Select country</option>
@@ -101,6 +139,7 @@
                         </select>
                         <i></i>
                     </div>
+                -->
                 </div>
                      </div>
                      <div>
@@ -171,7 +210,9 @@ export default {
             selectedBillingCycle: "light-30minutes",
             products: products,
             selectedPrice: products.prices[0].price,
-            selectedLocation: null,
+            selectedExitLocation:  [],
+            selectedMultihopExitLocation:  [],
+            selectedEntryLocation: [],
             multihop: false,
             validation: {
                 exitCity: true,
@@ -218,6 +259,20 @@ export default {
             },
             deep: true
         },
+
+        selectedExitLocation: function(){
+            if(this.selectedExitLocation.length > 0 && !this.multihop){
+                this.validation.submit = false;
+                this.inProgress = false;
+            }
+
+        },
+        selectedEntryLocation: function(){
+            if(this.selectedEntryLocation.length > 0 && this.selectedExitLocation.length > 0){
+                this.validation.submit = false;
+                this.inProgress = false;
+            }
+        }
     },
     computed: {
         ...mapState({
@@ -239,25 +294,23 @@ export default {
             if (res.servers) {
                 this.servers = res.servers.filter((server) => server.hostnames.wireguard != null);
                 this.filteredServers = this.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
+                this.filteredServers = this.sortBy(this.filteredServers, 'country', false);
                 this.countries = [...new Set(res.servers.map(server => server.country))].filter(String).sort();
             }
         },
         async send() {
+            console.log(this.inProgress);
             if (this.inProgress) {
                 return;
             }
 
-            let data = {
-                exitServer: this.exitServers[0].hostnames.wireguard,
-                entryServer: this.entryServers[0].hostnames.wireguard,
-                privateKey: this.privateKey,
-                publicKey: this.publicKey,
-                billingCycle: this.selectedBillingCycle
-            };
-
             try {
                 let URL = await this.$store.dispatch("account/createLightInvoice", {
-                    data: data             
+                    exitServer: this.selectedExitLocation,
+                    entryServer: this.selectedEntryLocation,
+                    privateKey: this.privateKey,
+                    publicKey: this.publicKey,
+                    priceID: this.selectedBillingCycle           
                 });
             } catch (error) {
                 return;
@@ -491,6 +544,9 @@ export default {
                 return 0
             });
         },
+        changeLocation(locations){
+            console.log(locations);
+        }
     },
 };
 </script>
@@ -507,12 +563,8 @@ section {
     margin-top: 120px;
 }
 
-.alert-light {
-    --bs-alert-color: #000;
-    --bs-alert-bg: #fefefe;
-    --bs-alert-border-color: #fdfdfe;
-    border: 1px solid #000;
-    text-align:center;
+.alert-light{
+     text-align:center;
 }
 
 .alert {
@@ -521,7 +573,6 @@ section {
     --bs-alert-padding-y: 1rem;
     --bs-alert-margin-bottom: 1rem;
     --bs-alert-color: inherit;
-    --bs-alert-border-color: white;
     --bs-alert-border: 1px solid var(--bs-alert-border-color);
     background-color: var(--bs-alert-bg);
     border: var(--bs-alert-border);
@@ -535,8 +586,6 @@ section {
     --bs-card-spacer-y: 1rem;
     --bs-card-spacer-x: 1rem;
     --bs-card-title-spacer-y: 0.5rem;
-    --bs-card-border-width: 1px;
-    --bs-card-border-color: white;
     --bs-card-box-shadow: ;
     --bs-card-cap-padding-y: 0.5rem;
     --bs-card-cap-padding-x: 1rem;
@@ -564,7 +613,6 @@ section {
 
 
 .card-header {
-    background-color: var(--bs-card-cap-bg);
     border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
     color: var(--bs-card-cap-color);
     margin-bottom: 0;
@@ -574,10 +622,10 @@ section {
 .alert hr {
     border: 0;
     border-top: 1px solid;
-    color: white;
     margin: 1rem 0;
     opacity: .25;
     width: 100%;
+
 }
 
 #runtimeselector {
@@ -784,6 +832,7 @@ section {
 
 form .btn-border{
     margin-top:5px;
+    
 }
 
 @media only screen and (max-width: 600px) {
