@@ -646,6 +646,7 @@ section {
     position: absolute;
 }
 
+
 .form-select {
     -moz-padding-start: calc(.75rem - 3px);
     -webkit-appearance: none;
@@ -709,7 +710,7 @@ section {
 }
 
 .price {
-    color: white;
+   
     text-align: center;
 }
 
@@ -832,7 +833,7 @@ section {
 
 form .btn-border{
     margin-top:5px;
-    
+
 }
 
 @media only screen and (max-width: 600px) {
