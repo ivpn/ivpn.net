@@ -137,6 +137,10 @@ export default {
         max-width: 550px;
     }
 
+    .btn-solid {
+        width: auto;
+    }
+
     .promo-block {
         &:first-of-type {
             margin-top: 72px;
