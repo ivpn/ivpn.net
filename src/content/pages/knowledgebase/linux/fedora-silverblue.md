@@ -8,7 +8,7 @@ sectionTitle: Linux
 layout: help-details
 weight: 150
 ---
-# Linux - Fedora Silverblue
+# Installing IVPN on Fedora Silverblue
 
 Fedora Silverblue is unique because it uses an immutable filesystem and an ostree-based package management system. This means that the system files cannot be modified once they are installed, ensuring greater stability and security of the operating system. 
 

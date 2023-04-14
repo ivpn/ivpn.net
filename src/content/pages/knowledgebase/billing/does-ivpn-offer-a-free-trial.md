@@ -7,7 +7,7 @@ sections:
     - general
 sectionTitle: Billing
 layout: help-details
-weight: 10
+weight: 11
 ---
 # Does IVPN offer a free trial?
 
