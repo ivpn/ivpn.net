@@ -31,11 +31,11 @@ releases: [{
     changelog: https://github.com/ivpn/android-app/blob/main/CHANGELOG.md,
     checksum: [
         {
-            title: SHA256 .apk,
+            title: .apk SHA256,
             value: e27ca4b9d64b012d1ebbba6be27d8a3d1f43abe544165240f10c571873e09822
         },
         {
-            title: SHA256 signing cert,
+            title: .apk signing cert SHA256,
             value: 88a6b40fc97fdc842f231f50eb12de116f5b759e3c5b38aaccaf6a7b393c85bb
         }
     ]
