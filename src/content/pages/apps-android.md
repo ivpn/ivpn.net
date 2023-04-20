@@ -19,6 +19,10 @@ releases: [{
             url: https://f-droid.org/en/packages/net.ivpn.client/
         },
         {
+            cta: Accrescent,
+            url: https://accrescent.app/app/net.ivpn.client
+        },
+        {
             cta: .APK file,
             url: https://www.ivpn.net/releases/android/IVPNv2.8.6site.apk
         }
