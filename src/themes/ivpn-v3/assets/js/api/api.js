@@ -393,11 +393,11 @@ export default {
     async createLightInvoice(priceID, exitServer, entryServer, privateKey, publicKey) {
 
         let response = await this.Post('/web/accounts/btc/create-light-invoice', {
-            priceId: priceID,
-            privateKey: privateKey,
-            publicKey: publicKey,
-            exitServer: exitServer,
-            entryServer: entryServer
+            price_id: priceID,
+            private_key: privateKey,
+            public_key: publicKey,
+            exit_server: exitServer,
+            entry_server: [ entryServer ]
         })
 
         return response

@@ -1,5 +1,6 @@
 <template>
-    <v-select
+    <!--
+    <Multiselect
         v-model="selectedLocation"
         :options="options"
         :getOptionLabel="getOptionLabel"
@@ -9,9 +10,8 @@
         :clearable="clearable"
         :searchable="searchable"
         :filterable="filterable"
-        appendToBody
     >
-        <template v-slot:option="option">
+        <template slot:option="option" slot-scope="props">
             <div class="option-element">
                 <div class="price-item-name" >
                     <country-flag :country="option.country_code" size='normal'/> {{ option.country }},{{ option.city }}
@@ -22,27 +22,61 @@
         <template #selected-option="{ country, city, country_code}">
             <div class="option-element selected">
                 <div class="price-item-name" style="flex-grow: 1">
-                    <country-flag :country="country_code" size='normal'/> {{ city }}
+                    <country-flag :country="country_code" size='normal'/> {{ country }},{{ city }}
                 </div>
             </div>
+        
+        
         </template>
-    </v-select>
+    </Multiselect>
+-->
+    <multiselect 
+        v-model="selectedLocation" 
+        :options="options"
+        :option-height="50" 
+        label="name" 
+        :show-labels="false"
+        track-by="name"
+        :multiple = "multiple"
+        group-values="cities" 
+        group-label="country" 
+        :group-select="true"
+        >
+        <template slot="option" slot-scope="props"><img class="option__image" :src="props.option.img" alt="No Man’s Sky">
+      <div class="option__desc"><span class="option__title">{{ props.option.name }}</span><span class="option__small">{{ props.option.code }}</span></div>
+        </template>
+        
+<!--
+    <template slot="option" slot-scope="props">
+  <div class="option__desc" v-if="props.option['$isLabel'] === true">
+    <div>
+      <span class="option__title"><country-flag :country="props.option.code" size='normal'/> {{ props.option['$groupLabel'].name }}</span>
+    </div>
+    <div>
+      <span class="option__small small"><country-flag :country="props.option.code" size='normal'/> {{ props.option['$groupLabel'].name }}</span>
+    </div>
+  </div>
+  <div v-else>
+    <div>
+      <span class="option__title"><country-flag :country="props.option.code" size='normal'/> {{ props.option.name }}</span>
+    </div>
+    <div>
+      <span class="option__small small"> <country-flag :country="props.option.code" size='normal'/> {{ props.option.code }}</span>
+    </div>
+  </div>
+</template>
+-->
+
+  </multiselect>
 </template>
 
 <script>
-import vSelect from "vue-select";
-import VueSelectCaret from "@/components/VueSelectCaret.vue";
-import "vue-select/dist/vue-select.css";
+import Multiselect from 'vue-multiselect'
 import CountryFlag from 'vue-country-flag-next'
-
-vSelect.props.components.default = () => ({
-    OpenIndicator: VueSelectCaret,
-});
-
 
 export default {
     components: {
-        vSelect,
+        Multiselect,
         CountryFlag,
     },
     model: {
@@ -59,6 +93,7 @@ export default {
     },
     watch: {
         selectedLocation: function () {
+            this.$emit("changeLocation", this.selecteLocation);
         },
     },
 
@@ -114,6 +149,7 @@ export default {
         font-size: 16px;
         line-height: 28px;
         margin: 0px 8px;
+        width: 100%;
 
         @include light-theme((
             color: $black
@@ -124,11 +160,13 @@ export default {
         ));
 
         @media (max-width: $brk-mobile-xs) {
+            width: 100%;
         }
 
         &.selected {
 
             @media (max-width: $brk-mobile-xs) {
+                width: 200px;
             }
         }
 
@@ -162,6 +200,7 @@ export default {
         ));
     }
 
+
     .vs__dropdown-option--disabled{
         @media (max-width: $brk-mobile-xs) {
         }
@@ -176,16 +215,46 @@ export default {
         ));
     }
 }
-
-.vs__dropdown-menu{
+.multiselect__option--selected{
     @include light-theme((
-            background: $white,
-            color: $black
-        ));
+        background: $white,
+        color: $black
+    ));
 
-        @include dark-theme((
-            background: #202020,
-            color: $white
-        ));
+    @include dark-theme((
+        background: #202020,
+        color: $white
+    ));
+
 }
+
+
+
+.multiselect__tags{
+    @include light-theme((
+        background: $white,
+        color: $black
+    ));
+
+    @include dark-theme((
+        background: #202020,
+        color: $white
+    )); 
+}
+
+.multiselect__tag{
+    background: #449CF8;
+}
+
+
+
+.multiselect__option--highlight{
+    background: #449CF8;
+}
+
+
+.multiselect__input{
+    border-color:transparent !important;
+}
+
 </style>

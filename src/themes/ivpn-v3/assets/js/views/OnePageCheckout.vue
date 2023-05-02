@@ -26,12 +26,14 @@
                                  </div>
                                  <div class="accordion-collapse collapse" v-if="!keysHidden">
                                     <div class="card-body">
-                                       <div role="alert" class="fade alert alert-light show">Your private keys are only generated within the browser!</div>
+                                       <div role="alert" v-if="!this.keysAdded" class="fade alert alert-light show">{{ showKeysTitle }}</div>
+                                       <div role="alert" v-else class="fade alert alert-light show">{{ usedCustomKeysText }}</div>
+                                       
                                        <form>
                                           <label>Private Key</label><input class="form-control"  type="text" v-model="privateKey" autofocus="">
                                           <label>Public Key</label><input class="form-control" type="text" v-model="publicKey">
                                           <p>
-                                            <button type="button" class="btn btn-border" @click="generateKeys()">Generate new keys</button>
+                                            <button v-if="!this.keysAdded" type="button" class="btn btn-border" @click="generateKeys()">Generate new keys</button>
                                           </p>
                                        </form>
                                     </div>
@@ -77,27 +79,13 @@
                        multiple
                        placeholder="Select a location"
                        :clearable="false"
-                       :searchable="false"
-                       :filterable="false"
+                       :searchable="true"
+                       :filterable="true"
                        >
                        </SelectLocations>
-                       </div>
-<!--
-                       <div class="select">
-                    <select @change="selectExitCountry($event)">
-                        <option value="">All countries</option>
-                        <option v-for="server in filteredServers" :value="server.country_code + '_' + server.country" :key="server.country_code">{{ server.country }}</option>
-                    </select>
-                    <i></i>
-                </div>
-                <div class="select" v-bind:class="{ disabled: validation.exitCity }">
-                    <select :disabled="validation.exitCity" @change="selectExitCity($event)">
-                        <option value="">All cities</option>
-                        <option v-for="city in exitCities" :value="city" :key="city">{{ city }}</option>
-                    </select>
-                    <i></i>
-                </div>
-            -->
+
+                    </div>
+
                 <div v-if="multihop">
                     <h4>Select entry server location</h4>
 
@@ -124,35 +112,19 @@
                        >
                     </SelectLocations>
 
-                    <!--
-                    <div class="select" v-bind:class="{ disabled: validation.multihop }">
-                        <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
-                            <option value="">Select country</option>
-                            <option v-for="server in multihopServers" :value="server.country_code" :key="server.country_code">{{ server.country }}</option>
-                        </select>
-                        <i></i>
-                    </div>
-                    <div class="select" v-bind:class="{ disabled: validation.entryCity || validation.multihop }">
-                        <select :disabled="validation.entryCity || validation.multihop" @change="selectEntryCity($event)">
-                            <option value="">Select city</option>
-                            <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
-                        </select>
-                        <i></i>
-                    </div>
-                -->
                 </div>
                      </div>
                      <div>
                         <div id="runtimeselector" role="group" class="btn-group">
-                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-1" value="light-30minutes" checked="" v-model="selectedBillingCycle" v-on:click="updatePrice('light-30minutes')">
+                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-1" value="light.30minutes" checked="" v-model="selectedBillingCycle" v-on:click="updatePrice('light.30minutes')">
                            <label tabindex="0" title="1 hour" for="tbg-radio-1" class="btn btn-primary">30 <br> minutes <br></label>
-                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-2" value="light-3hours" v-model="selectedBillingCycle" v-on:click="updatePrice('light-3hours')">
+                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-2" value="light.3hours" v-model="selectedBillingCycle" v-on:click="updatePrice('light.3hours')">
                            <label tabindex="0" title="1 day" for="tbg-radio-2" class="btn btn-primary">3 <br> hours <br></label>
-                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-3" value="light-1day" v-model="selectedBillingCycle" v-on:click="updatePrice('light-1day')">
+                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-3" value="light.1day" v-model="selectedBillingCycle" v-on:click="updatePrice('light.1day')">
                            <label tabindex="0" title="1 week" for="tbg-radio-3" class="btn btn-primary">1 <br> day <br></label>
-                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-4" value="light-7days" v-model="selectedBillingCycle" v-on:click="updatePrice('light-7days')">
+                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-4" value="light.1week" v-model="selectedBillingCycle" v-on:click="updatePrice('light.1week')">
                            <label tabindex="0" title="1 month" for="tbg-radio-4" class="btn btn-primary">7 <br>days <br></label >
-                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-5" value="light-30days" v-model="selectedBillingCycle" v-on:click="updatePrice('light-30days')">
+                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-5" value="light.1month" v-model="selectedBillingCycle" v-on:click="updatePrice('light.1month')">
                            <label tabindex="0" title="3 month" for="tbg-radio-5" class="btn btn-primary">30 <br> days</label>
                         </div>
                      </div>
@@ -176,11 +148,11 @@
 
 let products = {
         prices: [
-            { id: 'light-30minutes', name: '30 minutes', price: 0.1 },
-            { id: 'light-3hours', name: '3 hours', price: 0.2 },
-            { id: 'light-1day', name: '1 Day', price: 0.5 },
-            { id: 'light-7days', name: '7 Days', price: 1 },
-            { id: 'light-30days', name: '30 Days', price: 3},
+            { id: 'light.30minutes', name: '30 minutes', price: 0.1 },
+            { id: 'light.3hours', name: '3 hours', price: 0.2 },
+            { id: 'light.1day', name: '1 Day', price: 0.5 },
+            { id: 'light.1week', name: '1 week', price: 1 },
+            { id: 'light.1month', name: '1 month', price: 3},
         ]
 }
 
@@ -188,15 +160,19 @@ import Api from "@/api/api";
 import { mapState } from "vuex";
 import wireguard from '@/wireguard';
 import "vue-select/dist/vue-select.css";
+import "vue-multiselect/dist/vue-multiselect.css";
 import SelectLocations from "@/components/SelectLocations.vue";
+import SelectLocationsMulti from "@/components/SelectLocationsMulti.vue";
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import qrcode from "qrcode-generator";
+import { exportDefaultSpecifier } from "@babel/types";
 
 export default {
     name: "Light",
     components: {
       SelectLocations,
+      SelectLocationsMulti,
     },
 
     data() {
@@ -207,25 +183,20 @@ export default {
             customPublicKey: "",
             keysHidden: true,
             useKeysHidden: true,
-            selectedBillingCycle: "light-30minutes",
+            selectedBillingCycle: "light.30minutes",
             products: products,
             selectedPrice: products.prices[0].price,
             selectedExitLocation:  [],
             selectedMultihopExitLocation:  [],
-            selectedEntryLocation: [],
+            selectedEntryLocation: null,
             multihop: false,
             validation: {
-                exitCity: true,
-                exitServer: true,
-                entryCity: true,
-                entryServer: true,
                 multihop: true,
-                download: true,
-                downloadQR: true,
                 submit: true,
             },
             servers: [],
             filteredServers: [],
+            availableLocations: [],
             countries: [],
             multihopServers: [],
             exitCities: [],
@@ -244,18 +215,19 @@ export default {
                 addKey: null,
             },
             keysAdded: false,
+            showKeysTitle: "Your private keys are only generated within the browser:",
+            usedCustomKeysText: "You have added the following custom key pair:"
+
         };
     },
     watch: {
         query: {
             handler: function (after, before) {
-                this.updateQuery();
             },
             deep: true
         },
         validation: {
             handler: function (after, before) {
-                this.updateQuery();
             },
             deep: true
         },
@@ -263,16 +235,24 @@ export default {
         selectedExitLocation: function(){
             if(this.selectedExitLocation.length > 0 && !this.multihop){
                 this.validation.submit = false;
-                this.inProgress = false;
+            }else if(!this.multihop){
+                this.validation.submit = true;
             }
-
         },
         selectedEntryLocation: function(){
-            if(this.selectedEntryLocation.length > 0 && this.selectedExitLocation.length > 0){
+            if(this.selectedExitLocation.length > 0){
                 this.validation.submit = false;
-                this.inProgress = false;
+            }else{
+                this.validation.submit = true;
+            }
+        },
+        selectedMultihopExitLocation: function(){
+            this.selectedExitLocation = [this.selectedMultihopExitLocation];
+            if(this.selectedEntryLocation !== null){
+                this.validation.submit = false;
             }
         }
+
     },
     computed: {
         ...mapState({
@@ -286,24 +266,21 @@ export default {
     mounted() {
       this.generateKeys();
       this.fetchServers();
-      this.updateQuery();
     },
     methods: {
         async fetchServers() {
             let res = await Api.getServerStats();
             if (res.servers) {
-                this.servers = res.servers.filter((server) => server.hostnames.wireguard != null);
-                this.filteredServers = this.servers.filter((v,i,a) => a.findIndex(t => (t.country_code === v.country_code)) === i);
-                this.filteredServers = this.sortBy(this.filteredServers, 'country', false);
-                this.countries = [...new Set(res.servers.map(server => server.country))].filter(String).sort();
-            }
+                this.servers = res.servers.filter((server) => server.hostnames.wireguard != null)
+                this.filteredServers = this.sortBy(this.servers.filter((v,i,a) => a.findIndex(t => (t.city === v.city)) === i), 'country', false);
+            }    
         },
         async send() {
-            console.log(this.inProgress);
             if (this.inProgress) {
                 return;
             }
 
+            this.validation.submit = true;
             try {
                 let URL = await this.$store.dispatch("account/createLightInvoice", {
                     exitServer: this.selectedExitLocation,
@@ -312,7 +289,13 @@ export default {
                     publicKey: this.publicKey,
                     priceID: this.selectedBillingCycle           
                 });
+                if( URL ){
+                    window.location = URL;
+                }
+                this.validation.submit = true;
+
             } catch (error) {
+                this.validation.submit = true;
                 return;
             }
 
@@ -349,96 +332,6 @@ export default {
              }
          });
         },
-        selectExitCountry(event) {
-            let value = event.target.value.split("_")[0];
-            this.query.country = value;
-            this.query.city = null;
-            this.query.host = null;
-            this.multihop_basename = event.target.value.split("_")[1];
-            this.validation.exitCity = value == "";
-            this.validation.exitServer = true;
-            this.validation.multihop = true;
-            this.exitServers = [];
-
-            if (value == "") {
-                this.exitCities = [];
-            } else {
-                let filterCities = this.servers.filter((server) => server.country_code == value);
-                this.exitCities = [...new Set(filterCities.map(server => server.city))].sort();
-                this.multihopServers = this.filteredServers.filter((server) => server.country_code != value);
-            }
-
-            this.updateQuery();
-        },
-        selectExitCity(event) {
-            let value = event.target.value;
-            this.query.city = event.target.value;
-            this.query.host = null;
-            this.validation.exitServer = value == "";
-            this.validation.multihop = true;
-            if (value == "") {
-                this.exitServers = [];
-            } else {
-                this.exitServers = this.servers.filter((server) => server.city == value);
-                this.exitServers = this.sortBy(this.exitServers, 'gateway', false);
-                this.query.host = this.exitServers[0].hostnames.wireguard;
-                this.multihop_port = this.exitServers[0].multihop_port;
-                this.wg_public_key = this.exitServers[0].wg_public_key;
-                this.validation.multihop = false;
-                this.validation.submit = false;
-            }
-
-            this.updateQuery();
-        },
-        selectExitServer(event) {
-            let value = event.target.value;
-            this.validation.multihop = value == "";
-
-            if (value == "") {
-                this.query.host = null;
-                this.multihop_port = null;
-                this.wg_public_key = null;
-            } else {
-                this.query.host = value.split("_")[0];
-                this.multihop_port = value.split("_")[1];
-                this.wg_public_key = value.split("_")[2];
-            }
-            
-            this.updateQuery();
-        },
-        selectEntryCountry(event) {
-            let value = event.target.value;
-            this.validation.entryCity = value == "";
-            this.validation.entryServer = true;
-            this.validation.download = true;
-            this.entryServers = [];
-
-            if (value == "") {
-                this.entryCities = [];
-                this.multihopServers = this.filteredServers;
-            } else {
-                let filteredServers = this.servers.filter((server) => server.country_code == value);
-                this.entryCities = [...new Set(filteredServers.map(server => server.city))].sort();
-            }
-        },
-        selectEntryCity(event) {
-            let value = event.target.value;
-            this.validation.entryServer = value == "";
-            this.validation.download = true;
-
-            if (value == "") {
-                this.entryServers = [];
-            } else {
-                this.entryServers = this.servers.filter((server) => server.city == value);
-                this.entryServers = this.sortBy(this.entryServers, 'gateway', false);
-            }
-        },
-        selectEntryServer(event) {
-            let value = event.target.value;
-            this.entry_host = value;
-            this.validation.download = value == "";
-            this.updateQuery();
-        },
         toggleGenerateKey(event) {
             if (this.publicKey) {
                 return;
@@ -448,92 +341,22 @@ export default {
         },
         toggleMultihop(event) {
             this.multihop = event.target.getAttribute("data-multihop") == "true";
-
-            if (this.multihop) {
-                this.validation.download = this.multihop_port == null || this.entry_host == null;
-            } else {
-                this.query.port = "2049";
-                this.validation.entryCity = true;
-                this.validation.entryServer = true;
-                this.validation.download = false;
-                this.entryCities = [];
-                this.entryServers = [];
-                this.entry_host = null;
-            }
-
-            this.updateQuery();
-        },
-        updateQuery() {
-            var query = Object.assign({}, this.query);
-            Object.keys(query).forEach(key => {
-                if (query[key] === null || query[key] === undefined || query[key] == "") {
-                    delete query[key];
+            
+            if(this.multihop){
+                if(this.selectedEntryLocation != null && this.selectedExitLocation.length > 0){
+                    this.validation.submit = false;
+                    this.inProgress = false;
+                }else{
+                    this.validation.submit = true;
                 }
-            });
-
-            if (this.multihop) {
-                if (this.multihop_port) {
-                    query.port = this.multihop_port;
-                }
-                if (this.entry_host) {
-                    query.host = this.entry_host;
+            }else{
+                if(this.selectedExitLocation.length > 0){
+                    this.validation.submit = false;
+                    this.inProgress = false;
+                }else{
+                    this.validation.submit = true;
                 }
             }
-
-            if (query.city) {
-                query.city = this.query.city.split(",")[0];
-            }
-
-            if (!this.validation.download) {
-                this.validation.download = this.publicKey == null || this.privateKey == null;
-            }
-
-            this.query.address = this.ipAddress;
-            this.queryString = new URLSearchParams(query);
-            this.validation.downloadQR = this.validation.download || !this.query.host;
-        },
-        async handleDownload() {
-            if (this.validation.download) {
-                return;
-            }
-
-            let res = await Api.getWireGuardConfigurations(this.queryString);
-            this.downloadArchive(res);
-        },
-        async handleGenerateQRCode() {
-            if (this.validation.downloadQR) {
-                return;
-            }
-
-            let res = await Api.getWireGuardConfigurations(this.queryString);
-            this.generateQRCode(res);
-        },
-        configString(config) {
-            let publicKey = config.peer.public_key;
-            let dns = config.interface.dns;
-
-            if (this.multihop) {
-                if (this.wg_public_key) {
-                    publicKey = this.wg_public_key;
-                }
-            }
-
-            if (this.dns) {
-                dns = this.dns;
-            }
-
-            if (this.dnsType == "custom" && this.customDNS && this.isValidIP(this.customDNS)) {
-                dns = this.customDNS;
-            }
-
-            return "[Interface]" +
-            "\nPrivateKey = " + this.privateKey +
-            "\nAddress = " + config.interface.address +
-            "\nDNS = " + dns +
-            "\n\n[Peer]" +
-            "\nPublicKey = " + publicKey +
-            "\nAllowedIPs = " + config.peer.allowed_ips +
-            "\nEndpoint = " + config.peer.endpoint;
         },
         sortBy(array, by, desc) {
             return array.sort((a, b) => {
@@ -543,9 +366,6 @@ export default {
                     return (desc ? 1 : -1)
                 return 0
             });
-        },
-        changeLocation(locations){
-            console.log(locations);
         }
     },
 };
