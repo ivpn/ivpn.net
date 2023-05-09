@@ -12,6 +12,9 @@ IVPN proudly supports the following organizations and projects.
 {{< figure class="features__image--light" src="/images-static/uploads/logo-wireguard.svg" alt="WireGuard" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/logo-wireguard.svg" alt="WireGuard" >}}
 [WireGuard](https://www.wireguard.com) is an open-source VPN protocol developed by Jason A. Donenfeld. Development of WireGuard is supported by donations from companies who deploy it to their networks. IVPN first supported the project in November 2018 before implementing the protocol to our service.
+{{< figure width="125" class="features__image--light" src="/images-static/uploads/BTCPay.svg" alt="BTCPay" >}}
+{{< figure width="125" class="features__image--dark" src="/images-static/uploads/BTCPay.svg" alt="BTCPay" >}}
+[BTCPay Server Foundation](https://foundation.btcpayserver.org) is a non-profit organization responsible for maintaining [BTCPay Server](https://btcpayserver.org), a self-hosted, open-source cryptocurrency payment processor. IVPN is a long-standing user and advocate of BTCPay, and became a Foundation supporter in 2022.
 {{< figure class="features__image--light" src="/images-static/uploads/torservers.svg" alt="Torservers.net" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/torservers-dark.svg" alt="Torservers.net" >}}
 [Torservers.net](https://torservers.net) is an independent, global network of organizations that help the Tor network by running high bandwidth Tor relays to make the Tor network faster and more reliable. IVPN have been sponsoring a Tor server through torservers.net since June 2014.
