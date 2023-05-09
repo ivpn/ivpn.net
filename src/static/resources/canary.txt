@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-04-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 783720
-hash: 00000000000000000002eeac33d2c46826b9933e74d131e54bd59c1942728bc0
+height: 788045
+hash: 00000000000000000000e68a4a42855bef73bb7e175f074f5351fc6d0319a26a
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Oil prices surge as Opec+ makes unexpected production cut
-Goldman Sachs raises year-end Brent forecast to $95 a barrel
-
-There is no US deposit flight
-And it’s OK to own emerging market equities
+Bank runs are different now
+And the FDIC’s loan to JPMorgan
 
 FTAV’s further reading
-Central banks; blue checks; the Gulf; abandoned children; ChatGPT; English; the Fed; poetry; gay banks; and chess
+Cash; chip wars; crowds; algos; tech; longtermism; credit; and visuals
+
+BNP Paribas profits boosted after windfall from Bank of the West
+French lender finds momentum in first quarter as bad-loan provisions fall and earnings rise from bond trading
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmQqae4ACgkQisFrnrZH
-umnTAQgAg28baBXgcQUqppUBAf5mzC2FDncrn3k9nzPEsPkvvzy1cT+rQRhh+ytV
-3Lm4JdOnMwIFr6QTpglrNaFxLn7d1XJUsn9s2KXsjChzWIL1oW1KKX/NzjXBXRnZ
-DgDxPufHBqjUG6HxGfIdsadNsu2iuNlVWciJXRfapbso4Y6V+NpkSV9SwGhJx4GU
-SDfvIm3Gj8cs7gQYhjZo1A/HC+ZruEawY2hu1hWVsR+mVovHzqgx1PzftXEUsYiP
-SN+ooxqRxdjQMOCUlWS/DluKvvxHIS/56Z/jAWRPPxfqHGRa7q4ZDNfgIxy0hgDm
-pVkfUqMV12RYW96WR3c5fbejcH3KRg==
-=rDrq
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmRR90sACgkQisFrnrZH
+umln3Af9EeaVOiDcfGwUK8bzW7GSQRhP1EDNHR5BgB3DPk+nphug7bbDSq6D0/MP
+cHEVYnmKYoPSO5aMctFRlscFkRe0Nn/knHTddxtVgxxc7v/wug4SufKeneVQjiNP
+KFIvLpjqMrctX6B/qQ+dMNZZjTNrypJCGgX4DxWAfRQ+XRU7R+2efRI0VysbLgbV
+XmOm+A3LCpMhWX1to08yv0FD/UKurzOx+nqCwnEI8qw/+T1OgrygKuNv0tsyyApL
+k4zbdeHCvSFlvB24O7twIA1XlZU5Ws/k0G6TqSr+MzZt2RMoHO6xAwBEhHBsW5VG
+2O4AF4C9MClS91QMwYPL5PVL6YqvzQ==
+=Z+xJ
 -----END PGP SIGNATURE-----
 
 
