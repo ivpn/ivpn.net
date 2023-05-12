@@ -41,8 +41,8 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspberry-p
 
     ```
     $ wget https://go.dev/dl/go1.20.4.linux-arm64.tar.gz
-    $ sudo tar -C /usr/local -xzf https://go.dev/dl/go1.20.4.linux-arm64.tar.gz
-    $ rm -i https://go.dev/dl/go1.20.4.linux-arm64.tar.gz
+    $ sudo tar -C /usr/local -xzf go1.20.4.linux-arm64.tar.gz
+    $ rm -i go1.20.4.linux-arm64.tar.gz
     ```
 
     <div markdown="1" class="notice notice--info">
