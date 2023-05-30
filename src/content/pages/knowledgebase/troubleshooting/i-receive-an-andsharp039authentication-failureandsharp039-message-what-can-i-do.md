@@ -1,7 +1,7 @@
 ---
 title: I receive an 'authentication failure' message. What can I do? - IVPN Help
 h1: I receive an 'authentication failure' message. What can I do?
-url: /knowledgebase/troubleshooting/i-receive-an-andsharp039authentication-failureandsharp039-message--what-can-i-do/
+url: /knowledgebase/troubleshooting/i-receive-an-andsharp039authentication-failureandsharp039-message-what-can-i-do/
 sections:
     - troubleshooting
 sectionTitle: Troubleshooting
