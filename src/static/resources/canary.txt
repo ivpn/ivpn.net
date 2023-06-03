@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 788045
-hash: 00000000000000000000e68a4a42855bef73bb7e175f074f5351fc6d0319a26a
+height: 792642
+hash: 00000000000000000000058296a0cad1ebaa49c92b3da9482d83fcf0e3e22375
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Bank runs are different now
-And the FDIC’s loan to JPMorgan
+US defence chief warns China against risky behaviour in Indo-Pacific
+Lloyd Austin calls for more engagement after Beijing turns down meeting
 
-FTAV’s further reading
-Cash; chip wars; crowds; algos; tech; longtermism; credit; and visuals
+Composer Cassandra Miller: ‘People only really write music for their friends, right?’
+Her collaborations have produced some of her best work — and will soon feature in the Aldeburgh Festival
 
-BNP Paribas profits boosted after windfall from Bank of the West
-French lender finds momentum in first quarter as bad-loan provisions fall and earnings rise from bond trading
+Management 101: don’t drain a reservoir to find your phone
+The actions of one Indian official are a guide to what not to do when in a panic
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmRR90sACgkQisFrnrZH
-umln3Af9EeaVOiDcfGwUK8bzW7GSQRhP1EDNHR5BgB3DPk+nphug7bbDSq6D0/MP
-cHEVYnmKYoPSO5aMctFRlscFkRe0Nn/knHTddxtVgxxc7v/wug4SufKeneVQjiNP
-KFIvLpjqMrctX6B/qQ+dMNZZjTNrypJCGgX4DxWAfRQ+XRU7R+2efRI0VysbLgbV
-XmOm+A3LCpMhWX1to08yv0FD/UKurzOx+nqCwnEI8qw/+T1OgrygKuNv0tsyyApL
-k4zbdeHCvSFlvB24O7twIA1XlZU5Ws/k0G6TqSr+MzZt2RMoHO6xAwBEhHBsW5VG
-2O4AF4C9MClS91QMwYPL5PVL6YqvzQ==
-=Z+xJ
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmR6yQ8ACgkQisFrnrZH
+umnzTwf/TTJ4K2Ji+keWI9rKGnThuINTaDYLNDUl9QsUKWYRvsrVmx0Zqx4OLk2D
+8NtJPE0hjKC57Nd4ntymkD0U+6MF3VqlnW8J9xiOonRwodWjgPAPozTn5tuta6n2
+oq8lKSnFM/ptAVt4A8zRxBsOs1lnA/w+qpX8boCWYoQW9Gn5A9Cl7o3FXPO0YVjt
+htwTIp9pIEzZU6BdOPVf3yBu0yRKBih2wJrUJf/1A5Hu1FMxziAzykGbx3K99FKZ
+be2BmYCGN+oNqeDRnqVMCXGbHcKSm8gCjYA+nne6erARjZ5EBioK35l9Z0gLJMWh
+vRWzh1Yvk4bFA+DPhCKUX/K0XUCPuQ==
+=Jaj0
 -----END PGP SIGNATURE-----
 
 
