@@ -168,6 +168,10 @@ export default {
         return await this.Get('/web/wireguard/keys')
     },
 
+    async getWireguardConfigs(payload) {
+        return await this.Post('/web/wireguard/configs',payload)
+    },
+
     async addWireguardKey(payload) {
         return await this.Post('/web/wireguard/keys/add', payload)
     },

@@ -1,58 +1,42 @@
 <template>
     <div>
         <div class="payment-received">
-            <h2> Scan,Send or download config</h2>
-            <h3>Your payment has been received</h3>
-
-            <img width="200" style="text-align: center;margin-bottom: 32px;" src="https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg">
-
-            <p>
-                Wireguard VPN config, scan via the <a href="https://itunes.apple.com/us/app/wireguard/id1441195209?ls=1&mt=8"> Wireguard App on your smartphone</a>, 
-                download the config file for <a _targethref="https://www.wireguard.com/install/" >Wireguard for Windows and MacOS</a> or send it to yourself
-                via Email to use it later on another device.
-            </p>
-            <p style="color:red;">
-                Valid until
-                <b style="white-space: nowrap">
-                    Thu March  4 2025 23:59:59 GMT+0000 (CET)
-                </b
-                >
-                <p style="color:red;">
-                Make sure to save your config before closing. Otherwise it is lost.
-                </p>
-            </p>
-            <textarea disabled v-if="showConfig" v-model="wireguardConfig" cols="50" rows="50" style="margin-bottom:20px;height:200px;">
+            <h2>Your IVPN Light access is ready</h2>
+            <p>We have received your payment.</p>
+            <hr />
+            <h4 v-if="isLoaded">Your account is live until {{ $filters.formatActiveUntil(account.active_until) }}.</h4>
+            <hr />
+            <div class="steps">
+            <p>Next steps:</p>
+                <ol>
+                   <li>Save the QR code or config file now to avoid losing access.</li>
+                    <li> Download and open the WireGuard app.</li>
+                    <li>Scan the QR code, or add the configuration provided.</li>
+                </ol>
+            </div>
+            <hr />
+          
+            <div v-if="qrCodes.length > 0" v-for="qr in qrCodes">
+                <p>Access to:</p>
+                <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
+                <div class="code" v-html="qr.qrCode"></div>
+            </div>
+            <textarea disabled v-if="qrCodes.length == 1" v-model="wireguardConfig" cols="50" rows="50">
             </textarea>
 
-           
+        
             <button
-                v-if="showConfig"
-                @click.prevent="hideConfig"
-                class="btn btn-solid"
-                style="margin-bottom: 1em"
-                target="_blank"
-            >
-            Hide Config
-            </button>
-            <button
-                v-else
-                @click.prevent="hideConfig"
-                class="btn btn-solid"
-                style="margin-bottom: 1em"
-                target="_blank"
-            >
-            ShowConfig
-            </button>
-            <button
-                @click.prevent="downloadConfig"
+                @click.prevent="handleDownload()"
                 class="btn btn-solid"
                 style="margin-bottom: 1em"
                 target="_blank"
             >
                 <down-icon
                     style="width: 16px; height: 16px; fill: #449cf8"
-                />Download as File
+                />Download configuration
             </button>
+
+            <h5 v-if="isLoaded">For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a separate IVPN Light access, or generate an IVPN Standard or Pro account.</h5>
         </div>
     </div>
 </template>
@@ -61,48 +45,109 @@
 import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
-import Invoice from "@/views/Account/Invoice.vue";
+import JSCookie from "js-cookie"
+import CountryFlag from 'vue-country-flag-next'
+import Api from "@/api/api";
+import qrcode from "qrcode-generator";
+import JSZip from "jszip";
+import FileSaver from "file-saver";
 
 export default {
-    components: { SuccessIcon, DownIcon },
+    components: { SuccessIcon, DownIcon,CountryFlag },
     data() {
         return {
-            showConfig: true,
-            wireguardConfig: `[Interface]
-Address = 10.22.22.2/24
-PrivateKey = 123456
-
-[Peer]
-PublicKey = 123456
-AllowedIPs = 0.0.0.0/0
-Endpoint = 1.2.3.4:443`,
+            wireguardConfig: "",
+            isLoaded: false,
+            qrCodes: [],
+            wireguardConfigs: [],
         };
     },
 
     async created() {
-        
+        await this.$store.dispatch("auth/reload");
+        await this.$store.dispatch("wireguard/load");
+        await this.$store.dispatch("wireguard/loadConfigs");
     },
 
     methods: {
-        hideConfig(){
-            this.showConfig = !this.showConfig;
+        async handleDownload() {
+            this.downloadArchive();
         },
-        downloadConfig(){
-            let element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(this.wireguardConfig));
-            element.setAttribute('download', "ivpn-wireguard-config.conf");
-
-            element.style.display = 'none';
-            document.body.appendChild(element);
-
-            element.click();
-            document.body.removeChild(element);
-        }
+        downloadArchive() {
+            
+            let self = this;
+            let zip = new JSZip();
+            let basename = this.multihop ? (this.multihop_basename + ".conf") : null
+            this.wireguardConfigs.forEach(function (config) {
+                zip.file(basename || config.basename, self.configString(config));
+            });
+            zip.generateAsync({ type: "blob" }).then(function(content) {
+                FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
+            });
+        },
+        generateQRCode(res) {
+            if (!res) {
+                return;
+            }
+            let configString = this.configString(res);
+            this.wireguardConfig = configString;
+            let qr = qrcode(0, "M");
+            qr.addData(configString);
+            qr.make();
+            let location = {};
+            location.qrCode = qr.createSvgTag(4)
+            location.countryCode = res.country_code;
+            location.city = res.city;
+            this.qrCodes.push(location);
+            
+            this.qrCodes = this.qrCodes.filter((value, index, self) =>
+                index === self.findIndex((t) => (
+                    t.place === value.place && t.name === value.name
+                ))
+            );
+        },
+        configString(config) {
+            return "[Interface]" +
+            "\nPrivateKey = " + JSCookie.get('lpv') +
+            "\nAddress = " + config.interface.address +
+            "\nDNS = " + config.interface.dns +
+            "\n\n[Peer]" +
+            "\nPublicKey = " + config.peer.public_key +
+            "\nAllowedIPs = " + config.peer.allowed_ips +
+            "\nEndpoint = " + config.peer.endpoint;
+        },
     },
     computed: {
         ...mapState({
+            account: (state) => state.auth.account,
+            keys: (state) => state.wireguard.keys,
+            configs: (state) => state.wireguard.configs,
         }),
     },
+    watch: {
+        configs: {
+            handler: function (after, before) {
+                after.then((res) => {
+                    
+                    res.forEach((cfg) => {
+                        this.wireguardConfigs.push(cfg);
+                        this.generateQRCode(cfg);
+                    });
+                    
+                });
+            },
+            deep: true
+        },
+        account: {
+            handler: function (after, before) {
+                this.isLoaded = true;
+            },
+            deep: true
+        },
+    },
+
+    mounted(){
+    }
 };
 </script>
 
@@ -118,8 +163,48 @@ Endpoint = 1.2.3.4:443`,
         margin-bottom: 1em;
     }
 
+    h4{
+        color: #FF3344;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    textarea{
+        background: #F0F0F0;
+        border:0;
+        margin-bottom:20px;
+        min-height:200px;
+
+    }
+
+    h5{
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        line-height: 30px;
+        font-size: 16px;
+        margin: 10px;
+    }
+
     p {
         max-width: 550px;
+        margin-bottom:5px;
+    }
+
+    .steps{
+        text-align: left;
+    }
+
+    ol{
+        text-align: left;
+        margin-bottom:0px;
+        letter-spacing: -0.4px;
+    }
+
+    hr{
+        width:100%;
+        background:rgba(61, 61, 66, 0.5);
+        margin:30px;
     }
 
     .promo-block {

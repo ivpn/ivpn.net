@@ -33,7 +33,7 @@
     <multiselect 
         v-model="selectedLocation" 
         :options="options"
-        :option-height="50" 
+        :option-height="75" 
         label="name" 
         :show-labels="false"
         track-by="name"
@@ -42,7 +42,7 @@
         group-label="country" 
         :group-select="true"
         >
-        <template slot="option" slot-scope="props"><img class="option__image" :src="props.option.img" alt="No Man’s Sky">
+        <template slot="option" slot-scope="props"><img class="option__image" :src="props.option.img">
       <div class="option__desc"><span class="option__title">{{ props.option.name }}</span><span class="option__small">{{ props.option.code }}</span></div>
         </template>
         
@@ -200,21 +200,32 @@ export default {
         ));
     }
 
+    .vs__select {
+        @media (max-width: $brk-mobile-xs) {
+        }
+
+        @include dark-theme((
+            background: #3D3D42
+        ));
+    }
 
     .vs__dropdown-option--disabled{
         @media (max-width: $brk-mobile-xs) {
         }
         @include light-theme((
-            background: $white,
+            background: #E5E5E5,
             color: $black
         ));
 
         @include dark-theme((
-            background: #202020,
+            background: #222226,
             color: $white
         ));
     }
 }
+
+
+
 .multiselect__option--selected{
     @include light-theme((
         background: $white,
@@ -256,5 +267,99 @@ export default {
 .multiselect__input{
     border-color:transparent !important;
 }
+
+.vs__search{
+    font-family: 'Roboto Mono';
+    @include dark-theme((
+        background:   #3D3D42,
+        color: white
+    )); 
+}
+
+.v-select{
+    min-height: 76px !important;
+    @include light-theme((
+        background: $white,
+        color: $black
+    ));
+    @include dark-theme((
+        background:  #3D3D42,
+        color: white
+    )); 
+}
+
+.vs__dropdown-toggle{
+    min-height: 76px !important;
+    @include light-theme((
+        background: #F0F0F0
+    ));
+
+    @include dark-theme((
+        background:   #3D3D42, 
+    ));
+}
+
+.vs--searchable .vs__dropdown-toggle {
+    min-height: 76px !important;
+    @include dark-theme((
+        background:   #3D3D42,    
+    ));
+}
+
+#vs1__combobox{
+    min-height: 76px !important;
+    @include dark-theme((
+        background:   #3D3D42,    
+    ));
+}
+
+.vs__selected-options{
+    @include light-theme((
+        background: #F0F0F0
+    ));
+
+    @include dark-theme((
+        background: #3D3D42
+    ));
+}
+
+.vselect .vs__dropdown-toggle{
+   min-height: 76px !important;
+   @include dark-theme((
+        background:   #3D3D42,    
+    ));
+}
+
+.vs__actions{
+  color: #222226;;
+  @include dark-theme((
+        background:   #3D3D42,    
+  )); 
+}
+
+.vs__dropdown-menu{
+    @include light-theme((
+        background: #F0F0F0
+    ));
+
+    @include dark-theme((
+        background: #222226
+    ));
+}
+
+.vs__dropdown-option--disabled{
+        @media (max-width: $brk-mobile-xs) {
+        }
+        @include light-theme((
+            background: transparent,
+            color: $black
+        ));
+
+        @include dark-theme((
+            background: transparent,
+            color: $white
+        ));
+    }
+
 
 </style>

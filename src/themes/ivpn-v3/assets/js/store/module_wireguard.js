@@ -13,6 +13,7 @@ export default {
     error: null,
 
     keys: {},
+    configs: {},
   }),
 
   mutations: {
@@ -44,6 +45,10 @@ export default {
         if (payload.key) {
           state.keys.push(payload.key);
         }
+
+        if(payload.configs){
+            state.configs = payload.configs;
+        }
     },
 
     delete(state, payload) {
@@ -64,6 +69,30 @@ export default {
 
             context.commit('done', {
                 keys: keys,
+            })
+
+        } catch (error) {
+
+            if (error.status == StatusErrNotLoggedIn) {
+                context.commit('done', {})
+                console.log("error", error)
+                return;
+            }
+
+            context.commit('failed', { error })
+        }
+    },
+
+    async loadConfigs(context) {
+
+        context.commit('started')
+        
+        try {
+            let configs = Api.getWireguardConfigs({
+                "key":context.state.keys
+            })
+            context.commit('done', {
+                configs: configs,
             })
 
         } catch (error) {

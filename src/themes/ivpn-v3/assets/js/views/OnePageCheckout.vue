@@ -7,9 +7,9 @@
                   <div class="col">
                      <div>
                         <div class="alert alert-light">
-                           <p>Select a country ➞ Select duration ➞ Pay with Lightning ➞ Use your VPN ✔</p>
-                            <hr>
-                           <p class="mb-0">You need the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> VPN client app. You can download it <a href="https://www.wireguard.com/install/" target="_blank" rel="noreferrer">here</a>.</p>
+                           <h3>IVPN Light - quick IVPN access with Lighting</h3>
+                            
+                           <p class="mb-0">Up to 5 server locations, or one Multi-hop setup. Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</p>
                         </div>
                      </div> 
                      <div id="key-input">
@@ -19,8 +19,8 @@
                                  <div class="card-header">
                                     <div class="row">
                                        <div class="col keys-buttons">
-                                        <button type="button" class="btn btn-solid btn-big" @click="showKeys()"> Show my keys </button>
-                                        <button type="button" class="btn btn-solid btn-big" @click="useKeys()"> Use my own keys </button>
+                                        <button type="button" class="btn btn-solid btn-big" @click="showKeys()" :class="{ clickedButton: generateKeysClicked }"> Generate key </button>
+                                        <button type="button" class="btn btn-solid btn-big" @click="useKeys()" :class="{ clickedButton: addKeysClicked }"> Add your keys </button>
                                       </div>
                                     </div>
                                  </div>
@@ -30,10 +30,10 @@
                                        <div role="alert" v-else class="fade alert alert-light show">{{ usedCustomKeysText }}</div>
                                        
                                        <form>
-                                          <label>Private Key</label><input class="form-control"  type="text" v-model="privateKey" autofocus="">
-                                          <label>Public Key</label><input class="form-control" type="text" v-model="publicKey">
+                                          <label>Public Key</label><input class="form-control" type="text" v-model="publicKey" autofocus="">
+                                          <label>Private Key</label><input class="form-control"  type="text" v-model="privateKey">
                                           <p>
-                                            <button v-if="!this.keysAdded" type="button" class="btn btn-border" @click="generateKeys()">Generate new keys</button>
+                                            <button v-if="!this.keysAdded" type="button" class="btn btn-solid btn-border" @click="generateKeys()">Generate new key</button>
                                           </p>
                                        </form>
                                     </div>
@@ -42,9 +42,9 @@
                                     <div class="card-body">
                                           <form>
                                             <label for="public_key">Public Key:</label>
-                                            <input  id="public_key" type="text" v-model="customPublicKey" autofocus="" required>
+                                            <input  id="public_key" type="text" v-model="customPublicKey" autofocus="" required placeholder="Enter your key">
                                             <label for="private_key">Private Key:</label>
-                                            <input id="private_key" type="text" v-model="customPrivateKey" required>
+                                            <input id="private_key" type="text" v-model="customPrivateKey" required placeholder="Enter your key">
                                             <p v-if="keysAdded">
                                                 Your custom key pair has been saved!
                                             </p>
@@ -59,20 +59,21 @@
                            </div>
                         </div>
                      </div>
-                     <div>
+                     <div class="one-page-tabs">
                       <div class="tabs">
                           <ul>
                           <li v-bind:class="{ 'is-active': !multihop }">
                             <a @click.prevent="toggleMultihop" data-multihop="false" href="">Single-Hop</a>
                           </li>
+                          <li> / </li>
                           <li v-bind:class="{ 'is-active': multihop }">
                             <a @click.prevent="toggleMultihop" data-multihop="true" href="">Multi-Hop</a>
                           </li>
                           </ul>
                        </div>
+                       <hr />
                        <div v-if="!multihop">
-                       <h4>Select exit server location</h4>
-
+                       <h4>Select up to 5 locations</h4>
                        <SelectLocations 
                        :options="filteredServers"
                        v-model="selectedExitLocation"
@@ -114,11 +115,11 @@
 
                 </div>
                      </div>
-                     <div>
+                     <hr />
+                     <div class="billing-cycle-prices">
+                        <h4>4 different time horizon options:</h4>
                         <div id="runtimeselector" role="group" class="btn-group">
-                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-1" value="light.30minutes" checked="" v-model="selectedBillingCycle" v-on:click="updatePrice('light.30minutes')">
-                           <label tabindex="0" title="1 hour" for="tbg-radio-1" class="btn btn-primary">30 <br> minutes <br></label>
-                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-2" value="light.3hours" v-model="selectedBillingCycle" v-on:click="updatePrice('light.3hours')">
+                           <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-2" value="light.3hours" checked v-model="selectedBillingCycle" v-on:click="updatePrice('light.3hours')">
                            <label tabindex="0" title="1 day" for="tbg-radio-2" class="btn btn-primary">3 <br> hours <br></label>
                            <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-3" value="light.1day" v-model="selectedBillingCycle" v-on:click="updatePrice('light.1day')">
                            <label tabindex="0" title="1 week" for="tbg-radio-3" class="btn btn-primary">1 <br> day <br></label>
@@ -128,13 +129,15 @@
                            <label tabindex="0" title="3 month" for="tbg-radio-5" class="btn btn-primary">30 <br> days</label>
                         </div>
                      </div>
-                     <div>
-                        <h3 class="price">Total: <span>{{ getSelectedPrice }}</span>$</h3>
+                     <hr />
+                     <div class="light-price">
+                        <h3><span>Pay with Lightning:</span><br>{{ getSelectedSats }} sats (≈ {{ getSelectedPrice }} USD)</h3>
                      </div>
                      <div class="main-buttons">
                          <button type="button" :disabled="validation.submit" class="btn btn-solid btn-light" @click="send()">
-                              <div class="bitcoin-lightning-icon" ></div> Pay with Lightning
+                              <div class="bitcoin-lightning-icon" ></div> Purchase access
                           </button>
+                          <h4>We host our own BTCPay Server to generate a Lightning invoice for payment.</h4>
                      </div>
                   </div>
                </div>
@@ -148,25 +151,23 @@
 
 let products = {
         prices: [
-            { id: 'light.30minutes', name: '30 minutes', price: 0.1 },
-            { id: 'light.3hours', name: '3 hours', price: 0.2 },
-            { id: 'light.1day', name: '1 Day', price: 0.5 },
-            { id: 'light.1week', name: '1 week', price: 1 },
-            { id: 'light.1month', name: '1 month', price: 3},
+            { id: 'light.3hours', name: '3 hours', price: 0.1,sats: 500 },
+            { id: 'light.1day', name: '1 Day', price: 0.5,sats: 2000 },
+            { id: 'light.1week', name: '1 week', price: 1, sats: 5000 },
+            { id: 'light.1month', name: '1 month', price: 3,sats: 15000},
         ]
 }
 
 import Api from "@/api/api";
-import { mapState } from "vuex";
+import { mapState, storeKey } from "vuex";
 import wireguard from '@/wireguard';
 import "vue-select/dist/vue-select.css";
 import "vue-multiselect/dist/vue-multiselect.css";
 import SelectLocations from "@/components/SelectLocations.vue";
 import SelectLocationsMulti from "@/components/SelectLocationsMulti.vue";
-import JSZip from "jszip";
-import FileSaver from "file-saver";
-import qrcode from "qrcode-generator";
 import { exportDefaultSpecifier } from "@babel/types";
+import { resolveTransitionHooks } from "vue";
+import JSCookie from "js-cookie"
 
 export default {
     name: "Light",
@@ -183,9 +184,10 @@ export default {
             customPublicKey: "",
             keysHidden: true,
             useKeysHidden: true,
-            selectedBillingCycle: "light.30minutes",
+            selectedBillingCycle: "light.3hours",
             products: products,
             selectedPrice: products.prices[0].price,
+            selectedSats: products.prices[0].sats,
             selectedExitLocation:  [],
             selectedMultihopExitLocation:  [],
             selectedEntryLocation: null,
@@ -216,7 +218,9 @@ export default {
             },
             keysAdded: false,
             showKeysTitle: "Your private keys are only generated within the browser:",
-            usedCustomKeysText: "You have added the following custom key pair:"
+            usedCustomKeysText: "You have added the following custom key pair:",
+            generateKeysClicked: false,
+            addKeysClicked: false,
 
         };
     },
@@ -251,7 +255,7 @@ export default {
             if(this.selectedEntryLocation !== null){
                 this.validation.submit = false;
             }
-        }
+        },
 
     },
     computed: {
@@ -259,15 +263,30 @@ export default {
         }),
         getSelectedPrice(){
          return this.selectedPrice;
-        }
+        },
+        getSelectedSats(){
+         return this.selectedSats;
+        },
+
     },
     async created() {
     },
     mounted() {
       this.generateKeys();
       this.fetchServers();
+      this.fetchBtcPrice();
     },
     methods: {
+        async fetchBtcPrice(){
+            let url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
+            let res = await fetch(url);
+            let data = await res.json();
+            products.prices[0].price = (data.bitcoin.usd * ( products.prices[0].sats / 100000000  )).toFixed(3) ;
+            products.prices[1].price = (data.bitcoin.usd * ( products.prices[1].sats / 100000000  )).toFixed(3) ;
+            products.prices[2].price = (data.bitcoin.usd * ( products.prices[2].sats / 100000000  )).toFixed(3) ;
+            products.prices[3].price = (data.bitcoin.usd * ( products.prices[3].sats / 100000000  )).toFixed(3) ;
+            this.selectedPrice = products.prices[0].price;
+        },
         async fetchServers() {
             let res = await Api.getServerStats();
             if (res.servers) {
@@ -281,15 +300,30 @@ export default {
             }
 
             this.validation.submit = true;
+            let config = {
+                    exit: this.selectedExitLocation,
+                    entry: this.selectedEntryLocation,
+                    privateKey: this.privateKey,
+                    publicKey: this.publicKey,
+            }
             try {
+                await Api.logout();
+                let account = await Api.createNewAccount("IVPN Light");
+                if (account == null) {
+                    this.validation.submit = true;
+                    throw { message: "Invalid result returned from API" }
+                    return;
+                }
+                
                 let URL = await this.$store.dispatch("account/createLightInvoice", {
                     exitServer: this.selectedExitLocation,
                     entryServer: this.selectedEntryLocation,
                     privateKey: this.privateKey,
                     publicKey: this.publicKey,
-                    priceID: this.selectedBillingCycle           
+                    priceID: this.selectedBillingCycle,       
                 });
                 if( URL ){
+                    JSCookie.set('lpv', this.privateKey, { expires: 0.5, })
                     window.location = URL;
                 }
                 this.validation.submit = true;
@@ -309,10 +343,15 @@ export default {
         showKeys(){
          this.keysHidden = !this.keysHidden ;
          this.useKeysHidden = true;
+         this.addKeysClicked = true;
+         this.generateKeysClicked = true;
+         this.addKeysClicked = false;
         },
         useKeys(){
          this.useKeysHidden = !this.useKeysHidden ;
          this.keysHidden = true ;
+         this.generateKeysClicked = false;
+         this.addKeysClicked = true;
         },
         addKeys(){
             if( wireguard.isValidKey(this.customPrivateKey) && wireguard.isValidKey(this.customPublicKey)){
@@ -329,6 +368,7 @@ export default {
          this.products.prices.forEach((item) => {
              if(item.id == billingCycle){
                this.selectedPrice = item.price;
+               this.selectedSats = item.sats;
              }
          });
         },
@@ -374,6 +414,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/_vars.scss";
+@import "../styles/base.scss";
 
 p {
     font-size: 16px;
@@ -385,21 +426,6 @@ section {
 
 .alert-light{
      text-align:center;
-}
-
-.alert {
-    --bs-alert-bg: transparent;
-    --bs-alert-padding-x: 1rem;
-    --bs-alert-padding-y: 1rem;
-    --bs-alert-margin-bottom: 1rem;
-    --bs-alert-color: inherit;
-    --bs-alert-border: 1px solid var(--bs-alert-border-color);
-    background-color: var(--bs-alert-bg);
-    border: var(--bs-alert-border);
-    color: var(--bs-alert-color);
-    margin-bottom: var(--bs-alert-margin-bottom);
-    padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
-    position: relative;
 }
 
 .card {
@@ -464,26 +490,9 @@ section {
     clip: rect(0,0,0,0);
     pointer-events: none;
     position: absolute;
+    border: 1px solid rgba(61, 61, 66, 0.5)
 }
 
-
-.form-select {
-    -moz-padding-start: calc(.75rem - 3px);
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: 16px 12px;
-    border: 1px solid #ced4da;
-    color: #212529;
-    display: block;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    width: 100%;
-}
 
 #runtimeselector .btn {
     padding: 0.375rem;
@@ -502,9 +511,10 @@ section {
 }
 
 .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    background-color: var(--bs-btn-active-bg);
-    border-color: var(--bs-btn-active-border-color);
+    background-color: #449CF8;
+    border-color: #449CF8;
     color: var(--bs-btn-active-color);
+    color: white;
 }
 
 .btn-group-vertical>.btn, .btn-group>.btn {
@@ -527,38 +537,17 @@ section {
     --bs-btn-disabled-color: var(--bs-primary);
     --bs-btn-disabled-bg: var(--bs-primary);
     --bs-btn-disabled-border-color: var(--bs-primary);
+    border: 1px solid rgba(61, 61, 66, 0.5)
 }
 
-.price {
-   
-    text-align: center;
-}
 
 .btn-light{
    width:100%;
+   margin-bottom: 35px;
 }
 
 
-.input-group {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  width: 100%;
-}
-.input-group > .form-control,
-.input-group > .form-select,
-.input-group > .form-floating {
-  position: relative;
-  flex: 1 1 auto;
-  width: 1%;
-  min-width: 0;
-}
-.input-group > .form-control:focus,
-.input-group > .form-select:focus,
-.input-group > .form-floating:focus-within {
-  z-index: 5;
-}
+
 .input-group .btn {
   position: relative;
   z-index: 2;
@@ -567,85 +556,19 @@ section {
   z-index: 5;
 }
 
-.input-group-text {
-  display: flex;
-  align-items: center;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: white;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.input-group-lg > .form-control,
-.input-group-lg > .form-select,
-.input-group-lg > .input-group-text,
 .input-group-lg > .btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.5rem;
 }
 
-.input-group-sm > .form-control,
-.input-group-sm > .form-select,
-.input-group-sm > .input-group-text,
+
 .input-group-sm > .btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.25rem;
 }
 
-.input-group-lg > .form-select,
-.input-group-sm > .form-select {
-  padding-right: 3rem;
-}
-
-.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
-.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
-.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
-.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
-.input-group.has-validation > .dropdown-toggle:nth-last-child(n+4),
-.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
-.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-  margin-left: -1px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.input-group > .form-floating:not(:first-child) > .form-control,
-.input-group > .form-floating:not(:first-child) > .form-select {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-
-.select-period-control{
-   width:100%;
-}
-
-.input-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
-    flex: 1 1 auto;
-    min-width: 0;
-    position: relative;
-    width: 1%;
-}
-
-.input-group-text {
-    min-width: 150px;
-}
-
-.vs__selected{
-    color:white;
-}
 
 .keys-buttons button{
   margin-right:5px;
@@ -653,14 +576,178 @@ section {
 
 form .btn-border{
     margin-top:5px;
+    @include dark-theme((
+        background:  #449CF8,
+        color:  #FFFFFF,
+    ));
 
+    @include light-theme((
+        background:  #449CF8,
+        color:  #FFFFFF,
+    ));
 }
+
+
 
 @media only screen and (max-width: 600px) {
     .keys-buttons button{
         width: 100%;
-        margin-bottom: 5px;
+        margin-bottom:14px;
     }
+    .keys-buttons {
+        margin-bottom:30px !important;
+    }
+    .alert-light h3{
+        font-size: 30px !important;
+    }
+
+    .tabs ul li:not(:last-child) {
+        margin-right: 25px;
+    }
+
+    .light-price span{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    .alert-light h3{
+        font-size: 48px !important;
+    }
+
+    .alert-light p{
+        font-size: 16px;
+        padding: 15px;
+    }
+  
+}
+
+.alert-light h3{
+    font-weight: 700;
+    line-height: 120%;
+    font-size:40px;
+}
+
+.alert-light p{
+    font-size: 14px;
+}
+
+.keys-buttons button{
+    margin-right:28px;
+}
+
+.one-page-tabs{
+    text-align:center;
+}
+.one-page-tabs .tabs ul{
+    justify-content: center;
+}
+
+.one-page-tabs .tabs ul li{
+    font-size: 22px;
+}
+
+.keys-buttons{
+    margin-bottom:100px;
+}
+
+
+.billing-cycle-prices h4{
+    text-align: center;
+}
+
+.light-price{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -0.4px;
+}
+
+.main-buttons h4{
+    text-align: center;
+}
+
+hr{
+    width:100%;
+    background:rgba(61, 61, 66, 0.5);
+
+}
+
+h4{
+    font-weight: 400;
+}
+
+.multiselect__tags {
+    height: 76px !important;
+}
+
+.tabs ul{
+    @media (max-width: 576px){
+        flex-direction: row !important;
+    }
+}
+
+.card-body form p button{
+    width: 100%;
+    height: 56px;
+    font-weight: 700;
+}
+
+.card-body{
+    color: #949497;
+}
+
+
+.card-body label{
+    @include light-theme((
+        color:black,
+    ));
+
+    @include dark-theme((
+        color: #FFFFFF,
+    ));
+}
+
+.card-body alert{
+    margin-bottom:19px;
+    
+}
+
+
+.card-body form input{
+    margin-bottom:14px;
+    min-height: 76px;
+    border: 0;
+    @include light-theme((
+        background: #F0F0F0,
+        color:#949497,
+    ));
+
+    @include dark-theme((
+        background: #222226,
+        color: rgba(255, 255, 255, 0.3),
+    ));
+}
+
+
+body{
+font-family: "Roboto Mono";
+}
+
+.clickedButton{
+    @include light-theme((
+        background: #FFFFFF,
+        border: 1px solid #9E9EA0,
+        color: #9E9EA0,
+    ));
+
+    @include dark-theme((
+        background:  #222226,
+        border: 1px solid #9E9EA0,
+        color:  rgba(255, 255, 255, 0.3),
+    ));
 }
 
 </style>
