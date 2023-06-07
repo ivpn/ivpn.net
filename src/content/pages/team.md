@@ -53,11 +53,10 @@ sections:
         description: As the leader of our customer service department, Edward is responsible for making sure all customer inquiries are dealt with in a swift and professional manner, no matter when they come through.
         linkedin: https://www.linkedin.com/in/edward-de-91793b163/
         github: 
-      - image: /images-static/uploads/team-iain.png
-        image_retina: /images-static/uploads/team-iain-2x.png
+      - image: /images-static/uploads/team-avatar.png
+        image_retina: /images-static/uploads/team-avatar.png
         name: Iain Douglas
         description: With over 20 years' experience working with Unix and Linux, Iain knows a thing or two. He manages the team responsible for ensuring the security and availability of our public VPN infrastructure.
-        linkedin: https://www.linkedin.com/in/iain-douglas-a3b856162/
         github: https://github.com/Iain-ivpn
       - image: /images-static/uploads/team-gorka.png
         image_retina: /images-static/uploads/team-gorka-2x.png
