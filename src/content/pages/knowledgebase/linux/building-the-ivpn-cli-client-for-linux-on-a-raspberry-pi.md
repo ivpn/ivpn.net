@@ -40,9 +40,9 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspberry-p
     Install the most recent version of Go via [https://golang.org/dl/](https://golang.org/dl/) for your device's architecture:
 
     ```
-    $ wget https://go.dev/dl/go1.20.4.linux-arm64.tar.gz
-    $ sudo tar -C /usr/local -xzf go1.20.4.linux-arm64.tar.gz
-    $ rm -i go1.20.4.linux-arm64.tar.gz
+    $ wget https://go.dev/dl/go1.20.5.linux-arm64.tar.gz
+    $ sudo tar -C /usr/local -xzf go1.20.5.linux-arm64.tar.gz
+    $ rm -i go1.20.5.linux-arm64.tar.gz
     ```
 
     <div markdown="1" class="notice notice--info">
@@ -78,11 +78,12 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspberry-p
     $ cd desktop-app/cli/References/Linux/
     $ CL="https://raw.githubusercontent.com/ivpn/desktop-app/master/CHANGELOG.md"
     $ VER=$(curl -s $CL | grep "## Version" | head -n 1 | awk '{ print $3 }')
+    $ echo $VER
     $ ./build.sh -v $VER
     ...
     ---------------------------
     DEB package...
-    Created package {:path=>"ivpn_3.10.15_arm64.deb"}
+    Created package {:path=>"ivpn_3.10.23_arm64.deb"}
     ---------------------------
     ...
     Copying compiled packages to '/home/pi/desktop-app/cli/References/Linux/_out_bin'...
@@ -91,7 +92,7 @@ This was tested using <a href="https://www.raspberrypi.org/downloads/raspberry-p
 6.  Install the new package:
 
     ```
-    $ sudo apt install ./_out_bin/ivpn_3.10.15_arm64.deb
+    $ sudo apt install ./_out_bin/ivpn_3.10.23_arm64.deb
     ```
 
 7. Check our [Command Line Client FAQ](/knowledgebase/general/command-line-client-faq/) for the next steps.
