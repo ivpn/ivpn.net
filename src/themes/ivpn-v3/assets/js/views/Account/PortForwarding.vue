@@ -43,6 +43,12 @@
                     Your port number will be reserved on all servers (excluding USA) when connected using the OpenVPN or WireGuard protocols.
                     Your reservation will expire if you don't connect to the VPN for 14 days.
                 </p>
+                <p>
+                    Note: when port forwarding is enabled we store a timestamp for the last VPN connection event that occurred for your account. We used this information to release unused ports. We don’t log any other information, such as connecting IP address, bandwidth, DNS requests or other traffic related data.
+                </p>
+                <p>
+                    If you are concerned about IVPN keeping a record of your last connection date and time, we suggest that you do not enable port forwarding.
+                </p>
             </section>
 
             <section v-if="account.product.capabilities.has_port_forwarding">

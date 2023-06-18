@@ -18,4 +18,8 @@ weight: 70
 
 <div markdown="1" class="notice notice--info">
 Your port number will be reserved on all servers and will only expire if you do not connect to the VPN for 14 days. Port Forward is available on IVPN Pro accounts, and is disabled across all US-based servers.
+<br><br>
+Note: when port forwarding is enabled we store a timestamp for the last VPN connection event that occurred for your account. We used this information to release unused ports. We don’t log any other information, such as connecting IP address, bandwidth, DNS requests or other traffic related data.
+<br><br>
+If you are concerned about IVPN keeping a record of your last connection date and time, we suggest that you do not enable port forwarding. 
 </div>

@@ -147,7 +147,7 @@ If extracted, this can serve as an identifier, when other measures are not imple
 
 All IVPN clients apps support periodically changing IP addresses. This process is implemented together with key regeneration (see below).
 
-By default, this happens every 7 days but can be changed from within the app's settings to up to once per day.
+By default, this happens once per day and can be changed from within the app's settings to up to once every 30 days.
 
 #### Summary
 
@@ -165,7 +165,7 @@ All IVPN client apps support periodic, automatic key regeneration which also cha
 
 The new key is distributed to our servers and the client switches to using it and the new IP address. This is designed to be completely transparent to the user.
 
-The default is to regenerate the key every 7 days. It can be changed in the app's settings to be regenerated between once a day to once every 30 days.
+The default is to regenerate the key once per day. It can be changed in the app's settings to be regenerated between once a day to once every 30 days.
 
 #### Summary
 
