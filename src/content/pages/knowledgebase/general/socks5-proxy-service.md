@@ -154,10 +154,6 @@ The original Multi-Hop system used a suffix on the IVPN Account ID, like `@fr` t
 
 Yes, for Windows, macOS, and Linux.
 
-### Port Forwarding
-
-No.
-
 ### Split Tunnel ([IVPN App](https://www.ivpn.net/apps/))
 
 No.  A web browser included in the split tunnel bypass list will not be able to make use of the proxy service.

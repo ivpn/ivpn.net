@@ -102,12 +102,6 @@ define NTP_SERVERS = { 62.108.36.235, 85.214.96.5, 129.70.132.32, 136.243.202.11
 <span># define LAN_CLIENTS = { 192.168.0.2, 192.168.0.4-192.168.0.6 }</span>
 define LAN_CLIENTS = 192.168.0.0/24
 
-<span>## OPTIONAL: PORT FORWARDING: 5-digit port number available in the Account Area on ivpn.net with IVPN Pro.</span>
-<span>#define FORWARDED_PORT = 71234</span>
-
-<span>## OPTIONAL: PORT FORWARDING: Internet client IP address list allowed to access forwarded service.</span>
-<span>#define PF_CLIENTS = { a.b.c.d, e.f.g.h }</span>
-
 <span>## DROP everything by default for all chains ("INPUT", "FORWARD", "OUTPUT").</span>
 add chain inet killswitch INPUT { type filter hook input priority 0 ; policy drop ; }
 add chain inet killswitch FORWARD { type filter hook forward priority 0 ; policy drop ; }
@@ -122,19 +116,11 @@ add rule inet killswitch INPUT iifname $INET_DEV ip saddr 255.255.255.255 counte
 <span>## OPTIONAL: Allow incoming SSH (22/TCP) from LAN.  Uncomment and adjust for other services as required or add additional rules.</span>
 <span>#add rule inet killswitch INPUT iifname $INET_DEV tcp dport 22 counter accept</span>
 
-<span>## OPTIONAL PORT FORWARDING: Uncomment one rule of the three listed below.</span>
-<span>## 1. Allow all incoming Internet IP addresses</span>
-<span>#add rule inet killswitch INPUT iifname $VPN_DEV meta l4proto {tcp, udp} th dport $FORWARDED_PORT counter accept</span>
-<span>## 2. Allow all incoming Internet IP addresses with logging</span>
-<span>#add rule inet killswitch INPUT iifname $VPN_DEV meta l4proto {tcp, udp} th dport $FORWARDED_PORT counter log prefix "NFT PF: " accept</span>
-<span>## 3. Allow defined list of Internet IP addresses to access forwarded service</span>
-<span>#add rule inet killswitch INPUT iifname $VPN_DEV ip saddr $PF_CLIENTS meta l4proto {tcp, udp} th dport $FORWARDED_PORT counter accept</span>
-
 <span>## ALLOW related/established traffic and drop everything else without acknowledgement to peers.</span>
 add rule inet killswitch INPUT ct state related,established accept
 add rule inet killswitch INPUT counter drop
 
-<span>## FORWARDING: Your device is not a router, so do not allow forwarding.  Enable logging just in case.  Note: Not related to port forwarding from above.</span>
+<span>## FORWARDING: Your device is not a router, so do not allow forwarding.  Enable logging just in case.</span>
 add rule inet killswitch FORWARD counter log prefix "NFT drop fwd: " drop
 
 <span>## LOOPBACK: Some local processes need to talk to other ones.</span>
