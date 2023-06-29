@@ -33,10 +33,10 @@ Overall, we expect this change to improve the service for the vast majority of o
 
 If you have an IVPN Standard account, this change does not affect you. 
 
-By default, port forwarding is disabled on Pro accounts. If you have a Pro account, and have not activated port forwarding in the My Account settings, then this change does not affect you either. We suggest reading our ['Do you support Port Forwarding?'](https://privatus.atlassian.net/knowledgebase/general/do-you-support-port-forwarding/) explainer to learn more. 
+By default, port forwarding is disabled on Pro accounts. If you have a Pro account, and have not activated port forwarding in the My Account settings, then this change does not affect you either. We suggest reading our ['Do you support Port Forwarding?'](https://www.ivpn.net/knowledgebase/general/do-you-support-port-forwarding/) explainer to learn more. 
 
 This change will only affect IVPN Pro users who take advantage of port forwarding to host servers behind the VPN. Examples for this are gaming servers, media servers, web servers or blockchain nodes. Another popular application is running a seedbox or file server to distribute a significant quantity of data.
-For some of these use cases, there are alternate solutions, for example using a free mesh VPN like Tailscale to access your home servers from outside your private network. You can consult our ['How do I remotely connect to my home system or services?'](https://privatus.atlassian.net/knowledgebase/general/how-do-i-remotely-connect-to-my-home-system-or-services-behind-the-vpn-connection/) guide for more information.
+For some of these use cases, there are alternate solutions, for example using a free mesh VPN like Tailscale to access your home servers from outside your private network. You can consult our ['How do I remotely connect to my home system or services?'](https://www.ivpn.net/knowledgebase/general/how-do-i-remotely-connect-to-my-home-system-or-services-behind-the-vpn-connection/) guide for more information.
 
 If you have an IVPN Pro subscription with port forwarding enabled, note that once you disable your current reserved port, you won't be able to enable this feature again. Further, your current port forwarding set up will stop working on 30 September. 
 
