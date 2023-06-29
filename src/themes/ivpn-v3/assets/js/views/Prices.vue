@@ -34,7 +34,6 @@
                         <li>All protocols</li>
                         <li>7 devices</li>
                         <li>AntiTracker</li>
-                        <li>Port forwarding</li>
                         <li>Multi-hop</li>
                     </ul>
                 </div>
