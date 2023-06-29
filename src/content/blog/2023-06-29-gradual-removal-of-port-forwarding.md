@@ -9,7 +9,6 @@ categories:
 tags:
   - Subscriptions
 date: 2023-06-29
-thumbnailImage: none
 ---
 Protecting the interest of our customers and ensuring the stability of the service have been key principles for IVPN since starting our operations more than ten years ago. To keep delivering on these promises, we have made the decision to gradually phase out the port forwarding feature from the IVPN Pro plan. 
 
