@@ -20,11 +20,9 @@ Remote access to services and systems running behind a VPN. Review our dedicated
 
 The short answer to the question: Yes, you can download and upload data even with closed port.
 
- - If the port is closed that only means you can not accept incoming connections, but you can still connect to peers who accept connections. In torrent terminology they say that you are in passive mode.
+ - If the port is closed that only means you can not accept incoming connections, but you can still connect to peers who accept connections. In torrent terminology they say that you are in passive mode. A client in passive mode can connect to a client with open port (active mode), but not to a client with a closed port. 
 
- - If your port would be open then you would be able to accept connections too. In torrent terminology this is called active mode.
-
-A client with closed port (passive mode) can connect to a client with open port (active mode), but not to a client with a closed port. A client with open port can connect to both active and passive clients.
+ - If your port would be open then you would be able to accept connections too. In torrent terminology this is called active mode. A client with open port can connect to both active and passive clients.
 
 If your port is closed, that only means you can't connect to other peers with closed ports. In this case you may get less peers to connect to. If the torrent has a lot of peers, your client will likely be able to find enough peers with open port to achieve high download speeds. If the torrent has few peers, then it is likely that with open port you would get better results. 
 
