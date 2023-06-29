@@ -48,7 +48,7 @@ export default {
         },
         allowPortForwarding(){
             //Disable port forwarding starting from 29th June 2023
-            if( new Date(this.account.created_at).setHours(0, 0, 0, 0) >= new Date('2023-06-27').setHours(0, 0, 0, 0) ){
+            if( new Date(this.account.created_at).setHours(0, 0, 0, 0) >= new Date('2023-06-29').setHours(0, 0, 0, 0) ){
                 return false;
             } else {
                 return true;
