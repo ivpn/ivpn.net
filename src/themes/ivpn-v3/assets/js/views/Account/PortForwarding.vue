@@ -36,16 +36,22 @@
                     >
                 </div>
             </section>
-
-            <section v-if="account.product.capabilities.has_port_forwarding">
+            <section v-if="account.product.capabilities.has_port_forwarding && !isEnabled">
                 <h2>Port Forwarding</h2>
                 <p>
-                    Your port number will be reserved on all servers (excluding USA) when connected using the OpenVPN or WireGuard protocols.
-                    Your reservation will expire if you don't connect to the VPN for 14 days.
+                    Please note that the Port Forwarding option is being phased out from the IVPN service. Reserving new ports is no longer possible. 
+                    You can find more information in a <a href="/blog/gradual-removal-of-port-forwarding/"> blog post</a> about this change.
+                </p>
+            </section>
+            <section v-if="account.product.capabilities.has_port_forwarding && isEnabled">
+                <h2>Port Forwarding</h2>
+                <p>
+                    Please note that the Port Forwarding option is being phased out from the IVPN service. Reserving new ports is no longer possible. 
+                    Existing port reservations will be automatically disabled on 30 September 2023. You can find more information in a <a href="/blog/gradual-removal-of-port-forwarding/"> blog post</a> about this change.
                 </p>
             </section>
 
-            <section v-if="account.product.capabilities.has_port_forwarding">
+            <section v-if="account.product.capabilities.has_port_forwarding && isEnabled">
                 <div class="control">
                     <div class="label">
                         Port Forwarding
@@ -53,22 +59,12 @@
                         <span v-if="!isLoaded || inProgress">
                             <spinner fill="#398fe6" width="32" height="32" />
                         </span>
-                        <span v-if="isLoaded && !inProgress && !isEnabled"
-                            >Disabled</span
-                        >
                         <span
                             v-if="isLoaded && !inProgress && isEnabled"
                             v-html="formattedPorts"
                         ></span>
                     </div>
                     <div class="button">
-                        <button
-                            v-if="isLoaded && !inProgress && !isEnabled"
-                            @click.prevent="enable"
-                            class="btn btn-solid btn-big"
-                        >
-                            Enable
-                        </button>
                         <button
                             v-if="isLoaded && !inProgress && isEnabled"
                             @click.prevent="disable"
@@ -80,7 +76,7 @@
                 </div>
             </section>
 
-            <section>
+            <section v-if="account.product.capabilities.has_port_forwarding && isEnabled">
                 <h3>Useful links</h3>
                 <ul>
                     <li>

@@ -17,7 +17,7 @@
                     <ul>
                         <li>All protocols</li>
                         <li>2 devices</li>
-                        <li>Anti-tracker</li>
+                        <li>AntiTracker</li>
                     </ul>
                 </div>
             </price-box>
@@ -33,13 +33,13 @@
                     <ul>
                         <li>All protocols</li>
                         <li>7 devices</li>
-                        <li>Anti-tracker</li>
-                        <li>Port forwarding</li>
+                        <li>AntiTracker</li>
                         <li>Multi-hop</li>
                     </ul>
                 </div>
             </price-box>
         </div>
+        <p>All prices are in U.S. dollars.</p>
         <p>Review pricing for business or nonprofit teams <a href="/pricing-teams/">here</a>.</p>
         <section>
             <h2>All IVPN plans include:</h2>
@@ -58,6 +58,7 @@
                 <li>Credit Card</li>
                 <li>PayPal</li>
                 <li>Bitcoin</li>
+                <li>Bitcoin Lightning</li>
                 <li>Monero</li>
                 <li>Cash</li>
             </ul>

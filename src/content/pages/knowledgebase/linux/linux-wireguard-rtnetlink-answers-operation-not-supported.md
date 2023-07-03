@@ -1,6 +1,6 @@
 ---
-title: 'Linux - WireGuard - "RTNETLINK answers: Operation not supported" - IVPN Help'
-h1: 'Linux - WireGuard - "RTNETLINK answers: Operation not supported"'
+title: 'WireGuard - "RTNETLINK answers: Operation not supported" - IVPN Help'
+h1: 'WireGuard - "RTNETLINK answers: Operation not supported"'
 url: /knowledgebase/linux/linux-wireguard-rtnetlink-answers-operation-not-supported/
 sections:
     - linux
@@ -8,7 +8,7 @@ sectionTitle: Linux
 layout: help-details
 weight: 20
 ---
-# Linux - WireGuard - "RTNETLINK answers: Operation not supported"
+# WireGuard - "RTNETLINK answers: Operation not supported"
 
 If you are trying to establish a WireGuard connection with a **wg-quick** command and receive the following error..:
 

@@ -12,11 +12,11 @@ releases: [{
     downloads: [
         {
             cta: Intel,
-            url: "https://repo.ivpn.net/macos/bin/IVPN-3.9.32.dmg"
+            url: "https://repo.ivpn.net/macos/bin/IVPN-3.10.23.dmg"
         },
         {
             cta: Apple Silicon,
-            url: https://repo.ivpn.net/macos/bin/IVPN-3.9.32-arm64.dmg
+            url: https://repo.ivpn.net/macos/bin/IVPN-3.10.23-arm64.dmg
         }
     ],
     github: https://github.com/ivpn/desktop-app,
@@ -24,11 +24,11 @@ releases: [{
     checksum: [
         {
             title: SHA256 Intel,
-            value: f2c5ff37ec33c427694ff8680f4e3567ae207ee24038eb7fe41faf7e05e1a417
+            value: f53bb078f9c6d021dd28152b1de7c5ca63f38c8ce27a692a2f4fbf85cdfd4865
         },
         {
             title: SHA256 Apple Silicon,
-            value: 74a640f30c22a5197b26de7b2fbc4f2b21cdfe848ed7869ec13d6d94253bee35
+            value: 690577eeaa47d8c44139dcac64acdf98c39becb4f68b191d594ca45325532507
         }
     ]
 }]
@@ -43,9 +43,9 @@ releases: [{
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Allow LAN traffic when connected to VPN.
-- Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 - Pause VPN for when disabling VPN connection temporarily is required.
 - Obfsproxy option to circumvent censorship.
+- Custom DNS servers, with DoH.
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.
 

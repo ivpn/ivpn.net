@@ -21,8 +21,7 @@ releases: [{
 - AntiTracker that blocks ads, adware, malicious websites and data harvesting trackers.
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
-- Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
-- Supports defining custom DNS servers with custom DoH/DoT URL.
+- Custom DNS servers, with DoH or DoT.
 
 ## Manual configuration
 

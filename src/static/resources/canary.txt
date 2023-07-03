@@ -13,29 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2022-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
-(from https://www.ft.com/news-feed )
+Source: mempool.space (https://mempool.space/blocks)
 
-FirstFT: Kwarteng in defence mode
-Plus, Opec+ plans to slash oil output to prop up prices and what to do about bullies at work
+height: 796966
+hash: 00000000000000000002bf5df0ab102b047bc21e102c73b550e40cab614577be
 
-China’s Communist party congress
-Chinese president Xi Jinping is poised to win a third term as head of the party and military
 
-The best of TV and streaming this week
-An award-winning chef takes on a debt-ridden Chicago diner in exhilarating new series ‘The Bear’; Jeff Bridges and John Lithgow are stellar leads in CIA/FBI thriller ‘The Old Man’; Michael Winterbottom’s pandemic drama ‘This England’ turns the former prime minister Boris Johnson into a tragic theatrical hero — and more. Reviews by Dan Einav
+Source: FT (https://www.ft.com/news-feed)
+
+What the French riots mean for the Franco-German relationship
+Also in this newsletter: Spain’s culture war over bicycle lanes
+
+Asset Management: Pimco prepares for ‘harder landing’
+Plus, Silver Lake’s big bets, FTSE 100 falls flat, and FT books of the year
+
+FirstFT: Macron convenes ministers on French unrest
+Also in today’s newsletter, Thames Water crisis ‘a threat’ to UK investment and UBS to avoid $10bn Credit Suisse backstop
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmM6bI4ACgkQisFrnrZH
-umlw5AgAq/XqJUyRMOZIG8qkAoBUxzRGoG1zgWLpvnqkmB0cBlIOU43wBOZ46r32
-FMFiZbFYtL+G/bTjRCeHG9oIWGMCrOBae6n+AM6gv3VpqxBzdEujE81TIC5bCO2I
-g0zLedyPb1TH/5DXQEVFfYzUHAkSxEVeo7lQWzMuuZ8bcPIhVXxy4/uPT7Kus0Wh
-kC/7pkfHuOe4OaBUK10AlBMUQbeJPZbiZdo9z3KN5ZlzoTEUAyroMUUxeLuvdBfg
-KJMaaxHJ+6wCw5ngpwHp4V5Xo6TUWruSMmb75Md4fgqDvRGlmg7Dd6NxthpnxXy+
-6+8cywBuG9Lyv/1SjgQz2fu+P83gQg==
-=JuRk
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmSiVg8ACgkQisFrnrZH
+umkcHggAmeB3ujtjNzKsZq+C70uKTDs1SZb84dPxsmfyCRkHh0CqW9kRgWmQ3dYb
+9lj3PnVyU6pb9ZhsM0EeCWb0nlTpd59XYb7tzzfmK8pVzUjVutJBGEUqJ3eVkvzr
+EGSkmZMGFKQf4tkN9NqJYpEoDg7e9b55RVFrpKs2bsatO9kzyTwGH8Icc6Xqstb5
+sBZTURk6BeEtjwErSNVQxnTaMPzlNvi2X6+xYFtCs9B5CSymxjpfMg1b+Maj4KCm
+0VgaHdnRo+/ckWS6uUNNO/9/JEKqbW7x0ho/xW1ROlJMgleEAk26HSzDdf83gmf0
+7tkD81K8Gi/Aatd+71ixJh2ndkTSmg==
+=Ti6b
 -----END PGP SIGNATURE-----
 
 

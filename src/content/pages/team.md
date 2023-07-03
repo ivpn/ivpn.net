@@ -38,7 +38,7 @@ sections:
 
       We need tools enabled by strong encryption to protect ourselves against hostile adversaries. With the right set of protections we can once again control what we share with those we don’t know and can’t trust.
   - type: lead_text_one_column
-    content: Our current team is fully distributed, with 11 people from 7 countries.
+    content: Our current team is fully distributed, with 10 people from 7 countries.
   - type: team_three_column
     members:
       - image: /images-static/uploads/team-nick.png
@@ -47,23 +47,16 @@ sections:
         description: Nick is founder and CEO of IVPN and 100% owner of Privatus Limited, the company through which the IVPN service is operated. Nick brings considerable expertise in risk management and security testing whilst working for Royal Bank of Scotland, Network Rail and ABN AMRO Bank.
         linkedin: https://www.linkedin.com/in/nick-pestell/
         github: https://github.com/cipheromega
-      - image: /images-static/uploads/team-fedir.png
-        image_retina: /images-static/uploads/team-fedir-2x.png
-        name: Fedir Nepyyvoda 
-        description: With over 15 years' experience in software design and architecture, Fedir leads IVPN’s software development team. He is responsible for the technical details that safeguard your online privacy.
-        linkedin: https://www.linkedin.com/in/fedirnepyivoda/
-        github: https://github.com/fednep
       - image: /images-static/uploads/team-edward.png
         image_retina: /images-static/uploads/team-edward-2x.png
         name: Eduard De
         description: As the leader of our customer service department, Edward is responsible for making sure all customer inquiries are dealt with in a swift and professional manner, no matter when they come through.
         linkedin: https://www.linkedin.com/in/edward-de-91793b163/
         github: 
-      - image: /images-static/uploads/team-iain.png
-        image_retina: /images-static/uploads/team-iain-2x.png
+      - image: /images-static/uploads/team-avatar.png
+        image_retina: /images-static/uploads/team-avatar.png
         name: Iain Douglas
         description: With over 20 years' experience working with Unix and Linux, Iain knows a thing or two. He manages the team responsible for ensuring the security and availability of our public VPN infrastructure.
-        linkedin: https://www.linkedin.com/in/iain-douglas-a3b856162/
         github: https://github.com/Iain-ivpn
       - image: /images-static/uploads/team-gorka.png
         image_retina: /images-static/uploads/team-gorka-2x.png
@@ -71,18 +64,16 @@ sections:
         description: After gathering a decade of experience in quality assurance-related roles at technology firms, Gorka now applies his knowledge in helping the IVPN team ship bug-free apps and making sure you suffer no privacy leaks.
         linkedin: https://www.linkedin.com/in/gorkapernas/
         github: https://github.com/gorkapernas
+      - image: /images-static/uploads/nathan.png
+        image_retina: /images-static/uploads/nathan.png
+        name: Natanael Rodriguez
+        description: With over 15 years of experience in software development, Nathan now uses his skills to tackle all backend related projects at IVPN.
+        github: https://github.com/nathanrod
       - image: /images-static/uploads/team-juraj.png
         image_retina: /images-static/uploads/team-juraj-2x.png
         name: Juraj Hilje
-        description: As an unapologetic Apple fan and believer in smooth user experience, it was a natural choice for Juraj to get into iOS development close to a decade ago. Now he's obsessed with building the best VPN app available on the App Store.
-        linkedin: https://www.linkedin.com/in/jurajhilje/
+        description: As an unapologetic Apple fan and believer in smooth user experience, it was a natural choice for Juraj to get into iOS development a decade ago. Now he's obsessed with building the best VPN app available on the App Store.
         github: https://github.com/jurajhilje
-      - image: /images-static/uploads/team-oleksandr.png
-        image_retina: /images-static/uploads/team-oleksandr-2x.png
-        name: Oleksandr Mykhailenko
-        description: Aleks gained experience working for Samsung and several software development teams before joining the IVPN team. He is now our resident Android expert, working on making the best privacy app in the Play store.
-        linkedin: https://www.linkedin.com/in/aleksandr-mikhailenko/
-        github: https://github.com/AlexKorvin
       - image: /images-static/uploads/team-stenya.png
         image_retina: /images-static/uploads/team-stenya-2x.png
         name: Oleksandr Stelnykovych

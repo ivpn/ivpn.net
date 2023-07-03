@@ -31,7 +31,7 @@ Most commercial, centralized VPNs are designed to fulfil these use cases, and th
 Commercial VPN services and other tools that shift your IP location and encrypt your traffic have other use cases besides privacy protection and evading dragnet surveillance. Chief among these are enabling connection to websites and services that are blocked by censorship or a firewall. Another benefit is the ability to unlock streaming content restricted to one geographical area. In these scenarios a decentralized VPN might do well, or perform better than a centralized service. This post focuses on the privacy protection aspects of VPNs. 
 
 ### Introduction to dVPNs
-dVPNs use blockchain technology to operate a network of distributed nodes to connect to, and aim to improve on VPN service design in [other ways][5]. Current solutions promise proven inability for centralized logging, distribution of trust without on entity making decisions, and more fair payment systems. They aim for these improvements and highlight them as selling points while [promising to deliver][6] the same benefits as a centralized VPN service.
+dVPNs use blockchain technology to operate a network of distributed nodes to connect to, and aim to improve on VPN service design in [other ways][5]. Current solutions promise proven inability for centralized logging, distribution of trust without one entity making decisions, and more fair payment systems. They aim for these improvements and highlight them as selling points while [promising to deliver][6] the same benefits as a centralized VPN service.
 
 When evaluating dVPNs, we consider the follow criteria as a baseline implementation:
 1. Traffic encryption between end points using the latest, verifiable cryptographic standards and protocols

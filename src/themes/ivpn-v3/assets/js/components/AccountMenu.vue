@@ -7,12 +7,12 @@
                         >IVPN Account</router-link
                     >
                 </li>
-                <li :class="{ 'is-active': isWireGuardRoute() }">
+                <li v-id="allowPortForwarding" :class="{ 'is-active': isWireGuardRoute() }">
                     <router-link :to="{ name: 'wireguard' }"
                         >WireGuard</router-link
                     >
                 </li>
-                <li :class="{ 'is-active': isPortWordwarding() }" tag="li">
+                <li v-if="allowPortForwarding" :class="{ 'is-active': isPortWordwarding() }" tag="li">
                     <router-link :to="{ name: 'port-forwarding' }"
                         >Port Forwarding</router-link
                     >
@@ -31,8 +31,13 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
     computed: {
+        ...mapState({
+            account: (state) => state.auth.account,
+        }),
         currentRouteName() {
             return this.$route.path;
         },
@@ -41,6 +46,14 @@ export default {
                 this.$route.name
             );
         },
+        allowPortForwarding(){
+            //Disable port forwarding starting from 29th June 2023
+            if( new Date(this.account.created_at).setHours(0, 0, 0, 0) >= new Date('2023-06-29').setHours(0, 0, 0, 0) ){
+                return false;
+            } else {
+                return true;
+            }
+        }
     },
     methods: {
         isAccountRoute() {

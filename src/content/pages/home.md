@@ -24,7 +24,7 @@ sections:
   - type: usps_three_column_home
     usps:
       - name: No logs
-        description: We do not log any user activity relating to the use of the VPN service as verified by a [3rd party audit](/blog/ivpn-no-logging-claim-verified-by-independent-audit/) (although only a snapshot in time).
+        description: We do not log any user activity relating to the use of the VPN service, as explained in our clear [privacy policy](/privacy).
       - name: No customer data
         description: We're a privacy service, so we don't collect or store any personal data on sign-up, not even your email. We also
           accept cash, monero and bitcoin.
@@ -64,7 +64,6 @@ sections:
       - description: "Private non-logging **DNS servers** accessible through our VPN."
     features_col_two:
       - description: "**Multi-hop VPN routes**. Connect through multiple servers in separate jurisdictions for enhanced privacy."
-      - description: "**Port forwarding** for WireGuard and OpenVPN, reserved on all servers (excluding USA)."
       - description: "Define **trusted Wi-Fi networks** and create rules for automatic connection / disconnection."
       - description: "**Pause VPN** for when you need to disable the VPN temporarily after which connection is automatically restored (except iOS)."
       - description: "**Obfsproxy** to circumvent censorship (Windows, macOS and Linux clients)."
@@ -92,7 +91,7 @@ sections:
       ### However, a trustworthy VPN can be very effective at:
 
 
-      * Encrypting your data so your ISP or mobile network provider cannot monitor or log your online activity. Without a VPN, HTTPS still exposes the domain name or IP you are visiting to the ISP.
+      * Encrypting your data so your ISP or mobile network provider cannot monitor or log your online activity. Without a VPN, HTTPS still exposes the domain name or IP address you are visiting to the ISP.
 
       * Encrypting your DNS requests so your ISP or mobile network provider cannot monitor or log the domains you visit. 
 

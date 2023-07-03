@@ -19,16 +19,24 @@ releases: [{
             url: https://f-droid.org/en/packages/net.ivpn.client/
         },
         {
+            cta: Accrescent,
+            url: https://accrescent.app/app/net.ivpn.client
+        },
+        {
             cta: .APK file,
-            url: https://www.ivpn.net/releases/android/IVPNv2.8.3site.apk
+            url: https://www.ivpn.net/releases/android/IVPNv2.9.0site.apk
         }
     ],
     github: https://github.com/ivpn/android-app,
-    changelog: https://github.com/ivpn/android-app/blob/master/CHANGELOG.md,
+    changelog: https://github.com/ivpn/android-app/blob/main/CHANGELOG.md,
     checksum: [
         {
-            title: SHA256 .apk,
-            value: 8569cff849bcf27667f95a8f9f89ac1ca297376b6f77e68608f85438fea4fa26
+            title: .apk SHA256,
+            value: a09a8ea6ac49a385219c99a865100829fbd430637336de7e793700d3bd170fed
+        },
+        {
+            title: .apk sign cert SHA256,
+            value: 88a6b40fc97fdc842f231f50eb12de116f5b759e3c5b38aaccaf6a7b393c85bb
         }
     ]
 }]
@@ -41,9 +49,8 @@ releases: [{
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 - Split tunnel to allow some apps to bypass the VPN.
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
-- Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
-- Supports defining custom DNS servers.
-- Supports Mock location for GPS.
+- Custom DNS servers, DoT via Android native Private DNS.
+- Mock location for GPS.
 - Tapjacking protection.
 
 ## Manual configuration

@@ -1,14 +1,14 @@
 ---
-title: Linux - Autostart OpenVPN in systemd (Ubuntu) - IVPN Help
-h1: Linux - Autostart OpenVPN in systemd (Ubuntu)
+title: Autostart OpenVPN in systemd (Ubuntu) - IVPN Help
+h1: Autostart OpenVPN in systemd (Ubuntu)
 url: /knowledgebase/linux/linux-autostart-openvpn-in-systemd-ubuntu/
 sections:
     - linux
 sectionTitle: Linux
 layout: help-details
-weight: 10
+weight: 16
 ---
-# Linux - Autostart OpenVPN in systemd (Ubuntu)
+# Autostart OpenVPN in systemd (Ubuntu)
 
 In order to configure OpenVPN to autostart for systemd, complete the following steps:
 

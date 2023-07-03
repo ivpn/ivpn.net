@@ -37,6 +37,9 @@ contents:
     - item:
         title: Arch Linux
         anchor: arch
+    - item:
+        title: Fedora Silverblue
+        anchor: silverblue
 - item:
     title: Install from Binaries
     anchor: binaries
@@ -60,9 +63,9 @@ contents:
 * Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 * Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 * Allow LAN traffic when connected to VPN.
-* Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
+* Custom DNS servers, with DoH.
 * Split Tunnel to allow designated apps to bypass the VPN tunnel.
 
 ## Packages {#packages}
@@ -81,83 +84,116 @@ Please note: base package is required to be installed prior to installing GUI ap
 
 ### Ubuntu {#ubuntu}
 
-{{< highlight shell >}}
+```pkgconfig
 # Add IVPN's GPG key
 curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
 
 sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 
+# Set Appropriate Permissions for GPG key
+sudo chown root:root /usr/share/keyrings/ivpn-archive-keyring.gpg && sudo chmod 644 /usr/share/keyrings/ivpn-archive-keyring.gpg
+
 # Add the IVPN repository
 curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+
+# Set Appropriate Permissions for Repository
+sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
+
 # Update APT repo info
 sudo apt-get update
+
 # To install IVPN software (CLI and UI)
 sudo apt-get install ivpn-ui
+
 # To install only IVPN CLI
 sudo apt-get install ivpn
-{{< /highlight >}}
+```
 
 ### Debian {#debian}
 
-{{< highlight shell >}}
+```pkgconfig
 # Add IVPN's GPG key
 curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
 
 sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 
+# Set Appropriate Permissions for GPG key
+sudo chown root:root /usr/share/keyrings/ivpn-archive-keyring.gpg && sudo chmod 644 /usr/share/keyrings/ivpn-archive-keyring.gpg
+
 # Add the IVPN repository
 curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+
+# Set Appropriate Permissions for Repository
+sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
+
 # Update APT repo info
 sudo apt-get update
+
 # To install IVPN software (CLI and UI)
 sudo apt-get install ivpn-ui
+
 # To install only IVPN CLI
 sudo apt-get install ivpn
-{{< /highlight >}}
+```
 
 ### Mint {#mint}
 
-{{< highlight shell >}}
+```pkgconfig
 # Add IVPN's GPG key
 curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
 
 sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 
+# Set Appropriate Permissions for GPG key
+sudo chown root:root /usr/share/keyrings/ivpn-archive-keyring.gpg && sudo chmod 644 /usr/share/keyrings/ivpn-archive-keyring.gpg
+
 # Add the IVPN repository
 curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
+
+# Set Appropriate Permissions for Repository
+sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
+
 # Update APT repo info
 sudo apt-get update
+
 # To install IVPN software (CLI and UI)
 sudo apt-get install ivpn-ui
+
 # To install only IVPN CLI
 sudo apt-get install ivpn
-{{< /highlight >}}
+```
 
 ### Fedora {#fedora}
 
-{{< highlight shell >}}
+```pkgconfig
 # Add the IVPN repository
 sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+
 # To install IVPN software (CLI and UI)
 sudo dnf install ivpn-ui
+
 # To install only IVPN CLI
 sudo dnf install ivpn
-{{< /highlight >}}
+```
 
 ### CentOS {#centos}
 
-{{< highlight shell >}}
+```pkgconfig
 # Install Yum-utils
 sudo yum install yum-utils
+
 # Add the IVPN repository
 sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
+
 # To install IVPN software (CLI and UI)
 sudo yum install ivpn-ui
+
 # To install only IVPN CLI
 sudo yum install ivpn
+
 # Required for CentOS 8
 sudo yum install libXScrnSaver
-{{< /highlight >}}
+```
 
 ### Arch Linux {#arch}
 
@@ -168,30 +204,34 @@ UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)
 
 Using a AUR helper/Pacman wrapper  automates the installation process:
 
-{{< highlight shell >}}
+```pkgconfig
 yay -S ivpn
 yay -S ivpn-ui
-{{< /highlight >}}
+```
 
 Note: Other AUR helper/Pacman wrapper utilities are available.
+
+### Fedora Silverblue {#silverblue}
+
+IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-silverblue/).
 
 ## Install from Binaries {#binaries}
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.9.32_amd64.deb)  
-SHA256: 77997488e180cbd2a7f770581cd0218bf237e4c4928f557dae14b9548ce1d8c3  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.10.23_amd64.deb)  
+SHA256: b81637d872ce9fae32c8aef6f10be6e5668698dbfb77847f601059c2b7c41ed0  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.9.32_amd64.deb)  
-SHA256: 24cc3909242ce883a7b70997afa49cf14b0865d0fbe10498e0903b4c95cf0ba5  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.10.23_amd64.deb)  
+SHA256: 3a62e55e455650c9eb33c2594936512b9e3b69532f98c274fa3cf863de57c476  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.9.32-1.x86_64.rpm)  
-SHA256: 88c364d4366c9bf75db376d3c511421eef493e3458c7f7499502f11a1078b8c0  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.10.23-1.x86_64.rpm)  
+SHA256: fd61e1de25a6b8e2ad5e7b66103054aab4a653785268fae6308646c0b091b8c4  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.9.32-1.x86_64.rpm)  
-SHA256: 5a74aedf7df9485083c3398d780fc59cdd8b7c2c63abfb67c8fcb681f55babc7  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.10.23-1.x86_64.rpm)  
+SHA256: 8fdefea2f6ee26eb9af5476d7565832b09436de9f575350a331cf0f0e5f08871  
 
 ## Install from Source Code {#source}
 

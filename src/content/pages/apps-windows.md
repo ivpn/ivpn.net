@@ -9,13 +9,13 @@ layout: apps
 image: apps/windows-app-3.3.7
 releases: [{
     cta: Download,
-    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.9.32.exe,
+    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.10.23.exe,
     github: https://github.com/ivpn/desktop-app,
     changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
         {
             title: SHA256,
-            value: 2b2df9a1e560b186e333d1020b0dc32d6879dbf00492cdb7b92603b458c4fcb9
+            value: c6201200ab322a9307fe2d5f5eb70d11e15c8f6d7cc21bdd17f2ecb90b1dd02f
         }
     ]
 }]
@@ -30,10 +30,9 @@ releases: [{
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Allow LAN traffic when connected to VPN.
-- Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 - Pause VPN for when disabling VPN connection temporarily is required.
 - Obfsproxy option to circumvent censorship.
-- Supports defining custom DNS servers.
+- Custom DNS servers, with DoH.
 - Split tunneling.
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.

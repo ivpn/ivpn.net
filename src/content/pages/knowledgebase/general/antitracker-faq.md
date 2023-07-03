@@ -39,7 +39,7 @@ weight: 200
 6.  #### On which devices I can use AntiTracker?
     AntiTracker is available across all our [native apps](/apps/) for Windows, macOS, Linux, iOS and Android.  
 
-    Please note: This feature is not included in the IVPN app for Android distributed via the Play Store as Google will most likely ban it for providing the tools that are focused on blocking their services in the first place. If you wish to use the feature on your Android device, feel free to [download the .apk file](/apps-android/) from our website or install via [F-Droid](https://f-droid.org/packages/net.ivpn.client/). You will need to uninstall any previously installed version of IVPN app before installing from the .apk file or from F-Droid.  
+    Please note: This feature is not included in the IVPN app for Android distributed via the Play Store as Google will most likely ban it for providing the tools that are focused on blocking their services in the first place. If you wish to use the feature on your Android device, feel free to [download the .apk file](/apps-android/) from our website, or install via [Accrescent](https://accrescent.app/app/net.ivpn.client) or [F-Droid](https://f-droid.org/packages/net.ivpn.client/). You will need to uninstall any previously installed version of IVPN app before installing from the .apk file or from F-Droid.  
 
     The AntiTracker can also be enabled on routers and other manual connections by specifying the following DNS IP address - `10.0.254.2`
 

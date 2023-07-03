@@ -2,7 +2,7 @@
     <div>
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <form @submit.prevent="submit()">            
-            <label for="gift-card-code">Code from a Gift Card issued by IVPN:</label>
+            <label for="gift-card-code">Code from a Voucher issued by IVPN:</label>
                 <input
                     id='gift-card-code'
                     type="text"
@@ -22,6 +22,7 @@
                     fill="#FFFFFF"
                 />Add Time
             </button>
+            <p>Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period.</p>
         </form>
     </div>
 </template>
@@ -69,7 +70,7 @@ export default {
             this.$store.commit("setFlashMessage", {
                 type: "success",
                 message:
-                    `Gift card applied successfully. Service is extended until ` +
+                    "Voucher applied successfully. Service is extended until " +
                     this.$filters.formatDate(
                         this.account.active_until
                     )
@@ -88,7 +89,13 @@ export default {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
+
+    p {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 15px;
+    }
 }
 
 input#gift-card-code{

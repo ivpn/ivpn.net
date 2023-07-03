@@ -1,6 +1,6 @@
 ---
-title: Linux - Tray icon is missing in GNOME - IVPN Help
-h1: Linux - Tray icon is missing in GNOME
+title: Tray icon is missing in GNOME - IVPN Help
+h1: Tray icon is missing in GNOME
 url: /knowledgebase/linux/linux-tray-icon-is-missing-in-GNOME/
 sections:
     - linux
@@ -9,7 +9,7 @@ sectionTitle: Linux
 layout: help-details
 weight: 70
 ---
-# Linux - Tray icon is missing in GNOME
+# Tray icon is missing in GNOME
 
 In the GNOME desktop environment version 40, tray icons have been mostly removed and the tray icon for the IVPN App does not appear by default.  The IVPN App's tray icon can be restored by installing two packages using the command line via Terminal:
 
