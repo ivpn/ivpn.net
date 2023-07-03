@@ -334,7 +334,7 @@ Very stable and fast over wireless, cellular and other non reliable networks whe
 
 ### Verdict ![](/images-static/uploads/icon-like.svg)
 
-OpenVPN is an excellent choice for all platforms. It is extremely fast, secure and reliable. Additionally, the IVPN Multi-hop network and port forwarding is only available when connecting via OpenVPN.
+OpenVPN is an excellent choice for all platforms. It is extremely fast, secure and reliable.
 
 
 ## WireGuard
