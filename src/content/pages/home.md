@@ -91,7 +91,7 @@ sections:
       ### However, a trustworthy VPN can be very effective at:
 
 
-      * Encrypting your data so your ISP or mobile network provider cannot monitor or log your online activity. Without a VPN, HTTPS still exposes the domain name or IP you are visiting to the ISP.
+      * Encrypting your data so your ISP or mobile network provider cannot monitor or log your online activity. Without a VPN, HTTPS still exposes the domain name or IP address you are visiting to the ISP.
 
       * Encrypting your DNS requests so your ISP or mobile network provider cannot monitor or log the domains you visit. 
 
