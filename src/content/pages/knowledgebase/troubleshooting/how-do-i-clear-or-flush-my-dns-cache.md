@@ -32,7 +32,7 @@ The following instructions will flush the cache of your DNS resolver. This may b
 
 ### Linux
 
-1.  Open a terminal window (gnome-terminal, konsole, xterm, etc).
+1.  Open a terminal window (gnome-terminal, konsole, xterm, etc.).
 2.  Enter the following command followed by the enter button:
     ```
     sudo /etc/init.d/nscd restart
