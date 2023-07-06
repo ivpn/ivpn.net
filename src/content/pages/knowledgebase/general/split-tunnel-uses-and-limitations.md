@@ -12,7 +12,7 @@ weight: 590
 
 The IVPN App split tunnel feature offers a way to bypass the VPN tunnel for select applications and services e.g. to access video streaming services or for gaming. This is a convenient way to protect your privacy while offering the convenience of accessing content and services that may not be friendly to VPN server IP addresses.
 
-With any convenience, there is often a trade-off. For the split tunnel feature, the trade-off is an intentional leak. The IVPN App has been designed to prevent leaks, so please be aware that these intentional leaks present with the split tunnel feature may include unexpected behaviours. These are detailed below.
+With any convenience, there is often a trade-off. For the split tunnel feature, the trade-off is an intentional leak. The IVPN App has been designed to prevent leaks, so please be aware that these intentional leaks present with the split tunnel feature may include unexpected behaviors. These are detailed below.
 
 **Active Applications and Connections**
 
