@@ -1,6 +1,6 @@
 ---
-title: How many IP's do you have (in total or per server)? - IVPN Help
-h1: How many IP's do you have (in total or per server)?
+title: How many IPs do you have (in total or per server)? - IVPN Help
+h1: How many IPs do you have (in total or per server)?
 url: /knowledgebase/general/how-many-ips-do-you-have-in-total-or-per-server/
 sections:
     - general
