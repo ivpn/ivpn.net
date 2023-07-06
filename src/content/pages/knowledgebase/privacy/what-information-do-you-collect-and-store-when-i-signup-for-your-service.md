@@ -11,9 +11,9 @@ weight: 80
 ---
 # What information do you collect and store when I signup for your service?
 
-To maximize your privacy, you will not be asked for any personal information like your name, physical addresses, phone number and even the email address. This also means that we have no way to contact you in the event of any account issues, network downtime etc. If you wish to provide us with an email address so we can contact you about future issues you can optionally add one in the client area after signup. We will also not log any personally identifiable information e.g. IP address.
+To maximize your privacy, you will not be asked for any personal information like your name, physical address(es), phone number and even the e-mail address. This also means that we have no way to contact you in the event of any account issues, network downtime etc. If you wish to provide us with an e-mail address so we can contact you about future issues you can optionally add one in the client area after signup. We will also not log any personally identifiable information e.g. IP address.
 
-Depending on how payment for the service is made, some payment information may be related to your account. For example, if PayPal is used to pay for the service, a PayPal transaction ID will be associated with your account (as well as the subscription ID if a PayPal subscription has been setup).
+Depending on how payment for the service is made, some payment information may be related to your account. For example, if PayPal is used, a PayPal transaction ID will be associated with your account (as well as the subscription ID if a PayPal subscription has been set up).
 
 | Date of payment | Amount | Payment method | Transaction ID | Subscription ID |
 |---|---|---|---|---|
