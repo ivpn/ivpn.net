@@ -11,7 +11,7 @@ weight: 110
 ---
 # Tunnelblick - How to submit diagnostic data to IVPN?
 
-If you are unable to resolve a technical issue and wish to contact IVPN support please include a copy of the logs files by following the instructions below:
+If you are unable to resolve a technical issue and wish to contact IVPN support please include a copy of the log files by following the instructions below:
 
 1. Click on the Tunnelblick icon in the top right menu bar area.
 2. Click `VPN Details`.
