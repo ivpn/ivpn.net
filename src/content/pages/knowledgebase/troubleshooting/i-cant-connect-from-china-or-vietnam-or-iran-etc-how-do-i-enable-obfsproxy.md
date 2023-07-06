@@ -1,6 +1,6 @@
 ---
-title: I cant connect from China / Vietnam / Iran etc - How do I enable obfsproxy? - IVPN Help
-h1: I cant connect from China / Vietnam / Iran etc - How do I enable obfsproxy?
+title: I can't connect from China / Vietnam / Iran etc. - How do I enable obfsproxy? - IVPN Help
+h1: I can't connect from China / Vietnam / Iran etc. - How do I enable obfsproxy?
 url: /knowledgebase/troubleshooting/i-cant-connect-from-china-or-vietnam-or-iran-etc-how-do-i-enable-obfsproxy/
 sections:
     - troubleshooting
@@ -8,7 +8,7 @@ sectionTitle: Troubleshooting
 layout: help-details
 weight: 130
 ---
-# I cant connect from China / Vietnam / Iran etc - How do I enable obfsproxy?
+# I can't connect from China / Vietnam / Iran etc. - How do I enable obfsproxy?
 
 If you are unable to connect from a country where there may be a restrictive national firewall we recommend enabling the **obfsproxy** option from within the IVPN client.
 
