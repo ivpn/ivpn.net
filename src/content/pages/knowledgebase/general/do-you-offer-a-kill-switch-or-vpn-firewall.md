@@ -10,7 +10,7 @@ weight: 150
 ---
 # Do you offer a kill switch or VPN firewall?
 
-Yes, the IVPN apps on Windows, macOS, Linux and iOS (15.1+) has an integrated firewall that offers the 'kill switch' solution ensuring your privacy is protected in every possible scenario. If you are interested in knowing more about our kill switch please continue reading.
+Yes, the IVPN apps on Windows, macOS, Linux and iOS (15.1+) have an integrated firewall that offers the 'kill switch' solution ensuring your privacy is protected in every possible scenario. If you are interested in knowing more about our kill switch please continue reading.
 
 An Internet kill switch is a mechanism to prevent data from leaking outside of the VPN tunnel when the tunnel fails for any reason. Traditionally the kill switch software will monitor the Internet connection of the computer on which it is running and either block all traffic or disconnect the network connection if it detects that the VPN has failed.
 
@@ -49,7 +49,7 @@ When the IVPN Firewall is enabled it is impossible for any IPv6 traffic to leak 
 
 ### DNS
 
-When you connect using our native apps your system's DNS is replaced with IVPN DNS servers. This is done to ensure that neither your ISP nor anyone else can eavesdrop on what websites you visit.
+When you connect using our native apps your system's DNS is replaced with IVPN's DNS servers. This is done to ensure that neither your ISP nor anyone else can eavesdrop on what websites you visit.
 
 However, some 3rd-party applications or web browsers are configured to use their own DNS. When using such apps, your system's DNS is generally ignored, essentially causing a DNS leak. 
 
@@ -57,7 +57,7 @@ The IVPN Firewall adds rules to your system to block all DNS queries that are se
 
 ### WebRTC
 
-WebRTC (Web Real-Time Communication) is an API drafted by the W3C that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing (without the need of either internal or external plugins). WebRTC implements STUN (Session Traversal Utilities for Nat), a protocol that allows the discovery of your externally assigned IP address (to facilitate the applications above).
+WebRTC (Web Real-Time Communication) is an API drafted by the W3C that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing (without the need of either internal or external plugins). WebRTC implements STUN (Session Traversal Utilities for NAT), a protocol that allows the discovery of your externally assigned IP address (to facilitate the applications above).
 
 In some cases, the request to the STUN server may leak outside of the VPN and expose your ISP issued IP address. However, if you are using our kill switch, then these leaks will be blocked.
 
