@@ -10,8 +10,8 @@ weight: 240
 ---
 # I lose Internet connection when I disconnect from IVPN. Why?
 
-Most likely, you have IVPN Firewall (Kill-switch) enabled. It was designed to ensure that all traffic is routed strictly through the VPN tunnel to prevent any possible leaks or your real IP address getting exposed. Given the latter, it will also block the Internet connection if you disconnect from IVPN network.
+Most likely, you have IVPN Firewall (Kill switch) enabled. It was designed to ensure that all traffic is routed strictly through the VPN tunnel to prevent any possible leaks or your real IP address getting exposed. Given the latter, it will also block the Internet connection if you disconnect from the IVPN network.
 
-To regain access to the Internet, you must either disable the IVPN Firewall or reconnect to any of the IVPN servers. You may also control its behaviour within the app's `Settings` area - `IVPN Firewall` tab.
+To regain access to the Internet, you must either disable the IVPN Firewall or reconnect to any of the IVPN servers. You may also control its behavior within the app's `Settings` area - `IVPN Firewall` tab.
 
-Feel free to read more about how our Firewall works [here](/knowledgebase/general/do-you-offer-a-kill-switch-or-vpn-firewall/)
+You can read more about how our Firewall works [here](/knowledgebase/general/do-you-offer-a-kill-switch-or-vpn-firewall/)
