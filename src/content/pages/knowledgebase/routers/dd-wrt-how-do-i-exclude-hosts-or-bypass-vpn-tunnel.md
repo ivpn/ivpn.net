@@ -34,7 +34,7 @@ You can also specify a range of IPs by entering, e.g. - 192.168.1.64/26.
 
 ### OpenVPN
 
-1.  Go to `ADMINISTRATION` / `COMMANDS` / `COMMAND SHELL`. Enter the following commands whilst substituting the IP's you wish to bypass the VPN (each IP separated by a space character):
+1.  Go to `ADMINISTRATION` / `COMMANDS` / `COMMAND SHELL`. Enter the following commands whilst substituting the IPs you wish to bypass the VPN (each IP separated by a space character):
 
     ```
     nvram set no_vpn_lst="192.168.1.5 192.168.1.6 192.168.1.7"
@@ -61,4 +61,4 @@ You can also specify a range of IPs by entering, e.g. - 192.168.1.64/26.
     exit 0
     ```
 
-3.  Reboot. Now the devices with the IP's on your list will be routed outside the OpenVPN tunnel.
+3.  Reboot. Now the devices with the IPs on your list will be routed outside the OpenVPN tunnel.
