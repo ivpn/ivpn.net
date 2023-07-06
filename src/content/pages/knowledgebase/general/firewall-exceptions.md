@@ -10,7 +10,7 @@ weight: 470
 ---
 # Firewall Exceptions
 
-The IVPN App for Windows, macOS, and Linux includes a feature to allow IP addresses and subnets to bypass the app's kill switch firewall.  This can be useful to access local network devices that are outside of the range of the current LAN.  It can also be useful if a corporate VPN is required to run concurrently with the IVPN App.  It is also possible to include the IP address for a website in the firewall exception list and traffic to that website will bypass the VPN connection, like a split tunnel for a specific website.
+The IVPN App for Windows, macOS, and Linux includes a feature to allow IP addresses and subnets to bypass the app's kill switch.  This can be useful to access local network devices that are outside of the range of the current LAN.  It can also be useful if a corporate VPN is required to run concurrently with the IVPN App.  It is also possible to include the IP address for a website in the firewall exception list and traffic to that website will bypass the VPN connection, like a split tunnel for a specific website.
 
 To make use of this feature, adding a firewall exception to the IVPN App is the first step and adding a static route to the computer system is the second step.  The firewall exception instructs the IVPN App to allow the traffic to bypass its firewall and the static route instructs the computer system to route the traffic outside of the VPN tunnel.
 
@@ -19,7 +19,7 @@ To add a firewall exception, go to IVPN App's `Settings > IVPN Firewall > Except
 To add a static route, three details are required:
 1. The IP address or subnet from the exception
 1. The subnet mask for #1 above as an IP address or in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)
-1. The IP address for the computer system's default gateway (ie. the local router)
+1. The IP address for the computer system's default gateway (i.e. the local router)
 
 In the examples below, `a.b.c.d` represents the default gateway and needs to be replaced with the actual local default gateway IP address.
 
