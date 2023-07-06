@@ -53,10 +53,10 @@ weight: 480
 6.  #### What IP addresses are issued for WireGuard connections?
     The IP address is randomly assigned from `172.16.0.0/12` range.
 
-7.  #### Which servers I can connect to with WireGuard?
+7.  #### Which servers can I connect to with WireGuard?
     The full list of our WireGuard servers can be viewed on the [Servers](/status/) page.
 
-8.  #### How many devices I can connect with WireGuard?
+8.  #### How many devices can I connect with WireGuard?
     2 on the Standard and 7 on the Pro plan.
 
 9.  #### Do I need to manually create and add public key in the Client Area when adding a new device?
