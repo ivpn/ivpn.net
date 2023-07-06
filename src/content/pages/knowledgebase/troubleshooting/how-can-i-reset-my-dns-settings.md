@@ -25,7 +25,7 @@ The following instructions will reset your DNS configuration to that provided by
 ### Windows 8
 
 1. Select the `Desktop` from the Start menu.
-2. From the Desktop window, right click the `Networks` icon in the system try and select `Open Network and Sharing Center`.
+2. From the Desktop window, right click the `Networks` icon in the system tray and select `Open Network and Sharing Center`.
 3. Under 'Active Networks' click on the active connection name, usually `Ethernet` or `Local area connection`.
 4. Click on the `Properties` button. This should take you to the `Network Connections Properties` window.
 5. Click on `Internet protocol Version 4 (TCP/IP v4)` and then on the `Properties` button.
