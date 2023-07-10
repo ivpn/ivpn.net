@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import qrcode from "qrcode-generator";
 import CopyIcon from "@/components/icons/account/CopyIcon.vue";
 
