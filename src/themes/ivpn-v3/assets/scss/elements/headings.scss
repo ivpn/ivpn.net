@@ -89,3 +89,18 @@ ul + h2,
 ol + h2 {
     margin-top: 55px;
 }
+
+.blog-article {
+    h1, .h1 {
+        font-size: $blog-heading-size-h1;
+    }
+    h2, .h2 {
+        font-size: $blog-heading-size-h2;
+    }
+    h3, .h3 {
+        font-size: $blog-heading-size-h3;
+    }
+    h4, .h4 {
+        font-size: $blog-heading-size-h4;
+    }
+}
