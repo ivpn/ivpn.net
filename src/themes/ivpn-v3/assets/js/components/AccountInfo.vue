@@ -2,7 +2,8 @@
     <div>
         <div class="note" v-if="
             account.is_active &&
-            !account.product.capabilities.has_port_forwarding
+            account.product.capabilities.has_port_forwarding &&
+            isPortForwardingEnabled
         ">
             <p>Note: port forwarding is being phased out from the IVPN service. Read our <a href="https://www.ivpn.net/blog/gradual-removal-of-port-forwarding/">blog post</a> about this change, and <a href="https://www.ivpn.net/contactus/">contact us</a> if you have any questions.</p>
         </div>
@@ -54,6 +55,14 @@ export default {
         qr.addData(this.account.id);
         qr.make();
         this.qrCode = qr.createSvgTag(3);
+    },
+    mounted() {
+        this.$store.dispatch("portForwarding/load");
+    },
+    computed: {
+        ...mapState({
+            isPortForwardingEnabled: (state) => state.portForwarding.isEnabled,
+        }),
     },
     methods: {
         async copyToClipboard() {
