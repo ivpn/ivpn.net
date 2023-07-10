@@ -1,29 +1,37 @@
 <template>
-    <div class="account-id-section">
-        <div class="details">
-            <label class="header">Account ID</label>
-            <div class="id">
-                {{ account.id }}
-                <button
-                    class="btn btn-icon copy"
-                    title="Copy Account ID to the clipboard"
-                    @click="copyToClipboard()"
-                >
-                    <copy-icon />
-
-                    <transition name="fade">
-                        <div v-if="copied" class="copied">Copied</div>
-                    </transition>
-                </button>
-            </div>
-            <div
-                class="status"
-                v-bind:class="[account.is_active ? 'active' : 'inactive']"
-            >{{ account.is_active ? 'Active' : 'Inactive' }}</div>
+    <div>
+        <div class="note" v-if="
+            account.is_active &&
+            !account.product.capabilities.has_port_forwarding
+        ">
+            <p>Note: port forwarding is being phased out from the IVPN service. Read our <a href="https://www.ivpn.net/blog/gradual-removal-of-port-forwarding/">blog post</a> about this change, and <a href="https://www.ivpn.net/contactus/">contact us</a> if you have any questions.</p>
         </div>
-        <div v-if="!account.is_new && showQrCode" class="note qrnote">
-            <div class="qrcode" v-html="qrCode"></div>
-            <p>Scan from our mobile apps for quick setup.</p>
+        <div class="account-id-section">
+            <div class="details">
+                <label class="header">Account ID</label>
+                <div class="id">
+                    {{ account.id }}
+                    <button
+                        class="btn btn-icon copy"
+                        title="Copy Account ID to the clipboard"
+                        @click="copyToClipboard()"
+                    >
+                        <copy-icon />
+
+                        <transition name="fade">
+                            <div v-if="copied" class="copied">Copied</div>
+                        </transition>
+                    </button>
+                </div>
+                <div
+                    class="status"
+                    v-bind:class="[account.is_active ? 'active' : 'inactive']"
+                >{{ account.is_active ? 'Active' : 'Inactive' }}</div>
+            </div>
+            <div v-if="!account.is_new && showQrCode" class="note qrnote">
+                <div class="qrcode" v-html="qrCode"></div>
+                <p>Scan from our mobile apps for quick setup.</p>
+            </div>
         </div>
     </div>
 </template>
