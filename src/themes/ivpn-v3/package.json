@@ -39,5 +39,8 @@
     "vuex": "^4.1.0",
     "yarn-upgrade-all": "^0.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue-country-flag-next": "^2.3.2",
+    "vue-multiselect": "^3.0.0-beta.1"
+  }
 }

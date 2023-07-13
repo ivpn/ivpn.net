@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import PricesView from '@/views/Prices.vue'
+import OnePageCheckoutView from '@/views/OnePageCheckout.vue'
 import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
 import AccountView from '@/views/Account/Account.vue'
 import PaymentView from '@/views/Account/Payment.vue'
@@ -26,6 +27,7 @@ import PasswordResetView from '@/views/PasswordReset.vue'
 import PasswordResetCommitView from '@/views/PasswordResetCommit.vue'
 import ThankYouBTCView from '@/views/Account/ThankYouBTC.vue'
 import ThankYouView from '@/views/Account/ThankYou.vue'
+import ThankYouLightView from '@/views/Account/ThankYouLight.vue'
 import InvoiceView from '@/views/Account/Invoice.vue'
 import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
@@ -53,6 +55,14 @@ const routes = [
     },
     {
         path: '/', redirect: { name: 'prices' },
+    },
+    {
+        path: '/light',
+        name: 'light',
+        component: OnePageCheckoutView,
+        meta: {
+            title: 'IVPN one page checkout',
+        }
     },
     {
         path: '/pricing',
@@ -125,6 +135,14 @@ const routes = [
         path: '/account/payment/btc/thank-you',
         name: 'btc-thank-you',
         component: ThankYouBTCView,
+        meta: {
+            title: 'IVPN Account - Thank You',
+        }
+    },
+    {
+        path: '/thank-you-light',
+        name: 'btc-thank-you-light',
+        component: ThankYouLightView,
         meta: {
             title: 'IVPN Account - Thank You',
         }
