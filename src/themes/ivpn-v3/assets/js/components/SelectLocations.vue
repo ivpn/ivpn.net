@@ -58,7 +58,10 @@ export default {
     mounted() {
     },
     watch: {
-        selectedLocation: function () {
+        selectedLocation: function (after, before) {
+            if( after == null){
+                this.selectedLocation = [];
+            }
         },
     },
 
@@ -187,5 +190,53 @@ export default {
             background: #202020,
             color: $white
         ));
+}
+
+.vs__clear{
+    @include light-theme((
+        fill: #909093
+    ));
+
+    @include dark-theme((
+        fill: #909093
+    ));
+}
+
+.vs__search{
+    @include light-theme((
+        background:  #F0F0F0,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: #3D3D42,
+        color: #FFFFFF
+    ));
+
+}
+
+.vs__actions{
+    @include light-theme((
+        background:  #F0F0F0,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: #3D3D42,
+        color: #FFFFFF
+    ));
+}
+
+
+.vs__dropdown-toggle{
+    @include light-theme((
+        background:  #F0F0F0,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: #3D3D42,
+        color: #FFFFFF
+    ));
 }
 </style>

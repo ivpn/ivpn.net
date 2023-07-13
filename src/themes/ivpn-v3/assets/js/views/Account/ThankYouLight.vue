@@ -30,6 +30,7 @@
                 class="btn btn-solid"
                 style="margin-bottom: 1em"
                 target="_blank"
+                v-if="qrCodes.length > 0"
             >
                 <down-icon
                     style="width: 16px; height: 16px; fill: #449cf8"
@@ -60,6 +61,7 @@ export default {
             isLoaded: false,
             qrCodes: [],
             wireguardConfigs: [],
+            multihop: false,
         };
     },
 
@@ -99,12 +101,6 @@ export default {
             location.countryCode = res.country_code;
             location.city = res.city;
             this.qrCodes.push(location);
-            
-            this.qrCodes = this.qrCodes.filter((value, index, self) =>
-                index === self.findIndex((t) => (
-                    t.place === value.place && t.name === value.name
-                ))
-            );
         },
         configString(config) {
             return "[Interface]" +
@@ -133,7 +129,7 @@ export default {
                         this.wireguardConfigs.push(cfg);
                         this.generateQRCode(cfg);
                     });
-                    
+                    this.qrCodes = this.qrCodes.filter((v,i,a)=>a.findIndex(v2=>(JSON.stringify(v2) === JSON.stringify(v)))===i)
                 });
             },
             deep: true
@@ -151,7 +147,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import "../../styles/_vars.scss";
+@import "../../styles/base.scss";
+
 .payment-received {
     display: flex;
     flex-direction: column;
@@ -170,9 +169,17 @@ export default {
     }
 
     textarea{
-        background: #F0F0F0;
+        @include light-theme((
+            background:  #F0F0F0,
+            color: rgba(41, 41, 46, 0.5)
+        ));
+
+        @include dark-theme((
+            background:  #3D3D42,
+            color: white,
+        ));
         border:0;
-        margin-bottom:20px;
+        margin:20px;
         min-height:200px;
 
     }
@@ -261,7 +268,7 @@ export default {
 
     .btn-solid{
         width: 100%;
-        margin-bottom: 1em;
+        margin: 1em;
     }
 }
 </style>

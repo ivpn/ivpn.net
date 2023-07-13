@@ -7,9 +7,9 @@
                   <div class="col">
                      <div>
                         <div class="alert alert-light">
-                           <h3>IVPN Light - quick IVPN access with Lighting</h3>
-                            
-                           <p class="mb-0">Up to 5 server locations, or one Multi-hop setup. Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</p>
+                           <h1>IVPN Light</h1>
+                           <h2>quick IVPN access - priced in sats - pay with Lightning</h2>
+                           <p class="mb-0">Choose up to 5 exit points, or one Multi-hop setup. Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</p>
                         </div>
                      </div> 
                      <div id="key-input">
@@ -19,7 +19,7 @@
                                  <div class="card-header">
                                     <div class="row">
                                        <div class="col keys-buttons">
-                                        <button type="button" class="btn btn-solid btn-big" @click="showKeys()" :class="{ clickedButton: generateKeysClicked }"> Generate key </button>
+                                        <button type="button" class="btn btn-solid btn-big" @click="showKeys()" :class="{ clickedButton: generateKeysClicked }"> Use generated keys </button>
                                         <button type="button" class="btn btn-solid btn-big" @click="useKeys()" :class="{ clickedButton: addKeysClicked }"> Add your keys </button>
                                       </div>
                                     </div>
@@ -59,6 +59,7 @@
                            </div>
                         </div>
                      </div>
+                     <hr />
                      <div class="one-page-tabs">
                       <div class="tabs">
                           <ul>
@@ -71,7 +72,6 @@
                           </li>
                           </ul>
                        </div>
-                       <hr />
                        <div v-if="!multihop">
                        <h4>Select up to 5 locations</h4>
                        <SelectLocations 
@@ -95,8 +95,8 @@
                        v-model="selectedEntryLocation"
                        placeholder="Select a location"
                        :clearable="true"
-                       :searchable="false"
-                       :filterable="false"
+                       :searchable="true"
+                       :filterable="true"
                        :multiple= "false"
                        >
                     </SelectLocations>
@@ -107,8 +107,8 @@
                        v-model="selectedMultihopExitLocation"
                        placeholder="Select a location"
                        :clearable="true"
-                       :searchable="false"
-                       :filterable="false"
+                       :searchable="true"
+                       :filterable="true"
                        :multiple= "false"
                        >
                     </SelectLocations>
@@ -117,7 +117,7 @@
                      </div>
                      <hr />
                      <div class="billing-cycle-prices">
-                        <h4>4 different time horizon options:</h4>
+                        <h4>Choose length of access:</h4>
                         <div id="runtimeselector" role="group" class="btn-group">
                            <input class="btn-check" name="options" type="radio" autocomplete="off" id="tbg-radio-2" value="light.3hours" checked v-model="selectedBillingCycle" v-on:click="updatePrice('light.3hours')">
                            <label tabindex="0" title="1 day" for="tbg-radio-2" class="btn btn-primary">3 <br> hours <br></label>
@@ -217,7 +217,7 @@ export default {
                 addKey: null,
             },
             keysAdded: false,
-            showKeysTitle: "Your private keys are only generated within the browser:",
+            showKeysTitle: "WireGuard key pair generated for your setup:",
             usedCustomKeysText: "You have added the following custom key pair:",
             generateKeysClicked: false,
             addKeysClicked: false,
@@ -324,6 +324,8 @@ export default {
                 });
                 if( URL ){
                     JSCookie.set('lpv', this.privateKey, { expires: 0.5, })
+                    JSCookie.set('lmh', this.multihop , { expires: 0.5, })
+                    //JSCookie.set('logged_in', 2)
                     window.location = URL;
                 }
                 this.validation.submit = true;

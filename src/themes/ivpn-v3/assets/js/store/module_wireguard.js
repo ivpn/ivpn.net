@@ -1,5 +1,6 @@
 
 import Api from "@/api/api"
+import JSCookie from "js-cookie"
 
 const StatusErrNotLoggedIn = 11003
 
@@ -88,8 +89,12 @@ export default {
         context.commit('started')
         
         try {
+
+            let multihop = JSCookie.get('lmh');
+            multihop = (multihop == "true") ? 1:0;
             let configs = Api.getWireguardConfigs({
-                "key":context.state.keys
+                "key":context.state.keys,
+                "multihop": multihop,
             })
             context.commit('done', {
                 configs: configs,

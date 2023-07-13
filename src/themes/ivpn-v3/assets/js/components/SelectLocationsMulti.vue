@@ -1,35 +1,5 @@
 <template>
-    <!--
-    <Multiselect
-        v-model="selectedLocation"
-        :options="options"
-        :getOptionLabel="getOptionLabel"
-        class="select-location-control"
-        :selectable="() => this.selectedLocation.length < 5"
-        :multiple = "multiple"
-        :clearable="clearable"
-        :searchable="searchable"
-        :filterable="filterable"
-    >
-        <template slot:option="option" slot-scope="props">
-            <div class="option-element">
-                <div class="price-item-name" >
-                    <country-flag :country="option.country_code" size='normal'/> {{ option.country }},{{ option.city }}
-                </div>
-            </div>
-        </template>
 
-        <template #selected-option="{ country, city, country_code}">
-            <div class="option-element selected">
-                <div class="price-item-name" style="flex-grow: 1">
-                    <country-flag :country="country_code" size='normal'/> {{ country }},{{ city }}
-                </div>
-            </div>
-        
-        
-        </template>
-    </Multiselect>
--->
     <multiselect 
         v-model="selectedLocation" 
         :options="options"
@@ -45,28 +15,6 @@
         <template slot="option" slot-scope="props"><img class="option__image" :src="props.option.img">
       <div class="option__desc"><span class="option__title">{{ props.option.name }}</span><span class="option__small">{{ props.option.code }}</span></div>
         </template>
-        
-<!--
-    <template slot="option" slot-scope="props">
-  <div class="option__desc" v-if="props.option['$isLabel'] === true">
-    <div>
-      <span class="option__title"><country-flag :country="props.option.code" size='normal'/> {{ props.option['$groupLabel'].name }}</span>
-    </div>
-    <div>
-      <span class="option__small small"><country-flag :country="props.option.code" size='normal'/> {{ props.option['$groupLabel'].name }}</span>
-    </div>
-  </div>
-  <div v-else>
-    <div>
-      <span class="option__title"><country-flag :country="props.option.code" size='normal'/> {{ props.option.name }}</span>
-    </div>
-    <div>
-      <span class="option__small small"> <country-flag :country="props.option.code" size='normal'/> {{ props.option.code }}</span>
-    </div>
-  </div>
-</template>
--->
-
   </multiselect>
 </template>
 
@@ -299,19 +247,6 @@ export default {
     ));
 }
 
-.vs--searchable .vs__dropdown-toggle {
-    min-height: 76px !important;
-    @include dark-theme((
-        background:   #3D3D42,    
-    ));
-}
-
-#vs1__combobox{
-    min-height: 76px !important;
-    @include dark-theme((
-        background:   #3D3D42,    
-    ));
-}
 
 .vs__selected-options{
     @include light-theme((
@@ -323,12 +258,7 @@ export default {
     ));
 }
 
-.vselect .vs__dropdown-toggle{
-   min-height: 76px !important;
-   @include dark-theme((
-        background:   #3D3D42,    
-    ));
-}
+
 
 .vs__actions{
   color: #222226;;
