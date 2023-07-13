@@ -63,7 +63,6 @@ contents:
 * Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 * Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 * Allow LAN traffic when connected to VPN.
-* Port forwarding for WireGuard and OpenVPN, reserved on all but US-based servers.
 * Pause VPN for when disabling VPN connection temporarily is required.
 * Obfsproxy option to circumvent censorship.
 * Custom DNS servers, with DoH.
@@ -220,19 +219,19 @@ IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.10.14_amd64.deb)  
-SHA256: 1b0ba710ca8f1b5f369dc0d91475dc9056127bdef4fdd9f0076c3ce0ea442764  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.10.23_amd64.deb)  
+SHA256: b81637d872ce9fae32c8aef6f10be6e5668698dbfb77847f601059c2b7c41ed0  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.10.15_amd64.deb)  
-SHA256: 75c3f1867f9841b127d6936038bf10b6edbbe0bb27be7c2ee91b32b2def95bc3  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.10.23_amd64.deb)  
+SHA256: 3a62e55e455650c9eb33c2594936512b9e3b69532f98c274fa3cf863de57c476  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.10.14-1.x86_64.rpm)  
-SHA256: d54ba666a1297e167b6f96b02079d5d59c14468cd7320c0cd81dd958b411ad14  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.10.23-1.x86_64.rpm)  
+SHA256: fd61e1de25a6b8e2ad5e7b66103054aab4a653785268fae6308646c0b091b8c4  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.10.15-1.x86_64.rpm)  
-SHA256: ea9b5719c21bd0ad2dc662acc15fa82f42beb357c31cc3e030f45b1d27467687  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.10.23-1.x86_64.rpm)  
+SHA256: 8fdefea2f6ee26eb9af5476d7565832b09436de9f575350a331cf0f0e5f08871  
 
 ## Install from Source Code {#source}
 

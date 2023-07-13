@@ -36,7 +36,7 @@ We do not log any data relating to a user's VPN activity (while connected or con
 
 * No traffic logging
 
-* No connection timestamp or connection duration
+* No connection timestamp or connection duration (except when port forwarding is enabled, explained below)
 
 * No DNS request logging
 
@@ -93,6 +93,22 @@ Please select cash or cryptocurrency payments should this be of concern.
 ### Why do you store transaction_id and subscription_id?
 
 To be able to process refunds for our 30-day money-back guarantee and resolve other payment issues, as well as to enable auto-renewal of subscription.
+
+### What information is logged when I enable port forwarding?
+
+If, and only if port forwarding is enabled for your account we store a timestamp for the last connection event that occurred. We use this data to release unused ports after 14 days of inactivity.
+
+We don’t log any other information, such as connecting IP address, server connected to, bandwidth, DNS requests or other traffic related data.
+
+This is the data we store in relation to port forwarding:
+
+<div class="table-container-mobile">
+
+| Port | Account ID | Created on| Last used | 
+|---|---|---|---|
+| xxx | xxx | 2020-05-01 11:05:11 | 2020-05-02 14:01:11 |
+
+</div>
 
 ### What information is logged when I visit the IVPN website?
 

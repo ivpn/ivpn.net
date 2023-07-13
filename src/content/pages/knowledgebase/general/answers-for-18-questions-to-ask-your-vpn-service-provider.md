@@ -59,7 +59,4 @@ weight: 160
     OpenVPN using AES-256.
 
 17. #### Do you allow port forwarding by users?
-    Yes, but it is off by default. The feature is available in our Pro plan.
-
-18. #### Are all client ports ever forwarded by default? If so, on which servers?
     No.

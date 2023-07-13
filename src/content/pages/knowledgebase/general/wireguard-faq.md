@@ -67,14 +67,11 @@ weight: 480
 10. #### How do I verify that I am connected?
     Our website shows a connection status at the top of the page or inside the 'Menu' on mobile devices. There is a green 'Connected' or a red 'Disconnected' dot, which indicates your status. Another way to ensure that you are properly connected to IVPN is to simply visit the [dns leak test](https://www.dnsleaktest.com/) website. As long as you see the revealed location matches the selected IVPN server & the IP address is different to the one provided by your ISP - this gives you reasonable assurance that your traffic is routed through the VPN service.
 
-11. #### Does Port Forwarding work with WireGuard?
+11. #### Does WireGuard support IPv6?
     Yes.
 
-12. #### Does WireGuard support IPv6?
+12. #### Can I use Multi-hop with WireGuard?
     Yes.
 
-13. #### Can I use Multi-hop with WireGuard?
-    Yes.
-
-14. #### What DNS server is used when connecting with WireGuard?
+13. #### What DNS server is used when connecting with WireGuard?
     We provide our own, secure and absolutely logless DNS server which is pushed and applied automatically to your device when you connect. The IP address of the standard DNS server is `172.16.0.1`. The AntiTracker DNS address is `10.0.254.2`. The AntiTracker's Hardcore Mode DNS address is `10.0.254.3`.

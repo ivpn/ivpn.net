@@ -64,7 +64,6 @@ sections:
       - description: "Private non-logging **DNS servers** accessible through our VPN."
     features_col_two:
       - description: "**Multi-hop VPN routes**. Connect through multiple servers in separate jurisdictions for enhanced privacy."
-      - description: "**Port forwarding** for WireGuard and OpenVPN, reserved on all servers (excluding USA)."
       - description: "Define **trusted Wi-Fi networks** and create rules for automatic connection / disconnection."
       - description: "**Pause VPN** for when you need to disable the VPN temporarily after which connection is automatically restored (except iOS)."
       - description: "**Obfsproxy** to circumvent censorship (Windows, macOS and Linux clients)."

@@ -64,7 +64,7 @@ WireGuard is available and ready for use for all existing IVPN customers. You do
 
 #### Do you offer all features of IVPN for WireGuard?
 
-We support the same security and privacy features as with OpenVPN e.g. Firewall, Trusted networks, AntiTracker, Multi-hop and Port Forwarding.
+We support the same security and privacy features as with OpenVPN e.g. Firewall, Trusted networks, AntiTracker and Multi-hop.
 
 #### Do you offer IPv6 support for WireGuard?
 
