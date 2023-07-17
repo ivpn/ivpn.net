@@ -17,7 +17,7 @@ weight: 200
     See our in-depth [blog post](/blog/block-ads-and-beat-data-surveillance-with-ivpns-antitracker/) for more info on the subject.
 
 2.  #### How does it work?
-    The AntiTracker feature uses a specially configured DNS server to block domains from a continuously updated block list ([OISD full](https://oisd.nl)).
+    The AntiTracker feature uses a specially configured DNS server to block domains from a continuously updated block list ([OISD big](https://oisd.nl)).
 
 3.  #### How can I activate the AntiTracker?
     - On desktop apps for **macOS**, **Windows** and **Linux**, toggle the AntiTracker switch located below the IVPN Firewall switch on the right-side of the app.  
