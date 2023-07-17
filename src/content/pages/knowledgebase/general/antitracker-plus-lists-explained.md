@@ -36,7 +36,7 @@ Offers a convenient level of blocking.  May offer access to services that rely o
 
 * **1Hosts Lite** - "balanced; set & forget, doesn't hamper user experience (UX)"
 * **AdGuard** - "default filter for AdGuard Home and for the public AdGuard DNS servers"
-* **OIDS Small** - "smaller, less comprehensive variant of the big list, which [focuses] mainly on Ads, (Mobile) App Ads"
+* **OISD Small** - "smaller, less comprehensive variant of the big list, which [focuses] mainly on Ads, (Mobile) App Ads"
 * **Steven Black Unified = Ads + Malware**
 
 <br />
