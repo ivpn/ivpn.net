@@ -20,7 +20,7 @@ If you have a persistent speed issue consider the following troubleshooting step
     Selecting a server that is geographically close to you will normally result in increased performance (due to lower latency). In addition, changing to a server in another location may bypass any congestion issues depending on how close the congestion is to your location. See our [server status](/status/) page for a list of locations where we have servers.
 
 2.  ### Change VPN port/protocol
-    Your VPN software connects to our servers on a specific port number (e.g. 443) using a specific protocol (UDP or TCP). Some networks restrict the speed of certain ports or protocols.  Try changing the port/protocol until you identify the fastest combination. See [how to change ports and protocols](/knowledgebase/troubleshooting/how-to-change-portsorprotocols/).
+    Your VPN software connects to our servers on a specific port number (e.g. 443) using a specific protocol (UDP or TCP). Some networks restrict the speed of certain ports or protocols.  Try changing the port/protocol until you identify the fastest combination. See [how to change ports and protocols](/knowledgebase/troubleshooting/how-do-i-change-the-port-or-protocol-used-to-connect/).
 
 3.  ### Use a wired connection
     Your speed may be limited by your Wi-Fi connection. Wireless connections rely on a shared channel to transmit data between multiple devices which may result in increased latency and slower speeds. Wired connections normally support much higher speeds and are always preferable if you have access to one.
