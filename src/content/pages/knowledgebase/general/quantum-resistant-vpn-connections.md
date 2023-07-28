@@ -10,7 +10,7 @@ weight: 9
 ---
 # Quantum-Resistant VPN connections
 
-Quantum computing poses a threat to VPN security due to its potential to break classical encryption algorithms (e.g., AES, RSA) and key exchange mechanisms (e.g., Diffie-Hellman) much faster. 
+Quantum computing poses a threat to VPN security due to its potential to break traditional encryption algorithms (e.g., AES, RSA) and key exchange mechanisms (e.g., Diffie-Hellman) much faster. 
 
 ## Current Problems with VPNs and Quantum Resistance
 
@@ -39,7 +39,7 @@ This approach ensures that VPN connections remain secure during the transition t
 
 ### Key Encapsulation Mechanism (KEM)
 
-The Key Encapsulation Mechanism (KEM) is a cryptographic primitive used to securely exchange keys between two parties over an insecure channel. KEMs are designed to provide a level of security that is resistant to attacks from quantum computers.
+The Key Encapsulation Mechanism (KEM) is a cryptographic primitive used to securely exchange keys between two parties over an insecure channel. Post-quantum KEMs are designed to provide a level of security that is resistant to attacks from quantum computers.
 
 In a VPN connection, the key exchange process is a crucial step in establishing a secure communication channel between the client and server. Traditional key exchange methods, such as Diffie-Hellman (DH) and Elliptic Curve Diffie-Hellman (ECDH), are vulnerable to attacks by quantum computers through Shor's algorithm.
 
@@ -85,49 +85,47 @@ The table below is illustrating the algorithm/logic for exchanging a PresharedKe
 
 ![](/images-static/uploads/quantum-resistance-1.png)
 
-As an example, here is a Go-lang implementation of sharing a PresharedKey using a Key Encapsulation (the example uses liboqs-go, which is a wrapper for the original liboqs library):
+As an example, see the [Client](https://github.com/open-quantum-safe/liboqs-go/blob/main/examples/client_server_kem/client/client_kem.go) and [Server](https://github.com/open-quantum-safe/liboqs-go/blob/main/examples/client_server_kem/server/server_kem.go) Go-lang implementations of sharing a PresharedKey using a KEM (the example uses liboqs-go, which is a wrapper for the original liboqs library).
 
-[Client](https://github.com/open-quantum-safe/liboqs-go/blob/main/examples/client_server_kem/client/client_kem.go) | [Server](https://github.com/open-quantum-safe/liboqs-go/blob/main/examples/client_server_kem/server/server_kem.go)
+## Communication channel options for exchanging the PSK
 
-## Communication channels for exchanging PSK
+### Using the initial WireGuard tunnel 
 
-### Use the initial WireGuard tunnel 
-
-Using this approach the PSK is generating each time before the connection starts. But it uses an initial WireGuard connection for key exchange.
+Using this approach the PSK is generated each time before the connection starts. But it uses an initial WireGuard connection for key exchange.
 
 ![](/images-static/uploads/quantum-resistance-2.png)
 
-*Pros*: If the API server is blocked for the user, but they are able to access the WireGuard server, we can bypass such blocks and access the API server through the WireGuard tunnel
+<strong>Pros</strong>: If the API server is blocked for the user, but they are able to access the WireGuard server, we can bypass such blocks and access the API server through the WireGuard tunnel
 
-*Cons*: The need to establish an additional WireGuard tunnel, which will lead to extra delays before establishing a real connection
+<strong>Cons</strong>: The need to establish an additional WireGuard tunnel, which will lead to extra delays before establishing a real connection
 
-### Use REST API over HTTPS
+### Using REST API over HTTPS
 
-Since the Key Encapsulation Mechanism is developed to securely exchange keys between two parties over an insecure channel, it does not matter which channel to use. Using a simple API call before each WireGuard connection will be much easier, e.g.:
+Since the Key Encapsulation Mechanism is developed to securely exchange keys between two parties over an insecure channel, it does not matter which channel is used. Using an API call before each WireGuard connection is simpler e.g.:
 
 ![](/images-static/uploads/quantum-resistance-3.png)
 
-*Pros*: Easy to implement
+<strong>Pros</strong>: Easy to implement
 
-*Cons*: Impossible to exchange PSK when the API server is not accessible to a user
+<strong>Cons</strong>: Impossible to exchange PSK when the API server is not accessible to a user
 
-### Use REST API over HTTPS only when regenerating WG keys
+### Using REST API over HTTPS only when regenerating WG keys
 
 Using this method, the PSK is updated during the WireGuard keys regeneration phase.
 
-*Pros*: Easy to implement
+<strong>Pros</strong>: Easy to implement
 
-*Cons*: Using the same PSK for each connection, until the new WireGuard keys are regenerated
+<strong>Cons</strong>: Using the same PSK for each connection, until the new WireGuard keys are regenerated
 
-## The IVPN solution of quantum-resistant WireGuard connections
+## IVPN's solution for quantum-resistant WireGuard connections
 
-IVPN apps and infrastructure make use of the last method for exchanging PSK (via REST API over HTTPS during WireGuard key regeneration phase) with multiple KEM Algorithms for enhanced security.
+IVPN apps and infrastructure make use of the last method for exchanging the PSK (via REST API over HTTPS during WireGuard key regeneration phase) with multiple KEM Algorithms for enhanced security.
 
 The aim of using multiple KEM algorithms for PresharedKey generation is to increase the overall security and robustness of the key exchange process. By combining different KEM algorithms, we create a "hybrid" approach that mitigates the risk of any single algorithm being compromised or broken by an attacker, whether it be a classical or quantum computer. This strategy helps to ensure that even if one algorithm is found to be vulnerable, the other algorithm(s) can still provide a strong level of security for the key exchange.
 
 Chosen algorithms:
 
-1. Kyber (Kyber-1024). Kyber is one of the finalists in the NIST post-quantum cryptography project. It has a high Claimed NIST Level and it has not too long Public-Key size (1568 bytes).
+1. Kyber (Kyber-1024). Kyber is one of the finalists in the NIST post-quantum cryptography project. It has a high Claimed NIST Level and it has a not too long Public-Key size (1568 bytes).
 
 2. Classic McEliece (Classic-McEliece-348864). It is based on the McEliece cryptosystem, and its security has been studied and withstood attacks for decades. The main disadvantage is the large public key size. That's why we use the Classic-McEliece-348864 variant with the lowest NIST level, as it utilizes the smallest key size possible for this algorithm (261120 bytes).
 

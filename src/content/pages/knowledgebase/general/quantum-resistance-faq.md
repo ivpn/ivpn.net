@@ -27,11 +27,11 @@ We make use of the [liboqs](https://github.com/open-quantum-safe/liboqs) library
 - desktop apps: [Kyber-1024](https://pq-crystals.org/kyber/) + [Classic-McEliece-348864](https://classic.mceliece.org/)
 - mobile apps: [Kyber-1024](https://pq-crystals.org/kyber/)
         
-For more details on the subject, feel free to read the following [article](/knowledgebase/general/quantum-resistant-vpn-connections/).
+For more details read about [quantum resistant vpn connections](/knowledgebase/general/quantum-resistant-vpn-connections/).
 
 ### How often is PresharedKey rotated?
 
-A new PresharedKey is generated together with the new WireGuard key pair. The frequency at which the keys are rotated can be adjusted to anything from every 1 to 30 days.
+A new PresharedKey is generated together with the new WireGuard key pair. The frequency at which the keys are rotated can be adjusted from 1 to 30 days.
 
 ### Which platforms is quantum resistance available on?
 
