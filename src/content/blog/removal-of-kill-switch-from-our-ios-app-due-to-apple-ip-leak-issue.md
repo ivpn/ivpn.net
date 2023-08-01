@@ -14,7 +14,7 @@ tags:
 date: 2023-08-01T12:00:00.000Z
 thumbnailImage: /images-static/uploads/thumb-2x.png
 ---
-**When using Apple services on iOS 16+, a VPN connection does not fully protect your privacy  against Apple. Even with an active VPN connection and kill switch enabled, traffic from your iOS 16+ device to Apple servers can leak outside the VPN tunnel and expose your local IP address. For this reason, during the next release we are removing the kill switch feature from the IVPN iOS app.**
+**When using Apple services on iOS 16+, a VPN connection does not fully protect your privacy against Apple. Even with an active VPN connection and kill switch enabled, traffic from your iOS 16+ device to Apple servers can leak outside the VPN tunnel and expose your local IP address to Apple. For this reason, during the next release we are removing the kill switch feature from the IVPN iOS app. Connections to non-Apple servers are not vulnerable to this leak, thus general privacy benefits of your VPN connection are unaffected.**
 
 ## Leak issue
 
