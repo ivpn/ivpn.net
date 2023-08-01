@@ -34,9 +34,9 @@ weight: 200
     AntiTracker is configured to work across all OpenVPN and WireGuard servers.
 
 5.  #### Can I use it together with my browser’s ads/tracking-blocking extension?
-    Yes. Do keep in mind though, when using other tracker-blocking extensions, i.e. Privacy badger or Ghostery, along with our AntiTracker you might see that webpage still loads and contains various trackers. This happens because the AntiTracker is not purging these trackers from the webpage but rather prevents them from relaying any gathered data in your browser, thus mitigating a leak.
+    Yes. Do keep in mind though, when using other tracker-blocking extensions, e.g. Privacy Badger or Ghostery, along with our AntiTracker you might see that the webpage still loads and contains various trackers. This happens because the AntiTracker is not purging these trackers from the webpage but rather prevents them from relaying any gathered data in your browser, thus mitigating a leak.
 
-6.  #### On which devices I can use AntiTracker?
+6.  #### On which devices can I use AntiTracker?
     AntiTracker is available across all our [native apps](/apps/) for Windows, macOS, Linux, iOS and Android.  
 
     Please note: This feature is not included in the IVPN app for Android distributed via the Play Store as Google will most likely ban it for providing the tools that are focused on blocking their services in the first place. If you wish to use the feature on your Android device, feel free to [download the .apk file](/apps-android/) from our website, or install via [Accrescent](https://accrescent.app/app/net.ivpn.client) or [F-Droid](https://f-droid.org/packages/net.ivpn.client/). You will need to uninstall any previously installed version of IVPN app before installing from the .apk file or from F-Droid.  
@@ -44,14 +44,14 @@ weight: 200
     The AntiTracker can also be enabled on routers and other manual connections by specifying the following DNS IP address - `10.0.254.2`
 
 7.  #### What is “Hardcore Mode”?
-    Hardcore Mode extends the AntiTracker feature further by completely blocking all domains owned by the flagship bearers of the surveillance economy, Google and Facebook. 
+    Hardcore Mode extends the AntiTracker feature further by completely blocking all domains owned by the flagship bearers of the surveillance economy, Google and Meta (formerly Facebook). 
 
-    Do not be surprised to discover that the majority of services linked to those corporations, starting from Youtube, Facebook, Instagram, Gmail and down to the widely used Google Search and services using their domains will not work once you switch to Hardcore Mode.
+    Do not be surprised to discover that the majority of services linked to those corporations, starting from YouTube, Facebook, Instagram, Gmail and down to the widely used Google Search and services using their domains will not work once you switch to Hardcore Mode.
 
 8.  #### How do I activate the Hardcore Mode?
     If you are mentally prepared to fully cut any ties with those companies, follow the steps below:
 
-    - On desktop apps **macOS**, **Windows** and **Linux**, click the `Settings` gear icon at the top of the app's main window, click the AntiTracker tab on the left, then check **Hardcore Mode**.  
+    - On desktop apps for **macOS**, **Windows**, and **Linux**, click the `Settings` gear icon at the top of the app's main window, click the AntiTracker tab on the left, then check **Hardcore Mode**.  
 
     - On mobile apps for **Android** and **iOS**, tap the `Settings` gear icon at the top of the screen, tap the `AntiTracker` menu, enable the `AntiTracker` (if it is not enabled already), then toggle **Hardcore Mode** on.
 
@@ -60,7 +60,7 @@ weight: 200
     - To enable the Hardcore Mode on routers and other manual connections, use the following DNS IP address - `10.0.254.3`
 
 9.  #### Are there limitations to Hardcore Mode?
-    Hardcore mode uses autonomous system numbers (ASN) to detect extra domains based on Facebook and Google IP addresses.  The IP addresses themselves are not blocked, but any domains associated with those addresses that are not already part of the AntiTracker's block list will be blocked.  As a result, if an app or service uses a IP address directly, like if it is hard-coded into an app, access to Facebook and Google services will be available. 
+    Hardcore mode uses autonomous system numbers (ASN) to detect extra domains based on Meta and Google IP addresses.  The IP addresses themselves are not blocked, but any domains associated with those addresses that are not already part of the AntiTracker's blocklist will be blocked.  As a result, if an app or service uses an IP address directly, like if it is hard-coded into an app, access to Meta and Google services will be available. 
 
-    For example, Whatsapp uses IP addresses directly and access to messages and services may be available when Hardcore Mode is active.  This is likely a feature to bypass network restrictions that try to block Whatsapp content.
+    For example, WhatsApp (owned by Meta) uses IP addresses directly and access to messages and services may be available when Hardcore Mode is active.  This is likely a feature to bypass network restrictions that try to block WhatsApp content.
 
