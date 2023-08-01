@@ -10,13 +10,13 @@ weight: 150
 ---
 # Do you offer a kill switch or VPN firewall?
 
-Yes, the IVPN apps on Windows, macOS, Linux and iOS (15.1+) has an integrated firewall that offers the 'kill switch' solution ensuring your privacy is protected in every possible scenario. If you are interested in knowing more about our kill switch please continue reading.
+Yes, the IVPN apps on Windows, macOS, Linux, and iOS (15.1+) have an integrated firewall that offers the 'kill switch' solution ensuring your privacy is protected in every possible scenario. If you are interested in knowing more about our kill switch please continue reading.
 
 An Internet kill switch is a mechanism to prevent data from leaking outside of the VPN tunnel when the tunnel fails for any reason. Traditionally the kill switch software will monitor the Internet connection of the computer on which it is running and either block all traffic or disconnect the network connection if it detects that the VPN has failed.
 
 IVPN has implemented a secure and robust mechanism called the IVPN firewall. Once enabled the IVPN Firewall integrates deep into the operating system (using Microsoft’s own WFP API on Windows, pf on macOS & iptables on Linux) and filters all network packets. The Firewall is independent of the IVPN client, so even if a component of the IVPN Client crashes filtering will continue uninterrupted. The IVPN Firewall can be configured to switch on automatically during a VPN connection, or you can enable it manually when you need it. You can also set the 'always-on' IVPN Firewall to protect the system all the time, even before the OS is booted. This will ensure that no traffic will bypass the VPN tunnel even during the boot-up phase.
 
-Many events could cause the network to be reconfigured suddenly and without notice which could expose your personal IP address. For example;
+Many events could cause the network to be reconfigured suddenly and without notice which could expose your personal IP address. For example:
 
 - Disconnection from or connection to Wi-Fi or wired network.
 - Weak Wi-Fi signal which causes Wi-Fi to reconnect.
@@ -35,9 +35,9 @@ Native and third-party services can use your internet connection even before the
 
 ### IPv6
 
-As IPv6 becomes more popular, more and more ISP’s and Wi-Fi hotspots around the world allocate an IPv6 subnetwork for their clients along with an IPv4 address.
+As IPv6 becomes more popular, more and more ISPs and Wi-Fi hotspots around the world allocate an IPv6 subnetwork for their clients along with an IPv4 address.
 
-According to the Google IPv6 adoption statistics, 14.5% of all US traffic is IPv6. Some countries, such as Belgium have an adoption rate exceeding 30%.
+According to the Google IPv6 adoption statistics, 14.5% of all US traffic is IPv6. Some countries, such as Belgium, have an adoption rate exceeding 30%.
 
 It is important to understand that when IPv6 is enabled on the network you are connected to it will take precedence over IPv4 for all of the connections to hosts with IPv6 support.
 
@@ -49,7 +49,7 @@ When the IVPN Firewall is enabled it is impossible for any IPv6 traffic to leak 
 
 ### DNS
 
-When you connect using our native apps your system's DNS is replaced with IVPN DNS servers. This is done to ensure that neither your ISP nor anyone else can eavesdrop on what websites you visit.
+When you connect using our native apps your system's DNS is replaced with IVPN's DNS servers. This is done to ensure that neither your ISP nor anyone else can eavesdrop on what websites you visit.
 
 However, some 3rd-party applications or web browsers are configured to use their own DNS. When using such apps, your system's DNS is generally ignored, essentially causing a DNS leak. 
 
@@ -57,9 +57,9 @@ The IVPN Firewall adds rules to your system to block all DNS queries that are se
 
 ### WebRTC
 
-WebRTC (Web Real-Time Communication) is an API drafted by the W3C that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing (without the need of either internal or external plugins). WebRTC implements STUN (Session Traversal Utilities for Nat), a protocol that allows the discovery of your externally assigned IP address (to facilitate the applications above).
+WebRTC (Web Real-Time Communication) is an API drafted by the W3C that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing (without the need of either internal or external plugins). WebRTC implements STUN (Session Traversal Utilities for NAT), a protocol that allows the discovery of your externally assigned IP address (to facilitate the applications above).
 
-In some cases, the request to the STUN server may leak outside of the VPN and expose your ISP issued IP address. However, if you are using our kill switch, then these leaks will be blocked.
+In some cases, the request to the STUN server may leak outside of the VPN and expose your ISP-issued IP address. However, if you are using our kill switch, then these leaks will be blocked.
 
 ### Software stability and crashes
 
@@ -71,4 +71,4 @@ The IVPN Firewall ensures that if the VPN client, any part of the tunnel or your
 
 ### Conclusion
 
-Using the IVPN firewall enhances your security and privacy steps further. From ensuring your privacy at boot time to blocking IPv6 and protecting against IP, DNS and traffic leaks during a software crash.
+Using the IVPN firewall enhances your security and privacy steps further. From ensuring your privacy at boot time to blocking IPv6 and protecting against IP, DNS, and traffic leaks during a software crash.
