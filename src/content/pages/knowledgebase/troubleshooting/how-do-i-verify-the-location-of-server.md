@@ -12,7 +12,7 @@ weight: 220
 
 Sometimes, when you check the location of a server using IP-based geolocation, the database may say the server is not where it is advertised. This is usually because the database is incorrect.
 
-You can, though, use tools available on the internet to help verify the approximate location of a server. This technique is based on the understanding that the closer you are to a server the shorter the ping time should be. Whilst this may not be perfect it should be able to help you determine that a server is at least close to its stated location. For example, using a UK-based system I get the following ping times to various locations:
+You can, though, use tools available on the Internet to help verify the approximate location of a server. This technique is based on the understanding that the closer you are to a server the shorter the ping time should be. Whilst this may not be perfect it should be able to help you determine that a server is at least close to its stated location. For example, using a UK-based system I get the following ping times to various locations:
 
 | Location | Destination | Time ms |
 |---|---|---|
@@ -21,7 +21,7 @@ You can, though, use tools available on the internet to help verify the approxim
 | UK | us-tx1.gw.ivpn.net (Texas, USA) | 152 |
 | UK | us-ut1.gw.ivpn.net (Utah, USA) | 186 |
 
-From the above, we can tell that the servers in Utah and Texas are further away than the ones in the UK and France but we can't really distinguish between the UK and France. We would need to ping the servers from a number of locations and compare the results to get a more accurate result. This is where internet-based tools are useful. We will use the CA Technologies [Ping Test tool](https://asm.saas.broadcom.com/). This uses over 90 global locations to ping a server and displays the response time. (Note: The Ping Test tool was available previously, circa 2020, though seems to be behind a paywall/trial. This [ping test](https://www.wormly.com/test-remote-ping) may offer a similar experience without the paywall/trial.) Using the tool we can see (selected results):
+From the above, we can tell that the servers in Utah and Texas are further away than the ones in the UK and France but we can't really distinguish between the UK and France. We would need to ping the servers from a number of locations and compare the results to get a more accurate result. This is where Internet-based tools are useful. We will use the CA Technologies [Ping Test tool](https://asm.saas.broadcom.com/). This uses over 90 global locations to ping a server and displays the response time. (Note: The Ping Test tool was available previously, circa 2020, though seems to be behind a paywall/trial. This [ping test](https://www.wormly.com/test-remote-ping) may offer a similar experience without the paywall/trial.) Using the tool we can see (selected results):
 
 | Server: gb1.gw.ivpn.net (London, UK) |   | Server: fr1.gw.ivpn.net (Paris, FR) |
 |---|---|---|---|
@@ -34,7 +34,7 @@ From the above, we can tell that the servers in Utah and Texas are further away 
 | Berlin | 21 | Berlin | 24 |
 | Frankfurt | 11 | Frankfurt | 14 |
 
-Interpreting the results: First, this neatly shows that this is not perfect. Edinburgh is geographically further away from London than Manchester but the results don't show this. You should discard outliers like this. For everything else, the closer the test location is to the target server, the shorter the ping time. You can have a reasonable confidence that the servers are in the locations stated.
+Interpreting the results: First, this neatly shows that this is not perfect. Edinburgh is geographically further away from London than Manchester but the results don't show this. You should discard outliers like this. For everything else, the closer the test location is to the target server, the shorter the ping time. You can have reasonable confidence that the servers are in the locations stated.
 
 At the time of writing, we have a server in Texas with the IP address 67.228.177.194 that is correctly geolocated. Some of the secondary IP addresses on the Texas server e.g. 67.213.212.242 are incorrectly geolocated* in Utah (the ISP's headquarter location). Let's use the ping test to see what's really happening (selected results):
 
