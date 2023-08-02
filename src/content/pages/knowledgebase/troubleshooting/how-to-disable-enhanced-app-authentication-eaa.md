@@ -11,11 +11,11 @@ weight: 70
 
 # How to Disable Enhanced App Authentication (EAA)
 
-### Via the IVPN App's Graphical Interface
+### Via the IVPN app's Graphical Interface
 
 Go to the app's **Settings > Advanced > Enhanced App Authentication** area and click the `Disable` button, enter the EAA password, then click the `Disable` button.
 
-### Via the IVPN App's Command-line Interface (CLI)
+### Via the IVPN app's Command-Line Interface (CLI)
 
 Open a Command Prompt or Terminal and type `ivpn eaa -off`, type the EAA password, then press `Enter/Return`.
 
