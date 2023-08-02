@@ -11,4 +11,4 @@ weight: 30
 ---
 # How do I change my password?
 
-Navigate to [change password](/clientarea/changepwd/) form in the client area. If you are not logged in, please enter the e-mail address you signed up with and password to login. If you cannot remember your password, request a [password reset](/recover/password/).
+Navigate to [change password](/clientarea/changepwd/) form in the client area. If you are not logged in, please enter the email address you signed up with and password to login. If you cannot remember your password, request a [password reset](/recover/password/).
