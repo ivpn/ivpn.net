@@ -15,8 +15,8 @@ Tunnelblick stores usernames and passwords in the macOS keychain. If you are hav
 
 1. Open `keychain access` utility by navigating to your `Applications` folder and then `Utilities`.
 2. Select `Login` under `keychains` and `all elements` under `Category`.
-3. In the search box in the top right, enter `tunnelblick` to filter all the tunnelblick keychain entries.
-4. Select all the tunnelblick entries, select `edit` | `delete`.
-5. Close tunnelblick and open it again and try to connect.
+3. In the search box in the top right, enter `Tunnelblick` to filter all the Tunnelblick keychain entries.
+4. Select all the Tunnelblick entries, select `edit` | `delete`.
+5. Close Tunnelblick and open it again and try to connect.
 
 If you continue to have authentication issues please see [I receive an 'authentication failure' message. What can I do?](/knowledgebase/troubleshooting/i-receive-an-andsharp039authentication-failureandsharp039-message-what-can-i-do/)
