@@ -10,11 +10,11 @@ weight: 150
 ---
 # Do you offer a kill switch or VPN firewall?
 
-Yes, the IVPN apps on Windows, macOS, Linux, and iOS (15.1+) have an integrated firewall that offers the 'kill switch' solution ensuring your privacy is protected in every possible scenario. If you are interested in knowing more about our kill switch please continue reading.
+Yes, the IVPN apps on Windows, macOS, Linux, and iOS 15 have an integrated firewall that offers the 'kill switch' solution ensuring your privacy is protected in every possible scenario. If you are interested in knowing more about our kill switch please continue reading.
 
 An Internet kill switch is a mechanism to prevent data from leaking outside of the VPN tunnel when the tunnel fails for any reason. Traditionally the kill switch software will monitor the Internet connection of the computer on which it is running and either block all traffic or disconnect the network connection if it detects that the VPN has failed.
 
-IVPN has implemented a secure and robust mechanism called the IVPN firewall. Once enabled the IVPN Firewall integrates deep into the operating system (using Microsoft’s own WFP API on Windows, pf on macOS & iptables on Linux) and filters all network packets. The Firewall is independent of the IVPN client, so even if a component of the IVPN Client crashes filtering will continue uninterrupted. The IVPN Firewall can be configured to switch on automatically during a VPN connection, or you can enable it manually when you need it. You can also set the 'always-on' IVPN Firewall to protect the system all the time, even before the OS is booted. This will ensure that no traffic will bypass the VPN tunnel even during the boot-up phase.
+IVPN has implemented a secure and robust mechanism called the IVPN firewall. Once enabled the IVPN Firewall integrates deep into the operating system (using Microsoft’s own WFP API on Windows, `pf` on macOS, and `iptables` on Linux) and filters all network packets. The Firewall is independent of the IVPN client, so even if a component of the IVPN Client crashes filtering will continue uninterrupted. The IVPN Firewall can be configured to switch on automatically during a VPN connection, or you can enable it manually when you need it. You can also set the 'always-on' IVPN Firewall to protect the system all the time, even before the OS is booted. This will ensure that no traffic will bypass the VPN tunnel even during the boot-up phase.
 
 Many events could cause the network to be reconfigured suddenly and without notice which could expose your personal IP address. For example:
 
@@ -43,7 +43,7 @@ It is important to understand that when IPv6 is enabled on the network you are c
 
 This IPv6 traffic will most likely silently bypass your VPN tunnel.
 
-As a result if you have no control over the configuration of the router you are connected to (e.g. a public Wi-Fi hotspot), or when the default configuration of your router is set to announce any IPv6 network your ISP has allocated to you and you haven’t disabled IPv6 in your OS (which is enabled by default), you may find that you have IPv6 support which is a major potential threat to your privacy.
+As a result, if you have no control over the configuration of the router you are connected to (e.g. a public Wi-Fi hotspot), or when the default configuration of your router is set to announce any IPv6 network your ISP has allocated to you and you haven’t disabled IPv6 in your OS (which is enabled by default), you may find that you have IPv6 support which is a major potential threat to your privacy.
 
 When the IVPN Firewall is enabled it is impossible for any IPv6 traffic to leak outside of the VPN tunnel, giving you absolute peace of mind.
 
@@ -63,11 +63,11 @@ In some cases, the request to the STUN server may leak outside of the VPN and ex
 
 ### Software stability and crashes
 
-All software has bugs and may crash for a variety of reasons. For example, out of memory errors will crash practically any foreground application.
+All software has bugs and may crash for a variety of reasons. For example, out-of-memory errors will crash practically any foreground application.
 
 Software designed for security must fail-safe in the event of a crash, fully maintaining the security of the host system.
 
-The IVPN Firewall ensures that if the VPN client, any part of the tunnel or your desktop OS crashes, no traffic will leave the computer until IVPN Firewall is disabled manually or a new VPN tunnel is established.
+The IVPN Firewall ensures that if the VPN client, any part of the tunnel, or your desktop OS crashes, no traffic will leave the computer until IVPN Firewall is disabled manually or a new VPN tunnel is established.
 
 ### Conclusion
 
