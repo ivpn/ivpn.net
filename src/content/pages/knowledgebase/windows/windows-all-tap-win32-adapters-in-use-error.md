@@ -22,8 +22,8 @@ This error indicates that the VPN was not cleanly disconnected from the previous
 
 If the above does not resolve the issue please close and restart all OpenVPN processes by following these steps
 
-1. Press `ctrl alt del`.
-2. Open `task manager`.
-3. End all instances of any process containing the word **openvpn**.
+1. Press `Ctrl+Alt+Del`.
+2. Open `Task Manager`.
+3. End all instances of any process containing the word **OpenVPN**.
 4. Restart OpenVPN.
 5. Retry connecting to IVPN.
