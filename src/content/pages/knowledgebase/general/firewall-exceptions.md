@@ -10,11 +10,11 @@ weight: 470
 ---
 # Firewall Exceptions
 
-The IVPN app for Windows, macOS, and Linux includes a feature to allow IP addresses and subnets to bypass the app's kill switch.  This can be useful to access local network devices that are outside of the range of the current LAN.  It can also be useful if a corporate VPN is required to run concurrently with the IVPN app.  It is also possible to include the IP address for a website in the firewall exception list and traffic to that website will bypass the VPN connection, like a split tunnel for a specific website.
+The IVPN App for Windows, macOS, and Linux includes a feature to allow IP addresses and subnets to bypass the app's kill switch firewall.  This can be useful to access local network devices that are outside of the range of the current LAN.  It can also be useful if a corporate VPN is required to run concurrently with the IVPN App.  It is also possible to include the IP address for a website in the firewall exception list and traffic to that website will bypass the VPN connection, like a split tunnel for a specific website.
 
-To make use of this feature, adding a firewall exception to the IVPN app is the first step and adding a static route to the computer system is the second step.  The firewall exception instructs the IVPN app to allow the traffic to bypass its firewall and the static route instructs the computer system to route the traffic outside of the VPN tunnel.
+To make use of this feature, adding a firewall exception to the IVPN App is the first step and adding a static route to the computer system is the second step.  The firewall exception instructs the IVPN App to allow the traffic to bypass its firewall and the static route instructs the computer system to route the traffic outside of the VPN tunnel.
 
-To add a firewall exception, go to IVPN app's `Settings > IVPN Firewall > Exceptions` area and enter an IP address or a subnet.
+To add a firewall exception, go to IVPN App's `Settings > IVPN Firewall > Exceptions` area and enter an IP address or a subnet.
 
 To add a static route, three details are required:
 1. The IP address or subnet from the exception
@@ -95,7 +95,7 @@ nslookup dnsleaktest.com
 dig +short dnsleaktest.com
 ```
 
-Add an exception to the IVPN app's firewall for that website's IP address using the `/32` CIDR notation subnet mask.
+Add an exception to the IVPN App's firewall for that website's IP address using the `/32` CIDR notation subnet mask.
 
 Add a static route to the system for the website's IP address using the `/32` or `255.255.255.255` subnet mask.
 
