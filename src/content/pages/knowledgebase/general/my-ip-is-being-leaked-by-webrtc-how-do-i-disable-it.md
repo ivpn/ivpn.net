@@ -14,7 +14,7 @@ WebRTC (Web Real-Time Communication) is an API drafted by the W3C that supports 
 
 Due to the way in which Windows selects the adapter when sending traffic (source IP address selection), the request to the STUN server may leak outside of the VPN and expose your ISP issued IP address. However, if you are using a VPN firewall, such as the [IVPN Firewall](/knowledgebase/general/do-you-offer-a-kill-switch-or-vpn-firewall/) available in our [apps](/apps/), then these leaks will be blocked.
 
-However, it is still possible for the site to identify your internally assigned IP addresses as these are detected by the browser locally using javascript. Please follow the instructions below to disable WebRTC.
+However, it is still possible for the site to identify your internally assigned IP addresses as these are detected by the browser locally using JavaScript. Please follow the instructions below to disable WebRTC.
 
 To test whether you are vulnerable please visit this [demo page](https://diafygi.github.io/webrtc-ips/).
 

@@ -10,7 +10,7 @@ weight: 130
 ---
 # Paid with PayPal using eCheck but IVPN account is still in Pending/Suspended state. Why?
 
-Unfortunately, eChecks are not instant. They basically function the same as paper checks and can take up to 7 business days to clear. The name may appear to sound fast however, the process is not.
+Unfortunately, eChecks are not instant. They function the same as paper checks and can take up to 7 business days to clear. The name may appear to sound fast, however, the process is not.
 
 If your payment is still in a 'Pending' status that means we won't receive the funds until the transaction is cleared by PayPal. See more on the following [PayPal FAQ page](https://www.paypal.com/us/smarthelp/article/i-sent-an-echeck,-but-the-payment-is-pending.-why-faq572).
 

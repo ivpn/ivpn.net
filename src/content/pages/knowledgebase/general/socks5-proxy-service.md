@@ -14,14 +14,14 @@ weight: 210
 
 Our SOCKS v5 proxy service enables you to configure an application, e.g. a web browser to:
 
-1. Route its traffic through a different VPN server than the one you are connected to. This enables you to effectively setup VPN connections to multiple VPN servers at the same time. For example you could connect to the Paris VPN server but configure your Firefox web browser to exit the Singapore VPN server. All your traffic will exit the Paris server except for traffic from the Firefox web browser which will exit the Singapore VPN server. With the Firefox Multi-account Containers addon you can even configure different VPN servers for each tab of the Firefox browser.
+1. Route its traffic through a different VPN server than the one you are connected to. This enables you to effectively set up VPN connections to multiple VPN servers at the same time. For example you could connect to the Paris VPN server but configure your Firefox web browser to exit the Singapore VPN server. All your traffic will exit the Paris server except for traffic from the Firefox web browser which will exit the Singapore VPN server. With the Firefox Multi-Account Containers addon you can even configure different VPN servers for each tab of the Firefox browser.
 1. Force traffic to be unrouteable if the VPN connection is terminated (application kill switch). The IVPN app firewall already prevents any traffic leaking outside of the VPN connection whilst connected, though you may want an additional kill switch if you need to disable the IVPN firewall to access local or remote resources. This works because our SOCKS5 proxies are only available when the VPN is connected, so if the VPN is disconnected, the proxy is not available and no traffic can leak from the application.
 
 ## How to use the SOCKS5 service
 
 All IVPN VPN servers offer a SOCKS v5 proxy service.  The service is available on port `1080` when the VPN is connected.  SOCKS5 proxy services are not available when the VPN is disconnected.
 
-The local IP address for the proxy service is `10.1.0.1` and this address is associated with the DNS name `socks5.gw.ivpn.net`, which is the VPN server hosting the client device's connection. This is helpful if you want to configure an application to always sends it traffic to the SOCKS5 proxy on the same server that you are connected to giving you the additional kill switch functionality described in the overview above.
+The local IP address for the proxy service is `10.1.0.1` and this address is associated with the DNS name `socks5.gw.ivpn.net`, which is the VPN server hosting the client device's connection. This is helpful if you want to configure an application to always send its traffic to the SOCKS5 proxy on the same server that you are connected to giving you the additional kill switch functionality described in the overview above.
 
 Hostnames are available on our [server status page](https://www.ivpn.net/status), though typically follow the rule of adding `socks5.` at the beginning of the VPN server's hostname, like `socks5.es1.gw.ivpn.net` or `socks5.nl1.wg.ivpn.net`.
 
@@ -49,9 +49,9 @@ No authentication (username/password) is required for the proxy connection.
 
 Select `No Proxy` at the top of the `Connection Settings` area to disable the proxy settings.
 
-### All platforms: Firefox Multi-Account containers
+### All platforms: Firefox Multi-Account Containers
 
-The Firefox Multi-Account Containers add-on allows you to associate tabs with a specific container. Tabs in different containers use separate website storage areas, which limits 3rd party tracking and also enables other features such as being able to sign-in to the same account (e.g. Gmail) with two different identities in the same browser. Another feature of these containers is that they can be configured with their own SOCKS5 proxy so we can create one or multiple containers each associated with different exit VPN servers. For example, you could be connected to the London server with the IVPN App, but have three tabs open, one sending traffic to the Amsterdam VPN server, one to the Singapore VPN server and one to the Kharkiv VPN server (all via the SOCKS5 proxy on those servers).
+The Firefox Multi-Account Containers add-on allows you to associate tabs with a specific container. Tabs in different containers use separate website storage areas, which limits 3rd party tracking and also enables other features such as being able to sign in to the same account (e.g. Gmail) with two different identities in the same browser. Another feature of these containers is that they can be configured with their own SOCKS5 proxy so we can create one or multiple containers each associated with different exit VPN servers. For example, you could be connected to the London server with the IVPN app, but have three tabs open, one sending traffic to the Amsterdam VPN server, one to the Singapore VPN server and one to the Kyiv VPN server (all via the SOCKS5 proxy on those servers).
 
 1. Install the [Firefox Multi-Account Containers add-on](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 
@@ -123,7 +123,7 @@ Remove the check mark beside `SOCKS Proxy` in the `Network > Advanced > Proxies`
 
 ### Android and iOS
 
-AndroidOS and iOS currently support HTTPS proxy services; SOCKS5 proxies are not supported.
+Android and iOS currently support HTTPS proxy services; SOCKS5 proxies are not supported.
 
 
 ## Compatibility with Other IVPN Features
@@ -134,7 +134,7 @@ No.
 
 The standard DNS is used by the SOCKS5 proxy.  This standard DNS runs on the VPN server itself and all DNS queries are fully encrypted.
 
-### Custom DNS ([IVPN App](https://www.ivpn.net/apps/))
+### Custom DNS ([IVPN app](https://www.ivpn.net/apps/))
 
 No.
 
@@ -154,7 +154,7 @@ The original Multi-Hop system used a suffix on the IVPN Account ID, like `@fr` t
 
 Yes, for Windows, macOS, and Linux.
 
-### Split Tunnel ([IVPN App](https://www.ivpn.net/apps/))
+### Split Tunnel ([IVPN app](https://www.ivpn.net/apps/))
 
 No.  A web browser included in the split tunnel bypass list will not be able to make use of the proxy service.
 
