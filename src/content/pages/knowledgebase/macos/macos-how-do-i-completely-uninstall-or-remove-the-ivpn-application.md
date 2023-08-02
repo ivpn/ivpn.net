@@ -11,7 +11,7 @@ weight: 60
 ---
 # macOS - How do I completely uninstall / remove the IVPN application?
 
-The uninstaller app is included in the installation .dmg image and is only required if you wish to completly remove all components of the IVPN application from your macOS computer. It is not required before installing a new version.
+The uninstaller app is included in the installation .dmg image and is only required if you wish to completely remove all components of the IVPN application from your macOS computer. It is not required before installing a new version.
 
 You can download the latest .dmg image from the following link: [https://www.ivpn.net/apps-macos/](/apps-macos/)
 
