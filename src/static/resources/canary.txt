@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 796966
-hash: 00000000000000000002bf5df0ab102b047bc21e102c73b550e40cab614577be
+height: 801461
+hash: 00000000000000000003d69e743e04e1bd9dbb7eaa1c9ae21491050a9c5daa54
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-What the French riots mean for the Franco-German relationship
-Also in this newsletter: Spain’s culture war over bicycle lanes
+FirstFT: Investors gloomy on Europe but bet on ‘soft landing’ for US
+Also in today’s newsletter, UK post-Brexit border rules delayed again and Goldman hit by high-profile departures
 
-Asset Management: Pimco prepares for ‘harder landing’
-Plus, Silver Lake’s big bets, FTSE 100 falls flat, and FT books of the year
+Inside EY’s brewing succession battle
+Plus, Harvey Schwartz confronts a big challenge at Carlyle
 
-FirstFT: Macron convenes ministers on French unrest
-Also in today’s newsletter, Thames Water crisis ‘a threat’ to UK investment and UBS to avoid $10bn Credit Suisse backstop
+Investors turn gloomy over Europe’s economic outlook
+Recent market moves show growing divergence with bets on a ‘soft landing’ in the US
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmSiVg8ACgkQisFrnrZH
-umkcHggAmeB3ujtjNzKsZq+C70uKTDs1SZb84dPxsmfyCRkHh0CqW9kRgWmQ3dYb
-9lj3PnVyU6pb9ZhsM0EeCWb0nlTpd59XYb7tzzfmK8pVzUjVutJBGEUqJ3eVkvzr
-EGSkmZMGFKQf4tkN9NqJYpEoDg7e9b55RVFrpKs2bsatO9kzyTwGH8Icc6Xqstb5
-sBZTURk6BeEtjwErSNVQxnTaMPzlNvi2X6+xYFtCs9B5CSymxjpfMg1b+Maj4KCm
-0VgaHdnRo+/ckWS6uUNNO/9/JEKqbW7x0ho/xW1ROlJMgleEAk26HSzDdf83gmf0
-7tkD81K8Gi/Aatd+71ixJh2ndkTSmg==
-=Ti6b
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmTLNI8ACgkQisFrnrZH
+umkT+wf/V7EKfHDEQYjujVlR936dSuF7MJ4Hr+4Ew1OTYMf5HWW5Pl188yPE0btM
+AimKVk4swl5XvEyQIxvoNgIKCBuyNaPaqFNDa2IX85dXF5WKQmFBbbYp56s10/98
+fYZxQs50RuOK/FMJxw8Dkgtv+Lg9Mkd6z/+L8BPcM0lfuqq7KDYYDRty7mJjeooJ
+B9Ojlbod/URoRqugF06IHZYiObS6w9yBR2jtzIPRKiiSXJb2dGNZbqUjzmS1FVNO
+08aucg2p/emoBA/pOhXCmSsFJz3n8YJ9MjccuKbK0bX4epxZyDINihrNwFutdeCB
+A1SYiwstLFi2ubCHB1TeiZJEk10iEw==
+=+Igx
 -----END PGP SIGNATURE-----
 
 
