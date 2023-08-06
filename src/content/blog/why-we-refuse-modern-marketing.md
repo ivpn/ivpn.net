@@ -1,7 +1,7 @@
 ---
 title: "Why we refuse modern marketing, even when it hurts our growth"
 url: /blog/why-we-refuse-modern-marketing/
-highlighted: true
+highlighted: false
 draft: false
 authors:
   - Viktor Vecsei
