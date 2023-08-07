@@ -36,7 +36,7 @@ Offers a convenient level of blocking.  May offer access to services that rely o
 
 * **1Hosts Lite** - "balanced; set & forget, doesn't hamper user experience (UX)"
 * **AdGuard** - "default filter for AdGuard Home and for the public AdGuard DNS servers"
-* **EasyList + EasyPrivacy** - "EasyList is the primary filter list that removes most adverts from international webpages, including unwanted frames, images and objects. ... EasyPrivacy is [a] supplementary filter list that completely removes all forms of tracking from the internet, including web bugs, tracking scripts and information collectors, thereby protecting your personal data."
+* **EasyList + EasyPrivacy** - "EasyList is a popular list used by many ad blockers and forms the basis of over a dozen combination filter lists. EasyPrivacy is a supplementary filter list that removes all forms of tracking from the internet, including tracking scripts and information collectors."
 * **OISD Small** - "smaller, less comprehensive variant of the big list, which [focuses] mainly on Ads, (Mobile) App Ads"
 * **Steven Black Unified = Ads + Malware**
 
@@ -69,7 +69,7 @@ Offers an intense level of blocking.  Some online services may break.  Includes:
 
 The option also exists to select a single list for blocking instead of the collections above:
 
-* **EasyList + EasyPrivacy** - "EasyList is the primary filter list that removes most adverts from international webpages, including unwanted frames, images and objects. ... EasyPrivacy is [a] supplementary filter list that completely removes all forms of tracking from the internet, including web bugs, tracking scripts and information collectors, thereby protecting your personal data."
+* **EasyList + EasyPrivacy** - "EasyList is a popular list used by many ad blockers and forms the basis of over a dozen combination filter lists. EasyPrivacy is a supplementary filter list that removes all forms of tracking from the internet, including tracking scripts and information collectors."
 * **OISD Big** - "The big list blocks: Ads, (Mobile) App Ads, Phishing, Malvertising, Malware, Spyware, Ransomware, CryptoJacking, Scam ... Telemetry/Analytics/Tracking (Where not needed for proper functionality)"
 * **Developer Dan Ads + Tracking** - "A programmatically expanded list of hosts used for advertisements and tracking"
 * **Steven Black Unified = Ads + Malware**
