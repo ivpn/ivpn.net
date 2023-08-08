@@ -1,6 +1,6 @@
 ---
 title: Better tracker blocking controls with AntiTracker Plus
-url: /blog/block-ads-and-beat-data-surveillance-with-ivpns-antitracker/
+url: /blog/better-tracker-blocking-controls-with-antitracker-plus/
 highlighted: true
 draft: false
 authors:
