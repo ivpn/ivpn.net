@@ -7,7 +7,7 @@ authors:
   - Juraj Hilje
   - Viktor Vecsei
 categories:
-  - Apps
+  - Releases
 tags:
   - Apps
   - Privacy
