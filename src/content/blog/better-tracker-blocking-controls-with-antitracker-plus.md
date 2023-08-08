@@ -35,7 +35,7 @@ We build and offer blocklists using the following sources:
 * [OISD][6]
 * [Steven Black hosts][7]
 
-Please consult our [AntiTracker Plus FAQ entry][8]) to learn more about list combinations and individual lists.
+Please consult our [AntiTracker Plus FAQ entry][8] to learn more about list combinations and individual lists.
 
 ### Getting started with Plus lists
 
