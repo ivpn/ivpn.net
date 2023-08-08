@@ -1,6 +1,7 @@
 ---
 title: IVPN infrastructure security audit concluded
 url: /blog/ivpn-infrastructure-audit-concluded/
+highlighted: true 
 draft: false 
 authors:
   - Nick Pestell

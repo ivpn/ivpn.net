@@ -34,9 +34,9 @@ Add the `-port` command argument `ivpn connect -port TCP:443 de.gw.ivpn.net` and
 #### OpenVPN
 <br>
 
-1. Open the .ovpn config file with any text editor and locate line 3 `proto udp` & line 4 `remote xx.gw.ivpn.net 2049`.
-2. Change those values to, e.g. `proto tcp` & `remote xx.gw.ivpn.net 443` (see all available port combinations above).
-3. Save the changes, (if required) create a new VPN profile in your OpenVPN client and reconnect.
+1. Open the .ovpn config file with any text editor and locate line 3 `proto udp` and line 4 `remote xx.gw.ivpn.net 2049`.
+2. Change those values to, e.g. `proto tcp` and `remote xx.gw.ivpn.net 443` (see all available port combinations above).
+3. Save the changes, (if required) create a new VPN profile in your OpenVPN client, and reconnect.
 4. In case the issue persists, go back to step 1 and try a different port.
 
 #### WireGuard
@@ -44,5 +44,5 @@ Add the `-port` command argument `ivpn connect -port TCP:443 de.gw.ivpn.net` and
 
 1. Open the WireGuard config file with any text editor.
 2. Change the port number in the `Endpoint` field, e.g. `ua1.wg.ivpn.net:443` (see all available port combinations above).
-3. Save the changes, (if required) create a new VPN profile in your WireGuard client and reconnect.
+3. Save the changes, (if required) create a new VPN profile in your WireGuard client, and reconnect.
 4. In case the issue persists, go back to step 1 and try a different port.

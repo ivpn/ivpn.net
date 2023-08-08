@@ -17,11 +17,11 @@ We recommend using the official IVPN software client which already includes this
 
 For this solution to work, you need to configure OpenVPN to store your IVPN Account ID (if you have not done so already). To do this please follow [these instructions](/knowledgebase/windows/windows-how-do-i-configure-openvpn-to-save-my-password/).
 
-1.  Click on the Windows start button and type `task scheduler` and click on it.
+1.  Click on the Windows start button and type `Task Scheduler` and click on it.
 
 2.  On the menu bar click `Action` | `Create task`.
 
-3.  Give the task a name .e.g "Auto-start VPN".
+3.  Give the task a name e.g. "Auto-start VPN".
 
 4.  Select `Run only when user is logged on`.
 

@@ -1,6 +1,7 @@
 ---
 title: IVPN apps security audit for 2022 concluded
 url: /blog/ivpn-apps-security-audit-2022-concluded/
+highlighted: false
 draft: false 
 authors:
   - Nick Pestell

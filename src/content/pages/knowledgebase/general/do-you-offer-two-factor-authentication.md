@@ -16,7 +16,7 @@ Yes, and it can be easily enabled in just a few steps:
 
 2. Navigate to `Account settings` and check the `2-factor authentication` checkbox.
 
-3. Scan the barcode using the preferred TOTP app (Time-based One-Time Password), e.g. **Google Authenticator**.
+3. Scan the barcode using the preferred TOTP (Time-based One-Time Password) app, e.g. **Google Authenticator**.
 
 4. Enter the generated 6-digit code and click on the `Enable` button to confirm the 2FA activation.
 

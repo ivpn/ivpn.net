@@ -1,5 +1,6 @@
 
 import Api from "@/api/api"
+import JSCookie from "js-cookie"
 
 const StatusErrNotLoggedIn = 11003
 
@@ -13,6 +14,7 @@ export default {
     error: null,
 
     keys: {},
+    configs: {},
   }),
 
   mutations: {
@@ -44,6 +46,10 @@ export default {
         if (payload.key) {
           state.keys.push(payload.key);
         }
+
+        if(payload.configs){
+            state.configs = payload.configs;
+        }
     },
 
     delete(state, payload) {
@@ -64,6 +70,34 @@ export default {
 
             context.commit('done', {
                 keys: keys,
+            })
+
+        } catch (error) {
+
+            if (error.status == StatusErrNotLoggedIn) {
+                context.commit('done', {})
+                console.log("error", error)
+                return;
+            }
+
+            context.commit('failed', { error })
+        }
+    },
+
+    async loadConfigs(context) {
+
+        context.commit('started')
+        
+        try {
+
+            let multihop = JSCookie.get('lmh');
+            multihop = (multihop == "true") ? 1:0;
+            let configs = Api.getWireguardConfigs({
+                "key":context.state.keys,
+                "multihop": multihop,
+            })
+            context.commit('done', {
+                configs: configs,
             })
 
         } catch (error) {

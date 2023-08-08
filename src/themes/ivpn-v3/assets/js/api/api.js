@@ -13,8 +13,7 @@ export default {
 
     fetch(method, url, data = null, overrideURI = null, overrideOptions = {}) {
 
-        // let baseURI = process.env.MIX_APP_WEBAPI_URL
-        let baseURI = ""
+        let baseURI = process.env.MIX_APP_WEBAPI_URL
 
         let options = {
             method: method,
@@ -167,6 +166,10 @@ export default {
 
     async getWireguardKeys() {
         return await this.Get('/web/wireguard/keys')
+    },
+
+    async getWireguardConfigs(payload) {
+        return await this.Post('/web/wireguard/configs',payload)
     },
 
     async addWireguardKey(payload) {
@@ -391,12 +394,14 @@ export default {
         return response
     },
 
-    async getBitcoinURL(invoice, hmac, paymentMethodId) {
-        // let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, process.env.MIX_APP_WEBAPI_URL, {
-        //     credentials: "omit"
-        // })
-        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac, paymentMethodId }, "", {
-            credentials: "omit"
+    async createLightInvoice(priceID, exitServer, entryServer, privateKey, publicKey) {
+
+        let response = await this.Post('/web/accounts/btc/create-light-invoice', {
+            price_id: priceID,
+            private_key: privateKey,
+            public_key: publicKey,
+            exit_server: exitServer,
+            entry_server: [ entryServer ]
         })
 
         return response
@@ -434,7 +439,7 @@ export default {
 
     async getServerStats() {
         return await this.Get(
-            '/v5/servers/stats',
+            '/v4/servers/stats',
             process.env.MIX_APP_API_URL,
             {
                 credentials: "omit"
@@ -452,7 +457,7 @@ export default {
             },
         )
     },
-    
+
     //
     // Contact
     //
@@ -465,6 +470,20 @@ export default {
                 message: payload.message,
                 captcha_id: payload.captchaID,
                 captcha: payload.captchaValue
+            }
+        )
+    },
+
+    //
+    // Light
+    //
+
+    async submitLightPayment(payload) {
+        await this.Post(
+            '/web/btc/invoice/create',
+            {
+                privateKey: payload.privateKey,
+                publicKey: payload.publicKey,
             }
         )
     },
