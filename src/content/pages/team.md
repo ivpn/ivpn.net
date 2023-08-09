@@ -44,7 +44,7 @@ sections:
       - image: /images-static/uploads/team-nick.png
         image_retina: /images-static/uploads/team-nick-2x.png
         name: Nicholas Pestell
-        description: Nick is founder and CEO of IVPN and 100% owner of Privatus Limited, the company through which the IVPN service is operated. Nick brings considerable expertise in risk management and security testing whilst working for Royal Bank of Scotland, Network Rail and ABN AMRO Bank.
+        description: Nick is founder and CEO of IVPN and 100% owner of IVPN Limited, the company through which the IVPN service is operated. Nick brings considerable expertise in risk management and security testing whilst working for Royal Bank of Scotland, Network Rail and ABN AMRO Bank.
         linkedin: https://www.linkedin.com/in/nick-pestell/
         github: https://github.com/cipheromega
       - image: /images-static/uploads/team-edward.png
