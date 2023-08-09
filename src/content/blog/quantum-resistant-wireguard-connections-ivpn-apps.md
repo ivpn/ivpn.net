@@ -30,6 +30,6 @@ For more details read our explainer about [quantum resistant VPN connections][1]
 
 Quantum resistant connections are available only with IVPN apps at this time, we will assess offering similar functionality for manual connections using a router or the native WireGuard client.
 
- [1]: knowledgebase/general/quantum-resistant-vpn-connections/
- [2]: knowledgebase/general/quantum-resistance-faq/
+ [1]: /knowledgebase/general/quantum-resistant-vpn-connections/
+ [2]: /knowledgebase/general/quantum-resistance-faq/
  
