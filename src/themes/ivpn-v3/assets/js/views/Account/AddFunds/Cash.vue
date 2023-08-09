@@ -3,7 +3,7 @@
         <div v-if="price.price >= 60">
             <div class="print">
                 <p class="address">
-                    Privatus Limited<br>
+                    IVPN Limited<br>
                     Scanbox #05668<br>
                     Ehrenbergstr. 16a<br>
                     10245 Berlin<br>
@@ -23,7 +23,7 @@
 
                 <address>
                     <p>
-                        Privatus Limited
+                        IVPN Limited
                         <br />Scanbox #05668 <br />Ehrenbergstr. 16a <br />10245
                         Berlin <br />Germany
                         <br />
