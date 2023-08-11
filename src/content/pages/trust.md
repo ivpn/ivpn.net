@@ -8,8 +8,8 @@ url: /trust/
 
 1.  ### What is the public facing and full legal name of the VPN service and any parent or holding companies? Do these entities have ownership or economic stakes in other VPN services, and if so, do they share user information? Where are they incorporated? Is there any other company or partner directly involved in operating the VPN service, and if so, what is its full legal name?  
 
-    The public facing name is IVPN. The Legal name of the company is Privatus Limited.  
-    Privatus Limited has no parent or holding companies.  
+    The public facing name is IVPN. The Legal name of the company is IVPN Limited.  
+    IVPN Limited has no parent or holding companies.  
     There are no other companies or partners directly involved in operating the IVPN service.  
 
 2.  ### Does the company, or other companies involved in the operation or ownership of the service, have any ownership in VPN review websites?  
