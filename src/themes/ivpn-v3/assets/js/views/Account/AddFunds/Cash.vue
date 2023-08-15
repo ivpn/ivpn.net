@@ -43,7 +43,7 @@
                     Cash payments normally take 2-4 weeks to be received depending on the location 
                     the envelope was sent from and the postal service. When the envelope reaches the 
                     address in Berlin it is forwarded to a different location where our billing team 
-                    collects the payment and credits it to your account. Therefor if you are tracking 
+                    collects the payment and credits it to your account. Therefore, if you are tracking 
                     the package it will take a further 1-2 weeks after the item is received before your 
                     account is credited.
                 </p>
