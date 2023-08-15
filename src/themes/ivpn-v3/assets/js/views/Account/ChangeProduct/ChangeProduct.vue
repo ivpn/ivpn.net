@@ -57,7 +57,6 @@
                         <li>All protocols</li>
                         <li>7 devices</li>
                         <li>Anti-tracker</li>
-                        <li>Port forwarding</li>
                         <li>Multi-hop</li>
                     </ul>
                 </div>
