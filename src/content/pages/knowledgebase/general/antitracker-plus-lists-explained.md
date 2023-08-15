@@ -12,7 +12,7 @@ weight: 10
 
 **AntiTracker Plus** extends IVPN's original advertising and tracker blocking system by providing three combinations of lists to choose from with the option to choose any one of seven individual lists.  The goal is to offer more control over what is blocked and not blocked.
 
-Adjust the current AntiTracker block list selection via the IVPN App's `Settings > AntiTracker` area.
+Adjust the current AntiTracker block list selection via the IVPN App's `Settings > AntiTracker` area.  For manual VPN connections, check this [article](/knowledgebase/troubleshooting/what-is-the-ip-address-of-your-dns-servers/) for details on DNS server IP addresses.
 
 <div markdown="1" class="notice notice--info">
 Note: Hardcore Mode remains optionally available with each AntiTracker Plus list option to block known Google and Facebook domains.
