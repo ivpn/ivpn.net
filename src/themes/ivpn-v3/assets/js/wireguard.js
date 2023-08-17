@@ -181,4 +181,9 @@ export default {
         };
     },
 
+	isValidKey(key){
+		const re = /^[A-Za-z0-9+/]{42}[AEIMQUYcgkosw480]=$/;
+		return re.test(key);
+	}
+
 }

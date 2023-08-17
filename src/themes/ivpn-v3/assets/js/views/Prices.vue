@@ -46,10 +46,12 @@
             <ul>
                 <li>Anonymous registration - no email required</li>
                 <li>Open-source applications for Android, iOS, macOS, Windows and Linux</li>
-                <li>Private DNS servers</li>
                 <li>Cash, Monero and Bitcoin payment options for better anonymity</li>
                 <li>Money-back guarantee for 30 days</li>
+                <li>Private DNS servers</li>
+                <li>AntiTracker with blocklist selection option</li>
                 <li>Killswitch/firewall and obfuscation methods where applicable</li>
+                <li>SOCKS5 proxy service</li>
                 <li>Router, NAS support</li>
             </ul>
             <br>

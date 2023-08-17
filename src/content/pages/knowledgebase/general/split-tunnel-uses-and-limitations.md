@@ -10,7 +10,7 @@ weight: 590
 ---
 # Split Tunnel Uses and Limitations
 
-The IVPN App split tunnel feature offers a way to bypass the VPN tunnel for select applications and services e.g. to access video streaming services or for gaming. This is a convenient way to protect your privacy while offering the convenience of accessing content and services that may not be friendly to VPN server IP addresses.
+The IVPN App's split tunnel feature offers a way to bypass the VPN tunnel for select applications and services e.g. to access video streaming services or for gaming. This is a convenient way to protect your privacy while offering the convenience of accessing content and services that may not be friendly to VPN server IP addresses.
 
 With any convenience, there is often a trade-off. For the split tunnel feature, the trade-off is an intentional leak. The IVPN App has been designed to prevent leaks, so please be aware that these intentional leaks present with the split tunnel feature may include unexpected behaviours. These are detailed below.
 
@@ -34,7 +34,7 @@ Other gaming launchers, like the Epic Games Launcher, may behave in a similar ma
 
 **DNS**
 
-The Domain Name System (DNS) offers a way to turn a network hostname, like [ivpn.net](http://ivpn.net), into an IP address. Network communication relies on IP addresses and hostnames are offered to make accessing network clients easy for humans.
+The Domain Name System (DNS) offers a way to turn a network hostname, like [ivpn.net](https://ivpn.net), into an IP address. Network communication relies on IP addresses and hostnames are offered to make accessing network clients easy for humans.
 
 An application that uses the split tunnel feature in the IVPN App will likely rely on the operating system's DNS service, which is likely protected by the IVPN App's VPN connection. DNS queries from a web browser that uses the split tunnel, for example, may appear to come from the VPN server, which may have an impact on accessing some online content. Run a [DNS leak test](https://www.dnsleaktest.com/) to be certain.
 

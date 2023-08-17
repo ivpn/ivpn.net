@@ -10,6 +10,10 @@ weight: 40
 ---
 # Known issues with Native iOS Kill Switch
 
+<div markdown="1" class="notice notice--warning">
+Kill switch is not available on devices with iOS 16+. Learn why in our blog post <a href="/blog/removal-of-kill-switch-from-our-ios-app-due-to-apple-ip-leak-issue/">here</a>.
+</div>
+
 A list of known issues with the Kill Switch enabled for VPN tunnel in the iOS app:
 
 * [OpenVPN] OpenVPN tunnel will take slightly longer to reconnect to a different gateway.

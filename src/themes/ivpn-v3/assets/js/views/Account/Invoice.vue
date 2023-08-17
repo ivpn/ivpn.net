@@ -27,7 +27,7 @@
                 <div class="sides__details">
                     <b>Pay To:</b>
                     <p>
-                        PRIVATUS LIMITED d/b/a IVPN <br />
+                        IVPN Limited<br />
                         5 Secretary's Lane Gibraltar
                     </p>
                 </div>

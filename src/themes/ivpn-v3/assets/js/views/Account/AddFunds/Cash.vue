@@ -3,7 +3,7 @@
         <div v-if="price.price >= 60">
             <div class="print">
                 <p class="address">
-                    Privatus Limited<br>
+                    IVPN Limited<br>
                     Scanbox #05668<br>
                     Ehrenbergstr. 16a<br>
                     10245 Berlin<br>
@@ -23,7 +23,7 @@
 
                 <address>
                     <p>
-                        Privatus Limited
+                        IVPN Limited
                         <br />Scanbox #05668 <br />Ehrenbergstr. 16a <br />10245
                         Berlin <br />Germany
                         <br />
@@ -40,9 +40,12 @@
                     extra security.
                 </p>
                 <p>
-                    It can take up to 3 weeks for payments to be received depending
-                    on where you are sending them from. Post from the USA normally
-                    takes about a week and from Europe 3-4 days.
+                    Cash payments normally take 2-4 weeks to be received depending on the location 
+                    the envelope was sent from and the postal service. When the envelope reaches the 
+                    address in Berlin it is forwarded to a different location where our billing team 
+                    collects the payment and credits it to your account. Therefore, if you are tracking 
+                    the package it will take a further 1-2 weeks after the item is received before your 
+                    account is credited.
                 </p>
                 <p>Please note that cash payments are sent at your own risk.</p>
             </article>

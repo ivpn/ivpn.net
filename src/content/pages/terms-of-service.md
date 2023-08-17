@@ -8,9 +8,9 @@ canonical:
 
 ###### Last updated: 21 January 2021
 
-These are the terms of service you are agreeing to when you subscribe and/or are using the services of IVPN, operated by Privatus Limited.
+These are the terms of service you are agreeing to when you subscribe and/or are using the services of IVPN, operated by IVPN Limited.
 
-Please note that in this agreement, the term "You" means you the "Subscriber/User", and the term "We" or "Our" means Privatus Limited, its owners, employees, agents and any others involved with Privatus Limited.
+Please note that in this agreement, the term "You" means you the "Subscriber/User", and the term "We" or "Our" means IVPN Limited, its owners, employees, agents and any others involved with IVPN Limited.
 
 ##### As a subscriber of our services, you agree that:
 
@@ -42,7 +42,7 @@ Please note that in this agreement, the term "You" means you the "Subscriber/Use
 
 14. You agree not to pay for the service from a stolen credit card.
 
-15. You will not resell or attempt to resell IVPN accounts or services to any individual or entity for use or further resale without the express written permission of Privatus Limited.
+15. You will not resell or attempt to resell IVPN accounts or services to any individual or entity for use or further resale without the express written permission of IVPN Limited.
 
 16. The service that is offered to you is provided on an "as is" basis, with no warranties whatsoever. We are not liable for any direct, indirect, consequential, inconveniences, or whatsoever damages, or loss of profit, that may arise from the use of our services.
 

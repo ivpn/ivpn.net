@@ -169,6 +169,10 @@ export default {
         return await this.Get('/web/wireguard/keys')
     },
 
+    async getWireguardConfigs(payload) {
+        return await this.Post('/web/wireguard/configs',payload)
+    },
+
     async addWireguardKey(payload) {
         return await this.Post('/web/wireguard/keys/add', payload)
     },
@@ -401,6 +405,19 @@ export default {
 
         return response
     },
+    
+    async createLightInvoice(priceID, exitServer, entryServer, privateKey, publicKey) {
+
+        let response = await this.Post('/web/accounts/btc/create-light-invoice', {
+            price_id: priceID,
+            private_key: privateKey,
+            public_key: publicKey,
+            exit_server: exitServer,
+            entry_server: [ entryServer ]
+        })
+
+        return response
+    },
 
     async getMoneroPaymentDetails(duration) {
         return await this.Post('/web/accounts/monero-payment-details', {
@@ -465,6 +482,20 @@ export default {
                 message: payload.message,
                 captcha_id: payload.captchaID,
                 captcha: payload.captchaValue
+            }
+        )
+    },
+
+    //
+    // Light
+    //
+
+    async submitLightPayment(payload) {
+        await this.Post(
+            '/web/btc/invoice/create',
+            {
+                privateKey: payload.privateKey,
+                publicKey: payload.publicKey,
             }
         )
     },
