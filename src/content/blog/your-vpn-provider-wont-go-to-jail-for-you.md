@@ -11,7 +11,7 @@ categories:
 tags:
   - privacy
   - transparency
-date: 2020-08-19T08:54:36.080Z
+date: 2023-08-18T08:54:36.080Z
 # 740px X 740px
 thumbnailImage: /images-static/uploads/thumb_5d.png
 ---
@@ -25,7 +25,7 @@ We believe these observations apply to most VPN companies, however in every case
 
 
 <figure>
-    <img src="/images-static/uploads/justice_5d.jpeg"> 
+    <img src="/images-static/uploads/justice_5d.jpg"> 
 </figure>
 
 
@@ -44,7 +44,7 @@ A list of things a VPN service can do to make sure that no sensitive information
 If the provider makes the right choices on the above points, there is a very good chance they can safeguard you from data requests about your subscription information and VPN use. 
 
 <figure>
-    <img src="/images-static/uploads/cabinet_5d.jpeg"> 
+    <img src="/images-static/uploads/cabinet_5d.jpg"> 
 </figure>
 
 
