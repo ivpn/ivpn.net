@@ -13,8 +13,7 @@ export default {
 
     fetch(method, url, data = null, overrideURI = null, overrideOptions = {}) {
 
-        // let baseURI = process.env.MIX_APP_WEBAPI_URL
-        let baseURI = ""
+        let baseURI = process.env.MIX_APP_WEBAPI_URL
 
         let options = {
             method: method,
@@ -451,7 +450,7 @@ export default {
 
     async getServerStats() {
         return await this.Get(
-            '/v5/servers/stats',
+            '/v4/servers/stats',
             process.env.MIX_APP_API_URL,
             {
                 credentials: "omit"
@@ -469,7 +468,7 @@ export default {
             },
         )
     },
-    
+
     //
     // Contact
     //
