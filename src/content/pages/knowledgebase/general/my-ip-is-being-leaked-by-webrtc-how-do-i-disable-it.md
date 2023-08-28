@@ -28,10 +28,10 @@ To test whether you are vulnerable please visit this [demo page](https://diafygi
 
 No action is necessary.
 
-### Google Chrome
+### Google Chrome (Android only)
 
 1. In your Chrome address bar type `chrome://flags/#disable-webrtc` and hit Enter
 
 2. `WebRTC Stun origin` header should be set to **Enabled**
 
-3. Restart your Chrome browser for changes to take into effect.
+3. Restart your Chrome browser for changes to take effect.

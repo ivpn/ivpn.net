@@ -9,12 +9,19 @@ weight: 30
 ---
 ## pfSense® OpenVPN Setup Guide
 
+<div markdown="1" class="notice notice--warning">
+This guide was produced using pfSense v2.7.0.
+</div>
+
+
 ### Basic pfSense Setup
 
 1.  **Add the CA.crt to the Certificate Manager**  
-    In your pfSense device click on `"System"` -> `"Cert manager"` -> `"CAs"` and then click on `"+Add"`  
-    Give it a name, i.e. **"IVPN CA"** 
-    Choose `"Import an existing Certificate Authority"` and paste the following under **"Certificate data"**:  
+    In your pfSense device click on `System` -> `Certificates` -> `Authorities` and then click on `+Add`.
+
+    Give it a name, i.e. **"IVPN CA"**.
+
+    Choose `Import an existing Certificate Authority` and paste the following under **"Certificate data"**:  
 
     ```
     -----BEGIN CERTIFICATE-----
@@ -57,27 +64,27 @@ weight: 30
     -----END CERTIFICATE-----
     ```
 
-    Click on `"Save"`.  
+    Click `Save`.  
 
-    ![](/images-static/uploads/install-openvpn-pfsense-2.4.3-010.png)
+    ![](/images-static/uploads/install-pfsense-openvpn-2.7.0-010.png)
 
 2.  **Add a VPN connection**  
-    In this example, we'll create the VPN connection to Canada server (CA.GW.IVPN.NET). You can find domain names of other locations on our [server status page](/status/).  
-    Click on `"VPN"` -> `"OpenVPN"` -> `"Clients"` -> `"+Add"` & enter the following configuration:  
+    In this example, we will create the VPN connection to Canada server (CA.GW.IVPN.NET). You can find domain names of other locations on our [server status page](/status/).  
 
-    *   **Server Mode** - Peer to Peer (SSL/TLS)
-    *   **Protocol** - UDP on IPv4 only
-    *   **Device mode** - tun Layer 3 Tunnel Mode
-    *   **Interface** - WAN
-    *   **Server host** - ca.gw.ivpn.net (pick any other location from the [server status page](/status/))
-    *   **Server port** - 2049
+    Click on `VPN` -> `OpenVPN` -> `Clients` -> `+Add` and enter the following configuration:  
+
     *   **Description** - IVPN Canada
-        ![](/images-static/uploads/install-openvpn-pfsense-2.4.3-020.png)
-    *   Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX' and any password under **User Authentication Settings**  
-        <div markdown="1" class="notice notice--info">
-        Only your account ID is used for authentication and is case-sensitive. The password field can be left empty or set to anything if your client software requires a non-blank password.
-        </div>
-    *   Check **Use a TLS Key** option under **TLS Configuration** -> uncheck the **Automatically generate a TLS Key** option and past the following & past the following under **TLS Key**  
+    *   **Server Mode** - Peer to Peer (SSL/TLS)
+    *   **Device mode** - tun Layer 3 Tunnel Mode
+    *   **Protocol** - UDP on IPv4 only
+    *   **Interface** - WAN
+    *   **Server host** - convert hostname `ca.gw.ivpn.net` to an IP address by using `nslookup ca.gw.ivpn.net` in a Command Prompt or Terminal
+    *   **Server port** - 1194 (or any port from the [list](/knowledgebase/troubleshooting/how-do-i-change-the-port-or-protocol-used-to-connect/))
+
+        ![](/images-static/uploads/install-pfsense-openvpn-2.7.0-020.png)
+
+    *   Under **User Authentication Settings**, use your IVPN Account ID for authentication (like `ivpnXXXXXXXX` or `i-XXXX-XXXX-XXXX`, case-sensitive). Set the password field to anything non-blank (ie. ivpn or i).
+    *   Check **Use a TLS Key** option under **TLS Configuration** -> uncheck the **Automatically generate a TLS Key** option and past the following and past the following under **TLS Key**  
         ```
         -----BEGIN OpenVPN Static key V1-----
         ac470c93ff9f5602a8aab37dee84a528
@@ -99,43 +106,59 @@ weight: 30
         -----END OpenVPN Static key V1-----
         ```
     *   **TLS Key Usage Mode** - TLS Authentication
+    *   **TLS keydir direction** - Direction 1
     *   **Peer Certificate Authority** - IVPN CA
     *   **Client Certificate** - None (Username or Password required)
-    *   **Encryption Algorithm** - AES-256-GCM (256 bit key, 128 bit block)
-    *   **Enable NCP** - checked
-    *   **NCP Algorithms** - AES-128-GCM & AES-256-GCM
+    *   **Data Encryption Algorithm** - AES-256-GCM, CHACHA20-POLY1305
+    *   **Fallback Data Encryption Algorithm** - AES-256-CBC
     *   **Auth digest algorithm** - SHA1 (160-bit)
-        ![](/images-static/uploads/install-openvpn-pfsense-2.4.3-030.png)
-    *   **Compression** - No LZO Compression [Legacy style, comp-lzo no]
+    *   **Server Certificate Key Usage Validation** - Enforce key usage
+        ![](/images-static/uploads/install-pfsense-openvpn-2.7.0-030.png)
+    *   **Allow Compression** - Refuse any non-stub compression (Most secure)
+    *   **Custom options** - `verify-x509-name ca name-prefix` (middle entry `ca` needs to match the prefix for the VPN server hostname)
     *   **UDP Fast I/O** - checked.
     *   **Gateway creation** - IPv4 only
-    *   **Save.**
+    *   Click `Save`.
 
 3.  **Add an interface**  
 
-    * Click on `"Interfaces"` -> `"Assignments"`.
-    * Use the Drop-down menu for the `"Available network ports"` and select `"ovpnc* (IVPN Canada)"` and hit `"+Add"`
-    * Click on the new interface name (it is usually named `"OPT1"` or `"OPT2"`) & have the **Enable Interface** option checked.
-    * Hit `"Save"` to apply the changes.
+    *   Click on `Interfaces` -> `Assignments`.
+    *   Use the Drop-down menu for the `Available network ports` and select `ovpnc* (IVPN Canada)` and click `+Add`
+    *   Click on the new interface name (it is usually named `OPT1` or `OPT2`) and check the **Enable Interface** option.
+    *   Click `Save/Apply`.
+    *   **OPTIONAL:** Disable IPv6 via `Interface` -> `WAN` -> `IPv6 Configuration Type` = None, then click `Save/Apply`.  
 
 4.  **Adjust NAT rules**  
 
-    *   Click on `"Firewall"` -> `"NAT"` -> `"Outbound"`. Set `"Mode"` to `"Manual Outbound NAT rule Generation (AON)"` & click on `"Save"`
-    *   Look for the entry that contains your local IP address (the one that does not contain port "500" nor "127.0.0.0" entries, for you this will probably be 192.168.1.0/24) & click on the `Pen icon (Edit mapping)`
-    *   Set the interface to the one created in step 3, write a description & have both **Disabled** and **Do not NAT** options **Unchecked**. Click on the `"Save"` button
-    *   Delete other rules that contain your local IP that exist via WAN, (keep the 127.0.0.0 ones). This will ensure that traffic doesn't leak if the VPN tunnel accidentally goes down.
-    *   Hit `"Save"`.  
-        ![](/images-static/uploads/install-openvpn-pfsense-2.4.3-040.png)
+    *   Click on `Firewall` -> `NAT` -> `Outbound`. Set `Mode` to `Manual Outbound NAT rule Generation (AON)` and click `Save/Apply`
+    *   Look for the entry that contains your local IP address (the one that does not contain port `500` nor `127.0.0.0` entries, for you this will probably be `192.168.1.0/24`) and click on the `Pen icon (Edit mapping)`
+    *   Set the interface to the one created in step 3, write a description and have both **Disabled** and **Do not NAT** options **Unchecked**. Click on the `Save/Apply` button
+    *   Delete or disable other rules that contain your local IP that exist via WAN, (keep the 127.0.0.0 ones). This will ensure that traffic doesn't leak if the VPN tunnel accidentally goes down.
+    *   Click `Save/Apply`.  
+        ![](/images-static/uploads/install-pfsense-openvpn-2.7.0-040.png)
 
 5.  **Configure DNS**
 
-    * Navigate to `System` - `General setup`
-    * and add the following IVPN DNS servers: `10.0.254.1` & `198.245.51.147`. Hit `Save` to apply the changes.
-    * Finally, navigate to `Status` -> `OpenVPN` & click on the `Restart openvpn Service` button.
-    * Open the [dnsleaktest.com](https://dnsleaktest.com/) to verify that you are connected to IVPN.
+    * Navigate to `System` -> `General Setup`
+    * Add an internal OpenVPN DNS server address, like `10.0.254.1` for regular DNS or use an [AntiTracker](/knowledgebase/troubleshooting/what-is-the-ip-address-of-your-dns-servers/) address, and set **Gateway** to `OPT1` .
+    * Click the `+Add DNS Server` to add a public DNS server, like our public, validating, non-logging, recursive DNS server at `198.245.51.147`, and set **Gateway** to `WAN`.
+    * Uncheck the box for **DNS Server Override**.
+    * Click `Save`.
+        ![](/images-static/uploads/install-pfsense-openvpn-2.7.0-050.png)
+    * Reboot the pfSense router to apply the new configuration, then reboot your local network clients.
+    * Open [dnsleaktest.com](https://dnsleaktest.com/) and run a leak test to verify that you are connected to IVPN.  
 
-    <div markdown="1" class="notice notice--warning">
-    Sometimes, you might need to additionally reboot pfSense to apply the new configuration.
-    </div>
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and replace the port number in *Step 2* with the chosen Exit-hop server Multi-hop port and the `verify-x509-name` prefix in the OpenVPN client **Custom options** area matches the exit server.  
 
-**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and replace the port number in *Step 2* with the chosen Exit-hop server Multi-hop port. 
+### Privacy Considerations
+
+Recent versions of pfSense send an NTP request to a Google server as part of the system [bootstrap](https://docs.netgate.com/pfsense/en/latest/services/ntpd/bootstrap.html) process.  There are choices with respect to how to handle this:
+1. Ignore it and accept that a Google server will see your real IP address each time your router boots.
+1. Create the `/conf/ntp-boot-time-servers` file and leave it empty, which skips the NTP synchronization.
+1. Create the `/conf/ntp-boot-time-servers` file and add one or more NTP server IP addresses of your choice (separated by a single space).
+
+To create the empty file, access the router's shell and type `touch /conf/ntp-boot-time-servers`.
+
+To populate the file with one address, type `echo a.b.c.d > /conf/ntp-boot-time-servers`, where *a.b.c.d* is an NTP server IP address of your choice.
+
+To remove the file, type `rm -i /conf/ntp-boot-time-servers`.
