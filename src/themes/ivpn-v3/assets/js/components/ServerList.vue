@@ -113,17 +113,43 @@
                     </div>
                     <div class="col details">
                         <div>
-                            <em>Public Key</em>
+                            <em>WireGuard Public Key:</em>
                             {{ server.wg_public_key || "N/A" }}
                         </div>
                         <div>
-                            <em>MultiHop Port</em>
+                            <em>MultiHop Port:</em>
                             {{ server.multihop_port || "N/A" }}
                         </div>
+                        <div v-if="server.obfs.obfs3_multihop_port">
+                            <em>OBFS 3 SingleHop Port:</em>
+                            {{ config.ports.obfs3.port }}
+                        </div>
+                        <div v-if="server.obfs.obfs3_multihop_port">
+                            <em>OBFS 3 MultiHop Port:</em>
+                            {{ server.obfs.obfs3_multihop_port }}
+                        </div>
+                        <div v-if="server.obfs.obfs4_multihop_port">
+                            <em>OBFS 4 SingleHop Port:</em>
+                            {{ config.ports.obfs4.port }}
+                        </div>
+                        <div v-if="server.obfs.obfs4_multihop_port">
+                            <em>OBFS 4 MultiHop Port:</em>
+                            {{ server.obfs.obfs4_multihop_port }}
+                        </div>
+                        <div v-if="server.obfs.obfs4_key">
+                            <em>OBFS 4 Public Key:</em>
+                            {{ server.obfs.obfs4_key }}
+                        </div>
                         <div>
-                            <em>Socks5</em>
+                            <em>Socks5:</em>
                             {{ renderSocks5(server) }}
                         </div>
+                        <!-- <div>
+                            <em>
+                                <span class="port-speed-label">Port Speed</span>/<span class="port-speed-label">Configured Speed</span>
+                            </em>
+                            <span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[0] }}</span>/<span v-if="!!server.server_speed" class="port-speed-label">{{ server.server_speed.split("/")[1] }}</span>
+                        </div> -->
                     </div>
                 </div>
             </main>
@@ -138,6 +164,7 @@ export default {
     data() {
         return {
             servers: [],
+            config: {},
             sortedServers: [],
             filteredServers: [],
             countries: [],
@@ -155,6 +182,7 @@ export default {
             let resp = await Api.getServerStats();
             if (resp.servers) {
                 this.servers = resp.servers.filter((v,i,a) => a.findIndex(t => (t.gateway === v.gateway)) === i);
+                this.config = resp.config;
                 this.countries = [...new Set(resp.servers.map(server => server.country))].filter(String).sort();
                 this.cities = [...new Set(resp.servers.map(server => server.city))].filter(String).sort();
                 this.providers = [...new Set(resp.servers.map(server => server.isp))].filter(String).sort();
