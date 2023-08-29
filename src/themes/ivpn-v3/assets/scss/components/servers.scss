@@ -214,6 +214,20 @@
                         &:last-child {
                             margin-bottom: 0;
                         }
+
+                        em {
+                            font-size: 13px;
+                            font-style: normal;
+                            display: block;
+    
+                            @include light-theme((
+                                color: rgba(34, 34, 38, 0.5)
+                            ));
+    
+                            @include dark-theme((
+                                color: rgba(255, 255, 255, 0.5)
+                            ));
+                        }
                     }
                 }
             }

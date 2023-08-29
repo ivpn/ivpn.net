@@ -69,6 +69,7 @@
                             <li v-for="(host, protocol) in server.hostnames" :key="protocol">
                                 {{ host }}
                                 <span class="badge badge--light spacing">{{ protocol }}</span>
+                                <em>203.0.113.0</em>
                             </li>
                         </ul>
                     </div>
