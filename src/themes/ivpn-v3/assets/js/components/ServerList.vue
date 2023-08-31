@@ -66,9 +66,10 @@
                     <div class="col server">
                         <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
                         <ul class="hosts-list">
-                            <li v-for="(host, protocol) in server.hostnames" :key="protocol">
-                                {{ host }}
+                            <li v-for="(host, protocol) in server.hosts" :key="protocol">
+                                {{ host.hostname }}
                                 <span class="badge badge--light spacing">{{ protocol }}</span>
+                                <em>{{ host.host }}</em>
                             </li>
                         </ul>
                     </div>
@@ -93,16 +94,17 @@
                         <div class="hosts">
                             <i :title="renderStatus(server)" :class="['status', (server.is_active ? 'status--active' : ''), (server.in_maintenance ? 'status--maintenance' : '')]"></i>
                             <ul class="hosts-list">
-                                <li v-for="(host, protocol) in server.hostnames" :key="protocol">
-                                    {{ host }}
+                                <li v-for="(host, protocol) in server.hosts" :key="protocol">
+                                    {{ host.hostname }}
                                     <span class="badge badge--light spacing">{{ protocol }}</span>
+                                    <em>{{ host.host }}</em>
                                 </li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="location">
                             {{ server.country }}, {{ server.city }}
                         </div>
-                        <div>
+                        <div class="provider">
                             {{ server.isp }}, Load: {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
                         </div>
                     </div>
