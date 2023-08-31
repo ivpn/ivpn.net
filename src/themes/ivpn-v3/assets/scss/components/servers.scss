@@ -118,6 +118,7 @@
                     flex-direction: column;
                     padding-top: 20px;
                     padding-bottom: 20px;
+                    padding-left: 44px;
                     pointer-events: all;
 
                     &.active {
@@ -187,6 +188,11 @@
                         flex-direction: row;
                         pointer-events: all;
                         user-select: text;
+                    }
+
+                    .location,
+                    .provider {
+                        padding-left: 44px;
                     }
                 }
 
