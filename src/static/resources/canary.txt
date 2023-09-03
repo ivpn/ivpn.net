@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-09-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 801461
-hash: 00000000000000000003d69e743e04e1bd9dbb7eaa1c9ae21491050a9c5daa54
+height: 805987
+hash: 00000000000000000004065c1c78a5bb648c6d7504517574aceb1deed8a9ca0c
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Investors gloomy on Europe but bet on ‘soft landing’ for US
-Also in today’s newsletter, UK post-Brexit border rules delayed again and Goldman hit by high-profile departures
+German business urges help for crisis-hit building industry
+Rising rates, skills shortages and inflation have pushed developers into insolvency
 
-Inside EY’s brewing succession battle
-Plus, Harvey Schwartz confronts a big challenge at Carlyle
+Goldman faces £1mn lawsuit over ‘dysfunctional’ workplace claims
+The culture at the Wall Street bank’s London office is set to come under scrutiny
 
-Investors turn gloomy over Europe’s economic outlook
-Recent market moves show growing divergence with bets on a ‘soft landing’ in the US
+Aldi heads down new aisle with US supermarket shopping spree
+German discounter is moving into more conventional big store territory in a fiercely competitive market
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmTLNI8ACgkQisFrnrZH
-umkT+wf/V7EKfHDEQYjujVlR936dSuF7MJ4Hr+4Ew1OTYMf5HWW5Pl188yPE0btM
-AimKVk4swl5XvEyQIxvoNgIKCBuyNaPaqFNDa2IX85dXF5WKQmFBbbYp56s10/98
-fYZxQs50RuOK/FMJxw8Dkgtv+Lg9Mkd6z/+L8BPcM0lfuqq7KDYYDRty7mJjeooJ
-B9Ojlbod/URoRqugF06IHZYiObS6w9yBR2jtzIPRKiiSXJb2dGNZbqUjzmS1FVNO
-08aucg2p/emoBA/pOhXCmSsFJz3n8YJ9MjccuKbK0bX4epxZyDINihrNwFutdeCB
-A1SYiwstLFi2ubCHB1TeiZJEk10iEw==
-=+Igx
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmT0Ew8ACgkQisFrnrZH
+ummC1ggAtvBdqNclTDzkQG4H/yu1jqR/9Y4p4lemoJMBY2CHu1IU6c2DYVtm3m3g
+Y4ddGfOeVBb0JmQdSQTbkzRhBAUecIzH7GZR2M5TN9fhXE7hG8jkhaDzr6hdffNV
+tkCR5V4LOxWVATaid8wijR7piBXnxBdxfsjOCld0qzgo0lHzVbxaNhyt6QAUEQl2
+s2f03cMAydobfEComwfiNsTYQQcyQ5cziGrgmpmvY11oSiSdEP/iE2VduanSMP+5
+LSzjN9LnHSHy3eN3Fgs9rGyQFewsrdqUxYnOSGrFHsOLi4sDq8I14z5rqlR04A/j
+hfN+yWstji7x0MzmOmTHIs43ueAPsQ==
+=7br9
 -----END PGP SIGNATURE-----
 
 
