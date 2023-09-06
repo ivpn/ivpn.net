@@ -1,5 +1,5 @@
 <template>
-    <div class="vpn-configuration">
+    <div v-if="!isLight" class="vpn-configuration">
         <div v-if="!account.is_active">
             <section>
                 <h3>Your account is expired</h3>
@@ -257,6 +257,7 @@ export default {
             qrCode: "",
             hostKey: 0,
             dns: null,
+            isLight : false
         };
     },
     watch: {
@@ -576,6 +577,12 @@ export default {
 
             return ipv46_regex.test(ip);
         },
+    },
+    beforeMount(){
+        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+            this.isLight = true;
+            window.location = "/light";
+        }
     },
     components: {}
 };

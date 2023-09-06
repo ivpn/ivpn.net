@@ -1,5 +1,5 @@
 <template>
-    <div class='payment-page'>
+    <div v-if="!isLight" class='payment-page'>
         <div class="back-link">
             <router-link :to="{ name: 'account' }">
                 <span class="icon-back"></span>Back to account
@@ -24,10 +24,21 @@ export default {
     components: {
         SelectPaymentMethod,
     },
+    data() {
+        return {
+            isLight : false
+        };
+    },
     computed: {
         ...mapState({
             account: (state) => state.auth.account,
         }),
+    },
+    beforeMount(){
+        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+            this.isLight = true;
+            window.location = "/light";
+        }
     },
 };
 </script>

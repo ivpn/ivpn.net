@@ -1,5 +1,5 @@
 <template>
-    <div class="invoice">
+    <div v-if="!isLight" class="invoice">
         <img width="120" src="/images/logo.svg" />
         <div class="error" style='margin:32px 0px;' v-if="error">{{ error.message }}</div>
         <div v-if="inProgress" style='margin:32px 0px;'>
@@ -64,7 +64,8 @@ export default {
     data() {
         return {
             refId: "",
-            payment: null,            
+            payment: null,    
+            isLight : false        
         };
     },
     computed: {
@@ -86,6 +87,13 @@ export default {
         if (this.error) return;
         console.log("Payment", payment)
         this.payment = payment    
+    },
+
+    beforeMount(){
+        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+            this.isLight = true;
+            window.location = "/light";
+        }
     },
 };
 </script>

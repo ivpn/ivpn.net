@@ -169,7 +169,7 @@ export default {
         @media (max-width: $brk-mobile-xs) {
         }
         @include light-theme((
-            background: $white,
+            background: #FFFFFF,
             color: $black
         ));
 
@@ -236,6 +236,18 @@ export default {
 
     @include dark-theme((
         background: #3D3D42,
+        color: #FFFFFF
+    ));
+}
+
+.vs__dropdown-option--disabled{
+    @include light-theme((
+        background:  #FFFFFF,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: #202020,
         color: #FFFFFF
     ));
 }

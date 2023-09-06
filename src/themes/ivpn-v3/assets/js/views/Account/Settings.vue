@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!isLight">
         <div class="back-link">
             <router-link :to="{ name: 'account' }">
                 <span class="icon-back"></span>Back to account
@@ -58,6 +58,11 @@ export default {
             account: (state) => state.auth.account,
         }),
     },
+    data() {
+        return {
+            isLight : false
+        };
+    },
     methods: {
         deleteAccount() {
             this.$store.commit("popup/show", {
@@ -66,6 +71,15 @@ export default {
             });
         },
     },
+    beforeMount(){
+        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+            this.isLight = true;
+            window.location = "/light";
+        }
+    },
+
+
+    
 };
 </script>
 

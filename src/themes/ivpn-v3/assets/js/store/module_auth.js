@@ -26,7 +26,7 @@ export default {
 
     mutations: {
 
-        setState(state, { isAuthenticated, isLegacy }) {
+        setState(state, { isAuthenticated, isLegacy}) {
             state.isAuthenticated = isAuthenticated
             state.isLegacy = isLegacy
 
