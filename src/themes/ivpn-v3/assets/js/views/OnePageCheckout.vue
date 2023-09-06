@@ -8,8 +8,14 @@
                      <div>
                         <div class="alert alert-light">
                            <h1>IVPN Light</h1>
-                           <h2>quick IVPN access - priced in sats - pay with Lightning</h2>
-                           <p class="mb-0">Choose up to 5 exit points, or one Multi-hop setup. Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</p>
+                           <h2>VPN access in 60 seconds</h2>
+                           <ol>
+                            <li>Generate or upload keys</li>
+                            <li>Select servers & duration</li>
+                            <li>Pay with Lightning</li>
+                           </ol>
+                           <h3>Up to 5 exit points or one Multi-hop setup. </h3>
+                           <h3>Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</h3>
                         </div>
                      </div> 
                      <div id="key-input">
@@ -26,8 +32,12 @@
                                  </div>
                                  <div class="accordion-collapse collapse" v-if="!keysHidden">
                                     <div class="card-body">
-                                       <div role="alert" v-if="!this.keysAdded" class="fade alert alert-light show">{{ showKeysTitle }}</div>
-                                       <div role="alert" v-else class="fade alert alert-light show">{{ usedCustomKeysText }}</div>
+                                        
+                                        <div role="alert" class="fade alert alert-light show">
+                                        Private keys are <a href='https://github.com/ivpn/ivpn.net/blob/41645f63cdd76eeb757db4f9325d91b8215072a6/src/themes/ivpn-v3/assets/js/wireguard.js#L175'>generated and processed</a> client side - IVPN does not gain access to them.<br><br>WireGuard key pair generated for your setup:<br><br>
+                                       </div>
+
+                                       <div role="alert" v-if="this.keysAdded" class="fade alert alert-light show">{{ usedCustomKeysText }}</div>
                                        
                                        <form>
                                           <label>Public Key</label><input class="form-control" type="text" v-model="publicKey" autofocus="">
@@ -40,6 +50,9 @@
                                  </div>
                                  <div class="accordion-collapse collapse" v-if="!useKeysHidden">
                                     <div class="card-body">
+                                          <div role="alert" class="fade alert alert-light show">
+                                              Private keys are <a href='https://github.com/ivpn/ivpn.net/blob/41645f63cdd76eeb757db4f9325d91b8215072a6/src/themes/ivpn-v3/assets/js/wireguard.js#L175'>generated and processed</a> client side - IVPN does not gain access to them.
+                                         </div>
                                           <form>
                                             <label for="public_key">Public Key:</label>
                                             <input  id="public_key" type="text" v-model="customPublicKey" autofocus="" required placeholder="Enter your key">
@@ -79,7 +92,7 @@
                        v-model="selectedExitLocation"
                        multiple
                        placeholder="Select a location"
-                       :clearable="false"
+                       :clearable="true"
                        :searchable="true"
                        :filterable="true"
                        >
@@ -90,28 +103,28 @@
                 <div v-if="multihop">
                     <h4>Select entry server location</h4>
 
-                    <SelectLocations 
+                    <SelectLocationsMulti
                        :options="filteredServers"
                        v-model="selectedEntryLocation"
                        placeholder="Select a location"
                        :clearable="true"
                        :searchable="true"
                        :filterable="true"
-                       :multiple= "false"
+                       multiple
                        >
-                    </SelectLocations>
+                    </SelectLocationsMulti>
                     <h4>Select exit server location</h4>
 
-                    <SelectLocations 
+                    <SelectLocationsMulti
                        :options="filteredServers"
                        v-model="selectedMultihopExitLocation"
                        placeholder="Select a location"
                        :clearable="true"
                        :searchable="true"
                        :filterable="true"
-                       :multiple= "false"
+                       multiple
                        >
-                    </SelectLocations>
+                    </SelectLocationsMulti>
 
                 </div>
                      </div>
@@ -138,6 +151,7 @@
                               <div class="bitcoin-lightning-icon" ></div> Purchase access
                           </button>
                           <h4>We host our own BTCPay Server to generate a Lightning invoice for payment.</h4>
+                          <h4>By making a payment you are agreeing to our <a href="/tos">Terms of Service</a>.</h4>
                      </div>
                   </div>
                </div>
@@ -205,19 +219,10 @@ export default {
             exitServers: [],
             entryCities: [],
             entryServers: [],
-            query: {
-                country: null,
-                city: null,
-                host: null,
-                port: 2049,
-                ipv4: true,
-                ipv6: true,
-            },
             error: {
                 addKey: null,
             },
             keysAdded: false,
-            showKeysTitle: "WireGuard key pair generated for your setup:",
             usedCustomKeysText: "You have added the following custom key pair:",
             generateKeysClicked: false,
             addKeysClicked: false,
@@ -225,11 +230,6 @@ export default {
         };
     },
     watch: {
-        query: {
-            handler: function (after, before) {
-            },
-            deep: true
-        },
         validation: {
             handler: function (after, before) {
             },
@@ -244,17 +244,40 @@ export default {
             }
         },
         selectedEntryLocation: function(){
-            if(this.selectedExitLocation.length > 0){
+            if( this.selectedEntryLocation != null && this.selectedEntryLocation.length > 1){
+                this.selectedEntryLocation.shift();
+                let [entry] = this.selectedEntryLocation 
+                this.selectedEntryLocation = entry;
+            }
+
+            if(this.selectedEntryLocation != null && this.selectedEntryLocation.length > 0 && this.selectedMultihopExitLocation != null && this.selectedMultihopExitLocation.length > 0){
                 this.validation.submit = false;
+                if( this.selectedMultihopExitLocation[0].city == this.selectedEntryLocation[0].city){
+                    this.selectedMultihopExitLocation = [];
+                    this.validation.submit = true;
+                }
+            }else{
+                this.validation.submit = true;
+            } 
+        },
+        selectedMultihopExitLocation: function(){
+        
+            if( this.selectedMultihopExitLocation != null && this.selectedMultihopExitLocation.length > 1){
+                this.selectedMultihopExitLocation.shift();
+                let [exit] = this.selectedMultihopExitLocation
+                this.selectedMultihopExitLocation = [exit];
+            }
+            if(this.selectedEntryLocation != null && this.selectedEntryLocation.length > 0 && this.selectedMultihopExitLocation != null && this.selectedMultihopExitLocation.length > 0){
+                this.validation.submit = false;
+                if( this.selectedMultihopExitLocation[0].city == this.selectedEntryLocation[0].city){
+                    this.selectedEntryLocation = [];
+                    this.validation.submit = true;
+                }
             }else{
                 this.validation.submit = true;
             }
-        },
-        selectedMultihopExitLocation: function(){
-            this.selectedExitLocation = [this.selectedMultihopExitLocation];
-            if(this.selectedEntryLocation !== null){
-                this.validation.submit = false;
-            }
+            this.selectedExitLocation = this.selectedMultihopExitLocation;
+            console.log(this.validation.submit);
         },
 
     },
@@ -307,13 +330,7 @@ export default {
                     publicKey: this.publicKey,
             }
             try {
-                await Api.logout();
-                let account = await Api.createNewAccount("IVPN Light");
-                if (account == null) {
-                    this.validation.submit = true;
-                    throw { message: "Invalid result returned from API" }
-                    return;
-                }
+                await this.$store.dispatch("auth/createAccount", {product: "IVPN Light"} );
                 
                 let URL = await this.$store.dispatch("account/createLightInvoice", {
                     exitServer: this.selectedExitLocation,
@@ -323,9 +340,9 @@ export default {
                     priceID: this.selectedBillingCycle,       
                 });
                 if( URL ){
-                    JSCookie.set('lpv', this.privateKey, { expires: 0.5, })
                     JSCookie.set('lmh', this.multihop , { expires: 0.5, })
-                    //JSCookie.set('logged_in', 2)
+                    JSCookie.set('lpv', this.privateKey, { expires: 0.5, })
+                    console.log(this.$store.state.auth);
                     window.location = URL;
                 }
                 this.validation.submit = true;
@@ -343,17 +360,17 @@ export default {
             this.publicKey = keypair.publicKey;
         },
         showKeys(){
-         this.keysHidden = !this.keysHidden ;
-         this.useKeysHidden = true;
-         this.addKeysClicked = true;
-         this.generateKeysClicked = true;
-         this.addKeysClicked = false;
+            this.keysHidden = !this.keysHidden ;
+            this.useKeysHidden = true;
+            this.addKeysClicked = true;
+            this.generateKeysClicked = true;
+            this.addKeysClicked = false;
         },
         useKeys(){
-         this.useKeysHidden = !this.useKeysHidden ;
-         this.keysHidden = true ;
-         this.generateKeysClicked = false;
-         this.addKeysClicked = true;
+            this.useKeysHidden = !this.useKeysHidden ;
+            this.keysHidden = true ;
+            this.generateKeysClicked = false;
+            this.addKeysClicked = true;
         },
         addKeys(){
             if( wireguard.isValidKey(this.customPrivateKey) && wireguard.isValidKey(this.customPublicKey)){
@@ -428,6 +445,7 @@ section {
 
 .alert-light{
      text-align:center;
+     line-height: 20px
 }
 
 .card {
@@ -596,11 +614,8 @@ form .btn-border{
         width: 100%;
         margin-bottom:14px;
     }
-    .keys-buttons {
-        margin-bottom:30px !important;
-    }
+
     .alert-light h3{
-        font-size: 30px !important;
     }
 
     .tabs ul li:not(:last-child) {
@@ -610,17 +625,24 @@ form .btn-border{
     .light-price span{
         font-size: 14px;
     }
+
+    .alert-light h3{
+       font-size:14px;
+       font-weight: normal;
+       line-height: 15px !important;  
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   
-    .alert-light h3{
-        font-size: 48px !important;
-    }
-
     .alert-light p{
         font-size: 16px;
         padding: 15px;
+    }
+
+    .alert-light h3{
+       line-height: 15px !important;  
     }
   
 }
@@ -651,7 +673,6 @@ form .btn-border{
 }
 
 .keys-buttons{
-    margin-bottom:100px;
 }
 
 
@@ -673,7 +694,14 @@ form .btn-border{
 
 hr{
     width:100%;
-    background:rgba(61, 61, 66, 0.5);
+    margin: 15px 0 15px 0;
+    @include light-theme((
+        background:rgba(61, 61, 66, 0.5),
+    ));
+
+    @include dark-theme((
+        background: #F0F0F0,
+    ));
 
 }
 
@@ -751,5 +779,39 @@ font-family: "Roboto Mono";
         color:  rgba(255, 255, 255, 0.3),
     ));
 }
+
+.alert-light h1{
+   font-size:28px;
+}
+
+.alert-light h2{
+   font-size:20px;
+}
+
+.alert-light h3{
+   font-size:14px;
+   font-weight: normal;
+   line-height: 10px;
+}
+
+.alert-light ol li{
+}
+
+.alert-light ol li:before{
+    float:none;
+}
+
+.alert-light ol{
+}
+
+
+.alert-light p{
+    margin-bottom: 0px;
+}
+
+.one-page-tabs h4{
+    line-height: 50px;
+}
+
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!isLight">
         <div v-if="!account.is_active">
             <section>
                 <h3>Your account is expired</h3>
@@ -78,6 +78,17 @@ export default {
     components: {
         WireguardKey,
         Spinner,
+    },
+    data() {
+        return {
+            isLight : false
+        };
+    },
+    beforeMount(){
+        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+            this.isLight = true;
+            window.location = "/light";
+        }
     },
     mounted() {
         this.$store.dispatch("wireguard/load");

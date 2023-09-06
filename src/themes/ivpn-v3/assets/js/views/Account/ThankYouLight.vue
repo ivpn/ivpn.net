@@ -10,7 +10,7 @@
             <p>Next steps:</p>
                 <ol>
                    <li>Save the QR code or config file now to avoid losing access.</li>
-                    <li> Download and open the WireGuard app.</li>
+                    <li> Download and open the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">WireGuard</a> app.</li>
                     <li>Scan the QR code, or add the configuration provided.</li>
                 </ol>
             </div>
@@ -18,7 +18,13 @@
           
             <div v-if="qrCodes.length > 0" v-for="qr in qrCodes">
                 <p>Access to:</p>
+                <div v-if="this.multihop">
+                    <p><country-flag :country="qr.entryCountryCode" size='normal'/> {{ qr.entryCity }}</p>
+                    <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
+                </div>
+                <div v-else>
                 <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
+                </div>
                 <div class="code" v-html="qr.qrCode"></div>
             </div>
             <textarea disabled v-if="qrCodes.length == 1" v-model="wireguardConfig" cols="50" rows="50">
@@ -37,7 +43,7 @@
                 />Download configuration
             </button>
 
-            <h5 v-if="isLoaded">For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a separate IVPN Light access, or generate an IVPN Standard or Pro account.</h5>
+            <h5 v-if="isLoaded">For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/light">separate IVPN Light access</a>, or <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/pricing">generate</a> an IVPN Standard or Pro account.</h5>
         </div>
     </div>
 </template>
@@ -66,6 +72,7 @@ export default {
     },
 
     async created() {
+        document.getElementById("my-account").remove();
         await this.$store.dispatch("auth/reload");
         await this.$store.dispatch("wireguard/load");
         await this.$store.dispatch("wireguard/loadConfigs");
@@ -81,7 +88,7 @@ export default {
             let zip = new JSZip();
             let basename = this.multihop ? (this.multihop_basename + ".conf") : null
             this.wireguardConfigs.forEach(function (config) {
-                zip.file(basename || config.basename, self.configString(config));
+                zip.file(config.basename, self.configString(config));
             });
             zip.generateAsync({ type: "blob" }).then(function(content) {
                 FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
@@ -100,6 +107,16 @@ export default {
             location.qrCode = qr.createSvgTag(4)
             location.countryCode = res.country_code;
             location.city = res.city;
+            if( res.multihop ){
+                this.multihop = true;
+                location.countryCode = res.exit_country_code;
+                location.city = res.exit_city;
+                location.entryCity = res.city;
+                location.entryCountryCode = res.country_code;
+            }else{
+                location.countryCode = res.country_code;
+                location.city = res.city;
+            }
             this.qrCodes.push(location);
         },
         configString(config) {
@@ -142,7 +159,11 @@ export default {
         },
     },
 
+    beforeMount(){
+        document.getElementById("my-account").remove();
+    },
     mounted(){
+        document.getElementById("my-account").remove();
     }
 };
 </script>
