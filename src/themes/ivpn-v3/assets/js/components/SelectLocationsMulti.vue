@@ -1,30 +1,48 @@
 <template>
-
-    <multiselect 
-        v-model="selectedLocation" 
+    <v-select
+        v-model="selectedLocationMulti"
         :options="options"
-        :option-height="75" 
-        label="name" 
-        :show-labels="false"
-        track-by="name"
+        :getOptionLabel="getOptionLabel"
+        class="select-location-control"
+        :selectable="() =>  this.selectedLocationMulti.length < 2"
         :multiple = "multiple"
-        group-values="cities" 
-        group-label="country" 
-        :group-select="true"
-        >
-        <template slot="option" slot-scope="props"><img class="option__image" :src="props.option.img">
-      <div class="option__desc"><span class="option__title">{{ props.option.name }}</span><span class="option__small">{{ props.option.code }}</span></div>
+        :clearable="clearable"
+        :searchable="searchable"
+        :filterable="filterable"
+        appendToBody
+    >
+        <template v-slot:option="option">
+            <div class="option-element">
+                <div class="price-item-name" >
+                    <country-flag :country="option.country_code" size='normal'/> {{ option.country }},{{ option.city }}
+                </div>
+            </div>
         </template>
-  </multiselect>
+
+        <template #selected-option="{ country, city, country_code}">
+            <div class="option-element selected">
+                <div class="price-item-name" style="flex-grow: 1">
+                    <country-flag :country="country_code" size='normal'/> {{ city }}
+                </div>
+            </div>
+        </template>
+    </v-select>
 </template>
 
 <script>
-import Multiselect from 'vue-multiselect'
+import vSelect from "vue-select";
+import VueSelectCaret from "@/components/VueSelectCaret.vue";
+import "vue-select/dist/vue-select.css";
 import CountryFlag from 'vue-country-flag-next'
+
+vSelect.props.components.default = () => ({
+    OpenIndicator: VueSelectCaret,
+});
+
 
 export default {
     components: {
-        Multiselect,
+        vSelect,
         CountryFlag,
     },
     model: {
@@ -34,14 +52,16 @@ export default {
     props: ["options", "value", "mode","multiple","clearable","searchable","filterable","selectable"],
     data() {
         return {
-            selectedLocation: [],
+            selectedLocationMulti: [],
         };
     },
     mounted() {
     },
     watch: {
-        selectedLocation: function () {
-            this.$emit("changeLocation", this.selecteLocation);
+        selectedLocationMulti: function (after, before) {
+            if( after == null){
+                this.selectedLocationMulti = [];
+            }
         },
     },
 
@@ -56,6 +76,182 @@ export default {
 <style lang="scss">
 @import "@/styles/_vars.scss";
 @import "@/styles/base.scss";
+
+.select-location-control {
+    margin-top: 1em;
+    font-size: 18px;
+    line-height: 30px;
+
+    @include light-theme((
+        background: $white,
+        color: $black
+    ));
+
+    @include dark-theme((
+        background: rgba($color: $white, $alpha: 0.1),
+        color: $white
+    ));
+
+    @media (max-width: $brk-mobile-xs) {
+    }
+
+    ul {
+        ::before {
+            display: none;
+        }
+
+        @include light-theme((
+            background: $white,
+            color: $black
+        ));
+
+        @include dark-theme((
+            background: #202020,
+            color: $white
+        ));
+    }
+
+    .option-element {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 0px 8px;
+
+        @include light-theme((
+            color: $black
+        ));
+
+        @include dark-theme((
+            color: $white
+        ));
+
+        @media (max-width: $brk-mobile-xs) {
+        }
+
+        &.selected {
+
+            @media (max-width: $brk-mobile-xs) {
+            }
+        }
+
+        .price-item-name {
+            flex-grow: 1;
+        }
+        .price-item-price {
+            font-weight: bold;
+            font-family: $font-main-mono;
+            display: flex;
+            align-items: center;
+        }
+        .discount {
+            font-weight: normal;
+            opacity: 0.6;
+            padding: 0px 16px;
+            text-decoration: line-through;
+        }
+    }
+    .vs__selected {
+        @media (max-width: $brk-mobile-xs) {
+        }
+        @include light-theme((
+            background: $white,
+            color: $black
+        ));
+
+        @include dark-theme((
+            background: #202020,
+            color: $white
+        ));
+    }
+
+    .vs__dropdown-option--disabled{
+        @media (max-width: $brk-mobile-xs) {
+        }
+        @include light-theme((
+            background: #FFFFFF,
+            color: $black
+        ));
+
+        @include dark-theme((
+            background: transparent,
+            color: $white
+        ));
+    }
+}
+
+.vs__dropdown-menu{
+    @include light-theme((
+            background: $white,
+            color: $black
+        ));
+
+        @include dark-theme((
+            background: #202020,
+            color: $white
+        ));
+}
+
+.vs__clear{
+    @include light-theme((
+        fill: #909093
+    ));
+
+    @include dark-theme((
+        fill: #909093
+    ));
+}
+
+.vs__search{
+    @include light-theme((
+        background:  #F0F0F0,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: #3D3D42,
+        color: #FFFFFF
+    ));
+
+}
+
+.vs__actions{
+    @include light-theme((
+        background:  #F0F0F0,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: #3D3D42,
+        color: #FFFFFF
+    ));
+}
+
+
+.vs__dropdown-toggle{
+    @include light-theme((
+        background:  #F0F0F0,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: #3D3D42,
+        color: #FFFFFF
+    ));
+}
+
+.vs__dropdown-option--disabled{
+    @include light-theme((
+        background:  #FFFFFF,
+        color:  #222226
+    ));
+
+    @include dark-theme((
+        background: transparent,
+        color: #FFFFFF
+    ));
+}
+
 
 .select-location-control {
     margin-top: 1em;
@@ -166,7 +362,7 @@ export default {
         ));
 
         @include dark-theme((
-            background: #222226,
+            background: transparent,
             color: $white
         ));
     }
@@ -290,6 +486,5 @@ export default {
             color: $white
         ));
     }
-
 
 </style>

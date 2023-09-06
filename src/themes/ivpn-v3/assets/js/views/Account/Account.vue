@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>
+        <div v-if="!isLight">
             <flash-box />
             <div v-if="account.is_new">
                 <signup-section>
@@ -111,11 +111,27 @@ export default {
         SelectPaymentMethod,
     },
 
+    data() {
+        return {
+            isLight : false
+        };
+    },
+
     computed: {
         ...mapState({
             account: (state) => state.auth.account,
         }),
     },
+
+    
+    beforeMount(){
+        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+            this.isLight = true;
+            window.location = "/light";
+        }
+    },
+
+
 };
 </script>
 

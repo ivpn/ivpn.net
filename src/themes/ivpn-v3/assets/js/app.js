@@ -47,7 +47,7 @@ const app = createApp({
     computed: {
         ...mapState({
             isAuthenticated: state => state.auth.isAuthenticated,
-            isLegacy: state => state.auth.isLegacy
+            isLegacy: state => state.auth.isLegacy,
         })
     }
 })

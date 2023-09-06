@@ -103,6 +103,12 @@ disableKinds = ["sitemap", "taxonomyTerm"]
     weight = 5
 
   [[menu.footercolone]]
+    identifier = "light"
+    name = "IVPN Light"
+    url = "/light/"
+    weight = 5
+
+  [[menu.footercolone]]
     identifier = "wireguard"
     name = "WireGuard® VPN"
     url = "/wireguard/"

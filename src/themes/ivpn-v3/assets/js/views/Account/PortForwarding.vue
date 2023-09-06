@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!isLight">
         <div v-if="!account.is_active">
             <section>
                 <h3>Your account is expired</h3>
@@ -108,6 +108,11 @@ export default {
     components: {
         Spinner,
     },
+    data() {
+        return {
+            isLight : false
+        };
+    },
     computed: {
         ...mapState({
             ports: (state) => state.portForwarding.ports,
@@ -127,6 +132,13 @@ export default {
         disable() {
             this.$store.dispatch("portForwarding/disable");
         },
+    },
+
+    beforeMount(){
+        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+            this.isLight = true;
+            window.location = "/light";
+        }
     },
 };
 </script>
