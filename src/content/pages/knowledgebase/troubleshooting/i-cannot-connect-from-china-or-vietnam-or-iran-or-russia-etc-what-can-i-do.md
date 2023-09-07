@@ -12,7 +12,9 @@ weight: 130
 
 If you are unable to connect from a country where there may be a restrictive national firewall we recommend enabling the **obfsproxy** or **V2Ray** options from within the IVPN client.
 
-When using OpenVPN we offer two solutions, V2Ray and Obfsproxy. Both solutions generally work well but you may find one solution is more performant and/or reliable depending on multiple variables relating to your location and the path your traffic takes to the VPN server. We recommend experimenting with both Obfsproxy and V2Ray options.
+When using OpenVPN we offer two solutions, V2Ray and Obfsproxy. For WireGuard, only V2Ray is currently available.
+
+Both solutions generally work well but you may find one solution is more performant and/or reliable depending on multiple variables relating to your location and the path your traffic takes to the VPN server. We recommend experimenting with both Obfsproxy and V2Ray options.
 
 <div markdown="1" class="notice notice--info">
 Please note that we do not have a solution for mobile devices running Android or iOS. Obfuscation protocols are currently supported only in the IVPN app for Windows, macOS and Linux.
