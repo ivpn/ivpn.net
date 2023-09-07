@@ -69,7 +69,6 @@
                             <li v-for="(host, protocol) in server.hosts" :key="protocol">
                                 {{ host.hostname }}
                                 <span class="badge badge--light spacing">{{ protocol }}</span>
-                                <em>{{ host.host }}</em>
                             </li>
                         </ul>
                     </div>
@@ -97,7 +96,6 @@
                                 <li v-for="(host, protocol) in server.hosts" :key="protocol">
                                     {{ host.hostname }}
                                     <span class="badge badge--light spacing">{{ protocol }}</span>
-                                    <em>{{ host.host }}</em>
                                 </li>
                             </ul>
                         </div>
