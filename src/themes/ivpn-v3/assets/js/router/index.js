@@ -61,7 +61,7 @@ const routes = [
         name: 'light',
         component: OnePageCheckoutView,
         meta: {
-            title: 'IVPN one page checkout',
+            title: 'IVPN Light - Quick VPN Access paid with BTC Lightning',
         }
     },
     {
