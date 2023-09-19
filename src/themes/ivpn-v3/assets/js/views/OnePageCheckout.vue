@@ -330,6 +330,7 @@ export default {
                     publicKey: this.publicKey,
             }
             try {
+                await this.$store.dispatch('auth/logout')
                 await this.$store.dispatch("auth/createAccount", {product: "IVPN Light"} );
                 
                 let URL = await this.$store.dispatch("account/createLightInvoice", {
