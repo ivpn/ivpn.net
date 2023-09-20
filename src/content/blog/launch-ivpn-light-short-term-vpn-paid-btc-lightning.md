@@ -33,5 +33,5 @@ Our general [Privacy Policy](https://www.ivpn.net/privacy) applies to this servi
 
 IVPN Light is an experiment in supporting Lightning adoption. We look forward to your feedback and appreciate any ideas for improvement:
 
-https://github.com/ivpn/ivpn.net 
+https://github.com/ivpn/ivpn.net  
 https://www.ivpn.net/contactus/ 
