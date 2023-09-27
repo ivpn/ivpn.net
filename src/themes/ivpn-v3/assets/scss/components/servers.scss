@@ -115,9 +115,10 @@
                 &.details {
                     width: 100%;
                     display: none;
-                    flex-direction: row;
+                    flex-direction: column;
                     padding-top: 20px;
                     padding-bottom: 20px;
+                    padding-left: 44px;
                     pointer-events: all;
 
                     &.active {
@@ -129,12 +130,7 @@
                     }
 
                     div {
-                        margin-right: 30px;
                         word-break: break-all;
-
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
 
                         @include max-width('medium-large') {
                             margin-bottom: 15px;
@@ -143,13 +139,22 @@
                                 margin-bottom: 0;
                             }
                         }
+
+                        .port-speed-label {
+                            display: inline-block;
+                            min-width: 88px;
+
+                            &:last-child {
+                                margin-left: 10px;
+                            }
+                        }
                     }
 
                     em {
-                        display: block;
+                        display: inline-block;
                         font-size: 13px;
                         font-style: normal;
-                        margin-bottom: 8px;
+                        margin-bottom: 12px;
 
                         @include light-theme((
                             color: rgba(34, 34, 38, 0.5)
@@ -184,6 +189,11 @@
                         pointer-events: all;
                         user-select: text;
                     }
+
+                    .location,
+                    .provider {
+                        padding-left: 25px;
+                    }
                 }
 
                 .location__data {
@@ -209,6 +219,20 @@
 
                         &:last-child {
                             margin-bottom: 0;
+                        }
+
+                        em {
+                            font-size: 13px;
+                            font-style: normal;
+                            display: block;
+    
+                            @include light-theme((
+                                color: rgba(34, 34, 38, 0.5)
+                            ));
+    
+                            @include dark-theme((
+                                color: rgba(255, 255, 255, 0.5)
+                            ));
                         }
                     }
                 }
