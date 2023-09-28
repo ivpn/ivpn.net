@@ -7,14 +7,9 @@
                         >IVPN Account</router-link
                     >
                 </li>
-                <li v-id="allowPortForwarding" :class="{ 'is-active': isWireGuardRoute() }">
+                <li :class="{ 'is-active': isWireGuardRoute() }">
                     <router-link :to="{ name: 'wireguard' }"
                         >WireGuard</router-link
-                    >
-                </li>
-                <li v-if="allowPortForwarding" :class="{ 'is-active': isPortWordwarding() }" tag="li">
-                    <router-link :to="{ name: 'port-forwarding' }"
-                        >Port Forwarding</router-link
                     >
                 </li>
                 <li class="expand"></li>
@@ -42,32 +37,20 @@ export default {
             return this.$route.path;
         },
         shouldDisplay() {
-            return ["account", "port-forwarding", "wireguard", "wireguard-config"].includes(
+            return ["account", "wireguard", "wireguard-config"].includes(
                 this.$route.name
             );
         },
-        allowPortForwarding(){
-            //Disable port forwarding starting from 29th June 2023
-            if( new Date(this.account.created_at).setHours(0, 0, 0, 0) >= new Date('2023-06-29').setHours(0, 0, 0, 0) ){
-                return false;
-            } else {
-                return true;
-            }
-        }
     },
     methods: {
         isAccountRoute() {
             return (
                 this.currentRouteName.startsWith("/account") &&
-                !this.isWireGuardRoute() &&
-                !this.isPortWordwarding()
+                !this.isWireGuardRoute() 
             );
         },
         isWireGuardRoute() {
             return this.currentRouteName.startsWith("/account/wireguard");
-        },
-        isPortWordwarding() {
-            return this.currentRouteName.startsWith("/account/port-forwarding");
         },
     },
 };
