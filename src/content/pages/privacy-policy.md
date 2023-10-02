@@ -36,7 +36,7 @@ We do not log any data relating to a user's VPN activity (while connected or con
 
 * No traffic logging
 
-* No connection timestamp or connection duration (except when port forwarding is enabled, explained below)
+* No connection timestamp or connection duration
 
 * No DNS request logging
 
