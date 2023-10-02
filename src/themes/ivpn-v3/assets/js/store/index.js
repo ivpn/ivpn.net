@@ -3,7 +3,6 @@ import Vuex from "vuex"
 import auth from "./module_auth.js"
 import popup from "./module_popup.js"
 import wireguard from "./module_wireguard.js"
-import portForwarding from "./module_port_forwarding.js"
 import payments from "./module_payments.js"
 import product from "./module_product.js"
 import deleteAccount from "./module_delete_account.js"
@@ -18,7 +17,6 @@ export default new Vuex.Store({
         popup,
         payments,
         wireguard,
-        portForwarding,
         deleteAccount,        
         product,
         braintree,

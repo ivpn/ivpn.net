@@ -26,7 +26,7 @@ let products = {
         name: 'IVPN Pro',
         capabilities: {
             hasWireGuard: true,
-            hasPortForwarding: true,
+            hasPortForwarding: false,
         },
         prices: [
             { id: 'pro-1week', name: '1 Week', price: 4 },
