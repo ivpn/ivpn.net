@@ -377,7 +377,7 @@ Extremely stable and robust. More stable than OpenVPN when roaming across networ
 
 ### Verdict ![](/images-static/uploads/icon-like.svg)
 
-WireGuard® is an excellent choice and may be the best protocol for high speeds if you don't use the IVPN multi-hop network or port-forwarding. WireGuard® promises better security and faster speeds compared to existing solutions. Since its merge into Linux Kernel (v5.6) and the release of v1.0, we consider WireGuard® to be ready for wide-scale use.
+WireGuard® is an excellent choice and may be the best protocol for high speeds. WireGuard® promises better security and faster speeds compared to existing solutions. Since its merge into Linux Kernel (v5.6) and the release of v1.0, we consider WireGuard® to be ready for wide-scale use.
 
 {{< raw-html >}}
 </div>
