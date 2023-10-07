@@ -27,7 +27,7 @@
     "lunr": "^2.3.9",
     "mix-env-file": "^0.1.1",
     "paypal-checkout": "^4.0.336",
-    "postcss": "^8.4.16",
+    "postcss": "^8.4.31",
     "qrcode-generator": "^1.4.4",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.54.9",
