@@ -6,9 +6,7 @@ url: /refunds/
 
 IVPN strives to meet the expectations of all users and offers unlimited support to help users with any problems they may face. 
 
-If you are unsatisfied for any reason, you can request **a full refund within 30 days** of your payment.
-
-This unconditional refund offer is available **once per account and per customer**. 
+If you are unsatisfied for any reason, you can request **a full refund within 30 days** of your payment. This full refund offer is available **once per account and per customer**. 
 
 Beyond our general 30-day money-back guarantee, if you are affected by the <a href="https://www.ivpn.net/blog/gradual-removal-of-port-forwarding/">removal of the port forwarding service</a>, we are offering pro-rated refunds on IVPN Pro plans. We calculate the refund amount based on the remaining time on your account. The offer is valid for Pro accounts created on or before the 29th June 2023.
 
