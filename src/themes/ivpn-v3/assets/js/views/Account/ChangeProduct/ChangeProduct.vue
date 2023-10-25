@@ -15,7 +15,7 @@
         <div class="prices">
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Standard'"
+                :current="account.product.name == 'IVPN Standard' || lockedPlan"
                 :inProgress="inProgress"
                 @selected="selected('IVPN Standard')"
             >
@@ -36,7 +36,7 @@
                         <div class="label" v-else>Will be active until:</div>
 
                         <div class="value">
-                            {{ $filters.formatActiveUntil(activeUntilStandard) }}
+                            {{ standardActiveUntil }}
                             <sup
                                 v-if="account.product.name != 'IVPN Standard'"
                             >*</sup>
@@ -47,7 +47,7 @@
 
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Pro'"
+                :current="account.product.name == 'IVPN Pro' || lockedPlan"
                 :inProgress="inProgress"
                 @selected="selected('IVPN Pro')"
             >
@@ -66,7 +66,7 @@
                         <div class="label" v-else>Will be active until:</div>
 
                         <div class="value">
-                            {{ $filters.formatActiveUntil(activeUntilPro) }}
+                            {{ proActiveUntil }}
                             <sup
                                 v-if="account.product.name != 'IVPN Pro'"
                             >*</sup>
@@ -90,10 +90,27 @@ import { add, differenceInMinutes } from "date-fns";
 import { mapState } from "vuex";
 
 export default {
+    data() {
+        return {
+            standardActiveUntil: null,
+            proActiveUntil: null,
+            lockedPlan : false,
+        };
+    },
     components: {
         // SignupSection,
         PriceBox
     },
+
+    
+    async beforeMount() {
+        let standardActiveUntil = await this.calculateForProduct("IVPN Standard").then(response => response.active_until);
+        let proPlan = await this.calculateForProduct("IVPN Pro").then(response => response);
+        this.lockedPlan = proPlan.is_locked;
+        this.standardActiveUntil =this.$filters.formatActiveUntil(standardActiveUntil);
+        this.proActiveUntil = this.$filters.formatActiveUntil(proPlan.active_until);
+    },
+    
 
     methods: {
         async selected(newProductName) {
@@ -111,44 +128,20 @@ export default {
             this.$router.push({ name: "account" });
         },
 
-        calculateForProduct(newProduct) {
-            let now = new Date();
-            let minutesLeft = differenceInMinutes(
-                new Date(this.account.active_until),
-                now
-            );
-
-            if (!this.account.is_active || minutesLeft < 0) {
-                return this.account.active_until;
-            }
-
-            let currentProduct = this.account.product.name;
-
-            if (currentProduct == "IVPN Standard" && newProduct == "IVPN Pro") {
-                return add(now, { minutes: minutesLeft * 0.6 });
-            }
-
-            if (currentProduct == "IVPN Pro" && newProduct == "IVPN Standard") {
-                return add(now, { minutes: minutesLeft / 0.6 });
-            }
-
-            return this.account.active_until;
+        async calculateForProduct(newProduct) {
+            return  await this.$store.dispatch("product/changeDetails", {
+                    product: newProduct,    
+            });
         }
     },
     computed: {
+    
         ...mapState({
             account: state => state.auth.account,
-
             products: state => state.product.all,
             inProgress: state => state.product.inProgress,
             error: state => state.product.error
         }),
-        activeUntilStandard() {
-            return this.calculateForProduct("IVPN Standard");
-        },
-        activeUntilPro() {
-            return this.calculateForProduct("IVPN Pro");
-        }
     }
 };
 </script>

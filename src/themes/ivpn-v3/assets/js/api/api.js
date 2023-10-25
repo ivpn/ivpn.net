@@ -233,6 +233,18 @@ export default {
 
     },
 
+    async changeProductDetails(newProductName) {
+        let product = await this.Post(
+            '/web/accounts/change-product-details',
+            {
+                new_product: newProductName.product
+            }
+        )
+
+        return product
+
+    },
+
 
     async setEmailAuth(email, password) {
         await this.Post(
