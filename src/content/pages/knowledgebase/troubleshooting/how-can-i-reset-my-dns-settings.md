@@ -20,7 +20,7 @@ The following instructions will reset your DNS configuration to that provided by
 4. Click on `Internet protocol Version 4 (TCP/IP v4)` and then on the `Properties` button.
 5. Make sure that you have `Obtain IP Address automatically` and `Obtain DNS Server Automatically` selected. This will configure your device to acquire the settings directly from your modem/router.
 6. Click `OK` and exit all the windows.
-7. Follow the instructions in [How to flush my DNS cache](/knowledgebase/troubleshooting/how-do-i-clear-my-dns-cache/) to flush your DNS resolver cache.
+7. Follow the instructions in [How do I clear or flush my DNS cache?](/knowledgebase/troubleshooting/how-do-i-clear-or-flush-my-dns-cache/) to flush your DNS resolver cache.
 
 ### Windows 8
 
@@ -31,7 +31,7 @@ The following instructions will reset your DNS configuration to that provided by
 5. Click on `Internet protocol Version 4 (TCP/IP v4)` and then on the `Properties` button.
 6. Make sure that you have `Obtain IP Address automatically` and `Obtain DNS Server Automatically` selected. This will configure your device to acquire the settings directly from your modem/router.
 7. Click `OK` and exit all the windows.
-8. Follow the instructions in [How to flush my DNS cache](/knowledgebase/troubleshooting/how-do-i-clear-my-dns-cache/) to flush your DNS resolver cache.
+8. Follow the instructions in [How do I clear or flush my DNS cache?](/knowledgebase/troubleshooting/how-do-i-clear-or-flush-my-dns-cache/) to flush your DNS resolver cache.
 
 ### macOS
 
@@ -41,4 +41,4 @@ The following instructions will reset your DNS configuration to that provided by
 4. Select the `DNS` tab.
 5. Select any addresses in the list and attempt to remove them using the `-` button. If you cannot select them or the `-` is not active then you are already using your routers DHCP assigned DNS servers.
 6. Click `OK` and exit all the windows.
-7. Follow the instructions in [How to flush my DNS cache](/knowledgebase/troubleshooting/how-do-i-clear-my-dns-cache/) to flush your DNS resolver cache.
+7. Follow the instructions in [How do I clear or flush my DNS cache?](/knowledgebase/troubleshooting/how-do-i-clear-or-flush-my-dns-cache/) to flush your DNS resolver cache.

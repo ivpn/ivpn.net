@@ -15,7 +15,6 @@ import AddFundsGiftCard from '@/views/Account/AddFunds/GiftCard.vue'
 
 import WireguardView from '@/views/Account/Wireguard.vue'
 import WireguardConfigView from '@/views/Account/WireguardConfig.vue'
-import PortForwardingView from '@/views/Account/PortForwarding.vue'
 import Settings from '@/views/Account/Settings.vue'
 import SettingsAuthentication from '@/views/Account/Settings/Authentication.vue'
 import SettingsBilling from '@/views/Account/Settings/Billing.vue'
@@ -61,7 +60,7 @@ const routes = [
         name: 'light',
         component: OnePageCheckoutView,
         meta: {
-            title: 'IVPN one page checkout',
+            title: 'IVPN Light - Quick VPN Access paid with BTC Lightning',
         }
     },
     {
@@ -278,14 +277,6 @@ const routes = [
         component: WireguardConfigView,
         meta: {
             title: 'IVPN Account - WireGuard Configuration',
-        }
-    },
-    {
-        path: '/account/port-forwarding',
-        name: 'port-forwarding',
-        component: PortForwardingView,
-        meta: {
-            title: 'IVPN Account - Port Forwarding',
         }
     },
     {

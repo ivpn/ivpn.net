@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-09-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 805987
-hash: 00000000000000000004065c1c78a5bb648c6d7504517574aceb1deed8a9ca0c
+height: 810411
+hash: 00000000000000000001c78d63ee79a0d67516509b8aab462d9313c50070ae90
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-German business urges help for crisis-hit building industry
-Rising rates, skills shortages and inflation have pushed developers into insolvency
+FirstFT: Rishi Sunak under fire over plan to axe HS2’s northern leg
+Also in today’s newsletter, EU to release frozen funds to Hungary and India demands Canada withdraw diplomats
 
-Goldman faces £1mn lawsuit over ‘dysfunctional’ workplace claims
-The culture at the Wall Street bank’s London office is set to come under scrutiny
+Brussels to unfreeze Hungary funds as it seeks help for Ukraine
+Unblocking €13bn could secure Orbán support for EU budget top-up and assistance to Kyiv
 
-Aldi heads down new aisle with US supermarket shopping spree
-German discounter is moving into more conventional big store territory in a fiercely competitive market
+Brookfield swoops for UK wind farms in $1bn deal
+Canadian investment firm is buying Banks Renewables, one of the UK’s largest renewable developers
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmT0Ew8ACgkQisFrnrZH
-ummC1ggAtvBdqNclTDzkQG4H/yu1jqR/9Y4p4lemoJMBY2CHu1IU6c2DYVtm3m3g
-Y4ddGfOeVBb0JmQdSQTbkzRhBAUecIzH7GZR2M5TN9fhXE7hG8jkhaDzr6hdffNV
-tkCR5V4LOxWVATaid8wijR7piBXnxBdxfsjOCld0qzgo0lHzVbxaNhyt6QAUEQl2
-s2f03cMAydobfEComwfiNsTYQQcyQ5cziGrgmpmvY11oSiSdEP/iE2VduanSMP+5
-LSzjN9LnHSHy3eN3Fgs9rGyQFewsrdqUxYnOSGrFHsOLi4sDq8I14z5rqlR04A/j
-hfN+yWstji7x0MzmOmTHIs43ueAPsQ==
-=7br9
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmUboA4ACgkQisFrnrZH
+umk7nAf/eu/oZRsUbRfaN3H12s6cZ86YecvSR24GlCFeSTjfXCpKj+vYIWIkSdq8
+hA8yxLORccT7LnBuOSFI3DpQxqC8OJSa84Ll972kJCqwTz5yAG6Q+WmLFwTAycBm
+EnPFADGzpsK0qqeweLQm4TdiCqmgwiosxny08z/6vlEpY/1EsOR+q1OOg/s5u+SF
+4Kzxs01Mp6WmtqYIAUPdR07NRa+5buYujkClvYKT8UKtwerXTPTRWhbBVZlqmEfa
+S4Wil1ysRWDb0E1OOVJO18IHyAvPEyVlpCP3vRC9Dvcw+ZPGIVghzOw9HFFgYHrw
+zXDI9caCZFDMsNRnuWQFpT85L3KAeg==
+=bDPS
 -----END PGP SIGNATURE-----
 
 

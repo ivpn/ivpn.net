@@ -32,6 +32,8 @@ If you do not remember your account details, provide us with your PayPal account
 
 If you do not remember your account details, provide us with the transaction ID for your Bitcoin or Monero payment, the payment date, and the amount paid.
 
+Please note: IVPN Light purchases are non-refundable. 
+
 <h2>Android In-App Purchase</h2>
 
 - Your IVPN Account safe reference (XXXXXXXX) or the IVPN Account ID (i-XXXX-XXXX-XXXX / ivpnXXXXXXXX).

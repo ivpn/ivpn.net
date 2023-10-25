@@ -103,13 +103,13 @@ curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/
 sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
 
 # Update APT repo info
-sudo apt-get update
+sudo apt update
 
 # To install IVPN software (CLI and UI)
-sudo apt-get install ivpn-ui
+sudo apt install ivpn-ui
 
 # To install only IVPN CLI
-sudo apt-get install ivpn
+sudo apt install ivpn
 ```
 
 ### Debian {#debian}
@@ -130,13 +130,13 @@ curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/
 sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
 
 # Update APT repo info
-sudo apt-get update
+sudo apt update
 
 # To install IVPN software (CLI and UI)
-sudo apt-get install ivpn-ui
+sudo apt install ivpn-ui
 
 # To install only IVPN CLI
-sudo apt-get install ivpn
+sudo apt install ivpn
 ```
 
 ### Mint {#mint}
@@ -157,13 +157,13 @@ curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/so
 sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
 
 # Update APT repo info
-sudo apt-get update
+sudo apt update
 
 # To install IVPN software (CLI and UI)
-sudo apt-get install ivpn-ui
+sudo apt install ivpn-ui
 
 # To install only IVPN CLI
-sudo apt-get install ivpn
+sudo apt install ivpn
 ```
 
 ### Fedora {#fedora}
