@@ -43,6 +43,15 @@ export default {
                 context.commit('failed', { error })
             }
         },
+        async changeDetails(context, newProductName) {
+            context.commit('started')
+            try {
+                context.commit('done')
+                return await Api.changeProductDetails(newProductName);           
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
     },
     getters: {
 
