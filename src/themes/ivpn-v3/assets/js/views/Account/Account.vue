@@ -46,7 +46,7 @@
                             <label>Product</label>
                             <div class="value">{{ account.product.name }}</div>
                         </div>
-                        <div class="product-action">
+                        <div class="product-action" v-if="canChange">
                             <router-link :to="{ name: 'change-product' }"
                                 >Change</router-link
                             >
@@ -113,7 +113,8 @@ export default {
 
     data() {
         return {
-            isLight : false
+            isLight : false,
+            canChange: false,
         };
     },
 
@@ -124,12 +125,25 @@ export default {
     },
 
     
-    beforeMount(){
+    async beforeMount(){
         if( this.$store.state.auth.account.product.name == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
         }
+        if( !this.$store.state.auth.account.is_new){
+            let product= await this.calculateForProduct(this.$store.state.auth.account.product.name).then(response => response);
+            this.canChange = !product.is_locked;
+        }
     },
+
+    methods:{
+        async calculateForProduct(newProduct) {
+            return  await this.$store.dispatch("product/changeDetails", {
+                    product: newProduct,    
+            });
+        }
+
+    }
 
 
 };
