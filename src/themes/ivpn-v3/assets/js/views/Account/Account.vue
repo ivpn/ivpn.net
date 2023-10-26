@@ -130,8 +130,10 @@ export default {
             this.isLight = true;
             window.location = "/light";
         }
-        let product= await this.calculateForProduct(this.$store.state.auth.account.product.name).then(response => response);
-        this.canChange = !product.is_locked;
+        if( !this.$store.state.auth.account.is_new){
+            let product= await this.calculateForProduct(this.$store.state.auth.account.product.name).then(response => response);
+            this.canChange = !product.is_locked;
+        }
     },
 
     methods:{
