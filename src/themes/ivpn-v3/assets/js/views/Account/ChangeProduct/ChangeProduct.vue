@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!isLocked">
         <div class="back-link">
             <router-link :to="{name:'account'}">
                 <span class="icon-back"></span>Back to account
@@ -15,7 +15,7 @@
         <div class="prices">
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Standard' || lockedPlan"
+                :current="account.product.name == 'IVPN Standard'"
                 :inProgress="inProgress"
                 @selected="selected('IVPN Standard')"
             >
@@ -47,7 +47,7 @@
 
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Pro' || lockedPlan"
+                :current="account.product.name == 'IVPN Pro'"
                 :inProgress="inProgress"
                 @selected="selected('IVPN Pro')"
             >
@@ -94,7 +94,7 @@ export default {
         return {
             standardActiveUntil: null,
             proActiveUntil: null,
-            lockedPlan : false,
+            isLocked: true,
         };
     },
     components: {
@@ -106,9 +106,12 @@ export default {
     async beforeMount() {
         let standardActiveUntil = await this.calculateForProduct("IVPN Standard").then(response => response.active_until);
         let proPlan = await this.calculateForProduct("IVPN Pro").then(response => response);
-        this.lockedPlan = proPlan.is_locked;
         this.standardActiveUntil =this.$filters.formatActiveUntil(standardActiveUntil);
         this.proActiveUntil = this.$filters.formatActiveUntil(proPlan.active_until);
+        this.isLocked = proPlan.is_locked;
+        if( proPlan.is_locked ){
+            window.location = "/account";
+        }
     },
     
 
