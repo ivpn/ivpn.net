@@ -33,7 +33,7 @@ When using WireGuard we offer the powerful V2Ray proxy protocol. It is available
 
 ## Limitations and known issues
 
-* V2Ray does not work on mobile networks
+* V2Ray does not work on mobile/cellular networks
 * When switching WiFi networks, VPN needs to be manually reconnected
 * Before connecting VPN + V2Ray, VPN without V2Ray needs to be connected; app does this automatically when V2Ray is enabled
 * App might fail to connect in the following cases:
