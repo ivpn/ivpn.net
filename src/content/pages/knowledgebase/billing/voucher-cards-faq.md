@@ -15,7 +15,7 @@ Voucher payment method is only available for accounts that were created after No
 </div>
 
 1. ### Where can I purchase an IVPN voucher?
-    Physical voucher cards are currently available on [Amazon US](https://amazon.com/dp/B0BL8FWDRL) and [ProxyStore DE](https://shop.proxysto.re/category/69). Digital vouchers can purchased in the [ProxyStore Onlineshop](https://digitalgoods.proxysto.re/en). We plan to introduce it to other vendors and countries in the future.
+    Physical voucher cards are currently available on [Amazon US](https://amazon.com/dp/B0BL8FWDRL) and [ProxyStore DE](https://shop.proxysto.re/category/69). Digital vouchers can be purchased in the [ProxyStore Onlineshop](https://digitalgoods.proxysto.re/en). We plan to introduce it to other vendors and countries in the future.
 
 2. ### How do I redeem the voucher?
     One physical voucher card can be redeemed for either 2 years of IVPN Standard or 1 year of IVPN Pro. It can be used for activating a newly generated account as well as extending the duration of an existing one.
