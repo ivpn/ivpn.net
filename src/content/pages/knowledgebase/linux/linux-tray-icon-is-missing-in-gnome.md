@@ -1,7 +1,7 @@
 ---
 title: Tray icon is missing in GNOME - IVPN Help
 h1: Tray icon is missing in GNOME
-url: /knowledgebase/linux/linux-tray-icon-is-missing-in-GNOME/
+url: /knowledgebase/linux/linux-tray-icon-is-missing-in-gnome/
 sections:
     - linux
     - troubleshooting
