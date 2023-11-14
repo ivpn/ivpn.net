@@ -45,7 +45,7 @@ weight: 589
 
     You can have multiple apps added to the Split Tunnel list. The user defined Split Tunnel configuration persists through the system reboot and is automatically applied when the IVPN app is started.
 
-    It is impossible to add apps to the Split Tunnel list installed via Microsoft Store.
+    It is impossible to add some apps to the Split Tunnel list (e.g  apps installed via Microsoft Store).
 
     #### Linux
     To start the app in the Split Tunnel environment, it has to be launched from the IVPN app.
@@ -57,7 +57,6 @@ weight: 589
     The apps can also be quickly started in the Split Tunnel environment from the app's main UI window by clicking on the `+` icon in the `Split Tunnel mode active` area, as well as via the terminal (see `ivpn splittun -h` for details).
 
     #### Android
-
     In the IVPN app, access `Settings` by tapping on the `Gear` icon in the top right. Navigate to `Split Tunnelling` area and toggle the switch **'On'** next to the apps you want to use the VPN and **'Off** for those that must to use your default connection.
 
     The user defined Split Tunnel configuration persists through the system reboot and is automatically applied when the IVPN app is started.
