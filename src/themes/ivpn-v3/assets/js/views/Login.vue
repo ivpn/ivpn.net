@@ -4,33 +4,6 @@
             <form @submit.prevent="login()">
                 <h1>Log In</h1>  
                 <tabs @onTabChanged="updateLoginType">
-                    <tab :selected="loginType == 'email'" :tabid="'email'" :name="'With Email & Password'" class="login-tab">
-                        <div class="login-fields">
-                            
-                            <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
-                            <label for="login-email">Email:</label>
-                            <input type="text" id="login-email" v-model="email" autofocus />
-                            <label for="login-password">Password:</label>
-                            <input type="password" id="login-password" v-model="password" />
-
-                            <div class="totp" v-if="totpRequired">
-                                <label for="login-totp-2">Two-factor authentication token:</label>
-                                <input type="text" id="login-totp-2" v-model="totpValue" />
-                            </div>
-
-                            <div class="captcha" v-if="captchaImage">
-                                <div class="image-block">
-                                    <img :src="captchaImage" />
-                                </div>
-                                <label for="login-captch">Please enter the captcha you see above:</label>
-                                <input type="text" id="login-captch" v-model="captchaValue" />
-                            </div>
-
-                            <div class="forgot">
-                                <router-link :to="{name:'recover-password'}">Forgot Your Password?</router-link>
-                            </div>
-                        </div>
-                    </tab>
                     <tab :selected="loginType == 'id'" :tabid="'id'" :name="'With Account ID'" class="login-tab">
                         <div class="login-fields">
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
@@ -60,6 +33,33 @@
                             <!-- <div class="forgot">
                                 <a href="/forgot?">Forgot Your Account ID?</a>
                             </div>-->
+                        </div>
+                    </tab>
+                    <tab :selected="loginType == 'email'" :tabid="'email'" :name="'With Email & Password'" class="login-tab">
+                        <div class="login-fields">
+                            
+                            <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
+                            <label for="login-email">Email:</label>
+                            <input type="text" id="login-email" v-model="email" autofocus />
+                            <label for="login-password">Password:</label>
+                            <input type="password" id="login-password" v-model="password" />
+
+                            <div class="totp" v-if="totpRequired">
+                                <label for="login-totp-2">Two-factor authentication token:</label>
+                                <input type="text" id="login-totp-2" v-model="totpValue" />
+                            </div>
+
+                            <div class="captcha" v-if="captchaImage">
+                                <div class="image-block">
+                                    <img :src="captchaImage" />
+                                </div>
+                                <label for="login-captch">Please enter the captcha you see above:</label>
+                                <input type="text" id="login-captch" v-model="captchaValue" />
+                            </div>
+
+                            <div class="forgot">
+                                <router-link :to="{name:'recover-password'}">Forgot Your Password?</router-link>
+                            </div>
                         </div>
                     </tab>
                 </tabs>
@@ -110,7 +110,7 @@ export default {
     created() {
         this.loginType = location.hash.replace("#", "");
         if (this.loginType != "id" && this.loginType != "email") {
-            this.loginType = "email";
+            this.loginType = "id";
         }
     },
     computed: {
