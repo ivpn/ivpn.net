@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 810411
-hash: 00000000000000000001c78d63ee79a0d67516509b8aab462d9313c50070ae90
+height: 815075
+hash: 00000000000000000002e987fe14ac0efe1bf9aa2b7be7efbd3dd5cc94b38d78
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Rishi Sunak under fire over plan to axe HS2’s northern leg
-Also in today’s newsletter, EU to release frozen funds to Hungary and India demands Canada withdraw diplomats
+Qantas hit by shareholder backlash over executive pay proposal
+Vote comes as Australia’s flag carrier is being sued by regulator over ‘ghost flights’ scandal
 
-Brussels to unfreeze Hungary funds as it seeks help for Ukraine
-Unblocking €13bn could secure Orbán support for EU budget top-up and assistance to Kyiv
+It ain’t over till it’s over
+The rates cycle, that is
 
-Brookfield swoops for UK wind farms in $1bn deal
-Canadian investment firm is buying Banks Renewables, one of the UK’s largest renewable developers
+FirstFT: FTX founder Sam Bankman-Fried convicted of fraud
+Also in today’s newsletter, Israeli forces surround Gaza City and BlackRock foresees higher long-term US borrowing costs
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmUboA4ACgkQisFrnrZH
-umk7nAf/eu/oZRsUbRfaN3H12s6cZ86YecvSR24GlCFeSTjfXCpKj+vYIWIkSdq8
-hA8yxLORccT7LnBuOSFI3DpQxqC8OJSa84Ll972kJCqwTz5yAG6Q+WmLFwTAycBm
-EnPFADGzpsK0qqeweLQm4TdiCqmgwiosxny08z/6vlEpY/1EsOR+q1OOg/s5u+SF
-4Kzxs01Mp6WmtqYIAUPdR07NRa+5buYujkClvYKT8UKtwerXTPTRWhbBVZlqmEfa
-S4Wil1ysRWDb0E1OOVJO18IHyAvPEyVlpCP3vRC9Dvcw+ZPGIVghzOw9HFFgYHrw
-zXDI9caCZFDMsNRnuWQFpT85L3KAeg==
-=bDPS
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmVEjJ4ACgkQisFrnrZH
+umkOQggAjqAeSYfA03bcUycsglz3W46Elg2O6b7nb127Fe8NQGVEohl0clePKtXK
+grTvoeyTJHQATGAgCtzfBl1WmVtTU70LW+P0mh+/tjYzO9wEbliN7Zfd8ufOYGjy
+qnc214hTN34qYEgAXmSGPNRtbNQY7a1hbFBlqY3uFIijvwP4NZZqdgAC2l9dFFfe
+Acpv7X7c/UPCg5wJ1L56J7dP9kUDWpl90ii/4yk42kgQFSKdY3VhtIBrUkVjish1
+PpUYuaHGEVIMqC+1ROYItVoYjH/i5Uit2NIvKU1EMNpjJZGAXybG4hkRAdXj+Boc
+UjAdMhY2tgbOMB3DpJ4DCW5fD+Gljw==
+=qJXg
 -----END PGP SIGNATURE-----
 
 

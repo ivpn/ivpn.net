@@ -121,28 +121,32 @@
                             {{ server.multihop_port || "N/A" }}
                         </div>
                         <div v-if="server.obfs.obfs3_multihop_port">
-                            <em>OBFS 3 SingleHop Port:</em>
+                            <em>OBFS3 SingleHop Port:</em>
                             {{ config.ports.obfs3.port }}
                         </div>
                         <div v-if="server.obfs.obfs3_multihop_port">
-                            <em>OBFS 3 MultiHop Port:</em>
+                            <em>OBFS3 MultiHop Port:</em>
                             {{ server.obfs.obfs3_multihop_port }}
                         </div>
                         <div v-if="server.obfs.obfs4_multihop_port">
-                            <em>OBFS 4 SingleHop Port:</em>
+                            <em>OBFS4 SingleHop Port:</em>
                             {{ config.ports.obfs4.port }}
                         </div>
                         <div v-if="server.obfs.obfs4_multihop_port">
-                            <em>OBFS 4 MultiHop Port:</em>
+                            <em>OBFS4 MultiHop Port:</em>
                             {{ server.obfs.obfs4_multihop_port }}
                         </div>
                         <div v-if="server.obfs.obfs4_key">
-                            <em>OBFS 4 Public Key:</em>
+                            <em>OBFS4 Public Key:</em>
                             {{ server.obfs.obfs4_key }}
                         </div>
                         <div>
-                            <em>Socks5:</em>
+                            <em>SOCKS5:</em>
                             {{ renderSocks5(server) }}
+                        </div>
+                        <div>
+                            <em>SOCKS5 Port:</em>
+                            1080
                         </div>
                         <!-- <div>
                             <em>
