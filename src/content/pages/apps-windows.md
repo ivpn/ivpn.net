@@ -46,7 +46,10 @@ If you prefer not to use the IVPN app please follow the relevant setup guide bel
 - [OpenVPN GUI (Windows 8)](/setup/windows-8-openvpn-community/)
 - [IPSec with IKEv2 (Windows 10)](/setup/windows-10-ipsec-with-ikev2/)
 
-## Download legacy version
+## Download legacy versions
 
-Download [IVPN-2.12.17.exe](https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.17.exe)  
+[IVPN-Client-v3.12.0.exe](https://repo.ivpn.net/windows/bin/IVPN-Client-v3.12.0.exe)  
+SHA256: 2425f3e339eeb8bb8ac11734b2db918083eea6d2cd9172109e0748b2fcd62f19  
+
+[IVPN-Client-v2.12.17.exe](https://cdn.ivpn.net/releases/win/IVPN-Client-v2.12.17.exe)  
 SHA256: 7dce2cd90a2828f308c5c9063776d05af6074d974c57ee69a7ea79030640149a  
