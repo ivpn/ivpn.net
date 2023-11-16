@@ -12,11 +12,11 @@ releases: [{
     downloads: [
         {
             cta: Intel,
-            url: "https://repo.ivpn.net/macos/bin/IVPN-3.13.0.dmg"
+            url: "https://repo.ivpn.net/macos/bin/IVPN-3.13.1.dmg"
         },
         {
             cta: Apple Silicon,
-            url: https://repo.ivpn.net/macos/bin/IVPN-3.13.0-arm64.dmg
+            url: https://repo.ivpn.net/macos/bin/IVPN-3.13.1-arm64.dmg
         }
     ],
     github: https://github.com/ivpn/desktop-app,
@@ -24,11 +24,11 @@ releases: [{
     checksum: [
         {
             title: SHA256 Intel,
-            value: 0d8b176eadfc875e7eda99247bb44626ce0b0ed0eed6bc2575ed127e423c22e7
+            value: b053acbffa416117c3072415025d238701f0cb58f649154d10078b433cb3cecf
         },
         {
             title: SHA256 Apple Silicon,
-            value: f2122e2934fcb17749170a259a1e2424e5a95703a0fa1859ace8f9fcc3ef6a42
+            value: bb7d047ff5a1e01e783cd26a037599be7f929bc513940adabbb26cb5bb95dd9a
         }
     ]
 }]
