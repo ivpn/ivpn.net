@@ -108,7 +108,7 @@ Decentralized VPNs offer a vision where trust in a single entity is not required
 [2]:https://www.ivpn.net/privacy-guides/will-a-vpn-protect-me/
 [3]:https://www.ftc.gov/news-events/press-releases/2021/10/ftc-staff-report-finds-many-internet-service-providers-collect
 [4]:https://privacyinternational.org/sites/default/files/2017-12/Data%20Retention_2017.pdf
-[5]:https://sentinel.co/whitepaper/
+[5]:https://docs.sentinel.co/assets/files/whitepaper-513665f81a5d6c4b462e111926d26f57.pdf
 [6]:https://blog.orchid.com/everything-you-need-to-know-about-centralized-decentralized-and-opensource-vpns/
 [7]:https://www.eff.org/pages/what-tor-relay
 [8]:https://tech.slashdot.org/story/21/12/03/2237223/a-mysterious-threat-actor-is-running-hundreds-of-malicious-tor-relays
