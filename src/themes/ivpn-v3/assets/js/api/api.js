@@ -483,6 +483,15 @@ export default {
             },
         )
     },
+    async getServersDetails() {
+        return await this.Get(
+            '/v5/servers.json',
+            process.env.MIX_APP_API_URL,
+            {
+                credentials: "omit"
+            },
+        )
+    },
 
     //
     // Contact
