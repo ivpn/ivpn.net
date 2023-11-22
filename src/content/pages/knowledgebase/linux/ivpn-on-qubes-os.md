@@ -101,7 +101,11 @@ This approach is easy but not robust: DNS will not work if DNS settings change o
 
 2. Update **/rw/config/rc.local** file with the following command: 
     ```
-    echo -e "sleep 10 # Waiting a bit so that IVPN can establish a connection\n/usr/lib/qubes/qubes-setup-dnat-to-ns" | sudo tee -a /rw/config/rc.local
+    cat <<EOF | sudo tee -a /rw/config/rc.local
+    sleep 10 # Waiting a bit so that IVPN can establish a connection
+    systemctl restart systemd-resolved # for Qubes OS 4.2 only (tested on Qubes OS 4.2-RC4)
+    /usr/lib/qubes/qubes-setup-dnat-to-ns
+    EOF
     ```
 
 #### Approach 2 - Modify IVPN ‘dns’ script:
@@ -113,7 +117,7 @@ This approach is more robust because DNAT will be updated every time when IVPN u
 1. Open the **/opt/ivpn/etc/firewall.sh** script file on **ProxyVM (ivpn-proxy)** and add the following right after the `elif [[ $1 = "-set_dns" ]]; then` line:
     ```
     #QUBES OS - specific operation
-
+    systemctl restart systemd-resolved || echo "Error: systemd-resolved" # this line is required for Qubes OS 4.2 (tested on Qubes OS 4.2-RC4)
     /usr/lib/qubes/qubes-setup-dnat-to-ns || echo "Error: failed to run '/usr/lib/qubes/qubes-setup-dnat-to-ns'"
     ```
 
@@ -125,6 +129,7 @@ This approach is more robust because DNAT will be updated every time when IVPN u
     elif [[ $1 = "-set_dns" ]]; then
 
     #QUBES OS - specific operation
+    systemctl restart systemd-resolved || echo "Error: systemd-resolved" # this line is required for Qubes OS 4.2 (tested on Qubes OS 4.2-RC4)
     /usr/lib/qubes/qubes-setup-dnat-to-ns || echo "Error: failed to run '/usr/lib/qubes/qubes-setup-dnat-to-ns'" 
 
     get_firewall_enabled || return 0
