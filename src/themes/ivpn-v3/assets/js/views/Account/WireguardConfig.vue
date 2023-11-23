@@ -186,7 +186,7 @@
                    
                 
                     <div>
-                        <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
+                        <input type="radio" name="dns" id="dns_hardcore" ref="dns_hardcore" value="hardcore" @change="selectDNS($event)">
                         <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
                     </div>
                     <div class="search">
@@ -213,7 +213,6 @@ import wireguard from '@/wireguard';
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import qrcode from "qrcode-generator";
-
 import { mapState } from "vuex";
 
 export default {
@@ -286,6 +285,15 @@ export default {
         customDNS: {
              handler: function (after, before) {
                  this.updateQuery();
+             }
+         },
+         selectedBlockList: {
+             handler: function (after, before) {
+                if(this.$refs.dns_hardcore.checked){
+                    this.dns = after.Hardcore;
+                }else{
+                    this.dns= after.Normal;
+                }
              }
          },
     },
