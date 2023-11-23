@@ -159,12 +159,12 @@ export default {
 
             if (this.loginType == "id") {
                 data = {
-                    accountID: this.accountID,
+                    accountID: this.accountID.trim(),
                 };
             } else {
                 data = {
-                    email: this.email,
-                    password: this.password,
+                    email: this.email.trim(),
+                    password: this.password.trim(),
                 };
             }
 
