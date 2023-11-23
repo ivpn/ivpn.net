@@ -174,7 +174,7 @@
                         <label for="dns_standard">Standard</label>
                     </div>
                     <div>
-                        <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                        <input type="radio" name="dns" id="dns_antitracker" ref="dns_antitracker" value="antitracker" @change="selectDNS($event)">
                         <label for="dns_antitracker">AntiTracker </label>
                         <div class="select">
                         <select v-model="selectedBlockList">
@@ -291,7 +291,7 @@ export default {
              handler: function (after, before) {
                 if(this.$refs.dns_hardcore.checked){
                     this.dns = after.Hardcore;
-                }else{
+                }else if(this.$refs.dns_antitracker.checked){
                     this.dns= after.Normal;
                 }
              }
