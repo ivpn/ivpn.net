@@ -176,19 +176,17 @@
                     <div>
                         <input type="radio" name="dns" id="dns_antitracker" ref="dns_antitracker" value="antitracker" @change="selectDNS($event)">
                         <label for="dns_antitracker">AntiTracker </label>
+                        <i></i>
                         <div class="select">
                         <select v-model="selectedBlockList">
                             <option v-for="(item, key) in antitrackerBlockLists" :value="item" :selected="true">{{item.Name}}</option>
                         </select>
                         <i></i>
                     </div>
+                        <input id="hardcore_mode" type="checkbox" v-model="isDnsHardcore">
+                        <label for="hardcore_mode">Hardcore Mode</label>
                     </div>
                    
-                
-                    <div>
-                        <input type="radio" name="dns" id="dns_hardcore" ref="dns_hardcore" value="hardcore" @change="selectDNS($event)">
-                        <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
-                    </div>
                     <div class="search">
                         <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
                         <label for="dns_custom">Custom DNS</label>
@@ -267,6 +265,7 @@ export default {
             isLight : false,
             antitrackerBlockLists: [],
             selectedBlockList: null,
+            isDnsHardcore: false,
         };
     },
     watch: {
@@ -289,13 +288,26 @@ export default {
          },
          selectedBlockList: {
              handler: function (after, before) {
-                if(this.$refs.dns_hardcore.checked){
-                    this.dns = after.Hardcore;
-                }else if(this.$refs.dns_antitracker.checked){
-                    this.dns= after.Normal;
+                if( this.$refs.dns_antitracker.checked){
+                    if(this.isDnsHardcore){
+                        this.dns = after.Hardcore;
+                    }else{
+                        this.dns= after.Normal;
+                    }
                 }
              }
          },
+         isDnsHardcore: {
+            handler: function (after, before) {
+                if( this.$refs.dns_antitracker.checked){
+                    if(this.isDnsHardcore){
+                        this.dns = this.selectedBlockList.Hardcore;
+                    }else{
+                        this.dns = this.selectedBlockList.Normal;
+                    }
+                }
+             }
+         }
     },
     computed: {
         ...mapState({
@@ -512,10 +524,11 @@ export default {
                     this.dns = null;
                     break;
                 case "antitracker":
-                    this.dns = this.selectedBlockList.Normal;
-                    break;
-                case "hardcore":
-                    this.dns = this.selectedBlockList.Hardcore;
+                    if(this.isDnsHardcore){
+                        this.dns = this.selectedBlockList.Hardcore;
+                    }else{
+                        this.dns = this.selectedBlockList.Normal;
+                    }
                     break;
             }
         },
