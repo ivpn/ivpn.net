@@ -174,13 +174,19 @@
                         <label for="dns_standard">Standard</label>
                     </div>
                     <div>
-                        <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
-                        <label for="dns_antitracker">AntiTracker</label>
+                        <input type="radio" name="dns" id="dns_antitracker" ref="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                        <label for="dns_antitracker">AntiTracker </label>
+                        <i></i>
+                        <div class="select">
+                        <select v-model="selectedBlockList">
+                            <option v-for="(item, key) in antitrackerBlockLists" :value="item" :selected="true">{{item.Name}}</option>
+                        </select>
+                        <i></i>
                     </div>
-                    <div>
-                        <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
-                        <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
+                        <input id="hardcore_mode" type="checkbox" v-model="isDnsHardcore">
+                        <label for="hardcore_mode">Hardcore Mode</label>
                     </div>
+                   
                     <div class="search">
                         <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
                         <label for="dns_custom">Custom DNS</label>
@@ -205,7 +211,6 @@ import wireguard from '@/wireguard';
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import qrcode from "qrcode-generator";
-
 import { mapState } from "vuex";
 
 export default {
@@ -257,7 +262,10 @@ export default {
             qrCode: "",
             hostKey: 0,
             dns: null,
-            isLight : false
+            isLight : false,
+            antitrackerBlockLists: [],
+            selectedBlockList: null,
+            isDnsHardcore: false,
         };
     },
     watch: {
@@ -277,6 +285,28 @@ export default {
              handler: function (after, before) {
                  this.updateQuery();
              }
+         },
+         selectedBlockList: {
+             handler: function (after, before) {
+                if( this.$refs.dns_antitracker.checked){
+                    if(this.isDnsHardcore){
+                        this.dns = after.Hardcore;
+                    }else{
+                        this.dns= after.Normal;
+                    }
+                }
+             }
+         },
+         isDnsHardcore: {
+            handler: function (after, before) {
+                if( this.$refs.dns_antitracker.checked){
+                    if(this.isDnsHardcore){
+                        this.dns = this.selectedBlockList.Hardcore;
+                    }else{
+                        this.dns = this.selectedBlockList.Normal;
+                    }
+                }
+             }
          }
     },
     computed: {
@@ -287,6 +317,7 @@ export default {
     mounted() {
         this.fetchServers();
         this.updateQuery();
+        this.fetchBlockLists();
     },
     methods: {
         async fetchServers() {
@@ -488,15 +519,17 @@ export default {
         },
         selectDNS(event) {
             this.dnsType = event.target.value;
-
-            if (this.dnsType == "standard" || this.dnsType == "custom") {
-                this.dns = null;
-            }
-            if (this.dnsType == "antitracker") {
-                this.dns = "10.0.254.2";
-            }
-            if (this.dnsType == "hardcore") {
-                this.dns = "10.0.254.3";
+            switch(this.dnsType){
+                case "standard":
+                    this.dns = null;
+                    break;
+                case "antitracker":
+                    if(this.isDnsHardcore){
+                        this.dns = this.selectedBlockList.Hardcore;
+                    }else{
+                        this.dns = this.selectedBlockList.Normal;
+                    }
+                    break;
             }
         },
         updateQuery() {
@@ -576,6 +609,16 @@ export default {
             let ipv46_regex = /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/gm;
 
             return ipv46_regex.test(ip);
+        },
+        async fetchBlockLists() {
+            
+            let res =  await Api.getServersDetails();
+            
+            if (res.config) {
+                this.antitrackerBlockLists = res.config.antitracker_plus.DnsServers
+                this.selectedBlockList = this.antitrackerBlockLists[0];
+            }
+            
         },
     },
     beforeMount(){

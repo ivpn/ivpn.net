@@ -178,4 +178,19 @@
             margin-top: 10px;
         }
     }
+
+    input[type=checkbox]{
+        vertical-align: middle;
+    }
+    
+    label{
+        margin: 0 5px 0 5px; 
+    }
+    
+    @media only screen and (max-device-width: 600px){
+        .select{
+            margin-top:10px !important;
+            width:100% !important;
+        }
+    }
 }
