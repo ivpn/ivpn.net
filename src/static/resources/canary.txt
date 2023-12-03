@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2023-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 815075
-hash: 00000000000000000002e987fe14ac0efe1bf9aa2b7be7efbd3dd5cc94b38d78
+height: 819525
+hash: 00000000000000000003cff4609cc995c869f55ea1d2642174ef56a4e62ebf79
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Qantas hit by shareholder backlash over executive pay proposal
-Vote comes as Australia’s flag carrier is being sued by regulator over ‘ghost flights’ scandal
+AstraZeneca ties up with AI biologics company to develop cancer drug
+Deal with Absci is the latest between big pharma and tech companies to build new disease treatments
 
-It ain’t over till it’s over
-The rates cycle, that is
+Canadian pension giant warns against UK plan to push schemes into private equity
+Head of CPPIB says key to success of fund’s model is ‘freedom to invest wherever we see the best chance of returns’
 
-FirstFT: FTX founder Sam Bankman-Fried convicted of fraud
-Also in today’s newsletter, Israeli forces surround Gaza City and BlackRock foresees higher long-term US borrowing costs
+EY claims success in using AI to find audit frauds
+Big Four firm says suspicious activity quickly spotted but industry disagrees about relying on the new technology
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmVEjJ4ACgkQisFrnrZH
-umkOQggAjqAeSYfA03bcUycsglz3W46Elg2O6b7nb127Fe8NQGVEohl0clePKtXK
-grTvoeyTJHQATGAgCtzfBl1WmVtTU70LW+P0mh+/tjYzO9wEbliN7Zfd8ufOYGjy
-qnc214hTN34qYEgAXmSGPNRtbNQY7a1hbFBlqY3uFIijvwP4NZZqdgAC2l9dFFfe
-Acpv7X7c/UPCg5wJ1L56J7dP9kUDWpl90ii/4yk42kgQFSKdY3VhtIBrUkVjish1
-PpUYuaHGEVIMqC+1ROYItVoYjH/i5Uit2NIvKU1EMNpjJZGAXybG4hkRAdXj+Boc
-UjAdMhY2tgbOMB3DpJ4DCW5fD+Gljw==
-=qJXg
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmVsGZ8ACgkQisFrnrZH
+umkclggAwSiqDCVbz36U1JdL3oEvY0P7HvQ+544yiCDP43TQNpaYP8jHy4NL/Idt
+CbwZqmqe2nKpE7+z86PyROUjjUiMDT2kbyvHsdSQNCdaIyZ8k+FRL8riJW+YZyrS
+FbxcN8Vl9bUjeiUDGdIJyXnnR3+p/cDiqZ9xGJyLCdPgnHuYJzjQVPKzSHQ4j8du
+CfZ9SOoPLR5NWO+o8eLvcIY5CEDwp9cfFB6utVmK66cEQIBeBCHP3mhwkrAMHDxB
+5zQZ2Z3ohczZCMQ0kURLRi0wuLfkFBRu+VJX0OYW/Df+5C5KAqRxuRCA2d+S3bi7
+bKzAgLzw0M5VBz83Cq5mh8mk/Lk4qQ==
+=eIu1
 -----END PGP SIGNATURE-----
 
 
