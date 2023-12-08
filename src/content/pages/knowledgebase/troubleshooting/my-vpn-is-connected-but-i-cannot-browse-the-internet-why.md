@@ -12,7 +12,7 @@ weight: 40
 
 The most common reason you cannot browse the internet when connected to the VPN is a **DNS configuration issue**. Please perform the following steps to see if the issue is related to DNS:
 
-1. Ping an external IP such as **`1.1.1.1`** and **`8.8.8.8`** to verify that you have Internet connectivity. See [how to run the ping command](/knowledgebase/troubleshooting/how-to-run-the-ping-command/).
+1. Ping an external IP such as **`1.1.1.1`** and **`8.8.8.8`** to verify that you have Internet connectivity. See [how to run the ping command](/knowledgebase/troubleshooting/how-do-i-use-the-ping-command/).
 2. If you see replies from the ping above this indicates your connection is working and your issue is likely DNS related, continue to the "resolving DNS issues" section below.
 3. If you do not get a reply (e.g. "Request timeout") this indicates something is blocking the VPN connection, see [I cannot connect to the VPN, what can I do?](/knowledgebase/troubleshooting/i-cannot-connect-to-the-vpn-what-can-i-do/)
 
