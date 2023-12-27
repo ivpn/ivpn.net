@@ -19,20 +19,20 @@ layout: guides-details
 ---
 ### Introduction
 
-Choosing a VPN service can be a nerve–wracking ordeal. You've probably read about the Snowden leaks and NSA related revelations. You probably don't trust your ISP to protect your privacy (and as the [FTC recently concluded](https://www.ftc.gov/system/files/documents/reports/look-what-isps-know-about-you-examining-privacy-practices-six-major-internet-service-providers/p195402_isp_6b_staff_report.pdf), you really shouldn't). Perhaps you don't trust your government. You may even distrust all governments and corporations.
+Choosing a VPN service can be a nerve–wracking ordeal. You've probably read about the Snowden leaks and NSA related revelations about mass surveillance. You probably don't trust your ISP to protect your privacy (and as the [FTC concluded in 2021](https://www.ftc.gov/system/files/documents/reports/look-what-isps-know-about-you-examining-privacy-practices-six-major-internet-service-providers/p195402_isp_6b_staff_report.pdf), you really shouldn't). Perhaps you don't trust your government. You may even distrust all governments and corporations.
 
 Indeed, you may not trust this guide, and think that it's just an advertorial. While that's an understandable concern, I invite you to read on, and judge for yourself. I also invite you to read this in the context of my other writings about VPNs, Tor and such, primarily on [Wilders Security Forums][1] and [Tor.StackExchange][2].
 
-If you're especially concerned about privacy, you may want to obscure your research about VPN providers. Although many people use VPN services, extensive research might flag you as someone with something important to hide. You can mitigate that risk by using a free VPN service at this step (such as [Calyx VPN](https://calyxinstitute.org/projects/digital-services/vpn)) and free webmail (such as [VFEmail](https://vfemail.net/)). For even better privacy, you can add the [Tor Browser Bundle][3] to tunnel Tor through CalyxVPN, and use [VFEmail's hidden service][4].
+If you're especially concerned about privacy, you may want to obscure your research about VPN providers. Although many people use VPN services, extensive research might flag you as someone with something important to hide. You can mitigate that risk by using a free VPN service at this step (such as [Calyx VPN](https://calyxinstitute.org/projects/digital-services/vpn)) and free webmail (such as [mailbox.org](https://mailbox.org) or [RiseUP](https://riseup.net)). For even better privacy, you can add the [Tor Browser Bundle][3] to tunnel Tor through CalyxVPN, and connect through the hidden service access when offered, like [Mailbox.org][29] or [RiseUP][5] do.
 
-Relatively little reliable and trustworthy information about VPN services is available online. It's generally best to ignore 'best VPN' and 'VPN review' sites. Most feature paid reviews, and some are protection rackets, featuring bad reviews for VPN services that refuse to buy favorable reviews. Even the honest ones are typically just popularity contests, dominated by clueless torrent users and wannabe 'hackers'. If you ever need to get information from a dedicated VPN review source look for those that don't use affiliate parameters on outgoing links (or even better, remove referer information).
+Relatively little reliable and trustworthy information about VPN services is available online. It's generally best to ignore 'best VPN' and 'VPN review' sites. Most of them feature paid reviews, and some are protection rackets, featuring bad reviews for VPN services that refuse to buy favorable reviews. Even the honest ones are typically just popularity contests, dominated by clueless torrent users and wannabe 'hackers'. If you ever need to get information from a dedicated VPN review source look for those that don't use affiliate parameters on outgoing links (or even better, remove referer information).
 
 
 ### TorrentFreak's Surveys
 
 TorrentFreak's VPN surveys are notable exceptions to the norm. In late 2011, it became clear that Luzlsec member 'Recursion' had been identified and arrested based on connection logs that the VPN service HideMyAss provided to the FBI. TorrentFreak responded by publishing ['Which VPN Service Providers Really Take Anonymity Seriously?'][5] (now rephrased as "Which VPN Providers Really Take Privacy Seriously?"). This Q&A has been updated yearly since the original version, now supplying unedited answers to 12 privacy-related questions.
 
-These are the following (as of 2021): 
+These are the following (as of [2023][6]):
 
 1. Do you keep (or share with third parties) ANY data that would allow you to match an IP-address and a timestamp to a current or former user of your service? If so, exactly what information do you hold/share and for how long?
 2. What is the name under which your company is incorporated (+ parent companies, if applicable) and under which jurisdiction does your company operate?
@@ -53,9 +53,9 @@ Introducing their results, they note:
 
 This is arguably a fairly comprehensive starting list. TorrentFreak staff seem dedicated and knowledgeable, and their earlier surveys attracted the attention of many providers that had been omitted. But there are two key limitations. First, more obscure and low-key privacy-friendly VPN services don't appear on the TorrentFreak lists (e.g. cryptostorm). Some providers don't cater to BitTorrent users and have no motivation to appear on this list. Second, TorrentFreak is, for the most part, merely summarizing VPN providers' responses, and has not verified any of their claims. Comments in both reviews are also worth reading, by the way, but can't always be taken seriously.
 
-Even so, revelations about three providers – EarthVPN.com, Proxy.sh and PureVPN – demonstrate the risk of relying on providers' privacy claims. In early 2013, an EarthVPN customer was reportedly arrested based on logs kept by its hosting provider in the Netherlands. EarthVPN denied responsibility, maintaining that they 'do not keep logs', and said that they no longer use that provider. Although the actual dialog between EarthVPN and its customer ([here](http://lowendtalk.com/discussion/11348/problems-with-my-life-situation/) and [here](http://lowendtalk.com/discussion/11348/problems-with-my-life-situation/p2)) is no longer openly accessible, there are quotes and discussion in the [AirVPN](https://airvpn.org/topic/9958-importance-of-partition-of-trust-for-critical-data-exchanges/)  forums.  Also, keep in mind that ISPs can log as easily as hosting providers can.
+Even so, revelations about three providers – EarthVPN.com, Proxy.sh and PureVPN – demonstrate the risk of relying on providers' privacy claims. In early 2013, an EarthVPN customer was reportedly arrested based on logs kept by its hosting provider in the Netherlands. EarthVPN denied responsibility, maintaining that they 'do not keep logs', and said that they no longer use that provider. Although the actual dialog between EarthVPN and its customer ([here](https://web.archive.org/web/20130626030500/http://lowendtalk.com/discussion/11348/problems-with-my-life-situation/) (in comments) and [here](https://web.archive.org/web/20130731123057/http://lowendtalk.com/discussion/11348/problems-with-my-life-situation/p2)), the pages aren't accessible anymore but they were archived by the [Wayback Machine](https://wayback.archive.org), there are quotes and discussion in the [AirVPN](https://airvpn.org/topic/9958-importance-of-partition-of-trust-for-critical-data-exchanges/) forums.  Also, keep in mind that ISPs can log as easily as hosting providers can.
 
-In TorrentFreak's 2011 and 2013 surveys, Proxy.sh responded: 'No information whatsoever is being recorded or held in our facilities. Our services are run from RAM and all our system services come with state-of-the-art configuration that ensures nothing is left after usage.' However, in late September 2013, they installed Wireshark on one of their US servers, and retained packet captures for several hours. This was reportedly a voluntary response to complaints about hacking and harassment by one of their customers. For more specifics, see these TorrentFreak articles ([here](https://torrentfreak.com/proxy-sh-vpn-provider-monitored-traffic-to-catch-hacker-130930/) and [here](https://torrentfreak.com/vpns-is-it-ok-to-monitor-bad-users-on-ethical-grounds-131006/)). In TorrentFreak's 2014 survey, Proxy.sh answered as follows to the first question:
+In TorrentFreak's 2011 and 2013 surveys, Proxy.sh responded: 'No information whatsoever is being recorded or held in our facilities. Our services are run from RAM and all our system services come with state-of-the-art configuration that ensures nothing is left after usage.' However, in late September 2013, they installed [Wireshark](https://www.wireshark.org) on one of their US servers, and retained packet captures for several hours. This was reportedly a voluntary response to complaints about hacking and harassment by one of their customers. For more specifics, see these TorrentFreak articles ([here](https://torrentfreak.com/proxy-sh-vpn-provider-monitored-traffic-to-catch-hacker-130930/) and [here](https://torrentfreak.com/vpns-is-it-ok-to-monitor-bad-users-on-ethical-grounds-131006/)). In TorrentFreak's 2014 survey, Proxy.sh answered as follows to the first question:
 
 > We do not keep any logs and we do not record any IP-address, headers or anything. In terms of time stamp, we only record those associated with support tickets creation and update (invoices and renewals are only recorded by date) for management purposes. The only personal information we do record is an email address and a payment type, that corresponds to either the word “Money” or “Bitcoin”. This is made clear in our privacy policy. Our system will also hold services credentials, namely the account password and network login/password pair. All this data can be permanently removed at any time on customer’s request. All other data and information involved in our operations (connections, traffic, etc.) is neither monitored nor recorded.
 
@@ -71,9 +71,10 @@ Conversely, these incidents also demonstrate that news spreads very quickly on t
 Further positive signals you can look for:
 
   5. Open source VPN applications.
-  6. Publicly available audit results from independent, third-party auditors that investigate no-logs claims. Audits however, are constrained by their scope and provide only a temporary view, they are not persistent proofs about claims. 
+  6. Use of open source VPN protocols.
+  7. Publicly available audit results from independent, third-party auditors that investigate no-logs claims. Audits however, are constrained by their scope and provide only a temporary view, they are not persistent proofs about claims.
 
-All of the VPN services in TorrentFreak's recent survey deny keeping persistent logs. Assessing the plausibility of such claims in the context of pursuant data-retention requirements is a can of worms. Claims that there are no data-retention requirements in the US seem laughable in light of NSA documents released by Edward Snowden. The situation in Europe is complicated since the passing of GDPR and tensions between the 1995 Data Protection Directive and national legislations. The exact extent of NSA spying and EU collaboration with US operations is unknown and adds more uncertainty. For more about this issue generally, see [EFF's summary page][7].
+Nowadays, all of the VPN services in TorrentFreak's survey deny keeping persistent logs. Assessing the plausibility of such claims in the context of pursuant data-retention requirements is a can of worms. Claims that there are no data-retention requirements in the US seem laughable in light of NSA documents released by Edward Snowden. The situation in Europe is complicated since the passing of [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) and tensions between the 1995 Data Protection Directive and national legislations. The exact extent of NSA spying and EU collaboration with US operations is unknown and adds more uncertainty. For more about this issue generally, see [EFF's summary page][7].
 
 ### Presales Questions
 
@@ -132,8 +133,9 @@ Here are some additional questions that you might ask, followed by expected answ
  [1]: https://www.wilderssecurity.com/
  [2]: https://tor.stackexchange.com/
  [3]: https://www.torproject.org/projects/torbrowser.html.en
- [4]: http://344c6kbnjnljjzlz.onion/
+ [4]: http://vww6ybal4bd7szmgncyruucpgfkqahzddi37ktceo3ah7ngmcopnpyyd.onion/
  [5]: https://torrentfreak.com/which-vpn-providers-really-take-anonymity-seriously-111007/
+ [6]: https://torrentfreak.com/best-vpn-anonymous-no-logging/
  [7]: https://www.eff.org/issues/mandatory-data-retention/
  [9]: https://openvpn.net/index.php/open-source/documentation/manuals/65-openvpn-20x-manpage.html
  [10]: https://openvpn.net/index.php/open-source/documentation/howto.html
@@ -155,5 +157,6 @@ Here are some additional questions that you might ask, followed by expected answ
  [26]: #q16
  [27]: #q17
  [28]: #q18
+ [29]: http://xy5d2mmnh6zjnroce4yk7njlkyafi7tkrameybxu43rgsg5ywhnelmad.onion
  [30]: https://benchmarks.cisecurity.org/en-us/?route=downloads.browse.category.benchmarks.os.linux.redhat
  [31]: https://nsacyber.github.io/publications.html
