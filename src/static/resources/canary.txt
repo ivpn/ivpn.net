@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2023-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 819525
-hash: 00000000000000000003cff4609cc995c869f55ea1d2642174ef56a4e62ebf79
+height: 824110
+hash: 00000000000000000001472dcc8a397ee68c0060b4a8db5341e0330f0fa25ec4
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-AstraZeneca ties up with AI biologics company to develop cancer drug
-Deal with Absci is the latest between big pharma and tech companies to build new disease treatments
+A comprehensive round-up of all the 2024 investment outlook reports (updated)
+Blogging as a service
 
-Canadian pension giant warns against UK plan to push schemes into private equity
-Head of CPPIB says key to success of fund’s model is ‘freedom to invest wherever we see the best chance of returns’
+Listener mailbag with Martin Wolf and more
+FT journalists answer your questions!
 
-EY claims success in using AI to find audit frauds
-Big Four firm says suspicious activity quickly spotted but industry disagrees about relying on the new technology
+Put your own probate to the test
+Your estate’s executors will thank you
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmVsGZ8ACgkQisFrnrZH
-umkclggAwSiqDCVbz36U1JdL3oEvY0P7HvQ+544yiCDP43TQNpaYP8jHy4NL/Idt
-CbwZqmqe2nKpE7+z86PyROUjjUiMDT2kbyvHsdSQNCdaIyZ8k+FRL8riJW+YZyrS
-FbxcN8Vl9bUjeiUDGdIJyXnnR3+p/cDiqZ9xGJyLCdPgnHuYJzjQVPKzSHQ4j8du
-CfZ9SOoPLR5NWO+o8eLvcIY5CEDwp9cfFB6utVmK66cEQIBeBCHP3mhwkrAMHDxB
-5zQZ2Z3ohczZCMQ0kURLRi0wuLfkFBRu+VJX0OYW/Df+5C5KAqRxuRCA2d+S3bi7
-bKzAgLzw0M5VBz83Cq5mh8mk/Lk4qQ==
-=eIu1
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmWU+B4ACgkQisFrnrZH
+umnXbAgAjmkf0i1I62YHZPg18KdBXrWQYYWz4IUIhFFsTGgRLnV2njOPqhbeOjFG
+nejJWem8U/mx7YSNiOPTCqZUBiwhMS1YdcgN+wM27aMwGp4fT9rZ3NGeHCNLFJTk
+XVgLyWcvuVfsHzPtjArE+0xXDt+0bDYLtoLU9LZaDzeyOoLO1Ydu8w5SqqXYPEdQ
+iSzE+3LJHaD7EblY81dO0lwvhEn34jR1ZK5+usEm42NAst5KNG1qyl0xi7BMUU/F
+TM2Jvjx8RCEKSpQ0pIWiKAmNkWUdfzyMSJ+PFS2/FN6imxbRxKxGFZydnMMx0WEK
+cXXpJhDiuG+A0mroTy96lusdMUtooA==
+=/LDv
 -----END PGP SIGNATURE-----
 
 
