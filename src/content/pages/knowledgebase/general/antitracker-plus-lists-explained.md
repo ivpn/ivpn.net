@@ -74,7 +74,9 @@ The option also exists to select a single list for blocking instead of the colle
 * **Developer Dan Ads + Tracking** - "A programmatically expanded list of hosts used for advertisements and tracking"
 * **Steven Black Unified = Ads + Malware**
 * **1Hosts Xtra** - "extremly aggressive & restrictive"
+* **HaGeZi Multi Light** - "Cleans the Internet and protects your privacy! Blocks Ads, Tracking, Metrics, some Malware and Fake."
 * **HaGeZi Multi Pro** - "Cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Coins and other 'Crap'."
+* **HaGeZi Multi Pro++** - "Aggressive[ly] cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Coins and other 'Crap'."
 * **HaGeZi Multi Ultimate** - "It may contain false positive domains that limit functionality. Therefore it should only be used by experienced users."
 
 <br />

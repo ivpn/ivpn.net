@@ -343,7 +343,6 @@ export default {
                 if( URL ){
                     JSCookie.set('lmh', this.multihop , { expires: 0.5, })
                     JSCookie.set('lpv', this.privateKey, { expires: 0.5, })
-                    console.log(this.$store.state.auth);
                     window.location = URL;
                 }
                 this.validation.submit = true;

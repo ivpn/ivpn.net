@@ -30,6 +30,7 @@ import ThankYouLightView from '@/views/Account/ThankYouLight.vue'
 import InvoiceView from '@/views/Account/Invoice.vue'
 import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
+import DeviceManagementView from '@/views/Account/DeviceManagement.vue'
 
 import InternalErrorView from '../views/500.vue'
 
@@ -298,7 +299,15 @@ const routes = [
     {
         path: '/:catchAll(.*)',
         redirect: { name: '404' }
-    }
+    },
+    {
+        path: '/account/device-management',
+        name: 'device-management',
+        component: DeviceManagementView,
+        meta: {
+            title: 'IVPN Account - Device management',
+        }
+    },
 ]
 
 const router = createRouter({
