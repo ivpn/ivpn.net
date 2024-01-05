@@ -525,9 +525,8 @@ export default {
 
     //Device management
     async getSessions(payload) {
-        return await this.Get(
+        return await this.Post(
             '/web/session/get-all',
-            process.env.MIX_APP_API_URL,
         );
     },
 

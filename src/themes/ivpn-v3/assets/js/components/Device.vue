@@ -32,7 +32,6 @@ export default {
     },
     methods: {
         deleteDevice() {
-            console.log("emit delete device");
             this.$emit("deleteDevice", { token: this.token });
         },
     },
