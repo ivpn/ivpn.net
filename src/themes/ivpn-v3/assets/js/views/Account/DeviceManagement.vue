@@ -14,11 +14,6 @@
         </div>
 
         <div v-if="account.is_active">
-            <section>
-                <h2>Device Management</h2>
-            </section>
-
-           
 
             <section v-if="!isLoaded || inProgress">
                 <spinner fill="#398fe6" width="32" height="32" />
@@ -26,33 +21,47 @@
 
 
             <section v-if="!account.device_management">
-                <p>Device management is disabled</p>
+                <h3>Device management is disabled</h3>
+                <p>When enabled, all devices will be logged out and need to be re-added</p>
+                <p>The device name will be generated from a static name list, no sensible data about your device is stored</p>
+                <p>We suggest storing the device identifiers and the device pairs safely and with encryption so you can identify and remove devices when you don’t have access to them</p>
+
                 <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">Enable device management</a>
             </section>
             <section v-else>
-                <a class="btn btn-solid btn-big" href="#" @click="disableDeviceManagement">Disable device management</a>
+                <a class="btn btn-solid btn-big" href="#" @click="confirmDisableDeviceManagement">Disable device management</a>
             </section>
 
             <section v-if="account.device_management && isLoaded && !inProgress">
-
-                <div>
-                    <device
-                        v-for="(device, index) in sessions.sessions"
-                        :key="index"
-                        v-on:deleteDevice="confirmDelete"
-                        :name="device.device_name"
-                        :token="device.token"
-                    ></device>
-                </div>
-            
-                <section v-if="sessions.sessions && sessions.sessions.length === 0 && isLoaded && !inProgress">
+                <section v-if="sessions.sessions && sessions.sessions.length > 0">
                     <p>
-                        There are no devices available to display.
+                        {{ sessions.sessions.length }}/{{ account.product.max_device }} devices added 
+                        <a class="logout-all" href="#" @click="confirmLogoutDevices">Logout all devices</a>
                     </p>
+                    <div>
+                        <device
+                            v-for="(device, index) in sessions.sessions"
+                            :key="index"
+                            v-on:deleteDevice="confirmDelete"
+                            :name="device.device_name"
+                            :token="device.token"
+                            :timestamp="device.created_at"
+                        ></device>
+                    </div>
+                </section>
+            
+                <section v-else>
+                    <p>All your sessions are now logged out</p>
+                    <p>You need to add your devices again so you can connect to the service</p>
+                    <p>Devices will show up in the dashboard once they are added</p>
+                </section>
+
+                <section v-if="account.product.max_device == 2">
+                    <p>To increase your device limit to 7 <a href="https://www.ivpn.net/account/">change your Product</a> to IVPN Pro</p>
                 </section>
             </section>
 
-
+ 
         
 
             <section>
@@ -110,13 +119,22 @@ export default {
                 data: data,
             });
         },
+        confirmLogoutDevices(data) {
+            this.$store.commit("popup/show", {
+                type: "logout-devices",
+                data: data,
+            });
+        },
+        confirmDisableDeviceManagement(data) {
+            this.$store.commit("popup/show", {
+                type: "disable-device-management",
+                data: data,
+            });
+        },
         async enableDeviceManagement(){
             await this.$store.dispatch("account/enableDeviceManagement");
             await this.$store.dispatch("sessions/load");
         },
-        disableDeviceManagement(){
-            this.$store.dispatch("account/disableDeviceManagement");
-        }
     },
 };
 </script>
@@ -140,5 +158,10 @@ ul {
     font-family: $font-main-mono;
     font-size: 16px;
     line-height: 28px;    
+}
+
+.logout-all{
+    color:red;
+    float:right;
 }
 </style>
