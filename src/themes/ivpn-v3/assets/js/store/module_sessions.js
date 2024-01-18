@@ -101,9 +101,31 @@ export default {
 
           context.commit('failed', { error })
       }
-  },
+    },
+
+    async deleteSessions(context) {
+
+      context.commit('started')
+      
+      try {
+          await Api.deleteSessions();
+          let sessions = await Api.getSessions(context)
+          context.commit('done', {
+              sessions: sessions,
+          })
 
 
+      } catch (error) {
+
+          if (error.status == StatusErrNotLoggedIn) {
+              context.commit('done', {})
+              console.log("error", error)
+              return;
+          }
+
+          context.commit('failed', { error })
+      }
+    },
 
     clear(context) {
         context.commit('clear')
