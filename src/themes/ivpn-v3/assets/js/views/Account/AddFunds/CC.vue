@@ -1,5 +1,8 @@
 <template>
     <div class="payment-form">
+        <div v-if="this.cardFailedVerification">
+            <p class="error">There was an issue with your card. Please try again.</p>
+        </div>
         <div v-if="braintree != null">
             <div
                 v-if="captchaImage"
@@ -37,13 +40,11 @@
                                 fill="#FFFFFF"
                             />Continue
                         </button>
-                        <button class="btn btn-icon" @click.prevent="cancelCaptcha">
-                            Cancel
-                        </button>
+                    
                     </div>
                 </form>
             </div>
-            <form v-else @submit.prevent="makePayment()">
+            <form v-else v-if="!this.cardFailedVerification" @submit.prevent="makePayment()">
                 <braintree-cc
                     :braintree="braintree"
                     v-bind:amount="price.price"
@@ -115,6 +116,7 @@ export default {
             captchaImage: null,            
             captchaPaymentMethod: null,
             captchaValue: "",
+            cardFailedVerification: false,
         };
     },
     async created() {
@@ -142,7 +144,6 @@ export default {
     methods: {
         async makePayment() {
             let paymentMethod = null;
-
             if (this.captchaPaymentMethod != null) {
                 paymentMethod = this.captchaPaymentMethod;
             } else {
@@ -153,6 +154,7 @@ export default {
             }
 
             if (!paymentMethod) {
+                this.cardFailedVerification = true;
                 return;
             }
 
