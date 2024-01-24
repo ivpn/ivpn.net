@@ -6,12 +6,6 @@
                 <icon-trash color="#398FE6"></icon-trash> Delete
             </button>
         </div>
-        <div class="wireguard-key__row">
-            <div class="wireguard-key__public-key">
-                <label>Created at</label>
-                <div><small>{{ $filters.formatDeviceDate(timestamp) }}</small></div>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -25,10 +19,6 @@ export default {
             type: String,
         },
         token: {
-            required: true,
-            type: String,
-        },
-        timestamp: {
             required: true,
             type: String,
         },

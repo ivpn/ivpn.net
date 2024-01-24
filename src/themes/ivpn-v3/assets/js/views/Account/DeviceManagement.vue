@@ -22,8 +22,7 @@
 
             <section v-if="!account.device_management">
                 <h3>Device management is disabled</h3>
-                <p>When enabled, all devices will be logged out and need to be re-added</p>
-                <p>The device name will be generated from a static name list, no sensible data about your device is stored</p>
+                <p>Enable device management to manage your devices and be able to log them out if needed</p>
                 <p>We suggest storing the device identifiers and the device pairs safely and with encryption so you can identify and remove devices when you don’t have access to them</p>
 
                 <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">Enable device management</a>
@@ -36,7 +35,7 @@
                 <section v-if="sessions.sessions && sessions.sessions.length > 0">
                     <p>
                         {{ sessions.sessions.length }}/{{ account.product.max_device }} devices added 
-                        <a class="logout-all" href="#" @click="confirmLogoutDevices">Logout all devices</a>
+                        <a class="logout-all" href="#" @click="confirmLogoutDevices">Log out from all devices"</a>
                     </p>
                     <div>
                         <device
@@ -45,7 +44,6 @@
                             v-on:deleteDevice="confirmDelete"
                             :name="device.device_name"
                             :token="device.token"
-                            :timestamp="device.created_at"
                         ></device>
                     </div>
                 </section>
