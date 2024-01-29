@@ -5,6 +5,7 @@ url: /privacy-guides/isp-netflow-surveillance-and-vpn/
 section: Basic
 weight: 10
 date: 2024-01-08T00:00:00+00:00
+update: 2024-01-29T00:00:00+00:00
 layout: guides-details
 articles: [
   {
@@ -61,6 +62,8 @@ Unfortunately, a 2022 [article from Vice][Augury] has reveled that a US-based pr
 
 Using the puzzle analogy again, Team Cymru has access to most of the puzzle pieces. While a single piece doesn't hold enough information in the context of using a VPN, having many of them could potentially expose your Internet usage **if they receive NetFlow exports from both your ISP and your VPN provider ISP**. For example, traffic correlation using the packets timing becomes a lot easier when you know the delay between the user and their VPN provider acting as a proxy.
 
+In 2024, the NSA [stated to a senator][senate] that they were buying NetFlow exports from ISPs as long as it involves traffic to or from the United States.
+
 ### NetFlow and anonymization
 
 It is not possible to say which ISP shares their NetFlow data.
@@ -116,3 +119,4 @@ For our readers with some network skills, here is a simple experiment to underst
 [threat_model]: https://www.ivpn.net/privacy-guides/will-a-vpn-protect-me/
 [cymru_facts]: https://www.team-cymru.com/post/team-cymru-myth-vs-fact
 [gdpr]: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
+[senate]: https://www.wyden.senate.gov/news/press-releases/wyden-releases-documents-confirming-the-nsa-buys-americans-internet-browsing-records-calls-on-intelligence-community-to-stop-buying-us-data-obtained-unlawfully-from-data-brokers-violating-recent-ftc-order
