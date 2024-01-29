@@ -1,7 +1,7 @@
 <template>
     <div>
       <p>You will be logged out from all your devices.</p>
-      <p>Are you sure you want to log out from all devices"?</p>
+      <p>Are you sure you want to log out from all devices?</p>
       
       <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
       <button @click.prevent="logoutDevices" class="btn btn-solid">Yes</button>
