@@ -57,7 +57,7 @@
                 </section>
 
                 <section v-if="account.product.max_device == 2">
-                    <p>To increase your device limit to 7 <a href="https://www.ivpn.net/account/">change your Product</a> to IVPN Pro</p>
+                    <p>To increase your device limit to 7 <a href="https://www.ivpn.net/account/">change your Product</a> to IVPN Pro.</p>
                 </section>
             </section>
 
