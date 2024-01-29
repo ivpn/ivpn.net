@@ -21,9 +21,9 @@
 
 
             <section v-if="!account.device_management">
-                <h3>Device management is disabled</h3>
-                <p>Enable device management to manage your devices and be able to log them out if needed</p>
-                <p>We suggest storing the device identifiers and the device pairs safely and with encryption so you can identify and remove devices when you don’t have access to them</p>
+                <h3>Device management is disabled.</h3>
+                <p>Enable device management to manage your devices and be able to log them out if needed.</p>
+                <p>We suggest storing the device identifiers and the device pairs safely and with encryption so you can identify and remove devices when you don’t have access to them.</p>
 
                 <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">Enable device management</a>
             </section>
@@ -34,8 +34,10 @@
             <section v-if="account.device_management && isLoaded && !inProgress">
                 <section v-if="sessions.sessions && sessions.sessions.length > 0">
                     <p>
+                        <a class="logout-all" href="#" @click="confirmLogoutDevices">Log out from all devices</a>
+                    </p>
+                    <p>
                         {{ sessions.sessions.length }}/{{ account.product.max_device }} devices added 
-                        <a class="logout-all" href="#" @click="confirmLogoutDevices">Log out from all devices"</a>
                     </p>
                     <div>
                         <device
@@ -49,9 +51,9 @@
                 </section>
             
                 <section v-else>
-                    <p>All your sessions are now logged out</p>
-                    <p>You need to add your devices again so you can connect to the service</p>
-                    <p>Devices will show up in the dashboard once they are added</p>
+                    <p>You are logged out from all your devices.</p>
+                    <p>Log in to the IVPN app to add a device and connect to the service.</p>
+                    <p>Your devices will be displayed here once they are added.</p>
                 </section>
 
                 <section v-if="account.product.max_device == 2">
@@ -160,6 +162,5 @@ ul {
 
 .logout-all{
     color:red;
-    float:right;
 }
 </style>
