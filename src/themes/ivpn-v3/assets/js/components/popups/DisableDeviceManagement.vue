@@ -1,8 +1,8 @@
 <template>
     <div>
-      <p>Your sessions won’t be logged out.</p>
-      <p>You won’t be able to access device management.</p>
-      <p>To re-enable it, you need to go through the opt-in process again.</p>
+      <p>Please note - after disabling Device management:</p>
+      <p>You won’t be logged out from your devices.</p>
+      <p>You won’t be able to manage your devices on your dashboard.</p>
       
       <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
       <button @click.prevent="disableDeviceManagement" class="btn btn-solid">Yes</button>
