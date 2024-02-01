@@ -32,16 +32,16 @@
             </section>
 
             <section v-if="account.device_management && isLoaded && !inProgress">
-                <section v-if="sessions.sessions && sessions.sessions.length > 0">
+                <section v-if="sessions && sessions.length > 0">
                     <p>
                         <a class="logout-all" href="#" @click="confirmLogoutDevices">Log out from all devices</a>
                     </p>
                     <p>
-                        {{ sessions.sessions.length }}/{{ account.product.max_device }} devices added 
+                        {{ sessions.length }}/{{ account.product.max_device }} devices added 
                     </p>
                     <div>
                         <device
-                            v-for="(device, index) in sessions.sessions"
+                            v-for="(device, index) in sessions"
                             :key="index"
                             v-on:deleteDevice="confirmDelete"
                             :name="device.device_name"
