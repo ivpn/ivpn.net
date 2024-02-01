@@ -63,7 +63,7 @@ export default {
         try {
             let sessions = await Api.getSessions(context)
             context.commit('done', {
-                sessions: sessions,
+                sessions: sessions.sessions,
             })
 
 
@@ -87,7 +87,7 @@ export default {
           await Api.deleteSession(token);
           let sessions = await Api.getSessions(context)
           context.commit('done', {
-              sessions: sessions,
+              sessions: sessions.sessions,
           })
 
 
@@ -111,7 +111,7 @@ export default {
           await Api.deleteSessions();
           let sessions = await Api.getSessions(context)
           context.commit('done', {
-              sessions: sessions,
+              sessions: sessions.sessions,
           })
 
 
