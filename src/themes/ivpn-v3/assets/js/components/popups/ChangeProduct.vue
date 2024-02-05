@@ -1,8 +1,8 @@
 <template>
     <div>
-      <p>IVPN Standard enables VPN use on 2 devices. When initiating a plan change, all active sessions will be terminated and logged out from your devices. You can set up new sessions after. Please confirm you wish to proceed.</p>
+      <p>IVPN Standard allows VPN access on 2 devices. Initiating a plan change will log you out from all active devices. You can log in to new devices afterwards. Please confirm to proceed.</p>
       <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
-      <button @click.prevent="deleteSessions" class="btn btn-solid">Yes</button>
+      <button @click.prevent="deleteSessions" class="btn btn-solid">Confirm</button>
       <button @click.prevent="closeDialog" class="btn btn-border">Cancel</button>
     </div>
   </template>

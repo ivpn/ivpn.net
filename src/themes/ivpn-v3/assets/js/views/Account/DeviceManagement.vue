@@ -49,7 +49,7 @@
                 </section>
             
                 <section v-else>
-                    <h3>Device management is enabled</h3>
+                    <h3>Device management is enabled.</h3>
                     <p>You are currently not logged in to the service on any device.</p>
                     <p>Please <a href="/account">log in</a> to the IVPN app to add a device. Once added, your device identifiers will appear on this page.</p>
                 </section>
