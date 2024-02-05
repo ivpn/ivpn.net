@@ -22,20 +22,15 @@
 
             <section v-if="!account.device_management">
                 <h3>Device management is disabled.</h3>
-                <p>Enable device management to manage your devices and be able to log them out if needed.</p>
-                <p>We suggest storing the device identifiers and the device pairs safely and with encryption so you can identify and remove devices when you don’t have access to them.</p>
-
+                <p>When enabled, you can review devices logged into the service and remotely log them out as needed.</p>
+                <p>We recommend securely storing device identifiers with encryption to identify and disconnect devices when you don't have access to them.</p>
+                <p>Learn more about this feature and its potential privacy implications <a href="#">here</a>.</p>
                 <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">Enable device management</a>
-            </section>
-            <section v-else>
-                <a class="btn btn-solid btn-big" href="#" @click="confirmDisableDeviceManagement">Disable device management</a>
             </section>
 
             <section v-if="account.device_management && isLoaded && !inProgress">
                 <section v-if="sessions && sessions.length > 0">
-                    <p>
-                        <a class="logout-all" href="#" @click="confirmLogoutDevices">Log out from all devices</a>
-                    </p>
+                    <h2>Active devices</h2>
                     <p>
                         {{ sessions.length }}/{{ account.product.max_device }} devices added 
                     </p>
@@ -48,32 +43,24 @@
                             :token="device.token"
                         ></device>
                     </div>
+                    <p class="logout-all">
+                        <a  href="#" @click="confirmLogoutDevices">Log out from all devices</a>
+                    </p>
                 </section>
             
                 <section v-else>
-                    <p>You are logged out from all your devices.</p>
-                    <p>Log in to the IVPN app to add a device and connect to the service.</p>
-                    <p>Your devices will be displayed here once they are added.</p>
+                    <h3>Device management is enabled</h3>
+                    <p>You are currently not logged in to the service on any device.</p>
+                    <p>Please <a href="/account">log in</a> to the IVPN app to add a device. Once added, your device identifiers will appear on this page.</p>
                 </section>
 
-                <section v-if="account.product.max_device == 2">
+                <section v-if="account.product.max_device == 2 && sessions && sessions.length > 0">
                     <p>To increase your device limit to 7 <a href="/account/change-product">change your Product</a> to IVPN Pro.</p>
                 </section>
             </section>
 
- 
-        
-
-            <section>
-                <h3>Useful links</h3>
-                <ul>
-                    <li>
-                        <a href="/status/">WireGuard server list</a>
-                    </li>
-                    <li>
-                        <a href="/knowledgebase/general/wireguard-faq/">WireGuard FAQ</a>
-                    </li>
-                </ul>
+            <section v-if="account.device_management">
+                <a class="btn btn-solid btn-big" href="#" @click="confirmDisableDeviceManagement">Disable device management</a>
             </section>
         </div>
     </div>
@@ -161,6 +148,15 @@ ul {
 }
 
 .logout-all{
+    margin-top:20px;
+}
+
+.logout-all a{
     color:red;
 }
+
+section:last-child {
+  margin-bottom: 10px;
+}
+
 </style>
