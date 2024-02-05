@@ -5,7 +5,7 @@
       <p>You won’t be able to manage your devices on your dashboard.</p>
       
       <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
-      <button @click.prevent="disableDeviceManagement" class="btn btn-solid">Yes</button>
+      <button @click.prevent="disableDeviceManagement" class="btn btn-solid">Proceed</button>
       <button @click.prevent="closeDialog" class="btn btn-border">Cancel</button>
     </div>
   </template>
