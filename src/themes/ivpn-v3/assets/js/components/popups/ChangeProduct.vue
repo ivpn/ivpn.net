@@ -31,7 +31,6 @@
       },
       methods: {
         async deleteSessions() {
-          await this.$store.dispatch("sessions/deleteSessions")
           await this.$store.dispatch("product/change",this.data);
   
           if (!this.error) {
