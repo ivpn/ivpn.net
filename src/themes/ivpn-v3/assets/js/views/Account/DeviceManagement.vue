@@ -24,7 +24,7 @@
                 <h3>Device management is disabled.</h3>
                 <p>When enabled, you can review devices logged into the service and remotely log them out as needed.</p>
                 <p>We recommend securely storing device identifiers with encryption to identify and disconnect devices when you don't have access to them.</p>
-                <p>Learn more about this feature and its potential privacy implications <a href="#">here</a>.</p>
+                <p>Learn more about this feature and its potential privacy implications <a href="/knowledgebase/general/device-management-faq/">here</a>.</p>
                 <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">Enable device management</a>
             </section>
 
