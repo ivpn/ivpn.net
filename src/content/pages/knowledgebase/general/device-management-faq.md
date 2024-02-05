@@ -12,7 +12,7 @@ weight: 199
 
 ### What is Device Management?
 
-Device Management is an opt-in (disabled by default) feature that allows you to see the number and the list of devices that are currently added to your IVPN account (logged in to the IVPN app) and log specific or all devices out directly from the Client Area on our website.
+Device Management is an opt-in (disabled by default) feature that allows you to see the number and the list of devices that are currently added to your IVPN account (logged in to the IVPN app) and log specific or all devices out directly from the Account area on our website.
 
 ### What information do you store for Device Management?
 
@@ -24,7 +24,7 @@ When Device management is enabled, entries in the temporary record table used fo
 Device Management is only available for accounts that were created after November 2020 (account ID format: i-XXXX-XXXX-XXXX). If you have an IVPN subscription created before this date (account ID format: ivpnXXXXXXXX) and wish to make use of the feature, contact our customer service to help you make the switch.
 </div>
 
-To enable the feature, log in to your [Client Area](/account/login#id) - `Device Management` tab and click on the `Enable device management` button.
+To enable the feature, log in to the [Account](/account/login#id) area - `Device Management` tab and click on the `Enable device management` button.
 
 ![](/images-static/uploads/device-management-1.png)
 
@@ -46,7 +46,7 @@ Following the list order above, the first device that is logged in to the IVPN a
 
 Devices that were already logged in to the IVPN app prior to the activation of Device Management will be assigned the names in the order you have authenticated them in the past, e.g. the very first device you have logged in to the IVPN app on will be named “**Silent Circuit**”, the second “**Infinite Cipher**” and so on.
 
-We recommend storing these device identifiers and the device pairs safely, e.g. in open-source password managers with strong encryption, so you can easily identify and remove devices when you don’t have access to them. For extra security, you can [enable 2FA](/knowledgebase/general/do-you-offer-two-factor-authentication/) for both Client Area and IVPN apps authentication.
+We recommend storing these device identifiers and the device pairs safely, e.g. in open-source password managers with strong encryption, so you can easily identify and remove devices when you don’t have access to them. For extra security, you can [enable 2FA](/knowledgebase/general/do-you-offer-two-factor-authentication/) for both Account area and IVPN apps authentication.
 
 ### Where can I find my device name?
 
@@ -58,7 +58,7 @@ It can also be retrieved using the `ivpn account` CLI/terminal command on your d
 
 ### How can I delete (log out) my devices?
 
-- In the [Client Area](/account/login#id) - `Device Management` tab, locate the required device and click on the `Delete` button. Use the `Log out from all devices` button to log all of your devices out and reset the device counter to zero.
+- In your [Account](/account/login#id) area - `Device Management` tab, locate the required device and click on the `Delete` button. Use the `Log out from all devices` button to log all of your devices out and reset the device counter to zero.
 
 ![](/images-static/uploads/device-management-3.png)
 
