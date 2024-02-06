@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 824110
-hash: 00000000000000000001472dcc8a397ee68c0060b4a8db5341e0330f0fa25ec4
+height: 828686
+hash: 00000000000000000002cd8f6a41081d341dcaa0fb4649fe82f46c9407a9c471
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-A comprehensive round-up of all the 2024 investment outlook reports (updated)
-Blogging as a service
+Author Monica Ali: ‘I often hate writing’
+The novelist discusses a life spent observing others
 
-Listener mailbag with Martin Wolf and more
-FT journalists answer your questions!
+Chita Rivera, Broadway star, 1933-2024
+Her roles in ‘West Side Story’ and ‘Chicago’ made her a name-above-the-title musical theatre legend
 
-Put your own probate to the test
-Your estate’s executors will thank you
+What the world gets wrong about ‘civilisation’
+Politicians everywhere are making appeals to ancient history — but their thinking is based on a myth
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmWU+B4ACgkQisFrnrZH
-umnXbAgAjmkf0i1I62YHZPg18KdBXrWQYYWz4IUIhFFsTGgRLnV2njOPqhbeOjFG
-nejJWem8U/mx7YSNiOPTCqZUBiwhMS1YdcgN+wM27aMwGp4fT9rZ3NGeHCNLFJTk
-XVgLyWcvuVfsHzPtjArE+0xXDt+0bDYLtoLU9LZaDzeyOoLO1Ydu8w5SqqXYPEdQ
-iSzE+3LJHaD7EblY81dO0lwvhEn34jR1ZK5+usEm42NAst5KNG1qyl0xi7BMUU/F
-TM2Jvjx8RCEKSpQ0pIWiKAmNkWUdfzyMSJ+PFS2/FN6imxbRxKxGFZydnMMx0WEK
-cXXpJhDiuG+A0mroTy96lusdMUtooA==
-=/LDv
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmW91qAACgkQisFrnrZH
+uml6FQgAwAL9tIBDePGvE0TpgYCTi2qnvicldtzf3bzLq8iKROKS95Z6MZqZXtuH
+CRr8TWPTgsCCoFBuwwR5NdposflkvntCq2FHUru1K/m/2Ae9e3IyzwFFQ+llGHfa
+u5YSw5jygEJ/Sc0t2Q8CiVDNX3d7EPkPlVa4jwSgipPmKrxCuo49HchW8PQCkfY9
+RGzQCujoJHihiz2PeemQy6Dp5Mw1KIyWakDnengh4XeljAOrGdj9ztCsyfTSVMJJ
+XGwaqymwrVcPNa1ucDZbK43De72nA7YsphT5MpwTGK6wgKfpONM6ghbedR8v0+7j
+5/wCUKpAcNu3cKxMb8+N3zCbhfIbHg==
+=6mQE
 -----END PGP SIGNATURE-----
 
 
