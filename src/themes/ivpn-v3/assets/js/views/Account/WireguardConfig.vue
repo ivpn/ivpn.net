@@ -395,7 +395,7 @@ export default {
             this.query.country = value;
             this.query.city = null;
             this.query.host = null;
-            this.multihop_basename = event.target.value.split("_")[1];
+            this.multihop_basename = "mh-" + event.target.value.split("_")[1].toLowerCase();
             this.validation.exitCity = value == "";
             this.validation.exitServer = true;
             this.validation.multihop = true;
