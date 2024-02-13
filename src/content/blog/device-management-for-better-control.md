@@ -18,7 +18,7 @@ We are introducing IVPN device management, an opt-in (disabled by default) featu
 This step is a direct response to frequent customer requests for better device controls. IVPN plans come with a device limit - 2 and 7 for Standard and Pro respectively. Prior to this update, reaching this limit necessitated logging out from all devices in case unused ones were not identifiable or accessible.
 
 <figure>
-    <img width="600px" src="src/static/images-static/uploads/device_management_account_area.png"> 
+    <img width="600px" src="/images-static/uploads/device_management_account_area.png"> 
 </figure>
 
 After [activating device management](/account/device-management) in the Account dashboard on ivpn.net:
@@ -32,7 +32,7 @@ After [activating device management](/account/device-management) in the Account 
 * Disable Device Management option becomes available
 
 <figure>
-    <img width="600px" src="src/static/images-static/uploads/device_naming_android.png"> 
+    <img width="600px" src="/images-static/uploads/device_naming_android.png"> 
 </figure>
 
 Device management is disabled by default due to a minor privacy tradeoff consideration. When device management is activated, an extra field for the device name is added to the temporary record table which helps limiting the number of connected devices. However, these device names, allocated by IVPN, are non-unique and recycled from a set list of seven across all accounts. This approach guarantees that device names alone do not link back to your account in case an adversary was able to gain access to this specific data.
