@@ -328,8 +328,12 @@ export default {
         )
     },
 
-    async getBraintreeToken() {
-        let account = await this.Get('/web/accounts/braintree/client-token')
+    async getBraintreeToken(captchaID, captchaValue) {
+        let account = await this.Post('/web/accounts/braintree/client-token',
+        {
+            captcha_id: captchaID,
+            captcha: captchaValue
+        })
         return account.token
     },
 
