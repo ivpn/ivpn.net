@@ -1,16 +1,16 @@
 ---
-title: OPNSense OpenVPN Setup Guide
-listItem: OPNsense OpenVPN
-url: /setup/router/opnsense-openvpn/
+title: OPNsense OpenVPN Setup Guide (Legacy)
+listItem: OPNsense OpenVPN (Legacy)
+url: /setup/router/opnsense-openvpn-legacy/
 section: Router Setup
 platform: router
 layout: setup-article
-weight: 60
+weight: 62
 ---
-## OPNSense OpenVPN Setup Guide
+## OPNsense OpenVPN Setup Guide
 
 <div markdown="1" class="notice notice--warning">
-This guide was produced using OPNSense 21.7.1
+This guide was produced using OPNsense 21.7.1
 </div>
 
 ### Add a Certificate
