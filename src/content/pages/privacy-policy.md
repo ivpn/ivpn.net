@@ -120,11 +120,35 @@ IVPN is subject to EU law and is in compliance with the EU Data Protection Direc
 
 No third-parties have access to any of your data. We always use first or third-party tools we can host on our own servers in a protected and secure environment.
 
+### How do you limit the number of connected devices?
+
+IVPN plans limit the use of service to a set number of devices. The authentication server holds a temporary record of all account IDs that have at least one device logged in to an IVPN app. 
+When a customer logs into the IVPN app, an entry is added to the device session database containing the following:
+
+* a unique token, which is a 16 character alphanumeric string used to distinguish entries in the database
+
+* the corresponding account ID 
+
+When a customer attempts to log in to an IVPN app, a request is sent to our authentication servers to verify that the specified account ID is valid and has an active plan associated with it. As a next step, we check whether the number of tokens associated with customer’s account ID exceeds the permitted number of devices as per their purchased plan. If the number of tokens equal the number permitted by their plan, the authentication attempt is denied.
+
+We do not store timestamps, or any device related information that could be used to identify a device, such as product make, model, IMEI number, MAC address, etc. Entries from the device sessions database are permanently deleted when the customer logs out of the IVPN app, or when their account is terminated or deleted. If an adversary was able to gain access to this data, they could only determine which account IDs had been used to sign into at least one device at that time, and the number of devices logged in. This data does not, however, provide any useful information on past or present VPN connections initiated by the user of the account. 
+
+
 ### How do you limit simultaneous connections?
 
 To authenticate customers, our VPN servers send a request to a central authentication server, containing the customers account ID. The authentication server holds a temporary record of all connected customer ID's. When a customer connects to a VPN gateway, the authentication server checks how many active authentication records are already in the table for the account ID, if it exceeds the allowed number of simultaneous connections, then authentication is denied. When a user disconnects, the relevant record is permanently deleted. If an adversary was able to gain access to this data, they could only determine which account ID's were logged into the VPN network at that exact moment in time.
 
 As this data is only stored for the duration of the VPN session, if you or anyone requests to know how many connections you had at a specific time in the past, we couldn't tell you because we don't store it.
+
+### What information is stored for device management? 
+
+Device management is an opt-in (disabled by default) feature that helps customers review and remove devices that are authenticated to use the IVPN service.
+
+When device management is activated, an extra field for the device name is added to the temporary record table which helps limit the number of connected devices.
+IVPN assigns device names in a specific sequence (A-B-C-D-E-F-G) from a predefined list of seven names. If a device is logged out, its name becomes available as a next option for future assignment. For instance, if a customer with seven devices authenticated removes device F, D and then C, the new sequence becomes A-B-E-G-F-D-C, making the last three names available for new devices.
+
+This naming convention ensures device names cannot be used to identify your account in case an adversary was able to gain access to this specific data. 
+
 
 ### What information is retained when I stop using your service?
 When a VPN account is terminated on our network due to the subscription ending, non-payment or for any other reason, all data associated with that VPN account including the account itself (with the exception of the accounting data below) is automatically deleted after 90 days. After the account is deleted, the remaining accounting data below has no link to any past account ID. If you want to delete your data immediately, simply click on the 'delete account' button within the client area.
