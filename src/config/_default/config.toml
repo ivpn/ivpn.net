@@ -223,5 +223,5 @@ disableKinds = ["sitemap", "taxonomyTerm"]
     identifier = "mastodon"
     name = "Mastodon"
     url = "https://mastodon.social/@ivpn"
-    rel = "noopener"
+    rel = "noopener me"
     weight = 50
