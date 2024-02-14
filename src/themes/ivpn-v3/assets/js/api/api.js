@@ -512,4 +512,32 @@ export default {
         )
     },
 
+    //Device management
+    async getSessions(payload) {
+        return await this.Post(
+            '/web/session/get-all',
+        );
+    },
+
+    async enableDeviceManagement(payload) {
+        await this.Post(
+            '/web/accounts/device-management/enable',
+        );
+    },
+
+    async disableDeviceManagement(payload) {
+        await this.Post(
+            '/web/accounts/device-management/disable',
+        
+        );
+    },
+
+    async deleteSession(payload) {
+        return await this.Post('/web/session/delete', { session_token: payload.token})
+    },
+
+    async deleteSessions(payload) {
+        return await this.Post('/web/session/delete-all')
+    },
+
 }

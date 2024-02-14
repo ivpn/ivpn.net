@@ -44,6 +44,22 @@
                     v-if="type === 'totp-disable'"
                     :data="data"
                 ></totp-disable>
+                <delete-device
+                    v-if="type === 'delete-device'"
+                    :data="data"
+                ></delete-device>
+                <logout-devices
+                    v-if="type === 'logout-devices'"
+                    :data="data"
+                ></logout-devices>
+                <disable-device-management
+                    v-if="type === 'disable-device-management'"
+                    :data="data"
+                ></disable-device-management>
+                <change-product
+                    v-if="type === 'change-product'"
+                    :data="data"
+                ></change-product>
             </div>
             <div style='flex-grow:1' @click.self="close"></div>
         </div>
@@ -62,6 +78,10 @@ import SetAuthEmail from "@/components/popups/SetAuthEmail";
 import SetAuthAccountid from "@/components/popups/SetAuthAccountID";
 import TotpEnable from "@/components/popups/TotpEnable";
 import TotpDisable from "@/components/popups/TotpDisable";
+import DeleteDevice from "@/components/popups/DeleteDevice";
+import LogoutDevices from "@/components/popups/LogoutDevices";
+import DisableDeviceManagement from "@/components/popups/DisableDeviceManagement";
+import ChangeProduct from "@/components/popups/ChangeProduct";
 
 export default {
     computed: {
@@ -97,6 +117,10 @@ export default {
         SetAuthAccountid,
         TotpEnable,
         TotpDisable,
+        DeleteDevice,
+        LogoutDevices,
+        DisableDeviceManagement,
+        ChangeProduct,
     },
 };
 </script>

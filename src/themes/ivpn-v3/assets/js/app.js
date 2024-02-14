@@ -85,6 +85,13 @@ app.config.globalProperties.$filters = {
         }
 
         return format(value, 'MMM d, yyyy')
+    },
+    formatDeviceDate(value) {
+        if (typeof value == 'string') {
+            value = new Date(value)
+        }
+
+        return format(value, 'yyy-MM-d-HH-mm')
     }
 }
 

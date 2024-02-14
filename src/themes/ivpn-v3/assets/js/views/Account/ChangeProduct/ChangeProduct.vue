@@ -86,6 +86,7 @@
 import PriceBox from "@/components/PriceBox.vue";
 
 import { add, differenceInMinutes } from "date-fns";
+import { th } from "date-fns/locale";
 
 import { mapState } from "vuex";
 
@@ -112,12 +113,23 @@ export default {
         if( proPlan.is_locked ){
             window.location = "/account";
         }
+        this.$store.dispatch("sessions/load");
     },
     
 
     methods: {
         async selected(newProductName) {
+            if( newProductName == "IVPN Standard" && this.$store.state.sessions.sessions && this.$store.state.sessions.sessions.length > 2){
+                
+                this.$store.commit("popup/show", {
+                    type: "change-product",
+                    data: newProductName,  
+                });
+                return;
+            }
+            
             await this.$store.dispatch("product/change", newProductName);
+            
 
             if (this.error) {
                 return;

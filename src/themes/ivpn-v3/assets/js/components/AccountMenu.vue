@@ -12,6 +12,11 @@
                         >WireGuard</router-link
                     >
                 </li>
+                <li :class="{ 'is-active': isDeviceManagementRoute() }">
+                    <router-link :to="{ name: 'device-management' }"
+                        >Device Management</router-link
+                    >
+                </li>
                 <li class="expand"></li>
                 <li>
                     <router-link
@@ -37,7 +42,7 @@ export default {
             return this.$route.path;
         },
         shouldDisplay() {
-            return ["account", "wireguard", "wireguard-config"].includes(
+            return ["account", "wireguard", "wireguard-config","device-management"].includes(
                 this.$route.name
             );
         },
@@ -46,11 +51,15 @@ export default {
         isAccountRoute() {
             return (
                 this.currentRouteName.startsWith("/account") &&
-                !this.isWireGuardRoute() 
+                !this.isWireGuardRoute() && !this.isDeviceManagementRoute()
             );
         },
         isWireGuardRoute() {
             return this.currentRouteName.startsWith("/account/wireguard");
+        },
+    
+        isDeviceManagementRoute() {
+            return this.currentRouteName.startsWith("/account/device-management");
         },
     },
 };

@@ -31,7 +31,9 @@ export default {
     state: () => ({
         inProgress: false,
         error: null,
+        sessions: {},
     }),
+
 
     mutations: {
         clear(state) {
@@ -243,6 +245,29 @@ export default {
             context.commit('started')
             try {
                 await Api.resetPasswordCommit(token, password)
+
+                context.commit('done')
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+
+        async enableDeviceManagement(context) {
+            context.commit('started')
+            try {
+                await Api.enableDeviceManagement()
+                await context.dispatch('auth/reload', null, { root: true })
+
+                context.commit('done')
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+        async disableDeviceManagement(context) {
+            context.commit('started')
+            try {
+                await Api.disableDeviceManagement()
+                await context.dispatch('auth/reload', null, { root: true })
 
                 context.commit('done')
             } catch (error) {
