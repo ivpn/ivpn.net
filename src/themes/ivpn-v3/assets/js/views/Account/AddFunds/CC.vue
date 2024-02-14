@@ -94,7 +94,49 @@
                 width="48"
                 height="48"
             />
-            <div v-if="error" class="error-message">{{ error }}</div>
+            <div v-if="error" class="error-message">
+                <div v-if="captchaImage"
+                style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                ">
+                   
+                <p>Please solve the following captcha to continue.</p>
+                <p v-if="error && !hideError(error)" class="error">
+                    {{ error.message }}
+                </p>
+                <form @submit.prevent="createClientToken()">
+                    <div class="captcha" v-if="captchaImage">
+                        <div class="image-block">
+                            <img :src="captchaImage" />
+                        </div>
+                        <label for="login-captch"
+                            >Please enter the numbers you see above:</label
+                        >
+                        <input
+                            type="text"
+                            id="login-captch"
+                            v-model="captchaValue"
+                        />
+                        <button
+                            class="btn btn-solid btn-big make-payment"
+                        >
+                            <progress-spinner
+                                v-if="inProgress"
+                                width="32"
+                                height="32"
+                                fill="#FFFFFF"
+                            />Continue
+                        </button>
+                    
+                    </div>
+                </form>
+                </div>
+                <div v-else>
+                    {{ error.message }}
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -120,7 +162,7 @@ export default {
         };
     },
     async created() {
-        await this.$store.dispatch("braintree/init");
+        this.createClientToken();
     },
     components: {
         BraintreeCc,
@@ -143,6 +185,7 @@ export default {
     },
     methods: {
         async makePayment() {
+
             let paymentMethod = null;
             if (this.captchaPaymentMethod != null) {
                 paymentMethod = this.captchaPaymentMethod;
@@ -200,6 +243,31 @@ export default {
             this.captchaValue = "";
             await this.$store.dispatch("braintree/clear");            
         },
+
+        async createClientToken(){
+            await this.$store.dispatch("braintree/init",{
+                captchaID: this.captchaID,
+                captchaValue: this.captchaValue,
+            });
+            if (this.error) {
+                if (this.error.status == 70001 || this.error.status == 70002) {
+                    this.captchaID = this.error.captcha_id;
+                    this.captchaImage = this.error.captcha_image;
+                    this.captchaPaymentMethod = null;
+                } else {
+                    this.captchaID = null;
+                    this.captchaImage = null;
+                    this.captchaPaymentMethod = null;
+                }
+                this.captchaValue = "";
+                return;
+            }else{
+                this.captchaID = null;
+                this.captchaImage = null;
+                this.captchaPaymentMethod = null;
+                this.captchaValue = "";
+            }
+        }
     },
 };
 </script>
