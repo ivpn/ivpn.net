@@ -202,22 +202,26 @@ disableKinds = ["sitemap", "taxonomyTerm"]
     identifier = "reddit"
     name = "Reddit"
     url = "https://www.reddit.com/r/IVPN/"
+    rel = "noopener"
     weight = 20
 
   [[menu.footercolfour]]
     identifier = "twitter"
     name = "Twitter"
     url = "https://twitter.com/ivpnnet"
+    rel = "noopener"
     weight = 30
 
   [[menu.footercolfour]]
     identifier = "github"
     name = "GitHub"
     url = "https://github.com/ivpn"
+    rel = "noopener"
     weight = 40
   
   [[menu.footercolfour]]
     identifier = "mastodon"
     name = "Mastodon"
     url = "https://mastodon.social/@ivpn"
+    rel = "noopener"
     weight = 50
