@@ -38,7 +38,7 @@
                 {{ range .Site.Menus.footercolfour }}
                 <li>
                     <img width="24" height="25" src="{{ site.Params.cdnUrl }}/images/{{ .Identifier }}.svg" /><a
-                        href="{{ .URL }}" {{ with .Rel }}rel="{{ . }}"{{ end }}>{{ .Name }}</a>
+                        href="{{ .URL }}" {{ with .Params.rel }}rel="{{ . }}"{{ end }}>{{ .Name }}</a>
                 </li>
                 {{ end }}
             </ul>
