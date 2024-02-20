@@ -1,8 +1,69 @@
 <template>
     <div class="update-pm">
-        <h3>Set payment method</h3>
-        <div class="init-spinner" v-if="braintree == null">
-            <div v-if="error" class="error-message">{{ error.message }}</div>
+        <h3>Set payment method</h3> 
+        <div v-if="braintree == null">
+            <div v-if="error">
+                <div v-if="captchaImage"
+                style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                ">
+                   
+                <p>Please solve the following captcha to continue.</p>
+                <p v-if="error && !hideError(error)" class="error">
+                    {{ error.message }}
+                </p>
+                <form @submit.prevent="createClientToken()">
+                    <div class="captcha" v-if="captchaImage">
+                        <div class="image-block">
+                            <img :src="captchaImage" />
+                        </div>
+                        <label for="login-captch"
+                            >Please enter the numbers you see above:</label
+                        >
+                        <input
+                            type="text"
+                            id="login-captch"
+                            v-model="captchaValue"
+                        />
+                        <div class="popup-buttons">
+                        <button
+                            class="btn btn-solid btn-big make-payment"
+                        >
+                            <progress-spinner
+                                v-if="inProgress"
+                                width="32"
+                                height="32"
+                                fill="#FFFFFF"
+                            />Continue
+                        </button>
+
+                        <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+                        </div>
+                    
+                    </div>
+                </form>
+                </div>
+                <div v-else class="error-message">
+                    {{ error.message }}
+                    <div class="popup-buttons">
+                        <button
+                            class="btn btn-big btn-solid"
+                            @click.prevent="setPaymentMethod()"
+                            :disabled="!isReady"
+                        >
+                        <progress-spinner
+                            v-if="inProgress && braintree"
+                            width="32"
+                            height="32"
+                            fill="#FFFFFF"
+                        />Set Payment Method
+                        </button>
+                        <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+                    </div>
+                </div>
+            </div>
             <progress-spinner v-if="inProgress" id="progress-spinner" width="48" height="48" />
         </div>
         <div v-else>
@@ -33,8 +94,7 @@
                     </div>
                 </tab>
             </tabs>
-        </div>
-        <div class="popup-buttons">
+            <div class="popup-buttons">
             <button
                 class="btn btn-big btn-solid"
                 @click.prevent="setPaymentMethod()"
@@ -48,6 +108,7 @@
                 />Set Payment Method
             </button>
             <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+            </div>
         </div>
     </div>
 </template>
@@ -72,7 +133,11 @@ export default {
         return {
             ccValid: false,
             type: 'cc',
-            paypalPayload: null       
+            paypalPayload: null,
+            captchaID: null,
+            captchaImage: null,            
+            captchaPaymentMethod: null,
+            captchaValue: "",      
         }
     },
     props: {
@@ -106,8 +171,8 @@ export default {
             return false
         }
     },
-    created() {
-        this.$store.dispatch('braintree/init')
+    async created() {
+        this.createClientToken();
     },
     methods: {
         async setPaymentMethod() {
@@ -144,7 +209,35 @@ export default {
         },
         updateType(value) {
             this.type = value
-        }
+        },
+        async createClientToken(){
+            await this.$store.dispatch("braintree/init",{
+                captchaID: this.captchaID,
+                captchaValue: this.captchaValue,
+            });
+            if (this.error) {
+                if (this.error.status == 70001 || this.error.status == 70002) {
+                    this.captchaID = this.error.captcha_id;
+                    this.captchaImage = this.error.captcha_image;
+                    this.captchaPaymentMethod = null;
+                } else {
+                    this.captchaID = null;
+                    this.captchaImage = null;
+                    this.captchaPaymentMethod = null;
+                }
+                this.captchaValue = "";
+                return;
+            }else{
+                this.captchaID = null;
+                this.captchaImage = null;
+                this.captchaPaymentMethod = null;
+                this.captchaValue = "";
+            }
+            
+        },
+        hideError(error) {            
+            return error.status == 70001;
+        },
     },
 }
 </script>
@@ -174,5 +267,31 @@ export default {
 
 .tab-content {
     max-width: 532px;
+}
+.captcha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > * + * {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .image-block {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        background: #fffffff0;
+
+        a {
+            margin-left: 48px;
+        }
+    }
+
+    img {
+        flex-grow: 0;
+    }
 }
 </style>

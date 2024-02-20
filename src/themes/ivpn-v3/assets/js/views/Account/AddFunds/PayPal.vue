@@ -100,7 +100,7 @@
                 width="48"
                 height="48"
             />
-            <div v-if="error" class="error-message">
+            <div v-if="error">
                 <div v-if="captchaImage"
                 style="
                     display: flex;
@@ -139,7 +139,7 @@
                     </div>
                 </form>
                 </div>
-                <div v-else>
+                <div v-else class="error-message">
                     {{ error.message }}
                 </div>
             </div>
