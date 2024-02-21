@@ -1,6 +1,6 @@
 ---
-title: OPNsense OpenVPN Setup Guide (Legacy)
-listItem: OPNsense OpenVPN (Legacy)
+title: OPNsense OpenVPN Setup Guide (legacy)
+listItem: OPNsense OpenVPN (legacy)
 url: /setup/router/opnsense-openvpn-legacy/
 section: Router Setup
 platform: router
