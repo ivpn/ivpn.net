@@ -67,7 +67,10 @@
             <progress-spinner v-if="inProgress" id="progress-spinner" width="48" height="48" />
         </div>
         <div v-else>
-            <tabs @onTabChanged="updateType">
+            <p v-if="error" class="error-message">
+                {{ error.message }}
+            </p>
+            <tabs @onTabChanged="updateType" v-else>
                 <tab :selected="true" tabid="cc" name="Credit Card">
                     <braintree-cc v-if="!error"
                         :braintree="braintree"
@@ -75,9 +78,6 @@
                         ref="braintreeCC"
                         @valid-changed="ccValid = $event.value"
                     ></braintree-cc>
-                    <p v-else class="error-message">
-                        {{ error.message }}
-                    </p>
                 </tab>
                 <tab tabid="paypal" name="PayPal">
                     <p class='error' v-if="error"> {{ error.message }}</p>
@@ -148,7 +148,7 @@ export default {
     },
     watch: {
         type: function () {
-            this.$store.dispatch('braintree/clear')
+            this.$store.dispatch('braintree/clear') 
         }
     },
     computed: {
