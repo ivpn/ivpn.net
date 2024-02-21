@@ -14,7 +14,7 @@ RUN apt-get update  \
     && apt-get install -y nodejs \
     && apt-get update \
     && npm install --global yarn \
-    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.76.3/hugo_0.76.3_Linux-64bit.deb -o /tmp/hugo.deb \
+    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.79.1/hugo_0.79.1_Linux-64bit.deb -o /tmp/hugo.deb \
     && dpkg -i /tmp/hugo.deb \
     && rm /tmp/hugo.deb
 
