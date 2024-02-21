@@ -69,12 +69,15 @@
         <div v-else>
             <tabs @onTabChanged="updateType">
                 <tab :selected="true" tabid="cc" name="Credit Card">
-                    <braintree-cc
+                    <braintree-cc v-if="!error"
                         :braintree="braintree"
                         :error="error"
                         ref="braintreeCC"
                         @valid-changed="ccValid = $event.value"
                     ></braintree-cc>
+                    <p v-else class="error-message">
+                        {{ error.message }}
+                    </p>
                 </tab>
                 <tab tabid="paypal" name="PayPal">
                     <p class='error' v-if="error"> {{ error.message }}</p>
@@ -95,7 +98,7 @@
                 </tab>
             </tabs>
             <div class="popup-buttons">
-            <button
+            <button v-if="!error"
                 class="btn btn-big btn-solid"
                 @click.prevent="setPaymentMethod()"
                 :disabled="!isReady"
