@@ -17,7 +17,7 @@ When using OpenVPN we offer two solutions, V2Ray and Obfsproxy. For WireGuard, o
 Both solutions generally work well but you may find one solution is more performant and/or reliable depending on multiple variables relating to your location and the path your traffic takes to the VPN server. We recommend experimenting with both Obfsproxy and V2Ray options.
 
 <div markdown="1" class="notice notice--info">
-Please note that we do not have a solution for mobile devices running Android or iOS. Obfuscation protocols are currently supported only in the IVPN app for Windows, macOS and Linux.
+Obfuscation protocols are currently supported in the IVPN app for Windows, macOS, Linux and iOS (in beta). Adding the feature to the Android app is a work in progress.
 </div>
 
 ### Graphical Interface for Windows, macOS, and Linux
@@ -25,7 +25,7 @@ Please note that we do not have a solution for mobile devices running Android or
 1. Click on the `Settings` gear icon.
 2. Click on the `Connection` tab.
 3. Select the preferred obfuscation option from the `Obfuscation` drop-down list.
-4. Back out of `Settings` and connect the VPN.
+4. Exit `Settings` and connect to the VPN.
 
 ### Command-Line Interface for Windows, macOS, and Linux
 
@@ -43,6 +43,17 @@ Help is available with more **obfsproxy** & **V2Ray** options:
 ```
 ivpn connect -h
 ```
+
+### iOS
+
+<div markdown="1" class="notice notice--warning">
+Obfuscation with V2Ray on iOS is currently in <a href="/knowledgebase/ios/v2ray/" target="_blank">beta</a>.
+</div>
+
+1. Set the VPN protocol to `WireGuard`.
+2. Navigate to `Settings` - `Advanced` area.
+3. Toggle the `V2Ray` option on and select the preferred protocol.
+4. Exit `Settings` and connect to the VPN.
 
 ### Inter-Arrival Timing (IAT) Mode
 
