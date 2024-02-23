@@ -11,7 +11,7 @@ weight: 50
 # Obfuscation with V2Ray on iOS
 
 <div markdown="1" class="notice notice--warning">
-NOTE: Obfuscation with V2Ray on iOS is currently in beta.
+Obfuscation with V2Ray on iOS is currently in beta.
 </div>
 
 VPN obfuscation is a technique that masks VPN traffic to make it appear like standard internet traffic, helping to evade detection and bypass internet restrictions or censorship.
