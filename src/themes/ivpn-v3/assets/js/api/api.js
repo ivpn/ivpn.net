@@ -498,22 +498,6 @@ export default {
     },
 
     //
-    // Contact
-    //
-
-    async contactSupportUA(payload) {
-        await this.Post(
-            '/web/contact/supportua',
-            {
-                email: payload.email,
-                message: payload.message,
-                captcha_id: payload.captchaID,
-                captcha: payload.captchaValue
-            }
-        )
-    },
-
-    //
     // Light
     //
 
