@@ -185,10 +185,6 @@ export default {
     },
     methods: {
         async makePayment() {
-<<<<<<< HEAD
-
-=======
->>>>>>> bugfix/paypal-button-not-working-on-payment-update
             let paymentMethod = null;
             if (this.captchaPaymentMethod != null) {
                 paymentMethod = this.captchaPaymentMethod;
