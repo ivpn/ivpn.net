@@ -95,7 +95,7 @@
                             :braintree="braintree"
                             :error="error"
                             ref="braintreePaypal"
-                            v-model="paypalPayload"
+                            @payloadUpdated="proceed"
                         ></braintree-paypal>
                     </div>
                 </tab>
@@ -151,8 +151,8 @@ export default {
     },
     watch: {
         type: function () {
-            this.$store.dispatch('braintree/clear') 
-        }
+            this.$store.dispatch('braintree/clear')
+        },
     },
     computed: {
         ...mapState({
@@ -192,7 +192,7 @@ export default {
             }
 
             if (this.type == 'paypal') {
-                paymentMethod = this.paypalPayload
+                paymentMethod = this.paypalPayload;
             }
 
             if (!paymentMethod) {
@@ -209,6 +209,9 @@ export default {
             }
 
             this.closeDialog()
+        },
+        async proceed(payload) {
+            this.paypalPayload = payload;
         },
         closeDialog() {
             this.$store.commit('popup/close')
