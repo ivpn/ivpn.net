@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-03-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 828686
-hash: 00000000000000000002cd8f6a41081d341dcaa0fb4649fe82f46c9407a9c471
+height: 832923
+hash: 000000000000000000023f47c48101fcfe07cbd5eda1158f60e858a57774377e
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Author Monica Ali: ‘I often hate writing’
-The novelist discusses a life spent observing others
+Can Javier Milei rely on social media to shake up Argentina?
+The new president wants to use his popularity to force through a plan for radical austerity. But he risks political isolation
 
-Chita Rivera, Broadway star, 1933-2024
-Her roles in ‘West Side Story’ and ‘Chicago’ made her a name-above-the-title musical theatre legend
+Lemonade chief rounds on ‘naysayers’ who predicted insurance start-up’s demise
+Daniel Schreiber says cash levels are rising after more than 70% fall in share price since insurer’s IPO in 2020
 
-What the world gets wrong about ‘civilisation’
-Politicians everywhere are making appeals to ancient history — but their thinking is based on a myth
+‘Shrinking’ talent pool threatens health progress, warns science chief
+New Pasteur Institute head highlights risks posed by shortages of money, staff and political goodwill
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmW91qAACgkQisFrnrZH
-uml6FQgAwAL9tIBDePGvE0TpgYCTi2qnvicldtzf3bzLq8iKROKS95Z6MZqZXtuH
-CRr8TWPTgsCCoFBuwwR5NdposflkvntCq2FHUru1K/m/2Ae9e3IyzwFFQ+llGHfa
-u5YSw5jygEJ/Sc0t2Q8CiVDNX3d7EPkPlVa4jwSgipPmKrxCuo49HchW8PQCkfY9
-RGzQCujoJHihiz2PeemQy6Dp5Mw1KIyWakDnengh4XeljAOrGdj9ztCsyfTSVMJJ
-XGwaqymwrVcPNa1ucDZbK43De72nA7YsphT5MpwTGK6wgKfpONM6ghbedR8v0+7j
-5/wCUKpAcNu3cKxMb8+N3zCbhfIbHg==
-=6mQE
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmXkEiEACgkQisFrnrZH
+umm7/wf+IkTOdT9w/jmlS8jGWQIcN+MyLn7yXQd/5WK79w3wXCtEaDU2jaqueaLM
+avwV0leDd9QyHgNldXaQAT1Fpz70lHLpVi4s5kr07qRMhxbzQWwbK47nnMnE13hN
+8vJ32TN1+xpN2OyQ9JBpnkF+OfMNmJze7IIBIwv8Qs6Pl0Q9ctk1/zwdE3aHY4P/
+0MsPLK922keE/u8MYHglitMDe4uHs5wvlb/XMTNfvSO9RRmfElKCLaFMSckdPj1c
+/uk1EPJOXvRXojD3lbXCs91PgHMf+v7YrWxg9fEsxw7X5MykezV8yWgQxm75dBcT
+JA08SxKwgvu4ubn9bTspPBiGfDhC3g==
+=GzwY
 -----END PGP SIGNATURE-----
 
 
