@@ -165,10 +165,10 @@
 
 let products = {
         prices: [
-            { id: 'light.3hours', name: '3 hours', price: 0.1,sats: 500 },
-            { id: 'light.1day', name: '1 Day', price: 0.5,sats: 2000 },
-            { id: 'light.1week', name: '1 week', price: 1, sats: 5000 },
-            { id: 'light.1month', name: '1 month', price: 3,sats: 15000},
+            { id: 'light.3hours', name: '3 hours', price: 0.1,sats: 250 },
+            { id: 'light.1day', name: '1 Day', price: 0.5,sats: 1000 },
+            { id: 'light.1week', name: '1 week', price: 1, sats: 2500 },
+            { id: 'light.1month', name: '1 month', price: 3,sats: 7500},
         ]
 }
 
