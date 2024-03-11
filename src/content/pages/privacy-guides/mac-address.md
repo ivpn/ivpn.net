@@ -5,7 +5,7 @@ url: /privacy-guides/mac-address-privacy/
 section: Misc
 weight: 10
 date: 2024-03-08T00:00:15+00:00
-layout: misc
+layout: guides-details
 articles: [
   {
     title: "What is a VPN?",
@@ -19,7 +19,7 @@ articles: [
 ---
 In this guide, you will learn what type of tracking is done using MAC addresses, and what steps you can take to protect your privacy against such threats.
 
-# Introduction to MAC addresses
+## Introduction to MAC addresses
 
 The MAC address is used within local networks, at the Ethernet level, to identify network devices when exchanging data.
 
@@ -33,19 +33,19 @@ Network switches are relying on MAC address to figure which port to use when rel
 
 There is [a giant database](https://regauth.standards.ieee.org/standards-ra-web/pub/view.html) containing the MAC addresses of every individual device sold on the market. However, you may prefer to use a service with a simpler interface, just search for "MAC address database browser" in a search engine. Please mind that this database does not contain any personal information about people buying the devices, it is only a registry of all produced devices, their manufacturer and their identifier.
 
-# MAC address applications
+## MAC address applications
 
 The MAC address exists in the first place to allow network devices to exchange data between each other.
 
 However, as it identifies a machine on a local network, we have seen uses for wider purpose like tracking people in shopping centers, restrict networks to some machines or user identification in captive portals.
 
-## Quota and captive portals
+### Quota and captive portals
 
 Certain mechanisms rely on a MAC address to identify devices on a network, but such applications have shortcomings. It is easy to change your system MAC to another, and also easy to spoof someone's device MAC.
 
 Let me illustrate MAC spoofing. Let's say you are in a hotel providing a Wi-Fi hotspot, but it has an Internet use quota. It is likely the system is relying on the clients MAC addresses to assign the quota when no credentials are asked, in such cases, you could change your MAC to a random one to reset your quota. Even further, if you are required to pay to connect to the Internet and the system uses MAC addresses as identifiers, it could be easy to spoof the MAC address of someone who paid. This might be straightforward, but also illegal in most jurisdictions and may not work well while the two devices are connected simultaneously.
 
-## Customer tracking
+### Customer tracking
 
 A much more concerning use of MAC address is the tracking of customers in supermarkets / malls. Devices with Wi-Fi enabled, like smartphones, are regularly probing for access points by broadcasting their MAC address. This is holy grail for tracking customers, and was a popular technique during the 2010's.
 
@@ -62,13 +62,13 @@ If the center is big enough, it is possible to locate users within the building 
 
 Fortunately, smartphone system providers have added mechanisms to mitigate this tracking, more details on this in a section later in this guide.
 
-## Physical tracking
+### Physical tracking
 
 Edward Snowden reported that the [NSA used MAC addresses](https://www.wired.com/2014/08/edward-snowden/) to physically track people. If someone uses the same MAC address to connect to multiple public Wi-Fi within airports, train stations or any other open network that is at reach of a government agency, it becomes easy to know the time and location of a traveling device. This does not help to identify the person using the device though, the MAC address does not contain any personal information.
 
 There is no way to know if this is actively used in the wild, but MAC randomization protects against tracking.
 
-# Does the MAC address leaks on the Internet?
+## Does the MAC address leaks on the Internet?
 
 A MAC address is not shared beyond the local network because it is only used locally. If you connect to a website, the remote server will never know anything about MAC addresses from your local network.
 
@@ -76,19 +76,19 @@ As shown in the diagram below, the MAC address is used to carry data over the OS
 
 ![](/img/Tun-tap-osilayers-diagram.png)
 
-# Does a VPN protect your MAC address?
+## Does a VPN protect your MAC address?
 
 All commercial VPN providers are only offering an OSI Layer 3 VPN, it relays IP packets so the MAC address is not carried through the VPN.
 
 It is possible to create a VPN relaying the OSI Layer 2 and passing through Ethernet frames instead of IP packets. While this sort of VPN use does not have a specific name, multiple technologies provide this feature like VPLS or Ethernet bridging. They can virtually extend a network to other locations, and all devices on the network will see each other as if they were on the same local network. In practice, it is only useful for a couple of use cases, the most common is gaming using the "local network" mode with friends, but over the Internet. On this VPN, your MAC address is carried over to the VPN remote network.
 
-# IPv6 derived from MAC addresses
+## IPv6 derived from MAC addresses
 
 In the past, the IPv6 addresses the machines were assigning to themselves (in [SLAAC](https://www.networkacademy.io/ccna/ipv6/stateless-address-autoconfiguration-slaac) mode) were derived from the network interface MAC address. As IPv6 is used to communicate on the layer 3 this meant the MAC embedded in the IPv6 address itself were leaking to all remote servers.
 
 Fortunately, this problem was addressed [by adding extras IPv6 extensions](https://superuser.com/a/243713) to mitigate this issue using [temporary private addresses](https://blog.apnic.net/2020/05/20/getting-ipv6-private-addressing-right/). As of the writing of this article, most operating systems have implemented and enabled such a solution.
 
-# The case of Bluetooth tracking
+## The case of Bluetooth tracking
 
 Each Bluetooth device also has its own unique MAC address, which is a concern when it comes to data collection and analysis.
 
@@ -100,11 +100,11 @@ In parallel, there is a business tied to Bluetooth beacons being polled by appli
 
 If you do not want to be tracked through your Bluetooth devices, turn them off outside or keep them at home. If you only have a smartphone, do not keep Bluetooth enabled if you do not need it.
 
-# Operating System MAC randomization support
+## Operating System MAC randomization support
 
 Here is a list of the state of Wi-Fi and Ethernet MAC address randomization for each popular operating system.
 
-## Android (mobile OS)
+### Android (mobile OS)
 
 Android enabled random MAC for scanning since Android 8, but all devices supported changing the MAC address at this time as it was not a hardware requirement for Android devices.
 
@@ -114,15 +114,15 @@ Starting with Android 10, it became possible to randomize the MAC when connectin
 
 In Android 12, a new feature appeared that allows disposable random MAC addresses, but it only applies under specific circumstances as [explained in the documentation](https://source.android.com/docs/core/connect/wifi-mac-randomization-behavior).
 
-## iOS (Apple mobile OS)
+### iOS (Apple mobile OS)
 
 Apple implemented MAC randomization for scanning since the iPhone 5. However, [since iOS 14](https://support.apple.com/fr-fr/guide/security/secb9cb3140c/web) they added support for a stable random MAC per network. Each MAC is randomized every twenty-four hours. Keeping the same MAC for a day on a network allows to not break captive portals that may use your MAC for authentication, quota or payment.
 
-## macOS (Apple desktop OS)
+### macOS (Apple desktop OS)
 
 So far, macOS does not seem to support MAC address randomization.
 
-## Linux (desktop / mobile OS)
+### Linux (desktop / mobile OS)
 
 On popular Linux distributions, the MAC address is only randomized when scanning for networks, but not when connecting to an access point. Out of all Linux distributions we have investigated, only Qubes OS and [Tails](https://tails.net/doc/first_steps/welcome_screen/mac_spoofing/index.en.html) enable randomization for scanning and connecting by default.
 
@@ -132,7 +132,7 @@ Among the most popular operating systems, Linux distributions are the only ones 
 
 You can learn more about NetworkManager MAC randomization through [this guide](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) by one of the NetworkManager developers.
 
-## Windows (desktop OS)
+### Windows (desktop OS)
 
 By default, Windows enables random MAC for scanning. There [is a setting](https://support.microsoft.com/en-us/windows/how-to-use-random-hardware-addresses-in-windows-ac58de34-35fc-31ff-c650-823fc48eb1bc) to enable a stable random MAC address per Wi-Fi SSID, and also a setting to enable daily randomization.
 
@@ -140,7 +140,7 @@ Finding complete information about this feature is not straightforward, [some Mi
 
 Windows does not have support for randomizing the MAC of Ethernet interfaces.
 
-# Conclusion
+## Conclusion
 
 MAC addresses is a necessary component of network protocols, it does not leak through VPNs but could be used to track people through their devices.
 
