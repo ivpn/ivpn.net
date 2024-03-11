@@ -35,6 +35,8 @@ sudo launchctl enable system/net.ivpn.client.Helper
 
 Note: The `sudo` portion of the command requires your macOS password.
 
+Also check that the IVPN App's agent is set to run.  Visit the macOS system `Settings > General > Login Items` area and toggle the **IVPN** or **Privatus Limited** entry to `ON`.  Confirm the change with your macOS user password or biometrics, then open the IVPN App and click on the `Retry..` button.
+
 
 ### Linux (systemd):
 
