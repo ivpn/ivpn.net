@@ -68,7 +68,7 @@ Edward Snowden reported that the [NSA used MAC addresses](https://www.wired.com/
 
 There is no way to know if this is actively used in the wild, but MAC randomization protects against tracking.
 
-## Does the MAC address leaks on the Internet?
+## Does the MAC address leak on the Internet?
 
 A MAC address is not shared beyond the local network because it is only used locally. If you connect to a website, the remote server will never know anything about MAC addresses from your local network.
 
