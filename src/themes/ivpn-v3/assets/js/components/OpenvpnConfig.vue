@@ -139,6 +139,7 @@
 
 <script>
 import Api from "@/api/api";
+import { sanitizeUrl } from '@braintree/sanitize-url';
 
 export default {
     data() {

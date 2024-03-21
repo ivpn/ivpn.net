@@ -40,6 +40,7 @@
     "yarn-upgrade-all": "^0.7.2"
   },
   "dependencies": {
+    "@braintree/sanitize-url": "^7.0.0",
     "vue-country-flag-next": "^2.3.2",
     "vue-multiselect": "^3.0.0-beta.1"
   }
