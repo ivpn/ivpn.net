@@ -11,28 +11,18 @@ weight: 100
 ---
 # Why is IVPN agent daemon always running?
 
-The IVPN client software has a client-server architecture. The IVPN agent runs as a daemon and is responsible for establishing connections, spawning OpenVPN processes, etc. whilst the client UI that you interact with is a separate component that communicates with the agent.
+The IVPN App has a client-server architecture. The IVPN agent runs as a daemon and is responsible for establishing connections, spawning OpenVPN processes, managing WireGuard interfaces, handling firewall rules, etc., whilst the client UI that you interact with is a separate component that communicates with the agent.
 
-Disabling the helper agent will have an impact on the performance of additional features in the app. In order to implement various security features such as the 'always on' firewall, it is important that the agent daemon is always running. This keepalive functionality is configured in the daemon's `plist` file and can be modified to not be persistent by following the instructions below.
+Disabling the helper agent will cause the IVPN App to cease functioning.  In order to implement various security features, such as the Always-On firewall, it is important that the agent daemon is always running.
 
 <div markdown="1" class="notice notice--warning">
-Please note that by following the instructions below, the Always-On firewall will no longer function correctly.
+Please note that by following the instructions below, the IVPN App and the privacy and security features it provides, like the Always-On firewall, will no longer function correctly.
 </div>
 
-1.  Quit the IVPN client by clicking on the menu bar icon and selecting `Quit IVPN`.
+1.  Quit the IVPN client by clicking on the menu bar icon and selecting `Quit`.
 
-2.  Stop the agent daemon.
+1.  Stop the agent daemon by opening the macOS system `Settings > General > Login Items` and toggling the **IVPN** or **Privatus Limited** entry to `OFF`.  Confirm the change with your macOS user password or biometrics.
 
-    ```
-    sudo launchctl unload net.ivpn.client.Helper.plist
-    ```
+Re-enable the agent daemon by toggling that name login item entry to `ON`.   Confirm the change with your macOS user password or biometrics, then open the IVPN App and click on the `Retry..` button.
 
-3.  Edit `/Library/LaunchDaemons/net.ivpn.client.Helper.plist` and change the `KeepAlive` key to `False`.
 
-4.  Start the agent daemon.
-
-    ```
-    sudo launchctl load net.ivpn.client.Helper.plist
-    ```
-
-5.  Start the IVPN client. When you next quit the IVPN client the IVPN agent daemon will also be killed.
