@@ -14,7 +14,7 @@
   "devDependencies": {
     "@vue/compat": "^3.2.47",
     "@vue/compiler-sfc": "^3.2.47",
-    "braintree-web": "^3.92.1",
+    "braintree-web": "^3.101.0",
     "cross-env": "^7.0.2",
     "date-fns": "^2.29.3",
     "file-saver": "^2.0.5",
