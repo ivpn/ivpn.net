@@ -39,6 +39,7 @@
                 </div>
             </price-box>
         </div>
+        <div v-if="auth.error" class="error"><p>{{ auth.error.message }}</p></div>
         <p>All prices are in U.S. dollars.</p>
         <p>Review pricing for business or nonprofit teams <a href="/pricing-teams/">here</a>.</p>
         <section>
@@ -139,7 +140,6 @@ export default {
             }
         
             let wasAuthenticated = this.auth.isAuthenticated
-
             await this.$store.dispatch("auth/createAccount", { product });
             if (!wasAuthenticated) {
                 matomo.recordAccountCreated();
