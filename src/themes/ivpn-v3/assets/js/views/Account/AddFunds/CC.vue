@@ -94,7 +94,7 @@
                 width="48"
                 height="48"
             />
-            <div v-if="error" class="error-message">{{ error }}</div>
+            <div v-if="error" class="error-message">{{ error.message }}</div>
         </div>
     </div>
 </template>
