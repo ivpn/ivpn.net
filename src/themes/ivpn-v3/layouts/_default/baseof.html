@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">  
   <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.ivpn.net *.tamazaki.com;img-src * data:;script-src 'self' 'unsafe-inline' *.ivpn.net *.tamazaki.com *.sandbox.braintreegateway.com *.braintreegateway.com *.sandbox.braintree-api.com *.braintree-api.com *.paypal.com *.cardinalcommerce.com;style-src 'self' 'unsafe-inline' *.ivpn.net *.tamazaki.com;connect-src 'self' *.ivpn.net *.tamazaki.com *.cardinalcommerce.com *.sandbox.braintreegateway.com *.sandbox.braintree-api.com *.braintree-api.com *.braintreegateway.com *.paypal.com;frame-src 'self' *.ivpn.net *.tamazaki.com *.paypal.com *.sandbox.paypal.com *.braintreegateway.com *.kaptcha.com *.cardinalcommerce.com/;">
     {{- partial "head.html" . -}}
     <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/pages.css" }}">
     {{ block "main-style" . }}{{ end }}
