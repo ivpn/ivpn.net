@@ -35,7 +35,6 @@ A white-box approach was used whereby the auditors had access to our public and 
 A total of two vulnerabilities (low severity) and two general issues (info level) were identified. All vulnerabilities have been remediated. 
 
 We have made the [Cure53 report][1] available for those interested in the details. For transparency we decided to publish the full report with only potentially sensitive information redacted (e.g. internal hostnames).
-Commitments going forward
 
 ## Commitments going forward 
 
