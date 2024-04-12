@@ -10,11 +10,11 @@ WORKDIR /opt/build
 # Install nodejs, yarn and hugo
 RUN apt-get update  \
     && apt-get install -y gnupg gnupg2 gnupg1 \
-    && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs \
     && apt-get update \
     && npm install --global yarn \
-    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.76.3/hugo_0.76.3_Linux-64bit.deb -o /tmp/hugo.deb \
+    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.124.1/hugo_0.124.1_linux-amd64.deb -o /tmp/hugo.deb \
     && dpkg -i /tmp/hugo.deb \
     && rm /tmp/hugo.deb
 
@@ -31,11 +31,20 @@ RUN yarn --cwd ./src/themes/ivpn-v3/ run copy:manifest
 RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
      -e 's/^url:(.*)$/url: \/privacy-mobile-app\//' \
      -e 's/^canonical:(.*)$/canonical: \/privacy\//' \
-   ./src/content/pages/privacy-policy.md > ./src/content/pages/privacy-policy-mobile.md \
+   ./src/content/en/pages/privacy-policy.md > ./src/content/en/pages/privacy-policy-mobile.md \
    && sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
      -e 's/^url:(.*)$/url: \/tos-mobile-app\//' \
      -e 's/^canonical:(.*)$/canonical: \/tos\//' \
-   ./src/content/pages/terms-of-service.md > ./src/content/pages/terms-of-service-mobile.md
+   ./src/content/en/pages/terms-of-service.md > ./src/content/en/pages/terms-of-service-mobile.md
+
+RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
+     -e 's/^url:(.*)$/url: \/privacy-mobile-app\//' \
+     -e 's/^canonical:(.*)$/canonical: \/privacy\//' \
+   ./src/content/es/pages/privacy-policy.md > ./src/content/es/pages/privacy-policy-mobile.md \
+   && sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
+     -e 's/^url:(.*)$/url: \/tos-mobile-app\//' \
+     -e 's/^canonical:(.*)$/canonical: \/tos\//' \
+   ./src/content/es/pages/terms-of-service.md > ./src/content/es/pages/terms-of-service-mobile.md 
 
 RUN hugo -s ./src -b ${BASE_URL} --environment $ENV -d /opt/build/public
 

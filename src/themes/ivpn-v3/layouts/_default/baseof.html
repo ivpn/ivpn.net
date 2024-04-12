@@ -13,7 +13,7 @@
     {{ end }}
   </head>
     <body onclick="">{{/* onclick="" fixes iOS Safari :hover touch events */}}
-        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>               
+        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>            
         {{- partial "header.html" . -}}
         <main>
             {{- block "main" . }}{{- end }}

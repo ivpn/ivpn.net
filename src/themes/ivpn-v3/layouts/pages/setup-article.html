@@ -7,7 +7,7 @@
             <nav id="nav">
                 {{ $listItem := .Params.listItem }}
                 {{ range .Parent.Pages }}
-                <a class="{{ if eq .Params.listItem $listItem }}active{{ end }}" href="{{ .URL }}">{{ .Params.listItem }}</a>
+                <a class="{{ if eq .Params.listItem $listItem }}active{{ end }}" href="{{ .Permalink }}">{{ .Params.listItem }}</a>
                 {{ end }}
             </nav>
             <main id="main">

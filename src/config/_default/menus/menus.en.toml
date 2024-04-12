@@ -1,0 +1,174 @@
+[[main]]
+    identifier = "team"
+    name = "Team"
+    url = "/team/"
+    weight = 10
+
+  [[main]]
+    identifier = "ethics"
+    name = "Ethics"
+    url = "/ethics/"
+    weight = 20
+  
+  [[main]]
+    identifier = "privacy"
+    name = "Privacy"
+    url = "/privacy/"
+    weight = 30
+
+  [[main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 40
+
+  [[main]]
+    identifier = "prices"
+    name = "Pricing"
+    url = "/pricing/"
+    weight = 45
+
+
+  [[main]]
+    identifier = "download"
+    name = "Apps"
+    url = "/apps/"
+    weight = 50
+
+  [[main]]
+    identifier = "guides"
+    name = "Guides"
+    url = "/privacy-guides/"
+    weight = 60
+
+  [[main]]
+    identifier = "help"
+    name = "Help"
+    url = "/knowledgebase/general/"
+    weight = 70
+
+  [[footercolone]]
+    identifier = "generate-account"
+    name = "Generate Account"
+    url = "/signup/"
+    weight = 5
+
+  [[footercolone]]
+    identifier = "light"
+    name = "IVPN Light"
+    url = "/light/"
+    weight = 5
+
+  [[footercolone]]
+    identifier = "wireguard"
+    name = "WireGuard® VPN"
+    url = "/wireguard/"
+    weight = 10
+  
+  [[footercolone]]
+    identifier = "antitracker"
+    name = "AntiTracker"
+    url = "/antitracker/"
+    weight = 20
+
+  [[footercolone]]
+    identifier = "what-is-a-vpn"
+    name = "What is a VPN"
+    url = "/what-is-a-vpn/"
+    weight = 40
+  
+  [[footercolone]]
+    identifier = "pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard"
+    name = "Protocol Comparison"
+    url = "/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
+    weight = 70
+
+  [[footercoltwo]]
+    identifier = "manifesto"
+    name = "Our Manifesto"
+    url = "/manifesto/"
+    weight = 10
+
+  [[footercoltwo]]
+    identifier = "status"
+    name = "Servers"
+    url = "/status/"
+    weight = 20
+
+  [[footercoltwo]]
+    identifier = "transparency-report"
+    name = "Transparency Report"
+    url = "/transparency-report/"
+    weight = 30
+
+  [[footercoltwo]]
+    identifier = "canary"
+    name = "Warrant Canary"
+    url = "/resources/canary.txt"
+    weight = 40
+  
+  [[footercoltwo]]
+    identifier = "supported-projects"
+    name = "Supported Projects"
+    url = "/supported-projects/"
+    weight = 50
+  
+  [[footercolthree]]
+    identifier = "vulnerability-reporting"
+    name = "Report Vulnerability"
+    url = "/vulnerability-reporting/"
+    weight = 10
+
+  [[footercolthree]]
+    identifier = "legal-process-guidelines"
+    name = "Legal Guidelines"
+    url = "/legal-process-guidelines/"
+    weight = 20
+  
+  [[footercolthree]]
+    identifier = "tos"
+    name = "Terms of Service"
+    url = "/tos/"
+    weight = 30
+
+  [[footercolthree]]
+    identifier = "privacy-policy"
+    name = "Privacy Policy"
+    url = "/privacy/"
+    weight = 50
+
+  [[footercolthree]]
+    identifier = "refund-policy"
+    name = "Refund Policy"
+    url = "/refunds/"
+    weight = 60
+
+  [[footercolfour]]
+    identifier = "contact"
+    name = "Contact us"
+    url = "/contactus/"
+    weight = 10
+
+  [[footercolfour]]
+    identifier = "reddit"
+    name = "Reddit"
+    url = "https://www.reddit.com/r/IVPN/"
+    weight = 20
+
+  [[footercolfour]]
+    identifier = "twitter"
+    name = "Twitter"
+    url = "https://twitter.com/ivpnnet"
+    weight = 30
+
+  [[footercolfour]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/ivpn"
+    weight = 40
+  
+  [[footercolfour]]
+    identifier = "mastodon"
+    name = "Mastodon"
+    url = "https://mastodon.social/@ivpn"
+    weight = 50

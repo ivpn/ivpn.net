@@ -11,7 +11,7 @@ sections:
     dark_image: /images-static/uploads/ivpn-home-dark.png
     dark_image_retina: /images-static/uploads/ivpn-home-dark@2x.png
     content: >-
-      # Resist Online Surveillance
+      # Resist Online Surveillance 
 
       What you do online can be tracked by organizations you may not know or trust and become part of a permanent record. A VPN can’t solve this on its own, but can prevent your ISP from being able to share or sell your data.
     cta_one_label: Generate IVPN account
