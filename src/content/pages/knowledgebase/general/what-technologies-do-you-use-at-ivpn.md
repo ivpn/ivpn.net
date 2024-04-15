@@ -14,6 +14,8 @@ We use only open-source software at IVPN. Below is a list of some of the technol
 
 - [CentOS](https://www.centos.org/) - Enterprise-class Linux distribution
 
+- [AlmaLinux](https://almalinux.org/) - 1:1 binary compatible with RHEL® and pre-Stream CentOS
+
 - [Puppet](https://puppet.com/) and [the Foreman](https://theforeman.org/) - Centralized configuration management for all our servers.
 
 - [Zabbix](https://www.zabbix.com/) - Distributed network monitoring solution.
