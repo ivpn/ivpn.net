@@ -8,7 +8,7 @@ IVPN strives to meet the expectations of all users and offers unlimited support 
 
 If you are unsatisfied for any reason, you can request **a full refund within 30 days** of your payment. This full refund offer is available **once per account and per customer**. 
 
-Below is the information you need to <a href="mailto:support@ivpn.net">email</a>, or submit via live chat to us for each payment method:
+Below is the information you need to <a href="mailto:support@ivpn.net">email</a> to us for each payment method:
 
 <h2>Credit Card</h2>
 
