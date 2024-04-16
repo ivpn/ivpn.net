@@ -243,7 +243,7 @@ export default {
                     console.log("verifyCard.payload", payload);
                     if (!payload.liabilityShifted) {
                         // "lookup_bypassed"
-                        if (!payload.liabilityShiftPossible && (payload.threeDSecureInfo.enrolled == 'B' || payload.threeDSecureInfo.enrolled == 'U')) {
+                        if (!payload.liabilityShiftPossible && (payload.threeDSecureInfo.enrolled == 'B')) {
                             resolutionFunc(payload);
                             return;
                         }
