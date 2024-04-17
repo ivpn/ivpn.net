@@ -24,7 +24,7 @@ We use only open-source software at IVPN. Below is a list of some of the technol
 
 - [OpenVPN](https://openvpn.net/) - Encryption and authentication for all server to server communications.
 
-- [OpenSwan](https://www.openswan.org/projects/openswan) - Providing IPSec services to customers.
+- [OpenSwan](https://openswan.org/) - Providing IPSec services to customers.
 
 - [WireGuard](https://www.wireguard.com/) - WireGuard VPN services for customers.
 
