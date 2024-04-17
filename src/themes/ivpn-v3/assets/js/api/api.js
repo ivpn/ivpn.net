@@ -496,6 +496,17 @@ export default {
         )
     },
 
+    async getExchangeRates() {
+        return await this.Get(
+            '/web/accounts/payments/exchange-rates',
+            process.env.MIX_APP_API_URL,
+            {
+                credentials: "omit"
+            },
+            '/web/accounts',
+        )
+    },
+
     //Device management
     async getSessions(payload) {
         return await this.Post(
