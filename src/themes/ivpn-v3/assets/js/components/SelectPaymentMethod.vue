@@ -23,7 +23,6 @@
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-cc', params: { price: price.id } }"
-                @click.native="scrollToTop"
             >
                 <div class="credit-card-icon"></div>
                 Credit Card
@@ -32,7 +31,6 @@
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-paypal', params: { price: price.id } }"
-                @click.native="scrollToTop"
             >
                 <div class="paypal-icon"></div>
                 PayPal
@@ -41,7 +39,6 @@
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-bitcoin', params: { price: price.id } }"
-                @click.native="scrollToTop"
             >
                 <div class="bitcoin-icon"></div>
                 Bitcoin
@@ -50,7 +47,6 @@
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-monero', params: { price: price.id } }"
-                @click.native="scrollToTop"
             >
                 <div class="monero-icon"></div>
                 Monero
@@ -59,7 +55,6 @@
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-cash', params: { price: price.id } }"
-                @click.native="scrollToTop"
             >
                 <div class="cash-icon"></div>
                 Cash
@@ -117,9 +112,6 @@ export default {
     methods: {
         toggleMoreOptions() {
             this.more = !this.more;
-        },
-        scrollToTop() {
-            window.scrollTo(0,0);
         },
     },
 };
