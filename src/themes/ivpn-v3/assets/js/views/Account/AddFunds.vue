@@ -1,10 +1,10 @@
 <template>
     <div v-if="!isLight" class="payment-page-header">
         <div class="back-link">
-            <router-link :to="{ name: 'account' }" v-if="account.is_new" @click.native="scrollToTop">
+            <router-link :to="{ name: 'account' }" v-if="account.is_new">
                 <span class="icon-back"></span>Select payment method
             </router-link>
-            <router-link :to="{ name: 'payment' }" v-else @click.native="scrollToTop">
+            <router-link :to="{ name: 'payment' }" v-else>
                 <span class="icon-back"></span>Select payment method
             </router-link>
         </div>
@@ -73,11 +73,6 @@ export default {
             this.isLight = true;
             window.location = "/light";
         }
-    },
-    methods: {
-        scrollToTop() {
-            window.scrollTo(0,0);
-        },
     },
 };
 </script>
