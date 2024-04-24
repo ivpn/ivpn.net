@@ -19,7 +19,7 @@ Your IVPN Account ID can also be found in the **Settings > Account** area in the
 
 We can also try and look up your IVPN Account ID if you send us an email (support@ivpn.net) with the information of your last purchase.  Use [PGP encryption](/knowledgebase/general/how-do-i-send-a-secure-pgp-encrypted-email-to-ivpn/) for the message if you prefer.
 
-For card payments on made on our website, provide:
+For card payments made on our website, provide:
 - **first 6 digits** of the card 
 - **last 4 digits** of the card 
 - **expiry date** of the card 
