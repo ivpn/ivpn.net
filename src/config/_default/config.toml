@@ -4,7 +4,7 @@ title = "IVPN"
 theme = "ivpn-v3"
 paginate = 8
 summaryLength = 35
-disableKinds = ["sitemap", "taxonomyTerm"]
+disableKinds = ["sitemap", "taxonomy"]
 
 [markup.goldmark.renderer]
     unsafe= true
