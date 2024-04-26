@@ -40,3 +40,9 @@ When using WireGuard we offer the powerful V2Ray proxy protocol. It is available
   * When using MultiHop
   * When changing servers while the VPN is connected
   * When switching QUIC and TCP protocols while connected
+
+### Will V2Ray obfuscation stop websites from detecting a VPN connection?
+
+No.
+
+The obfuscation only exists between your device and the VPN server and the mechanism is not designed to bypass VPN blocks on websites, like for video streaming, gambling, or anything with geo-location restrictions.  The IP address on the VPN server for outgoing traffic remains the same whether V2Ray is active or not.
