@@ -6,6 +6,13 @@ paginate = 8
 summaryLength = 35
 disableKinds = ["sitemap", "taxonomy"]
 
+pygmentsUseClasses=true
+pygmentsCodefencesGuessSyntax=true
+pygmentsCodefences=true
+pygmentsStyle="monokai"
+pygmentsOptions="noclasses=false"
+
+
 [markup.goldmark.renderer]
     unsafe= true
 
