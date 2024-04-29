@@ -4,7 +4,14 @@ title = "IVPN"
 theme = "ivpn-v3"
 paginate = 8
 summaryLength = 35
-disableKinds = ["sitemap", "taxonomyTerm"]
+disableKinds = ["sitemap", "taxonomy"]
+
+pygmentsUseClasses=true
+pygmentsCodefencesGuessSyntax=true
+pygmentsCodefences=true
+pygmentsStyle="monokai"
+pygmentsOptions="noclasses=false"
+
 
 [markup.goldmark.renderer]
     unsafe= true

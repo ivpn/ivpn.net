@@ -10,11 +10,11 @@ WORKDIR /opt/build
 # Install nodejs, yarn and hugo
 RUN apt-get update  \
     && apt-get install -y gnupg gnupg2 gnupg1 \
-    && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs \
     && apt-get update \
     && npm install --global yarn \
-    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.76.3/hugo_0.76.3_Linux-64bit.deb -o /tmp/hugo.deb \
+    && curl -L  https://github.com/gohugoio/hugo/releases/download/v0.125.3/hugo_0.125.3_linux-amd64.deb -o /tmp/hugo.deb \
     && dpkg -i /tmp/hugo.deb \
     && rm /tmp/hugo.deb
 

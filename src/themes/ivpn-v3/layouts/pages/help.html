@@ -28,7 +28,7 @@
                 <ul class="list">
                     {{ range where .Site.Pages ".Params.sections" "intersect" (slice .Params.section) }}
                     <li>
-                        <a href="{{ .URL }}">{{ .Params.h1 }}</a>
+                        <a href="{{ .Permalink }}">{{ .Params.h1 }}</a>
                     </li>
                     {{ end }}
                 </ul>

@@ -1,5 +1,5 @@
 <article class="article">
-    <a href="{{ .Page.URL }}" class="article__image {{ if eq .Params.thumbnailImage nil }}article__image--placeholder{{ end }}">
+    <a href="{{ .Page.Permalink }}" class="article__image {{ if eq .Params.thumbnailImage nil }}article__image--placeholder{{ end }}">
         {{ if .Params.thumbnailImage }}
             <img src="{{ site.Params.cdnUrl }}{{ .Params.thumbnailImage }}" class="img-fluid" alt="{{ .Page.Title }}"/>
         {{ else }}
@@ -9,20 +9,20 @@
     <div class="article__summary">
         {{ range .Params.categories }}
             {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
-                <a href="{{ .URL }}" class="badge">{{ .Title }}</a>
+                <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
             {{ end }}
         {{ end }}
-        <h3><a href="{{ .Page.URL }}">{{ .Page.Title }}</a></h3>
+        <h3><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h3>
         <p class="article-meta">
             {{ range .Params.authors }}
                 {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}
-                    By <a href="{{ .URL }}">{{ .Title }}</a> |
+                    By <a href="{{ .Permalink }}">{{ .Title }}</a> |
                 {{ end }}
             {{ end }}
             Posted on {{ .Page.Date.Format "January 2, 2006"}}
         </p>
 
         <p class="article-summary">{{ .Page.Summary | safeHTML }}</p>
-        <a class="article-continue" href="{{ .Page.URL }}">Continue reading</a>
+        <a class="article-continue" href="{{ .Page.Permalink }}">Continue reading</a>
     </div>
 </article>
