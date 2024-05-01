@@ -210,21 +210,29 @@ pygmentsOptions="noclasses=false"
     name = "Reddit"
     url = "https://www.reddit.com/r/IVPN/"
     weight = 20
+    [menu.footercolfour.params]
+      rel = "noopener"
 
   [[menu.footercolfour]]
     identifier = "twitter"
     name = "Twitter"
     url = "https://twitter.com/ivpnnet"
     weight = 30
+    [menu.footercolfour.params]
+      rel = "noopener"
 
   [[menu.footercolfour]]
     identifier = "github"
     name = "GitHub"
     url = "https://github.com/ivpn"
     weight = 40
+    [menu.footercolfour.params]
+      rel = "noopener"
   
   [[menu.footercolfour]]
     identifier = "mastodon"
     name = "Mastodon"
     url = "https://mastodon.social/@ivpn"
     weight = 50
+    [menu.footercolfour.params]
+      rel = "noopener me"
