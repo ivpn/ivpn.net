@@ -10,7 +10,7 @@ weight: 60
 ## OPNsense OpenVPN Setup Guide
 
 <div markdown="1" class="notice notice--warning">
-This guide was produced using OPNsense 24.1.1
+This guide was produced using OPNsense 24.1.6
 </div>
 
 ### Adding a CA certificate
@@ -72,7 +72,9 @@ This guide was produced using OPNsense 24.1.1
     *   Source Address - **LAN net**
     *   Translation / target - **Interface address**
 
-3. Click `Save` and `Apply Changes`.<br></br>![](/images-static/uploads/install-openvpn-opnsense-06.png)
+3. Delete the other rule(s) containing your local network subnet that exist via WAN. This will ensure that traffic does not leak if the VPN tunnel accidentally goes down.
+
+4. Click `Save` and `Apply Changes`.<br></br>![](/images-static/uploads/install-openvpn-opnsense-06.png)
 
 ### DNS
 
