@@ -15,7 +15,7 @@ Network speed is measured with multiple parameters: **bandwidth**, **throughput*
 
 # Network speed explained
 
-Before diving into the explanations about speed performance impact of a VPN, it is important to understand what lies under network performance, more commonly called "Internet speed".
+Before diving into the explanations about speed performance cost of a VPN, it is important to understand what lies under network performance, more commonly called "Internet speed".
 
 ## Latency
 
@@ -25,11 +25,11 @@ It characterizes how a user feels the responsiveness when doing something over t
 
 Why is there any latency in the first place? Computers are fast and get faster every year after all. Most of the latency occurring is due to the distance [a network packet](https://www.techtarget.com/searchnetworking/definition/packet) has to travel.
 
-In fact, our fastest communication transport medium is the optical fiber. It can only carry data at two third of light speed, as the light beam inside the fiber is bouncing with a specific angle instead of going in a straight line. Light travels at approximately 300 000 kilometers per second, this is fast, but not enough to avoid latency.
+In fact, our fastest communication transport medium is the optical fibre. It can only carry data at two third of light speed, as the light beam inside the fibre is bouncing with a specific angle instead of going in a straight line. Light travels at approximately 300 000 kilometres per second, this is fast, but not enough to avoid latency.
 
-With these numbers in mind and some math, we can conclude networks can transport data at best at 200 000 kilometers / 124274 miles per second. Using a better time unit for latency, like milliseconds, the previous speed can be converted to 200 kilometers or 124 miles per millisecond.
+With these numbers in mind and some maths, we can conclude networks can transport data at best at 200 000 kilometres / 124 274 miles per second. Using a better time unit for latency, like milliseconds, the previous speed can be converted to 200 kilometres or 124 miles per millisecond.
 
-It is important to remember that for latency, the travel time must be accounted twice: a first time to reach the remote host and a second time for the response. The best real world achievable latency at the moment of writing is approximately 1 ms for every 100 km / 62 miles of distance between two hosts, assuming there are no other equipment adding latency (like routers, commuters, amplifier), and that the optical fiber between the hosts does not make a detour.
+It is important to remember that for latency, the travel time must be accounted twice: a first time to reach the remote host and a second time for the response. The best real world achievable latency at the moment of writing is approximately 1 ms for every 100 km / 62 miles of distance between two hosts, assuming there are no other equipment adding latency (like routers, commuters, amplifier), and that the optical fibre between the hosts does not make a detour.
 
 ![](/img/latency-explained.png)
 
@@ -37,8 +37,8 @@ Here is the average network latency of different technologies, measured between 
 
 These numbers can help to weight the latency introduced by distance compared to the latency of the network access itself:
 
-- Server in a datacenter using Ethernet: 0.1 ms
-- Optical fiber: 1-5 ms
+- Server in a data centre using Ethernet: 0.1 ms
+- Optical fibre: 1-5 ms
 - 5G: 2-20 ms
 - Coaxial: 3-25 ms
 - DSL: 25-70 ms
@@ -55,7 +55,7 @@ In practice, the latency is slightly increased by each equipment on the network 
 
 ## Bandwidth
 
-Another important speed metric for a network is its **bandwidth**, which is the maximum speed a network can sustain for a given period of time. Bandwidth is usually expressed in megabits per second (Mbps), but as optical fiber and 5G are getting more widespread, it is getting common to express it in gigabits per second (Gbps).
+Another important speed metric for a network is its **bandwidth**, which is the maximum speed a network can sustain for a given period of time. Bandwidth is usually expressed in megabits per second (Mbit/s), but as optical fibre and 5G are getting more widespread, it is getting common to express it in gigabits per second (Gbit/s).
 
 Network bandwidth is not always symmetric, most of the time there is a larger bandwidth for receiving data than for sending data. As most users download more data than they upload, it made sense to allocate bandwidth this way.
 
@@ -67,7 +67,7 @@ The bandwidth is what your ISP advertises as "speed", but in practice, it is the
 
 Finally, the last metric measuring and quantifying a network speed is the **throughput**. It is the actual amount of data going through the network for a given period of time. The throughput is usually measured in kilobytes per second (kB/s) or megabytes per second (MB/s).
 
-As a reminder, megabits are noted Mb while megabytes are noted MB. As 1 byte = 8 bits, there is a difference of a factor of 8 between the two.
+As a reminder, megabits are noted Mbit while megabytes are noted MB. As 1 byte = 8 bits, there is a difference of a factor of 8 between the two.
 
 When watching a download progress bar, the associated speed displayed is the instant throughput.
 
@@ -79,11 +79,11 @@ There is a part of the *speed* that does not depend on your connection itself. W
 
 Connections between network operators are called [peering](https://en.wikipedia.org/wiki/Peering).
 
-It is not uncommon to have peering issues on the Internet. They are usually short and remain unnoticed by most end users in that they only impact the servers behind a given network operator. Whereas a network issue at your ISP would impact all your network traffic and will be noticed very quickly.
+It is not uncommon to have peering issues on the Internet. They are usually short and remain unnoticed by most end users in that they only affect the servers behind a given network operator. Whereas a network issue at your ISP would affect all your network traffic and will be noticed very quickly.
 
 Exceptionally, there are known cases like the French ISP **Free** who was known for its poor peering ([source in French](https://www.ariase.com/box/actualite/lenteur-bridage-youtube-free-ufc-que-choisir)) with the network operator who serves YouTube since they could not find a trade agreement for years.  This ISP was also affected for almost two years by another major peering issue that cut it from most of IPv6 traffic ([source in French](https://www.mail-archive.com/frnog@frnog.org/msg59066.html)).
 
-# The impact of a VPN on Internet speed
+# The effect of a VPN on Internet speed
 
 As you now are acquainted with the multiple facets of network speed, let's discuss how a VPN affects your Internet speed.
 
@@ -117,7 +117,7 @@ Another example, the user is still in New York, but connects to a server in the 
 
 ### Bandwidth and VPN overhead
 
-Once tunneled through a VPN, your connection bandwidth becomes limited to the VPN bandwidth if the VPN exit node bandwidth is smaller than yours.
+Once tunnelled through a VPN, your connection bandwidth becomes limited to the VPN bandwidth if the VPN exit node bandwidth is smaller than yours.
 
 In addition, a VPN adds a data overhead in that the actual data going through the encrypted tunnel is carried over [clearnet](https://www.urbandictionary.com/define.php?term=clearnet) network packets. When using a VPN, the actual [data payload](https://networkengineering.stackexchange.com/a/35021) is reduced by overhead of the VPN protocol.
 
@@ -141,7 +141,7 @@ When doing an action over the network, a packet is sent to a remote server. In a
 
 When a network packet is carried over TCP/IP, the useful data contained in a packet is 1500-20-20 = 1460 bytes. In the context of TCP over IP, the payload is named [MSS (Maximum Segment Size)](https://en.wikipedia.org/wiki/Maximum_segment_size), it represents the actual size of useful data that can be carried over a single packet.
 
-VPN performance is impacted when the VPN network packets do not fit in the clearnet MTU, this produces [IP fragmentation](https://en.wikipedia.org/wiki/IP_fragmentation). As the payload (the VPN packet) is too large to fit in the network packet, that packet gets split in two smaller parts. In the end, there are twice the number of network packets for almost no payload increase. This produces an important overhead, which usually reduce the bandwidth by two digits percent.
+VPN performance is affected when the VPN network packets do not fit in the clearnet MTU, this produces [IP fragmentation](https://en.wikipedia.org/wiki/IP_fragmentation). As the payload (the VPN packet) is too large to fit in the network packet, that packet gets split in two smaller parts. In the end, there are twice the number of network packets for almost no payload increase. This produces an important overhead, which usually reduce the bandwidth by two digits percent.
 
 In a correct setup, the VPN MTU fits in the payload of the network layer above it.
 
@@ -165,13 +165,13 @@ However, there are some special cases where a VPN could indeed improve speed and
 
 - In case of a peering issue in the path between the user and a remote server. By using a VPN, the network traffic is likely to use a different network path without the peering issue.
 
-If you are not concerned or impacted by these cases, a VPN will not improve your connection speed.
+If you are not concerned or affected by these cases, a VPN will not improve your connection speed.
 
 # Conclusion
 
 You learned about **latency**, **bandwidth** and **throughput**. A VPN negatively affects all of them to some degree.
 
-The higher your bandwidth is, the higher the chance it will be limited by a VPN. In fact, many people got access to gigabit (1 Gbps) internet access [over the last years](https://gigabitmonitor.com/), while the network bandwidth available in datacenters did not increase proportionally. The servers used by VPN operators are often bandwidth limited by their network provider, and 10 Gbps networks accesses are still not widespread in hosting companies.
+The higher your bandwidth is, the higher the chance it will be limited by a VPN. In fact, many people got access to gigabit (1 Gbit/s) internet access [over the last years](https://gigabitmonitor.com/), while the network bandwidth available in data centres did not increase proportionally. The servers used by VPN operators are often bandwidth limited by their network provider, and 10 Gbit/s networks accesses are still not widespread in hosting companies.
 
 When it comes to latency, since it's related to the travelled distance of network packets when using a VPN, you may want an exit node closer or farther from your location. Deciding which exit node to use comes down to a balance between speed penalty and privacy:
 
