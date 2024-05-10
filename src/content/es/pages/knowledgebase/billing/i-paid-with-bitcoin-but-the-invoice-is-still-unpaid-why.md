@@ -12,4 +12,6 @@ weight: 70
 
 BTCPay invoices are only valid for 60 minutes due to exchange rate volatility. If a payment is received more than 60 minutes after the invoice is generated, we will need to manually process the payment.
 
-To expedite this process please send our [billing department](/contactus/) the Bitcoin transaction hash.
+In other cases, a payment may take a long time to confirm.  Our BTCPay server watches an invoice for 24 hours.  If a payment is confirmed after that, manual processing is required.
+
+In both cases, to expedite the invoice completion process, please send our [billing department](/contactus/) the Bitcoin transaction ID/hash.

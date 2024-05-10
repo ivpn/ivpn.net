@@ -7,6 +7,11 @@ summaryLength = 35
 disableKinds = ["sitemap", "taxonomy"]
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
+pygmentsUseClasses=true
+pygmentsCodefencesGuessSyntax=true
+pygmentsCodefences=true
+pygmentsStyle="monokai"
+pygmentsOptions="noclasses=false"
 
 [markup.goldmark.renderer]
     unsafe= true

@@ -165,10 +165,10 @@
 
 let products = {
         prices: [
-            { id: 'light.3hours', name: '3 hours', price: 0.1,sats: 250 },
-            { id: 'light.1day', name: '1 Day', price: 0.5,sats: 1000 },
-            { id: 'light.1week', name: '1 week', price: 1, sats: 2500 },
-            { id: 'light.1month', name: '1 month', price: 3,sats: 7500},
+            { id: 'light.3hours', name: '3 hours', price: 'N/A',sats: 250 },
+            { id: 'light.1day', name: '1 Day', price: 'N/A',sats: 1000 },
+            { id: 'light.1week', name: '1 week', price: 'N/A', sats: 2500 },
+            { id: 'light.1month', name: '1 month', price: 'N/A',sats: 7500},
         ]
 }
 
@@ -301,14 +301,14 @@ export default {
     },
     methods: {
         async fetchBtcPrice(){
-            let url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
-            let res = await fetch(url);
-            let data = await res.json();
-            products.prices[0].price = (data.bitcoin.usd * ( products.prices[0].sats / 100000000  )).toFixed(3) ;
-            products.prices[1].price = (data.bitcoin.usd * ( products.prices[1].sats / 100000000  )).toFixed(3) ;
-            products.prices[2].price = (data.bitcoin.usd * ( products.prices[2].sats / 100000000  )).toFixed(3) ;
-            products.prices[3].price = (data.bitcoin.usd * ( products.prices[3].sats / 100000000  )).toFixed(3) ;
-            this.selectedPrice = products.prices[0].price;
+            let res = await Api.getExchangeRates();
+            if( res.bitcoin){
+                products.prices[0].price = (res.bitcoin * ( products.prices[0].sats / 100000000  )).toFixed(3) ;
+                products.prices[1].price = (res.bitcoin * ( products.prices[1].sats / 100000000  )).toFixed(3) ;
+                products.prices[2].price = (res.bitcoin * ( products.prices[2].sats / 100000000  )).toFixed(3) ;
+                products.prices[3].price = (res.bitcoin * ( products.prices[3].sats / 100000000  )).toFixed(3) ;
+                this.selectedPrice = products.prices[0].price;
+            }
         },
         async fetchServers() {
             let res = await Api.getServerStats();

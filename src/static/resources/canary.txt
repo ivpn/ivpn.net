@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-04-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 837493
-hash: 00000000000000000001f3c58d91f30ee01954695209058ccd0857bac7e7f553
+height: 841873
+hash: 00000000000000000000e6eecf0ecd283943c8a16e64c21cebac6ba7332ff43f
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Mark Rutte’s Nato leadership bid marches on
-Also in this newsletter: The EU body pushing for free (er) movement with the UK
+FirstFT: Labour wins Blackpool South in blow to Rishi Sunak and Tories
+Also in today’s newsletter, South African regulator on Anglo American bid and Big Read on Russia’s frozen assets
 
-Where Tesla departs from the Mag 7
-And does leadership diversity boost margins?
+US High School Economics class: AI could kill off most call centres, says Tata Consultancy Services head
+Macroeconomics
 
-Productivity hacks — an Amy Hwang cartoon
-‘I spend all day learning learning productivity hacks’
+US High School Economics class: Music and sports fans told: brace for a summer of ticket scams
+Personal finance
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmYM4pAACgkQisFrnrZH
-uml/YAgAvQIm3B7RqOYGh34aINnK9Ub6vg3NMoEP7LW85jijhtqcm+Pvbl3FGcXA
-CBdc6Hc7NkHlf62p3dNLDsBLaWb0g7MStm3mNO+Rtlqdfh9D5B++6PFGB9u7aAXk
-7+uQ0Y51RT0LnSRJt85MQzn0qkwy1UEf5CmF2sxcqvXxj1mgnftGnUq7UJpRZp0x
-T5CNLPfsb9WmYKhlaSz01ltlbCoy3u4t1YqGMftIhkWS8dhZt0tJEHWmswkOCZmz
-mmB29I+Xl+SYQGgLVPKhq0z+xmPT7HBhq/MCGN7vUgvmnBMO0dEaCsUSdnfe5OSc
-YUIdYR87ENcb3zJOrHL+qKbP177zyQ==
-=W83B
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmY0b44ACgkQisFrnrZH
+umk/4QgAumb1ihk+IZpfJm+1VJTvUn55PIcXpcT4GvPTZa81PAduy3oOV4zng4k7
+OIoHuQW88pMpQ+uHoieRbf5EHCz7SgBgW6xs2zQn/cxwnWoCNlvzhzpxfQcGqqfT
+aPXTtTka7Q5mnOZ7d/jc6nWhe3a5ObGDO4JJYJ1jcsYNJrZC7NG4zNmB7JAQ9iqJ
+34luEsbuJRDsEw6vEE3D373BYTpxZecJYk15egGcOIgqxthhtww236XY1lueikyM
+t4znBzkCe/f9uQPziBqUkjDDYztkKvmP7RPf/fhO0fEcBOBSZUF338MU/Vj9Uo4o
+FS6uMpVHsKZITG1227wwUC5t4pV0bQ==
+=InC8
 -----END PGP SIGNATURE-----
 
 

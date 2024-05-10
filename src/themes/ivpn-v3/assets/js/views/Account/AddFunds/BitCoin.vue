@@ -2,7 +2,8 @@
     <div style="text-align:center;">
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>We run our own Bitcoin and Lightning Network nodes using a self-hosted BTCPay server instance. Payments are processed by IVPN and no 3rd parties are involved.</p>
-        <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress">
+        <p v-if="this.price.billing_cycle == 'Weekly'">On-chain Bitcoin payments are not available for IVPN 1 Week top-ups. We suggest using BTC Lightning or switching to a different payment method.</p>
+        <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress" v-if="this.price.billing_cycle != 'Weekly'">
             <div class="bitcoin-icon"></div>
             <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />Pay with Bitcoin
         </button>

@@ -33,7 +33,7 @@ sections:
           open-source for additional transparency and security.
       - name: No cloud services or data storage
         description: All servers managing the IVPN service are self-hosted
-          and operated by IVPN, including email and live chat.
+          and operated by IVPN, including email and customer service.
       - name: Independent security audits
         description: We commit to [annual security audits](/blog/tags/audit/) to improve our security
           practices and transparency.

@@ -12,7 +12,7 @@
                 <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
             {{ end }}
         {{ end }}
-        <h3><a href="{{ .Page.Permalink}}">{{ .Page.Title }}</a></h3>
+        <h3><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h3>
         <p class="article-meta">
             {{ range .Params.authors }}
                 {{ with ($.Site.GetPage (printf "/authors/%s" (. | urlize))) }}

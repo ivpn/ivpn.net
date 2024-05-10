@@ -496,6 +496,12 @@ export default {
         )
     },
 
+    async getExchangeRates() {
+        return await this.Get(
+            '/web/accounts/payments/exchange-rates',
+        )
+    },
+
     //Device management
     async getSessions(payload) {
         return await this.Post(

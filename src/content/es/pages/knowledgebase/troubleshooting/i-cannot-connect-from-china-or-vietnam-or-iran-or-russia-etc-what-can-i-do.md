@@ -68,3 +68,9 @@ There will likely be a performance decrease for the VPN connection with IAT-mode
 
 - **VMESS/QUIC**: a modern protocol designed to provide robust security and high performance, while reducing latency compared to traditional protocols. It makes your data appear as regular HTTPS traffic
 - **VMESS/TCP**: a traditional, widely-used protocol that guarantees reliable, ordered data delivery. It makes your data appear as regular HTTP traffic.
+
+### Will these obfuscation mechanisms stop websites from detecting a VPN connection?
+
+No.
+
+The obfuscation only exists between your device and the VPN server and the mechanism is not designed to bypass VPN blocks on websites, like for video streaming, gambling, or anything with geo-location restrictions.  The IP address on the VPN server for outgoing traffic remains the same whether an obfuscation mechanism is active or not.

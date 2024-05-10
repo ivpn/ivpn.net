@@ -10,90 +10,83 @@ weight: 61
 ## OPNSense WireGuard Setup Guide
 
 <div markdown="1" class="notice notice--warning">
-This guide was produced using OPNSense 20.1.
+This guide was produced using OPNSense 24.1.6
 </div>
 
-### Configure Your Environment
+### Adding a WireGuard Peer
 
-1.  Navigate to the home page of your router - By default `192.168.1.1`.
+1. Navigate to the [Server Status](/status) page, select the WireGuard server you want to connect to and note its **Hostname** (xx.wg.ivpn.net) with the **WireGuard Public Key**.
 
-2.  Install system updates: `System > Firmware > Updates`
+2. In your router's webUI, navigate to `VPN` - `WireGuard` - `Instances` - `Peers` tab, click on the `+` button and fill in the following configuration:
 
-3.  Install the WireGuard plugin via `System > Firmware > Plugins` and scroll down to **os-wireguard**, then click the `+` to install. Reboot via `Power > Reboot` to make sure WireGuard is applied to the system.
+    * Enabled - **Checked**
+    * Name - give it any name, e.g. **WG_Austria**
+    * Public key - the public key of the selected WireGuard server
+    * Allowed IPs - **0.0.0.0/0**, **::/0**
+    * Endpoint address - the hostname of the selected WireGuard server
+    * Endpoint port - **2049** (available ports can be viewed [here](/knowledgebase/troubleshooting/how-do-i-change-the-port-or-protocol-used-to-connect/))
+    * Keepalive interval - **25**
 
-    ![](/images-static/uploads/opns-wg-1-3-wg-plugin.png)
+3. Click `Save`.<br></br>![](/images-static/uploads/install-wireguard-opnsense-01.png)
 
-### Add an Endpoint (Server Location /Peer)
+### Creating a WireGuard Instance
 
-1.  Log in to the [IVPN Client Area](/account/).
+1. In the `Instances` tab, click on the `+` button.
 
-2.  Choose a WireGuard server to connect to from our [Server Status](/status/) page. Make note of the hostname and the public key of the server.
+2. Toggle the `Advanced mode` switch on and hit the `Gear` icon next to the `Public key` to generate a new WireGuard keypair. Copy the **Public key**.
 
-3.  In the OPNSense web interface, go to `VPN > WireGuard > Endpoints` and click the `+` to add a VPN server location (Endpoint/Peer):
+3. Log in to your [Account area](/account/login/), navigate to the `WireGuard` tab, click on the `Add new public key` button, paste the copied previously key into the `Public key` field, add any comment and click `Add`.
 
-    <div markdown="1" class="notice notice--info">
-    <strong>Name:</strong> A short interface name, like ivpnJapan or ivpnSeattle.<br>
-    <strong>Public Key:</strong> The server public key is available from the server list in the step above.<br>
-    <strong>Shared Secret:</strong> Leave it blank.<br>
-    <strong>Alloweb IPs:</strong> 0.0.0.0/0<br>
-    <strong>Endpoint Address:</strong> The server hostname is available from the server list in the step above.<br>
-    <strong>Endpoint Port:</strong> IVPN offers different ports to connect on: 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, and 58237<br>
-    <strong>Keepalive:</strong> 25
-    </div>
+4. Enter the assigned IPv4 and IPv6 IP addresses into your router's WireGuard instance `Tunnel address` field and fill in the following fields:
 
-    ![](/images-static/uploads/opns-wg-2-3-edit-endpoint.png)
+    * Enabled - **Checked**
+    * Name - give it any name, e.g. **WG_Interface**
+    * Listen port - **51820**
+    * MTU - **1412**
+    * DNS servers - enter the WireGuard regular DNS server IP address (172.16.0.1) or the one associated with the preferred [AntiTracker](/knowledgebase/troubleshooting/what-is-the-ip-address-of-your-dns-servers/) list
+    * Peers - select created previously WireGuard Peer
 
-4.  Click the `Save` button to add the **Endpoint** to your OPNSense system.
+5. Click `Save`.
 
-### Add a Local Interface
+6. Have the `Enable WireGuard` checked and click `Apply`.<br></br>![](/images-static/uploads/install-wireguard-opnsense-02.png)
 
-1.  In the OPNSense web interface, go to `VPN > WireGuard > Local` and click the `+` to add a local interface and enter the following:
+### Configuring Interfaces
 
-    <div markdown="1" class="notice notice--info">
-    <strong>Name:</strong> A short interface name, like ivpn.<br>
-    <strong>Listen Port:</strong> Default value is likely fine.<br>
-    <strong>DNS Server:</strong> The DNS server can be one of three options:<br><br>
-    <i>172.16.0.1</i> = regular DNS with no blocking<br>
-    <i>10.0.254.2</i> = standard AntiTracker to block advertising and malware domains<br>
-    <i>10.0.254.3</i> = Hardcore Mode AntiTracker to also block Google and Facebook domains<br><br>
-    <strong>Tunnel Address:</strong> Enter a temporary placeholder address, like 10.9.9.9<br>
-    <strong>Peers:</strong> Choose the <strong>Endpoint</strong> (VPN server location) you created in the previous step.
-    </div>
+1. Navigate to `Interfaces` - `Assignments`.
 
-    Click the `Save` button to generate your **Public** and **Private** keys.
+2. Add any description to the WireGuard interface, e.g. **WG** and click `Add`<br></br>![](/images-static/uploads/install-wireguard-opnsense-03.png)
 
-2.  Click the pencil icon to edit the local interface you created in the previous step and make note of your **Public Key**.
+3. Click on the newly added WireGuard interface, check the `Enable Interface` checkbox and click `Save`.
 
-    ![](/images-static/uploads/opns-wg-3-2-local-interface.png)
+4. Click on the `LAN` interface, set `MSS` to `1412` and click `Save`.
 
-3.  On the `VPN Accounts` page in the Client Area on our website, click the `WireGuard` tab. Go to `WireGuard Key Management` located under **Tools**. Click the `Add New Key` button. Copy the contents of the **Public Key** from OPNSense and paste them into the **Public Key**: field. Add a comment, like OPNSense if you prefer, and click the `Add Key button`.
+### Configuring a Firewall
 
-    <div markdown="1" class="notice notice--warning">
-    Be sure to copy the <strong>Public Key</strong> and not the <strong>Private Key</strong>. The <strong>Private Key</strong> must always be kept a carefully guarded secret.
-    </div>
+1. Navigate to `Firewall` > `NAT` > `Outbound`, select `Manual outbound NAT rule generation` and click `Save`
 
-4.  Make note of the IPv4 Address beside your newly added public key on the WireGuard tab in the Client Area. This is the IP address your computer system will have on our internal network. It will be in the form **172.x.y.z**.
+2. Click on the `+` button to add a new rule and fill in the following configuration:
 
-5.  Go back to the OPNSense web interface and the local interface that is being edited. Remove the temporary placeholder from the **Tunnel Address** field and enter the IP address from the step above plus the /32 netmask **(172.x.y.z/32)**.
+    *   Disabled - **Unchecked**
+    *   Interface - select the created earlier interface, i.e. **WG**
+    *   Source Address - **LAN net**
+    *   Translation / target - **Interface address**
 
-    ![](/images-static/uploads/opns-wg-3-5-edit-local-interface.png)
+3. Delete the other rule(s) containing your local network subnet that exist via WAN. This will ensure that traffic does not leak if the VPN tunnel accidentally goes down.
 
-6.  Click the `Save` button.
+4. Click `Save` and `Apply Changes`.<br></br>![](/images-static/uploads/install-wireguard-opnsense-04.png)
 
-### Connecting
+### DNS
 
-1.  Go to the `VPN > WireGuard > General` tab and put a check mark beside **Enable WireGuard** on the General tab, then click the `Save` button.
+1. Navigate to `Services` > `ISC DHCPv4` > `[LAN]`
 
-2.  Check the `VPN > WireGuard > List Configuration` and `Handshakes` tabs to see connection details.
+2. In the `DNS servers` field, enter the DNS server IP address specified in the created previously WireGuard Instance.
 
-3.  Go to the `Interfaces > LAN` page and set the `MSS` value to `1412`.  Click the `Save` button at the bottom of the page, then click the `Apply changes` button at the top of the page.
+3. Click `Save`.<br></br>![](/images-static/uploads/install-openvpn-opnsense-instance-06.png)
 
-4.  To let you internal network clients go through the tunnel, add a **NAT entry**. Go to `Firewall > NAT > Outbound` and click `+Add` to add a rule. Check that rule generation is set to **Manual** or **Hybrid**. Add a rule and select **Wireguard** as `Interface`. `Source Address` should be **LAN net** and set `Translation / target` to **Interface address**.
+### Final Steps
 
-    ![](/images-static/uploads/opns-wg-4-3-nat-rule.png)
+1. Restart your router and check the connection status of the WireGuard client in the `VPN` - `WireGuard` - `Status` area.<br></br>![](/images-static/uploads/install-wireguard-opnsense-05.png)
 
-5.  Click the `Save` button, click the `Apply Changes` button, then reboot the OPNSense router.
+2. Check the conenction status and the assigned public IP address on our website and run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) from one of the devices connected to your OPNsense router.<br></br>![](/images-static/uploads/install-wireguard-opnsense-06.png)
 
-6.  Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com/) via one of the internal network clients attached to your OPNSense router.
-
-**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and make the required changes to the `Endpoint Address` port and `Peer Public Key`. 
+**Please note:** If you plan to use a Multi-hop setup please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) and replace the port number in **Adding a WireGuard Peer** section, `Endpoint port` field with the chosen Exit-hop server Multi-hop port.
