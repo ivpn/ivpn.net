@@ -1,24 +1,24 @@
 ---
-title: VPN with Ad block and Anti-Tracking
-description: Increase your privacy protection by using IVPN with built-in tracking protection. We block requests from advertising and data harvesting companies to make your browsing experience lighter and more private.
+title: VPN con bloqueo de anuncios y antiseguimiento
+description: Aumente su protección y privacidad utilizando IVPN con protección de seguimiento incorporada. Bloqueamos solicitudes de empresas de publicidad y recopilación de datos para que su experiencia de navegación sea más ligera y privada.
 url: /antitracker/
 ---
 # AntiTracker
 
-AntiTracker is a built-in tool for IVPN apps that blocks ads, web trackers, adware and malware. It prevents snooping on your activities by social networks, data brokers and marketers. This provides additional privacy protection on top of the regular VPN benefits gained by using IVPN.
+AntiTracker es una herramienta integrada para aplicaciones IVPN que bloquea anuncios, rastreadores web, adware y malware. Evita que las redes sociales, los intermediarios de datos y los especialistas en marketing espíen sus actividades. Esto proporciona protección de privacidad adicional además de los beneficios de VPN habituales que se obtienen al utilizar IVPN.
 
-Most websites and apps either run ads or pass on user data to third parties, enabling companies to build a detailed profile of your preferences. Besides profiting from ads, site operators might get paid by the third parties for valuable information about your behavior.
+La mayoría de los sitios web y aplicaciones publican anuncios o transmiten datos de usuario a terceros, lo que permite a las empresas crear un perfil detallado de sus preferencias. Además de beneficiarse de los anuncios, los operadores del sitio pueden recibir pagos de terceros por información valiosa sobre su comportamiento.
 
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-3-rd-party-trackers.svg" alt="What is a VPN - 3-rd party trackers" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-3-rd-party-trackers-dark.svg" alt="What is a VPN - 3-rd party trackers" >}}
 
-With AntiTracker enabled in the IVPN apps, network connection requests by third-party trackers are stopped. This prevents companies from profiling you based on the actions you have taken in a browser or in apps. Since AntiTracker blocks advertising services, they won't collect your personal information, and ads targeted to you won’t follow you around.
+Con AntiTracker habilitado en las aplicaciones IVPN, se detienen las solicitudes de conexión de red realizadas por rastreadores de terceros. Esto evita que las empresas le creen un perfil en función de las acciones que ha realizado en un navegador o en las aplicaciones. Dado que AntiTracker bloquea los servicios de publicidad, no recopilarán su información personal y los anuncios dirigidos a usted no le seguirán.
 
-For stronger protection against the leaders of the surveillance economy, you can also block domains for Facebook and Google services by enabling AntiTracker's Hardcore mode.
+Para una mayor protección contra los líderes de la economía de la vigilancia, también puede bloquear dominios para los servicios de Facebook y Google habilitando el modo Hardcore de AntiTracker.
 
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-antitracker.svg" alt="What is a VPN - Antitracker" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-antitracker-dark.svg" alt="What is a VPN - Antitracker" >}}
 
-Each IVPN plan includes AntiTracker, it works on every device supported by our service and uses a selection of continuously updated [block lists](/knowledgebase/general/antitracker-plus-lists-explained/).
+Cada plan IVPN incluye AntiTracker, funciona en todos los dispositivos compatibles con nuestro servicio y utiliza una selección de [listas de bloqueo](/knowledgebase/general/antitracker-plus-lists-explained/) actualizadas continuamente .
 
-To learn more about IVPN’s AntiTracker visit our dedicated [FAQ](/knowledgebase/general/antitracker-faq/). 
+Para obtener más información sobre AntiTracker de IVPN, visite nuestras [Preguntas frecuentes](/knowledgebase/general/antitracker-faq/). 

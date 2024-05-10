@@ -1,28 +1,28 @@
 ---
-title: What is a VPN?
-description: What is a VPN? A VPN or Virtual Private Network encrypts data sent between computers on the Internet. When using a VPN for privacy, your data is encrypted so your ISP or mobile network provider cannot surveil your internet activity.
+title: ¿Qué es una VPN?
+description: ¿Qué es una VPN? Una VPN o red privada virtual cifra los datos enviados entre computadoras en Internet. Cuando utiliza una VPN por motivos de privacidad, sus datos se cifran para que su ISP o proveedor de red móvil no pueda monitorear su actividad en Internet.
 url: /what-is-a-vpn/
 ---
-# What is a VPN?
+# ¿Qué es una VPN?
 
-A VPN or Virtual Private Network encrypts data sent between computers on the Internet. When using a VPN for privacy, your data is encrypted so your ISP or mobile network provider cannot surveil your internet activity.
+Una VPN o red privada virtual cifra los datos enviados entre computadoras en Internet. Cuando utiliza una VPN por motivos de privacidad, sus datos se cifran para que su ISP o proveedor de red móvil no pueda monitorear su actividad en Internet.
 
-### Alice’s ISP can track every site she visits, and so can yours.
+### El ISP de Alice puede rastrear cada sitio que visita, y el suyo también.
 
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-alice.svg" alt="What is a VPN - Alice ISP" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-alice-dark.svg" alt="What is a VPN - Alice ISP" >}}
 
-Without a VPN you connect to the internet through your internet service provider (ISP) and risk exposing your private Internet activity. If you are not using HTTPS then every site you visit, and the content that you view or download, can be tracked by your ISP. It's like sending confidential messages using postcards except that unlike your post office, your ISP can record and store every message with almost zero effort and cost. Even if you are using HTTPS, the IP address or domain being visited can still be tracked by the ISP. 
+Sin una VPN, se conecta a Internet a través de su proveedor de servicios de Internet (ISP) y corre el riesgo de exponer su actividad privada en Internet. Si no utiliza HTTPS, su ISP puede rastrear cada sitio que visite y el contenido que vea o descargue. Es como enviar mensajes confidenciales mediante postales, excepto que, a diferencia de su oficina de correos, su ISP puede grabar y almacenar cada mensaje con casi cero esfuerzo y costo. Incluso si utiliza HTTPS, el ISP aún puede rastrear la dirección IP o el dominio que se está visitando.
 
-Even on public Wi-Fi, your data can be intercepted by eavesdroppers or hackers. Your activity or personal data may be intercepted without your knowledge, leaving you exposed.
+Incluso en redes Wi-Fi públicas, sus datos pueden ser interceptados por espías o piratas informáticos. Su actividad o sus datos personales pueden ser interceptados sin su conocimiento, dejándolo expuesto.
 
-Take a look at Alice’s case, as shown in the diagram. Her traffic is flowing through the ISP without any encryption, and so her ISP is able to record exactly where she is connected. In addition, the servers she is connected to also log her private IP address, affording her no privacy.
+Eche un vistazo al caso de Alice, como se muestra en el diagrama. Su tráfico fluye a través del ISP sin ningún cifrado, por lo que su ISP puede registrar exactamente dónde está conectada. Además, los servidores a los que está conectada también registran su dirección IP privada, lo que no le brinda privacidad.
 
-### Bob uses IVPN to protect his privacy instead.
+### Bob usa IVPN para proteger su privacidad.
 
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-bob-ivpn.svg" alt="What is a VPN - Bob IVPN" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-bob-ivpn-dark.svg" alt="What is a VPN - Bob IVPN" >}}
 
-With IVPN, you first connect to one of our secure servers through your ISP. Once connected, all of your online activity is encrypted and cannot be monitored or logged by your ISP. In addition, your data is protected from eavesdroppers or hackers positioned between your computer and ISP.
+Con IVPN, primero se conecta a uno de nuestros servidores seguros a través de tu ISP. Una vez conectado, toda su actividad en línea está cifrada y su ISP no puede monitorearla ni registrarla. Además, sus datos están protegidos contra espías o piratas informáticos ubicados entre su computadora y el ISP.
 
-In Bob’s case, he is connected to an IVPN server and therefore all traffic going through his ISP is encrypted. The ISP can only record that Bob is connected to an IVPN server, nothing else. The servers he is connected to see only that the IVPN server is connected to them and therefore can only record the IP address of the IVPN server in their logs. The best VPN services will diligently ensure that they do not log any user connection data, ensuring their customers' privacy.
+En el caso de Bob, está conectado a un servidor IVPN y, por tanto, todo el tráfico que pasa por su ISP está cifrado. El ISP sólo puede registrar que Bob está conectado a un servidor IVPN, nada más. Los servidores a los que está conectado solo ven que el servidor IVPN está conectado a ellos y, por lo tanto, solo pueden registrar la dirección IP del servidor IVPN en sus registros. Los mejores servicios de VPN se asegurarán diligentemente de no registrar ningún dato de conexión del usuario, garantizando la privacidad de sus clientes.

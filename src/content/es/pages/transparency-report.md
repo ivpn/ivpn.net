@@ -1,15 +1,15 @@
 ---
-title: IVPN Transparency report
-description: Its important our customers fully understand what private information we collect, store and process. Read our clear and simple policy to get the facts you need.
+title: Informe de transparencia de IVPN
+description: Es importante que nuestros clientes comprendan completamente qué información privada recopilamos, almacenamos y procesamos. Lea nuestra política clara y sencilla para obtener la información que necesita.
 url: /transparency-report/
 ---
-# Transparency Report
+# Informe de transparencia
 
-The table below shows the number of valid legal requests received from government or law enforcement agencies.
+La siguiente tabla muestra la cantidad de solicitudes legales válidas recibidas del gobierno o agencias encargadas de hacer cumplir la ley.
 
-For more information about how requests are processed please see the [legal process guidelines for law enforcement](/legal-process-guidelines/).
+Para obtener más información sobre cómo se procesan las solicitudes, consulte las [directrices de proceso legal para el cumplimiento de la ley](/legal-process-guidelines/).
 
-|   | # Requests received | # Valid requests received | # Valid requests received where data was provided |
+|   | # Solicitudes recibidas| # Solicitudes válidas recibidas | # Solicitudes válidas recibidas donde se proporcionaron datos |
 |---|---|---|---|
 | 2024 | 6 | 0 | 0 |
 | 2023 | 2 | 0 | 0 |
