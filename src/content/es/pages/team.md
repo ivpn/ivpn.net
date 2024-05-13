@@ -1,101 +1,101 @@
 ---
-title: IVPN Team
+title: Equipo IVPN
 url: /team/
 sections:
   - type: heading_text_cta_one_column
     content: >-
-      # Who is behind IVPN?
+      # ¿Quién está detrás de IVPN?
 
-      IVPN is run by a team of information security experts and privacy activists. The founding team is a group of security professionals who met whilst studying information security at the University of London, UK (Royal Holloway). IVPN has been around since 2009, far longer than most VPN services.
-    cta_label: Our Manifesto
+       IVPN está dirigido por un equipo de expertos en seguridad de la información y activistas de la privacidad. El equipo fundador es un grupo de profesionales de la seguridad que se conocieron mientras estudiaban seguridad de la información en la Universidad de Londres, Reino Unido (Royal Holloway). IVPN existe desde 2009, mucho más tiempo que la mayoría de los servicios VPN.
+    cta_label: Nuestro Manifesto
     cta_url: /manifesto/
   - type: image_full_width
     image: /images-static/uploads/team.png
     image_retina: /images-static/uploads/team-2x.png
     image_alt_text: IVPN Team
   - type: heading_text_one_column
-    content: "## What we believe"
+    content: "## En qué creemos"
   - type: text_two_column
     content_column_1: >-
-      #### Privacy is necessary for personal autonomy
+      #### La privacidad es necesaria para la autonomía personal
 
 
-      We believe privacy is a necessary precondition for the development and preservation of the self. The power to selectively reveal oneself to the world is under attack from governments and corporations. We are fighting back.
+      Creemos que la privacidad es una condición previa necesaria para el desarrollo y la preservación de uno mismo. El poder de revelarse selectivamente al mundo está siendo atacado por gobiernos y corporaciones. Estamos contraatacando.
     content_column_2: >-
-      #### Freedom is necessary for an open society
+      #### La libertad es necesaria para una sociedad abierta
 
 
-      We believe you have the right to freedom of opinion and expression online without interference or surveillance. Freedom leads to enhanced expressions of creativity and original thought. We are determined to protect this right.
+      Creemos que usted tiene derecho a la libertad de opinión y expresión en línea sin interferencias ni vigilancia. La libertad conduce a expresiones mejoradas de creatividad y pensamiento original. Estamos decididos a proteger este derecho.
   - type: text_two_column
     content_column_1: >-
-      #### Surveillance can not be the answer
+      #### La vigilancia no puede ser la respuesta
 
 
-      Advanced surveillance tools like device monitoring and facial recognition technologies are being deployed at a rapid pace. We refuse to accept that these tools are necessary for a safe society and call on governments to roll back their use.
+      Se están implementando a un ritmo rápido herramientas de vigilancia avanzadas, como el monitoreo de dispositivos y las tecnologías de reconocimiento facial. Nos negamos a aceptar que estas herramientas sean necesarias para una sociedad segura y pedimos a los gobiernos que reduzcan su uso.
     content_column_2: >-
-      #### Privacy requires strong security
+      #### La privacidad requiere una seguridad sólida
 
 
-      We need tools enabled by strong encryption to protect ourselves against hostile adversaries. With the right set of protections we can once again control what we share with those we don’t know and can’t trust.
+      Necesitamos herramientas habilitadas con un cifrado sólido para protegernos contra adversarios hostiles. Con el conjunto adecuado de protecciones podemos volver a controlar lo que compartimos con aquellos que no conocemos y en los que no podemos confiar.
   - type: lead_text_one_column
-    content: Our current team is fully distributed, with 10 people from 7 countries.
+    content: Nuestro equipo actual está completamente distribuido, con 10 personas de 7 países.
   - type: team_three_column
     members:
       - image: /images-static/uploads/team-nick.png
         image_retina: /images-static/uploads/team-nick-2x.png
         name: Nicholas Pestell
-        description: Nick is founder and CEO of IVPN and 100% owner of IVPN Limited, the company through which the IVPN service is operated. Nick brings considerable expertise in risk management and security testing whilst working for Royal Bank of Scotland, Network Rail and ABN AMRO Bank.
+        description: Nick es fundador y director ejecutivo de IVPN y propietario 100% de IVPN Limited, la empresa a través de la cual se opera el servicio IVPN. Nick aporta una considerable experiencia en gestión de riesgos y pruebas de seguridad mientras trabaja para Royal Bank of Scotland, Network Rail y ABN AMRO Bank.
         linkedin: https://www.linkedin.com/in/nick-pestell/
         github: https://github.com/cipheromega
       - image: /images-static/uploads/team-edward.png
         image_retina: /images-static/uploads/team-edward-2x.png
         name: Eduard De
-        description: As the leader of our customer service department, Edward is responsible for making sure all customer inquiries are dealt with in a swift and professional manner, no matter when they come through.
+        description: Como líder de nuestro departamento de atención al cliente, Edward es responsable de garantizar que todas las consultas de los clientes se atiendan de manera rápida y profesional, sin importar cuándo lleguen.
         linkedin: https://www.linkedin.com/in/edward-de-91793b163/
         github: 
       - image: /images-static/uploads/team-avatar.png
         image_retina: /images-static/uploads/team-avatar.png
         name: Iain Douglas
-        description: With over 20 years' experience working with Unix and Linux, Iain knows a thing or two. He manages the team responsible for ensuring the security and availability of our public VPN infrastructure.
+        description: Con más de 20 años de experiencia trabajando con Unix y Linux, Iain sabe un par de cosas. Dirige el equipo responsable de garantizar la seguridad y disponibilidad de nuestra infraestructura VPN pública.
         github: https://github.com/Iain-ivpn
       - image: /images-static/uploads/team-gorka.png
         image_retina: /images-static/uploads/team-gorka-2x.png
         name: Gorka Pernas
-        description: After gathering a decade of experience in quality assurance-related roles at technology firms, Gorka now applies his knowledge in helping the IVPN team ship bug-free apps and making sure you suffer no privacy leaks.
+        description: Después de acumular una década de experiencia en funciones relacionadas con el control de calidad en empresas de tecnología, Gorka ahora aplica sus conocimientos para ayudar al equipo de IVPN a enviar aplicaciones sin errores y asegurarse de que no sufra fugas de privacidad.
         linkedin: https://www.linkedin.com/in/gorkapernas/
         github: https://github.com/gorkapernas
       - image: /images-static/uploads/nathan.png
         image_retina: /images-static/uploads/nathan.png
         name: Natanael Rodriguez
-        description: With over 15 years of experience in software development, Nathan now uses his skills to tackle all backend related projects at IVPN.
+        description: Con más de 15 años de experiencia en desarrollo de software, Nathan ahora utiliza sus habilidades para abordar todos los proyectos relacionados con backend en IVPN.
         github: https://github.com/nathanrod
       - image: /images-static/uploads/team-juraj.png
         image_retina: /images-static/uploads/team-juraj-2x.png
         name: Juraj Hilje
-        description: As an unapologetic Apple fan and believer in smooth user experience, it was a natural choice for Juraj to get into iOS development a decade ago. Now he's obsessed with building the best VPN app available on the App Store.
+        description: Como fanático incondicional de Apple y creyente en una experiencia de usuario fluida, fue una elección natural para Juraj ingresar al desarrollo de iOS hace una década. Ahora está obsesionado con crear la mejor aplicación VPN disponible en la App Store.
         github: https://github.com/jurajhilje
       - image: /images-static/uploads/team-stenya.png
         image_retina: /images-static/uploads/team-stenya-2x.png
         name: Oleksandr Stelnykovych
-        description: Stenya has more than 15 years of experience as a software developer in various roles. At IVPN, he is working on building the best VPN applications for Windows and macOS desktops.
+        description: Stenya tiene más de 15 años de experiencia como desarrollador de software en diversos roles. En IVPN, está trabajando en la creación de las mejores aplicaciones VPN para escritorios Windows y macOS.
         linkedin: https://www.linkedin.com/in/alexandrstelnykovych/
         github: https://github.com/stenya
       - image: /images-static/uploads/team-jordan.png
         image_retina: /images-static/uploads/team-jordan-2x.png
         name: Jordan Sullivan
-        description: As a customer service shift leader for the Americas, Jordan uses his problem solving-based technical support skills to help anyone in need of clear and patient assistance.
+        description: Como líder de turno de servicio al cliente para las Américas, Jordan utiliza sus habilidades de soporte técnico basadas en la resolución de problemas para ayudar a cualquiera que necesite una asistencia clara y paciente.
         linkedin: 
         github: https://github.com/jordan-ivpn
       - image: /images-static/uploads/team-marina.png
         image_retina: /images-static/uploads/team-marina-2x.png
         name: Marina Tretiakova
-        description: As finance specialist, Marina not only ensures that IVPN's books are in order, but she is also responsible for developing business processes, performing internal controls and ensuring statutory compliance.
+        description: Como especialista en finanzas, Marina no sólo garantiza que los libros del IVPN estén en orden, sino que también es responsable de desarrollar los procesos de negocio, realizar controles internos y garantizar el cumplimiento de las leyes.
         linkedin: https://www.linkedin.com/in/marina-radionova-64800135/
         github: 
       - image: /images-static/uploads/team-viktor.png
         image_retina: /images-static/uploads/team-viktor-2x.png
         name: Viktor Vecsei
-        description: A reformed marketing professional, Viktor has become a fervent privacy advocate since joining IVPN. He is responsible for all communication and outreach efforts that spread the word about IVPN’s mission.
+        description: Viktor, un profesional de marketing reformado, se ha convertido en un ferviente defensor de la privacidad desde que se unió a IVPN. Es responsable de todos los esfuerzos de comunicación y divulgación que difunden la misión de IVPN.
         linkedin: https://www.linkedin.com/in/viktorvecsei/
         github: https://github.com/johnnyburnaway
 ---
