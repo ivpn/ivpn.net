@@ -1,6 +1,6 @@
 ---
-title: VPN con bloqueo de anuncios y antiseguimiento
-description: Aumente su protección y privacidad utilizando IVPN con protección de seguimiento incorporada. Bloqueamos solicitudes de empresas de publicidad y recopilación de datos para que su experiencia de navegación sea más ligera y privada.
+title: VPN con bloqueo de anuncios y antirastreo
+description: Aumenta tu protección y privacidad utilizando IVPN con protección de rastreo incorporada. Bloqueamos peticiones de empresas de publicidad y recopiladoras de datos para que tu experiencia de navegación sea más ligera y privada.
 url: /antitracker/
 ---
 # AntiTracker
