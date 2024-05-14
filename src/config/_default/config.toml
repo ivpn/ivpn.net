@@ -1,17 +1,29 @@
-baseURL = "https://www.ivpn.net"
-languageCode = "en-us"
+baseURL = "https://www.ivpn.net" 
 title = "IVPN"
 theme = "ivpn-v3"
 paginate = 8
 summaryLength = 35
 disableKinds = ["sitemap", "taxonomy"]
-defaultContentLanguage = 'en'
-defaultContentLanguageInSubdir = true
 pygmentsUseClasses=true
 pygmentsCodefencesGuessSyntax=true
 pygmentsCodefences=true
 pygmentsStyle="monokai"
 pygmentsOptions="noclasses=false"
+
+DefaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.en]
+    languageCode = "en"
+    contentDir = 'content/en'
+    languageName = 'English'
+    weight = 1
+  [languages.es]
+    languageCode = "es"
+    contentDir = 'content/es'
+    languageName = 'Español'
+    weight = 2
 
 [markup.goldmark.renderer]
     unsafe= true
