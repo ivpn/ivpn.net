@@ -1,6 +1,6 @@
 ---
 title: IVPN Team
-url: /team/
+url: team/
 sections:
   - type: heading_text_cta_one_column
     content: >-

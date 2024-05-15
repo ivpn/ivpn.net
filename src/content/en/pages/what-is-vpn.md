@@ -1,7 +1,7 @@
 ---
 title: What is a VPN?
 description: What is a VPN? A VPN or Virtual Private Network encrypts data sent between computers on the Internet. When using a VPN for privacy, your data is encrypted so your ISP or mobile network provider cannot surveil your internet activity.
-url: /what-is-a-vpn/
+url: what-is-a-vpn/
 ---
 # What is a VPN?
 

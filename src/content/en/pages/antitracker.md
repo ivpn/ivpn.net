@@ -1,7 +1,7 @@
 ---
 title: VPN with Ad block and Anti-Tracking
 description: Increase your privacy protection by using IVPN with built-in tracking protection. We block requests from advertising and data harvesting companies to make your browsing experience lighter and more private.
-url: /antitracker/
+url: antitracker/
 ---
 # AntiTracker
 

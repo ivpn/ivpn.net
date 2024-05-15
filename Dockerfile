@@ -11,7 +11,6 @@ WORKDIR /opt/build
 RUN apt-get update  \
     && apt-get install -y gnupg gnupg2 gnupg1 \
     && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-    && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs \
     && apt-get update \
     && npm install --global yarn \

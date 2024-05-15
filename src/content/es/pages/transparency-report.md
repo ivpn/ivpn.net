@@ -1,7 +1,7 @@
 ---
 title: Informe de transparencia de IVPN
 description: Es importante que nuestros clientes comprendan completamente qué información privada recopilamos, almacenamos y procesamos. Lea nuestra política clara y sencilla para obtener la información que necesita.
-url: /transparency-report/
+url: transparency-report/
 ---
 # Informe de transparencia
 

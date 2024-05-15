@@ -1,7 +1,7 @@
 ---
 title: ¿Qué es una VPN?
 description: ¿Qué es una VPN? Una VPN o red privada virtual cifra los datos enviados entre computadoras en Internet. Cuando utiliza una VPN por motivos de privacidad, sus datos se cifran para que su ISP o proveedor de red móvil no pueda monitorear su actividad en Internet.
-url: /what-is-a-vpn/
+url: what-is-a-vpn/
 ---
 # ¿Qué es una VPN?
 

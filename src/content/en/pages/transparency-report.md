@@ -1,7 +1,7 @@
 ---
 title: IVPN Transparency report
 description: Its important our customers fully understand what private information we collect, store and process. Read our clear and simple policy to get the facts you need.
-url: /transparency-report/
+url: transparency-report/
 ---
 # Transparency Report
 
