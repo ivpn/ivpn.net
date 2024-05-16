@@ -1,18 +1,18 @@
 [[main]]
     identifier = "team"
-    name = "Equipo"
+    name = "Team"
     url = "/team/"
     weight = 10
 
   [[main]]
     identifier = "ethics"
-    name = "Ética"
+    name = "Ethics"
     url = "/ethics/"
     weight = 20
   
   [[main]]
     identifier = "privacy"
-    name = "Privacidad"
+    name = "Privacy"
     url = "/privacy/"
     weight = 30
 
@@ -24,7 +24,7 @@
 
   [[main]]
     identifier = "prices"
-    name = "Precio"
+    name = "Pricing"
     url = "/pricing/"
     weight = 45
 
@@ -37,19 +37,19 @@
 
   [[main]]
     identifier = "guides"
-    name = "Guías"
+    name = "Guides"
     url = "/privacy-guides/"
     weight = 60
 
   [[main]]
     identifier = "help"
-    name = "Ayuda"
+    name = "Help"
     url = "/knowledgebase/general/"
     weight = 70
 
   [[footercolone]]
     identifier = "generate-account"
-    name = "Crear Cuenta"
+    name = "Generate Account"
     url = "/signup/"
     weight = 5
 
@@ -68,37 +68,43 @@
   [[footercolone]]
     identifier = "antitracker"
     name = "AntiTracker"
-    url = "/antitracker/"
+    url = "/es/antitracker/"
     weight = 20
 
   [[footercolone]]
     identifier = "what-is-a-vpn"
     name = "Qué es un VPN"
-    url = "/what-is-a-vpn/"
+    url = "/es/what-is-a-vpn/"
     weight = 40
   
   [[footercolone]]
     identifier = "pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard"
-    name = "Comparar Protocolos"
+    name = "Protocol Comparison"
     url = "/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
     weight = 70
 
+  [[footercolone]]
+    identifier = "change-language"
+    name = "English version"
+    url = "/en"
+    weight = 71
+
   [[footercoltwo]]
     identifier = "manifesto"
-    name = "Nuestro Manifiesto"
+    name = "Our Manifesto"
     url = "/manifesto/"
     weight = 10
 
   [[footercoltwo]]
     identifier = "status"
-    name = "Servidores"
+    name = "Servers"
     url = "/status/"
     weight = 20
 
   [[footercoltwo]]
     identifier = "transparency-report"
-    name = "Reporte de Transparencia"
-    url = "/transparency-report/"
+    name = "Informe de transparencia"
+    url = "/es/transparency-report/"
     weight = 30
 
   [[footercoltwo]]
@@ -109,43 +115,43 @@
   
   [[footercoltwo]]
     identifier = "supported-projects"
-    name = "Proyectos Soportados"
+    name = "Supported Projects"
     url = "/supported-projects/"
     weight = 50
   
   [[footercolthree]]
     identifier = "vulnerability-reporting"
-    name = "Reporte de Vulnerabilidades"
+    name = "Report Vulnerability"
     url = "/vulnerability-reporting/"
     weight = 10
 
   [[footercolthree]]
     identifier = "legal-process-guidelines"
-    name = "Guías Legales"
+    name = "Legal Guidelines"
     url = "/legal-process-guidelines/"
     weight = 20
   
   [[footercolthree]]
     identifier = "tos"
-    name = "Términos de Servicios"
+    name = "Terms of Service"
     url = "/tos/"
     weight = 30
 
   [[footercolthree]]
     identifier = "privacy-policy"
-    name = "Política de Privacidad"
+    name = "Privacy Policy"
     url = "/privacy/"
     weight = 50
 
   [[footercolthree]]
     identifier = "refund-policy"
-    name = "Política de reembolso"
+    name = "Refund Policy"
     url = "/refunds/"
     weight = 60
 
   [[footercolfour]]
     identifier = "contact"
-    name = "Contactar"
+    name = "Contact us"
     url = "/contactus/"
     weight = 10
 

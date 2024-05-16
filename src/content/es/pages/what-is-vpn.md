@@ -5,18 +5,18 @@ url: what-is-a-vpn/
 ---
 # ¿Qué es una VPN?
 
-Una VPN o red privada virtual cifra los datos enviados entre computadoras en Internet. Cuando utiliza una VPN por motivos de privacidad, sus datos se cifran para que su ISP o proveedor de red móvil no pueda monitorear su actividad en Internet.
+Una VPN o red privada virtual cifra los datos enviados entre computadoras en Internet. Cuando utilizas una VPN por motivos de privacidad, tus datos se cifran para que tu ISP o proveedor de red móvil no pueda monitorear tu actividad en Internet.
 
 ### El ISP de Alice puede rastrear cada sitio que visita, y el suyo también.
 
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-alice.svg" alt="What is a VPN - Alice ISP" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-alice-dark.svg" alt="What is a VPN - Alice ISP" >}}
 
-Sin una VPN, se conecta a Internet a través de su proveedor de servicios de Internet (ISP) y corre el riesgo de exponer su actividad privada en Internet. Si no utiliza HTTPS, su ISP puede rastrear cada sitio que visite y el contenido que vea o descargue. Es como enviar mensajes confidenciales mediante postales, excepto que, a diferencia de su oficina de correos, su ISP puede grabar y almacenar cada mensaje con casi cero esfuerzo y costo. Incluso si utiliza HTTPS, el ISP aún puede rastrear la dirección IP o el dominio que se está visitando.
+Sin una VPN, te conectas a Internet a través de tu proveedor de servicios de Internet (ISP) y corres el riesgo de exponer tu actividad privada en Internet. Si no utilizas HTTPS, tu ISP puede rastrear cada sitio que visites y el contenido que veas o descargues. Es como enviar mensajes confidenciales mediante postales, excepto que, a diferencia de su oficina de correos, tu ISP puede grabar y almacenar cada mensaje con casi cero esfuerzo y costo. Incluso si utilizas HTTPS, el ISP aún puede rastrear la dirección IP o el dominio que se está visitando.
 
-Incluso en redes Wi-Fi públicas, sus datos pueden ser interceptados por espías o piratas informáticos. Su actividad o sus datos personales pueden ser interceptados sin su conocimiento, dejándolo expuesto.
+Incluso en redes Wi-Fi públicas, tus datos pueden ser interceptados por espías o piratas informáticos. Tu actividad o tus datos personales pueden ser interceptados sin tu conocimiento, dejándolo expuesto.
 
-Eche un vistazo al caso de Alice, como se muestra en el diagrama. Su tráfico fluye a través del ISP sin ningún cifrado, por lo que su ISP puede registrar exactamente dónde está conectada. Además, los servidores a los que está conectada también registran su dirección IP privada, lo que no le brinda privacidad.
+Echa un vistazo al caso de Alice, como se muestra en el diagrama. Su tráfico fluye a través del ISP sin ningún cifrado, por lo que su ISP puede registrar exactamente dónde está conectada. Además, los servidores a los que está conectada también registran su dirección IP privada, lo que no le brinda privacidad.
 
 ### Bob usa IVPN para proteger su privacidad.
 

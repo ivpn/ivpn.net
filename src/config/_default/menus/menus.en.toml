@@ -68,13 +68,13 @@
   [[footercolone]]
     identifier = "antitracker"
     name = "AntiTracker"
-    url = "/antitracker/"
+    url = "/en/antitracker/"
     weight = 20
 
   [[footercolone]]
     identifier = "what-is-a-vpn"
     name = "What is a VPN"
-    url = "/what-is-a-vpn/"
+    url = "/en/what-is-a-vpn/"
     weight = 40
   
   [[footercolone]]
@@ -82,6 +82,12 @@
     name = "Protocol Comparison"
     url = "/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
     weight = 70
+
+  [[footercolone]]
+    identifier = "change-language"
+    name = "Versión española"
+    url = "/es"
+    weight = 71
 
   [[footercoltwo]]
     identifier = "manifesto"
@@ -98,7 +104,7 @@
   [[footercoltwo]]
     identifier = "transparency-report"
     name = "Transparency Report"
-    url = "/transparency-report/"
+    url = "/en/transparency-report/"
     weight = 30
 
   [[footercoltwo]]
