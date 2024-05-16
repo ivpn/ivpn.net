@@ -1,7 +1,7 @@
 ---
 title: VPN for Privacy & Security | IVPN | Resist Online Surveillance
 description: Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup with 30 day money back guarantee.
-url: /es/
+url: /es
 isMenuCta: false
 hasSeperator: false
 sections:
@@ -11,38 +11,46 @@ sections:
     dark_image: /images-static/uploads/ivpn-home-dark.png
     dark_image_retina: /images-static/uploads/ivpn-home-dark@2x.png
     content: >-
-      # Resista la vigilancia en línea
+      # Resist Online Surveillance 
 
-      Lo que usted hace en línea puede ser rastreado por organizaciones que quizás no conozca o en las que no confíe y pase a formar parte de un registro permanente. Una VPN no puede resolver esto por sí sola, pero puede evitar que su ISP pueda compartir o vender sus datos.
-    cta_one_label: Crear cuenta IVPN
+      What you do online can be tracked by organizations you may not know or trust and become part of a permanent record. A VPN can’t solve this on its own, but can prevent your ISP from being able to share or sell your data.
+    cta_one_label: Generate IVPN account
     cta_one_is_blue: true
     cta_one_url: /signup/
-    cta_one_note: No es necesario email
-    cta_two_label: IVPN en GitHub
+    cta_one_note: no email required
+    cta_two_label: IVPN on GitHub
     cta_two_is_blue: false
     cta_two_url: https://github.com/ivpn
   - type: usps_three_column_home
     usps:
-      - name: Sin logs
-        description: No registramos ninguna actividad del usuario relacionada con el uso del servicio VPN, como se explica en nuestra clara [política de privacidad](/privacidad).
-      - name: Sin datos de clientes
-        description: Somos un servicio de privacidad, por lo que no recopilamos ni almacenamos ningún dato personal al registrarse, ni siquiera su correo electrónico. También aceptamos efectivo, monero y bitcoin.
-      - name: Sitio web y aplicaciones de código abierto
-        description: Este sitio web y la aplicación IVPN para todas las plataformas son de código abierto para mayor transparencia y seguridad.
-      - name: Sin servicios en la nube ni almacenamiento de datos
-        description: Todos los servidores que administran el servicio IVPN son autohospedados y operados por IVPN, incluidos el correo electrónico y el chat en vivo.
-      - name: Auditorías de seguridad independientes
-        description: Nos comprometemos a realizar [auditorías de seguridad anuales](/blog/tags/audit/) para mejorar nuestras prácticas de seguridad y transparencia.
-      - name: Sin reseñas falsas
-        description: Nunca pagamos por reseñas y no tenemos un programa de afiliados, por lo que no nos encontrará en las listas de las "10 mejores VPN".
-      - name: Sin falsas promesas ni tonterías
-        description: No prometemos anonimato ni "cifrado de grado militar". Publicamos extensas [guías de privacidad](/privacy-guides/) y educamos a nuestros clientes sobre lo que una VPN puede lograr de manera realista.
-      - name: Defensores de la privacidad
-        description: Donamos regularmente a organizaciones que luchan por el derecho a la privacidad como EFF, Open Rights Group y el proyecto Tor.
-      - name: Transparencia
-        description: Nuestro modelo de negocio se basa exclusivamente en suscripciones pagas. No somos propietarios de ningún otro servicio VPN ni sitios de revisión de VPN. Revise [el equipo](/equipo/) que opera IVPN y la propiedad de la empresa.
+      - name: No logs
+        description: We do not log any user activity relating to the use of the VPN service, as explained in our clear [privacy policy](/privacy).
+      - name: No customer data
+        description: We're a privacy service, so we don't collect or store any personal data on sign-up, not even your email. We also
+          accept cash, monero and bitcoin.
+      - name: Open-source apps and website
+        description: This website and the IVPN app for all platforms are
+          open-source for additional transparency and security.
+      - name: No cloud services or data storage
+        description: All servers managing the IVPN service are self-hosted
+          and operated by IVPN, including email and customer service.
+      - name: Independent security audits
+        description: We commit to [annual security audits](/blog/tags/audit/) to improve our security
+          practices and transparency.
+      - name: No fake reviews
+        description: We never pay for reviews and do not have an affiliate program, so
+          you won’t find us on the 'top 10 best VPN' lists.
+      - name: No false promises or fluff
+        description: We don’t promise anonymity or 'military grade encryption'. We publish extensive [privacy guides](/privacy-guides/) and educate our customers on what a VPN can realistically achieve.
+      - name: Privacy advocates
+        description: We donate regularly to organizations fighting for the right to
+          privacy like the EFF, Open Rights Group, and the Tor project.
+      - name: Transparency
+        description: Our business model is exclusively based on paid subscriptions. We
+          do not own any other VPN services or VPN review sites. Review [the team](/team/)
+          operating IVPN and the company ownership.
   - type: heading_text_one_column
-    content: "## Características"
+    content: "## Features"
   - type: features_image_three_column
     light_image: /images-static/uploads/home-app-light.png
     light_image_retina: /images-static/uploads/home-app-light-2x.png
