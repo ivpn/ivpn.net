@@ -12,6 +12,7 @@ sections:
     dark_image_retina: /images-static/uploads/ivpn-home-dark@2x.png
     content: >-
       # Resiste la vigilancia en línea
+    
       Lo que haces en línea puede ser rastreado por organizaciones que quizás no conozcas y pases a formar parte de un registro permanente. Una VPN no puede resolver esto por sí sola, pero puede evitar que tu ISP pueda compartir o vender tus datos.
     cta_one_label: Generar cuenta IVPN
     cta_one_is_blue: true
