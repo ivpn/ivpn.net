@@ -11,7 +11,7 @@ sections:
     dark_image: /images-static/uploads/ivpn-home-dark.png
     dark_image_retina: /images-static/uploads/ivpn-home-dark@2x.png
     content: >-
-      # Resiste la vigilancia en línea
+     # Resiste la vigilancia en línea
     
       Lo que haces en línea puede ser rastreado por organizaciones que quizás no conozcas y pases a formar parte de un registro permanente. Una VPN no puede resolver esto por sí sola, pero puede evitar que tu ISP pueda compartir o vender tus datos.
     cta_one_label: Generar cuenta IVPN
@@ -57,16 +57,16 @@ sections:
     dark_image: /images-static/uploads/home-app-dark.png
     dark_image_retina: /images-static/uploads/home-app-dark-2x.png
     features_col_one:
-      - description: "Elección de protocolos **WireGuard, OpenVPN o IPSec** utilizando las aplicaciones IVPN o cualquier otro cliente VPN compatible".
-      - description: "**Controles de privacidad de WireGuard** - Define una programación personalizada para la rotación automática de claves y direcciones IP".
-      - description: "**AntiTracker** que bloquea anuncios, adware, sitios web maliciosos y rastreadores de recopilación de datos".
-      - description: "Opción **Killswitch/Firewall** en macOS, Windows, Linux, Android y la función On-demand incorporada en iOS. Ofrece protección contra filtraciones DNS, IPv6, WebRTC y desconexiones".
-      - description: "**Servidores DNS** privados sin registro, accesibles a través de nuestra VPN".
+      - description: "Elección de protocolos **WireGuard, OpenVPN o IPSec** utilizando las aplicaciones IVPN o cualquier otro cliente VPN compatible."
+      - description: "**Controles de privacidad de WireGuard** - Define una programación personalizada para la rotación automática de claves y direcciones IP."
+      - description: "**AntiTracker** que bloquea anuncios, adware, sitios web maliciosos y rastreadores de recopilación de datos."
+      - description: "Opción **Killswitch/Firewall** en macOS, Windows, Linux, Android y la función On-demand incorporada en iOS. Ofrece protección contra filtraciones DNS, IPv6, WebRTC y desconexiones."
+      - description: "**Servidores DNS** privados sin registro, accesibles a través de nuestra VPN."
     features_col_two:
-      - description: "**Rutas VPN Multi-hop**. Conéctate a través de múltiples servidores en jurisdicciones diferentes para mejorar la privacidad".
-      - description: "Define **redes Wi-Fi de confianza** y crea reglas para la conexión/desconexión automática".
-      - description: "**Función de pausado** para cuando necesites desactivar la VPN temporalmente, tras lo cual la conexión se restablece automáticamente (excepto iOS)".
-      - description: "**Obfsproxy** para eludir la censura (clientes Windows, macOS y Linux)".
+      - description: "**Rutas VPN Multi-hop**. Conéctate a través de múltiples servidores en jurisdicciones diferentes para mejorar la privacidad."
+      - description: "Define **redes Wi-Fi de confianza** y crea reglas para la conexión/desconexión automática."
+      - description: "**Función de pausado** para cuando necesites desactivar la VPN temporalmente, tras lo cual la conexión se restablece automáticamente (excepto iOS)."
+      - description: "**Obfsproxy** para eludir la censura (clientes Windows, macOS y Linux)."
   - type: heading_text_one_column
     content: "## ¿Realmente necesitas una VPN?"
   - type: text_two_column
