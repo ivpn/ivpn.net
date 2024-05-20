@@ -30,7 +30,7 @@ Syntax may differ depending on your Linux distro, substitute where required
     #sudo nano /etc/resolvconf/resolv.conf.d/head
     ```
 
-    ... and on the new line (without quotes) enter `nameserver 10.0.254.1` and on another line nameserver `198.245.51.147`. Cntrl+X to save changes and exit the file.
+    ... and on the new line (without quotes) enter `nameserver 10.0.254.1` and on another line `nameserver 198.245.51.147`. `Ctrl+X` to save changes and exit the file.
 
 3.  Restart your system to apply the DNS changes or edit the **resolv.conf** file to apply the DNS immediately:
 
@@ -94,7 +94,7 @@ Syntax may differ depending on your Linux distro, substitute where required
     nameserver 198.245.51.147
     ```
 
-    Press `Ctrl+x` to save and exit the **nano** editor, then change the file attribute to prevent writes or file changes:
+    Press `Ctrl+X` to save and exit the **nano** editor, then change the file attribute to prevent writes or file changes:
 
     ```
     sudo chattr +i /etc/resolv.conf
