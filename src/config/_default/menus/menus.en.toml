@@ -1,7 +1,7 @@
 [[main]]
     identifier = "team"
     name = "Team"
-    url = "/team/"
+    url = "/en/team/"
     weight = 10
 
   [[main]]
@@ -82,12 +82,6 @@
     name = "Protocol Comparison"
     url = "/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
     weight = 70
-
-  [[footercolone]]
-    identifier = "change-language"
-    name = "Versión española"
-    url = "/es"
-    weight = 71
 
   [[footercoltwo]]
     identifier = "manifesto"

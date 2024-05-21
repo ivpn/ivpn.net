@@ -1,13 +1,13 @@
 ---
 title: Informe de transparencia de IVPN
-description: Es importante que nuestros clientes comprendan completamente qué información privada recopilamos, almacenamos y procesamos. Lea nuestra política clara y sencilla para obtener la información que necesita.
+description: Es importante que nuestros clientes comprendan completamente qué información privada recopilamos, almacenamos y procesamos. Lee nuestra política clara y sencilla para obtener la información que necesitas.
 url: transparency-report/
 ---
 # Informe de transparencia
 
-La siguiente tabla muestra la cantidad de solicitudes legales válidas recibidas del gobierno o agencias encargadas de hacer cumplir la ley.
+La siguiente tabla muestra la cantidad de solicitudes legales válidas recibidas de agencias gubernamentales o agencias encargadas de hacer cumplir la ley.
 
-Para obtener más información sobre cómo se procesan las solicitudes, consulte las [directrices de proceso legal para el cumplimiento de la ley](/legal-process-guidelines/).
+Para obtener más información sobre cómo se procesan las solicitudes, consulta las [directrices de proceso legal para el cumplimiento de la ley](/legal-process-guidelines/).
 
 |   | # Solicitudes recibidas| # Solicitudes válidas recibidas | # Solicitudes válidas recibidas donde se proporcionaron datos |
 |---|---|---|---|
