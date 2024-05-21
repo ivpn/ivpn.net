@@ -2,6 +2,8 @@
 title: VPN para privacidad y seguridad | IVPN | Resiste la vigilancia en línea
 description: Servicio VPN de código abierto, auditado, con WireGuard, killswitch y bloqueador de rastreadores. Sin registros, sin falsas promesas. Inscripción anónima con garantía de reembolso de 30 días.
 url: /es/
+params:
+  translated: true
 isMenuCta: false
 hasSeperator: false
 sections:
@@ -13,7 +15,7 @@ sections:
     content: >-
       # Resiste la vigilancia en línea
     
-      Lo que haces en línea puede ser rastreado por organizaciones que quizás no conozcas y pases a formar parte de un registro permanente. Una VPN no puede resolver esto por sí sola, pero puede evitar que tu ISP pueda compartir o vender tus datos.
+      Lo que haces en línea puede ser rastreado por organizaciones que quizás no conozcas y pase a formar parte de un registro permanente. Una VPN no puede resolver esto por sí sola, pero puede evitar que tu ISP pueda compartir o vender tus datos.
     cta_one_label: Generar cuenta IVPN
     cta_one_is_blue: true
     cta_one_url: /signup/
@@ -47,7 +49,7 @@ sections:
           la privacidad como la EFF, Open Rights Group y el proyecto Tor.
       - name: Transparencia
         description: Nuestro modelo de negocio se basa exclusivamente en suscripciones de pago. No
-          poseemeos ningún otro servicio VPN ni páginas de reseñas de VPN. Revisa [el equipo](/team/)
+          poseemeos ningún otro servicio VPN ni páginas de reseñas de VPN. Revisa [el equipo](team/)
           que dirige IVPN y la propiedad de la empresa.
   - type: heading_text_one_column
     content: "## Funciones"
@@ -91,7 +93,7 @@ sections:
       ### Sin embargo, una VPN de confianza puede ser muy efectiva para:
 
 
-      * Cifrar tus datos para que tu ISP o proveedor de red móvil no pueda vigilar ni registrar tu actividad en línea. Sin una VPN, conexiones HTTPS aún exponen a tu ISP el nombre del dominio o la dirección IP que está visitando.
+      * Cifrar tus datos para que tu ISP o proveedor de red móvil no pueda vigilar ni registrar tu actividad en línea. Sin una VPN, conexiones HTTPS aún exponen a tu ISP el nombre del dominio o la dirección IP que estás visitando.
 
       * Cifrar tu peticiones de DNS para que tu ISP o proveedor de red móvil no pueda vigilar ni registrar los dominios que visitas.
 

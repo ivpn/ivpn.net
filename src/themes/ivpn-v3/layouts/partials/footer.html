@@ -13,7 +13,7 @@
                     <a href="{{ .URL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
-                {{ if eq site.Language.Lang "en" }}
+                {{ if and (eq site.Language.Lang "en") (.Param "translated") }}
                 <li>
                     <a href="{{ replace .Page.RelPermalink "/en/" "/es/" }}">Versión española</a>
                 </li>
