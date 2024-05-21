@@ -2,6 +2,8 @@
 title: VPN para privacidad y seguridad | IVPN | Resiste la vigilancia en línea
 description: Servicio VPN de código abierto, auditado, con WireGuard, killswitch y bloqueador de rastreadores. Sin registros, sin falsas promesas. Inscripción anónima con garantía de reembolso de 30 días.
 url: /es/
+params:
+  translated: true
 isMenuCta: false
 hasSeperator: false
 sections:
@@ -47,7 +49,7 @@ sections:
           la privacidad como la EFF, Open Rights Group y el proyecto Tor.
       - name: Transparencia
         description: Nuestro modelo de negocio se basa exclusivamente en suscripciones de pago. No
-          poseemeos ningún otro servicio VPN ni páginas de reseñas de VPN. Revisa [el equipo](/team/)
+          poseemeos ningún otro servicio VPN ni páginas de reseñas de VPN. Revisa [el equipo](team/)
           que dirige IVPN y la propiedad de la empresa.
   - type: heading_text_one_column
     content: "## Funciones"

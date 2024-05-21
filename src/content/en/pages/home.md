@@ -2,6 +2,8 @@
 title: VPN for Privacy & Security | IVPN | Resist Online Surveillance
 description: Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup with 30 day money back guarantee.
 url: /en/
+params:
+  translated: true
 isMenuCta: false
 hasSeperator: false
 sections:
@@ -47,7 +49,7 @@ sections:
           privacy like the EFF, Open Rights Group, and the Tor project.
       - name: Transparency
         description: Our business model is exclusively based on paid subscriptions. We
-          do not own any other VPN services or VPN review sites. Review [the team](/team/)
+          do not own any other VPN services or VPN review sites. Review [the team](team/)
           operating IVPN and the company ownership.
   - type: heading_text_one_column
     content: "## Features"
