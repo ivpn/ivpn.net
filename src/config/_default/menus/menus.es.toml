@@ -7,7 +7,7 @@
   [[main]]
     identifier = "ethics"
     name = "Ethics"
-    url = "/ethics/"
+    url = "/es/ethics/"
     weight = 20
   
   [[main]]
