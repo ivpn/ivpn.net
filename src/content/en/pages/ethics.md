@@ -1,7 +1,9 @@
 ---
 title: Ethical guidelines for privacy protection | IVPN
 description: Learn about the privacy-first ethical direction we follow. We explain how we approach transparency and how/what we communicate to new customers.
-url: /ethics/
+url: /en/ethics/
+params:
+  translated: true
 sections:
   - type: text_one_narrow_column
     content: >-

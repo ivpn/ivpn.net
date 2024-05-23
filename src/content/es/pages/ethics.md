@@ -1,7 +1,9 @@
 ---
 title: Directrices éticas para la protección de la privacidad | IVPN
 description: Conoce la dirección ética que seguimos, dando prioridad a la privacidad. Explicamos cómo abordamos la transparencia y cómo/qué comunicamos a los nuevos clientes.
-url: /ethics/
+url: /es/ethics/
+params:
+  translated: true
 sections:
   - type: text_one_narrow_column
     content: >-
