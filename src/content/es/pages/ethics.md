@@ -30,7 +30,7 @@ sections:
 
       #### Sin secretos
 
-      La [propiedad, estructura de la empresa y equipo](team/) de IVPN es pública, por lo tanto sabes quién es responsable de proteger tu privacidad.
+      La [propiedad, estructura de la empresa y equipo](/es/team/) de IVPN es pública, por lo tanto sabes quién es responsable de proteger tu privacidad.
 
       #### Sin falsas promesas
 
@@ -38,7 +38,7 @@ sections:
 
       #### Sinceridad y responsabilidad
 
-      Nuestras aplicaciones son de código abierto y están disponibles en nuestra [página de GitHub] (https://github.com/ivpn). Comisionamos [auditorías](https://www.ivpn.net/blog/tags/audit/) periódicas para respaldar nuestras afirmaciones. 
+      Nuestras aplicaciones son de código abierto y están disponibles en nuestra [página de GitHub](https://github.com/ivpn). Comisionamos [auditorías](https://www.ivpn.net/blog/tags/audit/) periódicas para respaldar nuestras afirmaciones. 
       
   - type: text_one_narrow_column
     content: >-

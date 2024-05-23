@@ -31,7 +31,7 @@ sections:
 
       #### No secrets
 
-      IVPN’s [ownership, company structure and team](team/) is public, so you know who is responsible for protecting your privacy.
+      IVPN’s [ownership, company structure and team](/en/team/) is public, so you know who is responsible for protecting your privacy.
 
       #### No false promises
 
