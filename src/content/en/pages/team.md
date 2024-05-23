@@ -1,6 +1,7 @@
 ---
 title: IVPN Team
 url: /en/team/
+aliases: ['/team/']
 params:
   translated: true
 sections:
