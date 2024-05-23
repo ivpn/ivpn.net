@@ -27,7 +27,7 @@ sections:
       #### La libertad es necesaria para una sociedad abierta
 
 
-      Creemos que usted tiene derecho a la libertad de opinión y expresión en línea sin interferencias ni vigilancia. La libertad conduce a expresiones mejoradas de creatividad y pensamiento original. Estamos decididos a proteger este derecho.
+      Creemos que tienes derecho a la libertad de opinión y expresión en línea sin interferencias ni vigilancia. La libertad conduce a expresiones mejoradas de creatividad y pensamiento original. Estamos decididos a proteger este derecho.
   - type: text_two_column
     content_column_1: >-
       #### La vigilancia no puede ser la respuesta
@@ -46,7 +46,7 @@ sections:
       - image: /images-static/uploads/team-nick.png
         image_retina: /images-static/uploads/team-nick-2x.png
         name: Nicholas Pestell
-        description: Nick es fundador y director ejecutivo de IVPN y propietario 100% de IVPN Limited, la empresa a través de la cual se opera el servicio IVPN. Nick aporta una considerable experiencia en gestión de riesgos y pruebas de seguridad mientras trabaja para Royal Bank of Scotland, Network Rail y ABN AMRO Bank.
+        description: Nick es fundador y director ejecutivo de IVPN y propietario 100% de IVPN Limited, la empresa a través de la cual se opera el servicio IVPN. Nick aporta una considerable experiencia en gestión de riesgos y pruebas de seguridad, adquirida mientras trabajaba para Royal Bank of Scotland, Network Rail y ABN AMRO Bank.
         linkedin: https://www.linkedin.com/in/nick-pestell/
         github: https://github.com/cipheromega
       - image: /images-static/uploads/team-edward.png
@@ -63,7 +63,7 @@ sections:
       - image: /images-static/uploads/team-gorka.png
         image_retina: /images-static/uploads/team-gorka-2x.png
         name: Gorka Pernas
-        description: Después de acumular una década de experiencia en funciones relacionadas con el control de calidad en empresas de tecnología, Gorka ahora aplica sus conocimientos para ayudar al equipo de IVPN a enviar aplicaciones sin errores y asegurarse de que no sufra fugas de privacidad.
+        description: Después de acumular una década de experiencia en funciones relacionadas con el control de calidad en empresas de tecnología, Gorka ahora aplica sus conocimientos para ayudar al equipo de IVPN a lanzar aplicaciones sin errores y asegurarse de que no sufras filtraciones de privacidad.
         linkedin: https://www.linkedin.com/in/gorkapernas/
         github: https://github.com/gorkapernas
       - image: /images-static/uploads/nathan.png
@@ -74,24 +74,24 @@ sections:
       - image: /images-static/uploads/team-juraj.png
         image_retina: /images-static/uploads/team-juraj-2x.png
         name: Juraj Hilje
-        description: Como fanático incondicional de Apple y creyente en una experiencia de usuario fluida, fue una elección natural para Juraj ingresar al desarrollo de iOS hace una década. Ahora está obsesionado con crear la mejor aplicación VPN disponible en la App Store.
+        description: Como fanático incondicional de Apple y creyente en una experiencia de usuario fluida, fue una elección natural para Juraj empezar a desarrollar iOS hace una década. Ahora está obsesionado con crear la mejor VPN disponible en la App Store.
         github: https://github.com/jurajhilje
       - image: /images-static/uploads/team-stenya.png
         image_retina: /images-static/uploads/team-stenya-2x.png
         name: Oleksandr Stelnykovych
-        description: Stenya tiene más de 15 años de experiencia como desarrollador de software en diversos roles. En IVPN, está trabajando en la creación de las mejores aplicaciones VPN para escritorios Windows y macOS.
+        description: Stenya tiene más de 15 años de experiencia como desarrollador de software en diversos roles. En IVPN, trabaja en desarrollar las mejores aplicaciones VPN de escritorio para Windows y macOS.
         linkedin: https://www.linkedin.com/in/alexandrstelnykovych/
         github: https://github.com/stenya
       - image: /images-static/uploads/team-jordan.png
         image_retina: /images-static/uploads/team-jordan-2x.png
         name: Jordan Sullivan
-        description: Como líder de turno de servicio al cliente para las Américas, Jordan utiliza sus habilidades de soporte técnico basadas en la resolución de problemas para ayudar a cualquiera que necesite una asistencia clara y paciente.
+        description: Como líder del servicio al cliente para América, Jordan utiliza sus habilidades de soporte técnico basadas en la resolución de problemas para ayudar a cualquiera que necesite una asistencia clara y paciente.
         linkedin: 
         github: https://github.com/jordan-ivpn
       - image: /images-static/uploads/team-marina.png
         image_retina: /images-static/uploads/team-marina-2x.png
         name: Marina Tretiakova
-        description: Como especialista en finanzas, Marina no sólo garantiza que los libros del IVPN estén en orden, sino que también es responsable de desarrollar los procesos de negocio, realizar controles internos y garantizar el cumplimiento de las leyes.
+        description: Como especialista en finanzas, Marina no sólo garantiza que las finanzas de IVPN estén en orden, sino que también es responsable de desarrollar los procesos de negocio, realizar controles internos y garantizar el cumplimiento normativo.
         linkedin: https://www.linkedin.com/in/marina-radionova-64800135/
         github: 
       - image: /images-static/uploads/team-viktor.png
