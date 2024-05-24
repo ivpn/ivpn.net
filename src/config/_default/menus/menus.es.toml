@@ -62,7 +62,7 @@
   [[footercolone]]
     identifier = "wireguard"
     name = "WireGuard® VPN"
-    url = "/wireguard/"
+    url = "/es/wireguard/"
     weight = 10
   
   [[footercolone]]
