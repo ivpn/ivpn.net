@@ -4,7 +4,7 @@ url: /es/refunds/
 params:
   translated: true
 ---
-# Refunds
+# Reembolsos
 
 IVPN se esfuerza por satisfacer las expectativas de todos los usuarios y ofrece soporte ilimitado para ayudar a los usuarios con cualquier problema que puedan encontrar.
 

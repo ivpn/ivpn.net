@@ -128,7 +128,7 @@
   [[footercolthree]]
     identifier = "tos"
     name = "Terms of Service"
-    url = "/tos/"
+    url = "/es/tos/"
     weight = 30
 
   [[footercolthree]]
@@ -140,7 +140,7 @@
   [[footercolthree]]
     identifier = "refund-policy"
     name = "Refund Policy"
-    url = "/refunds/"
+    url = "/es/refunds/"
     weight = 60
 
   [[footercolfour]]
