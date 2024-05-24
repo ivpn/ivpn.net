@@ -28,7 +28,7 @@ Ten en cuenta que en este acuerdo, el término "Tú" significa tú el "Suscripto
 
 6. Tú no utilizarás nuestro servicio para enviar datos no solicitados de ninguna forma. Esto incluye, entre otros, lo siguiente: envío de correos electrónicos no solicitados (es decir, correos electrónicos no deseados), correos electrónicos de odio, correos electrónicos de marketing masivo, mensajes instantáneos no solicitados y SMS no solicitados.
 
-7. Tú no utilizarás nuestros servicios para participar en ningún tipo de actividad de pornografía infantil. Esto incluye, entre otros, lo siguiente: Comercio, trueque, venta, transmisión o recepción de dicho material.
+7. Tú no utilizarás nuestros servicios para participar en ningún tipo de actividad de pornografía infantil. Esto incluye, entre otros, lo siguiente: comercio, trueque, venta, transmisión o recepción de dicho material.
 
 8. Tú no utilizarás nuestro servicio para ningún tipo de actividades delictivas. Esto incluye, entre otros, lo siguiente: Participar en el uso de tarjetas de crédito robadas, cuentas bancarias robadas, tarjetas de débito robadas, tarjetas de crédito robadas, cuentas de pago en línea robadas (por ejemplo, PayPal).
 
