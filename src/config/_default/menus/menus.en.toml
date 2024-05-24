@@ -7,7 +7,7 @@
   [[main]]
     identifier = "ethics"
     name = "Ethics"
-    url = "/ethics/"
+    url = "/en/ethics/"
     weight = 20
   
   [[main]]
@@ -62,7 +62,7 @@
   [[footercolone]]
     identifier = "wireguard"
     name = "WireGuard® VPN"
-    url = "/wireguard/"
+    url = "/en/wireguard/"
     weight = 10
   
   [[footercolone]]
