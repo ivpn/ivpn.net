@@ -1,0 +1,28 @@
+{
+    "servers": {
+        "title": "IVPN Servers",
+        "country": "Country",
+        "any": "Any",
+        "city": "City",
+        "provider": "Provider",
+        "reset": "Reset",
+        "server": "Server",
+        "table": {
+            "country": "COUNMTRY",
+            "city": "CITY",
+            "provider": "PROVIDER",
+            "load": "LOAD"
+        },
+        "details": {
+            "wireguard": "WireGuard Public Key",
+            "multihop": "MultiHop Port",
+            "obfs3single": "OBFS3 SingleHop Port",
+            "obfs3multi": "OBFS3 MultiHop Port",
+            "obfs4single": "OBFS4 SingleHop Port",
+            "obfs4multi": "OBFS4 MultiHop Port",
+            "obfs4key": "OBFS4 MultiHop Port",
+            "socks5": "SOCKS5",
+            "socks5port": "SOCKS5 Port"
+        }
+    }
+}

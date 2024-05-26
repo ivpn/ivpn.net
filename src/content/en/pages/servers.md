@@ -1,5 +1,8 @@
 ---
 title: IVPN Server Status
-url: /status/
+url: /en/status/
+aliases: ['/status/']
+params:
+  translated: true
 layout: servers
 ---

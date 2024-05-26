@@ -6,6 +6,10 @@ import store from './store'
 
 import { format } from 'date-fns'
 import { mapState } from 'vuex'
+import { createI18n } from 'vue-i18n'
+
+const i18n = createI18n({
+})
 
 let products = {
     standard: {
@@ -98,4 +102,5 @@ app.config.globalProperties.$filters = {
 app.config.productionTip = false
 app.use(store)
 app.use(router)
+app.use(i18n)
 app.mount('#application')
