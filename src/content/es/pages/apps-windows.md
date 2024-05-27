@@ -48,7 +48,7 @@ Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración c
 - [OpenVPN GUI (Windows 8)](/setup/windows-8-openvpn-community/)
 - [IPSec with IKEv2 (Windows 10)](/setup/windows-10-ipsec-with-ikev2/)
 
-## Descarga versiones anteriores
+## Descarga una versión anterior
 
 [IVPN-Client-v3.12.0.exe](https://repo.ivpn.net/windows/bin/IVPN-Client-v3.12.0.exe)  
 SHA256: 2425f3e339eeb8bb8ac11734b2db918083eea6d2cd9172109e0748b2fcd62f19  
