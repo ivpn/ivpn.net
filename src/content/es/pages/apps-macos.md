@@ -48,7 +48,6 @@ releases: [{
 - Función de pausado para cuando sea necesario deshabilitar temporalmente la conexión VPN.
 - Opción Obfsproxy para eludir la censura.
 - Servidores DNS personalizados, con DoH.
-- Túneles divididos.
 - Actualización automática.
 - Conexión automática de inicio y al unirse a una red Wi-Fi insegura.
 
