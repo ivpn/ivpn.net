@@ -1,5 +1,5 @@
 ---
-title: IVPN para Windows: aplicación VPN de código abierto para tu PC Windows
+title: IVPN para Windows - Aplicación VPN de código abierto para tu PC Windows
 description: IVPN para Windows te ofrece una protección integral contra filtraciones de privacidad con el firewall IVPN, conexión automática en redes Wi-Fi inseguras y Multi-hop.
 h1: IVPN para Windows
 subtitle: Compatible con Windows 10 / 11 (64-bit)
