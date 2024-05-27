@@ -1,8 +1,8 @@
 ---
-title: IVPN para Android - aplicación VPN de código abierto para Android
-description: La aplicación IVPN para Android te ofrece una protección integral contra fugas de privacidad con el firewall IVPN, conexión automática en Wi-Fi inseguro y Multi-hop.
+title: IVPN para Android - Aplicación VPN de código abierto para Android
+description: La aplicación IVPN para Android te ofrece una protección integral contra filtraciones de privacidad con el firewall IVPN, conexión automática en redes de Wi-Fi inseguras y Multi-hop.
 h1: IVPN para Android
-subtitle: Soporta Android 5.0+
+subtitle: Compatible con Android 5.0+
 url: /es/apps-android/
 params:
   translated: true
@@ -46,18 +46,18 @@ releases: [{
 ## Funciones
 
 - Protocolos WireGuard y OpenVPN.
-- Controles de privacidad de WireGuard: define un programa de rotación automática de claves y direcciones IP.
-- AntiTracker que bloquea anuncios, software publicitario, sitios web maliciosos y rastreadores de recolección de datos.
-- Capacidad para definir redes Wi-Fi confiables y crear reglas para la conexión/desconexión automática de VPN.
+- Controles de privacidad de WireGuard - Define un programa de rotación automática de claves y direcciones IP.
+- AntiTracker que bloquea anuncios, adware, páginas web maliciosos y rastreadores de recopilación de datos.
+- Capacidad para definir redes Wi-Fi de confianza y crear reglas para la conexión/desconexión automática de VPN.
 - Túnel dividido para permitir que algunas aplicaciones omitan la VPN.
-- Rutas VPN de múltiples saltos. Conéctate a través de múltiples servidores en jurisdicciones separadas para mejorar la privacidad.
+- Rutas VPN de Multi-hop. Conéctate a través de múltiples servidores en jurisdicciones diferentes para mejorar la privacidad.
 - Servidores DNS personalizados, DoT a través de DNS privado nativo de Android.
 - Ubicación simulada para GPS.
 - Protección contra Tapjacking.
 
 ## Configuración manual
 
-Si prefiere no utilizar la aplicación IVPN, siga la guía de configuración correspondiente a continuación.
+Si prefiere no utilizar la aplicación IVPN, sigue la guía de configuración correspondiente a continuación.
 
 - [WireGuard](/setup/android-wireguard/)
 - [OpenVPN for Android](/setup/android-openvpn-for-android/)  
