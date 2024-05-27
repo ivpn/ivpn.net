@@ -7,7 +7,7 @@
             <div class="row row__filter">
                 <div class="col server">
                     <form class="search" @submit.prevent autocomplete="off">
-                        <input name="search" type="text" placeholder="Server" @input="onChangeServerFilter($event)" ref="serverFilter">
+                        <input name="search" type="text" :placeholder="$t('servers.placeholder')" @input="onChangeServerFilter($event)" ref="serverFilter">
                         <input type="submit" value=" ">
                     </form>
                 </div>
@@ -163,6 +163,7 @@
 
 <script>
 import Api from "@/api/api";
+import { useI18n } from "vue-i18n";
 
 export default {
     data() {
@@ -179,6 +180,7 @@ export default {
         };
     },
     mounted() {
+        useI18n().locale.value = window.location.href.split("/")[3];
         this.refreshServers();
     },
     methods: {

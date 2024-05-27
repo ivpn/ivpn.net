@@ -1,9 +1,19 @@
 ---
+<<<<<<< HEAD
 title: IVPN for macOS - Open-source VPN app for your Mac
 description: IVPN for macOS offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for macOS
 subtitle: Supports macOS 10.14+
 url: /apps-macos/
+=======
+title: IVPN para macOS - Aplicación VPN de código abierto para tu Mac
+description: IVPN para macOS te ofrece una protección integral contra filtraciones de privacidad con el firewall IVPN, conexión automática en redes Wi-Fi inseguras y Multi-hop.
+h1: IVPN para macOS
+subtitle: Compatible con macOS 10.14+
+url: /es/apps-macos/
+params:
+  translated: true
+>>>>>>> feature/language-localisation
 platform: macos
 layout: apps
 image: apps/macos-app
@@ -33,6 +43,7 @@ releases: [{
     ]
 }]
 ---
+<<<<<<< HEAD
 ## Features
 
 - Supports WireGuard or OpenVPN protocols.
@@ -52,11 +63,34 @@ releases: [{
 ## Manual Configuration
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
+=======
+## Funciones
+
+- Protocolos WireGuard y OpenVPN.
+- GUI o CLI (interfaz de línea de comandos).
+- Controles de privacidad de WireGuard - Define un programa de rotación automática de claves y direcciones IP.
+- AntiTracker que bloquea anuncios, adware, páginas web maliciosas y rastreadores de recopilación de datos.
+- Firewall/killswitch - Posibilidad de configurarlo a demanda o siempre activo. Ofrece protección integral contra filtraciones DNS, IPv6, WebRTC y desconexiones.
+- Capacidad para definir redes Wi-Fi de confianza y crear reglas para la conexión/desconexión automática de la VPN.
+- Rutas VPN de Multi-hop. Conéctate a través de múltiples servidores en jurisdicciones diferentes para mejorar la privacidad.
+- Permitir el tráfico LAN cuando estés conectado a la VPN.
+- Función de pausado para cuando sea necesario deshabilitar temporalmente la conexión VPN.
+- Opción Obfsproxy para eludir la censura.
+- Servidores DNS personalizados, con DoH.
+- Túneles divididos.
+- Actualización automática.
+- Conexión automática de inicio y al unirse a una red Wi-Fi insegura.
+
+## Configuración manual
+
+Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración correspondiente a continuación.
+>>>>>>> feature/language-localisation
 
 - [WireGuard](/setup/macos-wireguard/)
 - [Tunnelblick (OpenVPN)](/setup/macos-openvpn-tunnelblick/)  
 - [IPSec with IKEv2](/setup/macos-ipsec-with-ikev2/)   
 
+<<<<<<< HEAD
 ## Signature Verification
 
 The OpenSSL public key file has to be used for verification:
@@ -77,6 +111,9 @@ Next steps should be performed, to verify the signature (example):
     {{< /highlight >}}
 
 ## Download Legacy Version
+=======
+## Descarga una versión anterior
+>>>>>>> feature/language-localisation
 
 Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
 SHA256: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22  

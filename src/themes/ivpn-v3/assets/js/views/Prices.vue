@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h1 class="app">Select IVPN Plan</h1>
+        <h1 class="app">{{ $t('pricing.title') }}</h1>
         <p>
-            Select a plan to create your account instantly. You can switch between IVPN Standard and Pro any time in the future.
+            {{ $t('pricing.description') }}
         </p>
 
         <div class="prices">
@@ -12,12 +12,12 @@
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'IVPN Standard'"
             >
-                <div class="price-header">IVPN Standard</div>
+                <div class="price-header">{{ $t('pricing.standard') }}</div>
                 <div class="price-features">
                     <ul>
-                        <li>All protocols</li>
-                        <li>2 devices</li>
-                        <li>AntiTracker</li>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
                     </ul>
                 </div>
             </price-box>
@@ -31,10 +31,10 @@
                 <div class="price-header">IVPN Pro</div>
                 <div class="price-features">
                     <ul>
-                        <li>All protocols</li>
-                        <li>7 devices</li>
-                        <li>AntiTracker</li>
-                        <li>Multi-hop</li>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
             </price-box>
@@ -83,6 +83,7 @@ import PriceBox from "@/components/PriceBox.vue";
 
 import { mapState } from "vuex";
 import matomo from "@/api/matomo.js";
+import { useI18n } from "vue-i18n";
 
 export default {
     name: "Prices",
@@ -101,6 +102,9 @@ export default {
             inProgress: (state) => state.auth.inProgress,
             auth: (state) => state.auth,
         }),
+    },
+    mounted(){
+        useI18n().locale.value = window.location.href.split("/")[3];
     },
     async created() {
         if (

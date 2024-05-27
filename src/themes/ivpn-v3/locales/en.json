@@ -6,9 +6,10 @@
         "city": "City",
         "provider": "Provider",
         "reset": "Reset",
-        "server": "Server",
+        "server": "SERVER",
+        "placeholder": "Server",
         "table": {
-            "country": "COUNMTRY",
+            "country": "COUNTRY",
             "city": "CITY",
             "provider": "PROVIDER",
             "load": "LOAD"
@@ -24,5 +25,20 @@
             "socks5": "SOCKS5",
             "socks5port": "SOCKS5 Port"
         }
+    },
+    "pricing":{
+        "meta": {
+            "title": "IVPN Pricing - VPN subscription with anonymous registration"
+        },
+        "title": "Select IVPN Plan",
+        "description": "Select a plan to create your account instantly. You can switch between IVPN Standard and Pro any time in the future.",
+        "standard": "IVPN STANDARD",
+        "pro": "IVPN PRO",
+        "allProtocols": "All protocols",
+        "standardDevices": "2 devices",
+        "antitracker": "AntiTracker",
+        "proDevices": "7 devices",
+        "multihop": "Multi-hop"
+
     }
 }

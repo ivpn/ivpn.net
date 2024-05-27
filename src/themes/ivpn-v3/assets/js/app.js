@@ -7,9 +7,9 @@ import store from './store'
 import { format } from 'date-fns'
 import { mapState } from 'vuex'
 import { createI18n } from 'vue-i18n'
+import en from '../../locales/en.json'
+import es from '../../locales/es.json'
 
-const i18n = createI18n({
-})
 
 let products = {
     standard: {
@@ -46,6 +46,16 @@ let products = {
 store.commit('product/setAll', { products })
 store.dispatch('auth/init')
 
+const i18n = createI18n({
+    legacy: false,
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages: {
+      en: en,
+      es: es
+    }
+})
+
 const app = createApp({
     render: () => h(App),
     computed: {
@@ -55,6 +65,8 @@ const app = createApp({
         })
     }
 })
+
+app.use(i18n)
 
 app.mixin({
     methods: {
