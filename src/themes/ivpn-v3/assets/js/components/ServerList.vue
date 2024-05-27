@@ -1,7 +1,7 @@
 <template>
     <div class="servers">
         <div class="servers__heading">
-            <h1>IVPN Servers</h1>
+            <h1>{{ $t('servers.title') }}</h1>
         </div>
         <div class="servers__list">
             <div class="row row__filter">
@@ -14,7 +14,7 @@
                 <div class="col country active">
                     <form class="select">
                         <select name="country" @change="onChangeFilter($event)" data-filter="country" ref="countryFilter">
-                            <option value="">Country: Any</option>
+                            <option value="">{{ $t('servers.country') }}: {{ $t('servers.any') }}</option>
                             <option v-for="country in countries" :value="country" :key="country">{{ country }}</option>
                         </select>
                         <i></i>
@@ -23,7 +23,7 @@
                 <div class="col city">
                     <form class="select">
                         <select name="city" @change="onChangeFilter($event)" data-filter="city" ref="cityFilter">
-                            <option value="">City: Any</option>
+                            <option value="">{{ $t('servers.city') }}: {{ $t('servers.any') }}</option>
                             <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
                         </select>
                         <i></i>
@@ -32,7 +32,7 @@
                 <div class="col provider">
                     <form class="select">
                         <select name="provider" @change="onChangeFilter($event)" data-filter="isp" ref="providerFilter">
-                            <option value="">Provider: Any</option>
+                            <option value="">{{ $t('servers.provider') }}: {{ $t('servers.any') }}</option>
                             <option v-for="provider in providers" :value="provider" :key="provider">{{ provider }}</option>
                         </select>
                         <i></i>
@@ -40,24 +40,24 @@
                 </div>
                 <div class="col load">&nbsp;</div>
                 <div class="col action">
-                    <a @click="resetFilter">Reset</a>
+                    <a @click="resetFilter">{{ $t('servers.reset') }}</a>
                 </div>
             </div>
             <header class="row row__header">
                 <div class="col server">
-                    <a @click="sortBy" data-sort="gateway">SERVER<i></i></a>
+                    <a @click="sortBy" data-sort="gateway">{{ $t('servers.server') }}<i></i></a>
                 </div>
                 <div class="col country active">
-                    <a @click="sortBy" data-sort="country">COUNTRY<i></i></a>
+                    <a @click="sortBy" data-sort="country">{{ $t('servers.table.country') }}<i></i></a>
                 </div>
                 <div class="col city">
-                    <a @click="sortBy" data-sort="city">CITY<i></i></a>
+                    <a @click="sortBy" data-sort="city">{{ $t('servers.table.city') }}<i></i></a>
                 </div>
                 <div class="col provider">
-                    <a @click="sortBy" data-sort="isp">PROVIDER<i></i></a>
+                    <a @click="sortBy" data-sort="isp">{{ $t('servers.table.provider') }}<i></i></a>
                 </div>
                 <div class="col load">
-                    <a @click="sortBy" data-sort="load">LOAD<i></i></a>
+                    <a @click="sortBy" data-sort="load">{{ $t('servers.table.load') }}<i></i></a>
                 </div>
                 <div class="col action">&nbsp;</div>
             </header>
@@ -103,7 +103,7 @@
                             {{ server.country }}, {{ server.city }}
                         </div>
                         <div class="provider">
-                            {{ server.isp }}, Load: {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
+                            {{ server.isp }}, {{ $t('servers.table.load') }}: {{ (Math.round(server.load * 100) / 100).toFixed(2) }}%
                         </div>
                     </div>
                     <div class="col action">
@@ -113,39 +113,39 @@
                     </div>
                     <div class="col details">
                         <div>
-                            <em>WireGuard Public Key:</em>
+                            <em>{{ $t('servers.details.wireguard') }}:</em>
                             {{ server.wg_public_key || "N/A" }}
                         </div>
                         <div>
-                            <em>MultiHop Port:</em>
+                            <em>{{ $t('servers.details.multihop') }}:</em>
                             {{ server.multihop_port || "N/A" }}
                         </div>
                         <div v-if="server.obfs.obfs3_multihop_port">
-                            <em>OBFS3 SingleHop Port:</em>
+                            <em>{{ $t('servers.details.obfs3single') }}:</em>
                             {{ config.ports.obfs3.port }}
                         </div>
                         <div v-if="server.obfs.obfs3_multihop_port">
-                            <em>OBFS3 MultiHop Port:</em>
+                            <em>{{ $t('servers.details.obfs3multi') }}:</em>
                             {{ server.obfs.obfs3_multihop_port }}
                         </div>
                         <div v-if="server.obfs.obfs4_multihop_port">
-                            <em>OBFS4 SingleHop Port:</em>
+                            <em>{{ $t('servers.details.obfs4single') }}:</em>
                             {{ config.ports.obfs4.port }}
                         </div>
                         <div v-if="server.obfs.obfs4_multihop_port">
-                            <em>OBFS4 MultiHop Port:</em>
+                            <em>{{ $t('servers.details.obfs4multi') }}:</em>
                             {{ server.obfs.obfs4_multihop_port }}
                         </div>
                         <div v-if="server.obfs.obfs4_key">
-                            <em>OBFS4 Public Key:</em>
+                            <em>{{ $t('servers.details.obfs4key') }}:</em>
                             {{ server.obfs.obfs4_key }}
                         </div>
                         <div>
-                            <em>SOCKS5:</em>
+                            <em>{{ $t('servers.details.socks5') }}:</em>
                             {{ renderSocks5(server) }}
                         </div>
                         <div>
-                            <em>SOCKS5 Port:</em>
+                            <em>{{ $t('servers.details.socks5port') }}:</em>
                             1080
                         </div>
                         <!-- <div>

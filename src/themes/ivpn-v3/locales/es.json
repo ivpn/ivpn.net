@@ -1,0 +1,28 @@
+{
+    "servers": {
+        "title": "Servidores IVPN",
+        "country": "pais",
+        "any": "Cualquiera",
+        "city": "Ciudad",
+        "provider": "Proveedor",
+        "reset": "Reiniciar",
+        "server": "Servidor",
+        "table": {
+            "country": "PAIS",
+            "city": "CIUDAD",
+            "provider": "PROVEEDOR",
+            "load": "CARGA"
+        },
+        "details": {
+            "wireguard": "Llave pública WireGuard ",
+            "multihop": "Puerto MultiHop",
+            "obfs3single": "Puerto OBFS3 SingleHop",
+            "obfs3multi": "Puerto OBFS3 MultiHop",
+            "obfs4single": "Puerto OBFS4 SingleHop",
+            "obfs4multi": "Puerto OBFS4 MultiHop",
+            "obfs4key": "Puerto OBFS4 MultiHop",
+            "socks5": "SOCKS5",
+            "socks5port": "Puerto SOCKS5"
+        }
+    }
+}
