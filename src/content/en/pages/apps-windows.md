@@ -4,7 +4,7 @@ description: IVPN for Windows offers you comprehensive privacy leak protection w
 h1: IVPN for Windows
 subtitle: Supports Windows 10 / 11 (64-bit)
 url: /en/apps-windows/
-aliases: ['/app-windows/']
+aliases: ['/apps-windows/']
 params:
   translated: true
 platform: windows
