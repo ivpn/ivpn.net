@@ -22,7 +22,7 @@ releases: [{
     ]
 }]
 ---
-## Características
+## Funciones
 
 - Protocolos WireGuard y OpenVPN.
 - GUI o CLI (interfaz de línea de comandos).
