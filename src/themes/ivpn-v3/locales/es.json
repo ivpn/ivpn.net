@@ -1,12 +1,13 @@
 {
     "servers": {
         "title": "Servidores IVPN",
-        "country": "pais",
+        "country": "País",
         "any": "Cualquiera",
         "city": "Ciudad",
         "provider": "Proveedor",
         "reset": "Reiniciar",
-        "server": "Servidor",
+        "server": "SERVIDOR",
+        "placeholder": "Servidor",
         "table": {
             "country": "PAIS",
             "city": "CIUDAD",
@@ -24,5 +25,20 @@
             "socks5": "SOCKS5",
             "socks5port": "Puerto SOCKS5"
         }
+    },
+    "pricing":{
+        "meta": {
+            "title": "Precios de IVPN - suscripción VPN con registro anónimo"
+        },
+        "title": "Elije Plan IVPN",
+        "description": "Seleccione un plan para crear su cuenta al instante. Puede cambiar entre IVPN Standard y Pro en cualquier momento en el futuro.",
+        "standard": "IVPN STANDARD",
+        "pro": "IVPN PRO",
+        "allProtocols": "Todos los protocolos",
+        "standardDevices": "2 dispositivos",
+        "antitracker": "AntiTracker",
+        "proDevices": "7 dispositivos",
+        "multihop": "Multi-hop"
+
     }
 }
