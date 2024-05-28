@@ -1,5 +1,5 @@
 ---
-title: Estado servidores IVPN
+title: Estado de servidores IVPN
 url: /es/status/
 params:
   translated: true
