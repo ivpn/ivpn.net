@@ -1,19 +1,19 @@
 ---
 title: Protocolo WireGuard VPN para privacidad - comienza a usarlo con IVPN
-description: WireGuard es un protocolo VPN revolucionario que promete mayor seguridad y velocidades más rápidas en comparación con las soluciones existentes. IVPN ofrece WireGuard en nuestras aplicaciones de Windows, macOS, Linux, Android e iOS. Configure y ejecute WireGuard VPN en dos minutos.
+description: WireGuard es un protocolo VPN revolucionario que promete mayor seguridad y velocidades más rápidas en comparación con las soluciones existentes. IVPN ofrece WireGuard en nuestras aplicaciones de Windows, macOS, Linux, iOS y Android. Configura y ejecuta WireGuard VPN en dos minutos.
 url: /es/wireguard/
 params:
   translated: true
 ---
 # WireGuard<sup>®</sup> VPN
 
-[WireGuard](https://www.wireguard.com/) es un protocolo VPN revolucionario que utiliza criptografía de última generación prometiendo mayor seguridad y velocidades más rápidas en comparación con las soluciones existentes. Consulte la [página del protocolo WireGuard](https://www.wireguard.com/) para obtener una descripción general rápida del protocolo y la criptografía. Para una discusión en profundidad, revise el [documento técnico](https://www.wireguard.com/papers/wireguard.pdf).
+[WireGuard](https://www.wireguard.com/) es un protocolo VPN revolucionario que utiliza criptografía de última generación prometiendo mayor seguridad y velocidades más rápidas en comparación con las soluciones existentes. Consulta la [página del protocolo WireGuard](https://www.wireguard.com/) para obtener una descripción general rápida del protocolo y la criptografía. Para mayor información, revisa el [documento técnico](https://www.wireguard.com/papers/wireguard.pdf).
 
 ## IVPN + WireGuard
 
 Desde su fusión con Linux Kernel v5.6, el lanzamiento de WireGuard 1.0 y una auditoría de seguridad de terceros, consideramos que el protocolo está listo para un uso a gran escala. Creemos que WireGuard es el mejor protocolo para la mayoría de los clientes debido a su rendimiento excepcional, propiedades de seguridad, capacidad de itinerancia entre direcciones IP sin pérdida de paquetes ni desconexiones y conexión/desconexión instantánea.
 
-Sin embargo, WireGuard® no fue diseñado pensando en los proveedores de VPN de privacidad. Además, deja ciertos aspectos (por ejemplo, asignación de dirección IP, distribución de claves, etc.) a la responsabilidad del implementador. Como resultado, existen algunos problemas de privacidad que todos los proveedores de VPN responsables deben resolver. Estos problemas no representan de ninguna manera una debilidad del protocolo WireGuard en sí, son simplemente aspectos que los diseñadores del protocolo omitieron intencionalmente. Hemos identificado e implementado las siguientes soluciones en la red IVPN.
+Sin embargo, WireGuard® no fue diseñado pensando en los proveedores de VPN de privacidad. Además, deja ciertos aspectos (por ejemplo, asignación de dirección IP, distribución de claves, etc.) a la responsabilidad del desarrollador. Como resultado, existen algunos problemas de privacidad que todos los proveedores de VPN responsables deben resolver. Estos problemas no representan de ninguna manera una debilidad del protocolo WireGuard en sí, son simplemente aspectos que los diseñadores del protocolo omitieron intencionalmente. Hemos identificado e implementado las siguientes soluciones en la red IVPN.
 
 <span class="badge">Asunto</span>
 
@@ -33,16 +33,16 @@ Las aplicaciones IVPN llaman al backend de forma automática y transparente cada
 
 Las aplicaciones IVPN regeneran de forma automática y transparente un nuevo par de claves cada 24 horas y cargan la clave pública al backend para distribuirla a todos los servidores. 
 
-## WireGuard  FAQ
+## WireGuard FAQ
 
 #### ¿Cómo puedo utilizar WireGuard?
 
-* [Configura tu propio servidor WireGuard](https://www.wireguard.com/quickstart/) y conéctate usando una de las aplicaciones cliente oficiales.
+* [Configura tu propio servidor WireGuard](https://www.wireguard.com/quickstart/) y conéctate usando una de las aplicaciones oficiales.
 * Suscríbete a un proveedor de VPN que admita WireGuard. Si bien IVPN no es el único servicio que ofrece WireGuard, fuimos [los primeros en adoptarlo](/blog/introducing-wireguard-fully-automated/) y tener una experiencia significativa dándole soporte.
 
 #### ¿Qué sistemas operativos admite WireGuard?
 
-WireGuard es compatible con todos los principales sistemas operativos. La compatibilidad con WireGuard está integrada en las aplicaciones de IVPN para Windows, macOS, Linux, Android e iOS.
+WireGuard es compatible con todos los principales sistemas operativos. La compatibilidad con WireGuard está integrada en las aplicaciones de IVPN para Windows, macOS, Linux, iOS y Android.
 
 #### ¿Qué criptografía se utiliza en WireGuard?
 
@@ -58,21 +58,21 @@ WireGuard utiliza los siguientes protocolos y primitivas:
 
 #### ¿Dónde tienes los servidores WireGuard?
 
-Ofrecemos servidores WireGuard en 45 ubicaciones en 32 países. Revisa la lista completa de servidores en nuestra[página de estado de servidores](/status/).
+Ofrecemos servidores WireGuard en 45 ubicaciones en 32 países. Revisa la lista completa de servidores en nuestra [página de estado de servidores](/status/).
 
-#### Soy suscriptor de IVPN. ¿Necesito registrarme en WireGuard?
+#### Soy usuario de IVPN. ¿Necesito registrarme en WireGuard?
 
 WireGuard está disponible y listo para su uso para todos los clientes de IVPN existentes. No es necesario registrarse por separado.
 
-#### ¿Ofrecen todas las funciones de IVPN para WireGuard?
+#### ¿Se ofrecen todas las funciones de IVPN para WireGuard?
 
-Admitimos las mismas funciones de seguridad y privacidad que con OpenVPN, por ejemplo, Firewall, Redes confiables, AntiTracker y Multi-hop.
+Admitimos las mismas funciones de seguridad y privacidad que con OpenVPN, por ejemplo, Firewall, protección de redes inseguras, AntiTracker y Multi-hop.
 
-#### ¿Ofrecen soporte IPv6 para WireGuard?
+#### ¿Se ofrece soporte IPv6 para WireGuard?
 
 Si.
 
-#### ¿Qué puertos utilizas para WireGuard?
+#### ¿Qué puertos se utilizan para WireGuard?
 
 Puertos UDP 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, 58237.
 
@@ -80,8 +80,8 @@ Puertos UDP 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, 58237.
 
 No, cuando se utiliza la aplicación IVPN, las claves se generan automáticamente y la clave pública se carga en nuestro servidor en el momento en que selecciona el protocolo WireGuard en la aplicación.
 
-Si no está utilizando una aplicación IVPN, también puede generar y descargar archivos de configuración WireGuard en el [Área de cliente](/account/wireguard-config).
+Si no estás utilizando una aplicación IVPN, también puedes generar y descargar archivos de configuración WireGuard en el [Área de cliente](/account/wireguard-config).
 
 #### ¿Qué servidor DNS se utiliza al conectarse con WireGuard?
 
-Alojamos nuestros propios servidores DNS sin registros que se envían y aplican automáticamente a su dispositivo cuando se conecta. Cuando está conectado, la dirección IP del servidor DNS es 172.16.0.1
+Alojamos nuestros propios servidores DNS sin registros que se envían y aplican automáticamente a tu dispositivo cuando te conectas. Cuando estás conectado, la dirección IP del servidor DNS es 172.16.0.1
