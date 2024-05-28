@@ -9,13 +9,13 @@
         "server": "SERVIDOR",
         "placeholder": "Servidor",
         "table": {
-            "country": "PAIS",
+            "country": "PAÍS",
             "city": "CIUDAD",
             "provider": "PROVEEDOR",
             "load": "CARGA"
         },
         "details": {
-            "wireguard": "Llave pública WireGuard ",
+            "wireguard": "Clave pública WireGuard ",
             "multihop": "Puerto MultiHop",
             "obfs3single": "Puerto OBFS3 SingleHop",
             "obfs3multi": "Puerto OBFS3 MultiHop",
@@ -28,10 +28,10 @@
     },
     "pricing":{
         "meta": {
-            "title": "Precios de IVPN - suscripción VPN con registro anónimo"
+            "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
-        "title": "Elije Plan IVPN",
-        "description": "Seleccione un plan para crear su cuenta al instante. Puede cambiar entre IVPN Standard y Pro en cualquier momento en el futuro.",
+        "title": "Selecciona Plan IVPN",
+        "description": "Selecciona un plan para crear tu cuenta al instante. Puedes cambiar entre IVPN Standard y Pro en cualquier momento en el futuro.",
         "standard": "IVPN STANDARD",
         "pro": "IVPN PRO",
         "allProtocols": "Todos los protocolos",
@@ -40,13 +40,13 @@
         "proDevices": "7 dispositivos",
         "multihop": "Multi-hop",
         "productFooterPrice": "Todos los precios están en dólares estadounidenses.",
-        "productFooterReview": "Consulta los precios para empresas u organizaciones no gubernamentales.",
+        "productFooterReview": "Consulta los precios para empresas u organizaciones no gubernamentales",
         "here": "aquí",
         "featuresTitle": "Todos los planes IVPN incluyen:",
-        "feature1": "Registro anónimo - no se requiere correo electrónico",
+        "feature1": "Inscripción anónima - no se requiere correo electrónico",
         "feature2": "Aplicaciones de código abierto para Android, iOS, macOS, Windows y Linux",
         "feature3": "Opciones de pago en efectivo, Monero y Bitcoin para un mejor anonimato",
-        "feature4": "Garantía de devolución de dinero durante 30 días",
+        "feature4": "Garantía de reembolso de 30 días",
         "feature5": "Servidores DNS privados",
         "feature6": "AntiTracker con opción de selección de lista de bloqueo",
         "feature7": "Killswitch/firewall y métodos de ofuscación cuando corresponda",
