@@ -1,22 +1,24 @@
 ---
-title: IVPN for Linux - Open-source VPN app for Linux
-description: IVPN for Linux offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
+title: IVPN para Linux - Aplicación VPN de código abierto para Linux
+description: IVPN para Linux te ofrece una protección integral contra filtraciones de privacidad con el firewall IVPN, conexión automática en redes Wi-Fi inseguras y Multi-hop.
 h1: IVPN for Linux
-subtitle: Supports 64-bit Linux 3.10+
-url: /apps-linux/
+subtitle: Compatible con 64-bit Linux 3.10+
+url: /es/apps-linux/
+params:
+  translated: true
 platform: linux
 layout: apps-single
 imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png
 imageDark: /images-static/uploads/apps/linux-app-3.3.7-dark@2x.png
 contents:
 - item:
-    title: Features
+    title: Funcioness
     anchor: features
 - item:
-    title: Packages
+    title: Paquetes
     anchor: packages
 - item:
-    title: Install from IVPN Repository
+    title: Instalar desde el repositorio de IVPN
     anchor: install
     subitems:
     - item:
@@ -41,218 +43,207 @@ contents:
         title: Fedora Silverblue
         anchor: silverblue
 - item:
-    title: Install from Binaries
+    title: Instalar desde los archivos binarios
     anchor: binaries
 - item:
-    title: Install from Source Code
+    title: Instalar desde el código fuente
     anchor: source
 - item:
-    title: Signature Verification
-    anchor: signature-verification
-- item:
-    title: Install the Snap
+    title: Instalar desde Snap
     anchor: snap
 - item:
-    title: Useful Links
+    title: Enlaces útiles
     anchor: useful-links
 ---
-## Features {#features}
+## Funciones {#features}
 
-* WireGuard or OpenVPN protocols.
-* GUI or CLI (command-line interface).
-* WireGuard privacy controls - Define automatic key and IP address rotation schedule.
-* AntiTracker that blocks ads, adware, malicious websites and data harvesting trackers.
-* Firewall / kill switch - Ability to configure as on-demand or always-on. Offers comprehensive protection against DNS, IPv6, disconnection and WebRTC leaks.
-* Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
-* Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
-* Allow LAN traffic when connected to VPN.
-* Pause VPN for when disabling VPN connection temporarily is required.
-* Obfsproxy option to circumvent censorship.
-* Custom DNS servers, with DoH.
-* Split Tunnel to allow designated apps to bypass the VPN tunnel.
+* Protocolos WireGuard y OpenVPN.
+* GUI o CLI (interfaz de línea de comandos).
+* Controles de privacidad de WireGuard - Define un calendario de rotación automática de claves y direcciones IP.
+* AntiTracker que bloquea anuncios, adware, páginas web maliciosas y rastreadores de recopilación de datos.
+* Firewall/killswitch - Posibilidad de configurarlo a demanda o siempre activo. Ofrece protección integral contra filtraciones DNS, IPv6, WebRTC y desconexiones.
+* Capacidad para definir redes Wi-Fi de confianza y crear reglas para la conexión/desconexión automática de la VPN.
+* Rutas VPN de Multi-hop. Conéctate a través de múltiples servidores en jurisdicciones diferentes para mejorar la privacidad.
+* Permitir el tráfico LAN cuando estés conectado a la VPN.
+* Función de pausado para cuando sea necesario deshabilitar temporalmente la conexión VPN.
+* Opción Obfsproxy para eludir la censura.
+* Servidores DNS personalizados, con DoH.
+* Tunelización dividida para permitir que las aplicaciones designadas eviten el túnel VPN.
+* Conexión automática de inicio y al unirse a una red Wi-Fi insegura
 
-## Packages {#packages}
+## Paquetes {#packages}
 
-### Base Package  
+### Paquete base 
 
-Base package contains everything you need to connect to IVPN with command line interface. IVPN GUI app is provided as a separate package you can find below.  
-[Changelog](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
+El paquete base contiene todo lo que necesitas para conectarte a IVPN con una interfaz de línea de comandos. La aplicación IVPN GUI se proporciona como un paquete separado que puedes encontrar a continuación.  
+[Registro de cambios](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md) 
 
-### IVPN GUI App  
+### Aplicación GUI IVPN 
 
-Please note: base package is required to be installed prior to installing GUI app.  
-[Changelog](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
+Ten en cuenta que es necesario instalar el paquete base antes de instalar la aplicación GUI.  
+[Registro de cambios](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
 
-## Install from IVPN Repository {#install}
+## Instalar desde el repositorio IVPN {#install}
 
 ### Ubuntu {#ubuntu}
 
 ```pkgconfig
-# Add IVPN's GPG key
+# Añadir la clave GPG de IVPN
 curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
 
 sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 
-# Set Appropriate Permissions for GPG key
+# Establecer permisos apropiados para la clave GPG
 sudo chown root:root /usr/share/keyrings/ivpn-archive-keyring.gpg && sudo chmod 644 /usr/share/keyrings/ivpn-archive-keyring.gpg
 
-# Add the IVPN repository
+# Añadir el repositorio IVPN
 curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 
-# Set Appropriate Permissions for Repository
+# Establecer permisos apropiados para el repositorio
 sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
 
-# Update APT repo info
+# Actualizar la información del repositorio de APT
 sudo apt update
 
-# To install IVPN software (CLI and UI)
+# Para instalar el software IVPN (CLI y UI)
 sudo apt install ivpn-ui
 
-# To install only IVPN CLI
+# Para instalar solo IVPN CLI
 sudo apt install ivpn
 ```
 
 ### Debian {#debian}
 
 ```pkgconfig
-# Add IVPN's GPG key
+# Añadir la clave GPG de IVPN
 curl -fsSL https://repo.ivpn.net/stable/debian/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
 
 sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 
-# Set Appropriate Permissions for GPG key
+# Establecer permisos apropiados para la clave GPG
 sudo chown root:root /usr/share/keyrings/ivpn-archive-keyring.gpg && sudo chmod 644 /usr/share/keyrings/ivpn-archive-keyring.gpg
 
-# Add the IVPN repository
+# Añadir el repositorio IVPN
 curl -fsSL https://repo.ivpn.net/stable/debian/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 
-# Set Appropriate Permissions for Repository
+# Establecer permisos apropiados para el repositorio
 sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
 
-# Update APT repo info
+# Actualizar la información del repositorio de APT
 sudo apt update
 
-# To install IVPN software (CLI and UI)
+# Para instalar el software IVPN (CLI y UI)
 sudo apt install ivpn-ui
 
-# To install only IVPN CLI
+# Para instalar solo IVPN CLI
 sudo apt install ivpn
 ```
 
 ### Mint {#mint}
 
 ```pkgconfig
-# Add IVPN's GPG key
+# Añadir la clave GPG de IVPN
 curl -fsSL https://repo.ivpn.net/stable/mint/generic.gpg | gpg --dearmor > ~/ivpn-archive-keyring.gpg
 
 sudo mv ~/ivpn-archive-keyring.gpg /usr/share/keyrings/ivpn-archive-keyring.gpg
 
-# Set Appropriate Permissions for GPG key
+# Establecer permisos apropiados para la clave GPG
 sudo chown root:root /usr/share/keyrings/ivpn-archive-keyring.gpg && sudo chmod 644 /usr/share/keyrings/ivpn-archive-keyring.gpg
 
-# Add the IVPN repository
+# Añadir el repositorio IVPN
 curl -fsSL https://repo.ivpn.net/stable/mint/generic.list | sudo tee /etc/apt/sources.list.d/ivpn.list
 
-# Set Appropriate Permissions for Repository
+# Establecer permisos apropiados para el repositorio
 sudo chown root:root /etc/apt/sources.list.d/ivpn.list && sudo chmod 644 /etc/apt/sources.list.d/ivpn.list
 
-# Update APT repo info
+# Actualizar la información del repositorio de APT
 sudo apt update
 
-# To install IVPN software (CLI and UI)
+# Para instalar el software IVPN (CLI y UI)
 sudo apt install ivpn-ui
 
-# To install only IVPN CLI
+# Para instalar solo IVPN CLI
 sudo apt install ivpn
 ```
 
 ### Fedora {#fedora}
 
 ```pkgconfig
-# Add the IVPN repository
+# Agregar el repositorio IVPN
 sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
 
-# To install IVPN software (CLI and UI)
+# Para instalar el software IVPN (CLI y UI)
 sudo dnf install ivpn-ui
 
-# To install only IVPN CLI
+# Para instalar solo IVPN CLI
 sudo dnf install ivpn
 ```
 
 ### CentOS {#centos}
 
 ```pkgconfig
-# Install Yum-utils
+# Instalar Yum-utils
 sudo yum install yum-utils
 
-# Add the IVPN repository
+# Agregar el repositorio IVPN
 sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
 
-# To install IVPN software (CLI and UI)
+# Para instalar el software IVPN (CLI y UI)
 sudo yum install ivpn-ui
 
-# To install only IVPN CLI
+# Para instalar solo IVPN CLI
 sudo yum install ivpn
 
-# Required for CentOS 8
+# Requerido para CentOS 8
 sudo yum install libXScrnSaver
 ```
 
 ### Arch Linux {#arch}
 
-AUR - ArchLinux User Repository. Can be used by distributions based on ArchLinux: (e.g. ArchLinux, Manjaro ...)
+AUR - Repositorio de usuarios de ArchLinux. Puede ser utilizado por distribuciones basadas en ArchLinux: ArchLinux, Manjaro...
 
-Base package: [ivpn](https://aur.archlinux.org/packages/ivpn/)  
-UI package: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)  
+Paquete base: [ivpn](https://aur.archlinux.org/packages/ivpn/)  
+Paquete UI: [ivpn-ui](https://aur.archlinux.org/packages/ivpn-ui/)  
 
-Using a AUR helper/Pacman wrapper  automates the installation process:
+El uso de un asistente AUR/Pacman wrapper automatiza el proceso de instalación:
 
 ```pkgconfig
 yay -S ivpn
 yay -S ivpn-ui
 ```
 
-Note: Other AUR helper/Pacman wrapper utilities are available.
+Nota: Hay disponibles otras utilidades de ayuda de AUR/Pacman wrapper.
 
 ### Fedora Silverblue {#silverblue}
 
-IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-silverblue/).
+El cliente IVPN se puede instalar en [Fedora Silverblue](/knowledgebase/linux/fedora-silverblue/).
 
-## Install from Binaries {#binaries}
+## Instalar desde los archivos binarios {#binaries}
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.14.2_amd64.deb)  
+[Paquete base](https://repo.ivpn.net/stable/pool/ivpn_3.14.2_amd64.deb)  
 SHA256: 12d1005eeb92c5b35bf83b9df51317ec4ac08efc6fbb7ab01e962250f23b891d  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.2_amd64.deb)  
+[Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.2_amd64.deb)  
 SHA256: f64cd84b4e0ce252f0c066977d180b953c55f2b485cf7a5437b1e4c7af1959f7  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.14.2-1.x86_64.rpm)  
+[Paquete base](https://repo.ivpn.net/stable/pool/ivpn-3.14.2-1.x86_64.rpm)  
 SHA256: 45dba6b5a281646bde6b6651661092024aafc0165268e3245fb515dabb866996  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.2-1.x86_64.rpm)  
+[Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.2-1.x86_64.rpm)  
 SHA256: 0b3602497cf599060e44b0912923f3a5bc2f9325c8d34856bc7ef2eb019bb6ee  
 
-## Install from Source Code {#source}
+## Instalar desde el código fuente {#source}
 
 [Daemon + CLI](https://github.com/ivpn/desktop-app#compilation_linux_daemon)  
 [UI](https://github.com/ivpn/desktop-app#compilation_linux_ui)  
 
-## Signature Verification {#signature-verification}
+## Instalar desde Snap {#snap}
 
-Each Linux binary is signed by a GPG key.
-
-GPG key location:
-
-* for DEB files: `<repository path>/generic.gpg` (example: `https://repo.ivpn.net/stable/ubuntu/generic.gpg`)
-* for RPM files: `<repository path>/repo.gpg` (example: `https://repo.ivpn.net/stable/fedora/generic/repo.gpg`)
-
-## Install the Snap {#snap}
-
-Get the IVPN App from the [Snap Store](https://snapcraft.io/ivpn) by typing `sudo snap install ivpn`.  
+Descarga la aplicación IVPN en [Snap Store](https://snapcraft.io/ivpn) usando el comando `sudo snap install ivpn`.  
 
 <p>
     <a href="https://snapcraft.io/ivpn">
@@ -261,18 +252,18 @@ Get the IVPN App from the [Snap Store](https://snapcraft.io/ivpn) by typing `sud
     </a>
 </p>
 
-### Snap Notes:
+### Notas de Snap:
 
-* The [snapd](https://snapcraft.io/docs/installing-snapd) daemon is required.
-* Uninstall prior versions (DEB, RPM, etc.) of the IVPN App before switching to the snap release channel and vice versa.
-* The **Split Tunnel** feature is not available due to strong restrictions of the snap environment.
+* Se requiere el programa daemon [snapd](https://snapcraft.io/docs/installing-snapd).
+* Desinstala las versiones anteriores (DEB, RPM, etc.) de la aplicación IVPN antes de cambiar al canal de Snap y viceversa.
+* La función **Tunelización dividida** no está disponible debido a fuertes restricciones del entorno Snap.
 
-## Useful Links {#useful-links}
+## Enlaces útiles {#useful-links}
 
-If you prefer not to use the IVPN app please follow the relevant setup guide below.
+Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración correspondiente a continuación.
 
-* [WireGuard using terminal](/setup/linux-wireguard/)
-* [WireGuard using NetworkManager](/setup/linux-wireguard-netman/)
-* [OpenVPN using terminal](/setup/linux-terminal/)
-* [OpenVPN using NetworkManager](/setup/linux-netman/)
-* [IPSec with IKEv2](/setup/linux-ipsec-with-ikev2/)
+* [WireGuard usando terminal](/setup/linux-wireguard/)
+* [WireGuard usando NetworkManager](/setup/linux-wireguard-netman/)
+* [OpenVPN usando terminal](/setup/linux-terminal/)
+* [OpenVPN usando NetworkManager](/setup/linux-netman/)
+* [IPSec con IKEv2](/setup/linux-ipsec-con-ikev2/)

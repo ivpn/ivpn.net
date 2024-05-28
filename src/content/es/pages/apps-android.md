@@ -49,7 +49,7 @@ releases: [{
 - Controles de privacidad de WireGuard - Define un programa de rotación automática de claves y direcciones IP.
 - AntiTracker que bloquea anuncios, adware, páginas web maliciosos y rastreadores de recopilación de datos.
 - Capacidad para definir redes Wi-Fi de confianza y crear reglas para la conexión/desconexión automática de VPN.
-- Túnel dividido para permitir que algunas aplicaciones omitan la VPN.
+- Tunelización dividida para permitir que algunas aplicaciones omitan la VPN.
 - Rutas VPN de Multi-hop. Conéctate a través de múltiples servidores en jurisdicciones diferentes para mejorar la privacidad.
 - Servidores DNS personalizados, DoT a través de DNS privado nativo de Android.
 - Ubicación simulada para GPS.
@@ -61,4 +61,4 @@ Si prefiere no utilizar la aplicación IVPN, sigue la guía de configuración co
 
 - [WireGuard](/setup/android-wireguard/)
 - [OpenVPN for Android](/setup/android-openvpn-for-android/)  
-- [IPSec with IKEv2](/setup/android-ipsec-with-ikev2/)  
+- [IPSec con IKEv2](/setup/android-ipsec-with-ikev2/)  

@@ -4,7 +4,7 @@
         <div class="price-options">
             <div
                 class="price-option"
-                v-for="price in prices"
+                v-for="price in pricesLocale"
                 v-bind:key="price.id"
             >
                 <label>
@@ -32,19 +32,34 @@
                 width="32"
                 height="32"
                 v-if="inProgress && !current"
-            />Select
+            />{{ $t('pricing.select') }}
         </button>
     </div>
 </template>
 
 <script>
 import Spinner from "@/components/ProgressSpinner.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["prices", "onselect", "disabled", "current", "inProgress"],
     components: { Spinner },
     model: {
         event: "change",
+    },
+    data() {
+        return {
+            pricesLocale: [],
+        };
+    },
+    mounted(){
+        let lang = window.location.href.split("/")[3];
+        useI18n().locale.value = lang;
+        if( lang  === "es"){
+            this.pricesLocale = this.prices.pricesEs;
+        } else {
+            this.pricesLocale = this.prices.prices;
+        }
     },
 
     methods: {

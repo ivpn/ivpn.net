@@ -13,7 +13,7 @@
   [[main]]
     identifier = "privacy"
     name = "Privacy"
-    url = "/privacy/"
+    url = "/es/privacy/"
     weight = 30
 
   [[main]]
@@ -134,7 +134,7 @@
   [[footercolthree]]
     identifier = "privacy-policy"
     name = "Privacy Policy"
-    url = "/privacy/"
+    url = "/es/privacy/"
     weight = 50
 
   [[footercolthree]]
