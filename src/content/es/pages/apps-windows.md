@@ -46,7 +46,7 @@ Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración c
 - [WireGuard (Windows 10)](/setup/windows-10-wireguard/)  
 - [OpenVPN GUI (Windows 10)](/setup/windows-10-openvpn-community/)
 - [OpenVPN GUI (Windows 8)](/setup/windows-8-openvpn-community/)
-- [IPSec with IKEv2 (Windows 10)](/setup/windows-10-ipsec-with-ikev2/)
+- [IPSec con IKEv2 (Windows 10)](/setup/windows-10-ipsec-with-ikev2/)
 
 ## Descarga una versión anterior
 
