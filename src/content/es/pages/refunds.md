@@ -8,7 +8,7 @@ params:
 
 IVPN se esfuerza por satisfacer las expectativas de todos los usuarios y ofrece soporte ilimitado para ayudar a los usuarios con cualquier problema que puedan encontrar.
 
-Si no estás satisfecho por algún motivo, puedes solicitar **un reembolso completo dentro de los 30 días** de su pago. Esta oferta de reembolso completo está disponible **una vez por cuenta y por cliente**.
+Si no estás satisfecho por algún motivo, puedes solicitar **un reembolso completo dentro de los 30 días** desde tu pago. Esta oferta de reembolso completo está disponible **una vez por cuenta y por cliente**.
 
 A continuación se muestra la información que necesitas enviarnos al <a href="mailto:support@ivpn.net">correo electrónico</a> para cada método de pago:
 
@@ -16,7 +16,7 @@ A continuación se muestra la información que necesitas enviarnos al <a href="m
 
 - La referencia segura de tu cuenta IVPN (XXXXXXXX) o el ID de tu cuenta IVPN (i-XXXX-XXXX-XXXX / ivpnXXXXXXXX).
 
-Si no recuerdas los detalles de tu cuenta, proporciónanos los primeros 6 dígitos del número de tarjeta, los últimos 4 dígitos del número de tarjeta, la fecha del pago y el monto pagado.
+Si no recuerdas los detalles de tu cuenta, proporciónanos los primeros 6 dígitos del número de tarjeta, los últimos 4 dígitos del número de tarjeta, la fecha del pago y la cantidad pagada.
 
 <h2>PayPal</h2>
 
@@ -30,9 +30,9 @@ Si no recuerdas los detalles de tu cuenta, proporciónenos la dirección de corr
 
 - Tu dirección de billetera Bitcoin/Monero para recibir el reembolso.
 
-Si no recuerdas los detalles de tu cuenta, proporciónanos el ID de la transacción de tu pago de Bitcoin o Monero, la fecha de pago y el monto pagado.
+Si no recuerdas los detalles de tu cuenta, proporciónanos el ID de la transacción de tu pago de Bitcoin o Monero, la fecha de pago y la cantidad pagada.
 
-Ten en cuenta: las compras de IVPN Light no son reembolsables.
+Ten en cuenta que las compras de IVPN Light no son reembolsables.
 
 <h2>Compra desde la aplicación de Android</h2>
 
@@ -42,10 +42,10 @@ Ten en cuenta: las compras de IVPN Light no son reembolsables.
 
 <h2>Compra desde la aplicación de iOS</h2>
 
-Apple reembolsa las compras de la App Store. Los detalles sobre cómo enviar el reclamo de reembolso a Apple se pueden encontrar <a href="https://support.apple.com/en-gb/HT204084" target="_blank">aquí</a>.
+Apple reembolsa las compras desde la App Store. Los detalles sobre cómo enviar el reclamo de reembolso a Apple se pueden encontrar <a href="https://support.apple.com/en-gb/HT204084" target="_blank">aquí</a>.
 
 <h2>Efectivo y vales</h2>
 
 Los pagos en efectivo y con cupones no son reembolsables.
 
-**Ten en cuenta**: No ofrecemos reembolsos prorrateados.
+**Ten en cuenta** que no ofrecemos reembolsos prorrateados.
