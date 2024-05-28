@@ -57,7 +57,7 @@ Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración c
 
 - [WireGuard](/setup/macos-wireguard/)
 - [Tunnelblick (OpenVPN)](/setup/macos-openvpn-tunnelblick/)  
-- [IPSec with IKEv2](/setup/macos-ipsec-with-ikev2/)   
+- [IPSec con IKEv2](/setup/macos-ipsec-with-ikev2/)   
 
 ## Descarga una versión anterior
 
