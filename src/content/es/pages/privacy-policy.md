@@ -172,7 +172,7 @@ Las solicitudes de acceso a los sujetos deben realizarse por escrito a sar@ivpn.
 
 ### ¿Dónde está la autoridad reguladora que supervisa la jurisdicción en la que opera IVPN según el GDPR?
 
-IVPN está registrada en Gibraltar y, como tal, el organismo regulador del RGPD es la [Autoridad Reguladora de Gibraltar] (http://www.gra.gi/).
+IVPN está registrada en Gibraltar y, como tal, el organismo regulador del RGPD es la [Autoridad Reguladora de Gibraltar](http://www.gra.gi/).
 
 ### ¿Qué sucede si recibo un aviso legal, como una DMCA, para los derechos de autor del material que he descargado?
 
@@ -222,4 +222,4 @@ Se utiliza para escanear códigos QR para iniciar sesión con una ID de cuenta.
 
 IVPN se reserva el derecho de cambiar esta política de privacidad en cualquier momento. En tales casos, tomaremos todas las medidas razonables para garantizar que estos cambios lleguen a tu conocimiento publicando todos los cambios de manera destacada en la página web de IVPN durante un período de tiempo razonable, antes de que la nueva política entre en vigencia, así como enviando correos electrónicos a nuestros clientes existentes.
 
-Si tienes alguna pregunta o comentario sobre esta política, no dude en contactarnos.
+Si tienes alguna pregunta o comentario sobre esta política, no dudes en contactarnos.
