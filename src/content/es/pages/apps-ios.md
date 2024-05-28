@@ -1,7 +1,7 @@
 ---
 title: IVPN para iOS - Aplicación VPN de código abierto para tu iPhone y iPad
 description: La IVPN app para iOS, diseñada para iPhone y iPad, te ofrece una protección integral contra filtraciones de privacidad, conexión automática en redes Wi-Fi inseguras y Multi-hop.
-h1: IVPN paara iOS
+h1: IVPN para iOS
 subtitle: Compatible con iOS/iPadOS 14.0+
 url: /es/apps-ios/
 params:
