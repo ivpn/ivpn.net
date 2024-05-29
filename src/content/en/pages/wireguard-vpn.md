@@ -49,12 +49,12 @@ WireGuard supports all major operating systems. Support for WireGuard is built i
 
 WireGuard utilizes the following protocols and primitives:
 
-* [ChaCha20](http://cr.yp.to/chacha.html) for symmetric encryption, authenticated with [Poly1305](http://cr.yp.to/mac.html), using [RFC7539's AEAD construction](https://tools.ietf.org/html/rfc7539)
-* [Curve25519](http://cr.yp.to/ecdh.html) for ECDH
+* [ChaCha20](https://cr.yp.to/chacha.html) for symmetric encryption, authenticated with [Poly1305](https://cr.yp.to/mac.html), using [RFC7539's AEAD construction](https://tools.ietf.org/html/rfc7539)
+* [Curve25519](https://cr.yp.to/ecdh.html) for ECDH
 * [BLAKE2s](https://blake2.net/) for hashing and keyed hashing, as described in [RFC7693](https://tools.ietf.org/html/rfc7693)
-* [SipHash](http://cr.yp.to/siphash/siphash-20120918.pdf) for hashtable keys
+* [SipHash](https://cr.yp.to/siphash/siphash-20120918.pdf) for hashtable keys
 * [HKDF](https://eprint.iacr.org/2010/264) for key derivation, as described in [RFC5869](https://tools.ietf.org/html/rfc5869)
-* [Noise_IK handshake](https://www.wireguard.com/protocol/#key-exchange-and-data-packets) from [Noise](http://noiseprotocol.org/noise.pdf), building on the work of [CurveCP](http://www.curvecp.org/), [NaCL](http://cr.yp.to/highspeed/naclcrypto-20090310.pdf), [KEA+](http://research.microsoft.com/en-us/um/people/klauter/security_of_kea_ake_protocol.pdf), [SIGMA](http://webee.technion.ac.il/~hugo/sigma-pdf.pdf), [FHMQV](https://eprint.iacr.org/2009/408.pdf), and [HOMQV](https://eprint.iacr.org/2010/638.pdf)
+* [Noise_IK handshake](https://www.wireguard.com/protocol/#key-exchange-and-data-packets) from [Noise](https://noiseprotocol.org/noise.pdf), building on the work of [CurveCP](https://www.curvecp.org/), [NaCL](https://cr.yp.to/highspeed/naclcrypto-20090310.pdf), [KEA+](https://link.springer.com/content/pdf/10.1007/11745853_25.pdf), [SIGMA](https://github.com/hugokraw/Files/blob/main/SIGMA-AKE-full.pdf), [FHMQV](https://eprint.iacr.org/2009/408.pdf), and [HOMQV](https://eprint.iacr.org/2010/638.pdf)
 * All packets are sent over UDP
 
 #### Where do you have WireGuard servers?
