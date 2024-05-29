@@ -71,5 +71,16 @@
         "twoYears": "2 Years",
         "threeYears": "3 Years",
         "select": "Select"
+    },
+    "login": {
+        "title": "Log In",
+        "accountId": "Account ID:",
+        "email": "Email:",
+        "password": "Password:",
+        "createNewAccount": "Create New Account",
+        "idPlaceholder": "i... or ivpn...",
+        "2faToken": "Two-factor authentication token:",
+        "enterCaptcha": "Please enter the captcha you see above:",
+        "forgotPassword": "Forgot Your Password?"
     }
 }
