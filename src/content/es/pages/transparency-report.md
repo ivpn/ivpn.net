@@ -9,7 +9,7 @@ params:
 
 La siguiente tabla muestra la cantidad de solicitudes legales válidas recibidas de agencias gubernamentales o agencias encargadas de hacer cumplir la ley.
 
-Para obtener más información sobre cómo se procesan las solicitudes, consulta las [directrices de proceso legal para el cumplimiento de la ley](/legal-process-guidelines/).
+Para obtener más información sobre cómo se procesan las solicitudes, consulta las [pautas del proceso legal para el cumplimiento de la ley](/es/legal-process-guidelines/).
 
 |   | # Solicitudes recibidas| # Solicitudes válidas recibidas | # Solicitudes válidas recibidas donde se proporcionaron datos |
 |---|---|---|---|
