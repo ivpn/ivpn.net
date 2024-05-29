@@ -52,5 +52,5 @@ IVPN no almacena ningún registro relacionado con las conexiones de los usuarios
 
 IVPN no almacena registros relacionados con la actividad de los usuarios de IVPN cuando están conectados al servicio IVPN, es decir, registros de a qué servidores de Internet o sitios web se conectó el usuario de IVPN. Por lo tanto, si se le proporciona una marca, IVPN no podrá recuperar ninguna actividad de Internet relacionada con ningún período de tiempo o cuenta de usuario.
 
-Si tienes más preguntas, puedes contatar con nosotros en [legal@ivpn.net](mailto:legal@ivpn.net).
+Si tienes más preguntas, puedes contactar con nosotros en [legal@ivpn.net](mailto:legal@ivpn.net).
 
