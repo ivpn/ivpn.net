@@ -127,7 +127,28 @@ const routes = [
         }
     },
     {
+        path: '/es/account/logout',
+        name: 'logout',
+        beforeEnter: async (to, from, next) => {
+            try {
+                await store.dispatch('auth/logout')
+                next({ name: 'login' })
+            } catch (error) {
+                console.error(error)
+                next({ name: '500' })
+            }
+        }
+    },
+    {
         path: '/account',
+        name: 'account',
+        component: AccountView,
+        meta: {
+            title: 'IVPN Account',
+        },
+    },
+    {
+        path: '/es/account',
         name: 'account',
         component: AccountView,
         meta: {
@@ -143,7 +164,23 @@ const routes = [
         }
     },
     {
+        path: '/es/account/change-product',
+        name: 'change-product',
+        component: ChangeProductView,
+        meta: {
+            title: 'IVPN Account - Change Product',
+        }
+    },
+    {
         path: '/account/payment/btc/thank-you',
+        name: 'btc-thank-you',
+        component: ThankYouBTCView,
+        meta: {
+            title: 'IVPN Account - Thank You',
+        }
+    },
+    {
+        path: '/es/account/payment/btc/thank-you',
         name: 'btc-thank-you',
         component: ThankYouBTCView,
         meta: {
@@ -167,7 +204,23 @@ const routes = [
         }
     },
     {
+        path: '/es/account/payment/:refid/received',
+        name: 'payment-received',
+        component: ThankYouView,
+        meta: {
+            title: 'IVPN Account - Payment has been received',
+        }
+    },
+    {
         path: '/account/payment/:refid/invoice',
+        name: 'payment-invoice',
+        component: InvoiceView,
+        meta: {
+            title: 'IVPN Account - Invoice for payment',
+        }
+    },
+    {
+        path: '/es/account/payment/:refid/invoice',
         name: 'payment-invoice',
         component: InvoiceView,
         meta: {
@@ -181,8 +234,47 @@ const routes = [
         meta: {
             title: 'IVPN Account - Payment',
         }
-    }, {
+    }, 
+    {
+        path: '/es/account/payment',
+        component: PaymentView,
+        name: 'payment',
+        meta: {
+            title: 'IVPN Account - Payment',
+        }
+    }, 
+    {
         path: '/account/settings',
+        component: Settings,
+        children: [
+            {
+                path: '',
+                name: 'settings-main',
+                component: SettingsAuthentication,
+                meta: {
+                    title: 'Account settings - Authentication',
+                }
+            },
+            {
+                path: 'billing',
+                name: 'settings-billing',
+                component: SettingsBilling,
+                meta: {
+                    title: 'Account settings - Billing',
+                }
+            },
+            {
+                path: 'delete',
+                name: 'settings-delete',
+                component: SettingsDelete,
+                meta: {
+                    title: 'Account settings - Delete account',
+                }
+            },
+        ],
+    },
+    {
+        path: '/es/account/settings',
         component: Settings,
         children: [
             {
@@ -266,9 +358,71 @@ const routes = [
                 }
             }
         ],
+        path: '/es/account/add-funds/:price',
+        component: AddFundsView,
+        children: [
+            {
+                path: 'cc', name: 'add-funds-cc',
+                component: AddFundsCC,
+                meta: {
+                    title: 'IVPN Add Funds - Credit Card',
+                }
+            },
+            {
+                path: 'paypal', name: 'add-funds-paypal',
+                component: AddFundsPayPal,
+                meta: {
+                    title: 'IVPN Add Funds - PayPal',
+                },
+            }, {
+                path: 'bitcoin', name: 'add-funds-bitcoin',
+                component: AddFundsBitcoin,
+                meta: {
+                    title: 'IVPN Add Funds - Bitcoin',
+                }
+            }, {
+                path: 'monero', name: 'add-funds-monero',
+                component: AddFundsMonero,
+                meta: {
+                    title: 'IVPN Add Funds - Monero',
+                }
+            }, {
+                path: 'voucher', name: 'add-funds-voucher',
+                component: AddFundsGiftCard,
+                meta: {
+                    title: 'IVPN Add Funds - Voucher',
+                }
+            }, {
+                path: 'applepay', name: 'add-funds-apple',
+                component: ApplePayView,
+                meta: {
+                    title: 'IVPN Add Funds - ApplePay',
+                }
+            }, {
+                path: 'googlepay', name: 'add-funds-google',
+                component: GooglePayView,
+                meta: {
+                    title: 'IVPN Add Funds - GooglePay',
+                }
+            }, {
+                path: 'cash', name: 'add-funds-cash',
+                component: AddFundsCash,
+                meta: {
+                    title: 'IVPN Add Funds - Cash',
+                }
+            }
+        ],
     },
     {
         path: '/account/change-product',
+        name: 'account-change-product',
+        component: ChangeProductView,
+        meta: {
+            title: 'IVPN Change Product',
+        }
+    },
+    {
+        path: '/es/account/change-product',
         name: 'account-change-product',
         component: ChangeProductView,
         meta: {
@@ -284,7 +438,23 @@ const routes = [
         }
     },
     {
+        path: '/es/account/wireguard',
+        name: 'wireguard',
+        component: WireguardView,
+        meta: {
+            title: 'IVPN Account - WireGuard',
+        }
+    },
+    {
         path: '/account/wireguard-config',
+        name: 'wireguard-config',
+        component: WireguardConfigView,
+        meta: {
+            title: 'IVPN Account - WireGuard Configuration',
+        }
+    },
+    {
+        path: '/es/account/wireguard-config',
         name: 'wireguard-config',
         component: WireguardConfigView,
         meta: {
@@ -313,6 +483,14 @@ const routes = [
     },
     {
         path: '/account/device-management',
+        name: 'device-management',
+        component: DeviceManagementView,
+        meta: {
+            title: 'IVPN Account - Device management',
+        }
+    },
+    {
+        path: '/es/account/device-management',
         name: 'device-management',
         component: DeviceManagementView,
         meta: {

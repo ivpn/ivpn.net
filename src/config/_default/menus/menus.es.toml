@@ -92,7 +92,7 @@
   [[footercoltwo]]
     identifier = "status"
     name = "Servers"
-    url = "/status/"
+    url = "/es/status/"
     weight = 20
 
   [[footercoltwo]]

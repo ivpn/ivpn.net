@@ -2,24 +2,24 @@
     <div class="login-form-container">                
         <div class="login-box">
             <form @submit.prevent="login()">
-                <h1>Log In</h1>  
+                <h1>{{ $t('login.title') }}</h1>  
                 <tabs @onTabChanged="updateLoginType">
                     <tab :selected="loginType == 'id'" :tabid="'id'" :name="'With Account ID'" class="login-tab">
                         <div class="login-fields">
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
-                            <label for="accountid">Account ID:</label>
+                            <label for="accountid">{{ $t('login.accountId') }}</label>
 
                             <!--  -->
                             <input
                                 type="text"
                                 id="accountid"
                                 v-model="accountID"
-                                placeholder="i... or ivpn..."
+                                :placeholder="$t('login.idPlaceholder')"
                                 autofocus
                             />
 
                             <div class="totp" v-if="totpRequired">
-                                <label for="login-totp-2">Two-factor authentication token:</label>
+                                <label for="login-totp-2">{{ $t('login.2fatoken') }}</label>
                                 <input type="text" id="login-totp-2" v-model="totpValue" />
                             </div>
 
@@ -27,7 +27,7 @@
                                 <div class="image-block">
                                     <img :src="captchaImage" />
                                 </div>
-                                <label for="login-captcha-2">Please enter the captcha you see above:</label>
+                                <label for="login-captcha-2">{{ $t('login.enterCaptcha') }}</label>
                                 <input type="text" id="login-captcha-2" v-model="captchaValue" />
                             </div>
                             <!-- <div class="forgot">
@@ -39,13 +39,13 @@
                         <div class="login-fields">
                             
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
-                            <label for="login-email">Email:</label>
+                            <label for="login-email">{{ $t('login.email') }}</label>
                             <input type="text" id="login-email" v-model="email" autofocus />
-                            <label for="login-password">Password:</label>
+                            <label for="login-password">{{ $t('login.password') }}</label>
                             <input type="password" id="login-password" v-model="password" />
 
                             <div class="totp" v-if="totpRequired">
-                                <label for="login-totp-2">Two-factor authentication token:</label>
+                                <label for="login-totp-2">{{ $t('login.2fatoken') }}</label>
                                 <input type="text" id="login-totp-2" v-model="totpValue" />
                             </div>
 
@@ -53,25 +53,25 @@
                                 <div class="image-block">
                                     <img :src="captchaImage" />
                                 </div>
-                                <label for="login-captch">Please enter the captcha you see above:</label>
+                                <label for="login-captch">{{ $t('login.enterCaptcha') }}</label>
                                 <input type="text" id="login-captch" v-model="captchaValue" />
                             </div>
 
                             <div class="forgot">
-                                <router-link :to="{name:'recover-password'}">Forgot Your Password?</router-link>
+                                <router-link :to="{name:'recover-password'}">{{ $t('login.forgotPassword') }}</router-link>
                             </div>
                         </div>
                     </tab>
                 </tabs>
                 <button class="btn btn-big btn-solid login-btn" :disabled="inProgress || !formValid">
-                    <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>Log In
+                    <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>{{ $t('login.title') }}
                 </button>
             </form>
             <router-link
                 :to="{name:'prices'}"
                 id="createnew"
                 class="btn btn-big btn-border"
-            >Create New Account</router-link>
+            >{{ $t('login.createNewAccount') }}</router-link>
         </div>
     </div>
 </template>
@@ -83,6 +83,8 @@ import Tab from "@/components/Tab.vue";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 
 import { mapState } from "vuex";
+
+import { useI18n } from "vue-i18n";
 
 const StatusCaptchaRequired = 70001;
 const StatusTotpRequired = 70011;
@@ -112,6 +114,9 @@ export default {
         if (this.loginType != "id" && this.loginType != "email") {
             this.loginType = "id";
         }
+    },
+    mounted(){
+        useI18n().locale.value = window.location.href.split("/")[3];
     },
     computed: {
         ...mapState({

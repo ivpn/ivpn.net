@@ -49,7 +49,11 @@
                     <a class="navigation__link navigation__link--is-cta" href="/clientarea/">My Account</a></span>
                 </li>
                 <li class="navigation__item" data-hide="auth">
+                    {{ if eq site.Language.Lang "es" }}
                     <a class="navigation__link navigation__link--is-cta" href="/account/login/">Login</a></span>
+                    {{ else }}
+                    <a class="navigation__link navigation__link--is-cta" href="/account/login/">Login</a></span>
+                    {{ end }}
                 </li>
             </div>
             {{ else }}
@@ -58,16 +62,6 @@
                 </li>
             {{ end }}
         {{ end }}
-
-        <div class='login-menu'>
-            <li class="navigation__item submenu" id="{{ urlize .Name }}">
-                <a class="navigation__link navigation__link--is-cta" href="#"><img width="25" height="25" src="/images/lang.svg"></a><span class='dropdown_icon'></span>
-                <ul class='submenu__items'>
-                {{ range $.Site.Home.AllTranslations }}
-                <li><a  class='navigation__link' href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
-                {{ end }}
-                </ul>
-        </div>
     </ul>
     <div class="mobile-navigation">
 
@@ -99,7 +93,11 @@
                         onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a>
                     </li>
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-hide="auth">
+                        {{ if eq site.Language.Lang "es" }}
                         <a class="mobile-navigation__menu-link" href="/account/login/">Login</a>
+                        {{ else }}
+                        <a class="mobile-navigation__menu-link" href="/login/">Login</a>
+                        {{ end }}
                     </li>
 
                 {{ else }}
