@@ -87,7 +87,7 @@ const routes = [
         path: '/prices', redirect: { name: 'prices' }
     },
     {
-        path: '/en/account/login',
+        path: '/account/login',
         name: 'login',
         component: LoginView,
         meta: {
@@ -123,7 +123,7 @@ const routes = [
         beforeEnter: notAuthenticatedGuard,
     },
     {
-        path: '/en/account/logout',
+        path: '/account/logout',
         name: 'logout',
         beforeEnter: async (to, from, next) => {
             try {
@@ -149,7 +149,7 @@ const routes = [
         }
     },
     {
-        path: '/en/account',
+        path: '/account',
         name: 'account',
         component: AccountView,
         meta: {
@@ -165,7 +165,7 @@ const routes = [
         },
     },
     {
-        path: '/en/account/change-product',
+        path: '/account/change-product',
         name: 'change-product',
         component: ChangeProductView,
         meta: {
@@ -181,7 +181,7 @@ const routes = [
         }
     },
     {
-        path: '/en/account/payment/btc/thank-you',
+        path: '/account/payment/btc/thank-you',
         name: 'btc-thank-you',
         component: ThankYouBTCView,
         meta: {
@@ -205,7 +205,7 @@ const routes = [
         }
     },
     {
-        path: '/en/account/payment/:refid/received',
+        path: '/account/payment/:refid/received',
         name: 'payment-received',
         component: ThankYouView,
         meta: {
@@ -221,7 +221,7 @@ const routes = [
         }
     },
     {
-        path: '/en/account/payment/:refid/invoice',
+        path: '/account/payment/:refid/invoice',
         name: 'payment-invoice',
         component: InvoiceView,
         meta: {
@@ -237,7 +237,7 @@ const routes = [
         }
     },
     {
-        path: '/en/account/payment',
+        path: '/account/payment',
         component: PaymentView,
         name: 'payment',
         meta: {
@@ -253,7 +253,7 @@ const routes = [
         }
     }, 
     {
-        path: '/en/account/settings',
+        path: '/account/settings',
         component: Settings,
         children: [
             {
@@ -313,7 +313,7 @@ const routes = [
         ],
     },
     {
-        path: '/en/account/add-funds/:price',
+        path: '/account/add-funds/:price',
         component: AddFundsView,
         children: [
             {
@@ -423,7 +423,7 @@ const routes = [
         ],
     },
     {
-        path: '/en/account/change-product',
+        path: '/account/change-product',
         name: 'account-change-product',
         component: ChangeProductView,
         meta: {
@@ -439,7 +439,7 @@ const routes = [
         }
     },
     {
-        path: '/en/account/wireguard',
+        path: '/account/wireguard',
         name: 'wireguard',
         component: WireguardView,
         meta: {
@@ -455,7 +455,7 @@ const routes = [
         }
     },
     {
-        path: '/en/account/wireguard-config',
+        path: '/account/wireguard-config',
         name: 'wireguard-config',
         component: WireguardConfigView,
         meta: {
@@ -491,7 +491,7 @@ const routes = [
         redirect: { name: '404' }
     },
     {
-        path: '/en/account/device-management',
+        path: '/account/device-management',
         name: 'device-management',
         component: DeviceManagementView,
         meta: {
@@ -519,7 +519,7 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
 
-    if ( (to.path.startsWith('/en/account') || to.path.startsWith('/es/account') || to.path.startsWith('/account') ) && to.name != 'login') {
+    if ( to.path.startsWith('/account')  && to.name != 'login') {
 
         if (!store.state.auth.isAuthenticated) {
             next({ name: 'login' })
