@@ -96,15 +96,6 @@ const routes = [
         beforeEnter: notAuthenticatedGuard,
     },
     {
-        path: '/es/account/login',
-        name: 'login',
-        component: LoginView,
-        meta: {
-            title: 'IVPN Login',
-        },
-        beforeEnter: notAuthenticatedGuard,
-    },
-    {
         path: '/recover/password',
         name: 'recover-password',
         component: PasswordResetView,
@@ -519,7 +510,7 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
 
-    if ( to.path.startsWith('/account')  && to.name != 'login') {
+    if (to.path.startsWith('/account') && to.name != 'login') {
 
         if (!store.state.auth.isAuthenticated) {
             next({ name: 'login' })
