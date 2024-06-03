@@ -11,9 +11,9 @@ weight: 100
 ---
 # What information is stored when I stop using your service?
 
-When a VPN account is terminated on our network due to the subscription ending, non-payment or for any other reason, all data associated with that VPN account including the account itself (with the exception of the accounting data below) is automatically deleted from all systems after 3 months. After the account is deleted the remaining accounting data below has no link to any past account ID. 
+When a VPN account is terminated on our network due to the subscription ending, non-payment, or for any other reason, all data associated with that VPN account including the account itself (with the exception of the accounting data below) is automatically deleted from all systems after three months. After the account is deleted, the remaining accounting data below has no link to any past Account ID. 
 
-If you want to delete your data immediately, simply click on the `Delete account` button within the [Client Area](/account/login/).
+You are welcome to [delete your IVPN account](/knowledgebase/billing/how-can-i-delete-my-ivpn-account/) at any time if you prefer to skip the three-month waiting period.  
 
 | Date of payment | Amount | Payment method | Transaction ID | Subscription ID |
 |---|---|---|---|---|
