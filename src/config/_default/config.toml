@@ -48,9 +48,9 @@ defaultContentLanguageInSubdir = true
   authors = "authors"
 
 [permalinks]
-  categories = "blog/categories/:slug/"
-  tags = "blog/tags/:slug/"
-  authors = "blog/authors/:slug/"
+  categories = "/blog/categories/:slug/"
+  tags = "/blog/tags/:slug/"
+  authors = "/blog/authors/:slug/"
 
 [related]
   threshold = 80
