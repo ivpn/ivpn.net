@@ -228,10 +228,10 @@ SHA256: 9cc74190cc567d4f6d813311c9fcba51695280c9776754150a251032f36ee941
 ### .RPM
 
 [Base package](https://repo.ivpn.net/stable/pool/ivpn-3.14.14-1.x86_64.rpm)  
-SHA256: fb29f980b609a63f4ad8653652b1d441197421915aa99f7642c1e3dc66bc2e3d  
+SHA256: e65c72e34f75dcac0e4113584fb0687c2852fa5bdea03bde287a0344147297e1  
 
 [UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.14-1.x86_64.rpm)  
-SHA256: 5eb0de7de062180812deba88a641fe5f4dfde36c41dee56120aff3536a164654  
+SHA256: cadddb72584b75e5ca6d2df8de5424e3e3bad9547b02a675ff6e14713311f15c  
 
 ## Install from Source Code {#source}
 
