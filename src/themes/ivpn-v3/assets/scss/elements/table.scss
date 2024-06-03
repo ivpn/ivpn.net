@@ -79,3 +79,12 @@ table {
         }
     }
 }
+
+@media only screen and (max-device-width: 600px)
+{
+    table {
+        th {
+            padding: 7px;
+        }
+    }
+}
