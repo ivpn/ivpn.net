@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 841873
-hash: 00000000000000000000e6eecf0ecd283943c8a16e64c21cebac6ba7332ff43f
+height: 846299
+hash: 0000000000000000000262902444fcde8fdbda228c560cb6b724d93a4516a2da
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Labour wins Blackpool South in blow to Rishi Sunak and Tories
-Also in today’s newsletter, South African regulator on Anglo American bid and Big Read on Russia’s frozen assets
+FirstFT: Russia-China gas pipeline deal hits snag
+Also in today’s newsletter, Labour unveils ex-military candidates and ‘green shoots’ in European dealmaking
 
-US High School Economics class: AI could kill off most call centres, says Tata Consultancy Services head
-Macroeconomics
+Upskilling
+Technology, demography and shifts in demand are disrupting the world of work. Thousands of jobs are expected to change in coming years, requiring new skills training for staff of all ages. This report looks at how companies and employees are adapting
 
-US High School Economics class: Music and sports fans told: brace for a summer of ticket scams
-Personal finance
+Are we getting inflation right? With Neel Kashkari
+Soumaya Keynes talks to the president of the Minneapolis Fed
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmY0b44ACgkQisFrnrZH
-umk/4QgAumb1ihk+IZpfJm+1VJTvUn55PIcXpcT4GvPTZa81PAduy3oOV4zng4k7
-OIoHuQW88pMpQ+uHoieRbf5EHCz7SgBgW6xs2zQn/cxwnWoCNlvzhzpxfQcGqqfT
-aPXTtTka7Q5mnOZ7d/jc6nWhe3a5ObGDO4JJYJ1jcsYNJrZC7NG4zNmB7JAQ9iqJ
-34luEsbuJRDsEw6vEE3D373BYTpxZecJYk15egGcOIgqxthhtww236XY1lueikyM
-t4znBzkCe/f9uQPziBqUkjDDYztkKvmP7RPf/fhO0fEcBOBSZUF338MU/Vj9Uo4o
-FS6uMpVHsKZITG1227wwUC5t4pV0bQ==
-=InC8
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmZdTg0ACgkQisFrnrZH
+umn4WwgApot22FQ4oWKGcSA/xdxO18nVIYai+Zo0TNuN622+6ZmTdRZ6rr/bNmc5
+3rE3uTjxXrMAG45ChPqVtAyJH0TMIV0+WD6erAFB+KivPTFfvWxhafSKW55ROPCm
+jKSkgjCu9qWzO6PE+0wN/0DmczJyV0Qa4v9upyK76abymgfmr6cZxWypF9j2Oo7b
+o1EWFZ3WRbWux/chjKsTiQpnIif5tmWEKRGWcst1Tesa9JVT52hpWwbytyt8/nz8
+V5Zirqilyc2bY0UQT/yz1jiFwHkt5fp6wfU+gWSifDshCWlqUclcStWoKN/Z256E
+Nt5zfhe/vFRwUh7lg4xdl7Z8hMpexA==
+=DNsb
 -----END PGP SIGNATURE-----
 
 
