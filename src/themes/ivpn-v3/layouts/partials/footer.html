@@ -13,14 +13,16 @@
                     <a href="{{ .URL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
-                {{ if and (eq site.Language.Lang "en") (.Param "translated") }}
-                <li>
-                    <a href="{{ replace .Page.RelPermalink "/en/" "/es/" }}">Versión española</a>
-                </li>
-                {{ else }}
-                <li>
-                    <a href="{{ replace .Page.RelPermalink "/es/" "/en/" }}">English version</a>
-                </li>
+                {{ if (.Param "translated") }}
+                    {{ if (eq site.Language.Lang "en")  }}
+                    <li>
+                        <a href="{{ replace .Page.RelPermalink "/en/" "/es/" }}">Versión española</a>
+                    </li>
+                    {{ else }}
+                    <li>
+                        <a href="{{ replace .Page.RelPermalink "/es/" "/en/" }}">English version</a>
+                    </li>
+                    {{ end }}
                 {{ end }}
             </ul>
         </div>
