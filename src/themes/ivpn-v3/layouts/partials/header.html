@@ -93,11 +93,7 @@
                         onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a>
                     </li>
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-hide="auth">
-                        {{ if eq site.Language.Lang "es" }}
                         <a class="mobile-navigation__menu-link" href="/account/login/">Login</a>
-                        {{ else }}
-                        <a class="mobile-navigation__menu-link" href="/login/">Login</a>
-                        {{ end }}
                     </li>
 
                 {{ else }}
