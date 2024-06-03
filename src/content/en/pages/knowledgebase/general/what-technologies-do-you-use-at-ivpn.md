@@ -14,6 +14,8 @@ We use only open-source software at IVPN. Below is a list of some of the technol
 
 - [CentOS](https://www.centos.org/) - Enterprise-class Linux distribution
 
+- [AlmaLinux](https://almalinux.org/) - 1:1 binary compatible with RHEL® and pre-Stream CentOS
+
 - [Puppet](https://puppet.com/) and [the Foreman](https://theforeman.org/) - Centralized configuration management for all our servers.
 
 - [Zabbix](https://www.zabbix.com/) - Distributed network monitoring solution.
@@ -22,7 +24,7 @@ We use only open-source software at IVPN. Below is a list of some of the technol
 
 - [OpenVPN](https://openvpn.net/) - Encryption and authentication for all server to server communications.
 
-- [OpenSwan](https://www.openswan.org/projects/openswan) - Providing IPSec services to customers.
+- [OpenSwan](https://openswan.org/) - Providing IPSec services to customers.
 
 - [WireGuard](https://www.wireguard.com/) - WireGuard VPN services for customers.
 

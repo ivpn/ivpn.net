@@ -1,4 +1,3 @@
-baseURL = "https://www.ivpn.net" 
 title = "IVPN"
 theme = "ivpn-v3"
 paginate = 8

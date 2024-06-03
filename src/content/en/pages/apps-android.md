@@ -2,7 +2,7 @@
 title: IVPN for Android - Open-source VPN app for your Android
 description: The IVPN app for Android offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for Android
-subtitle: Supports Android 5.0+
+subtitle: Supports Android 7.1+
 url: /apps-android/
 platform: android
 layout: apps
