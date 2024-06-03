@@ -10,7 +10,7 @@ pygmentsStyle="monokai"
 pygmentsOptions="noclasses=false"
 
 DefaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = true 
 
 [languages]
   [languages.en]
