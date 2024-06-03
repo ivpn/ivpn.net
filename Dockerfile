@@ -1,7 +1,7 @@
 FROM nginx:1.18 AS builder
 
 ARG ENV=production
-ARG BASE_URL=https://www.ivpn.net
+ARG BASE_URL=http://localhost:8010
 ARG API_URL=https://api.ivpn.net
 ARG PAYPAL_CLIENT_ID=Ae94bviH2d45LcrM1nnnUcIDuJNb2NZgR_-3GKoJS1krkkNiInSl9V-SHMLvpPd1V8P9-yDRNoWBWK44
 
