@@ -219,19 +219,19 @@ IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.14.2_amd64.deb)  
-SHA256: 12d1005eeb92c5b35bf83b9df51317ec4ac08efc6fbb7ab01e962250f23b891d  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.14.14_amd64.deb)  
+SHA256: 123cc46bd12baede70fbf3e8db013ee248fe1faa9090af9ff3c6a8dcc60cc27d  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.2_amd64.deb)  
-SHA256: f64cd84b4e0ce252f0c066977d180b953c55f2b485cf7a5437b1e4c7af1959f7  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.14_amd64.deb)  
+SHA256: 9cc74190cc567d4f6d813311c9fcba51695280c9776754150a251032f36ee941  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.14.2-1.x86_64.rpm)  
-SHA256: 45dba6b5a281646bde6b6651661092024aafc0165268e3245fb515dabb866996  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.14.14-1.x86_64.rpm)  
+SHA256: fb29f980b609a63f4ad8653652b1d441197421915aa99f7642c1e3dc66bc2e3d  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.2-1.x86_64.rpm)  
-SHA256: 0b3602497cf599060e44b0912923f3a5bc2f9325c8d34856bc7ef2eb019bb6ee  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.14-1.x86_64.rpm)  
+SHA256: 5eb0de7de062180812deba88a641fe5f4dfde36c41dee56120aff3536a164654  
 
 ## Install from Source Code {#source}
 
