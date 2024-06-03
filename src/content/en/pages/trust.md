@@ -71,5 +71,5 @@ url: /trust/
     * All VPN servers are built using Open Source software e.g. CentOS, OpenVPN, StrongSWAN etc.
     * [Vulnerability disclosure](/vulnerability-reporting/) process.
     * [Warrant canary](/resources/canary.txt).
-    * IVPN is a transparent organisation with published information [about staff](team/) on the website and Linkedin profiles.
+    * IVPN is a transparent organisation with published information [about staff](/team/) on the website and Linkedin profiles.
     * In-depth [privacy guides](/privacy-guides/) for IVPN customers.
