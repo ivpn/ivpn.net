@@ -35,7 +35,7 @@ sections:
         description: All servers managing the IVPN service are self-hosted
           and operated by IVPN, including email and customer service.
       - name: Independent security audits
-        description: We commit to [annual security audits](/blog/tags/audit/) to improve our security
+        description: We commit to [annual security audits](/en/blog/tags/audit/) to improve our security
           practices and transparency.
       - name: No fake reviews
         description: We never pay for reviews and do not have an affiliate program, so
@@ -47,7 +47,7 @@ sections:
           privacy like the EFF, Open Rights Group, and the Tor project.
       - name: Transparency
         description: Our business model is exclusively based on paid subscriptions. We
-          do not own any other VPN services or VPN review sites. Review [the team](team/)
+          do not own any other VPN services or VPN review sites. Review [the team](/team/)
           operating IVPN and the company ownership.
   - type: heading_text_one_column
     content: "## Features"
