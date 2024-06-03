@@ -73,7 +73,7 @@
 
   [[footercolone]]
     identifier = "what-is-a-vpn"
-    name = "Qué es un VPN"
+    name = "What is a VPN"
     url = "/es/what-is-a-vpn/"
     weight = 40
   
@@ -97,7 +97,7 @@
 
   [[footercoltwo]]
     identifier = "transparency-report"
-    name = "Informe de transparencia"
+    name = "Transparency Report"
     url = "/es/transparency-report/"
     weight = 30
 
