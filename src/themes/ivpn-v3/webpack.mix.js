@@ -4,6 +4,8 @@ let path = require('path');
 require('laravel-mix-bundle-analyzer');
 require('mix-env-file');
 
+const VueI18nPlugin = require('@intlify/unplugin-vue-i18n/webpack')
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -24,7 +26,10 @@ mix.webpackConfig({
             '@': path.resolve('assets/js'),
             'scss': path.resolve('assets/scss'),
         }
-    }
+    },
+    plugins: [
+        VueI18nPlugin({})
+    ]
 });
 
 // if (mix.inProduction()) {

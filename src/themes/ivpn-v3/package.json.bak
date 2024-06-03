@@ -1,0 +1,47 @@
+{
+  "name": "ivpn-v3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "watch": "npm run development -- --watch",
+    "development": "cross-env NODE_ENV=development ENV_FILE=./.env.development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "copy:manifest": "cp static/mix-manifest.json data/manifest.json"
+  },
+  "devDependencies": {
+    "@vue/compat": "^3.2.47",
+    "@vue/compiler-sfc": "^3.2.47",
+    "braintree-web": "^3.92.1",
+    "cross-env": "^7.0.2",
+    "date-fns": "^2.29.3",
+    "file-saver": "^2.0.5",
+    "flexbox-grid-mixins": "^0.3.4",
+    "ip-num": "^1.5.1",
+    "js-cookie": "^3.0.1",
+    "jszip": "^3.10.1",
+    "laravel-mix": "^6.0.49",
+    "laravel-mix-bundle-analyzer": "^1.0.5",
+    "lunr": "^2.3.9",
+    "mix-env-file": "^0.1.1",
+    "paypal-checkout": "^4.0.336",
+    "postcss": "^8.4.31",
+    "qrcode-generator": "^1.4.4",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.54.9",
+    "sass-loader": "^13.0.2",
+    "vue": "^3.2.47",
+    "vue-loader": "^17.0.1",
+    "vue-router": "^4.1.6",
+    "vue-select": "^4.0.0-beta.5",
+    "vuex": "^4.1.0",
+    "yarn-upgrade-all": "^0.7.2"
+  },
+  "dependencies": {
+    "@getalby/bitcoin-connect": "^3.2.1",
+    "vue-country-flag-next": "^2.3.2",
+    "vue-multiselect": "^3.0.0-beta.1"
+  }
+}

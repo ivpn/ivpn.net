@@ -1,29 +1,29 @@
 <template>
     <div>
-        <h1 class="app">Select IVPN Plan</h1>
+        <h1 class="app">{{ $t('pricing.title') }}</h1>
         <p>
-            Select a plan to create your account instantly. You can switch between IVPN Standard and Pro any time in the future.
+            {{ $t('pricing.description') }}
         </p>
 
         <div class="prices">
             <price-box
-                :prices="products.standard.prices"
+                :prices="products.standard"
                 @selected="selected('IVPN Standard')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'IVPN Standard'"
             >
-                <div class="price-header">IVPN Standard</div>
+                <div class="price-header">{{ $t('pricing.standard') }}</div>
                 <div class="price-features">
                     <ul>
-                        <li>All protocols</li>
-                        <li>2 devices</li>
-                        <li>AntiTracker</li>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
                     </ul>
                 </div>
             </price-box>
 
             <price-box
-                :prices="products.pro.prices"
+                :prices="products.pro"
                 @selected="selected('IVPN Pro')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'IVPN Pro'"
@@ -31,48 +31,48 @@
                 <div class="price-header">IVPN Pro</div>
                 <div class="price-features">
                     <ul>
-                        <li>All protocols</li>
-                        <li>7 devices</li>
-                        <li>AntiTracker</li>
-                        <li>Multi-hop</li>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
             </price-box>
         </div>
         <div v-if="auth.error" class="error"><p>{{ auth.error.message }}</p></div>
-        <p>All prices are in U.S. dollars.</p>
-        <p>Review pricing for business or nonprofit teams <a href="/pricing-teams/">here</a>.</p>
+        <p>{{ $t('pricing.productFooterPrice') }}</p>
+        <p>{{ $t('pricing.productFooterReview') }} <a href="/pricing-teams/">{{ $t('pricing.here') }}</a>.</p>
         <section>
-            <h2>All IVPN plans include:</h2>
+            <h2>{{ $t('pricing.featuresTitle') }}</h2>
             <ul>
-                <li>Anonymous registration - no email required</li>
-                <li>Open-source applications for Android, iOS, macOS, Windows and Linux</li>
-                <li>Cash, Monero and Bitcoin payment options for better anonymity</li>
-                <li>Money-back guarantee for 30 days</li>
-                <li>Private DNS servers</li>
-                <li>AntiTracker with blocklist selection option</li>
-                <li>Killswitch/firewall and obfuscation methods where applicable</li>
-                <li>SOCKS5 proxy service</li>
-                <li>Router, NAS support</li>
+                <li>{{ $t('pricing.feature1') }}</li>
+                <li>{{ $t('pricing.feature2') }}</li>
+                <li>{{ $t('pricing.feature3') }}</li>
+                <li>{{ $t('pricing.feature4') }}</li>
+                <li>{{ $t('pricing.feature5') }}</li>
+                <li>{{ $t('pricing.feature6') }}</li>
+                <li>{{ $t('pricing.feature7') }}</li>
+                <li>{{ $t('pricing.feature8') }}</li>
+                <li>{{ $t('pricing.feature9') }}</li>
             </ul>
             <br>
-            <h2>Supported payment methods:</h2>
+            <h2>{{ $t('pricing.paymentMethodsTitle') }}</h2>
             <ul>
-                <li>Credit Card</li>
-                <li>PayPal</li>
-                <li>Bitcoin</li>
-                <li>Bitcoin Lightning</li>
-                <li>Monero</li>
-                <li>Cash</li>
+                <li>{{ $t('pricing.paymentMethod1') }}</li>
+                <li>{{ $t('pricing.paymentMethod2') }}</li>
+                <li>{{ $t('pricing.paymentMethod3') }}</li>
+                <li>{{ $t('pricing.paymentMethod4') }}</li>
+                <li>{{ $t('pricing.paymentMethod5') }}</li>
+                <li>{{ $t('pricing.paymentMethod6') }}</li>
             </ul>
             <br>
-            <h2>Why trust IVPN?</h2>
+            <h2>{{ $t('pricing.trustTitle') }}</h2>
             <ul>
-                <li>No logs, regularly audited VPN service</li>
-                <li>No customer data stored</li>
-                <li>Clear privacy policy</li>
-                <li>Transparent ownership and team</li>
-                <li>Strong ethics: no trackers, no false promises, no surveillance ads</li>
+                <li>{{ $t('pricing.trustList1') }}</li>
+                <li>{{ $t('pricing.trustList2') }}</li>
+                <li>{{ $t('pricing.trustList3') }}</li>
+                <li>{{ $t('pricing.trustList4') }}</li>
+                <li>{{ $t('pricing.trustList5') }}</li>
             </ul>
         </section>
     </div>
@@ -83,6 +83,7 @@ import PriceBox from "@/components/PriceBox.vue";
 
 import { mapState } from "vuex";
 import matomo from "@/api/matomo.js";
+import { useI18n } from "vue-i18n";
 
 export default {
     name: "Prices",
@@ -101,6 +102,9 @@ export default {
             inProgress: (state) => state.auth.inProgress,
             auth: (state) => state.auth,
         }),
+    },
+    mounted(){
+        useI18n().locale.value = window.location.href.split("/")[3];
     },
     async created() {
         if (

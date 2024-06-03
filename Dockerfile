@@ -31,11 +31,20 @@ RUN yarn --cwd ./src/themes/ivpn-v3/ run copy:manifest
 RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
      -e 's/^url:(.*)$/url: \/privacy-mobile-app\//' \
      -e 's/^canonical:(.*)$/canonical: \/privacy\//' \
-   ./src/content/pages/privacy-policy.md > ./src/content/pages/privacy-policy-mobile.md \
+   ./src/content/en/pages/privacy-policy.md > ./src/content/en/pages/privacy-policy-mobile.md \
    && sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
      -e 's/^url:(.*)$/url: \/tos-mobile-app\//' \
      -e 's/^canonical:(.*)$/canonical: \/tos\//' \
-   ./src/content/pages/terms-of-service.md > ./src/content/pages/terms-of-service-mobile.md
+   ./src/content/en/pages/terms-of-service.md > ./src/content/en/pages/terms-of-service-mobile.md
+
+#RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
+#     -e 's/^url:(.*)$/url: \/privacy-mobile-app\//' \
+#    -e 's/^canonical:(.*)$/canonical: \/privacy\//' \
+#   ./src/content/es/pages/privacy-policy.md > ./src/content/es/pages/privacy-policy-mobile.md \
+#   && sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
+#     -e 's/^url:(.*)$/url: \/tos-mobile-app\//' \
+#     -e 's/^canonical:(.*)$/canonical: \/tos\//' \
+#   ./src/content/es/pages/terms-of-service.md > ./src/content/es/pages/terms-of-service-mobile.md 
 
 RUN hugo -s ./src -b ${BASE_URL} --environment $ENV -d /opt/build/public
 

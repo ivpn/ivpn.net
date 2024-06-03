@@ -36,6 +36,9 @@ import InternalErrorView from '../views/500.vue'
 
 import store from '@/store'
 
+import en from '@/../../locales/en.json'
+import es from '@/../../locales/es.json'
+
 async function notAuthenticatedGuard(to, from, next) {
     if (store.state.auth.isAuthenticated) {
         if (store.state.auth.isLegacy) {
@@ -69,7 +72,7 @@ const routes = [
         name: 'prices',
         component: PricesView,
         meta: {
-            title: 'IVPN Pricing - VPN subscription with anonymous registration',
+            title: en.pricing.meta.title,
         }
     },
     {
@@ -170,7 +173,8 @@ const routes = [
         meta: {
             title: 'IVPN Account - Payment',
         }
-    }, {
+    }, 
+    {
         path: '/account/settings',
         component: Settings,
         children: [
@@ -255,6 +259,7 @@ const routes = [
                 }
             }
         ],
+        
     },
     {
         path: '/account/change-product',

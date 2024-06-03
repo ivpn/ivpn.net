@@ -1,17 +1,32 @@
-baseURL = "https://www.ivpn.net"
-languageCode = "en-us"
+baseURL = "https://www.ivpn.net" 
 title = "IVPN"
 theme = "ivpn-v3"
 paginate = 8
 summaryLength = 35
 disableKinds = ["sitemap", "taxonomy"]
-
 pygmentsUseClasses=true
 pygmentsCodefencesGuessSyntax=true
 pygmentsCodefences=true
 pygmentsStyle="monokai"
 pygmentsOptions="noclasses=false"
 
+DefaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.en]
+    languageCode = "en"
+    contentDir = 'content/en'
+    languageName = 'English'
+    languageDirection = 'ltr'
+    weight = 1
+  [languages.es]
+    languageCode = "es"
+    contentDir = 'content/es'
+    languageName = 'Español'
+
+    languageDirection = 'ltr'
+    weight = 2
 
 [markup.goldmark.renderer]
     unsafe= true
@@ -34,9 +49,9 @@ pygmentsOptions="noclasses=false"
   authors = "authors"
 
 [permalinks]
-  categories = "/blog/categories/:slug/"
-  tags = "/blog/tags/:slug/"
-  authors = "/blog/authors/:slug/"
+  categories = "blog/categories/:slug/"
+  tags = "blog/tags/:slug/"
+  authors = "blog/authors/:slug/"
 
 [related]
   threshold = 80
@@ -52,179 +67,3 @@ pygmentsOptions="noclasses=false"
   name  = "date"
   weight = 60
   pattern = "200601"
-
-[menu]
-  [[menu.main]]
-    identifier = "team"
-    name = "Team"
-    url = "/team/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "ethics"
-    name = "Ethics"
-    url = "/ethics/"
-    weight = 20
-  
-  [[menu.main]]
-    identifier = "privacy"
-    name = "Privacy"
-    url = "/privacy/"
-    weight = 30
-
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 40
-
-  [[menu.main]]
-    identifier = "prices"
-    name = "Pricing"
-    url = "/pricing/"
-    weight = 45
-
-
-  [[menu.main]]
-    identifier = "download"
-    name = "Apps"
-    url = "/apps/"
-    weight = 50
-
-  [[menu.main]]
-    identifier = "guides"
-    name = "Guides"
-    url = "/privacy-guides/"
-    weight = 60
-
-  [[menu.main]]
-    identifier = "help"
-    name = "Help"
-    url = "/knowledgebase/general/"
-    weight = 70
-
-  [[menu.footercolone]]
-    identifier = "generate-account"
-    name = "Generate Account"
-    url = "/signup/"
-    weight = 5
-
-  [[menu.footercolone]]
-    identifier = "light"
-    name = "IVPN Light"
-    url = "/light/"
-    weight = 5
-
-  [[menu.footercolone]]
-    identifier = "wireguard"
-    name = "WireGuard® VPN"
-    url = "/wireguard/"
-    weight = 10
-  
-  [[menu.footercolone]]
-    identifier = "antitracker"
-    name = "AntiTracker"
-    url = "/antitracker/"
-    weight = 20
-
-  [[menu.footercolone]]
-    identifier = "what-is-a-vpn"
-    name = "What is a VPN"
-    url = "/what-is-a-vpn/"
-    weight = 40
-  
-  [[menu.footercolone]]
-    identifier = "pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard"
-    name = "Protocol Comparison"
-    url = "/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
-    weight = 70
-
-  [[menu.footercoltwo]]
-    identifier = "manifesto"
-    name = "Our Manifesto"
-    url = "/manifesto/"
-    weight = 10
-
-  [[menu.footercoltwo]]
-    identifier = "status"
-    name = "Servers"
-    url = "/status/"
-    weight = 20
-
-  [[menu.footercoltwo]]
-    identifier = "transparency-report"
-    name = "Transparency Report"
-    url = "/transparency-report/"
-    weight = 30
-
-  [[menu.footercoltwo]]
-    identifier = "canary"
-    name = "Warrant Canary"
-    url = "/resources/canary.txt"
-    weight = 40
-  
-  [[menu.footercoltwo]]
-    identifier = "supported-projects"
-    name = "Supported Projects"
-    url = "/supported-projects/"
-    weight = 50
-  
-  [[menu.footercolthree]]
-    identifier = "vulnerability-reporting"
-    name = "Report Vulnerability"
-    url = "/vulnerability-reporting/"
-    weight = 10
-
-  [[menu.footercolthree]]
-    identifier = "legal-process-guidelines"
-    name = "Legal Guidelines"
-    url = "/legal-process-guidelines/"
-    weight = 20
-  
-  [[menu.footercolthree]]
-    identifier = "tos"
-    name = "Terms of Service"
-    url = "/tos/"
-    weight = 30
-
-  [[menu.footercolthree]]
-    identifier = "privacy-policy"
-    name = "Privacy Policy"
-    url = "/privacy/"
-    weight = 50
-
-  [[menu.footercolthree]]
-    identifier = "refund-policy"
-    name = "Refund Policy"
-    url = "/refunds/"
-    weight = 60
-
-  [[menu.footercolfour]]
-    identifier = "contact"
-    name = "Contact us"
-    url = "/contactus/"
-    weight = 10
-
-  [[menu.footercolfour]]
-    identifier = "reddit"
-    name = "Reddit"
-    url = "https://www.reddit.com/r/IVPN/"
-    weight = 20
-
-  [[menu.footercolfour]]
-    identifier = "twitter"
-    name = "Twitter"
-    url = "https://twitter.com/ivpnnet"
-    weight = 30
-
-  [[menu.footercolfour]]
-    identifier = "github"
-    name = "GitHub"
-    url = "https://github.com/ivpn"
-    weight = 40
-  
-  [[menu.footercolfour]]
-    identifier = "mastodon"
-    name = "Mastodon"
-    url = "https://mastodon.social/@ivpn"
-    weight = 50

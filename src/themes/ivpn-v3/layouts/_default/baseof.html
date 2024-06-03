@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ $.Site.LanguageCode | default "en" }}">  
+<html lang="{{ $.Site.LanguageCode | default "en" }}" dir="ltr">  
   <head>
     {{- partial "head.html" . -}}
     <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/pages.css" }}">
@@ -13,7 +13,7 @@
     {{ end }}
   </head>
     <body onclick="">{{/* onclick="" fixes iOS Safari :hover touch events */}}
-        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>               
+        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>            
         {{- partial "header.html" . -}}
         <main>
             {{- block "main" . }}{{- end }}

@@ -5,6 +5,12 @@
     <meta name="description" content="{{ .Description }}">
 {{ end }}
 
+{{ if .Param "translated" }}
+<link rel="alternate" hreflang="es" href="{{ replace .Page.RelPermalink "/en/" "/es/" }}">
+<link rel="alternate" hreflang="en" href="{{ replace .Page.RelPermalink "/es/" "/en/" }}">
+<link rel="alternate" hreflang="x-default" href="{{ replace .Page.RelPermalink "/es/" "/en/" }}">
+{{ end }}
+
 <title>{{ block "title" . }}{{ .Params.Title | default .Site.Title }}{{ end }}</title>
 
 {{ if eq $.Site.Params.environment "production"  }}

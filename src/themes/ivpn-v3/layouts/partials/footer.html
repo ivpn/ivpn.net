@@ -13,6 +13,17 @@
                     <a href="{{ .URL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
+                {{ if (.Param "translated") }}
+                    {{ if (eq site.Language.Lang "en")  }}
+                    <li>
+                        <a href="{{ replace .Page.RelPermalink "/en/" "/es/" }}">Versión española</a>
+                    </li>
+                    {{ else }}
+                    <li>
+                        <a href="{{ replace .Page.RelPermalink "/es/" "/en/" }}">English version</a>
+                    </li>
+                    {{ end }}
+                {{ end }}
             </ul>
         </div>
         <div class="footer__column">
