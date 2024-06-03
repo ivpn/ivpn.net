@@ -1,13 +1,13 @@
 ---
 title: ¿Qué es una VPN?
-description: ¿Qué es una VPN? Una VPN o red privada virtual cifra los datos enviados entre ordenadores en Internet. Cuando utilizas una VPN por motivos de privacidad, tus datos se cifran para que tu ISP o proveedor de red móvil no pueda monitorear tu actividad en Internet.
+description: ¿Qué es una VPN? Una VPN o red privada virtual cifra los datos enviados entre ordenadores en Internet. Cuando utilizas una VPN por motivos de privacidad, tus datos se cifran para que tu ISP o proveedor de red móvil no pueda rastrear tu actividad en Internet.
 url: /es/what-is-a-vpn/
 params:
   translated: true
 ---
 # ¿Qué es una VPN?
 
-Una VPN o red privada virtual cifra los datos enviados entre ordenadores en Internet. Cuando utilizas una VPN por motivos de privacidad, tus datos se cifran para que tu ISP o proveedor de red móvil no pueda monitorear tu actividad en Internet.
+Una VPN o red privada virtual cifra los datos enviados entre ordenadores en Internet. Cuando utilizas una VPN por motivos de privacidad, tus datos se cifran para que tu ISP o proveedor de red móvil no pueda rastrear tu actividad en Internet.
 
 ### El ISP de Alice puede rastrear cada sitio que visita, y el tuyo también.
 
@@ -27,4 +27,4 @@ Echa un vistazo al caso de Alice, como se muestra en el diagrama. Su tráfico fl
 
 Con IVPN, primero te conectas a uno de nuestros servidores seguros a través de tu ISP. Una vez conectado, toda tu actividad en línea está cifrada y tu ISP no puede monitorearla ni registrarla. Además, tus datos están protegidos contra espías o piratas informáticos ubicados entre tu ordenador y el ISP.
 
-En el caso de Bob, está conectado a un servidor IVPN y, por tanto, todo el tráfico que pasa por su ISP está cifrado. El ISP sólo puede registrar que Bob está conectado a un servidor IVPN, nada más. Los servidores a los que está conectado solo ven que el servidor IVPN está conectado a ellos y, por lo tanto, solo pueden registrar la dirección IP del servidor IVPN en sus registros. Los mejores servicios de VPN se asegurarán diligentemente de no registrar ningún dato de conexión del usuario, garantizando la privacidad de sus clientes.
+En el caso de Bob, está conectado a un servidor IVPN y por tanto, todo el tráfico que pasa por su ISP está cifrado. El ISP sólo puede registrar que Bob está conectado a un servidor IVPN, nada más. Los servidores a los que está conectado solo ven que el servidor IVPN está conectado a ellos y por lo tanto, solo pueden registrar la dirección IP del servidor IVPN en sus registros. Los mejores servicios de VPN se asegurarán diligentemente de no registrar ningún dato de conexión del usuario, garantizando la privacidad de sus clientes.
