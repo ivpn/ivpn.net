@@ -19,7 +19,7 @@
                             />
 
                             <div class="totp" v-if="totpRequired">
-                                <label for="login-totp-2">{{ $t('login.2fatoken') }}</label>
+                                <label for="login-totp-2">{{ $t('login.2faToken') }}</label>
                                 <input type="text" id="login-totp-2" v-model="totpValue" />
                             </div>
 
@@ -45,7 +45,7 @@
                             <input type="password" id="login-password" v-model="password" />
 
                             <div class="totp" v-if="totpRequired">
-                                <label for="login-totp-2">{{ $t('login.2fatoken') }}</label>
+                                <label for="login-totp-2">{{ $t('login.2faToken') }}</label>
                                 <input type="text" id="login-totp-2" v-model="totpValue" />
                             </div>
 
