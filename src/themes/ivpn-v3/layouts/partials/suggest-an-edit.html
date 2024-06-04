@@ -1,5 +1,6 @@
 <div class='suggest-an-edit'>
-    Spotted a mistake or have an idea on how to improve this page? <br />
-    <a href='https://github.com/ivpn/ivpn.net/tree/main/src/content/en/{{ .File.Path }}' target="_blank">
-        Suggest an edit</a> on GitHub.
+    {{ T "suggestEditTitle" }} <br />
+    <a href='https://github.com/ivpn/ivpn.net/tree/main/src/content/{{ .Site.Language.Lang }}/{{ .File.Path }}' target="_blank">
+    {{ T "suggestAnEdit" }} </a> {{ T "onGithub" }}
 </div>
+
