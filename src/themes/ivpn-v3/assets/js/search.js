@@ -24,7 +24,7 @@ const app = createApp({
             }
         },
         fetchAndSearch(query) {
-            fetch('/pages/index.json')
+            fetch('/en/pages/index.json')
                 .then(response => response.json())
                 .then(data => {
                     this.collection = data

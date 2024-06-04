@@ -3,10 +3,7 @@ title: IVPN for Linux - Open-source VPN app for Linux
 description: IVPN for Linux offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for Linux
 subtitle: Supports 64-bit Linux 3.10+
-url: /en/apps-linux/
-aliases: ['/apps-linux/']
-params:
-  translated: true
+url: /apps-linux/
 platform: linux
 layout: apps-single
 imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png

@@ -1,33 +1,3 @@
----
-title: Política de privacidad de IVPN
-description: Es importante que nuestros clientes comprendan plenamente qué información privada recopilamos, almacenamos y procesamos. Lee nuestra política clara y sencilla para obtener la información que necesitas.
-url: /es/privacy/
-params:
-  translated: true
-layout:
-canonical:
----
-# Política de privacidad
-
-Estamos hechos para la privacidad. Internamente, sabemos lo qué esto significa; Utilizamos la privacidad como filtro para la toma de decisiones. Si es necesario elegir entre una práctica que profundiza en la privacidad de un usuario y otra que la disminuiría pero aceleraría nuestro crecimiento, siempre elegiremos la opción más lenta y privada. Si deseas obtener más información sobre los principios y creencias que impulsan nuestras decisiones, consulta nuestras páginas [equipo](/es/team/) y [ética](/es/ethics/).
-
-Nos damos cuenta de lo importante que es que nuestros clientes comprendan plenamente lo que
-entendemos por privacidad. Esta política brinda una descripción general de;
-
-* Qué queremos decir con "sin registros"
-
-* Qué información recopilamos, cómo se almacena y cómo se utiliza
-
-* ¿Qué sucede en el caso de que nos citen, recibamos una orden judicial o un aviso de infracción de derechos de autor de la DMCA?
-
-* Qué hacemos con la información relacionada con cuentas canceladas o inactivas
-
-* Cómo manejamos las solicitudes de acceso del sujeto
-
-Hemos hecho todo lo posible para que esta política sea lo más clara y legible posible para que puedas obtener la información que necesitas rápidamente.
-
-### Nuestro objetivo es cero información del usuario
-
 Como servicio de privacidad, creemos que es de vital importancia recopilar la información mínima necesaria para utilizar nuestro servicio. Muchas empresas requieren al menos una dirección de correo electrónico para presionar con  las renovaciones de suscripciones y permitir otras estrategias de crecimiento. Cuando te registras en IVPN, no se te pedirá ninguna información personal, como dirección de correo electrónico, nombre, etc. Tampoco registraremos ninguna información de identificación personal, como la Dirección IP. 
 
 Esto también significa que no tenemos forma de comunicarnos contigo en caso de tener problemas con la cuenta, inactividad de la red, etc. Si deseas proporcionarnos una dirección de correo electrónico para que podamos comunicarnos contigo sobre problemas futuros, opcionalmente puedes añadir una en el area del cliente después de registrarte.

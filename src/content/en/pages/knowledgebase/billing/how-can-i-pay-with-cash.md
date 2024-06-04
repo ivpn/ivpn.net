@@ -21,3 +21,5 @@ Due to the manual processing required we accept cash payments only for 1, 2, or 
 3. After you click the `Cash` button you will be redirected to a page with instructions on how and where to send the cash.
 
 If you would like to add more time to an existing account, login to the [Client Area](/account/login/), click on the `Billing Settings` -> `Extend your account`, select 1 year or longer and click on the `Cash` button to checkout.
+
+Letters are forwarded from the address from step 3 above to our receiving and billing teams.  It can take anywhere from one to four weeks for the payment to be received and processed.

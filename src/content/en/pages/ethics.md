@@ -1,10 +1,7 @@
 ---
 title: Ethical guidelines for privacy protection | IVPN
 description: Learn about the privacy-first ethical direction we follow. We explain how we approach transparency and how/what we communicate to new customers.
-url: /en/ethics/
-aliases: ['/ethics/']
-params:
-  translated: true
+url: /ethics/
 sections:
   - type: text_one_narrow_column
     content: >-
@@ -31,7 +28,7 @@ sections:
 
       #### No secrets
 
-      IVPN’s [ownership, company structure and team](/en/team/) is public, so you know who is responsible for protecting your privacy.
+      IVPN’s [ownership, company structure and team](/team/) is public, so you know who is responsible for protecting your privacy.
 
       #### No false promises
 
@@ -39,7 +36,7 @@ sections:
 
       #### Openness and accountability 
 
-      Our applications are open source and available for review on our [GitHub page](https://github.com/ivpn). We commission regular [audits](https://www.ivpn.net/blog/tags/audit/) to back up our claims. 
+      Our applications are open source and available for review on our [GitHub page](https://github.com/ivpn). We commission regular [audits](https://www.ivpn.net/en/blog/tags/audit/) to back up our claims. 
       
   - type: text_one_narrow_column
     content: >-
@@ -91,7 +88,7 @@ sections:
         </tr>
         <tr>
           <td><strong>Educational projects</strong><br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.</td>
-          <td><a href="https://www.ivpn.net/privacy-guides/">IVPN Privacy Guides</a><br><a href="https://www.ivpn.net/blog/categories/industry-insights/">Educational blog posts</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a><br><a href="https://theprivacyissue.com">The Privacy Issue</a></td> 
+          <td><a href="https://www.ivpn.net/privacy-guides/">IVPN Privacy Guides</a><br><a href="https://www.ivpn.net/en/blog/categories/industry-insights/">Educational blog posts</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a><br><a href="https://theprivacyissue.com">The Privacy Issue</a></td> 
         </tr>
         <tr>
           <td><strong>Community and social channels</strong><br>We share information about our progress in dedicated IVPN communities.</td>

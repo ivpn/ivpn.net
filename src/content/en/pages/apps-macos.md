@@ -3,10 +3,7 @@ title: IVPN for macOS - Open-source VPN app for your Mac
 description: IVPN for macOS offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for macOS
 subtitle: Supports macOS 10.14+
-url: /en/apps-macos/
-aliases: ['/apps-macos/']
-params:
-  translated: true
+url: /apps-macos/
 platform: macos
 layout: apps
 image: apps/macos-app
@@ -15,11 +12,11 @@ releases: [{
     downloads: [
         {
             cta: Intel,
-            url: "https://repo.ivpn.net/macos/bin/IVPN-3.14.12.dmg"
+            url: "https://repo.ivpn.net/macos/bin/IVPN-3.14.14.dmg"
         },
         {
             cta: Apple Silicon,
-            url: https://repo.ivpn.net/macos/bin/IVPN-3.14.12-arm64.dmg
+            url: https://repo.ivpn.net/macos/bin/IVPN-3.14.14-arm64.dmg
         }
     ],
     github: https://github.com/ivpn/desktop-app,
@@ -27,11 +24,11 @@ releases: [{
     checksum: [
         {
             title: SHA256 Intel,
-            value: 802426e0ab7eacd1bb2b9da39eb31d59cf3c0d250073b77692449a4d9ec77dbe
+            value: 0d4ed59601695ef8cfeb68ffad30ca761446b117d669679448ca8f4acc714f55
         },
         {
             title: SHA256 Apple Silicon,
-            value: eb41d2049ae30518b940eafc439043d527729070dea6b8df0165923055b64949
+            value: c25c046560b832d1443b371996ddbd0804d4230d6088de10101db996990729e2
         }
     ]
 }]

@@ -21,6 +21,6 @@ Para una mayor protección contra los líderes de la economía de la vigilancia,
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-antitracker.svg" alt="What is a VPN - Antitracker" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-antitracker-dark.svg" alt="What is a VPN - Antitracker" >}}
 
-Cada plan IVPN incluye AntiTracker, funciona en todos los dispositivos compatibles con nuestro servicio y utiliza una selección de [listas de bloqueo](/knowledgebase/general/antitracker-plus-lists-explained/) actualizadas continuamente .
+Cada plan IVPN incluye AntiTracker, funciona en todos los dispositivos compatibles con nuestro servicio y utiliza una selección de [listas de bloqueo](/knowledgebase/general/antitracker-plus-lists-explained/) actualizadas continuamente.
 
-Para obtener más información sobre AntiTracker de IVPN, visite nuestras [Preguntas frecuentes](/knowledgebase/general/antitracker-faq/). 
+Para obtener más información sobre AntiTracker de IVPN, visita nuestras [Preguntas frecuentes](/knowledgebase/general/antitracker-faq/). 

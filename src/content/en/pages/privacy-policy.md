@@ -1,16 +1,13 @@
 ---
 title: IVPN Privacy Policy
 description: Its important our customers fully understand what private information we collect, store and process. Read our clear and simple policy to get the facts you need.
-url: /en//privacy/
-aliases: ['/privacy/']
-params:
-  translated: true
+url: /privacy/
 layout:
 canonical:
 ---
 # Privacy Policy
 
-We're built for privacy. Internally, we know what exactly that means; we use privacy as a filter for decision-making. If a choice needs to be made between one practice that deepens a user's privacy, and another that would diminish it but accelerate our growth, we'll always take the slower, more private option. If you'd like to know more about our principles and beliefs that drive our choices, please see our [team](team/) and [ethics](/ethics/) pages.
+We're built for privacy. Internally, we know what exactly that means; we use privacy as a filter for decision-making. If a choice needs to be made between one practice that deepens a user's privacy, and another that would diminish it but accelerate our growth, we'll always take the slower, more private option. If you'd like to know more about our principles and beliefs that drive our choices, please see our [team](/team/) and [ethics](/ethics/) pages.
 
 We realize how important it is that our customers fully understand what we
 mean by privacy. This policy gives you an overview of;

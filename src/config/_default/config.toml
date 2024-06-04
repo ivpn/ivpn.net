@@ -1,4 +1,3 @@
-baseURL = "https://www.ivpn.net" 
 title = "IVPN"
 theme = "ivpn-v3"
 paginate = 8
@@ -11,7 +10,7 @@ pygmentsStyle="monokai"
 pygmentsOptions="noclasses=false"
 
 DefaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = true 
 
 [languages]
   [languages.en]
@@ -49,9 +48,9 @@ defaultContentLanguageInSubdir = true
   authors = "authors"
 
 [permalinks]
-  categories = "blog/categories/:slug/"
-  tags = "blog/tags/:slug/"
-  authors = "blog/authors/:slug/"
+  categories = "/blog/categories/:slug/"
+  tags = "/blog/tags/:slug/"
+  authors = "/blog/authors/:slug/"
 
 [related]
   threshold = 80

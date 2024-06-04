@@ -30,7 +30,7 @@
         "meta": {
             "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
-        "title": "Selecciona Plan IVPN",
+        "title": "Selecciona un Plan IVPN",
         "description": "Selecciona un plan para crear tu cuenta al instante. Puedes cambiar entre IVPN Standard y Pro en cualquier momento en el futuro.",
         "standard": "IVPN STANDARD",
         "pro": "IVPN PRO",
@@ -73,14 +73,14 @@
         "select": "Seleccionar"
     },
     "login": {
-        "title": "Logear",
-        "accountId": "ID Cuenta:",
+        "title": "Iniciar sesión",
+        "accountId": "ID de cuenta:",
         "email": "Correo electrónico:",
         "password": "Contraseña:",
         "createNewAccount": "Crear una nueva cuenta",
         "idPlaceholder": "i... o ivpn...",
         "2faToken": "Token de autentificación de dos factores:",
-        "enterCaptcha": "Por favor, escriba el captcha que ve encima:",
-        "forgotPassword": "Olvidó su contraseña?"
+        "enterCaptcha": "Por favor, escribe el captcha que ves encima:",
+        "forgotPassword": "¿Olvidaste tu contraseña?"
     }
 }

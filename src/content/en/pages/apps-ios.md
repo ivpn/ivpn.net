@@ -2,11 +2,8 @@
 title: IVPN for iOS - Open-source VPN app for your iPhone and iPad
 description: The IVPN app for iOS is designed for iPhone and iPad and offers you comprehensive privacy leak protection, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for iOS
-subtitle: Supports iOS/iPadOS 14.0+
-url: /en/apps-ios/
-aliases: ['/apps-ios/']
-params:
-  translated: true
+subtitle: Supports iOS/iPadOS 15.0+
+url: /apps-ios/
 platform: ios
 layout: apps
 image: apps/ios-app

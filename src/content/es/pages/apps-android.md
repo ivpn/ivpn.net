@@ -61,4 +61,4 @@ Si prefiere no utilizar la aplicación IVPN, sigue la guía de configuración co
 
 - [WireGuard](/setup/android-wireguard/)
 - [OpenVPN for Android](/setup/android-openvpn-for-android/)  
-- [IPSec con IKEv2](/setup/android-ipsec-with-ikev2/)  
+- [IPSec con IKEv2](/setup/android-ipsec-with-ikev2/)

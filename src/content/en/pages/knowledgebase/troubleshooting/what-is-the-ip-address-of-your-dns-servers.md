@@ -67,9 +67,17 @@ Hardcore `10.0.254.21`
 Normal   `10.0.254.16` and 
 Hardcore `10.0.254.17`
 
+#### Hagezi Light
+Normal   `10.0.254.22` and 
+Hardcore `10.0.254.23`
+
 #### Hagezi Pro
 Normal   `10.0.254.10` and 
 Hardcore `10.0.254.11`
+
+#### Hagezi Pro++
+Normal   `10.0.254.24` and 
+Hardcore  `10.0.254.25`
 
 #### Hagezi Ultimate
 Normal   `10.0.254.12` and 

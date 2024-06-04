@@ -32,7 +32,7 @@
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.proDevices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
