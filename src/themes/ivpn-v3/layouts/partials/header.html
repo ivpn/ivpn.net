@@ -40,9 +40,16 @@
                 <li class="navigation__item submenu" id="{{ urlize .Name }}" data-show="auth">
                     <a class="navigation__link navigation__link--is-cta" href="{{ .URL }}">My Account</a><span class='dropdown_icon'></span>
                     <ul class='submenu__items'>
-                        <li><a class='navigation__link' href='/account/'>My Account</a></li>
+                        {{ if eq site.Language.Lang "es" }}
+                        <li><a class='navigation__link' href='/en/account/'>My Account</a></li>
                         <li><a class='navigation__link' href='/account/logout/' 
                             onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a></li>
+                        {{ else }}
+                        <li><a class='navigation__link' href='/es/account/'>My Account</a></li>
+                        <li><a class='navigation__link' href='/account/logout/' 
+                            onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a></li>
+                        
+                        {{ end }}
                     </ul>
                 </li>
                 <li class="navigation__item" id="{{ urlize .Name }}" data-show="auth-legacy">
@@ -50,9 +57,9 @@
                 </li>
                 <li class="navigation__item" data-hide="auth">
                     {{ if eq site.Language.Lang "es" }}
-                    <a class="navigation__link navigation__link--is-cta" href="/account/login/">Login</a></span>
+                    <a class="navigation__link navigation__link--is-cta" href="/es/account/login/">Login</a></span>
                     {{ else }}
-                    <a class="navigation__link navigation__link--is-cta" href="/account/login/">Login</a></span>
+                    <a class="navigation__link navigation__link--is-cta" href="/en/account/login/">Login</a></span>
                     {{ end }}
                 </li>
             </div>
@@ -93,7 +100,7 @@
                         onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a>
                     </li>
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-hide="auth">
-                        <a class="mobile-navigation__menu-link" href="/account/login/">Login</a>
+                        <a class="mobile-navigation__menu-link" href="/en/account/login/">Login</a>
                     </li>
 
                 {{ else }}

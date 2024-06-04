@@ -73,6 +73,9 @@
         "select": "Select"
     },
     "login": {
+        "meta": {
+            "title": "IVPN Login"
+        },
         "title": "Log In",
         "accountId": "Account ID:",
         "email": "Email:",
@@ -82,5 +85,11 @@
         "2faToken": "Two-factor authentication token:",
         "enterCaptcha": "Please enter the captcha you see above:",
         "forgotPassword": "Forgot Your Password?"
+    },
+    "headerMenu":{
+        "login": "Login",
+        "logout": "Log out",
+        "logoutWarning": "This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?",
+        "myAccount": "My Account"
     }
 }

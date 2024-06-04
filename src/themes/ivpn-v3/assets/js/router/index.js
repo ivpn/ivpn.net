@@ -68,6 +68,14 @@ const routes = [
         }
     },
     {
+        path: '/pricing',
+        name: 'prices',
+        component: PricesView,
+        meta: {
+            title: en.pricing.meta.title,
+        }
+    },
+    {
         path: '/en/pricing',
         name: 'pricesEn',
         component: PricesView,
@@ -84,11 +92,29 @@ const routes = [
         }
     },
     {
-        path: '/prices', redirect: { name: 'pricesEn' }
+        path: '/prices', redirect: { name: 'prices' }
     },
     {
         path: '/account/login',
         name: 'login',
+        component: LoginView,
+        meta: {
+            title: 'IVPN Login',
+        },
+        beforeEnter: notAuthenticatedGuard,
+    },
+    {
+        path: '/en/account/login',
+        name: 'loginEn',
+        component: LoginView,
+        meta: {
+            title: 'IVPN Login',
+        },
+        beforeEnter: notAuthenticatedGuard,
+    },
+    {
+        path: '/es/account/login',
+        name: 'loginEs',
         component: LoginView,
         meta: {
             title: 'IVPN Login',
@@ -129,6 +155,22 @@ const routes = [
     {
         path: '/account',
         name: 'account',
+        component: AccountView,
+        meta: {
+            title: 'IVPN Account',
+        },
+    },
+    {
+        path: '/en/account',
+        name: 'accountEn',
+        component: AccountView,
+        meta: {
+            title: 'IVPN Account',
+        },
+    },
+    {
+        path: '/es/account',
+        name: 'accountEs',
         component: AccountView,
         meta: {
             title: 'IVPN Account',

@@ -73,6 +73,9 @@
         "select": "Seleccionar"
     },
     "login": {
+        "meta": {
+            "title": "IVPN Iniciar sesión"
+        },
         "title": "Iniciar sesión",
         "accountId": "ID de cuenta:",
         "email": "Correo electrónico:",
