@@ -1,6 +1,9 @@
 ---
 title: IVPN Terms of Service
-url: /tos/
+url: /en/tos/
+aliases: ['/tos/']
+params:
+  translated: true
 layout:
 canonical:
 ---
