@@ -1,5 +1,5 @@
 ---
-title: My Account
+title: Mi cuenta
 url: /es/account/
 # Leave empty for default, `application` for client area and signup
 layout: application

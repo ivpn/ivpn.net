@@ -68,15 +68,23 @@ const routes = [
         }
     },
     {
-        path: '/pricing',
-        name: 'prices',
+        path: '/en/pricing',
+        name: 'pricesEn',
         component: PricesView,
         meta: {
             title: en.pricing.meta.title,
         }
     },
     {
-        path: '/prices', redirect: { name: 'prices' }
+        path: '/es/pricing',
+        name: 'pricesEs',
+        component: PricesView,
+        meta: {
+            title: es.pricing.meta.title,
+        }
+    },
+    {
+        path: '/prices', redirect: { name: 'pricesEn' }
     },
     {
         path: '/account/login',

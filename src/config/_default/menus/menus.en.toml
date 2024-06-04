@@ -1,19 +1,19 @@
 [[main]]
     identifier = "team"
     name = "Team"
-    url = "/team/"
+    url = "/en/team/"
     weight = 10
 
   [[main]]
     identifier = "ethics"
     name = "Ethics"
-    url = "/ethics/"
+    url = "/en/ethics/"
     weight = 20
   
   [[main]]
     identifier = "privacy"
     name = "Privacy"
-    url = "/privacy/"
+    url = "/en/privacy/"
     weight = 30
 
   [[main]]
@@ -25,7 +25,7 @@
   [[main]]
     identifier = "prices"
     name = "Pricing"
-    url = "/pricing/"
+    url = "/en/pricing/"
     weight = 45
 
 
@@ -62,7 +62,7 @@
   [[footercolone]]
     identifier = "wireguard"
     name = "WireGuard® VPN"
-    url = "/wireguard/"
+    url = "/en/wireguard/"
     weight = 10
   
   [[footercolone]]
@@ -128,19 +128,19 @@
   [[footercolthree]]
     identifier = "tos"
     name = "Terms of Service"
-    url = "/tos/"
+    url = "/en/tos/"
     weight = 30
 
   [[footercolthree]]
     identifier = "privacy-policy"
     name = "Privacy Policy"
-    url = "/privacy/"
+    url = "/en/privacy/"
     weight = 50
 
   [[footercolthree]]
     identifier = "refund-policy"
     name = "Refund Policy"
-    url = "/refunds/"
+    url = "/en/refunds/"
     weight = 60
 
   [[footercolfour]]
