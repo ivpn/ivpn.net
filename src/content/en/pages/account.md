@@ -1,6 +1,6 @@
 ---
 title: My Account
-url: /account/
+url: /en/account/
 # Leave empty for default, `application` for client area and signup
 layout: application
 menu:

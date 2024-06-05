@@ -1,7 +1,7 @@
 ---
 title: What permissions does your app require and why? - IVPN Help
 h1: What permissions does your app require and why?
-url: /knowledgebase/android/what-permissions-does-your-app-require-and-why?/
+url: /knowledgebase/android/what-permissions-does-your-app-require-and-why/
 sections:
     - android
 sectionTitle: Android
