@@ -1,7 +1,7 @@
 ---
 title: IVPN para Linux - Aplicación VPN de código abierto para Linux
 description: IVPN para Linux te ofrece una protección integral contra filtraciones de privacidad con el firewall IVPN, conexión automática en redes Wi-Fi inseguras y Multi-hop.
-h1: IVPN for Linux
+h1: IVPN para Linux
 subtitle: Compatible con 64-bit Linux 3.10+
 url: /es/apps-linux/
 params:

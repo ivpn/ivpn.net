@@ -32,7 +32,7 @@
   [[main]]
     identifier = "download"
     name = "Apps"
-    url = "/apps/"
+    url = "/en/apps/"
     weight = 50
 
   [[main]]

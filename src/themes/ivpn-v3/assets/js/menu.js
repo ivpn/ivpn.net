@@ -10,18 +10,23 @@
                 macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
                 windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
                 iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-                os = null;
+                os = null,
+                prefix = "";
+
+            if (window.location.pathname.startsWith("/es")) {
+                prefix = "/es/";
+            }
 
             if (macosPlatforms.indexOf(platform) !== -1) {
-                updateLinks(downloadLinks, '/apps-macos/');
+                updateLinks(downloadLinks, prefix + '/apps-macos/');
             } else if (windowsPlatforms.indexOf(platform) !== -1) {
-                updateLinks(downloadLinks, '/apps-windows/');
+                updateLinks(downloadLinks, prefix + '/apps-windows/');
             } else if (iosPlatforms.indexOf(platform) !== -1) {
-                updateLinks(downloadLinks, '/apps-ios/');
+                updateLinks(downloadLinks, prefix + '/apps-ios/');
             } else if (/Android/.test(userAgent)) {
-                updateLinks(downloadLinks, '/apps-android/');
+                updateLinks(downloadLinks, prefix + '/apps-android/');
             } else if (!os && /Linux/.test(platform)) {
-                updateLinks(downloadLinks, '/apps-linux/');
+                updateLinks(downloadLinks, prefix + '/apps-linux/');
             }
         }
     }
