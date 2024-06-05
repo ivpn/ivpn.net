@@ -93,16 +93,7 @@ const routes = [
     },
     {
         path: '/prices', redirect: { name: 'prices' }
-    },
-    {
-        path: '/account/login',
-        name: 'login',
-        component: LoginView,
-        meta: {
-            title: 'IVPN Login',
-        },
-        beforeEnter: notAuthenticatedGuard,
-    },
+    }, 
     {
         path: '/en/account/login',
         name: 'loginEn',
@@ -151,14 +142,6 @@ const routes = [
                 next({ name: '500' })
             }
         }
-    },
-    {
-        path: '/account',
-        name: 'account',
-        component: AccountView,
-        meta: {
-            title: 'IVPN Account',
-        },
     },
     {
         path: '/en/account',
@@ -376,10 +359,17 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
 
-    if (to.path.startsWith('/account') && to.name != 'login') {
+    console.log("PATH " + to.path);
+
+    let suffix = "En";
+    if (to.path.startsWith('/es/')) {
+        suffix = "Es";
+    }
+
+    if ( (to.path.startsWith('/en/account') && to.name != 'loginEn') || (to.path.startsWith('/es/account') && to.name != 'loginEs') ){
 
         if (!store.state.auth.isAuthenticated) {
-            next({ name: 'login' })
+            next({ name: 'login' + suffix })
             return
         }
 
@@ -392,7 +382,7 @@ router.beforeEach(async (to, from, next) => {
 
         if (!store.state.auth.isAuthenticated) {
             // Go to login page in case account could not be loaded
-            next({ name: 'login' })
+            next({ name: 'login' + suffix })
             return
         }
 
