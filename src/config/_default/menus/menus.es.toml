@@ -1,18 +1,18 @@
 [[main]]
     identifier = "team"
-    name = "Team"
+    name = "Equipo"
     url = "/es/team/"
     weight = 10
 
   [[main]]
     identifier = "ethics"
-    name = "Ethics"
+    name = "Ética"
     url = "/es/ethics/"
     weight = 20
   
   [[main]]
     identifier = "privacy"
-    name = "Privacy"
+    name = "Privacidad"
     url = "/es/privacy/"
     weight = 30
 
@@ -24,7 +24,7 @@
 
   [[main]]
     identifier = "prices"
-    name = "Pricing"
+    name = "Precios"
     url = "/es/pricing/"
     weight = 45
 
@@ -32,7 +32,7 @@
   [[main]]
     identifier = "download"
     name = "Apps"
-    url = "/apps/"
+    url = "/es/apps/"
     weight = 50
 
   [[main]]
@@ -73,7 +73,7 @@
 
   [[footercolone]]
     identifier = "what-is-a-vpn"
-    name = "What is a VPN"
+    name = "Qué es una VPN"
     url = "/es/what-is-a-vpn/"
     weight = 40
   
@@ -91,13 +91,13 @@
 
   [[footercoltwo]]
     identifier = "status"
-    name = "Servers"
+    name = "Servidores"
     url = "/es/status/"
     weight = 20
 
   [[footercoltwo]]
     identifier = "transparency-report"
-    name = "Transparency Report"
+    name = "Informe de transparencia"
     url = "/es/transparency-report/"
     weight = 30
 
@@ -121,25 +121,25 @@
 
   [[footercolthree]]
     identifier = "legal-process-guidelines"
-    name = "Legal Guidelines"
+    name = "Directivas legales"
     url = "/es/legal-process-guidelines/"
     weight = 20
   
   [[footercolthree]]
     identifier = "tos"
-    name = "Terms of Service"
+    name = "Términos de servicio"
     url = "/es/tos/"
     weight = 30
 
   [[footercolthree]]
     identifier = "privacy-policy"
-    name = "Privacy Policy"
+    name = "Política de privacidad"
     url = "/es/privacy/"
     weight = 50
 
   [[footercolthree]]
     identifier = "refund-policy"
-    name = "Refund Policy"
+    name = "Política de reembolso"
     url = "/es/refunds/"
     weight = 60
 
