@@ -2,7 +2,7 @@
     <div>
         <div class="account-id-section">
             <div class="details">
-                <label class="header">Account ID</label>
+                <label class="header">{{ $t('account.accountId') }}</label>
                 <div class="id">
                     {{ account.id }}
                     <button
@@ -13,18 +13,18 @@
                         <copy-icon />
 
                         <transition name="fade">
-                            <div v-if="copied" class="copied">Copied</div>
+                            <div v-if="copied" class="copied">{{ $t('account.copied') }}</div>
                         </transition>
                     </button>
                 </div>
                 <div
                     class="status"
                     v-bind:class="[account.is_active ? 'active' : 'inactive']"
-                >{{ account.is_active ? 'Active' : 'Inactive' }}</div>
+                >{{ account.is_active ? $t('account.active') : $t('account.inactive') }}</div>
             </div>
             <div v-if="!account.is_new && showQrCode" class="note qrnote">
                 <div class="qrcode" v-html="qrCode"></div>
-                <p>Scan from our mobile apps for quick setup.</p>
+                <p>{{ $t('account.qrScan') }}</p>
             </div>
         </div>
     </div>
@@ -34,6 +34,7 @@
 import { mapState } from "vuex";
 import qrcode from "qrcode-generator";
 import CopyIcon from "@/components/icons/account/CopyIcon.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["account", "showQrCode"],
@@ -51,6 +52,7 @@ export default {
         this.qrCode = qr.createSvgTag(3);
     },
     mounted() {
+        useI18n().locale.value = window.location.href.split("/")[3];
     },
     computed: {
         ...mapState({

@@ -6,7 +6,7 @@
                     <div class="plan-name">{{ account.product.name }}</div>
                     <div class="plan-change">
                         <router-link :to="{ name: 'prices' }"
-                            >Change plan</router-link
+                            >{{ $t('account.changePlan') }}</router-link
                         >
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 :to="{ name: 'add-funds-cc', params: { price: price.id } }"
             >
                 <div class="credit-card-icon"></div>
-                Credit Card
+                {{ $t('account.creditCard') }}
             </router-link>
             <router-link
                 tag="button"
@@ -33,7 +33,7 @@
                 :to="{ name: 'add-funds-paypal', params: { price: price.id } }"
             >
                 <div class="paypal-icon"></div>
-                PayPal
+                {{ $t('account.paypal') }}
             </router-link>
             <router-link
                 tag="button"
@@ -41,7 +41,7 @@
                 :to="{ name: 'add-funds-bitcoin', params: { price: price.id } }"
             >
                 <div class="bitcoin-icon"></div>
-                Bitcoin
+                {{ $t('account.bitcoin') }}
             </router-link>
             <router-link
                 tag="button"
@@ -49,7 +49,7 @@
                 :to="{ name: 'add-funds-monero', params: { price: price.id } }"
             >
                 <div class="monero-icon"></div>
-                Monero
+                {{ $t('account.monero') }}
             </router-link>            
             <router-link
                 tag="button"
@@ -57,12 +57,12 @@
                 :to="{ name: 'add-funds-cash', params: { price: price.id } }"
             >
                 <div class="cash-icon"></div>
-                Cash
+                {{ $t('account.cash') }}
             </router-link>
         </div>
         <div>
-            Have a voucher code?
-            <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">Redeem it here</router-link>.
+            {{ $t('account.haveVoucher') }}
+            <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
         </div>
         <!--
         <div class="pay-buttons">
@@ -81,6 +81,7 @@
 
 <script>
 import SelectBillingCycle from "@/components/SelectBillingCycle.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -103,6 +104,9 @@ export default {
         ) {
             this.price = this.account.product.prices[2];
         }
+    },
+    mounted() {
+        useI18n().locale.value = window.location.href.split("/")[3];
     },
     watch: {
         price: function () {

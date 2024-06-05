@@ -4,7 +4,7 @@
             <form @submit.prevent="login()">
                 <h1>{{ $t('login.title') }}</h1>  
                 <tabs @onTabChanged="updateLoginType">
-                    <tab :selected="loginType == 'id'" :tabid="'id'" :name="'With Account ID'" class="login-tab">
+                    <tab :selected="loginType == 'id'" :tabid="'id'" :name="$t('login.withAccountId')" class="login-tab">
                         <div class="login-fields">
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
                             <label for="accountid">{{ $t('login.accountId') }}</label>
@@ -35,7 +35,7 @@
                             </div>-->
                         </div>
                     </tab>
-                    <tab :selected="loginType == 'email'" :tabid="'email'" :name="'With Email & Password'" class="login-tab">
+                    <tab :selected="loginType == 'email'" :tabid="'email'" :name="$t('login.withEmailAndPassword')" class="login-tab">
                         <div class="login-fields">
                             
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>

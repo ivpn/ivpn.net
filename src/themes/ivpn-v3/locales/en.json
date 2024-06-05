@@ -84,12 +84,41 @@
         "idPlaceholder": "i... or ivpn...",
         "2faToken": "Two-factor authentication token:",
         "enterCaptcha": "Please enter the captcha you see above:",
-        "forgotPassword": "Forgot Your Password?"
+        "forgotPassword": "Forgot Your Password?",
+        "withAccountId": "With Account ID",
+        "withEmailAndPassword": "With Email & Password"
     },
-    "headerMenu":{
-        "login": "Login",
-        "logout": "Log out",
-        "logoutWarning": "This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?",
-        "myAccount": "My Account"
+    "account":{
+        "greetings": "Your account has been created!",
+        "greetingsText": "Please make sure you save your Account ID in a safe place, you will use it to connect to the VPN. You don't need to enter your email to use our service.",
+        "accountId":"Account ID",
+        "inactive": "INACTIVE",
+        "active": "ACTIVE",
+        "continueToPayment1": "Continue to payment",
+        "continueToPayment2": "To start using IVPN add funds to your account.",
+        "product": "Product",
+        "change": "Change",
+        "paidUntil": "Paid Until",
+        "wasActiveUntil": "Was Active Until",
+        "addMoreTime": "Add More Time",
+        "billingSettings": "Billing Settings",
+        "copied": "Copied",
+        "qrScan": "Scan from our mobile apps for quick setup.",
+        "contactSupport": "Contact Support",
+        "safeReferenceTitle": "Account safe reference ID:",
+        "safeReferenceDescription": "Safe reference ID can be used when communicating with support engineers by email.",
+        "deleteAccount": "Delete Account",
+        "changePlan": "Change plan",
+        "creditCard": "Credit Card",
+        "paypal": "PayPal",
+        "bitcoin": "Bitcoin",
+        "monero": "Monero",
+        "cash": "Cash",
+        "haveVoucher": "Have a voucher code?",
+        "redeem": "Redeem it here",
+        "ivpnAccount": "IVPN Account",
+        "wireguard": "Wireguard",
+        "deviceManagement": "Device Management",
+        "accountSettings": "Account Settings"
     }
 }

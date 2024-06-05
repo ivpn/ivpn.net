@@ -5,11 +5,9 @@
             <div v-if="account.is_new">
                 <signup-section>
                     <div class="greetings">
-                        <h3>Your account has been created!</h3>
+                        <h3>{{ $t('account.greetings') }}</h3>
                         <p>
-                            Please make sure you save your Account ID in a safe
-                            place, you will use it to connect to the VPN. You
-                            don't need to enter your email to use our service.
+                            {{ $t('account.greetingsText') }}
                         </p>
                     </div>
                     <account-info
@@ -18,8 +16,8 @@
                     ></account-info>
                 </signup-section>
                 <section class="payment">
-                    <h3>Continue to payment</h3>
-                    <p>To start using IVPN add funds to your account.</p>
+                    <h3>{{ $t('account.continueToPayment1') }}</h3>
+                    <p>{{ $t('account.continueToPayment2') }}</p>
                     <select-payment-method
                         :account="account"
                     ></select-payment-method>
@@ -43,12 +41,12 @@
                 <signup-section>
                     <div class="product">
                         <div class="product-info">
-                            <label>Product</label>
+                            <label>{{ $t('account.product') }}</label>
                             <div class="value">{{ account.product.name }}</div>
                         </div>
                         <div class="product-action" v-if="canChange">
                             <router-link :to="{ name: 'change-product' }"
-                                >Change</router-link
+                                >{{ $t('account.change') }}</router-link
                             >
                         </div>
                     </div>
@@ -56,8 +54,8 @@
                 <signup-section>
                     <div class="product">
                         <div class="product-info">
-                            <label v-if="account.is_active">Paid Until</label>
-                            <label v-else>Was Active Until</label>
+                            <label v-if="account.is_active">{{ $t('account.paidUntil') }}</label>
+                            <label v-else>{{ $t('account.wasActiveUntil') }}</label>
                             <div class="value">
                                 {{ $filters.formatActiveUntil(account.active_until) }}
                             </div>
@@ -67,12 +65,12 @@
                             v-if="!account.subscription"
                         >
                             <router-link :to="{ name: 'payment' }"
-                                >Add More Time</router-link
+                                >{{ $t('account.addMoreTime') }}</router-link
                             >
                         </div>
                         <div class="product-action" v-else>
                             <router-link :to="{ name: 'settings-billing' }"
-                                >Billing settings</router-link
+                                >{{ $t('account.billingSettings') }}</router-link
                             >
                         </div>
                     </div>
@@ -100,6 +98,8 @@ import AccountFooter from "@/components/AccountFooter.vue";
 import SelectPaymentMethod from "@/components/SelectPaymentMethod.vue";
 
 import { mapState } from "vuex";
+
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -134,6 +134,9 @@ export default {
             let product= await this.calculateForProduct(this.$store.state.auth.account.product.name).then(response => response);
             this.canChange = !product.is_locked;
         }
+    },
+    mounted(){
+        useI18n().locale.value = window.location.href.split("/")[3];
     },
 
     methods:{
