@@ -38,28 +38,27 @@
             {{ if eq (urlize .Name) "my-account" }}
             <div class='login-menu'>
                 <li class="navigation__item submenu" id="{{ urlize .Name }}" data-show="auth">
-                    <a class="navigation__link navigation__link--is-cta" href="{{ .URL }}">My Account</a><span class='dropdown_icon'></span>
+                    <a class="navigation__link navigation__link--is-cta" href="{{ .URL }}">{{ T "myAccount" }}</a><span class='dropdown_icon'></span>
                     <ul class='submenu__items'>
                         {{ if eq site.Language.Lang "es" }}
-                        <li><a class='navigation__link' href='/account/'>My Account</a></li>
+                        <li><a class='navigation__link' href='/es/account/'>{{ T "myAccount" }}</a></li>
                         <li><a class='navigation__link' href='/account/logout/' 
-                            onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a></li>
+                            onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a></li>
                         {{ else }}
-                        <li><a class='navigation__link' href='/account/'>My Account</a></li>
+                        <li><a class='navigation__link' href='/en/account/'>{{ T "myAccount" }}</a></li>
                         <li><a class='navigation__link' href='/account/logout/' 
-                            onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a></li>
-                        
+                            onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a></li>
                         {{ end }}
                     </ul>
                 </li>
                 <li class="navigation__item" id="{{ urlize .Name }}" data-show="auth-legacy">
-                    <a class="navigation__link navigation__link--is-cta" href="/clientarea/">My Account</a></span>
+                    <a class="navigation__link navigation__link--is-cta" href="/clientarea/">{{ T "myAccount" }}</a></span>
                 </li>
                 <li class="navigation__item" data-hide="auth">
                     {{ if eq site.Language.Lang "es" }}
-                    <a class="navigation__link navigation__link--is-cta" href="/account/login/">Login</a></span>
+                    <a class="navigation__link navigation__link--is-cta" href="/es/account/login/">{{ T "login" }}</a></span>
                     {{ else }}
-                    <a class="navigation__link navigation__link--is-cta" href="/account/login/">Login</a></span>
+                    <a class="navigation__link navigation__link--is-cta" href="/en/account/login/">{{ T "login" }}</a></span>
                     {{ end }}
                 </li>
             </div>
@@ -97,10 +96,14 @@
                     </li>
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-show="auth">
                         <a class="mobile-navigation__menu-link" href="/account/logout/" 
-                        onclick="return confirm('This will log you out of your account. Please make sure you have saved your Account ID before logging out. Do you want to proceed with log out?')">Log out</a>
+                        onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a>
                     </li>
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-hide="auth">
-                        <a class="mobile-navigation__menu-link" href="/account/login/">Login</a>
+                        {{ if eq site.Language.Lang "es" }}
+                        <a class="mobile-navigation__menu-link" href="/es/account/login/">{{ T "login" }}</a>
+                        {{ else }}
+                        <a class="mobile-navigation__menu-link" href="/en/account/login/">{{ T "login" }}</a>
+                        {{ end }}
                     </li>
 
                 {{ else }}
