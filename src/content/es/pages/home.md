@@ -18,7 +18,7 @@ sections:
       Lo que haces en línea puede ser rastreado por organizaciones que quizás no conozcas y pase a formar parte de un registro permanente. Una VPN no puede resolver esto por sí sola, pero puede evitar que tu ISP pueda compartir o vender tus datos.
     cta_one_label: Generar cuenta IVPN
     cta_one_is_blue: true
-    cta_one_url: /signup/
+    cta_one_url: /es/signup/
     cta_one_note: no se requiere email
     cta_two_label: IVPN en GitHub
     cta_two_is_blue: false
@@ -26,7 +26,7 @@ sections:
   - type: usps_three_column_home
     usps:
       - name: Sin registros
-        description: No registramos ninguna actividad de usuario relacionada con el uso del servicio VPN, como se explica en nuestra clara [política de privacidad](/privacy).
+        description: No registramos ninguna actividad de usuario relacionada con el uso del servicio VPN, como se explica en nuestra clara [política de privacidad](/es/privacy).
       - name: Sin datos del cliente
         description: Somos un servicio de privacidad, por lo que no recopilamos ni almacenamos ningún dato personal al registrarse, ni siquiera
           tu correo electrónico. También aceptamos efectivo, Monero y Bitcoin.
@@ -43,13 +43,13 @@ sections:
         description: Nunca pagamos por reseñas y no tenemos un programa de afiliados, por lo que
           no nos encontrarás en las listas de las '10 mejores VPN'.
       - name: Sin falsas promesas
-        description: No prometemos anonimato ni "cifrado de grado militar". Publicamos extensas [guías de privacidad](/privacy-guides/) y educamos a nuestros clientes sobre lo que una VPN puede lograr de manera realista.
+        description: No prometemos anonimato ni "cifrado de grado militar". Publicamos extensas [guías de privacidad](/es/privacy-guides/) y educamos a nuestros clientes sobre lo que una VPN puede lograr de manera realista.
       - name: Defensores de la privacidad
         description: Donamos regularmente a organizaciones que luchan por el derecho a
           la privacidad como la EFF, Open Rights Group y el proyecto Tor.
       - name: Transparencia
         description: Nuestro modelo de negocio se basa exclusivamente en suscripciones de pago. No
-          poseemeos ningún otro servicio VPN ni páginas de reseñas de VPN. Revisa [el equipo](team/)
+          poseemeos ningún otro servicio VPN ni páginas de reseñas de VPN. Revisa [el equipo](/es/team/)
           que dirige IVPN y la propiedad de la empresa.
   - type: heading_text_one_column
     content: "## Funciones"
@@ -107,6 +107,6 @@ sections:
       El uso de una VPN debe ser parte de una estrategia general para proteger tu privacidad, **pero solo si confías más en el proveedor de VPN que en tu ISP**.
     cta_label: Generar cuenta IVPN
     cta_is_blue: true
-    cta_url: /signup/
+    cta_url: /es/signup/
     cta_note: no se require email
 ---
