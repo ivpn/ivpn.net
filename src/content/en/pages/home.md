@@ -18,7 +18,7 @@ sections:
       What you do online can be tracked by organizations you may not know or trust and become part of a permanent record. A VPN can’t solve this on its own, but can prevent your ISP from being able to share or sell your data.
     cta_one_label: Generate IVPN account
     cta_one_is_blue: true
-    cta_one_url: /signup/
+    cta_one_url: /en/signup/
     cta_one_note: no email required
     cta_two_label: IVPN on GitHub
     cta_two_is_blue: false
@@ -49,7 +49,7 @@ sections:
           privacy like the EFF, Open Rights Group, and the Tor project.
       - name: Transparency
         description: Our business model is exclusively based on paid subscriptions. We
-          do not own any other VPN services or VPN review sites. Review [the team](/team/)
+          do not own any other VPN services or VPN review sites. Review [the team](/en/team/)
           operating IVPN and the company ownership.
   - type: heading_text_one_column
     content: "## Features"
@@ -107,6 +107,6 @@ sections:
       Using a VPN should be part of an overall strategy to protect your privacy - **but only if you trust the VPN provider more than your ISP**.
     cta_label: Generate IVPN account
     cta_is_blue: true
-    cta_url: /signup/
+    cta_url: /en/signup/
     cta_note: no email required
 ---
