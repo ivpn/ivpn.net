@@ -18,7 +18,7 @@ sections:
       Lo que haces en línea puede ser rastreado por organizaciones que quizás no conozcas y pase a formar parte de un registro permanente. Una VPN no puede resolver esto por sí sola, pero puede evitar que tu ISP pueda compartir o vender tus datos.
     cta_one_label: Generar cuenta IVPN
     cta_one_is_blue: true
-    cta_one_url: /es/signup/
+    cta_one_url: /es/pricing/
     cta_one_note: no se requiere email
     cta_two_label: IVPN en GitHub
     cta_two_is_blue: false
@@ -37,13 +37,13 @@ sections:
         description: Todos los servidores que gestionan los servicios de IVPN
            están autoalojados y operados por IVPN, incluido el correo electrónico y atencion al cliente.
       - name: Auditorías de seguridad independientes
-        description: Nos comprometemos a realizar [auditorías de seguridad anuales](/blog/tags/audit/) para mejorar nuestras
+        description: Nos comprometemos a realizar [auditorías de seguridad anuales](/en/blog/tags/audit/) para mejorar nuestras
            prácticas de seguridad y transparencia.
       - name: Sin reseñas falsas
         description: Nunca pagamos por reseñas y no tenemos un programa de afiliados, por lo que
           no nos encontrarás en las listas de las '10 mejores VPN'.
       - name: Sin falsas promesas
-        description: No prometemos anonimato ni "cifrado de grado militar". Publicamos extensas [guías de privacidad](/es/privacy-guides/) y educamos a nuestros clientes sobre lo que una VPN puede lograr de manera realista.
+        description: No prometemos anonimato ni "cifrado de grado militar". Publicamos extensas [guías de privacidad](/privacy-guides/) y educamos a nuestros clientes sobre lo que una VPN puede lograr de manera realista.
       - name: Defensores de la privacidad
         description: Donamos regularmente a organizaciones que luchan por el derecho a
           la privacidad como la EFF, Open Rights Group y el proyecto Tor.
@@ -107,6 +107,6 @@ sections:
       El uso de una VPN debe ser parte de una estrategia general para proteger tu privacidad, **pero solo si confías más en el proveedor de VPN que en tu ISP**.
     cta_label: Generar cuenta IVPN
     cta_is_blue: true
-    cta_url: /es/signup/
+    cta_url: /es//pricing/
     cta_note: no se require email
 ---
