@@ -1,15 +1,15 @@
 <template>
     <div style="text-align:center;">
         <p v-if="error" class="error-message">{{ error.message }}</p>
-        <p>We run our own Bitcoin and Lightning Network nodes using a self-hosted BTCPay server instance. Payments are processed by IVPN and no 3rd parties are involved.</p>
-        <p v-if="this.price.billing_cycle == 'Weekly'">On-chain Bitcoin payments are not available for IVPN 1 Week top-ups. We suggest using BTC Lightning or switching to a different payment method.</p>
+        <p>{{ $t('account.payments.bitcoin.bitcoinDescription') }}</p>
+        <p v-if="this.price.billing_cycle == 'Weekly'">{{ $t('account.payments.bitcoin.bitcoinOnchain') }}</p>
         <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress" v-if="this.price.billing_cycle != 'Weekly'">
             <div class="bitcoin-icon"></div>
-            <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />Pay with Bitcoin
+            <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithBitcoin') }}
         </button>
         <button class="btn btn-solid" @click.prevent="submitLightning()" :disabled="inProgressLightning">
             <div class="bitcoin-lightning-icon"></div>
-            <progress-spinner v-if="inProgressLightning" width="32" height="32" fill="#FFFFFF" />Pay with Lightning
+            <progress-spinner v-if="inProgressLightning" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithLightning') }}
         </button>
     </div>
 </template>
@@ -17,6 +17,7 @@
 <script>
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["price"],
@@ -33,6 +34,11 @@ export default {
         ...mapState({            
             error: (state) => state.account.error,
         }),
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         async submit() {

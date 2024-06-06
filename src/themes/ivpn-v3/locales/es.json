@@ -206,6 +206,82 @@
             "disablePopupDesc3": "No podrás gestionar tus dispositivos en tu panel de control.",
             "proceed": "Proceder",
             "cancel": "Cancelar"
+        },
+        "accountSettingsTab": {
+            "backToAccount": "Volver a la cuenta",
+            "title": "Configuración de la cuenta",
+            "authentication": "Autentificación",
+            "billing": "Facturación",
+            "deleteAccount": "Borrar cuenta",
+            "logInto": "Inicia sesión en el área de cliente utilizando",
+            "accountId":"ID de cuenta",
+            "emailPassword": "Email y Contraseña",
+            "email": "Email:",
+            "password": "Contraseña:",
+            "2fa": "Autentificación de dos factores",
+            "2faDesc": "Cuando está activado se requerirá autentificación de dos factores en el área de cliente y aplicaciones de IVPN.",
+            "recurringPayments": "Pagos recurrentes",
+            "billingCycle": "Ciclo de facturación",
+            "paymentMethod": "Método de pago",
+            "paidUntil":"Pagado hasta",
+            "wasActiveUntil": " Estaba activo hasta",
+            "lastPayment": "Último pago",
+            "recurringFailedOn": "El pago automático recurrente falló el",
+            "pleaseCheck": "Por favor, revisa o actualiza tu método de pago e inténtalo de nuevo.",
+            "processingPayment": "Procesando pago",
+            "extendYourAccount": "Amplía tu cuenta"
+        },
+        "payments":{
+            "selectPaymentMethod": "Elige un método de pago",
+            "byMaking": "Pagando aceptas nuestros",
+            "termsOfService": "Términos de servicio",
+            "bitcoin": {
+                "bitcoinDescription": "Ejecutamos nuestros propios nodos de Bitcoin y Lightning Network utilizando una instancia de servidor BTCPay auto-alojada. Los pagos son procesados por IVPN y no hay terceros involucrados.",
+                "bitcoinOnchain": "Los pagos de Bitcoin On-chain no están disponibles para recargas de 1 semana de IVPN. Sugerimos usar BTC Lightning o cambiar a un método de pago diferente.",
+                "payWithBitcoin": "Paga con Bitcoin",
+                "payWithLightning": "Paga con Lightning"
+            },
+            "paypal": {
+                "processingYourPayment": "Procesando tu pago...",
+                "solveCaptcha": "Por favor, resuelve el siguiente captcha para continuar.",
+                "enterNumbers": "Por favor, introduce los números que ves arriba:",
+                "continue": "Continuar",
+                "cancel": "Cancelar",
+                "toProceed": "Para proceder con el pago, por favor inicia sesión en tu cuenta de PayPal utilizando el botón de abajo.",
+                "automaticallyRenew": "Renueva automáticamente al final del período",
+                "enablingThisCheckbox": "Activando esta casilla, tu método de pago se guardará y se facturará automáticamente al final del período. Podrás cancelar la renovación automática en cualquier momento."
+            },
+            "creditCard": {
+                "cardIssue": "Hubo un problema con tu tarjeta. Por favor, inténtalo de nuevo.",
+                "automaticRenewal": "Renovación automática",
+                "ccAutomaticRenewalInfo": "Las renovaciones automáticas están siempre desactivadas de forma predeterminada. Puedes habilitar esto si es más conveniente para ti. Tus datos de tarjeta serán almacenados por Braintree, sin embargo, puedes cancelar la renovación automática en cualquier momento desde tu página de cuenta.",
+                "makePayment": "Pagar"
+            },
+            "cash": {
+                "pleaseSend": "Por favor envía un sobre que contenga",
+                "or": "o",
+                "andReferenceNumber": "y el número de referencia",
+                "toTheFollowingAddress": "a la siguiente dirección. Recomendamos hacer clic en el botón de abajo para imprimir la etiqueta de dirección y el número de referencia.",
+                "printAddress": "Imprima la dirección y el número de referencia",
+                "pleaseNote": "Por favor, ten en cuenta",
+                "ifYouDontInclude": "Si no incluyes tu número de referencia único, no podremos atribuir tu pago a tu cuenta.",
+                "weRecommend": "Recomendamos envolver los billetes en dos hojas de papel para mayor seguridad.",
+                "cashPaymentsNormally": "Los pagos en efectivo normalmente tardan de 2 a 4 semanas en ser recibidos, dependiendo de la ubicación desde la que se envió el sobre y del servicio postal. Cuando el sobre llega a la dirección en Berlín, se envía a una ubicación diferente donde nuestro equipo de facturación recoge el pago y lo acredita a tu cuenta. Por lo tanto, si estás rastreando el paquete, tardará de 1 a 2 semanas más después de que se reciba el artículo antes de que se acredite tu cuenta.",
+                "pleaseNoteCash": "Por favor, ten en cuenta que los pagos en efectivo se envían bajo tu propio riesgo. IVPN no se hace responsable de los pagos en efectivo perdidos en tránsito.",
+                "weAccept": "Aceptamos pagos en efectivo a partir de 1 año. Por favor, regresa y selecciona al menos 1 año de período."
+            },
+            "monero": {
+                "pleaseUse": "Por favor, utiliza los siguientes detalles de pago para transferir Monero:",
+                "address": "Dirección:",
+                "amount": "Cantidad:",
+                "paymentReceived": "Pago recibido:",
+                "extendedUntil": "extendido hasta",
+                "waitingForPayment": "Esperando el pago...",
+                "information": "la información sobre el último pago reciente se mostrará aquí.",
+                "pleaseNote": "Por favor , ten en cuenta:",
+                "note1": "Tu cuenta se extenderá automáticamente después de que el pago sea confirmado. Esto puede tardar unos minutos.",
+                "note2": "La dirección especificada anteriormente es permanente para tu cuenta. Puedes usarla para recargar tu cuenta en cualquier momento en el futuro."
+            }
         }
     }
 }

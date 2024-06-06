@@ -14,11 +14,11 @@
             </div>
             <article>
                 <p style="font-size: 20px; line-height: 36px;">
-                    Please send an envelope containing <strong>{{ price.price }} USD</strong> or <strong>{{ price.price }} EUR</strong> and reference number <span class="ref-id">{{ account.ref_id }}</span> to the address below. We recommend clicking on the button below to print the address label and reference number.
+                    {{ $t('account.payments.cash.pleaseSend') }} <strong>{{ price.price }} USD</strong> {{ $t('account.payments.cash.or') }} <strong>{{ price.price }} EUR</strong> {{ $t('account.payments.cash.andReferenceNumber') }} <span class="ref-id">{{ account.ref_id }}</span> {{ $t('account.payments.cash.toTheFollowingAddress') }}:
                 </p>
 
                 <p>
-                    <a href="" class="btn btn-border btn-print" @click.prevent="printPage()">Print address & reference number</a>
+                    <a href="" class="btn btn-border btn-print" @click.prevent="printPage()">{{ $t('account.payments.cash.printAddress') }}</a>
                 </p>
 
                 <address>
@@ -31,29 +31,20 @@
                 </address>
 
                 <p>
-                    <strong>Please note</strong>: if you do not include your unique
-                    reference number above we will not be able to attribute your
-                    payment to your account.
+                    <strong>{{ $t('account.payments.cash.pleaseNote') }}</strong>: {{ $t('account.payments.cash.ifYouDontInclude') }}
                 </p>
                 <p>
-                    We recommend wrapping cash bills in two sheets of paper for
-                    extra security.
+                    {{ $t('account.payments.cash.weRecommend') }}
                 </p>
                 <p>
-                    Cash payments normally take 2-4 weeks to be received depending on the location 
-                    the envelope was sent from and the postal service. When the envelope reaches the 
-                    address in Berlin it is forwarded to a different location where our billing team 
-                    collects the payment and credits it to your account. Therefore, if you are tracking 
-                    the package it will take a further 1-2 weeks after the item is received before your 
-                    account is credited.
+                    {{ $t('account.payments.cash.cashPaymentsNormally') }}
                 </p>
-                <p>Please note that cash payments are sent at your own risk.</p>
+                <p>{{ $t('account.payments.cash.pleaseNoteCash') }}</p>
             </article>
         </div>
         <div v-else>
             <p>
-                We accept Cash payments starting from 1 year. Please return back
-                and select at least 1 year period.
+                {{ $t('account.payments.cash.weAccept') }}
             </p>
         </div>
     </div>
@@ -61,6 +52,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["price"],
@@ -73,6 +65,11 @@ export default {
         printPage() {
             print();
         },
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
 };
 </script>

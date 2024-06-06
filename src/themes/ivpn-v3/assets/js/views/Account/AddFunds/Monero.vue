@@ -9,27 +9,27 @@
             <p v-if="error" class="error-message">{{ error.message }}</p>
             <div v-if="address" class="payment-page">
                 <p>
-                    Please use the following payment details to transfer Monero:
+                    {{ $t('account.payments.monero.pleaseUse') }}
                 </p>
                 <div class="info-box payment-form">
                     <div class="qrcode" v-html="qrCode"></div>
                     <div style="padding: 14px"></div>
                     <div class="details">
                         <dl>
-                            <dt class="highlight bold">Address:</dt>
+                            <dt class="highlight bold"> {{ $t('account.payments.monero.address') }}</dt>
                             <dd class="address">{{ address }}</dd>
 
-                            <dt class="highlight bold">Amount:</dt>
+                            <dt class="highlight bold"> {{ $t('account.payments.monero.amount') }}</dt>
                             <dd>{{ amountRounded }} XMR</dd>
                         </dl>
                     </div>
                 </div>
                 <div class="info-box">
                     <div v-if="recentPayment">
-                        <p class="highlight">Payment received:</p>
+                        <p class="highlight"> {{ $t('account.payments.monero.paymentReceived') }}</p>
                         <div>
                             {{ $filters.formatDate(recentPayment.date) }},
-                            {{ recentPayment.product }}, extended until
+                            {{ recentPayment.product }},  {{ $t('account.payments.monero.extendedUntil') }}
                             {{ $filters.formatActiveUntil(recentPayment.applied_to) }}
                         </div>
                     </div>
@@ -38,25 +38,21 @@
                             <progress-spinner
                                 style="width: 32px; height: 32px"
                             ></progress-spinner>
-                            Waiting for payment...
+                            {{ $t('account.payments.monero.waitingForPayment') }}
                         </p>
 
                         <p style="margin-top: 1em">
-                            Information about the last recent payment will be
-                            displayed here.
+                            {{ $t('account.payments.monero.information') }}
                         </p>
                     </div>
                 </div>
-                <p class="highlight">Please note:</p>
+                <p class="highlight"> {{ $t('account.payments.monero.pleaseNote') }}</p>
                 <p>
-                    Your account will automatically be extended after the
-                    payment is confirmed. This may take a couple of minutes.
+                    {{ $t('account.payments.monero.note1') }}
                 </p>
 
                 <p>
-                    The address specified above is permanent for your account.
-                    You can use it to top up your account at any time in the
-                    future.
+                    {{ $t('account.payments.monero.note2') }}
                 </p>
             </div>
         </div>
@@ -67,8 +63,8 @@
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import qrcode from "qrcode-generator";
 import api from "@/api/api.js";
-
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["price"],
@@ -110,6 +106,9 @@ export default {
         this.qrCode = qr.createSvgTag(2);
     },
     async mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
         this.refreshTimer = setInterval(this.updateLastPayment, 10000);
         await this.updateLastPayment();
     },

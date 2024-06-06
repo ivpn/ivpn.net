@@ -247,6 +247,22 @@ const routes = [
         }
     }, 
     {
+        path: '/en/account/payment',
+        component: PaymentView,
+        name: 'payment-en',
+        meta: {
+            title: 'IVPN Account - Payment',
+        }
+    }, 
+    {
+        path: '/es/account/payment',
+        component: PaymentView,
+        name: 'payment-es',
+        meta: {
+            title: 'IVPN Account - Payment',
+        }
+    }, 
+    {
         path: '/account/settings',
         component: Settings,
         children: [
@@ -409,6 +425,120 @@ const routes = [
                 }
             }, {
                 path: 'cash', name: 'add-funds-cash',
+                component: AddFundsCash,
+                meta: {
+                    title: 'IVPN Add Funds - Cash',
+                }
+            }
+        ],
+        
+    },
+    {
+        path: '/en/account/add-funds/:price',
+        component: AddFundsView,
+        children: [
+            {
+                path: 'cc', name: 'add-funds-cc-en',
+                component: AddFundsCC,
+                meta: {
+                    title: 'IVPN Add Funds - Credit Card',
+                }
+            },
+            {
+                path: 'paypal', name: 'add-funds-paypal-en',
+                component: AddFundsPayPal,
+                meta: {
+                    title: 'IVPN Add Funds - PayPal',
+                },
+            }, {
+                path: 'bitcoin', name: 'add-funds-bitcoin-en',
+                component: AddFundsBitcoin,
+                meta: {
+                    title: 'IVPN Add Funds - Bitcoin',
+                }
+            }, {
+                path: 'monero', name: 'add-funds-monero-en',
+                component: AddFundsMonero,
+                meta: {
+                    title: 'IVPN Add Funds - Monero',
+                }
+            }, {
+                path: 'voucher', name: 'add-funds-voucher-en',
+                component: AddFundsGiftCard,
+                meta: {
+                    title: 'IVPN Add Funds - Voucher',
+                }
+            }, {
+                path: 'applepay', name: 'add-funds-apple-en',
+                component: ApplePayView,
+                meta: {
+                    title: 'IVPN Add Funds - ApplePay',
+                }
+            }, {
+                path: 'googlepay', name: 'add-funds-google-en',
+                component: GooglePayView,
+                meta: {
+                    title: 'IVPN Add Funds - GooglePay',
+                }
+            }, {
+                path: 'cash', name: 'add-funds-cash-en',
+                component: AddFundsCash,
+                meta: {
+                    title: 'IVPN Add Funds - Cash',
+                }
+            }
+        ],
+        
+    },
+    {
+        path: '/es/account/add-funds/:price',
+        component: AddFundsView,
+        children: [
+            {
+                path: 'cc', name: 'add-funds-cc-es',
+                component: AddFundsCC,
+                meta: {
+                    title: 'IVPN Add Funds - Credit Card',
+                }
+            },
+            {
+                path: 'paypal', name: 'add-funds-paypal-es',
+                component: AddFundsPayPal,
+                meta: {
+                    title: 'IVPN Add Funds - PayPal',
+                },
+            }, {
+                path: 'bitcoin', name: 'add-funds-bitcoin-es',
+                component: AddFundsBitcoin,
+                meta: {
+                    title: 'IVPN Add Funds - Bitcoin',
+                }
+            }, {
+                path: 'monero', name: 'add-funds-monero-es',
+                component: AddFundsMonero,
+                meta: {
+                    title: 'IVPN Add Funds - Monero',
+                }
+            }, {
+                path: 'voucher', name: 'add-funds-voucher-es',
+                component: AddFundsGiftCard,
+                meta: {
+                    title: 'IVPN Add Funds - Voucher',
+                }
+            }, {
+                path: 'applepay', name: 'add-funds-apple-es',
+                component: ApplePayView,
+                meta: {
+                    title: 'IVPN Add Funds - ApplePay',
+                }
+            }, {
+                path: 'googlepay', name: 'add-funds-google-es',
+                component: GooglePayView,
+                meta: {
+                    title: 'IVPN Add Funds - GooglePay',
+                }
+            }, {
+                path: 'cash', name: 'add-funds-cash-es',
                 component: AddFundsCash,
                 meta: {
                     title: 'IVPN Add Funds - Cash',

@@ -1,7 +1,7 @@
 <template>
     <div class="payment-form">
         <div v-if="this.cardFailedVerification">
-            <p class="error">There was an issue with your card. Please try again.</p>
+            <p class="error">{{ $t('account.payments.creditCard.cardIssue') }}</p>
         </div>
         <div v-if="braintree != null">
             <div
@@ -12,7 +12,7 @@
                     align-items: center;
                 "
             >
-                <p>Please solve the following captcha to continue.</p>
+                <p>{{ $t('account.payments.paypal.solveCaptcha') }}</p>
                 <p v-if="error && !hideError(error)" class="error">
                     {{ error.message }}
                 </p>
@@ -22,7 +22,7 @@
                             <img :src="captchaImage" />
                         </div>
                         <label for="login-captch"
-                            >Please enter the numbers you see above:</label
+                            >{{ $t('account.payments.paypal.enterNumbers') }}</label
                         >
                         <input
                             type="text"
@@ -64,10 +64,10 @@
                     </div>
                     <div class="recurring--description">
                         <label for="cb_recurring"
-                            >Automatic renewal</label
+                            >{{ $t('account.payments.creditCard.automaticRenewal') }}</label
                         >
                         <p>
-                            Automatic renewals are always off by default. You may enable this if it is more convenient for you. Your card data will be stored by Braintree however you can cancel automatic renewal at any time from your account page.
+                            {{ $t('account.payments.creditCard.ccAutomaticRenewalInfo') }}
                         </p>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                             width="32"
                             height="32"
                             fill="#FFFFFF"
-                        />Make Payment
+                        />{{ $t('account.payments.creditCard.makePayment') }}
                     </button>
                 </div>
             </form>
@@ -104,6 +104,7 @@ import BraintreeCc from "@/components/BraintreeCc.vue";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
 import matomo from "@/api/matomo.js";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["price"],
@@ -121,6 +122,11 @@ export default {
     },
     async created() {
         await this.$store.dispatch("braintree/init");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     components: {
         BraintreeCc,

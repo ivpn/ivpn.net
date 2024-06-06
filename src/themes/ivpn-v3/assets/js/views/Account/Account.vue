@@ -64,12 +64,12 @@
                             class="product-action"
                             v-if="!account.subscription"
                         >
-                            <router-link :to="{ name: 'payment' }"
+                            <router-link :to="{ name: 'payment-' + this.language }"
                                 >{{ $t('account.addMoreTime') }}</router-link
                             >
                         </div>
                         <div class="product-action" v-else>
-                            <router-link :to="{ name: 'settings-billing' }"
+                            <router-link :to="{ name: 'settings-billing-' + this.language }"
                                 >{{ $t('account.billingSettings') }}</router-link
                             >
                         </div>
@@ -115,6 +115,7 @@ export default {
         return {
             isLight : false,
             canChange: false,
+            language: "en"
         };
     },
 
@@ -137,6 +138,7 @@ export default {
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = window.location.href.split("/")[3];
     },
 
     methods:{

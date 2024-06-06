@@ -3,18 +3,18 @@
         <div class="wireguard-key__row wireguard-key__header">
             <h3>{{ name }}</h3>
             <button class="btn btn-icon" @click.prevent="deleteKey">
-                <icon-trash color="#398FE6"></icon-trash> Delete
+                <icon-trash color="#398FE6"></icon-trash> {{ $t('account.wireguardTab.delete') }}
             </button>
         </div>
         <div class="wireguard-key__row">
             <div class="wireguard-key__public-key">
-                <label>Public key</label>
+                <label>{{ $t('account.wireguardTab.publicKeyt') }}</label>
                 <div><small>{{ publicKey }}</small></div>
             </div>
             <div class="wireguard-key__ip-address">
-                <label>IPv4 address</label>
+                <label>{{ $t('account.wireguardTab.ipv4Address') }}</label>
                 <div><small>{{ ip }}</small></div>
-                <label>IPv6 address</label>
+                <label>{{ $t('account.wireguardTab.ipv6Address') }}</label>
                 <div><small>{{ ipv6Address }}</small></div>
             </div>
         </div>

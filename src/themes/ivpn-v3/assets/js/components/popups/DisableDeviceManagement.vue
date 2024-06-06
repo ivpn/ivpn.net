@@ -22,7 +22,6 @@
         }
       },
       mounted() {
-        this.$store.dispatch("wireguard/load");
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
         }
