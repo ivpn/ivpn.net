@@ -93,16 +93,7 @@ const routes = [
     },
     {
         path: '/prices', redirect: { name: 'prices' }
-    },
-    {
-        path: '/account/login',
-        name: 'login',
-        component: LoginView,
-        meta: {
-            title: 'IVPN Login',
-        },
-        beforeEnter: notAuthenticatedGuard,
-    },
+    }, 
     {
         path: '/en/account/login',
         name: 'loginEn',
@@ -162,7 +153,7 @@ const routes = [
     },
     {
         path: '/en/account',
-        name: 'accountEn',
+        name: 'account-en',
         component: AccountView,
         meta: {
             title: 'IVPN Account',
@@ -170,7 +161,7 @@ const routes = [
     },
     {
         path: '/es/account',
-        name: 'accountEs',
+        name: 'account-es',
         component: AccountView,
         meta: {
             title: 'IVPN Account',
@@ -237,6 +228,14 @@ const routes = [
                 }
             },
             {
+                path: '',
+                name: 'settings-main-en',
+                component: SettingsAuthentication,
+                meta: {
+                    title: 'Account settings - Authentication',
+                }
+            },
+            {
                 path: 'billing',
                 name: 'settings-billing',
                 component: SettingsBilling,
@@ -247,6 +246,82 @@ const routes = [
             {
                 path: 'delete',
                 name: 'settings-delete',
+                component: SettingsDelete,
+                meta: {
+                    title: 'Account settings - Delete account',
+                }
+            },
+        ],
+    },
+    {
+        path: '/en/account/settings',
+        component: Settings,
+        children: [
+            {
+                path: '',
+                name: 'settings-main-en',
+                component: SettingsAuthentication,
+                meta: {
+                    title: 'Account settings - Authentication',
+                }
+            },
+            {
+                path: '',
+                name: 'settings-main-en',
+                component: SettingsAuthentication,
+                meta: {
+                    title: 'Account settings - Authentication',
+                }
+            },
+            {
+                path: 'billing',
+                name: 'settings-billing-en',
+                component: SettingsBilling,
+                meta: {
+                    title: 'Account settings - Billing',
+                }
+            },
+            {
+                path: 'delete',
+                name: 'settings-delete-en',
+                component: SettingsDelete,
+                meta: {
+                    title: 'Account settings - Delete account',
+                }
+            },
+        ],
+    },
+    {
+        path: '/es/account/settings',
+        component: Settings,
+        children: [
+            {
+                path: '',
+                name: 'settings-main-es',
+                component: SettingsAuthentication,
+                meta: {
+                    title: 'Account settings - Authentication',
+                }
+            },
+            {
+                path: '',
+                name: 'settings-main-es',
+                component: SettingsAuthentication,
+                meta: {
+                    title: 'Account settings - Authentication',
+                }
+            },
+            {
+                path: 'billing',
+                name: 'settings-billing-es',
+                component: SettingsBilling,
+                meta: {
+                    title: 'Account settings - Billing',
+                }
+            },
+            {
+                path: 'delete',
+                name: 'settings-delete-es',
                 component: SettingsDelete,
                 meta: {
                     title: 'Account settings - Delete account',
@@ -328,8 +403,40 @@ const routes = [
         }
     },
     {
+        path: '/en/account/wireguard',
+        name: 'wireguard-en',
+        component: WireguardView,
+        meta: {
+            title: 'IVPN Account - WireGuard',
+        }
+    },
+    {
+        path: '/es/account/wireguard',
+        name: 'wireguard-es',
+        component: WireguardView,
+        meta: {
+            title: 'IVPN Account - WireGuard',
+        }
+    },
+    {
         path: '/account/wireguard-config',
         name: 'wireguard-config',
+        component: WireguardConfigView,
+        meta: {
+            title: 'IVPN Account - WireGuard Configuration',
+        }
+    },
+    {
+        path: '/en/account/wireguard-config',
+        name: 'wireguard-config-en',
+        component: WireguardConfigView,
+        meta: {
+            title: 'IVPN Account - WireGuard Configuration',
+        }
+    },
+    {
+        path: '/es/account/wireguard-config',
+        name: 'wireguard-config-es',
         component: WireguardConfigView,
         meta: {
             title: 'IVPN Account - WireGuard Configuration',
@@ -363,6 +470,22 @@ const routes = [
             title: 'IVPN Account - Device management',
         }
     },
+    {
+        path: '/en/account/device-management',
+        name: 'device-management-en',
+        component: DeviceManagementView,
+        meta: {
+            title: 'IVPN Account - Device management',
+        }
+    },
+    {
+        path: '/es/account/device-management',
+        name: 'device-management-es',
+        component: DeviceManagementView,
+        meta: {
+            title: 'IVPN Account - Device management',
+        }
+    },
 ]
 
 const router = createRouter({
@@ -375,11 +498,16 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
+    
+    let suffix = "En";
+    if (to.path.startsWith('/es/')) {
+        suffix = "Es";
+    }
 
-    if (to.path.startsWith('/account') && to.name != 'login') {
+    if ( (to.path.startsWith('/en/account') && to.name != 'loginEn') || (to.path.startsWith('/es/account') && to.name != 'loginEs') ){
 
         if (!store.state.auth.isAuthenticated) {
-            next({ name: 'login' })
+            next({ name: 'login' + suffix })
             return
         }
 
@@ -392,7 +520,7 @@ router.beforeEach(async (to, from, next) => {
 
         if (!store.state.auth.isAuthenticated) {
             // Go to login page in case account could not be loaded
-            next({ name: 'login' })
+            next({ name: 'login' + suffix })
             return
         }
 
