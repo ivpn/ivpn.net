@@ -101,7 +101,7 @@ Para cumplir con los requisitos de este descuento, tu organización debe ser una
 ## ¿Por qué confiar en IVPN?
 
 * Servicio VPN sin registros auditado periódicamente
-* Más de 10 años de trayectoria ofreciendo servicios VPN a sus clientes
+* Más de 10 años de experiencia ofreciendo servicios VPN a sus clientes
 * Política de privacidad clara
 * Propiedad y equipo transparentes
 * Ética sólida: sin rastreadores, sin falsas promesas, sin anuncios de vigilancia
