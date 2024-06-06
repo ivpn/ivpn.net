@@ -177,7 +177,10 @@
             "pleaseEnter": "Please enter a valid IPv4 or IPv6 address.",
             "downloadZipArchive": "Download zip archive",
             "generateQrCode": "Generate QR code",
-            "configStep4Title": "4. Download"
+            "configStep4Title": "4. Download",
+            "delete": "Delete",
+            "ipv4Address": "IPv4 address",
+            "ipv6Address": "IPv6 address"
         },
         "deviceManagementTab": {
             "disabled": "Device management is disabled.",
