@@ -427,6 +427,22 @@ const routes = [
         }
     },
     {
+        path: '/en/account/wireguard-config',
+        name: 'wireguard-config-en',
+        component: WireguardConfigView,
+        meta: {
+            title: 'IVPN Account - WireGuard Configuration',
+        }
+    },
+    {
+        path: '/es/account/wireguard-config',
+        name: 'wireguard-config-es',
+        component: WireguardConfigView,
+        meta: {
+            title: 'IVPN Account - WireGuard Configuration',
+        }
+    },
+    {
         path: '/404',
         name: '404',
         component: NotFoundView,

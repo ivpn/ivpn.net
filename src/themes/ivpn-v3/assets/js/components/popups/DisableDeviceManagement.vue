@@ -1,17 +1,18 @@
 <template>
     <div>
-      <p>Please note - after disabling Device management:</p>
-      <p>You won’t be logged out from your devices.</p>
-      <p>You won’t be able to manage your devices on your dashboard.</p>
+      <p>{{ $t('account.deviceManagementTab.disablePopupDesc1') }}</p>
+      <p>{{ $t('account.deviceManagementTab.disablePopupDesc2') }}</p>
+      <p>{{ $t('account.deviceManagementTab.disablePopupDesc3') }}</p>
       
       <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
-      <button @click.prevent="disableDeviceManagement" class="btn btn-solid">Proceed</button>
-      <button @click.prevent="closeDialog" class="btn btn-border">Cancel</button>
+      <button @click.prevent="disableDeviceManagement" class="btn btn-solid">{{ $t('account.deviceManagementTab.proceed') }}</button>
+      <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.deviceManagementTab.cancel') }}</button>
     </div>
   </template>
   
   <script>
     import { mapState } from "vuex";
+    import { useI18n } from "vue-i18n"
     
     export default {
       props: {
@@ -20,6 +21,12 @@
           type: Object,
         }
       },
+      mounted() {
+        this.$store.dispatch("wireguard/load");
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
+    },
       computed: {
           ...mapState({
               error: state => state.sessions.error,

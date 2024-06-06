@@ -19,7 +19,7 @@
                 <p>{{ $t('account.wireguardTab.description1') }}</p>
                 <p>{{ $t('account.wireguardTab.description2') }}</p>
                 <router-link
-                    :to="{ name: 'wireguard-config' }"
+                    :to="{ name: 'wireguard-config-' + this.language }"
                     class="btn btn-solid btn-big"
                     >{{ $t('account.wireguardTab.configurationFileGenerator') }}</router-link
                 >
@@ -83,6 +83,7 @@ export default {
     data() {
         return {
             isLight : false,
+            language: "en"
         };
     },
     beforeMount(){
@@ -95,6 +96,7 @@ export default {
         this.$store.dispatch("wireguard/load");
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     computed: {

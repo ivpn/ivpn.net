@@ -71,7 +71,6 @@ import Device from "@/components/Device.vue";
 import Spinner from "@/components/ProgressSpinner.vue";
 
 import { mapState } from "vuex";
-
 import { useI18n } from "vue-i18n";
 
 export default {
