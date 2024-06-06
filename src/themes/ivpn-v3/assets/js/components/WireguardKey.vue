@@ -24,6 +24,7 @@
 <script>
 import IconTrash from "@/components/icons/btn/Trash";
 import { IPv4 } from "ip-num/IPNumber";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: {
@@ -49,6 +50,11 @@ export default {
     created() {
         let ipv4 = new IPv4(this.ip);
         this.ipv6Address = this.API_GATEWAYS_WG_LOCAL_IPV6 + ipv4.toIPv4MappedIPv6().toString().replace("::ffff:", "");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         deleteKey() {

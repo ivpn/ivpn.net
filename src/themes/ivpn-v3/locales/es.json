@@ -177,7 +177,10 @@
             "pleaseEnter": "Por favor, introduce una dirección IPv4 o IPv6 válida.",
             "downloadZipArchive": "Descargar archivo zip",
             "generateQrCode": "Generar código QR",
-            "configStep4Title": "4. Descargar"
+            "configStep4Title": "4. Descargar",
+            "delete": "Eliminar",
+            "ipv4Address": "Dirección IPv4",
+            "ipv6Address": "Dirección IPv6"
         },
         "deviceManagementTab": {
             "disabled": "La gestión de dispositivos está deshabilitada.",

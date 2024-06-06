@@ -135,8 +135,39 @@ const routes = [
         name: 'logout',
         beforeEnter: async (to, from, next) => {
             try {
+                let suffix = "En";
+                if (to.path.startsWith('/es/')) {
+                    suffix = "Es";
+                }
+                console.log('logout', suffix)
                 await store.dispatch('auth/logout')
-                next({ name: 'login' })
+                next({ name: 'login' + suffix})
+            } catch (error) {
+                console.error(error)
+                next({ name: '500' })
+            }
+        }
+    },
+    {
+        path: '/en/account/logout',
+        name: 'logout-en',
+        beforeEnter: async (to, from, next) => {
+            try {
+                await store.dispatch('auth/logout')
+                next({ name: 'loginEn' })
+            } catch (error) {
+                console.error(error)
+                next({ name: '500' })
+            }
+        }
+    },
+    {
+        path: '/es/account/logout',
+        name: 'logout-es',
+        beforeEnter: async (to, from, next) => {
+            try {
+                await store.dispatch('auth/logout')
+                next({ name: 'loginEs' })
             } catch (error) {
                 console.error(error)
                 next({ name: '500' })
