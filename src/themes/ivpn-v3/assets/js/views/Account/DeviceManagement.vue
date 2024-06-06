@@ -3,7 +3,7 @@
         <div v-if="!account.is_active">
             <section>
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
-                <p>{{ $t('account.wireguardTab.renewAccount') }}.</p>
+                <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
                     :to="{ name: 'account' }"
                     class="btn btn-solid"
@@ -91,7 +91,6 @@ export default {
         this.$store.dispatch("sessions/load");
     },
     mounted() {
-        this.$store.dispatch("wireguard/load");
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
         }

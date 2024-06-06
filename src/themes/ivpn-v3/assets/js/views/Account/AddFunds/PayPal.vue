@@ -7,7 +7,7 @@
                         width="32"
                         height="32"
                         fill="#398fe6"
-                    />Processing your payment...
+                    />{{ $t('account.payments.paypal.processingYourPayment') }}
                 </p>
             </div>
             <div v-else>
@@ -19,7 +19,7 @@
                         align-items: center;
                     "
                 >
-                    <p>Please solve the following captcha to continue.</p>
+                    <p>{{ $t('account.payments.paypal.solveCaptcha') }}</p>
                     <p v-if="error && !hideError(error)" class="error">
                         {{ error.message }}
                     </p>
@@ -29,7 +29,7 @@
                                 <img :src="captchaImage" />
                             </div>
                             <label for="login-captch"
-                                >Please enter the numbers you see above:</label
+                                >{{ $t('account.payments.paypal.enterNumbers') }}</label
                             >
                             <input
                                 type="text"
@@ -37,13 +37,13 @@
                                 v-model="captchaValue"
                             />
                             <button class="btn btn-solid btn-big make-payment">
-                                Continue
+                                {{ $t('account.payments.paypal.continue') }}
                             </button>
                             <button
                                 class="btn btn-icon"
                                 @click.prevent="cancelCaptcha"
                             >
-                                Cancel
+                            {{ $t('account.payments.paypal.cancel') }}
                             </button>
                         </div>
                     </form>
@@ -54,8 +54,7 @@
                         {{ error.message }}
                     </p>
                     <p>
-                        To proceed with payment please log into your paypal
-                        account using the button below.
+                        {{ $t('account.payments.paypal.toProceed') }}
                     </p>
 
                     <braintree-paypal
@@ -80,13 +79,10 @@
 
                         <div class="recurring--description">
                             <label for="cb_recurring"
-                                >Automatically renew at the end of period</label
+                                >{{ $t('account.payments.paypal.automaticallyRenew') }}</label
                             >
                             <p>
-                                Enabling this checkbox will make your payment
-                                method saved and automatically billed at the end
-                                of period. You will be able to cancel automatic
-                                renewal any time.
+                                {{ $t('account.payments.paypal.enablingThisCheckbox') }}
                             </p>
                         </div>
                     </div>
@@ -155,6 +151,7 @@ import { mapState } from "vuex";
 
 import braintree from "braintree-web";
 import matomo from "@/api/matomo.js";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["price"],
@@ -173,6 +170,11 @@ export default {
 
     async created() {
         this.createClientToken();
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     computed: {
         ...mapState({

@@ -1,15 +1,15 @@
 <template>
     <div v-if="!isLight" class="payment-page-header">
         <div class="back-link">
-            <router-link :to="{ name: 'account' }" v-if="account.is_new">
-                <span class="icon-back"></span>Select payment method
+            <router-link :to="{ name: 'account-' + this.language }" v-if="account.is_new">
+                <span class="icon-back"></span>{{ $t('account.payments.selectPaymentMethod') }}
             </router-link>
-            <router-link :to="{ name: 'payment' }" v-else>
-                <span class="icon-back"></span>Select payment method
+            <router-link :to="{ name: 'payment-' + this.language  }" v-else>
+                <span class="icon-back"></span>{{ $t('account.payments.selectPaymentMethod') }}
             </router-link>
         </div>
         <h1>{{ title }}</h1>
-        <ul class="payment-details" v-if="$route.name != 'add-funds-voucher'">
+        <ul class="payment-details" v-if="$route.name != 'add-funds-voucher-' + this.language">
             <li>{{ account.product.name }}</li>
             <li>{{ price.name }}</li>
             <li>${{ price.price }}</li>
@@ -20,19 +20,21 @@
             style="margin-top: 32px"
         />
 
-        <p class='tos' v-if="account.is_new">By making a payment you are agreeing to our <a href='/tos'>Terms of Service</a>.</p>
+        <p class='tos' v-if="account.is_new">{{ $t('account.payments.byMaking') }} <a href='/tos'>{{ $t('account.payments.termsOfService') }}</a>.</p>
     </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     data() {
         return {
             price: null,
             title: String,
-            isLight : false
+            isLight : false,
+            language: "en"
         };
     },
     created() {
@@ -74,6 +76,12 @@ export default {
             window.location = "/light";
         }
     },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
+    }
 };
 </script>
 

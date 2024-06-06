@@ -22,7 +22,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cc', params: { price: price.id } }"
+                :to="{ name: 'add-funds-cc-' + this.language, params: { price: price.id } }"
             >
                 <div class="credit-card-icon"></div>
                 {{ $t('account.creditCard') }}
@@ -30,7 +30,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-paypal', params: { price: price.id } }"
+                :to="{ name: 'add-funds-paypal-' + this.language, params: { price: price.id } }"
             >
                 <div class="paypal-icon"></div>
                 {{ $t('account.paypal') }}
@@ -38,7 +38,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-bitcoin', params: { price: price.id } }"
+                :to="{ name: 'add-funds-bitcoin-' + this.language, params: { price: price.id } }"
             >
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
@@ -46,7 +46,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-monero', params: { price: price.id } }"
+                :to="{ name: 'add-funds-monero-' + this.language,  params: { price: price.id } }"
             >
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
@@ -54,7 +54,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cash', params: { price: price.id } }"
+                :to="{ name: 'add-funds-cash-' + this.language, params: { price: price.id } }"
             >
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
@@ -62,7 +62,7 @@
         </div>
         <div>
             {{ $t('account.haveVoucher') }}
-            <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
+            <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
         </div>
         <!--
         <div class="pay-buttons">
@@ -93,6 +93,7 @@ export default {
         return {
             price: "",
             more: false,
+            language: "en",
         };
     },
     created() {
@@ -106,7 +107,10 @@ export default {
         }
     },
     mounted() {
-        useI18n().locale.value = window.location.href.split("/")[3];
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
     },
     watch: {
         price: function () {
@@ -172,7 +176,7 @@ export default {
     margin-top: 12px;
     margin-bottom: 32px;
     .pay-button {
-        width: 220px;
+        width: 280px;
         line-height: 28px;
         margin: 20px 24px 0px 0px;
         font-size: 18px;

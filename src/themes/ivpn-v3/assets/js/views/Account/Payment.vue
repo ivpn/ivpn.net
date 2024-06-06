@@ -1,13 +1,13 @@
 <template>
     <div v-if="!isLight" class='payment-page'>
         <div class="back-link">
-            <router-link :to="{ name: 'account' }">
-                <span class="icon-back"></span>Back to account
+            <router-link :to="{ name: 'account-' + this.language }">
+                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
 
         <div>
-            <h1>Extend your account</h1>
+            <h1>{{ $t('account.accountSettingsTab.extendYourAccount') }}</h1>
             <select-payment-method :account="account"></select-payment-method>
         </div>
     </div>
@@ -20,13 +20,16 @@ import { add } from "date-fns";
 
 import { mapState } from "vuex";
 
+import { useI18n } from "vue-i18n";
+
 export default {
     components: {
         SelectPaymentMethod,
     },
     data() {
         return {
-            isLight : false
+            isLight : false,
+            language: 'en'
         };
     },
     computed: {
@@ -38,6 +41,12 @@ export default {
         if( this.$store.state.auth.account.product.name == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
+        }
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
 };

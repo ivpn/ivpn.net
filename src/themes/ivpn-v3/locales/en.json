@@ -206,6 +206,82 @@
             "disablePopupDesc3": "You won’t be able to manage your devices on your dashboard.",
             "proceed": "Proceed",
             "cancel": "Cancel"
+        },
+        "accountSettingsTab": {
+            "backToAccount": "Back to account",
+            "title": "Account Settings",
+            "authentication": "Authentication",
+            "billing": "Billing",
+            "deleteAccount": "Delete account",
+            "logInto": "Log into client area using",
+            "accountId":"Account ID",
+            "emailPassword": "Email & Password",
+            "email": "Email:",
+            "password": "Password:",
+            "2fa": "2-factor authentication",
+            "2faDesc": "When enabled, 2-factor authentication will be required in the client area and IVPN apps.",
+            "recurringPayments": "Recurring payments",
+            "billingCycle": "Billing cycle",
+            "paymentMethod": "Payment method",
+            "paidUntil":"Paid until",
+            "wasActiveUntil": "Was active until",
+            "lastPayment": "Last payment",
+            "recurringFailedOn": "Automatic recurring payment failed on ",
+            "pleaseCheck": "Please check or update your payment method and try again.",
+            "processingPayment": "Processing payment",
+            "extendYourAccount": "Extend your account"
+        },
+        "payments":{
+            "selectPaymentMethod": "Select payment method",
+            "byMaking": "By making a payment you are agreeing to our",
+            "termsOfService": "Terms of Service",
+            "bitcoin": {
+                "bitcoinDescription": "We run our own Bitcoin and Lightning Network nodes using a self-hosted BTCPay server instance. Payments are processed by IVPN and no 3rd parties are involved.",
+                "bitcoinOnchain": "On-chain Bitcoin payments are not available for IVPN 1 Week top-ups. We suggest using BTC Lightning or switching to a different payment method.",
+                "payWithBitcoin": "Pay with Bitcoin",
+                "payWithLightning": "Pay with Lightning"
+            },
+            "paypal": {
+                "processingYourPayment": "Processing your payment...",
+                "solveCaptcha": "Please solve the following captcha to continue.",
+                "enterNumbers": "Please enter the numbers you see above:",
+                "continue": "Continue",
+                "cancel": "Cancel",
+                "toProceed": "To proceed with payment please log into your paypal account using the button below.",
+                "automaticallyRenew": "Automatically renew at the end of period",
+                "enablingThisCheckbox": "Enabling this checkbox will make your payment method saved and automatically billed at the end of period. You will be able to cancel automatic renewal any time."
+            },
+            "creditCard": {
+                "cardIssue": "There was an issue with your card. Please try again.",
+                "automaticRenewal": "Automatic renewal",
+                "ccAutomaticRenewalInfo": "Automatic renewals are always off by default. You may enable this if it is more convenient for you. Your card data will be stored by Braintree however you can cancel automatic renewal at any time from your account page.",
+                "makePayment": "Make payment"
+            },
+            "cash": {
+                "pleaseSend": "Please send an envelope containing",
+                "or": "or",
+                "andReferenceNumber": "and reference number",
+                "toTheFollowingAddress": "to the address below. We recommend clicking on the button below to print the address label and reference number.",
+                "printAddress": "Print address & reference number",
+                "pleaseNote": "Please note",
+                "ifYouDontInclude": "if you do not include your unique reference number above we will not be able to attribute your payment to your account.",
+                "weRecommend": "We recommend wrapping cash bills in two sheets of paper for extra security.",
+                "cashPaymentsNormally": "Cash payments normally take 2-4 weeks to be received depending on the location the envelope was sent from and the postal service. When the envelope reaches the address in Berlin it is forwarded to a different location where our billing team collects the payment and credits it to your account. Therefore, if you are tracking the package it will take a further 1-2 weeks after the item is received before your account is credited.",
+                "pleaseNoteCash": "Please note that cash payments are sent at your own risk.",
+                "weAccept": "We accept Cash payments starting from 1 year. Please return back and select at least 1 year period."
+            },
+            "monero": {
+                "pleaseUse": "Please use the following payment details to transfer Monero:",
+                "address": "Address:",
+                "amount": "Amount:",
+                "paymentReceived": "Payment received:",
+                "extendedUntil": "extended until",
+                "waitingForPayment": "Waiting for payment...",
+                "information": "Information about the last recent payment will be displayed here.",
+                "pleaseNote": "Please note:",
+                "note1": "Your account will automatically be extended after the payment is confirmed. This may take a couple of minutes.",
+                "note2": "The address specified above is permanent for your account. You can use it to top up your account at any time in thefuture."
+            }
         }
     }
 }

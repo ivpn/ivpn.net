@@ -18,7 +18,7 @@ sections:
       What you do online can be tracked by organizations you may not know or trust and become part of a permanent record. A VPN can’t solve this on its own, but can prevent your ISP from being able to share or sell your data.
     cta_one_label: Generate IVPN account
     cta_one_is_blue: true
-    cta_one_url: /signup/
+    cta_one_url: /en/pricing/
     cta_one_note: no email required
     cta_two_label: IVPN on GitHub
     cta_two_is_blue: false
@@ -43,13 +43,13 @@ sections:
         description: We never pay for reviews and do not have an affiliate program, so
           you won’t find us on the 'top 10 best VPN' lists.
       - name: No false promises or fluff
-        description: We don’t promise anonymity or 'military grade encryption'. We publish extensive [privacy guides](/privacy-guides/) and educate our customers on what a VPN can realistically achieve.
+        description: We don’t promise anonymity or 'military grade encryption'. We publish extensive [privacy guides](/en/privacy-guides/) and educate our customers on what a VPN can realistically achieve.
       - name: Privacy advocates
         description: We donate regularly to organizations fighting for the right to
           privacy like the EFF, Open Rights Group, and the Tor project.
       - name: Transparency
         description: Our business model is exclusively based on paid subscriptions. We
-          do not own any other VPN services or VPN review sites. Review [the team](/team/)
+          do not own any other VPN services or VPN review sites. Review [the team](/en/team/)
           operating IVPN and the company ownership.
   - type: heading_text_one_column
     content: "## Features"
@@ -107,6 +107,6 @@ sections:
       Using a VPN should be part of an overall strategy to protect your privacy - **but only if you trust the VPN provider more than your ISP**.
     cta_label: Generate IVPN account
     cta_is_blue: true
-    cta_url: /signup/
+    cta_url: /en/pricing/
     cta_note: no email required
 ---

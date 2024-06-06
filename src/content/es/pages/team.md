@@ -85,7 +85,7 @@ sections:
       - image: /images-static/uploads/team-jordan.png
         image_retina: /images-static/uploads/team-jordan-2x.png
         name: Jordan Sullivan
-        description: Como líder del servicio al cliente para América, Jordan utiliza sus habilidades de soporte técnico basadas en la resolución de problemas para ayudar a cualquiera que necesite una asistencia clara y paciente.
+        description: Como líder del servicio de atención al cliente para América, Jordan utiliza sus habilidades de soporte técnico basadas en la resolución de problemas para ayudar a cualquiera que necesite una asistencia clara y paciente.
         linkedin: 
         github: https://github.com/jordan-ivpn
       - image: /images-static/uploads/team-marina.png
