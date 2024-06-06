@@ -119,6 +119,41 @@
         "ivpnAccount": "IVPN Account",
         "wireguard": "Wireguard",
         "deviceManagement": "Device Management",
-        "accountSettings": "Account Settings"
+        "accountSettings": "Account Settings",
+        "wireguardTab": {
+            "title": "WireGuard",
+            "description1": "If you are using the IVPN Apps for Windows, macOS, Linux, Android or iOS, WireGuard keys are managed automatically, simply select the WireGuard protocol in the app settings.",
+            "description2": "If you are using the native WireGuard client then you need to manually create your keys and the necessary configuration files. We provide a configuration file generator that will generate WireGuard keys, allow you to specify the servers you require and other parameters. You simply import the configuration file and are ready to connect.",
+            "configurationFileGenerator": "Configuration file generator",
+            "manuallyConfigure": "If you wish to manually configure WireGuard and just need to submit a new public key then use the form below.",
+            "addNewPublicKey": "Add new public key",
+            "noWireguardKeys": "There are no WireGuard keys added manually for this account.",
+            "usefulLinks": "Useful links",
+            "serverList": "WireGuard server list",
+            "faq": "WireGuard FAQ",
+            "expiredTitle": "Your account is expired",
+            "renewAccount": "Please renew your account to manage WireGuard keys.",
+            "toYourAccount": "To your account"
+        },
+        "deviceManagementTab": {
+            "disabled": "Device management is disabled.",
+            "disabledDesc1": "When enabled, you can review devices logged into the service and remotely log them out as needed.",
+            "disabledDesc2": "We recommend securely storing device identifiers with encryption to identify and disconnect devices when you don't have access to them.",
+            "disabledDesc3": "Learn more about this feature and its potential privacy implications",
+            "here": "here",
+            "enableDeviceManagement": "Enable device management",
+            "activeDevices": "Active devices",
+            "devicesAdded": "Devices added",
+            "logoutFromAllDevices": "Logout from all devices",
+            "enabled": "Device management is enabled.",
+            "enabledDesc1": "You are currently not logged in to the service on any device.",
+            "enabledDesc2": "to the IVPN app to add a device. Once added, your device identifiers will appear on this page.",
+            "please": "Please",
+            "login": "log in",
+            "increaseDeviceLimit": "To increase your device limit to",
+            "changeYourProduct": "change your Product",
+            "changeTo": "to IVPN Pro.",
+            "disableDeviceManagement": "Disable device management"
+        }
     }
 }

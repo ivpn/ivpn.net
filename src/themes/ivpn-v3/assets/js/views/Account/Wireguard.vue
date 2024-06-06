@@ -2,33 +2,33 @@
     <div v-if="!isLight">
         <div v-if="!account.is_active">
             <section>
-                <h3>Your account is expired</h3>
-                <p>Please renew your account to manage WireGuard keys.</p>
+                <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
+                <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
                     :to="{ name: 'account' }"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
-                    >To your account</router-link
+                    >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
                 >
             </section>
         </div>
 
         <div v-if="account.is_active">
             <section>
-                <h2>WireGuard</h2>
-                <p>If you are using the IVPN Apps for Windows, macOS, Linux, Android or iOS, WireGuard keys are managed automatically, simply select the WireGuard protocol in the app settings.</p>
-                <p>If you are using the native WireGuard client then you need to manually create your keys and the necessary configuration files. We provide a configuration file generator that will generate WireGuard keys, allow you to specify the servers you require and other parameters. You simply import the configuration file and are ready to connect.</p>
+                <h2>{{ $t('account.wireguardTab.title') }}</h2>
+                <p>{{ $t('account.wireguardTab.description1') }}</p>
+                <p>{{ $t('account.wireguardTab.description2') }}</p>
                 <router-link
                     :to="{ name: 'wireguard-config' }"
                     class="btn btn-solid btn-big"
-                    >Configuration file generator</router-link
+                    >{{ $t('account.wireguardTab.configurationFileGenerator') }}</router-link
                 >
             </section>
 
             <section>
-                <p>If you wish to manually configure WireGuard and just need to submit a new public key then use the form below.</p>
+                <p>{{ $t('account.wireguardTab.manuallyConfigure') }}</p>
                 <a class="btn btn-solid btn-big" @click.prevent="addKey"
-                    >Add new public key</a
+                    >{{ $t('account.wireguardTab.addNewPublicKey') }}</a
                 >
             </section>
 
@@ -49,18 +49,18 @@
 
             <section v-if="keys.length === 0 && isLoaded && !inProgress">
                 <p>
-                    There are no WireGuard keys added manually for this account.
+                    {{ $t('account.wireguardTab.noWireguardKeys') }}
                 </p>
             </section>
 
             <section>
-                <h3>Useful links</h3>
+                <h3>{{ $t('account.wireguardTab.usefulLinks') }}</h3>
                 <ul>
                     <li>
-                        <a href="/status/">WireGuard server list</a>
+                        <a href="/status/">{{ $t('account.wireguardTab.serverList') }}</a>
                     </li>
                     <li>
-                        <a href="/knowledgebase/general/wireguard-faq/">WireGuard FAQ</a>
+                        <a href="/knowledgebase/general/wireguard-faq/">{{ $t('account.wireguardTab.faq') }}</a>
                     </li>
                 </ul>
             </section>
@@ -71,6 +71,7 @@
 <script>
 import WireguardKey from "@/components/WireguardKey.vue";
 import Spinner from "@/components/ProgressSpinner.vue";
+import { useI18n } from "vue-i18n";
 
 import { mapState } from "vuex";
 
@@ -81,7 +82,7 @@ export default {
     },
     data() {
         return {
-            isLight : false
+            isLight : false,
         };
     },
     beforeMount(){
@@ -92,6 +93,9 @@ export default {
     },
     mounted() {
         this.$store.dispatch("wireguard/load");
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     computed: {
         ...mapState({

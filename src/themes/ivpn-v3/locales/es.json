@@ -119,6 +119,41 @@
         "ivpnAccount": "Cuenta IVPN",
         "wireguard": "Wireguard",
         "deviceManagement": "Gestión de dispositivos",
-        "accountSettings": "Configuración de la cuenta"
+        "accountSettings": "Configuración de la cuenta",
+        "wireguardTab": {
+            "title": "WireGuard",
+            "description1": "Si estás utilizando las aplicaciones de IVPN para Windows, macOS, Linux, Android o iOS, las claves de WireGuard se gestionan automáticamente, simplemente selecciona el protocolo WireGuard en la configuración de la aplicación.",
+            "description2": "Si estás utilizando el cliente nativo de WireGuard, entonces necesitas crear manualmente tus claves y los archivos de configuración necesarios. Proporcionamos un generador de archivos de configuración que generará claves de WireGuard, te permitirá especificar los servidores que necesitas y otros parámetros. Simplemente importa el archivo de configuración y estarás listo para conectarte.",
+            "configurationFileGenerator": "Generador de archivos de configuración",
+            "manuallyConfigure": "Si deseas configurar WireGuard manualmente y solo necesitas enviar una nueva clave pública, utiliza el formulario a continuación.",
+            "addNewPublicKey": "Añadir nueva clave pública",
+            "noWireguardKeys": "No hay claves de WireGuard añadidas manualmente para esta cuenta.",
+            "usefulLinks": "Enlaces útiles",
+            "serverList": "Lista de servidores WireGuard",
+            "faq": "Preguntas frecuentes de WireGuard",
+            "expiredTitle": "Tu cuenta ha caducado",
+            "renewAccount": " Por favor, renueva tu cuenta para gestionar las claves de WireGuard.",
+            "toYourAccount": "A tu cuenta"
+        },
+        "deviceManagementTab": {
+            "disabled": "La gestión de dispositivos está deshabilitada.",
+            "disabledDesc1": "Cuando está habilitado, puedes revisar los dispositivos conectados al servicio y cerrar la sesión de forma remota según sea necesario.",
+            "disabledDesc2": "Recomendamos guardar de forma segura los identificadores de dispositivos con cifrado para identificar y desconectar dispositivos cuando no tengas acceso a ellos.",
+            "disabledDesc3": "Aprende más sobre esta función y sus posibles implicaciones de privacidad" ,
+            "here": "aquí",
+            "enableDeviceManagement": "Activar la gestión de dispositivos",
+            "activeDevices": "Dispositivos activos",
+            "devicesAdded": "Dispositivos añadidos",
+            "logoutFromAllDevices": "Cerrar sesión en todos los dispositivos",
+            "enabled": "La gestión de dispositivos está habilitada.",
+            "enabledDesc1": "No tienes dispositivos conectados al servicio.",
+            "enabledDesc2": "en la aplicación IVPN para añadir un dispositivo. Una vez añadidos, los identificadores de tus dispositivos aparecerán en esta página.",
+            "please": "Por favor",
+            "login": "inicia sesión",
+            "increaseDeviceLimit": "Para aumentar tu límite de dispositivos a",
+            "changeYourProduct": "cambia tu producto",
+            "changeTo": "a IVPN Pro.",
+            "disableDeviceManagement": "Desactivar la gestión de dispositivos"
+        }
     }
 }
