@@ -119,7 +119,7 @@
         "ivpnAccount": "Cuenta IVPN",
         "wireguard": "Wireguard",
         "deviceManagement": "Gestión de dispositivos",
-        "accountSettings": "Configuración de la cuenta",
+        "accountSettings": "Configuración",
         "wireguardTab": {
             "title": "WireGuard",
             "description1": "Si estás utilizando las aplicaciones de IVPN para Windows, macOS, Linux, Android o iOS, las claves de WireGuard se gestionan automáticamente, simplemente selecciona el protocolo WireGuard en la configuración de la aplicación.",
