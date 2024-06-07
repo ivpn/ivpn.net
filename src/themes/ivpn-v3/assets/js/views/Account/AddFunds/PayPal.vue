@@ -123,6 +123,7 @@ export default {
             captchaImage: null,
             captchaNonce: null,
             captchaValue: "",
+            language: "en",
         };
     },
 
@@ -132,6 +133,7 @@ export default {
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     computed: {
@@ -184,7 +186,7 @@ export default {
             matomo.recordPurchase(isNewAccount, this.price.price);
 
             this.$router.push({
-                name: "payment-received-" + useI18n().locale.value,
+                name: "payment-received-" + this.language,
                 params: {
                     refid: result.payment.ref_id,
                 },

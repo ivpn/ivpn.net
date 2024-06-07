@@ -94,6 +94,7 @@ export default {
     data() {
         return {
             selectedProduct: "",
+            language: "en"
         };
     },
     computed: {
@@ -105,6 +106,7 @@ export default {
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = window.location.href.split("/")[3];
     },
     async created() {
         if (
@@ -118,7 +120,7 @@ export default {
     methods: {
         async selected(product) {
             if (this.auth.isAuthenticated && this.auth.isLegacy) {
-                this.$router.push({ name: "account-" + useI18n().locale })
+                this.$router.push({ name: "account-" + this.language })
                 return;
             }
 
@@ -126,7 +128,7 @@ export default {
 
             if (this.auth.isAuthenticated) {
                 if (this.auth.isLegacy) {
-                    this.$router.push({ name: "account-" + useI18n().locale })
+                    this.$router.push({ name: "account-" + this.language })
                     return;
                 }
 
@@ -138,7 +140,7 @@ export default {
                 }
 
                 if (!this.auth.account.is_new) {
-                    this.$router.push({ name: "account-" + useI18n().locale })
+                    this.$router.push({ name: "account-" + this.language })
                     return;
                 }
             }
@@ -148,7 +150,7 @@ export default {
             if (!wasAuthenticated) {
                 matomo.recordAccountCreated();
             }
-            this.$router.push({ name: "account-" + useI18n().locale })
+            this.$router.push({ name: "account-" + this.language })
         },
     },
 };

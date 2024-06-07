@@ -22,7 +22,8 @@ export default {
             error: {},
             braintree: null,
             formValid: false,
-            inProgress: false
+            inProgress: false,
+            language: "en"
         };
     },
     async created() {
@@ -45,6 +46,7 @@ export default {
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = window.location.href.split("/")[3];
     },
     components: {
         ProgressSpinner
@@ -99,7 +101,7 @@ export default {
                         `Your payment was successful. Service is extended until ` +
                         this.$filters.formatDate(account.active_until)
                 });
-                this.$router.push({ name: "account-" + useI18n().locale })
+                this.$router.push({ name: "account-" + this.language })
             } catch (error) {
                 this.inProgress = false;
                 this.error = error.message;
