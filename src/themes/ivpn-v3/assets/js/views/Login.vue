@@ -196,7 +196,7 @@ export default {
                 return;
             }
 
-            this.$router.push({ name: "account-" + useI18n().locale.value })
+            this.$router.push({ name: "account-" + useI18n().locale })
         },
         processError(error) {
             this.totpRequired =
