@@ -111,7 +111,7 @@ const routes = [
     },
     {
         path: '/en/account/login',
-        name: 'loginEn',
+        name: 'login-en',
         component: LoginView,
         meta: {
             title: 'IVPN Login',
@@ -120,7 +120,7 @@ const routes = [
     },
     {
         path: '/es/account/login',
-        name: 'loginEs',
+        name: 'login-es',
         component: LoginView,
         meta: {
             title: 'IVPN Login',
@@ -187,7 +187,7 @@ const routes = [
         beforeEnter: async (to, from, next) => {
             try {
                 await store.dispatch('auth/logout')
-                next({ name: 'loginEn' })
+                next({ name: 'login-en' })
             } catch (error) {
                 console.error(error)
                 next({ name: '500' })
@@ -200,7 +200,7 @@ const routes = [
         beforeEnter: async (to, from, next) => {
             try {
                 await store.dispatch('auth/logout')
-                next({ name: 'loginEs' })
+                next({ name: 'login-es' })
             } catch (error) {
                 console.error(error)
                 next({ name: '500' })
@@ -714,7 +714,7 @@ router.beforeEach(async (to, from, next) => {
         suffix = "Es";
     }
 
-    if ( (to.path.startsWith('/en/account') && to.name != 'loginEn') || (to.path.startsWith('/es/account') && to.name != 'loginEs') ){
+    if ( (to.path.startsWith('/en/account') && to.name != 'login-en') || (to.path.startsWith('/es/account') && to.name != 'login-es') ){
 
         if (!store.state.auth.isAuthenticated) {
             next({ name: 'login' + suffix })
