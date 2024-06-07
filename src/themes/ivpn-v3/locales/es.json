@@ -90,7 +90,7 @@
     },
     "account":{
         "greetings": "¡Tu cuenta ha sido creada!",
-        "greetingsText": "Por favor asegúrate de guardar tu ID de cuenta en un lugar seguro, lo usarás para conectarte a la VPN. No necesitas usar tu correo electrónico para usar nuestro servicio.",
+        "greetingsText": "Por favor asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
         "accountId":"ID de cuenta",
         "inactive": "INACTIVO",
         "active": "ACTIVO",
@@ -229,7 +229,7 @@
             "recurringFailedOn": "El pago automático recurrente falló el",
             "pleaseCheck": "Por favor, revisa o actualiza tu método de pago e inténtalo de nuevo.",
             "processingPayment": "Procesando pago",
-            "extendYourAccount": "Amplía tu cuenta"
+            "extendYourAccount": "Recarga tu cuenta"
         },
         "payments":{
             "selectPaymentMethod": "Elige un método de pago",
@@ -254,21 +254,21 @@
             "creditCard": {
                 "cardIssue": "Hubo un problema con tu tarjeta. Por favor, inténtalo de nuevo.",
                 "automaticRenewal": "Renovación automática",
-                "ccAutomaticRenewalInfo": "Las renovaciones automáticas están siempre desactivadas de forma predeterminada. Puedes habilitar esto si es más conveniente para ti. Tus datos de tarjeta serán almacenados por Braintree, sin embargo, puedes cancelar la renovación automática en cualquier momento desde tu página de cuenta.",
+                "ccAutomaticRenewalInfo": "La renovación automática está siempre desactivada de forma predeterminada. Puedes habilitarla si es más conveniente para ti. Tus datos de tarjeta serán almacenados por Braintree, sin embargo, puedes cancelar la renovación automática en cualquier momento desde tu cuenta.",
                 "makePayment": "Pagar"
             },
             "cash": {
                 "pleaseSend": "Por favor envía un sobre que contenga",
                 "or": "o",
                 "andReferenceNumber": "y el número de referencia",
-                "toTheFollowingAddress": "a la siguiente dirección. Recomendamos hacer clic en el botón de abajo para imprimir la etiqueta de dirección y el número de referencia.",
-                "printAddress": "Imprima la dirección y el número de referencia",
+                "toTheFollowingAddress": "a la dirección que se indica abajo. Recomendamos hacer clic en el botón de abajo para imprimir la etiqueta de dirección y el número de referencia",
+                "printAddress": "Imprime la dirección y el número de referencia",
                 "pleaseNote": "Por favor, ten en cuenta",
                 "ifYouDontInclude": "Si no incluyes tu número de referencia único, no podremos atribuir tu pago a tu cuenta.",
                 "weRecommend": "Recomendamos envolver los billetes en dos hojas de papel para mayor seguridad.",
                 "cashPaymentsNormally": "Los pagos en efectivo normalmente tardan de 2 a 4 semanas en ser recibidos, dependiendo de la ubicación desde la que se envió el sobre y del servicio postal. Cuando el sobre llega a la dirección en Berlín, se envía a una ubicación diferente donde nuestro equipo de facturación recoge el pago y lo acredita a tu cuenta. Por lo tanto, si estás rastreando el paquete, tardará de 1 a 2 semanas más después de que se reciba el artículo antes de que se acredite tu cuenta.",
                 "pleaseNoteCash": "Por favor, ten en cuenta que los pagos en efectivo se envían bajo tu propio riesgo. IVPN no se hace responsable de los pagos en efectivo perdidos en tránsito.",
-                "weAccept": "Aceptamos pagos en efectivo a partir de 1 año. Por favor, regresa y selecciona al menos 1 año de período."
+                "weAccept": "Aceptamos pagos en efectivo para planes IVPN a partir de 1 año. Por favor, regresa y selecciona al menos 1 año como período de facturación."
             },
             "monero": {
                 "pleaseUse": "Por favor, utiliza los siguientes detalles de pago para transferir Monero:",
@@ -278,7 +278,7 @@
                 "extendedUntil": "extendido hasta",
                 "waitingForPayment": "Esperando el pago...",
                 "information": "la información sobre el último pago reciente se mostrará aquí.",
-                "pleaseNote": "Por favor , ten en cuenta:",
+                "pleaseNote": "Por favor, ten en cuenta:",
                 "note1": "Tu cuenta se extenderá automáticamente después de que el pago sea confirmado. Esto puede tardar unos minutos.",
                 "note2": "La dirección especificada anteriormente es permanente para tu cuenta. Puedes usarla para recargar tu cuenta en cualquier momento en el futuro."
             }
