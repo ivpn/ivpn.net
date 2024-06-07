@@ -99,7 +99,7 @@ export default {
                         `Your payment was successful. Service is extended until ` +
                         this.$filters.formatDate(account.active_until)
                 });
-                this.$router.push({ name: "account-" + useI18n().locale.value })
+                this.$router.push({ name: "account-" + useI18n().locale })
             } catch (error) {
                 this.inProgress = false;
                 this.error = error.message;

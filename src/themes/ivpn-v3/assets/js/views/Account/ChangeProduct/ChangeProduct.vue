@@ -144,7 +144,7 @@ export default {
                 message: `Product has been successfully changed to ${newProductName}`
             });
 
-            this.$router.push({ name: "account-" + useI18n().locale.value })
+            this.$router.push({ name: "account-" + useI18n().locale })
         },
 
         async calculateForProduct(newProduct) {
