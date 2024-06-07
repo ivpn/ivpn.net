@@ -168,13 +168,13 @@ const routes = [
         name: 'logout',
         beforeEnter: async (to, from, next) => {
             try {
-                let suffix = "En";
+                let suffix = "en";
                 if (to.path.startsWith('/es/')) {
-                    suffix = "Es";
+                    suffix = "es";
                 }
                 console.log('logout', suffix)
                 await store.dispatch('auth/logout')
-                next({ name: 'login' + suffix})
+                next({ name: 'login-' + suffix})
             } catch (error) {
                 console.error(error)
                 next({ name: '500' })
@@ -709,15 +709,15 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
     
-    let suffix = "En";
+    let suffix = "en";
     if (to.path.startsWith('/es/')) {
-        suffix = "Es";
+        suffix = "es";
     }
 
     if ( (to.path.startsWith('/en/account') && to.name != 'login-en') || (to.path.startsWith('/es/account') && to.name != 'login-es') ){
 
         if (!store.state.auth.isAuthenticated) {
-            next({ name: 'login' + suffix })
+            next({ name: 'login-' + suffix })
             return
         }
 
@@ -730,7 +730,7 @@ router.beforeEach(async (to, from, next) => {
 
         if (!store.state.auth.isAuthenticated) {
             // Go to login page in case account could not be loaded
-            next({ name: 'login' + suffix })
+            next({ name: 'login-' + suffix })
             return
         }
 
