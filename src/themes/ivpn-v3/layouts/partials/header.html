@@ -42,11 +42,11 @@
                     <ul class='submenu__items'>
                         {{ if eq site.Language.Lang "es" }}
                         <li><a class='navigation__link' href='/es/account/'>{{ T "myAccount" }}</a></li>
-                        <li><a class='navigation__link' href='/account/logout/' 
+                        <li><a class='navigation__link' href='/es/account/logout/' 
                             onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a></li>
                         {{ else }}
                         <li><a class='navigation__link' href='/en/account/'>{{ T "myAccount" }}</a></li>
-                        <li><a class='navigation__link' href='/account/logout/' 
+                        <li><a class='navigation__link' href='/en/account/logout/' 
                             onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a></li>
                         {{ end }}
                     </ul>
@@ -95,8 +95,11 @@
                         <a class="mobile-navigation__menu-link" href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-show="auth">
-                        <a class="mobile-navigation__menu-link" href="/account/logout/" 
-                        onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a>
+                        {{ if eq site.Language.Lang "es" }}
+                        <a class="mobile-navigation__menu-link" href="/es/account/logout/" onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a>
+                        {{ else }}
+                        <a class="mobile-navigation__menu-link" href="/en/account/logout/" onclick='return confirm( `{{ T "logoutConfirmation" }}` )'>{{ T "logout" }}</a>
+                        {{ end }}
                     </li>
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-hide="auth">
                         {{ if eq site.Language.Lang "es" }}

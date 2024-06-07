@@ -168,13 +168,8 @@ const routes = [
         name: 'logout',
         beforeEnter: async (to, from, next) => {
             try {
-                let suffix = "en";
-                if (to.path.startsWith('/es/')) {
-                    suffix = "es";
-                }
-                console.log('logout', suffix)
                 await store.dispatch('auth/logout')
-                next({ name: 'login-' + suffix})
+                next({ name: 'login-en'})
             } catch (error) {
                 console.error(error)
                 next({ name: '500' })
@@ -274,6 +269,22 @@ const routes = [
     {
         path: '/account/payment/:refid/received',
         name: 'payment-received',
+        component: ThankYouView,
+        meta: {
+            title: 'IVPN Account - Payment has been received',
+        }
+    },
+    {
+        path: '/en/account/payment/:refid/received',
+        name: 'payment-received-en',
+        component: ThankYouView,
+        meta: {
+            title: 'IVPN Account - Payment has been received',
+        }
+    },
+    {
+        path: '/es/account/payment/:refid/received',
+        name: 'payment-received-es',
         component: ThankYouView,
         meta: {
             title: 'IVPN Account - Payment has been received',
