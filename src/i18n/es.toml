@@ -6,3 +6,7 @@ myAccount = "Mi cuenta"
 login = "Iniciar sesión"
 logout = "Cerrar sesión"
 logoutConfirmation = "Esto te desconectará de tu cuenta. Por favor asegúrate de haber guardado tu ID de cuenta antes de salir. ¿Quieres continuar?"
+download = "Descargar"
+viewSourceGithub = "Ver código fuente en GitHub"
+changelog = "Historial de cambios"
+

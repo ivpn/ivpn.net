@@ -22,7 +22,7 @@
                         {{ with .downloads }}
                         <ul class="cta--menu">
                             <li>
-                                <a class="cta cta--is-blue">Download</a>
+                                <a class="cta cta--is-blue">{{ T "download" }}</a>
                                 <ul>
                                     {{ range . }}
                                     <li>
@@ -34,7 +34,7 @@
                             </li>
                         </ul>
                         {{ end }}
-                        <a href="{{ .github }}" class="cta ">View source on GitHub</a>
+                        <a href="{{ .github }}" class="cta ">{{ T "viewSourceGithub" }}</a>
                     </p>
                     {{ with .checksum }}
                     <p class="checksum">
@@ -45,7 +45,7 @@
                     {{ end }}
                     {{ if isset . "changelog" }}
                     <p>
-                        <a href="{{ .changelog }}">Changelog</a>
+                        <a href="{{ .changelog }}">{{ T "changelog" }}</a>
                     </p>
                     {{ end }}
                 {{ end }}
