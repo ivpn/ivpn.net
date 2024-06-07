@@ -118,7 +118,7 @@ export default {
     methods: {
         async selected(product) {
             if (this.auth.isAuthenticated && this.auth.isLegacy) {
-                this.$router.push({ name: "account" });
+                this.$router.push({ name: "account-" + useI18n().locale.value })
                 return;
             }
 
@@ -126,7 +126,7 @@ export default {
 
             if (this.auth.isAuthenticated) {
                 if (this.auth.isLegacy) {
-                    this.$router.push({ name: "account" });
+                    this.$router.push({ name: "account-" + useI18n().locale.value })
                     return;
                 }
 
@@ -138,7 +138,7 @@ export default {
                 }
 
                 if (!this.auth.account.is_new) {
-                    this.$router.push({ name: "account" });
+                    this.$router.push({ name: "account-" + useI18n().locale.value })
                     return;
                 }
             }
@@ -148,7 +148,7 @@ export default {
             if (!wasAuthenticated) {
                 matomo.recordAccountCreated();
             }
-            this.$router.push({ name: "account" });
+            this.$router.push({ name: "account-" + useI18n().locale.value })
         },
     },
 };
