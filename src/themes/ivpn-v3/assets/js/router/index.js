@@ -95,6 +95,15 @@ const routes = [
         path: '/prices', redirect: { name: 'prices' }
     }, 
     {
+        path: '/account/login',
+        name: 'login',
+        component: LoginView,
+        meta: {
+            title: 'IVPN Login',
+        },
+        beforeEnter: notAuthenticatedGuard,
+    },
+    {
         path: '/en/account/login',
         name: 'loginEn',
         component: LoginView,
@@ -201,6 +210,22 @@ const routes = [
     {
         path: '/account/change-product',
         name: 'change-product',
+        component: ChangeProductView,
+        meta: {
+            title: 'IVPN Account - Change Product',
+        }
+    },
+    {
+        path: '/en/account/change-product',
+        name: 'change-product-en',
+        component: ChangeProductView,
+        meta: {
+            title: 'IVPN Account - Change Product',
+        }
+    },
+    {
+        path: '/es/account/change-product',
+        name: 'change-product-es',
         component: ChangeProductView,
         meta: {
             title: 'IVPN Account - Change Product',

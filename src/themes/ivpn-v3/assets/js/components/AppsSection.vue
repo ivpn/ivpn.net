@@ -1,22 +1,22 @@
 <template>
     <div class="apps-block">
         <div class="apps-buttons">
-            <a href="/apps-windows/">
+            <a :href="this.language + /apps-windows/">
                 <icon-windows />Windows
             </a>
-            <a href="/apps-macos/">
+            <a :href="this.language + /apps-macos/">
                 <icon-macos />macOS
             </a>
-            <a href="/apps-linux/">
+            <a :href="this.language + /apps-linux/">
                 <icon-linux />Linux
             </a>
-            <a href="/apps-ios/">
+            <a :href="this.language + /apps-ios/">
                 <icon-iphone />iPhone
             </a>
-            <a href="/apps-ios/">
+            <a :href="this.language + /apps-ios/">
                 <icon-ipad />iPad
             </a>
-            <a href="/apps-android/">
+            <a :href="this.language + /apps-android/">
                 <icon-android />Android
             </a>
             <a href="/setup/router/">
@@ -49,7 +49,17 @@ export default {
         IconMacos,
         IconNas,
         IconRouter
-    }
+    },
+    data() {
+        return {
+            language: "/en"
+        };
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            this.language = "/es";
+        }
+    },
 };
 </script>
 

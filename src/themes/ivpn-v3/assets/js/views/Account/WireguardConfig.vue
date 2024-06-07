@@ -5,7 +5,7 @@
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
                 <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account' }"
+                    :to="{ name: 'account-' + this.language }"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
                     >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
@@ -14,7 +14,7 @@
         </div>
         <div v-if="account.is_active">
             <div class="back-link">
-                <router-link :to="{ name: 'wireguard' }">
+                <router-link :to="{ name: 'wireguard-' + this.language }">
                     <span class="icon-back"></span> {{ $t('account.wireguardTab.backToWireguard') }}
                 </router-link>
             </div>
@@ -267,6 +267,7 @@ export default {
             antitrackerBlockLists: [],
             selectedBlockList: null,
             isDnsHardcore: false,
+            language: "en",
         };
     },
     watch: {
