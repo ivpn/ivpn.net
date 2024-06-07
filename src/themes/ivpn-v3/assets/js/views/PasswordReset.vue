@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="submit()">
         <div class="back-link">
-            <router-link :to="{name:'account-'} + this.language">
+            <router-link :to="{name:'login-' + this.language }">
                 <span class="icon-back"></span> {{ $t('resetPassword.backToLogin') }}
             </router-link>
         </div>
