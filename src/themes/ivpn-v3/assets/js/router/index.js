@@ -77,7 +77,7 @@ const routes = [
     },
     {
         path: '/en/pricing',
-        name: 'pricesEn',
+        name: 'prices-en',
         component: PricesView,
         meta: {
             title: en.pricing.meta.title,
@@ -85,7 +85,7 @@ const routes = [
     },
     {
         path: '/es/pricing',
-        name: 'pricesEs',
+        name: 'prices-es',
         component: PricesView,
         meta: {
             title: es.pricing.meta.title,
@@ -95,10 +95,10 @@ const routes = [
         path: '/prices', redirect: { name: 'prices' }
     }, 
     {
-        path: '/en/prices', redirect: { name: 'pricesEn' }
+        path: '/en/prices', redirect: { name: 'prices-en' }
     }, 
     {
-        path: '/es/prices', redirect: { name: 'pricesEs' }
+        path: '/es/prices', redirect: { name: 'prices-es' }
     }, 
     {
         path: '/account/login',
