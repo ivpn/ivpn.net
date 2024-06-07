@@ -56,9 +56,9 @@ WireGuard utiliza los siguientes protocolos y primitivas:
 * [Noise_IK handshake](https://www.wireguard.com/protocol/#key-exchange-and-data-packets) de [Noise](http://noiseprotocol.org/noise.pdf), basándose en el trabajo de [CurveCP](http://www.curvecp.org/), [NaCL](http://cr.yp.to/highspeed/naclcrypto-20090310.pdf), [KEA+](http://research.microsoft.com/en-us/um/people/klauter/security_of_kea_ake_protocol.pdf), [SIGMA](http://webee.technion.ac.il/~hugo/sigma-pdf.pdf), [FHMQV](https://eprint.iacr.org/2009/408.pdf), and [HOMQV](https://eprint.iacr.org/2010/638.pdf)
 * Todos los paquetes se envían a través de UDP.
 
-#### ¿Dónde tienes los servidores WireGuard?
+#### ¿Dónde se sitúan los servidores WireGuard?
 
-Ofrecemos servidores WireGuard en 45 ubicaciones en 32 países. Revisa la lista completa de servidores en nuestra [página de estado de servidores](/status/).
+Ofrecemos servidores WireGuard en 45 ubicaciones en 32 países. Revisa la lista completa de servidores en nuestra [página de estado de servidores](/es/status/).
 
 #### Soy usuario de IVPN. ¿Necesito registrarme en WireGuard?
 
@@ -80,7 +80,7 @@ Puertos UDP 53, 80, 443, 1194, 2049, 2050, 30587, 41893, 48574, 58237.
 
 No, cuando se utiliza la aplicación IVPN, las claves se generan automáticamente y la clave pública se carga en nuestro servidor en el momento en que selecciona el protocolo WireGuard en la aplicación.
 
-Si no estás utilizando una aplicación IVPN, también puedes generar y descargar archivos de configuración WireGuard en el [Área de cliente](/account/wireguard-config).
+Si no estás utilizando una aplicación IVPN, también puedes generar y descargar archivos de configuración WireGuard en el [Área de cliente](/es/account/wireguard-config).
 
 #### ¿Qué servidor DNS se utiliza al conectarse con WireGuard?
 
