@@ -184,7 +184,7 @@ export default {
             matomo.recordPurchase(isNewAccount, this.price.price);
 
             this.$router.push({
-                name: "payment-received",
+                name: "payment-received-" + useI18n().locale.value,
                 params: {
                     refid: result.payment.ref_id,
                 },

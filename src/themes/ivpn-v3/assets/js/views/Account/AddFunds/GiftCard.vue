@@ -82,7 +82,7 @@ export default {
                     )
             });
 
-            this.$router.push({ name: "account" });
+            this.$router.push({ name: "account-" + useI18n().locale.value })
         }
     }
 };

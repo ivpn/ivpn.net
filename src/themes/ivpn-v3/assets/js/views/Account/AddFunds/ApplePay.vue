@@ -13,6 +13,7 @@
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import Api from "@/api/api";
 import BraintreeApi from "@/api/braintree";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["price", "account"],
@@ -41,6 +42,9 @@ export default {
             console.error("Error initializing BrainTree", error);
             this.error = "Error initializing BrainTree";
         }
+    },
+    mounted(){
+        useI18n().locale.value = window.location.href.split("/")[3];
     },
     components: {
         ProgressSpinner
@@ -95,7 +99,7 @@ export default {
                         `Your payment was successful. Service is extended until ` +
                         this.$filters.formatDate(account.active_until)
                 });
-                this.$router.push({ name: "account" });
+                this.$router.push({ name: "account-" + useI18n().locale.value })
             } catch (error) {
                 this.inProgress = false;
                 this.error = error.message;
