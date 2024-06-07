@@ -160,6 +160,7 @@ export default {
             captchaPaymentMethod: null,
             captchaValue: "",
             cardFailedVerification: false,
+            language: "en",
         };
     },
     async created() {
@@ -168,6 +169,7 @@ export default {
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     components: {
@@ -233,7 +235,7 @@ export default {
 
             matomo.recordPurchase(isNewAccount, this.price.price);
 
-            this.$router.push({ name: "payment-received" + useI18n().locale,  params: {
+            this.$router.push({ name: "payment-received" + this.language,  params: {
                 refid: result.payment.ref_id                
             }});
         },

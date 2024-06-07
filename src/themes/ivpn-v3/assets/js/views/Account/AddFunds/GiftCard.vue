@@ -40,7 +40,8 @@ export default {
     },
     data() {
         return {            
-            code: "",       
+            code: "",  
+            "language": "en"   
         };
     },
     computed: {
@@ -59,6 +60,7 @@ export default {
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     methods: {
@@ -82,7 +84,7 @@ export default {
                     )
             });
 
-            this.$router.push({ name: "account-" + useI18n().locale })
+            this.$router.push({ name: "account-" + this.language })
         }
     }
 };
