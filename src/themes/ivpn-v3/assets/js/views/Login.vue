@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="forgot">
-                                <router-link :to="{name:'recover-password'}">{{ $t('login.forgotPassword') }}</router-link>
+                                <router-link :to="{name:'recover-password-' + this.language }">{{ $t('login.forgotPassword') }}</router-link>
                             </div>
                         </div>
                     </tab>
@@ -68,7 +68,7 @@
                 </button>
             </form>
             <router-link
-                :to="{name:'prices'}"
+                :to="{name:'prices-' + this.language}"
                 id="createnew"
                 class="btn btn-big btn-border"
             >{{ $t('login.createNewAccount') }}</router-link>
@@ -107,6 +107,7 @@ export default {
             loginType: "",
 
             totpValue: "",
+            language: "en"
         };
     },
     created() {
@@ -117,6 +118,7 @@ export default {
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = useI18n().locale.value;
     },
     computed: {
         ...mapState({

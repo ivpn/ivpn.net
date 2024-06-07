@@ -95,6 +95,12 @@ const routes = [
         path: '/prices', redirect: { name: 'prices' }
     }, 
     {
+        path: '/en/prices', redirect: { name: 'pricesEn' }
+    }, 
+    {
+        path: '/es/prices', redirect: { name: 'pricesEs' }
+    }, 
+    {
         path: '/account/login',
         name: 'login',
         component: LoginView,
