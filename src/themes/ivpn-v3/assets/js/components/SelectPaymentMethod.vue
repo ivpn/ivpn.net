@@ -5,7 +5,7 @@
                 <div class="plan-details" v-if="account.is_new">
                     <div class="plan-name">{{ account.product.name }}</div>
                     <div class="plan-change">
-                        <router-link :to="{ name: 'prices' }"
+                        <router-link :to="{ name: 'prices-' + this.language }"
                             >{{ $t('account.changePlan') }}</router-link
                         >
                     </div>
@@ -93,7 +93,7 @@ export default {
         return {
             price: "",
             more: false,
-            language: "en",
+            language: "en"
         };
     },
     created() {
@@ -176,7 +176,7 @@ export default {
     margin-top: 12px;
     margin-bottom: 32px;
     .pay-button {
-        width: 280px;
+        width: 220px;
         line-height: 28px;
         margin: 20px 24px 0px 0px;
         font-size: 18px;

@@ -107,6 +107,6 @@ sections:
       El uso de una VPN debe ser parte de una estrategia general para proteger tu privacidad, **pero solo si confías más en el proveedor de VPN que en tu ISP**.
     cta_label: Generar cuenta IVPN
     cta_is_blue: true
-    cta_url: /es//pricing/
+    cta_url: /es/pricing/
     cta_note: no se require email
 ---

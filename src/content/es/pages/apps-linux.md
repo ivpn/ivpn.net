@@ -266,4 +266,4 @@ Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración c
 * [WireGuard usando NetworkManager](/setup/linux-wireguard-netman/)
 * [OpenVPN usando terminal](/setup/linux-terminal/)
 * [OpenVPN usando NetworkManager](/setup/linux-netman/)
-* [IPSec con IKEv2](/setup/linux-ipsec-con-ikev2/)
+* [IPSec con IKEv2](/setup/linux-ipsec-with-ikev2/)

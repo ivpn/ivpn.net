@@ -255,7 +255,16 @@
                 "cardIssue": "There was an issue with your card. Please try again.",
                 "automaticRenewal": "Automatic renewal",
                 "ccAutomaticRenewalInfo": "Automatic renewals are always off by default. You may enable this if it is more convenient for you. Your card data will be stored by Braintree however you can cancel automatic renewal at any time from your account page.",
-                "makePayment": "Make payment"
+                "makePayment": "Make payment",
+                "cardNumber": "Card number",
+                "errorAbove": "The above error message comes directly from Braintree, our credit card payment processor. You may update your card details and/or add additional information and try again.",
+                "additionalCardInformation": "Additional card information",
+                "byDesign": "By design we always request the minimum information however some card issuers require more than just the card number. e.g. Name, Email. You may optionally submit this information to increase the chances that your payment is successful. This data is sent directly from your browser to our payment processor (braintreepayments.com) and is never seen by IVPN.",
+                "firstName": "First name",
+                "lastName": "Last name",
+                "email": "Email",
+                "streetname": "Street name",
+                "postalCode": "Postal code"
             },
             "cash": {
                 "pleaseSend": "Please send an envelope containing",
@@ -281,6 +290,11 @@
                 "pleaseNote": "Please note:",
                 "note1": "Your account will automatically be extended after the payment is confirmed. This may take a couple of minutes.",
                 "note2": "The address specified above is permanent for your account. You can use it to top up your account at any time in thefuture."
+            },
+            "voucher":{
+                "codeFrom": "Code from a Voucher issued by IVPN:",
+                "addTime": "Add Time",
+                "pleaseNote": "Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period."
             }
         }
     }

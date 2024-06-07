@@ -26,7 +26,7 @@ sections:
   - type: usps_three_column_home
     usps:
       - name: No logs
-        description: We do not log any user activity relating to the use of the VPN service, as explained in our clear [privacy policy](/privacy).
+        description: We do not log any user activity relating to the use of the VPN service, as explained in our clear [privacy policy](/en/privacy).
       - name: No customer data
         description: We're a privacy service, so we don't collect or store any personal data on sign-up, not even your email. We also
           accept cash, monero and bitcoin.
@@ -43,7 +43,7 @@ sections:
         description: We never pay for reviews and do not have an affiliate program, so
           you won’t find us on the 'top 10 best VPN' lists.
       - name: No false promises or fluff
-        description: We don’t promise anonymity or 'military grade encryption'. We publish extensive [privacy guides](/en/privacy-guides/) and educate our customers on what a VPN can realistically achieve.
+        description: We don’t promise anonymity or 'military grade encryption'. We publish extensive [privacy guides](/privacy-guides/) and educate our customers on what a VPN can realistically achieve.
       - name: Privacy advocates
         description: We donate regularly to organizations fighting for the right to
           privacy like the EFF, Open Rights Group, and the Tor project.
