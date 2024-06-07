@@ -254,8 +254,17 @@
             "creditCard": {
                 "cardIssue": "Hubo un problema con tu tarjeta. Por favor, inténtalo de nuevo.",
                 "automaticRenewal": "Renovación automática",
-                "ccAutomaticRenewalInfo": "La renovación automática está siempre desactivada de forma predeterminada. Puedes habilitarla si es más conveniente para ti. Tus datos de tarjeta serán almacenados por Braintree, sin embargo, puedes cancelar la renovación automática en cualquier momento desde tu cuenta.",
-                "makePayment": "Pagar"
+                "ccAutomaticRenewalInfo": "Las renovaciones automáticas están siempre desactivadas de forma predeterminada. Puedes habilitar esto si es más conveniente para ti. Tus datos de tarjeta serán almacenados por Braintree, sin embargo, puedes cancelar la renovación automática en cualquier momento desde tu página de cuenta.",
+                "makePayment": "Pagar",
+                "cardNumber": "Número de tarjeta",
+                "errorAbove": "El error anterior proviene directamente de Braintree, nuestro procesador de pagos con tarjeta de crédito. Puedes actualizar los detalles de tu tarjeta y/o añadir información adicional e intentarlo de nuevo.",
+                "additionalCardInformation": "Información adicional de la tarjeta",
+                "byDesign": "Siempre solicitamos la información mínima a propósito, sin embargo, algunos emisores de tarjetas requieren más que solo el número de tarjeta. Por ejemplo, nombre, correo electrónico. Opcionalmente puedes enviar esta información para aumentar las posibilidades de que tu pago sea exitoso. Estos datos se envían directamente desde tu navegador a nuestro procesador de pagos (braintreepayments.com) y nunca son vistos por IVPN.",
+                "firstName": "Nombre",
+                "lastName": "Apellidos",
+                "email": "Email",
+                "streetname": "Calle",
+                "postalCode": "Código postal"
             },
             "cash": {
                 "pleaseSend": "Por favor envía un sobre que contenga",
@@ -281,6 +290,11 @@
                 "pleaseNote": "Por favor, ten en cuenta:",
                 "note1": "Tu cuenta se extenderá automáticamente después de que el pago sea confirmado. Esto puede tardar unos minutos.",
                 "note2": "La dirección especificada anteriormente es permanente para tu cuenta. Puedes usarla para recargar tu cuenta en cualquier momento en el futuro."
+            },
+            "voucher":{
+                "codeFrom": "El código de un cupón emitido por IVPN:",
+                "addTime": "Añadir tiempo",
+                "pleaseNote": "Por favor, ten en cuenta: Los códigos de cupón se almacenan en nuestro sistema durante 30 días después de su uso para ayudar a resolver problemas de activación. La recuperación de la cuenta no es posible después de este período."
             }
         }
     }
