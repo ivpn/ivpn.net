@@ -1,15 +1,15 @@
 <template>
     <div class="popup--content">
-        <h3>Delete Account</h3>
+        <h3>{{ $t('account.accountSettingsTab.deleteAccount') }}</h3>
         <p v-if="error" style="color: red;" v-html="error.message"></p>
         <div v-if="confirmation">
             <div class="confirm" v-if="!account.is_active">
-                <p>Are you sure you want to delete your account?</p>
+                <p>{{ $t('account.accountSettingsTab.deleteAccountConfirm') }}</p>
             </div>
             <div class="confirm" v-else>
-                <p>Your account is currently active.</p>
+                <p>{{ $t('account.accountSettingsTab.accountActive') }}</p>
                 <p>
-                    To confirm permanent deletion of your account, please enter the following symbols in the field below:
+                    {{ $t('account.accountSettingsTab.deleteAccountConfirmDesc') }}
                     <span
                         style="font-weight: bold"
                     >{{ confirmation }}</span>
@@ -17,12 +17,12 @@
                 <input type="text" v-model="userConfirmation" autofocus />
             </div>
 
-            <button @click.prevent="deleteAccount" class="btn btn-solid-red" :disabled="inProgress">Delete Account</button>            
-            <a @click.prevent="closeDialog" class="btn btn-icon">Cancel</a>
+            <button @click.prevent="deleteAccount" class="btn btn-solid-red" :disabled="inProgress">{{ $t('account.accountSettingsTab.deleteAccount') }}</button>            
+            <a @click.prevent="closeDialog" class="btn btn-icon">{{ $t('account.accountSettingsTab.cancel') }}</a>
 
             <div class="note">
                 <p>
-                    <b>Warning:</b> this operation cannot be undone. Deleting your account will permanently remove data from our systems.
+                    <b>{{ $t('account.accountSettingsTab.warning') }}</b> {{ $t('account.accountSettingsTab.warningDesc') }}
                 </p>
             </div>
         </div>
@@ -37,6 +37,7 @@
 <script>
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -63,6 +64,11 @@ export default {
     },
     created() {
         this.$store.dispatch("deleteAccount/updateConfirmation");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         async deleteAccount() {

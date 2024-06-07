@@ -45,7 +45,7 @@
                             <div class="value">{{ account.product.name }}</div>
                         </div>
                         <div class="product-action" v-if="canChange">
-                            <router-link :to="{ name: 'change-product' }"
+                            <router-link :to="{ name: 'change-product-' + this.language }"
                                 >{{ $t('account.change') }}</router-link
                             >
                         </div>
@@ -96,9 +96,7 @@ import AppsSection from "@/components/AppsSection.vue";
 import FlashBox from "@/components/FlashBox.vue";
 import AccountFooter from "@/components/AccountFooter.vue";
 import SelectPaymentMethod from "@/components/SelectPaymentMethod.vue";
-
 import { mapState } from "vuex";
-
 import { useI18n } from "vue-i18n";
 
 export default {

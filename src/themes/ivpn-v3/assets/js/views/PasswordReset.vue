@@ -1,20 +1,19 @@
 <template>
     <form @submit.prevent="submit()">
         <div class="back-link">
-            <router-link :to="{name:'account'}">
-                <span class="icon-back"></span> Back to log in
+            <router-link :to="{name:'account-'} + this.language">
+                <span class="icon-back"></span> {{ $t('resetPassword.backToLogin') }}
             </router-link>
         </div>
         <div class="form" v-if="done">
-            <h1>Reset Password</h1>
+            <h1>{{ $t('resetPassword.resetPassword') }}</h1>
             <p>
-                If an account with the specified email address exists we will send an email 
-                with further instructions on how to reset your password.
+                {{ $t('resetPassword.resetPasswordDesc') }}
             </p>
         </div>
         <div class="form" v-else>
-            <h1>Reset Password</h1>
-            <p>Please enter your registered email address. You will be sent instructions on how to reset your password.</p>
+            <h1>{{ $t('resetPassword.resetPassword') }}</h1>
+            <p>{{ $t('resetPassword.enterEmail') }}</p>
             <div v-if="error" class="error">{{ error.message }}</div>
             <label for="email">Email:</label>
             <input type="text" id="email" v-model="email" autofocus />
@@ -30,7 +29,7 @@
                     width="32"
                     height="32"
                     fill="#FFFFFF"
-                />Send reset instructions
+                />{{ $t('resetPassword.sendResetInstructions') }}
             </button>
         </div>
     </form>
@@ -40,6 +39,7 @@
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: { ProgressSpinner },
@@ -47,10 +47,17 @@ export default {
         return {
             email: "",
             done: false,
+            language: "en",
         };
     },
     created() {
         this.$store.dispatch("account/clear");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
     },
     computed: {
         ...mapState({

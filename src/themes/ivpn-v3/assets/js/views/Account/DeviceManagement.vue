@@ -5,7 +5,7 @@
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
                 <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account' }"
+                    :to="{ name: 'account-' + this.language }"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
                     >To your account</router-link
@@ -80,7 +80,8 @@ export default {
     },
     data() {
         return {
-            isLight : false
+            isLight : false,
+            language: "en"
         };
     },
     beforeMount(){
@@ -93,6 +94,7 @@ export default {
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     computed: {

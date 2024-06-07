@@ -26,7 +26,7 @@
             "socks5port": "SOCKS5 Port"
         }
     },
-    "pricing":{
+    "pricing": {
         "meta": {
             "title": "IVPN Pricing - VPN subscription with anonymous registration"
         },
@@ -120,6 +120,11 @@
         "wireguard": "Wireguard",
         "deviceManagement": "Device Management",
         "accountSettings": "Account Settings",
+        "changeProductTitle": "Change Product",
+        "changeProductDesc": "You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.",
+        "activeUntil": "Active until:",
+        "willBeActiveUntil": "Will be active until:",
+        "thisDate": "This date is calculated based on the current time left on your account, and the price difference between product types. Long-term discounts are not applicable. No additional payment is required.",
         "wireguardTab": {
             "title": "WireGuard",
             "description1": "If you are using the IVPN Apps for Windows, macOS, Linux, Android or iOS, WireGuard keys are managed automatically, simply select the WireGuard protocol in the app settings.",
@@ -180,7 +185,9 @@
             "configStep4Title": "4. Download",
             "delete": "Delete",
             "ipv4Address": "IPv4 address",
-            "ipv6Address": "IPv6 address"
+            "ipv6Address": "IPv6 address",
+            "deletKeyConfirm": "Are you sure you want to delete this key?",
+            "yes": "Yes"
         },
         "deviceManagementTab": {
             "disabled": "Device management is disabled.",
@@ -229,7 +236,15 @@
             "recurringFailedOn": "Automatic recurring payment failed on ",
             "pleaseCheck": "Please check or update your payment method and try again.",
             "processingPayment": "Processing payment",
-            "extendYourAccount": "Extend your account"
+            "extendYourAccount": "Extend your account",
+            "deleteAccountConfirm": "Are you sure you want to delete your account?",
+            "accountActive": "Your account is currently active.",
+            "deleteAccountConfirmDesc": "To confirm permanent deletion of your account, please enter the following symbols in the field below:",
+            "cancel": "Cancel",
+            "warning": "Warning:",
+            "warningDesc": "this operation cannot be undone. Deleting your account will permanently remove data from our systems."
+
+
         },
         "payments":{
             "selectPaymentMethod": "Select payment method",
@@ -297,5 +312,17 @@
                 "pleaseNote": "Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period."
             }
         }
+    },
+    "resetPassword": {
+        "backToLogin": "Back to log in",
+        "resetPassword": "Reset Password",
+        "resetPasswordDesc": "If an account with the specified email address exists we will send an email with further instructions on how to reset your password.",
+        "enterEmail": "Please enter your registered email address. You will be sent instructions on how to reset your password.",
+        "sendResetInstructions": "Send reset instructions",
+        "setNewPassword": "Set New Password",
+        "setNewPasswordDesc": "Your password has been changed successfully.",
+        "newPassword": "New Password:",
+        "confirm": "Confirm:",
+        "changePassword": "Change Password"
     }
 }

@@ -8,7 +8,7 @@
         </div>
         <div class="wireguard-key__row">
             <div class="wireguard-key__public-key">
-                <label>{{ $t('account.wireguardTab.publicKeyt') }}</label>
+                <label>{{ $t('account.wireguardTab.publicKey') }}</label>
                 <div><small>{{ publicKey }}</small></div>
             </div>
             <div class="wireguard-key__ip-address">

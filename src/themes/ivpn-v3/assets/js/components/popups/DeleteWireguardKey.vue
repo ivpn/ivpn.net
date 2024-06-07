@@ -1,14 +1,15 @@
 <template>
   <div>
-    <p>Are you sure you want to delete this key?</p>
+    <p>{{ $t('account.wireguardTab.deleteKeyConfirm') }}</p>
     <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
-    <button @click.prevent="deleteKey" class="btn btn-solid">Yes</button>
-    <button @click.prevent="closeDialog" class="btn btn-border">Cancel</button>
+    <button @click.prevent="deleteKey" class="btn btn-solid">{{ $t('account.wireguardTab.yes') }}</button>
+    <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.wireguardTab.cancel') }}</button>
   </div>
 </template>
 
 <script>
   import { mapState } from "vuex";
+  import { useI18n } from "vue-i18n";
   
   export default {
     props: {
@@ -16,6 +17,11 @@
         required: true,
         type: Object,
       }
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     computed: {
         ...mapState({

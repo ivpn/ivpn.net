@@ -109,17 +109,21 @@
         "safeReferenceDescription": "La ID de referencia segura se puede utilizar al comunicarse con los ingenieros de soporte técnico por correo electrónico.",
         "deleteAccount": "Borrar cuenta",
         "changePlan": "Cambiar plan",
-        "creditCard": "T. de crédito",
+        "creditCard": "T. crédito",
         "paypal": "PayPal",
         "bitcoin": "Bitcoin",
         "monero": "Monero",
-        "cash": "En efectivo",
+        "cash": "Efectivo",
         "haveVoucher": "¿Tienes un cupón?",
         "redeem": "Canjéalo aquí",
         "ivpnAccount": "Cuenta IVPN",
         "wireguard": "Wireguard",
-        "deviceManagement": "Gestión de dispositivos",
+        "deviceManagement": "Dispositivos",
         "accountSettings": "Configuración",
+        "changeProductTitle": "Cambiar producto",
+        "changeProductDesc": "Puedes cambiar tu plan de producto en cualquier momento. Si tu cuenta está activa, cambiar el tipo de producto cambiará la cantidad de tiempo restante en tu cuenta.",
+        "activeUntil": "Activo hasta:",
+        "willBeActiveUntil": "Estará activo hasta:",
         "wireguardTab": {
             "title": "WireGuard",
             "description1": "Si estás utilizando las aplicaciones de IVPN para Windows, macOS, Linux, Android o iOS, las claves de WireGuard se gestionan automáticamente, simplemente selecciona el protocolo WireGuard en la configuración de la aplicación.",
@@ -180,7 +184,9 @@
             "configStep4Title": "4. Descargar",
             "delete": "Eliminar",
             "ipv4Address": "Dirección IPv4",
-            "ipv6Address": "Dirección IPv6"
+            "ipv6Address": "Dirección IPv6",
+            "deleteKeyConfirm": "¿Estás seguro de que deseas eliminar esta clave?",
+            "yes": "Si"
         },
         "deviceManagementTab": {
             "disabled": "La gestión de dispositivos está deshabilitada.",
@@ -229,7 +235,13 @@
             "recurringFailedOn": "El pago automático recurrente falló el",
             "pleaseCheck": "Por favor, revisa o actualiza tu método de pago e inténtalo de nuevo.",
             "processingPayment": "Procesando pago",
-            "extendYourAccount": "Recarga tu cuenta"
+            "extendYourAccount": "Recarga tu cuenta",
+            "deleteAccountConfirm": "¿Estás seguro de que deseas borrar tu cuenta?",
+            "accountActive": "Tu cuenta está actualmente activa.",
+            "deleteAccountConfirmDesc": "Para confirmar la eliminación permanente de tu cuenta, por favor introduce los siguientes símbolos en el campo de abajo:",
+            "cancel": "Cancelar",
+            "warning": "Aviso:",
+            "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas."
         },
         "payments":{
             "selectPaymentMethod": "Elige un método de pago",
@@ -297,5 +309,17 @@
                 "pleaseNote": "Por favor, ten en cuenta: Los códigos de cupón se almacenan en nuestro sistema durante 30 días después de su uso para ayudar a resolver problemas de activación. La recuperación de la cuenta no es posible después de este período."
             }
         }
+    },
+    "resetPassword": {
+        "backToLogin": "Volver a iniciar sesión",
+        "resetPassword": "Restaurar contraseña",
+        "resetPasswordDesc": "Si una cuenta con la dirección de correo electrónico especificada existe, enviaremos un correo electrónico con instrucciones adicionales sobre cómo restablecer tu contraseña.",
+        "enterEmail": "Por favor introduce tu dirección de correo electrónico registrada. Se te enviarán instrucciones sobre cómo restablecer tu contraseña.",
+        "sendResetInstructions": "Enviar instrucciones de restablecimiento",
+        "setNewPassword": "Establecer nueva contraseña",
+        "setNewPasswordDesc": "Tu contraseña ha sido cambiado con éxito.",
+        "newPassword": "Nueva contraseña:",
+        "confirm": "Confirmar:",
+        "changePassword": "Cambiar contraseña"
     }
 }

@@ -24,7 +24,7 @@
                     style="width: 16px; height: 16px; fill: #449cf8"
                 />Download invoice
             </button>
-            <router-link class="btn btn-big btn-solid" :to="{ name: 'account' }"
+            <router-link class="btn btn-big btn-solid" :to="{ name: 'account-' . this.language }"
                 >Go to your account</router-link
             >
             <div class="promo-block">
@@ -78,6 +78,7 @@ export default {
     data() {
         return {
             refId: "",
+            language: "en"
         };
     },
 

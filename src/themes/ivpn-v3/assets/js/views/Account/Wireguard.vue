@@ -5,7 +5,7 @@
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
                 <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account' }"
+                    :to="{ name: 'account-' + this.language}"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
                     >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
