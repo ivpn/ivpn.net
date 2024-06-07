@@ -137,6 +137,24 @@ const routes = [
         beforeEnter: notAuthenticatedGuard,
     },
     {
+        path: '/en/recover/password',
+        name: 'recover-password-en',
+        component: PasswordResetView,
+        meta: {
+            title: 'Recover Password',
+        },
+        beforeEnter: notAuthenticatedGuard,
+    },
+    {
+        path: '/es/recover/password',
+        name: 'recover-password-es',
+        component: PasswordResetView,
+        meta: {
+            title: 'Recover Password',
+        },
+        beforeEnter: notAuthenticatedGuard,
+    },
+    {
         path: '/recover/password/:token',
         name: 'recover-password-commit',
         component: PasswordResetCommitView,
