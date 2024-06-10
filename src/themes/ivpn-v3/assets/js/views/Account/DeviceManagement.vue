@@ -51,11 +51,11 @@
                 <section v-else>
                     <h3>{{ $t('account.deviceManagementTab.enabled') }}</h3>
                     <p>{{ $t('account.deviceManagementTab.enabledDesc1') }}</p>
-                    <p>{{ $t('account.deviceManagementTab.please') }} <a href="/account">{{ $t('account.deviceManagementTab.login') }}</a> {{ $t('account.deviceManagementTab.enabledDesc2') }}</p>
+                    <p>{{ $t('account.deviceManagementTab.please') }} <a :href="'/' + this.language + '/account'">{{ $t('account.deviceManagementTab.login') }}</a> {{ $t('account.deviceManagementTab.enabledDesc2') }}</p>
                 </section>
 
                 <section v-if="account.product.max_device == 2 && sessions && sessions.length > 0">
-                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a href="/account/change-product">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
+                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + this.language + '/account/change-product'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
                 </section>
             </section>
 

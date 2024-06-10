@@ -1,20 +1,26 @@
 <template>
     <div>
-      <p>Are you sure you want to delete this device?</p>
+      <p>{{ $t('account.deviceManagementTab.confirmDelete') }}</p>
       <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
-      <button @click.prevent="deleteDevice" class="btn btn-solid">Yes</button>
-      <button @click.prevent="closeDialog" class="btn btn-border">Cancel</button>
+      <button @click.prevent="deleteDevice" class="btn btn-solid">{{ $t('account.deviceManagementTab.yes') }}</button>
+      <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.deviceManagementTab.cancel') }}</button>
     </div>
   </template>
   
   <script>
     import { mapState } from "vuex";
+    import { useI18n } from "vue-i18n";
     
     export default {
       props: {
         data: {
           required: true,
           type: Object,
+        }
+      },
+      mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
         }
       },
       computed: {

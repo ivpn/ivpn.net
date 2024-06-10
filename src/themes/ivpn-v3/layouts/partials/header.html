@@ -27,7 +27,7 @@
 
     <ul class="navigation">
         <li class="navigation__item navigation__item--contains-logo">
-            <a href="/en">
+            <a href="/{{ .Site.Language.LanguageCode }}/">
                 <img width="84" height="29" class="navigation__logo" src="{{ site.Params.cdnUrl }}/images/logo.svg"/>
             </a>
         </li>
@@ -73,7 +73,7 @@
 
         <input type="checkbox" class="mobile-navigation__checkbox" hidden id="ham_menu">
         <div class="mobile-navigation__wrapper">
-            <a class="mobile-navigation__logo" href="/en">
+            <a class="mobile-navigation__logo" href="/{{ .Site.Language.LanguageCode }}/">
                 <img src="{{ site.Params.cdnUrl }}/images/logo.svg"/>
             </a>
             

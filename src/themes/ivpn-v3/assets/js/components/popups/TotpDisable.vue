@@ -1,9 +1,9 @@
 <template>
     <form @submit.prevent="submit()">
         <div class="popup--content">
-            <h3>Disable 2-Factor Authentication</h3>
+            <h3>{{ $t('account.popups.totp.disable.title') }}</h3>
 
-            <p>To disable two-factor authentication, please enter code from TOTP app or a backup code.</p>
+            <p>{{ $t('account.popups.totp.disable.desc') }}</p>
             <p v-if="error" class="error-message">{{ error.message }}</p>
             <input
                 id="inp_code"
@@ -15,9 +15,9 @@
             <div class="popup-buttons">
                 <button class="btn btn-big btn-solid" :disabled="!confirmation || inProgress">
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                    <span>Disable</span>
+                    <span>{{ $t('account.popups.totp.disable.disable') }}</span>
                 </button>
-                <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+                <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.popups.totp.disable.cancel') }}</a>
             </div>
         </div>
     </form>
@@ -26,6 +26,7 @@
 <script>
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -40,6 +41,11 @@ export default {
         };
     },
 
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+      }
+    },
     computed: {
         ...mapState({
             account: (state) => state.auth.account,

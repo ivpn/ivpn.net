@@ -19,8 +19,7 @@
             :price="price"
             style="margin-top: 32px"
         />
-
-        <p class='tos' v-if="account.is_new">{{ $t('account.payments.byMaking') }} <a href='/tos'>{{ $t('account.payments.termsOfService') }}</a>.</p>
+        <p class='tos' v-if="account.is_new">{{ $t('account.payments.byMaking') }} <a :href="'/' + this.language + '/tos'">{{ $t('account.payments.termsOfService') }}</a>.</p>
     </div>
 </template>
 

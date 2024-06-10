@@ -89,6 +89,30 @@
         "withEmailAndPassword": "With Email & Password"
     },
     "account":{
+        "metaTitle":{
+            "login": "IVPN Login",
+            "recover": "Recover Password",
+            "account": "IVPN Account",
+            "changeProduct": "IVPN Account - Change Product",
+            "thankYou": "IVPN Account - Thank You",
+            "paymentReceived": "IVPN Account - Payment has been received",
+            "invoicePayment": "IVPN Account - Invoice for payment",
+            "payment": "IVPN Account - Payment",
+            "authentication": "Account settings - Authentication",
+            "billing": "Account settings - Billing",
+            "delete": "Account settings - Delete account",
+            "addFundsCC": "IVPN Add Funds - Credit Card",
+            "addFundsPaypal": "IVPN Add Funds - PayPal",
+            "addFundsBitcoin": "IVPN Add Funds - Bitcoin",
+            "addFundsMonero": "IVPN Add Funds - Monero",
+            "addFundsVoucher": "IVPN Add Funds - Voucher",
+            "addFundsApplePay": "IVPN Add Funds - Apple Pay",
+            "addFundsGooglePay": "IVPN Add Funds - Google Pay",
+            "addFundsCash": "IVPN Add Funds - Cash",
+            "wireguard": "IVPN Account - WireGuard",
+            "wireguardConfig": "IVPN Account - WireGuard Configuration",
+            "deviceManagement": "IVPN Account - Device management"
+        },
         "greetings": "Your account has been created!",
         "greetingsText": "Please make sure you save your Account ID in a safe place, you will use it to connect to the VPN. You don't need to enter your email to use our service.",
         "accountId":"Account ID",
@@ -125,6 +149,66 @@
         "activeUntil": "Active until:",
         "willBeActiveUntil": "Will be active until:",
         "thisDate": "This date is calculated based on the current time left on your account, and the price difference between product types. Long-term discounts are not applicable. No additional payment is required.",
+        "changeProductSuccess": "Product has been successfully changed to ",
+        "changeBillingCycle": "Change Billing Cycle",
+        "newBillingCycle": "New billing cycle will be applied at the end of the current billing period",
+        "update": "Update",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "confirmChangeProduct": "IVPN Standard allows VPN access on 2 devices. Initiating a plan change will log you out from all active devices. You can log in to new devices afterwards. Please confirm to proceed.",
+        "disableRecurring": "Disable recurring payments",
+        "disableRecurringDesc" : "Disabling recurring payments will remove stored payment information from our system and disable automatic renewal of the service.",
+        "disablerecurringPayments": "Disable recurring payments",
+        "popups": {
+            "authentication": {
+                "title": "Authenticate using Account ID",
+                "desc": "Disabling email & password authentication will remove your email address and password hash from our systems.",
+                "important": "Important:",
+                "makeSure": "please make sure you've written down your Account ID, since you will use it to log into client area:",
+                "changeAuthentication": "Change authentication"
+            },
+            "email": {
+                "title": "Set up email & password authentication",
+                "changeYourEmail": "Change your email address",
+                "changePassword": "Change password",
+                "pleaseEnter": "Please enter your email and password you'll use to log into client area.",
+                "email": "Email:",
+                "password": "Password:",
+                "confirmPassword": "Confirm password:",
+                "setup": "Set up",
+                "update": "Update",
+                "cancel": "Cancel"
+            },
+            "paymentMethod": {
+                "title": "Set payment method",
+                "paypalAccount": "PayPal Account:",
+                "pleaseLog": "Please log into your paypal account using the button below.",
+                "setPaymentMethod": "Set Payment Method",
+                "cancel": "Cancel"
+            },
+            "totp":{
+                "disable": {
+                    "title": "Disable 2-Factor Authentication",
+                    "desc": "To disable two-factor authentication, please enter code from TOTP app or a backup code.",
+                    "disable": "Disable",
+                    "cancel": "Cancel"
+                },
+                "enable": {
+                    "title": "Enable 2-Factor Authentication",
+                    "instructions": "To enable two-factor authentication, please scan the code with a TOTP app (for example: Google Authenticator) and enter the code in the field below.",
+                    "scan": "If you cannot scan QR code, you can enter the following information manually.",
+                    "secret": "Secret:",
+                    "account": "Account:",
+                    "success": "Two-factor authentication was set up successfully.",
+                    "successDesc": "Please record the following backup codes which you will be able to use instead of TOTP in case you lost access to your device.",
+                    "backupCodes": "Backup codes:",
+                    "eachCode": "Each of these codes can be used only once.",
+                    "close": "Close",
+                    "enable": "Enable",
+                    "cancel": "Cancel"
+                }
+            }
+        },
         "wireguardTab": {
             "title": "WireGuard",
             "description1": "If you are using the IVPN Apps for Windows, macOS, Linux, Android or iOS, WireGuard keys are managed automatically, simply select the WireGuard protocol in the app settings.",
@@ -212,7 +296,12 @@
             "disablePopupDesc2": "You won’t be logged out from your devices.",
             "disablePopupDesc3": "You won’t be able to manage your devices on your dashboard.",
             "proceed": "Proceed",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "confirmLogoutAll": "Please confirm you want to log out from all devices.",
+            "confirm": "Confirm",
+            "confirmDelete": "Are you sure you want to delete this device?",
+            "yes": "Yes"
+
         },
         "accountSettingsTab": {
             "backToAccount": "Back to account",
@@ -278,7 +367,7 @@
                 "firstName": "First name",
                 "lastName": "Last name",
                 "email": "Email",
-                "streetname": "Street name",
+                "streetAddress": "Street address",
                 "postalCode": "Postal code"
             },
             "cash": {
@@ -309,7 +398,8 @@
             "voucher":{
                 "codeFrom": "Code from a Voucher issued by IVPN:",
                 "addTime": "Add Time",
-                "pleaseNote": "Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period."
+                "pleaseNote": "Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period.",
+                "successPayment": "Voucher applied successfully. Service is extended until "
             }
         }
     },

@@ -1,20 +1,26 @@
 <template>
     <div>
-      <p>IVPN Standard allows VPN access on 2 devices. We recommend reducing your active devices to 2 before switching plans. If you choose to change your plan now, you will be logged out from all active devices. You can log in to new devices afterwards. Please confirm to proceed.</p>
+      <p>{{ $t('account.confirmChangeProduct') }}</p>
       <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
-      <button @click.prevent="deleteSessions" class="btn btn-solid">Confirm</button>
-      <button @click.prevent="closeDialog" class="btn btn-border">Cancel</button>
+      <button @click.prevent="deleteSessions" class="btn btn-solid">{{ $t('account.confirm') }}</button>
+      <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.cancel') }}</button>
     </div>
   </template>
   
   <script>
     import { mapState } from "vuex";
+    import { useI18n } from "vue-i18n";
     
     export default {
       props: {
         data: {
           required: true,
           type: Object,
+        }
+      },
+      mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
         }
       },
       computed: {
