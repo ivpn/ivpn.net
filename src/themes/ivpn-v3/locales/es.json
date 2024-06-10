@@ -368,7 +368,7 @@
                 "email": "Email",
                 "streetAddress": "Dirección",
                 "postalCode": "Código postal",
-                "dateformat": "MM / AAAA"
+                "dateFormat": "MM / AAAA"
             },
             "cash": {
                 "pleaseSend": "Por favor envía un sobre que contenga",

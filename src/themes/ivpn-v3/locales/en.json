@@ -370,7 +370,7 @@
                 "email": "Email",
                 "streetAddress": "Street address",
                 "postalCode": "Postal code",
-                "dateformat": "MM / YYYY"
+                "dateFormat": "MM / YYYY"
             },
             "cash": {
                 "pleaseSend": "Please send an envelope containing",
