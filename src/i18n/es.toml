@@ -9,4 +9,5 @@ logoutConfirmation = "Esto te desconectará de tu cuenta. Por favor asegúrate d
 download = "Descargar"
 viewSourceGithub = "Ver código fuente en GitHub"
 changelog = "Historial de cambios"
+openVpnConfiguration = "Configuración de OpenVPN"
 

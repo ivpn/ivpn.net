@@ -12,7 +12,7 @@ imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png
 imageDark: /images-static/uploads/apps/linux-app-3.3.7-dark@2x.png
 contents:
 - item:
-    title: Funcioness
+    title: Funciones
     anchor: features
 - item:
     title: Paquetes
@@ -76,12 +76,12 @@ contents:
 ### Paquete base 
 
 El paquete base contiene todo lo que necesitas para conectarte a IVPN con una interfaz de línea de comandos. La aplicación IVPN GUI se proporciona como un paquete separado que puedes encontrar a continuación.  
-[Registro de cambios](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md) 
+[Historial de cambios](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md) 
 
 ### Aplicación GUI IVPN 
 
 Ten en cuenta que es necesario instalar el paquete base antes de instalar la aplicación GUI.  
-[Registro de cambios](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
+[Historial de cambios](https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md)  
 
 ## Instalar desde el repositorio IVPN {#install}
 
