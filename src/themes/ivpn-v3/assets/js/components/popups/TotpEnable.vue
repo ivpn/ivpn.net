@@ -24,7 +24,7 @@
                 <input
                     id="inp_code"
                     type="text"
-                    placeholder="Code from TOTP app"
+                    :placeholder="$t('account.popups.totp.enable.codeFrom')"
                     v-model="confirmation"
                     autofocus
                 />
