@@ -141,7 +141,7 @@ export default {
 
             this.$store.commit("setFlashMessage", {
                 type: "success",
-                message: $t('account.changeProductSuccess')  + " to " + newProductName
+                message: t('account.changeProductSuccess')  + " to " + newProductName
             });
 
             this.$router.push({ name: "account-" + this.language })
