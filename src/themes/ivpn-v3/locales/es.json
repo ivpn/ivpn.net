@@ -98,7 +98,7 @@
             "paymentReceived": "Cuenta IVPN - Pago recibido",
             "invoicePayment": "Cuenta IVPN - factura para el pago",
             "payment": "Cuenta IVPN - Pago",
-            "authentication": "Configuración de la cuenta - Autentificación",
+            "authentication": "Configuración de la cuenta - Autenticación",
             "billing": "Configuración de la cuenta - Facturación",
             "delete": "Configuración de la cuenta - Borrar cuenta",
             "addFundsCC": "IVPN Añadir fondos - Tarjeta de crédito",
@@ -165,7 +165,7 @@
                 "desc": "Desactivando la autenticación por correo electrónico y contraseña, se eliminará tu dirección de correo electrónico y el hash de la contraseña de nuestros sistemas. No podrás iniciar sesión con tu dirección de correo electrónico y contraseña. Si deseas volver a habilitar la autenticación por correo electrónico y contraseña, deberás contactar con soporte.",
                 "important": "Importante:",
                 "makeSure": "por favor asegúrate de haber anotado tu ID de cuenta, ya que la usarás para iniciar sesión en el área de cliente:",
-                "changeAuthentication": "Cambiar autentificación"
+                "changeAuthentication": "Cambiar autenticación"
             },
             "authenticationEmail": {
                 "title": "Configurar autenticación por correo electrónico y contraseña",
@@ -188,18 +188,18 @@
             },
             "totp":{
                 "disable": {
-                    "title": "Desactivar autentificación de dos factores",
-                    "desc": "Para desactivar la autentificación de dos factores, por favor introduce el código de la aplicación TOTP o un código de respaldo.",
+                    "title": "Desactivar autenticación de dos factores",
+                    "desc": "Para desactivar la autenticaciónde dos factores, por favor introduce el código de la aplicación TOTP o un código de respaldo.",
                     "disable": "Desactivar",
                     "cancel": "Cancelar"
                 },
                 "enable": {
-                    "title": "Activar autentificación de dos factores",
-                    "instructions": "Para activar la autentificaciónde dos factores, escanea el código con una aplicación TOTP (por ejemplo: Google Authenticator) e introduce el código en el campo de abajo.",
+                    "title": "Activar autenticación de dos factores",
+                    "instructions": "Para activar la autenticación de dos factores, escanea el código con una aplicación TOTP (por ejemplo: Google Authenticator) e introduce el código en el campo de abajo.",
                     "scan": "Si no puedes escanear el código QR, puedes introducir la siguiente información manualmente.",
                     "secret": "Secreto:",
                     "account": "Cuenta:",
-                    "success": "La autentificación de dos factores se ha configurado correctamente.",
+                    "success": "La autenticación de dos factores se ha configurado correctamente.",
                     "successDesc": "Por favor, guarda los siguientes códigos de respaldo que podrás usar en lugar de TOTP en caso de que pierdas el acceso a tu dispositivo.",
                     "backupCodes": "Códigos de respaldo",
                     "eachCode": "Cada uno de estos códigos solo se puede usar una vez.",
