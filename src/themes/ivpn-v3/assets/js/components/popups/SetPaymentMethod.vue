@@ -114,7 +114,6 @@
                 />{{ $t('account.popups.paymentMethod.setPaymentMethod') }}
             </button>
             <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.popups.paymentMethod.cancel') }}</a>
-            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
             </div>
         </div>
     </div>
