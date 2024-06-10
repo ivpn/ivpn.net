@@ -158,7 +158,7 @@
         "confirmChangeProduct": "IVPN Standard permite el acceso VPN en 2 dispositivos. Iniciar un cambio de plan te desconectará de todos los dispositivos activos. Puedes iniciar sesión en nuevos dispositivos después. Por favor, confirma para proceder.",
         "disableRecurring": "Desactivar pagos recurrentes",
         "disableRecurringDesc" : "Desactivando los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
-        "disablerecurringPayments": "Desactivar pagos recurrentes",
+        "disableRecurringPayments": "Desactivar pagos recurrentes",
         "popups": {
             "authentication": {
                 "title": "Autentificar usando ID de cuenta",
@@ -167,7 +167,7 @@
                 "makeSure": "por favor asegúrate de haber anotado tu ID de cuenta, ya que la usarás para iniciar sesión en el área de cliente:",
                 "changeAuthentication": "Cambiar autentificación"
             },
-            "email": {
+            "authenticationEmail": {
                 "title": "Configurar autenticación por correo electrónico y contraseña",
                 "changeYourEmail": "Cambia tu dirección de correo electrónico",
                 "changePassword": "Cambia tu contraseña",
@@ -205,7 +205,8 @@
                     "eachCode": "Cada uno de estos códigos solo se puede usar una vez.",
                     "close": "Cerrar",
                     "enable": "Activar",
-                    "cancel": "Cancelar"
+                    "cancel": "Cancelar",
+                    "codeFrom": "Código de la aplicación TOTP"
                 }
             }
 
