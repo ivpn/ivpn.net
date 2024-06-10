@@ -1,5 +1,6 @@
 ---
 title: OpenVPN Configuration
-url: /openvpn-config/
+url: /en/openvpn-config/
+aliases: ['/openvpn-config/']
 layout: openvpn-config
 ---

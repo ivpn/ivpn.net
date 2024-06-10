@@ -9,3 +9,4 @@ logoutConfirmation = "This will log you out of your account. Please make sure yo
 download = "Download"
 viewSourceGithub = "View source on GitHub"
 changelog = "Changelog"
+openVpnConfiguration = "OpenVPN Configuration"

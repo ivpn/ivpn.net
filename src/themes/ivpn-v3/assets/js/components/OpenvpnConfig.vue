@@ -1,66 +1,66 @@
 <template>
     <div class="vpn-configuration">
-        <h3>1. Select one or multiple exit servers</h3>
-        <p class="note">A separate configuration file will be generated for each location that you include.</p>
+        <h3>{{ $t('openVpnConfig.step1Title') }}</h3>
+        <p class="note">{{ $t('openVpnConfig.step1Desc') }}</p>
         <div class="tabs">
             <ul>
                 <li v-bind:class="{ 'is-active': !multihop }">
-                    <a @click.prevent="toggleMultihop" data-multihop="false" href="">Single-Hop</a>
+                    <a @click.prevent="toggleMultihop" data-multihop="false" href="">{{ $t('openVpnConfig.singleHop') }}</a>
                 </li>
                 <li v-bind:class="{ 'is-active': multihop }">
-                    <a @click.prevent="toggleMultihop" data-multihop="true" href="">Multi-Hop</a>
+                    <a @click.prevent="toggleMultihop" data-multihop="true" href="">{{ $t('openVpnConfig.multiHop') }}</a>
                 </li>
             </ul>
         </div>
-        <h4>Select exit server location</h4>
+        <h4>{{ $t('openVpnConfig.selectExitServerLocation') }}</h4>
         <div class="select">
             <select @change="selectExitCountry($event)">
-                <option value="">All countries</option>
+                <option value="">{{ $t('openVpnConfig.allCountries') }}</option>
                 <option v-for="server in filteredServers" :value="server.country_code" :key="server.country_code">{{ server.country }}</option>
             </select>
             <i></i>
         </div>
         <div class="select" v-bind:class="{ disabled: validation.exitCity }">
             <select :disabled="validation.exitCity" @change="selectExitCity($event)">
-                <option value="">All cities</option>
+                <option value="">{{ $t('openVpnConfig.allCities') }}</option>
                 <option v-for="city in exitCities" :value="city" :key="city">{{ city }}</option>
             </select>
             <i></i>
         </div>
         <div class="select" v-bind:class="{ disabled: validation.exitServer }">
             <select :disabled="validation.exitServer" @change="selectExitServer($event)">
-                <option value="">All servers</option>
+                <option value="">{{ $t('openVpnConfig.allServers') }}</option>
                 <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port" :key="server.gateway">{{ server.gateway }}</option>
             </select>
             <i></i>
         </div>
         <div v-if="multihop">
-            <h4>Select entry server location</h4>
+            <h4>{{ $t('openVpnConfig.selectEntryServerLocation') }}</h4>
             <div class="select" v-bind:class="{ disabled: validation.multihop }">
                 <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
-                    <option value="">Select country</option>
+                    <option value="">{{ $t('openVpnConfig.selectCountry') }}</option>
                     <option v-for="server in multihopServers" :value="server.country_code" :key="server.country_code">{{ server.country }}</option>
                 </select>
                 <i></i>
             </div>
             <div class="select" v-bind:class="{ disabled: validation.entryCity || validation.multihop }">
                 <select :disabled="validation.entryCity || validation.multihop" @change="selectEntryCity($event)">
-                    <option value="">Select city</option>
+                    <option value="">{{ $t('openVpnConfig.selectCity') }}</option>
                     <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
                 </select>
                 <i></i>
             </div>
             <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
                 <select :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
-                    <option value="">Select server</option>
+                    <option value="">{{ $t('openVpnConfig.selectServer') }}</option>
                     <option v-for="server in entryServers" :value="server.gateway" :key="server.gateway">{{ server.gateway }}</option>
                 </select>
                 <i></i>
             </div>
         </div>
-        <h3>2. Configuration</h3>
+        <h3>{{ $t('openVpnConfig.step2Title') }}</h3>
         <div v-if="multihop">
-            <h4>Protocol</h4>
+            <h4>{{ $t('openVpnConfig.protocol') }}</h4>
             <div class="select">
                 <select @change="selectProtocol($event)">
                     <option value="udp" :selected="query.proto == 'udp' || !query.proto">UDP</option>
@@ -70,8 +70,8 @@
             </div>
         </div>
         <div v-if="!multihop">
-            <h4>Protocol / Port</h4>
-            <p class="note">You may need to configure a custom port if you are behind a restrictive firewall.</p>
+            <h4>{{ $t('openVpnConfig.protocolPort') }}</h4>
+            <p class="note">{{ $t('openVpnConfig.step2Desc') }}</p>
             <div class="select">
                 <select @change="selectProtocolPort($event)">
                     <option value="udp-2049" :selected="(query.proto == 'udp' && query.port == 2049) || !query.port">UDP 2049</option>
@@ -87,31 +87,31 @@
                 <i></i>
             </div>
         </div>
-        <h4>Hostnames or IP addresses</h4>
+        <h4>{{ $t('openVpnConfig.hostnamesOrIp') }}</h4>
         <div class="radio">
             <div>
                 <input type="radio" name="use_ip_address" id="use_hostnames" value="false" checked @change="selectUseIPAddress($event)">
-                <label for="use_hostnames">Use hostnames</label>
+                <label for="use_hostnames">{{ $t('openVpnConfig.useHostnames') }}</label>
             </div>
             <div>
                 <input type="radio" name="use_ip_address" id="use_ip_address" value="true" @change="selectUseIPAddress($event)">
-                <label for="use_ip_address">Use IP addresses</label>
+                <label for="use_ip_address">{{ $t('openVpnConfig.useIpAddresses') }}</label>
             </div>
         </div>
-        <h4>OpenVPN version</h4>
+        <h4>{{ $t('openVpnConfig.openVpnVersion') }}</h4>
         <div class="radio">
             <div>
                 <input type="radio" name="latest_version" id="default_version" value="false" checked @change="selectVersion($event)">
-                <label for="default_version">OpenVPN all versions</label>
+                <label for="default_version">{{ $t('openVpnConfig.allVersions') }}</label>
             </div>
             <div>
                 <input type="radio" name="latest_version" id="latest_version" value="true" @change="selectVersion($event)">
                 <label for="latest_version">OpenVPN 2.5</label>
             </div>
         </div>
-        <h4>DNS settings</h4>
-        <p class="note">When AntiTracker is enabled, IVPN blocks ads, malicious websites, and third-party trackers using our private DNS servers. <a href="/antitracker/">Learn more</a> about how IVPN AntiTracker is implemented.</p>
-        <p class="note">Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook). <a href="/knowledgebase/general/antitracker-faq/">Learn more</a></p>
+        <h4>{{ $t('openVpnConfig.dnsSettings') }}</h4>
+        <p class="note">{{ $t('openVpnConfig.dnsSettingsNote1') }} <a href="antitracker/">{{ $t('openVpnConfig.learnMore') }}</a> {{ $t('openVpnConfig.aboutHow') }}</p>
+        <p class="note">{{ $t('openVpnConfig.dnsSettingsNote2') }} <a href="/knowledgebase/general/antitracker-faq/">{{ $t('openVpnConfig.learnMore') }}</a></p>
         <div class="radio">
             <div>
                 <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
@@ -123,22 +123,23 @@
             </div>
             <div>
                 <input type="radio" name="dns" id="dns_hardcore" value="hardcore" @change="selectDNS($event)">
-                <label for="dns_hardcore">AntiTracker + Hardcore mode</label>
+                <label for="dns_hardcore">AntiTracker + {{ $t('openVpnConfig.hardcoreMode') }}</label>
             </div>
             <div class="search">
                 <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
-                <label for="dns_custom">Custom DNS</label>
+                <label for="dns_custom">{{ $t('openVpnConfig.customDns') }}</label>
                 <input v-if="dnsType == 'custom'" v-model="customDNS" name="search" type="text">
-                <p v-if="dnsType == 'custom'" class="note note--input">Please enter a valid IPv4 address.</p>
+                <p v-if="dnsType == 'custom'" class="note note--input">{{ $t('openVpnConfig.enterValidIp') }}</p>
             </div>
         </div>
-        <h3>3. Download</h3>
-        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">Download zip archive</a>
+        <h3>{{ $t('openVpnConfig.step3Title') }}</h3>
+        <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" :href="apiURL + '/v5/config/ivpn-openvpn-config.zip?' + queryString.toString()" @click="handleDownload($event)">{{ $t('openVpnConfig.downloadZip') }}</a>
     </div>
 </template>
 
 <script>
 import Api from "@/api/api";
+import { useI18n } from "vue-i18n";
 
 export default {
     data() {
@@ -194,6 +195,9 @@ export default {
     mounted() {
         this.refreshServers();
         this.updateQuery();
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         async refreshServers() {
