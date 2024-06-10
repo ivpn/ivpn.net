@@ -41,7 +41,7 @@
         </div>
         <div v-if="auth.error" class="error"><p>{{ auth.error.message }}</p></div>
         <p>{{ $t('pricing.productFooterPrice') }}</p>
-        <p>{{ $t('pricing.productFooterReview') }} <a href="/pricing-teams/">{{ $t('pricing.here') }}</a>.</p>
+        <p>{{ $t('pricing.productFooterReview') }} <a :href="'/' + this.language + '/pricing-teams/'">{{ $t('pricing.here') }}</a>.</p>
         <section>
             <h2>{{ $t('pricing.featuresTitle') }}</h2>
             <ul>

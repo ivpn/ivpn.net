@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="submit()">
         <div class="popup--content">
-            <h3>Enable 2-Factor Authentication</h3>
+            <h3>{{ $t('account.popups.totp.enable.title') }}</h3>
             <div class="popup--initializing" v-if="!initialized">
                 <progress-spinner v-if="inProgress" width="32" height="32" fill="#398fe6" />
                 <p v-if="error" class="error-message">{{ error.message }}</p>
@@ -11,13 +11,12 @@
                     <div class="code" v-html="qrCode"></div>
                     <div class="instructions">
                         <p>
-                            To enable two-factor authentication, please scan the code with a
-                            TOTP app (for example: Google Authenticator) and enter the code in the field below.
+                            {{ $t('account.popups.totp.enable.instructions') }}
                         </p>
                         <p
                             class="secret"
-                        >If you cannot scan QR code, you can enter the following information manually. 
-                        Secret: <span class='npbr'>{{ secret }}</span>, Account: <span class='nobr'>{{ account.id }}</span></p>
+                        >{{ $t('account.popups.totp.enable.scan') }}
+                        {{ $t('account.popups.totp.enable.secret') }} <span class='npbr'>{{ secret }}</span>, {{ $t('account.popups.totp.enable.account') }} <span class='nobr'>{{ account.id }}</span></p>
                     </div>
                 </div>
 
@@ -31,20 +30,20 @@
                 />
             </div>
             <div class="popup--data" v-if="initialized && backup">
-                <p>Two-factor authentication was set up successfully.</p>
+                <p>{{ $t('account.popups.totp.enable.success') }}</p>
                 <p>
-                    Please record the following backup codes which you will be able to use instead of TOTP in case you lost access to your device.
+                    {{ $t('account.popups.totp.enable.successDesc') }}
                 </p>
                 <p class='backup-codes'>
-                    <b>Backup codes:</b> {{ backup }}
+                    <b>{{ $t('account.popups.totp.enable.backupCodes') }}</b> {{ backup }}
                 </p>
-                <p>Each of these codes can be used only once.</p>
+                <p>{{ $t('account.popups.totp.enable.eachCode') }}</p>
 
                 <a
                     @click.prevent="closeDialog()"
                     class="btn btn-border"
                     style="margin: 1em 0em;"
-                >Close</a>
+                >{{ $t('account.popups.totp.enable.close') }}</a>
             </div>
             <div class="popup-buttons" v-if="!backup">
                 <button
@@ -57,9 +56,9 @@
                         height="32"
                         fill="#FFFFFF"
                     />
-                    <span>Enable</span>
+                    <span>{{ $t('account.popups.totp.enable.enable') }}</span>
                 </button>
-                <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+                <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.popups.totp.enable.cancel') }}</a>
             </div>
         </div>
     </form>
@@ -69,6 +68,7 @@
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import qrcode from "qrcode-generator";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -111,6 +111,11 @@ export default {
         qr.addData(resp.uri);
         qr.make();
         this.qrCode = qr.createSvgTag(2);
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+      }
     },
 
     methods: {

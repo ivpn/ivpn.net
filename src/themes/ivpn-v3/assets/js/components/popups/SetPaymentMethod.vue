@@ -1,6 +1,6 @@
 <template>
     <div class="update-pm">
-        <h3>Set payment method</h3>
+        <h3>{{ $t('account.popups.paymentMethod.title') }}</h3>
         <div class="init-spinner" v-if="braintree == null">
             <div v-if="error" class="error-message">{{ error.message }}</div>
             <progress-spinner v-if="inProgress" id="progress-spinner" width="48" height="48" />
@@ -19,11 +19,11 @@
                     <p class='error' v-if="error"> {{ error.message }}</p>
                     <div v-if="paypalPayload">
                         <p style='margin: 1em'>
-                            <b>PayPal Account:</b><br> {{ paypalPayload.details.email }}
+                            <b>{{ $t('account.popups.paymentMethod.paypalAccount') }}</b><br> {{ paypalPayload.details.email }}
                         </p>
                     </div>
                     <div v-else>
-                        <p>Please log into your paypal account using the button below.</p>
+                        <p>{{ $t('account.popups.paymentMethod.pleaseLog') }}</p>
                         <braintree-paypal
                             :braintree="braintree"
                             :error="error"
@@ -45,9 +45,9 @@
                     width="32"
                     height="32"
                     fill="#FFFFFF"
-                />Set Payment Method
+                />{{ $t('account.popups.paymentMethod.setPaymentMethod') }}
             </button>
-            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.popups.paymentMethod.cancel') }}</a>
         </div>
     </div>
 </template>
@@ -59,6 +59,7 @@ import BraintreePaypal from '@/components/BraintreePaypal.vue'
 import Tabs from '@/components/Tabs.vue'
 import Tab from '@/components/Tab.vue'
 import { mapState } from 'vuex'
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -108,6 +109,11 @@ export default {
     },
     created() {
         this.$store.dispatch('braintree/init')
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+      }
     },
     methods: {
         async setPaymentMethod() {

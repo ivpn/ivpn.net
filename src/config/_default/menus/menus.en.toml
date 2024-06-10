@@ -50,7 +50,7 @@
   [[footercolone]]
     identifier = "generate-account"
     name = "Generate Account"
-    url = "/signup/"
+    url = "/en/signup/"
     weight = 5
 
   [[footercolone]]

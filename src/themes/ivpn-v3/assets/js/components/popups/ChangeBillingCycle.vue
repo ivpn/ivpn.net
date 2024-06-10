@@ -1,6 +1,6 @@
 <template>
     <div class="update-billing-cycle">
-        <h3>Change Billing Cycle</h3>
+        <h3>{{ $t('account.changeBillingCycle') }}</h3>
 
         <p v-if="error" style="color: red;" v-html="error.message"></p>
 
@@ -23,7 +23,7 @@
 
         <p
             style="margin-top: 2em;"
-        >New billing cycle will be applied at the end of the current billing period ({{ $filters.formatPaymentDate(account.active_until) }}).</p>
+        >{{ $t('account.newBillingCycle') }} ({{ $filters.formatPaymentDate(account.active_until) }}).</p>
 
         <div class="popup-buttons">
             <button
@@ -31,9 +31,9 @@
                 @click.prevent="updateBillingCycle()"
                 :disabled="inProgress"
             >
-                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />Update
+                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />{{ $t('account.update') }}
             </button>
-            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.cancel') }}</a>
         </div>
     </div>
 </template>
@@ -41,6 +41,7 @@
 <script>
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -83,6 +84,11 @@ export default {
     created() {
         this.billingCycle = this.account.subscription.billing_cycle;
         this.$store.dispatch("payments/clear");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         async updateBillingCycle() {

@@ -1,20 +1,19 @@
 <template>
     <div class="message-box">
 
-        <h3>Disable recurring payments</h3>
+        <h3>{{ $t('account.disableRecurring') }}</h3>
 
         <p v-if="error" style="color: red;" v-html="error.message"></p>
 
         <p>
-            Disabling recurring payments will remove stored payment information from our system
-            and disable automatic renewal of the service.
+            {{ $t('account.disableRecurringDesc') }}
         </p>
 
         <div class="popup-buttons">
             <button class="btn btn-big btn-solid" @click.prevent="disableRecurringPayments()" :disabled="inProgress">
-                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" /> Disable recurring payments
+                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" /> {{ $t('account.disableRecurringPayments') }}
             </button>
-            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.cancel') }}</a>
         </div>
     </div>
 </template>
@@ -22,6 +21,7 @@
 <script>
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -40,6 +40,11 @@ export default {
     },
     async created() {
         await this.$store.dispatch("payments/clear");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         async disableRecurringPayments() {

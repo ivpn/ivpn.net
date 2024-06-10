@@ -105,7 +105,7 @@ const routes = [
         name: 'login',
         component: LoginView,
         meta: {
-            title: 'IVPN Login',
+            title: en.account.metaTitle.login,
         },
         beforeEnter: notAuthenticatedGuard,
     },
@@ -114,7 +114,7 @@ const routes = [
         name: 'login-en',
         component: LoginView,
         meta: {
-            title: 'IVPN Login',
+            title: en.account.metaTitle.login,
         },
         beforeEnter: notAuthenticatedGuard,
     },
@@ -123,7 +123,7 @@ const routes = [
         name: 'login-es',
         component: LoginView,
         meta: {
-            title: 'IVPN Login',
+            title: es.account.metaTitle.login,
         },
         beforeEnter: notAuthenticatedGuard,
     },
@@ -132,7 +132,7 @@ const routes = [
         name: 'recover-password',
         component: PasswordResetView,
         meta: {
-            title: 'Recover Password',
+            title: en.account.metaTitle.recover,
         },
         beforeEnter: notAuthenticatedGuard,
     },
@@ -141,7 +141,7 @@ const routes = [
         name: 'recover-password-en',
         component: PasswordResetView,
         meta: {
-            title: 'Recover Password',
+            title: en.account.metaTitle.recover,
         },
         beforeEnter: notAuthenticatedGuard,
     },
@@ -150,7 +150,7 @@ const routes = [
         name: 'recover-password-es',
         component: PasswordResetView,
         meta: {
-            title: 'Recover Password',
+            title: es.account.metaTitle.recover,
         },
         beforeEnter: notAuthenticatedGuard,
     },
@@ -159,7 +159,7 @@ const routes = [
         name: 'recover-password-commit',
         component: PasswordResetCommitView,
         meta: {
-            title: 'Recover Password',
+            title: en.account.metaTitle.recover,
         },
         beforeEnter: notAuthenticatedGuard,
     },
@@ -207,7 +207,7 @@ const routes = [
         name: 'account',
         component: AccountView,
         meta: {
-            title: 'IVPN Account',
+            title: en.account.metaTitle.account,
         },
     },
     {
@@ -215,7 +215,7 @@ const routes = [
         name: 'account-en',
         component: AccountView,
         meta: {
-            title: 'IVPN Account',
+            title: en.account.metaTitle.account,
         },
     },
     {
@@ -223,7 +223,7 @@ const routes = [
         name: 'account-es',
         component: AccountView,
         meta: {
-            title: 'IVPN Account',
+            title: es.account.metaTitle.account,
         },
     },
     {
@@ -231,7 +231,7 @@ const routes = [
         name: 'change-product',
         component: ChangeProductView,
         meta: {
-            title: 'IVPN Account - Change Product',
+            title: en.account.metaTitle.changeProduct,
         }
     },
     {
@@ -239,7 +239,7 @@ const routes = [
         name: 'change-product-en',
         component: ChangeProductView,
         meta: {
-            title: 'IVPN Account - Change Product',
+            title: en.account.metaTitle.changeProduct,
         }
     },
     {
@@ -247,7 +247,7 @@ const routes = [
         name: 'change-product-es',
         component: ChangeProductView,
         meta: {
-            title: 'IVPN Account - Change Product',
+            title: es.account.metaTitle.changeProduct,
         }
     },
     {
@@ -255,7 +255,7 @@ const routes = [
         name: 'btc-thank-you',
         component: ThankYouBTCView,
         meta: {
-            title: 'IVPN Account - Thank You',
+            title: en.account.metaTitle.thankYou,
         }
     },
     {
@@ -263,7 +263,7 @@ const routes = [
         name: 'btc-thank-you-light',
         component: ThankYouLightView,
         meta: {
-            title: 'IVPN Account - Thank You',
+            title: en.account.metaTitle.thankYou,
         }
     },
     {
@@ -271,7 +271,7 @@ const routes = [
         name: 'payment-received',
         component: ThankYouView,
         meta: {
-            title: 'IVPN Account - Payment has been received',
+            title: en.account.metaTitle.paymentReceived,
         }
     },
     {
@@ -279,7 +279,7 @@ const routes = [
         name: 'payment-received-en',
         component: ThankYouView,
         meta: {
-            title: 'IVPN Account - Payment has been received',
+            title: en.account.metaTitle.paymentReceived,
         }
     },
     {
@@ -287,7 +287,7 @@ const routes = [
         name: 'payment-received-es',
         component: ThankYouView,
         meta: {
-            title: 'IVPN Account - Payment has been received',
+            title: es.account.metaTitle.paymentReceived,
         }
     },
     {
@@ -295,7 +295,7 @@ const routes = [
         name: 'payment-invoice',
         component: InvoiceView,
         meta: {
-            title: 'IVPN Account - Invoice for payment',
+            title: en.account.metaTitle.invoicePayment,
         }
     },
     {
@@ -303,7 +303,7 @@ const routes = [
         component: PaymentView,
         name: 'payment',
         meta: {
-            title: 'IVPN Account - Payment',
+            title: en.account.metaTitle.payment,
         }
     }, 
     {
@@ -311,7 +311,7 @@ const routes = [
         component: PaymentView,
         name: 'payment-en',
         meta: {
-            title: 'IVPN Account - Payment',
+            title: en.account.metaTitle.payment,
         }
     }, 
     {
@@ -319,7 +319,7 @@ const routes = [
         component: PaymentView,
         name: 'payment-es',
         meta: {
-            title: 'IVPN Account - Payment',
+            title: es.account.metaTitle.payment,
         }
     }, 
     {
@@ -331,7 +331,7 @@ const routes = [
                 name: 'settings-main',
                 component: SettingsAuthentication,
                 meta: {
-                    title: 'Account settings - Authentication',
+                    title: en.account.metaTitle.authentication,
                 }
             },
             {
@@ -339,7 +339,7 @@ const routes = [
                 name: 'settings-main-en',
                 component: SettingsAuthentication,
                 meta: {
-                    title: 'Account settings - Authentication',
+                    title: en.account.metaTitle.authentication,
                 }
             },
             {
@@ -347,7 +347,7 @@ const routes = [
                 name: 'settings-billing',
                 component: SettingsBilling,
                 meta: {
-                    title: 'Account settings - Billing',
+                    title: en.account.metaTitle.billing,
                 }
             },
             {
@@ -355,7 +355,7 @@ const routes = [
                 name: 'settings-delete',
                 component: SettingsDelete,
                 meta: {
-                    title: 'Account settings - Delete account',
+                    title: en.account.metaTitle.delete,
                 }
             },
         ],
@@ -369,7 +369,7 @@ const routes = [
                 name: 'settings-main-en',
                 component: SettingsAuthentication,
                 meta: {
-                    title: 'Account settings - Authentication',
+                    title: en.account.metaTitle.authentication,
                 }
             },
             {
@@ -377,7 +377,7 @@ const routes = [
                 name: 'settings-main-en',
                 component: SettingsAuthentication,
                 meta: {
-                    title: 'Account settings - Authentication',
+                    title: en.account.metaTitle.authentication,
                 }
             },
             {
@@ -385,7 +385,7 @@ const routes = [
                 name: 'settings-billing-en',
                 component: SettingsBilling,
                 meta: {
-                    title: 'Account settings - Billing',
+                    title: en.account.metaTitle.billing,
                 }
             },
             {
@@ -393,7 +393,7 @@ const routes = [
                 name: 'settings-delete-en',
                 component: SettingsDelete,
                 meta: {
-                    title: 'Account settings - Delete account',
+                    title: en.account.metaTitle.delete,
                 }
             },
         ],
@@ -407,7 +407,7 @@ const routes = [
                 name: 'settings-main-es',
                 component: SettingsAuthentication,
                 meta: {
-                    title: 'Account settings - Authentication',
+                    title: es.account.metaTitle.authentication,
                 }
             },
             {
@@ -415,7 +415,7 @@ const routes = [
                 name: 'settings-main-es',
                 component: SettingsAuthentication,
                 meta: {
-                    title: 'Account settings - Authentication',
+                    title: es.account.metaTitle.authentication,
                 }
             },
             {
@@ -423,7 +423,7 @@ const routes = [
                 name: 'settings-billing-es',
                 component: SettingsBilling,
                 meta: {
-                    title: 'Account settings - Billing',
+                    title: es.account.metaTitle.billing,
                 }
             },
             {
@@ -431,7 +431,7 @@ const routes = [
                 name: 'settings-delete-es',
                 component: SettingsDelete,
                 meta: {
-                    title: 'Account settings - Delete account',
+                    title: es.account.metaTitle.delete,
                 }
             },
         ],
@@ -444,50 +444,50 @@ const routes = [
                 path: 'cc', name: 'add-funds-cc',
                 component: AddFundsCC,
                 meta: {
-                    title: 'IVPN Add Funds - Credit Card',
+                    title: en.account.metaTitle.addFundsCC,
                 }
             },
             {
                 path: 'paypal', name: 'add-funds-paypal',
                 component: AddFundsPayPal,
                 meta: {
-                    title: 'IVPN Add Funds - PayPal',
+                    title: en.account.metaTitle.addFundsPaypal,
                 },
             }, {
                 path: 'bitcoin', name: 'add-funds-bitcoin',
                 component: AddFundsBitcoin,
                 meta: {
-                    title: 'IVPN Add Funds - Bitcoin',
+                    title: en.account.metaTitle.addFundsBitcoin,
                 }
             }, {
                 path: 'monero', name: 'add-funds-monero',
                 component: AddFundsMonero,
                 meta: {
-                    title: 'IVPN Add Funds - Monero',
+                    title: en.account.metaTitle.addFundsMonero,
                 }
             }, {
                 path: 'voucher', name: 'add-funds-voucher',
                 component: AddFundsGiftCard,
                 meta: {
-                    title: 'IVPN Add Funds - Voucher',
+                    title: en.account.metaTitle.addFundsVoucher,
                 }
             }, {
                 path: 'applepay', name: 'add-funds-apple',
                 component: ApplePayView,
                 meta: {
-                    title: 'IVPN Add Funds - ApplePay',
+                    title: en.account.metaTitle.addFundsApplePay,
                 }
             }, {
                 path: 'googlepay', name: 'add-funds-google',
                 component: GooglePayView,
                 meta: {
-                    title: 'IVPN Add Funds - GooglePay',
+                    title: en.account.metaTitle.addFundsGooglePay,
                 }
             }, {
                 path: 'cash', name: 'add-funds-cash',
                 component: AddFundsCash,
                 meta: {
-                    title: 'IVPN Add Funds - Cash',
+                    title: en.account.metaTitle.addFundsCash,
                 }
             }
         ],
@@ -501,50 +501,50 @@ const routes = [
                 path: 'cc', name: 'add-funds-cc-en',
                 component: AddFundsCC,
                 meta: {
-                    title: 'IVPN Add Funds - Credit Card',
+                    title: en.account.metaTitle.addFundsCC,
                 }
             },
             {
                 path: 'paypal', name: 'add-funds-paypal-en',
                 component: AddFundsPayPal,
                 meta: {
-                    title: 'IVPN Add Funds - PayPal',
+                    title: en.account.metaTitle.addFundsPaypal,
                 },
             }, {
                 path: 'bitcoin', name: 'add-funds-bitcoin-en',
                 component: AddFundsBitcoin,
                 meta: {
-                    title: 'IVPN Add Funds - Bitcoin',
+                    title: en.account.metaTitle.addFundsBitcoin,
                 }
             }, {
                 path: 'monero', name: 'add-funds-monero-en',
                 component: AddFundsMonero,
                 meta: {
-                    title: 'IVPN Add Funds - Monero',
+                    title: en.account.metaTitle.addFundsMonero,
                 }
             }, {
                 path: 'voucher', name: 'add-funds-voucher-en',
                 component: AddFundsGiftCard,
                 meta: {
-                    title: 'IVPN Add Funds - Voucher',
+                    title: en.account.metaTitle.addFundsVoucher,
                 }
             }, {
                 path: 'applepay', name: 'add-funds-apple-en',
                 component: ApplePayView,
                 meta: {
-                    title: 'IVPN Add Funds - ApplePay',
+                    title: en.account.metaTitle.addFundsApplePay,
                 }
             }, {
                 path: 'googlepay', name: 'add-funds-google-en',
                 component: GooglePayView,
                 meta: {
-                    title: 'IVPN Add Funds - GooglePay',
+                    title: en.account.metaTitle.addFundsGooglePay,
                 }
             }, {
                 path: 'cash', name: 'add-funds-cash-en',
                 component: AddFundsCash,
                 meta: {
-                    title: 'IVPN Add Funds - Cash',
+                    title: en.account.metaTitle.addFundsCash,
                 }
             }
         ],
@@ -558,50 +558,50 @@ const routes = [
                 path: 'cc', name: 'add-funds-cc-es',
                 component: AddFundsCC,
                 meta: {
-                    title: 'IVPN Add Funds - Credit Card',
+                    title: es.account.metaTitle.addFundsCC,
                 }
             },
             {
                 path: 'paypal', name: 'add-funds-paypal-es',
                 component: AddFundsPayPal,
                 meta: {
-                    title: 'IVPN Add Funds - PayPal',
+                    title: es.account.metaTitle.addFundsPaypal,
                 },
             }, {
                 path: 'bitcoin', name: 'add-funds-bitcoin-es',
                 component: AddFundsBitcoin,
                 meta: {
-                    title: 'IVPN Add Funds - Bitcoin',
+                    title: es.account.metaTitle.addFundsBitcoin,
                 }
             }, {
                 path: 'monero', name: 'add-funds-monero-es',
                 component: AddFundsMonero,
                 meta: {
-                    title: 'IVPN Add Funds - Monero',
+                    title: es.account.metaTitle.addFundsMonero,
                 }
             }, {
                 path: 'voucher', name: 'add-funds-voucher-es',
                 component: AddFundsGiftCard,
                 meta: {
-                    title: 'IVPN Add Funds - Voucher',
+                    title: es.account.metaTitle.addFundsVoucher,
                 }
             }, {
                 path: 'applepay', name: 'add-funds-apple-es',
                 component: ApplePayView,
                 meta: {
-                    title: 'IVPN Add Funds - ApplePay',
+                    title: es.account.metaTitle.addFundsApplePay,
                 }
             }, {
                 path: 'googlepay', name: 'add-funds-google-es',
                 component: GooglePayView,
                 meta: {
-                    title: 'IVPN Add Funds - GooglePay',
+                    title: es.account.metaTitle.addFundsGooglePay,
                 }
             }, {
                 path: 'cash', name: 'add-funds-cash-es',
                 component: AddFundsCash,
                 meta: {
-                    title: 'IVPN Add Funds - Cash',
+                    title: es.account.metaTitle.addFundsCash,
                 }
             }
         ],
@@ -612,7 +612,7 @@ const routes = [
         name: 'account-change-product',
         component: ChangeProductView,
         meta: {
-            title: 'IVPN Change Product',
+            title: en.account.metaTitle.changeProduct,
         }
     },
     {
@@ -620,7 +620,7 @@ const routes = [
         name: 'wireguard',
         component: WireguardView,
         meta: {
-            title: 'IVPN Account - WireGuard',
+            title: en.account.metaTitle.wireguard,
         }
     },
     {
@@ -628,7 +628,7 @@ const routes = [
         name: 'wireguard-en',
         component: WireguardView,
         meta: {
-            title: 'IVPN Account - WireGuard',
+            title: en.account.metaTitle.wireguard,
         }
     },
     {
@@ -636,7 +636,7 @@ const routes = [
         name: 'wireguard-es',
         component: WireguardView,
         meta: {
-            title: 'IVPN Account - WireGuard',
+            title: es.account.metaTitle.wireguard,
         }
     },
     {
@@ -644,7 +644,7 @@ const routes = [
         name: 'wireguard-config',
         component: WireguardConfigView,
         meta: {
-            title: 'IVPN Account - WireGuard Configuration',
+            title: en.account.metaTitle.wireguardConfig,
         }
     },
     {
@@ -652,7 +652,7 @@ const routes = [
         name: 'wireguard-config-en',
         component: WireguardConfigView,
         meta: {
-            title: 'IVPN Account - WireGuard Configuration',
+            title: en.account.metaTitle.wireguardConfig,
         }
     },
     {
@@ -660,7 +660,7 @@ const routes = [
         name: 'wireguard-config-es',
         component: WireguardConfigView,
         meta: {
-            title: 'IVPN Account - WireGuard Configuration',
+            title: es.account.metaTitle.wireguardConfig,
         }
     },
     {
@@ -688,7 +688,7 @@ const routes = [
         name: 'device-management',
         component: DeviceManagementView,
         meta: {
-            title: 'IVPN Account - Device management',
+            title: en.account.metaTitle.deviceManagement,
         }
     },
     {
@@ -696,7 +696,7 @@ const routes = [
         name: 'device-management-en',
         component: DeviceManagementView,
         meta: {
-            title: 'IVPN Account - Device management',
+            title: en.account.metaTitle.deviceManagement,
         }
     },
     {
@@ -704,7 +704,7 @@ const routes = [
         name: 'device-management-es',
         component: DeviceManagementView,
         meta: {
-            title: 'IVPN Account - Device management',
+            title: es.account.metaTitle.deviceManagement,
         }
     },
 ]

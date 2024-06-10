@@ -59,12 +59,12 @@
                 <input class="cc-field" id="cc-email" v-model="email" placeholder="Email"/>
             </div>
             <div class="card-line">
-                <input class="cc-field" id="cc-name" v-model="name" placeholder="{{ $t('account.payments.creditCard.firstName') }}"/>
-                <input class="cc-field" id="cc-surname" v-model="surname" placeholder="{{ $t('account.payments.creditCard.lastName') }}"/>
+                <input class="cc-field" id="cc-name" v-model="name" :placeholder="$t('account.payments.creditCard.firstName')"/>
+                <input class="cc-field" id="cc-surname" v-model="surname" :placeholder="$t('account.payments.creditCard.lastName')"/>
             </div>
             <div class="card-line">
-                <input class="cc-field" id="cc-address" v-model="address" placeholder="{{ $t('account.payments.creditCard.streetAddress') }}"/>
-                <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="{{ $t('account.payments.creditCard.postalCode') }}"/>
+                <input class="cc-field" id="cc-address" v-model="address" :placeholder="$t('account.payments.creditCard.streetAddress')"/>
+                <input class="cc-field" id="cc-postal-code" v-model="postalCode" :placeholder="$t('account.payments.creditCard.postalCode')"/>
             </div>
         </div>
     </div>

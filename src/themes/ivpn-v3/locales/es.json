@@ -89,6 +89,30 @@
         "withEmailAndPassword": "Con email y contraseña"
     },
     "account":{
+        "metaTitle":{
+            "login": "IVPN Iniciar sesión",
+            "recover": "Recuperar contraseña",
+            "account": "Cuenta IVPN",
+            "changeProduct": "Cuenta IVPN - Cambiar producto",
+            "thankYou": "Cuenta IVPN - Gracias",
+            "paymentReceived": "Cuenta IVPN - Pago recibido",
+            "invoicePayment": "Cuenta IVPN - factura para el pago",
+            "payment": "Cuenta IVPN - Pago",
+            "authentication": "Configuración de la cuenta - Autentificación",
+            "billing": "Configuración de la cuenta - Facturación",
+            "delete": "Configuración de la cuenta - Borrar cuenta",
+            "addFundsCC": "IVPN Añadir fondos - Tarjeta de crédito",
+            "addFundsPaypal": "IVPN Añadir fondos - PayPal",
+            "addFundsBitcoin": "IVPN Añadir fondos - Bitcoin",
+            "addFundsMonero": "IVPN Añadir fondos - Monero",
+            "addFundsVoucher": "IVPN Añadir fondos - Cupón",
+            "addFundsApplePay": "IVPN Añadir fondos - Apple Pay",
+            "addFundsGooglePay": "IVPN Añadir fondos - Google Pay",
+            "addFundsCash": "IVPN Añadir fondos - Cash",
+            "wireguard": "Cuenta IVPN - WireGuard",
+            "wireguardConfig": "Cuenta IVPN - Configuración de WireGuard",
+            "deviceManagement": "Cuenta IVPN - Administración de dispositivos"
+        },
         "greetings": "¡Tu cuenta ha sido creada!",
         "greetingsText": "Por favor asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
         "accountId":"ID de cuenta",
@@ -124,6 +148,68 @@
         "changeProductDesc": "Puedes cambiar tu plan de producto en cualquier momento. Si tu cuenta está activa, cambiar el tipo de producto cambiará la cantidad de tiempo restante en tu cuenta.",
         "activeUntil": "Activo hasta:",
         "willBeActiveUntil": "Estará activo hasta:",
+        "thisDate": "Esta fecha se calcula en función del tiempo restante en tu cuenta y la diferencia de precio entre los tipos de producto. Los descuentos a largo plazo no son aplicables. No se requiere un pago adicional.",
+        "changeProductSuccess": "El producto se ha cambiado correctamente a",
+        "changeBillingCycle": "Cambiar ciclo de facturación",
+        "newBillingCycle": "El nuevo ciclo de facturación se aplicará al final del período de facturación actual",
+        "update": "Actualizar",
+        "cancel": "Cancelar",
+        "confirm": "Confirm",
+        "confirmChangeProduct": "IVPN Standard permite el acceso VPN en 2 dispositivos. Iniciar un cambio de plan te desconectará de todos los dispositivos activos. Puedes iniciar sesión en nuevos dispositivos después. Por favor, confirma para proceder.",
+        "disableRecurring": "Desactivar pagos recurrentes",
+        "disableRecurringDesc" : "Desactivando los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
+        "disablerecurringPayments": "Desactivar pagos recurrentes",
+        "popups": {
+            "authentication": {
+                "title": "Autentificar usando ID de cuenta",
+                "desc": "Desactivando la autenticación por correo electrónico y contraseña, se eliminará tu dirección de correo electrónico y el hash de la contraseña de nuestros sistemas. No podrás iniciar sesión con tu dirección de correo electrónico y contraseña. Si deseas volver a habilitar la autenticación por correo electrónico y contraseña, deberás contactar con soporte.",
+                "important": "Importante:",
+                "makeSure": "por favor asegúrate de haber anotado tu ID de cuenta, ya que la usarás para iniciar sesión en el área de cliente:",
+                "changeAuthentication": "Cambiar autentificación"
+            },
+            "email": {
+                "title": "Configurar autenticación por correo electrónico y contraseña",
+                "changeYourEmail": "Cambia tu dirección de correo electrónico",
+                "changePassword": "Cambia tu contraseña",
+                "pleaseEnter": "Por favor introduce tu correo electrónico y contraseña que usarás para iniciar sesión en el área de cliente.",
+                "email": "Correo electrónico:",
+                "password": "Contraseña:",
+                "confirmPassword": "Confirma la contraseña:",
+                "setup": "Configurar",
+                "update": "Actualizar",
+                "cancel": "Cancelar"
+            },
+            "paymentMethod": {
+                "title": "Configurar método de pago",
+                "paypalAccount": "Cuenta PayPal:",
+                "pleaseLog": "Por favor inicia sesión en tu cuenta de PayPal utilizando el botón de abajo.",
+                "setPaymentMethod": "Configurar método de pago",
+                "cancel": "Cancelar"
+            },
+            "totp":{
+                "disable": {
+                    "title": "Desactivar autentificación de dos factores",
+                    "desc": "Para desactivar la autentificación de dos factores, por favor introduce el código de la aplicación TOTP o un código de respaldo.",
+                    "disable": "Desactivar",
+                    "cancel": "Cancelar"
+                },
+                "enable": {
+                    "title": "Activar autentificación de dos factores",
+                    "instructions": "Para activar la autentificaciónde dos factores, escanea el código con una aplicación TOTP (por ejemplo: Google Authenticator) e introduce el código en el campo de abajo.",
+                    "scan": "Si no puedes escanear el código QR, puedes introducir la siguiente información manualmente.",
+                    "secret": "Secreto:",
+                    "account": "Cuenta:",
+                    "success": "La autentificación de dos factores se ha configurado correctamente.",
+                    "successDesc": "Por favor, guarda los siguientes códigos de respaldo que podrás usar en lugar de TOTP en caso de que pierdas el acceso a tu dispositivo.",
+                    "backupCodes": "Códigos de respaldo",
+                    "eachCode": "Cada uno de estos códigos solo se puede usar una vez.",
+                    "close": "Cerrar",
+                    "enable": "Activar",
+                    "cancel": "Cancelar"
+                }
+            }
+
+        },
         "wireguardTab": {
             "title": "WireGuard",
             "description1": "Si estás utilizando las aplicaciones de IVPN para Windows, macOS, Linux, Android o iOS, las claves de WireGuard se gestionan automáticamente, simplemente selecciona el protocolo WireGuard en la configuración de la aplicación.",
@@ -150,7 +236,7 @@
             "configStep1Content": "Una clave privada y pública se generará en el navegador. La clave privada se incluirá en el archivo de configuración que descargues. Solo la clave pública se enviará a nuestro servidor. Puedes revisar el código en",
             "generateKey": "Generar clave",
             "addKey": "Añadir ",
-            "keyComment": "Comentario ",
+            "keyComment": "Comentario de la clave (opcional):",
             "keyCommentRequired": "Comentario de la clave",
             "privateKey": "Clave privada",
             "configStep2Title": "Selecciona uno o varios servidores de salida",
@@ -211,7 +297,11 @@
             "disablePopupDesc2": "- No se cerrará la sesión de tus dispositivos.",
             "disablePopupDesc3": "- No podrás gestionar tus dispositivos en tu panel de control.",
             "proceed": "Proceder",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "confirmLogoutAll": "Please confirm you want to log out from all devices.",
+            "confirm": "Confirm",
+            "confirmDelete": "Are you sure you want to delete this device?",
+            "yes": "Yes"
         },
         "accountSettingsTab": {
             "backToAccount": "Volver a la cuenta",
@@ -275,8 +365,9 @@
                 "firstName": "Nombre",
                 "lastName": "Apellidos",
                 "email": "Email",
-                "streetname": "Calle",
-                "postalCode": "Código postal"
+                "streetAddress": "Dirección",
+                "postalCode": "Código postal",
+                "dateformat": "MM / AAAA"
             },
             "cash": {
                 "pleaseSend": "Por favor envía un sobre que contenga",
@@ -306,7 +397,8 @@
             "voucher":{
                 "codeFrom": "Código de un cupón emitido por IVPN:",
                 "addTime": "Añadir tiempo",
-                "pleaseNote": "Por favor, ten en cuenta que los códigos de cupón se almacenan en nuestro sistema durante 30 días después de su uso para ayudar a resolver problemas de activación. La recuperación de la cuenta no es posible después de este período."
+                "pleaseNote": "Por favor, ten en cuenta que los códigos de cupón se almacenan en nuestro sistema durante 30 días después de su uso para ayudar a resolver problemas de activación. La recuperación de la cuenta no es posible después de este período.",
+                "successPayment": "Cupón aplicado con éxito. El servicio se extiende hasta "
             }
         }
     },

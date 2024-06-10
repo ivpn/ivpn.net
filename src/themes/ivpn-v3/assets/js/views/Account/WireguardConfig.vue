@@ -45,7 +45,7 @@
                         {{ publicKey }}
                     </p>
                     <p v-if="keyComment && publicKey">
-                        <strong>{{ $t('account.wireguardTab.KeyCommentRequired') }}</strong><br>
+                        <strong>{{ $t('account.wireguardTab.keyCommentRequired') }}</strong><br>
                         {{ keyComment }}
                     </p>
                 </div>
@@ -66,7 +66,7 @@
                         {{ publicKey }}
                     </p>
                     <p v-if="keyComment && publicKey">
-                        <strong>{{ $t('account.wireguardTab.KeyCommentRequired') }}</strong><br>
+                        <strong>{{ $t('account.wireguardTab.keyCommentRequired') }}</strong><br>
                         {{ keyComment }}
                     </p>
                 </div>

@@ -78,7 +78,7 @@ export default {
             this.$store.commit("setFlashMessage", {
                 type: "success",
                 message:
-                    "Voucher applied successfully. Service is extended until " +
+                    t('account.payments.voucher.successPayment')  +
                     this.$filters.formatDate(
                         this.account.active_until
                     )

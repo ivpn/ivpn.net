@@ -2,7 +2,7 @@
     <div v-if="!isLocked">
         <div class="back-link">
             <router-link :to="{name:'account-' + this.language}">
-                <span class="icon-back"></span>Back to account
+                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
 
@@ -141,7 +141,7 @@ export default {
 
             this.$store.commit("setFlashMessage", {
                 type: "success",
-                message: `Product has been successfully changed to ${newProductName}`
+                message: $t('account.changeProductSuccess')  + " to " + newProductName
             });
 
             this.$router.push({ name: "account-" + this.language })
