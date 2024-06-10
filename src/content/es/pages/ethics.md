@@ -18,7 +18,7 @@ sections:
       
       #### Sin información personal
 
-      Nuestro objetivo es no recopilar información del usuario según se define en nuestra [política de privacidad](https://www.ivpn.net/es/privacy) concisa. No pedimos tu dirección de correo electrónico ni ninguna otra información personal.
+      Nuestro objetivo es no recopilar información del usuario según se define en nuestra [política de privacidad](/es/privacy) concisa. No pedimos tu dirección de correo electrónico ni ninguna otra información personal.
 
       #### Sin rastreadores
 
@@ -38,7 +38,7 @@ sections:
 
       #### Sinceridad y responsabilidad
 
-      Nuestras aplicaciones son de código abierto y están disponibles en nuestra [página de GitHub](https://github.com/ivpn). Comisionamos [auditorías](https://www.ivpn.net/blog/tags/audit/) periódicas para respaldar nuestras afirmaciones. 
+      Nuestras aplicaciones son de código abierto y están disponibles en nuestra [página de GitHub](https://github.com/ivpn). Comisionamos [auditorías](https://www.ivpn.net/en/blog/tags/audit/) periódicas para respaldar nuestras afirmaciones. 
       
   - type: text_one_narrow_column
     content: >-
