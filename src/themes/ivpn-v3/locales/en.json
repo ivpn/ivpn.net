@@ -368,7 +368,8 @@
                 "lastName": "Last name",
                 "email": "Email",
                 "streetAddress": "Street address",
-                "postalCode": "Postal code"
+                "postalCode": "Postal code",
+                "dateformat": "MM / YYYY"
             },
             "cash": {
                 "pleaseSend": "Please send an envelope containing",
