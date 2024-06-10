@@ -271,7 +271,7 @@
                 "cardNumber": "Número de tarjeta",
                 "errorAbove": "El error anterior proviene directamente de Braintree, nuestro procesador de pagos con tarjeta de crédito. Puedes actualizar los detalles de tu tarjeta y/o añadir información adicional e intentarlo de nuevo.",
                 "additionalCardInformation": "Información adicional de la tarjeta",
-                "byDesign": "Siempre solicitamos la información mínima a propósito, sin embargo, algunos emisores de tarjetas requieren más que solo el número de tarjeta. Por ejemplo, nombre, correo electrónico. Opcionalmente puedes enviar esta información para aumentar las posibilidades de que tu pago sea exitoso. Estos datos se envían directamente desde tu navegador a nuestro procesador de pagos (braintreepayments.com) y nunca son vistos por IVPN.",
+                "byDesign": "Por defecto, siempre solicitamos la información mínima, sin embargo, algunos emisores de tarjetas requieren otra información además del número de tarjeta. Por ejemplo, nombre, correo electrónico. Opcionalmente puedes enviar esta información para aumentar las posibilidades de que tu pago sea exitoso. Estos datos se envían directamente desde tu navegador a nuestro procesador de pagos (braintreepayments.com) y nunca son vistos por IVPN.",
                 "firstName": "Nombre",
                 "lastName": "Apellidos",
                 "email": "Email",
