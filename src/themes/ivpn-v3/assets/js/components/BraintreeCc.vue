@@ -156,7 +156,7 @@ export default {
             const hostedFieldsSettings = {
                 number: {
                     selector: "#card-number",
-                    placeholder: "Card Number",
+                    placeholder: this.$t('account.payments.creditCard.cardNumber'),
                 },
                 cvv: {
                     selector: "#cvv",
@@ -164,7 +164,7 @@ export default {
                 },
                 expirationDate: {
                     selector: "#expiration-date",
-                    placeholder: "MM / YYYY",
+                    placeholder: this.$t('account.payments.creditCard.dateFormat'),
                 },
             };
 
