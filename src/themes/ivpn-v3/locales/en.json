@@ -337,6 +337,17 @@
 
         },
         "payments":{
+            "paymentReceived": {
+                "title": "Your payment has been received",
+                "accountExtended": "Your account has been extended to",
+                "review": ". You can review your payment details and details about your selected plan on the account page.",
+                "downloadInvoice": "Download invoice",
+                "goToAccount": "Go to your account",
+                "join": "Join our community for news, product updates, and discussion:",
+                "nextSteps": "Take the next step in improving your privacy:",
+                "privacyGuides": "IVPN Privacy Guides",
+                "blog": "IVPN Blog"
+            },
             "selectPaymentMethod": "Select payment method",
             "byMaking": "By making a payment you are agreeing to our",
             "termsOfService": "Terms of Service",

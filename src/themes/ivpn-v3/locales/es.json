@@ -335,6 +335,17 @@
             "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas."
         },
         "payments":{
+            "paymentReceived": {
+                "title": "Tu pago ha sido recibido",
+                "accountExtended": "Tu cuenta se ha extendido hasta ",
+                "review": ". Puedes revisar los detalles de tu pago y los detalles sobre tu plan seleccionado en la página de la cuenta.",
+                "downloadInvoice": "Descargar factura",
+                "goToAccount": "Ir a la cuenta",
+                "join": "Únete a nuestra comunidad para noticias, actualizaciones de productos y discusiones:",
+                "nextSteps": "Toma el siguiente paso para mejorar tu privacidad:",
+                "privacyGuides": "Guías de privacidad",
+                "blog": "Blog IVPN"
+            },
             "selectPaymentMethod": "Elige un método de pago",
             "byMaking": "Al pagar aceptas nuestros",
             "termsOfService": "Términos de servicio",

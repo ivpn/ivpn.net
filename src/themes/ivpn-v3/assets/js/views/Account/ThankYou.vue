@@ -2,15 +2,14 @@
     <div>
         <div class="payment-received">
             <success-icon style="margin: 24px 0px" />
-            <h2>Your payment has been received</h2>
+            <h2>{{ $t('account.payments.paymentReceived.title') }}</h2>
 
             <p style="margin-bottom: 32px">
-                Your account has been extended to
+                {{ $t('account.payments.paymentReceived.accountExtended') }}
                 <b style="white-space: nowrap">{{
                     $filters.formatPaymentDate(account.active_until)
                 }}</b
-                >. You can review your payment details and details about your
-                selected plan on the account page.
+                >{{ $t('account.payments.paymentReceived.review') }}
             </p>
 
             <button
@@ -22,14 +21,14 @@
             >
                 <down-icon
                     style="width: 16px; height: 16px; fill: #449cf8"
-                />Download invoice
+                />{{ $t('account.payments.paymentReceived.downloadInvoice') }}
             </button>
-            <router-link class="btn btn-big btn-solid" :to="{ name: 'account-' . this.language }"
-                >Go to your account</router-link
+            <router-link class="btn btn-big btn-solid" :to="{ name: 'account-' + this.language }"
+                >{{ $t('account.payments.paymentReceived.goToAccount') }}</router-link
             >
             <div class="promo-block">
                 <p>
-                    Join our community for news, product updates, and discussion:
+                    {{ $t('account.payments.paymentReceived.join') }}
                 </p>
                 <ul class="links">
                     <li class='social'>
@@ -57,10 +56,10 @@
             </div>
 
             <div class="promo-block">
-                <p>Take the next step in improving your privacy:</p>
+                <p>{{ $t('account.payments.paymentReceived.nextStaps') }}</p>
                 <ul class="links">
-                    <li><a href="/privacy-guides" target="_blank">IVPN Privacy Guides</a></li>
-                    <li><a href="/blog" target="_blank">IVPN Blog</a></li>
+                    <li><a href="/privacy-guides" target="_blank">{{ $t('account.payments.paymentReceived.privacyGuides') }}</a></li>
+                    <li><a href="/en/blog" target="_blank">{{ $t('account.payments.paymentReceived.blog') }}</a></li>
                 </ul>
             </div>
         </div>
@@ -72,6 +71,7 @@ import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
 import Invoice from "@/views/Account/Invoice.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: { SuccessIcon, DownIcon },
@@ -81,10 +81,14 @@ export default {
             language: "en"
         };
     },
-
     async created() {
-        console.log("RefID: ", this.$route.params.refid);
         this.refId = this.$route.params.refid;
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
     },
 
     methods: {
