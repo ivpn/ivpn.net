@@ -9,7 +9,7 @@
                 id="inp_code"
                 type="text"
                 v-model="confirmation"
-                placeholder="Code from TOTP app"
+                :placeholder="$t('account.popups.totp.enable.codeFrom')"
                 autofocus
             />
             <div class="popup-buttons">

@@ -259,6 +259,22 @@ const routes = [
         }
     },
     {
+        path: '/en/account/payment/btc/thank-you',
+        name: 'btc-thank-you-en',
+        component: ThankYouBTCView,
+        meta: {
+            title: en.account.metaTitle.thankYou,
+        }
+    },
+    {
+        path: '/es/account/payment/btc/thank-you',
+        name: 'btc-thank-you-es',
+        component: ThankYouBTCView,
+        meta: {
+            title: en.account.metaTitle.thankYou,
+        }
+    },
+    {
         path: '/thank-you-light',
         name: 'btc-thank-you-light',
         component: ThankYouLightView,

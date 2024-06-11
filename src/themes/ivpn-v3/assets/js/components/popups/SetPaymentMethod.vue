@@ -7,7 +7,7 @@
         </div>
         <div v-else>
             <tabs @onTabChanged="updateType">
-                <tab :selected="true" tabid="cc" name="Credit Card">
+                <tab :selected="true" tabid="cc" :name="$t('account.creditCard')">
                     <braintree-cc
                         :braintree="braintree"
                         :error="error"

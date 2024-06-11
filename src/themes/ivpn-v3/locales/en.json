@@ -346,7 +346,11 @@
                 "join": "Join our community for news, product updates, and discussion:",
                 "nextSteps": "Take the next step in improving your privacy:",
                 "privacyGuides": "IVPN Privacy Guides",
-                "blog": "IVPN Blog"
+                "blog": "IVPN Blog",
+                "thankYou": "Thank you for your order",
+                "yourAccount": "Your account will be credited once your Bitcoin payment is confirmed.",
+                "questions": "If you have any questions please",
+                "contactUs": "contact us."
             },
             "invoice": {
                 "loading": "Loading invoice...",

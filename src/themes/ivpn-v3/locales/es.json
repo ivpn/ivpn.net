@@ -344,13 +344,17 @@
                 "join": "Únete a nuestra comunidad para noticias, actualizaciones de productos y discusiones:",
                 "nextSteps": "Toma el siguiente paso para mejorar tu privacidad:",
                 "privacyGuides": "Guías de privacidad",
-                "blog": "Blog IVPN"
+                "blog": "Blog IVPN",
+                "thankYou": "Gracias por tu pedido",
+                "yourAccount": "Tu cuenta se acreditará una vez que se confirme tu pago de Bitcoin.",
+                "questions": "Si tienes alguna pregunta, por favor, ",
+                "contactUs": "contáctanos."
             },
             "invoice": {
                 "loading": "Cargando  factura...",
                 "invoice": "Factura",
                 "invoiceDate": "Fecha de la factura:",
-                "paid": "Pagada",
+                "paid": "Pagada:",
                 "invoicedTo": "Facturado a:",
                 "accountReference": "ID de referencia de la cuenta:",
                 "payTo": "Pagar a:",
