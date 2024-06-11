@@ -78,7 +78,7 @@ export default {
             this.$store.commit("setFlashMessage", {
                 type: "success",
                 message:
-                    t('account.payments.voucher.successPayment')  +
+                    this.$t('account.payments.voucher.successPayment')  +
                     this.$filters.formatDate(
                         this.account.active_until
                     )
