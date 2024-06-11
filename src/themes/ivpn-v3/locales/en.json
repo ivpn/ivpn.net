@@ -301,7 +301,8 @@
             "confirmLogoutAll": "Please confirm you want to log out from all devices.",
             "confirm": "Confirm",
             "confirmDelete": "Are you sure you want to delete this device?",
-            "yes": "Yes"
+            "yes": "Yes",
+            "renewAccount": "Please renew your account to manage your devices."
 
         },
         "accountSettingsTab": {

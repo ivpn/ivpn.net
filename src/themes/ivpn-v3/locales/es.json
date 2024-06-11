@@ -299,10 +299,11 @@
             "disablePopupDesc3": "- No podrás gestionar tus dispositivos en tu panel de control.",
             "proceed": "Proceder",
             "cancel": "Cancelar",
-            "confirmLogoutAll": "Please confirm you want to log out from all devices.",
-            "confirm": "Confirm",
-            "confirmDelete": "Are you sure you want to delete this device?",
-            "yes": "Yes"
+            "confirmLogoutAll": "Por favor confirma que deseas cerrar sesión en todos los dispositivos.",
+            "confirm": "Confirmar",
+            "confirmDelete": "¿Está seguro de que desea eliminar este dispositivo?",
+            "yes": "Si",
+            "renewAccount": "Please renew your account to manage your devices."
         },
         "accountSettingsTab": {
             "backToAccount": "Volver a la cuenta",

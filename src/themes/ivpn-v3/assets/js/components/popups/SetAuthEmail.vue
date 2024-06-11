@@ -2,7 +2,7 @@
     <form @submit.prevent="submit()">
         <div class="popup--content">
             <h3 v-if="data.type == 'setup'">{{ $t('account.popups.authenticationEmail.title') }}</h3>
-            <h3 v-if="data.type == 'change-email'">{{ $t('account.popups.authenticationEmail.changeEmail') }}</h3>
+            <h3 v-if="data.type == 'change-email'">{{ $t('account.popups.authenticationEmail.changeYourEmail') }}</h3>
             <h3 v-if="data.type == 'change-password'">{{ $t('account.popups.authenticationEmail.changePassword') }}</h3>
 
             <p
