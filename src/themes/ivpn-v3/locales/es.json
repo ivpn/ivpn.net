@@ -301,9 +301,9 @@
             "cancel": "Cancelar",
             "confirmLogoutAll": "Por favor confirma que deseas cerrar sesión en todos los dispositivos.",
             "confirm": "Confirmar",
-            "confirmDelete": "¿Está seguro de que desea eliminar este dispositivo?",
+            "confirmDelete": "¿Estás seguros de que deseas eliminar este dispositivo?",
             "yes": "Si",
-            "renewAccount": "Please renew your account to manage your devices."
+            "renewAccount": "Por favor, renueva tu cuenta para gestionar tus dispositivos."
         },
         "accountSettingsTab": {
             "backToAccount": "Volver a la cuenta",
