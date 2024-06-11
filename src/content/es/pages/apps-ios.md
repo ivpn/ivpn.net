@@ -10,7 +10,7 @@ platform: ios
 layout: apps
 image: apps/ios-app
 releases: [{
-    cta: Consíguelo en la App Store,
+    cta: Consíguela en la App Store,
     download: "https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8",
     github: https://github.com/ivpn/ios-app,
     changelog: https://github.com/ivpn/ios-app/blob/master/CHANGELOG.md
