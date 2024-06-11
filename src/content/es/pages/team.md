@@ -63,7 +63,7 @@ sections:
       - image: /images-static/uploads/team-gorka.png
         image_retina: /images-static/uploads/team-gorka-2x.png
         name: Gorka Pernas
-        description: Después de acumular una década de experiencia en funciones relacionadas con el control de calidad en empresas de tecnología, Gorka ahora aplica sus conocimientos para ayudar al equipo de IVPN a lanzar aplicaciones sin errores y asegurarse de que no sufras filtraciones de privacidad.
+        description: Después de acumular más de una década de experiencia en funciones relacionadas con el control de calidad en empresas de tecnología, Gorka ahora aplica sus conocimientos para ayudar al equipo de IVPN a lanzar aplicaciones sin errores y asegurarse de que no sufras filtraciones de privacidad.
         linkedin: https://www.linkedin.com/in/gorkapernas/
         github: https://github.com/gorkapernas
       - image: /images-static/uploads/nathan.png

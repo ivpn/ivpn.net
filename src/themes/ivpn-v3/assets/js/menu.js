@@ -18,15 +18,15 @@
             }
 
             if (macosPlatforms.indexOf(platform) !== -1) {
-                updateLinks(downloadLinks, prefix + '/apps-macos/');
+                updateLinks(downloadLinks, prefix + 'apps-macos/');
             } else if (windowsPlatforms.indexOf(platform) !== -1) {
-                updateLinks(downloadLinks, prefix + '/apps-windows/');
+                updateLinks(downloadLinks, prefix + 'apps-windows/');
             } else if (iosPlatforms.indexOf(platform) !== -1) {
-                updateLinks(downloadLinks, prefix + '/apps-ios/');
+                updateLinks(downloadLinks, prefix + 'apps-ios/');
             } else if (/Android/.test(userAgent)) {
-                updateLinks(downloadLinks, prefix + '/apps-android/');
+                updateLinks(downloadLinks, prefix + 'apps-android/');
             } else if (!os && /Linux/.test(platform)) {
-                updateLinks(downloadLinks, prefix + '/apps-linux/');
+                updateLinks(downloadLinks, prefix + 'apps-linux/');
             }
         }
     }
