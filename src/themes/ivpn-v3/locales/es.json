@@ -111,7 +111,7 @@
             "addFundsCash": "IVPN Añadir fondos - Cash",
             "wireguard": "Cuenta IVPN - WireGuard",
             "wireguardConfig": "Cuenta IVPN - Configuración de WireGuard",
-            "deviceManagement": "Cuenta IVPN - Administración de dispositivos"
+            "deviceManagement": "Cuenta IVPN - Gestión de dispositivos"
         },
         "greetings": "¡Tu cuenta ha sido creada!",
         "greetingsText": "Por favor asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
@@ -125,7 +125,7 @@
         "paidUntil": "Pagado hasta",
         "wasActiveUntil": "Estuvo activo hasta",
         "addMoreTime": "Añadir más tiempo",
-        "billingSettings": "Configuración de facturación",
+        "billingSettings": "Facturación",
         "copied": "Copiado",
         "qrScan": "Escanea desde nuestras aplicaciones móviles para una configuración rápida.",
         "contactSupport": "Contactar con soporte",
@@ -154,24 +154,24 @@
         "newBillingCycle": "El nuevo ciclo de facturación se aplicará al final del período de facturación actual",
         "update": "Actualizar",
         "cancel": "Cancelar",
-        "confirm": "Confirm",
+        "confirm": "Confirmar",
         "confirmChangeProduct": "IVPN Standard permite el acceso VPN en 2 dispositivos. Iniciar un cambio de plan te desconectará de todos los dispositivos activos. Puedes iniciar sesión en nuevos dispositivos después. Por favor, confirma para proceder.",
         "disableRecurring": "Desactivar pagos recurrentes",
-        "disableRecurringDesc" : "Desactivando los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
+        "disableRecurringDesc" : "Al desactivar los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
         "disableRecurringPayments": "Desactivar pagos recurrentes",
         "popups": {
             "authentication": {
-                "title": "Autentificar usando ID de cuenta",
-                "desc": "Desactivando la autenticación por correo electrónico y contraseña, se eliminará tu dirección de correo electrónico y el hash de la contraseña de nuestros sistemas. No podrás iniciar sesión con tu dirección de correo electrónico y contraseña. Si deseas volver a habilitar la autenticación por correo electrónico y contraseña, deberás contactar con soporte.",
+                "title": "Autenticar usando ID de cuenta",
+                "desc": "Al desactivar la autenticación por correo electrónico y contraseña, se eliminará tu dirección de correo electrónico y el hash de la contraseña de nuestros sistemas. No podrás iniciar sesión con tu dirección de correo electrónico y contraseña. Si deseas volver a habilitar la autenticación por correo electrónico y contraseña, deberás contactar con soporte.",
                 "important": "Importante:",
-                "makeSure": "por favor asegúrate de haber anotado tu ID de cuenta, ya que la usarás para iniciar sesión en el área de cliente:",
+                "makeSure": "Por favor, asegúrate de haber anotado tu ID de cuenta, ya que la usarás para iniciar sesión en el área de cliente:",
                 "changeAuthentication": "Cambiar autenticación"
             },
             "authenticationEmail": {
                 "title": "Configurar autenticación por correo electrónico y contraseña",
                 "changeYourEmail": "Cambia tu dirección de correo electrónico",
                 "changePassword": "Cambia tu contraseña",
-                "pleaseEnter": "Por favor introduce tu correo electrónico y contraseña que usarás para iniciar sesión en el área de cliente.",
+                "pleaseEnter": "Por favor introduce el correo electrónico y contraseña que usarás para iniciar sesión en el área de cliente.",
                 "email": "Correo electrónico:",
                 "password": "Contraseña:",
                 "confirmPassword": "Confirma la contraseña:",
@@ -189,14 +189,14 @@
             "totp":{
                 "disable": {
                     "title": "Desactivar autenticación de dos factores",
-                    "desc": "Para desactivar la autenticaciónde dos factores, por favor introduce el código de la aplicación TOTP o un código de respaldo.",
+                    "desc": "Para desactivar la autenticaciónde de dos factores, por favor introduce el código de la aplicación TOTP o un código de respaldo.",
                     "disable": "Desactivar",
                     "cancel": "Cancelar"
                 },
                 "enable": {
                     "title": "Activar autenticación de dos factores",
                     "instructions": "Para activar la autenticación de dos factores, escanea el código con una aplicación TOTP (por ejemplo: Google Authenticator) e introduce el código en el campo de abajo.",
-                    "scan": "Si no puedes escanear el código QR, puedes introducir la siguiente información manualmente.",
+                    "scan": "Si no puedes escanear el código QR, puedes introducir manualmente la siguiente información.",
                     "secret": "Secreto:",
                     "account": "Cuenta:",
                     "success": "La autenticación de dos factores se ha configurado correctamente.",
@@ -238,7 +238,7 @@
             "generateKey": "Generar clave",
             "addKey": "Añadir ",
             "keyComment": "Comentario de la clave (opcional):",
-            "keyCommentRequired": "Comentario de la clave",
+            "keyCommentRequired": "Comentario de la clave:",
             "privateKey": "Clave privada",
             "configStep2Title": "Selecciona uno o varios servidores de salida",
             "configStep2Content": "Una configuración separada se generará para cada ubicación que incluyas.",
@@ -299,10 +299,11 @@
             "disablePopupDesc3": "- No podrás gestionar tus dispositivos en tu panel de control.",
             "proceed": "Proceder",
             "cancel": "Cancelar",
-            "confirmLogoutAll": "Please confirm you want to log out from all devices.",
-            "confirm": "Confirm",
-            "confirmDelete": "Are you sure you want to delete this device?",
-            "yes": "Yes"
+            "confirmLogoutAll": "Por favor confirma que deseas cerrar sesión en todos los dispositivos.",
+            "confirm": "Confirmar",
+            "confirmDelete": "¿Está seguro de que desea eliminar este dispositivo?",
+            "yes": "Si",
+            "renewAccount": "Please renew your account to manage your devices."
         },
         "accountSettingsTab": {
             "backToAccount": "Volver a la cuenta",

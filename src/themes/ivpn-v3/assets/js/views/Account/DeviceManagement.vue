@@ -3,12 +3,12 @@
         <div v-if="!account.is_active">
             <section>
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
-                <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
+                <p>{{ $t('account.deviceManagementTab.renewAccount') }}</p>
                 <router-link
                     :to="{ name: 'account-' + this.language }"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
-                    >To your account</router-link
+                    >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
                 >
             </section>
         </div>
