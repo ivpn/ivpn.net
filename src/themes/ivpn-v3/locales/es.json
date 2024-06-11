@@ -114,7 +114,7 @@
             "deviceManagement": "Cuenta IVPN - Gestión de dispositivos"
         },
         "greetings": "¡Tu cuenta ha sido creada!",
-        "greetingsText": "Por favor asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
+        "greetingsText": "Por favor, asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
         "accountId":"ID de cuenta",
         "inactive": "INACTIVO",
         "active": "ACTIVO",
@@ -171,7 +171,7 @@
                 "title": "Configurar autenticación por correo electrónico y contraseña",
                 "changeYourEmail": "Cambia tu dirección de correo electrónico",
                 "changePassword": "Cambia tu contraseña",
-                "pleaseEnter": "Por favor introduce el correo electrónico y contraseña que usarás para iniciar sesión en el área de cliente.",
+                "pleaseEnter": "Por favor, introduce el correo electrónico y contraseña que usarás para iniciar sesión en el área de cliente.",
                 "email": "Correo electrónico:",
                 "password": "Contraseña:",
                 "confirmPassword": "Confirma la contraseña:",
@@ -182,14 +182,14 @@
             "paymentMethod": {
                 "title": "Configurar método de pago",
                 "paypalAccount": "Cuenta PayPal:",
-                "pleaseLog": "Por favor inicia sesión en tu cuenta de PayPal utilizando el botón de abajo.",
+                "pleaseLog": "Por favor, inicia sesión en tu cuenta de PayPal utilizando el botón de abajo.",
                 "setPaymentMethod": "Configurar método de pago",
                 "cancel": "Cancelar"
             },
             "totp":{
                 "disable": {
                     "title": "Desactivar autenticación de dos factores",
-                    "desc": "Para desactivar la autenticaciónde de dos factores, por favor introduce el código de la aplicación TOTP o un código de respaldo.",
+                    "desc": "Para desactivar la autenticación de dos factores, introduce el código de la aplicación TOTP o un código de respaldo.",
                     "disable": "Desactivar",
                     "cancel": "Cancelar"
                 },
@@ -294,12 +294,12 @@
             "changeYourProduct": "cambia tu producto",
             "changeTo": "a IVPN Pro.",
             "disableDeviceManagement": "Desactivar la gestión de dispositivos",
-            "disablePopupDesc1": "Por favor ten en cuenta que después de desactivar la gestión de dispositivos:",
+            "disablePopupDesc1": "Por favor, ten en cuenta que después de desactivar la gestión de dispositivos:",
             "disablePopupDesc2": "- No se cerrará la sesión de tus dispositivos.",
             "disablePopupDesc3": "- No podrás gestionar tus dispositivos en tu panel de control.",
             "proceed": "Proceder",
             "cancel": "Cancelar",
-            "confirmLogoutAll": "Por favor confirma que deseas cerrar sesión en todos los dispositivos.",
+            "confirmLogoutAll": "Por favor, confirma que deseas cerrar sesión en todos los dispositivos.",
             "confirm": "Confirmar",
             "confirmDelete": "¿Estás seguro de que deseas eliminar este dispositivo?",
             "yes": "Si",
@@ -330,7 +330,7 @@
             "extendYourAccount": "Recarga tu cuenta",
             "deleteAccountConfirm": "¿Estás seguro de que deseas borrar tu cuenta?",
             "accountActive": "Tu cuenta está actualmente activa.",
-            "deleteAccountConfirmDesc": "Para confirmar la eliminación permanente de tu cuenta, por favor introduce los siguientes símbolos en el campo de abajo:",
+            "deleteAccountConfirmDesc": "Para confirmar la eliminación permanente de tu cuenta, introduce los siguientes símbolos en el campo de abajo:",
             "cancel": "Cancelar",
             "warning": "Aviso:",
             "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas."
@@ -348,7 +348,7 @@
                 "blog": "Blog IVPN",
                 "thankYou": "Gracias por tu pedido",
                 "yourAccount": "Tu cuenta se acreditará una vez que se confirme tu pago de Bitcoin.",
-                "questions": "Si tienes alguna pregunta, por favor, ",
+                "questions": "Si tienes alguna pregunta, ",
                 "contactUs": "contáctanos."
             },
             "invoice": {
@@ -379,7 +379,7 @@
                 "enterNumbers": "Por favor, introduce los números que ves arriba:",
                 "continue": "Continuar",
                 "cancel": "Cancelar",
-                "toProceed": "Para proceder con el pago, por favor inicia sesión en tu cuenta de PayPal utilizando el botón de abajo.",
+                "toProceed": "Para proceder con el pago, inicia sesión en tu cuenta de PayPal utilizando el botón de abajo.",
                 "automaticallyRenew": "Renueva automáticamente al final del período",
                 "enablingThisCheckbox": "Activando esta casilla, tu método de pago se guardará y se facturará automáticamente al final del período. Podrás cancelar la renovación automática en cualquier momento."
             },
@@ -400,7 +400,7 @@
                 "dateFormat": "MM / AAAA"
             },
             "cash": {
-                "pleaseSend": "Por favor envía un sobre que contenga",
+                "pleaseSend": "Por favor, envía un sobre que contenga",
                 "or": "o",
                 "andReferenceNumber": "y el número de referencia",
                 "toTheFollowingAddress": "a la dirección que se indica abajo. Recomendamos hacer clic en el botón de abajo para imprimir la etiqueta de dirección y el número de referencia",
@@ -436,7 +436,7 @@
         "backToLogin": "Volver a Iniciar sesión",
         "resetPassword": "Restaurar contraseña",
         "resetPasswordDesc": "Si una cuenta con la dirección de correo electrónico especificada existe, enviaremos un correo electrónico con instrucciones adicionales sobre cómo restablecer tu contraseña.",
-        "enterEmail": "Por favor introduce tu dirección de correo electrónico registrada. Se te enviarán instrucciones sobre cómo restablecer tu contraseña.",
+        "enterEmail": "Por favor, introduce tu dirección de correo electrónico registrada. Se te enviarán instrucciones sobre cómo restablecer tu contraseña.",
         "sendResetInstructions": "Enviar instrucciones de restablecimiento",
         "setNewPassword": "Establecer nueva contraseña",
         "setNewPasswordDesc": "Tu contraseña ha sido cambiado con éxito.",
