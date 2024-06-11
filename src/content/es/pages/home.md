@@ -80,7 +80,7 @@ sections:
       <li>Evitar que Google o Facebook recopilen tus datos privados.</li>
       <li>Prevenir la creación de perfiles no deseados por parte de redes sociales o motores de búsqueda.</li>
       <li>Proporcionar mayor seguridad al "trabajar desde casa".</li>
-      <li>Proteger tus contraseñas</li>
+      <li>Proteger tus contraseñas.</li>
       <li>Ocultar la ubicación de tu teléfono móvil (GPS).</li>
       <li>Ayudarte a evitar filtraciones de datos en lo servicios que utilizas en línea.</li>
       <li>Defensa contra “amenazas cibernéticas” y robo de identidad.</li>
