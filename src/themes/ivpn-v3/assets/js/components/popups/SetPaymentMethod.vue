@@ -71,7 +71,7 @@
                 {{ error.message }}
             </p>
             <tabs @onTabChanged="updateType" v-else>
-                <tab :selected="true" tabid="cc" name="Credit Card">
+                <tab :selected="true" tabid="cc" :name="$t('account.creditCard')">
                     <braintree-cc v-if="!error"
                         :braintree="braintree"
                         :error="error"
