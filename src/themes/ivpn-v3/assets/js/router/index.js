@@ -299,6 +299,22 @@ const routes = [
         }
     },
     {
+        path: '/en/account/payment/:refid/invoice',
+        name: 'payment-invoice-en',
+        component: InvoiceView,
+        meta: {
+            title: en.account.metaTitle.invoicePayment,
+        }
+    },
+    {
+        path: '/es/account/payment/:refid/invoice',
+        name: 'payment-invoice-es',
+        component: InvoiceView,
+        meta: {
+            title: es.account.metaTitle.invoicePayment,
+        }
+    },
+    {
         path: '/account/payment',
         component: PaymentView,
         name: 'payment',

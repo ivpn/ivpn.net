@@ -346,6 +346,19 @@
                 "privacyGuides": "Guías de privacidad",
                 "blog": "Blog IVPN"
             },
+            "invoice": {
+                "loading": "Cargando  factura...",
+                "invoice": "Factura",
+                "invoiceDate": "Fecha de la factura:",
+                "paid": "Pagada",
+                "invoicedTo": "Facturado a:",
+                "accountReference": "ID de referencia de la cuenta:",
+                "payTo": "Pagar a:",
+                "description": "Descripción:",
+                "amount": "Cantidad:",
+                "subtotal": "Subtotal:",
+                "total": "Total:"
+            },
             "selectPaymentMethod": "Elige un método de pago",
             "byMaking": "Al pagar aceptas nuestros",
             "termsOfService": "Términos de servicio",
