@@ -1,6 +1,5 @@
 ---
-url: /en/account/headless/
-aliases: ['/headless/']
+url: /es/account/headless/
 params:
   translated: true
 layout: application

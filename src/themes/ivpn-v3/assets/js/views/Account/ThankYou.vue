@@ -115,6 +115,8 @@ export default {
                 left +
                 ",top=" +
                 top;
+            
+            console.log(routeData.href);
             window.open(routeData.href, "IVPN_Invoice", windowFeatures);
         },
     },

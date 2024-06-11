@@ -78,7 +78,6 @@ export default {
     },
 
     async created() {
-        console.log("RefID: ", this.$route.params.refid);
         this.refId = this.$route.params.refid;
 
         let payment = await this.$store.dispatch("payments/getPaymentByRefId", {
@@ -86,7 +85,6 @@ export default {
         });
 
         if (this.error) return;
-        console.log("Payment", payment)
         this.payment = payment    
     },
 
