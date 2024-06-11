@@ -30,7 +30,7 @@ sections:
 
       #### Sin secretos
 
-      La [propiedad, estructura de la empresa y equipo](/es/team/) de IVPN es pública, por lo tanto sabes quién es responsable de proteger tu privacidad.
+      La [propiedad, estructura de la empresa y equipo](/es/team/) de IVPN es pública, por lo tanto siempre sabrás quién es responsable de proteger tu privacidad.
 
       #### Sin falsas promesas
 

@@ -62,7 +62,7 @@ sections:
       - description: "Elección de protocolos **WireGuard, OpenVPN o IPSec** utilizando las aplicaciones IVPN o cualquier otro cliente VPN compatible."
       - description: "**Controles de privacidad de WireGuard** - Define una programación personalizada para la rotación automática de claves y direcciones IP."
       - description: "**AntiTracker** que bloquea anuncios, adware, sitios web maliciosos y rastreadores de recopilación de datos."
-      - description: "Opción **Killswitch/Firewall** en macOS, Windows, Linux, Android y la función On-demand incorporada en iOS. Ofrece protección contra filtraciones DNS, IPv6, WebRTC y desconexiones."
+      - description: "Función **Killswitch/Firewall** en macOS, Windows, Linux, Android y la función On-demand incorporada en iOS. Ofrece protección contra filtraciones DNS, IPv6, WebRTC y desconexiones."
       - description: "**Servidores DNS** privados sin registro, accesibles a través de nuestra VPN."
     features_col_two:
       - description: "**Rutas VPN Multi-hop**. Conéctate a través de múltiples servidores en jurisdicciones diferentes para mejorar la privacidad."
@@ -80,7 +80,7 @@ sections:
       <li>Evitar que Google o Facebook recopilen tus datos privados.</li>
       <li>Prevenir la creación de perfiles no deseados por parte de redes sociales o motores de búsqueda.</li>
       <li>Proporcionar mayor seguridad al "trabajar desde casa".</li>
-      <li>Proteger tus contraseñas</li>
+      <li>Proteger tus contraseñas.</li>
       <li>Ocultar la ubicación de tu teléfono móvil (GPS).</li>
       <li>Ayudarte a evitar filtraciones de datos en lo servicios que utilizas en línea.</li>
       <li>Defensa contra “amenazas cibernéticas” y robo de identidad.</li>

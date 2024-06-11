@@ -57,7 +57,7 @@
                 <h3>{{ $t('account.wireguardTab.usefulLinks') }}</h3>
                 <ul>
                     <li>
-                        <a href="/status/">{{ $t('account.wireguardTab.serverList') }}</a>
+                        <a :href=" '/' + this.language + '/status/'">{{ $t('account.wireguardTab.serverList') }}</a>
                     </li>
                     <li>
                         <a href="/knowledgebase/general/wireguard-faq/">{{ $t('account.wireguardTab.faq') }}</a>
