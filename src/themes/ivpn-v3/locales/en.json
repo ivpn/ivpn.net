@@ -348,6 +348,19 @@
                 "privacyGuides": "IVPN Privacy Guides",
                 "blog": "IVPN Blog"
             },
+            "invoice": {
+                "loading": "Loading invoice...",
+                "invoice": "Invoice",
+                "invoiceDate": "Invoice Date:",
+                "paid": "Paid:",
+                "invoicedTo": "Invoiced To:",
+                "accountReference": "Account reference ID:",
+                "payTo": "Pay To:",
+                "description": "Description:",
+                "amount": "Amount:",
+                "subtotal": "Subtotal:",
+                "total": "Total:"
+            },
             "selectPaymentMethod": "Select payment method",
             "byMaking": "By making a payment you are agreeing to our",
             "termsOfService": "Terms of Service",

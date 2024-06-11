@@ -56,7 +56,7 @@
             </div>
 
             <div class="promo-block">
-                <p>{{ $t('account.payments.paymentReceived.nextStaps') }}</p>
+                <p>{{ $t('account.payments.paymentReceived.nextSteps') }}</p>
                 <ul class="links">
                     <li><a href="/privacy-guides" target="_blank">{{ $t('account.payments.paymentReceived.privacyGuides') }}</a></li>
                     <li><a href="/en/blog" target="_blank">{{ $t('account.payments.paymentReceived.blog') }}</a></li>
@@ -103,7 +103,7 @@ export default {
             }
 
             let routeData = this.$router.resolve({
-                name: "payment-invoice",
+                name: "payment-invoice-" + this.language,
                 params: { refid: this.refId },
             });
             var windowFeatures =
