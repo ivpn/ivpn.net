@@ -149,7 +149,7 @@
         "activeUntil": "Activo hasta:",
         "willBeActiveUntil": "Estará activo hasta:",
         "thisDate": "Esta fecha se calcula en función del tiempo restante en tu cuenta y la diferencia de precio entre los tipos de producto. Los descuentos a largo plazo no son aplicables. No se requiere un pago adicional.",
-        "changeProductSuccess": "El producto se ha cambiado correctamente a",
+        "changeProductSuccess": "El producto se ha cambiado correctamente a ",
         "changeBillingCycle": "Cambiar ciclo de facturación",
         "newBillingCycle": "El nuevo ciclo de facturación se aplicará al final del período de facturación actual",
         "update": "Actualizar",
