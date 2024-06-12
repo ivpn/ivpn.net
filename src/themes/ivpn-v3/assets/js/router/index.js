@@ -164,6 +164,24 @@ const routes = [
         beforeEnter: notAuthenticatedGuard,
     },
     {
+        path: '/en/recover/password/:token',
+        name: 'recover-password-commit-en',
+        component: PasswordResetCommitView,
+        meta: {
+            title: en.account.metaTitle.recover,
+        },
+        beforeEnter: notAuthenticatedGuard,
+    },
+    {
+        path: '/es/recover/password/:token',
+        name: 'recover-password-commit-es',
+        component: PasswordResetCommitView,
+        meta: {
+            title: en.account.metaTitle.recover,
+        },
+        beforeEnter: notAuthenticatedGuard,
+    },
+    {
         path: '/account/logout',
         name: 'logout',
         beforeEnter: async (to, from, next) => {
