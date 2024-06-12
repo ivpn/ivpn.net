@@ -62,7 +62,7 @@
   [[footercolone]]
     identifier = "wireguard"
     name = "WireGuard® VPN"
-    url = "/es/wireguard/"
+    url = "/wireguard/"
     weight = 10
   
   [[footercolone]]
@@ -97,7 +97,7 @@
 
   [[footercoltwo]]
     identifier = "transparency-report"
-    name = "Informe de transparencia"
+    name = "Transparency Report"
     url = "/es/transparency-report/"
     weight = 30
 
