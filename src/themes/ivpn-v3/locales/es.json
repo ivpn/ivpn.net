@@ -324,7 +324,7 @@
             "paidUntil":"Pagado hasta",
             "wasActiveUntil": " Estaba activo hasta",
             "lastPayment": "Último pago",
-            "recurringFailedOn": "El pago automático recurrente falló el",
+            "recurringFailedOn": "El pago automático recurrente falló el ",
             "pleaseCheck": "Por favor, revisa o actualiza tu método de pago e inténtalo de nuevo.",
             "processingPayment": "Procesando pago",
             "extendYourAccount": "Recarga tu cuenta",
