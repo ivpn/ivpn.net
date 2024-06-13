@@ -239,7 +239,7 @@
             "addKey": "Añadir ",
             "keyComment": "Comentario de la clave (opcional):",
             "keyCommentRequired": "Comentario de la clave:",
-            "privateKey": "Clave privada",
+            "privateKey": "Clave privada:",
             "configStep2Title": "Selecciona uno o varios servidores de salida",
             "configStep2Content": "Una configuración separada se generará para cada ubicación que incluyas.",
             "selectExitServerLocation": "Selecciona la ubicación del servidor de salida",
