@@ -1,5 +1,5 @@
 ---
-title: My Account
+title: Mi cuenta
 url: /es/account/
 params:
   translated: true
