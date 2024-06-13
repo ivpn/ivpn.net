@@ -333,9 +333,8 @@
             "deleteAccountConfirmDesc": "To confirm permanent deletion of your account, please enter the following symbols in the field below:",
             "cancel": "Cancel",
             "warning": "Warning:",
-            "warningDesc": "this operation cannot be undone. Deleting your account will permanently remove data from our systems."
-
-
+            "warningDesc": "this operation cannot be undone. Deleting your account will permanently remove data from our systems.",
+            "retry": "Retry"
         },
         "payments":{
             "paymentReceived": {
