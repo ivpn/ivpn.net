@@ -151,7 +151,7 @@
                               <div class="bitcoin-lightning-icon" ></div> Purchase access
                           </button>
                           <h4>We host our own BTCPay Server to generate a Lightning invoice for payment.</h4>
-                          <h4>By making a payment you are agreeing to our <a href="/tos">Terms of Service</a>.</h4>
+                          <h4>By making a payment you are agreeing to our <a href="/en/tos">Terms of Service</a>.</h4>
                      </div>
                   </div>
                </div>
