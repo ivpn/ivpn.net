@@ -87,7 +87,7 @@
         </div>        
         <ul class="mobile-navigation__menu">
             {{ range .Site.Menus.main }}
-                {{ if eq (urlize .Name) "my-account" }}
+                {{ if or (eq (urlize .Name) "my-account") (eq (urlize .Name) "mi-cuenta") }}
                     <li class="mobile-navigation__menu-item" id="{{ urlize .Name }}" data-show="auth-legacy">
                         <a class="mobile-navigation__menu-link" href="/clientarea/">{{ .Name }}</a>
                     </li>
