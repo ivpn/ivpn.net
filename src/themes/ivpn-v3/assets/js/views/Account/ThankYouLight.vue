@@ -43,7 +43,7 @@
                 />Download configuration
             </button>
 
-            <h5 v-if="isLoaded">For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/light">separate IVPN Light access</a>, or <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/pricing">generate</a> an IVPN Standard or Pro account.</h5>
+            <h5 v-if="isLoaded">For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/light">separate IVPN Light access</a>, or <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/en/pricing">generate</a> an IVPN Standard or Pro account.</h5>
         </div>
     </div>
 </template>
