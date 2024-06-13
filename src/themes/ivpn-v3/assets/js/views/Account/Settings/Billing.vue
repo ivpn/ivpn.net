@@ -67,7 +67,7 @@
                         <div v-if="!inProgress">
                             <p v-if="error" style="color: red;" v-html="error.message"></p>
                             <p>
-                                Automatic recurring payment failed on {{ $t('account.accountSettingsTab.recurringFailed') }}
+                                {{ $t('account.accountSettingsTab.recurringFailedOn') }}
                                 <b>{{ $filters.formatDate(account.subscription.last_payment.date) }}</b>
                                 (${{account.subscription.last_payment.amount}})
                             </p>
