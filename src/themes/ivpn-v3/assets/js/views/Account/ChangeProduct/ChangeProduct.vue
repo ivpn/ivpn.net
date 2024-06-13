@@ -111,7 +111,7 @@ export default {
         this.proActiveUntil = this.$filters.formatActiveUntil(proPlan.active_until);
         this.isLocked = proPlan.is_locked;
         if( proPlan.is_locked ){
-            window.location = "/account";
+            window.location = "/" + this.language + "/account";
         }
         this.$store.dispatch("sessions/load");
     },

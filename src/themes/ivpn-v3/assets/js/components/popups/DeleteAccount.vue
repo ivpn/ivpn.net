@@ -51,7 +51,8 @@ export default {
     },
     data() {
         return {
-            userConfirmation: ""
+            userConfirmation: "",
+            language: "en"
         };
     },
     computed: {
@@ -68,6 +69,7 @@ export default {
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     methods: {
@@ -78,7 +80,7 @@ export default {
 
             if (!this.error) {
                 this.closeDialog();
-                window.location = "/account";
+                window.location = "/" + this.language + "/account";
             }
         },
         closeDialog() {
