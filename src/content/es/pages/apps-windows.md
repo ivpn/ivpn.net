@@ -11,7 +11,7 @@ layout: apps
 image: apps/windows-app-3.3.7
 releases: [{
     cta: Descargar,
-    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.14.2.exe,
+    download: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.14.14.exe,
     github: https://github.com/ivpn/desktop-app,
     changelog: https://github.com/ivpn/desktop-app/blob/master/CHANGELOG.md,
     checksum: [
