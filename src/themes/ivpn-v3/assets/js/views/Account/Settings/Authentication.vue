@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Log into client area using</h3>
+        <h3>{{ $t('account.accountSettingsTab.logInto') }}</h3>
         <div class="table-kw">
             <div class="row">
                 <div style="display:block">
@@ -13,7 +13,7 @@
                             @click.prevent="setAccountID()"
                             v-model="auth"
                         />
-                        <label for="rb_accountid" style="cursor:pointer">Account ID</label>
+                        <label for="rb_accountid" style="cursor:pointer">{{ $t('account.accountSettingsTab.accountId') }}</label>
                     </div>
                     <div class="radio-section">
                         <input
@@ -24,14 +24,14 @@
                             @click.prevent="setEmailPassword()"
                             v-model="auth"
                         />
-                        <label for="rb_email" style="cursor:pointer">Email & password</label>
+                        <label for="rb_email" style="cursor:pointer">{{ $t('account.accountSettingsTab.emailPassword') }}</label>
                     </div>
                 </div>
             </div>
 
             <div v-if="auth == 'email'">
                 <div class="row">
-                    <div class="key">Email</div>
+                    <div class="key">{{ $t('account.accountSettingsTab.email') }}</div>
                     <div class="value">{{ account.email }}</div>
                     <div class="action">
                         <button class="btn btn-icon" @click.prevent="changeEmail()">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="key">Password</div>
+                    <div class="key">{{ $t('account.accountSettingsTab.password') }}</div>
                     <div class="value">********</div>
                     <div class="action">
                         <button class="btn btn-icon" @click.prevent="changePassword()">
@@ -59,9 +59,9 @@
                         :checked="account.is_totp_enabled"
                         @click.prevent="change2FA()"
                     />
-                    <label for="cb_recurring" style="cursor:pointer">2-factor authentication</label>
+                    <label for="cb_recurring" style="cursor:pointer">{{ $t('account.accountSettingsTab.2fa') }}</label>
                 </div>
-                <p>When enabled, 2-factor authentication will be required in the client area and IVPN apps.</p>
+                <p>{{ $t('account.accountSettingsTab.2faDesc') }}</p>
             </div>
             <div></div>
         </div>
@@ -71,6 +71,7 @@
 <script>
 import { mapState } from "vuex";
 import EditIcon from "@/components/icons/btn/Edit.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -140,6 +141,11 @@ export default {
     },
     created() {
         
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
 
     computed: {

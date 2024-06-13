@@ -3,18 +3,18 @@
         <div class="wireguard-key__row wireguard-key__header">
             <h3>{{ name }}</h3>
             <button class="btn btn-icon" @click.prevent="deleteKey">
-                <icon-trash color="#398FE6"></icon-trash> Delete
+                <icon-trash color="#398FE6"></icon-trash> {{ $t('account.wireguardTab.delete') }}
             </button>
         </div>
         <div class="wireguard-key__row">
             <div class="wireguard-key__public-key">
-                <label>Public key</label>
+                <label>{{ $t('account.wireguardTab.publicKey') }}</label>
                 <div><small>{{ publicKey }}</small></div>
             </div>
             <div class="wireguard-key__ip-address">
-                <label>IPv4 address</label>
+                <label>{{ $t('account.wireguardTab.ipv4Address') }}</label>
                 <div><small>{{ ip }}</small></div>
-                <label>IPv6 address</label>
+                <label>{{ $t('account.wireguardTab.ipv6Address') }}</label>
                 <div><small>{{ ipv6Address }}</small></div>
             </div>
         </div>
@@ -24,6 +24,7 @@
 <script>
 import IconTrash from "@/components/icons/btn/Trash";
 import { IPv4 } from "ip-num/IPNumber";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: {
@@ -49,6 +50,11 @@ export default {
     created() {
         let ipv4 = new IPv4(this.ip);
         this.ipv6Address = this.API_GATEWAYS_WG_LOCAL_IPV6 + ipv4.toIPv4MappedIPv6().toString().replace("::ffff:", "");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         deleteKey() {

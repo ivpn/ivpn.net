@@ -4,7 +4,7 @@
             <form @submit.prevent="login()">
                 <h1>{{ $t('login.title') }}</h1>  
                 <tabs @onTabChanged="updateLoginType">
-                    <tab :selected="loginType == 'id'" :tabid="'id'" :name="'With Account ID'" class="login-tab">
+                    <tab :selected="loginType == 'id'" :tabid="'id'" :name="$t('login.withAccountId')" class="login-tab">
                         <div class="login-fields">
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
                             <label for="accountid">{{ $t('login.accountId') }}</label>
@@ -35,7 +35,7 @@
                             </div>-->
                         </div>
                     </tab>
-                    <tab :selected="loginType == 'email'" :tabid="'email'" :name="'With Email & Password'" class="login-tab">
+                    <tab :selected="loginType == 'email'" :tabid="'email'" :name="$t('login.withEmailAndPassword')" class="login-tab">
                         <div class="login-fields">
                             
                             <p v-if="error && !hideError(error)" class="error">{{ error.message }}</p>
@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="forgot">
-                                <router-link :to="{name:'recover-password'}">{{ $t('login.forgotPassword') }}</router-link>
+                                <router-link :to="{name:'recover-password-' + this.language }">{{ $t('login.forgotPassword') }}</router-link>
                             </div>
                         </div>
                     </tab>
@@ -68,7 +68,7 @@
                 </button>
             </form>
             <router-link
-                :to="{name:'prices'}"
+                :to="{name:'prices-' + this.language}"
                 id="createnew"
                 class="btn btn-big btn-border"
             >{{ $t('login.createNewAccount') }}</router-link>
@@ -107,6 +107,7 @@ export default {
             loginType: "",
 
             totpValue: "",
+            language: "en"
         };
     },
     created() {
@@ -117,6 +118,7 @@ export default {
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = useI18n().locale.value;
     },
     computed: {
         ...mapState({
@@ -194,7 +196,7 @@ export default {
                 return;
             }
 
-            this.$router.push({ name: "account" });
+            this.$router.push({ name: "account-" + this.language })
         },
         processError(error) {
             this.totpRequired =

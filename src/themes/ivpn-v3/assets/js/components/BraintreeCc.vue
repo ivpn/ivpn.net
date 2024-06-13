@@ -21,7 +21,7 @@
                 {{ error.message }}
             </p>
             <p v-if="error" class="note">
-                The above error message comes directly from Braintree, our credit card payment processor. You may update your card details and/or add additional information and try again.
+                {{ $t('account.payments.creditCard.errorAbove') }}
             </p>
         </div>
 
@@ -47,10 +47,10 @@
             </div>
             <div class="recurring--description">
                 <label for="cb_threed_secure_parameters">
-                    Additional card information
+                    {{ $t('account.payments.creditCard.additionalCardInformation') }}
                 </label>
                 <p>
-                    By design we always request the minimum information however some card issuers require more than just the card number. e.g. Name, Email. You may optionally submit this information to increase the chances that your payment is successful. This data is sent directly from your browser to our payment processor (braintreepayments.com) and is never seen by IVPN.
+                    {{ $t('account.payments.creditCard.byDesign') }}
                 </p>
             </div>
         </div>
@@ -59,12 +59,12 @@
                 <input class="cc-field" id="cc-email" v-model="email" placeholder="Email"/>
             </div>
             <div class="card-line">
-                <input class="cc-field" id="cc-name" v-model="name" placeholder="First name"/>
-                <input class="cc-field" id="cc-surname" v-model="surname" placeholder="Last name"/>
+                <input class="cc-field" id="cc-name" v-model="name" :placeholder="$t('account.payments.creditCard.firstName')"/>
+                <input class="cc-field" id="cc-surname" v-model="surname" :placeholder="$t('account.payments.creditCard.lastName')"/>
             </div>
             <div class="card-line">
-                <input class="cc-field" id="cc-address" v-model="address" placeholder="Street address"/>
-                <input class="cc-field" id="cc-postal-code" v-model="postalCode" placeholder="Postal code"/>
+                <input class="cc-field" id="cc-address" v-model="address" :placeholder="$t('account.payments.creditCard.streetAddress')"/>
+                <input class="cc-field" id="cc-postal-code" v-model="postalCode" :placeholder="$t('account.payments.creditCard.postalCode')"/>
             </div>
         </div>
     </div>
@@ -74,6 +74,7 @@
 import braintree from "braintree-web";
 import DiscoverIcon from "@/components/icons/cc/discover.vue";
 import VisaIcon from "@/components/icons/cc/visa.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: { DiscoverIcon, VisaIcon },
@@ -122,6 +123,11 @@ export default {
         this.initFields();
         this.initThreeDSecure();
     },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
+    },
     methods: {
         initFields() {
             let hostedFieldsStyles = {
@@ -150,7 +156,7 @@ export default {
             const hostedFieldsSettings = {
                 number: {
                     selector: "#card-number",
-                    placeholder: "Card Number",
+                    placeholder: this.$t('account.payments.creditCard.cardNumber'),
                 },
                 cvv: {
                     selector: "#cvv",
@@ -158,7 +164,7 @@ export default {
                 },
                 expirationDate: {
                     selector: "#expiration-date",
-                    placeholder: "MM / YYYY",
+                    placeholder: this.$t('account.payments.creditCard.dateFormat'),
                 },
             };
 

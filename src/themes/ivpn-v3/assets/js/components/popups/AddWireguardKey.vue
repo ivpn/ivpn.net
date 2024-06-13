@@ -1,25 +1,26 @@
 <template>
     <div class="form popup--small">
         <form @submit.prevent="add">
-        <h3>Add WireGuard Key</h3>
+        <h3>{{ $t('account.wireguardTab.addWireguardKey') }}</h3>
 
-        <p class="error" v-if="isInvalid && !error">Public key is required!</p>
+        <p class="error" v-if="isInvalid && !error">{{ $t('account.wireguardTab.publicKeyRequired') }}</p>
         <p class="error" v-if="!isInvalid && hasError" v-html="errorMessage"></p>
 
-        <label for="inp_key">Public Key:</label>
+        <label for="inp_key">{{ $t('account.wireguardTab.publicKey') }}</label>
         <input id="inp_key" v-model="publicKey" type="text" autofocus />
 
-        <label for="inp_comment" class='mt-1'>Comment (optional):</label>
+        <label for="inp_comment" class='mt-1'>{{ $t('account.wireguardTab.comment') }}</label>
         <input id="comment" v-model="comment" type="text" />
 
-        <button :disabled="inProgress" class="btn btn-big btn-solid mt-2">Add</button>
-        <button @click.prevent="closeDialog" class="btn btn-icon btn-icon-red mt-1">Cancel</button>
+        <button :disabled="inProgress" class="btn btn-big btn-solid mt-2">{{ $t('account.wireguardTab.add') }}</button>
+        <button @click.prevent="closeDialog" class="btn btn-icon btn-icon-red mt-1">{{ $t('account.wireguardTab.cancel') }}</button>
         </form>
     </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: {
@@ -35,6 +36,12 @@ export default {
             publicKey: "",
             comment: "",
         };
+    },
+    mounted() {
+        this.$store.dispatch("wireguard/load");
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     computed: {
         ...mapState({

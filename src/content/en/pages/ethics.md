@@ -1,7 +1,10 @@
 ---
 title: Ethical guidelines for privacy protection | IVPN
 description: Learn about the privacy-first ethical direction we follow. We explain how we approach transparency and how/what we communicate to new customers.
-url: /ethics/
+url: /en/ethics/
+aliases: ['/ethics/']
+params:
+  translated: true
 sections:
   - type: text_one_narrow_column
     content: >-
@@ -16,7 +19,7 @@ sections:
       
       #### No personal information
 
-      We aim for zero user information collected as defined in our concise [privacy policy](https://www.ivpn.net/privacy). We don’t ask for your email address or any other personal information.
+      We aim for zero user information collected as defined in our concise [privacy policy](/en/privacy). We don’t ask for your email address or any other personal information.
 
       #### No trackers
 

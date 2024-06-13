@@ -3,29 +3,29 @@
         <img width="120" src="/images/logo.svg" />
         <div class="error" style='margin:32px 0px;' v-if="error">{{ error.message }}</div>
         <div v-if="inProgress" style='margin:32px 0px;'>
-            <p>Loading invoice...</p>
+            <p>{{ $t('account.payments.invoice.loading') }}</p>
         </div>
         <div v-if="payment">
             <div class="info">
                 <div>
-                    <b>Invoice #{{ payment.ref_id }}</b>
+                    <b>{{ $t('account.payments.invoice.invoice') }} #{{ payment.ref_id }}</b>
                 </div>
                 <div>
-                    <b>Invoice Date:</b> {{ $filters.formatPaymentDate(payment.date) }}
+                    <b>{{ $t('account.payments.invoice.invoiceDate') }}</b> {{ $filters.formatPaymentDate(payment.date) }}
                 </div>
                 <div v-if="payment.is_successful">
-                    <b>Paid:</b> {{ $filters.formatPaymentDate(payment.date) }}
+                    <b>{{ $t('account.payments.invoice.paid') }}</b> {{ $filters.formatPaymentDate(payment.date) }}
                 </div>
             </div>
             <div class="sides">
                 <div class="sides__details">
-                    <b>Invoiced To:</b>
+                    <b>{{ $t('account.payments.invoice.invoicedTo') }}</b>
                     <p>
-                        Account reference ID: <b>{{ account.ref_id }}</b>
+                        {{ $t('account.payments.invoice.accountReference') }} <b>{{ account.ref_id }}</b>
                     </p>
                 </div>
                 <div class="sides__details">
-                    <b>Pay To:</b>
+                    <b>{{ $t('account.payments.invoice.payTo') }}</b>
                     <p>
                         IVPN Limited<br />
                         5 Secretary's Lane Gibraltar
@@ -34,19 +34,19 @@
             </div>
             <table>
                 <tr>
-                    <th width="75%">Description</th>
-                    <th width="25%">Amount</th>
+                    <th width="75%">{{ $t('account.payments.invoice.description') }}</th>
+                    <th width="25%">{{ $t('account.payments.invoice.amount') }}</th>
                 </tr>
                 <tr>
                     <td>{{ payment.product }}, {{ payment.duration }}</td>
                     <td>${{ payment.amount }}</td>
                 </tr>
                 <tr>
-                    <th>Subtotal:</th>
+                    <th>{{ $t('account.payments.invoice.subtotal') }}</th>
                     <td>${{ payment.amount }}</td>
                 </tr>
                 <tr>
-                    <th>Total:</th>
+                    <th>{{ $t('account.payments.invoice.total') }}</th>
                     <td>${{ payment.amount }}</td>
                 </tr>
             </table>
@@ -58,6 +58,7 @@
 import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: { SuccessIcon, DownIcon },
@@ -77,7 +78,6 @@ export default {
     },
 
     async created() {
-        console.log("RefID: ", this.$route.params.refid);
         this.refId = this.$route.params.refid;
 
         let payment = await this.$store.dispatch("payments/getPaymentByRefId", {
@@ -85,7 +85,6 @@ export default {
         });
 
         if (this.error) return;
-        console.log("Payment", payment)
         this.payment = payment    
     },
 
@@ -93,6 +92,12 @@ export default {
         if( this.$store.state.auth.account.product.name == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
+        }
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
 };

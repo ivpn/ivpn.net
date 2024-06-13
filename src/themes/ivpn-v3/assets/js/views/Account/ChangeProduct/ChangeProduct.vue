@@ -1,13 +1,13 @@
 <template>
     <div v-if="!isLocked">
         <div class="back-link">
-            <router-link :to="{name:'account'}">
-                <span class="icon-back"></span>Back to account
+            <router-link :to="{name:'account-' + this.language}">
+                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
 
-        <h1>Change Product</h1>
-        <p>You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.</p>
+        <h1>{{ $t('account.changeProductTitle') }}</h1>
+        <p>{{ $t('account.changeProductDesc') }}</p>
         <p v-if="error" class="error">
             <b>Error:</b>
             {{ error.message }}
@@ -22,9 +22,9 @@
                 <div class="price-header">IVPN Standard</div>
                 <div class="price-features">
                     <ul>
-                        <li>All protocols</li>
-                        <li>2 devices</li>
-                        <li>Anti-tracker</li>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
@@ -32,8 +32,8 @@
                         <div
                             class="label"
                             v-if="account.product.name == 'IVPN Standard'"
-                        >Active until:</div>
-                        <div class="label" v-else>Will be active until:</div>
+                        >{{ $t('account.activeUntil') }}</div>
+                        <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
 
                         <div class="value">
                             {{ standardActiveUntil }}
@@ -54,16 +54,16 @@
                 <div class="price-header">IVPN Pro</div>
                 <div class="price-features">
                     <ul>
-                        <li>All protocols</li>
-                        <li>7 devices</li>
-                        <li>Anti-tracker</li>
-                        <li>Multi-hop</li>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.proDevices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
                     <div class="active-until">
-                        <div class="label" v-if="account.product.name == 'IVPN Pro'">Active until:</div>
-                        <div class="label" v-else>Will be active until:</div>
+                        <div class="label" v-if="account.product.name == 'IVPN Pro'">{{ $t('account.activeUntil') }}</div>
+                        <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
 
                         <div class="value">
                             {{ proActiveUntil }}
@@ -76,7 +76,7 @@
             </price-box>
         </div>
         <p>
-            <sup style="color:red" v-if="account.is_active">*</sup> This date is calculated based on the current time left on your account, and the price difference between product types. Long-term discounts are not applicable. No additional payment is required.
+            <sup style="color:red" v-if="account.is_active">*</sup> {{ $t('account.thisDate') }}
         </p>
     </div>
 </template>
@@ -84,11 +84,10 @@
 <script>
 // import SignupSection from "@/components/SignupSection.vue";
 import PriceBox from "@/components/PriceBox.vue";
-
 import { add, differenceInMinutes } from "date-fns";
 import { th } from "date-fns/locale";
-
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     data() {
@@ -96,6 +95,7 @@ export default {
             standardActiveUntil: null,
             proActiveUntil: null,
             isLocked: true,
+            language: "en"
         };
     },
     components: {
@@ -111,9 +111,13 @@ export default {
         this.proActiveUntil = this.$filters.formatActiveUntil(proPlan.active_until);
         this.isLocked = proPlan.is_locked;
         if( proPlan.is_locked ){
-            window.location = "/account";
+            window.location = "/" + this.language + "/account";
         }
         this.$store.dispatch("sessions/load");
+    },
+    mounted(){
+        useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = window.location.href.split("/")[3];
     },
     
 
@@ -137,10 +141,10 @@ export default {
 
             this.$store.commit("setFlashMessage", {
                 type: "success",
-                message: `Product has been successfully changed to ${newProductName}`
+                message: this.$t('account.changeProductSuccess') + newProductName
             });
 
-            this.$router.push({ name: "account" });
+            this.$router.push({ name: "account-" + this.language })
         },
 
         async calculateForProduct(newProduct) {

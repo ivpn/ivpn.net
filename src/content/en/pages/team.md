@@ -1,6 +1,9 @@
 ---
 title: IVPN Team
-url: /team/
+url: /en/team/
+aliases: ['/team/']
+params:
+  translated: true
 sections:
   - type: heading_text_cta_one_column
     content: >-
@@ -61,7 +64,7 @@ sections:
       - image: /images-static/uploads/team-gorka.png
         image_retina: /images-static/uploads/team-gorka-2x.png
         name: Gorka Pernas
-        description: After gathering a decade of experience in quality assurance-related roles at technology firms, Gorka now applies his knowledge in helping the IVPN team ship bug-free apps and making sure you suffer no privacy leaks.
+        description: After gathering more than a decade of experience in quality assurance-related roles at technology firms, Gorka now applies his knowledge in helping the IVPN team ship bug-free apps and making sure you suffer no privacy leaks.
         linkedin: https://www.linkedin.com/in/gorkapernas/
         github: https://github.com/gorkapernas
       - image: /images-static/uploads/nathan.png

@@ -3,7 +3,10 @@ title: IVPN for Linux - Open-source VPN app for Linux
 description: IVPN for Linux offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for Linux
 subtitle: Supports 64-bit Linux 3.10+
-url: /apps-linux/
+url: /en/apps-linux/
+aliases: ['/apps-linux/']
+params:
+  translated: true
 platform: linux
 layout: apps-single
 imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png
@@ -222,16 +225,16 @@ IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-
 [Base package](https://repo.ivpn.net/stable/pool/ivpn_3.14.14_amd64.deb)  
 SHA256: 123cc46bd12baede70fbf3e8db013ee248fe1faa9090af9ff3c6a8dcc60cc27d  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.14_amd64.deb)  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.4_amd64.deb)  
 SHA256: 9cc74190cc567d4f6d813311c9fcba51695280c9776754150a251032f36ee941  
 
 ### .RPM
 
 [Base package](https://repo.ivpn.net/stable/pool/ivpn-3.14.14-1.x86_64.rpm)  
-SHA256: e65c72e34f75dcac0e4113584fb0687c2852fa5bdea03bde287a0344147297e1  
+SHA256: e65c72e34f75dcac0e4113584fb0687c2852fa5bdea03bde287a0344147297e1 
 
 [UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.14-1.x86_64.rpm)  
-SHA256: cadddb72584b75e5ca6d2df8de5424e3e3bad9547b02a675ff6e14713311f15c  
+SHA256: cadddb72584b75e5ca6d2df8de5424e3e3bad9547b02a675ff6e14713311f15c 
 
 ## Install from Source Code {#source}
 

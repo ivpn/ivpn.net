@@ -2,7 +2,7 @@
     <div>
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <form @submit.prevent="submit()">            
-            <label for="gift-card-code">Code from a Voucher issued by IVPN:</label>
+            <label for="gift-card-code">{{ $t('account.payments.voucher.codeFrom') }}</label>
                 <input
                     id='gift-card-code'
                     type="text"
@@ -20,9 +20,9 @@
                     width="32"
                     height="32"
                     fill="#FFFFFF"
-                />Add Time
+                />{{ $t('account.payments.voucher.addTime') }}
             </button>
-            <p>Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period.</p>
+            <p>{{ $t('account.payments.voucher.pleaseNote') }}</p>
         </form>
     </div>
 </template>
@@ -31,6 +31,7 @@
 import { mapState } from "vuex";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import matomo from "@/api/matomo.js"
+import { useI18n } from "vue-i18n";
 
 export default {
     props: ["price"],
@@ -39,7 +40,8 @@ export default {
     },
     data() {
         return {            
-            code: ""            
+            code: "",  
+            "language": "en"   
         };
     },
     computed: {
@@ -54,6 +56,12 @@ export default {
     },
     created() {
         this.$store.dispatch("payments/clear")
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
     },
     methods: {
         async submit() {
@@ -70,13 +78,13 @@ export default {
             this.$store.commit("setFlashMessage", {
                 type: "success",
                 message:
-                    "Voucher applied successfully. Service is extended until " +
+                    this.$t('account.payments.voucher.successPayment')  +
                     this.$filters.formatDate(
                         this.account.active_until
                     )
             });
 
-            this.$router.push({ name: "account" });
+            this.$router.push({ name: "account-" + this.language })
         }
     }
 };

@@ -3,7 +3,7 @@
         <div class="wireguard-key__row wireguard-key__header">
             <h3>{{ name }}</h3>
             <button class="btn btn-icon" @click.prevent="deleteDevice">
-                <icon-trash color="#398FE6"></icon-trash> Delete
+                <icon-trash color="#398FE6"></icon-trash> {{ $t('account.wireguardTab.delete') }}
             </button>
         </div>
     </div>
@@ -11,6 +11,7 @@
 
 <script>
 import IconTrash from "@/components/icons/btn/Trash";
+import { useI18n } from "vue-i18n";
 
 export default {
     props: {
@@ -28,6 +29,11 @@ export default {
         };
     },
     created() {
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+        }
     },
     methods: {
         deleteDevice() {

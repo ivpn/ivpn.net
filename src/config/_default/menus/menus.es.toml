@@ -1,19 +1,19 @@
 [[main]]
     identifier = "team"
-    name = "Team"
-    url = "/team/"
+    name = "Equipo"
+    url = "/es/team/"
     weight = 10
 
   [[main]]
     identifier = "ethics"
-    name = "Ethics"
-    url = "/ethics/"
+    name = "Ética"
+    url = "/es/ethics/"
     weight = 20
   
   [[main]]
     identifier = "privacy"
-    name = "Privacy"
-    url = "/privacy/"
+    name = "Privacidad"
+    url = "/es/privacy/"
     weight = 30
 
   [[main]]
@@ -24,15 +24,15 @@
 
   [[main]]
     identifier = "prices"
-    name = "Pricing"
-    url = "/pricing/"
+    name = "Precios"
+    url = "/es/pricing/"
     weight = 45
 
 
   [[main]]
     identifier = "download"
     name = "Apps"
-    url = "/apps/"
+    url = "/es/apps/"
     weight = 50
 
   [[main]]
@@ -49,8 +49,8 @@
 
   [[footercolone]]
     identifier = "generate-account"
-    name = "Generate Account"
-    url = "/signup/"
+    name = "Generar cuenta"
+    url = "/es/signup/"
     weight = 5
 
   [[footercolone]]
@@ -62,7 +62,7 @@
   [[footercolone]]
     identifier = "wireguard"
     name = "WireGuard® VPN"
-    url = "/wireguard/"
+    url = "/es/wireguard/"
     weight = 10
   
   [[footercolone]]
@@ -73,7 +73,7 @@
 
   [[footercolone]]
     identifier = "what-is-a-vpn"
-    name = "What is a VPN"
+    name = "Qué es una VPN"
     url = "/es/what-is-a-vpn/"
     weight = 40
   
@@ -91,13 +91,13 @@
 
   [[footercoltwo]]
     identifier = "status"
-    name = "Servers"
+    name = "Servidores"
     url = "/es/status/"
     weight = 20
 
   [[footercoltwo]]
     identifier = "transparency-report"
-    name = "Transparency Report"
+    name = "Informe de transparencia"
     url = "/es/transparency-report/"
     weight = 30
 
@@ -121,26 +121,26 @@
 
   [[footercolthree]]
     identifier = "legal-process-guidelines"
-    name = "Legal Guidelines"
+    name = "Directivas legales"
     url = "/es/legal-process-guidelines/"
     weight = 20
   
   [[footercolthree]]
     identifier = "tos"
-    name = "Terms of Service"
-    url = "/tos/"
+    name = "Términos de servicio"
+    url = "/es/tos/"
     weight = 30
 
   [[footercolthree]]
     identifier = "privacy-policy"
-    name = "Privacy Policy"
-    url = "/privacy/"
+    name = "Política de privacidad"
+    url = "/es/privacy/"
     weight = 50
 
   [[footercolthree]]
     identifier = "refund-policy"
-    name = "Refund Policy"
-    url = "/refunds/"
+    name = "Política de reembolso"
+    url = "/es/refunds/"
     weight = 60
 
   [[footercolfour]]

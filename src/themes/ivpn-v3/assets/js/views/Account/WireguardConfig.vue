@@ -2,77 +2,77 @@
     <div v-if="!isLight" class="vpn-configuration">
         <div v-if="!account.is_active">
             <section>
-                <h3>Your account is expired</h3>
-                <p>Please renew your account to manage WireGuard keys.</p>
+                <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
+                <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account' }"
+                    :to="{ name: 'account-' + this.language }"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
-                    >To your account</router-link
+                    >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
                 >
             </section>
         </div>
         <div v-if="account.is_active">
             <div class="back-link">
-                <router-link :to="{ name: 'wireguard' }">
-                    <span class="icon-back"></span>Back to WireGuard
+                <router-link :to="{ name: 'wireguard-' + this.language }">
+                    <span class="icon-back"></span> {{ $t('account.wireguardTab.backToWireguard') }}
                 </router-link>
             </div>
             <section>
-                <h2>WireGuard Configuration</h2>
-                <h3>1. Generate WireGuard key</h3>
-                <p class="note">A private and public key pair will be generated within the browser. The private key will be included in the config file that you download. Only the public key is sent to our server. You can review the code on <a href="https://github.com/ivpn/ivpn.net/blob/main/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
+                <h2>{{ $t('account.wireguardTab.configuration') }}</h2>
+                <h3>{{ $t('account.wireguardTab.configStep1Title') }}</h3>
+                <p class="note">{{ $t('account.wireguardTab.configStep1Content') }} <a href="https://github.com/ivpn/ivpn.net/blob/main/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': isKeyGenerated }">
-                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="true" href="">Generate key</a>
+                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="true" href="">{{ $t('account.wireguardTab.generateKey') }}</a>
                         </li>
                         <li v-bind:class="{ 'is-active': !isKeyGenerated }">
-                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="false" href="">Add key</a>
+                            <a @click.prevent="toggleGenerateKey" data-isKeyGenerated="false" href="">{{ $t('account.wireguardTab.addKey') }}</a>
                         </li>
                     </ul>
                 </div>
                 <div v-if="isKeyGenerated">
                     <p v-if="!publicKey">
-                        <label for="key_comment_generated">Key comment (optional):</label>
+                        <label for="key_comment_generated">{{ $t('account.wireguardTab.keyComment') }}</label>
                         <input id="key_comment_generated" v-model="keyComment" type="text">
                     </p>
                     <p v-if="!publicKey">
-                        <a class="btn btn-border" href="" @click.prevent="generateKey()">Generate key</a>
+                        <a class="btn btn-border" href="" @click.prevent="generateKey()">{{ $t('account.wireguardTab.generateKey') }}</a>
                     </p>
                     <p class="key" v-if="publicKey">
-                        <strong>Public key:</strong><br>
+                        <strong>{{ $t('account.wireguardTab.publicKey') }}</strong><br>
                         {{ publicKey }}
                     </p>
                     <p v-if="keyComment && publicKey">
-                        <strong>Key comment:</strong><br>
+                        <strong>{{ $t('account.wireguardTab.keyCommentRequired') }}</strong><br>
                         {{ keyComment }}
                     </p>
                 </div>
                 <div v-if="!isKeyGenerated">
                     <form v-if="!publicKey" @submit.prevent="addKey">
-                        <label for="public_key">Public Key:</label>
+                        <label for="public_key">{{ $t('account.wireguardTab.publicKey') }}</label>
                         <input id="public_key" v-model="publicKeyAdd" type="text" autofocus>
-                        <label for="private_key">Private Key:</label>
+                        <label for="private_key">{{ $t('account.wireguardTab.privateKey') }}</label>
                         <input id="private_key" v-model="privateKeyAdd" type="text">
-                        <label for="key_comment">Key comment (optional):</label>
+                        <label for="key_comment">{{ $t('account.wireguardTab.keyComment') }}</label>
                         <input id="key_comment" v-model="keyComment" type="text">
                         <p>
-                            <button class="btn btn-border">Add key</button>
+                            <button class="btn btn-border">{{ $t('account.wireguardTab.addKey') }}</button>
                         </p>
                     </form>
                     <p v-if="publicKey">
-                        <strong>Public key:</strong><br>
+                        <strong>{{ $t('account.wireguardTab.publicKey') }}</strong><br>
                         {{ publicKey }}
                     </p>
                     <p v-if="keyComment && publicKey">
-                        <strong>Key comment:</strong><br>
+                        <strong>{{ $t('account.wireguardTab.keyCommentRequired') }}</strong><br>
                         {{ keyComment }}
                     </p>
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
-                <h3>2. Select one or multiple exit servers</h3>
-                <p class="note">A separate configuration file will be generated for each location that you include.</p>
+                <h3>{{ $t('account.wireguardTab.configStep2Title') }}</h3>
+                <p class="note">{{ $t('account.wireguardTab.configStep2Content') }}</p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': !multihop }">
@@ -83,56 +83,56 @@
                         </li>
                     </ul>
                 </div>
-                <h4>Select exit server location</h4>
+                <h4>{{ $t('account.wireguardTab.selectExitServerLocation') }}</h4>
                 <div class="select">
                     <select @change="selectExitCountry($event)">
-                        <option value="">All countries</option>
+                        <option value="">{{ $t('account.wireguardTab.allCountries') }}</option>
                         <option v-for="server in filteredServers" :value="server.country_code + '_' + server.country" :key="server.country_code">{{ server.country }}</option>
                     </select>
                     <i></i>
                 </div>
                 <div class="select" v-bind:class="{ disabled: validation.exitCity }">
                     <select :disabled="validation.exitCity" @change="selectExitCity($event)">
-                        <option value="">All cities</option>
+                        <option value="">{{ $t('account.wireguardTab.allCities') }}</option>
                         <option v-for="city in exitCities" :value="city" :key="city">{{ city }}</option>
                     </select>
                     <i></i>
                 </div>
                 <div class="select" v-bind:class="{ disabled: validation.exitServer }">
                     <select :disabled="validation.exitServer" @change="selectExitServer($event)">
-                        <option value="">All servers</option>
+                        <option value="">{{ $t('account.wireguardTab.allServers') }}</option>
                         <option v-for="server in exitServers" :value="server.gateway + '_' + server.multihop_port + '_' + server.wg_public_key" :key="server.gateway">{{ server.gateway }}</option>
                     </select>
                     <i></i>
                 </div>
                 <div v-if="multihop">
-                    <h4>Select entry server location</h4>
+                    <h4>{{ $t('account.wireguardTab.selectEntryServerLocation') }}</h4>
                     <div class="select" v-bind:class="{ disabled: validation.multihop }">
                         <select :disabled="validation.multihop" @change="selectEntryCountry($event)">
-                            <option value="">Select country</option>
+                            <option value="">{{ $t('account.wireguardTab.selectCountry') }}</option>
                             <option v-for="server in multihopServers" :value="server.country_code" :key="server.country_code">{{ server.country }}</option>
                         </select>
                         <i></i>
                     </div>
                     <div class="select" v-bind:class="{ disabled: validation.entryCity || validation.multihop }">
                         <select :disabled="validation.entryCity || validation.multihop" @change="selectEntryCity($event)">
-                            <option value="">Select city</option>
+                            <option value="">{{ $t('account.wireguardTab.selectCity') }}</option>
                             <option v-for="city in entryCities" :value="city" :key="city">{{ city }}</option>
                         </select>
                         <i></i>
                     </div>
                     <div class="select" v-bind:class="{ disabled: validation.entryServer || validation.multihop }">
                         <select :disabled="validation.entryServer || validation.multihop" @change="selectEntryServer($event)">
-                            <option value="">Select server</option>
+                            <option value="">{{ $t('account.wireguardTab.selectServer') }}</option>
                             <option v-for="server in entryServers" :value="server.gateway" :key="server.gateway">{{ server.gateway }}</option>
                         </select>
                         <i></i>
                     </div>
                 </div>
-                <h3>3. Configuration</h3>
+                <h3>{{ $t('account.wireguardTab.configStep3Title') }}</h3>
                 <div v-if="!multihop">
-                    <h4>Port</h4>
-                    <p class="note">You may need to configure a custom port if you are behind a restrictive firewall.</p>
+                    <h4>{{ $t('account.wireguardTab.port') }}</h4>
+                    <p class="note">{{ $t('account.wireguardTab.configStep3Content') }}</p>
                     <div class="select">
                         <select @change="selectPort($event)">
                             <option value="2049" :selected="(query.port == 2049) || !query.port">2049</option>
@@ -149,12 +149,12 @@
                         <i></i>
                     </div>
                 </div>
-                <h4>VPN tunnel traffic</h4>
-                <p class="note">By default, you will receive both an IPv4 and IPv6 address. You can specify if you wish to receive only IPv4 or IPv6 address.</p>
+                <h4>{{ $t('account.wireguardTab.vpnTunnelTraffic') }}</h4>
+                <p class="note">{{ $t('account.wireguardTab.vpnTunnelTrafficDesc') }}</p>
                 <div class="radio">
                     <div>
                         <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv4_ipv6" value="ipv4_ipv6" checked @change="selectTrafficProtocol($event)">
-                        <label for="traffic_protocol_ipv4_ipv6">IPv4 and IPv6</label>
+                        <label for="traffic_protocol_ipv4_ipv6">IPv4 {{ $t('account.wireguardTab.and') }} IPv6</label>
                     </div>
                     <div>
                         <input type="radio" name="traffic_protocol" id="traffic_protocol_ipv4" value="ipv4" @change="selectTrafficProtocol($event)">
@@ -165,17 +165,17 @@
                         <label for="traffic_protocol_ipv6">IPv6</label>
                     </div>
                 </div>
-                <h4>DNS settings</h4>
-                <p class="note">When AntiTracker is enabled, IVPN blocks ads, malicious websites, and third-party trackers using our private DNS servers. <a href="/antitracker/">Learn more</a> about how IVPN AntiTracker is implemented.</p>
-                <p class="note">Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook). <a href="/knowledgebase/general/antitracker-faq/">Learn more</a></p>
+                <h4>{{ $t('account.wireguardTab.dnsSettings') }}</h4>
+                <p class="note">{{ $t('account.wireguardTab.dnsSettingsNote1') }} <a href="/antitracker/">{{ $t('account.wireguardTab.learnMore') }}</a> {{ $t('account.wireguardTab.aboutHow') }}</p>
+                <p class="note">{{ $t('account.wireguardTab.dnsSettingsNote2') }}  <a href="/knowledgebase/general/antitracker-faq/">{{ $t('account.wireguardTab.learnMore') }}</a></p>
                 <div class="radio">
                     <div>
                         <input type="radio" name="dns" id="dns_standard" value="standard" checked @change="selectDNS($event)">
-                        <label for="dns_standard">Standard</label>
+                        <label for="dns_standard">{{ $t('account.wireguardTab.standard') }} </label>
                     </div>
                     <div>
                         <input type="radio" name="dns" id="dns_antitracker" ref="dns_antitracker" value="antitracker" @change="selectDNS($event)">
-                        <label for="dns_antitracker">AntiTracker </label>
+                        <label for="dns_antitracker">{{ $t('account.wireguardTab.antitracker') }}  </label>
                         <i></i>
                         <div class="select">
                         <select v-model="selectedBlockList">
@@ -184,19 +184,19 @@
                         <i></i>
                     </div>
                         <input id="hardcore_mode" type="checkbox" v-model="isDnsHardcore">
-                        <label for="hardcore_mode">Hardcore Mode</label>
+                        <label for="hardcore_mode">{{ $t('account.wireguardTab.hardcore') }} </label>
                     </div>
                    
                     <div class="search">
                         <input type="radio" name="dns" id="dns_custom" value="custom" @change="selectDNS($event)">
-                        <label for="dns_custom">Custom DNS</label>
+                        <label for="dns_custom">{{ $t('account.wireguardTab.customDns') }} </label>
                         <input v-if="dnsType == 'custom'" v-model="customDNS" name="search" type="text">
-                        <p v-if="dnsType == 'custom'" class="note note--input">Please enter a valid IPv4 or IPv6 address.</p>
+                        <p v-if="dnsType == 'custom'" class="note note--input">{{ $t('account.wireguardTab.pleaseEnter') }}</p>
                     </div>
                 </div>
-                <h3>4. Download</h3>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">Download zip archive</a>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">Generate QR code</a>
+                <h3>{{ $t('account.wireguardTab.configStep4Title') }}</h3>
+                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
+                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
                 <div class="qrnote">
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
@@ -212,6 +212,7 @@ import JSZip from "jszip";
 import FileSaver from "file-saver";
 import qrcode from "qrcode-generator";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     data() {
@@ -266,6 +267,7 @@ export default {
             antitrackerBlockLists: [],
             selectedBlockList: null,
             isDnsHardcore: false,
+            language: "en",
         };
     },
     watch: {
@@ -315,9 +317,14 @@ export default {
         }),
     },
     mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
         this.fetchServers();
         this.updateQuery();
         this.fetchBlockLists();
+
     },
     methods: {
         async fetchServers() {

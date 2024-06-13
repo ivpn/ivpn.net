@@ -1,36 +1,36 @@
 <template>
     <div v-if="!isLight">
         <div class="back-link">
-            <router-link :to="{ name: 'account' }">
-                <span class="icon-back"></span>Back to account
+            <router-link :to="{ name: 'account-' + this.language }">
+                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
-        <h1>Account settings</h1>
+        <h1>{{ $t('account.accountSettingsTab.title') }}</h1>
         <div class="tabs sub-navigation">
             <div class="page-centered">
                 <ul>
                     <li
                         :class="{
-                            'is-active': this.$route.name == 'settings-main',
+                            'is-active': this.$route.name == 'settings-main-' + this.language,
                         }"
                     >
-                        <router-link :to="{ name: 'settings-main' }">
-                            Authentication
+                        <router-link :to="{ name: 'settings-main-' + this.language}">
+                            {{ $t('account.accountSettingsTab.authentication') }}
                         </router-link>
                     </li>
                     <li
                         :class="{
-                            'is-active': this.$route.name == 'settings-billing',
+                            'is-active': this.$route.name == 'settings-billing-' + this.language,
                         }"
                     >
-                        <router-link :to="{ name: 'settings-billing' }">
-                            Billing
+                        <router-link :to="{ name: 'settings-billing-' + this.language}">
+                            {{ $t('account.accountSettingsTab.billing') }}
                         </router-link>
                     </li>
                     <li class="expand"></li>
                     <li
                         :class="{
-                            'is-active': this.$route.name == 'settings-delete',
+                            'is-active': this.$route.name == 'settings-delete-' + this.language,
                         }"
                     >
                         <a
@@ -39,7 +39,7 @@
                             style="opacity: 0.7"
                             href="#"
                         >
-                            Delete account
+                        {{ $t('account.accountSettingsTab.deleteAccount') }}
                         </a>
                     </li>
                 </ul>
@@ -51,6 +51,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     computed: {
@@ -60,7 +61,8 @@ export default {
     },
     data() {
         return {
-            isLight : false
+            isLight : false,
+            language : "en"
         };
     },
     methods: {
@@ -75,6 +77,12 @@ export default {
         if( this.$store.state.auth.account.product.name == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
+        }
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
 

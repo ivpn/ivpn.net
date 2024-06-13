@@ -1,23 +1,23 @@
 <template>
     <div class="popup--content" style='max-width: 550px;'>
 
-        <h3>Authenticate using Account ID</h3>
+        <h3>{{ $t('account.popups.authentication.title') }}</h3>
 
         <p v-if="error" style="color: red;" v-html="error.message"></p>
 
         <p>
-            Disabling email & password authentication will remove your email address and password hash from our systems.
+            {{ $t('account.popups.authentication.desc') }}
         </p>
 
-        <p><b>Important:</b> please make sure you've written down your Account ID, since you will use it to log into client area:
+        <p><b>{{ $t('account.popups.authentication.important') }}</b> {{ $t('account.popups.authentication.makeSure') }}
         </p>
         <div class='accountid'>{{ this.account.id }}</div>
 
         <div class="popup-buttons">
             <button class="btn btn-big btn-solid" @click.prevent="setAuthAccountID()" :disabled="inProgress">
-                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" /> Change authentication
+                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" /> {{ $t('account.popups.authentication.changeAuthentication') }}
             </button>
-            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">Cancel</a>
+            <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.cancel') }}</a>
         </div>
     </div>
 </template>
@@ -25,6 +25,7 @@
 <script>
 import progressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -43,6 +44,11 @@ export default {
     },
     created() {
         this.$store.dispatch("account/clear");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+      }
     },
     methods: {
         async setAuthAccountID() {

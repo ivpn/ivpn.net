@@ -10,13 +10,13 @@
                         :checked="isSubscribed"
                         @click.prevent="changeRecurring()"
                     />
-                    <label for="cb_recurring" style="cursor:pointer">Recurring payments</label>
+                    <label for="cb_recurring" style="cursor:pointer">{{ $t('account.accountSettingsTab.recurringPayments') }}</label>
                 </div>
             </div>
 
             <div v-if="isSubscribed">                
                 <div class="row">
-                    <div class="key">Billing cycle</div>
+                    <div class="key">{{ $t('account.accountSettingsTab.billingCycle') }}</div>
                     <div class="value">{{ account.subscription.billing_cycle }}</div>
                     <div class="action">
                         <button class="btn btn-icon" @click.prevent="changeBillingCycle()">
@@ -25,7 +25,7 @@
                     </div>
                 </div>                
                 <div class="row">
-                    <div class="key">Payment method</div>
+                    <div class="key">{{ $t('account.accountSettingsTab.paymentMethod') }}</div>
                     <div
                         class="value"
                         v-if="account.subscription.payment_method == account.subscription.payment_method_info"
@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="key" v-if="account.is_active">Paid until</div>
-                    <div class="key" v-else>Was Active until</div>
+                    <div class="key" v-if="account.is_active">{{ $t('account.accountSettingsTab.paidUntil') }}</div>
+                    <div class="key" v-else>{{ $t('account.accountSettingsTab.wasActiveUntil') }}</div>
                     <div class="value">{{ $filters.formatPaymentDate(account.active_until) }}</div>
                     <div class="action"></div>
                 </div>
@@ -50,7 +50,7 @@
                     class="row"
                     v-if="account.subscription.last_payment && account.subscription.last_payment.is_successful"
                 >
-                    <div class="key">Last payment</div>
+                    <div class="key">{{ $t('account.accountSettingsTab.lastPayment') }}</div>
                     <div
                         class="value"
                     >{{ $filters.formatDate(account.subscription.last_payment.date) }} | ${{ account.subscription.last_payment.amount }}</div>
@@ -67,14 +67,14 @@
                         <div v-if="!inProgress">
                             <p v-if="error" style="color: red;" v-html="error.message"></p>
                             <p>
-                                Automatic recurring payment failed on
+                                {{ $t('account.accountSettingsTab.recurringFailedOn') }}
                                 <b>{{ $filters.formatDate(account.subscription.last_payment.date) }}</b>
                                 (${{account.subscription.last_payment.amount}})
                             </p>
-                            <p>Please check or update your payment method and try again.</p>
+                            <p>{{ $t('account.accountSettingsTab.pleaseCheck') }}</p>
                         </div>
                         <div v-else>
-                            <p>Processing payment...</p>
+                            <p>{{ $t('account.accountSettingsTab.processingPayment') }}</p>
                         </div>
                     </div>
                     <div class="retry">
@@ -89,7 +89,7 @@
                                 fill="#398FE6"
                                 v-if="inProgress"
                             ></progress-spinner>
-                            <span v-else>Retry</span>
+                            <span v-else>{{ $t('account.accountSettingsTab.retry') }}</span>
                         </button>
                     </div>
                 </div>
@@ -102,9 +102,9 @@
         <div class="row">
             <div class="key">
                 <router-link
-                    :to="{name:'payment'}"
+                    :to="{name:'payment-' + this.language}"
                     class="btn btn-big btn-border"
-                >Extend your account</router-link>
+                >{{ $t('account.accountSettingsTab.extendYourAccount') }}</router-link>
             </div>
         </div>
     </div>
@@ -114,6 +114,7 @@
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import EditIcon from "@/components/icons/btn/Edit.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -133,6 +134,12 @@ export default {
     },
     created() {
         this.$store.dispatch("payments/clear");
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
     },
     methods: {
         changeRecurring() {
@@ -163,6 +170,11 @@ export default {
         retryPayment() {
             this.$store.dispatch("payments/retrySubscriptionPayment");
         },
+    },
+    data() {
+        return {
+            language : "en"
+        };
     },
 };
 </script>

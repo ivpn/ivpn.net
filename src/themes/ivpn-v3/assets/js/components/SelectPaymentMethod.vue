@@ -5,8 +5,8 @@
                 <div class="plan-details" v-if="account.is_new">
                     <div class="plan-name">{{ account.product.name }}</div>
                     <div class="plan-change">
-                        <router-link :to="{ name: 'prices' }"
-                            >Change plan</router-link
+                        <router-link :to="{ name: 'prices-' + this.language }"
+                            >{{ $t('account.changePlan') }}</router-link
                         >
                     </div>
                 </div>
@@ -22,47 +22,47 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cc', params: { price: price.id } }"
+                :to="{ name: 'add-funds-cc-' + this.language, params: { price: price.id } }"
             >
                 <div class="credit-card-icon"></div>
-                Credit Card
+                {{ $t('account.creditCard') }}
             </router-link>
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-paypal', params: { price: price.id } }"
+                :to="{ name: 'add-funds-paypal-' + this.language, params: { price: price.id } }"
             >
                 <div class="paypal-icon"></div>
-                PayPal
+                {{ $t('account.paypal') }}
             </router-link>
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-bitcoin', params: { price: price.id } }"
+                :to="{ name: 'add-funds-bitcoin-' + this.language, params: { price: price.id } }"
             >
                 <div class="bitcoin-icon"></div>
-                Bitcoin
+                {{ $t('account.bitcoin') }}
             </router-link>
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-monero', params: { price: price.id } }"
+                :to="{ name: 'add-funds-monero-' + this.language,  params: { price: price.id } }"
             >
                 <div class="monero-icon"></div>
-                Monero
+                {{ $t('account.monero') }}
             </router-link>            
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cash', params: { price: price.id } }"
+                :to="{ name: 'add-funds-cash-' + this.language, params: { price: price.id } }"
             >
                 <div class="cash-icon"></div>
-                Cash
+                {{ $t('account.cash') }}
             </router-link>
         </div>
         <div>
-            Have a voucher code?
-            <router-link :to="{ name: 'add-funds-voucher', params: { price: price.id } }">Redeem it here</router-link>.
+            {{ $t('account.haveVoucher') }}
+            <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
         </div>
         <!--
         <div class="pay-buttons">
@@ -81,6 +81,7 @@
 
 <script>
 import SelectBillingCycle from "@/components/SelectBillingCycle.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -92,6 +93,7 @@ export default {
         return {
             price: "",
             more: false,
+            language: "en"
         };
     },
     created() {
@@ -102,6 +104,12 @@ export default {
             !this.account.product.prices.includes(this.price)
         ) {
             this.price = this.account.product.prices[2];
+        }
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     watch: {

@@ -2,13 +2,13 @@
     <div v-if="!isLight">
         <div v-if="!account.is_active">
             <section>
-                <h3>Your account is expired</h3>
-                <p>Please renew your account to manage your devices.</p>
+                <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
+                <p>{{ $t('account.deviceManagementTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account' }"
+                    :to="{ name: 'account-' + this.language }"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
-                    >To your account</router-link
+                    >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
                 >
             </section>
         </div>
@@ -21,18 +21,18 @@
 
 
             <section v-if="!account.device_management">
-                <h3>Device management is disabled.</h3>
-                <p>When enabled, you can review devices logged into the service and remotely log them out as needed.</p>
-                <p>We recommend securely storing device identifiers with encryption to identify and disconnect devices when you don't have access to them.</p>
-                <p>Learn more about this feature and its potential privacy implications <a href="/knowledgebase/general/device-management-faq/">here</a>.</p>
-                <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">Enable device management</a>
+                <h3>{{ $t('account.deviceManagementTab.disabled') }}</h3>
+                <p>{{ $t('account.deviceManagementTab.disabledDesc1') }}</p>
+                <p>{{ $t('account.deviceManagementTab.disabledDesc2') }}</p>
+                <p>{{ $t('account.deviceManagementTab.disabledDesc3') }} <a href="/knowledgebase/general/device-management-faq/"> {{ $t('account.deviceManagementTab.here') }}</a>.</p>
+                <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">{{ $t('account.deviceManagementTab.enableDeviceManagement') }}</a>
             </section>
 
             <section v-if="account.device_management && isLoaded && !inProgress">
                 <section v-if="sessions && sessions.length > 0">
-                    <h2>Active devices</h2>
+                    <h2>{{ $t('account.deviceManagementTab.activeDevices') }}</h2>
                     <p>
-                        {{ sessions.length }}/{{ account.product.max_device }} devices added 
+                        {{ sessions.length }}/{{ account.product.max_device }} {{ $t('account.deviceManagementTab.devicesAdded') }} 
                     </p>
                     <div>
                         <device
@@ -44,23 +44,23 @@
                         ></device>
                     </div>
                     <p class="logout-all">
-                        <a  href="#" @click="confirmLogoutDevices">Log out from all devices</a>
+                        <a  href="#" @click="confirmLogoutDevices">{{ $t('account.deviceManagementTab.logoutFromAllDevices') }}</a>
                     </p>
                 </section>
             
                 <section v-else>
-                    <h3>Device management is enabled.</h3>
-                    <p>You are currently not logged in to the service on any device.</p>
-                    <p>Please <a href="/account">log in</a> to the IVPN app to add a device. Once added, your device identifiers will appear on this page.</p>
+                    <h3>{{ $t('account.deviceManagementTab.enabled') }}</h3>
+                    <p>{{ $t('account.deviceManagementTab.enabledDesc1') }}</p>
+                    <p>{{ $t('account.deviceManagementTab.please') }} <a :href="'/' + this.language + '/account'">{{ $t('account.deviceManagementTab.login') }}</a> {{ $t('account.deviceManagementTab.enabledDesc2') }}</p>
                 </section>
 
                 <section v-if="account.product.max_device == 2 && sessions && sessions.length > 0">
-                    <p>To increase your device limit to 7 <a href="/account/change-product">change your Product</a> to IVPN Pro.</p>
+                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + this.language + '/account/change-product'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
                 </section>
             </section>
 
             <section v-if="account.device_management">
-                <a class="btn btn-solid btn-big" href="#" @click="confirmDisableDeviceManagement">Disable device management</a>
+                <a class="btn btn-solid btn-big" href="#" @click="confirmDisableDeviceManagement">{{ $t('account.deviceManagementTab.disableDeviceManagement') }}</a>
             </section>
         </div>
     </div>
@@ -71,6 +71,7 @@ import Device from "@/components/Device.vue";
 import Spinner from "@/components/ProgressSpinner.vue";
 
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     components: {
@@ -79,7 +80,8 @@ export default {
     },
     data() {
         return {
-            isLight : false
+            isLight : false,
+            language: "en"
         };
     },
     beforeMount(){
@@ -90,6 +92,10 @@ export default {
         this.$store.dispatch("sessions/load");
     },
     mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
+        }
     },
     computed: {
         ...mapState({

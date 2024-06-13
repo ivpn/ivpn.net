@@ -1,0 +1,13 @@
+wireguardTrademark = "WireGuard® es una marca registrada de Jason A. Donenfeld"
+suggestEditTitle = " ¿Has encontrado algún error o tienes una idea para mejorar esta página?"
+suggestAnEdit = "Sugiere una edición"
+onGithub = "en GitHub."
+myAccount = "Mi cuenta"
+login = "Iniciar sesión"
+logout = "Cerrar sesión"
+logoutConfirmation = "Esto te desconectará de tu cuenta. Por favor asegúrate de haber guardado tu ID de cuenta antes de salir. ¿Quieres continuar?"
+download = "Descargar"
+viewSourceGithub = "Ver código fuente en GitHub"
+changelog = "Historial de cambios"
+openVpnConfiguration = "Configuración de OpenVPN"
+
