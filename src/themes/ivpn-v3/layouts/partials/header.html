@@ -35,7 +35,7 @@
             {{ if eq .Identifier "prices" }} 
                 <li class="navigation__seperator">|</li>
             {{ end }}
-            {{ if eq (urlize .Name) "my-account" }}
+            {{ if or (eq (urlize .Name) "my-account") (eq (urlize .Name) "mi-cuenta") }}
             <div class='login-menu'>
                 <li class="navigation__item submenu" id="{{ urlize .Name }}" data-show="auth">
                     <a class="navigation__link navigation__link--is-cta" href="{{ .URL }}">{{ T "myAccount" }}</a><span class='dropdown_icon'></span>
