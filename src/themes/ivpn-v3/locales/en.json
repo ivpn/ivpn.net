@@ -271,7 +271,7 @@
             "delete": "Delete",
             "ipv4Address": "IPv4 address",
             "ipv6Address": "IPv6 address",
-            "deletKeyConfirm": "Are you sure you want to delete this key?",
+            "deleteKeyConfirm": "Are you sure you want to delete this key?",
             "yes": "Yes"
         },
         "deviceManagementTab": {
