@@ -15,6 +15,8 @@
 
             if (window.location.pathname.startsWith("/es")) {
                 prefix = "/es/";
+            }else{
+                prefix = "/en/";
             }
 
             if (macosPlatforms.indexOf(platform) !== -1) {
