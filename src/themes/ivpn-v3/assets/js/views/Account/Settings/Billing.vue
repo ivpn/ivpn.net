@@ -89,7 +89,7 @@
                                 fill="#398FE6"
                                 v-if="inProgress"
                             ></progress-spinner>
-                            <span v-else>Retry</span>
+                            <span v-else>{{ $t('account.accountSettingsTab.retry') }}</span>
                         </button>
                     </div>
                 </div>

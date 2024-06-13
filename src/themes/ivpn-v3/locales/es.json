@@ -333,7 +333,8 @@
             "deleteAccountConfirmDesc": "Para confirmar la eliminación permanente de tu cuenta, por favor, introduce los siguientes símbolos en el campo de abajo:",
             "cancel": "Cancelar",
             "warning": "Aviso:",
-            "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas."
+            "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas.",
+            "retry": "Intentar de nuevo"
         },
         "payments":{
             "paymentReceived": {
