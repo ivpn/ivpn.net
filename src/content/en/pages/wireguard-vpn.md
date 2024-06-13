@@ -1,7 +1,10 @@
 ---
 title: WireGuard VPN protocol for privacy - start using with IVPN
 description: WireGuard is a revolutionary VPN protocol that promises better security and faster speeds compared to existing solutions. IVPN offers WireGuard in our Windows, macOS, Linux, Android and iOS apps. Get set up and running with WireGuard VPN in two minutes.
-url: /wireguard/
+url: /en/wireguard/
+aliases: ['/wireguard/']
+params:
+  translated: true
 ---
 # WireGuard<sup>®</sup> VPN
 
