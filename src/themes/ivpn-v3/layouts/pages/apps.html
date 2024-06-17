@@ -48,6 +48,11 @@
                         <a href="{{ .changelog }}">{{ T "changelog" }}</a>
                     </p>
                     {{ end }}
+                    {{ if isset . "note" }}
+                    <p class="note">
+                        {{ .note | markdownify }}
+                    </p>
+                    {{ end }}
                 {{ end }}
             </div>
         </header>
