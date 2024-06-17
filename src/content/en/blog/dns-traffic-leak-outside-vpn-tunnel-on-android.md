@@ -25,4 +25,4 @@ A DNS leak can occur when an app (e.g. Chrome app) calls the `getaddrinfo` funct
 5. Check `tcpdump` for plaintext DNS traffic
 
 ### Recommendations
-DNS leaks can seriously impact user privacy, resulting in potential exposure of browsing history and geolocation, or tracking and profiling. Depending on your threat model, you might consider avoiding using Android in situations where DNS leaks can impact your privacy, until the issue is fixed in a future Android OS version.
+DNS leaks can seriously impact user privacy, resulting in potential exposure of browsing history and geolocation, or tracking and profiling. Depending on your threat model, consider avoiding using Android in situations where DNS leaks can impact your privacy, until the issue is fixed in a future Android OS version.
