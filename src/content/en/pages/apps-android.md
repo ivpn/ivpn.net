@@ -41,7 +41,8 @@ releases: [{
             title: .apk sign cert SHA256,
             value: 88a6b40fc97fdc842f231f50eb12de116f5b759e3c5b38aaccaf6a7b393c85bb
         }
-    ]
+    ],
+    note: 'Note: A vulnerability in Android might cause a DNS leak on all VPN connections, no matter which VPN service you use. Review [our blog post](https://www.ivpn.net/blog/dns-traffic-leak-outside-vpn-tunnel-on-android/) for more information.'
 }]
 ---
 ## Features

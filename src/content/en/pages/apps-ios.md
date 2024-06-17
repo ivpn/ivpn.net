@@ -14,7 +14,8 @@ releases: [{
     cta: Get it on App Store,
     download: "https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8",
     github: https://github.com/ivpn/ios-app,
-    changelog: https://github.com/ivpn/ios-app/blob/master/CHANGELOG.md
+    changelog: https://github.com/ivpn/ios-app/blob/master/CHANGELOG.md,
+    note: 'Note: Vulnerabilities in iOS might affect all VPN connections on iOS, no matter which VPN service you use. For details review our blog post on the [Apple services leak issue](https://www.ivpn.net/blog/removal-of-kill-switch-from-our-ios-app-due-to-apple-ip-leak-issue/), or the assessment on [TunnelVision](https://github.com/ivpn/desktop-app/issues/374) vulnerability.'
 }]
 ---
 ## Features
