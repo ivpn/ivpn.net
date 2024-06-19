@@ -3,7 +3,7 @@ title: Privacy issues related to MAC addresses
 author: Solène Rapenne
 url: /privacy-guides/mac-address-privacy/
 section: Misc
-weight: 10
+weight: 15
 date: 2024-03-08T00:00:15+00:00
 layout: guides-details
 articles: [
