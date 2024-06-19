@@ -3,7 +3,7 @@ title: Creating a VM within a hidden veracrypt partition
 author: Ed Holden
 url: /privacy-guides/creating-a-vm-within-a-hidden-veracrypt-partition/
 section: Misc
-weight: 10
+weight: 20
 date: 2013-10-23T13:54:43+00:00
 layout: guides-details
 ---
