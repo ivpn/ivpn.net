@@ -4,7 +4,7 @@ author: Solène Rapenne
 url: /privacy-guides/self-audit-series-part1/
 section: Misc
 weight: 10
-date: 2024-06-19T15:00:00+00:00
+date: 2024-06-19T11:00:00+00:00
 aliases: ['/privacy-guides/how-to-perform-a-vpn-leak-test/']
 layout: guides-details
 articles: [

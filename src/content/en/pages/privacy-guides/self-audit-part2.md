@@ -4,7 +4,7 @@ author: Solène Rapenne
 url: /privacy-guides/self-audit-series-part2/
 section: Misc
 weight: 11
-date: 2024-06-19T15:00:00+00:00
+date: 2024-06-19T12:00:00+00:00
 layout: guides-details
 articles: [
   {
