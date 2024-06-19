@@ -14,7 +14,7 @@ releases: [{
     download: "https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8",
     github: https://github.com/ivpn/ios-app,
     changelog: https://github.com/ivpn/ios-app/blob/master/CHANGELOG.md,
-    note: "Nota: Las vulnerabilidades en iOS pueden afectar todas las conexiones VPN en iOS, sin importar qué servicio VPN utilices. Para obtener más información, revisa nuestra publicación de blog sobre el [problema de fuga de servicios de Apple] (https://www.ivpn.net/blog/removal-of-kill-switch-from-our-ios-app-due-to-apple-ip -leak-issue/), o la evaluación de la vulnerabilidad [TunnelVision](https://github.com/ivpn/desktop-app/issues/374)."
+    note: "Nota: Vulnerabilidades en iOS podrían afectar todas las conexiones VPN, sin importar qué servicio VPN utilices. Para obtener más información, revisa nuestra publicación de blog sobre el [problema de fuga de servicios de Apple](https://www.ivpn.net/blog/removal-of-kill-switch-from-our-ios-app-due-to-apple-ip -leak-issue/), o la evaluación de la vulnerabilidad de [TunnelVision](https://github.com/ivpn/desktop-app/issues/374)."
 }]
 ---
 ## Funciones
