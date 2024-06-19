@@ -41,7 +41,7 @@ releases: [{
             value: 88a6b40fc97fdc842f231f50eb12de116f5b759e3c5b38aaccaf6a7b393c85bb
         }
     ],
-    note: 'Nota: Una vulnerabilidad en Android podría provocar una fuga de DNS en todas las conexiones VPN, sin importar qué servicio VPN utilice. Revise [nuestra publicación de blog](https://www.ivpn.net/blog/dns-traffic-leak-outside-vpn-tunnel-on-android/) para obtener más información.'
+    note: 'Nota: Una vulnerabilidad en Android podría provocar una fuga de DNS en todas las conexiones VPN, sin importar qué servicio VPN utilices. Revisa [nuestra publicación de blog](https://www.ivpn.net/blog/dns-traffic-leak-outside-vpn-tunnel-on-android/) para obtener más información.'
 }]
 ---
 ## Funciones
