@@ -25,7 +25,7 @@ Using Wireshark, start capturing the network traffic on the physical interface c
 
 Use the following text into Wireshark display filter input, adapt the variables (written in capital letters): `(ip or ipv6) and not (ip.addr == SERVER_IP and udp.port == SERVER_PORT) and not (icmpv6 or llmnr or dhcp or mdns) and not (ip.host matches ".255$" or ip.addr == 224.0.0.0/4)`. If your VPN is using V2Ray obfuscation using VMESS/TCP, you will need to replace `udp.port` by `tcp.port`.
 
-Here is the filter explained:
+Here is a detailed breakdown of this filter:
 
 * `(ip or ipv6)`: match Internet Protocol (IPv4 and IPv6) packets. This discards other protocols such as [ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol) or [Ethernet](https://en.wikipedia.org/wiki/Ethernet) that are not relevant for the current scenario.
 * `not (ip.addr == SERVER_IP and udp.port == SERVER_PORT)`:
@@ -43,12 +43,12 @@ Here is the filter explained:
   * `ip.addr == 224.0.0.0/4`: matches [IPv4 broadcast](https://en.wikipedia.org/wiki/Broadcast_address#IP_networking) traffic.
   * The combination of the two removes all broadcast and multicast packets, they are not useful because they are not meant to be tunneled through a VPN, so we do not need them to appear as false positive.
 
-This display filter restricts the display content to IP traffic that is not from your VPN, it excludes a certain number of packets that are not routable.
+This display filter restricts the display content to IP traffic that is not from your VPN and excludes a certain number of packets that are not routable.
 
 Ideally, with this filter, you should not have lines in the Wireshark packet list (main display). If a line appears in the list, ask yourself the following questions:
 
-* Is the VPN disconnected and my firewall not blocking non-VPN traffic?
-* Is this a local network traffic? If both the source and destination IP belong to your LAN, it is LAN traffic and does not belong to a VPN tunnel.
+* Is the VPN disconnected and my firewall not blocking non-VPN traffic as it should?
+* Is this a local network (LAN) traffic? If both the source and destination IP belong to your LAN, it is LAN traffic and does not belong to a VPN tunnel.
 * Does it occur regularly? If so, close all the programs on your computer and check if you see it again. If not, start the programs one by one until you see the pattern again, one of them may be bound to a configured network interface and bypass the VPN routing rules.
 * What protocol is it? Is it expected? At this point, you will need to understand exactly what happens on your system.
 * Are there multiple connected VPNs on my system? You may be auditing the one that is encapsulated in another VPN.
@@ -64,7 +64,7 @@ The first line corresponds to my computer LAN IP `10.137.0.30` querying `9.9.9.9
 
 ## How to verify your system firewall effectiveness
 
-In this scenario, you will learn how to ensure the system firewall is working effectively and blocking all traffic when the VPN is not connected. In order to check the firewall, you will monitor the network transmitted from your computer to the Internet. If the firewall is working correctly, there should not any [data egress](https://aviatrix.com/learn-center/cloud-security/egress-and-ingress/).
+In this scenario, you will learn how to ensure the system firewall is working effectively and blocking all traffic when the VPN is not connected. In order to check the firewall, you will monitor the network transmitted from your computer to the Internet. If the firewall is working correctly, there should not be any [data egress](https://aviatrix.com/learn-center/cloud-security/egress-and-ingress/).
 
 For this scenario, you need to find the IP of your computer on the local network, most of the time it looks like `192.168.y.x`.
 
@@ -96,7 +96,7 @@ If you use the App of your VPN provider, you may see traffic related to the prov
 
 In this scenario, you will learn how to verify that WireGuard obfuscation [V2Ray](https://www.v2ray.com/en/) is working effectively. Obfuscation algorithms can disguise WireGuard packets as [QUIC](https://en.wikipedia.org/wiki/QUIC) or HTTP traffic, making it much harder to identify as VPN traffic, even using [deep packet inspection](https://en.wikipedia.org/wiki/Deep_content_inspection).
 
-Both methods have a performance penalty and should only be used when you are not able to connect using a genuine WireGuard tunnel.
+Both methods have a performance penalty and should only be used when you are not able to connect using a non-obfuscated WireGuard tunnel.
 
 The first step is to identify the IP address of the chosen server, you can refer to [the first part of the series](/privacy-guides/self-audit-series-part1/#identify-the-vpn-server-ip) to learn how to proceed. IVPN users will need to use the server list from the API to find the IP address on which the server is offering V2Ray.
 
@@ -108,7 +108,7 @@ This filter restricts the capture display to the packets exchanged with the VPN 
 
 You can find how to configure Wireshark to tag the packets as QUIC in the [first part of the series](/privacy-guides/self-audit-series-part1/#force-wireshark-to-decode-packets-using-a-given-protocol).
 
-On Wireshark main display with the packets list, if the column "Info" displays "Protected Payload" for all packets, this indicates the packets are using WireGuard, but if you see most packets have the text "Retry" it means you are looking at QUIC packets and obfuscation is working.
+On Wireshark main display with the packets list, if the column "Info" displays "Protected Payload" for all packets. This indicates the packets are using WireGuard, but if you see most packets have the text "Retry" it means you are looking at QUIC packets and obfuscation is working.
 
 Further verification can be done by looking at the protocol details on a packet, either at the bottom of the display or in a popup window by double-clicking on a packet.
 
