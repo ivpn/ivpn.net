@@ -18,9 +18,9 @@ While it is important to protect your privacy, it is also essential to trust you
 
 Verifying the functionality of your VPN is crucial for maintaining your privacy. While some VPN providers publish their apps in open source, not everyone has the time or expertise to thoroughly review them. The most straightforward way to validate your VPN is to analyze network traffic from various angles and ensure it's connected to the intended server, on the correct port, and using the appropriate protocol. Additionally, it's essential to identify any potential data leak. After this series, you will have the knowledge and confidence to assess the quality of your VPN.
 
-Network traffic analysis technique is an effective method for conducting a self-audit of your VPN. By reviewing the network activity, you can ensure that what you audit is actually occurring on the network.
+Network traffic analysis is an effective method for conducting a self-audit of your VPN. By reviewing the network activity, you can ensure that what you audit is actually occurring on the network.
 
-Furthermore, this will enable you to investigate privacy issues such as DNS leak or performance VPN issues due to fragmented network packets.
+Furthermore, this will enable you to investigate privacy issues such as DNS leak or VPN performance issues due to fragmented network packets.
 
 In this initial section, you will gain an understanding of the tools you will utilize throughout the series, as well as some methodologies that will be pertinent in certain audit scenarios.
 
@@ -28,7 +28,7 @@ In this initial section, you will gain an understanding of the tools you will ut
 
 For this series, you will use the software [Wireshark](https://www.wireshark.org/) which is the industry standard for capturing and analyzing network packets.
 
-Wireshark is compatible with the majority of operating systems including Windows, macOS, Linux and *BSD. It has the capability to identify known protocols, limit displayed packets with advanced filters, display TCP by sessions, render packets content and much more.
+Wireshark is compatible with most operating systems including Windows, macOS, Linux and *BSD. It has the capability to identify known protocols, limit displayed packets with advanced filters, display TCP by sessions, render packets content and much more.
 
 Although it is not available on mobile devices, we will provide a method for analyzing network traffic on mobile devices. Wireshark is a graphical application that is not intended for use on remote headless systems. The guides will also cover how to achieve traffic analysis of remote systems.
 
@@ -39,9 +39,9 @@ This section will teach you the basics of Wireshark, so you can use it for the s
 ### Quick setup
 #### Windows
 
-In order to install Wireshark on Windows, visit the [Downloads](https://www.wireshark.org/download.html) page and download the file that suits best your system, if you do not know which one you need, download the file "Windows x64 Installer".
+In order to install Wireshark on Windows, visit the [Downloads](https://www.wireshark.org/download.html) page and download the file that suits your system best. If you do not know which one you need, download the file "Windows x64 Installer".
 
-Run the installer and follow the instructions. Windows requires an extra specific installation step to install a component named "Npcap", this is required on Windows to capture packets, it is safe to install.
+Run the installer and follow the instructions. Windows requires an extra specific installation step to install a component named "Npcap", this is required on Windows to capture packets - it is safe to install.
 
 #### macOS
 
@@ -63,9 +63,9 @@ When running Wireshark, below the text "Capture... using this filter" and a text
 
 There are two kinds of filters in Wireshark: capture filters and display filters, they use a different syntax.
 
-When you know exactly what you want to capture, it is better to use a capture filter to make the capture dataset smaller. But when you want to explore the network traffic like you will do in this series, you will need all data in the capture but only dynamically filter the display.
+When you know exactly what you want to capture, it is better to use a capture filter to make the capture dataset smaller. When you want to explore the network traffic like you will do in this series, you will need all data in the capture then dynamically filter the display.
 
-Wireshark offers auto-completion while typing a filter which makes life easier when searching for a filter. The documentation contains [common examples](https://wiki.wireshark.org/DisplayFilters) of display filters. Do not worry if you do not understand the filters syntax or what they mean. The guides will provide filters and explanations about what they do.
+Wireshark offers auto-completion while typing a filter, which makes life easier when searching for one. The documentation contains [common examples](https://wiki.wireshark.org/DisplayFilters) of display filters. Do not worry if you do not understand the filters syntax or what they mean at this point. The guides will provide filters and explanations about what they do.
 
 ## Network capture of remote devices
 
@@ -93,7 +93,7 @@ You can use an Ethernet connection instead of a wireless hotspot if your devices
 
 In order to analyze the network traffic passing through a headless server/router, you will need to use the software [tcpdump](https://www.tcpdump.org/) on the remote system.
 
-As tcpdump works in a terminal and its output is hard to read, you will only use it for [capturing network data into a file](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html) on the remote machine, then retrieve the file to open it using Wireshark for a local analysis offline.
+As tcpdump works in a terminal and its output might be challenging to read, you will only use it for [capturing network data into a file](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html) on the remote machine, then retrieve the file to open it using Wireshark for a local analysis offline.
 
 The program usage is simple: as the privileged user (root on Linux and *BSD), run the command `tcpdump -i <interface> -s 65535 -w <file>` where:
 
@@ -102,7 +102,7 @@ The program usage is simple: as the privileged user (root on Linux and *BSD), ru
 
 Wait at least two minutes to have a good sample of network traffic, then press `Ctrl + C` to stop the capture.
 
-It is important to understand that `<file>` will contain all the data that went through `<interface>` during the capture. If you run the capture for a long time or that the network interface had a high bandwidth usage during the capture, the destination file size can be large.
+Note that `<file>` will contain all the data that went through `<interface>` during the capture. If you run the capture for a long time or that the network interface had a high bandwidth usage during the capture, the destination file size can be large.
 
 Once you are done with the network capture, do not forget to retrieve the file on the computer where Wireshark will be used.
 
@@ -110,7 +110,7 @@ To open the capture file, start Wireshark and click on "File" and then on "Open"
 
 ## Force Wireshark to decode packets using a given protocol
 
-In order to identify the protocol used by network packets independently of its transport protocol port, it is required to configure Wireshark to force using a given protocol to decode the packets.
+In order to identify the protocol used by network packets independently of its transport protocol port, you need to configure Wireshark to force using a given protocol to decode the packets.
 
 This can be achieved using the following instructions:
 
@@ -130,7 +130,7 @@ In the series, some scenarios will require you to know the IP of the server you 
 
 ### VPN configured without a provider App
 
-If you do not use your VPN provider App, you can find the IP address of the server in the VPN configuration, it should be named like "Endpoint address". Only retain the IP address in case the field contains the VPN port.
+If you do not use the app of your VPN provider, you can find the IP address of the server in the VPN configuration. It should have a name "Endpoint address" or similar. Only retain the IP address in case the field contains the VPN port.
 
 ### Using the IVPN App
 
@@ -156,7 +156,7 @@ Name:   gr1.wg.ivpn.net
 Address: 169.150.252.113
 ```
 
-If you do not know how to use a command line program, you can use [this website](https://iamroot.tech/dns-lookup/): type the hostname and select the query type "A" to obtain the IPv4 address.
+If you do not know how to use a command line program, you can use [a DNS lookup tool](https://iamroot.tech/dns-lookup/): type the hostname and select the query type "A" to obtain the IPv4 address.
 
 ## Identify the VPN server protocol and port
 
@@ -164,7 +164,7 @@ In the series, some scenarios will require you to know the protocol and the port
 
 ### VPN configured without a provider App
 
-If you do not use your VPN provider App, you can find the protocol and port used to establish the VPN in its configuration.
+If you do not use the app of your VPN provider, you can find the protocol and port used to establish the VPN in its configuration.
 
 With WireGuard, it is always using the UDP protocol, the port can be found in the "Endpoint address" field of the configuration, after the server IP.
 
