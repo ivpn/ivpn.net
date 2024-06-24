@@ -116,7 +116,7 @@
   [[footercolthree]]
     identifier = "vulnerability-reporting"
     name = "Report Vulnerability"
-    url = "/vulnerability-reporting/"
+    url = "/en/vulnerability-reporting/"
     weight = 10
 
   [[footercolthree]]
