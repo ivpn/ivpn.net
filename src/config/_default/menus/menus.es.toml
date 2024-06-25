@@ -109,8 +109,8 @@
   
   [[footercoltwo]]
     identifier = "supported-projects"
-    name = "Supported Projects"
-    url = "/supported-projects/"
+    name = "Proyectos apoyados"
+    url = "/es/supported-projects/"
     weight = 50
   
   [[footercolthree]]
