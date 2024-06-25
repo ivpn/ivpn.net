@@ -80,7 +80,7 @@
   [[footercolone]]
     identifier = "pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard"
     name = "Protocol Comparison"
-    url = "/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
+    url = "/en/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
     weight = 70
 
   [[footercoltwo]]
