@@ -86,7 +86,7 @@
   [[footercoltwo]]
     identifier = "manifesto"
     name = "Our Manifesto"
-    url = "/manifesto/"
+    url = "/en/manifesto/"
     weight = 10
 
   [[footercoltwo]]
