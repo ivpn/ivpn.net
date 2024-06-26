@@ -2,8 +2,6 @@
 title: Precios IVPN para equipos empresariales y sin ánimo lucro
 description: Ofrecemos descuentos para empresas y organizaciones sin ánimo de lucro que necesitan una VPN de confianza para sus equipos.
 URL: /es/pricing-teams/
-params:
-  translated: true
 ---
 # IVPN para equipos
 

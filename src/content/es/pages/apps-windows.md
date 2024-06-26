@@ -4,8 +4,6 @@ description: IVPN para Windows te ofrece una protección integral contra filtrac
 h1: IVPN para Windows
 subtitle: Compatible con Windows 10 / 11 (64-bit)
 url: /es/apps-windows/
-params:
-  translated: true
 platform: windows
 layout: apps
 image: apps/windows-app-3.3.7

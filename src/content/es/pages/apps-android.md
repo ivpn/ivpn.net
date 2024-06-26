@@ -4,8 +4,6 @@ description: La aplicación IVPN para Android te ofrece una protección integral
 h1: IVPN para Android
 subtitle: Compatible con Android 7.1+
 url: /es/apps-android/
-params:
-  translated: true
 platform: android
 layout: apps
 image: apps/android-app

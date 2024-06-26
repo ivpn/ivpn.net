@@ -1,8 +1,6 @@
 ---
 title: Directrices del proceso legal para el cumplimiento de la ley
 url: /es/legal-process-guidelines/
-params:
-  translated: true
 ---
 # Directrices del proceso legal para el cumplimiento de la ley
 

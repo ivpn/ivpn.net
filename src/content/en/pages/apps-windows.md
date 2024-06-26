@@ -5,8 +5,6 @@ h1: IVPN for Windows
 subtitle: Supports Windows 10 / 11 (64-bit)
 url: /en/apps-windows/
 aliases: ['/apps-windows/']
-params:
-  translated: true
 platform: windows
 layout: apps
 image: apps/windows-app-3.3.7

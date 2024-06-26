@@ -1,8 +1,6 @@
 ---
 title: Términos de servicio de IVPN
 url: /es/tos/
-params:
-  translated: true
 layout:
 canonical:
 ---

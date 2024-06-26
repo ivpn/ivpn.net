@@ -2,8 +2,6 @@
 title: IVPN Proyectos apoyados
 description: VPN se enorgullece de apoyar a muchas organizaciones y proyectos que se alinean estrechamente con nuestros valores. Lea más sobre nuestras creencias y por qué hacemos lo que hacemos
 url: /es/supported-projects/
-params:
-  translated: true
 ---
 # Proyectos apoyados
 

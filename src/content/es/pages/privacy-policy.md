@@ -2,8 +2,6 @@
 title: Política de privacidad de IVPN
 description: Es importante que nuestros clientes comprendan plenamente qué información privada recopilamos, almacenamos y procesamos. Lee nuestra política clara y sencilla para obtener la información que necesitas.
 url: /es/privacy/
-params:
-  translated: true
 layout:
 canonical:
 ---

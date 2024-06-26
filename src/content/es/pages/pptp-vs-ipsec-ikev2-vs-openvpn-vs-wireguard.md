@@ -2,8 +2,6 @@
 title: PPTP vs IPSec IKEv2 vs OpenVPN vs WireGuard
 description: Compare PPTP, IPSec IKEv2, OpenVPN y WireGuard para determinar qué protocolo VPN ofrece la mejor combinación de seguridad, velocidad y facilidad de uso para sus necesidades.
 url: /es/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
-params:
-  translated: true
 layout: full-width
 ---
 # Comparativa de protocolos VPN

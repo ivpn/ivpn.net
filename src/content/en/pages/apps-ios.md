@@ -5,8 +5,6 @@ h1: IVPN for iOS
 subtitle: Supports iOS/iPadOS 15.0+
 url: /en/apps-ios/
 aliases: ['/apps-ios/']
-params:
-  translated: true
 platform: ios
 layout: apps
 image: apps/ios-app

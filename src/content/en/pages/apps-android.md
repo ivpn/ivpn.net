@@ -5,8 +5,6 @@ h1: IVPN for Android
 subtitle: Supports Android 7.1+
 url: /en/apps-android/
 aliases: ['/apps-android/']
-params:
-  translated: true
 platform: android
 layout: apps
 image: apps/android-app
