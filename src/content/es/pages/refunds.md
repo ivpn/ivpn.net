@@ -1,8 +1,6 @@
 ---
 title: Política y proceso de reembolso de IVPN
 url: /es/refunds/
-params:
-  translated: true
 ---
 # Reembolsos
 

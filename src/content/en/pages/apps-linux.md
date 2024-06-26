@@ -5,8 +5,7 @@ h1: IVPN for Linux
 subtitle: Supports 64-bit Linux 3.10+
 url: /en/apps-linux/
 aliases: ['/apps-linux/']
-params:
-  translated: true
+
 platform: linux
 layout: apps-single
 imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png

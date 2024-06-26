@@ -1,9 +1,7 @@
 ---
 title: PPTP vs IPSec IKEv2 vs OpenVPN vs WireGuard
-description: Compare PPTP, IPSec IKEv2, OpenVPN y WireGuard para determinar qué protocolo VPN ofrece la mejor combinación de seguridad, velocidad y facilidad de uso para sus necesidades.
+description: Compara PPTP, IPSec IKEv2, OpenVPN y WireGuard para determinar qué protocolo VPN ofrece la mejor combinación de seguridad, velocidad y facilidad de uso para tus necesidades.
 url: /es/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
-params:
-  translated: true
 layout: full-width
 ---
 # Comparativa de protocolos VPN
@@ -62,9 +60,9 @@ layout: full-width
     </tr>
     <tr>
         <td>La implementación de PPTP de Microsoft tiene <a href="http://www.schneier.com/paper-pptpv2.html">graves vulnerabilidades de seguridad</a>. MSCHAP-v2 es vulnerable a ataques de diccionario y el algoritmo RC4 está sujeto a ataques de inversión de bits. Microsoft recomienda encarecidamente actualizar a IPSec cuando la confidencialidad sea una preocupación.</td>
-        <td>IPSec no tiene vulnerabilidades importantes conocidas y generalmente se considera seguro cuando se implementa utilizando un algoritmo de cifrado seguro y certificados para autenticación. Sin embargo, las <a href="https://github.com/nsa-observer/documents/blob/master/files/pdf/media-35529.pdf">presentaciones filtradas de la NSA</a> indican que IKE podría explotarse en un Manera desconocida de descifrar el tráfico IPSec.</td>
+        <td>IPSec no tiene vulnerabilidades importantes conocidas y generalmente se considera seguro cuando se implementa utilizando un algoritmo de cifrado seguro y certificados para autenticación. Sin embargo, las <a href="https://github.com/nsa-observer/documents/blob/master/files/pdf/media-35529.pdf">presentaciones filtradas de la NSA</a> indican que IKE podría explotarse en una manera desconocida de descifrar el tráfico IPSec.</td>
         <td>OpenVPN no tiene vulnerabilidades importantes conocidas y generalmente se considera seguro cuando se implementa utilizando un algoritmo de cifrado seguro y certificados de autenticación.</td>
-        <td>WireGuard® no tiene vulnerabilidades importantes conocidas. Es relativamente nuevo y no ha sido objeto de una investigación exhaustiva de OpenVPN, aunque la base de código es extremadamente pequeña, por lo que las auditorías completas son posibles por parte de individuos y no solo de grandes organizaciones. WireGuard® está integrado en el árbol de Linux Kernel 5.6 y ha sido revisado por un auditor externo.</td>
+        <td>WireGuard® no tiene vulnerabilidades importantes conocidas. Es relativamente nuevo y no ha sido objeto de una investigación exhaustiva como OpenVPN, aunque la base de código es extremadamente pequeña, por lo que las auditorías completas son posibles por parte de individuos y no solo de grandes organizaciones. WireGuard® está integrado en el árbol de Linux Kernel 5.6 y ha sido revisado por un auditor externo.</td>
     </tr>
 </table>
 {{< / raw-html >}}
@@ -79,7 +77,7 @@ layout: full-width
     <tr>
         <td>Con RC4 y claves de 128 bits, la sobrecarga de cifrado es menor que la de todos los protocolos, lo que hace que PPTP sea el más rápido.</td>
         <td>IPSec con IKEv2 debería, en teoría, ser más rápido que OpenVPN debido al cifrado en modo de usuario en OpenVPN; sin embargo, depende de muchas variables específicas de la conexión. En la mayoría de los casos es más rápido que OpenVPN.</td>
-        <td>Cuando se utiliza en su modo UDP predeterminado en una red confiable, OpenVPN funciona de manera similar a IKEv2.</td>
+        <td>Cuando se utiliza en su modo UDP predeterminado en una red de confianza, OpenVPN funciona de manera similar a IKEv2.</td>
         <td>WireGuard® se beneficia de primitivas criptográficas de velocidad extremadamente alta y de una profunda integración con el núcleo del sistema operativo subyacente, por lo que las velocidades son muy altas con una sobrecarga baja. La mayoría de los clientes reportan velocidades más altas que OpenVPN.</td>
     </tr>
 </table>
@@ -121,13 +119,13 @@ layout: full-width
 <table class="table--fixed">
     <tr>
         <th colspan="4">
-            <h3>Estabilidad / Compatibilidad</h3>
+            <h3>Estabilidad/Compatibilidad</h3>
         </th>
     </tr>
     <tr>
-        <td>PPTP no es tan confiable ni se recupera tan rápido como OpenVPN en conexiones de red inestables. Problemas menores de compatibilidad con el protocolo GRE y algunos enrutadores.</td>
+        <td>PPTP no es tan seguro ni se recupera tan rápido como OpenVPN en conexiones de red inestables. Problemas menores de compatibilidad con el protocolo GRE y algunos enrutadores.</td>
         <td>IPSec es más complejo que OpenVPN y puede requerir configuración adicional entre dispositivos detrás de enrutadores NAT. Sin embargo, siempre que tanto el servidor como el cliente admitan el cruce NAT, no debería haber ningún problema.</td>
-        <td>Muy estable y rápido en redes inalámbricas, teléfonos móviles y otras redes no confiables donde la pérdida de paquetes y la congestión son comunes. OpenVPN tiene un modo TCP para conexiones muy poco confiables, pero este modo sacrifica un rendimiento significativo debido a la ineficiencia de encapsular TCP dentro de TCP.</td>
+        <td>Muy estable y rápido en redes inalámbricas, teléfonos móviles y otras redes inseguras donde la pérdida de paquetes y la congestión son comunes. OpenVPN tiene un modo TCP para conexiones muy poco fiables, pero este modo sacrifica un rendimiento significativo debido a la ineficiencia de encapsular TCP dentro de TCP.</td>
         <td>Extremadamente estable y robusto. Más estable que OpenVPN en roaming entre redes. Utiliza un punto final inicial para las conexiones y puede cambiar de servidor mientras mantiene la conexión. El cliente también puede cambiar de red sin perder la conexión.</td>
     </tr>
 </table>
@@ -142,34 +140,34 @@ layout: full-width
     </tr>
     <tr>
         <td>
-            <a href="/apps-windows/">Windows</a><br>
-            <a href="/apps-macos/">macOS</a><br>
-            <a href="/apps-linux/">Linux</a><br>
-            <a href="/apps-ios/">Apple iOS</a><br>
-            <a href="/apps-android/">Android</a><br>
+            <a href="/es/apps-windows/">Windows</a><br>
+            <a href="/es/apps-macos/">macOS</a><br>
+            <a href="/es/apps-linux/">Linux</a><br>
+            <a href="/es/apps-ios/">Apple iOS</a><br>
+            <a href="/es/apps-android/">Android</a><br>
             <a href="/setup/router/">DD-WRT</a>
         </td>
         <td>
-            <a href="/apps-windows/">Windows</a><br>
-            <a href="/apps-macos/">macOS</a><br>
-            <a href="/apps-linux/">Linux</a><br>
-            <a href="/apps-ios/">Apple iOS</a><br>
-            <a href="/apps-android/">Android</a>
+            <a href="/es/apps-windows/">Windows</a><br>
+            <a href="/es/apps-macos/">macOS</a><br>
+            <a href="/es/apps-linux/">Linux</a><br>
+            <a href="/es/apps-ios/">Apple iOS</a><br>
+            <a href="/es/apps-android/">Android</a>
         </td>
         <td>
-            <a href="/apps-windows/">Windows</a><br>
-            <a href="/apps-macos/">macOS</a><br>
-            <a href="/apps-linux/">Linux</a><br>
-            <a href="/apps-ios/">Apple iOS</a><br>
-            <a href="/apps-android/">Android</a><br>
+            <a href="/es/apps-windows/">Windows</a><br>
+            <a href="/es/apps-macos/">macOS</a><br>
+            <a href="/es/apps-linux/">Linux</a><br>
+            <a href="/es/apps-ios/">Apple iOS</a><br>
+            <a href="/es/apps-android/">Android</a><br>
             <a href="/setup/router/">DD-WRT (con la versión correcta)</a>
         </td>
         <td>
-            <a href="/apps-windows/">Windows</a><br>
-            <a href="/apps-macos/">macOS</a><br>
-            <a href="/apps-linux/">Linux</a><br>
-            <a href="/apps-ios/">Apple iOS</a><br>
-            <a href="/apps-android/">Android</a>
+            <a href="/es/apps-windows/">Windows</a><br>
+            <a href="/es/apps-macos/">macOS</a><br>
+            <a href="/es/apps-linux/">Linux</a><br>
+            <a href="/es/apps-ios/">Apple iOS</a><br>
+            <a href="/es/apps-android/">Android</a>
         </td>
     </tr>
 </table>
@@ -189,9 +187,9 @@ layout: full-width
         <td><img src="/images-static/uploads/icon-like.svg"></td>
     </tr>
     <tr>
-        <td>Debido a los importantes fallos de seguridad, no hay ninguna buena razón para elegir PPTP aparte de la compatibilidad del dispositivo. Si tiene un dispositivo que solo admite PPTP, entonces debería considerar cómo cifrar datos en otras capas, por ejemplo. HTTPS.</td>
-        <td>IKEv2 es una excelente opción, es extremadamente rápido, seguro y confiable. Además, a diferencia de OpenVPN, no requiere la instalación de software adicional (en la mayoría de los casos) y, por lo tanto, es el más rápido de configurar. Si tiene un modelo de amenaza que incluye adversarios sofisticados, es posible que desee considerar OpenVPN debido a las presentaciones filtradas de la NSA discutidas anteriormente.</td>
-        <td>OpenVPN es una excelente opción para todas las plataformas. Es extremadamente rápido, seguro y confiable.</td>
+        <td>Debido a los importantes fallos de seguridad, no hay ninguna buena razón para elegir PPTP aparte de la compatibilidad del dispositivo. Si tienes un dispositivo que solo admite PPTP, entonces deberías considerar cómo cifrar datos en otras capas, por ejemplo. HTTPS.</td>
+        <td>IKEv2 es una excelente opción, es extremadamente rápido, seguro y de confianza Además, a diferencia de OpenVPN, no requiere la instalación de software adicional (en la mayoría de los casos) y por lo tanto, es el más rápido de configurar. Si tienes un modelo de amenaza que incluye adversarios sofisticados, es posible que desees considerar OpenVPN debido a las presentaciones filtradas de la NSA discutidas anteriormente.</td>
+        <td>OpenVPN es una excelente opción para todas las plataformas. Es extremadamente rápido, seguro y de confianza</td>
         <td>WireGuard® es una excelente opción y puede ser el mejor protocolo para altas velocidades. WireGuard® promete mayor seguridad y velocidades más rápidas en comparación con las soluciones existentes. Desde su fusión con el Kernel de Linux (v5.6) y el lanzamiento de la v1.0, consideramos que WireGuard® está listo para su uso a gran escala.</td>
     </tr>
 </table>
@@ -232,22 +230,22 @@ PPTP utiliza el puerto TCP 1723 y GRE (Protocolo 47). PPTP se puede bloquear fá
 
 Todas las versiones de Windows y la mayoría de los demás sistemas operativos (incluidos los móviles) tienen soporte nativo para PPTP. PPTP sólo requiere un nombre de usuario, contraseña y dirección de servidor, lo que lo hace increíblemente sencillo de instalar y configurar.
 
-### Estabilidad / Compatibilidad
+### Estabilidad/Compatibilidad
 
-PPTP no es tan confiable ni se recupera tan rápido como OpenVPN en conexiones de red inestables. Problemas menores de compatibilidad con el protocolo GRE y algunos enrutadores.
+PPTP no es tan fiable ni se recupera tan rápido como OpenVPN en conexiones de red inestables. Problemas menores de compatibilidad con el protocolo GRE y algunos enrutadores.
 
 ### Plataformas compatibles
 
-[Windows](/apps-windows/)  
-[macOS](/apps-macos/)  
-[Linux](/apps-linux/)  
-[Apple iOS](/apps-ios/)  
-[Android](/apps-android/)  
-[DD-WRT](/setup/router/)  
+[Windows](/es/apps-windows/)  
+[macOS](/es/apps-macos/)  
+[Linux](/es/apps-linux/)  
+[Apple iOS](/es/apps-ios/)  
+[Android](/es/apps-android/)  
+[DD-WRT](/es/setup/router/)  
 
 ### Verdicto ![](/images-static/uploads/icon-dislike.svg)
 
-Debido a los importantes fallos de seguridad, no hay ninguna buena razón para elegir PPTP aparte de la compatibilidad del dispositivo. Si tiene un dispositivo que solo admite PPTP, entonces debería considerar cómo cifrar datos en otras capas, por ejemplo. HTTPS.
+Debido a los importantes fallos de seguridad, no hay ninguna buena razón para elegir PPTP aparte de la compatibilidad del dispositivo. Si tienes un dispositivo que solo admite PPTP, entonces deberías considerar cómo cifrar datos en otras capas, por ejemplo. HTTPS.
 
 
 ##IPSec IKEv2
@@ -277,24 +275,24 @@ IKEv2 es más fácil de bloquear que OpenVPN debido a su dependencia de protocol
 
 Windows 7+, macOS 10.11+ y la mayoría de los sistemas operativos móviles tienen soporte nativo para IPSec con IKEv2.
 
-### Estabilidad / Compatibilidad
+### Estabilidad/Compatibilidad
 
 IPSec es más complejo que OpenVPN y puede requerir una configuración adicional entre dispositivos detrás de enrutadores NAT. Sin embargo, siempre que tanto el servidor como el cliente admitan el cruce NAT, no debería haber ningún problema.
 
 ### Plataformas compatibles
 
-[Windows](/apps-windows/)  
-[macOS](/apps-macos/)  
-[Linux](/apps-linux/)  
-[Apple iOS](/apps-ios/)  
-[Android](/apps-android/)  
+[Windows](/es/apps-windows/)  
+[macOS](/es/apps-macos/)  
+[Linux](/es/apps-linux/)  
+[Apple iOS](/es/apps-ios/)  
+[Android](/es/apps-android/)  
 
-### ¡Veredicto![](/images-static/uploads/icon-like.svg)
+### Veredicto ![](/images-static/uploads/icon-like.svg)
 
-IKEv2 es una excelente opción, es extremadamente rápido, seguro y confiable. Además, a diferencia de OpenVPN, no requiere la instalación de software adicional (en la mayoría de los casos) y, por lo tanto, es el más rápido de configurar. Si tiene un modelo de amenaza que incluye adversarios sofisticados, es posible que desee considerar OpenVPN debido a las presentaciones filtradas de la NSA discutidas anteriormente.
+IKEv2 es una excelente opción, es extremadamente rápido, seguro y de confianza. Además, a diferencia de OpenVPN, no requiere la instalación de software adicional (en la mayoría de los casos) y por lo tanto, es el más rápido de configurar. Si tienes un modelo de amenaza que incluye adversarios sofisticados, es posible que desees considerar OpenVPN debido a las presentaciones filtradas de la NSA discutidas anteriormente.
 
 
-## AbiertoVPN
+## OpenVPN
 
 ### Introducción
 
@@ -311,7 +309,7 @@ OpenVPN no tiene vulnerabilidades importantes conocidas y generalmente se consid
 
 ### Velocidad
 
-Cuando se utiliza en su modo UDP predeterminado en una red confiable, OpenVPN funciona de manera similar a IKEv2.
+Cuando se utiliza en su modo UDP predeterminado en una red de confianza, OpenVPN funciona de manera similar a IKEv2.
 
 ### Puertos de firewall
 
@@ -321,25 +319,25 @@ OpenVPN se puede configurar fácilmente para ejecutarse en cualquier puerto util
 
 OpenVPN no está incluido en ninguna versión del sistema operativo y requiere la instalación de software cliente. La instalación suele tardar menos de 5 minutos.
 
-### Estabilidad / Compatibilidad
+### Estabilidad/Compatibilidad
 
-Muy estable y rápido en redes inalámbricas, celulares y otras redes no confiables donde la pérdida de paquetes y la congestión son comunes. OpenVPN tiene un modo TCP para conexiones muy poco confiables, pero este modo sacrifica un rendimiento significativo debido a la ineficiencia de encapsular TCP dentro de TCP.
+Muy estable y rápido en redes inalámbricas, celulares y otras redes inseguras donde la pérdida de paquetes y la congestión son comunes. OpenVPN tiene un modo TCP para conexiones muy poco seguras, pero este modo sacrifica un rendimiento significativo debido a la ineficiencia de encapsular TCP dentro de TCP.
 
 ### Plataformas compatibles
 
-[Windows](/apps-windows/)  
-[macOS](/apps-macos/)  
-[Linux](/apps-linux/)  
-[Apple iOS](/apps-ios/)  
-[Android](/apps-android/)  
+[Windows](/es/apps-windows/)  
+[macOS](/es/apps-macos/)  
+[Linux](/es/apps-linux/)  
+[Apple iOS](v/es/apps-ios/)  
+[Android](/es/apps-android/)  
 [DD-WRT (with the correct build)](/setup/router/) 
 
-### ¡Veredicto![](/images-static/uploads/icon-like.svg)
+### Veredicto ![](/images-static/uploads/icon-like.svg)
 
-OpenVPN es una excelente opción para todas las plataformas. Es extremadamente rápido, seguro y confiable.
+OpenVPN es una excelente opción para todas las plataformas. Es extremadamente rápido, seguro y de confianza.
 
 
-## Guardia de alambre
+## WireGuard
 
 ### Introducción
 
@@ -351,7 +349,7 @@ Construido sobre ChaCha20 para cifrado simétrico ([RFC7539](https://tools.ietf.
 
 ### Debilidades de seguridad
 
-WireGuard® no tiene vulnerabilidades importantes conocidas. Es relativamente nuevo y no ha sido objeto de una investigación exhaustiva de OpenVPN, aunque la base de código es extremadamente pequeña, por lo que las auditorías completas son posibles por parte de individuos y no solo de grandes organizaciones. WireGuard® está integrado en el árbol de Linux Kernel 5.6 y ha sido revisado por un auditor externo.
+WireGuard® no tiene vulnerabilidades importantes conocidas. Es relativamente nuevo y no ha sido objeto de una investigación exhaustiva como OpenVPN, aunque la base de código es extremadamente pequeña, por lo que las auditorías completas son posibles por parte de individuos y no solo de grandes organizaciones. WireGuard® está integrado en el árbol de Linux Kernel 5.6 y ha sido revisado por un auditor externo.
 
 ### Velocidad
 
@@ -365,19 +363,19 @@ WireGuard® utiliza el protocolo UDP y se puede configurar para utilizar cualqui
 
 WireGuard® está integrado en el árbol con Linux Kernel 5.6. Otros sistemas operativos que no son Linux requieren la instalación de una aplicación cliente WireGuard®. La instalación suele tardar menos de 5 minutos.
 
-### Estabilidad / Compatibilidad
+### Estabilidad/Compatibilidad
 
 Extremadamente estable y robusto. Más estable que OpenVPN en roaming entre redes. Utiliza un punto final inicial para las conexiones y puede cambiar de servidor mientras mantiene la conexión. El cliente también puede cambiar de red sin perder la conexión.
 
 ### Plataformas compatibles
 
-[Windows](/apps-windows/)  
-[macOS](/apps-macos/)  
-[Linux](/apps-linux/)  
-[Apple iOS](/apps-ios/)  
-[Android](/apps-android/)  
+[Windows](/es/apps-windows/)  
+[macOS](/es/apps-macos/)  
+[Linux](/es/apps-linux/)  
+[Apple iOS](/es/apps-ios/)  
+[Android](/es/apps-android/)  
 
-### ¡Veredicto![](/images-static/uploads/icon-like.svg)
+### Veredicto ![](/images-static/uploads/icon-like.svg)
 
 WireGuard® es una excelente opción y puede ser el mejor protocolo para altas velocidades. WireGuard® promete mayor seguridad y velocidades más rápidas en comparación con las soluciones existentes. Desde su fusión con el kernel de Linux (v5.6) y el lanzamiento de la v1.0, consideramos que WireGuard® está listo para su uso a gran escala.
 

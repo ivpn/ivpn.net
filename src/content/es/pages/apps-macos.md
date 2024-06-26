@@ -4,8 +4,6 @@ description: IVPN para macOS te ofrece una protección integral contra filtracio
 h1: IVPN para macOS
 subtitle: Compatible con macOS 10.14+
 url: /es/apps-macos/
-params:
-  translated: true
 platform: macos
 layout: apps
 image: apps/macos-app

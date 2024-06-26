@@ -1,8 +1,6 @@
 ---
 title: Equipo IVPN
 url: /es/team/
-params:
-  translated: true
 sections:
   - type: heading_text_cta_one_column
     content: >-

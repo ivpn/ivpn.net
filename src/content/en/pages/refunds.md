@@ -2,8 +2,6 @@
 title: IVPN Refund Policy and Process
 url: /en/refunds/
 aliases: ['/refunds/']
-params:
-  translated: true
 ---
 # Refunds
 

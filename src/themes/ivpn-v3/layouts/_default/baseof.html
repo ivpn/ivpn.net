@@ -11,9 +11,23 @@
     <link rel="alternate" href="{{ .Params.AlternateURL }}" hreflang="{{ .Params.Hreflang }}">
     {{ end }}
     {{ end }}
+
+    <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/localisation.js" }}"></script>
+
+    {{ if .IsTranslated }}
+        {{/* Redirect to the browser or localstorage language */}}
+        <script type="text/javascript">
+          if( "{{ $.Site.LanguageCode }}" != window.getLanguage()){
+            window.location =  window.location.href.replace("{{ $.Site.LanguageCode }}", window.getLanguage());
+          }
+        </script>
+    {{ end }}
+
+
+
   </head>
     <body onclick="">{{/* onclick="" fixes iOS Safari :hover touch events */}}
-        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>            
+        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>         
         {{- partial "header.html" . -}}
         <main>
             {{- block "main" . }}{{- end }}

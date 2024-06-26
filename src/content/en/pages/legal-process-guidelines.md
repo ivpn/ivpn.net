@@ -2,8 +2,6 @@
 title: Law Enforcement Legal Process Guidelines
 url: /en/legal-process-guidelines/
 aliases: ['/legal-process-guidelines/']
-params:
-  translated: true
 ---
 # Law Enforcement Legal Process Guidelines
 
