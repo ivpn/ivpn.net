@@ -153,4 +153,6 @@
     let isLegacyAuth = document.cookie.indexOf("logged_in=l") != -1;
 
     updateLoginMenu(isAuth, isLegacyAuth);
+
+    window.addLanguageSwitcherEvent();
 })();
