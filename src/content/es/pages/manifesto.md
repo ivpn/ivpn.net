@@ -1,8 +1,6 @@
 ---
 title: Manifesto
 url: /es/manifesto/
-params:
-  translated: true
 ---
 # Resiste la vigilancia en línea
 
