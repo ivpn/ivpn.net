@@ -204,7 +204,7 @@ layout: full-width
 <div class="content--hidden-desktop">
 {{< / raw-html >}}
 
-##PPTP
+## PPTP
 
 ### Introducción
 
@@ -248,7 +248,7 @@ PPTP no es tan fiable ni se recupera tan rápido como OpenVPN en conexiones de r
 Debido a los importantes fallos de seguridad, no hay ninguna buena razón para elegir PPTP aparte de la compatibilidad del dispositivo. Si tienes un dispositivo que solo admite PPTP, entonces deberías considerar cómo cifrar datos en otras capas, por ejemplo. HTTPS.
 
 
-##IPSec IKEv2
+## IPSec IKEv2
 
 ### Introducción
 
