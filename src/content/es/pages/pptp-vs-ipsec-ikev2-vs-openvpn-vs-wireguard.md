@@ -241,7 +241,7 @@ PPTP no es tan fiable ni se recupera tan rápido como OpenVPN en conexiones de r
 [Linux](/es/apps-linux/)  
 [Apple iOS](/es/apps-ios/)  
 [Android](/es/apps-android/)  
-[DD-WRT](/es/setup/router/)  
+[DD-WRT](/setup/router/)  
 
 ### Verdicto ![](/images-static/uploads/icon-dislike.svg)
 
@@ -328,9 +328,9 @@ Muy estable y rápido en redes inalámbricas, celulares y otras redes inseguras 
 [Windows](/es/apps-windows/)  
 [macOS](/es/apps-macos/)  
 [Linux](/es/apps-linux/)  
-[Apple iOS](v/es/apps-ios/)  
+[Apple iOS](/es/apps-ios/)  
 [Android](/es/apps-android/)  
-[DD-WRT (with the correct build)](/setup/router/) 
+[DD-WRT (con la versión correcta)](/setup/router/) 
 
 ### Veredicto ![](/images-static/uploads/icon-like.svg)
 
