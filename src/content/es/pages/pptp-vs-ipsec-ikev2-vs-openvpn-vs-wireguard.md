@@ -204,7 +204,7 @@ layout: full-width
 <div class="content--hidden-desktop">
 {{< / raw-html >}}
 
-##PPTP
+## PPTP
 
 ### Introducción
 
@@ -241,14 +241,14 @@ PPTP no es tan fiable ni se recupera tan rápido como OpenVPN en conexiones de r
 [Linux](/es/apps-linux/)  
 [Apple iOS](/es/apps-ios/)  
 [Android](/es/apps-android/)  
-[DD-WRT](/es/setup/router/)  
+[DD-WRT](/setup/router/)  
 
 ### Verdicto ![](/images-static/uploads/icon-dislike.svg)
 
 Debido a los importantes fallos de seguridad, no hay ninguna buena razón para elegir PPTP aparte de la compatibilidad del dispositivo. Si tienes un dispositivo que solo admite PPTP, entonces deberías considerar cómo cifrar datos en otras capas, por ejemplo. HTTPS.
 
 
-##IPSec IKEv2
+## IPSec IKEv2
 
 ### Introducción
 
@@ -328,9 +328,9 @@ Muy estable y rápido en redes inalámbricas, celulares y otras redes inseguras 
 [Windows](/es/apps-windows/)  
 [macOS](/es/apps-macos/)  
 [Linux](/es/apps-linux/)  
-[Apple iOS](v/es/apps-ios/)  
+[Apple iOS](/es/apps-ios/)  
 [Android](/es/apps-android/)  
-[DD-WRT (with the correct build)](/setup/router/) 
+[DD-WRT (con la versión correcta)](/setup/router/) 
 
 ### Veredicto ![](/images-static/uploads/icon-like.svg)
 
