@@ -12,8 +12,6 @@ weight: 140
 
 We use only open-source software at IVPN. Below is a list of some of the technologies we have used to build our network.
 
-- [CentOS](https://www.centos.org/) - Enterprise-class Linux distribution
-
 - [AlmaLinux](https://almalinux.org/) - 1:1 binary compatible with RHEL® and pre-Stream CentOS
 
 - [Puppet](https://puppet.com/) and [the Foreman](https://theforeman.org/) - Centralized configuration management for all our servers.
