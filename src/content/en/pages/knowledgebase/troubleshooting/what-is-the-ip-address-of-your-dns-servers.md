@@ -55,10 +55,6 @@ Hardcore `10.0.254.15`
 Normal   `10.0.254.2` and 
 Hardcore `10.0.254.3`
 
-#### Developer Dan Ads + Tracking
-Normal   `10.0.254.8` and 
-Hardcore `10.0.254.9`
-
 #### Steven Black Unified + Ads + Malware
 Normal   `10.0.254.20` and 
 Hardcore `10.0.254.21`
