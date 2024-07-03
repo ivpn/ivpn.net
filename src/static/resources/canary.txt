@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 846299
-hash: 0000000000000000000262902444fcde8fdbda228c560cb6b724d93a4516a2da
+height: 850483
+hash: 000000000000000000005ce1be331a4b5a61def1f1620b86a4aab2980332945e
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Russia-China gas pipeline deal hits snag
-Also in today’s newsletter, Labour unveils ex-military candidates and ‘green shoots’ in European dealmaking
+FirstFT: French left and centrist candidates pulled from run-off vote to fend off far right
+Also in today’s newsletter, EU targets cheap Chinese goods and Blackstone’s private equity credit risk
 
-Upskilling
-Technology, demography and shifts in demand are disrupting the world of work. Thousands of jobs are expected to change in coming years, requiring new skills training for staff of all ages. This report looks at how companies and employees are adapting
+Technology and cyber crime: how to keep out the bad guys
+Maintaining strict security protocols and monitoring your firm’s digital activity can improve your chances of fending off an attack
 
-Are we getting inflation right? With Neel Kashkari
-Soumaya Keynes talks to the president of the Minneapolis Fed
+Letter: Scotland just wants to be the master of its own destiny
+- From Lesley Ellis, Coull, Aberdeenshire, UK
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmZdTg0ACgkQisFrnrZH
-umn4WwgApot22FQ4oWKGcSA/xdxO18nVIYai+Zo0TNuN622+6ZmTdRZ6rr/bNmc5
-3rE3uTjxXrMAG45ChPqVtAyJH0TMIV0+WD6erAFB+KivPTFfvWxhafSKW55ROPCm
-jKSkgjCu9qWzO6PE+0wN/0DmczJyV0Qa4v9upyK76abymgfmr6cZxWypF9j2Oo7b
-o1EWFZ3WRbWux/chjKsTiQpnIif5tmWEKRGWcst1Tesa9JVT52hpWwbytyt8/nz8
-V5Zirqilyc2bY0UQT/yz1jiFwHkt5fp6wfU+gWSifDshCWlqUclcStWoKN/Z256E
-Nt5zfhe/vFRwUh7lg4xdl7Z8hMpexA==
-=DNsb
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmaE2w0ACgkQisFrnrZH
+umnvBgf+MB21Bv4X7bKQpFRTUZEg5g/E8ooHOayTi8yB55ZjT3d0tbUgCUgRXMeh
+LNpWEgsenS+bjc0Ynis2PKZL34wooqhU/2o8yj0j+wYCCsFflsExC6C/l9mN0r4q
+3/3rkk3eDhaeSnLHVTXTBuQAN9IbkzY83NVMGY0B4wLWHL7XeTu2WhIfzS0nbLlL
+9PEe/2B3+zAtpTLuh9tkAy+vEUpnz9bVJB4gHQNds/Hlk/ehT596lL8lb4uEvOvD
+DiH3EHZWTqlLz5zJiSTJfDkqRJEVlfO++VktoQdtqsN8cgljLT0T6hJfLMKA/XGa
+dUUAJ8pXS9MR0BbZANZoq68I1daapQ==
+=N0eo
 -----END PGP SIGNATURE-----
 
 
