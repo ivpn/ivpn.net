@@ -115,6 +115,15 @@ When your web browser loads a page on our site, a small snippet of JavaScript co
 
 To ensure your privacy, IVPN discards the last two octets of the IP address. Matomo may also set a web cookie to facilitate the identification of users who revisit the site.
 
+To improve customer experience we utilise the ‘local storage’ JavaScript functionality to save non-identifying information about your visit. This information is saved locally in your browser and is not communicated to our servers. Data held in local storage may include information about;
+
+* visual theme selection
+
+* preferred language 
+
+* used payment methods (such as PayPal)
+
+
 ### Where is my data stored and who has access to it?
 
 IVPN is subject to EU law and is in compliance with the EU Data Protection Directive (Directive 95/46/EC), which prohibits companies transferring data to overseas jurisdictions with weaker privacy laws. IVPN will not locate servers in countries where it's forced to break this compliance. Due to the nature of our logging practices, VPN servers do not contain any personally identifiable information and thus, if seized, could not be used to identify users.

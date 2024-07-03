@@ -8,7 +8,7 @@ function getLanguage(){
 
     let browserLanguage = navigator.language || navigator.userLanguage; 
     
-    if( browserLanguage.startsWith("es")){
+    if( browserLanguage.startsWith("es-") || browserLanguage == "es"){
         return "es";
     }else{
         return "en"
