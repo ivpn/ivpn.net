@@ -79,14 +79,14 @@
   
   [[footercolone]]
     identifier = "pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard"
-    name = "Protocol Comparison"
-    url = "/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
+    name = "Comparativa de protocolos"
+    url = "/es/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
     weight = 70
 
   [[footercoltwo]]
     identifier = "manifesto"
-    name = "Our Manifesto"
-    url = "/manifesto/"
+    name = "Nuestro manifesto"
+    url = "/es/manifesto/"
     weight = 10
 
   [[footercoltwo]]
@@ -109,14 +109,14 @@
   
   [[footercoltwo]]
     identifier = "supported-projects"
-    name = "Supported Projects"
-    url = "/supported-projects/"
+    name = "Proyectos apoyados"
+    url = "/es/supported-projects/"
     weight = 50
   
   [[footercolthree]]
     identifier = "vulnerability-reporting"
-    name = "Report Vulnerability"
-    url = "/vulnerability-reporting/"
+    name = "Informar de vulnerabilidad"
+    url = "/es/vulnerability-reporting/"
     weight = 10
 
   [[footercolthree]]

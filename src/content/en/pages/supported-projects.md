@@ -1,7 +1,8 @@
 ---
 title: IVPN Supported Projects
 description: IVPN proudly supports many organizations and projects that closely align with our values. Read more about our beliefs and why we do what we do.
-url: /supported-projects/
+url: /en/supported-projects/
+aliases: ['/supported-projects/']
 ---
 # Supported Projects
 

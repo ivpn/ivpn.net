@@ -1,8 +1,6 @@
 ---
 title: Equipo IVPN
 url: /es/team/
-params:
-  translated: true
 sections:
   - type: heading_text_cta_one_column
     content: >-
@@ -10,7 +8,7 @@ sections:
 
        IVPN está dirigido por un equipo de expertos en seguridad de la información y activistas de la privacidad. El equipo fundador es un grupo de profesionales de la seguridad que se conocieron mientras estudiaban seguridad de la información en la Universidad de Londres, Reino Unido (Royal Holloway). IVPN existe desde 2009, mucho más tiempo que la mayoría de los servicios VPN.
     cta_label: Nuestro Manifesto
-    cta_url: /manifesto/
+    cta_url: /es/manifesto/
   - type: image_full_width
     image: /images-static/uploads/team.png
     image_retina: /images-static/uploads/team-2x.png

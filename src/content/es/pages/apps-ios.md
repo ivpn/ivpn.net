@@ -4,8 +4,6 @@ description: La IVPN app para iOS, diseñada para iPhone y iPad, te ofrece una p
 h1: IVPN para iOS
 subtitle: Compatible con iOS/iPadOS 15.0+
 url: /es/apps-ios/
-params:
-  translated: true
 platform: ios
 layout: apps
 image: apps/ios-app

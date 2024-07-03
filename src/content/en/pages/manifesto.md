@@ -1,6 +1,7 @@
 ---
 title: Manifesto
-url: /manifesto/
+url: /en/manifesto/
+aliases: ['/manifesto/']
 ---
 # Resist Online Surveillance
 

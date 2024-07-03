@@ -4,8 +4,6 @@ description: IVPN para Linux te ofrece una protección integral contra filtracio
 h1: IVPN para Linux
 subtitle: Compatible con 64-bit Linux 3.10+
 url: /es/apps-linux/
-params:
-  translated: true
 platform: linux
 layout: apps-single
 imageLight: /images-static/uploads/apps/linux-app-3.3.7-light@2x.png

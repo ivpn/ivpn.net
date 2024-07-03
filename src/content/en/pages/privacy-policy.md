@@ -3,8 +3,6 @@ title: IVPN Privacy Policy
 description: Its important our customers fully understand what private information we collect, store and process. Read our clear and simple policy to get the facts you need.
 url: /en/privacy/
 aliases: ['/privacy/']
-params:
-  translated: true
 layout:
 canonical:
 ---
@@ -116,6 +114,15 @@ When your web browser loads a page on our site, a small snippet of JavaScript co
 * IP address.
 
 To ensure your privacy, IVPN discards the last two octets of the IP address. Matomo may also set a web cookie to facilitate the identification of users who revisit the site.
+
+To improve customer experience we utilise the ‘local storage’ JavaScript functionality to save non-identifying information about your visit. This information is saved locally in your browser and is not communicated to our servers. Data held in local storage may include information about;
+
+* visual theme selection
+
+* preferred language 
+
+* used payment methods (such as PayPal)
+
 
 ### Where is my data stored and who has access to it?
 

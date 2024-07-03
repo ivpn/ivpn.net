@@ -2,8 +2,6 @@
 title: My Account
 url: /en/account/
 aliases: ['/account/']
-params:
-  translated: true
 # Leave empty for default, `application` for client area and signup
 layout: application
 menu:

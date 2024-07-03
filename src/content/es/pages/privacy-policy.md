@@ -2,8 +2,6 @@
 title: Política de privacidad de IVPN
 description: Es importante que nuestros clientes comprendan plenamente qué información privada recopilamos, almacenamos y procesamos. Lee nuestra política clara y sencilla para obtener la información que necesitas.
 url: /es/privacy/
-params:
-  translated: true
 layout:
 canonical:
 ---
@@ -102,7 +100,7 @@ IVPN ha seleccionado [Matomo](https://matomo.org) como su plataforma de análisi
 
 Matomo es un software de código abierto que se aloja en nuestra propia infraestructura de servidores para garantizar tu privacidad (a diferencia de plataformas como Google Analytics). Por ejemplo, el Centro para la Protección de la Privacidad de Datos de Francia (CNIL) recomendó Matomo como la única herramienta que puede garantizar fácilmente el pleno cumplimiento de las normas de privacidad. Matomo se utiliza para analizar información agregada sobre los visitantes de nuestra página web.
 
-Cuando tu navegador web carga una página en nuestro sitio, se ejecuta un pequeño fragmento de código JavaScript dentro de tu navegador que envía información como;
+Cuando tu navegador web carga una página en nuestro sitio, se ejecuta un pequeño fragmento de código JavaScript dentro de tu navegador que envía información como:
 
 * el agente de usuario de tu navegador
 
@@ -112,9 +110,17 @@ Cuando tu navegador web carga una página en nuestro sitio, se ejecuta un peque�
 
 * página web de referencia
 
-* Dirección IP
+* dirección IP
 
 Para garantizar tu privacidad, IVPN descarta los dos últimos octetos de la dirección IP. Matomo también puede establecer una cookie web para facilitar la identificación de los usuarios que vuelven a visitar el sitio.
+
+Para mejorar la experiencia del cliente, utilizamos la funcionalidad JavaScript de "almacenamiento local" para guardar información no identificable sobre tu visita. Esta información se guarda localmente en tu navegador y no se comunica a nuestros servidores. Los datos almacenados en el almacenamiento local pueden incluir información sobre:
+
+* selección de modos visuales
+
+* idioma preferido 
+
+* métodos de pago utilizados (como PayPal)
 
 ### ¿Dónde se almacenan mis datos y quién tiene acceso a ellos?
 

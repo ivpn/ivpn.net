@@ -3,8 +3,6 @@ title: IVPN business and nonprofit teams pricing
 description: We offer discounts for businesses and nonprofit organizations that need a trustworthy VPN for their teams.
 url: /en/pricing-teams/
 aliases: ['/pricing-teams/']
-params:
-  translated: true
 ---
 # IVPN for teams
 

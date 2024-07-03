@@ -5,8 +5,7 @@ h1: IVPN for macOS
 subtitle: Supports macOS 10.14+
 url: /en/apps-macos/
 aliases: ['/apps-macos/']
-params:
-  translated: true
+
 platform: macos
 layout: apps
 image: apps/macos-app

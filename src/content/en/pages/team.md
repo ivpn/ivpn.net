@@ -2,8 +2,6 @@
 title: IVPN Team
 url: /en/team/
 aliases: ['/team/']
-params:
-  translated: true
 sections:
   - type: heading_text_cta_one_column
     content: >-
@@ -11,7 +9,7 @@ sections:
 
       IVPN is run by a team of information security experts and privacy activists. The founding team is a group of security professionals who met whilst studying information security at the University of London, UK (Royal Holloway). IVPN has been around since 2009, far longer than most VPN services.
     cta_label: Our Manifesto
-    cta_url: /manifesto/
+    cta_url: /en/manifesto/
   - type: image_full_width
     image: /images-static/uploads/team.png
     image_retina: /images-static/uploads/team-2x.png
