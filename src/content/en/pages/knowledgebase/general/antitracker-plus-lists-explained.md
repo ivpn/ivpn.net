@@ -22,7 +22,6 @@ Note: Hardcore Mode remains optionally available with each AntiTracker Plus list
 
 * [1Hosts](https://o0.pages.dev/)
 * [AdGuard DNS Filter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt)
-* [Developer Dan / Lightswitch05](https://github.com/lightswitch05/hosts)
 * [EasyList](https://easylist.to/)
 * [HaGeZi](https://github.com/hagezi/dns-blocklists)
 * [OISD](https://oisd.nl/downloads)
@@ -48,7 +47,6 @@ Offers a moderate level of blocking.  Recommended as a reasonable balance betwee
 
 * **Basic** list sources from above
 * **1Hosts Pro** - "strict; has some minimal breakages, prioritizes privacy & safety (adblocking) over UX"
-* **Developer Dan Ads + Tracking** - "A programmatically expanded list of hosts used for advertisements and tracking"
 * **HaGeZi Multi Normal** - "All-round protection"
 * **OISD Big** - "The big list blocks: Ads, (Mobile) App Ads, Phishing, Malvertising, Malware, Spyware, Ransomware, CryptoJacking, Scam ... Telemetry/Analytics/Tracking (Where not needed for proper functionality)"
 
@@ -60,7 +58,6 @@ Offers an intense level of blocking.  Some online services may break.  Includes:
 
 * **Comprehensive** list sources from above
 * **1Hosts Xtra** - "extremly aggressive & restrictive"
-* **Developer Dan Aggressive Tracking** - "I do not recommend this list for most users. It is a very aggressive block list for tracking, geo-targeting, & ads. This list will likely break functionality, so do not use it unless you are willing to maintain your own whitelist."
 * **HaGeZi Multi Ultimate** - "Aggressive protection"
 
 <br />
@@ -71,7 +68,6 @@ The option also exists to select a single list for blocking instead of the colle
 
 * **EasyList + EasyPrivacy** - "EasyList is a popular list used by many ad blockers and forms the basis of over a dozen combination filter lists. EasyPrivacy is a supplementary filter list that removes all forms of tracking from the internet, including tracking scripts and information collectors."
 * **OISD Big** - "The big list blocks: Ads, (Mobile) App Ads, Phishing, Malvertising, Malware, Spyware, Ransomware, CryptoJacking, Scam ... Telemetry/Analytics/Tracking (Where not needed for proper functionality)"
-* **Developer Dan Ads + Tracking** - "A programmatically expanded list of hosts used for advertisements and tracking"
 * **Steven Black Unified = Ads + Malware**
 * **1Hosts Xtra** - "extremly aggressive & restrictive"
 * **HaGeZi Multi Light** - "Cleans the Internet and protects your privacy! Blocks Ads, Tracking, Metrics, some Malware and Fake."
