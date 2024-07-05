@@ -31,6 +31,15 @@
                     <p>
                         {{ $t('account.vouchersTab.eligibleDesc') }}
                     </p>
+                    <p>
+                        {{ $t('account.vouchersTab.eligibleDesc2') }}
+                    </p>
+                    <p>
+                        {{ $t('account.vouchersTab.eligibleDesc3') }}
+                    </p>
+                    <p>
+                        {{ $t('account.vouchersTab.eligibleDesc4') }}
+                    </p>
                     <div>
                         <voucher
                             v-for="(voucher, index) in vouchers"
