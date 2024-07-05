@@ -436,10 +436,13 @@
         },
         "vouchersTab": {
             "notEligible": "Your account is not eligible",
-            "notEligibleDesc": "Your account is not eligible for vouchers at this time. At least 90 days of paid time is required.",
+            "notEligibleDesc": "Your account is not eligible for vouchers at this time. At least 60 days of paid time remaining is required.",
             "eligible": "Your account is eligible",
-            "eligibleDesc": "You can generate a voucher codes and share it with your friends. PLACEHOLDER",
-            "generateVouchers": "Generate vouchers"
+            "eligibleDesc": "You can give away these vouchers to friends/communities, the voucher codes will be available for 30 days.",
+            "eligibleDesc2": "Each voucher can be used to signup for a 60 days IVPN Standard account and are only valid for new accounts.",
+            "eligibleDesc3": "You will not be able see status of whether its used or not for privacy reasons.",
+            "eligibleDesc4": "On voucher redemption, it will be rejected if your account does not have at least 60 days of paid time remaining."
+
         }
     },
     "resetPassword": {

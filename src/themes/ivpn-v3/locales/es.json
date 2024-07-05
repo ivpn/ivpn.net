@@ -436,10 +436,12 @@
         },
         "vouchersTab": {
             "notEligible": "Tu cuenta no es elegible",
-            "notEligibleDesc": "Tu cuenta no es elegible para cupones en este momento. Se requieren al menos 90 días de tiempo pagado.",
-            "eligible": "Your account is eligible",
-            "eligibleDesc": "Puedes generar códigos de cupón y compartirlo con tus amigos.",
-            "generateVouchers": "Generar cupones"
+            "notEligibleDesc": "Tu cuenta no es elegible para cupones en este momento. Se requieren al menos 60 días de tiempo pagado restante.",
+            "eligible": "Tu cuenta es elegible",
+            "eligibleDesc": "Puedes regalar estos cupones a amigos/comunidades, los códigos de cupón estarán disponibles durante 30 días.",
+            "eligibleDesc2": "Cada cupón se puede utilizar para registrarse en una cuenta IVPN Standard de 60 días y solo son válidos para cuentas nuevas.",
+            "eligibleDesc3": "No verás el estado de si se ha utilizado o no por razones de privacidad.",
+            "eligibleDesc4": "Cuando se canjee un cupón, será rechazado si tu cuenta no tiene al menos 60 días de tiempo pagado restante."
         }
     },
     "resetPassword": {
