@@ -17,6 +17,11 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
+                <li :class="{ 'is-active': isVouchersRoute() }">
+                    <router-link :to="{ name: 'vouchers-' + this.language }"
+                        >{{ $t('account.vouchers') }}</router-link
+                    >
+                </li>
                 <li class="expand"></li>
                 <li>
                     <router-link
@@ -54,7 +59,7 @@ export default {
             return this.$route.path;
         },
         shouldDisplay() {
-            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es"].includes(
+            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es","vouchers-es","vouchers-en"].includes(
                 this.$route.name
             );
         },
@@ -63,15 +68,17 @@ export default {
         isAccountRoute() {
             return (
                 ( this.currentRouteName.startsWith("/en/account") || this.currentRouteName.startsWith("/es/account")) &&
-                !this.isWireGuardRoute() && !this.isDeviceManagementRoute()
+                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute()
             );
         },
         isWireGuardRoute() {
             return this.currentRouteName.startsWith("/en/account/wireguard") || this.currentRouteName.startsWith("/es/account/wireguard");
         },
-    
         isDeviceManagementRoute() {
             return this.currentRouteName.startsWith("/en/account/device-management") || this.currentRouteName.startsWith("/es/account/device-management");
+        },
+        isVouchersRoute() {
+            return this.currentRouteName.startsWith("/en/account/vouchers") || this.currentRouteName.startsWith("/es/account/vouchers");
         },
     },
 };

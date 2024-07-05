@@ -111,7 +111,8 @@
             "addFundsCash": "IVPN Add Funds - Cash",
             "wireguard": "IVPN Account - WireGuard",
             "wireguardConfig": "IVPN Account - WireGuard Configuration",
-            "deviceManagement": "IVPN Account - Device management"
+            "deviceManagement": "IVPN Account - Device management",
+            "vouchers": "IVPN Account - Vouchers"
         },
         "greetings": "Your account has been created!",
         "greetingsText": "Please make sure you save your Account ID in a safe place, you will use it to connect to the VPN. You don't need to enter your email to use our service.",
@@ -142,7 +143,7 @@
         "redeem": "Redeem it here",
         "ivpnAccount": "IVPN Account",
         "wireguard": "Wireguard",
-        "deviceManagement": "Device Management",
+        "deviceManagement": "Devices",
         "accountSettings": "Account Settings",
         "changeProductTitle": "Change Product",
         "changeProductDesc": "You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.",
@@ -159,6 +160,7 @@
         "disableRecurring": "Disable recurring payments",
         "disableRecurringDesc" : "Disabling recurring payments will remove stored payment information from our system and disable automatic renewal of the service.",
         "disableRecurringPayments": "Disable recurring payments",
+        "vouchers": "Vouchers",
         "popups": {
             "authentication": {
                 "title": "Authenticate using Account ID",
@@ -431,6 +433,13 @@
                 "pleaseNote": "Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period.",
                 "successPayment": "Voucher applied successfully. Service is extended until "
             }
+        },
+        "vouchersTab": {
+            "notEligible": "Your account is not eligible",
+            "notEligibleDesc": "Your account is not eligible for vouchers at this time. At least 90 days of paid time is required.",
+            "eligible": "Your account is eligible",
+            "eligibleDesc": "You can generate a voucher codes and share it with your friends. PLACEHOLDER",
+            "generateVouchers": "Generate vouchers"
         }
     },
     "resetPassword": {

@@ -111,7 +111,8 @@
             "addFundsCash": "IVPN Añadir fondos - Cash",
             "wireguard": "Cuenta IVPN - WireGuard",
             "wireguardConfig": "Cuenta IVPN - Configuración de WireGuard",
-            "deviceManagement": "Cuenta IVPN - Gestión de dispositivos"
+            "deviceManagement": "Cuenta IVPN - Gestión de dispositivos",
+            "vouchers": "Cuenta IVPN - Cupones"
         },
         "greetings": "¡Tu cuenta ha sido creada!",
         "greetingsText": "Por favor, asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
@@ -159,6 +160,7 @@
         "disableRecurring": "Desactivar pagos recurrentes",
         "disableRecurringDesc" : "Al desactivar los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
         "disableRecurringPayments": "Desactivar pagos recurrentes",
+        "vouchers": "Cupones",
         "popups": {
             "authentication": {
                 "title": "Autenticar usando ID de cuenta",
@@ -431,6 +433,13 @@
                 "pleaseNote": "Por favor, ten en cuenta que los códigos de cupón se almacenan en nuestro sistema durante 30 días después de su uso para ayudar a resolver problemas de activación. La recuperación de la cuenta no es posible después de este período.",
                 "successPayment": "Cupón aplicado con éxito. El servicio se extiende hasta "
             }
+        },
+        "vouchersTab": {
+            "notEligible": "Tu cuenta no es elegible",
+            "notEligibleDesc": "Tu cuenta no es elegible para cupones en este momento. Se requieren al menos 90 días de tiempo pagado.",
+            "eligible": "Your account is eligible",
+            "eligibleDesc": "Puedes generar códigos de cupón y compartirlo con tus amigos.",
+            "generateVouchers": "Generar cupones"
         }
     },
     "resetPassword": {
