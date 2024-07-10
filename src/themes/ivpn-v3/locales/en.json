@@ -439,7 +439,7 @@
             "notEligibleDesc": "Your account is not eligible for vouchers at this time. At least 60 days of paid time remaining is required.",
             "eligible": "Your account is eligible",
             "eligibleDesc": "You can give away these vouchers to friends/communities, the voucher codes will be available for 30 days.",
-            "eligibleDesc2": "Each voucher can be used to signup for a 60 days IVPN Standard account and are only valid for new accounts.",
+            "eligibleDesc2": "Each voucher can be used to signup for a 30 days IVPN account of your current plan type and are only valid for new accounts.",
             "eligibleDesc3": "You will not be able see status of whether its used or not for privacy reasons.",
             "eligibleDesc4": "On voucher redemption, it will be rejected if your account does not have at least 60 days of paid time remaining."
 
