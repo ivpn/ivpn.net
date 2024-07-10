@@ -53,6 +53,28 @@
         })
     };
 
+    function updateVoucherBanner(isAuth, isLegacy){
+        document.querySelector('[data-voucher]').classList.add('voucher')
+
+        if (isAuth && !isLegacy){
+            fetch('/web/accounts/get',{
+                method: 'GET',
+                credentials: 'include'
+              }).then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                console.log(json)
+                console.log(json.account.is_voucher_eligible)
+                if(json.account.is_voucher_eligible){
+                    document.querySelector('[data-voucher]').classList.remove('voucher')
+                }else{
+                    document.querySelector('[data-voucher]').classList.add('voucher')
+                }
+            }
+            );
+        }
+    }
+
     function updateCheckboxes(checkboxes, isChecked, excludeCheckbox) {
 
         checkboxes.forEach((checkbox) => {
@@ -148,11 +170,13 @@
     updateConnectionInfo();
 
     window.updateLoginMenu = updateLoginMenu;
+    window.updateVoucherBanner = updateVoucherBanner;
 
     let isAuth = document.cookie.indexOf("logged_in=1") != -1;
     let isLegacyAuth = document.cookie.indexOf("logged_in=l") != -1;
 
     updateLoginMenu(isAuth, isLegacyAuth);
+    updateVoucherBanner(isAuth, isLegacyAuth);
 
     window.addLanguageSwitcherEvent();
 })();
