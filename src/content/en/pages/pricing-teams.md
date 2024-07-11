@@ -107,7 +107,7 @@ To qualify for this discount, your organisation must be a verified nonprofit.
 
 ## Privacy Disclaimer for Teams
 
-In addition to our regular [privacy policy](/privacy) conditions the following terms apply to IVPN for Teams services:
+In addition to our regular [privacy policy](/en/privacy) conditions the following terms apply to IVPN for Teams services:
 
 * An email address is required to sign up as an administrator for an IVPN Teams plan. We collect and store this email address, and might use it to contact the administrator with matters relevant to their IVPN Teams account.
 * An email address is required to receive team member invites. We collect and store this email address for each team member account. We do not use this address to contact a non-administrator team members, with the exception of customer service interactions initiated by them. No other personal information is required as part of the sign-up process as team member. 
