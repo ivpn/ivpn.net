@@ -104,6 +104,15 @@ Para cumplir con los requisitos de este descuento, tu organización debe ser una
 * Propiedad y equipo transparentes
 * Ética sólida: sin rastreadores, sin falsas promesas, sin anuncios de vigilancia
 
+## Descargo de responsabilidad de privacidad para equipos
+
+Además de nuestras condiciones habituales de [política de privacidad](/es/privacy), se aplican los siguientes términos a los servicios de IVPN para equipos:
+
+* Se requiere una dirección de correo electrónico para registrarse como administrador de un plan IVPN para equipos. Recopilamos y almacenamos esta dirección de correo electrónico y podemos usarla para contactar al administrador con asuntos relevantes a su cuenta de IVPN para equipos.
+* Se requiere una dirección de correo electrónico para recibir invitaciones de miembros del equipo. Recopilamos y almacenamos esta dirección de correo electrónico para cada cuenta de miembro del equipo. No utilizamos esta dirección para contactar a miembros del equipo que no sean administradores, con la excepción de las interacciones de servicio al cliente iniciadas por ellos. No se requiere ninguna otra información personal como parte del proceso de registro como miembro del equipo.
+* Almacenamos la invitación y si está disponible, la fecha de registro de las cuentas de los miembros del equipo, y mostramos esta información a los administradores del equipo.
+
+
 Si tienes alguna pregunta, [contáctanos](mailto:team-support@ivpn.net).
 
 Estas ofertas son válidas para empresas y organizaciones que adquieran cuentas IVPN para los miembros de su equipo. La reventa de cuentas IVPN está prohibida según nuestros términos de servicio.
