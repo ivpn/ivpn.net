@@ -23,6 +23,8 @@
             <section v-if="!account.is_voucher_eligible">
                 <h3>{{ $t('account.vouchersTab.notEligible') }}</h3>
                 <p>{{ $t('account.vouchersTab.notEligibleDesc') }}</p>
+                <p>{{ $t('account.vouchersTab.notEligibleDesc2') }}</p>
+                <p>{{ $t('account.vouchersTab.notEligibleDesc3') }} <a :href= " '/'  + this.language + '/account/payment'">{{ $t('account.vouchersTab.addMoreTime') }}</a></p>
             </section>
 
             <section v-if="account.is_voucher_eligible  && !inProgress">
@@ -37,9 +39,11 @@
                     <p>
                         {{ $t('account.vouchersTab.eligibleDesc3') }}
                     </p>
-                    <p>
-                        {{ $t('account.vouchersTab.eligibleDesc4') }}
-                    </p>
+                    <ol>
+                        <li>{{ $t('account.vouchersTab.recipients1') }}</li>
+                        <li>{{ $t('account.vouchersTab.recipients2') }}</li>
+                        <li>{{ $t('account.vouchersTab.recipients3') }}</li>
+                    </ol>
                     <div>
                         <voucher
                             v-for="(voucher, index) in vouchers"
@@ -47,6 +51,16 @@
                             :name="voucher"
                         ></voucher>
                     </div>
+                    <h3>
+                        {{ $t('account.vouchersTab.usefulNotes') }}
+                    </h3>
+                    <ul>
+                        <li>{{ $t('account.vouchersTab.notes1') }}</li>
+                        <li>{{ $t('account.vouchersTab.notes2') }}</li>
+                        <li>{{ $t('account.vouchersTab.notes3') }}</li>
+                        <li>{{ $t('account.vouchersTab.notes4') }}</li>
+                    </ul>
+                    
                 </section>
             </section>
         </div>

@@ -435,13 +435,23 @@
             }
         },
         "vouchersTab": {
-            "notEligible": "Tu cuenta no es elegible",
-            "notEligibleDesc": "Tu cuenta no es elegible para cupones en este momento. Se requieren al menos 60 días de tiempo pagado restante.",
-            "eligible": "Tu cuenta es elegible",
-            "eligibleDesc": "Puedes regalar estos cupones a amigos/comunidades, los códigos de cupón estarán disponibles durante 30 días.",
-            "eligibleDesc2": "Cada cupón se puede utilizar para registrarse en una cuenta IVPN de 30 días del mismo tipo que tu cuenta actual y solo son válidos para cuentas nuevas.",
-            "eligibleDesc3": "No verás el estado de si se ha utilizado o no por razones de privacidad.",
-            "eligibleDesc4": "Cuando se canjee un cupón, será rechazado si tu cuenta no tiene al menos 60 días de tiempo pagado restante."
+            "notEligible": "Cupones IVPN gratuitos",
+            "notEligibleDesc": "Cuando eres elegible, los códigos de cupón estarán disponibles durante 30 días.",
+            "notEligibleDesc2": "Los cupones IVPN solo están disponibles para cuentas existentes que tengan al menos 60 días de tiempo pagado restante.",
+            "notEligibleDesc3": "Recarga tu cuenta para cumplir con los criterios:",
+            "addMoreTime": "Añade más tiempo",
+            "eligible": "Cupones IVPN gratuitos",
+            "eligibleDesc": "A continuación puedes encontrar cinco códigos de cupón gratuitos.",
+            "eligibleDesc2": "Compártelos con amigos, familiares o en las redes sociales.",
+            "eligibleDesc3": "Los destinatarios pueden canjear los códigos de cupón mediante:",
+            "recipients1": "Creando una nueva cuenta IVPN Standard o Pro",
+            "recipients2": "Seleccionando 'Añadir más tiempo'",
+            "recipients3": "Siguiendo el enlace de redención del código de cupón",
+            "usefulNotes": "Notas útiles sobre los códigos de cupón gratuitos:",
+            "notes1": "Los cupones están disponibles y se pueden canjear siempre que tengas al menos 60 días de tiempo pagado restante en tu cuenta de IVPN",
+            "notes2": "Los cupones solo se pueden aplicar una vez a cuentas nuevas de IVPN Standard o Pro sin historial previo de cupones o pagos",
+            "notes3": "La oferta de cupones gratuitos se extiende hasta el 30 de septiembre de 2024",
+            "notes4": "Por razones de privacidad, no mostramos el estado de redención de los códigos anteriores"
         }
     },
     "resetPassword": {
