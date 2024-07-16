@@ -545,8 +545,12 @@ export default {
         return await this.Post('/web/session/delete-all')
     },
 
-    async getVouchers(paykload) {
+    async getVouchers(payload) {
         return await this.Post('/web/vouchers')
-    }
+    },
+
+    async updateVoucher(payload) {
+        return await this.Post('/web/vouchers/update', { card: payload.card})
+    },
 
 }

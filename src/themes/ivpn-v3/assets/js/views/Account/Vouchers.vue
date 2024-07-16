@@ -44,11 +44,14 @@
                         <li>{{ $t('account.vouchersTab.recipients2') }}</li>
                         <li>{{ $t('account.vouchersTab.recipients3') }}</li>
                     </ol>
+                    <h3>{{ $t('account.vouchersTab.voucherCodes') }}</h3>
                     <div>
                         <voucher
                             v-for="(voucher, index) in vouchers"
                             :key="index"
-                            :name="voucher"
+                            :card="voucher.code"
+                            :shared=voucher.is_shared
+                            v-on:updateVoucher="updateVoucher"
                         ></voucher>
                     </div>
                     <h3>
@@ -108,27 +111,9 @@ export default {
         }),
     },
     methods: {
-        confirmDelete(data) {
-            this.$store.commit("popup/show", {
-                type: "delete-device",
-                data: data,
-            });
-        },
-        confirmLogoutDevices(data) {
-            this.$store.commit("popup/show", {
-                type: "logout-devices",
-                data: data,
-            });
-        },
-        confirmDisableDeviceManagement(data) {
-            this.$store.commit("popup/show", {
-                type: "disable-device-management",
-                data: data,
-            });
-        },
-        async enableDeviceManagement(){
-            await this.$store.dispatch("account/enableDeviceManagement");
-            await this.$store.dispatch("sessions/load");
+        async updateVoucher(card) {
+            await this.$store.dispatch("vouchers/update", { 'voucher': card } );
+            this.$store.dispatch("vouchers/load");
         }
     },
 };

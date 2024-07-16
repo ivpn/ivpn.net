@@ -75,36 +75,11 @@ export default {
         }
     },
 
-    async deleteVoucher(context,token) {
+    async update(context,data) {
 
       context.commit('started')
-      
       try {
-          await Api.deleteVoucher(token);
-          let response= await Api.deleteVoucher(context)
-          context.commit('done', {
-              vouchers: response.vouchers,
-          })
-
-
-      } catch (error) {
-
-          if (error.status == StatusErrNotLoggedIn) {
-              context.commit('done', {})
-              console.log("error", error)
-              return;
-          }
-
-          context.commit('failed', { error })
-      }
-    },
-
-    async deleteVouchers(context) {
-
-      context.commit('started')
-      
-      try {
-          await Api.deleteVouchers();
+          await Api.updateVoucher(data.voucher);
           let response = await Api.getVouchers(context)
           context.commit('done', {
               vouchers: response.vouchers,

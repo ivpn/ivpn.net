@@ -1,24 +1,32 @@
 <template>
-    <div class="wireguard-key">
+    <div class="wireguard-key" :class = "(shared)?'wireguard-key crossed-off':'wireguard-key'">
         <div class="wireguard-key__row wireguard-key__header">
-            <h3>{{ name }}</h3>
+            <h3>{{ card }}</h3>
+            <button class="btn btn-icon" @click.prevent="updateVoucher">
+                <icon-edit color="#398FE6"></icon-edit> {{ $t('account.vouchersTab.markAsShared') }}
+            </button>
         </div>
     </div>
 </template>
 
 <script>
-import IconTrash from "@/components/icons/btn/Trash";
+import IconEdit from "@/components/icons/btn/Edit";
 import { useI18n } from "vue-i18n";
 
 export default {
     props: {
-        name: {
+        card: {
             required: true,
             type: String,
+        },
+        shared: {
+            required: true,
+            type: Boolean,
         }
     },
     data() {
         return {
+            language: "en"
         };
     },
     created() {
@@ -26,12 +34,16 @@ export default {
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     methods: {
+        updateVoucher() {
+            this.$emit("updateVoucher", { card: this.card });
+        },
     },
     components: {
-        IconTrash,
+        IconEdit,
     },
 };
 </script>
@@ -119,5 +131,9 @@ export default {
             margin-top: 24px;
         }
     }
+}
+
+.crossed-off{
+    text-decoration: line-through
 }
 </style>
