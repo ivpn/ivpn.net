@@ -451,7 +451,10 @@
             "notes1": "Vouchers are available and can be redeemed as long as you have at least 60 days of paid time remaining on your IVPN account",
             "notes2": "Vouchers can be only applied once to new IVPN Standard or Pro accounts without previous voucher or payment history",
             "notes3": "Free voucher offer runs until 30 September 2024",
-            "notes4": "For privacy reasons, we don't display redemption status of the codes above"
+            "notes4": "For privacy reasons, we don't display redemption status of the codes above",
+            "voucherCodes": "Voucher codes",
+            "markAsShared": "Mark as shared",
+            "markAsNotShared": "Mark as not shared"
         }
     },
     "resetPassword": {
