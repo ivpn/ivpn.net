@@ -29,21 +29,21 @@ RUN yarn --cwd ./src/themes/ivpn-v3/ $ENV
 RUN yarn --cwd ./src/themes/ivpn-v3/ run copy:manifest
 
 RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
-     -e 's/^url:(.*)$/url: \/privacy-mobile-app\//' \
-     -e 's/^canonical:(.*)$/canonical: \/privacy\//' \
+     -e 's/^url:(.*)$/url: \/en\/privacy-mobile-app\//' \
+     -e 's/^canonical:(.*)$/canonical: \/en\/privacy\//' \
    ./src/content/en/pages/privacy-policy.md > ./src/content/en/pages/privacy-policy-mobile.md \
    && sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
-     -e 's/^url:(.*)$/url: \/tos-mobile-app\//' \
-     -e 's/^canonical:(.*)$/canonical: \/tos\//' \
+     -e 's/^url:(.*)$/url: \/en\/tos-mobile-app\//' \
+     -e 's/^canonical:(.*)$/canonical: \/en\/tos\//' \
    ./src/content/en/pages/terms-of-service.md > ./src/content/en/pages/terms-of-service-mobile.md
 
 RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
-    -e 's/^url:(.*)$/url: \/privacy-mobile-app\//' \
-    -e 's/^canonical:(.*)$/canonical: \/privacy\//' \
+    -e 's/^url:(.*)$/url: \/es\/privacy-mobile-app\//' \
+    -e 's/^canonical:(.*)$/canonical: \/es\/privacy\//' \
    ./src/content/es/pages/privacy-policy.md > ./src/content/es/pages/privacy-policy-mobile.md \
    && sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
-     -e 's/^url:(.*)$/url: \/tos-mobile-app\//' \
-     -e 's/^canonical:(.*)$/canonical: \/tos\//' \
+     -e 's/^url:(.*)$/url: \/es\/tos-mobile-app\//' \
+     -e 's/^canonical:(.*)$/canonical: \/es\/tos\//' \
    ./src/content/es/pages/terms-of-service.md > ./src/content/es/pages/terms-of-service-mobile.md 
 
 RUN hugo -s ./src -b ${BASE_URL} --environment $ENV -d /opt/build/public
