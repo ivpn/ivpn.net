@@ -111,7 +111,8 @@
             "addFundsCash": "IVPN Añadir fondos - Cash",
             "wireguard": "Cuenta IVPN - WireGuard",
             "wireguardConfig": "Cuenta IVPN - Configuración de WireGuard",
-            "deviceManagement": "Cuenta IVPN - Gestión de dispositivos"
+            "deviceManagement": "Cuenta IVPN - Gestión de dispositivos",
+            "vouchers": "Cuenta IVPN - Cupones"
         },
         "greetings": "¡Tu cuenta ha sido creada!",
         "greetingsText": "Por favor, asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
@@ -159,6 +160,7 @@
         "disableRecurring": "Desactivar pagos recurrentes",
         "disableRecurringDesc" : "Al desactivar los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
         "disableRecurringPayments": "Desactivar pagos recurrentes",
+        "vouchers": "Cupones",
         "popups": {
             "authentication": {
                 "title": "Autenticar usando ID de cuenta",
@@ -431,6 +433,28 @@
                 "pleaseNote": "Por favor, ten en cuenta que los códigos de cupón se almacenan en nuestro sistema durante 30 días después de su uso para ayudar a resolver problemas de activación. La recuperación de la cuenta no es posible después de este período.",
                 "successPayment": "Cupón aplicado con éxito. El servicio se extiende hasta "
             }
+        },
+        "vouchersTab": {
+            "notEligible": "Cupones IVPN gratuitos",
+            "notEligibleDesc": "Cuando sea elegible, puede compartir cinco códigos de cupón de prueba de 30 días con otras personas nuevas en IVPN.",
+            "notEligibleDesc2": "Los cupones IVPN están disponibles para cuentas existentes que tengan al menos 60 días de tiempo pagado restante.",
+            "notEligibleDesc3": "Recarga tu cuenta para cumplir con los criterios:",
+            "addMoreTime": "Añade más tiempo",
+            "eligible": "Cupones IVPN gratuitos",
+            "eligibleDesc": "A continuación puedes encontrar cinco códigos de cupón gratuitos.",
+            "eligibleDesc2": "Compártelos con otras personas para que puedan canjearlos por 30 días en sus nuevas cuentas de IVPN.",
+            "eligibleDesc3": "Los destinatarios pueden canjear los códigos de cupón siguiendo los siguientes pasos:",
+            "recipients1": "Creando una nueva cuenta IVPN Standard o Pro",
+            "recipients2": "Seleccionando 'Añadir más tiempo'",
+            "recipients3": "Seleccionando el enlace de canje del código de cupón",
+            "usefulNotes": "Notas sobre los códigos de cupón gratuitos:",
+            "notes1": "Los cupones están disponibles y se pueden canjear siempre que tengas al menos 60 días de tiempo pagado restante en tu cuenta de IVPN",
+            "notes2": "Los cupones solo se pueden canjear una vez con cuentas nuevas de IVPN Standard o Pro sin historial previo de cupones o pagos",
+            "notes3": "La oferta de cupones gratuitos se extiende hasta el 30 de septiembre de 2024",
+            "notes4": "Por razones de privacidad, no mostramos el estado de canje de los códigos anteriores",
+            "voucherCodes": "Códigos de cupón",
+            "markAsShared": "Marcar como compartido",
+            "markAsNotShared": "Marcar como no compartido"
         }
     },
     "resetPassword": {

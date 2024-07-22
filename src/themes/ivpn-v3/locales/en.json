@@ -111,7 +111,8 @@
             "addFundsCash": "IVPN Add Funds - Cash",
             "wireguard": "IVPN Account - WireGuard",
             "wireguardConfig": "IVPN Account - WireGuard Configuration",
-            "deviceManagement": "IVPN Account - Device management"
+            "deviceManagement": "IVPN Account - Device management",
+            "vouchers": "IVPN Account - Vouchers"
         },
         "greetings": "Your account has been created!",
         "greetingsText": "Please make sure you save your Account ID in a safe place, you will use it to connect to the VPN. You don't need to enter your email to use our service.",
@@ -142,7 +143,7 @@
         "redeem": "Redeem it here",
         "ivpnAccount": "IVPN Account",
         "wireguard": "Wireguard",
-        "deviceManagement": "Device Management",
+        "deviceManagement": "Devices",
         "accountSettings": "Account Settings",
         "changeProductTitle": "Change Product",
         "changeProductDesc": "You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.",
@@ -159,6 +160,7 @@
         "disableRecurring": "Disable recurring payments",
         "disableRecurringDesc" : "Disabling recurring payments will remove stored payment information from our system and disable automatic renewal of the service.",
         "disableRecurringPayments": "Disable recurring payments",
+        "vouchers": "Vouchers",
         "popups": {
             "authentication": {
                 "title": "Authenticate using Account ID",
@@ -431,6 +433,28 @@
                 "pleaseNote": "Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period.",
                 "successPayment": "Voucher applied successfully. Service is extended until "
             }
+        },
+        "vouchersTab": {
+            "notEligible": "IVPN Free Vouchers",
+            "notEligibleDesc": "When eligible, you can share five 30-day IVPN test voucher codes with others new to IVPN.",
+            "notEligibleDesc2": "IVPN vouchers are available to existing accounts that have at least 60 days of paid time remaining.",
+            "notEligibleDesc3": "Extend your account to meet the criteria:",
+            "addMoreTime": "Add More Time",
+            "eligible": "IVPN Free Vouchers",
+            "eligibleDesc": "Below you can find five free voucher codes.",
+            "eligibleDesc2": "Share them with others to redeem for 30 days of time on their new IVPN accounts.",
+            "eligibleDesc3": "Recipients can redeem the voucher codes by:",
+            "recipients1": "Creating a new IVPN Standard or Pro account",
+            "recipients2": "Selecting 'Add More Time'",
+            "recipients3": "Following the voucher code redemption link",
+            "usefulNotes": "Notes about free voucher codes:",
+            "notes1": "Vouchers are available and can be redeemed as long as you have at least 60 days of paid time remaining on your IVPN account",
+            "notes2": "Vouchers can be only applied once to new IVPN Standard or Pro accounts without previous voucher or payment history",
+            "notes3": "Free voucher offer runs until 30 September 2024",
+            "notes4": "For privacy reasons, we don't display redemption status of the codes above",
+            "voucherCodes": "Voucher codes",
+            "markAsShared": "Mark as shared",
+            "markAsNotShared": "Mark as not shared"
         }
     },
     "resetPassword": {
