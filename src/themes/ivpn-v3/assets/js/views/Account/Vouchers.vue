@@ -32,8 +32,6 @@
                     <h2>{{ $t('account.vouchersTab.eligible') }}</h2>
                     <p>
                         {{ $t('account.vouchersTab.eligibleDesc') }}
-                    </p>
-                    <p>
                         {{ $t('account.vouchersTab.eligibleDesc2') }}
                     </p>
                     <p>
