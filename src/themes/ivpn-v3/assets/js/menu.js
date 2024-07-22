@@ -63,8 +63,6 @@
               }).then(function (response) {
                 return response.json();
             }).then(function (json) {
-                console.log(json)
-                console.log(json.account.is_voucher_eligible)
                 if(json.account.is_voucher_eligible){
                     document.querySelector('[data-voucher]').classList.remove('voucher')
                 }else{
