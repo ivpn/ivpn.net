@@ -143,7 +143,7 @@ There are two end-to-end encryption methods available for emails: [S/MIME](https
 
 Both S/MIME and PGP are using [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) which requires exchanging keys over a secure channel before being able to use end-to-end encryption. Unfortunately, they do not support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), so if your private key is ever stolen, all your past email become readable to the thief (given they have access to your emails).
 
-A limitation of end-to-end encryption of emails it that only the email body can be encrypted. The headers are required for the email delivery process and must stay in clear text.
+A limitation of end-to-end encryption of emails is that only the email body can be encrypted. The headers are required for the email delivery process and must stay in clear text.
 
 Headers contain important information like who sent the email, to whom, about what and when. The subject can be left empty but not the other fields. With regard to privacy, end-to-end encryption is still an improvement, but not a perfect solution.
 
