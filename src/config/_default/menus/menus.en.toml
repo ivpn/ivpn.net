@@ -73,7 +73,7 @@
 
   [[footercolone]]
     identifier = "what-is-a-vpn"
-    name = "What is a VPN"
+    name = "What is a VPN?"
     url = "/en/what-is-a-vpn/"
     weight = 40
   
