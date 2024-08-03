@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 850483
-hash: 000000000000000000005ce1be331a4b5a61def1f1620b86a4aab2980332945e
+height: 855167
+hash: 00000000000000000002667788db7579a1dc6f7d5cf51a79743ab1844dbb1ccf
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: French left and centrist candidates pulled from run-off vote to fend off far right
-Also in today’s newsletter, EU targets cheap Chinese goods and Blackstone’s private equity credit risk
+Swamp Notes: The Three Party Problem
+Third-party candidates can’t win the White House. But they can make someone else lose it.
 
-Technology and cyber crime: how to keep out the bad guys
-Maintaining strict security protocols and monitoring your firm’s digital activity can improve your chances of fending off an attack
+US rejects Vietnam’s bid for ‘market economy’ status in blow to trade ties
+Classification would have boosted exports and reduced tariffs on goods from country that is rising supply chain alternative to China
 
-Letter: Scotland just wants to be the master of its own destiny
-- From Lesley Ellis, Coull, Aberdeenshire, UK
+Scotland’s magic mountain
+For centuries, the mystery and beauty of Schiehallion have drawn visitors in pursuit of enlightenment both spiritual and scientific
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmaE2w0ACgkQisFrnrZH
-umnvBgf+MB21Bv4X7bKQpFRTUZEg5g/E8ooHOayTi8yB55ZjT3d0tbUgCUgRXMeh
-LNpWEgsenS+bjc0Ynis2PKZL34wooqhU/2o8yj0j+wYCCsFflsExC6C/l9mN0r4q
-3/3rkk3eDhaeSnLHVTXTBuQAN9IbkzY83NVMGY0B4wLWHL7XeTu2WhIfzS0nbLlL
-9PEe/2B3+zAtpTLuh9tkAy+vEUpnz9bVJB4gHQNds/Hlk/ehT596lL8lb4uEvOvD
-DiH3EHZWTqlLz5zJiSTJfDkqRJEVlfO++VktoQdtqsN8cgljLT0T6hJfLMKA/XGa
-dUUAJ8pXS9MR0BbZANZoq68I1daapQ==
-=N0eo
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmatuY0ACgkQisFrnrZH
+umlHuQgAofyE/W1qTdXoS6XJA4DzkSujVCji4qhfDKboJAu4q0NJPszsgpHeh1bA
+WHmkImqUEwG1qKtChzf5de5AaARZBCP13FcLLill1AUJ4a72I4DqxZJKMlW9lQCI
+7WlLff5Gogvtc4R2O+B/wflvZWctlYKRHSOsRVGQj6vjHiJ9FgExze/M38ybVz3X
+KEs0to7+AOwUcVS/32jqBsnWBGp3wDVcEbsMLLnf3xnu1m5R3DgdvJ6nM5yVB9mn
+6unW6/kGcHEIQt1T6ETZVEMyr4hluSUO4xQnjtO9BSHvlb/yW+7lYYxV7ACw6nRa
+0wq/fYFRg5T6bxw3i6bvl9s8pk/3ig==
+=rXrn
 -----END PGP SIGNATURE-----
 
 
