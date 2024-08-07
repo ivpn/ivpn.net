@@ -24,7 +24,7 @@ releases: [{
         },
         {
             cta: .APK file,
-            url: https://www.ivpn.net/releases/android/IVPNv2.10.8site.apk
+            url: https://www.ivpn.net/releases/android/IVPNv2.10.9site.apk
         }
     ],
     github: https://github.com/ivpn/android-app,
@@ -32,7 +32,7 @@ releases: [{
     checksum: [
         {
             title: .apk SHA256,
-            value: 5f3de49a59b80f06087f440d3e7d939d2f815d7ba944a1a75c90a20e447865cd
+            value: 5e766d230559deb1ae1a543aae66714ad422f63f468ef565dd2ec94c406ff040
         },
         {
             title: .apk sign cert SHA256,
