@@ -32,7 +32,7 @@ releases: [{
     checksum: [
         {
             title: .apk SHA256,
-            value: 5e766d230559deb1ae1a543aae66714ad422f63f468ef565dd2ec94c406ff040
+            value: cd68f954ec349277bec818988c57494a7f64f4447d0c5804607c95977a1b1db2
         },
         {
             title: .apk sign cert SHA256,
