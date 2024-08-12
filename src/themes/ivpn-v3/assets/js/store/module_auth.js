@@ -132,8 +132,6 @@ export default {
                 if (!response.account && !response.is_legacy) {
                     throw { message: "Response received without account or required data. Refresh page and try again." }
                 }
-
-                window.updateVoucherBanner(true, response.is_legacy);
                 context.commit('done', { account: response.account })
 
             } catch (error) {
@@ -176,7 +174,6 @@ export default {
                 isAuthenticated: false,
                 isLegacy: false,
             })
-            window.updateVoucherBanner(false, false);
         },
 
 
