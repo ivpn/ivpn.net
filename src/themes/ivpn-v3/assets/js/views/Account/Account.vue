@@ -75,6 +75,21 @@
                         </div>
                     </div>
                 </signup-section>
+                <signup-section>
+                    <div class="product">
+                        <div class="product-info">
+                            <label>Connected Service</label>
+                            <div class="value">
+                                Email Forwarder
+                            </div>
+                        </div>
+                        <div class="product-action">
+                            <router-link :to="{ name: 'email-service' }">
+                                Activate
+                            </router-link>
+                        </div>
+                    </div>
+                </signup-section>
 
                 <signup-section>
                     <apps-section />
