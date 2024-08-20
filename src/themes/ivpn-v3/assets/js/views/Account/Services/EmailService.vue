@@ -7,32 +7,41 @@
         </div>
         <h1>Email Forwarder</h1>
         <p>Enter your Email Forwarder Subscription ID to activate the service.</p>
+        <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>
             <label for="subscription_id">Subscription ID:</label>
-            <input id="subscription_id" v-model="subId" type="text">
+            <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
         </p>
         <p>
-            <a class="btn btn-big btn-border" href="" @click.prevent="submit()">Activate</a>
+            <button class="btn btn-big btn-solid" @click.prevent="submit()" :disabled="inProgress">
+                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
+                <span>Activate</span>
+            </button>
         </p>
     </div>
 </template>
 
 <script>
-
 export default {
     data() {
         return {
             language: "en",
             subId: "",
-            error: "",
         };
+    },
+    computed: {
+        ...mapState({
+            account: (state) => state.auth.account,
+            error: (state) => state.account.error,
+            inProgress: (state) => state.account.inProgress,
+        }),
     },
     methods: {
         async submit() {
             try {
                 const response = await this.$store.dispatch("account/updateEmailSubscription", {
                     uuid: this.subId,
-                    store: true,
+                    store: false,
                 });
                 if (response.error) {
                     this.error = response.error;
