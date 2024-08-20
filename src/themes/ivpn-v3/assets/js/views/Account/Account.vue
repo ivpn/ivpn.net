@@ -78,14 +78,14 @@
                 <signup-section>
                     <div class="product">
                         <div class="product-info">
-                            <label>Connected Service</label>
+                            <label>Service</label>
                             <div class="value">
                                 Email Forwarder
                             </div>
                         </div>
                         <div class="product-action">
                             <router-link :to="{ name: 'email-service' }">
-                                Activate
+                                Update
                             </router-link>
                         </div>
                     </div>
