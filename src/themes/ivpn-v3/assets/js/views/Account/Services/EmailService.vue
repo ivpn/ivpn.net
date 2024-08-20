@@ -22,7 +22,9 @@
 </template>
 
 <script>
+import progressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 
 export default {
     data() {
@@ -38,6 +40,10 @@ export default {
             inProgress: (state) => state.account.inProgress,
         }),
     },
+    mounted(){
+        useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = window.location.href.split("/")[3];
+    },
     methods: {
         async submit() {
             console.log("submit()");
@@ -46,10 +52,23 @@ export default {
                     uuid: this.subId,
                     store: false,
                 });
+
+                console.log(response);
+
                 if (response.error) {
                     this.error = response.error;
                 }
-                console.log(response);
+
+                if (this.error) {
+                    return;
+                }
+
+                this.$store.commit("setFlashMessage", {
+                    type: "success",
+                    message: this.$t('account.updateEmailServiceSuccess')
+                });
+
+                this.$router.push({ name: "account-" + this.language })
             } catch (error) {
                 this.error = error;
             }

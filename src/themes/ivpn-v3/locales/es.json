@@ -162,6 +162,7 @@
         "disableRecurringDesc" : "Al desactivar los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
         "disableRecurringPayments": "Desactivar pagos recurrentes",
         "vouchers": "Cupones",
+        "updateEmailServiceSuccess": "Email service has been successfully updated.",
         "popups": {
             "authentication": {
                 "title": "Autenticar usando ID de cuenta",
