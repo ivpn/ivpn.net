@@ -30,8 +30,9 @@ export default {
     methods: {
         async submit() {
             try {
-                const response = await this.$store.dispatch("account/activateEmailService", {
+                const response = await this.$store.dispatch("account/updateEmailSubscription", {
                     uuid: this.subId,
+                    store: true,
                 });
                 if (response.error) {
                     this.error = response.error;

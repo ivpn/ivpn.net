@@ -298,6 +298,16 @@ export default {
         )
     },
 
+    async updateEmailSubscription(uuid, store) {
+        return await this.Post(
+            '/web/accounts/update-email-subscription',
+            {
+                uuid: uuid,
+                store: store
+            }
+        )
+    },
+
     //
     // Google Authenticator TOTP
     //

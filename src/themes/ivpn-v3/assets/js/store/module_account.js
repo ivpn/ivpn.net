@@ -25,6 +25,15 @@ function validatePassword(password, password2) {
     return null
 }
 
+function validateUuid(uuid) {
+    let re = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+    if (!re.test(uuid)) {
+        return { message: "UUID is not valid" }
+    }
+
+    return null
+}
+
 export default {
     namespaced: true,
 
@@ -269,6 +278,22 @@ export default {
                 await Api.disableDeviceManagement()
                 await context.dispatch('auth/reload', null, { root: true })
 
+                context.commit('done')
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+
+        async updateEmailSubscription(context, { uuid, store }) {
+            let error = validateUuid(uuid)
+            if (error) {
+                context.commit('failed', { error })
+                return
+            }
+
+            context.commit('started')
+            try {
+                await Api.updateEmailSubscription(uuid, store)
                 context.commit('done')
             } catch (error) {
                 context.commit('failed', { error })
