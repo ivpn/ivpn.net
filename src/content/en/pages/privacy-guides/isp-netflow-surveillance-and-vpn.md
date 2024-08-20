@@ -44,7 +44,7 @@ As you may be aware, a VPN creates an encapsulated connection between your VPN c
 
 Nonetheless, it's crucial to note that, besides the encrypted data, your ISP obtains a lot of information about your VPN from the NetFlow data. As the VPN service providers IP ranges are well known, your ISP can easily figure you are using a VPN, in addition to knowing the time you connect, the amount of data you transfer over the VPN and the location of the remote VPN server.
 
-Although this information may seem insignificant, it can be exploited. For instance, it's easy to determine your computer time habits, and potentially the number of people in your house, and how people consume the Internet.
+Although this information may seem insignificant, it can be exploited. For instance, it's easy to determine the timing of your device usage, potentially the number of people in your house, and gather insights about how these people use the Internet.
 
 Please note that it's impossible to hide your network activity from your ISP, as they are the ones who provide your connection to remote servers, but if you use a VPN, your ISP will only see a single encrypted connection.
 
@@ -58,15 +58,15 @@ If your VPN service provider is located in a different part of the puzzle than y
 
 ## Worldwide NetFlow database
 
-Unfortunately, a 2022 [article from Vice][Augury] has revealed that a US-based private company has been collecting NetFlow exports from many ISPs worldwide in exchange for Threat Intelligence analysis. The number of involved ISPs suggests that, from the article, it may represent roughly ninety percent of the global Internet traffic. Information about [Team Cymru][cymru], the company that sells access to the consolidated NetFlows database, remains limited. It was found that their website contains a list of [facts and myths][cymru_facts] about their services, though their claims cannot be verified. Nevertheless, it is evident that they are working on NetFlow aggregation.
+Unfortunately, a 2022 [article from Vice][Augury] has revealed that a US-based private company has been collecting NetFlow exports from many ISPs worldwide in exchange for Threat Intelligence analysis. As per the article, the number of involved ISPs suggests that it may represent roughly ninety percent of the global Internet traffic. Information about [Team Cymru][cymru], the company that sells access to the consolidated NetFlows database, remains limited. It was found that their website contains a list of [facts and myths][cymru_facts] about their services, though their claims cannot be verified. Nevertheless, it is evident that they are working on NetFlow aggregation.
 
 Using the puzzle analogy again, Team Cymru has access to most of the puzzle pieces. While a single piece doesn't hold enough information in the context of using a VPN, having many of them could potentially expose your Internet usage **if they receive NetFlow exports from both your ISP and your VPN provider ISP**. For example, traffic correlation using the packets timing becomes a lot easier when you know the delay between the user and their VPN provider acting as a proxy.
 
-In 2024, the NSA [stated to a senator][senate] that they were buying NetFlow exports from ISPs as long as it involves traffic to or from the United States.
+In 2024, the NSA [stated to a U.S. senator][senate] that they were buying NetFlow exports from ISPs as long as it involves traffic to or from the United States.
 
 ### NetFlow and anonymization
 
-It is not possible to say which ISP shares their NetFlow data.
+It is not possible to say which ISPs share their NetFlow data.
 
 For European based ISPs, the [GDPR][gdpr] compliance dictates that personal data should not be shared. It is not our place to discuss if NetFlow datasets qualify as our personal data, but GDPR compliance implies that ISPs must not permit any third party to associate a NetFlow export with personal information such as names, addresses, or phone numbers.
 
@@ -91,7 +91,7 @@ To protect your privacy efficiently, it's important that you [define your threat
 
 An alternative mitigation would be to use the [I2P protocol][i2p_wiki], although its usage is a bit restrictive, [contrary to Tor][tor_vs_i2p]. I2P is intended to be used as a "network layer on top of the Internet", rather than a substitute for a VPN. For more information, visit the [official project website][i2p].
 
-A more realistic mitigation would be the use of a [mix network](https://www.ivpn.net/privacy-guides/adversaries-and-anonymity-systems-the-basics/#anonymity-systems), but as of the time of writing, they are complicated to use and require blockchain tokens to work, which is a challenge to buy anonymously. We also lack feedback about their efficiency in a real world usage.
+A more realistic mitigation would be the use of a [mix network](https://www.ivpn.net/privacy-guides/adversaries-and-anonymity-systems-the-basics/#anonymity-systems), but as of the time of writing, those available on the market are complicated to use and require blockchain tokens to work. We also lack feedback about their efficiency in a real world usage.
 
 ## Exercise: monitor your own network activity
 
