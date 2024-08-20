@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="product-action">
-                            <router-link :to="{ name: 'email-service' }">
+                            <router-link :to="{ name: 'email-service-' + this.language  }">
                                 Update
                             </router-link>
                         </div>
