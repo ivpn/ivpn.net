@@ -255,14 +255,6 @@ const routes = [
         }
     },
     {
-        path: '/account/email-service',
-        name: 'email-service',
-        component: EmailService,
-        meta: {
-            title: en.account.metaTitle.emailService,
-        }
-    },
-    {
         path: '/en/account/change-product',
         name: 'change-product-en',
         component: ChangeProductView,
@@ -276,6 +268,30 @@ const routes = [
         component: ChangeProductView,
         meta: {
             title: es.account.metaTitle.changeProduct,
+        }
+    },
+    {
+        path: '/account/email-service',
+        name: 'email-service',
+        component: EmailService,
+        meta: {
+            title: en.account.metaTitle.emailService,
+        }
+    },
+    {
+        path: '/en/account/email-service',
+        name: 'email-service-en',
+        component: EmailService,
+        meta: {
+            title: en.account.metaTitle.emailService,
+        }
+    },
+    {
+        path: '/es/account/email-service',
+        name: 'email-service-es',
+        component: EmailService,
+        meta: {
+            title: es.account.metaTitle.emailService,
         }
     },
     {
