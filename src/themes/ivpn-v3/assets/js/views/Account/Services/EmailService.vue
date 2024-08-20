@@ -38,6 +38,7 @@ export default {
     },
     methods: {
         async submit() {
+            console.log("submit()");
             try {
                 const response = await this.$store.dispatch("account/updateEmailSubscription", {
                     uuid: this.subId,
@@ -46,6 +47,7 @@ export default {
                 if (response.error) {
                     this.error = response.error;
                 }
+                console.log(response);
             } catch (error) {
                 this.error = error;
             }
