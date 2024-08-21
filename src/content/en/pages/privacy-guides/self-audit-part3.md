@@ -3,7 +3,7 @@ title: Self audit your VPN - Pt3. - OpenVPN Configuration and Leaks
 author: Solène Rapenne
 url: /privacy-guides/self-audit-series-part3/
 section: Misc
-weight: 11
+weight: 12
 date: 2024-08-21T12:00:00+00:00
 layout: guides-details
 articles: [
