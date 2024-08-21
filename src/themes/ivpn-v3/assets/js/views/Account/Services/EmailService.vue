@@ -20,6 +20,21 @@
             <label for="subscription_id">Subscription ID:</label>
             <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
         </p>
+        <div class="table-kw">
+            <div class="row row__checkbox">
+                <div class="key">
+                    <input
+                        v-model="isStored"
+                        type="checkbox"
+                        id="is_stored"
+                        style="margin-right: 12px;"
+                        checked="checked"
+                    />
+                    <label for="is_stored" style="cursor:pointer">Manage automatically</label>
+                </div>
+                <p>When selected, the Email Forwarder subscription is updated automatically. Disable to prevent storing any information from the Email Forwarder in the IVPN database.</p>
+            </div>
+        </div>
         <p>
             <button class="btn btn-big btn-solid" @click.prevent="submit()" :disabled="inProgress">
                 <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
@@ -42,6 +57,7 @@ export default {
         return {
             language: "en",
             subId: "",
+            isStored: false,
         };
     },
     computed: {
@@ -57,32 +73,21 @@ export default {
     },
     methods: {
         async submit() {
-            console.log("submit()");
-            try {
-                const response = await this.$store.dispatch("account/updateEmailSubscription", {
-                    uuid: this.subId,
-                    store: false,
-                });
+            await this.$store.dispatch("account/updateEmailSubscription", {
+                uuid: this.subId,
+                store: this.isStored,
+            });
 
-                console.log(response);
-
-                if (response.error) {
-                    this.error = response.error;
-                }
-
-                if (this.error) {
-                    return;
-                }
-
-                this.$store.commit("setFlashMessage", {
-                    type: "success",
-                    message: this.$t('account.updateEmailServiceSuccess')
-                });
-
-                this.$router.push({ name: "account-" + this.language })
-            } catch (error) {
-                this.error = error;
+            if (this.error) {
+                return;
             }
+
+            this.$store.commit("setFlashMessage", {
+                type: "success",
+                message: this.$t('account.updateEmailServiceSuccess')
+            });
+
+            this.$router.push({ name: "account-" + this.language });
         },
     },
 };
