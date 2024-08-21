@@ -162,7 +162,7 @@
         "disableRecurringDesc" : "Disabling recurring payments will remove stored payment information from our system and disable automatic renewal of the service.",
         "disableRecurringPayments": "Disable recurring payments",
         "vouchers": "Vouchers",
-        "updateEmailServiceSuccess": "Email service has been successfully updated.",
+        "updateEmailServiceSuccess": "Email Forwarder service has been successfully updated.",
         "popups": {
             "authentication": {
                 "title": "Authenticate using Account ID",
