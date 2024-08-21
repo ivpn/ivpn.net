@@ -17,7 +17,7 @@
         <p>Enter your Email Forwarder Subscription ID to activate/update the service.</p>
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>
-            <label for="subscription_id">Email Forwarder subscription ID:</label>
+            <label for="subscription_id">Subscription ID:</label>
             <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
         </p>
         <p>
@@ -87,3 +87,10 @@ export default {
     },
 };
 </script>
+
+<style lang="scss">
+@import "@/styles/_vars.scss";
+@import "@/styles/icons.scss";
+@import "@/styles/buttons.scss";
+@import "@/styles/base.scss";
+</style>
