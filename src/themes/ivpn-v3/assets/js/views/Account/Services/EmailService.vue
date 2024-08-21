@@ -125,4 +125,11 @@ export default {
         ));
     }
 }
+
+.table-kw {
+    .row {
+        padding: 0;
+        margin-bottom: 24px;
+    }
+}
 </style>
