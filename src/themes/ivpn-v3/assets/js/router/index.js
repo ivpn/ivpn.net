@@ -12,6 +12,7 @@ import AddFundsBitcoin from '@/views/Account/AddFunds/BitCoin.vue'
 import AddFundsMonero from '@/views/Account/AddFunds/Monero.vue'
 import AddFundsCash from '@/views/Account/AddFunds/Cash.vue'
 import AddFundsGiftCard from '@/views/Account/AddFunds/GiftCard.vue'
+import EmailService from '../views/Account/Services/EmailService.vue'
 
 import WireguardView from '@/views/Account/Wireguard.vue'
 import WireguardConfigView from '@/views/Account/WireguardConfig.vue'
@@ -267,6 +268,30 @@ const routes = [
         component: ChangeProductView,
         meta: {
             title: es.account.metaTitle.changeProduct,
+        }
+    },
+    {
+        path: '/account/email-service',
+        name: 'email-service',
+        component: EmailService,
+        meta: {
+            title: en.account.metaTitle.emailService,
+        }
+    },
+    {
+        path: '/en/account/email-service',
+        name: 'email-service-en',
+        component: EmailService,
+        meta: {
+            title: en.account.metaTitle.emailService,
+        }
+    },
+    {
+        path: '/es/account/email-service',
+        name: 'email-service-es',
+        component: EmailService,
+        meta: {
+            title: es.account.metaTitle.emailService,
         }
     },
     {
