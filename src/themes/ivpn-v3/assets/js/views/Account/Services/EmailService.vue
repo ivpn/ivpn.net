@@ -6,16 +6,24 @@
             </router-link>
         </div>
         <h1>Email Forwarder</h1>
-        <p>Enter your Email Forwarder Subscription ID to activate the service.</p>
+        <p>
+            Status:<br>
+            <div
+                class="status"
+                v-bind:class="[account.is_active ? 'active' : 'inactive']">
+                {{ account.is_active ? $t('account.active') : $t('account.inactive') }}
+            </div>
+        </p>
+        <p>Enter your Email Forwarder Subscription ID to activate/update the service.</p>
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>
-            <label for="subscription_id">Subscription ID:</label>
+            <label for="subscription_id">Email Forwarder subscription ID:</label>
             <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
         </p>
         <p>
             <button class="btn btn-big btn-solid" @click.prevent="submit()" :disabled="inProgress">
                 <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                <span>Activate</span>
+                <span>Activate / Update</span>
             </button>
         </p>
     </div>
