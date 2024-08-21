@@ -90,7 +90,34 @@ export default {
 
 <style lang="scss">
 @import "@/styles/_vars.scss";
-@import "@/styles/icons.scss";
-@import "@/styles/buttons.scss";
 @import "@/styles/base.scss";
+
+.status {
+    margin-top: 8px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0px 16px 0px 16px;
+    line-height: 28px;
+    font-size: 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+
+    &.active {
+        background: #64ad07;
+        color: $white;
+        
+    }
+
+    &.inactive {
+        @include light-theme((
+            background: #29292E80,
+            color: $white
+        ));
+
+        @include dark-theme((
+            background: rgba(255, 255, 255, 0.5),
+            color: #29292E
+        ));
+    }
+}
 </style>
