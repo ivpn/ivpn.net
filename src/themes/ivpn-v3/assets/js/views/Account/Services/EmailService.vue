@@ -7,7 +7,6 @@
         </div>
         <h1>Email Forwarder</h1>
         <p v-if="account.email_service_enabled">
-            Status:<br>
             <div
                 class="status"
                 v-bind:class="[account.is_active ? 'active' : 'inactive']">
