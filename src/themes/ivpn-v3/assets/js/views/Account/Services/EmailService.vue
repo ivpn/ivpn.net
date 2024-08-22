@@ -6,12 +6,12 @@
             </router-link>
         </div>
         <h1>Email Forwarder</h1>
-        <p>
+        <p v-if="account.email_service_enabled">
             Status:<br>
             <div
                 class="status"
                 v-bind:class="[account.is_active ? 'active' : 'inactive']">
-                {{ account.is_active ? $t('account.active') : $t('account.inactive') }}
+                {{ account.is_active ? $t('account.active') + ' - Updated automatically' : $t('account.inactive') }}
             </div>
         </p>
         <p>Enter your Email Forwarder Subscription ID to activate/update the service.</p>
