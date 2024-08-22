@@ -127,8 +127,9 @@ export default {
 }
 
 .table-kw {
+    
     .row {
-        padding: 0;
+        padding: 10px 0!important;
         margin-bottom: 24px;
     }
 }
