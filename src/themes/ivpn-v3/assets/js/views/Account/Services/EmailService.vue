@@ -28,7 +28,7 @@
                         type="checkbox"
                         id="is_stored"
                         style="margin-right: 12px;"
-                        checked="checked"
+                        :checked="isStored"
                     />
                     <label for="is_stored" style="cursor:pointer">Manage automatically</label>
                 </div>
@@ -57,7 +57,7 @@ export default {
         return {
             language: "en",
             subId: "",
-            isStored: false,
+            isStored: true,
         };
     },
     computed: {
