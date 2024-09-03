@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-09-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 855167
-hash: 00000000000000000002667788db7579a1dc6f7d5cf51a79743ab1844dbb1ccf
+height: 859652
+hash: 00000000000000000000019dbc93693d8961b9a42351a03a810c36cb22952441
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Swamp Notes: The Three Party Problem
-Third-party candidates can’t win the White House. But they can make someone else lose it.
+FirstFT: Unease over housing costs at record high across rich nations
+Also in today’s newsletter, Netanyahu’s refusal to ‘surrender’ to pressure and Morgan Stanley’s drive to regain stock trading dominance
 
-US rejects Vietnam’s bid for ‘market economy’ status in blow to trade ties
-Classification would have boosted exports and reduced tariffs on goods from country that is rising supply chain alternative to China
+Jean Pisani-Ferry: ‘It’s a war between two strands of capitalism — green and brown’
+The French economist sees promise in technology but worries about the heterogeneity of global climate policies
 
-Scotland’s magic mountain
-For centuries, the mystery and beauty of Schiehallion have drawn visitors in pursuit of enlightenment both spiritual and scientific
+More cleantech companies close as fundraising challenges emerge
+Rising interest rates, competition for funding and delayed federal support contribute to issues facing sector
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmatuY0ACgkQisFrnrZH
-umlHuQgAofyE/W1qTdXoS6XJA4DzkSujVCji4qhfDKboJAu4q0NJPszsgpHeh1bA
-WHmkImqUEwG1qKtChzf5de5AaARZBCP13FcLLill1AUJ4a72I4DqxZJKMlW9lQCI
-7WlLff5Gogvtc4R2O+B/wflvZWctlYKRHSOsRVGQj6vjHiJ9FgExze/M38ybVz3X
-KEs0to7+AOwUcVS/32jqBsnWBGp3wDVcEbsMLLnf3xnu1m5R3DgdvJ6nM5yVB9mn
-6unW6/kGcHEIQt1T6ETZVEMyr4hluSUO4xQnjtO9BSHvlb/yW+7lYYxV7ACw6nRa
-0wq/fYFRg5T6bxw3i6bvl9s8pk/3ig==
-=rXrn
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmbWmA8ACgkQisFrnrZH
+umnIUAgApkBuLECXAkc8z2J+Qb8NUpNPN21gehFyI8T63a2HsH+zH6NDN8IrqBF2
+ZD2iijUJGCs6Fp0HIf7pSnCxfd1v7XWuuz1f3TptMI0jTgyq65KSt2hr35dnxpRX
+ze70OKZ9n9I1fZBIVFw7Q4A43Fo/WuMNUoJ1ATiRTEwNwEyDHpunSZeqYqB/2prg
+RKcYT4sNTYTd50Dk6gGmoK+HLAHGobP8tPNizWpPcgO30xALJmNIQTaA6IYI3dWi
+VKqJQUQbh1BRGGnRovPRQasXtCgFngKX3As8YXnHv5cIUEJ5O3Wy1Eksqv2SeEHi
+p/VhbeSidLGW5UdCSnJvZcIDI8fvvg==
+=0JVT
 -----END PGP SIGNATURE-----
 
 
