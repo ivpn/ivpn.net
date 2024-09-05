@@ -5,7 +5,7 @@ url: /privacy-guides/email-and-privacy/
 section: Basic
 weight: 10
 date: 2024-07-23T00:07:00+00:00
-update: 2024-07-23T00:07:00+00:00
+update: 2024-09-04T00:07:00+00:00
 layout: guides-details
 articles: [
   {
@@ -165,7 +165,7 @@ Some implementations such as [Proton Mail](https://proton.me/blog/zero-knowledge
 
 On the other hand, email providers like [Posteo](https://posteo.de/en/site/features) and [Mailbox.org](https://mailbox.org/en/private-customers#security) offer optional encryption of inbound emails using your S/MIME or PGP public key. This method guarantees that you are the only owner of the private key used to decrypt your emails, and that state-of-the-art encryption is used, but as explained earlier, all the headers will be left unencrypted.
 
-Server side encryption does not prevent the email provider to snoop emails upon arrival, for instance they could be forced to save a copy of all your emails due to a court order. In such a case they would not be able to read your emails sent/received before the surveillance began.
+Server side encryption does not prevent the email provider to snoop emails upon arrival, for instance they could be forced to save a copy of all your emails due to a court order. In such a case they would not be able to read your emails sent/received before the surveillance began. For instance, [in 2021 the German court](https://web.archive.org/web/20240820114923/https://cyberscoop.com/court-rules-encrypted-email-tutanota-monitor-messages/) ordered the email provider Tuta to make unencrypted copies of all incoming and outgoing emails related to two Tuta accounts.
 
 It is important to be aware that even with server-side encryption, multiple copies of your emails may exist: when you send an email, it is typically stored on both your email provider's server and the recipient's provider's server. So if your provider offers encryption at rest, the recipient's provider might not. This means a copy of your email could still exist unencrypted on their system. This is why end-to-end encryption is still valuable even if some email providers started to offer encryption at rest.
 
