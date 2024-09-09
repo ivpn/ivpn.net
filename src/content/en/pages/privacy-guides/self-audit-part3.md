@@ -17,7 +17,7 @@ articles: [
   },
 ]
 ---
-This guide is [part of a series](/privacy-guides/self-audit-series-part1/) that will show you how to self-audit a VPN tunnel for data leak and performance issues.
+This guide is [part of a series](/privacy-guides/self-audit-series-part1/) that will show you how to self-audit a VPN tunnel for data leak.
 
 [Part two](/privacy-guides/self-audit-series-part2/) of the series was about WireGuard. The current guide is the part three and focuses on OpenVPN.
 
