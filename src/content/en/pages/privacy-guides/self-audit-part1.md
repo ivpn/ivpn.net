@@ -12,6 +12,10 @@ articles: [
     title: "Self audit your VPN - Pt2. - WireGuard Configuration and Leaks",
     url: "/privacy-guides/self-audit-series-part2/"
   },
+  {
+    title: "Self audit your VPN - Pt3. - OpenVPN Configuration and Leaks",
+    url: "/privacy-guides/self-audit-series-part3/"
+  },
 ]
 ---
 While it is important to protect your privacy, it is also essential to trust your VPN provider with the proper implementation of its VPN service. While third-party audits by organisations can provide some assurance, it is possible to audit the VPN functionality independently. This series will teach you how to verify that your VPN is functioning as claimed by your VPN provider, as well as how to verify that it is performing at its optimal level with the best settings.
@@ -180,4 +184,4 @@ In the example above, the protocol is UDP and the port number is 4500.
 
 # Next step
 
-If you have read the guide until here, you are ready to [continue to the next part](/privacy-guides/self-audit-series-part2) of the series.
+If you have read the guide until here, you are ready to continue the series covering [WireGuard](/privacy-guides/self-audit-series-part2) and [OpenVPN](/privacy-guides/self-audit-series-part3).
