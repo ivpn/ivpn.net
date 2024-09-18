@@ -10,7 +10,7 @@ weight: 130
 ---
 # What VPN protocols do you offer?
 
-IVPN supports OpenVPN, WireGuard®, and IPSec with IKEv2.
+IVPN supports OpenVPN (2.3.7 and up), WireGuard®, and IPSec with IKEv2.
 
 The IVPN App for all platforms supports OpenVPN and WireGuard connections.  The IVPN App for iOS also supports IPSec with IKEv2 connections.  Check the app's `Settings > Connection` (desktop) or `Settings > Protocol` (mobile) area for protocol details and options.
 
