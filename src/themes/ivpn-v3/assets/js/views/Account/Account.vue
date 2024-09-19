@@ -148,6 +148,10 @@ export default {
             let product= await this.calculateForProduct(this.$store.state.auth.account.product.name).then(response => response);
             this.canChange = !product.is_locked;
         }
+
+        if(this.$store.state.auth.account.is_legacy){
+            this.canChange = false;
+        }
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
