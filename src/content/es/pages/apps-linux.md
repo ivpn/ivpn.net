@@ -32,7 +32,7 @@ contents:
         title: Fedora
         anchor: fedora
     - item:
-        title: CentOS
+        title: CentOS/Alma/Rocky
         anchor: centos
     - item:
         title: Arch Linux
@@ -177,23 +177,26 @@ sudo dnf install ivpn-ui
 sudo dnf install ivpn
 ```
 
-### CentOS {#centos}
+### CentOS/Alma/Rocky {#centos}
 
 ```pkgconfig
-# Instalar Yum-utils
-sudo yum install yum-utils
+# Instalar epel-release
+sudo dnf install epel-release
+
+# Instalar OpenVPN
+sudo dnf install openvpn
 
 # Agregar el repositorio IVPN
-sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
+sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
 
 # Para instalar el software IVPN (CLI y UI)
-sudo yum install ivpn-ui
+sudo dnf install ivpn-ui
 
 # Para instalar solo IVPN CLI
-sudo yum install ivpn
+sudo dnf install ivpn
 
 # Requerido para CentOS 8
-sudo yum install libXScrnSaver
+sudo dnf install libXScrnSaver
 ```
 
 ### Arch Linux {#arch}
