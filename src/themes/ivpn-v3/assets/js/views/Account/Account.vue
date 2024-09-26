@@ -149,7 +149,7 @@ export default {
             this.canChange = !product.is_locked;
         }
 
-        if(this.$store.state.auth.account.is_legacy){
+        if(this.$store.state.auth.account.is_migrated){
             this.canChange = false;
         }
     },
