@@ -69,7 +69,6 @@ The option also exists to select a single list for blocking instead of the colle
 * **EasyList + EasyPrivacy** - "EasyList is a popular list used by many ad blockers and forms the basis of over a dozen combination filter lists. EasyPrivacy is a supplementary filter list that removes all forms of tracking from the internet, including tracking scripts and information collectors."
 * **OISD Big** - "The big list blocks: Ads, (Mobile) App Ads, Phishing, Malvertising, Malware, Spyware, Ransomware, CryptoJacking, Scam ... Telemetry/Analytics/Tracking (Where not needed for proper functionality)"
 * **Steven Black Unified = Ads + Malware**
-* **1Hosts Xtra** - "extremely aggressive & restrictive"
 * **HaGeZi Multi Light** - "Cleans the Internet and protects your privacy! Blocks Ads, Tracking, Metrics, some Malware and Fake."
 * **HaGeZi Multi Pro** - "Cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Coins and other 'Crap'."
 * **HaGeZi Multi Pro++** - "Aggressive[ly] cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Coins and other 'Crap'."
