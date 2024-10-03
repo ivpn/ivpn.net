@@ -11,38 +11,21 @@ Special note should be taken if these messages ever cease being updated, or are 
 The current message is here:
 
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
-As of 2024-09-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
-Source: mempool.space (https://mempool.space/blocks)
+(from https://www.ft.com/news-feed )
 
-height: 859652
-hash: 00000000000000000000019dbc93693d8961b9a42351a03a810c36cb22952441
+Turkish inflation falls below 50% in boon to Erdoğan
+Slowest price growth in over a year comes after painful rate rises
 
+Harris tries to lock in anti-Trump Republican voters
+Liz Cheney to stump for Democratic presidential candidate in swing state Wisconsin on Thursday
 
-Source: FT (https://www.ft.com/news-feed)
+Eurozone house prices rise for first time in more than a year
+Annual increase of 1.3% in second quarter points to gradual recovery of region’s housing market
 
-FirstFT: Unease over housing costs at record high across rich nations
-Also in today’s newsletter, Netanyahu’s refusal to ‘surrender’ to pressure and Morgan Stanley’s drive to regain stock trading dominance
-
-Jean Pisani-Ferry: ‘It’s a war between two strands of capitalism — green and brown’
-The French economist sees promise in technology but worries about the heterogeneity of global climate policies
-
-More cleantech companies close as fundraising challenges emerge
-Rising interest rates, competition for funding and delayed federal support contribute to issues facing sector
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmbWmA8ACgkQisFrnrZH
-umnIUAgApkBuLECXAkc8z2J+Qb8NUpNPN21gehFyI8T63a2HsH+zH6NDN8IrqBF2
-ZD2iijUJGCs6Fp0HIf7pSnCxfd1v7XWuuz1f3TptMI0jTgyq65KSt2hr35dnxpRX
-ze70OKZ9n9I1fZBIVFw7Q4A43Fo/WuMNUoJ1ATiRTEwNwEyDHpunSZeqYqB/2prg
-RKcYT4sNTYTd50Dk6gGmoK+HLAHGobP8tPNizWpPcgO30xALJmNIQTaA6IYI3dWi
-VKqJQUQbh1BRGGnRovPRQasXtCgFngKX3As8YXnHv5cIUEJ5O3Wy1Eksqv2SeEHi
-p/VhbeSidLGW5UdCSnJvZcIDI8fvvg==
-=0JVT
------END PGP SIGNATURE-----
 
 
 The primary IVPN public key is here:
