@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-09-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 859652
-hash: 00000000000000000000019dbc93693d8961b9a42351a03a810c36cb22952441
+height: 863912
+hash: 000000000000000000026558d0d6d017da30ff683572b6e0dbb2c76dbc51de7a
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Unease over housing costs at record high across rich nations
-Also in today’s newsletter, Netanyahu’s refusal to ‘surrender’ to pressure and Morgan Stanley’s drive to regain stock trading dominance
+FirstFT: Israel steps up Lebanon offensive as Middle East braces for retaliation on Iran
+Also in today’s newsletter, OpenAI wants exclusive investors and LVMH to sponsor F1
 
-Jean Pisani-Ferry: ‘It’s a war between two strands of capitalism — green and brown’
-The French economist sees promise in technology but worries about the heterogeneity of global climate policies
+Transcript: Israel presses its military advantage
+Gideon Rachman talks to Sanam Vakil, director of the Middle East program at Chatham House
 
-More cleantech companies close as fundraising challenges emerge
-Rising interest rates, competition for funding and delayed federal support contribute to issues facing sector
+Why the US can’t impose its will over global trade in electric cars
+The American market is too small to give Washington leverage over Chinese software in EVs
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmbWmA8ACgkQisFrnrZH
-umnIUAgApkBuLECXAkc8z2J+Qb8NUpNPN21gehFyI8T63a2HsH+zH6NDN8IrqBF2
-ZD2iijUJGCs6Fp0HIf7pSnCxfd1v7XWuuz1f3TptMI0jTgyq65KSt2hr35dnxpRX
-ze70OKZ9n9I1fZBIVFw7Q4A43Fo/WuMNUoJ1ATiRTEwNwEyDHpunSZeqYqB/2prg
-RKcYT4sNTYTd50Dk6gGmoK+HLAHGobP8tPNizWpPcgO30xALJmNIQTaA6IYI3dWi
-VKqJQUQbh1BRGGnRovPRQasXtCgFngKX3As8YXnHv5cIUEJ5O3Wy1Eksqv2SeEHi
-p/VhbeSidLGW5UdCSnJvZcIDI8fvvg==
-=0JVT
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmb+JQ0ACgkQisFrnrZH
+uml5LQgAnuYdt5PG96JE0wYcGBR677tweXszirQ1nFhyMlf3R6+0XYbGOfQKKVwF
+0Up0Y0cHSx6yz6HM8msHvPieqP/hWco0qV5+AOKUVvEo4adBRfgPPV3smBjCllc4
+bxMxJ+GuX7O/SnZG8Vh5NA8/vSH10mdmJjWlr2X0eFk2BClJOgUPY3UI4+XGvRE9
+ReJ7We35WIvLidZIXZ3pK568GDRk6TNv258Fp+9oDi2pIpzO4eCMW8stlExdTiAJ
+y57iSEYLp4huPWlmQ61FWFffxgQ5OLC/qBoPPmN+pr487lHxKvWXMOkIu/iUMqew
+VQmYiRrg2YDnE4AwLryNfclUEOdjvg==
+=Pqga
 -----END PGP SIGNATURE-----
 
 
