@@ -99,3 +99,4 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
 - If you plan to use a Multi-hop connection, please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) to make the required changes in the `.ovpn` config file.
 - To mitigate the [TunnelVision vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2024-3661), check [this IVPN knowledge base article](/knowledgebase/routers/openwrt-tunnelvision-mitigation-cve-2024-3661/).
+- Add OBFS3 and OBFS4 obfuscation with [obfs4proxy](/knowledgebase/routers/openwrt-obfs3-and-obfs4-obfuscation-with-obfsproxy-and-openvpn/).
