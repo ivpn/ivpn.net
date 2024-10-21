@@ -21,7 +21,7 @@
             "obfs3multi": "OBFS3 MultiHop Port",
             "obfs4single": "OBFS4 SingleHop Port",
             "obfs4multi": "OBFS4 MultiHop Port",
-            "obfs4key": "OBFS4 MultiHop Port",
+            "obfs4key": "OBFS4 Public Key",
             "socks5": "SOCKS5",
             "socks5port": "SOCKS5 Port"
         }
