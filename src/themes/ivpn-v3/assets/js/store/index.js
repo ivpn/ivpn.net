@@ -10,7 +10,6 @@ import braintree from "./module_braintree.js"
 import account from "./module_account.js"
 import light from "./module_light.js"
 import sessions from "./module_sessions.js"
-import vouchers from "./module_vouchers.js"
 
 export default new Vuex.Store({
     modules: {
@@ -24,7 +23,6 @@ export default new Vuex.Store({
         account,
         light,
         sessions,
-        vouchers,
     },
 
     state: {        
