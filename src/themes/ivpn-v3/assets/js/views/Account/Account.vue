@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </signup-section>
-                <signup-section>
+                <!-- <signup-section>
                     <div class="product">
                         <div class="product-info">
                             <label>Service</label>
@@ -89,7 +89,7 @@
                             </router-link>
                         </div>
                     </div>
-                </signup-section>
+                </signup-section> -->
 
                 <signup-section>
                     <apps-section />

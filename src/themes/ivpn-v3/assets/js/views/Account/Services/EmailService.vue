@@ -1,11 +1,6 @@
 <template>
     <div>
-        <div class="back-link">
-            <router-link :to="{name:'account-' + this.language}">
-                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
-            </router-link>
-        </div>
-        <h1>Email Forwarder</h1>
+        <h2>Email Forwarder</h2>
         <p v-if="account.email_service_enabled">
             <div
                 class="status"
