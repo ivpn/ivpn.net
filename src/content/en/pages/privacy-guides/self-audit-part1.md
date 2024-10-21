@@ -12,15 +12,17 @@ articles: [
     title: "Self audit your VPN - Pt2. - WireGuard Configuration and Leaks",
     url: "/privacy-guides/self-audit-series-part2/"
   },
+  {
+    title: "Self audit your VPN - Pt3. - OpenVPN Configuration and Leaks",
+    url: "/privacy-guides/self-audit-series-part3/"
+  },
 ]
 ---
-While it is important to protect your privacy, it is also essential to trust your VPN provider with the proper implementation of its VPN service. While third-party audits by organisations can provide some assurance, it is possible to audit the VPN functionality independently. This series will teach you how to verify that your VPN is functioning as claimed by your VPN provider, as well as how to verify that it is performing at its optimal level with the best settings.
+While it is important to protect your privacy, it is also essential to trust your VPN provider with the proper implementation of its VPN service. While third-party audits by organisations can provide some assurance, it is possible to audit the VPN functionality independently. This series will teach you how to verify that your VPN is functioning as claimed by your VPN provider.
 
-Verifying the functionality of your VPN is crucial for maintaining your privacy. While some VPN providers publish their apps in open source, not everyone has the time or expertise to thoroughly review them. The most straightforward way to validate your VPN is to analyze network traffic from various angles and ensure it's connected to the intended server, on the correct port, and using the appropriate protocol. Additionally, it's essential to identify any potential data leak. After this series, you will have the knowledge and confidence to assess the quality of your VPN.
+Verifying the functionality of your VPN is crucial for maintaining your privacy. While some VPN providers publish their apps in open source, not everyone has the time or expertise to thoroughly review them. The most straightforward way to validate your VPN is to analyze network traffic from various angles and ensure it's connected to the intended server, on the correct port, and using the appropriate protocol. Additionally, it's essential to identify any potential data leak. After this series, you will have the knowledge and confidence to assess your VPN configuration.
 
 Network traffic analysis is an effective method for conducting a self-audit of your VPN. By reviewing the network activity, you can ensure that what you audit is actually occurring on the network.
-
-Furthermore, this will enable you to investigate privacy issues such as DNS leak or VPN performance issues due to fragmented network packets.
 
 In this initial section, you will gain an understanding of the tools you will utilize throughout the series, as well as some methodologies that will be pertinent in certain audit scenarios.
 
@@ -180,4 +182,4 @@ In the example above, the protocol is UDP and the port number is 4500.
 
 # Next step
 
-If you have read the guide until here, you are ready to [continue to the next part](/privacy-guides/self-audit-series-part2) of the series.
+If you have read the guide until here, you are ready to continue the series covering [WireGuard](/privacy-guides/self-audit-series-part2) and [OpenVPN](/privacy-guides/self-audit-series-part3).

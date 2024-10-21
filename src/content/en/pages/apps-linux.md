@@ -34,7 +34,7 @@ contents:
         title: Fedora
         anchor: fedora
     - item:
-        title: CentOS
+        title: CentOS/Alma/Rocky
         anchor: centos
     - item:
         title: Arch Linux
@@ -178,23 +178,26 @@ sudo dnf install ivpn-ui
 sudo dnf install ivpn
 ```
 
-### CentOS {#centos}
+### CentOS/Alma/Rocky {#centos}
 
 ```pkgconfig
-# Install Yum-utils
-sudo yum install yum-utils
+# Install Extra packages
+sudo dnf install epel-release
+
+# Install OpenVPN
+sudo dnf install openvpn
 
 # Add the IVPN repository
-sudo yum-config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
+sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/centos/generic/ivpn.repo
 
 # To install IVPN software (CLI and UI)
-sudo yum install ivpn-ui
+sudo dnf install ivpn-ui
 
 # To install only IVPN CLI
-sudo yum install ivpn
+sudo dnf install ivpn
 
 # Required for CentOS 8
-sudo yum install libXScrnSaver
+sudo dnf install libXScrnSaver
 ```
 
 ### Arch Linux {#arch}
@@ -221,19 +224,19 @@ IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.14.14_amd64.deb)  
-SHA256: 123cc46bd12baede70fbf3e8db013ee248fe1faa9090af9ff3c6a8dcc60cc27d  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.14.17_amd64.deb)  
+SHA256: 1e66b3300c6cbaa567458d8ff4949a9309f35bd713b07c4e143fda3f0eb0adc9  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.14_amd64.deb)  
-SHA256: 9cc74190cc567d4f6d813311c9fcba51695280c9776754150a251032f36ee941  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.14.17_amd64.deb)  
+SHA256: f6adb4974ec52910af2dedf367d11d309db56661fc1f6fb53a8210c1439a03e6  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.14.14-1.x86_64.rpm)  
-SHA256: e65c72e34f75dcac0e4113584fb0687c2852fa5bdea03bde287a0344147297e1 
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.14.17-1.x86_64.rpm)  
+SHA256: 6bf9c626a510d6a91cb4267c80ba041dd3dd741181359570e8e8795c0b847b66 
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.14-1.x86_64.rpm)  
-SHA256: cadddb72584b75e5ca6d2df8de5424e3e3bad9547b02a675ff6e14713311f15c 
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.14.17-1.x86_64.rpm)  
+SHA256: c19bd6303c9f27aef9705a848f04632d51d2bf7daa54c7b99e3ff4270103f6cd 
 
 ## Install from Source Code {#source}
 

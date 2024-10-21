@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-As of 2024-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 855167
-hash: 00000000000000000002667788db7579a1dc6f7d5cf51a79743ab1844dbb1ccf
+height: 863912
+hash: 000000000000000000026558d0d6d017da30ff683572b6e0dbb2c76dbc51de7a
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Swamp Notes: The Three Party Problem
-Third-party candidates can’t win the White House. But they can make someone else lose it.
+FirstFT: Israel steps up Lebanon offensive as Middle East braces for retaliation on Iran
+Also in today’s newsletter, OpenAI wants exclusive investors and LVMH to sponsor F1
 
-US rejects Vietnam’s bid for ‘market economy’ status in blow to trade ties
-Classification would have boosted exports and reduced tariffs on goods from country that is rising supply chain alternative to China
+Transcript: Israel presses its military advantage
+Gideon Rachman talks to Sanam Vakil, director of the Middle East program at Chatham House
 
-Scotland’s magic mountain
-For centuries, the mystery and beauty of Schiehallion have drawn visitors in pursuit of enlightenment both spiritual and scientific
+Why the US can’t impose its will over global trade in electric cars
+The American market is too small to give Washington leverage over Chinese software in EVs
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmatuY0ACgkQisFrnrZH
-umlHuQgAofyE/W1qTdXoS6XJA4DzkSujVCji4qhfDKboJAu4q0NJPszsgpHeh1bA
-WHmkImqUEwG1qKtChzf5de5AaARZBCP13FcLLill1AUJ4a72I4DqxZJKMlW9lQCI
-7WlLff5Gogvtc4R2O+B/wflvZWctlYKRHSOsRVGQj6vjHiJ9FgExze/M38ybVz3X
-KEs0to7+AOwUcVS/32jqBsnWBGp3wDVcEbsMLLnf3xnu1m5R3DgdvJ6nM5yVB9mn
-6unW6/kGcHEIQt1T6ETZVEMyr4hluSUO4xQnjtO9BSHvlb/yW+7lYYxV7ACw6nRa
-0wq/fYFRg5T6bxw3i6bvl9s8pk/3ig==
-=rXrn
+iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmb+JQ0ACgkQisFrnrZH
+uml5LQgAnuYdt5PG96JE0wYcGBR677tweXszirQ1nFhyMlf3R6+0XYbGOfQKKVwF
+0Up0Y0cHSx6yz6HM8msHvPieqP/hWco0qV5+AOKUVvEo4adBRfgPPV3smBjCllc4
+bxMxJ+GuX7O/SnZG8Vh5NA8/vSH10mdmJjWlr2X0eFk2BClJOgUPY3UI4+XGvRE9
+ReJ7We35WIvLidZIXZ3pK568GDRk6TNv258Fp+9oDi2pIpzO4eCMW8stlExdTiAJ
+y57iSEYLp4huPWlmQ61FWFffxgQ5OLC/qBoPPmN+pr487lHxKvWXMOkIu/iUMqew
+VQmYiRrg2YDnE4AwLryNfclUEOdjvg==
+=Pqga
 -----END PGP SIGNATURE-----
 
 

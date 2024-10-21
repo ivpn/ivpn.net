@@ -59,10 +59,6 @@ Hardcore `10.0.254.3`
 Normal   `10.0.254.20` and 
 Hardcore `10.0.254.21`
 
-#### 1Hosts Extra
-Normal   `10.0.254.16` and 
-Hardcore `10.0.254.17`
-
 #### Hagezi Light
 Normal   `10.0.254.22` and 
 Hardcore `10.0.254.23`
