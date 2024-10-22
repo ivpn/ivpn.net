@@ -1,19 +1,16 @@
 <template>
     <div>
         <h2>Email Forwarder</h2>
-        <p v-if="account.email_service_enabled">
-            <div
-                class="status"
-                v-bind:class="[account.is_active ? 'active' : 'inactive']">
-                {{ account.is_active ? $t('account.active') + ' - Updated automatically' : $t('account.inactive') }}
-            </div>
-        </p>
-        <p>Enter your Email Forwarder Subscription ID to activate/update the service.</p>
-        <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>
-            <label for="subscription_id">Subscription ID:</label>
-            <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
+            <button class="btn btn-big btn-solid" @click="" :disabled="inProgress">
+                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
+                <span>Get the signup link</span>
+            </button>
         </p>
+        <p>
+            <a href="https://irelay.app/signup/741b07e9-49c9-4596-a514-3d1beb9ec172">https://irelay.app/signup/741b07e9-49c9-4596-a514-3d1beb9ec172</a>
+        </p>
+        <hr>
         <div class="table-kw">
             <div class="row row__checkbox">
                 <div class="key">
@@ -24,15 +21,20 @@
                         style="margin-right: 12px;"
                         :checked="isStored"
                     />
-                    <label for="is_stored" style="cursor:pointer">Manage automatically</label>
+                    <label for="is_stored" style="cursor:pointer">Managed automatically</label>
                 </div>
                 <p>When selected, the Email Forwarder subscription is updated automatically. Disable to prevent storing any information from the Email Forwarder in the IVPN database.</p>
             </div>
         </div>
         <p>
-            <button class="btn btn-big btn-solid" @click.prevent="submit()" :disabled="inProgress">
+            <label for="subscription_id">Enter Email Forwarder Subscription ID to update the service:</label>
+            <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
+        </p>
+        <p v-if="error" class="error-message">{{ error.message }}</p>
+        <p>
+            <button class="btn btn-big btn-solid" @click="update()" :disabled="inProgress">
                 <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                <span>Activate / Update</span>
+                <span>Update</span>
             </button>
         </p>
     </div>
@@ -66,7 +68,7 @@ export default {
         this.language = window.location.href.split("/")[3];
     },
     methods: {
-        async submit() {
+        async update() {
             await this.$store.dispatch("account/updateEmailSubscription", {
                 uuid: this.subId,
                 store: this.isStored,
@@ -80,8 +82,6 @@ export default {
                 type: "success",
                 message: this.$t('account.updateEmailServiceSuccess')
             });
-
-            this.$router.push({ name: "account-" + this.language });
         },
     },
 };
