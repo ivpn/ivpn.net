@@ -31,7 +31,6 @@ import InvoiceView from '@/views/Account/Invoice.vue'
 import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
 import DeviceManagementView from '@/views/Account/DeviceManagement.vue'
-import VouchersView from '@/views/Account/Vouchers.vue'
 
 import InternalErrorView from '../views/500.vue'
 
@@ -754,22 +753,6 @@ const routes = [
         path: '/es/account/device-management',
         name: 'device-management-es',
         component: DeviceManagementView,
-        meta: {
-            title: es.account.metaTitle.deviceManagement,
-        }
-    },
-    {
-        path: '/en/account/vouchers',
-        name: 'vouchers-en',
-        component: VouchersView,
-        meta: {
-            title: en.account.metaTitle.deviceManagement,
-        }
-    },
-    {
-        path: '/es/account/vouchers',
-        name: 'vouchers-es',
-        component: VouchersView,
         meta: {
             title: es.account.metaTitle.deviceManagement,
         }
