@@ -2,14 +2,23 @@
     <div>
         <h2>Email Forwarder</h2>
         <p>
-            <button class="btn btn-big btn-solid" @click="" :disabled="inProgress">
+            <strong>The Email Forwarder service is still in development. Please report any feedback or issues to beta@ivpn.net.</strong>
+        </p>
+        <hr>
+        <p>
+            <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
                 <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                <span>Get the signup link</span>
+                <span>Generate signup link</span>
             </button>
         </p>
-        <p>
+        <div>
+            <p>
             <a href="https://irelay.app/signup/741b07e9-49c9-4596-a514-3d1beb9ec172">https://irelay.app/signup/741b07e9-49c9-4596-a514-3d1beb9ec172</a>
-        </p>
+            </p>
+            <p>
+                Note: The signup link expires after 15 minutes. If you need a new link, please generate a new one.
+            </p>
+        </div>
         <hr>
         <div class="table-kw">
             <div class="row row__checkbox">
@@ -20,23 +29,26 @@
                         id="is_stored"
                         style="margin-right: 12px;"
                         :checked="isStored"
+                        @click="delete()"
                     />
                     <label for="is_stored" style="cursor:pointer">Managed automatically</label>
                 </div>
                 <p>When selected, the Email Forwarder subscription is updated automatically. Disable to prevent storing any information from the Email Forwarder in the IVPN database.</p>
             </div>
         </div>
-        <p>
-            <label for="subscription_id">Enter Email Forwarder Subscription ID to update the service:</label>
-            <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
-        </p>
-        <p v-if="error" class="error-message">{{ error.message }}</p>
-        <p>
-            <button class="btn btn-big btn-solid" @click="update()" :disabled="inProgress">
-                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                <span>Update</span>
-            </button>
-        </p>
+        <div>
+            <p>
+                <label for="subscription_id">Enter Email Forwarder Subscription ID to update the service:</label>
+                <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
+            </p>
+            <p v-if="error" class="error-message">{{ error.message }}</p>
+            <p>
+                <button class="btn btn-big btn-solid" @click="update()" :disabled="inProgress">
+                    <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
+                    <span>Update</span>
+                </button>
+            </p>
+        </div>
     </div>
 </template>
 
@@ -68,6 +80,9 @@ export default {
         this.language = window.location.href.split("/")[3];
     },
     methods: {
+        async add() {
+            await this.$store.dispatch("account/addEmailSubscription");
+        },
         async update() {
             await this.$store.dispatch("account/updateEmailSubscription", {
                 uuid: this.subId,
@@ -82,6 +97,11 @@ export default {
                 type: "success",
                 message: this.$t('account.updateEmailServiceSuccess')
             });
+        },
+        async delete() {
+            if (!confirm('Proceed only if you already completed the signup process. After disabling this, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
+
+            await this.$store.dispatch("account/deleteEmailSubscription");
         },
     },
 };
