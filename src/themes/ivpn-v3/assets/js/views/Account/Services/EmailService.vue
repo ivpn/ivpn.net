@@ -4,43 +4,47 @@
         <p>
             <strong>The Email Forwarder service is still in development. Please report any feedback or issues to beta@ivpn.net.</strong>
         </p>
-        <hr>
-        <p>
-            <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
-                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                <span>Generate signup link</span>
-            </button>
-        </p>
+
         <div>
+            <hr>
             <p>
-            <a href="https://irelay.app/signup/741b07e9-49c9-4596-a514-3d1beb9ec172">https://irelay.app/signup/741b07e9-49c9-4596-a514-3d1beb9ec172</a>
+                <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
+                    <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
+                    <span>Generate signup link</span>
+                </button>
             </p>
-            <p>
-                Note: The signup link expires after 15 minutes. If you need a new link, please generate a new one.
-            </p>
-        </div>
-        <hr>
-        <div class="table-kw">
-            <div class="row row__checkbox">
-                <div class="key">
-                    <input
-                        v-model="isStored"
-                        type="checkbox"
-                        id="is_stored"
-                        style="margin-right: 12px;"
-                        :checked="isStored"
-                        @click="delete()"
-                    />
-                    <label for="is_stored" style="cursor:pointer">Managed automatically</label>
-                </div>
-                <p>When selected, the Email Forwarder subscription is updated automatically. Disable to prevent storing any information from the Email Forwarder in the IVPN database.</p>
+            <div v-if="subId">
+                <p>
+                <a href="https://irelay.app/signup/{{ subId }}">https://irelay.app/signup/{{ subId }}</a>
+                </p>
+                <p>
+                    Note: The signup link expires after 15 minutes. If you need a new link, please generate a new one.
+                </p>
             </div>
         </div>
+
+        
         <div>
+            <hr>
             <p>
                 <label for="subscription_id">Enter Email Forwarder Subscription ID to update the service:</label>
-                <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
+                <input id="subscription_id" v-model="updateSubId" type="text" placeholder="UUID">
             </p>
+            <div class="table-kw">
+                <div class="row row__checkbox">
+                    <div class="key">
+                        <input
+                            v-model="store"
+                            type="checkbox"
+                            id="is_stored"
+                            style="margin-right: 12px;"
+                            :checked="store"
+                        />
+                        <label for="is_stored" style="cursor:pointer">Managed automatically</label>
+                    </div>
+                    <p>When selected, the Email Forwarder subscription is updated automatically. Disable to prevent storing any information from the Email Forwarder in the IVPN database.</p>
+                </div>
+            </div>
             <p v-if="error" class="error-message">{{ error.message }}</p>
             <p>
                 <button class="btn btn-big btn-solid" @click="update()" :disabled="inProgress">
@@ -49,6 +53,7 @@
                 </button>
             </p>
         </div>
+
     </div>
 </template>
 
@@ -65,7 +70,8 @@ export default {
         return {
             language: "en",
             subId: "",
-            isStored: true,
+            subDeletedAt: "",
+            store: false,
         };
     },
     computed: {
@@ -78,15 +84,19 @@ export default {
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
+        this.subId = this.account["email_service_id"];
+        this.subIdDeletedAt = this.account["email_service_deleted_at"];
     },
     methods: {
         async add() {
-            await this.$store.dispatch("account/addEmailSubscription");
+            let res = await this.$store.dispatch("account/addEmailSubscription");
+            console.log("add()", res);
+            this.subId = res.id;
         },
         async update() {
             await this.$store.dispatch("account/updateEmailSubscription", {
-                uuid: this.subId,
-                store: this.isStored,
+                uuid: this.updateSubId,
+                store: this.store,
             });
 
             if (this.error) {
@@ -102,6 +112,18 @@ export default {
             if (!confirm('Proceed only if you already completed the signup process. After disabling this, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
 
             await this.$store.dispatch("account/deleteEmailSubscription");
+
+            if (this.error) {
+                return;
+            }
+
+            this.subId = "";
+            this.subIdDeletedAt = new Date().toISOString();
+
+            this.$store.commit("setFlashMessage", {
+                type: "success",
+                message: this.$t('account.deleteEmailServiceSuccess')
+            });
         },
     },
 };
