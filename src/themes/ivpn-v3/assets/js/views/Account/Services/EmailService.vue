@@ -12,7 +12,7 @@
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
                     <span>Generate signup link</span>
                 </button>
-                <button class="btn btn-big btn-solid" @click="delete()" :disabled="inProgress">
+                <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
                     <span>Delete Email Forwarder Subscription ID</span>
                 </button>
@@ -111,7 +111,7 @@ export default {
                 message: this.$t('account.updateEmailServiceSuccess')
             });
         },
-        async delete() {
+        async deleteSub() {
             if (!confirm('Proceed only if you already completed the signup process. After disabling this, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
 
             await this.$store.dispatch("account/deleteEmailSubscription");
