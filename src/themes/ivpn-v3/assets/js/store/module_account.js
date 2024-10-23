@@ -300,6 +300,28 @@ export default {
             }
         },
 
+        async addEmailSubscription(context) {
+            context.commit('started')
+            try {
+                let res = await Api.addEmailSubscription()
+                context.commit('done')
+                return res
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+
+        async deleteEmailSubscription(context) {
+            context.commit('started')
+            try {
+                let res = await Api.deleteEmailSubscription()
+                context.commit('done')
+                return res
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+
         clear(context) {
             context.commit('clear')
         },
