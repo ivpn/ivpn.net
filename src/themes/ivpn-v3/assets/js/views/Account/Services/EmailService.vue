@@ -10,8 +10,10 @@
             <p>
                 <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                    <span>Generate signup link</span>
+                    <span>Generate Signup Link</span>
                 </button>
+            </p>
+            <p v-if="subId">
                 <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
                     <span>Delete Email Forwarder Subscription ID</span>
@@ -26,7 +28,6 @@
                 </p>
             </div>
         </div>
-
         
         <div v-if="subDeletedAt">
             <p>
