@@ -17,16 +17,11 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
-                <li :class="{ 'is-active': isVouchersRoute() }">
-                    <router-link :to="{ name: 'vouchers-' + this.language }"
-                        >{{ $t('account.vouchers') }}</router-link
-                    >
-                </li>
-                <!-- <li :class="{ 'is-active': isServiceEmailRoute() }">
+                <li :class="{ 'is-active': isServiceEmailRoute() }">
                     <router-link :to="{ name: 'service-email-' + this.language }"
                         >Email</router-link
                     >
-                </li> -->
+                </li>
                 <li class="expand"></li>
                 <li>
                     <router-link
