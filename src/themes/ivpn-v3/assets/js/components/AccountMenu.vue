@@ -68,7 +68,7 @@ export default {
         isAccountRoute() {
             return (
                 ( this.currentRouteName.startsWith("/en/account") || this.currentRouteName.startsWith("/es/account")) &&
-                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute()
+                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute() && !this.isServiceEmailRoute()
             );
         },
         isWireGuardRoute() {
