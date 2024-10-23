@@ -4,18 +4,22 @@
         <p>
             <strong>The Email Forwarder service is still in development. Please report any feedback or issues to beta@ivpn.net.</strong>
         </p>
+        <hr>
 
-        <div>
-            <hr>
+        <div v-if="!subDeletedAt">
             <p>
                 <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
                     <span>Generate signup link</span>
                 </button>
+                <button class="btn btn-big btn-solid" @click="delete()" :disabled="inProgress">
+                    <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
+                    <span>Delete Email Forwarder Subscription ID</span>
+                </button>
             </p>
             <div v-if="subId">
                 <p>
-                <a href="https://irelay.app/signup/{{ subId }}">https://irelay.app/signup/{{ subId }}</a>
+                    <a href="https://irelay.app/signup/{{ subId }}">https://irelay.app/signup/{{ subId }}</a>
                 </p>
                 <p>
                     Note: The signup link expires after 15 minutes. If you need a new link, please generate a new one.
@@ -24,8 +28,7 @@
         </div>
 
         
-        <div>
-            <hr>
+        <div v-if="subDeletedAt">
             <p>
                 <label for="subscription_id">Enter Email Forwarder Subscription ID to update the service:</label>
                 <input id="subscription_id" v-model="updateSubId" type="text" placeholder="UUID">
