@@ -15,7 +15,7 @@
             </p>
             <div v-if="subId">
                 <p>
-                    <a href="https://irelay.app/signup/{{ subId }}">https://irelay.app/signup/{{ subId }}</a>
+                    <a :href="'https://irelay.app/signup/' + subId">https://irelay.app/signup/{{ subId }}</a>
                 </p>
                 <p>
                     Note: The signup link expires after 15 minutes. If you need a new link, please generate new one.
