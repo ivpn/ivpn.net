@@ -22,7 +22,6 @@
                 </p>
                 <p>
                     <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
-                        <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
                         <span>Delete Email Forwarder Subscription ID</span>
                     </button>
                 </p>
@@ -117,7 +116,8 @@ export default {
 
             console.log("deleteSub()");
 
-            await this.$store.dispatch("account/deleteEmailSubscription");
+            let res = await this.$store.dispatch("account/deleteEmailSubscription");
+            console.log("deleteSub() res", res);
 
             if (this.error) {
                 return;

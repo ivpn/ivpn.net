@@ -285,6 +285,7 @@ export default {
         },
 
         async updateEmailSubscription(context, { uuid, store }) {
+            console.log('updateEmailSubscription', context)
             let error = validateUuid(uuid)
             if (error) {
                 context.commit('failed', { error })
@@ -301,6 +302,7 @@ export default {
         },
 
         async addEmailSubscription(context) {
+            console.log('addEmailSubscription', context)
             context.commit('started')
             try {
                 let res = await Api.addEmailSubscription()
@@ -312,6 +314,7 @@ export default {
         },
 
         async deleteEmailSubscription(context) {
+            console.log('deleteEmailSubscription', context)
             context.commit('started')
             try {
                 let res = await Api.deleteEmailSubscription()
