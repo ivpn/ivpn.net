@@ -13,18 +13,18 @@
                     <span>Generate Signup Link</span>
                 </button>
             </p>
-            <p v-if="subId">
-                <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
-                    <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                    <span>Delete Email Forwarder Subscription ID</span>
-                </button>
-            </p>
             <div v-if="subId">
                 <p>
                     <a href="https://irelay.app/signup/{{ subId }}">https://irelay.app/signup/{{ subId }}</a>
                 </p>
                 <p>
-                    Note: The signup link expires after 15 minutes. If you need a new link, please generate a new one.
+                    Note: The signup link expires after 15 minutes. If you need a new link, please generate new one.
+                </p>
+                <p>
+                    <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
+                        <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
+                        <span>Delete Email Forwarder Subscription ID</span>
+                    </button>
                 </p>
             </div>
         </div>
@@ -114,6 +114,8 @@ export default {
         },
         async deleteSub() {
             if (!confirm('Proceed only if you already completed the signup process. After disabling this, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
+
+            console.log("deleteSub()");
 
             await this.$store.dispatch("account/deleteEmailSubscription");
 
