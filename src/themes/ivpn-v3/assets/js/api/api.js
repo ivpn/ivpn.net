@@ -32,8 +32,8 @@ export default {
         }
 
         // Adding CSRF token when it exists to all 
-        // POST requests
-        if (method == "POST" && overrideURI == null && CSRFToken) {            
+        // POST or DELETE requests
+        if ((method == "POST" || method == "DELETE") && overrideURI == null && CSRFToken) {            
             options.headers['Csrf-Token'] = CSRFToken
         }
 
@@ -72,6 +72,23 @@ export default {
 
         let response = await this.fetch("GET", url, null, overrideURI, overrideOptions);
 
+        if (response.ok !== true)
+            await this.processErrorResponse(response)
+
+        if (overrideURI == null)
+            this.processCSRFToken(response)
+
+        return await response.json()
+    },
+
+    async Delete(url = '', data = null, overrideURI = null, overrideOptions = {}) {
+
+        if (process.env.MIX_APP_DELAY_APIS) {
+            console.log("Delaying API: ", url)
+            await delay(process.env.MIX_APP_DELAY_APIS)
+        }
+
+        let response = await this.fetch("DELETE", url, data, overrideURI, overrideOptions);
         if (response.ok !== true)
             await this.processErrorResponse(response)
 

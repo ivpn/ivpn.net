@@ -20,10 +20,14 @@
                 <p>
                     Note: The signup link expires after 15 minutes. If you need a new link, please generate new one.
                 </p>
+                <hr>
                 <p>
                     <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
-                        <span>Delete Email Forwarder Subscription ID</span>
+                        <span>Delete Subscription ID</span>
                     </button>
+                </p>
+                <p>
+                    Note: Delete Subscription ID to prevent storing any information from the Email Forwarder in the IVPN database. Make sure you already completed the signup process. After deleting Subscription ID, you will no longer be able to generate a new signup link.
                 </p>
             </div>
         </div>
@@ -112,7 +116,7 @@ export default {
             });
         },
         async deleteSub() {
-            if (!confirm('Proceed only if you already completed the signup process. After disabling this, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
+            if (!confirm('Proceed only if you already completed the signup process. After deleting Subscription ID, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
 
             console.log("deleteSub()");
 
