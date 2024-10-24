@@ -17,11 +17,6 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
-                <li :class="{ 'is-active': isVouchersRoute() }">
-                    <router-link :to="{ name: 'vouchers-' + this.language }"
-                        >{{ $t('account.vouchers') }}</router-link
-                    >
-                </li>
                 <li class="expand"></li>
                 <li>
                     <router-link

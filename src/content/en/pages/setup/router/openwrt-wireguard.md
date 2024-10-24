@@ -85,3 +85,8 @@ To ensure the traffic on your LAN devices travels strictly via the VPN tunnel an
 
 1. A device reboot is not required, though it may be useful to confirm that everything behaves as expected.
 2. Run a leak test at [https://www.dnsleaktest.com](https://www.dnsleaktest.com) via one of the internal network clients attached to your OpenWRT router.
+
+### Useful Links
+
+- If you plan to use a Multi-hop connection, please see [this guide](/knowledgebase/general/how-can-i-connect-to-the-multihop-network/) to make the required change in the WireGuard config file or via an existing WireGuard interface's `Peer - Edit - Endpoint Port`.
+- To mitigate the [TunnelVision vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2024-3661), check [this IVPN knowledge base article](/knowledgebase/routers/openwrt-tunnelvision-mitigation-cve-2024-3661/).
