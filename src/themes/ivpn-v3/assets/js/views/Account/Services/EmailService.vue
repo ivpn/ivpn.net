@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h2>Email Forwarder</h2>
+        <h2>MailX Email Forwarder</h2>
         <p>
-            <strong>The Email Forwarder service is still in development. Please report any feedback or issues to beta@ivpn.net.</strong>
+            <strong>MailX Email Forwarder service is still in development. Please report any feedback or issues to support@mailx.net.</strong>
         </p>
         <hr>
 
