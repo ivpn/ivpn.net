@@ -6,7 +6,7 @@
         </p>
         <hr>
 
-        <div v-if="!subDeletedAt">
+        <div v-if="!subIdDeletedAt">
             <p>
                 <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
@@ -33,7 +33,7 @@
             </div>
         </div>
         
-        <div v-if="subDeletedAt">
+        <div v-if="subIdDeletedAt">
             <p>
                 <label for="subscription_id">Enter Email Forwarder Subscription ID to update the service:</label>
                 <input id="subscription_id" v-model="updateSubId" type="text" placeholder="UUID">
@@ -78,7 +78,7 @@ export default {
         return {
             language: "en",
             subId: "",
-            subDeletedAt: "",
+            subIdDeletedAt: "",
             store: false,
         };
     },
