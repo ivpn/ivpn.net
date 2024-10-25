@@ -10,7 +10,8 @@
             <p>
                 <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
                     <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                    <span>Generate Signup Link</span>
+                    <span v-if="!subId">Generate Signup Link</span>
+                    <span v-if="subId">Refresh Signup Link</span>
                 </button>
             </p>
             <div v-if="subId">
