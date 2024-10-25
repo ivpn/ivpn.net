@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>MailX Email Forwarder</h2>
+        <h2>MailX</h2>
         <p>
             <strong>MailX Email Forwarder service is still in development. Please report any feedback or issues to support@mailx.net.</strong>
         </p>
@@ -19,7 +19,7 @@
                     <a :href="'https://irelay.app/signup/' + subId">https://irelay.app/signup/{{ subId }}</a>
                 </p>
                 <p>
-                    Note: The signup link expires after 15 minutes. If you need a new link, please generate new one.
+                    Note: The signup link expires after 15 minutes. If you need a new link, please refresh it.
                 </p>
                 <hr>
                 <p>
@@ -28,14 +28,14 @@
                     </button>
                 </p>
                 <p>
-                    Note: Delete Subscription ID to prevent storing any information from the Email Forwarder in the IVPN database. Make sure you already completed the signup process. After deleting Subscription ID, you will no longer be able to generate a new signup link.
+                    Note: Delete Subscription ID to prevent storing any information from MailX in the IVPN database. Make sure you already completed the signup process. After deleting Subscription ID, you will no longer be able to generate a new signup link.
                 </p>
             </div>
         </div>
         
         <div v-if="subIdDeletedAt">
             <p>
-                <label for="subscription_id">Enter Email Forwarder Subscription ID to update the service:</label>
+                <label for="subscription_id">Enter MailX Subscription ID to update the service:</label>
                 <input id="subscription_id" v-model="updateSubId" type="text" placeholder="UUID">
             </p>
             <div class="table-kw">
@@ -50,7 +50,7 @@
                         />
                         <label for="is_stored" style="cursor:pointer">Managed automatically</label>
                     </div>
-                    <p>When selected, the Email Forwarder subscription is updated automatically. Disable to prevent storing any information from the Email Forwarder in the IVPN database.</p>
+                    <p>When selected, the MailX subscription is updated automatically. Disable to prevent storing any information from the MailX in the IVPN database.</p>
                 </div>
             </div>
             <p v-if="error" class="error-message">{{ error.message }}</p>
@@ -60,6 +60,7 @@
                     <span>Update</span>
                 </button>
             </p>
+            <p v-if="success">{{ success }}</p>
         </div>
 
     </div>
@@ -80,6 +81,7 @@ export default {
             subId: "",
             subIdDeletedAt: "",
             store: false,
+            success: "",
         };
     },
     computed: {
@@ -98,8 +100,9 @@ export default {
     methods: {
         async add() {
             let res = await this.$store.dispatch("account/addEmailSubscription");
-            console.log("add()", res);
-            this.subId = res.id;
+            if (res) {
+                this.subId = res.id;
+            }
         },
         async update() {
             await this.$store.dispatch("account/updateEmailSubscription", {
@@ -108,21 +111,16 @@ export default {
             });
 
             if (this.error) {
+                this.success = "";
                 return;
             }
 
-            this.$store.commit("setFlashMessage", {
-                type: "success",
-                message: this.$t('account.updateEmailServiceSuccess')
-            });
+            this.success = "MailX subscription updated successfully";
         },
         async deleteSub() {
             if (!confirm('Proceed only if you already completed the signup process. After deleting Subscription ID, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
 
-            console.log("deleteSub()");
-
             let res = await this.$store.dispatch("account/deleteEmailSubscription");
-            console.log("deleteSub() res", res);
 
             if (this.error) {
                 return;
