@@ -34,8 +34,8 @@
         </div>
         
         <div v-if="subIdDeletedAt">
+            <p>Enter MailX Subscription ID to update the service:</p>
             <p>
-                <label for="subscription_id">Enter MailX Subscription ID to update the service:</label>
                 <input id="subscription_id" v-model="updateSubId" type="text" placeholder="UUID">
             </p>
             <div class="table-kw">
