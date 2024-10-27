@@ -113,6 +113,9 @@ export default {
         if( proPlan.is_locked ){
             window.location = "/" + this.language + "/account";
         }
+        if( this.$store.state.auth.account.has_custom_price){
+            window.location = "/" + this.language + "/account";
+        }
         this.$store.dispatch("sessions/load");
     },
     mounted(){
