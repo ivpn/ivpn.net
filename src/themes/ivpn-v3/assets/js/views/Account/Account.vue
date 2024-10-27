@@ -134,7 +134,7 @@ export default {
             this.canChange = !product.is_locked;
         }
 
-        if(this.$store.state.auth.account.is_migrated){
+        if(this.$store.state.auth.account.has_custom_price){
             this.canChange = false;
         }
     },
