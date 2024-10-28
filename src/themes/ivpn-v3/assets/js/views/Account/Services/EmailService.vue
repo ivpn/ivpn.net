@@ -1,40 +1,34 @@
 <template>
     <div>
-        <h2>MailX</h2>
+        <h2>Mailx</h2>
         <p>
-            <strong>MailX Email Forwarder service is still in development. Please report any feedback or issues to support@mailx.net.</strong>
+            <strong>Mailx Email Forwarder service is still in development. Please report any feedback or issues to support@mailx.net.</strong>
         </p>
         <hr>
 
         <div v-if="!subIdDeletedAt">
             <p>
-                <button class="btn btn-big btn-solid" @click="add()" :disabled="inProgress">
-                    <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                    <span v-if="!subId">Generate Signup Link</span>
-                    <span v-if="subId">Refresh Signup Link</span>
-                </button>
+                To participate, follow these steps:
             </p>
-            <div v-if="subId">
-                <p>
-                    <a :href="'https://irelay.app/signup/' + subId">https://irelay.app/signup/{{ subId }}</a>
-                </p>
-                <p>
-                    Note: The signup link expires after 15 minutes. If you need a new link, please refresh it.
-                </p>
-                <hr>
-                <p>
-                    <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
-                        <span>Delete Subscription ID</span>
-                    </button>
-                </p>
-                <p>
-                    Note: Delete Subscription ID to prevent storing any information from MailX in the IVPN database. Make sure you already completed the signup process. After deleting Subscription ID, you will no longer be able to generate a new signup link.
-                </p>
-            </div>
+            <p v-if="subId">
+                1. Use the link below to sign up to the beta service:
+                <br>
+                <a target="_blank" :href="'https://irelay.app/signup/' + subId">https://irelay.app/signup/{{ subId }}</a>
+            </p>
+            <p v-if="subId">
+                2. When the signup on mailx.net is complete, let us know:
+                <br>
+                <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
+                    <span>Signup Complete</span>
+                </button>
+                <br>
+                This step prevents storing any information about your Mailx account in the IVPN database.<br>
+                Warning: if you complete this step the signup link won't be accessible to you any more.
+            </p>
         </div>
-        
+
         <div v-if="subIdDeletedAt">
-            <p>Enter MailX Subscription ID to update the service:</p>
+            <p>Enter Mailx Subscription ID to update the service:</p>
             <p>
                 <input id="subscription_id" v-model="updateSubId" type="text" placeholder="UUID">
             </p>
@@ -50,7 +44,7 @@
                         />
                         <label for="is_stored" style="cursor:pointer">Managed automatically</label>
                     </div>
-                    <p>When selected, the MailX subscription is updated automatically. Disable to prevent storing any information from the MailX in the IVPN database.</p>
+                    <p>When selected, the Mailx subscription is updated automatically. Disable to prevent storing any information from the Mailx in the IVPN database.</p>
                 </div>
             </div>
             <p v-if="error" class="error-message">{{ error.message }}</p>
@@ -96,6 +90,7 @@ export default {
         this.language = window.location.href.split("/")[3];
         this.subId = this.account["email_service_id"];
         this.subIdDeletedAt = this.account["email_service_deleted_at"];
+        this.add();
     },
     methods: {
         async add() {
@@ -105,22 +100,23 @@ export default {
             }
         },
         async update() {
+            this.success = "";
+
             await this.$store.dispatch("account/updateEmailSubscription", {
                 uuid: this.updateSubId,
                 store: this.store,
             });
 
             if (this.error) {
-                this.success = "";
                 return;
             }
 
-            this.success = "MailX subscription updated successfully";
+            this.success = "Mailx subscription updated successfully";
         },
         async deleteSub() {
-            if (!confirm('Proceed only if you already completed the signup process. After deleting Subscription ID, you will no longer be able to generate a new signup link. Do you want to proceed?')) return
+            if (!confirm(' Warning: if you complete this step the signup link won\'t be accessible to you any more. Do you want to proceed?')) return
 
-            let res = await this.$store.dispatch("account/deleteEmailSubscription");
+            await this.$store.dispatch("account/deleteEmailSubscription");
 
             if (this.error) {
                 return;
@@ -128,11 +124,6 @@ export default {
 
             this.subId = "";
             this.subIdDeletedAt = new Date().toISOString();
-
-            this.$store.commit("setFlashMessage", {
-                type: "success",
-                message: this.$t('account.deleteEmailServiceSuccess')
-            });
         },
     },
 };
