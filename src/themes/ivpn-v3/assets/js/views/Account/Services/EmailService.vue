@@ -11,7 +11,7 @@
                 To participate, follow these steps:
             </p>
             <p v-if="subId">
-                <strong></strong>1.</strong> Use the link below to sign up to the beta service:
+                <strong>1.</strong> Use the link below to sign up to the beta service:
                 <br>
                 <a target="_blank" :href="'https://irelay.app/signup/' + subId">https://irelay.app/signup/{{ subId }}</a>
             </p>
