@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Mailx</h2>
+        <h2>Mailx beta</h2>
         <p>
             <strong>Mailx Email Forwarder service is still in development. Please report any feedback or issues to support@mailx.net.</strong>
         </p>
