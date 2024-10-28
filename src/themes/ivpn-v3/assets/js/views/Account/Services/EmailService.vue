@@ -11,19 +11,18 @@
                 To participate, follow these steps:
             </p>
             <p v-if="subId">
-                1. Use the link below to sign up to the beta service:
+                <strong></strong>1.</strong> Use the link below to sign up to the beta service:
                 <br>
                 <a target="_blank" :href="'https://irelay.app/signup/' + subId">https://irelay.app/signup/{{ subId }}</a>
             </p>
             <p v-if="subId">
-                2. When the signup on mailx.net is complete, let us know:
-                <br>
+                <strong>2.</strong> When the signup on mailx.net is complete, let us know:
+                <br><br>
                 <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
                     <span>Signup Complete</span>
                 </button>
-                <br>
-                This step prevents storing any information about your Mailx account in the IVPN database.<br>
-                Warning: if you complete this step the signup link won't be accessible to you any more.
+                <br><br>
+                This step prevents storing any information about your Mailx account in the IVPN database. Warning: if you complete this step the signup link won't be accessible to you any more.
             </p>
         </div>
 
