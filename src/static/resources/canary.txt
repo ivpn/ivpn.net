@@ -11,37 +11,37 @@ Special note should be taken if these messages ever cease being updated, or are 
 The current message is here:
 
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
-As of 2024-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 863912
-hash: 000000000000000000026558d0d6d017da30ff683572b6e0dbb2c76dbc51de7a
+height: 868651
+hash: 000000000000000000022296625b5302bfb6dd3565c6add5b030c1f412d6473a
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Israel steps up Lebanon offensive as Middle East braces for retaliation on Iran
-Also in today’s newsletter, OpenAI wants exclusive investors and LVMH to sponsor F1
+The best of TV and streaming this week
+Eddie Redmayne plays the titular assassin in ‘The Day of the Jackal’; a pair of BBC documentaries follow opposite sides of the Trump divide; ‘Endurance’ brings Shackleton’s ill-fated Antarctica expedition to life; Channel 4’s Undercover’ infiltrates a far-right group promoting race-based eugenics; ‘Road Diary’ chronicles an electrifying Bruce Springsteen tour; Billy Crystal stars as a grief-stricken child therapist in supernatural thriller ‘Before’ — reviews by Dan Einav
 
-Transcript: Israel presses its military advantage
-Gideon Rachman talks to Sanam Vakil, director of the Middle East program at Chatham House
+Cruise companies pour money into lucrative private resorts
+Passenger numbers and profit forecasts are up as operators respond to a tourism backlash by building their own facilities
 
-Why the US can’t impose its will over global trade in electric cars
-The American market is too small to give Washington leverage over Chinese software in EVs
+Fed to look past US election uncertainty with quarter-point rate cut
+Central bank expected to stay the course despite a distorted jobs report and unclear path for economic policy
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmb+JQ0ACgkQisFrnrZH
-uml5LQgAnuYdt5PG96JE0wYcGBR677tweXszirQ1nFhyMlf3R6+0XYbGOfQKKVwF
-0Up0Y0cHSx6yz6HM8msHvPieqP/hWco0qV5+AOKUVvEo4adBRfgPPV3smBjCllc4
-bxMxJ+GuX7O/SnZG8Vh5NA8/vSH10mdmJjWlr2X0eFk2BClJOgUPY3UI4+XGvRE9
-ReJ7We35WIvLidZIXZ3pK568GDRk6TNv258Fp+9oDi2pIpzO4eCMW8stlExdTiAJ
-y57iSEYLp4huPWlmQ61FWFffxgQ5OLC/qBoPPmN+pr487lHxKvWXMOkIu/iUMqew
-VQmYiRrg2YDnE4AwLryNfclUEOdjvg==
-=Pqga
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmcnDjUACgkQisFrnrZH
+ummMrwf/a6+dpKXyvPa0aE6qovoXR+KgzrupfXd94eoKcjpoWrMPZz4L/I/0gwzI
+TbOK5YnO35xa9WuL20fDIe0r0UEEwojO2/egko7N+wZ5o8I5qXH98w+kaGkOnf+2
+vRF8HpZFyRoRdlhrGIrejqpBJWoXC/b6NBpGC8wRNDWLtPXlQxFK1cfZ66DMcKlV
+sWFG0CQly5pFFsfxVDEDnKklNjt/8Q0XRNgKQOLbYLIHSBg8EzrYmKMHEGvOUlL4
+SX3kIXXJ+VI6470fxNg6gEjRo8o5y5GmWx3hqpB896XDI5XyQSu828qEGBI8Hw18
+qAlgWzYhyzrQrh90Y+rC3NY3p0jNQw==
+=SXjS
 -----END PGP SIGNATURE-----
 
 
