@@ -167,8 +167,11 @@ sudo apt install ivpn
 ### Fedora {#fedora}
 
 ```pkgconfig
-# Agregar el repositorio IVPN
+# [Fedora 40 y versiones anteriores] Agregar el repositorio IVPN
 sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+
+# [Fedora 41+] Agregar el repositorio IVPN
+sudo dnf config-manager addrepo --from-repofile=https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
 
 # Para instalar el software IVPN (CLI y UI)
 sudo dnf install ivpn-ui
