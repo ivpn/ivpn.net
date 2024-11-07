@@ -14,7 +14,7 @@
 
     <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/localisation.js" }}"></script>
 
-    {{ if .IsTranslated }}
+    {{ if and (.IsTranslated) (ne .Title "404 Page not found") }}
         {{/* Redirect to the browser or localstorage language */}}
         <script type="text/javascript">
           if( "{{ $.Site.LanguageCode }}" != window.getLanguage()){
