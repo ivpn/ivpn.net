@@ -13,7 +13,7 @@
             <p v-if="subId">
                 <strong>1.</strong> Use the link below to sign up to the beta service:
                 <br>
-                <a target="_blank" :href="'https://irelay.app/signup/' + subId">https://irelay.app/signup/{{ subId }}</a>
+                <a target="_blank" :href="'https://staging.mailx.net/signup/' + subId">https://staging.mailx.net/signup/{{ subId }}</a>
             </p>
             <p v-if="subId">
                 <strong>2.</strong> When the signup on mailx.net is complete, let us know:
