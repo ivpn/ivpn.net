@@ -438,7 +438,6 @@ export default {
         }
         let response = await this.Post('/web/accounts/btc/create-light-invoice', {
             price_id: priceID,
-            private_key: privateKey,
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer 
