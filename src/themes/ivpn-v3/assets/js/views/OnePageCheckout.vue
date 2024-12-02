@@ -990,7 +990,6 @@ font-family: "Roboto Mono";
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 700px;
         text-align: center;
 
         border-top: 1px solid #99999940;

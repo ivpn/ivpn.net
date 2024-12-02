@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="payment-received">
+        <div class="payment-received" v-if="isLoaded">
             <h2>Your IVPN Light access is ready</h2>
             <p>We have received your payment.</p>
             <hr />
-            <h4 v-if="isLoaded">Your account is live until {{ $filters.formatActiveUntil(account.active_until) }}.</h4>
+            <h4>Your account is live until {{ $filters.formatActiveUntil(account.active_until) }}.</h4>
             <hr />
             <div class="steps">
                 <h5>For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/light">separate IVPN Light access</a>, or <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/en/pricing">generate</a> an IVPN Standard or Pro account.</h5>
@@ -15,6 +15,7 @@
 
 <script>
 
+import { mapState } from "vuex";
 
 export default {
     data() {
@@ -23,13 +24,23 @@ export default {
         };
     },
     computed: {
-        account: (state) => state.auth.account,
+        ...mapState({
+            account: (state) => state.auth.account,
+        }),
     },
     async created() {
         document.getElementById("my-account").remove();
         await this.$store.dispatch("auth/reload");
     },
 
+    watch: {
+        account: {
+            handler: function (after, before) {
+                this.isLoaded = true;
+            },
+            deep: true
+        },
+    },
     beforeMount(){
         document.getElementById("my-account").remove();
     },
