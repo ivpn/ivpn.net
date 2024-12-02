@@ -431,7 +431,7 @@ export default {
         return response
     },
     
-    async createLightInvoice(priceID, exitServer, entryServer, privateKey, publicKey) {
+    async createLightInvoice(priceID, exitServer, entryServer,publicKey, address) {
 
         if( !Array.isArray(entryServer) ) {
             entryServer = [ entryServer ]
@@ -440,7 +440,8 @@ export default {
             price_id: priceID,
             public_key: publicKey,
             exit_server: exitServer,
-            entry_server: entryServer 
+            entry_server: entryServer,
+            address: address,
         })
 
         return response
@@ -514,7 +515,6 @@ export default {
         await this.Post(
             '/web/btc/invoice/create',
             {
-                privateKey: payload.privateKey,
                 publicKey: payload.publicKey,
             }
         )

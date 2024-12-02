@@ -143,6 +143,44 @@
                         </div>
                      </div>
                      <hr />
+
+                     <div class="payment-received" v-if="!validation.submit">
+                         <div class="steps">
+                             <p>Next steps:</p>
+                             <ol>
+                                 <li>Save the QR code or config file now to avoid losing access.</li>
+                                 <li> Download and open the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">WireGuard</a> app.</li>
+                                 <li>Scan the QR code, or add the configuration provided.</li>
+                             </ol>
+                        </div>
+                        <hr />
+          
+                        <div v-if="qrCodes.length > 0" v-for="qr in qrCodes">
+                            <p>Access to:</p>
+                            <div v-if="this.multihop">
+                               <p><country-flag :country="qr.entryCountryCode" size='normal'/> {{ qr.entryCity }}</p>
+                               <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
+                            </div>
+                            <div v-else>
+                                <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
+                            </div>
+                            <div class="code" v-html="qr.qrCode"></div>
+                        </div>
+                        <textarea disabled v-if="qrCodes.length == 1" v-model="wireguardConfig" cols="50" rows="50"></textarea>
+        
+                        <button
+                        @click.prevent="handleDownload()"
+                        class="btn btn-solid"
+                        style="margin-bottom: 1em"
+                        target="_blank"
+                        v-if="qrCodes.length > 0"
+                        >
+                       <down-icon
+                           style="width: 16px; height: 16px; fill: #449cf8"
+                       />Download configuration
+                        </button>
+                    </div>
+
                      <div class="light-price">
                         <h3><span>Pay with Lightning:</span><br>{{ getSelectedSats }} sats (≈ {{ getSelectedPrice }} USD)</h3>
                      </div>
@@ -179,15 +217,22 @@ import "vue-select/dist/vue-select.css";
 import "vue-multiselect/dist/vue-multiselect.css";
 import SelectLocations from "@/components/SelectLocations.vue";
 import SelectLocationsMulti from "@/components/SelectLocationsMulti.vue";
-import { exportDefaultSpecifier } from "@babel/types";
-import { resolveTransitionHooks } from "vue";
-import JSCookie from "js-cookie"
+import qrcode from "qrcode-generator";
+import JSZip from "jszip";
+import FileSaver from "file-saver";
+import SuccessIcon from "@/components/icons/success.vue";
+import DownIcon from "@/components/icons/btn/Download.vue";
+import CountryFlag from 'vue-country-flag-next'
+
 
 export default {
     name: "Light",
     components: {
       SelectLocations,
       SelectLocationsMulti,
+      SuccessIcon, 
+      DownIcon,
+      CountryFlag,
     },
 
     data() {
@@ -212,13 +257,6 @@ export default {
             },
             servers: [],
             filteredServers: [],
-            availableLocations: [],
-            countries: [],
-            multihopServers: [],
-            exitCities: [],
-            exitServers: [],
-            entryCities: [],
-            entryServers: [],
             error: {
                 addKey: null,
             },
@@ -226,7 +264,9 @@ export default {
             usedCustomKeysText: "You have added the following custom key pair:",
             generateKeysClicked: false,
             addKeysClicked: false,
-
+            qrCodes: [],
+            wireguardConfigs: [],
+            address: null,
         };
     },
     watch: {
@@ -234,14 +274,6 @@ export default {
             handler: function (after, before) {
             },
             deep: true
-        },
-
-        selectedExitLocation: function(){
-            if(this.selectedExitLocation.length > 0 && !this.multihop){
-                this.validation.submit = false;
-            }else if(!this.multihop){
-                this.validation.submit = true;
-            }
         },
         selectedEntryLocation: function(){
             if( this.selectedEntryLocation != null && this.selectedEntryLocation.length > 1){
@@ -277,12 +309,28 @@ export default {
                 this.validation.submit = true;
             }
             this.selectedExitLocation = this.selectedMultihopExitLocation;
-            console.log(this.validation.submit);
+        },
+        selectedExitLocation: function(){
+            if(this.selectedExitLocation.length > 0 && !this.multihop){
+                this.validation.submit = false;
+            }else if(!this.multihop){
+                this.validation.submit = true;
+            }
+            this.wireguardConfigs = [];
+            this.qrCodes = [];
+            this.selectedExitLocation.forEach((location) => {
+                this.wireguardConfigs.push(location);
+                this.generateQRCode(location);
+            });
+            this.qrCodes = this.qrCodes.filter((v,i,a)=>a.findIndex(v2=>(JSON.stringify(v2) === JSON.stringify(v)))===i)
         },
 
     },
     computed: {
         ...mapState({
+            account: (state) => state.auth.account,
+            keys: (state) => state.wireguard.keys,
+            configs: (state) => state.wireguard.configs,
         }),
         getSelectedPrice(){
          return this.selectedPrice;
@@ -295,11 +343,63 @@ export default {
     async created() {
     },
     mounted() {
+      this.generateAddress();
       this.generateKeys();
       this.fetchServers();
       this.fetchBtcPrice();
     },
     methods: {
+        async handleDownload() {
+            this.downloadArchive();
+        },
+        downloadArchive() {
+            
+            let self = this;
+            let zip = new JSZip();
+            console.log(this.wireguardConfigs);
+            this.wireguardConfigs.forEach(function (config) {
+                let basename =  config.country_code.toLowerCase() + "-" + config.city.toLowerCase() + ".conf"; 
+                zip.file(basename, self.configString(config));
+            });
+            zip.generateAsync({ type: "blob" }).then(function(content) {
+                FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
+            });
+        },
+        generateQRCode(res) {
+            if (!res) {
+                return;
+            }
+            let configString = this.configString(res);
+            this.wireguardConfig = configString;
+            let qr = qrcode(0, "M");
+            qr.addData(configString);
+            qr.make();
+            let location = {};
+            location.qrCode = qr.createSvgTag(4)
+            location.countryCode = res.country_code;
+            location.city = res.city;
+            if( res.multihop ){
+                this.multihop = true;
+                location.countryCode = res.exit_country_code;
+                location.city = res.exit_city;
+                location.entryCity = res.city;
+                location.entryCountryCode = res.country_code;
+            }else{
+                location.countryCode = res.country_code;
+                location.city = res.city;
+            }
+            this.qrCodes.push(location);
+        },
+        configString(config) {
+            return "[Interface]" +
+            "\nPrivateKey = " + this.privateKey +
+            "\nAddress = " + this.address +
+            "\nDNS = " + config.hosts[0].local_ip.split("/")[0] +
+            "\n\n[Peer]" +
+            "\nPublicKey = " + config.hosts[0].public_key +
+            "\nAllowedIPs = " + "0.0.0.0/0,::0/0" +
+            "\nEndpoint = " + config.hosts[0].host + ":2049";
+        },
         async fetchBtcPrice(){
             let res = await Api.getExchangeRates();
             if( res.bitcoin){
@@ -311,9 +411,9 @@ export default {
             }
         },
         async fetchServers() {
-            let res = await Api.getServerStats();
-            if (res.servers) {
-                this.servers = res.servers.filter((server) => server.hostnames.wireguard != null)
+            let res = await Api.getServersDetails();
+            if (res.wireguard) {
+                this.servers = res.wireguard.filter((server) => server.gateway != null)
                 this.filteredServers = this.sortBy(this.servers.filter((v,i,a) => a.findIndex(t => (t.city === v.city)) === i), 'country', false);
             }    
         },
@@ -336,13 +436,11 @@ export default {
                 let URL = await this.$store.dispatch("account/createLightInvoice", {
                     exitServer: this.selectedExitLocation,
                     entryServer: this.selectedEntryLocation,
-                    privateKey: this.privateKey,
                     publicKey: this.publicKey,
-                    priceID: this.selectedBillingCycle,       
+                    priceID: this.selectedBillingCycle, 
+                    address: this.address,      
                 });
                 if( URL ){
-                    JSCookie.set('lmh', this.multihop , { expires: 0.5, })
-                    JSCookie.set('lpv', this.privateKey, { expires: 0.5, })
                     window.location = URL;
                 }
                 this.validation.submit = true;
@@ -425,8 +523,17 @@ export default {
                     return (desc ? 1 : -1)
                 return 0
             });
+        },
+        randRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
+        generateAddress() {
+            for (let i = 0; i < 10; i++) {
+                const address = `172.${this.randRange(16, 31)}.${this.randRange(0, 255)}.${this.randRange(2, 254)}`;
+                this.address = address;
+            }
         }
-    },
+    }
 };
 </script>
 
@@ -811,6 +918,126 @@ font-family: "Roboto Mono";
 
 .one-page-tabs h4{
     line-height: 50px;
+}
+
+.payment-received {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    h4{
+        color: #FF3344;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    textarea{
+        @include light-theme((
+            background:  #F0F0F0,
+            color: rgba(41, 41, 46, 0.5)
+        ));
+
+        @include dark-theme((
+            background:  #3D3D42,
+            color: white,
+        ));
+        border:0;
+        margin:20px;
+        min-height:200px;
+
+    }
+
+    h5{
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        line-height: 30px;
+        font-size: 16px;
+        margin: 10px;
+    }
+
+    p {
+        max-width: 550px;
+        margin-bottom:5px;
+    }
+
+    .steps{
+        text-align: left;
+    }
+
+    ol{
+        text-align: left;
+        margin-bottom:0px;
+        letter-spacing: -0.4px;
+    }
+
+    hr{
+        width:100%;
+        background:rgba(61, 61, 66, 0.5);
+        margin:30px;
+    }
+
+    .promo-block {
+        &:first-of-type {
+            margin-top: 72px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 700px;
+        text-align: center;
+
+        border-top: 1px solid #99999940;
+        margin: 24px 0px 0px 0;
+        padding: 8px 0px 4px 0px;
+        width: 80%;
+
+        p {
+            margin-bottom: 8px;
+            margin-top: 16px;
+            max-width: 650px;
+        }
+
+        ul.links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                &:before {
+                    display: none;
+                }
+
+                flex-grow: 1;
+                &.social {
+                    width: 135px;
+                }
+
+                a {
+                    padding: 0px 8px;
+                }
+
+                padding: 0px 8px;
+                margin: 0px;
+            }
+
+            .social {
+                margin: 0px 10px;
+            }
+        }
+    }
+
+    .btn-solid{
+        width: 100%;
+        margin: 1em;
+    }
 }
 
 
