@@ -437,7 +437,8 @@ export default {
                     exitServer: this.selectedExitLocation,
                     entryServer: this.selectedEntryLocation,
                     publicKey: this.publicKey,
-                    priceID: this.selectedBillingCycle,       
+                    priceID: this.selectedBillingCycle, 
+                    address: this.address,      
                 });
                 if( URL ){
                     window.location = URL;
@@ -923,7 +924,6 @@ font-family: "Roboto Mono";
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 700px;
     text-align: center;
 
     h2 {
