@@ -925,6 +925,7 @@ font-family: "Roboto Mono";
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 800px;
 
     h2 {
         margin-bottom: 1em;
