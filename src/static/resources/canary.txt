@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2024-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2024-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 868651
-hash: 000000000000000000022296625b5302bfb6dd3565c6add5b030c1f412d6473a
+height: 873027
+hash: 000000000000000000015c0202911b6798b53693d59e6ca3dd2e0e59e6055d15
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-The best of TV and streaming this week
-Eddie Redmayne plays the titular assassin in ‘The Day of the Jackal’; a pair of BBC documentaries follow opposite sides of the Trump divide; ‘Endurance’ brings Shackleton’s ill-fated Antarctica expedition to life; Channel 4’s Undercover’ infiltrates a far-right group promoting race-based eugenics; ‘Road Diary’ chronicles an electrifying Bruce Springsteen tour; Billy Crystal stars as a grief-stricken child therapist in supernatural thriller ‘Before’ — reviews by Dan Einav
+America is one big bubble
+Plus, China’s ‘Japanification’
 
-Cruise companies pour money into lucrative private resorts
-Passenger numbers and profit forecasts are up as operators respond to a tourism backlash by building their own facilities
+Nato’s Rutte says Ukraine needs more weapons, not new ideas
+Also in this newsletter: Why the French government is headed for collapse
 
-Fed to look past US election uncertainty with quarter-point rate cut
-Central bank expected to stay the course despite a distorted jobs report and unclear path for economic policy
+FTAV’s further reading
+Divine Comedy; Truss in America; financial conditions; Coppola says sorry
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmcnDjUACgkQisFrnrZH
-ummMrwf/a6+dpKXyvPa0aE6qovoXR+KgzrupfXd94eoKcjpoWrMPZz4L/I/0gwzI
-TbOK5YnO35xa9WuL20fDIe0r0UEEwojO2/egko7N+wZ5o8I5qXH98w+kaGkOnf+2
-vRF8HpZFyRoRdlhrGIrejqpBJWoXC/b6NBpGC8wRNDWLtPXlQxFK1cfZ66DMcKlV
-sWFG0CQly5pFFsfxVDEDnKklNjt/8Q0XRNgKQOLbYLIHSBg8EzrYmKMHEGvOUlL4
-SX3kIXXJ+VI6470fxNg6gEjRo8o5y5GmWx3hqpB896XDI5XyQSu828qEGBI8Hw18
-qAlgWzYhyzrQrh90Y+rC3NY3p0jNQw==
-=SXjS
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmdOrj8ACgkQisFrnrZH
+umnVuAf/fnBpJ9oFvuzkeY6aiRK9zKRfLqXQ+Gv4nJjQ6XEZeI+LSoPdDE+Na36f
+WBytxYRCWyFqxWNI/0ZPNnDaE+jrN5kexxCpANzLcQEjKsaQ9J0pjx+lV3qFy/es
+tIoULtb6M3q8+MQdnfkOUJ6v9jCdIRakuwPPsOZF5GnqMGUzE7Am6ZcGh+QFC2mO
+u4mydECqZ/Uf3/Q0FijNGP0jgJ5tJBWkzGqY7uKKYF2hygTZUzIDAAPDbGnNRBl/
+BuFSWNEB18B6XTlVl/TcsAGXveM9RNH8c+rHXH/LH9Jsukf0xmEYKA23onA4mPcR
+WDhEITlLnKWrGCQs9QPrEodEevkm+g==
+=C65F
 -----END PGP SIGNATURE-----
 
 
