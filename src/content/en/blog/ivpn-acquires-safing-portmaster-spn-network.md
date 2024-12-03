@@ -38,6 +38,8 @@ Our pledge to Safing’s customers and community:
 
 You can learn more about the story behind the acquisition and the next steps in [Safing’s blog post][1] and a [joint announcement video][2] by Raphael and Viktor from IVPN. 
 
+\* _formally, Nicholas Pestell owns 100% of both IVPN and Safing ICS Technologies GmbH_ 
+
 
 [1]: https://safing.io/blog/2024/12/03/a-new-chapter-begins/
 [2]: https://www.youtube.com/watch?v=O2Maf2u4Z90
