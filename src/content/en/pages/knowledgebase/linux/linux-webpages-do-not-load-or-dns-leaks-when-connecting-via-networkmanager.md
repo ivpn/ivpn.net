@@ -12,6 +12,8 @@ weight: 110
 
 When you connect to a VPN server using the NetworkManager, you might discover that it does not apply IVPN DNS IP address automatically. This may lead to either websites' domain names not resolving or your real DNS is being used, which is considered as a leak.
 
+IVPN DNS IP addresses and details are listed [here](/knowledgebase/troubleshooting/what-is-the-ip-address-of-your-dns-servers/).  The `198.245.51.147` address referenced below is our public DNS server.  Addresses in the private address space, like `10.0.254.x` are internal to the VPN connection.  For the internal DNS, feel free to use any from the list, like to activate different levels of the AntiTracker.
+
 If you are more comfortable with NetworkManager, feel free to apply IVPN DNS IP addresses manually:
 
 <div markdown="1" class="notice notice--warning">
@@ -46,10 +48,6 @@ Syntax may differ depending on your Linux distro, substitute where required
     ```
 
     Remove or comment out (by adding '#' at the beginning of the line) lines containing your real DNS IP address  
-    Using a different Internal IP addresses activates the AntiTracker:  
-    * 10.0.254.1 = regular DNS with no blocking (OpenVPN)
-    * 10.0.254.2 = standard AntiTracker to block advertising and malware domains
-    * 10.0.254.3 = Hardcore Mode AntiTracker to also block Google and Facebook domains 
 
 4.  Confirm that your system is now using IVPN DNS. Running the, e.g. **nslookup ivpn.net** command should provide you with the following output.  
     When disconnected from IVPN, your system should use `198.245.51.147` IP address:
