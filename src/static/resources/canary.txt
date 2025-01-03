@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2024-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 873027
-hash: 000000000000000000015c0202911b6798b53693d59e6ca3dd2e0e59e6055d15
+height: 877595
+hash: 0000000000000000000170d37ebf794373e944285af1b83d619c55f5258df2f6
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-America is one big bubble
-Plus, China’s ‘Japanification’
+South Korean officials abandon bid to arrest impeached president after stand-off
+Yoon Suk Yeol faces probe into alleged treason and abuse of power over failed attempt to impose martial law
 
-Nato’s Rutte says Ukraine needs more weapons, not new ideas
-Also in this newsletter: Why the French government is headed for collapse
+Trump ally Johnson faces knife-edge vote to remain US House Speaker
+Tiny Republican majority in chamber leaves party’s congressional leader vulnerable to rebellion
 
-FTAV’s further reading
-Divine Comedy; Truss in America; financial conditions; Coppola says sorry
+Budget gyms aim to bulk up in smaller UK centres
+PureGym and The Gym Group say plenty of opportunities remain as cost-conscious consumers try to keep fit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmdOrj8ACgkQisFrnrZH
-umnVuAf/fnBpJ9oFvuzkeY6aiRK9zKRfLqXQ+Gv4nJjQ6XEZeI+LSoPdDE+Na36f
-WBytxYRCWyFqxWNI/0ZPNnDaE+jrN5kexxCpANzLcQEjKsaQ9J0pjx+lV3qFy/es
-tIoULtb6M3q8+MQdnfkOUJ6v9jCdIRakuwPPsOZF5GnqMGUzE7Am6ZcGh+QFC2mO
-u4mydECqZ/Uf3/Q0FijNGP0jgJ5tJBWkzGqY7uKKYF2hygTZUzIDAAPDbGnNRBl/
-BuFSWNEB18B6XTlVl/TcsAGXveM9RNH8c+rHXH/LH9Jsukf0xmEYKA23onA4mPcR
-WDhEITlLnKWrGCQs9QPrEodEevkm+g==
-=C65F
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmd3dGIACgkQisFrnrZH
+umkOdwf/Svdh2chj1Hw6hGiU3jslxrFerR2w2P1uRKydKQPZj7qDwKTVvTz1vm2y
+0GnIDZmd42ZhFOptx0y9MKcWqorrCfF6z1rkiAOcZduPMbpiAHHhAkxEn1RC3Ove
+SVW/lr4JobaODZFjtpJbI+0CU8s1wWVgbeu7uXuXTjkYA4WECGgtPRX0BmijyIVo
+cnNZd8QMaF8xJEyIqDZiTBH0UY88onCPeI2Qp9G7XiGj6UOhEhWWsZqZ7hxkohFD
+fJ5G6c74w+bKqh4mBugJlJlfNyJp9X82NmMjEm6PZl5bIfi5jRboA69JgfB0QABI
+AqmqZEwc1QLW7X5ocLTsRzVkSrcZzg==
+=tDhI
 -----END PGP SIGNATURE-----
 
 
