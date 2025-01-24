@@ -11,8 +11,10 @@
                            <h2>VPN access in 60 seconds</h2>
                            <ol>
                             <li>Generate or upload keys</li>
+                            <li class="error">Copy your private key</li>
                             <li>Select servers & duration</li>
                             <li>Pay with Lightning</li>
+                            <li>Paste you private key</li>
                            </ol>
                            <h3>Up to 5 exit points or one Multi-hop setup. </h3>
                            <h3>Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</h3>
@@ -41,7 +43,7 @@
                                        
                                        <form>
                                           <label>Public Key</label><input class="form-control" type="text" v-model="publicKey" autofocus="">
-                                          <label>Private Key</label><input class="form-control"  type="text" v-model="privateKey">
+                                          <label><span class="error">Private Key</span></label><input class="form-control"  type="text" v-model="privateKey">
                                           <p>
                                             <button v-if="!this.keysAdded" type="button" class="btn btn-solid btn-border" @click="generateKeys()">Generate new key</button>
                                           </p>
@@ -56,8 +58,6 @@
                                           <form>
                                             <label for="public_key">Public Key:</label>
                                             <input  id="public_key" type="text" v-model="customPublicKey" autofocus="" required placeholder="Enter your key">
-                                            <label for="private_key">Private Key:</label>
-                                            <input id="private_key" type="text" v-model="customPrivateKey" required placeholder="Enter your key">
                                             <p v-if="keysAdded">
                                                 Your custom key pair has been saved!
                                             </p>
@@ -144,42 +144,6 @@
                      </div>
                      <hr />
 
-                     <div class="payment-received" v-if="!validation.submit">
-                         <div class="steps">
-                             <p>Next steps:</p>
-                             <ol>
-                                 <li>Save the QR code or config file now to avoid losing access.</li>
-                                 <li> Download and open the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">WireGuard</a> app.</li>
-                                 <li>Scan the QR code, or add the configuration provided.</li>
-                             </ol>
-                        </div>
-                        <hr />
-          
-                        <div v-if="qrCodes.length > 0" v-for="qr in qrCodes">
-                            <p>Access to:</p>
-                            <div v-if="this.multihop">
-                               <p><country-flag :country="qr.entryCountryCode" size='normal'/> {{ qr.entryCity }}</p>
-                               <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
-                            </div>
-                            <div v-else>
-                                <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
-                            </div>
-                            <div class="code" v-html="qr.qrCode"></div>
-                        </div>
-                        <textarea disabled v-if="qrCodes.length == 1" v-model="wireguardConfig" cols="50" rows="50"></textarea>
-        
-                        <button
-                        @click.prevent="handleDownload()"
-                        class="btn btn-solid"
-                        style="margin-bottom: 1em"
-                        target="_blank"
-                        v-if="qrCodes.length > 0"
-                        >
-                       <down-icon
-                           style="width: 16px; height: 16px; fill: #449cf8"
-                       />Download configuration
-                        </button>
-                    </div>
 
                      <div class="light-price">
                         <h3><span>Pay with Lightning:</span><br>{{ getSelectedSats }} sats (≈ {{ getSelectedPrice }} USD)</h3>
@@ -239,7 +203,6 @@ export default {
         return {
             privateKey: "",
             publicKey: "",
-            customPrivateKey: "",
             customPublicKey: "",
             keysHidden: true,
             useKeysHidden: true,
@@ -264,9 +227,6 @@ export default {
             usedCustomKeysText: "You have added the following custom key pair:",
             generateKeysClicked: false,
             addKeysClicked: false,
-            qrCodes: [],
-            wireguardConfigs: [],
-            address: null,
         };
     },
     watch: {
@@ -317,12 +277,9 @@ export default {
                 this.validation.submit = true;
             }
             this.wireguardConfigs = [];
-            this.qrCodes = [];
             this.selectedExitLocation.forEach((location) => {
                 this.wireguardConfigs.push(location);
-                this.generateQRCode(location);
             });
-            this.qrCodes = this.qrCodes.filter((v,i,a)=>a.findIndex(v2=>(JSON.stringify(v2) === JSON.stringify(v)))===i)
         },
 
     },
@@ -343,63 +300,11 @@ export default {
     async created() {
     },
     mounted() {
-      this.generateAddress();
       this.generateKeys();
       this.fetchServers();
       this.fetchBtcPrice();
     },
     methods: {
-        async handleDownload() {
-            this.downloadArchive();
-        },
-        downloadArchive() {
-            
-            let self = this;
-            let zip = new JSZip();
-            console.log(this.wireguardConfigs);
-            this.wireguardConfigs.forEach(function (config) {
-                let basename =  config.country_code.toLowerCase() + "-" + config.city.toLowerCase() + ".conf"; 
-                zip.file(basename, self.configString(config));
-            });
-            zip.generateAsync({ type: "blob" }).then(function(content) {
-                FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
-            });
-        },
-        generateQRCode(res) {
-            if (!res) {
-                return;
-            }
-            let configString = this.configString(res);
-            this.wireguardConfig = configString;
-            let qr = qrcode(0, "M");
-            qr.addData(configString);
-            qr.make();
-            let location = {};
-            location.qrCode = qr.createSvgTag(4)
-            location.countryCode = res.country_code;
-            location.city = res.city;
-            if( res.multihop ){
-                this.multihop = true;
-                location.countryCode = res.exit_country_code;
-                location.city = res.exit_city;
-                location.entryCity = res.city;
-                location.entryCountryCode = res.country_code;
-            }else{
-                location.countryCode = res.country_code;
-                location.city = res.city;
-            }
-            this.qrCodes.push(location);
-        },
-        configString(config) {
-            return "[Interface]" +
-            "\nPrivateKey = " + this.privateKey +
-            "\nAddress = " + this.address +
-            "\nDNS = " + config.hosts[0].local_ip.split("/")[0] +
-            "\n\n[Peer]" +
-            "\nPublicKey = " + config.hosts[0].public_key +
-            "\nAllowedIPs = " + "0.0.0.0/0,::0/0" +
-            "\nEndpoint = " + config.hosts[0].host + ":2049";
-        },
         async fetchBtcPrice(){
             let res = await Api.getExchangeRates();
             if( res.bitcoin){
@@ -426,7 +331,6 @@ export default {
             let config = {
                     exit: this.selectedExitLocation,
                     entry: this.selectedEntryLocation,
-                    privateKey: this.privateKey,
                     publicKey: this.publicKey,
             }
             try {
@@ -438,7 +342,6 @@ export default {
                     entryServer: this.selectedEntryLocation,
                     publicKey: this.publicKey,
                     priceID: this.selectedBillingCycle, 
-                    address: this.address,      
                 });
                 if( URL ){
                     window.location = URL;
@@ -471,8 +374,7 @@ export default {
             this.addKeysClicked = true;
         },
         addKeys(){
-            if( wireguard.isValidKey(this.customPrivateKey) && wireguard.isValidKey(this.customPublicKey)){
-                this.privateKey = this.customPrivateKey;
+            if( wireguard.isValidKey(wireguard.isValidKey(this.customPublicKey)) ){
                 this.publicKey = this.customPublicKey;
                 this.error.addKey = "";
                 this.keysAdded = true;
@@ -527,12 +429,6 @@ export default {
         randRange(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         },
-        generateAddress() {
-            for (let i = 0; i < 10; i++) {
-                const address = `172.${this.randRange(16, 31)}.${this.randRange(0, 255)}.${this.randRange(2, 254)}`;
-                this.address = address;
-            }
-        }
     }
 };
 </script>
@@ -1038,6 +934,7 @@ font-family: "Roboto Mono";
         width: 100%;
         margin: 1em;
     }
+
 }
 
 
