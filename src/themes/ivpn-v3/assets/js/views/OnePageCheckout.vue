@@ -181,9 +181,6 @@ import "vue-select/dist/vue-select.css";
 import "vue-multiselect/dist/vue-multiselect.css";
 import SelectLocations from "@/components/SelectLocations.vue";
 import SelectLocationsMulti from "@/components/SelectLocationsMulti.vue";
-import qrcode from "qrcode-generator";
-import JSZip from "jszip";
-import FileSaver from "file-saver";
 import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import CountryFlag from 'vue-country-flag-next'
@@ -374,7 +371,7 @@ export default {
             this.addKeysClicked = true;
         },
         addKeys(){
-            if( wireguard.isValidKey(wireguard.isValidKey(this.customPublicKey)) ){
+            if( wireguard.isValidKey(this.customPublicKey)){
                 this.publicKey = this.customPublicKey;
                 this.error.addKey = "";
                 this.keysAdded = true;

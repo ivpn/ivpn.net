@@ -7,6 +7,43 @@
             <h4>Your account is live until {{ $filters.formatActiveUntil(account.active_until) }}.</h4>
             <hr />
             <div class="steps">
+            <p>Next steps:</p>
+                <ol>
+                    <li>Paste the private key generated in the checkout page</li>
+                    <li>Save the QR code or config file now to avoid losing access.</li>
+                    <li>Download and open the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">WireGuard</a> app.</li>
+                    <li>Scan the QR code, or add the configuration provided.</li>
+                </ol>
+            </div>
+            <input type ="text" v-model="privateKey" placeholder="Paste your private key here">
+
+            <button
+                v-if="isValidPrivateKey && qrCodes.length > 0"
+                @click.prevent="handleDownload()"
+                class="btn btn-solid"
+                style="margin-bottom: 1em"
+                target="_blank"
+            >
+                <down-icon
+                    style="width: 16px; height: 16px; fill: #449cf8"
+                />Download configuration and generate QR codes
+            </button>
+
+            <div v-if="isValidPrivateKey && qrCodes.length > 0" v-for="qr in qrCodes">
+                <p>Access to:</p>
+                <div v-if="this.multihop">
+                    <p><country-flag :country="qr.entryCountryCode" size='normal'/> {{ qr.entryCity }}</p>
+                    <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
+                </div>
+                <div v-else>
+                <p><country-flag :country="qr.countryCode" size='normal'/> {{ qr.city }}</p>
+                </div>
+                <div class="code" v-html="qr.qrCode"></div>
+            </div>
+            <textarea disabled v-if="qrCodes.length == 1" v-model="wireguardConfig" cols="50" rows="50">
+            </textarea>
+
+            <div class="steps">
                 <h5>For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/light">separate IVPN Light access</a>, or <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/en/pricing">generate</a> an IVPN Standard or Pro account.</h5>
             </div>
         </div>
@@ -15,31 +52,120 @@
 
 <script>
 
+import SuccessIcon from "@/components/icons/success.vue";
+import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
+import CountryFlag from 'vue-country-flag-next'
+import Api from "@/api/api";
+import qrcode from "qrcode-generator";
+import JSZip from "jszip";
+import FileSaver from "file-saver";
+import wireguard from '@/wireguard';
 
 export default {
+    components: { SuccessIcon, DownIcon,CountryFlag },
     data() {
         return {
             isLoaded: false,
+            privateKey: "",
+            isValidPrivateKey: false,
+            wireguardConfig: "",
+            qrCodes: [],
+            wireguardConfigs: [],
+            multihop: false,
         };
-    },
-    computed: {
-        ...mapState({
-            account: (state) => state.auth.account,
-        }),
     },
     async created() {
         document.getElementById("my-account").remove();
         await this.$store.dispatch("auth/reload");
+        await this.$store.dispatch("wireguard/load");
+        await this.$store.dispatch("wireguard/loadConfigs");
     },
-
+    methods: {
+        async handleDownload() {
+            this.downloadArchive();
+        },
+        downloadArchive() {
+            
+            let self = this;
+            let zip = new JSZip();
+            let basename = this.multihop ? (this.multihop_basename + ".conf") : null
+            this.wireguardConfigs.forEach(function (config) {
+                zip.file(config.basename, self.configString(config));
+            });
+            zip.generateAsync({ type: "blob" }).then(function(content) {
+                FileSaver.saveAs(content, "ivpn-wireguard-config.zip");
+            });
+        },
+        generateQRCode(res) {
+            if (!res) {
+                return;
+            }
+            let configString = this.configString(res);
+            this.wireguardConfig = configString;
+            let qr = qrcode(0, "M");
+            qr.addData(configString);
+            qr.make();
+            let location = {};
+            location.qrCode = qr.createSvgTag(4)
+            location.countryCode = res.country_code;
+            location.city = res.city;
+            if( res.multihop ){
+                this.multihop = true;
+                location.countryCode = res.exit_country_code;
+                location.city = res.exit_city;
+                location.entryCity = res.city;
+                location.entryCountryCode = res.country_code;
+            }else{
+                location.countryCode = res.country_code;
+                location.city = res.city;
+            }
+            this.qrCodes.push(location);
+        },
+        configString(config) {
+            return "[Interface]" +
+            "\nPrivateKey = " + this.privateKey +
+            "\nAddress = " + config.interface.address +
+            "\nDNS = " + config.interface.dns +
+            "\n\n[Peer]" +
+            "\nPublicKey = " + config.peer.public_key +
+            "\nAllowedIPs = " + config.peer.allowed_ips +
+            "\nEndpoint = " + config.peer.endpoint;
+        },
+    },
+    computed: {
+        ...mapState({
+            account: (state) => state.auth.account,
+            keys: (state) => state.wireguard.keys,
+            configs: (state) => state.wireguard.configs,
+        }),
+    },
     watch: {
+        configs: {
+            handler: function (after, before) {
+                after.then((res) => {
+                    
+                    res.forEach((cfg) => {
+                        this.wireguardConfigs.push(cfg);
+                        this.generateQRCode(cfg);
+                    });
+                    this.qrCodes = this.qrCodes.filter((v,i,a)=>a.findIndex(v2=>(JSON.stringify(v2) === JSON.stringify(v)))===i)
+                });
+            },
+            deep: true
+        },
         account: {
             handler: function (after, before) {
                 this.isLoaded = true;
             },
             deep: true
         },
+        privateKey: {
+            handler: function (after, before) {
+                this.isValidPrivateKey = wireguard.isValidKey(after);
+            },
+            deep: true
+        }
     },
     beforeMount(){
         document.getElementById("my-account").remove();
