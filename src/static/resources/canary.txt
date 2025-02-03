@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-01-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 877595
-hash: 0000000000000000000170d37ebf794373e944285af1b83d619c55f5258df2f6
+height: 882086
+hash: 000000000000000000019072e320645f649fb2f491304685d7753ebbbfce53e0
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-South Korean officials abandon bid to arrest impeached president after stand-off
-Yoon Suk Yeol faces probe into alleged treason and abuse of power over failed attempt to impose martial law
+FirstFT: Trump starts trade war with Canada, Mexico and China, threatens EU
+Also in today’s newsletter, Trump threatens aid to South Africa and corporate America cosies up to Musk
 
-Trump ally Johnson faces knife-edge vote to remain US House Speaker
-Tiny Republican majority in chamber leaves party’s congressional leader vulnerable to rebellion
+The best of TV and streaming this week
+Steve Coogan and Harriet Walter enact a tangled political relationship in ‘Brian and Maggie’; Keeley Hawes plays the sister of novelist Jane in BBC drama ‘Miss Austen’; a Palestinian seeks to re-enter the US in season 2 of Netflix comedy ‘Mo’; ‘Idris Elba: Our Knife Crime Crisis’ probes the social ills behind a wave of UK youth violence; ‘Paradise’ is a thriller about a presidential ex-bodyguard; ‘The Music of Auschwitz’ seeks out resilience amid the atrocities — reviews by Dan Einav and Rebecca Nicholson
 
-Budget gyms aim to bulk up in smaller UK centres
-PureGym and The Gym Group say plenty of opportunities remain as cost-conscious consumers try to keep fit
+Trump’s Truth.Fi ETF ambitions could push into Strive’s space
+Truth.Fi’s ‘American first’ aims share sentiments underlying Vivek Ramaswamy’s approach in founding Strive
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmd3dGIACgkQisFrnrZH
-umkOdwf/Svdh2chj1Hw6hGiU3jslxrFerR2w2P1uRKydKQPZj7qDwKTVvTz1vm2y
-0GnIDZmd42ZhFOptx0y9MKcWqorrCfF6z1rkiAOcZduPMbpiAHHhAkxEn1RC3Ove
-SVW/lr4JobaODZFjtpJbI+0CU8s1wWVgbeu7uXuXTjkYA4WECGgtPRX0BmijyIVo
-cnNZd8QMaF8xJEyIqDZiTBH0UY88onCPeI2Qp9G7XiGj6UOhEhWWsZqZ7hxkohFD
-fJ5G6c74w+bKqh4mBugJlJlfNyJp9X82NmMjEm6PZl5bIfi5jRboA69JgfB0QABI
-AqmqZEwc1QLW7X5ocLTsRzVkSrcZzg==
-=tDhI
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmegV7kACgkQisFrnrZH
+ummExwf7Btdw2TDlYuyrxa2arL3q8SIzHtvPMrQV62lzte/onELLHKD1fCOZ/i15
+UQdt0bb0WCZUlXdMLC627zX8W7uMHGAFUL7J6hHhin72RP6UBdQAFVC2pzJYbe0Y
+oTOAwVtNDwn/2afo6LKLtv0Jya396gBcVs9BjH9xQzcVFcPIrKqzDVvQwF2Iuwni
+v08iQLZeyRqJofoARcSzOXl9JhJ0vSmXZdomczJxZTcyaYBXBTEWyVCQk8HI9gRq
+1T915aBOUWkAbICOwpDwKiPRAsdHRoC0jdcDQO++mLwTURxVBaSzicLbivpgwYLv
+9WZ203DFWBQNMcbBb2LHgarQ5ahKEw==
+=znbV
 -----END PGP SIGNATURE-----
 
 
