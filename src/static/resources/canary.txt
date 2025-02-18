@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2024-12-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 873027
-hash: 000000000000000000015c0202911b6798b53693d59e6ca3dd2e0e59e6055d15
+height: 882086
+hash: 000000000000000000019072e320645f649fb2f491304685d7753ebbbfce53e0
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-America is one big bubble
-Plus, China’s ‘Japanification’
+FirstFT: Trump starts trade war with Canada, Mexico and China, threatens EU
+Also in today’s newsletter, Trump threatens aid to South Africa and corporate America cosies up to Musk
 
-Nato’s Rutte says Ukraine needs more weapons, not new ideas
-Also in this newsletter: Why the French government is headed for collapse
+The best of TV and streaming this week
+Steve Coogan and Harriet Walter enact a tangled political relationship in ‘Brian and Maggie’; Keeley Hawes plays the sister of novelist Jane in BBC drama ‘Miss Austen’; a Palestinian seeks to re-enter the US in season 2 of Netflix comedy ‘Mo’; ‘Idris Elba: Our Knife Crime Crisis’ probes the social ills behind a wave of UK youth violence; ‘Paradise’ is a thriller about a presidential ex-bodyguard; ‘The Music of Auschwitz’ seeks out resilience amid the atrocities — reviews by Dan Einav and Rebecca Nicholson
 
-FTAV’s further reading
-Divine Comedy; Truss in America; financial conditions; Coppola says sorry
+Trump’s Truth.Fi ETF ambitions could push into Strive’s space
+Truth.Fi’s ‘American first’ aims share sentiments underlying Vivek Ramaswamy’s approach in founding Strive
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmdOrj8ACgkQisFrnrZH
-umnVuAf/fnBpJ9oFvuzkeY6aiRK9zKRfLqXQ+Gv4nJjQ6XEZeI+LSoPdDE+Na36f
-WBytxYRCWyFqxWNI/0ZPNnDaE+jrN5kexxCpANzLcQEjKsaQ9J0pjx+lV3qFy/es
-tIoULtb6M3q8+MQdnfkOUJ6v9jCdIRakuwPPsOZF5GnqMGUzE7Am6ZcGh+QFC2mO
-u4mydECqZ/Uf3/Q0FijNGP0jgJ5tJBWkzGqY7uKKYF2hygTZUzIDAAPDbGnNRBl/
-BuFSWNEB18B6XTlVl/TcsAGXveM9RNH8c+rHXH/LH9Jsukf0xmEYKA23onA4mPcR
-WDhEITlLnKWrGCQs9QPrEodEevkm+g==
-=C65F
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmegV7kACgkQisFrnrZH
+ummExwf7Btdw2TDlYuyrxa2arL3q8SIzHtvPMrQV62lzte/onELLHKD1fCOZ/i15
+UQdt0bb0WCZUlXdMLC627zX8W7uMHGAFUL7J6hHhin72RP6UBdQAFVC2pzJYbe0Y
+oTOAwVtNDwn/2afo6LKLtv0Jya396gBcVs9BjH9xQzcVFcPIrKqzDVvQwF2Iuwni
+v08iQLZeyRqJofoARcSzOXl9JhJ0vSmXZdomczJxZTcyaYBXBTEWyVCQk8HI9gRq
+1T915aBOUWkAbICOwpDwKiPRAsdHRoC0jdcDQO++mLwTURxVBaSzicLbivpgwYLv
+9WZ203DFWBQNMcbBb2LHgarQ5ahKEw==
+=znbV
 -----END PGP SIGNATURE-----
 
 

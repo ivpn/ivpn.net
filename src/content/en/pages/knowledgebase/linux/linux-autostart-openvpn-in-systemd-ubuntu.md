@@ -46,7 +46,7 @@ In order to configure OpenVPN to autostart for systemd, complete the following s
     # sudo nano /etc/openvpn/pass
     ```
 
-    and enter your IVPN Account ID (starts with 'ivpn') on the first line and any non-blank text on the 2nd line, then press 'Ctrl X' to save the changes and exit the text editor.
+    and enter your IVPN Account ID (i-XXXX-XXXX-XXXX or ivpnXXXXXXXX) on the first line and any non-blank text on the 2nd line, then press 'Ctrl X' to save the changes and exit the text editor.
 
 5.  (Optional) Change the permissions on the pass file to protect the credentials:
 
