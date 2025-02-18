@@ -19,7 +19,7 @@
             <input type ="text" v-model="privateKey" placeholder="Paste your private key here">
 
             <button
-                :disabled="!isValidPrivateKey && qrCodes.length == 0"
+                :disabled="!isValidPrivateKey"
                 @click.prevent="handleDownload()"
                 class="btn btn-solid"
                 style="margin-bottom: 1em"
