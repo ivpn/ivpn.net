@@ -43,7 +43,13 @@
                                        
                                        <form>
                                           <label>Public Key</label><input class="form-control" type="text" v-model="publicKey" autofocus="">
-                                          <label><span class="error">Private Key</span></label><input class="form-control"  type="text" v-model="privateKey">
+                                          <label>
+                                            <span class="error">
+                                                Private Key
+                                                <p>Save this key to complete the next step in the setup process</p>
+                                            </span>
+                                          </label>
+                                          <input class="form-control"  type="text" v-model="privateKey">
                                           <p>
                                             <button v-if="!this.keysAdded" type="button" class="btn btn-solid btn-border" @click="generateKeys()">Generate new key</button>
                                           </p>
@@ -149,7 +155,7 @@
                         <h3><span>Pay with Lightning:</span><br>{{ getSelectedSats }} sats (≈ {{ getSelectedPrice }} USD)</h3>
                      </div>
                      <div class="main-buttons">
-                         <button type="button" :disabled="validation.submit" class="btn btn-solid btn-light" @click="send()">
+                         <button type="button" :disabled="!isValidated()" class="btn btn-solid btn-light" @click="send()">
                               <div class="bitcoin-lightning-icon" ></div> Purchase access
                           </button>
                           <h4>We host our own BTCPay Server to generate a Lightning invoice for payment.</h4>
@@ -227,11 +233,6 @@ export default {
         };
     },
     watch: {
-        validation: {
-            handler: function (after, before) {
-            },
-            deep: true
-        },
         selectedEntryLocation: function(){
             if( this.selectedEntryLocation != null && this.selectedEntryLocation.length > 1){
                 this.selectedEntryLocation.shift();
@@ -302,6 +303,12 @@ export default {
       this.fetchBtcPrice();
     },
     methods: {
+        isValidated(){
+            if( !this.validation.submit && (this.keysAdded || this.generateKeysClicked)){
+                return true;
+            }
+            return false;
+        },
         async fetchBtcPrice(){
             let res = await Api.getExchangeRates();
             if( res.bitcoin){
@@ -320,6 +327,13 @@ export default {
             }    
         },
         async send() {
+
+            console.log(this.validation.submit);
+            console.log(this.generateKeysClicked);
+            console.log(this.addKeysClicked);
+            console.log("final");
+            console.log(( !this.generateKeysClicked && !this.addKeysClicked));
+
             if (this.inProgress) {
                 return;
             }
