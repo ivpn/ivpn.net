@@ -170,16 +170,6 @@
 </template>
 
 <script>
-
-let products = {
-        prices: [
-            { id: 'light.3hours', name: '3 hours', price: 'N/A',sats: 250 },
-            { id: 'light.1day', name: '1 Day', price: 'N/A',sats: 1000 },
-            { id: 'light.1week', name: '1 week', price: 'N/A', sats: 2500 },
-            { id: 'light.1month', name: '1 month', price: 'N/A',sats: 7500},
-        ]
-}
-
 import Api from "@/api/api";
 import { mapState, storeKey } from "vuex";
 import wireguard from '@/wireguard';
@@ -191,6 +181,14 @@ import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import CountryFlag from 'vue-country-flag-next'
 
+const products = {
+        prices: [
+            { id: 'light.3hours', name: '3 hours', price: 'N/A',sats: 250 },
+            { id: 'light.1day', name: '1 Day', price: 'N/A',sats: 1000 },
+            { id: 'light.1week', name: '1 week', price: 'N/A', sats: 2500 },
+            { id: 'light.1month', name: '1 month', price: 'N/A',sats: 7500},
+        ]
+}
 
 export default {
     name: "Light",
@@ -201,7 +199,6 @@ export default {
       DownIcon,
       CountryFlag,
     },
-
     data() {
         return {
             privateKey: "",
@@ -296,50 +293,47 @@ export default {
 
     },
     async created() {
-    },
-    mounted() {
       this.generateKeys();
       this.fetchServers();
       this.fetchBtcPrice();
     },
     methods: {
         isValidated(){
-            if( !this.validation.submit && (this.keysAdded || this.generateKeysClicked)){
-                return true;
-            }
-            return false;
+            return !this.validation.submit && (this.keysAdded || this.generateKeysClicked);i
         },
         async fetchBtcPrice(){
-            let res = await Api.getExchangeRates();
-            if( res.bitcoin){
-                products.prices[0].price = (res.bitcoin * ( products.prices[0].sats / 100000000  )).toFixed(3) ;
-                products.prices[1].price = (res.bitcoin * ( products.prices[1].sats / 100000000  )).toFixed(3) ;
-                products.prices[2].price = (res.bitcoin * ( products.prices[2].sats / 100000000  )).toFixed(3) ;
-                products.prices[3].price = (res.bitcoin * ( products.prices[3].sats / 100000000  )).toFixed(3) ;
-                this.selectedPrice = products.prices[0].price;
+            try {
+                const res = await Api.getExchangeRates();
+                if (res.bitcoin) {
+                    products.prices.forEach((item, index) => {
+                        item.price = (res.bitcoin * (item.sats / 100000000)).toFixed(3);
+                    });
+                    this.selectedPrice = products.prices[0].price;
+                }
+            } catch (error) {
+                console.error("Failed to fetch BTC price:", error);
             }
         },
         async fetchServers() {
-            let res = await Api.getServersDetails();
-            if (res.wireguard) {
-                this.servers = res.wireguard.filter((server) => server.gateway != null)
-                this.filteredServers = this.sortBy(this.servers.filter((v,i,a) => a.findIndex(t => (t.city === v.city)) === i), 'country', false);
-            }    
+            try {
+                const res = await Api.getServersDetails();
+                if (res.wireguard) {
+                    this.servers = res.wireguard.filter(server => server.gateway != null);
+                    this.filteredServers = this.sortBy(
+                        this.servers.filter((v, i, a) => a.findIndex(t => t.city === v.city) === i),
+                        'country',
+                        false
+                    );
+                }
+            } catch (error) {
+                console.error("Failed to fetch servers:", error);
+            } 
         },
         async send() {
-
-            console.log(this.validation.submit);
-            console.log(this.generateKeysClicked);
-            console.log(this.addKeysClicked);
-            console.log("final");
-            console.log(( !this.generateKeysClicked && !this.addKeysClicked));
-
-            if (this.inProgress) {
-                return;
-            }
+            if (this.inProgress) return;
 
             this.validation.submit = true;
-            let config = {
+            const config = {
                     exit: this.selectedExitLocation,
                     entry: this.selectedEntryLocation,
                     publicKey: this.publicKey,
@@ -348,7 +342,7 @@ export default {
                 await this.$store.dispatch('auth/logout')
                 await this.$store.dispatch("auth/createAccount", {product: "IVPN Light"} );
                 
-                let URL = await this.$store.dispatch("account/createLightInvoice", {
+                const URL = await this.$store.dispatch("account/createLightInvoice", {
                     exitServer: this.selectedExitLocation,
                     entryServer: this.selectedEntryLocation,
                     publicKey: this.publicKey,
@@ -360,14 +354,14 @@ export default {
                 this.validation.submit = true;
 
             } catch (error) {
+                console.error("Failed to send data:", error);
                 this.validation.submit = true;
-                return;
             }
 
             this.messageSent = true;
         },
         generateKeys() {
-            let keypair = wireguard.generateKeypair();
+            const keypair = wireguard.generateKeypair();
             this.privateKey = keypair.privateKey;
             this.publicKey = keypair.publicKey;
         },
@@ -403,10 +397,7 @@ export default {
          });
         },
         toggleGenerateKey(event) {
-            if (this.publicKey) {
-                return;
-            }
-
+            if (this.publicKey) return;
             this.isKeyGenerated = event.target.getAttribute("data-isKeyGenerated") == "true";
         },
         toggleMultihop(event) {
