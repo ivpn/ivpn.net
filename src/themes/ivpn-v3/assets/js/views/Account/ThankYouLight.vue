@@ -9,16 +9,17 @@
             <div class="steps">
             <p>Next steps:</p>
                 <ol>
-                    <li>Paste the private key generated in the checkout page</li>
-                    <li>Save the QR code or config file now to avoid losing access.</li>
+                    <li>Paste the private key saved in the previous step to the field below.</li>
+                    <li>Save the generated QR code or config file to avoid losing access.</li>
                     <li>Download and open the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">WireGuard</a> app.</li>
                     <li>Scan the QR code, or add the configuration provided.</li>
+                    <li>Connect to the IVPN service</li>
                 </ol>
             </div>
             <input type ="text" v-model="privateKey" placeholder="Paste your private key here">
 
             <button
-                v-if="isValidPrivateKey && qrCodes.length > 0"
+                :disabled="!isValidPrivateKey && qrCodes.length == 0"
                 @click.prevent="handleDownload()"
                 class="btn btn-solid"
                 style="margin-bottom: 1em"
@@ -26,7 +27,7 @@
             >
                 <down-icon
                     style="width: 16px; height: 16px; fill: #449cf8"
-                />Download configuration and generate QR codes
+                />Download configuration
             </button>
 
             <div v-if="isValidPrivateKey && qrCodes.length > 0" v-for="qr in qrCodes">
