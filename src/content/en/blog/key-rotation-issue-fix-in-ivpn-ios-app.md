@@ -29,5 +29,5 @@ Customers using IVPN's iOS apps may be affected. This issue does not affect IVPN
 
 If you rely on the IVPN app for iOS, we recommend updating to the latest version (v2.12.5) immediately:
 
-- If you update your iOS apps manually, visit [https://apps.apple.com/nl/app/ivpn-secure-vpn-for-privacy/id1193122683](https://apps.apple.com/nl/app/ivpn-secure-vpn-for-privacy/id1193122683) to update your IVPN app
-- If automatic app updates are enabled in your App Store settings, visit [https://apps.apple.com/nl/app/ivpn-secure-vpn-for-privacy/id1193122683](https://apps.apple.com/nl/app/ivpn-secure-vpn-for-privacy/id1193122683) to confirm you have the latest version (v2.12.5) installed.
+- If you update your iOS apps manually, visit [https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8](https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8) to update your IVPN app
+- If automatic app updates are enabled in your App Store settings, visit [https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8](https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8) to confirm you have the latest version (v2.12.5) installed.
