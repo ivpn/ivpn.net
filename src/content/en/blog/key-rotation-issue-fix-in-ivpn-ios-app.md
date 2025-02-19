@@ -15,7 +15,7 @@ tags:
 date: 2025-02-18T10:00:00.000Z
 ---
 
-**In summary: We identified a potential DNS leak issue affecting our iOS app during the brief intervals during WireGuard key regeneration. We advise IVPN customers using the IVPN iOS app to update to the latest version (v2.12.5) as soon as possible.**
+**In summary: We identified a potential DNS leak issue affecting our iOS app in brief intervals during WireGuard key regeneration.**
 
 ## Details of the issue
 
