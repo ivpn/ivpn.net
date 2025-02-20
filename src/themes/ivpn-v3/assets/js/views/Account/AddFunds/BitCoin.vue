@@ -7,10 +7,12 @@
             <div class="bitcoin-icon"></div>
             <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithBitcoin') }}
         </button>
+        <!--
         <button class="btn btn-solid" @click.prevent="submitLightning()" :disabled="inProgressLightning">
             <div class="bitcoin-lightning-icon"></div>
             <progress-spinner v-if="inProgressLightning" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithLightning') }}
         </button>
+        -->
     </div>
 </template>
 
