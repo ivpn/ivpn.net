@@ -3,16 +3,16 @@
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>{{ $t('account.payments.bitcoin.bitcoinDescription') }}</p>
         <p v-if="this.price.billing_cycle == 'Weekly'">{{ $t('account.payments.bitcoin.bitcoinOnchain') }}</p>
-        <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress" v-if="this.price.billing_cycle != 'Weekly'">
+        <button class="btn btn-solid unavailable" @click.prevent="submit()" :disabled=true v-if="this.price.billing_cycle != 'Weekly'">
             <div class="bitcoin-icon"></div>
-            <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithBitcoin') }}
+            <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.unavailable') }}
         </button>
-        <!--
-        <button class="btn btn-solid" @click.prevent="submitLightning()" :disabled="inProgressLightning">
+        
+        <button class="btn btn-solid unavailable" @click.prevent="submitLightning()" :disabled=true>
             <div class="bitcoin-lightning-icon"></div>
-            <progress-spinner v-if="inProgressLightning" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithLightning') }}
+            <progress-spinner v-if="inProgressLightning" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.unavailable') }}
         </button>
-        -->
+        
     </div>
 </template>
 
@@ -82,5 +82,8 @@ export default {
 <style lang="scss" scoped>
 .btn {
     margin: 0 5px;
+}
+.unavailable{
+    color: red !important;
 }
 </style>
