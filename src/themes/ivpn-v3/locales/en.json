@@ -374,7 +374,8 @@
                 "bitcoinDescription": "We run our own Bitcoin and Lightning Network nodes using a self-hosted BTCPay server instance. Payments are processed by IVPN and no 3rd parties are involved.",
                 "bitcoinOnchain": "On-chain Bitcoin payments are not available for IVPN 1 Week top-ups. We suggest using BTC Lightning or switching to a different payment method.",
                 "payWithBitcoin": "Pay with Bitcoin",
-                "payWithLightning": "Pay with Lightning"
+                "payWithLightning": "Pay with Lightning",
+                "unavailable": "Temporarily Unavailable"
             },
             "paypal": {
                 "processingYourPayment": "Processing your payment...",

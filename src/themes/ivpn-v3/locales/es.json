@@ -374,7 +374,8 @@
                 "bitcoinDescription": "Ejecutamos nuestros propios nodos de Bitcoin y Lightning Network utilizando una instancia de servidor BTCPay auto-alojada. Los pagos son procesados por IVPN y no hay terceros involucrados.",
                 "bitcoinOnchain": "Los pagos de Bitcoin On-chain no están disponibles para recargas de 1 semana de IVPN. Sugerimos usar BTC Lightning o cambiar a un método de pago diferente.",
                 "payWithBitcoin": "Paga con Bitcoin",
-                "payWithLightning": "Paga con Lightning"
+                "payWithLightning": "Paga con Lightning",
+                "unavailable": "No disponible temporalmente"
             },
             "paypal": {
                 "processingYourPayment": "Procesando tu pago...",
