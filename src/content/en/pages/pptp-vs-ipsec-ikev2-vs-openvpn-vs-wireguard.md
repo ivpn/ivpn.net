@@ -77,7 +77,7 @@ layout: full-width
     </tr>
     <tr>
         <td>With RC4 and 128 bit keys, the encryption overhead is least of all protocols making PPTP the fastest.</td>
-        <td>IPSec with IKEv2 should in theory be the faster than OpenVPN due to user-mode encryption in OpenVPN however it depends on many variables specific to the connection. In most cases it is faster than OpenVPN.</td>
+        <td>IPSec with IKEv2 should in theory be faster than OpenVPN due to user-mode encryption in OpenVPN however it depends on many variables specific to the connection. In most cases it is faster than OpenVPN.</td>
         <td>When used in its default UDP mode on a reliable network OpenVPN performs similarly to IKEv2.</td>
         <td>WireGuard® benefits from extremely high-speed cryptographic primitives and deep integration with underlying operating system kernel, so speeds are very high with low overhead. Most customers report higher speeds than OpenVPN.</td>
     </tr>
