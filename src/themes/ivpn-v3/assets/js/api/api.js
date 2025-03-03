@@ -406,7 +406,7 @@ export default {
         return response
     },
 
-    async createLightInvoice(priceID, exitServer, entryServer,publicKey, address) {
+    async createLightInvoice(priceID, exitServer, entryServer,publicKey) {
 
         if( !Array.isArray(entryServer) ) {
             entryServer = [ entryServer ]
@@ -416,7 +416,6 @@ export default {
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer,
-            address: address,
         })
 
         return response
