@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-03-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 882086
-hash: 000000000000000000019072e320645f649fb2f491304685d7753ebbbfce53e0
+height: 886090
+hash: 0000000000000000000178718dbf4ff33ad84defb9ef7368a2682b2fd98c2e2e
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Trump starts trade war with Canada, Mexico and China, threatens EU
-Also in today’s newsletter, Trump threatens aid to South Africa and corporate America cosies up to Musk
+‘Anora’ triumphs with 5 Oscars wins
+Indie film earns directing and actress prizes as Netflix’s frontrunner ‘Emilia Pérez’ comes up short
 
-The best of TV and streaming this week
-Steve Coogan and Harriet Walter enact a tangled political relationship in ‘Brian and Maggie’; Keeley Hawes plays the sister of novelist Jane in BBC drama ‘Miss Austen’; a Palestinian seeks to re-enter the US in season 2 of Netflix comedy ‘Mo’; ‘Idris Elba: Our Knife Crime Crisis’ probes the social ills behind a wave of UK youth violence; ‘Paradise’ is a thriller about a presidential ex-bodyguard; ‘The Music of Auschwitz’ seeks out resilience amid the atrocities — reviews by Dan Einav and Rebecca Nicholson
+FirstFT: Europe scrambles to salvage Ukraine peace hopes
+Also in today’s newsletter, Trump still deciding tariff rates for Mexico and Canada, and crypto prices jump
 
-Trump’s Truth.Fi ETF ambitions could push into Strive’s space
-Truth.Fi’s ‘American first’ aims share sentiments underlying Vivek Ramaswamy’s approach in founding Strive
+Chinese chain selling bubble tea for under $1 soars 40% in Hong Kong debut
+Mixue’s IPO, city’s biggest in year to date, highlights investor focus on China’s price-conscious consumers
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmegV7kACgkQisFrnrZH
-ummExwf7Btdw2TDlYuyrxa2arL3q8SIzHtvPMrQV62lzte/onELLHKD1fCOZ/i15
-UQdt0bb0WCZUlXdMLC627zX8W7uMHGAFUL7J6hHhin72RP6UBdQAFVC2pzJYbe0Y
-oTOAwVtNDwn/2afo6LKLtv0Jya396gBcVs9BjH9xQzcVFcPIrKqzDVvQwF2Iuwni
-v08iQLZeyRqJofoARcSzOXl9JhJ0vSmXZdomczJxZTcyaYBXBTEWyVCQk8HI9gRq
-1T915aBOUWkAbICOwpDwKiPRAsdHRoC0jdcDQO++mLwTURxVBaSzicLbivpgwYLv
-9WZ203DFWBQNMcbBb2LHgarQ5ahKEw==
-=znbV
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmfFQvEACgkQisFrnrZH
+umn2OggAtuD0e5edLcu631zgImCZnmGbBRplItyHgtbw9/3rGJNPCGoxjcguMO7x
+vXt0XtZzAYfKSn/ZlkKvAlHGJb7uOr62f0ez1qC3iZJbUufSSzVGQOz68hBX4q9c
+xEtncyot0wBfrYZrtyj6k/fw41Z4lG3PSP/CtDrlFSF3+tE9a5RRhb5a9ZMQ3OeB
+knORxTLc47b6OoHVhrdLusNu/tX/ldgxIdmmbZlw4hPH4wck6hRYKSKYfW4RKbTM
+y0Ajx+d7ANg2J7tbWKn1qpbXUB+mp9hXTEClOkKYhn6inGQG9oHV61cnpzH1LMyp
+APOUqt69goqT06r1U+8puQie6CsN1Q==
+=5ldJ
 -----END PGP SIGNATURE-----
 
 
