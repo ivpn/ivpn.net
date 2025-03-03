@@ -1,22 +1,36 @@
 <template>
     <div>
-        <div class="payment-received">
+        <div class="payment-received" v-if="isLoaded">
             <h2>Your IVPN Light access is ready</h2>
             <p>We have received your payment.</p>
             <hr />
-            <h4 v-if="isLoaded">Your account is live until {{ $filters.formatActiveUntil(account.active_until) }}.</h4>
+            <h4>Your account is live until {{ $filters.formatActiveUntil(account.active_until) }}.</h4>
             <hr />
             <div class="steps">
             <p>Next steps:</p>
                 <ol>
-                   <li>Save the QR code or config file now to avoid losing access.</li>
-                    <li> Download and open the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">WireGuard</a> app.</li>
+                    <li>Paste the private key saved in the previous step to the field below.</li>
+                    <li>Save the generated QR code or config file to avoid losing access.</li>
+                    <li>Download and open the <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">WireGuard</a> app.</li>
                     <li>Scan the QR code, or add the configuration provided.</li>
+                    <li>Connect to the IVPN service</li>
                 </ol>
             </div>
-            <hr />
-          
-            <div v-if="qrCodes.length > 0" v-for="qr in qrCodes">
+            <input type ="text" v-model="privateKey" placeholder="Paste your private key here">
+
+            <button
+                :disabled="!isValidPrivateKey"
+                @click.prevent="handleDownload()"
+                class="btn btn-solid"
+                style="margin-bottom: 1em"
+                target="_blank"
+            >
+                <down-icon
+                    style="width: 16px; height: 16px; fill: #449cf8"
+                />Download configuration
+            </button>
+
+            <div v-if="isValidPrivateKey && qrCodes.length > 0" v-for="qr in qrCodes">
                 <p>Access to:</p>
                 <div v-if="this.multihop">
                     <p><country-flag :country="qr.entryCountryCode" size='normal'/> {{ qr.entryCity }}</p>
@@ -30,54 +44,44 @@
             <textarea disabled v-if="qrCodes.length == 1" v-model="wireguardConfig" cols="50" rows="50">
             </textarea>
 
-        
-            <button
-                @click.prevent="handleDownload()"
-                class="btn btn-solid"
-                style="margin-bottom: 1em"
-                target="_blank"
-                v-if="qrCodes.length > 0"
-            >
-                <down-icon
-                    style="width: 16px; height: 16px; fill: #449cf8"
-                />Download configuration
-            </button>
-
-            <h5 v-if="isLoaded">For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/light">separate IVPN Light access</a>, or <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/en/pricing">generate</a> an IVPN Standard or Pro account.</h5>
+            <div class="steps">
+                <h5>For further access beyond {{ $filters.formatActiveUntil(account.active_until) }} pay for a <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/light">separate IVPN Light access</a>, or <a target="_blank" rel="noreferrer" href="https://www.ivpn.net/en/pricing">generate</a> an IVPN Standard or Pro account.</h5>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+
 import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
-import JSCookie from "js-cookie"
 import CountryFlag from 'vue-country-flag-next'
 import Api from "@/api/api";
 import qrcode from "qrcode-generator";
 import JSZip from "jszip";
 import FileSaver from "file-saver";
+import wireguard from '@/wireguard';
 
 export default {
     components: { SuccessIcon, DownIcon,CountryFlag },
     data() {
         return {
-            wireguardConfig: "",
             isLoaded: false,
+            privateKey: "",
+            isValidPrivateKey: false,
+            wireguardConfig: "",
             qrCodes: [],
             wireguardConfigs: [],
             multihop: false,
         };
     },
-
     async created() {
         document.getElementById("my-account").remove();
         await this.$store.dispatch("auth/reload");
         await this.$store.dispatch("wireguard/load");
         await this.$store.dispatch("wireguard/loadConfigs");
     },
-
     methods: {
         async handleDownload() {
             this.downloadArchive();
@@ -121,7 +125,7 @@ export default {
         },
         configString(config) {
             return "[Interface]" +
-            "\nPrivateKey = " + JSCookie.get('lpv') +
+            "\nPrivateKey = " + this.privateKey +
             "\nAddress = " + config.interface.address +
             "\nDNS = " + config.interface.dns +
             "\n\n[Peer]" +
@@ -157,8 +161,13 @@ export default {
             },
             deep: true
         },
+        privateKey: {
+            handler: function (after, before) {
+                this.isValidPrivateKey = wireguard.isValidKey(after);
+            },
+            deep: true
+        }
     },
-
     beforeMount(){
         document.getElementById("my-account").remove();
     },
