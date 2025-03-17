@@ -268,13 +268,18 @@ export default {
         selectedExitLocation: function(){
             if(this.selectedExitLocation.length > 0 && !this.multihop){
                 this.validation.submit = false;
-            }else if(!this.multihop){
-                this.validation.submit = true;
+            }
+            if(this.multihop){
+                if( this.selectedEntryLocation != null && this.selectedExitLocation.length > 0){
+                    this.validation.submit = false;
+                }    
             }
             this.wireguardConfigs = [];
             this.selectedExitLocation.forEach((location) => {
                 this.wireguardConfigs.push(location);
             });
+            console.log("Selected exit location: ", this.selectedExitLocation);
+            console.log("submitted: ", this.validation.submit);
         },
 
     },

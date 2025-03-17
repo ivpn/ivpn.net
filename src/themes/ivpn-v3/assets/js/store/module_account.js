@@ -220,10 +220,10 @@ export default {
             }
         },
 
-        async createLightInvoice(context, { priceID, exitServer, entryServer, publicKey, address }) {
+        async createLightInvoice(context, { priceID, exitServer, entryServer, publicKey }) {
             context.commit('started')
             try {
-                let resp= await Api.createLightInvoice(priceID, exitServer, entryServer, publicKey, address)
+                let resp= await Api.createLightInvoice(priceID, exitServer, entryServer, publicKey)
 
                 context.commit('done')
                 return resp.invoice

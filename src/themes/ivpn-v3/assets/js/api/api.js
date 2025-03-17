@@ -441,7 +441,6 @@ export default {
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer,
-            address: address,
         })
 
         return response
