@@ -268,13 +268,18 @@ export default {
         selectedExitLocation: function(){
             if(this.selectedExitLocation.length > 0 && !this.multihop){
                 this.validation.submit = false;
-            }else if(!this.multihop){
-                this.validation.submit = true;
+            }
+            if(this.multihop){
+                if( this.selectedEntryLocation != null && this.selectedExitLocation.length > 0){
+                    this.validation.submit = false;
+                }    
             }
             this.wireguardConfigs = [];
             this.selectedExitLocation.forEach((location) => {
                 this.wireguardConfigs.push(location);
             });
+            console.log("Selected exit location: ", this.selectedExitLocation);
+            console.log("submitted: ", this.validation.submit);
         },
 
     },
@@ -316,15 +321,11 @@ export default {
         },
         async fetchServers() {
             try {
-                const res = await Api.getServersDetails();
-                if (res.wireguard) {
-                    this.servers = res.wireguard.filter(server => server.gateway != null);
-                    this.filteredServers = this.sortBy(
-                        this.servers.filter((v, i, a) => a.findIndex(t => t.city === v.city) === i),
-                        'country',
-                        false
-                    );
-                }
+                let res = await Api.getServerStats();
+                if (res.servers) {
+                    this.servers = res.servers.filter((server) => server.hostnames.wireguard != null)
+                    this.filteredServers = this.sortBy(this.servers.filter((v,i,a) => a.findIndex(t => (t.city === v.city)) === i), 'country', false);
+                } 
             } catch (error) {
                 console.error("Failed to fetch servers:", error);
             } 
