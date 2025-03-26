@@ -37,6 +37,10 @@ releases: [{
 - Actualización automática.
 - Conexión automática de inicio y al unirse a una red Wi-Fi insegura.
 
+<br>
+
+Nota: Windows basado en ARM no es compatible actualmente.  
+
 ## Configuración manual
 
 Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración correspondiente a continuación.
