@@ -41,7 +41,7 @@
                 </div>
                 <div class="code" v-html="qr.qrCode"></div>
             </div>
-            <textarea disabled v-if="qrCodes.length == 1" v-model="wireguardConfig" cols="50" rows="50">
+            <textarea disabled v-if="isValidPrivateKey && (qrCodes.length == 1)" v-model="wireguardConfig" cols="50" rows="50">
             </textarea>
 
             <div class="steps">
@@ -80,7 +80,6 @@ export default {
         document.getElementById("my-account").remove();
         await this.$store.dispatch("auth/reload");
         await this.$store.dispatch("wireguard/load");
-        await this.$store.dispatch("wireguard/loadConfigs");
     },
     methods: {
         async handleDownload() {
@@ -164,6 +163,11 @@ export default {
         privateKey: {
             handler: function (after, before) {
                 this.isValidPrivateKey = wireguard.isValidKey(after);
+                if(this.isValidPrivateKey){
+                    this.qrCodes = [];
+                    this.wireguardConfigs = [];
+                    this.$store.dispatch("wireguard/loadConfigs");
+                }
             },
             deep: true
         }
