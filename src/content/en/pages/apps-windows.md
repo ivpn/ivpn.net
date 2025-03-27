@@ -38,6 +38,10 @@ releases: [{
 - Auto-update.
 - Auto-connect on launch / on joining insecure Wi-Fi.
 
+<br>
+
+Note: ARM-based Windows are currently not supported.  
+
 ## Manual configuration
 
 If you prefer not to use the IVPN app please follow the relevant setup guide below.
