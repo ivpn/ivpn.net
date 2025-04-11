@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/styles/_vars.scss";
 @import "@/styles/base.scss";
 
@@ -420,7 +420,7 @@ export default {
     )); 
 }
 
-.v-select{
+.select-location-control {
     min-height: 76px !important;
     @include light-theme((
         background: $white,
@@ -430,19 +430,18 @@ export default {
         background:  #3D3D42,
         color: white
     )); 
+
+    .vs__dropdown-toggle{
+        min-height: 76px !important;
+        @include light-theme((
+            background: #F0F0F0
+        ));
+
+        @include dark-theme((
+            background:   #3D3D42, 
+        ));
+    }
 }
-
-.vs__dropdown-toggle{
-    min-height: 76px !important;
-    @include light-theme((
-        background: #F0F0F0
-    ));
-
-    @include dark-theme((
-        background:   #3D3D42, 
-    ));
-}
-
 
 .vs__selected-options{
     @include light-theme((
