@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/styles/_vars.scss";
 @import "@/styles/base.scss";
 
@@ -421,7 +421,7 @@ export default {
 }
 
 .v-select{
-    // min-height: 76px !important;
+    min-height: 76px !important;
     @include light-theme((
         background: $white,
         color: $black
@@ -433,7 +433,7 @@ export default {
 }
 
 .vs__dropdown-toggle{
-    // min-height: 76px !important;
+    min-height: 76px !important;
     @include light-theme((
         background: #F0F0F0
     ));
