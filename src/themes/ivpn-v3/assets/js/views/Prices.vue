@@ -7,34 +7,58 @@
 
         <div class="prices">
             <price-box
-                :prices="products.standard"
-                @selected="selected('IVPN Standard')"
+                :prices="products.tier1"
+                @selected="selected('IVPN Tier 1')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'IVPN Standard'"
+                :inProgress="inProgress && selectedProduct == 'IVPN Tier 1'"
             >
-                <div class="price-header">{{ $t('pricing.standard') }}</div>
+                <div class="price-header">{{ $t('pricing.tier1') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
                         <li>{{ $t('pricing.standardDevices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
             </price-box>
 
             <price-box
-                :prices="products.pro"
-                @selected="selected('IVPN Pro')"
+                :prices="products.tier2"
+                @selected="selected('IVPN Tier 2')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'IVPN Pro'"
+                :inProgress="inProgress && selectedProduct == 'IVPN Tier 2'"
             >
-                <div class="price-header">IVPN Pro</div>
+                <div class="price-header">{{ $t('pricing.tier2') }}</div>
+                <div class="price-features">
+                    <ul>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.resistdns') }}</li>
+                        <li>{{ $t('pricing.mailx') }}</li>
+                    </ul>
+                </div>
+            </price-box>
+
+            <price-box
+                :prices="products.tier3"
+                @selected="selected('IVPN Tier 3')"
+                :disabled="inProgress"
+                :inProgress="inProgress && selectedProduct == 'IVPN Tier 3'"
+            >
+                <div class="price-header">{{ $t('pricing.tier3') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
                         <li>{{ $t('pricing.proDevices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.resistdns') }}</li>
+                        <li>{{ $t('pricing.mailx') }}</li>
+                        <li>{{ $t('pricing.portmaster') }}</li>
+
                     </ul>
                 </div>
             </price-box>
