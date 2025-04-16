@@ -31,13 +31,14 @@
             "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
         "title": "Selecciona un Plan IVPN",
-        "description": "Selecciona un plan para crear tu cuenta al instante. Puedes cambiar entre IVPN Standard y Pro en cualquier momento en el futuro.",
-        "standard": "IVPN STANDARD",
-        "pro": "IVPN PRO",
+        "description": "Selecciona un plan para crear tu cuenta al instante. Puedes cambiar entre IVPN Tier 1, IVPN Tier 2 y IVPN Tier 3 en cualquier momento en el futuro.",
+        "tier1": "IVPN TIER 1",
+        "tier2": "IVPN TIER 2",
+        "tier3": "IVPN TIER 3",
         "allProtocols": "Todos los protocolos",
-        "standardDevices": "2 dispositivos",
+        "standardDevices": "5 dispositivos",
         "antitracker": "AntiTracker",
-        "proDevices": "7 dispositivos",
+        "proDevices": "10 dispositivos",
         "multihop": "Multi-hop",
         "productFooterPrice": "Todos los precios están en dólares estadounidenses.",
         "productFooterReview": "Consulta los precios para empresas",
@@ -70,7 +71,10 @@
         "oneYear": "1 Año",
         "twoYears": "2 Años",
         "threeYears": "3 Años",
-        "select": "Seleccionar"
+        "select": "Seleccionar",
+        "resistdns": "ResistDNS",
+        "mailx": "MailX",
+        "portmaster": "Portmaster/SPN"
     },
     "login": {
         "meta": {
