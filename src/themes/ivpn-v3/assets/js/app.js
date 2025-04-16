@@ -21,12 +21,12 @@ let products = {
         prices: [
             { id: 'standard-1week', name: en.pricing.oneWeek, price: 2 },
             { id: 'standard-1month', name: en.pricing.oneMonth, price: 6 },
-            { id: 'standard-1year', name: en.pricing.oneYear, price: 60, ref: 72 },
+            { id: 'standard-1year', name: en.pricing.oneYear, price: 60},
         ],
         pricesEs: [
             { id: 'standard-1week', name: es.pricing.oneWeek, price: 2 },
             { id: 'standard-1month', name: es.pricing.oneMonth, price: 6 },
-            { id: 'standard-1year', name: es.pricing.oneYear, price: 60, ref: 72 },
+            { id: 'standard-1year', name: es.pricing.oneYear, price: 60},
         ]
     },
     tier2: {
@@ -38,12 +38,12 @@ let products = {
         prices: [
             { id: 'standard-1week', name: en.pricing.oneWeek, price: 3 },
             { id: 'standard-1month', name: en.pricing.oneMonth, price: 8 },
-            { id: 'standard-1year', name: en.pricing.oneYear, price: 80, ref: 72 },
+            { id: 'standard-1year', name: en.pricing.oneYear, price: 80},
         ],
         pricesEs: [
             { id: 'standard-1week', name: es.pricing.oneWeek, price: 3 },
             { id: 'standard-1month', name: es.pricing.oneMonth, price: 8 },
-            { id: 'standard-1year', name: es.pricing.oneYear, price: 80, ref: 72 },
+            { id: 'standard-1year', name: es.pricing.oneYear, price: 80},
         ]
     },
     tier3: {
@@ -55,13 +55,13 @@ let products = {
         prices: [
             { id: 'pro-1week', name: en.pricing.oneWeek, price: 4 },
             { id: 'pro-1month', name: en.pricing.oneMonth, price: 10 },
-            { id: 'pro-1year', name: en.pricing.oneYear, price: 100, ref: 120 },
+            { id: 'pro-1year', name: en.pricing.oneYear, price: 100},
 
         ],
         pricesEs: [
             { id: 'pro-1week', name: es.pricing.oneWeek, price: 4 },
             { id: 'pro-1month', name: es.pricing.oneMonth, price: 10 },
-            { id: 'pro-1year', name: es.pricing.oneYear, price: 100, ref: 120 },
+            { id: 'pro-1year', name: es.pricing.oneYear, price: 100},
 
         ]
     }

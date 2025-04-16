@@ -8,9 +8,9 @@
         <div class="prices">
             <price-box
                 :prices="products.tier1"
-                @selected="selected('IVPN Tier 1')"
+                @selected="selected('tier1')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'IVPN Tier 1'"
+                :inProgress="inProgress && selectedProduct == 'tier1'"
             >
                 <div class="price-header">{{ $t('pricing.tier1') }}</div>
                 <div class="price-features">
@@ -25,9 +25,9 @@
 
             <price-box
                 :prices="products.tier2"
-                @selected="selected('IVPN Tier 2')"
+                @selected="selected('tier2')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'IVPN Tier 2'"
+                :inProgress="inProgress && selectedProduct == 'tier2'"
             >
                 <div class="price-header">{{ $t('pricing.tier2') }}</div>
                 <div class="price-features">
@@ -44,9 +44,9 @@
 
             <price-box
                 :prices="products.tier3"
-                @selected="selected('IVPN Tier 3')"
+                @selected="selected('tier3')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'IVPN Tier 3'"
+                :inProgress="inProgress && selectedProduct == 'tier3'"
             >
                 <div class="price-header">{{ $t('pricing.tier3') }}</div>
                 <div class="price-features">
