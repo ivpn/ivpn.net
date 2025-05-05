@@ -33,7 +33,7 @@ systemctl reboot
 
 <span># enable IVPN service to start automatically</span>
 sudo systemctl enable ivpn-service
-<span># start IVPN stervice</span>
+<span># start IVPN service</span>
 sudo systemctl start ivpn-service
 </code>
 </pre>
@@ -57,7 +57,7 @@ rpm-ostree uninstall ivpn-ui
 sudo systemctl stop ivpn-service
 sudo systemctl disable ivpn-service
 
-<span># manualy remove leftovers</span>
+<span># manually remove leftovers</span>
 sudo rm -fr /etc/opt/ivpn
 sudo rm -fr /var/log/ivpn
 
