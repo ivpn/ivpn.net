@@ -1,59 +1,25 @@
 <template>
     <div>
-        <h2>Mailx beta</h2>
-        <p>
-            <strong>Mailx Email Forwarder service is still in development. Please report any feedback or issues to support@mailx.net.</strong>
-        </p>
-        <hr>
+        <h2>MailX beta</h2>
 
         <div v-if="!subIdDeletedAt">
-            <p>
-                To participate, follow these steps:
-            </p>
+            <p>MailX is an e-mail aliasing service developed by IVPN. Email aliasing enables generating a new email alias for every website or service you sign up to. Email sent to aliases are forwarded to your actual email address, concealing both your main email and email provider.</p>
+            <p>MailX is currently in beta and available for registration to selected IVPN customers for free. MailX will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
             <p v-if="subId">
-                <strong>1.</strong> Use the link below to sign up to the beta service:
-                <br>
+                Please follow the unique registration link below to start testing the MailX service:<br>
                 <a target="_blank" :href="'https://staging.mailx.net/signup/' + subId">https://staging.mailx.net/signup/{{ subId }}</a>
             </p>
-            <p v-if="subId">
-                <strong>2.</strong> When the signup on mailx.net is complete, let us know:
-                <br><br>
-                <button class="btn btn-big btn-solid" @click="deleteSub()" :disabled="inProgress">
-                    <span>Signup Complete</span>
-                </button>
-                <br><br>
-                This step prevents storing any information about your Mailx account in the IVPN database. Warning: if you complete this step the signup link won't be accessible to you any more.
-            </p>
+            <p>We welcome your feedback about the service via <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>.</p>
         </div>
 
         <div v-if="subIdDeletedAt">
-            <p>Enter Mailx Subscription ID to update the service:</p>
+            <p>You have signed up to MailX, an e-mail aliasing service developed by IVPN.</p>
+            <p>Access the MailX service dashboard <a href="https://staging.mailx.net">here</a>.</p>
             <p>
-                <input id="subscription_id" v-model="updateSubId" type="text" placeholder="UUID">
+                Please submit your feedback, requests and any issues you encounter through one of the following channels:<br>
+                GitHub - <a href="https://github.com/ivpn/email">https://github.com/ivpn/email</a><br>
+                Email - <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>
             </p>
-            <div class="table-kw">
-                <div class="row row__checkbox">
-                    <div class="key">
-                        <input
-                            v-model="store"
-                            type="checkbox"
-                            id="is_stored"
-                            style="margin-right: 12px;"
-                            :checked="store"
-                        />
-                        <label for="is_stored" style="cursor:pointer">Managed automatically</label>
-                    </div>
-                    <p>When selected, the Mailx subscription is updated automatically. Disable to prevent storing any information from the Mailx in the IVPN database.</p>
-                </div>
-            </div>
-            <p v-if="error" class="error-message">{{ error.message }}</p>
-            <p>
-                <button class="btn btn-big btn-solid" @click="update()" :disabled="inProgress">
-                    <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                    <span>Update</span>
-                </button>
-            </p>
-            <p v-if="success">{{ success }}</p>
         </div>
 
     </div>
@@ -89,7 +55,10 @@ export default {
         this.language = window.location.href.split("/")[3];
         this.subId = this.account["email_service_id"];
         this.subIdDeletedAt = this.account["email_service_deleted_at"];
-        this.add();
+
+        if (!subIdDeletedAt) {
+            this.add();
+        }
     },
     methods: {
         async add() {
@@ -97,32 +66,6 @@ export default {
             if (res) {
                 this.subId = res.id;
             }
-        },
-        async update() {
-            this.success = "";
-
-            await this.$store.dispatch("account/updateEmailSubscription", {
-                uuid: this.updateSubId,
-                store: this.store,
-            });
-
-            if (this.error) {
-                return;
-            }
-
-            this.success = "Mailx subscription updated successfully";
-        },
-        async deleteSub() {
-            if (!confirm(' Warning: if you complete this step the signup link won\'t be accessible to you any more. Do you want to proceed?')) return
-
-            await this.$store.dispatch("account/deleteEmailSubscription");
-
-            if (this.error) {
-                return;
-            }
-
-            this.subId = "";
-            this.subIdDeletedAt = new Date().toISOString();
         },
     },
 };

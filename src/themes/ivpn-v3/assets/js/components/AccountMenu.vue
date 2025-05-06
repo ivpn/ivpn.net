@@ -19,7 +19,7 @@
                 </li>
                 <li :class="{ 'is-active': isServiceEmailRoute() }">
                     <router-link :to="{ name: 'service-email-' + this.language }"
-                        >Mailx Beta</router-link
+                        >MailX Beta</router-link
                     >
                 </li>
                 <li class="expand"></li>
