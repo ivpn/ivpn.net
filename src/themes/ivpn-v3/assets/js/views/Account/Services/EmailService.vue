@@ -56,7 +56,7 @@ export default {
         this.subId = this.account["email_service_id"];
         this.subIdDeletedAt = this.account["email_service_deleted_at"];
 
-        if (!subIdDeletedAt) {
+        if (!this.subIdDeletedAt) {
             this.add();
         }
     },
