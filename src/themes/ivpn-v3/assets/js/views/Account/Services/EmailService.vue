@@ -5,6 +5,7 @@
         <div v-if="!subIdDeletedAt">
             <p>MailX is an e-mail aliasing service developed by IVPN. Email aliasing enables generating a new email alias for every website or service you sign up to. Email sent to aliases are forwarded to your actual email address, concealing both your main email and email provider.</p>
             <p>MailX is currently in beta and available for registration to selected IVPN customers for free. MailX will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
+            <p>After successful registration MailX specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
             <p v-if="subId">
                 Please follow the unique registration link below to start testing the MailX service:<br>
                 <a target="_blank" :href="'https://staging.mailx.net/signup/' + subId">https://staging.mailx.net/signup/{{ subId }}</a>

@@ -284,40 +284,11 @@ export default {
             }
         },
 
-        async updateEmailSubscription(context, { uuid, store }) {
-            console.log('updateEmailSubscription', context)
-            let error = validateUuid(uuid)
-            if (error) {
-                context.commit('failed', { error })
-                return
-            }
-
-            context.commit('started')
-            try {
-                await Api.updateEmailSubscription(uuid, store)
-                context.commit('done')
-            } catch (error) {
-                context.commit('failed', { error })
-            }
-        },
-
         async addEmailSubscription(context) {
             console.log('addEmailSubscription', context)
             context.commit('started')
             try {
                 let res = await Api.addEmailSubscription()
-                context.commit('done')
-                return res
-            } catch (error) {
-                context.commit('failed', { error })
-            }
-        },
-
-        async deleteEmailSubscription(context) {
-            console.log('deleteEmailSubscription', context)
-            context.commit('started')
-            try {
-                let res = await Api.deleteEmailSubscription()
                 context.commit('done')
                 return res
             } catch (error) {
