@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>MailX beta</h2>
+        <h2>MailX Beta</h2>
 
         <div v-if="!subIdDeletedAt">
             <p>MailX is an e-mail aliasing service developed by IVPN. Email aliasing enables generating a new email alias for every website or service you sign up to. Email sent to aliases are forwarded to your actual email address, concealing both your main email and email provider.</p>
