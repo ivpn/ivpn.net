@@ -15,10 +15,10 @@
 
         <div v-if="subIdDeletedAt">
             <p>You have signed up to MailX, an e-mail aliasing service developed by IVPN.</p>
-            <p>Access the MailX service dashboard <a href="https://staging.mailx.net">here</a>.</p>
+            <p>Access the MailX service dashboard <a target="_blank" href="https://staging.mailx.net">here</a>.</p>
             <p>
                 Please submit your feedback, requests and any issues you encounter through one of the following channels:<br>
-                GitHub - <a href="https://github.com/ivpn/email">https://github.com/ivpn/email</a><br>
+                GitHub - <a target="_blank" href="https://github.com/ivpn/email">https://github.com/ivpn/email</a><br>
                 Email - <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>
             </p>
         </div>
