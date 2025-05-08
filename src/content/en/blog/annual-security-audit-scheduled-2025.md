@@ -26,7 +26,7 @@ As in previous years, audits will target systems and services undergoing signifi
 
 Looking ahead, our ongoing IVPN infrastructure upgrade - including transitioning to RAM-only servers - remains a priority with test deployments under way. Audits next year will focus specifically on evaluating new infrastructure rolled out throughout the rest of 2025.
 
-Nicholas Pestell
-CEO 
+Nicholas Pestell<br>
+CEO<br>
 IVPN
 
