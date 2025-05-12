@@ -2,7 +2,7 @@
     <div>
         <h2>MailX Beta</h2>
 
-        <div v-if="!subIdDeletedAt">
+        <div v-if="!subIdDeletedAt && loaded">
             <p>MailX is an e-mail aliasing service developed by IVPN. Email aliasing enables generating a new email alias for every website or service you sign up to. Email sent to aliases are forwarded to your actual email address, concealing both your main email and email provider.</p>
             <p>MailX is currently in beta and available for registration to selected IVPN customers for free. MailX will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
             <p>After successful registration MailX specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
@@ -13,7 +13,7 @@
             <p>We welcome your feedback about the service via <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>.</p>
         </div>
 
-        <div v-if="subIdDeletedAt">
+        <div v-if="subIdDeletedAt && loaded">
             <p>You have signed up to MailX, an e-mail aliasing service developed by IVPN.</p>
             <p>Access the MailX service dashboard <a target="_blank" href="https://staging.mailx.net">here</a>.</p>
             <p>
@@ -37,6 +37,7 @@ export default {
     },
     data() {
         return {
+            loaded: false,
             language: "en",
             subId: "",
             subIdDeletedAt: "",
@@ -56,6 +57,7 @@ export default {
 
         this.subId = this.account["email_service_id"];
         this.subIdDeletedAt = this.account["email_service_deleted_at"];
+        this.loaded = true;
 
         if (!this.subIdDeletedAt) {
             this.add();
