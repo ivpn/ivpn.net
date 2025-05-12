@@ -70,7 +70,7 @@ export default {
     methods: {
         async add() {
             let res = await this.$store.dispatch("account/addEmailSubscription");
-            if (res) {
+            if (res && !this.subId) {
                 this.subId = res.id;
             }
         },
