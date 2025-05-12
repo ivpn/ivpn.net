@@ -51,18 +51,19 @@ export default {
             inProgress: (state) => state.account.inProgress,
         }),
     },
-    async created() {
+    async beforeMount() {
         await this.$store.dispatch("auth/reload");
-    },
-    mounted(){
-        useI18n().locale.value = window.location.href.split("/")[3];
-        this.language = window.location.href.split("/")[3];
+
         this.subId = this.account["email_service_id"];
         this.subIdDeletedAt = this.account["email_service_deleted_at"];
 
         if (!this.subIdDeletedAt) {
             this.add();
         }
+    },
+    mounted() {
+        useI18n().locale.value = window.location.href.split("/")[3];
+        this.language = window.location.href.split("/")[3];
     },
     methods: {
         async add() {
