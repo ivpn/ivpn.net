@@ -51,6 +51,9 @@ export default {
             inProgress: (state) => state.account.inProgress,
         }),
     },
+    async created() {
+        await this.$store.dispatch("auth/reload");
+    },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
