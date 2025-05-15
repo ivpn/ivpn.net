@@ -11,8 +11,10 @@
                            <h2>VPN access in 60 seconds</h2>
                            <ol>
                             <li>Generate or upload keys</li>
+                            <li class="error">Copy your private key</li>
                             <li>Select servers & duration</li>
                             <li>Pay with Lightning</li>
+                            <li>Paste you private key</li>
                            </ol>
                            <h3>Up to 5 exit points or one Multi-hop setup. </h3>
                            <h3>Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</h3>
@@ -41,7 +43,13 @@
                                        
                                        <form>
                                           <label>Public Key</label><input class="form-control" type="text" v-model="publicKey" autofocus="">
-                                          <label>Private Key</label><input class="form-control"  type="text" v-model="privateKey">
+                                          <label>
+                                            <span class="error">
+                                                Private Key
+                                                <p>Save this key to complete the next step in the setup process</p>
+                                            </span>
+                                          </label>
+                                          <input class="form-control"  type="text" v-model="privateKey">
                                           <p>
                                             <button v-if="!this.keysAdded" type="button" class="btn btn-solid btn-border" @click="generateKeys()">Generate new key</button>
                                           </p>
@@ -56,8 +64,6 @@
                                           <form>
                                             <label for="public_key">Public Key:</label>
                                             <input  id="public_key" type="text" v-model="customPublicKey" autofocus="" required placeholder="Enter your key">
-                                            <label for="private_key">Private Key:</label>
-                                            <input id="private_key" type="text" v-model="customPrivateKey" required placeholder="Enter your key">
                                             <p v-if="keysAdded">
                                                 Your custom key pair has been saved!
                                             </p>
@@ -143,11 +149,13 @@
                         </div>
                      </div>
                      <hr />
+
+
                      <div class="light-price">
                         <h3><span>Pay with Lightning:</span><br>{{ getSelectedSats }} sats (≈ {{ getSelectedPrice }} USD)</h3>
                      </div>
                      <div class="main-buttons">
-                         <button type="button" :disabled="validation.submit" class="btn btn-solid btn-light" @click="send()">
+                         <button type="button" :disabled="!isValidated()" class="btn btn-solid btn-light" @click="send()">
                               <div class="bitcoin-lightning-icon" ></div> Purchase access
                           </button>
                           <h4>We host our own BTCPay Server to generate a Lightning invoice for payment.</h4>
@@ -162,8 +170,18 @@
 </template>
 
 <script>
+import Api from "@/api/api";
+import { mapState, storeKey } from "vuex";
+import wireguard from '@/wireguard';
+import "vue-select/dist/vue-select.css";
+import "vue-multiselect/dist/vue-multiselect.css";
+import SelectLocations from "@/components/SelectLocations.vue";
+import SelectLocationsMulti from "@/components/SelectLocationsMulti.vue";
+import SuccessIcon from "@/components/icons/success.vue";
+import DownIcon from "@/components/icons/btn/Download.vue";
+import CountryFlag from 'vue-country-flag-next'
 
-let products = {
+const products = {
         prices: [
             { id: 'light.3hours', name: '3 hours', price: 'N/A',sats: 250 },
             { id: 'light.1day', name: '1 Day', price: 'N/A',sats: 1000 },
@@ -172,29 +190,19 @@ let products = {
         ]
 }
 
-import Api from "@/api/api";
-import { mapState, storeKey } from "vuex";
-import wireguard from '@/wireguard';
-import "vue-select/dist/vue-select.css";
-import "vue-multiselect/dist/vue-multiselect.css";
-import SelectLocations from "@/components/SelectLocations.vue";
-import SelectLocationsMulti from "@/components/SelectLocationsMulti.vue";
-import { exportDefaultSpecifier } from "@babel/types";
-import { resolveTransitionHooks } from "vue";
-import JSCookie from "js-cookie"
-
 export default {
     name: "Light",
     components: {
       SelectLocations,
       SelectLocationsMulti,
+      SuccessIcon, 
+      DownIcon,
+      CountryFlag,
     },
-
     data() {
         return {
             privateKey: "",
             publicKey: "",
-            customPrivateKey: "",
             customPublicKey: "",
             keysHidden: true,
             useKeysHidden: true,
@@ -212,13 +220,6 @@ export default {
             },
             servers: [],
             filteredServers: [],
-            availableLocations: [],
-            countries: [],
-            multihopServers: [],
-            exitCities: [],
-            exitServers: [],
-            entryCities: [],
-            entryServers: [],
             error: {
                 addKey: null,
             },
@@ -226,23 +227,9 @@ export default {
             usedCustomKeysText: "You have added the following custom key pair:",
             generateKeysClicked: false,
             addKeysClicked: false,
-
         };
     },
     watch: {
-        validation: {
-            handler: function (after, before) {
-            },
-            deep: true
-        },
-
-        selectedExitLocation: function(){
-            if(this.selectedExitLocation.length > 0 && !this.multihop){
-                this.validation.submit = false;
-            }else if(!this.multihop){
-                this.validation.submit = true;
-            }
-        },
         selectedEntryLocation: function(){
             if( this.selectedEntryLocation != null && this.selectedEntryLocation.length > 1){
                 this.selectedEntryLocation.shift();
@@ -277,12 +264,30 @@ export default {
                 this.validation.submit = true;
             }
             this.selectedExitLocation = this.selectedMultihopExitLocation;
-            console.log(this.validation.submit);
+        },
+        selectedExitLocation: function(){
+            if(this.selectedExitLocation.length > 0 && !this.multihop){
+                this.validation.submit = false;
+            }
+            if(this.multihop){
+                if( this.selectedEntryLocation != null && this.selectedExitLocation.length > 0){
+                    this.validation.submit = false;
+                }    
+            }
+            this.wireguardConfigs = [];
+            this.selectedExitLocation.forEach((location) => {
+                this.wireguardConfigs.push(location);
+            });
+            console.log("Selected exit location: ", this.selectedExitLocation);
+            console.log("submitted: ", this.validation.submit);
         },
 
     },
     computed: {
         ...mapState({
+            account: (state) => state.auth.account,
+            keys: (state) => state.wireguard.keys,
+            configs: (state) => state.wireguard.configs,
         }),
         getSelectedPrice(){
          return this.selectedPrice;
@@ -293,69 +298,71 @@ export default {
 
     },
     async created() {
-    },
-    mounted() {
       this.generateKeys();
       this.fetchServers();
       this.fetchBtcPrice();
     },
     methods: {
+        isValidated(){
+            return !this.validation.submit && (this.keysAdded || this.generateKeysClicked);i
+        },
         async fetchBtcPrice(){
-            let res = await Api.getExchangeRates();
-            if( res.bitcoin){
-                products.prices[0].price = (res.bitcoin * ( products.prices[0].sats / 100000000  )).toFixed(3) ;
-                products.prices[1].price = (res.bitcoin * ( products.prices[1].sats / 100000000  )).toFixed(3) ;
-                products.prices[2].price = (res.bitcoin * ( products.prices[2].sats / 100000000  )).toFixed(3) ;
-                products.prices[3].price = (res.bitcoin * ( products.prices[3].sats / 100000000  )).toFixed(3) ;
-                this.selectedPrice = products.prices[0].price;
+            try {
+                const res = await Api.getExchangeRates();
+                if (res.bitcoin) {
+                    products.prices.forEach((item, index) => {
+                        item.price = (res.bitcoin * (item.sats / 100000000)).toFixed(3);
+                    });
+                    this.selectedPrice = products.prices[0].price;
+                }
+            } catch (error) {
+                console.error("Failed to fetch BTC price:", error);
             }
         },
         async fetchServers() {
-            let res = await Api.getServerStats();
-            if (res.servers) {
-                this.servers = res.servers.filter((server) => server.hostnames.wireguard != null)
-                this.filteredServers = this.sortBy(this.servers.filter((v,i,a) => a.findIndex(t => (t.city === v.city)) === i), 'country', false);
-            }    
+            try {
+                let res = await Api.getServerStats();
+                if (res.servers) {
+                    this.servers = res.servers.filter((server) => server.hostnames.wireguard != null)
+                    this.filteredServers = this.sortBy(this.servers.filter((v,i,a) => a.findIndex(t => (t.city === v.city)) === i), 'country', false);
+                } 
+            } catch (error) {
+                console.error("Failed to fetch servers:", error);
+            } 
         },
         async send() {
-            if (this.inProgress) {
-                return;
-            }
+            if (this.inProgress) return;
 
             this.validation.submit = true;
-            let config = {
+            const config = {
                     exit: this.selectedExitLocation,
                     entry: this.selectedEntryLocation,
-                    privateKey: this.privateKey,
                     publicKey: this.publicKey,
             }
             try {
                 await this.$store.dispatch('auth/logout')
                 await this.$store.dispatch("auth/createAccount", {product: "IVPN Light"} );
                 
-                let URL = await this.$store.dispatch("account/createLightInvoice", {
+                const URL = await this.$store.dispatch("account/createLightInvoice", {
                     exitServer: this.selectedExitLocation,
                     entryServer: this.selectedEntryLocation,
-                    privateKey: this.privateKey,
                     publicKey: this.publicKey,
-                    priceID: this.selectedBillingCycle,       
+                    priceID: this.selectedBillingCycle, 
                 });
                 if( URL ){
-                    JSCookie.set('lmh', this.multihop , { expires: 0.5, })
-                    JSCookie.set('lpv', this.privateKey, { expires: 0.5, })
                     window.location = URL;
                 }
                 this.validation.submit = true;
 
             } catch (error) {
+                console.error("Failed to send data:", error);
                 this.validation.submit = true;
-                return;
             }
 
             this.messageSent = true;
         },
         generateKeys() {
-            let keypair = wireguard.generateKeypair();
+            const keypair = wireguard.generateKeypair();
             this.privateKey = keypair.privateKey;
             this.publicKey = keypair.publicKey;
         },
@@ -373,8 +380,7 @@ export default {
             this.addKeysClicked = true;
         },
         addKeys(){
-            if( wireguard.isValidKey(this.customPrivateKey) && wireguard.isValidKey(this.customPublicKey)){
-                this.privateKey = this.customPrivateKey;
+            if( wireguard.isValidKey(this.customPublicKey)){
                 this.publicKey = this.customPublicKey;
                 this.error.addKey = "";
                 this.keysAdded = true;
@@ -392,10 +398,7 @@ export default {
          });
         },
         toggleGenerateKey(event) {
-            if (this.publicKey) {
-                return;
-            }
-
+            if (this.publicKey) return;
             this.isKeyGenerated = event.target.getAttribute("data-isKeyGenerated") == "true";
         },
         toggleMultihop(event) {
@@ -425,8 +428,11 @@ export default {
                     return (desc ? 1 : -1)
                 return 0
             });
-        }
-    },
+        },
+        randRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
+    }
 };
 </script>
 
@@ -811,6 +817,127 @@ font-family: "Roboto Mono";
 
 .one-page-tabs h4{
     line-height: 50px;
+}
+
+.payment-received {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    h4{
+        color: #FF3344;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    textarea{
+        @include light-theme((
+            background:  #F0F0F0,
+            color: rgba(41, 41, 46, 0.5)
+        ));
+
+        @include dark-theme((
+            background:  #3D3D42,
+            color: white,
+        ));
+        border:0;
+        margin:20px;
+        min-height:200px;
+
+    }
+
+    h5{
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        line-height: 30px;
+        font-size: 16px;
+        margin: 10px;
+    }
+
+    p {
+        max-width: 550px;
+        margin-bottom:5px;
+    }
+
+    .steps{
+        text-align: left;
+    }
+
+    ol{
+        text-align: left;
+        margin-bottom:0px;
+        letter-spacing: -0.4px;
+    }
+
+    hr{
+        width:100%;
+        background:rgba(61, 61, 66, 0.5);
+        margin:30px;
+    }
+
+    .promo-block {
+        &:first-of-type {
+            margin-top: 72px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        border-top: 1px solid #99999940;
+        margin: 24px 0px 0px 0;
+        padding: 8px 0px 4px 0px;
+        width: 80%;
+
+        p {
+            margin-bottom: 8px;
+            margin-top: 16px;
+            max-width: 650px;
+        }
+
+        ul.links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                &:before {
+                    display: none;
+                }
+
+                flex-grow: 1;
+                &.social {
+                    width: 135px;
+                }
+
+                a {
+                    padding: 0px 8px;
+                }
+
+                padding: 0px 8px;
+                margin: 0px;
+            }
+
+            .social {
+                margin: 0px 10px;
+            }
+        }
+    }
+
+    .btn-solid{
+        width: 100%;
+        margin: 1em;
+    }
+
 }
 
 

@@ -11,37 +11,37 @@ Special note should be taken if these messages ever cease being updated, or are 
 The current message is here:
 
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
-As of 2024-10-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 863912
-hash: 000000000000000000026558d0d6d017da30ff683572b6e0dbb2c76dbc51de7a
+height: 894987
+hash: 0000000000000000000013904b96dd6ea8433e01014c0e0d00988c7f005e8a88
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-FirstFT: Israel steps up Lebanon offensive as Middle East braces for retaliation on Iran
-Also in today’s newsletter, OpenAI wants exclusive investors and LVMH to sponsor F1
+Transcript: Swamp Notes — The conservative view on tariffs now
+Marc Filippino talks to Oren Cass and Edward Luce
 
-Transcript: Israel presses its military advantage
-Gideon Rachman talks to Sanam Vakil, director of the Middle East program at Chatham House
+Inside the Large Hadron Collider for smashing bugs
+A cutting edge machine has transformed the study of insects, which may yield even bigger breakthroughs for humans
 
-Why the US can’t impose its will over global trade in electric cars
-The American market is too small to give Washington leverage over Chinese software in EVs
+Jane Gardam, novelist, 1928-2025
+The prizewinning witty chronicler of middle-class life claimed writing was her ‘salvation’
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmb+JQ0ACgkQisFrnrZH
-uml5LQgAnuYdt5PG96JE0wYcGBR677tweXszirQ1nFhyMlf3R6+0XYbGOfQKKVwF
-0Up0Y0cHSx6yz6HM8msHvPieqP/hWco0qV5+AOKUVvEo4adBRfgPPV3smBjCllc4
-bxMxJ+GuX7O/SnZG8Vh5NA8/vSH10mdmJjWlr2X0eFk2BClJOgUPY3UI4+XGvRE9
-ReJ7We35WIvLidZIXZ3pK568GDRk6TNv258Fp+9oDi2pIpzO4eCMW8stlExdTiAJ
-y57iSEYLp4huPWlmQ61FWFffxgQ5OLC/qBoPPmN+pr487lHxKvWXMOkIu/iUMqew
-VQmYiRrg2YDnE4AwLryNfclUEOdjvg==
-=Pqga
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmgVo7IACgkQisFrnrZH
+umll9wgAjbX6r7w95CCv598v26sJAIBRsphUvhl3LwCIJFdywgieXQiFHrjHajUX
+22H5xDyJzALTBnA2pXG4mhcB72yapAsGDarxt0lzzE4LERtNBCZC0tRbqpTGtUkY
+NVFG03J91lYH/U+wYonEwkOEvTIDbvqxyzlqEvQ8HEbJJkFnXuVWDUyXljExISo6
+9SJ4wFzEOnU4qVSSewOEyMxZIYzOerCNanGgH4C3Qs+yhLSteXfcBcnDw0NkUs0v
+FSjoBaAB5iqeP/1exMVYBcsn2U87oX/J2wA9IiyS93mw7aVTInBFVilz3QaV320x
+OZNzmMYzRmESCE/XNJA2K3hV4leJug==
+=Rs2x
 -----END PGP SIGNATURE-----
 
 
