@@ -53,6 +53,11 @@ export default {
         }),
     },
     async beforeMount() {
+        if (!account.product.capabilities.has_mailx) {
+            window.location.href = this.language + "/account";
+            return;
+        }
+
         await this.$store.dispatch("auth/reload");
 
         this.subId = this.account["email_service_id"];
