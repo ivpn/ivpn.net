@@ -54,7 +54,7 @@ export default {
     },
     async beforeMount() {
         if (!this.account.product.capabilities.has_mailx) {
-            window.location.href = this.language + "/account";
+            window.location.href = "/" + this.language + "/account";
             return;
         }
 
