@@ -53,7 +53,7 @@ export default {
         }),
     },
     async beforeMount() {
-        if (!account.product.capabilities.has_mailx) {
+        if (!this.account.product.capabilities.has_mailx) {
             window.location.href = this.language + "/account";
             return;
         }
