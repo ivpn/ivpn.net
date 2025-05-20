@@ -51,35 +51,6 @@ IVPN Pro pricing for companies:
 
 [Email us](mailto:team-support@ivpn.net) to purchase IVPN team accounts for your company.
 
-## IVPN for nonprofit organisations
-
-We offer steep discounts for nonprofit organizations that need a trustworthy VPN for their members.
-
-IVPN Pro Pricing for nonprofits:
-
-<div class="price-box">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>per user per month</th>
-<th>per user per year</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5+ seats</td>
-<td>$3</td>
-<td>$30</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-To qualify for this discount, your organisation must be a verified nonprofit.
-
-[Email us](mailto:team-support@ivpn.net) to purchase IVPN non-profit team accounts.
-
 ## IVPN Pro team account benefits
 
 * Access on up to 7 devices per seat
