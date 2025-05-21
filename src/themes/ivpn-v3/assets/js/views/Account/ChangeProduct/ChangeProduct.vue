@@ -15,15 +15,15 @@
         <div class="prices">
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Standard'"
+                :current="account.product.name == 'IVPN Tier 1'"
                 :inProgress="inProgress"
-                @selected="selected('IVPN Standard')"
+                @selected="selected('IVPN Tier 1')"
             >
-                <div class="price-header">IVPN Standard</div>
+                <div class="price-header">{{ $t('pricing.tier1') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.tier1Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                     </ul>
                 </div>
@@ -31,14 +31,14 @@
                     <div class="active-until">
                         <div
                             class="label"
-                            v-if="account.product.name == 'IVPN Standard'"
+                            v-if="account.product.name == 'IVPN Tier 1'"
                         >{{ $t('account.activeUntil') }}</div>
                         <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
 
                         <div class="value">
                             {{ standardActiveUntil }}
                             <sup
-                                v-if="account.product.name != 'IVPN Standard'"
+                                v-if="account.product.name != 'IVPN Tier 1'"
                             >*</sup>
                         </div>
                     </div>
@@ -47,28 +47,28 @@
 
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Pro'"
+                :current="account.product.name == 'IVPN Tier 3'"
                 :inProgress="inProgress"
-                @selected="selected('IVPN Pro')"
+                @selected="selected('IVPN Tier 3')"
             >
-                <div class="price-header">IVPN Pro</div>
+                <div class="price-header">{{ $t('pricing.tier3') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.proDevices') }}</li>
+                        <li>{{ $t('pricing.tier2Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
                     <div class="active-until">
-                        <div class="label" v-if="account.product.name == 'IVPN Pro'">{{ $t('account.activeUntil') }}</div>
+                        <div class="label" v-if="account.product.name == 'IVPN Tier 3'">{{ $t('account.activeUntil') }}</div>
                         <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
 
                         <div class="value">
                             {{ proActiveUntil }}
                             <sup
-                                v-if="account.product.name != 'IVPN Pro'"
+                                v-if="account.product.name != 'IVPN Tier 3'"
                             >*</sup>
                         </div>
                     </div>

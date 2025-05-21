@@ -3,11 +3,19 @@
         <div class="billing-section">
             <div class="billing-options">
                 <div class="plan-details" v-if="account.is_new">
-                    <div class="plan-name">{{ account.product.name }}</div>
+                    <div class="plan-name">{{ $t('account.selectedPlan') }}: {{ account.product.name }}</div>
                     <div class="plan-change">
                         <router-link :to="{ name: 'prices-' + this.language }"
                             >{{ $t('account.changePlan') }}</router-link
                         >
+                    </div>
+                </div>
+                <div class="plan-details" v-if="account.is_new">
+                    <div class="plan-name">
+                        {{ $t('account.included') }}: [VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]
+                        [ResistDNS <span v-if="account.product.capabilities.has_resist_dns">&#10003;</span><span v-else>&#10007;</span>]
+                        [MailX <span v-if="account.product.capabilities.has_mailx">&#10003;</span><span v-else>&#10007;</span>]
+                        [SPN <span v-if="account.product.capabilities.has_spn">&#10003;</span><span v-else>&#10007;</span>]
                     </div>
                 </div>
 
@@ -144,7 +152,6 @@ export default {
 }
 
 .billing-options {
-    max-width: 320px;
     display: flex;
     flex-direction: column;
 
@@ -169,6 +176,7 @@ export default {
 
         .plan-change {
             font-size: 16px;
+            margin: 4px 5px 5px 15px;
         }
     }
 }
