@@ -16,7 +16,7 @@
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.tier1Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
@@ -33,7 +33,7 @@
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.standardDevices') }}</li>
+                        <li>{{ $t('pricing.tier2Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
                         <li>{{ $t('pricing.resistdns') }}</li>
@@ -52,7 +52,7 @@
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.proDevices') }}</li>
+                        <li>{{ $t('pricing.tier2Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
                         <li>{{ $t('pricing.resistdns') }}</li>
