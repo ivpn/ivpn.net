@@ -269,6 +269,22 @@ const routes = [
         }
     },
     {
+        path: '/en/account/compare-product',
+        name: 'compare-product-en',
+        component: ChangeProductView,
+        meta: {
+            title: en.account.metaTitle.changeProduct,
+        }
+    },
+    {
+        path: '/es/account/compare-product',
+        name: 'compare-product-es',
+        component: ChangeProductView,
+        meta: {
+            title: es.account.metaTitle.changeProduct,
+        }
+    },
+    {
         path: '/account/payment/btc/thank-you',
         name: 'btc-thank-you',
         component: ThankYouBTCView,

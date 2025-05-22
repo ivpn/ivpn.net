@@ -1,5 +1,6 @@
 <template>
     <div class="apps-block">
+        <label>{{ $t('account.ivpnSetup') }}</label>
         <div class="apps-buttons">
             <a :href="this.language + /apps-windows/">
                 <icon-windows />Windows
@@ -25,6 +26,9 @@
             <a href="/setup/nas/">
                 <icon-nas />NAS
             </a>
+        </div>
+        <div class="apps-footer">
+            <label>{{ $t('account.configureWireguard') }} <a href="wireguard">{{ $t('account.configureWireguardLink') }}</a></label>
         </div>
     </div>
 </template>
@@ -100,5 +104,10 @@ h3.devices {
             }
         }
     }
+}
+.apps-footer{
+    opacity: 0.7;
+    margin: 10px 20px;
+    line-height: 28px; 
 }
 </style>
