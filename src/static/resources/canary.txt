@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-05-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 894987
-hash: 0000000000000000000013904b96dd6ea8433e01014c0e0d00988c7f005e8a88
+height: 899609
+hash: 00000000000000000000420c73abf8520d11a195e81ae797dba2b410ccf3ae05
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Transcript: Swamp Notes — The conservative view on tariffs now
-Marc Filippino talks to Oren Cass and Edward Luce
+KKR drops of out of Thames Water rescue deal
+Move throws future of Britain’s largest water utility into doubt
 
-Inside the Large Hadron Collider for smashing bugs
-A cutting edge machine has transformed the study of insects, which may yield even bigger breakthroughs for humans
+The Bank of England’s bond sales might finally become a hot topic. Does the OBR care?
+Call of QT: Bank ops
 
-Jane Gardam, novelist, 1928-2025
-The prizewinning witty chronicler of middle-class life claimed writing was her ‘salvation’
+A warning from US factories
+And QE by bank
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmgVo7IACgkQisFrnrZH
-umll9wgAjbX6r7w95CCv598v26sJAIBRsphUvhl3LwCIJFdywgieXQiFHrjHajUX
-22H5xDyJzALTBnA2pXG4mhcB72yapAsGDarxt0lzzE4LERtNBCZC0tRbqpTGtUkY
-NVFG03J91lYH/U+wYonEwkOEvTIDbvqxyzlqEvQ8HEbJJkFnXuVWDUyXljExISo6
-9SJ4wFzEOnU4qVSSewOEyMxZIYzOerCNanGgH4C3Qs+yhLSteXfcBcnDw0NkUs0v
-FSjoBaAB5iqeP/1exMVYBcsn2U87oX/J2wA9IiyS93mw7aVTInBFVilz3QaV320x
-OZNzmMYzRmESCE/XNJA2K3hV4leJug==
-=Rs2x
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmg+llwACgkQisFrnrZH
+umlHOwf+Iy7X08++MhnFHtsbfejsFHdKEkpvydKv6IuXGLpFW/7cynf2+BccGIjj
+wqS39uBZ6yU/mKblgr0fd+vsR8RNSxYLr+JSq/MNJxmbYGSbko2Sk2unfXzIvgRe
+0Yq+MIfDXNelkMaef5o6B3C3pRjbpNPzgrRIODjhkF6Zl+/JCePK9zJiHkrjEbz2
+pqNgZOJ+W222OxugwDgOUPTrbvk6l+/TKAaImikxO9m7biM8LWihRy95urGPZEOB
+pzmz6/xabI8aJJhOI3BmPylQiN2zoPSQLEUbz41IMAvEFRNu2mwK6+uDnj+z5qa/
+JgwFRuId6X82ZESgVBwcZWEa8z3PMQ==
+=dSjW
 -----END PGP SIGNATURE-----
 
 
