@@ -56,10 +56,10 @@
                     v-if="type === 'disable-device-management'"
                     :data="data"
                 ></disable-device-management>
-                <change-product
-                    v-if="type === 'change-product'"
+                <upgrade-product
+                    v-if="type === 'upgrade-product'"
                     :data="data"
-                ></change-product>
+                ></upgrade-product>
             </div>
             <div style='flex-grow:1' @click.self="close"></div>
         </div>

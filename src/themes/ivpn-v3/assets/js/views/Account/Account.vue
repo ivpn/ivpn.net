@@ -50,9 +50,9 @@
                                 <span v-if="account.product.capabilities.has_spn">[SPN &#10003;]</span>
                             </div>
                         </div>
-                        <div class="product-action" v-if="canChange">
-                            <router-link :to="{ name: 'change-product-' + this.language }"
-                                >{{ $t('account.change') }}</router-link
+                        <div class="product-action" v-if="canUpgrade">
+                            <router-link :to="{ name: 'upgrade-product-' + this.language }"
+                                >{{ $t('account.upgrade') }}</router-link
                             >
                         </div>
                     </div>
@@ -128,7 +128,7 @@ export default {
     data() {
         return {
             isLight : false,
-            canChange: false,
+            canUpgrade: false,
             language: "en"
         };
     },
@@ -147,7 +147,8 @@ export default {
         }
         if( !this.$store.state.auth.account.is_new){
             let product= await this.calculateForProduct(this.$store.state.auth.account.product.name).then(response => response);
-            this.canChange = !product.is_locked;
+            console.log(product);
+            this.canUpgrade = product.can_upgrade;
         }
 
         if(this.$store.state.auth.account.has_custom_price){
