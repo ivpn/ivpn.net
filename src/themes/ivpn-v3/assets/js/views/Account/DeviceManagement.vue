@@ -25,6 +25,7 @@
                 <p>{{ $t('account.deviceManagementTab.disabledDesc1') }}</p>
                 <p>{{ $t('account.deviceManagementTab.disabledDesc2') }}</p>
                 <p>{{ $t('account.deviceManagementTab.disabledDesc3') }} <a href="/knowledgebase/general/device-management-faq/"> {{ $t('account.deviceManagementTab.here') }}</a>.</p>
+                <p>{{ $t('account.deviceManagementTab.disabledDesc4') }}</p>
                 <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">{{ $t('account.deviceManagementTab.enableDeviceManagement') }}</a>
             </section>
 
@@ -55,7 +56,7 @@
                 </section>
 
                 <section v-if="account.product.max_device == 2 && sessions && sessions.length > 0">
-                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + this.language + '/account/change-product'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
+                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + this.language + '/account/upgrade-product'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
                 </section>
             </section>
 

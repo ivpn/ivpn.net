@@ -221,9 +221,9 @@ export default {
         return account.account
     },
 
-    async changeProduct(newProductName) {
+    async upgradeProduct(newProductName) {
         let account = await this.Post(
-            '/web/accounts/change-product',
+            '/web/accounts/upgrade-product',
             {
                 new_product: newProductName
             }

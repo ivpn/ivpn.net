@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import PricesView from '@/views/Prices.vue'
 import OnePageCheckoutView from '@/views/OnePageCheckout.vue'
-import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
+import UpgradeProductView from '@/views/Account/UpgradeProduct/UpgradeProduct.vue'
 import AccountView from '@/views/Account/Account.vue'
 import PaymentView from '@/views/Account/Payment.vue'
 import AddFundsView from '@/views/Account/AddFunds.vue'
@@ -31,6 +31,7 @@ import InvoiceView from '@/views/Account/Invoice.vue'
 import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
 import DeviceManagementView from '@/views/Account/DeviceManagement.vue'
+import CompareProductView from '@/views/Account/CompareProduct.vue'
 
 import InternalErrorView from '../views/500.vue'
 
@@ -245,33 +246,33 @@ const routes = [
         },
     },
     {
-        path: '/account/change-product',
-        name: 'change-product',
-        component: ChangeProductView,
+        path: '/account/upgrade-product',
+        name: 'upgrade-product',
+        component: UpgradeProductView,
         meta: {
-            title: en.account.metaTitle.changeProduct,
+            title: en.account.metaTitle.upgradeProduct,
         }
     },
     {
-        path: '/en/account/change-product',
-        name: 'change-product-en',
-        component: ChangeProductView,
+        path: '/en/account/upgrade-product',
+        name: 'upgrade-product-en',
+        component: UpgradeProductView,
         meta: {
-            title: en.account.metaTitle.changeProduct,
+            title: en.account.metaTitle.upgradeProduct,
         }
     },
     {
-        path: '/es/account/change-product',
-        name: 'change-product-es',
-        component: ChangeProductView,
+        path: '/es/account/upgrade-product',
+        name: 'upgrade-product-es',
+        component: UpgradeProductView,
         meta: {
-            title: es.account.metaTitle.changeProduct,
+            title: es.account.metaTitle.upgradeProduct,
         }
     },
     {
         path: '/en/account/compare-product',
         name: 'compare-product-en',
-        component: ChangeProductView,
+        component: CompareProductView,
         meta: {
             title: en.account.metaTitle.changeProduct,
         }
@@ -279,7 +280,7 @@ const routes = [
     {
         path: '/es/account/compare-product',
         name: 'compare-product-es',
-        component: ChangeProductView,
+        component: CompareProductView,
         meta: {
             title: es.account.metaTitle.changeProduct,
         }
@@ -672,14 +673,6 @@ const routes = [
             }
         ],
         
-    },
-    {
-        path: '/account/change-product',
-        name: 'account-change-product',
-        component: ChangeProductView,
-        meta: {
-            title: en.account.metaTitle.changeProduct,
-        }
     },
     {
         path: '/account/wireguard',
