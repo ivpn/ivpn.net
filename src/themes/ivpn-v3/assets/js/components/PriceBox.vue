@@ -11,12 +11,11 @@
                     {{ price.name }}
                 </label>
                 
-                <span class="discount" v-if="price.ref">
-                        ${{ price.ref }}</span
-                    >
+                
                 <div class="price">
                     
                     {{ "$" + price.price }}
+                     <sup v-if="isChange">*</sup>
                 </div>
             </div>
         </div>
@@ -42,7 +41,7 @@ import Spinner from "@/components/ProgressSpinner.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["prices", "onselect", "disabled", "current", "inProgress"],
+    props: ["prices", "onselect", "disabled", "current", "inProgress","isChange"],
     components: { Spinner },
     model: {
         event: "change",
@@ -177,6 +176,10 @@ label {
         @include dark-theme((
             color: $white
         ));
+
+        sup {
+            color: $red;
+        }
     }
 }
 </style>

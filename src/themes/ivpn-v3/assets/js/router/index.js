@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import PricesView from '@/views/Prices.vue'
 import OnePageCheckoutView from '@/views/OnePageCheckout.vue'
-import UpgradeProductView from '@/views/Account/UpgradeProduct/UpgradeProduct.vue'
+import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
 import AccountView from '@/views/Account/Account.vue'
 import PaymentView from '@/views/Account/Payment.vue'
 import AddFundsView from '@/views/Account/AddFunds.vue'
@@ -246,27 +246,27 @@ const routes = [
         },
     },
     {
-        path: '/account/upgrade-product',
-        name: 'upgrade-product',
-        component: UpgradeProductView,
+        path: '/account/change-product',
+        name: 'change-product',
+        component: ChangeProductView,
         meta: {
-            title: en.account.metaTitle.upgradeProduct,
+            title: en.account.metaTitle.changeProduct,
         }
     },
     {
-        path: '/en/account/upgrade-product',
-        name: 'upgrade-product-en',
-        component: UpgradeProductView,
+        path: '/en/account/change-product',
+        name: 'change-product-en',
+        component: ChangeProductView,
         meta: {
-            title: en.account.metaTitle.upgradeProduct,
+            title: en.account.metaTitle.changeProduct,
         }
     },
     {
-        path: '/es/account/upgrade-product',
-        name: 'upgrade-product-es',
-        component: UpgradeProductView,
+        path: '/es/account/change-product',
+        name: 'change-product-es',
+        component: ChangeProductView,
         meta: {
-            title: es.account.metaTitle.upgradeProduct,
+            title: es.account.metaTitle.changeProduct,
         }
     },
     {
