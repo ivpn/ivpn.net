@@ -51,8 +51,8 @@
                             </div>
                         </div>
                         <div class="product-action" v-if="canUpgrade">
-                            <router-link :to="{ name: 'upgrade-product-' + this.language }"
-                                >{{ $t('account.upgrade') }}</router-link
+                            <router-link :to="{ name: 'change-product-' + this.language }"
+                                >{{ $t('account.change') }}</router-link
                             >
                         </div>
                     </div>
@@ -145,10 +145,8 @@ export default {
             this.isLight = true;
             window.location = "/light";
         }
-        if( !this.$store.state.auth.account.is_new){
-            let product= await this.calculateForProduct(this.$store.state.auth.account.product.name).then(response => response);
-            console.log(product);
-            this.canUpgrade = product.can_upgrade;
+        if( !this.$store.state.auth.account.is_new && (this.$store.state.auth.account.product.name == "IVPN Tier 1" || this.$store.state.auth.account.product.name == "IVPN Tier 2")  ){
+            this.canUpgrade = true;
         }
 
         if(this.$store.state.auth.account.has_custom_price){

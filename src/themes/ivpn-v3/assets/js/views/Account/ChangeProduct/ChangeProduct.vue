@@ -14,10 +14,11 @@
         </p>
         <div class="prices">
             <price-box
+                v-if="account.product.name == 'IVPN Tier 1'"
                 :prices="{}"
                 :current="account.product.name == 'IVPN Tier 1'"
                 :inProgress="inProgress"
-                @selected="selected('IVPN Tier 1')"
+                :disabled="disabled"
             >
                 <div class="price-header">{{ $t('pricing.tier1') }}</div>
                 <div class="price-features">
@@ -25,22 +26,46 @@
                         <li>{{ $t('pricing.allProtocols') }}</li>
                         <li>{{ $t('pricing.tier1Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
                     <div class="active-until">
                         <div
                             class="label"
-                            v-if="account.product.name == 'IVPN Tier 1'"
-                        >{{ $t('account.activeUntil') }}</div>
-                        <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
-
-                        <div class="value">
-                            {{ standardActiveUntil }}
-                            <sup
-                                v-if="account.product.name != 'IVPN Tier 1'"
-                            >*</sup>
+                        >{{ $t('account.activeUntil') }}
                         </div>
+                        <div class="value">
+                            {{ $filters.formatActiveUntil(account.active_until) }}
+                       </div>
+                    </div>
+                </template>
+            </price-box>
+
+            <price-box
+                :prices='{"prices":[{"id":"u1","name":"Price","price":2.2}],"pricesEs":[{"id":"u1","name":"Precio","price":2.2}]}'
+                :current="account.product.name == 'IVPN Tier 2'"
+                :inProgress="inProgress"
+                :isChange="true"
+                @selected="selected('IVPN Tier 2')"
+            >
+                <div class="price-header">{{ $t('pricing.tier2') }}</div>
+                <div class="price-features">
+                    <ul>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.tier2Devices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.resistdns') }}</li>
+                        <li>{{ $t('pricing.mailx') }}</li>
+                    </ul>
+                </div>
+                <template v-slot:footer v-if="account.is_active">
+                    <div class="active-until">
+                        <div class="label">{{ $t('account.activeUntil') }}</div>
+                        <div class="value">
+                            {{ $filters.formatActiveUntil(account.active_until) }}
+                       </div>
                     </div>
                 </template>
             </price-box>
@@ -58,53 +83,53 @@
                         <li>{{ $t('pricing.tier2Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.resistdns') }}</li>
+                        <li>{{ $t('pricing.mailx') }}</li>
+                        <li>{{ $t('pricing.portmaster') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
                     <div class="active-until">
-                        <div class="label" v-if="account.product.name == 'IVPN Tier 3'">{{ $t('account.activeUntil') }}</div>
-                        <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
-
+                        <div class="label">{{ $t('account.activeUntil') }}</div>
                         <div class="value">
-                            {{ proActiveUntil }}
-                            <sup
-                                v-if="account.product.name != 'IVPN Tier 3'"
-                            >*</sup>
-                        </div>
+                            {{ $filters.formatActiveUntil(account.active_until) }}
+                            <sup>*</sup>
+                       </div>
                     </div>
                 </template>
             </price-box>
         </div>
         <p>
-            <sup style="color:red" v-if="account.is_active">*</sup> {{ $t('account.thisDate') }}
+            <sup style="color:red" v-if="account.is_active">*</sup> {{ $t('account.thisPrice') }}
         </p>
     </div>
 </template>
 
 <script>
-// import SignupSection from "@/components/SignupSection.vue";
 import PriceBox from "@/components/PriceBox.vue";
 import { add, differenceInMinutes } from "date-fns";
-import { th } from "date-fns/locale";
+import { th, tr } from "date-fns/locale";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
 
 export default {
     data() {
         return {
-            standardActiveUntil: null,
-            proActiveUntil: null,
-            isLocked: true,
-            language: "en"
+            language: "en",
+            isLocked: false,
         };
     },
     components: {
-        // SignupSection,
         PriceBox
     },
 
     
     async beforeMount() {
+        if( this.$store.state.auth.account.product.name == "IVPN Tier 3") {
+            this.isLocked = true;
+        }
+        
+        /*
         let standardActiveUntil = await this.calculateForProduct("IVPN Standard").then(response => response.active_until);
         let proPlan = await this.calculateForProduct("IVPN Pro").then(response => response);
         this.standardActiveUntil =this.$filters.formatActiveUntil(standardActiveUntil);
@@ -117,6 +142,7 @@ export default {
             window.location = "/" + this.language + "/account";
         }
         this.$store.dispatch("sessions/load");
+        */
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
