@@ -10,7 +10,7 @@ weight: 63
 ## Mikrotik WireGuard Setup Guide
 
 <div markdown="1" class="notice notice--warning">
-This guide was produced using RouterOS 7.15.3.<br>
+This guide was produced using RouterOS 7.19.1.<br>
 A MikroTik router with RouterOS v7 or later is required. WireGuard is not available in earlier versions.
 </div>
 
@@ -56,30 +56,37 @@ WireGuard config file generator is only available for accounts that were created
 
 1. Navigate to `Routing` - `Tables`, click `+` to create a new table. Give it any name, e.g. `WG-Table`, check the `FIB` option and `Apply` the changes.<br></br>![](/images-static/uploads/install-wireguard-mikrotik-04.png)
 
-2. In `Routing` - `Rules`, click `+` to add a new rule and fill in the following fields:
+2. Navigate to `Routing` - `Rules`, click `+` to allow communication between devices on your LAN — including access to the router itself:
 
     * Src. Address - the IP address of your local network, e.g., **10.0.0.0/24**
-    * Action - **Lookup only in table**
+    * Dst. Address - **10.0.0.0/24**
+    * Action - **lookup**
+    * Table - **main**
+
+3. In the same section, click `+` again to add a second routing rule that sends all remaining traffic through the WireGuard interface. Make sure this rule is positioned below the previous rule to ensure local traffic is handled correctly. Configure the rule with the following fields:
+
+    * Src. Address - the IP address of your local network, e.g., **10.0.0.0/24**
+    * Action - **lookup only in table**
     * Table - **WG-Table**
 
-3. Hit `Apply` and `Okay`.<br></br>![](/images-static/uploads/install-wireguard-mikrotik-05.png)
+4. Hit `Apply` and `Okay`.<br></br>![](/images-static/uploads/install-wireguard-mikrotik-05.jpeg)
 
-4. In `IP` - `Routes`, click `+` to create a new route with the following configuration:
+5. In `IP` - `Routes`, click `+` to create a new route with the following configuration:
 
     * Dst.Address - **0.0.0.0/0**
     * Gateway - **wg1**
     * Routing Table - **WG-Table**
 
-5. Hit `Apply` and `Okay`.<br></br>![](/images-static/uploads/install-wireguard-mikrotik-06.png)
+6. Hit `Apply` and `Okay`.<br></br>![](/images-static/uploads/install-wireguard-mikrotik-06.png)
 
-6. In `IP` - `Firewall` - `NAT` tab, click `+` and fill in the following:
+7. In `IP` - `Firewall` - `NAT` tab, click `+` and fill in the following:
 
     * Chain - **srcnat**
     * Src. Address - the IP address of your local network, specified in step #2 (e.g. **10.0.0.0/24**)
     * Out. Interface - **wg1**
     * Action tab Action - **Masquerade**
 
-7. Hit `Apply` and `Okay`.<br></br>![](/images-static/uploads/install-wireguard-mikrotik-07.png)
+8. Hit `Apply` and `Okay`.<br></br>![](/images-static/uploads/install-wireguard-mikrotik-07.png)
 
 ### Configuring DNS
 
