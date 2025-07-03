@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-06-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 899609
-hash: 00000000000000000000420c73abf8520d11a195e81ae797dba2b410ccf3ae05
+height: 903775
+hash: 0000000000000000000233580519b3c0c8369cbd457ebc0ff6115e6d76a8b1ab
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-KKR drops of out of Thames Water rescue deal
-Move throws future of Britain’s largest water utility into doubt
+Denmark is ‘sure’ EU will negotiate a ‘good’ US trade deal as deadline nears
+Also in this newsletter: European parliament gears up for no-confidence vote in von der Leyen
 
-The Bank of England’s bond sales might finally become a hot topic. Does the OBR care?
-Call of QT: Bank ops
+Are bigger AI models better stock pickers? Maybe, but probably not
+Complexity ain’t all that, wonks say
 
-A warning from US factories
-And QE by bank
+FTAV further reading
+Bonds; conversations; FT; Tampa pensions; crypto scams; financial repression; counting
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmg+llwACgkQisFrnrZH
-umlHOwf+Iy7X08++MhnFHtsbfejsFHdKEkpvydKv6IuXGLpFW/7cynf2+BccGIjj
-wqS39uBZ6yU/mKblgr0fd+vsR8RNSxYLr+JSq/MNJxmbYGSbko2Sk2unfXzIvgRe
-0Yq+MIfDXNelkMaef5o6B3C3pRjbpNPzgrRIODjhkF6Zl+/JCePK9zJiHkrjEbz2
-pqNgZOJ+W222OxugwDgOUPTrbvk6l+/TKAaImikxO9m7biM8LWihRy95urGPZEOB
-pzmz6/xabI8aJJhOI3BmPylQiN2zoPSQLEUbz41IMAvEFRNu2mwK6+uDnj+z5qa/
-JgwFRuId6X82ZESgVBwcZWEa8z3PMQ==
-=dSjW
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmhmFQgACgkQisFrnrZH
+ummuOwf9GmjAByY3IyGK25DpxJS4nZoNL1p9tLWGPy6p+HhhCy1LKwaqWJLJJjHu
+MJQjaBX+2ZGPGKzzrza/hAzP11HijzapXoxsOqutmmAclNnG6Uce6FlCNR9qvw+R
+73pvpY37JVRvPdU45XSBwNdbJf1Rxy4HsB6HhXwszx/hzJ1MFk0Ub3bCW778OXKA
+Jtftv2U4jbQzNjiS47xuTGYKIScqbSo3KONmahioyf3fPzGy+Vy0LPVjDMT2cWWR
+QRhOF1aWzMu4OFyLUX/+D0eG/DOB0kghlxI0gIf0/RRSp5r2P4QRtjG2x3CASpaS
+/VLgzpAScS5v4PcXsZc2P90PtjhFEg==
+=wW47
 -----END PGP SIGNATURE-----
 
 
