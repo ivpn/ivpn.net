@@ -26,4 +26,4 @@ Once you have verified all of the above, proceed to troubleshoot the connection 
 6. Try another internet connection, some types of connections are particularly problematic such as public hotspots, cellular hotspots and hotel internet connections.
 7. Try another device as there may be an issue with your local device. Our service works with many different devices, see our [setup guides](/apps/).
 
-Still can't connect? Please see [how to submit VPN diagnostic logs to IVPN](/knowledgebase/troubleshooting/how-to-submit-openvpn-diagnostic-data-to-ivpn/) so we can help you diagnose the issue.
+Still can't connect? Please see [how to submit VPN diagnostic logs to IVPN](/knowledgebase/troubleshooting/how-to-submit-vpn-diagnostic-logs-to-ivpn/) so we can help you diagnose the issue.

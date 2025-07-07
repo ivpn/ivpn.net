@@ -173,6 +173,9 @@ sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/i
 # [Fedora 41+] Agregar el repositorio IVPN
 sudo dnf config-manager addrepo --from-repofile=https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
 
+# [Fedora 42+]
+sudo dnf install iptables-legacy
+
 # Para instalar el software IVPN (CLI y UI)
 sudo dnf install ivpn-ui
 
