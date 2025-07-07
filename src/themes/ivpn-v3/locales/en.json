@@ -94,7 +94,7 @@
             "recover": "Recover Password",
             "account": "IVPN Account",
             "changeProduct": "IVPN Account - Change Product",
-            "emailService": "IVPN Account - Email Service",
+            "emailService": "IVPN Account - MailX",
             "thankYou": "IVPN Account - Thank You",
             "paymentReceived": "IVPN Account - Payment has been received",
             "invoicePayment": "IVPN Account - Invoice for payment",
@@ -162,7 +162,6 @@
         "disableRecurringDesc" : "Disabling recurring payments will remove stored payment information from our system and disable automatic renewal of the service.",
         "disableRecurringPayments": "Disable recurring payments",
         "vouchers": "Vouchers",
-        "updateEmailServiceSuccess": "Email Forwarder service has been successfully updated.",
         "popups": {
             "authentication": {
                 "title": "Authenticate using Account ID",
