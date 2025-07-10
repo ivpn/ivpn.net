@@ -1,21 +1,22 @@
 <template>
     <div>
-        <h2>MailX Beta</h2>
+        <h2>Mailx Beta</h2>
 
         <div v-if="!subIdDeletedAt && loaded">
-            <p>MailX is an e-mail aliasing service developed by IVPN. Email aliasing enables generating a new email alias for every website or service you sign up to. Email sent to aliases are forwarded to your actual email address, concealing both your main email and email provider.</p>
-            <p>MailX is currently in beta and available for registration to selected IVPN customers for free. MailX will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
-            <p>After successful registration MailX specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
+            <p>Mailx is an email aliasing service developed by IVPN that protects your real email address.</p>
+            <p>With Mailx, you can generate a unique email for every website or app you use. All messages are forwarded directly to your main inbox, while your personal email address and provider stay private.</p>
+            <p>Mailx is currently in beta and available for registration to selected IVPN customers for free. Mailx will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
+            <p>After successful registration Mailx specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
             <p v-if="subId">
-                Please follow the unique registration link below to start testing the MailX service:<br>
+                Please follow the unique registration link below to start testing Mailx:<br>
                 <a target="_blank" :href="'https://mailx.net/signup/' + subId">https://mailx.net/signup/{{ subId }}</a>
             </p>
             <p>We welcome your feedback about the service via <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>.</p>
         </div>
 
         <div v-if="subIdDeletedAt && loaded">
-            <p>You have signed up to MailX, an e-mail aliasing service developed by IVPN.</p>
-            <p>Access the MailX service dashboard <a target="_blank" href="https://mailx.net">here</a>.</p>
+            <p>You have signed up to Mailx, an e-mail aliasing service developed by IVPN.</p>
+            <p>Access the Mailx service dashboard <a target="_blank" href="https://mailx.net">here</a>.</p>
             <p>
                 Please submit your feedback, requests and any issues you encounter through one of the following channels:<br>
                 GitHub - <a target="_blank" href="https://github.com/ivpn/mailx">https://github.com/ivpn/mailx</a><br>

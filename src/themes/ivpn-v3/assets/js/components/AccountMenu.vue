@@ -19,7 +19,7 @@
                 </li>
                 <li v-if="account.product.capabilities.has_mailx" :class="{ 'is-active': isServiceEmailRoute() }">
                     <router-link :to="{ name: 'service-email-' + this.language }"
-                        >MailX Beta</router-link
+                        >Mailx Beta</router-link
                     >
                 </li>
                 <li class="expand"></li>
