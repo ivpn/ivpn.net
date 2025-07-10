@@ -298,6 +298,10 @@ export default {
         )
     },
 
+    async addEmailSubscription() {
+        return await this.Post( '/web/accounts/add-email-subscription', {})
+    },
+
     //
     // Google Authenticator TOTP
     //
