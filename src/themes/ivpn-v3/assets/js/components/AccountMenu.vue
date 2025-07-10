@@ -12,6 +12,11 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
+                <li v-if="account.product.capabilities.has_mailx" :class="{ 'is-active': isServiceEmailRoute() }">
+                    <router-link :to="{ name: 'service-email-' + this.language }"
+                        >Mailx Beta</router-link
+                    >
+                </li>
                 <li class="expand"></li>
                 <li>
                     <router-link
@@ -49,7 +54,7 @@ export default {
             return this.$route.path;
         },
         shouldDisplay() {
-            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es","vouchers-es","vouchers-en"].includes(
+            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es","vouchers-es","vouchers-en", "service-email", "service-email-en", "service-email-es"].includes(
                 this.$route.name
             );
         },
@@ -58,7 +63,7 @@ export default {
         isAccountRoute() {
             return (
                 ( this.currentRouteName.startsWith("/en/account") || this.currentRouteName.startsWith("/es/account")) &&
-                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute()
+                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute() && !this.isServiceEmailRoute()
             );
         },
         isWireGuardRoute() {
@@ -69,6 +74,9 @@ export default {
         },
         isVouchersRoute() {
             return this.currentRouteName.startsWith("/en/account/vouchers") || this.currentRouteName.startsWith("/es/account/vouchers");
+        },
+        isServiceEmailRoute() {
+            return this.currentRouteName.startsWith("/en/account/service/email") || this.currentRouteName.startsWith("/es/account/service/email");
         },
     },
 };

@@ -48,15 +48,22 @@ export default {
     },
 
     actions: {
-        async init(context) {
+        async init(context,data) {
             context.commit('resetInstance')
             context.commit('started')
             try {
-                let token = await Api.getBraintreeToken();
+                let token = await Api.getBraintreeToken(
+                    data.captchaID,
+                    data.captchaValue,
+                );
                 let braintree = await BraintreeApi.init(token);
                 context.commit('initialized', { braintree })
             } catch (error) {
-                console.error("Error initializing BrainTree", error);                
+                if( error.status == 70001 || error.status == 70002 ) {
+                    console.log("Error, captcha required");
+                } else {
+                    console.error("Error initializing BrainTree", error);  
+                }              
                 context.commit('failed', { error })
             }
         },

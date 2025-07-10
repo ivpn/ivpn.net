@@ -98,6 +98,7 @@
             "recover": "Recover Password",
             "account": "IVPN Account",
             "changeProduct": "IVPN Account - Change Product",
+            "emailService": "IVPN Account - Mailx",
             "thankYou": "IVPN Account - Thank You",
             "paymentReceived": "IVPN Account - Payment has been received",
             "invoicePayment": "IVPN Account - Invoice for payment",
