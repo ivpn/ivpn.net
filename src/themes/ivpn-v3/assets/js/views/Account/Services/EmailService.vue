@@ -8,17 +8,17 @@
             <p>After successful registration MailX specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
             <p v-if="subId">
                 Please follow the unique registration link below to start testing the MailX service:<br>
-                <a target="_blank" :href="'https://staging.mailx.net/signup/' + subId">https://staging.mailx.net/signup/{{ subId }}</a>
+                <a target="_blank" :href="'https://mailx.net/signup/' + subId">https://mailx.net/signup/{{ subId }}</a>
             </p>
             <p>We welcome your feedback about the service via <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>.</p>
         </div>
 
         <div v-if="subIdDeletedAt && loaded">
             <p>You have signed up to MailX, an e-mail aliasing service developed by IVPN.</p>
-            <p>Access the MailX service dashboard <a target="_blank" href="https://staging.mailx.net">here</a>.</p>
+            <p>Access the MailX service dashboard <a target="_blank" href="https://mailx.net">here</a>.</p>
             <p>
                 Please submit your feedback, requests and any issues you encounter through one of the following channels:<br>
-                GitHub - <a target="_blank" href="https://github.com/ivpn/email">https://github.com/ivpn/email</a><br>
+                GitHub - <a target="_blank" href="https://github.com/ivpn/mailx">https://github.com/ivpn/mailx</a><br>
                 Email - <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>
             </p>
         </div>
