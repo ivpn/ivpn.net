@@ -270,24 +270,24 @@ const routes = [
         }
     },
     {
-        path: '/account/email-service',
-        name: 'email-service',
+        path: '/account/service/email',
+        name: 'service-email',
         component: EmailService,
         meta: {
             title: en.account.metaTitle.emailService,
         }
     },
     {
-        path: '/en/account/email-service',
-        name: 'email-service-en',
+        path: '/en/account/service/email',
+        name: 'service-email-en',
         component: EmailService,
         meta: {
             title: en.account.metaTitle.emailService,
         }
     },
     {
-        path: '/es/account/email-service',
-        name: 'email-service-es',
+        path: '/es/account/service/email',
+        name: 'service-email-es',
         component: EmailService,
         meta: {
             title: es.account.metaTitle.emailService,

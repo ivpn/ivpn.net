@@ -298,14 +298,8 @@ export default {
         )
     },
 
-    async updateEmailSubscription(uuid, store) {
-        return await this.Post(
-            '/web/accounts/update-email-subscription',
-            {
-                uuid: uuid,
-                store: store
-            }
-        )
+    async addEmailSubscription() {
+        return await this.Post( '/web/accounts/add-email-subscription', {})
     },
 
     //

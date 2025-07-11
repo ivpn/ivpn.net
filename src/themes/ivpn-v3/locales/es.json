@@ -40,7 +40,7 @@
         "proDevices": "7 dispositivos",
         "multihop": "Multi-hop",
         "productFooterPrice": "Todos los precios están en dólares estadounidenses.",
-        "productFooterReview": "Consulta los precios para empresas u organizaciones sin ánimo de lucro",
+        "productFooterReview": "Consulta los precios para empresas",
         "here": "aquí",
         "featuresTitle": "Todos los planes IVPN incluyen:",
         "feature1": "Inscripción anónima - no se requiere correo electrónico",
@@ -94,7 +94,7 @@
             "recover": "Recuperar contraseña",
             "account": "Cuenta IVPN",
             "changeProduct": "Cuenta IVPN - Cambiar producto",
-            "emailService": "IVPN Account - Email Service",
+            "emailService": "Cuenta IVPN - Mailx",
             "thankYou": "Cuenta IVPN - Gracias",
             "paymentReceived": "Cuenta IVPN - Pago recibido",
             "invoicePayment": "Cuenta IVPN - factura para el pago",
@@ -162,7 +162,6 @@
         "disableRecurringDesc" : "Al desactivar los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
         "disableRecurringPayments": "Desactivar pagos recurrentes",
         "vouchers": "Cupones",
-        "updateEmailServiceSuccess": "Email service has been successfully updated.",
         "popups": {
             "authentication": {
                 "title": "Autenticar usando ID de cuenta",

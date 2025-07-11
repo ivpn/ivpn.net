@@ -284,17 +284,13 @@ export default {
             }
         },
 
-        async updateEmailSubscription(context, { uuid, store }) {
-            let error = validateUuid(uuid)
-            if (error) {
-                context.commit('failed', { error })
-                return
-            }
-
+        async addEmailSubscription(context) {
+            console.log('addEmailSubscription', context)
             context.commit('started')
             try {
-                await Api.updateEmailSubscription(uuid, store)
+                let res = await Api.addEmailSubscription()
                 context.commit('done')
+                return res
             } catch (error) {
                 context.commit('failed', { error })
             }

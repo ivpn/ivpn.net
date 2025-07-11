@@ -50,35 +50,6 @@ Precios IVPN Pro para empresas:
 
 [Envíanos un correo electrónico](mailto:team-support@ivpn.net) para adquirir cuentas IVPN de equipo para tu empresa.
 
-## IVPN para organizaciones sin ánimo de lucro
-
-Ofrecemos grandes descuentos para organizaciones sin ánimo de lucro que necesitan una VPN de confianza para sus miembros.
-
-Precios IVPN Pro para organizaciones sin ánimo de lucro:
-
-<div class="price-box">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>por usuario y al mes</th>
-<th>por usuario y al año</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Más de 5 usuarios</td>
-<td>$3</td>
-<td>$30</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-Para cumplir con los requisitos de este descuento, tu organización debe ser una organización sin ánimo de lucro verificada.
-
-[Envíanos un correo electrónico](mailto:team-support@ivpn.net) para adquirir cuentas IVPN de equipo sin ánimo de lucro.
-
 ## Beneficios de la cuenta IVPN Pro para equipos
 
 * Acceso en hasta 7 dispositivos por usuario

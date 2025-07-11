@@ -1,46 +1,29 @@
 <template>
     <div>
-        <div class="back-link">
-            <router-link :to="{name:'account-' + this.language}">
-                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
-            </router-link>
+        <h2>Mailx Beta</h2>
+
+        <div v-if="!subIdDeletedAt && loaded">
+            <p>Mailx is an email aliasing service developed by IVPN that protects your real email address.</p>
+            <p>With Mailx, you can generate a unique email for every website or app you use. All messages are forwarded directly to your main inbox, while your personal email address and provider stay private.</p>
+            <p>Mailx is currently in beta and available for registration to selected IVPN customers for free. Mailx will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
+            <p>After successful registration Mailx specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
+            <p v-if="subId">
+                Please follow the unique registration link below to start testing Mailx:<br>
+                <a target="_blank" :href="'https://mailx.net/signup/' + subId">https://mailx.net/signup/{{ subId }}</a>
+            </p>
+            <p>We welcome your feedback about the service via <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>.</p>
         </div>
-        <h1>Email Forwarder</h1>
-        <p>
-            Status:<br>
-            <div
-                class="status"
-                v-bind:class="[account.is_active ? 'active' : 'inactive']">
-                {{ account.is_active ? $t('account.active') : $t('account.inactive') }}
-            </div>
-        </p>
-        <p>Enter your Email Forwarder Subscription ID to activate/update the service.</p>
-        <p v-if="error" class="error-message">{{ error.message }}</p>
-        <p>
-            <label for="subscription_id">Subscription ID:</label>
-            <input id="subscription_id" v-model="subId" type="text" placeholder="UUID">
-        </p>
-        <div class="table-kw">
-            <div class="row row__checkbox">
-                <div class="key">
-                    <input
-                        v-model="isStored"
-                        type="checkbox"
-                        id="is_stored"
-                        style="margin-right: 12px;"
-                        checked="checked"
-                    />
-                    <label for="is_stored" style="cursor:pointer">Manage automatically</label>
-                </div>
-                <p>When selected, the Email Forwarder subscription is updated automatically. Disable to prevent storing any information from the Email Forwarder in the IVPN database.</p>
-            </div>
+
+        <div v-if="subIdDeletedAt && loaded">
+            <p>You have signed up to Mailx, an e-mail aliasing service developed by IVPN.</p>
+            <p>Access the Mailx service dashboard <a target="_blank" href="https://mailx.net">here</a>.</p>
+            <p>
+                Please submit your feedback, requests and any issues you encounter through one of the following channels:<br>
+                GitHub - <a target="_blank" href="https://github.com/ivpn/mailx">https://github.com/ivpn/mailx</a><br>
+                Email - <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>
+            </p>
         </div>
-        <p>
-            <button class="btn btn-big btn-solid" @click.prevent="submit()" :disabled="inProgress">
-                <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />
-                <span>Activate / Update</span>
-            </button>
-        </p>
+
     </div>
 </template>
 
@@ -55,9 +38,12 @@ export default {
     },
     data() {
         return {
+            loaded: false,
             language: "en",
             subId: "",
-            isStored: false,
+            subIdDeletedAt: "",
+            store: false,
+            success: "",
         };
     },
     computed: {
@@ -67,27 +53,32 @@ export default {
             inProgress: (state) => state.account.inProgress,
         }),
     },
-    mounted(){
+    async beforeMount() {
+        if (!this.account.product.capabilities.has_mailx) {
+            window.location.href = "/" + this.language + "/account/";
+            return;
+        }
+
+        await this.$store.dispatch("auth/reload");
+
+        this.subId = this.account["email_service_id"];
+        this.subIdDeletedAt = this.account["email_service_deleted_at"];
+        this.loaded = true;
+
+        if (!this.subIdDeletedAt) {
+            this.add();
+        }
+    },
+    mounted() {
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
     },
     methods: {
-        async submit() {
-            await this.$store.dispatch("account/updateEmailSubscription", {
-                uuid: this.subId,
-                store: this.isStored,
-            });
-
-            if (this.error) {
-                return;
+        async add() {
+            let res = await this.$store.dispatch("account/addEmailSubscription");
+            if (res && !this.subId) {
+                this.subId = res.id;
             }
-
-            this.$store.commit("setFlashMessage", {
-                type: "success",
-                message: this.$t('account.updateEmailServiceSuccess')
-            });
-
-            this.$router.push({ name: "account-" + this.language });
         },
     },
 };
@@ -123,6 +114,14 @@ export default {
             background: rgba(255, 255, 255, 0.5),
             color: #29292E
         ));
+    }
+}
+
+.table-kw {
+    
+    .row {
+        padding: 10px 0!important;
+        margin-bottom: 24px;
     }
 }
 </style>
