@@ -91,6 +91,6 @@ IVPN Staff
 [2]: https://github.com/ivpn/mailx
 [3]: https://cure53.de/
 [4]: NEEDS_LINK
-[5]: https://www.ivpn.net/account/]
+[5]: https://www.ivpn.net/account/
 
 
