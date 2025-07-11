@@ -11,9 +11,9 @@ weight: 10
 ---
 # I forgot my IVPN Account ID. What should I do?
 
-The IVPN Account ID looks with `i-XXXX-XXXX-XXXX` or `ivpnXXXXXXXX`.
+The IVPN Account ID looks like `i-XXXX-XXXX-XXXX` or `ivpnXXXXXXXX`.
 
-To locate the IVPN Account ID in the original, `ivpnXXXXXXXX` format, log into the [Client Area](/account/) with your email address and your current password.
+To locate the IVPN Account ID in the original `ivpnXXXXXXXX` format, log into the [Client Area](/account/login#email) with your email address and your current password.
 
 Your IVPN Account ID can also be found in the **Settings > Account** area in the IVPN App for all platforms.  Click or tap the **Account** icon (minimalist head-with-shoulders button on the app's main screen) to access the Account screen.
 
