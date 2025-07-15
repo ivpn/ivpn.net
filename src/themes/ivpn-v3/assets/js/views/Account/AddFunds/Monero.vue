@@ -32,6 +32,11 @@
                             {{ recentPayment.product }},  {{ $t('account.payments.monero.extendedUntil') }}
                             {{ $filters.formatActiveUntil(recentPayment.applied_to) }}
                         </div>
+                        <div class="back-link">
+                            <router-link :to="{ name: 'account-' + this.language }">
+                                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
+                            </router-link>
+                        </div>
                     </div>
                     <div v-else>
                         <p class="highlight">
@@ -75,6 +80,7 @@ export default {
             address: "",
             qrCode: "",
             recentPayment: null,
+            language : "en",
         };
     },
     components: {
@@ -87,6 +93,7 @@ export default {
         }),
     },
     async created() {
+    
         let resp = await this.$store.dispatch(
             "payments/getMoneroPaymentDetails",
             {
@@ -108,6 +115,7 @@ export default {
     async mounted() {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
         this.refreshTimer = setInterval(this.updateLastPayment, 10000);
         await this.updateLastPayment();

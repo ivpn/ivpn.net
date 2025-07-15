@@ -112,7 +112,7 @@ export default {
             this.price == null ||
             !this.account.product.prices.includes(this.price)
         ) {
-            this.price = this.account.product.prices[2];
+            this.price = this.account.product.prices[1];
         }
     },
     mounted() {
@@ -200,6 +200,7 @@ export default {
     @media (max-width: $brk-mobile) {
         display:block;
         width: 100%;
+        line-height: 25px;;
     }
 }
         
