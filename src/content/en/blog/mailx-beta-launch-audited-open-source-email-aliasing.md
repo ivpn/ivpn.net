@@ -90,7 +90,7 @@ IVPN Staff
 [1]: https://www.ivpn.net/blog/ivpn-year-in-review-plans-for-2025/
 [2]: https://github.com/ivpn/mailx
 [3]: https://cure53.de/
-[4]: NEEDS_LINK
+[4]: /resources/IVP-07-report.pdf
 [5]: https://www.ivpn.net/account/
 
 
