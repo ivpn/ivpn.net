@@ -16,7 +16,7 @@ thumbnailImage: /images-static/uploads/mailx_thumb.png
 ---
 ## In short
 
-Today we are launching Mailx, an email aliasing and forwarding service built and operated by the IVPN Team. Mailx is in closed beta, first available free to IVPN Pro customers with at least one year of remaining time on their account, with new invite rounds to follow. To get started, log in to your IVPN account and navigate to the "Email beta" tab. Source code and results of the first security audit of the service are now available. Details below.
+Today we are launching Mailx, an email aliasing and forwarding service built and operated by the IVPN Team. Mailx is in closed beta, first available free to IVPN Pro customers with at least one year of remaining time on their account, with new invite rounds to follow. To get started, log in to your IVPN account and navigate to the "Mailx beta" tab. Source code and results of the first security audit of the service are now available. Details below.
 
 ## About Mailx
 
