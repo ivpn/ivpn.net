@@ -72,8 +72,8 @@
         "twoYears": "2 Years",
         "threeYears": "3 Years",
         "select": "Select",
-        "resistdns": "ResistDNS",
-        "mailx": "MailX",
+        "dns": "ModDNS",
+        "mailx": "Mailx",
         "portmaster": "Portmaster/SPN"
     },
     "login": {

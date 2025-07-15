@@ -30,7 +30,7 @@
                         <li>{{ $t('pricing.tier2Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
-                        <li>{{ $t('pricing.resistdns') }}</li>
+                        <li>{{ $t('pricing.dns') }}</li>
                         <li>{{ $t('pricing.mailx') }}</li>
                     </ul>
                 </div>
@@ -46,7 +46,7 @@
                         <li>{{ $t('pricing.tier2Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
-                        <li>{{ $t('pricing.resistdns') }}</li>
+                        <li>{{ $t('pricing.dns') }}</li>
                         <li>{{ $t('pricing.mailx') }}</li>
                         <li>{{ $t('pricing.portmaster') }}</li>
 

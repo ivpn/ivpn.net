@@ -3,7 +3,7 @@
         <div class="billing-section">
             <div class="billing-options">
                 <div class="plan-details" v-if="account.is_new">
-                    <div class="plan-name">{{ $t('account.selectedPlan') }}: {{ account.product.name }}</div>
+                    <div class="plan-name"><span class="row">{{ $t('account.selectedPlan') }}:</span>{{ account.product.name }}</div>
                     <div class="plan-change">
                         <router-link :to="{ name: 'prices-' + this.language }"
                             >{{ $t('account.changePlan') }}</router-link
@@ -12,10 +12,11 @@
                 </div>
                 <div class="plan-details" v-if="account.is_new">
                     <div class="plan-name">
-                        {{ $t('account.included') }}: [VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]
-                        [ResistDNS <span v-if="account.product.capabilities.has_resist_dns">&#10003;</span><span v-else>&#10007;</span>]
-                        [MailX <span v-if="account.product.capabilities.has_mailx">&#10003;</span><span v-else>&#10007;</span>]
-                        [SPN <span v-if="account.product.capabilities.has_spn">&#10003;</span><span v-else>&#10007;</span>]
+                        <span class="row">{{ $t('account.included') }}: </span>
+                        <span class="row">[VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]</span>
+                        <span class="row">[ModDNS <span v-if="account.product.capabilities.has_resist_dns">&#10003;</span><span v-else>&#10007;</span>]</span>
+                        <span class="row">[Mailx <span v-if="account.product.capabilities.has_mailx">&#10003;</span><span v-else>&#10007;</span>]</span>
+                        <span class="row">[SPN <span v-if="account.product.capabilities.has_spn">&#10003;</span><span v-else>&#10007;</span>]</span>
                     </div>
                 </div>
 
@@ -171,7 +172,6 @@ export default {
             font-weight: bold;
             font-size: 18px;
             line-height: 120%;
-            flex-grow: 1;
         }
 
         .plan-change {
@@ -195,4 +195,12 @@ export default {
     margin-top: 2em;
     text-align: right;
 }
+
+.plan-name .row{
+    @media (max-width: $brk-mobile) {
+        display:block;
+        width: 100%;
+    }
+}
+        
 </style>

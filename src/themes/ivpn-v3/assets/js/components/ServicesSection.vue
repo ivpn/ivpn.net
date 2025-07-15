@@ -11,7 +11,7 @@
                 <div class="service">
                     <span class="service-line"><label class="value">ResisDNS</label><span class="service-description">/ Dns filtering/ Available for all platforms</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">Setup ResistDNS</a>
+                    <a href="#">Setup modDNS</a>
                 </div>
                 <div class="service">
                     <span class="service-line"><label class="value">Portmaster</label><span class="service-description">/ Network firewall/ Available for Windows and Linux</span></span>
