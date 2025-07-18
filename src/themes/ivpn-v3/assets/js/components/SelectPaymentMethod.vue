@@ -14,9 +14,9 @@
                     <div class="plan-name">
                         <span class="row">{{ $t('account.included') }}: </span>
                         <span class="row">[VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]</span>
-                        <span class="row">[ModDNS <span v-if="account.product.capabilities.has_resist_dns">&#10003;</span><span v-else>&#10007;</span>]</span>
-                        <span class="row">[Mailx <span v-if="account.product.capabilities.has_mailx">&#10003;</span><span v-else>&#10007;</span>]</span>
-                        <span class="row">[SPN <span v-if="account.product.capabilities.has_spn">&#10003;</span><span v-else>&#10007;</span>]</span>
+                        <span class="row">[{{ $t('pricing.dns') }} <span v-if="account.product.capabilities.has_resist_dns">&#10003;</span><span v-else>&#10007;</span>]</span>
+                        <span class="row">[{{ $t('pricing.mailx') }} <span v-if="account.product.capabilities.has_mailx">&#10003;</span><span v-else>&#10007;</span>]</span>
+                        <span class="row">[{{ $t('pricing.portmaster') }} <span v-if="account.product.capabilities.has_spn">&#10003;</span><span v-else>&#10007;</span>]</span>
                     </div>
                 </div>
 

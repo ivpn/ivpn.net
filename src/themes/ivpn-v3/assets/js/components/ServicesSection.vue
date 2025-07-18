@@ -4,19 +4,19 @@
         <div class="services">
             <div class="services-info">
                 <div class="service">
-                    <span class="service-line"><label class="value">MailX</label><span class="service-description">/ Email forwarding/ Available for all platforms</span></span>
+                    <span class="service-line"><label class="value">{{ $t('pricing.mailx') }}</label><span class="service-description">/ Email forwarding/ Available for all platforms</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">Access MailX</a>
+                    <a href="#">{{ $t('pricing.mailx') }}</a>
                 </div>
                 <div class="service">
-                    <span class="service-line"><label class="value">ResisDNS</label><span class="service-description">/ Dns filtering/ Available for all platforms</span></span>
+                    <span class="service-line"><label class="value">{{ $t('pricing.dns') }}</label><span class="service-description">/ Dns filtering/ Available for all platforms</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">Setup modDNS</a>
+                    <a href="#">Setup {{ $t('pricing.dns') }}</a>
                 </div>
                 <div class="service">
-                    <span class="service-line"><label class="value">Portmaster</label><span class="service-description">/ Network firewall/ Available for Windows and Linux</span></span>
+                    <span class="service-line"><label class="value">{{ $t('pricing.portmaster') }}</label><span class="service-description">/ Network firewall/ Available for Windows and Linux</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">Access Portmaster</a>
+                    <a href="#">Access {{ $t('pricing.portmasters') }}</a>
                 </div>
             </div>
         </div>

@@ -12,11 +12,6 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
-                <li v-if="account.product.capabilities.has_mailx" :class="{ 'is-active': isServiceEmailRoute() }">
-                    <router-link :to="{ name: 'service-email-' + this.language }"
-                        >Mailx Beta</router-link
-                    >
-                </li>
                 <li class="expand"></li>
                 <li>
                     <router-link

@@ -45,9 +45,9 @@
                             <div class="value">{{ account.product.name }}</div>
                             <div class="product-details">
                                 {{ $t('account.included') }}: [VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]
-                                <span v-if="account.product.capabilities.has_resist_dns">[ModDNS &#10003;]</span>
-                                <span v-if="account.product.capabilities.has_mailx">[MailX &#10003;]</span>
-                                <span v-if="account.product.capabilities.has_spn">[SPN &#10003;]</span>
+                                <span v-if="account.product.capabilities.has_resist_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
+                                <span v-if="account.product.capabilities.has_mailx">[{{ $t('pricing.mailx') }} &#10003;]</span>
+                                <span v-if="account.product.capabilities.has_spn">[{{ $t('pricing.portmaster') }} &#10003;]</span>
                             </div>
                         </div>
                         <div class="product-action" v-if="canUpgrade">
