@@ -12,7 +12,6 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
-                <li class="expand"></li>
                 <li>
                     <router-link
                         class="settings"
