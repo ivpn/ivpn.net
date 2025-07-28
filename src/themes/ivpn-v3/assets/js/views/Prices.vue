@@ -78,6 +78,7 @@
                 <li>{{ $t('pricing.feature7') }}</li>
                 <li>{{ $t('pricing.feature8') }}</li>
                 <li>{{ $t('pricing.feature9') }}</li>
+                <li>{{ $t('pricing.feature10') }}</li>
             </ul>
             <br>
             <h2>{{ $t('pricing.paymentMethodsTitle') }}</h2>
