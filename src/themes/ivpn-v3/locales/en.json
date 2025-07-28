@@ -31,7 +31,7 @@
             "title": "IVPN Pricing - VPN subscription with anonymous registration"
         },
         "title": "Select IVPN Plan",
-        "description": "Select a plan to create your account instantly. You can switch between IVPN Tier 1, IVPN Tier 2 and IVPN Tier 3 any time in the future.",
+        "description": "Select a plan to create your account instantly. You can switch between IVPN Standard, IVPN Plus and IVPN Pro Suite any time in the future.",
         "tier1": "IVPN Standard",
         "tier2": "IVPN Plus",
         "tier3": "IVPN Pro Suite",
