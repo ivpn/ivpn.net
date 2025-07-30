@@ -42,7 +42,7 @@
                     <div class="product">
                         <div class="product-info">
                             <label>{{ $t('account.product') }}</label>
-                            <div class="value">{{ account.product.name }}</div>
+                            <div class="value" >{{ productName }}</div>
                             <div class="product-details">
                                 {{ $t('account.included') }}: [VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]
                                 <span class="row" v-if="account.product.capabilities.has_resist_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
@@ -129,7 +129,8 @@ export default {
         return {
             isLight : false,
             canUpgrade: false,
-            language: "en"
+            language: "en",
+            productName: "",
         };
     },
 
@@ -152,6 +153,21 @@ export default {
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
+        console.log("product name: ", this.$store.state.auth.account.product.name);
+        switch(this.$store.state.auth.account.product.name){
+            case "IVPN Tier 1":
+                this.productName = this.$t('pricing.tier1');
+                break;
+            case "IVPN Tier 2":
+                this.productName = this.$t('pricing.tier2');
+                break;
+            case "IVPN Tier 3":
+                this.productName = this.$t('pricing.tier3');
+                break;
+            default:
+                this.productName = this.$store.state.auth.account.product.name;
+        }
+        console.log("product name: ", this.productName);
     },
 
     methods:{
