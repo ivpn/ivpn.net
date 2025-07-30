@@ -116,11 +116,7 @@ export default {
             this.price = this.account.product.prices[1];
         }
     },
-    mounted() {
-        if ( window.location.href.split("/")[3] == "es") {
-            useI18n().locale.value = "es";
-            this.language = "es";
-        }
+    beforeMount(){
          switch(this.$store.state.auth.account.product.name){
             case "IVPN Tier 1":
                 this.productName = this.$t('pricing.tier1');
@@ -133,6 +129,12 @@ export default {
                 break;
             default:
                 this.productName = this.$store.state.auth.account.product.name;
+        }
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] == "es") {
+            useI18n().locale.value = "es";
+            this.language = "es";
         }
     },
     watch: {
