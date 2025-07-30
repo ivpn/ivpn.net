@@ -3,7 +3,7 @@
         <div class="billing-section">
             <div class="billing-options">
                 <div class="plan-details" v-if="account.is_new">
-                    <div class="plan-name"><span class="row">{{ $t('account.selectedPlan') }}:</span>{{ account.product.name }}</div>
+                    <div class="plan-name"><span class="row">{{ $t('account.selectedPlan') }}:</span>{{ productName }}</div>
                     <div class="plan-change">
                         <router-link :to="{ name: 'prices-' + this.language }"
                             >{{ $t('account.changePlan') }}</router-link
@@ -102,7 +102,8 @@ export default {
         return {
             price: "",
             more: false,
-            language: "en"
+            language: "en",
+            productName: this.$store.state.auth.account.product.name,
         };
     },
     created() {
@@ -119,6 +120,19 @@ export default {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
             this.language = "es";
+        }
+         switch(this.$store.state.auth.account.product.name){
+            case "IVPN Tier 1":
+                this.productName = this.$t('pricing.tier1');
+                break;
+            case "IVPN Tier 2":
+                this.productName = this.$t('pricing.tier2');
+                break;
+            case "IVPN Tier 3":
+                this.productName = this.$t('pricing.tier3');
+                break;
+            default:
+                this.productName = this.$store.state.auth.account.product.name;
         }
     },
     watch: {
