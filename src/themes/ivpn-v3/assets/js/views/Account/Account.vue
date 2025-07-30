@@ -153,7 +153,6 @@ export default {
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
-        console.log("product name: ", this.$store.state.auth.account.product.name);
         switch(this.$store.state.auth.account.product.name){
             case "IVPN Tier 1":
                 this.productName = this.$t('pricing.tier1');
@@ -167,7 +166,6 @@ export default {
             default:
                 this.productName = this.$store.state.auth.account.product.name;
         }
-        console.log("product name: ", this.productName);
     },
 
     methods:{
