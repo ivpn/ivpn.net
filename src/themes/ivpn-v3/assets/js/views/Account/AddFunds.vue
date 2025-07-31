@@ -10,7 +10,7 @@
         </div>
         <h1>{{ title }}</h1>
         <ul class="payment-details" v-if="$route.name != 'add-funds-voucher-' + this.language">
-            <li>{{ account.product.name }}</li>
+            <li>{{ productName }}</li>
             <li>{{ price.name }}</li>
             <li>${{ price.price }}</li>
         </ul>
@@ -33,7 +33,8 @@ export default {
             price: null,
             title: String,
             isLight : false,
-            language: "en"
+            language: "en",
+            productName: this.$store.state.auth.account.product.name,
         };
     },
     created() {
@@ -79,6 +80,20 @@ export default {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
             this.language = "es";
+        }
+
+        switch(this.$store.state.auth.account.product.name){
+            case "IVPN Tier 1":
+                this.productName = this.$t('pricing.tier1');
+                break;
+            case "IVPN Tier 2":
+                this.productName = this.$t('pricing.tier2');
+                break;
+            case "IVPN Tier 3":
+                this.productName = this.$t('pricing.tier3');
+                break;
+            default:
+                this.productName = this.$store.state.auth.account.product.name;
         }
     }
 };
