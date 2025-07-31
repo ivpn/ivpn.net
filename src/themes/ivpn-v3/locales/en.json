@@ -524,5 +524,9 @@
         "enterValidIp": "Please enter a valid IPv4 address.",
         "step3Title": "3. Download",
         "downloadZip": "Download zip archive"
+    },
+    "compare": {
+        "title": "Compare",
+        "description": "Compare different IVPN plans and features."
     }
 }
