@@ -525,5 +525,9 @@
         "enterValidIp": "Por favor, introduce una dirección IPv4 válida.",
         "step3Title": "3. Descargar",
         "downloadZip": "Descargar archivo zip"
+    },
+    "compare": {
+        "title": "Compara",
+        "description": "Compara diferentes planes y características de IVPN."
     }
 }

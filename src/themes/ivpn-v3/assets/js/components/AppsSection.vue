@@ -28,7 +28,7 @@
             </a>
         </div>
         <div class="apps-footer">
-            <label>{{ $t('account.configureWireguard') }} <a href="wireguard">{{ $t('account.configureWireguardLink') }}</a></label>
+            <label>{{ $t('account.configureWireguard') }} <a href="account/wireguard">{{ $t('account.configureWireguardLink') }}</a></label>
         </div>
     </div>
 </template>
