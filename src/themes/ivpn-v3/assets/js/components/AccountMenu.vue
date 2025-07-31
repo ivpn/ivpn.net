@@ -4,7 +4,7 @@
             <ul>
                 <li :class="{ 'is-active': isAccountRoute() }">
                     <router-link :to="{ name: 'account-' + this.language }"
-                        >{{ $t('account.ivpnAccount') }}</router-link
+                        >{{ $t('account.services') }}</router-link
                     >
                 </li>
                 <li :class="{ 'is-active': isDeviceManagementRoute() }">
