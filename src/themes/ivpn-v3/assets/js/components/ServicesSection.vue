@@ -16,7 +16,7 @@
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('pricing.portmaster') }}</label><span class="service-description">/ Network firewall/ Available for Windows and Linux</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">Access {{ $t('pricing.portmasters') }}</a>
+                    <a href="#">Access {{ $t('pricing.portmaster') }}</a>
                 </div>
             </div>
         </div>
