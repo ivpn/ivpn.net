@@ -1,4 +1,4 @@
-FROM nginx:1.18 AS builder
+FROM nginx:1.20 AS builder
 
 ARG ENV=production
 ARG BASE_URL=http://localhost:8010
