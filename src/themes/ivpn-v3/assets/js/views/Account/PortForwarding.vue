@@ -24,7 +24,7 @@
                     <h2>Port forwarding is not available</h2>
                     <p>
                         Your current plan
-                        <b>{{ account.product.name }}</b> doesn't have port
+                        <b>{{ productName }}</b> doesn't have port
                         forwarding support. To use port forwarding, please
                         upgrade your account to IVPN Pro.
                     </p>
@@ -104,13 +104,27 @@ import Spinner from "@/components/ProgressSpinner.vue";
 export default {
     mounted() {
         this.$store.dispatch("portForwarding/load");
+        switch(this.$store.state.auth.account.product.name){
+            case "IVPN Tier 1":
+                this.productName = this.$t('pricing.tier1');
+                break;
+            case "IVPN Tier 2":
+                this.productName = this.$t('pricing.tier2');
+                break;
+            case "IVPN Tier 3":
+                this.productName = this.$t('pricing.tier3');
+                break;
+            default:
+                this.productName = this.$store.state.auth.account.product.name;
+        }
     },
     components: {
         Spinner,
     },
     data() {
         return {
-            isLight : false
+            isLight : false,
+            productName: this.$store.state.auth.account.product.name,
         };
     },
     computed: {
