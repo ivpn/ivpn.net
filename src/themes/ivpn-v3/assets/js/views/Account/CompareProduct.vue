@@ -23,7 +23,7 @@
             <compare-box
                 :prices="products.tier2"
             >
-                <div class="price-header">{{ $t('pricing.tier2') }}</div>
+                <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
@@ -39,7 +39,7 @@
             <compare-box
                 :prices="products.tier3"
             >
-                <div class="price-header">{{ $t('pricing.tier3') }}</div>
+                <div class="price-header">{{ $t('.name') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>

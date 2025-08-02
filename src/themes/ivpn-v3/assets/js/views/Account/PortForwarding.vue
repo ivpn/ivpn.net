@@ -106,13 +106,13 @@ export default {
         this.$store.dispatch("portForwarding/load");
         switch(this.$store.state.auth.account.product.name){
             case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1');
+                this.productName = this.$t('pricing.tier1.name');
                 break;
             case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2');
+                this.productName = this.$t('pricing.tier2.name');
                 break;
             case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3');
+                this.productName = this.$t('pricing.tier3.name');
                 break;
             default:
                 this.productName = this.$store.state.auth.account.product.name;

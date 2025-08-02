@@ -76,8 +76,7 @@ label {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(51, 77, 102, 0.2);
-    padding: 32px;
-    margin: 24px 48px 0px 0px;
+    margin: 24px 28px 0px 0px;
     min-width: 280px;
     max-width: 350px;
     &.current {

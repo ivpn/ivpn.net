@@ -6,20 +6,37 @@
         </p>
 
         <div class="prices">
+            <div class="price-sidebar">
+                <p>{{ $t('pricing.sidebar.feature1') }}</p>
+                <p>{{ $t('pricing.sidebar.feature2') }}</p>
+                <p>{{ $t('pricing.sidebar.feature3') }}</p>
+                <p>{{ $t('pricing.sidebar.feature4') }}</p>
+            </div>
             <price-box
                 :prices="products.tier1"
                 @selected="selected('IVPN Tier 1')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'tier1'"
+                :buttonText="$t('pricing.tier1.button')"
+                product="tier1"
             >
-                <div class="price-header">{{ $t('pricing.tier1') }}</div>
+                <div class="price-head">
+                    <div class="price-header">
+                        {{ $t('pricing.tier1.name') }}
+                    </div>
+                    <div class="price-title">
+                        {{ $t('pricing.tier1.title') }}
+                    </div>
+                </div>
                 <div class="price-features">
                     <ul>
-                        <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.tier1Devices') }}</li>
-                        <li>{{ $t('pricing.antitracker') }}</li>
-                        <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.tier1.feature1') }}</li>
+                        <li>{{ $t('pricing.tier1.feature2') }}</li>
+                        <li>{{ $t('pricing.tier1.feature3') }}</li>
                     </ul>
+                </div>
+                <div class="price-features-footer">
+                    {{ $t('pricing.tier1.footer') }}
                 </div>
             </price-box>
 
@@ -28,17 +45,25 @@
                 @selected="selected('IVPN Tier 2')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'tier2'"
+                :buttonText="$t('pricing.tier2.button')"
+                product="tier2"
             >
-                <div class="price-header">{{ $t('pricing.tier2') }}</div>
+                <div class="price-head">
+                    <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
+                    <div class="price-title">
+                        {{ $t('pricing.tier2.title') }}
+                    </div>
+                </div>
                 <div class="price-features">
                     <ul>
-                        <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.tier2Devices') }}</li>
-                        <li>{{ $t('pricing.antitracker') }}</li>
-                        <li>{{ $t('pricing.multihop') }}</li>
-                        <li>{{ $t('pricing.dns') }}</li>
-                        <li>{{ $t('pricing.mailx') }}</li>
+                        <li>{{ $t('pricing.tier2.feature1') }}</li>
+                        <li>{{ $t('pricing.tier2.feature2') }}</li>
+                        <li>{{ $t('pricing.tier2.feature3') }}</li>
+                        <li>{{ $t('pricing.tier2.feature4') }}</li>
                     </ul>
+                </div>
+                <div class="price-features-footer">
+                    {{ $t('pricing.tier2.footer') }}
                 </div>
             </price-box>
 
@@ -47,19 +72,27 @@
                 @selected="selected('IVPN Tier 3')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'tier3'"
+                :buttonText="$t('pricing.tier3.button')"
+                product="tier3"
             >
-                <div class="price-header">{{ $t('pricing.tier3') }}</div>
+                <div class="price-head">
+                    <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
+                    <div class="price-title">
+                        {{ $t('pricing.tier3.title') }}
+                    </div>
+                </div>
                 <div class="price-features">
                     <ul>
-                        <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.tier2Devices') }}</li>
-                        <li>{{ $t('pricing.antitracker') }}</li>
-                        <li>{{ $t('pricing.multihop') }}</li>
-                        <li>{{ $t('pricing.dns') }}</li>
-                        <li>{{ $t('pricing.mailx') }}</li>
-                        <li>{{ $t('pricing.portmaster') }}</li>
+                        <li>{{ $t('pricing.tier3.feature1') }}</li>
+                        <li>{{ $t('pricing.tier3.feature2') }}</li>
+                        <li>{{ $t('pricing.tier3.feature3') }}</li>
+                        <li>{{ $t('pricing.tier3.feature4') }}</li>
+                        <li>{{ $t('pricing.tier3.feature5') }}</li>
 
                     </ul>
+                </div>
+                <div class="price-features-footer">
+                    {{ $t('pricing.tier3.footer') }}
                 </div>
             </price-box>
         </div>
@@ -201,6 +234,8 @@ p {
         list-style: circle;
     }
 }
+
+
 section {
     margin-top: 120px;
 }

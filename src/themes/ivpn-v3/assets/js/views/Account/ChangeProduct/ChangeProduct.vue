@@ -20,7 +20,7 @@
                 :inProgress="inProgress"
                 :disabled="disabled"
             >
-                <div class="price-header">{{ $t('pricing.tier1') }}</div>
+                <div class="price-header">{{ $t('pricing.tier1.name') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
@@ -49,7 +49,7 @@
                 :isChange="true"
                 @selected="selected('IVPN Tier 2')"
             >
-                <div class="price-header">{{ $t('pricing.tier2') }}</div>
+                <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
@@ -76,7 +76,7 @@
                 :inProgress="inProgress"
                 @selected="selected('IVPN Tier 3')"
             >
-                <div class="price-header">{{ $t('pricing.tier3') }}</div>
+                <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
