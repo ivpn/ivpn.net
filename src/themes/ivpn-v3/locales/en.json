@@ -31,10 +31,7 @@
             "title": "IVPN Pricing - VPN subscription with anonymous registration"
         },
         "title": "Select IVPN Plan",
-        "description": "Select a plan to create your account instantly. You can switch between IVPN Standard, IVPN Plus and IVPN Pro Suite any time in the future.",
-        "tier1": "IVPN Standard",
-        "tier2": "IVPN Plus",
-        "tier3": "IVPN Pro Suite",
+        "description": "Select a plan to create your account instantly. Pick the right level of privacy protection for you.",
         "allProtocols": "All protocols",
         "tier1Devices": "5 devices",
         "tier2Devices": "10 devices",
@@ -43,7 +40,7 @@
         "productFooterPrice": "All prices are in U.S. dollars.",
         "productFooterReview": "Review pricing for teams",
         "here": "here",
-        "featuresTitle": "All IVPN plans include:",
+        "featuresTitle": "All IVPN plans come with:",
         "feature1": "Anonymous registration - no email required",
         "feature2": "Open-source applications for Android, iOS, macOS, Windows and Linux",
         "feature3": "Cash, Monero and Bitcoin payment options for better anonymity",
@@ -75,7 +72,44 @@
         "select": "Select",
         "dns": "ModDNS",
         "mailx": "Mailx",
-        "portmaster": "Portmaster/SPN"
+        "portmaster": "Portmaster/SPN",
+        "chooseTimeAdded": "You can choose time added at the next step",
+        "tier1":{
+            "name": "IVPN Standard",
+            "title": "VPN-only plan",
+            "feature1": "IVPN on 5 devices",
+            "feature2": "Multihop",
+            "feature3": "Basic ads & Tracker blocker",
+            "footer": "If you need a straightforward, trustworthy VPN for your toolkit.",
+            "button": "Select Standard"
+        },
+        "tier2":{
+            "name": "IVPN Plus",
+            "title": "VPN + Privacy tools",
+            "feature1": "IVPN on 10 devices",
+            "feature2": "Multihop",
+            "feature3": "ModDNS, advanced DNS filtering tool",
+            "feature4": "Mailx, email forwarding service",
+            "footer": "Offers custom tracking protection and improved email privacy.",
+            "button": "Select Plus"
+        },
+        "tier3":{
+            "name": "IVPN Pro Suite",
+            "title": "Advanced privacy toolkit",
+            "feature1": "IVPN on 10 devices",
+            "feature2": "Multihop",
+            "feature3": "ModDNS, advanced DNS filtering tool",
+            "feature4": "Mailx, email forwarding service",
+            "feature5": "Safing Portmaster Pro: network firewall with SPN (Linux, Win)",
+            "footer": "Complete network controls with application firewall included.",
+            "button": "Select Pro Suite"
+        },
+        "sidebar":{
+            "feature1": "VPN",
+            "feature2": "Adds & Trackers",
+            "feature3": "Email",
+            "feature4": "Firewall"
+        }
     },
     "login": {
         "meta": {

@@ -155,13 +155,13 @@ export default {
         this.language = window.location.href.split("/")[3];
         switch(this.$store.state.auth.account.product.name){
             case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1');
+                this.productName = this.$t('pricing.tier1.name');
                 break;
             case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2');
+                this.productName = this.$t('pricing.tier2.name');
                 break;
             case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3');
+                this.productName = this.$t('pricing.tier3.name');
                 break;
             default:
                 this.productName = this.$store.state.auth.account.product.name;

@@ -31,10 +31,7 @@
             "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
         "title": "Selecciona un Plan IVPN",
-        "description": "Selecciona un plan para crear tu cuenta al instante. Puedes cambiar entre IVPN Standard, IVPN Plus y IVPN Pro Suite en cualquier momento en el futuro.",
-        "tier1": "IVPN Standard",
-        "tier2": "IVPN Plus",
-        "tier3": "IVPN Pro Suite",
+        "description": "Selecciona un plan para crear tu cuenta al instante. Elige el nivel adecuado de protección de privacidad para ti.",
         "allProtocols": "Todos los protocolos",
         "tier1Devices": "5 dispositivos",
         "tier2Devices": "10 dispositivos",
@@ -43,7 +40,7 @@
         "productFooterPrice": "Todos los precios están en dólares estadounidenses.",
         "productFooterReview": "Consulta los precios para empresas",
         "here": "aquí",
-        "featuresTitle": "Todos los planes IVPN incluyen:",
+        "featuresTitle": "Todos los planes IVPN vienen con:",
         "feature1": "Inscripción anónima - no se requiere correo electrónico",
         "feature2": "Aplicaciones de código abierto para Android, iOS, macOS, Windows y Linux",
         "feature3": "Opciones de pago en efectivo, Monero y Bitcoin para un mejor anonimato",
@@ -75,7 +72,44 @@
         "select": "Seleccionar",
         "dns": "ModDNS",
         "mailx": "Mailx",
-        "portmaster": "Portmaster/SPN"
+        "portmaster": "Portmaster/SPN",
+        "chooseTimeAdded": "Puedes elegir el tiempo añadido en el siguiente paso",
+        "tier1":{
+            "name": "IVPN Standard",
+            "title": "Plan de solo VPN",
+            "feature1": "IVPN en 5 dispositivos",
+            "feature2": "Multihop",
+            "feature3": "Bloqueador básico de anuncios y rastreadores",
+            "footer": "Si necesitas una VPN sencilla y confiable para tu kit de herramientas.",
+            "button": "Seleccionar Standard"
+        },
+        "tier2":{
+            "name": "IVPN Plus",
+            "title": "VPN + Herramientas de privacidad",
+            "feature1": "IVPN en 10 dispositivos",
+            "feature2": "Multihop",
+            "feature3": "ModDNS, herramienta avanzada de filtrado DNS",
+            "feature4": "Mailx, servicio de reenvío de correo electrónico",
+            "footer": "Protección de rastreo y privacidad del correo electrónico mejorada.",
+            "button": "Seleccionar Plus"
+        },
+        "tier3":{
+            "name": "IVPN Pro Suite",
+            "title": "Kit de herramientas de privacidad avanzado",
+            "feature1": "IVPN en 10 dispositivos",
+            "feature2": "Multihop",
+            "feature3": "ModDNS, herramienta avanzada de filtrado DNS",
+            "feature4": "Mailx, servicio de reenvío de correo electrónico",
+            "feature5": "Safing Portmaster Pro: firewall de red con SPN (Linux, Win)",
+            "footer": "Controles de red completos con firewall de aplicación incluido.",
+            "button": "Seleccionar Pro Suite"
+        },
+        "sidebar":{
+            "feature1": "VPN",
+            "feature2": "Anuncios y rastreadores",
+            "feature3": "Correo",
+            "feature4": "Cortafuegos"
+        }
     },
     "login": {
         "meta": {

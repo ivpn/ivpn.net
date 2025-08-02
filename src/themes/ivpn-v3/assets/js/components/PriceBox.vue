@@ -1,5 +1,5 @@
 <template>
-    <div class="price-box" :class="{ current }">
+    <div class="price-box" :class="product">
         <slot></slot>
         <div class="price-options">
             <div
@@ -20,6 +20,7 @@
             </div>
         </div>
         <slot name="footer"></slot>
+        <div class="price-button">
         <button
             class="btn btn-solid btn-big"
             style="margin-top: 2em"
@@ -31,8 +32,12 @@
                 width="32"
                 height="32"
                 v-if="inProgress && !current"
-            />{{ $t('pricing.select') }}
+            />{{ buttonText}}
         </button>
+        </div>
+        <div class="price-legend">
+            {{ $t('pricing.chooseTimeAdded') }}
+        </div>
     </div>
 </template>
 
@@ -41,7 +46,7 @@ import Spinner from "@/components/ProgressSpinner.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["prices", "onselect", "disabled", "current", "inProgress","isChange"],
+    props: ["prices", "onselect", "disabled", "current", "inProgress","isChange","buttonText","product"],
     components: { Spinner },
     model: {
         event: "change",
@@ -80,6 +85,46 @@ export default {
     font-weight: bold;
     font-size: 18px;
     line-height: 14px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.price-title{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;;
+    margin-top: 20px;
+}
+
+.price-head {
+    padding: 35px;
+    min-height: 135px;
+    @include dark-theme((
+        background-color: black,
+    ));
+}
+
+.price-footer{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    padding: 0px 35px 0px 35px;
+}
+
+.price-legend{
+    font-style: italic;
+    font-weight: bold;
+    padding: 0px 5px 35px 8px;
+}
+
+.price-features-footer{
+    font-style: italic;
+    font-weight: bold;
+    padding: 20px 0px 20px 0px;
+    margin: 0px 5px 0px 10px;
+    border-bottom: 0.5px solid white;
+    border-top: 0.5px solid white;
+    line-height: 24px;
 }
 
 label {
@@ -93,21 +138,30 @@ label {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(51, 77, 102, 0.2);
-    padding: 32px;
-    margin: 24px 48px 0px 0px;
+    margin: 24px 18px 0px 0px;
     min-width: 280px;
     max-width: 350px;
     &.current {
         border-color: $blue;
     }
 
-    @include light-theme((
-        background: $white
-    ));
+    &.tier1 {
+        @include dark-theme((
+            background-color: #444953,
+        ));
+    }
 
-    @include dark-theme((
-        background: $dark
-    ));
+    &.tier2 {
+        @include dark-theme((
+            background-color: #363434,
+        ));
+    }
+
+    &.tier3 {
+        @include dark-theme((
+            background-color: #2B2A2A,
+        ));
+    }
 
     ul {
         li {
@@ -118,6 +172,7 @@ label {
     }
 }
 
+
 .price-features {
     font-style: normal;
     font-weight: normal;
@@ -125,11 +180,15 @@ label {
     line-height: 30px;
     position: relative;
     flex: 1;
+    font-weight: bold;;
 
     li {
         list-style: disc;
     }
+    padding: 0px 35px 0px 35px;
 }
+
+
 
 .price-features ul.additional-features {
     position: absolute;
@@ -141,6 +200,10 @@ label {
     padding-left: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
+}
+
+.price-options{
+    padding: 0px 35px 0px 35px;
 }
 
 .price-option {
@@ -182,4 +245,30 @@ label {
         }
     }
 }
+.price-button{
+    padding: 0px 10px 35px 10px;
+}
+
+.price-button .btn{
+    width:100%;
+}
+
+.price-sidebar {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 160px 0px 0px -130px;
+        padding: 25px 10px 0px 10px;
+        max-height: 380px;
+        min-width: 125px;
+        @include dark-theme((
+            background-color: #363434
+        ));
+
+        p{
+            line-height: 50px !important;
+            font-size: 16px !important;
+        }
+}
+
 </style>
