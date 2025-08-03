@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 903775
-hash: 0000000000000000000233580519b3c0c8369cbd457ebc0ff6115e6d76a8b1ab
+height: 908359
+hash: 0000000000000000000134497b68d3b88223d2f65b0c819420bae566d39cdac6
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Denmark is ‘sure’ EU will negotiate a ‘good’ US trade deal as deadline nears
-Also in this newsletter: European parliament gears up for no-confidence vote in von der Leyen
+European bank shares hit highest levels since 2008
+A surge in long-term interest rates and economic optimism has lifted the region’s lenders
 
-Are bigger AI models better stock pickers? Maybe, but probably not
-Complexity ain’t all that, wonks say
+Influencers in Number 10? Inevitable
+Get past your nausea and you’ll see that it’s canny public relations for governments to want to be where the voters are
 
-FTAV further reading
-Bonds; conversations; FT; Tampa pensions; crypto scams; financial repression; counting
+Trump tariffs are ‘unsustainable’, says Mexico’s auto sector chief
+Vehicles made in Mexico still incur 25 per cent levies as President Claudia Sheinbaum seeks US concessions
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmhmFQgACgkQisFrnrZH
-ummuOwf9GmjAByY3IyGK25DpxJS4nZoNL1p9tLWGPy6p+HhhCy1LKwaqWJLJJjHu
-MJQjaBX+2ZGPGKzzrza/hAzP11HijzapXoxsOqutmmAclNnG6Uce6FlCNR9qvw+R
-73pvpY37JVRvPdU45XSBwNdbJf1Rxy4HsB6HhXwszx/hzJ1MFk0Ub3bCW778OXKA
-Jtftv2U4jbQzNjiS47xuTGYKIScqbSo3KONmahioyf3fPzGy+Vy0LPVjDMT2cWWR
-QRhOF1aWzMu4OFyLUX/+D0eG/DOB0kghlxI0gIf0/RRSp5r2P4QRtjG2x3CASpaS
-/VLgzpAScS5v4PcXsZc2P90PtjhFEg==
-=wW47
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmiO+6EACgkQisFrnrZH
+umle1Af/RDcwOsfS5yZTNiMd9sYMiHWdWqZcVTV3vRtC/cR1Er/GFQvTyoLQZ0+U
+6K+dEqsBxElzVarCzLjWR5lzBP5N/s0WRxW6QGQsaQxKG9sMi2K0wDxPSRCZ6yxT
+emEx060cZtfRLwbNPDv6c009G+KwKf7I2YdX13nFvGjO8k00UzIutiDoJY7TzaLh
+KmJKGjufrMgXV88i3MxpPBQXRcYV0a2Aa5chAbHsMEHVz6KQM5iAyOonDQ7geXm6
+yWo/h7bRmK7M+CiuML6ozeFW5tB033bE8oOUqHyaOSfAKaUGT1Uv3BokOEmb8ERQ
+m+2V1eGhkH+vmeYOxUVONpqjbpLUWA==
+=GA9r
 -----END PGP SIGNATURE-----
 
 
