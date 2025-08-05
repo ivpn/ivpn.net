@@ -58,8 +58,8 @@
                     <ul>
                         <li>{{ $t('pricing.tier2.feature1') }}</li>
                         <li>{{ $t('pricing.tier2.feature2') }}</li>
-                        <li>{{ $t('pricing.tier2.feature3') }}</li>
-                        <li>{{ $t('pricing.tier2.feature4') }}</li>
+                        <li>{{ $t('pricing.tier2.feature3') }} <span :title="$t('pricing.tier2.feature3Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier2.feature4') }} <span :title="$t('pricing.tier2.feature4Title')">&#9432;</span></li>
                     </ul>
                 </div>
                 <div class="price-features-footer">
@@ -85,10 +85,9 @@
                     <ul>
                         <li>{{ $t('pricing.tier3.feature1') }}</li>
                         <li>{{ $t('pricing.tier3.feature2') }}</li>
-                        <li>{{ $t('pricing.tier3.feature3') }}</li>
-                        <li>{{ $t('pricing.tier3.feature4') }}</li>
-                        <li>{{ $t('pricing.tier3.feature5') }}</li>
-
+                        <li>{{ $t('pricing.tier3.feature3') }} <span :title="$t('pricing.tier3.feature3Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier3.feature4') }} <span :title="$t('pricing.tier3.feature4Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier3.feature5') }} <span :title="$t('pricing.tier3.feature5Title')">&#9432;</span></li>
                     </ul>
                 </div>
                 <div class="price-features-footer">
@@ -97,21 +96,29 @@
             </price-box>
         </div>
         <div v-if="auth.error" class="error"><p>{{ auth.error.message }}</p></div>
-        <p>{{ $t('pricing.productFooterPrice') }}</p>
-        <p>{{ $t('pricing.productFooterReview') }} <a :href="'/' + this.language + '/pricing-teams/'">{{ $t('pricing.here') }}</a>.</p>
-        <section>
+        <div class="pricing-footer">
+            <p>{{ $t('pricing.productFooter1') }} <a :href="'/' + this.language + '/services/'"> {{ $t('pricing.services') }}</a> {{ $t('pricing.productFooter2') }}</p>
+            <p>
+                {{ $t('pricing.productFooterPrice') }}
+                {{ $t('pricing.productFooterReview') }} <a :href="'/' + this.language + '/pricing-teams/'">{{ $t('pricing.here') }}</a>.
+            </p>
+        </div>
+            <section>
             <h2>{{ $t('pricing.featuresTitle') }}</h2>
             <ul>
                 <li>{{ $t('pricing.feature1') }}</li>
-                <li>{{ $t('pricing.feature2') }}</li>
-                <li>{{ $t('pricing.feature3') }}</li>
                 <li>{{ $t('pricing.feature4') }}</li>
+                <li>{{ $t('pricing.feature3') }}</li>
+            </ul>
+            <br>
+            <h2>{{ $t('pricing.serviceBenefits') }}</h2>
+            <ul>
+                <li>{{ $t('pricing.feature2') }}</li>
                 <li>{{ $t('pricing.feature5') }}</li>
                 <li>{{ $t('pricing.feature6') }}</li>
                 <li>{{ $t('pricing.feature7') }}</li>
                 <li>{{ $t('pricing.feature8') }}</li>
                 <li>{{ $t('pricing.feature9') }}</li>
-                <li>{{ $t('pricing.feature10') }}</li>
             </ul>
             <br>
             <h2>{{ $t('pricing.paymentMethodsTitle') }}</h2>
@@ -233,6 +240,10 @@ p {
     ul {
         list-style: circle;
     }
+}
+
+.pricing-footer p{
+    font-size: 16px !important;
 }
 
 

@@ -185,7 +185,7 @@ label {
     li {
         list-style: disc;
     }
-    padding: 0px 35px 0px 35px;
+    padding: 0px 25px 0px 25px;
 }
 
 
@@ -268,6 +268,11 @@ label {
         p{
             line-height: 50px !important;
             font-size: 16px !important;
+        }
+
+        // Hide on mobile devices and tablets (1024px and below)
+        @media (max-width: 1024px) {
+            display: none;
         }
 }
 
