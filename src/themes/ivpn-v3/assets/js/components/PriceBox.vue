@@ -102,6 +102,9 @@ export default {
     @include dark-theme((
         background-color: black,
     ));
+    @include light-theme((
+            color: $white,
+    ));
 }
 
 .price-footer{
@@ -149,17 +152,26 @@ label {
         @include dark-theme((
             background-color: #444953,
         ));
+        @include light-theme((
+            background-color: white,
+        ));
     }
 
     &.tier2 {
         @include dark-theme((
             background-color: #363434,
         ));
+        @include light-theme((
+            background-color: white,
+        ));
     }
 
     &.tier3 {
         @include dark-theme((
             background-color: #2B2A2A,
+        ));
+        @include light-theme((
+            background-color: white,
         ));
     }
 
@@ -258,11 +270,15 @@ label {
         font-weight: bold;
         font-size: 16px;
         margin: 160px 0px 0px -130px;
-        padding: 25px 10px 0px 10px;
+        padding: 35px 10px 0px 10px;
         max-height: 380px;
         min-width: 125px;
         @include dark-theme((
             background-color: #363434
+        ));
+        @include light-theme((
+            background-color: #363434,
+            color: white
         ));
 
         p{
