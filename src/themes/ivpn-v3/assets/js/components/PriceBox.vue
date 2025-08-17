@@ -101,10 +101,20 @@ export default {
     min-height: 135px;
     @include dark-theme((
         background-color: black,
+        color: rgba(255, 255, 255, 0.8),
     ));
     @include light-theme((
-            color: $white,
+            background-color: #F9F9F9,
+            color: black,
     ));
+    @media (prefers-color-scheme: dark) {
+            background-color: black;
+            color: rgba(255, 255, 255, 0.8);
+    }
+    @media (prefers-color-scheme: light) {
+        background-color: #F9F9F9;
+        color: black;
+    }
 }
 
 .price-footer{
@@ -128,6 +138,14 @@ export default {
     border-bottom: 0.5px solid white;
     border-top: 0.5px solid white;
     line-height: 24px;
+    @include dark-theme((
+        border-bottom: 0.5px solid white,
+        border-top: 0.5px solid white,
+    ));
+     @include light-theme((
+        border-bottom: 0.5px solid black,
+        border-top: 0.5px solid black,
+    ));
 }
 
 label {
@@ -151,28 +169,58 @@ label {
     &.tier1 {
         @include dark-theme((
             background-color: #444953,
+            color: rgba(255, 255, 255, 0.8),
         ));
         @include light-theme((
-            background-color: white,
+            background-color: #F3F3F3,
+            color:black,
         ));
+        @media (prefers-color-scheme: dark) {
+            background-color: #444953;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        @media (prefers-color-scheme: light) {
+            background-color: #F3F3F3;
+            color: black;
+        }
     }
 
     &.tier2 {
         @include dark-theme((
             background-color: #363434,
+           color: rgba(255, 255, 255, 0.8),
         ));
         @include light-theme((
-            background-color: white,
+            background-color: #E7E7E7,
+            color:black,
         ));
+        @media (prefers-color-scheme: dark) {
+            background-color: #363434;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        @media (prefers-color-scheme: light) {
+            background-color: #E7E7E7;
+            color: black;
+        }
     }
 
     &.tier3 {
         @include dark-theme((
             background-color: #2B2A2A,
+            color: rgba(255, 255, 255, 0.8),
         ));
         @include light-theme((
-            background-color: white,
+            background-color: #E1E1E1,
+            color:black,
         ));
+        @media (prefers-color-scheme: dark) {
+            background-color: #2B2A2A;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        @media (prefers-color-scheme: light) {
+            background-color: #E1E1E1;
+            color: black;
+        }
     }
 
     ul {
@@ -198,6 +246,7 @@ label {
         list-style: disc;
     }
     padding: 0px 25px 0px 25px;
+    
 }
 
 
@@ -271,18 +320,26 @@ label {
         font-size: 16px;
         margin: 160px 0px 0px -130px;
         padding: 35px 10px 0px 10px;
-        max-height: 380px;
+        max-height: 340px;
         min-width: 125px;
         @include dark-theme((
-            background-color: #363434
+            background-color: #363434,
+            color: rgba(255, 255, 255, 0.8),
         ));
         @include light-theme((
-            background-color: #363434,
-            color: white
+            background-color: #E7E7E7,
+            color: black
         ));
+        @media (prefers-color-scheme: dark) {
+            background-color: #363434;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        @media (prefers-color-scheme: light) {
+            background-color: #E7E7E7;
+            color: black;
+        }
 
         p{
-            line-height: 50px !important;
             font-size: 16px !important;
         }
 

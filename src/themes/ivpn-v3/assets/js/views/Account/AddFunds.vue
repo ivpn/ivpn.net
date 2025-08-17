@@ -84,7 +84,7 @@ export default {
 
         switch(this.$store.state.auth.account.product.name){
             case "IVPN Tier 1":
-                this.productName = this.$t('pricing.name');
+                this.productName = this.$t('pricing.tier1.name');
                 break;
             case "IVPN Tier 2":
                 this.productName = this.$t('pricing.tier2.name');
