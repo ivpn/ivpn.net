@@ -54,7 +54,7 @@
         "feature7": "Killswitch/firewall and obfuscation methods where applicable",
         "feature8": "SOCKS5 proxy service",
         "feature9": "Router, NAS support",
-        "feature10": "MultiHop",
+        "feature10": "MultiHop - route traffic through two IVPN servers",
         "paymentMethodsTitle": "Supported payment methods:",
         "paymentMethod1": "Credit Card",
         "paymentMethod2": "PayPal",
@@ -115,7 +115,7 @@
         },
         "sidebar":{
             "feature1": "VPN",
-            "feature2": "Adds & Trackers",
+            "feature2": "Ads & Trackers",
             "feature3": "Email",
             "feature4": "Firewall"
         }

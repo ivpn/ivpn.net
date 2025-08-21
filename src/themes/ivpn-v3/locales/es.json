@@ -54,7 +54,7 @@
         "feature7": "Killswitch/firewall y métodos de ofuscación cuando corresponda",
         "feature8": "Servicio de proxy SOCKS5",
         "feature9": "Soporte para router y NAS",
-        "feature10": "MultiHop",
+        "feature10": "MultiHop - enruta el tráfico a través de dos servidores IVPN",
         "paymentMethodsTitle": "Métodos de pago admitidos:",
         "paymentMethod1": "Tarjeta de crédito",
         "paymentMethod2": "PayPal",
