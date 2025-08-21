@@ -116,6 +116,7 @@
                 <li>{{ $t('pricing.feature2') }}</li>
                 <li>{{ $t('pricing.feature5') }}</li>
                 <li>{{ $t('pricing.feature6') }}</li>
+                <li>{{ $t('pricing.feature10') }}</li>
                 <li>{{ $t('pricing.feature7') }}</li>
                 <li>{{ $t('pricing.feature8') }}</li>
                 <li>{{ $t('pricing.feature9') }}</li>
@@ -250,6 +251,29 @@ p {
 section {
     margin-top: 120px;
 }
+
+[title] {
+    position: relative;
+  }
+
+  [title]:after {
+    content: attr(title);
+    position: absolute;
+    left: 50%;
+    bottom: 100%; /* put it on the top */
+    background-color: black;
+    padding: 5px;
+    font-size:80%;
+    line-height: 15px;
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    z-index: 999;
+  }
+
+  [title]:hover:after {
+    opacity: 1;
+  }
 
 // on small device:
 // flex-wrap: nowrap | wrap
