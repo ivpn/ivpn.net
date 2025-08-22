@@ -58,8 +58,8 @@
                     <ul>
                         <li>{{ $t('pricing.tier2.feature1') }}</li>
                         <li>{{ $t('pricing.tier2.feature2') }}</li>
-                        <li>{{ $t('pricing.tier2.feature3') }} <span :title="$t('pricing.tier2.feature3Title')">&#9432;</span></li>
-                        <li>{{ $t('pricing.tier2.feature4') }} <span :title="$t('pricing.tier2.feature4Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier2.feature3') }} <span :data-tooltip="$t('pricing.tier2.feature3Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier2.feature4') }} <span :data-tooltip="$t('pricing.tier2.feature4Title')">&#9432;</span></li>
                     </ul>
                 </div>
                 <div class="price-features-footer">
@@ -85,9 +85,9 @@
                     <ul>
                         <li>{{ $t('pricing.tier3.feature1') }}</li>
                         <li>{{ $t('pricing.tier3.feature2') }}</li>
-                        <li>{{ $t('pricing.tier3.feature3') }} <span :title="$t('pricing.tier3.feature3Title')">&#9432;</span></li>
-                        <li>{{ $t('pricing.tier3.feature4') }} <span :title="$t('pricing.tier3.feature4Title')">&#9432;</span></li>
-                        <li>{{ $t('pricing.tier3.feature5') }} <span :title="$t('pricing.tier3.feature5Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier3.feature3') }} <span :data-tooltip="$t('pricing.tier3.feature3Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier3.feature4') }} <span :data-tooltip="$t('pricing.tier3.feature4Title')">&#9432;</span></li>
+                        <li>{{ $t('pricing.tier3.feature5') }} <span :data-tooltip="$t('pricing.tier3.feature5Title')">&#9432;</span></li>
                     </ul>
                 </div>
                 <div class="price-features-footer">
@@ -252,12 +252,12 @@ section {
     margin-top: 120px;
 }
 
-[title] {
+[data-tooltip] {
     position: relative;
   }
 
-  [title]:after {
-    content: attr(title);
+  [data-tooltip]:after {
+    content: attr(data-tooltip);
     position: absolute;
     left: 50%;
     bottom: 100%; /* put it on the top */
@@ -266,13 +266,13 @@ section {
     font-size:80%;
     line-height: 15px;
     width: 300px;
-    opacity: 0;
-    transition: opacity 0.1s ease-in-out;
+    display: none;
+    transition: display block ease-in-out;
     z-index: 999;
   }
 
-  [title]:hover:after {
-    opacity: 1;
+  [data-tooltip]:hover:after {
+    display: block;
   }
 
 // on small device:
