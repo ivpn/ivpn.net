@@ -252,29 +252,6 @@ section {
     margin-top: 120px;
 }
 
-[data-tooltip] {
-    position: relative;
-  }
-
-  [data-tooltip]:after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 50%;
-    bottom: 100%; /* put it on the top */
-    background-color: black;
-    padding: 5px;
-    font-size:80%;
-    line-height: 15px;
-    width: 300px;
-    display: none;
-    transition: display block ease-in-out;
-    z-index: 999;
-  }
-
-  [data-tooltip]:hover:after {
-    display: block;
-  }
-
 // on small device:
 // flex-wrap: nowrap | wrap
 </style>
