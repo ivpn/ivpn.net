@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-08-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-09-02 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 908359
-hash: 0000000000000000000134497b68d3b88223d2f65b0c819420bae566d39cdac6
+height: 912841
+hash: 0000000000000000000137532adac783c427e68f30b01fcd4519d37b5a7f8667
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-European bank shares hit highest levels since 2008
-A surge in long-term interest rates and economic optimism has lifted the region’s lenders
+UK long-term borrowing costs hit highest level since 1998
+Rise in gilt yields adds to pressure on chancellor Rachel Reeves ahead of Budget
 
-Influencers in Number 10? Inevitable
-Get past your nausea and you’ll see that it’s canny public relations for governments to want to be where the voters are
+Rothschild boosts Middle East wealth business as Liechtenstein private bank retreats
+Liechtensteinische Landesbank is leaving the UAE, where Rothschild opened a wealth management unit last year
 
-Trump tariffs are ‘unsustainable’, says Mexico’s auto sector chief
-Vehicles made in Mexico still incur 25 per cent levies as President Claudia Sheinbaum seeks US concessions
+CityFibre founder to step down as CEO after £2.3bn refinancing secured
+Greg Mesch’s departure comes weeks after Goldman Sachs and Mubadala back further expansion of network
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmiO+6EACgkQisFrnrZH
-umle1Af/RDcwOsfS5yZTNiMd9sYMiHWdWqZcVTV3vRtC/cR1Er/GFQvTyoLQZ0+U
-6K+dEqsBxElzVarCzLjWR5lzBP5N/s0WRxW6QGQsaQxKG9sMi2K0wDxPSRCZ6yxT
-emEx060cZtfRLwbNPDv6c009G+KwKf7I2YdX13nFvGjO8k00UzIutiDoJY7TzaLh
-KmJKGjufrMgXV88i3MxpPBQXRcYV0a2Aa5chAbHsMEHVz6KQM5iAyOonDQ7geXm6
-yWo/h7bRmK7M+CiuML6ozeFW5tB033bE8oOUqHyaOSfAKaUGT1Uv3BokOEmb8ERQ
-m+2V1eGhkH+vmeYOxUVONpqjbpLUWA==
-=GA9r
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmi2qQsACgkQisFrnrZH
+umk2uQf/Ui+WNCQ8Re1xMHe0FmhYMhft4BauSMAPx3GFVOgPXE4GMuM196yJRQNd
+sOqut7erEWNijghw1SjkXFqD9yJTAgiaFWLjtL1hhC0Q81ffNvM8VSyMRwJcmOJv
+x/jTdD/vaTvqlzHm7xEU01m8bSj3sZGZVv+Abz8/mQgM4rwJPnVubN5slr3Pmu3v
+lZm2Z/Em9t/1wX8ad3mJN4HuncdsQklNKL3EcgEwOH7rbYkcoXWXLu/Ih92uwc/t
+xqspbeRNIFPrDsqNWpPCZgHOPlBU59jYcuEx491Ewq7xVq/eUy0avgLcsBFd9Tb+
+Bu+V2cIp8jMl0NzsHsw9eoNAvdI7kg==
+=4/k+
 -----END PGP SIGNATURE-----
 
 
