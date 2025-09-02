@@ -349,4 +349,43 @@ label {
         }
 }
 
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    @media (max-width: 1200px) {
+        right: 50%;
+    }
+    bottom: 100%; 
+    @include dark-theme((
+        background-color: black,
+        color: rgba(255, 255, 255, 0.8),
+    ));
+    @include light-theme((
+        background-color: #F9F9F9,
+        color: black,
+    ));
+    @media (prefers-color-scheme: dark) {
+        background-color: black;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    @media (prefers-color-scheme: light) {
+        background-color: #F9F9F9;
+        color: black;
+    }
+    padding: 5px;
+    font-size:80%;
+    line-height: 15px;
+    display: none;
+    z-index: 999;
+    width:300px;
+}
+
+[data-tooltip]:hover:after {
+    display: block;
+}
+
 </style>
