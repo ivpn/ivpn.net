@@ -6,17 +6,17 @@
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('pricing.mailx') }}</label><span class="service-description">/ Email forwarding/ Available for all platforms</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">{{ $t('pricing.mailx') }}</a>
+                    <a href="#" @click.prevent="signIn" data-service="mailx">Setup {{ $t('pricing.mailx') }}</a>
                 </div>
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('pricing.dns') }}</label><span class="service-description">/ Dns filtering/ Available for all platforms</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">Setup {{ $t('pricing.dns') }}</a>
+                    <a href="#" @click.prevent="signIn" data-service="dns">Setup {{ $t('pricing.dns') }}</a>
                 </div>
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('pricing.portmaster') }}</label><span class="service-description">/ Network firewall/ Available for Windows and Linux</span></span>
                     <div class="status active">ACTIVE</div>
-                    <a href="#">Access {{ $t('pricing.portmaster') }}</a>
+                    <a href="#" @click.prevent="signIn" data-service="portmaster">Access {{ $t('pricing.portmaster') }}</a>
                 </div>
             </div>
         </div>
@@ -45,6 +45,11 @@ export default {
             this.language = "/es";
         }
     },
+    methods: {
+        async signIn(service){
+            let response = this.$store.dispatch("auth/serviceSignin");
+        },
+    }
 };
 </script>
 

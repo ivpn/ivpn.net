@@ -176,6 +176,18 @@ export default {
             })
         },
 
+        async serviceSignin(context){
+            context.commit('started')
+            try {
+                let res = await Api.serviceSignin( context.state.account.id )
+                let url = "https://mailx.net/signup?token=" + res.token_hash + "&uuid=" + crypto.randomUUID() + "&service=mailx";
+                context.commit('done')
+                return res
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+
 
     },
     getters: {

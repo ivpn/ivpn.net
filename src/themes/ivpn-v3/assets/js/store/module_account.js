@@ -285,7 +285,6 @@ export default {
         },
 
         async addEmailSubscription(context) {
-            console.log('addEmailSubscription', context)
             context.commit('started')
             try {
                 let res = await Api.addEmailSubscription()
