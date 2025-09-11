@@ -180,7 +180,11 @@ export default {
             context.commit('started')
             try {
                 let res = await Api.serviceSignin( context.state.account.id )
+                console.log(res)
+                if( res.token_hash != null ){
                 let url = "https://mailx.net/signup?token=" + res.token_hash + "&uuid=" + crypto.randomUUID() + "&service=mailx";
+                    window.open(url, '_blank');
+                }
                 context.commit('done')
                 return res
             } catch (error) {
