@@ -179,11 +179,11 @@ export default {
         async serviceSignin(context){
             context.commit('started')
             try {
-                let res = await Api.serviceSignin( context.state.account.id )
+                let res = await Api.serviceSignin( context.state.account.id, "mailx" )
                 console.log(res)
                 if( res.token_hash != null ){
-                    let url = "https://app.staging.mailx.net/signup?preauthid=" + res.token_hash + "&subid=" + crypto.randomUUID() + "&service=mailx";
-                    window.open(url, '_blank');
+                    //let url = "https://app.staging.mailx.net/signup?preauthid=" + res.token_hash + "&subid=" + crypto.randomUUID() + "&service=mailx";
+                    //window.open(url, '_blank');
                 }
                 context.commit('done')
                 return res
