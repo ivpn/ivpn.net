@@ -555,9 +555,15 @@ export default {
         return await this.Post('/web/vouchers/update', { card: payload.card})
     },
 
-    //Authentication
+    //Services
     async serviceSignin(payload, service) {
         return await this.Post('/web/auth/preauth', {  account_id: payload, service: service })
+    },
+
+    async getServices(payload) {
+        return await this.Post(
+            '/web/services'
+        );
     },
 
 

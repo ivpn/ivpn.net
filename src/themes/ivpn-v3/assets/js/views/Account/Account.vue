@@ -52,7 +52,7 @@
                         </div>
                         <div class="product-action" v-if="canUpgrade">
                             <router-link :to="{ name: 'change-product-' + this.language }"
-                                >{{ $t('account.change') }}</router-link
+                                >{{ $t('account.upgrade') }}</router-link
                             >
                         </div>
                     </div>
@@ -91,7 +91,9 @@
                     <apps-section />
                 </signup-section>   
                 <signup-section>
-                    <services-section />
+                    <services-section>
+                        :account="account"
+                    </services-section>
                 </signup-section>             
                 <signup-section>
                     <account-footer :account="account"
@@ -131,6 +133,16 @@ export default {
             canUpgrade: false,
             language: "en",
             productName: "",
+            mailService: null,
+            dnsService: null,
+            portmasterService: null,
+            /*
+            services: [
+                {"mail": null},
+                {"dns": null},
+                {"portmaster": null}
+            ],
+            */
         };
     },
 
@@ -155,6 +167,7 @@ export default {
         }
     },
     mounted(){
+
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
         switch(this.$store.state.auth.account.product.name){
@@ -171,14 +184,12 @@ export default {
                 this.productName = this.$store.state.auth.account.product.name;
         }
     },
-
     methods:{
         async calculateForProduct(newProduct) {
             return  await this.$store.dispatch("product/changeDetails", {
                     product: newProduct,    
             });
-        }
-
+        },
     }
 
 
