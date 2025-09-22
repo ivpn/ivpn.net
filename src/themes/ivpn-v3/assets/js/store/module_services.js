@@ -11,11 +11,15 @@ export default {
     inProgress: true,
     isLoaded: false,
     error: null,
-
+    preauth: null,
     services: [],
   }),
 
   mutations: {
+
+    setState(state, { preauth}) {
+        state.preauth = preauth
+    },
 
     clear(state) {
         state.inProgress = false;
@@ -68,6 +72,31 @@ export default {
             context.commit('failed', { error })
         }
     },
+
+     async auth(context){
+            context.commit('started')
+            try {
+                let res = await Api.services( context.state.account.id )
+                context.commit('setState', {
+                    preauth: res
+                })
+                context.commit('done')
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+
+
+            context.commit('started')
+
+            try {
+                let account = await Api.getAccount()
+                context.commit('done', { account })
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+
+            context.dispatch('updateState')
+        },
 
     clear(context) {
         context.commit('clear')
