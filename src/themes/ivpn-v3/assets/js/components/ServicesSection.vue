@@ -4,19 +4,52 @@
         <div class="services">
             <div class="services-info">
                 <div class="service">
-                    <span class="service-line"><label class="value">{{ $t('pricing.mailx') }}</label><span class="service-description">/ Email forwarding/ Available for all platforms</span></span>
-                    <div class="status active">ACTIVE</div>
-                    <a href="#" @click.prevent="signIn" data-service="mailx">Setup {{ $t('pricing.mailx') }}</a>
+                    <span class="service-line"><label class="value">{{ $t('account.servicesArea.mail') }}</label><span class="service-description">/ {{ $t('account.servicesArea.mailDescription') }}</span></span>
+                    <div class="status" v-if="this.$store.state.auth.account.product.name == 'IVPN Tier 1'">
+                        <a href="change-product">{{ $t('account.servicesArea.upgrade') }}</a>
+                    </div>
+                    <span v-else>
+                    <span v-if="mailService && mailService.is_active">
+                        <div class="status active">{{ $t('account.servicesArea.active') }}</div>
+                    </span>
+                    <span v-else>
+                        <div class="status active">{{ $t('account.servicesArea.available') }}</div>
+                    </span>
+                    <a href="#" @click.prevent="signIn" data-service="mail" v-if="!mailService || !mailService.is_active">{{ $t('account.servicesArea.setupMail') }}</a>
+                    <a href="https://app.mailx.net/login" target="_blank" v-else>{{ $t('account.servicesArea.accessMail') }}</a>
+                    </span>
                 </div>
                 <div class="service">
-                    <span class="service-line"><label class="value">{{ $t('pricing.dns') }}</label><span class="service-description">/ Dns filtering/ Available for all platforms</span></span>
-                    <div class="status active">ACTIVE</div>
-                    <a href="#" @click.prevent="signIn" data-service="dns">Setup {{ $t('pricing.dns') }}</a>
+                    <span class="service-line"><label class="value">{{ $t('account.servicesArea.dns') }}</label><span class="service-description">/{{ $t('account.servicesArea.dnsDescription') }}</span></span>
+                    <div class="status" v-if="this.$store.state.auth.account.product.name == 'IVPN Tier 1'">
+                        <a href="change-product">{{ $t('account.servicesArea.upgrade') }}</a>
+                    </div>
+                    <span v-else>
+                    <span v-if="dnsService && dnsService.is_active">
+                        <div class="status active">{{ $t('account.servicesArea.active') }}</div>
+                    </span>
+                    <span v-else>
+                        <div class="status active">{{ $t('account.servicesArea.available') }}</div>
+                    </span>
+                    <a href="#" @click.prevent="signIn" data-service="dns" v-if="!dnsService || !dnsService.is_active">{{ $t('account.servicesArea.setupDNS') }}</a>
+                    <a href="#" target="_blank" v-else>{{ $t('account.servicesArea.accessDNS') }}</a>
+                    </span>
                 </div>
                 <div class="service">
-                    <span class="service-line"><label class="value">{{ $t('pricing.portmaster') }}</label><span class="service-description">/ Network firewall/ Available for Windows and Linux</span></span>
-                    <div class="status active">ACTIVE</div>
-                    <a href="#" @click.prevent="signIn" data-service="portmaster">Access {{ $t('pricing.portmaster') }}</a>
+                    <span class="service-line"><label class="value">{{ $t('account.servicesArea.portmaster') }}</label><span class="service-description">/ {{ $t('account.servicesArea.portmasterDescription') }}</span></span>
+                    <div class="status" v-if="this.$store.state.auth.account.product.name == 'IVPN Tier 1' || this.$store.state.auth.account.product.name == 'IVPN Tier 2'">
+                        <a href="change-product">{{ $t('account.servicesArea.upgrade') }}</a>
+                    </div>
+                    <span v-else>
+                    <span v-if="portmasterService && portmasterService.is_active">
+                        <div class="status active">{{ $t('account.servicesArea.active') }}</div>
+                    </span>
+                    <span v-else>
+                        <div class="status active">{{ $t('account.servicesArea.available') }}</div>
+                    </span>
+                    <a href="#" @click.prevent="signIn" data-service="portmaster" v-if="!portmasterService || !portmasterService.is_active">{{ $t('account.servicesArea.setupPortmaster') }}</a>
+                    <a href="https://account.safing.io/account/sign_in" target="_blank" v-else>{{ $t('account.servicesArea.accessPortmaster') }}</a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -32,13 +65,22 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
     components: {
     },
+    props: ["account"],
     data() {
         return {
-            language: "/en"
+            language: "/en",
+            mailService: null,
+            dnsService: null,
+            portmasterService: null,
         };
+    },
+    beforeMount(){
+        this.$store.dispatch("services/load");
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
@@ -49,7 +91,29 @@ export default {
         async signIn(service){
             let response = this.$store.dispatch("auth/serviceSignin");
         },
-    }
+        getServiceByName(name){
+            for(let i=0; i < this.$store.state.services.services.length; i++){
+                if(this.$store.state.services.services[i].name == name){
+                    return this.$store.state.services.services[i];
+                }
+            }
+            return null;
+        },
+    },
+    computed: {
+        ...mapState({
+            services: (state) => state.services.services,
+        }),
+    },
+    watch: {
+        'services': function(newVal) {
+            if(newVal){
+                this.mailService = this.getServiceByName("mail");
+                this.dnsService = this.getServiceByName("dns");
+                this.portmasterService = this.getServiceByName("portmaster");
+            }
+        }
+    },
 };
 </script>
 
@@ -105,6 +169,8 @@ export default {
         .status.active{
             background: #64ad07;
             color: #ffffff;
+            width: 105px;
+            text-align: center;
         }
         .status.inactive{
             background: #ff0000;
@@ -113,6 +179,9 @@ export default {
         .service-line{
             display: inline-block;
             width:465px;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
         }
     }
 }

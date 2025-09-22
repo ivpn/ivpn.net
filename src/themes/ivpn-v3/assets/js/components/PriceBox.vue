@@ -356,7 +356,7 @@ label {
 [data-tooltip]:after {
     content: attr(data-tooltip);
     position: absolute;
-    @media (max-width: 1200px) {
+    @media (max-width: 1500px) {
         right: 50%;
     }
     bottom: 100%; 

@@ -172,6 +172,7 @@
         "continueToPayment2": "To start using IVPN add funds to your account.",
         "product": "Product",
         "change": "Change",
+        "upgrade": "Upgrade",
         "paidUntil": "Paid Until",
         "wasActiveUntil": "Was Active Until",
         "addMoreTime": "Add More Time",
@@ -522,6 +523,23 @@
             "voucherCodes": "Voucher codes",
             "markAsShared": "Mark as shared",
             "markAsNotShared": "Mark as not shared"
+        },
+        "servicesArea": {
+            "mail": "MailX",
+            "dns": "ModDNS",
+            "portmaster": "Portmaster",
+            "accessMail": "Access",
+            "accessDNS": "Access",
+            "accessPortmaster": "Access",
+            "setupMail": "Set up",
+            "setupDNS": "Set up",
+            "setupPortmaster": "Set up",
+            "active": "ACTIVE",
+            "available": "AVAILABLE",
+            "upgrade": "Upgrade to access",
+            "mailDescription": "Email forwarding/ Available for all platforms",
+            "dnsDescription": "Dns filtering/ Available for all platforms",
+            "portmasterDescription": "Network firewall/ Available for Windows and Linux"
         }
     },
     "resetPassword": {
