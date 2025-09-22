@@ -175,23 +175,6 @@ export default {
                 isLegacy: false,
             })
         },
-
-        async serviceSignin(context){
-            context.commit('started')
-            try {
-                let res = await Api.serviceSignin( context.state.account.id, "mail" )
-                if( res.token_hash != null ){
-                    let url = "https://app.staging.mailx.net/signup?preauthid=" + res.token_hash + "&subid=" + res.uuid + "&service=mail";
-                    window.open(url, '_blank');
-                }
-                context.commit('done')
-                return res
-            } catch (error) {
-                context.commit('failed', { error })
-            }
-        },
-
-
     },
     getters: {
 

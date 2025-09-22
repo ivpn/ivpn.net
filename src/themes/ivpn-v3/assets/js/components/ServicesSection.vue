@@ -81,6 +81,7 @@ export default {
     },
     beforeMount(){
         this.$store.dispatch("services/load");
+        this.$store.dispatch("services/auth");
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
@@ -88,9 +89,6 @@ export default {
         }
     },
     methods: {
-        async signIn(service){
-            let response = this.$store.dispatch("auth/serviceSignin");
-        },
         getServiceByName(name){
             for(let i=0; i < this.$store.state.services.services.length; i++){
                 if(this.$store.state.services.services[i].name == name){
@@ -103,6 +101,7 @@ export default {
     computed: {
         ...mapState({
             services: (state) => state.services.services,
+            preauth: (state) => state.services.preauth,
         }),
     },
     watch: {

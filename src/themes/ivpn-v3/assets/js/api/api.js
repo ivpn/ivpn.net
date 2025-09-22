@@ -556,8 +556,8 @@ export default {
     },
 
     //Services
-    async serviceSignin(payload, service) {
-        return await this.Post('/web/auth/preauth', {  account_id: payload, service: service })
+    async services(payload) {
+        return await this.Post('/web/auth/preauth', {  account_id: payload })
     },
 
     async getServices(payload) {
