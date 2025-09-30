@@ -414,7 +414,18 @@ export default {
         return response
     },
 
-    async createLightInvoice(priceID, exitServer, entryServer,publicKey) {
+    async getBitcoinURL(invoice, hmac, paymentMethodId) {
+        // let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, process.env.MIX_APP_WEBAPI_URL, {
+        //     credentials: "omit"
+        // })
+        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac, paymentMethodId }, "", {
+            credentials: "omit"
+        })
+
+        return response
+    },
+    
+    async createLightInvoice(priceID, exitServer, entryServer,publicKey, address) {
 
         if( !Array.isArray(entryServer) ) {
             entryServer = [ entryServer ]
@@ -545,8 +556,10 @@ export default {
     },
 
     //Services
-    async services(payload) {
-        return await this.Post('/web/auth/preauth', {  account_id: payload })
+    async preauthService(payload) {
+        return await this.Post(
+            '/web/auth/preauth'
+        );
     },
 
     async getServices(payload) {

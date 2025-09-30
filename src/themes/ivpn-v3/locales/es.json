@@ -536,10 +536,14 @@
             "setupPortmaster": "Configurar",
             "active": "ACTIVO",
             "available": "DISPONIBLE",
+            "unavailable": "NO DISPONIBLE",
+            "expired": "CADUCADO",
             "upgrade": "Mejorar para acceder",
-            "mailDescription": "Reenvío de correo electrónico/ Disponible para todas las plataformas",
-            "dnsDescription": "Filtrado de DNS/ Disponible para todas las plataformas",
-            "portmasterDescription": "Cortafuegos / Disponible para Windows y Linux"
+            "mailDescription": "Reenvío de correo / todas las plataformas",
+            "dnsDescription": "Filtrado DNS / todas las plataformas",
+            "portmasterDescription": "Cortafuegos / Windows y Linux",
+            "limitedAccess": "Nota: Tu cuenta de IVPN ha caducado. Los servicios adicionales tienen funcionalidad limitada y no están disponibles para su registro. Para recuperar el acceso completo a los servicios adicionales, agrega tiempo a tu cuenta de IVPN lo antes posible.",
+            "pendingDeletion": "Nota: Tu cuenta de IVPN ha caducado. Los servicios adicionales no están disponibles. Para evitar la pérdida de configuraciones y datos en los servicios existentes, por favor recarga tu cuenta de IVPN."
         }
     },
     "resetPassword": {

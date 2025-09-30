@@ -133,16 +133,6 @@ export default {
             canUpgrade: false,
             language: "en",
             productName: "",
-            mailService: null,
-            dnsService: null,
-            portmasterService: null,
-            /*
-            services: [
-                {"mail": null},
-                {"dns": null},
-                {"portmaster": null}
-            ],
-            */
         };
     },
 
@@ -161,6 +151,11 @@ export default {
         if( !this.$store.state.auth.account.is_new && (this.$store.state.auth.account.product.name == "IVPN Tier 1" || this.$store.state.auth.account.product.name == "IVPN Tier 2")  ){
             this.canUpgrade = true;
         }
+
+        if(this.$store.state.auth.account.has_custom_price){
+            this.canChange = false;
+        }
+        
     },
     mounted(){
 

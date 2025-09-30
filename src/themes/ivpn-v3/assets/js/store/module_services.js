@@ -17,10 +17,6 @@ export default {
 
   mutations: {
 
-    setState(state, { preauth}) {
-        state.preauth = preauth
-    },
-
     clear(state) {
         state.inProgress = false;
         state.error = null;
@@ -43,6 +39,9 @@ export default {
 
         if (payload.services) {
           state.services = payload.services;
+        }
+        if (payload.preauth) {
+          state.preauth = payload.preauth;
         }
     },
 
@@ -76,26 +75,13 @@ export default {
      async auth(context){
             context.commit('started')
             try {
-                let res = await Api.services( context.state.account.id )
-                context.commit('setState', {
-                    preauth: res
+                let preauth = await Api.preauthService(context)
+                context.commit('done', {
+                    preauth: preauth,
                 })
-                context.commit('done')
             } catch (error) {
                 context.commit('failed', { error })
             }
-
-
-            context.commit('started')
-
-            try {
-                let account = await Api.getAccount()
-                context.commit('done', { account })
-            } catch (error) {
-                context.commit('failed', { error })
-            }
-
-            context.dispatch('updateState')
         },
 
     clear(context) {
