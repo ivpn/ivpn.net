@@ -91,8 +91,8 @@
                             <span v-else>
                                 <div class="status active">{{ $t('account.servicesArea.available') }}</div>
                             </span>
-                            <a :href="portmasterURL"  v-if="!portmasterService || !portmasterService.is_active">{{ $t('account.servicesArea.setupPortmaster') }}</a>
-                            <a href="https://account.safing.io/account/sign_in" target="_blank" v-else>{{ $t('account.servicesArea.accessPortmaster') }}</a>
+                            <a href="#"  v-if="!portmasterService || !portmasterService.is_active">{{ $t('account.servicesArea.setupPortmaster') }}</a>
+                            <a :href="portmasterURL" target="_blank" v-else>{{ $t('account.servicesArea.accessPortmaster') }}</a>
                         </span>
                     </span>
                 </div>
@@ -158,9 +158,9 @@ export default {
             const currentDate = new Date();
             const lastActiveDate = new Date(this.$store.state.auth.account.active_until);
             const daysSinceExpired = Math.floor((currentDate - lastActiveDate) / (24 * 60 * 60 * 1000));
-            if (daysSinceExpired < 14) {
+            if (daysSinceExpired <= 14) {
                 this.expiredStatus = "limitedAccess";
-            } else if (daysSinceExpired < 180) {
+            } else if (daysSinceExpired <= 180) {
                 this.expiredStatus = "pendingDeletion";  
             } else {
                 this.expiredStatus = "deleted";
