@@ -133,16 +133,6 @@ export default {
             canUpgrade: false,
             language: "en",
             productName: "",
-            mailService: null,
-            dnsService: null,
-            portmasterService: null,
-            /*
-            services: [
-                {"mail": null},
-                {"dns": null},
-                {"portmaster": null}
-            ],
-            */
         };
     },
 
@@ -165,6 +155,7 @@ export default {
         if(this.$store.state.auth.account.has_custom_price){
             this.canChange = false;
         }
+        
     },
     mounted(){
 

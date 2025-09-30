@@ -556,8 +556,10 @@ export default {
     },
 
     //Services
-    async services(payload) {
-        return await this.Post('/web/auth/preauth', {  account_id: payload })
+    async preauthService(payload) {
+        return await this.Post(
+            '/web/auth/preauth'
+        );
     },
 
     async getServices(payload) {

@@ -536,10 +536,14 @@
             "setupPortmaster": "Set up",
             "active": "ACTIVE",
             "available": "AVAILABLE",
+            "unavailable": "UNAVAILABLE",
+            "expired": "EXPIRED",
             "upgrade": "Upgrade to access",
-            "mailDescription": "Email forwarding/ Available for all platforms",
-            "dnsDescription": "Dns filtering/ Available for all platforms",
-            "portmasterDescription": "Network firewall/ Available for Windows and Linux"
+            "mailDescription": "Email forwarding / Available for all platforms",
+            "dnsDescription": "DNS filtering / Available for all platforms",
+            "portmasterDescription": "Network firewall / Windows and Linux",
+            "limitedAccess": "Note: Your IVPN account has expired. Additional services have limited functionality and are not available for registration. To regain full access to additional services, please add time to your IVPN account as soon as possible.",
+            "pendingDeletion": "Note: Your IVPN account has expired. Additional services are not available. To avoid loss of settings and data on existing services, please top up your IVPN account."
         }
     },
     "resetPassword": {
