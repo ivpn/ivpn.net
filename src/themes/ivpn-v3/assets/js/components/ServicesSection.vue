@@ -99,7 +99,7 @@
             </div>
         </div>
         <div class="services-footer">
-            <span v-if="!this.$store.state.auth.account.is_active && (this.$store.state.auth.account.product.name == 'IVPN Tier 1' || this.$store.state.auth.account.product.name == 'IVPN Tier 2')" class="red">
+            <span v-if="!this.$store.state.auth.account.is_active && (this.$store.state.auth.account.product.name == 'IVPN Tier 2' || this.$store.state.auth.account.product.name == 'IVPN Tier 3')" class="red">
                 <label v-if="expiredStatus == 'pendingDeletion'">
                     {{ $t('account.servicesArea.pendingDeletion') }}
                 </label>
@@ -160,7 +160,6 @@ export default {
             const currentDate = new Date();
             const lastActiveDate = new Date(this.$store.state.auth.account.active_until);
             const daysSinceExpired = Math.floor((currentDate - lastActiveDate) / (24 * 60 * 60 * 1000));
-            console.log("Days since expired: ", daysSinceExpired);
             if (daysSinceExpired <= 14) {
                 this.expiredStatus = "limitedAccess";
             } else if (daysSinceExpired <= 180) {
