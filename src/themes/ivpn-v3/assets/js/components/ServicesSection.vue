@@ -137,7 +137,9 @@ export default {
     },
     beforeMount(){
         this.$store.dispatch("services/load");
+        if( this.$store.state.auth.account.is_active){
         this.$store.dispatch("services/auth");
+        }
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
@@ -158,6 +160,7 @@ export default {
             const currentDate = new Date();
             const lastActiveDate = new Date(this.$store.state.auth.account.active_until);
             const daysSinceExpired = Math.floor((currentDate - lastActiveDate) / (24 * 60 * 60 * 1000));
+            console.log("Days since expired: ", daysSinceExpired);
             if (daysSinceExpired <= 14) {
                 this.expiredStatus = "limitedAccess";
             } else if (daysSinceExpired <= 180) {
