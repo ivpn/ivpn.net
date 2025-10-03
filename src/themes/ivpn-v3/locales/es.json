@@ -211,6 +211,8 @@
         "accountSettings": "Configuración",
         "changeProductTitle": "Cambiar producto",
         "changeProductDesc": "Puedes cambiar tu plan de producto en cualquier momento. Si tu cuenta está activa, cambiar el tipo de producto cambiará la cantidad de tiempo restante en tu cuenta.",
+        "upgradeProductTitle": "Mejorar producto",
+        "upgradeProductDesc": "Puedes mejorar tu plan de producto en cualquier momento.",
         "activeUntil": "Activo hasta:",
         "willBeActiveUntil": "Estará activo hasta:",
         "price": "Precio",

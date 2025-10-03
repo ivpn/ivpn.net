@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PricesView from '@/views/Prices.vue'
 import OnePageCheckoutView from '@/views/OnePageCheckout.vue'
 import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
+import UpgradeProductView from '@/views/Account/UpgradeProduct/UpgradeProduct.vue'
 import AccountView from '@/views/Account/Account.vue'
 import PaymentView from '@/views/Account/Payment.vue'
 import AddFundsView from '@/views/Account/AddFunds.vue'
@@ -268,6 +269,54 @@ const routes = [
         component: ChangeProductView,
         meta: {
             title: es.account.metaTitle.changeProduct,
+        }
+    },
+    {
+        path: '/account/upgrade-product',
+        name: 'upgrade-product',
+        component: UpgradeProductView,
+        meta: {
+            title: en.account.metaTitle.upgradeProduct,
+        }
+    },
+    {
+        path: '/en/account/upgrade-product',
+        name: 'upgrade-product-en',
+        component: UpgradeProductView,
+        meta: {
+            title: en.account.metaTitle.upgradeProduct,
+        }
+    },
+    {
+        path: '/es/account/upgrade-product',
+        name: 'upgrade-product-es',
+        component: UpgradeProductView,
+        meta: {
+            title: es.account.metaTitle.upgradeProduct,
+        }
+    },
+    {
+        path: '/account/service/email',
+        name: 'service-email',
+        component: EmailService,
+        meta: {
+            title: en.account.metaTitle.emailService,
+        }
+    },
+    {
+        path: '/en/account/service/email',
+        name: 'service-email-en',
+        component: EmailService,
+        meta: {
+            title: en.account.metaTitle.emailService,
+        }
+    },
+    {
+        path: '/es/account/service/email',
+        name: 'service-email-es',
+        component: EmailService,
+        meta: {
+            title: es.account.metaTitle.emailService,
         }
     },
     {

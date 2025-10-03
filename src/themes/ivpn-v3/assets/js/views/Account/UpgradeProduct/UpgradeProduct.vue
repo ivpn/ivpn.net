@@ -1,25 +1,24 @@
 <template>
-    <div v-if="!account.is_active && !isLocked">
+    <div v-if="!isLocked">
         <div class="back-link">
             <router-link :to="{name:'account-' + this.language}">
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
 
-        <h1>{{ $t('account.changeProductTitle') }}</h1>
-        <p>{{ $t('account.changeProductDesc') }}</p>
+        <h1>{{ $t('account.upgradeProductTitle') }}</h1>
+        <p>{{ $t('account.upgradeProductDesc') }}</p>
         <p v-if="error" class="error">
             <b>Error:</b>
             {{ error.message }}
         </p>
         <div class="prices">
             <price-box
+                v-if="account.product.name == 'IVPN Tier 1'"
                 :prices="{}"
                 :current="account.product.name == 'IVPN Tier 1'"
                 :inProgress="inProgress"
-                :buttonText="$t('pricing.select')"
-                :isChange="true"
-                @selected="selected('IVPN Tier 1')"
+                :disabled="disabled"
             >
                 <div class="price-header">{{ $t('pricing.tier1.name') }}</div>
                 <div class="price-features">
@@ -30,14 +29,24 @@
                         <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
+                <template v-slot:footer v-if="account.is_active">
+                    <div class="active-until">
+                        <div
+                            class="label"
+                        >{{ $t('account.activeUntil') }}
+                        </div>
+                        <div class="value">
+                            {{ $filters.formatActiveUntil(account.active_until) }}
+                       </div>
+                    </div>
+                </template>
             </price-box>
 
             <price-box
-                :prices='{}'
+                :prices='{"prices":[{"id":"u1","name":"Price","price":2.2}],"pricesEs":[{"id":"u1","name":"Precio","price":2.2}]}'
                 :current="account.product.name == 'IVPN Tier 2'"
                 :inProgress="inProgress"
                 :isChange="true"
-                :buttonText="$t('pricing.select')"
                 @selected="selected('IVPN Tier 2')"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
@@ -51,14 +60,20 @@
                         <li>{{ $t('pricing.mailx') }}</li>
                     </ul>
                 </div>
+                <template v-slot:footer v-if="account.is_active">
+                    <div class="active-until">
+                        <div class="label">{{ $t('account.activeUntil') }}</div>
+                        <div class="value">
+                            {{ $filters.formatActiveUntil(account.active_until) }}
+                       </div>
+                    </div>
+                </template>
             </price-box>
 
             <price-box
                 :prices="{}"
                 :current="account.product.name == 'IVPN Tier 3'"
                 :inProgress="inProgress"
-                :isChange="true"
-                :buttonText="$t('pricing.select')"
                 @selected="selected('IVPN Tier 3')"
             >
                 <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
@@ -73,8 +88,20 @@
                         <li>{{ $t('pricing.portmaster') }}</li>
                     </ul>
                 </div>
+                <template v-slot:footer v-if="account.is_active">
+                    <div class="active-until">
+                        <div class="label">{{ $t('account.activeUntil') }}</div>
+                        <div class="value">
+                            {{ $filters.formatActiveUntil(account.active_until) }}
+                            <sup>*</sup>
+                       </div>
+                    </div>
+                </template>
             </price-box>
         </div>
+        <p>
+            <sup style="color:red" v-if="account.is_active">*</sup> {{ $t('account.thisPrice') }}
+        </p>
     </div>
 </template>
 
@@ -98,6 +125,21 @@ export default {
 
     
     async beforeMount() {
+        if( this.$store.state.auth.account.product.name == "IVPN Tier 3") {
+            this.isLocked = true;
+        }
+        
+        /*
+        let standardActiveUntil = await this.calculateForProduct("IVPN Standard").then(response => response.active_until);
+        let proPlan = await this.calculateForProduct("IVPN Pro").then(response => response);
+        this.standardActiveUntil =this.$filters.formatActiveUntil(standardActiveUntil);
+        this.proActiveUntil = this.$filters.formatActiveUntil(proPlan.active_until);
+        this.isLocked = proPlan.is_locked;
+        if( proPlan.is_locked ){
+            window.location = "/" + this.language + "/account";
+        }
+        this.$store.dispatch("sessions/load");
+        */
     },
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
@@ -107,6 +149,14 @@ export default {
 
     methods: {
         async selected(newProductName) {
+            if( newProductName == "IVPN Standard" && this.$store.state.sessions.sessions && this.$store.state.sessions.sessions.length > 2){
+                
+                this.$store.commit("popup/show", {
+                    type: "change-product",
+                    data: newProductName,  
+                });
+                return;
+            }
             
             await this.$store.dispatch("product/change", newProductName);
             
@@ -115,27 +165,19 @@ export default {
                 return;
             }
 
-            let productLocale;
-            switch( newProductName ){
-                case "IVPN Tier 1":
-                    productLocale = this.$t('pricing.tier1.name');
-                    break;
-                case "IVPN Tier 2":
-                    productLocale = this.$t('pricing.tier2.name');
-                    break;
-                case "IVPN Tier 3":
-                    productLocale = this.$t('pricing.tier3.name');
-                    break;
-            }
-
             this.$store.commit("setFlashMessage", {
                 type: "success",
-                message: this.$t('account.changeProductSuccess') + productLocale
+                message: this.$t('account.changeProductSuccess') + newProductName
             });
 
             this.$router.push({ name: "account-" + this.language })
         },
 
+        async calculateForProduct(newProduct) {
+            return  await this.$store.dispatch("product/changeDetails", {
+                    product: newProduct,    
+            });
+        }
     },
     computed: {
     

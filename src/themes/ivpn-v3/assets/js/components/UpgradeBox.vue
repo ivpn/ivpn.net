@@ -10,6 +10,13 @@
                 <label>
                     {{ price.name }}
                 </label>
+                
+                
+                <div class="price">
+                    
+                    {{ "$" + price.price }}
+                     <sup v-if="isChange">*</sup>
+                </div>
             </div>
         </div>
         <slot name="footer"></slot>
@@ -28,7 +35,7 @@
             />{{ buttonText}}
         </button>
         </div>
-        <div v-if="!isChange" class="price-legend">
+        <div class="price-legend">
             {{ $t('pricing.chooseTimeAdded') }}
         </div>
     </div>
