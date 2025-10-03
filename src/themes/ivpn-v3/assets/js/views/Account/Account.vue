@@ -50,8 +50,13 @@
                                 <span class="row" v-if="account.product.capabilities.has_spn">[{{ $t('pricing.portmaster') }} &#10003;]</span>
                             </div>
                         </div>
-                        <div class="product-action" v-if="canUpgrade">
+                        <div v-if="!account.is_active" class="product-action">
                             <router-link :to="{ name: 'change-product-' + this.language }"
+                                >{{ $t('account.change') }}</router-link
+                            >
+                        </div>
+                        <div v-else class="product-action" v-if="canUpgrade">
+                            <router-link :to="{ name: 'upgrade-product-' + this.language }"
                                 >{{ $t('account.upgrade') }}</router-link
                             >
                         </div>
@@ -87,8 +92,8 @@
                     </div>
                 </signup-section>
 
-                <signup-section>
-                    <apps-section />
+                <signup-section v-if="account.is_active">
+                    <apps-section></apps-section>
                 </signup-section>   
                 <signup-section>
                     <services-section>

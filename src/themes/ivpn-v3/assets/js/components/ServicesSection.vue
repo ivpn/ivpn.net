@@ -14,7 +14,7 @@
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="this.language + '/account/upgrade'" >{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="this.language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>
@@ -45,7 +45,7 @@
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="this.language + '/account/upgrade'" >{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="this.language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>
@@ -76,7 +76,7 @@
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="this.language + '/account/upgrade'" >{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="this.language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>
