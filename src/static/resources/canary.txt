@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-09-02 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-10-08 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 912841
-hash: 0000000000000000000137532adac783c427e68f30b01fcd4519d37b5a7f8667
+height: 918149
+hash: 000000000000000000011820f53505cb9f00b2b70dda4dfb0623b72c7f3fb69d
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-UK long-term borrowing costs hit highest level since 1998
-Rise in gilt yields adds to pressure on chancellor Rachel Reeves ahead of Budget
+French PM floats pension climbdown to court left
+Outgoing premier Sébastien Lecornu holds last-minute talks with opposition parties after resigning on Monday
 
-Rothschild boosts Middle East wealth business as Liechtenstein private bank retreats
-Liechtensteinische Landesbank is leaving the UAE, where Rothschild opened a wealth management unit last year
+Verisure shares jump 12% in debut after raising €3.2bn in listing
+Stockholm-listed security company has provided boost to European IPO market
 
-CityFibre founder to step down as CEO after £2.3bn refinancing secured
-Greg Mesch’s departure comes weeks after Goldman Sachs and Mubadala back further expansion of network
+ONS revises down UK government borrowing by £2bn after VAT error
+Statistics agency reduces estimate for current fiscal year weeks ahead of Rachel Reeves’ Budget
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmi2qQsACgkQisFrnrZH
-umk2uQf/Ui+WNCQ8Re1xMHe0FmhYMhft4BauSMAPx3GFVOgPXE4GMuM196yJRQNd
-sOqut7erEWNijghw1SjkXFqD9yJTAgiaFWLjtL1hhC0Q81ffNvM8VSyMRwJcmOJv
-x/jTdD/vaTvqlzHm7xEU01m8bSj3sZGZVv+Abz8/mQgM4rwJPnVubN5slr3Pmu3v
-lZm2Z/Em9t/1wX8ad3mJN4HuncdsQklNKL3EcgEwOH7rbYkcoXWXLu/Ih92uwc/t
-xqspbeRNIFPrDsqNWpPCZgHOPlBU59jYcuEx491Ewq7xVq/eUy0avgLcsBFd9Tb+
-Bu+V2cIp8jMl0NzsHsw9eoNAvdI7kg==
-=4/k+
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmjmG0EACgkQisFrnrZH
+umlaJQf/TAyfS4N1KijokBHlmiSaWnINxYusrbARiagCuiGayrD882RSVu+ueneM
+A9owe00DAd938R3lwmBKxVlVNhbSjm2UHpqV2u5DHYwuCLQEoDH1A/KsAxbZqL6p
+wCjzgyefbHU2hZUGKcjP0egI3S23I+lzOdFzG+HiPrXR6J1X3nUfPxHo5F4DlkaO
+d96E+Hrj5w98b6hV3/JAzHlr8Yiyd+rWg5ToSOJmJdUS4reOmvli+0mzK2Kj5lNK
+m21JqFAsLZwflKydsjjEEnLivpJkGQI7w+ib3919PzzB6zNiLAuk6Hp9meNbJUYQ
+Wqcx+IQI3UKg4oyDW0QS8q07bn7unA==
+=uuZS
 -----END PGP SIGNATURE-----
 
 
