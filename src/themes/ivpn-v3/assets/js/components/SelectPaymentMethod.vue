@@ -52,6 +52,7 @@
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
             </router-link>
+            <!--
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
@@ -59,7 +60,8 @@
             >
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
-            </router-link>            
+            </router-link>       
+            -->     
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
