@@ -1,10 +1,5 @@
 <template>
     <div v-if="!isLight">
-        <div class="back-link">
-            <router-link :to="{ name: 'account-' + this.language }">
-                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
-            </router-link>
-        </div>
         <div v-if="!account.is_active">
             <section>
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
