@@ -63,6 +63,9 @@
             </router-link>
         </div>
         <div>
+            <span class="red">Monero payments are temporarily unavailable. Please try a different payment method or check back later.</span><br>
+        </div>
+        <div>
             {{ $t('account.haveVoucher') }}
             <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
         </div>
