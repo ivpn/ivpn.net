@@ -29,7 +29,7 @@
                             <span v-else>
                                 <div class="status active">{{ $t('account.servicesArea.available') }}</div>
                             </span>
-                            <a v-if="isLoaded && (!mailService || !mailService.is_active)" :href="'https://app.staging.mailx.net/signup?preauthid=' + preauth.id + '&preauthtokenhash=' + preauth.token_hash + '&subid=' + preauth.uuid + '&service=mail'" target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
+                            <a v-if="isLoaded && (!mailService || !mailService.is_active)" :href="'https://app.staging.mailx.net/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid " target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
                             <a v-else :href="mailXURL" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
                         </span>
                     </span>
