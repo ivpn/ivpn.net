@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a class="btn btn-big btn-border" v-if="isLoaded && (!mailService || !mailService.is_active)" :href="mailXURL + '/account?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid " target="_blank" >{{ $t('account.accountSettingsTab.syncMail') }}</a>
+        <a class="btn btn-big btn-border" v-if="isLoaded && (mailService && mailService.is_active)" :href="mailXURL + '/account?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid " target="_blank" >{{ $t('account.accountSettingsTab.syncMail') }}</a>
     </div>
 </template>
 
