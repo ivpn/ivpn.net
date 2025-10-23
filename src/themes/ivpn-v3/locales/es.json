@@ -161,7 +161,8 @@
             "wireguard": "Cuenta IVPN - WireGuard",
             "wireguardConfig": "Cuenta IVPN - Configuración de WireGuard",
             "deviceManagement": "Cuenta IVPN - Gestión de dispositivos",
-            "vouchers": "Cuenta IVPN - Cupones"
+            "vouchers": "Cuenta IVPN - Cupones",
+            "services": "Cuenta IVPN - Servicios"
         },
         "greetings": "¡Tu cuenta ha sido creada!",
         "greetingsText": "Por favor, asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
@@ -405,7 +406,8 @@
             "cancel": "Cancelar",
             "warning": "Aviso:",
             "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas.",
-            "retry": "Reintentar"
+            "retry": "Reintentar",
+            "services": "Servicios"
         },
         "payments":{
             "paymentReceived": {

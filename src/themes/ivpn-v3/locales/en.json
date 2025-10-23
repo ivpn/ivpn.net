@@ -161,7 +161,8 @@
             "wireguard": "IVPN Account - WireGuard",
             "wireguardConfig": "IVPN Account - WireGuard Configuration",
             "deviceManagement": "IVPN Account - Device management",
-            "vouchers": "IVPN Account - Vouchers"
+            "vouchers": "IVPN Account - Vouchers",
+            "services": "IVPN Account - Services"
         },
         "greetings": "Your account has been created!",
         "greetingsText": "Please make sure you save your Account ID in a safe place, you will use it to connect to the VPN. You don't need to enter your email to use our service.",
@@ -405,7 +406,9 @@
             "cancel": "Cancel",
             "warning": "Warning:",
             "warningDesc": "this operation cannot be undone. Deleting your account will permanently remove data from our systems.",
-            "retry": "Retry"
+            "retry": "Retry",
+            "services": "Services",
+            "syncMail": "Sync Mailx with IVPN"
         },
         "payments":{
             "paymentReceived": {
