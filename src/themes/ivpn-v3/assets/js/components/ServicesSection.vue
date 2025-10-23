@@ -29,8 +29,12 @@
                             <span v-else>
                                 <div class="status active">{{ $t('account.servicesArea.available') }}</div>
                             </span>
-                            <a v-if="isLoaded && (!mailService || !mailService.is_active)" :href="'https://app.staging.mailx.net/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid " target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
-                            <a v-else :href="mailXURL" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
+                            <a v-if="isLoaded && (!mailService || !mailService.is_active)" :href="mailXURL + '/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid " target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
+                            <span v-else>
+                                <a  :href="mailXURL + '/login'" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
+                            </span>
+                            
+
                         </span>
                     </span>
                 </div>
@@ -175,13 +179,13 @@ export default {
             preauth: (state) => state.services.preauth,
         }),
         mailXURL() {
-            return window.siteConfig?.mailXURL || 'https://app.mailx.net/login';
+            return window.siteConfig?.mailXURL + "/login" || 'https://app.mailx.net';
         },
         modDNSURL() {
             return window.siteConfig?.modDNSURL || 'https://app.moddns.net';
         },
         portmasterURL() {
-            return window.siteConfig?.portmasterURL || 'https://account.safing.io/account/sign_in';
+            return window.siteConfig?.portmasterURL  || 'https://account.safing.io';
         }
     },
     watch: {
