@@ -179,7 +179,7 @@ export default {
             preauth: (state) => state.services.preauth,
         }),
         mailXURL() {
-            return window.siteConfig?.mailXURL + "/login" || 'https://app.mailx.net';
+            return window.siteConfig?.mailXURL || 'https://app.mailx.net';
         },
         modDNSURL() {
             return window.siteConfig?.modDNSURL || 'https://app.moddns.net';
