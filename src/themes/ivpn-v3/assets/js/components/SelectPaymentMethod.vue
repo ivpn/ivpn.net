@@ -52,6 +52,7 @@
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
             </router-link>
+            <!--
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
@@ -59,7 +60,8 @@
             >
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
-            </router-link>        
+            </router-link>    
+            -->    
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
@@ -68,8 +70,11 @@
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
             </router-link>
-        </div>
 
+        </div>
+        <div class="not-available-warning">
+                <span>Monero payments are temporarily unavailable. Please try a different payment method.</span>
+        </div>
         <div>
             {{ $t('account.haveVoucher') }}
             <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
@@ -153,6 +158,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/styles/_vars.scss";
+@import "@/styles/base.scss";
 
 .billing-section {
     display: flex;
@@ -213,6 +219,7 @@ export default {
     text-align: right;
 }
 
+<<<<<<< HEAD
 .plan-name .row{
     @media (max-width: $brk-mobile) {
         display:block;
@@ -221,4 +228,16 @@ export default {
     }
 }
         
+=======
+.not-available-warning {
+    margin: -15px 0 15px;
+    @include light-theme((
+            color: $black
+        ));
+
+    @include dark-theme((
+        color: $white
+    ));
+}
+>>>>>>> f987246a (Updated payment method issue style)
 </style>
