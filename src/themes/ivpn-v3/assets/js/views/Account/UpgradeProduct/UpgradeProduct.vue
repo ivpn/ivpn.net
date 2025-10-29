@@ -43,7 +43,7 @@
             </price-box>
 
             <price-box
-                :prices='{"prices":[{"id":"u1","name":"Price","price":2.2}],"pricesEs":[{"id":"u1","name":"Precio","price":2.2}]}'
+                :prices='{"prices":[{"id":"u1","name":"Price","price":pricing.Tier2}],"pricesEs":[{"id":"u1","name":"Precio","price":pricing.Tier2}]}'
                 :current="account.product.name == 'IVPN Tier 2'"
                 :inProgress="inProgress"
                 :isChange="true"
@@ -71,7 +71,7 @@
             </price-box>
 
             <price-box
-                :prices="{}"
+                :prices='{"prices":[{"id":"u1","name":"Price","price":pricing.Tier3}],"pricesEs":[{"id":"u1","name":"Precio","price":pricing.Tier3}]}'
                 :current="account.product.name == 'IVPN Tier 3'"
                 :inProgress="inProgress"
                 @selected="selected('IVPN Tier 3')"
@@ -117,6 +117,11 @@ export default {
         return {
             language: "en",
             isLocked: false,
+            pricing : {
+                Tier1: null,
+                Tier2: null,
+                Tier3: null
+            },
         };
     },
     components: {
@@ -129,6 +134,7 @@ export default {
             this.isLocked = true;
         }
         
+        pricing = await this.calculateForProduct(this.$store.state.auth.account.product.name);
         /*
         let standardActiveUntil = await this.calculateForProduct("IVPN Standard").then(response => response.active_until);
         let proPlan = await this.calculateForProduct("IVPN Pro").then(response => response);
