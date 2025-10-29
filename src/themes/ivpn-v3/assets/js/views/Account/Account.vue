@@ -181,11 +181,7 @@ export default {
         }
     },
     methods:{
-        async calculateForProduct(newProduct) {
-            return  await this.$store.dispatch("product/changeDetails", {
-                    product: newProduct,    
-            });
-        },
+        
     }
 
 
