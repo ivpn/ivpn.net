@@ -43,7 +43,7 @@
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
             </router-link>
-            <!--
+            
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
@@ -52,7 +52,7 @@
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
             </router-link>    
-            -->    
+                
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
@@ -62,9 +62,6 @@
                 {{ $t('account.cash') }}
             </router-link>
 
-        </div>
-        <div class="not-available-warning">
-                <span>Monero payments are temporarily unavailable. Please try a different payment method.</span>
         </div>
         <div>
             {{ $t('account.haveVoucher') }}

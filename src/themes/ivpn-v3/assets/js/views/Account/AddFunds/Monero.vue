@@ -1,8 +1,5 @@
 <template>
-    <div class="not-available-warning">
-        <span>Monero payments are temporarily unavailable. Please try a different payment method.</span>
-    </div>
-    <div v-if="false" style="text-align: center">
+    <div style="text-align: center">
         <div v-if="inProgress">
             <progress-spinner
                 style="width: 32px; height: 32px"
@@ -90,7 +87,7 @@ export default {
         }),
     },
     async created() {
-        /*
+        
         let resp = await this.$store.dispatch(
             "payments/getMoneroPaymentDetails",
             {
@@ -108,16 +105,16 @@ export default {
         qr.addData(resp.payment_uri);
         qr.make();
         this.qrCode = qr.createSvgTag(2);
-        */
+        
     },
     async mounted() {
-        /*
+        
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
         }
         this.refreshTimer = setInterval(this.updateLastPayment, 10000);
         await this.updateLastPayment();
-        */
+        
     },
     beforeDestroy() {
         clearInterval(this.refreshTimer);
