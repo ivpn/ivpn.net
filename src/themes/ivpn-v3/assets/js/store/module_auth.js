@@ -1,6 +1,7 @@
 
 import Api from "@/api/api"
 import JSCookie from "js-cookie"
+import { fixProductNames } from "@/utils/ProductUtils"
 
 const LoggedInCookieName = 'logged_in'
 
@@ -9,18 +10,12 @@ export default {
     namespaced: true,
 
     state: () => ({
-
-        // the folloding two fiels are taken from the cookies initially
-        // and later can be updated when the actual data is being loaded
+        // Authentication state from cookies
         isAuthenticated: false,
         isLegacy: false,
-
-        // isLoaded means that the contents of account was loaded
         isLoaded: false,
-
         inProgress: false,
         account: null,
-
         error: null,
     }),
 
@@ -48,14 +43,14 @@ export default {
         done(state, payload) {
             state.inProgress = false;
             state.isLoaded = payload.account != null;
-            state.account = payload.account;
+            state.account = fixProductNames(payload.account);
         },
 
         updateAccount(state, payload) {
             if (state.isLegacy && payload.account != null) {
                 throw { message: "cannot update legacy account. Refresh page and try again" }
             }
-            state.account = payload.account;
+            state.account = fixProductNames(payload.account);
         },
 
         // Other mutations
@@ -81,8 +76,7 @@ export default {
         },
 
         async load(context) {
-
-            // return true if acocunt is already loaded
+            // Return early if account is already loaded
             if (context.state.account != null) {
                 return;
             }
@@ -109,6 +103,7 @@ export default {
 
         async login(context, payload) {
             context.commit('started')
+
             try {
                 let response;
 
@@ -135,7 +130,6 @@ export default {
                 context.commit('done', { account: response.account })
 
             } catch (error) {
-
                 context.commit('failed', { error })
                 throw error
 
@@ -177,6 +171,10 @@ export default {
         },
     },
     getters: {
-
+        isAuthenticated: state => state.isAuthenticated,
+        isLegacy: state => state.isLegacy,
+        account: state => state.account,
+        isLoaded: state => state.isLoaded,
+        hasError: state => state.error != null,
     }
 }
