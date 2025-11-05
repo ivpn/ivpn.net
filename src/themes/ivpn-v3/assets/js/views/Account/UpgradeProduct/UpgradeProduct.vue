@@ -13,12 +13,13 @@
         </p>
 
         <div class="prices">
-            <price-box
+            <upgrade-box
                 v-if="account.product.name == 'IVPN Tier 1'"
-                :prices="{}"
+                :price="products.tier1"
                 :current="account.product.name == 'IVPN Tier 1'"
                 :inProgress="inProgress"
                 :disabled="disabled"
+                :buttonText="$t('pricing.tier1.button')"
             >
                 <div class="price-header">{{ $t('pricing.tier1.name') }}</div>
                 <div class="price-features">
@@ -40,14 +41,15 @@
                        </div>
                     </div>
                 </template>
-            </price-box>
+            </upgrade-box>
 
-            <price-box
-                :prices='{"prices":[{"id":"u1","name":"Price","price":pricing.Tier2}],"pricesEs":[{"id":"u1","name":"Precio","price":pricing.Tier2}]}'
+            <upgrade-box
+                :price="pricing.Tier2"
                 :current="account.product.name == 'IVPN Tier 2'"
                 :inProgress="inProgress"
                 :isChange="true"
                 @selected="selected('IVPN Tier 2')"
+                :buttonText="$t('pricing.tier2.button')"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
                 <div class="price-features">
@@ -68,12 +70,13 @@
                        </div>
                     </div>
                 </template>
-            </price-box>
+            </upgrade-box>
 
-            <price-box
-                :prices='{"prices":[{"id":"u1","name":"Price","price":pricing.Tier3}],"pricesEs":[{"id":"u1","name":"Precio","price":pricing.Tier3}]}'
+            <upgrade-box
+                :price="pricing.Tier3"
                 :current="account.product.name == 'IVPN Tier 3'"
                 :inProgress="inProgress"
+                :buttonText="$t('pricing.tier3.button')"
                 @selected="selected('IVPN Tier 3')"
             >
                 <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
@@ -93,11 +96,10 @@
                         <div class="label">{{ $t('account.activeUntil') }}</div>
                         <div class="value">
                             {{ $filters.formatActiveUntil(account.active_until) }}
-                            <sup>*</sup>
                        </div>
                     </div>
                 </template>
-            </price-box>
+            </upgrade-box>
         </div>
         <p>
             <sup style="color:red" v-if="account.is_active">*</sup> {{ $t('account.thisPrice') }}
@@ -106,9 +108,7 @@
 </template>
 
 <script>
-import PriceBox from "@/components/PriceBox.vue";
-import { add, differenceInMinutes } from "date-fns";
-import { th, tr } from "date-fns/locale";
+import UpgradeBox from "@/components/UpgradeBox.vue";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
 
@@ -125,7 +125,7 @@ export default {
         };
     },
     components: {
-        PriceBox
+        UpgradeBox
     },
 
     async beforeMount() {
@@ -135,6 +135,7 @@ export default {
         this.pricing.Tier1 = pricing.tier1_upgrade_price;
         this.pricing.Tier2 = pricing.tier2_upgrade_price;
         this.pricing.Tier3 = pricing.tier3_upgrade_price;
+        console.log(this.pricing);
     },
 
     mounted(){

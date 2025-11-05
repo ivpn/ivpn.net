@@ -1,21 +1,14 @@
 <template>
-    <div class="price-box" :class="product">
+    <div class="price-box upgrade-box" :class="product">
         <slot></slot>
         <div class="price-options">
-            <div
-                class="price-option"
-                v-for="price in pricesLocale"
-                v-bind:key="price.id"
-            >
+            <div class="price-option" v-if="price">
                 <label>
-                    {{ price.name }}
+                    {{ $t('account.price') }}
                 </label>
-                
-                
                 <div class="price">
-                    
-                    {{ "$" + price.price }}
-                     <sup v-if="isChange">*</sup>
+                    {{ "$" + (Math.trunc(price * 100) / 100).toFixed(2) }}
+                    <sup>*</sup>
                 </div>
             </div>
         </div>
@@ -35,9 +28,6 @@
             />{{ buttonText}}
         </button>
         </div>
-        <div class="price-legend">
-            {{ $t('pricing.chooseTimeAdded') }}
-        </div>
     </div>
 </template>
 
@@ -46,24 +36,18 @@ import Spinner from "@/components/ProgressSpinner.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["prices", "onselect", "disabled", "current", "inProgress","isChange","buttonText","product"],
+    props: ["price", "onselect", "disabled", "current", "inProgress","isChange","buttonText","product"],
     components: { Spinner },
     model: {
         event: "change",
     },
     data() {
         return {
-            pricesLocale: [],
         };
     },
     mounted(){
-        let lang = window.location.href.split("/")[3];
+        const lang = window.location.href.split("/")[3];
         useI18n().locale.value = lang;
-        if( lang  === "es"){
-            this.pricesLocale = this.prices.pricesEs;
-        } else {
-            this.pricesLocale = this.prices.prices;
-        }
     },
 
     methods: {
@@ -152,8 +136,8 @@ label {
     display: inline-block;
 }
 
-.price-box,
-.app-content .price-box {
+.upgrade-box,
+.app-content .upgrade-box {
     top: 0px;
     flex-grow: 1;
     display: flex;
@@ -162,6 +146,7 @@ label {
     margin: 24px 18px 0px 0px;
     min-width: 280px;
     max-width: 350px;
+    padding: 32px;
     &.current {
         border-color: $blue;
     }
