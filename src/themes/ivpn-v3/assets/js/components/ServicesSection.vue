@@ -6,20 +6,20 @@
                 <!-- Mail Service -->
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('account.servicesArea.mail') }}</label><span class="service-description"> / {{ $t('account.servicesArea.mailDescription') }}</span></span>
-                    <span v-if="this.$store.state.auth.account.product.name == 'IVPN Tier 1'">
-                        <span v-if="!this.$store.state.auth.account.is_active">
+                    <span v-if="$store.state.auth.account.product.name === 'IVPN Tier 1'">
+                        <span v-if="$store.state.auth.account.is_active">
                             <span>
                                  <div class="status inactive">{{ $t('account.servicesArea.unavailable') }}</div>
                             </span>
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="this.language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="language + '/account/upgrade-product'">{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>
                     <span v-else>
-                        <span v-if="!this.$store.state.auth.account.is_active">
+                        <span v-if="!$store.state.auth.account.is_active">
                              <div class="status inactive">{{ $t('account.servicesArea.expired') }}</div>
                         </span>
                         <span v-else>
@@ -29,9 +29,9 @@
                             <span v-else>
                                 <div class="status active">{{ $t('account.servicesArea.available') }}</div>
                             </span>
-                            <a v-if="isLoaded && (!mailService || !mailService.is_active)" :href="mailXURL + '/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid " target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
+                            <a v-if="isLoaded && (!mailService || !mailService.is_active)" :href="mailXURL + '/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid" target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
                             <span v-else>
-                                <a  :href="mailXURL + '/login'" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
+                                <a :href="mailXURL + '/login'" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
                             </span>
                             
 
@@ -41,20 +41,20 @@
                 <!-- DNS Service -->
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('account.servicesArea.dns') }}</label><span class="service-description"> / {{ $t('account.servicesArea.dnsDescription') }}</span></span>
-                    <span v-if="this.$store.state.auth.account.product.name == 'IVPN Tier 1'">
-                        <span v-if="!this.$store.state.auth.account.is_active">
+                    <span v-if="$store.state.auth.account.product.name === 'IVPN Tier 1'">
+                        <span v-if="!$store.state.auth.account.is_active">
                             <span>
                                  <div class="status inactive">{{ $t('account.servicesArea.unavailable') }}</div>
                             </span>
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="this.language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>
                     <span v-else>
-                        <span v-if="!this.$store.state.auth.account.is_active">
+                        <span v-if="!$store.state.auth.account.is_active">
                              <div class="status inactive">{{ $t('account.servicesArea.expired') }}</div>
                         </span>
                         <span v-else>
@@ -72,20 +72,20 @@
                 <!-- Portmaster Service  -->
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('account.servicesArea.portmaster') }}</label><span class="service-description"> / {{ $t('account.servicesArea.portmasterDescription') }}</span></span>
-                    <span v-if="this.$store.state.auth.account.product.name == 'IVPN Tier 1' || this.$store.state.auth.account.product.name == 'IVPN Tier 2'">
-                        <span v-if="!this.$store.state.auth.account.is_active">
+                    <span v-if="$store.state.auth.account.product.name === 'IVPN Tier 1' || $store.state.auth.account.product.name === 'IVPN Tier 2'">
+                        <span v-if="!$store.state.auth.account.is_active">
                             <span>
                                  <div class="status inactive">{{ $t('account.servicesArea.unavailable') }}</div>
                             </span>
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="this.language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>
                     <span v-else>
-                        <span v-if="!this.$store.state.auth.account.is_active">
+                        <span v-if="!$store.state.auth.account.is_active">
                              <div class="status inactive">{{ $t('account.servicesArea.expired') }}</div>
                         </span>
                         <span v-else>
@@ -103,11 +103,11 @@
             </div>
         </div>
         <div class="services-footer">
-            <span v-if="!this.$store.state.auth.account.is_active && (this.$store.state.auth.account.product.name == 'IVPN Tier 2' || this.$store.state.auth.account.product.name == 'IVPN Tier 3')" class="red">
-                <label v-if="expiredStatus == 'pendingDeletion'">
+            <span v-if="!$store.state.auth.account.is_active && ($store.state.auth.account.product.name === 'IVPN Tier 2' || $store.state.auth.account.product.name === 'IVPN Tier 3')" class="red">
+                <label v-if="expiredStatus === 'pendingDeletion'">
                     {{ $t('account.servicesArea.pendingDeletion') }}
                 </label>
-                <label v-else-if="expiredStatus == 'limitedAccess'">
+                <label v-else-if="expiredStatus === 'limitedAccess'">
                     {{ $t('account.servicesArea.limitedAccess') }}
                 </label>
             </span>
@@ -126,80 +126,122 @@
 <script>
 import { mapState } from "vuex";
 
+const SERVICE_URLS = {
+    mail: 'https://app.mailx.net',
+    dns: 'https://app.moddns.net',
+    portmaster: 'https://account.safing.io'
+};
+
+const EXPIRY_THRESHOLDS = {
+    LIMITED_ACCESS: 14,
+    PENDING_DELETION: 180
+};
+
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
+
 export default {
-    components: {
-    },
+    components: {},
     data() {
         return {
             language: "/en",
-            mailService: null,
-            dnsService: null,
-            portmasterService: null,
+            services: {
+                mail: null,
+                dns: null,
+                portmaster: null
+            },
             isLoaded: false,
             expiredStatus: null,
         };
     },
-    beforeMount(){
-        this.$store.dispatch("services/load");
-        if( this.$store.state.auth.account.is_active){
-        this.$store.dispatch("services/auth");
-        }
-    },
-    mounted() {
-        if ( window.location.href.split("/")[3] == "es") {
-            this.language = "/es";
-        }
-        this.getExpiredStatus();
-    },
-    methods: {
-        getServiceByName(name){
-            for(let i=0; i < this.$store.state.services.services.length; i++){
-                if(this.$store.state.services.services[i].name == name){
-                    return this.$store.state.services.services[i];
-                }
-            }
-            return null;
-        },
-        getExpiredStatus(){
-            const currentDate = new Date();
-            const lastActiveDate = new Date(this.$store.state.auth.account.active_until);
-            const daysSinceExpired = Math.floor((currentDate - lastActiveDate) / (24 * 60 * 60 * 1000));
-            if (daysSinceExpired <= 14) {
-                this.expiredStatus = "limitedAccess";
-            } else if (daysSinceExpired <= 180) {
-                this.expiredStatus = "pendingDeletion";  
-            } else {
-                this.expiredStatus = "deleted";
-            }
-        }
-    },
+
     computed: {
         ...mapState({
             services: (state) => state.services.services,
             preauth: (state) => state.services.preauth,
         }),
+
         mailXURL() {
-            return window.siteConfig?.mailXURL || 'https://app.mailx.net';
+            return window.siteConfig?.mailXURL || SERVICE_URLS.mail;
         },
+        
         modDNSURL() {
-            return window.siteConfig?.modDNSURL || 'https://app.moddns.net';
+            return window.siteConfig?.modDNSURL || SERVICE_URLS.dns;
         },
+        
         portmasterURL() {
-            return window.siteConfig?.portmasterURL  || 'https://account.safing.io';
-        }
+            return window.siteConfig?.portmasterURL || SERVICE_URLS.portmaster;
+        },
     },
+
     watch: {
-        'services': function(newVal) {
-            if(newVal){
-                this.mailService = this.getServiceByName("mail");
-                this.dnsService = this.getServiceByName("dns");
-                this.portmasterService = this.getServiceByName("portmaster");
+        services: {
+            handler(newVal) {
+                if (newVal) {
+                    this.updateServices();
+                }
+            },
+            immediate: true
+        },
+        
+        preauth(newVal) {
+            if (newVal) {
+                this.isLoaded = true;
             }
         },
-        "preauth": function(newVal) {
-            this.isLoaded = true;
-        },
     },
+
+    beforeMount(){
+        this.$store.dispatch("services/load");
+        if( this.$store.state.auth.account.is_active && (this.$store.state.auth.account.product.name != "IVPN Tier 1")) {
+            this.$store.dispatch("services/auth");
+        }
+    },
+    mounted() {
+        if ( window.location.href.split("/")[3] === "es") {
+            this.language = "/es";
+        }
+        this.calculateExpiredStatus();
+    },
+
+    methods: {
+        getServiceByName(name){
+            const services = this.$store.state.services.services;
+            for (let i = 0; i < services.length; i++) {
+                if (services[i].name === name) {
+                    return services[i];
+                }
+            }
+            return null;
+        },
+
+        updateServices() {
+            const serviceNames = ['mail', 'dns', 'portmaster'];
+            serviceNames.forEach(name => {
+                this.services[name] = this.findService(name);
+            });
+        },
+
+        findService(name) {
+            return this.servicesData?.find(service => service.name === name) || null;
+        },
+
+        calculateExpiredStatus() {
+            if (!this.account?.active_until) return;
+            
+            const currentDate = new Date();
+            const lastActiveDate = new Date(this.account.active_until);
+            const daysSinceExpired = Math.floor((currentDate - lastActiveDate) / MS_PER_DAY);
+            
+            if (daysSinceExpired <= EXPIRY_THRESHOLDS.LIMITED_ACCESS) {
+                this.expiredStatus = "limitedAccess";
+            } else if (daysSinceExpired <= EXPIRY_THRESHOLDS.PENDING_DELETION) {
+                this.expiredStatus = "pendingDeletion";
+            } else {
+                this.expiredStatus = "deleted";
+            }
+        }
+    },
+
 };
 </script>
 
@@ -207,64 +249,45 @@ export default {
 @import "@/styles/_vars.scss";
 @import "@/styles/buttons.scss";
 
-
-.services-footer{
+.services-footer {
     opacity: 0.7;
-    margin: 10px 0px;
-    line-height: 28px; 
+    margin: 10px 0;
+    line-height: 28px;
     font-size: 14px;
 }
+
 .services {
     display: flex;
     align-items: center;
 
-    .services-info {
+    &-info {
         margin: 10px 20px;
         flex-grow: 1;
         font-family: $font-main-mono;
         font-size: 16px;
+        
         label {
             line-height: 32px;
         }
 
         .value {
             font-weight: bold;
-
         }
     }
 
-    .service-details{
-        line-height: 32px;
-    }
-
-    .service{
-        .service-description{
+    .service {
+        &-details {
+            line-height: 32px;
+        }
+        
+        &-description {
             font-size: 12px;
         }
-        .status{
-            text-transform: uppercase;
+        
+        &-line {
             display: inline-block;
-            padding: 0px 16px 0px 16px;
-            line-height: 28px;
-            font-size: 12px;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        .status.active{
-            background: #64ad07;
-            color: #ffffff;
-            width: 105px;
-            text-align: center;
-        }
-        .status.inactive{
-            background: #ff0000;
-            color: #ffffff;
-        }
-        .service-line{
-            display: inline-block;
-            width:465px;
+            width: 465px;
+            
             @media (max-width: 768px) {
                 width: 100%;
             }
@@ -272,5 +295,26 @@ export default {
     }
 }
 
+.status {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 16px;
+    line-height: 28px;
+    font-size: 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin: 0 10px;
     
+    &.active {
+        background: #64ad07;
+        color: #ffffff;
+        width: 105px;
+        text-align: center;
+    }
+    
+    &.inactive {
+        background: #ff0000;
+        color: #ffffff;
+    }
+}
 </style>
