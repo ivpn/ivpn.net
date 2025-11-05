@@ -1,7 +1,7 @@
 <template>
     <div v-if="!isLocked">
         <div class="back-link">
-            <router-link :to="{name:'account-' + this.language}">
+            <router-link :to="{name:'account-' + language}">
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
@@ -9,9 +9,9 @@
         <h1>{{ $t('account.upgradeProductTitle') }}</h1>
         <p>{{ $t('account.upgradeProductDesc') }}</p>
         <p v-if="error" class="error">
-            <b>Error:</b>
-            {{ error.message }}
+            <b>Error:</b> {{ error.message }}
         </p>
+
         <div class="prices">
             <price-box
                 v-if="account.product.name == 'IVPN Tier 1'"
@@ -128,35 +128,34 @@ export default {
         PriceBox
     },
 
-    
     async beforeMount() {
-        if( this.$store.state.auth.account.product.name == "IVPN Tier 3") {
-            this.isLocked = true;
-        }
-        
-        pricing = await this.calculateForProduct(this.$store.state.auth.account.product.name);
-        /*
-        let standardActiveUntil = await this.calculateForProduct("IVPN Standard").then(response => response.active_until);
-        let proPlan = await this.calculateForProduct("IVPN Pro").then(response => response);
-        this.standardActiveUntil =this.$filters.formatActiveUntil(standardActiveUntil);
-        this.proActiveUntil = this.$filters.formatActiveUntil(proPlan.active_until);
-        this.isLocked = proPlan.is_locked;
-        if( proPlan.is_locked ){
-            window.location = "/" + this.language + "/account";
-        }
-        this.$store.dispatch("sessions/load");
-        */
+        this.isLocked = this.$store.state.auth.account.product.name === "IVPN Tier 3";
+
+        const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.name);
+        this.pricing.Tier1 = pricing.tier1_upgrade_price;
+        this.pricing.Tier2 = pricing.tier2_upgrade_price;
+        this.pricing.Tier3 = pricing.tier3_upgrade_price;
     },
+
     mounted(){
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
+    },
+
+    computed: {
+    
+        ...mapState({
+            account: state => state.auth.account,
+            products: state => state.product.all,
+            inProgress: state => state.product.inProgress,
+            error: state => state.product.error
+        }),
     },
     
 
     methods: {
         async selected(newProductName) {
-            if( newProductName == "IVPN Standard" && this.$store.state.sessions.sessions && this.$store.state.sessions.sessions.length > 2){
-                
+            if (newProductName === "IVPN Standard" && this.$store.state.sessions.sessions?.length > 2) {
                 this.$store.commit("popup/show", {
                     type: "change-product",
                     data: newProductName,  
@@ -165,7 +164,6 @@ export default {
             }
             
             await this.$store.dispatch("product/change", newProductName);
-            
 
             if (this.error) {
                 return;
@@ -180,24 +178,15 @@ export default {
         },
 
         async calculateForProduct(newProduct) {
-            return  await this.$store.dispatch("product/changeDetails", {
+            return await this.$store.dispatch("product/changeDetails", {
                     product: newProduct,    
             });
         }
     },
-    computed: {
-    
-        ...mapState({
-            account: state => state.auth.account,
-            products: state => state.product.all,
-            inProgress: state => state.product.inProgress,
-            error: state => state.product.error
-        }),
-    }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/styles/_vars.scss";
 @import "@/styles/buttons.scss";
 
