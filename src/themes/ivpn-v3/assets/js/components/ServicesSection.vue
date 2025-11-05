@@ -23,13 +23,13 @@
                              <div class="status inactive">{{ $t('account.servicesArea.expired') }}</div>
                         </span>
                         <span v-else>
-                            <span v-if="mailService && mailService.is_active">
+                            <span v-if="services.mail && services.mail.is_active">
                                 <div class="status active">{{ $t('account.servicesArea.active') }}</div>
                             </span>
                             <span v-else>
                                 <div class="status active">{{ $t('account.servicesArea.available') }}</div>
                             </span>
-                            <a v-if="isLoaded && (!mailService || !mailService.is_active)" :href="mailXURL + '/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid" target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
+                            <a v-if="isLoaded && (!services.mail || !services.mail.is_active)" :href="mailXURL + '/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid" target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
                             <span v-else>
                                 <a :href="mailXURL + '/login'" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
                             </span>
@@ -58,13 +58,13 @@
                              <div class="status inactive">{{ $t('account.servicesArea.expired') }}</div>
                         </span>
                         <span v-else>
-                            <span v-if="dnsService && dnsService.is_active">
+                            <span v-if="services.dns && services.dns.is_active">
                                 <div class="status active">{{ $t('account.servicesArea.active') }}</div>
                             </span>
                             <span v-else>
                                 <div class="status active">{{ $t('account.servicesArea.available') }}</div>
                             </span>
-                            <a href="#" v-if="!dnsService || !dnsService.is_active">{{ $t('account.servicesArea.setupDNS') }}</a>
+                            <a href="#" v-if="!services.dns || !services.dns.is_active">{{ $t('account.servicesArea.setupDNS') }}</a>
                             <a :href="modDNSURL" target="_blank" v-else>{{ $t('account.servicesArea.accessDNS') }}</a>
                         </span>
                     </span>
@@ -89,13 +89,13 @@
                              <div class="status inactive">{{ $t('account.servicesArea.expired') }}</div>
                         </span>
                         <span v-else>
-                            <span v-if="portmasterService && portmasterService.is_active">
+                            <span v-if="services.portmaster && services.portmaster.is_active">
                                 <div class="status active">{{ $t('account.servicesArea.active') }}</div>
                             </span>
                             <span v-else>
                                 <div class="status active">{{ $t('account.servicesArea.available') }}</div>
                             </span>
-                            <a href="#"  v-if="!portmasterService || !portmasterService.is_active">{{ $t('account.servicesArea.setupPortmaster') }}</a>
+                            <a href="#"  v-if="!services.portmaster || !services.portmaster.is_active">{{ $t('account.servicesArea.setupPortmaster') }}</a>
                             <a :href="portmasterURL" target="_blank" v-else>{{ $t('account.servicesArea.accessPortmaster') }}</a>
                         </span>
                     </span>
@@ -156,7 +156,7 @@ export default {
 
     computed: {
         ...mapState({
-            services: (state) => state.services.services,
+            servicesData: (state) => state.services.services,
             preauth: (state) => state.services.preauth,
         }),
 
@@ -174,7 +174,7 @@ export default {
     },
 
     watch: {
-        services: {
+        servicesData: {
             handler(newVal) {
                 if (newVal) {
                     this.updateServices();
@@ -204,25 +204,19 @@ export default {
     },
 
     methods: {
-        getServiceByName(name){
-            const services = this.$store.state.services.services;
-            for (let i = 0; i < services.length; i++) {
-                if (services[i].name === name) {
-                    return services[i];
-                }
-            }
-            return null;
-        },
-
         updateServices() {
             const serviceNames = ['mail', 'dns', 'portmaster'];
             serviceNames.forEach(name => {
                 this.services[name] = this.findService(name);
             });
+            console.log("Services updated:", this.services);
         },
 
         findService(name) {
-            return this.servicesData?.find(service => service.name === name) || null;
+            if (!this.servicesData || !Array.isArray(this.servicesData)) {
+                return null;
+            }
+            return this.servicesData.find(service => service.name === name) || null;
         },
 
         calculateExpiredStatus() {
