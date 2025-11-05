@@ -33,8 +33,6 @@
                             <span v-else>
                                 <a :href="mailXURL + '/login'" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
                             </span>
-                            
-
                         </span>
                     </span>
                 </div>
