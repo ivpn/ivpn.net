@@ -207,7 +207,6 @@ export default {
             serviceNames.forEach(name => {
                 this.services[name] = this.findService(name);
             });
-            console.log("Services updated:", this.services);
         },
 
         findService(name) {

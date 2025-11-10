@@ -8,7 +8,12 @@
 
         <div>
             <h1>{{ $t('account.accountSettingsTab.extendYourAccount') }}</h1>
-            <select-payment-method :account="account"></select-payment-method>
+            <select-payment-method 
+                :account="account"
+                :monero=true
+                :cash=true
+                :voucher=true
+            ></select-payment-method>
         </div>
     </div>
 </template>

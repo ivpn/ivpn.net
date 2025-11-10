@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="billing-section">
+        <div class="billing-section" v-if="!isUpgrade">
             <div class="billing-options">
                 <div class="plan-details" v-if="account.is_new">
                     <div class="plan-name"><span class="row">{{ $t('account.selectedPlan') }}:</span>{{ productName }}</div>
@@ -52,15 +52,19 @@
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
             </router-link>
+            
             <router-link
+                v-if="monero"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-monero-' + this.language,  params: { price: price.id } }"
             >
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
-            </router-link>            
+            </router-link>    
+                
             <router-link
+                v-if="cash"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-cash-' + this.language, params: { price: price.id } }"
@@ -68,8 +72,9 @@
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
             </router-link>
+
         </div>
-        <div>
+        <div v-if="voucher">
             {{ $t('account.haveVoucher') }}
             <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
         </div>
@@ -97,7 +102,7 @@ export default {
         SelectBillingCycle,
     },
 
-    props: ["account"],
+    props: ["account","monero","cash","voucher","isUpgrade"],
     data() {
         return {
             price: "",
@@ -108,6 +113,7 @@ export default {
     },
     created() {
         this.price = this.$store.state.payments.selectedPrice;
+        console.log("selected price on create:", this.price);
 
         if (
             this.price == null ||
@@ -152,6 +158,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/styles/_vars.scss";
+@import "@/styles/base.scss";
 
 .billing-section {
     display: flex;
@@ -212,12 +219,14 @@ export default {
     text-align: right;
 }
 
-.plan-name .row{
-    @media (max-width: $brk-mobile) {
-        display:block;
-        width: 100%;
-        line-height: 25px;;
-    }
+.not-available-warning {
+    margin: -15px 0 15px;
+    @include light-theme((
+            color: $black
+        ));
+
+    @include dark-theme((
+        color: $white
+    ));
 }
-        
 </style>

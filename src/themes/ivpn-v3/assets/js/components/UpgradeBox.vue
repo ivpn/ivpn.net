@@ -14,19 +14,27 @@
         </div>
         <slot name="footer"></slot>
         <div class="price-button">
-        <button
+            <a :href="'/' + language  + redirectUrl" v-if="redirectUrl && !disabled && !current && !inProgress">
+            <button
+                class="btn btn-solid btn-big"
+                style="margin-top: 2em"
+            >
+                {{ buttonText }}
+            </button>
+            </a>
+            <button v-else
             class="btn btn-solid btn-big"
             style="margin-top: 2em"
-            v-on:click="selected"
+            @click="selected"
             :disabled="disabled || current || inProgress"
-        >
+            >
             <spinner
                 fill="#FFFFFF"
                 width="32"
                 height="32"
                 v-if="inProgress && !current"
-            />{{ buttonText}}
-        </button>
+            />{{ buttonText }}
+            </button>
         </div>
     </div>
 </template>
@@ -36,18 +44,20 @@ import Spinner from "@/components/ProgressSpinner.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["price", "onselect", "disabled", "current", "inProgress","isChange","buttonText","product"],
+    props: ["price", "onselect", "disabled", "current", "inProgress","isChange","buttonText","product","redirectUrl"],
     components: { Spinner },
     model: {
         event: "change",
     },
     data() {
         return {
+            language: "en",
         };
     },
     mounted(){
         const lang = window.location.href.split("/")[3];
         useI18n().locale.value = lang;
+        this.language = window.location.href.split("/")[3];
     },
 
     methods: {
@@ -290,9 +300,6 @@ label {
             color: $red;
         }
     }
-}
-.price-button{
-    padding: 0px 10px 35px 10px;
 }
 
 .price-button .btn{

@@ -35,6 +35,7 @@ import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
 import DeviceManagementView from '@/views/Account/DeviceManagement.vue'
 import CompareProductView from '@/views/Account/CompareProduct.vue'
+import UpgradePaymentView from '@/views/Account/UpgradePayment.vue'
 
 import InternalErrorView from '../views/500.vue'
 
@@ -817,6 +818,23 @@ const routes = [
             title: es.account.metaTitle.deviceManagement,
         }
     },
+    {
+        path: '/en/account/upgrade/:product',
+        component: UpgradePaymentView,
+        name: 'upgrade-payment-en',
+        meta: {
+            title: en.account.metaTitle.upgradeProduct,
+        }
+    }, 
+    {
+        path: '/es/account/upgrade/:product',
+        component: UpgradePaymentView,
+        name: 'upgrade-payment-es',
+        meta: {
+            title: es.account.metaTitle.upgradeProduct,
+        }
+    }, 
+    
 ]
 
 const router = createRouter({

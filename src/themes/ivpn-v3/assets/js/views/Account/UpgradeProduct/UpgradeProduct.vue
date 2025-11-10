@@ -50,6 +50,7 @@
                 :isChange="true"
                 @selected="selected('IVPN Tier 2')"
                 :buttonText="$t('pricing.tier2.button')"
+                 :redirectUrl="'/account/upgrade/tier2'"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
                 <div class="price-features">
@@ -78,6 +79,7 @@
                 :inProgress="inProgress"
                 :buttonText="$t('pricing.tier3.button')"
                 @selected="selected('IVPN Tier 3')"
+                :redirectUrl="'/account/upgrade/tier3'"
             >
                 <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
                 <div class="price-features">
@@ -135,7 +137,6 @@ export default {
         this.pricing.Tier1 = pricing.tier1_upgrade_price;
         this.pricing.Tier2 = pricing.tier2_upgrade_price;
         this.pricing.Tier3 = pricing.tier3_upgrade_price;
-        console.log(this.pricing);
     },
 
     mounted(){
@@ -155,29 +156,6 @@ export default {
     
 
     methods: {
-        async selected(newProductName) {
-            if (newProductName === "IVPN Standard" && this.$store.state.sessions.sessions?.length > 2) {
-                this.$store.commit("popup/show", {
-                    type: "change-product",
-                    data: newProductName,  
-                });
-                return;
-            }
-            
-            await this.$store.dispatch("product/change", newProductName);
-
-            if (this.error) {
-                return;
-            }
-
-            this.$store.commit("setFlashMessage", {
-                type: "success",
-                message: this.$t('account.changeProductSuccess') + newProductName
-            });
-
-            this.$router.push({ name: "account-" + this.language })
-        },
-
         async calculateForProduct(newProduct) {
             return await this.$store.dispatch("product/changeDetails", {
                     product: newProduct,    
