@@ -409,7 +409,7 @@
             "warningDesc": "this operation cannot be undone. Deleting your account will permanently remove data from our systems.",
             "retry": "Retry",
             "services": "Services",
-            "syncMail": "Sync Mailx with IVPN"
+            "syncMail": "Synchronize"
         },
         "payments":{
             "paymentReceived": {
