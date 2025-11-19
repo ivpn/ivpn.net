@@ -20,15 +20,6 @@
                     </li>
                     <li
                         :class="{
-                            'is-active': this.$route.name == 'settings-services-' + this.language,
-                        }"
-                    >
-                        <router-link :to="{ name: 'settings-services-' + this.language}">
-                            {{ $t('account.accountSettingsTab.services') }}
-                        </router-link>
-                    </li>
-                    <li
-                        :class="{
                             'is-active': this.$route.name == 'settings-billing-' + this.language,
                         }"
                     >

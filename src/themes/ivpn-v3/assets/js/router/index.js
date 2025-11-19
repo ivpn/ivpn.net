@@ -21,7 +21,6 @@ import Settings from '@/views/Account/Settings.vue'
 import SettingsAuthentication from '@/views/Account/Settings/Authentication.vue'
 import SettingsBilling from '@/views/Account/Settings/Billing.vue'
 import SettingsDelete from '@/views/Account/Settings/Delete.vue'
-import SettingsServices from '@/views/Account/Settings/Services.vue'
 import LoginView from '@/views/Login.vue'
 import NotFoundView from '@/views/404.vue'
 
@@ -492,14 +491,6 @@ const routes = [
                 }
             },
             {
-                path: '',
-                name: 'settings-services-en',
-                component: SettingsServices,
-                meta: {
-                    title: en.account.metaTitle.services,
-                }
-            },
-            {
                 path: 'billing',
                 name: 'settings-billing-en',
                 component: SettingsBilling,
@@ -527,14 +518,6 @@ const routes = [
                 component: SettingsAuthentication,
                 meta: {
                     title: es.account.metaTitle.authentication,
-                }
-            },
-            {
-                path: '',
-                name: 'settings-services-es',
-                component: SettingsServices,
-                meta: {
-                    title: es.account.metaTitle.services,
                 }
             },
             {

@@ -10,6 +10,10 @@
                 <label>
                     {{ price.name }}
                 </label>
+
+                 <div class="price">
+                    {{ "$" + price.price }}
+                </div>
             </div>
         </div>
         <slot name="footer"></slot>

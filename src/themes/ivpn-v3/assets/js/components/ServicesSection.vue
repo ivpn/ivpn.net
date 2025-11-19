@@ -31,7 +31,8 @@
                             </span>
                             <a v-if="isLoaded && (!services.mail || !services.mail.is_active)" :href="mailXURL + '/signup?sessionid=' + preauth.mail.sessionid + '&subid=' + preauth.uuid" target="_blank" >{{ $t('account.servicesArea.setupMail') }}</a>
                             <span v-else>
-                                <a :href="mailXURL + '/login'" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
+                                <a v-if="this.$route.query.action == 'sync'" :href="mailXURL + '/account?sessionid=' + preauth?.mail?.sessionid + '&subid=' + preauth?.uuid" target="_blank" >{{ $t('account.accountSettingsTab.syncMail') }}</a>
+                                <a v-else :href="mailXURL + '/login'" target="_blank">{{ $t('account.servicesArea.accessMail') }}</a>
                             </span>
                         </span>
                     </span>
@@ -283,29 +284,33 @@ export default {
                 width: 100%;
             }
         }
+
+        .status {
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 0 16px;
+            line-height: 28px;
+            font-size: 12px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            margin: 0 10px;
+            @media (max-width: $brk-mobile) {
+                margin: 10px 10px 0px 0px;
+            }
+    
+            &.active {
+                background: #64ad07;
+                color: #ffffff;
+                width: 105px;
+                text-align: center;
+            }
+    
+            &.inactive {
+                background: #ff0000;
+                color: #ffffff;
+            }
+        }
     }
 }
 
-.status {
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 0 16px;
-    line-height: 28px;
-    font-size: 12px;
-    border-radius: 4px;
-    letter-spacing: 1px;
-    margin: 0 10px;
-    
-    &.active {
-        background: #64ad07;
-        color: #ffffff;
-        width: 105px;
-        text-align: center;
-    }
-    
-    &.inactive {
-        background: #ff0000;
-        color: #ffffff;
-    }
-}
 </style>
