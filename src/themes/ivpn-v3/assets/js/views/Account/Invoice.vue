@@ -89,7 +89,7 @@ export default {
     },
 
     beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+        if( this.$store.state.auth.account.product.id == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
         }

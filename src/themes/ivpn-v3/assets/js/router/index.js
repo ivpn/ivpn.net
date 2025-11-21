@@ -710,6 +710,120 @@ const routes = [
         
     },
     {
+        path: '/en/account/upgrade-product/:price',
+        component: AddFundsView,
+        children: [
+            {
+                path: 'cc', name: 'upgrade-product-cc-en',
+                component: AddFundsCC,
+                meta: {
+                    title: en.account.metaTitle.addFundsCC,
+                }
+            },
+            {
+                path: 'paypal', name: 'upgrade-product-paypal-en',
+                component: AddFundsPayPal,
+                meta: {
+                    title: en.account.metaTitle.addFundsPaypal,
+                },
+            }, {
+                path: 'bitcoin', name: 'upgrade-product-bitcoin-en',
+                component: AddFundsBitcoin,
+                meta: {
+                    title: en.account.metaTitle.addFundsBitcoin,
+                }
+            }, {
+                path: 'monero', name: 'upgrade-product-monero-en',
+                component: AddFundsMonero,
+                meta: {
+                    title: en.account.metaTitle.addFundsMonero,
+                }
+            }, {
+                path: 'voucher', name: 'upgrade-product-voucher-en',
+                component: AddFundsGiftCard,
+                meta: {
+                    title: en.account.metaTitle.addFundsVoucher,
+                }
+            }, {
+                path: 'applepay', name: 'upgrade-product-apple-en',
+                component: ApplePayView,
+                meta: {
+                    title: en.account.metaTitle.addFundsApplePay,
+                }
+            }, {
+                path: 'googlepay', name: 'upgrade-product-google-en',
+                component: GooglePayView,
+                meta: {
+                    title: en.account.metaTitle.addFundsGooglePay,
+                }
+            }, {
+                path: 'cash', name: 'upgrade-product-cash-en',
+                component: AddFundsCash,
+                meta: {
+                    title: en.account.metaTitle.addFundsCash,
+                }
+            }
+        ],
+        
+    },
+    {
+        path: '/es/account/upgrade-product/:price',
+        component: AddFundsView,
+        children: [
+            {
+                path: 'cc', name: 'upgrade-product-cc-es',
+                component: AddFundsCC,
+                meta: {
+                    title: es.account.metaTitle.addFundsCC,
+                }
+            },
+            {
+                path: 'paypal', name: 'upgrade-product-paypal-es',
+                component: AddFundsPayPal,
+                meta: {
+                    title: es.account.metaTitle.addFundsPaypal,
+                },
+            }, {
+                path: 'bitcoin', name: 'upgrade-product-bitcoin-es',
+                component: AddFundsBitcoin,
+                meta: {
+                    title: es.account.metaTitle.addFundsBitcoin,
+                }
+            }, {
+                path: 'monero', name: 'upgrade-product-monero-es',
+                component: AddFundsMonero,
+                meta: {
+                    title: es.account.metaTitle.addFundsMonero,
+                }
+            }, {
+                path: 'voucher', name: 'upgrade-product-voucher-es',
+                component: AddFundsGiftCard,
+                meta: {
+                    title: es.account.metaTitle.addFundsVoucher,
+                }
+            }, {
+                path: 'applepay', name: 'upgrade-product-apple-es',
+                component: ApplePayView,
+                meta: {
+                    title: es.account.metaTitle.addFundsApplePay,
+                }
+            }, {
+                path: 'googlepay', name: 'upgrade-product-google-es',
+                component: GooglePayView,
+                meta: {
+                    title: es.account.metaTitle.addFundsGooglePay,
+                }
+            }, {
+                path: 'cash', name: 'upgrade-product-cash-es',
+                component: AddFundsCash,
+                meta: {
+                    title: es.account.metaTitle.addFundsCash,
+                }
+            }
+        ],
+        
+    },
+    {
         path: '/account/wireguard',
         name: 'wireguard',
         component: WireguardView,

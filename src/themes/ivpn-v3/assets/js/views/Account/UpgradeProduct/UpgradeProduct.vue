@@ -14,15 +14,15 @@
 
         <div class="prices">
             <upgrade-box
-                v-if="account.product.name == 'IVPN Tier 1'"
+                v-if="account.product.id == 'IVPN Tier 1'"
                 :price="products.tier1"
-                :current="account.product.name == 'IVPN Tier 1'"
+                :current="account.product.id == 'IVPN Tier 1'"
                 :inProgress="inProgress"
                 :disabled="disabled"
                 :buttonText="$t('pricing.tier1.button')"
             >
                 <div class="price-header">{{ $t('pricing.tier1.name') }}</div>
-                <div class="price-features">
+                <div class="upgrade-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
                         <li>{{ $t('pricing.tier1Devices') }}</li>
@@ -45,7 +45,7 @@
 
             <upgrade-box
                 :price="pricing.Tier2"
-                :current="account.product.name == 'IVPN Tier 2'"
+                :current="account.product.id == 'IVPN Tier 2'"
                 :inProgress="inProgress"
                 :isChange="true"
                 @selected="selected('IVPN Tier 2')"
@@ -53,7 +53,7 @@
                  :redirectUrl="'/account/upgrade/tier2'"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
-                <div class="price-features">
+                <div class="upgrade-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
                         <li>{{ $t('pricing.tier2Devices') }}</li>
@@ -75,14 +75,14 @@
 
             <upgrade-box
                 :price="pricing.Tier3"
-                :current="account.product.name == 'IVPN Tier 3'"
+                :current="account.product.id == 'IVPN Tier 3'"
                 :inProgress="inProgress"
                 :buttonText="$t('pricing.tier3.button')"
                 @selected="selected('IVPN Tier 3')"
                 :redirectUrl="'/account/upgrade/tier3'"
             >
                 <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
-                <div class="price-features">
+                <div class="upgrade-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
                         <li>{{ $t('pricing.tier2Devices') }}</li>
@@ -131,9 +131,9 @@ export default {
     },
 
     async beforeMount() {
-        this.isLocked = this.$store.state.auth.account.product.name === "IVPN Tier 3";
+        this.isLocked = this.$store.state.auth.account.product.id === "IVPN Tier 3";
 
-        const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.name);
+        const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.id);
         this.pricing.Tier1 = pricing.tier1_upgrade_price;
         this.pricing.Tier2 = pricing.tier2_upgrade_price;
         this.pricing.Tier3 = pricing.tier3_upgrade_price;

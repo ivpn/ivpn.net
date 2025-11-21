@@ -50,10 +50,10 @@ export default {
         }),
     },
     async beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+        if( this.$store.state.auth.account.product.id == "IVPN Light"){
             window.location = "/light";
         }
-        const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.name);
+        const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.id);
         switch(this.$route.params.product){
             case "tier2":
                 this.price= pricing.tier2_upgrade_price

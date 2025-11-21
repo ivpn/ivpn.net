@@ -15,7 +15,7 @@
         <div class="prices">
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Tier 1'"
+                :current="account.product.id == 'IVPN Tier 1'"
                 :inProgress="inProgress"
                 :buttonText="$t('pricing.select')"
                 :isChange="true"
@@ -34,7 +34,7 @@
 
             <price-box
                 :prices='{}'
-                :current="account.product.name == 'IVPN Tier 2'"
+                :current="account.product.id == 'IVPN Tier 2'"
                 :inProgress="inProgress"
                 :isChange="true"
                 :buttonText="$t('pricing.select')"
@@ -55,7 +55,7 @@
 
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Tier 3'"
+                :current="account.product.id == 'IVPN Tier 3'"
                 :inProgress="inProgress"
                 :isChange="true"
                 :buttonText="$t('pricing.select')"

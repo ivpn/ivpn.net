@@ -6,7 +6,7 @@
                 <!-- Mail Service -->
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('account.servicesArea.mail') }}</label><span class="service-description"> / {{ $t('account.servicesArea.mailDescription') }}</span></span>
-                    <span v-if="$store.state.auth.account.product.name === 'IVPN Tier 1'">
+                    <span v-if="$store.state.auth.account.product.id === 'IVPN Tier 1'">
                         <span v-if="$store.state.auth.account.is_active">
                             <span>
                                  <div class="status inactive">{{ $t('account.servicesArea.unavailable') }}</div>
@@ -40,7 +40,7 @@
                 <!-- DNS Service -->
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('account.servicesArea.dns') }}</label><span class="service-description"> / {{ $t('account.servicesArea.dnsDescription') }}</span></span>
-                    <span v-if="$store.state.auth.account.product.name === 'IVPN Tier 1'">
+                    <span v-if="$store.state.auth.account.product.id === 'IVPN Tier 1'">
                         <span v-if="!$store.state.auth.account.is_active">
                             <span>
                                  <div class="status inactive">{{ $t('account.servicesArea.unavailable') }}</div>
@@ -71,7 +71,7 @@
                 <!-- Portmaster Service  -->
                 <div class="service">
                     <span class="service-line"><label class="value">{{ $t('account.servicesArea.portmaster') }}</label><span class="service-description"> / {{ $t('account.servicesArea.portmasterDescription') }}</span></span>
-                    <span v-if="$store.state.auth.account.product.name === 'IVPN Tier 1' || $store.state.auth.account.product.name === 'IVPN Tier 2'">
+                    <span v-if="$store.state.auth.account.product.id === 'IVPN Tier 1' || $store.state.auth.account.product.id === 'IVPN Tier 2'">
                         <span v-if="!$store.state.auth.account.is_active">
                             <span>
                                  <div class="status inactive">{{ $t('account.servicesArea.unavailable') }}</div>
@@ -102,7 +102,7 @@
             </div>
         </div>
         <div class="services-footer">
-            <span v-if="!$store.state.auth.account.is_active && ($store.state.auth.account.product.name === 'IVPN Tier 2' || $store.state.auth.account.product.name === 'IVPN Tier 3')" class="red">
+            <span v-if="!$store.state.auth.account.is_active && ($store.state.auth.account.product.id === 'IVPN Tier 2' || $store.state.auth.account.product.id === 'IVPN Tier 3')" class="red">
                 <label v-if="expiredStatus === 'pendingDeletion'">
                     {{ $t('account.servicesArea.pendingDeletion') }}
                 </label>

@@ -27,7 +27,7 @@
             </div>
             <div class="gap"></div>
         </div>
-        <div class="pay-buttons">
+        <div v-if="!isUpgrade" class="pay-buttons">
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
@@ -72,11 +72,52 @@
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
             </router-link>
-
         </div>
-        <div v-if="voucher">
-            {{ $t('account.haveVoucher') }}
-            <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
+        <div v-else class="pay-buttons">
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-product-cc-' + this.language, params: { price: this.$route.params.product} }"
+            >
+                <div class="credit-card-icon"></div>
+                {{ $t('account.creditCard') }}
+            </router-link>
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-product-paypal-' + this.language, params: { price: this.$route.params.product } }"
+            >
+                <div class="paypal-icon"></div>
+                {{ $t('account.paypal') }}
+            </router-link>
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-product-bitcoin-' + this.language, params: { price: this.$route.params.product } }"
+            >
+                <div class="bitcoin-icon"></div>
+                {{ $t('account.bitcoin') }}
+            </router-link>
+            
+            <router-link
+                v-if="monero"
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-product-monero-' + this.language,  params: { price: this.$route.params.product } }"
+            >
+                <div class="monero-icon"></div>
+                {{ $t('account.monero') }}
+            </router-link>    
+                
+            <router-link
+                v-if="cash"
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-product-cash-' + this.language, params: { price: this.$route.params.product } }"
+            >
+                <div class="cash-icon"></div>
+                {{ $t('account.cash') }}
+            </router-link>
         </div>
         <!--
         <div class="pay-buttons">
@@ -123,19 +164,6 @@ export default {
         }
     },
     beforeMount(){
-         switch(this.$store.state.auth.account.product.name){
-            case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1.name');
-                break;
-            case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2.name');
-                break;
-            case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3.name');
-                break;
-            default:
-                this.productName = this.$store.state.auth.account.product.name;
-        }
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {

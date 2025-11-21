@@ -1,8 +1,8 @@
 <template>
-    <div class="price-box upgrade-box" :class="product">
+    <div class="upgrade-box price-box" :class="product">
         <slot></slot>
         <div class="price-options">
-            <div class="price-option" v-if="price">
+            <div class="price-option" v-if="redirectUrl && !disabled && !current && !inProgress">
                 <label>
                     {{ $t('account.price') }}
                 </label>
@@ -16,14 +16,14 @@
         <div class="price-button">
             <a :href="'/' + language  + redirectUrl" v-if="redirectUrl && !disabled && !current && !inProgress">
             <button
-                class="btn btn-solid btn-big"
+                class="btn btn-solid btn-upgrade"
                 style="margin-top: 2em"
             >
                 {{ buttonText }}
             </button>
             </a>
             <button v-else
-            class="btn btn-solid btn-big"
+            class="btn btn-solid btn-upgrade"
             style="margin-top: 2em"
             @click="selected"
             :disabled="disabled || current || inProgress"
@@ -228,7 +228,7 @@ label {
 }
 
 
-.price-features {
+.upgrade-features {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -240,19 +240,19 @@ label {
     li {
         list-style: disc;
     }
-    padding: 0px 25px 0px 25px;
+    padding: 0px 15px 0px 25px;
     
 }
 
 
 
-.price-features ul.additional-features {
+.upgrade-features ul.additional-features {
     position: absolute;
     top: 0px;
     right: 0px;
 }
 
-.price-features ul {
+.upgrade-features ul {
     padding-left: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -378,6 +378,27 @@ label {
 
 [data-tooltip]:hover:after {
     display: block;
+}
+
+.upgrade-box .price-button {
+    padding: 0px 0px 15px 10px;
+}
+
+.upgrade-box .price-box {
+    top: 0px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(51, 77, 102, 0.2);
+    margin: 24px 28px 0px 0px;
+    min-width: 290px;
+    max-width: 350px;
+}
+
+.btn.btn-upgrade {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 5px;
 }
 
 </style>

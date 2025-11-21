@@ -71,7 +71,7 @@ export default {
     },
 
     beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+        if( this.$store.state.auth.account.product.id == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
         }
@@ -80,20 +80,6 @@ export default {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
             this.language = "es";
-        }
-
-        switch(this.$store.state.auth.account.product.name){
-            case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1.name');
-                break;
-            case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2.name');
-                break;
-            case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3.name');
-                break;
-            default:
-                this.productName = this.$store.state.auth.account.product.name;
         }
     }
 };

@@ -20,6 +20,9 @@
                     <p>{{ $t('account.continueToPayment2') }}</p>
                     <select-payment-method
                         :account="account"
+                        :monero=true
+                        :cash=true
+                        :voucher=true
                     ></select-payment-method>
                 </section>
                 <signup-section></signup-section>
@@ -149,11 +152,11 @@ export default {
 
     
     async beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+        if( this.$store.state.auth.account.product.id == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
         }
-        if( !this.$store.state.auth.account.is_new && (this.$store.state.auth.account.product.name == "IVPN Tier 1" || this.$store.state.auth.account.product.name == "IVPN Tier 2")  ){
+        if( !this.$store.state.auth.account.is_new && (this.$store.state.auth.account.product.id == "IVPN Tier 1" || this.$store.state.auth.account.product.id == "IVPN Tier 2")  ){
             this.canUpgrade = true;
         }
 
@@ -166,19 +169,6 @@ export default {
 
         useI18n().locale.value = window.location.href.split("/")[3];
         this.language = window.location.href.split("/")[3];
-        switch(this.$store.state.auth.account.product.name){
-            case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1.name');
-                break;
-            case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2.name');
-                break;
-            case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3.name');
-                break;
-            default:
-                this.productName = this.$store.state.auth.account.product.name;
-        }
     },
     methods:{
         
