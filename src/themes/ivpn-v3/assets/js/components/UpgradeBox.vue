@@ -7,7 +7,7 @@
                     {{ $t('account.price') }}
                 </label>
                 <div class="price">
-                    {{ "$" + (Math.trunc(price * 100) / 100).toFixed(2) }}
+                    {{ "$" + price }}
                     <sup>*</sup>
                 </div>
             </div>

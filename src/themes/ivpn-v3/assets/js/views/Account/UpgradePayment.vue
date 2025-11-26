@@ -5,13 +5,12 @@
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
-
         <div>
             <h1>{{ $t('account.accountSettingsTab.upgradeYourAccount') }}</h1>
             <ul class="payment-details">
                 <li>{{ currentProduct }}</li>
                 <li>{{ newProduct }}</li>
-                <li>${{ + (Math.trunc(price * 100) / 100).toFixed(2) }}</li>
+                <li>{{ price }}</li>
             </ul>
             <select-payment-method 
                 :account="account"
@@ -42,6 +41,7 @@ export default {
             currentProduct: fixProductNames(this.$store.state.auth.account.product.name),
             newProduct: '',
             price: null,
+            isLight : false,
         };
     },
     computed: {
@@ -51,6 +51,7 @@ export default {
     },
     async beforeMount(){
         if( this.$store.state.auth.account.product.id == "IVPN Light"){
+            this.isLight = true;
             window.location = "/light";
         }
         const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.id);
@@ -62,7 +63,6 @@ export default {
                 this.price= pricing.tier3_upgrade_price
                 break;
         }
-        console.log("pricing:", pricing);
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es" ) {

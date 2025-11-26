@@ -14,7 +14,7 @@
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="language + '/account/upgrade-product'">{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="language + '/account/upgrade'">{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>
@@ -48,7 +48,7 @@
                         </span>
                         <span v-else>
                             <div class="status">
-                                <a :href="language + '/account/upgrade-product'" >{{ $t('account.servicesArea.upgrade') }}</a>
+                                <a :href="language + '/account/upgrade'" >{{ $t('account.servicesArea.upgrade') }}</a>
                             </div>
                         </span>
                     </span>

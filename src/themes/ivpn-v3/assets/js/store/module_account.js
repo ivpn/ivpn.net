@@ -207,11 +207,11 @@ export default {
             }
         },
 
-        async createBitcoinInvoice(context, { priceID, paymentMethodId }) {
+        async createBitcoinInvoice(context, { priceID, paymentMethodId, paymentType }) {
             
             context.commit('started')
             try {
-                let resp= await Api.createBitcoinInvoice(priceID, paymentMethodId)
+                let resp= await Api.createBitcoinInvoice(priceID, paymentMethodId, paymentType)
 
                 context.commit('done')
                 return resp.invoice
@@ -220,10 +220,10 @@ export default {
             }
         },
 
-        async createLightInvoice(context, { priceID, exitServer, entryServer, publicKey }) {
+        async createLightInvoice(context, { priceID, paymentType, exitServer, entryServer, publicKey }) {
             context.commit('started')
             try {
-                let resp= await Api.createLightInvoice(priceID, exitServer, entryServer, publicKey)
+                let resp= await Api.createLightInvoice(priceID, paymentType, exitServer, entryServer, publicKey)
 
                 context.commit('done')
                 return resp.invoice

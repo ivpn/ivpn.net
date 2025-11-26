@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PricesView from '@/views/Prices.vue'
 import OnePageCheckoutView from '@/views/OnePageCheckout.vue'
 import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
-import UpgradeProductView from '@/views/Account/UpgradeProduct/UpgradeProduct.vue'
+import UpgradeView from '@/views/Account/Upgrade/Upgrade.vue'
 import AccountView from '@/views/Account/Account.vue'
 import PaymentView from '@/views/Account/Payment.vue'
 import AddFundsView from '@/views/Account/AddFunds.vue'
@@ -42,6 +42,7 @@ import store from '@/store'
 
 import en from '@/../../locales/en.json'
 import es from '@/../../locales/es.json'
+import { is } from 'date-fns/locale'
 
 async function notAuthenticatedGuard(to, from, next) {
     if (store.state.auth.isAuthenticated) {
@@ -273,25 +274,25 @@ const routes = [
         }
     },
     {
-        path: '/account/upgrade-product',
-        name: 'upgrade-product',
-        component: UpgradeProductView,
+        path: '/account/upgrade', 
+        name: 'upgrade',
+        component: UpgradeView,
         meta: {
             title: en.account.metaTitle.upgradeProduct,
         }
     },
     {
-        path: '/en/account/upgrade-product',
-        name: 'upgrade-product-en',
-        component: UpgradeProductView,
+        path: '/en/account/upgrade',
+        name: 'upgrade-en',
+        component: UpgradeView,
         meta: {
             title: en.account.metaTitle.upgradeProduct,
         }
     },
     {
-        path: '/es/account/upgrade-product',
-        name: 'upgrade-product-es',
-        component: UpgradeProductView,
+        path: '/es/account/upgrade',
+        name: 'upgrade-es',
+        component: UpgradeView,
         meta: {
             title: es.account.metaTitle.upgradeProduct,
         }
@@ -710,116 +711,96 @@ const routes = [
         
     },
     {
-        path: '/en/account/upgrade-product/:price',
+        path: '/en/account/upgrade/product/:product',
+        component: UpgradePaymentView,
+        name: 'upgrade-payment-en',
+        meta: {
+            title: en.account.metaTitle.upgradeProduct,
+        }
+    }, 
+    {
+        path: '/es/account/upgrade/product/:product',
+        component: UpgradePaymentView,
+        name: 'upgrade-payment-es',
+        meta: {
+            title: es.account.metaTitle.upgradeProduct,
+        }
+    }, 
+    {
+        path: '/en/account/upgrade/payment/:price',
         component: AddFundsView,
+        props: { isUpgrade: true },
         children: [
             {
-                path: 'cc', name: 'upgrade-product-cc-en',
+                path: 'cc', name: 'upgrade-cc-en',
                 component: AddFundsCC,
+                props: { isUpgrade: true },
                 meta: {
                     title: en.account.metaTitle.addFundsCC,
                 }
             },
             {
-                path: 'paypal', name: 'upgrade-product-paypal-en',
+                path: 'paypal', name: 'upgrade-paypal-en',
                 component: AddFundsPayPal,
+                props: { isUpgrade: true },
                 meta: {
                     title: en.account.metaTitle.addFundsPaypal,
                 },
-            }, {
-                path: 'bitcoin', name: 'upgrade-product-bitcoin-en',
+            }, 
+            {
+                path: 'bitcoin', name: 'upgrade-bitcoin-en',
                 component: AddFundsBitcoin,
+                props: { isUpgrade: true },
                 meta: {
                     title: en.account.metaTitle.addFundsBitcoin,
                 }
-            }, {
-                path: 'monero', name: 'upgrade-product-monero-en',
+            }, 
+            {
+                path: 'monero', name: 'upgrade-monero-en',
                 component: AddFundsMonero,
+                props: { isUpgrade: true },
                 meta: {
                     title: en.account.metaTitle.addFundsMonero,
-                }
-            }, {
-                path: 'voucher', name: 'upgrade-product-voucher-en',
-                component: AddFundsGiftCard,
-                meta: {
-                    title: en.account.metaTitle.addFundsVoucher,
-                }
-            }, {
-                path: 'applepay', name: 'upgrade-product-apple-en',
-                component: ApplePayView,
-                meta: {
-                    title: en.account.metaTitle.addFundsApplePay,
-                }
-            }, {
-                path: 'googlepay', name: 'upgrade-product-google-en',
-                component: GooglePayView,
-                meta: {
-                    title: en.account.metaTitle.addFundsGooglePay,
-                }
-            }, {
-                path: 'cash', name: 'upgrade-product-cash-en',
-                component: AddFundsCash,
-                meta: {
-                    title: en.account.metaTitle.addFundsCash,
                 }
             }
         ],
         
     },
     {
-        path: '/es/account/upgrade-product/:price',
+        path: '/es/account/upgrade/payment/:price',
         component: AddFundsView,
+        props: { isUpgrade: true },
         children: [
             {
-                path: 'cc', name: 'upgrade-product-cc-es',
+                path: 'cc', name: 'upgrade-cc-es',
                 component: AddFundsCC,
+                props: { isUpgrade: true },
                 meta: {
                     title: es.account.metaTitle.addFundsCC,
                 }
             },
             {
-                path: 'paypal', name: 'upgrade-product-paypal-es',
+                path: 'paypal', name: 'upgrade-paypal-es',
                 component: AddFundsPayPal,
+                props: { isUpgrade: true },
                 meta: {
                     title: es.account.metaTitle.addFundsPaypal,
                 },
             }, {
-                path: 'bitcoin', name: 'upgrade-product-bitcoin-es',
+                path: 'bitcoin', name: 'upgrade-bitcoin-es',
                 component: AddFundsBitcoin,
+                props: { isUpgrade: true },
                 meta: {
                     title: es.account.metaTitle.addFundsBitcoin,
                 }
             }, {
-                path: 'monero', name: 'upgrade-product-monero-es',
+                path: 'monero', name: 'upgrade-monero-es',
                 component: AddFundsMonero,
+                props: { isUpgrade: true },
                 meta: {
                     title: es.account.metaTitle.addFundsMonero,
                 }
-            }, {
-                path: 'voucher', name: 'upgrade-product-voucher-es',
-                component: AddFundsGiftCard,
-                meta: {
-                    title: es.account.metaTitle.addFundsVoucher,
-                }
-            }, {
-                path: 'applepay', name: 'upgrade-product-apple-es',
-                component: ApplePayView,
-                meta: {
-                    title: es.account.metaTitle.addFundsApplePay,
-                }
-            }, {
-                path: 'googlepay', name: 'upgrade-product-google-es',
-                component: GooglePayView,
-                meta: {
-                    title: es.account.metaTitle.addFundsGooglePay,
-                }
-            }, {
-                path: 'cash', name: 'upgrade-product-cash-es',
-                component: AddFundsCash,
-                meta: {
-                    title: es.account.metaTitle.addFundsCash,
-                }
-            }
+            },
         ],
         
     },
@@ -915,22 +896,6 @@ const routes = [
             title: es.account.metaTitle.deviceManagement,
         }
     },
-    {
-        path: '/en/account/upgrade/:product',
-        component: UpgradePaymentView,
-        name: 'upgrade-payment-en',
-        meta: {
-            title: en.account.metaTitle.upgradeProduct,
-        }
-    }, 
-    {
-        path: '/es/account/upgrade/:product',
-        component: UpgradePaymentView,
-        name: 'upgrade-payment-es',
-        meta: {
-            title: es.account.metaTitle.upgradeProduct,
-        }
-    }, 
     
 ]
 

@@ -53,7 +53,7 @@
                     @valid-changed="formValid = $event.value"
                 ></braintree-cc>
 
-                <div class="recurring--payments" v-if="!account.subscription">
+                <div class="recurring--payments" v-if="!isUpgrade &&!account.subscription">
                     <div class="checkbox">
                         <input
                             type="checkbox"
@@ -149,7 +149,7 @@ import matomo from "@/api/matomo.js";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["price"],
+    props: ["price","isUpgrade"],
     data() {
         return {
             formValid: false,

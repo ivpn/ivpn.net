@@ -50,7 +50,6 @@ export default {
     async Post(url = '', data = null, overrideURI = null, overrideOptions = {}) {
 
         if (process.env.MIX_APP_DELAY_APIS) {
-            console.log("Delaying API: ", url)
             await delay(process.env.MIX_APP_DELAY_APIS)
         }
 
@@ -404,11 +403,12 @@ export default {
         return account.account
     },
 
-    async createBitcoinInvoice(priceID, paymentMethodId) {
+    async createBitcoinInvoice(priceID, paymentMethodId , paymentType) {
 
         let response = await this.Post('/web/accounts/btc/create-invoice', {
             price_id: priceID,
-            paymentMethodId: paymentMethodId
+            paymentMethodId: paymentMethodId,
+            paymentType: paymentType
         })
 
         return response

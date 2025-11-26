@@ -59,7 +59,7 @@
                             >
                         </div>
                         <div v-else class="product-action" v-if="canUpgrade">
-                            <router-link :to="{ name: 'upgrade-product-' + this.language }"
+                            <router-link :to="{ name: 'upgrade-' + this.language }"
                                 >{{ $t('account.upgrade') }}</router-link
                             >
                         </div>

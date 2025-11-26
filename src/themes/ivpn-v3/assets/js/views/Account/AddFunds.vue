@@ -1,6 +1,6 @@
 <template>
     <div v-if="!isLight" class="payment-page-header">
-        <div class="back-link">
+        <div class="back-link" v-if="!isUpgrade">
             <router-link :to="{ name: 'account-' + this.language }" v-if="account.is_new">
                 <span class="icon-back"></span>{{ $t('account.payments.selectPaymentMethod') }}
             </router-link>
@@ -8,17 +8,26 @@
                 <span class="icon-back"></span>{{ $t('account.payments.selectPaymentMethod') }}
             </router-link>
         </div>
+        <div class="back-link" v-else>
+            <router-link :to="{ name: 'account-' + this.language }" v-if="account.is_new">
+                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
+            </router-link>
+            <router-link :to="{ name: 'account-' + this.language  }" v-else>
+                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
+            </router-link>
+        </div>
         <h1>{{ title }}</h1>
         <ul class="payment-details" v-if="$route.name != 'add-funds-voucher-' + this.language">
             <li>{{ productName }}</li>
-            <li>{{ price.name }}</li>
-            <li>${{ price.price }}</li>
+            <li>{{ price?.name }}</li>
+            <li>${{ price?.price }}</li>
         </ul>
         <router-view
             :account="account"
             :price="price"
             style="margin-top: 32px"
         />
+       
         <p class='tos' v-if="account.is_new">{{ $t('account.payments.byMaking') }} <a :href="'/' + this.language + '/tos'">{{ $t('account.payments.termsOfService') }}</a>.</p>
     </div>
 </template>
@@ -26,8 +35,10 @@
 <script>
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
+import { fixProductNames } from "@/utils/ProductUtils"
 
 export default {
+    props: ['isUpgrade'],
     data() {
         return {
             price: null,
@@ -37,7 +48,7 @@ export default {
             productName: this.$store.state.auth.account.product.name,
         };
     },
-    created() {
+    async created() {
         let title = {
             "add-funds-cc": "Add time with a credit card",
             "add-funds-bitcoin": "Add time with Bitcoin",
@@ -53,11 +64,34 @@ export default {
 
         let priceId = this.$route.params.price;
 
-        for (const price of this.account.product.prices) {
-            if (price.id == priceId) {
-                this.price = price;
-                break;
+        if(!this.isUpgrade){
+            for (const price of this.account.product.prices) {
+                if (price.id == priceId) {
+                    this.price = price;
+                    break;
+                }
             }
+        }else{
+            let upgradePrice = null;
+            const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.id);
+            switch(this.$route.params.price){
+                case "tier2":
+                    upgradePrice= pricing.tier2_upgrade_price
+                    break;
+                case "tier3":
+                    upgradePrice= pricing.tier3_upgrade_price
+                    break;
+            }
+            this.price = {
+                 id: this.$route.params.price,
+                 type: "upgrade",
+                 billing_cycle: "Monthly",
+                 discount: 0,
+                 duration: "1 month",
+                 id: this.$route.params.price,
+                 name: fixProductNames(this.$route.params.price),
+                 price: upgradePrice,
+            };
         }
 
         if (this.price == null) {
@@ -81,7 +115,14 @@ export default {
             useI18n().locale.value = "es";
             this.language = "es";
         }
-    }
+    },
+    methods: {
+        async calculateForProduct(newProduct) {
+            return await this.$store.dispatch("product/changeDetails", {
+                    product: newProduct,    
+            });
+        }
+    },
 };
 </script>
 

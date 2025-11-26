@@ -77,7 +77,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'upgrade-product-cc-' + this.language, params: { price: this.$route.params.product} }"
+                :to="{ name: 'upgrade-cc-' + this.language, params: { price: this.$route.params.product} }"
             >
                 <div class="credit-card-icon"></div>
                 {{ $t('account.creditCard') }}
@@ -85,7 +85,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'upgrade-product-paypal-' + this.language, params: { price: this.$route.params.product } }"
+                :to="{ name: 'upgrade-paypal-' + this.language, params: { price: this.$route.params.product } }"
             >
                 <div class="paypal-icon"></div>
                 {{ $t('account.paypal') }}
@@ -93,7 +93,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'upgrade-product-bitcoin-' + this.language, params: { price: this.$route.params.product } }"
+                :to="{ name: 'upgrade-bitcoin-' + this.language, params: { price: this.$route.params.product } }"
             >
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
@@ -103,7 +103,7 @@
                 v-if="monero"
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'upgrade-product-monero-' + this.language,  params: { price: this.$route.params.product } }"
+                :to="{ name: 'upgrade-monero-' + this.language,  params: { price: this.$route.params.product } }"
             >
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
@@ -113,7 +113,7 @@
                 v-if="cash"
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'upgrade-product-cash-' + this.language, params: { price: this.$route.params.product } }"
+                :to="{ name: 'upgrade-cash-' + this.language, params: { price: this.$route.params.product } }"
             >
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
@@ -154,7 +154,6 @@ export default {
     },
     created() {
         this.price = this.$store.state.payments.selectedPrice;
-        console.log("selected price on create:", this.price);
 
         if (
             this.price == null ||
@@ -162,6 +161,7 @@ export default {
         ) {
             this.price = this.account.product.prices[1];
         }
+        
     },
     beforeMount(){
     },
