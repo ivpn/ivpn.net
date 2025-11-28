@@ -340,12 +340,13 @@ export default {
         return account.token
     },
 
-    async addBraintreeFunds(priceID, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
+    async addBraintreeFunds(priceID, paymentType, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
 
         return await this.Post(
             '/web/accounts/braintree/add-funds',
             {
                 price_id: priceID,
+                payment_type: paymentType,
                 amount: amount,
                 payment_method: paymentMethod,
                 fraud_data: fraudData,
@@ -407,19 +408,8 @@ export default {
 
         let response = await this.Post('/web/accounts/btc/create-invoice', {
             price_id: priceID,
-            paymentMethodId: paymentMethodId,
-            paymentType: paymentType
-        })
-
-        return response
-    },
-
-    async getBitcoinURL(invoice, hmac, paymentMethodId) {
-        // let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, process.env.MIX_APP_WEBAPI_URL, {
-        //     credentials: "omit"
-        // })
-        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac, paymentMethodId }, "", {
-            credentials: "omit"
+            payment_method_id: paymentMethodId,
+            payment_type: paymentType
         })
 
         return response
@@ -432,6 +422,7 @@ export default {
         }
         let response = await this.Post('/web/accounts/btc/create-light-invoice', {
             price_id: priceID,
+            payment_type: "extend",
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer,

@@ -88,6 +88,7 @@ export default {
             try {
                 let result = await Api.addBraintreeFunds(
                     data.priceId,
+                    data.paymentType,
                     data.price,
                     data.paymentMethod,
                     context.state.instance.fraudData,

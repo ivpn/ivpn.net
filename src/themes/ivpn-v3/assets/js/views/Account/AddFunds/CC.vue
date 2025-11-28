@@ -209,10 +209,12 @@ export default {
             }
 
             let isNewAccount = this.account.is_new;
+            let paymentType = this.isUpgrade ? "upgrade" : "extend";
             let result = await this.$store.dispatch("braintree/addFunds", {
                 nonce: paymentMethod.nonce,
                 priceId: this.price.id,
                 price: this.price.price,
+                paymentType: paymentType,
                 paymentMethod: "cc",
                 isRecurring: this.isRecurring,
                 captchaID: this.captchaID,

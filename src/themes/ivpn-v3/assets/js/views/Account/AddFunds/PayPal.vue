@@ -198,14 +198,14 @@ export default {
         },
         async proceed({ nonce }) {
             let isNewAccount = this.account.is_new;
-
+            let paymentType = this.isUpgrade ? "upgrade" : "extend";
             let result = await this.$store.dispatch("braintree/addFunds", {
                 nonce: nonce,
                 priceId: this.price.id,
                 price: this.price.price,
                 paymentMethod: "paypal",
                 isRecurring: this.isRecurring,
-
+                paymentType: paymentType,
                 captchaID: this.captchaID,
                 captchaValue: this.captchaValue,
             });
