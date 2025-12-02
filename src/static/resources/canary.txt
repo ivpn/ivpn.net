@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-11-04 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2025-12-02 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 922162
-hash: 00000000000000000000863a3e588ce6b881b1c5ef13296f6cec03c82b34089d
+height: 926115
+hash: 00000000000000000001c5044a132a1ba1c3bf1e046bcfe0a12b6b70d19da873
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-New EU members could be put ‘on probation’, says official
-Enlargement commissioner Marta Kos says bloc has to prevent Russian ‘Trojan horse’ behaviour from new entrants
+India demands installation of government app on all smartphones
+Privacy advocates raise concerns about potential snooping
 
-ABF explores spinning off Primark fashion chain
-London-listed group examines splitting retail and food businesses
+Demand for Japanese bonds reassures jittery markets
+Yen and equities steady one day after hawkish comments from BoJ governor
 
-Reeves prepares ground for tax rises in Downing Street speech
-Chancellor pledges to take ‘fair choices’ to reduce debt, protect NHS and cut cost of living in Budget
+BoE lowers capital requirements for UK banks as they pass stress tests
+Move by Financial Policy Committee comes in first review in six years
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmkJxJkACgkQisFrnrZH
-umkeTwf9ELM3qK7qYPB0cCbNEAAr7mljlzUx2YtotR9nyaIClVchMfW0EbD8VG0A
-SOS+7vLfBlUtWe1HuCJmzRUIqdQ6NbrnbxrM7RZo1x/K2+FbiyaSYHVzOjQQyhET
-EtP1tp5uFoUHlxAuFEPNn04y/RUQ1ZWJGMYqbrunWBdRqlM4c01lgJCE0eE/vIMR
-f++ho9TeVnZj73/ymgovxGbaLeWi874IsGwiQ4LAbP2czBi7ilIBk/1tVkXUcY0z
-Oq3ZE3VxkeoBhC9Dq+W+QFnp6n7YrPcxgdrh5Qe4kGOcPTYi3t3EwlFLzLx2m8Z4
-U59/p87GCUmz2k4yAY7mlxrAB0VxfA==
-=02z7
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmkuqakACgkQisFrnrZH
+umkrnAf+J1rDK2PanrN1HVFzNRfTKEgBLUysG0Ldo3ahw3hUjnTDBVuaPqbe6bhU
+jBh0T/CZQCzJo7yYhj0Mfc4Cf8MGbgKe77vP1NZwbpwjKrUrIks5P47NqOvfIbcF
+yBfISdUEn13wWAeYjV6cThP3L28WPLWcEdjOX4a9FelAP0ioSuVFzvGS/l1Uendj
+IdS9Vd8ugshDvR5EE0QbFn9XX+4vIvC6Vxw6EsmfWgW4aFY67Weoefh65rTHgPv7
+Zp1QBE/DsCM4nmSb3DGJkMkjL0YGspWVOAcHuxUTogFALi14VmBRPApcWXpv7TYn
+yiMWN9P3UShXT00wePcA78OQXeO0Tw==
+=1AQZ
 -----END PGP SIGNATURE-----
 
 
