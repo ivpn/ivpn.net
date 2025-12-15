@@ -7,6 +7,7 @@
             <p>With Mailx, you can generate a unique email for every website or app you use. All messages are forwarded directly to your main inbox, while your personal email address and provider stay private.</p>
             <p>Mailx is currently in beta and available for registration to selected IVPN customers for free. Mailx will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
             <p>After successful registration Mailx specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
+            <p>Beta Disclaimer: This service is in active development. You may encounter occasional downtime or delivery delays. Do not rely on Mailx for mission-critical delivery until the full release.</p>
             <p v-if="subId">
                 Please follow the unique registration link below to start testing Mailx:<br>
                 <a target="_blank" :href="'https://mailx.net/signup/' + subId">https://mailx.net/signup/{{ subId }}</a>
@@ -17,6 +18,7 @@
         <div v-if="subIdDeletedAt && loaded">
             <p>You have signed up to Mailx, an e-mail aliasing service developed by IVPN.</p>
             <p>Access the Mailx service dashboard <a target="_blank" href="https://mailx.net">here</a>.</p>
+            <p>Beta Disclaimer: This service is in active development. You may encounter occasional downtime or delivery delays. Do not rely on Mailx for mission-critical delivery until the full release.</p>
             <p>
                 Please submit your feedback, requests and any issues you encounter through one of the following channels:<br>
                 GitHub - <a target="_blank" href="https://github.com/ivpn/mailx">https://github.com/ivpn/mailx</a><br>
