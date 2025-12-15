@@ -53,7 +53,7 @@
                     @valid-changed="formValid = $event.value"
                 ></braintree-cc>
 
-                <div class="recurring--payments" v-if="!isUpgrade &&!account.subscription">
+                <div class="recurring--payments" v-if="!isUpgrade && !account.subscription">
                     <div class="checkbox">
                         <input
                             type="checkbox"

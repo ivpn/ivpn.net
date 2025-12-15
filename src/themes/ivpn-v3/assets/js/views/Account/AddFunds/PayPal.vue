@@ -66,7 +66,7 @@
 
                     <div
                         class="recurring--payments"
-                        v-if="!account.subscription"
+                        v-if="!isUpgrade &&!account.subscription"
                     >
                         <div class="checkbox">
                             <input
@@ -154,7 +154,7 @@ import matomo from "@/api/matomo.js";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["price"],
+    props: ["price","isUpgrade"],
 
     data() {
         return {
@@ -204,7 +204,7 @@ export default {
                 priceId: this.price.id,
                 price: this.price.price,
                 paymentMethod: "paypal",
-                isRecurring: this.isRecurring,
+                isRecurring: this.isRecurring && !this.isUpgrade,
                 paymentType: paymentType,
                 captchaID: this.captchaID,
                 captchaValue: this.captchaValue,
