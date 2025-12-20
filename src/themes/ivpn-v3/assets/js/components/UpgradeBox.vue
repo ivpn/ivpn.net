@@ -80,36 +80,8 @@ export default {
     font-size: 18px;
     line-height: 14px;
     text-align: center;
-    text-decoration: underline;
 }
 
-.price-title{
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;;
-    margin-top: 20px;
-}
-
-.price-head {
-    padding: 35px;
-    min-height: 135px;
-    @include dark-theme((
-        background-color: black,
-        color: rgba(255, 255, 255, 0.8),
-    ));
-    @include light-theme((
-            background-color: #F9F9F9,
-            color: black,
-    ));
-    @media (prefers-color-scheme: dark) {
-            background-color: black;
-            color: rgba(255, 255, 255, 0.8);
-    }
-    @media (prefers-color-scheme: light) {
-        background-color: #F9F9F9;
-        color: black;
-    }
-}
 
 .price-footer{
     text-align: center;
@@ -122,24 +94,6 @@ export default {
     font-style: italic;
     font-weight: bold;
     padding: 0px 5px 35px 8px;
-}
-
-.price-features-footer{
-    font-style: italic;
-    font-weight: bold;
-    padding: 20px 0px 20px 0px;
-    margin: 0px 5px 0px 10px;
-    border-bottom: 0.5px solid white;
-    border-top: 0.5px solid white;
-    line-height: 24px;
-    @include dark-theme((
-        border-bottom: 0.5px solid white,
-        border-top: 0.5px solid white,
-    ));
-     @include light-theme((
-        border-bottom: 0.5px solid black,
-        border-top: 0.5px solid black,
-    ));
 }
 
 label {

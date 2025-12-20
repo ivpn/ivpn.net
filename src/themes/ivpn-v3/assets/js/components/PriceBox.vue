@@ -19,7 +19,8 @@
         <slot name="footer"></slot>
         <div class="price-button">
         <button
-            class="btn btn-solid btn-big"
+            class="btn btn-big btn-generate"
+            :class="product !== 'tier3' ? 'btn-outline' : 'btn-primary'"
             style="margin-top: 2em"
             v-on:click="selected"
             :disabled="disabled || current || inProgress"
@@ -31,9 +32,6 @@
                 v-if="inProgress && !current"
             />{{ buttonText}}
         </button>
-        </div>
-        <div v-if="!isChange" class="price-legend">
-            {{ $t('pricing.chooseTimeAdded') }}
         </div>
     </div>
 </template>
@@ -75,41 +73,23 @@ export default {
 @import "@/styles/_vars.scss";
 @import "@/styles/base.scss";
 
-.price-header {
-    text-transform: uppercase;
-    font-family: "Roboto Mono", monospace;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 14px;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.price-title{
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;;
-    margin-top: 20px;
-}
 
 .price-head {
-    padding: 35px;
-    min-height: 135px;
+    padding: 50px 0px 20px 35px;
     @include dark-theme((
-        background-color: black,
+        background-color: transparent,
         color: rgba(255, 255, 255, 0.8),
     ));
     @include light-theme((
-            background-color: #F9F9F9,
+            background-color: transparent,
             color: black,
     ));
     @media (prefers-color-scheme: dark) {
-            background-color: black;
+            background-color: transparent;
             color: rgba(255, 255, 255, 0.8);
     }
     @media (prefers-color-scheme: light) {
-        background-color: #F9F9F9;
+        background-color: transparent;
         color: black;
     }
 }
@@ -128,22 +108,22 @@ export default {
 }
 
 .price-features-footer{
-    font-style: italic;
-    font-weight: bold;
     padding: 20px 0px 20px 0px;
-    margin: 0px 5px 0px 10px;
-    border-bottom: 0.5px solid white;
-    border-top: 0.5px solid white;
+    margin: 0px 5px 0px 30px;
     line-height: 24px;
+    font-size: 0.875rem;
     @include dark-theme((
-        border-bottom: 0.5px solid white,
-        border-top: 0.5px solid white,
+        border-top: 1px solid #333333
     ));
      @include light-theme((
-        border-bottom: 0.5px solid black,
-        border-top: 0.5px solid black,
+        border-top: 1px solid black,
     ));
+
+    @media (prefers-color-scheme: dark) {
+        border-top: 1px solid #333333;
+    }
 }
+
 
 label {
     display: inline-block;
@@ -157,65 +137,66 @@ label {
     flex-direction: column;
     border: 1px solid rgba(51, 77, 102, 0.2);
     margin: 24px 18px 0px 0px;
-    min-width: 280px;
-    max-width: 350px;
+    @media (max-width: 768px) {
+        min-width: 100%;
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+        min-width: 100%;
+    }
+   
+
     &.current {
         border-color: $blue;
     }
 
     &.tier1 {
         @include dark-theme((
-            background-color: #444953,
+            background-color: #222226,
             color: rgba(255, 255, 255, 0.8),
         ));
         @include light-theme((
-            background-color: #F3F3F3,
             color:black,
         ));
         @media (prefers-color-scheme: dark) {
-            background-color: #444953;
+            background-color: #222226;
             color: rgba(255, 255, 255, 0.8);
         }
         @media (prefers-color-scheme: light) {
-            background-color: #F3F3F3;
             color: black;
         }
     }
 
     &.tier2 {
         @include dark-theme((
-            background-color: #363434,
+            background-color: #222226,
            color: rgba(255, 255, 255, 0.8),
         ));
         @include light-theme((
-            background-color: #E7E7E7,
             color:black,
         ));
         @media (prefers-color-scheme: dark) {
-            background-color: #363434;
+            background-color: #222226;
             color: rgba(255, 255, 255, 0.8);
         }
         @media (prefers-color-scheme: light) {
-            background-color: #E7E7E7;
             color: black;
         }
     }
 
     &.tier3 {
+        border: 1px solid #3b9eff;
         @include dark-theme((
-            background-color: #2B2A2A,
+            background-color: #222226,
             color: rgba(255, 255, 255, 0.8),
         ));
         @include light-theme((
-            background-color: #E1E1E1,
             color:black,
         ));
         @media (prefers-color-scheme: dark) {
-            background-color: #2B2A2A;
+            background-color: #222226;
             color: rgba(255, 255, 255, 0.8);
         }
         @media (prefers-color-scheme: light) {
-            background-color: #E1E1E1;
             color: black;
         }
     }
@@ -266,7 +247,6 @@ label {
 
 .price-option {
     position: relative;
-    border-bottom: 1px solid #334d6633;
     line-height: 42px;
     font-size: 16px;
     display: flex;    
@@ -302,13 +282,6 @@ label {
             color: $red;
         }
     }
-}
-.price-button{
-    padding: 0px 10px 35px 10px;
-}
-
-.price-button .btn{
-    width:100%;
 }
 
 .price-sidebar {
@@ -348,6 +321,7 @@ label {
 
 [data-tooltip] {
     position: relative;
+    margin-left: 15px;
 }
 
 [data-tooltip]:after {
@@ -384,5 +358,46 @@ label {
 [data-tooltip]:hover:after {
     display: block;
 }
+
+.price-button{
+    padding: 0px 35px 35px 35px;
+}
+
+.price-button .btn-generate{
+    text-transform: uppercase;
+}
+
+
+.price-button .btn-primary {
+    background-color: #3b9eff;
+    color: black;
+}
+
+.price-button .btn-primary:hover {
+    background-color: #5aafff;
+}
+
+.price-button .btn {
+    width: 100%;
+    padding: 1.5rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.price-button .btn-outline {
+    background-color: transparent;
+    border: 2px solid #3b9eff;
+    color: #3b9eff;
+}
+.price-button .btn-outline:hover {
+    background-color: #3b9eff;
+    color: black;
+}
+
 
 </style>

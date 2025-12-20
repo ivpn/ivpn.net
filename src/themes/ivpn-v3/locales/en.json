@@ -30,8 +30,8 @@
         "meta": {
             "title": "IVPN Pricing - VPN subscription with anonymous registration"
         },
-        "title": "Select IVPN Plan",
-        "description": "Select a plan to create your account instantly. Pick the right level of privacy protection for you.",
+        "title": "Select your plan",
+        "description": "Three tiers. No upselling. Pick based on your privacy needs.",
         "allProtocols": "All protocols",
         "tier1Devices": "5 devices",
         "tier2Devices": "10 devices",
@@ -40,8 +40,8 @@
         "services": "Services",
         "productFooter1": "MailX, ModDNS and Portmaster are services owned and operated by IVPN. Visit our",
         "productFooter2": "page for a detailed overview of their features and capabilities.",
-        "productFooterPrice": "All prices are in U.S. dollars.",
-        "productFooterReview": "Review pricing for teams",
+        "productFooterPrice": "Pricing in USD.",
+        "productFooterReview": "Team licensing with admin options available",
         "here": "here",
         "featuresTitle": "All IVPN plans come with:",
         "serviceBenefits": "Service benefits:",
@@ -78,9 +78,14 @@
         "mailx": "Mailx",
         "portmaster": "Portmaster/SPN",
         "chooseTimeAdded": "You can choose time added at the next step",
+        "generateAccount": "Generate Account",
+        "selectPlan": "Select Plan",
+        "portmasterTitle": "Portmaster",
+        "reviewServices": "REVIEW SERVICE FEATURES",
+        "paymentMethods": "Payment Methods",
         "tier1":{
             "name": "IVPN Standard",
-            "title": "VPN-only plan",
+            "title": "Core VPN service",
             "feature1": "IVPN on 5 devices",
             "feature2": "Multihop",
             "feature3": "Basic ads & Tracker blocker",
@@ -89,28 +94,28 @@
         },
         "tier2":{
             "name": "IVPN Plus",
-            "title": "VPN + Privacy tools",
+            "title": "Added DNS & email privacy",
             "feature1": "IVPN on 10 devices",
             "feature2": "Multihop",
-            "feature3": "ModDNS, advanced DNS filtering tool",
-            "feature3Title": "ModDNS improves your security and privacy by blocking DNS requests for ads, trackers, malware & phishing. Supports popular blocklists and custom rules.",
-            "feature4": "Mailx, email forwarding service",
-            "feature4Title": "MailX is an e-mail aliasing service developed by IVPN. Improve your privacy by hiding your real email address from every website or service you use.",
-            "footer": "Offers custom tracking protection and improved email privacy.",
+            "feature3": "modDNS with custom filtering",
+            "feature3Title": "DNS filtering service with blocklist combinations and configurable rules. Developed by IVPN.",
+            "feature4": "Mailx email aliasing service",
+            "feature4Title": "Email forwarding service that hides your real address from third parties. Developed by IVPN.",
+            "footer": "Includes standalone tools for email forwarding and granular DNS control.",
             "button": "Select Plus"
         },
         "tier3":{
             "name": "IVPN Pro Suite",
-            "title": "Advanced privacy toolkit",
+            "title": "Complete network stack",
             "feature1": "IVPN on 10 devices",
             "feature2": "Multihop",
-            "feature3": "ModDNS, advanced DNS filtering tool",
-            "feature3Title": "ModDNS improves your security and privacy by blocking DNS requests for ads, trackers, malware & phishing. Supports popular blocklists and custom rules.",
-            "feature4": "Mailx, email forwarding service",
-            "feature4Title": "MailX is an e-mail aliasing service developed by IVPN. Improve your privacy by hiding your real email address from every website or service you use.",
-            "feature5": "Safing Portmaster Pro: network firewall with SPN (Linux, Windows)",
-            "feature5Title": "Portmaster is a desktop firewall & network monitor tool operated by IVPN. Includes SPN, a VPN alternative with onion routed multi-hop connections.",
-            "footer": "Complete network controls with application firewall included.",
+            "feature3": "modDNS with custom filtering",
+            "feature3Title": "DNS filtering service with blocklist combinations and configurable rules. Developed by IVPN.",
+            "feature4": "Mailx email aliasing service",
+            "feature4Title": "Email forwarding service that hides your real address from third parties. Developed by IVPN.",
+            "feature5": "Portmaster Pro firewall (Windows, Linux)",
+            "feature5Title": "Firewall & network monitoring tool operated by IVPN. Includes SPN, an onion-routed Tor alternative.",
+            "footer": "Complete network controls with firewall and onion-routed SPN.",
             "button": "Select Pro Suite"
         },
         "sidebar":{
@@ -118,6 +123,52 @@
             "feature2": "Ads & Trackers",
             "feature3": "Email",
             "feature4": "Firewall"
+        },
+        "stack":{
+            "title": "The privacy stack",
+            "feature1": "Four standalone privacy services operated by IVPN<",
+            "feature2": "All services are open-source",
+            "feature3": "Additional services are activated separately after purchase",
+            "feature4": "Activate services without linking your IVPN account ID"
+        },
+        "features":{
+            "title": "IVPN features",
+            "feature1": "Open-source clients (Android, iOS, macOS, Windows, Linux/CLI)",
+            "feature2": "Private DNS resolvers (no third-party logging)",
+            "feature3": "DNS-based AntiTracker with configurable blocklists",
+            "feature4": "Kill switch with network firewall integration",
+            "feature5": "Obfuscation protocols (v2Ray, obfsproxy)",
+            "feature6": "SOCKS5 proxy service",
+            "feature7": "Router and NAS deployment support"
+        },
+        "featuresBadges":{
+            "badge1": "No email required for signup",
+            "badge2": "30-day refund window",
+            "badge3": "Cash, Monero, Bitcoin accepted",
+            "badge4": "Killswitch",
+            "badge5": "Obfuscation",
+            "badge6": "MultiHop",
+            "badge7": "SOCKS5 Proxy",
+            "badge8": "Router & NAS"
+        },
+        "transparency":{
+            "title": "Audited & transparent",
+            "feature1": "No connection logs or session data retained",
+            "feature2": "No customer information stored post-purchase",
+            "feature3": "Annual third-party security audits (#7 completed May 2025)",
+            "feature4": "Public transparency reports and warrant canary",
+            "feature5": "Disclosed ownership and team with 15-year operating history",
+            "feature6": "No affiliate program, no tracking scripts, no surveillance advertising"
+        },
+        "limitations":{
+            "title": "Limitations we acknowledge",
+            "feature1": "We operate servers in 58 locations / 41 countries.",
+            "feature2": "We don't offer port forwarding.",
+            "feature3": "No streaming compatibility guarantees."
+        },
+        "footerBack": {
+            "item1": "If you've read this far, you know what we're about.",
+            "item2": "Choose the plan that matches your threat model."
         }
     },
     "login": {
@@ -201,6 +252,7 @@
         "creditCard": "Credit Card",
         "paypal": "PayPal",
         "bitcoin": "Bitcoin",
+        "lightning": "BTC Lightning",
         "monero": "Monero",
         "cash": "Cash",
         "haveVoucher": "Have a voucher code?",
