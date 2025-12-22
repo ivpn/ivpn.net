@@ -148,7 +148,7 @@
             <div class="container">
                 <div class="cta-content">
                     <p class="pricing-note">
-                        {{ $t('pricing.productFooterPrice') }} {{ $t('pricing.productFooterReview') }} <a :href="'/' + this.language + '/pricing-teams/'">{{ $t('pricing.here') }}</a>.
+                        {{ $t('pricing.productFooterPrice') }} {{ $t('pricing.productFooterReview') }} <a :href="'/' + language + '/pricing-teams/'">{{ $t('pricing.here') }}</a>.
                     </p>
                 </div>
             </div>
@@ -411,7 +411,7 @@
                 <div class="cta-content">
                     <p>{{ $t('pricing.footerBack.item1') }}</p>
                     <p>{{ $t('pricing.footerBack.item2') }}</p>
-                    <button class="btn btn-primary btn-cta" onclick="document.getElementById('pricing-section').scrollIntoView({behavior: 'smooth'})">
+                    <button class="btn btn-primary btn-cta" @click="scrollToPricing">
                         <svg class="icon icon-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="18 15 12 9 6 15"></polyline>
                         </svg>
@@ -428,10 +428,8 @@
 
 <script>
 import PriceBox from "@/components/PriceBox.vue";
-
 import { mapState } from "vuex";
 import matomo from "@/api/matomo.js";
-import { useI18n } from "vue-i18n";
 
 export default {
     name: "Prices",
@@ -442,7 +440,6 @@ export default {
     data() {
         return {
             selectedProduct: "",
-            language: "en"
         };
     },
     computed: {
@@ -451,10 +448,9 @@ export default {
             inProgress: (state) => state.auth.inProgress,
             auth: (state) => state.auth,
         }),
-    },
-    mounted(){
-        useI18n().locale.value = window.location.href.split("/")[3];
-        this.language = window.location.href.split("/")[3];
+        language() {
+            return this.$route.params.lang || window.location.href.split("/")[3] || "en";
+        }
     },
     async created() {
         if (
@@ -467,19 +463,15 @@ export default {
     },
     methods: {
         async selected(product) {
+            // Check legacy status once at the beginning
             if (this.auth.isAuthenticated && this.auth.isLegacy) {
-                this.$router.push({ name: "account-" + this.language })
+                this.$router.push({ name: 'account', params: { lang: this.language } });
                 return;
             }
 
             this.selectedProduct = product;
 
             if (this.auth.isAuthenticated) {
-                if (this.auth.isLegacy) {
-                    this.$router.push({ name: "account-" + this.language })
-                    return;
-                }
-
                 if (!this.auth.isLoaded) {
                     await this.$store.dispatch("auth/load");
                     if (this.auth.error) {
@@ -488,18 +480,21 @@ export default {
                 }
 
                 if (!this.auth.account.is_new) {
-                    this.$router.push({ name: "account-" + this.language })
+                    this.$router.push({ name: 'account', params: { lang: this.language } });
                     return;
                 }
             }
         
-            let wasAuthenticated = this.auth.isAuthenticated
+            const wasAuthenticated = this.auth.isAuthenticated;
             await this.$store.dispatch("auth/createAccount", { product });
             if (!wasAuthenticated) {
                 matomo.recordAccountCreated();
             }
-            this.$router.push({ name: "account-" + this.language })
+            this.$router.push({ name: 'account', params: { lang: this.language } });
         },
+        scrollToPricing() {
+            document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
+        }
     },
 };
 </script>
@@ -507,366 +502,120 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/_vars.scss";
+@import "@/styles/base.scss";
 
-p {
-    font-size: 20px;
-    line-height: 36px;
+.text-center {
+    text-align: center;
+    max-width: 100%;
 }
 
+// Pricing Section
 .prices {
     display: flex;
-    // justify-content: flex-start;
-    // flex-wrap: wrap;
+
     @media (max-width: $brk-tablet) {
         flex-wrap: wrap;
     }
-}
 
-
-
-.pricebox-header {
-    text-transform: uppercase;
-    font-family: "Roboto Mono", monospace;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 14px;
-    text-align: left;
-    
-}
-
-.price-title{
-    text-align: left;
-    margin-top: 20px;
-    font-size: 0.875rem;
-    color: #6b6b6b;
-}
-
-.price-features {
-    .feature-item {
-        margin-bottom: 0.75rem;
-        padding-left: 0.4rem;
-        position: relative;
-        font-size:0.9rem;
-        display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    color: var(--color-gray-300);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    // Price box headers
+    .pricebox-header {
+        font-family: "Roboto Mono", monospace;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 14px;
+        text-align: left;
+        text-transform: uppercase;
     }
-    .feature-item .icon {
-        width: 1rem;
-        height: 1rem;
-        color: #3b9eff;
-        margin-top: 0.25rem;
-        flex-shrink: 0;
+
+    .price-title {
+        margin-top: 20px;
+        font-size: 0.875rem;
+        color: #6b6b6b;
+        text-align: left;
+    }
+
+    // Price features
+    .price-features {
+        .feature-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-left: 0.4rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--color-gray-300);
+
+            .icon {
+                width: 1rem;
+                height: 1rem;
+                margin-top: 0.25rem;
+                color: #3b9eff;
+                flex-shrink: 0;
+            }
+        }
     }
 }
 
+// Feature Items (for privacy-features sections)
 .privacy-features {
     .feature-item {
-        margin-bottom: 0.75rem;
         position: relative;
-        font-size:0.9rem;
         display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    color: var(--color-gray-300);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    }
-    .feature-item .icon {
-        width: 1rem;
-        height: 1rem;
-        color: #3b9eff;
-        margin-top: 0.25rem;
-        flex-shrink: 0;
-    }
-}
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--color-gray-300);
 
-.content-text .link{
-    color: #3b9eff;
-}
-
-.cta-content .btn-primary {
-    background-color: #3b9eff;
-    color: black;
-}
-
-.cta-content .btn-primary:hover {
-    background-color: #5aafff;
-}
-
-// on small device:
-// flex-wrap: nowrap | wrap
-
-
-
-// TODO
-
-
-
-       
-        .grid-pattern {
-            position: absolute;
-            inset: 0;
-            opacity: 0.5;
-            background-image: 
-                linear-gradient(rgba(59, 158, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59, 158, 255, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            margin-top: 0.25rem;
+            color: #3b9eff;
+            flex-shrink: 0;
         }
+    }
+}
 
+// CTA Section
+.cta-section {
+    text-align: center;
 
+    .cta-content {
+        max-width: 768px;
+        margin: 0 auto;
+
+        p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-gray-300);
+
+            &:last-of-type {
+                margin-bottom: 2rem;
+            }
+        }
 
         .pricing-note {
-            text-align: center;
-            font-size: 0.875rem;
-            color: var(--color-gray-500);
             margin-top: 2rem;
+            font-size: 0.875rem;
+            text-align: center;
+            color: var(--color-gray-500);
         }
 
-        /* Buttons */
         .btn {
             width: 100%;
             padding: 1.5rem;
             font-family: var(--font-mono);
             font-weight: 600;
             font-size: 0.875rem;
+            text-transform: uppercase;
             border: none;
             cursor: pointer;
             transition: all 0.2s;
-            text-transform: uppercase;
-        }
-
-        .features-badges {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            color: #cccccc;
-            margin-bottom: 2.5rem;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            align-items: center;
-            margin-top: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .content-grid.reverse {
-            margin-top: 5rem;
-        }
-
-        .content-text h3 {
-            font-weight: 600;
-            color: white;
-            margin-bottom: 1.5rem;
-            font-family: var(--font-mono);
-            font-size: 1.5rem;
-        }
-
-        .link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-primary);
-            text-decoration: none;
-            font-family: var(--font-mono);
-            font-size: 0.875rem;
-            transition: color 0.2s;
-        }
-
-        .link:hover {
-            color: var(--color-primary-hover);
-        }
-
-        .link .icon {
-            width: 1rem;
-            height: 1rem;
-        }
-
-        .service-icons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            align-items: center;
-            justify-items: center;
-        }
-
-        .service-icon {
-            width: 6rem;
-            height: 6rem;
-            object-fit: contain;
-        }
-
-        .portmaster-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 6rem;
-            height: 6rem;
-        }
-
-        .portmaster-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            object-fit: contain;
-            flex-shrink: 0;
-        }
-
-        .portmaster-logo span {
-            color: var(--color-white);
-            font-weight: 700;
-            font-size: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .product-images {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 500px;
-        }
-
-        .product-cli {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(calc(-50% - 70px));
-            width: 74%;
-            height: auto;
-            object-fit: contain;
-            z-index: 10;
-        }
-
-        .product-gui {
-            position: absolute;
-            left: 4rem;
-            top: 50%;
-            transform: translateY(-40%);
-            width: 74%;
-            height: auto;
-            object-fit: contain;
-            z-index: 20;
-        }
-
-        /* Payment Methods Section */
-        .payment-methods {
-            padding: 0.625rem 3.125rem 2.5rem;
-            margin-top: 1.25rem;
-            padding-top: 1.25rem;
-        }
-
-        .payment-methods h3 {
-            font-weight: 600;
-            color: var(--color-white);
-            margin-bottom: 1.5rem;
-            font-family: var(--font-mono);
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .payment-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .payment-badge {
-            padding: 0.5rem 1rem;
-            border: 0.5px solid;
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .payment-badge .icon {
-            width: 1rem;
-            height: 1rem;
-        }
-
-        /* Trust Section */
-        .trust-section {
-            margin-top: 1rem;
-            padding-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .trust-content h2 {
-            font-weight: 700;
-            color: var(--color-white);
-            margin-bottom: 3rem;
-            font-family: var(--font-mono);
-            font-size: 1.5rem;
-        }
-
-        .limitations-box {
-            border: 1px solid;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .limitations-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .limitations-title {
-            font-weight: 600;
-            color: var(--color-white);
-            margin-bottom: 1rem;
-        }
-
-        .server-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-
-        .server-image img {
-            width: 100%;
-            max-width: 600px;
-            height: 100% !important;
-            object-fit: contain;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 768px;
-            margin: 0 auto;
-        }
-
-        .cta-content p {
-            font-size: 1rem;
-            color: var(--color-gray-300);
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-
-        .cta-content p:last-of-type {
-            margin-bottom: 2rem;
         }
 
         .btn-cta {
@@ -878,107 +627,349 @@ p {
             width: auto;
         }
 
+        .btn-primary {
+            background-color: #3b9eff;
+            color: black;
+
+            &:hover {
+                background-color: #5aafff;
+            }
+        }
+
         .icon-up {
             width: 1rem;
             height: 1rem;
         }
+    }
+}
 
-
-        .features-badges .badge {
-            background-color: transparent;
+// Included Features Section
+.included-features {
+    .container {
+        // Features badges
+        .features-badges {
+            display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            display:flex;
-            gap: 0.5rem;
-        }
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            color: #cccccc;
 
-        .features-badges  .badge .icon {
-                width: 1rem;
-                height: 1rem;
-                color: #3b9eff;
-                flex-shrink: 0;
-            }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-           
-
-
-            .product-cli {
-                transform: translateY(calc(-50% - 50px));
-            }
-
-            .product-gui {
-                transform: translateY(calc(-40% + 20px));
-            }
-        }
-
-        @media (max-width: 768px) {
-           
-
-        
-
-            .content-grid,
-            .trust-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-images {
-                margin-top: -2.5rem;
-                margin-bottom: -2.5rem;
-            }
-
-            .service-icon,
-            .portmaster-logo {
-                width: 5rem;
-                height: 5rem;
-            }
-
-            .portmaster-icon {
-                width: 2rem;
-                height: 2rem;
-            }
-
-            .portmaster-logo span {
-                font-size: 1.25rem;
-            }
-
-            
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .features-badges {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .features-badges .badge {
-                background-color: transparent;
+            .badge {
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
-                font-size: 0.9rem;
+                @include dark-theme((
+                    background-color: transparent,
+                ));
+                @include light-theme((
+                    background-color: transparent,
+                    color: black,
+                ));
+
+                @media (prefers-color-scheme: light) {
+                    background-color: transparent;
+                    color: black;
+                };
+
+
+
+                .icon {
+                    width: 1rem;
+                    height: 1rem;
+                    color: #3b9eff;
+                    flex-shrink: 0;
+                }
             }
 
-            .features-badges  .badge .icon {
-                width: 1rem;
-                height: 1rem;
-                color: #3b9eff;
-                flex-shrink: 0;
+            @media (max-width: 480px) {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .badge {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        // Content Grid
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: center;
+            margin-top: 3rem;
+            margin-bottom: 0.5rem;
+
+            &.reverse {
+                margin-top: 5rem;
+
+                @media (max-width: 480px) {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
             }
 
-            .content-grid.reverse {
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
+
+            // Content text
+            .content-text {
+
+                h3 {
+                    margin-bottom: 1.5rem;
+                    font-family: var(--font-mono);
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    @include light-theme((
+                    color: black,
+                ));
+
+                @media (prefers-color-scheme: light) {
+                    color: black;
+                };
+                }
+
+                .link {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-family: var(--font-mono);
+                    font-size: 0.875rem;
+                    color: #3b9eff;
+                    text-decoration: none;
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: var(--color-primary-hover);
+                    }
+
+                    .icon {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+            }
+
+            // Service Icons
+            .service-icons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                align-items: center;
+                justify-items: center;
+
+                .service-icon {
+                    width: 6rem;
+                    height: 6rem;
+                    object-fit: contain;
+
+                    @media (max-width: 768px) {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+                }
+
+                .portmaster-logo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    width: 6rem;
+                    height: 6rem;
+
+                    @media (max-width: 768px) {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    span {
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        line-height: 1.2;
+                        color: var(--color-white);
+
+                        @media (max-width: 768px) {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+
+                .portmaster-icon {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    object-fit: contain;
+                    flex-shrink: 0;
+
+                    @media (max-width: 768px) {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+            }
+
+            // Product Images
+            .product-images {
+                position: relative;
                 display: flex;
-                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+                min-height: 500px;
+
+                @media (max-width: 768px) {
+                    margin-top: -2.5rem;
+                    margin-bottom: -2.5rem;
+                }
+
+                .product-cli {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(calc(-50% - 70px));
+                    width: 74%;
+                    height: auto;
+                    object-fit: contain;
+                    z-index: 10;
+
+                    @media (max-width: 1024px) {
+                        transform: translateY(calc(-50% - 50px));
+                    }
+                }
+
+                .product-gui {
+                    position: absolute;
+                    left: 4rem;
+                    top: 50%;
+                    transform: translateY(-40%);
+                    width: 74%;
+                    height: auto;
+                    object-fit: contain;
+                    z-index: 20;
+
+                    @media (max-width: 1024px) {
+                        transform: translateY(calc(-40% + 20px));
+                    }
+                }
             }
         }
+    }
+}
 
-        .text-center{
+// Payment Methods Section
+.payment-methods {
+    margin-top: 1.25rem;
+    padding: 1.25rem 3.125rem 2.5rem;
+
+    .container {
+        h3 {
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1.5rem;
             text-align: center;
-            max-width: 100%;
+            color: var(--color-white);
         }
 
+        .payment-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
 
+            .payment-badge {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                border: 0.5px solid;
+
+                .icon {
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// Trust Section
+.trust-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 2.5rem;
+
+    .container {
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-content {
+                h2 {
+                    margin-bottom: 3rem;
+                    font-family: var(--font-mono);
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    color: var(--color-white);
+                }
+
+                .limitations-box {
+                    position: relative;
+                    padding: 2rem;
+                    border: 1px solid;
+                    overflow: hidden;
+
+                    .grid-pattern {
+                        position: absolute;
+                        inset: 0;
+                        opacity: 0.5;
+                        background-image: 
+                            linear-gradient(rgba(59, 158, 255, 0.03) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(59, 158, 255, 0.03) 1px, transparent 1px);
+                        background-size: 20px 20px;
+                    }
+
+                    .limitations-content {
+                        position: relative;
+                        z-index: 10;
+
+                        .limitations-title {
+                            margin-bottom: 1rem;
+                            font-weight: 600;
+                            color: var(--color-white);
+                        }
+                    }
+                }
+            }
+
+            .server-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    max-width: 600px;
+                    height: 100% !important;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
 </style>
