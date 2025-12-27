@@ -56,7 +56,7 @@
                 </section>
 
                 <section v-if="account.product.max_device == 2 && sessions && sessions.length > 0">
-                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + this.language + '/account/change-product'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
+                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + this.language + '/account/pricing'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
                 </section>
             </section>
 

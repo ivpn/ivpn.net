@@ -11,7 +11,7 @@
                 @selected="selected('IVPN Tier 1')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'tier1'"
-                :buttonText="$t('pricing.generateAccount')"
+                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier1"
             >
                 <div class="price-head">
@@ -52,7 +52,7 @@
                 @selected="selected('IVPN Tier 2')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'tier2'"
-                :buttonText="$t('pricing.generateAccount')"
+                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier2"
             >
                 <div class="price-head">
@@ -97,7 +97,7 @@
                 @selected="selected('IVPN Tier 3')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct == 'tier3'"
-                :buttonText="$t('pricing.generateAccount')"
+                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier3"
             >
                 <div class="price-head">
@@ -509,12 +509,14 @@ export default {
     max-width: 100%;
 }
 
-// Pricing Section
 .prices {
-    display: flex;
 
     @media (max-width: $brk-tablet) {
         flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+         flex-direction: column;
     }
 
     // Price box headers
@@ -660,17 +662,18 @@ export default {
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
-                @include dark-theme((
-                    background-color: transparent,
-                ));
                 @include light-theme((
                     background-color: transparent,
-                    color: black,
+                    color:black,
+                ));
+                @include dark-theme((
+                    background-color: transparent,
+                    color: lab(85.1236% -.612259 -3.7138),
                 ));
 
                 @media (prefers-color-scheme: light) {
                     background-color: transparent;
-                    color: black;
+                    color:black;
                 };
 
 
@@ -683,7 +686,7 @@ export default {
                 }
             }
 
-            @media (max-width: 480px) {
+            @media (max-width: 768px) {
                 flex-direction: column;
                 align-items: flex-start;
 
@@ -698,12 +701,9 @@ export default {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             align-items: center;
-            margin-top: 3rem;
             margin-bottom: 0.5rem;
 
             &.reverse {
-                margin-top: 5rem;
-
                 @media (max-width: 480px) {
                     display: flex;
                     flex-direction: column-reverse;
@@ -723,12 +723,16 @@ export default {
                     font-weight: 600;
                     font-size: 1.5rem;
                     @include light-theme((
-                    color: black,
-                ));
+                        color: black,
+                    ));
 
-                @media (prefers-color-scheme: light) {
-                    color: black;
-                };
+                    @include dark-theme((
+                        color:  white,
+                    ));
+
+                    @media (prefers-color-scheme: light) {
+                        color: black;
+                    };
                 }
 
                 .link {
@@ -759,6 +763,10 @@ export default {
                 gap: 0.5rem;
                 align-items: center;
                 justify-items: center;
+
+                @media (max-width: 480px) {
+                    margin-top: 1.5rem;
+                }
 
                 .service-icon {
                     width: 6rem;
@@ -809,57 +817,73 @@ export default {
                 }
             }
 
-            // Product Images
-            .product-images {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                min-height: 500px;
 
-                @media (max-width: 768px) {
-                    margin-top: -2.5rem;
-                    margin-bottom: -2.5rem;
-                }
+.product-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
 
-                .product-cli {
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(calc(-50% - 70px));
-                    width: 74%;
-                    height: auto;
-                    object-fit: contain;
-                    z-index: 10;
+    @media (max-width: 768px) {
+        width: 100vw;
+        min-height: 300px;
+    }
 
-                    @media (max-width: 1024px) {
-                        transform: translateY(calc(-50% - 50px));
-                    }
-                }
+    .product-cli {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(calc(-50% - 70px));
+        width: 74%;
+        height: auto;
+        object-fit: contain;
+        z-index: 10;
 
-                .product-gui {
-                    position: absolute;
-                    left: 4rem;
-                    top: 50%;
-                    transform: translateY(-40%);
-                    width: 74%;
-                    height: auto;
-                    object-fit: contain;
-                    z-index: 20;
+        @media (max-width: 1024px) {
+            transform: translateY(calc(-50% - 50px));
+        }
 
-                    @media (max-width: 1024px) {
-                        transform: translateY(calc(-40% + 20px));
-                    }
-                }
-            }
+        @media (max-width: 768px) {
+            left: 5%;
+        }
+    }
+
+    .product-gui {
+        position: absolute;
+        left: 4rem;
+        top: 50%;
+        transform: translateY(-40%);
+        width: 74%;
+        height: auto;
+        object-fit: contain;
+        z-index: 20;
+
+        @media (max-width: 1024px) {
+            transform: translateY(calc(-40% + 20px));
+        }
+
+        @media (max-width: 768px) {
+            left: calc(5% + 4rem);
+        }
+    }
+}
         }
     }
 }
 
 // Payment Methods Section
 .payment-methods {
-    margin-top: 1.25rem;
-    padding: 1.25rem 3.125rem 2.5rem;
+    margin-top: -40px;
+    margin-bottom: 40px;
+    padding: 0rem 3.125rem 0rem;
+    @media(max-width: 480px) {
+        padding: 0rem 1.125rem 0rem;
+    }
+    @media (max-width: 768px) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
 
     .container {
         h3 {
@@ -884,6 +908,9 @@ export default {
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem;
                 border: 0.5px solid;
+                @media(max-width: 480px) {
+                    
+                }
 
                 .icon {
                     width: 1rem;
@@ -898,7 +925,6 @@ export default {
 .trust-section {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-top: 2.5rem;
 
     .container {
         .trust-grid {

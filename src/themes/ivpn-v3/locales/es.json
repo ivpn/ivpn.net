@@ -30,7 +30,7 @@
         "meta": {
             "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
-        "title": "Selecciona un plan",
+        "title": "Selecciona tu plan",
         "description": "Tres niveles. Sin ventas adicionales. Elige según tus necesidades de privacidad.",
         "allProtocols": "Todos los protocolos",
         "tier1Devices": "5 dispositivos",
@@ -76,7 +76,7 @@
         "select": "Seleccionar",
         "dns": "ModDNS",
         "mailx": "Mailx",
-        "portmaster": "Portmaster/SPN",
+        "portmaster": "Portmaster",
         "chooseTimeAdded": "Puedes elegir el tiempo añadido en el siguiente paso",
         "generateAccount": "Crear cuenta",
         "selectPlan": "Elige un plan",

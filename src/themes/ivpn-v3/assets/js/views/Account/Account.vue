@@ -54,14 +54,12 @@
                             </div>
                         </div>
                         <div v-if="!account.is_active" class="product-action">
-                            <router-link :to="{ name: 'change-product-' + this.language }"
-                                >{{ $t('account.change') }}</router-link
-                            >
+                            <router-link :to="'/' + this.language + '/pricing'"></router-link>
                         </div>
                         <div v-else class="product-action" v-if="canUpgrade">
-                            <router-link :to="{ name: 'upgrade-' + this.language }"
-                                >{{ $t('account.upgrade') }}</router-link
-                            >
+                            <router-link :to="{ name: 'upgrade-' + this.language }">
+                                {{ $t('account.upgrade') }}
+                            </router-link>
                         </div>
                     </div>
                     <div class="product-action" v-if="canUpgrade">
@@ -148,6 +146,9 @@ export default {
         ...mapState({
             account: (state) => state.auth.account,
         }),
+        productName() {
+            return this.account?.product?.name || '';
+        }
     },
 
     

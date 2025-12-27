@@ -7,6 +7,10 @@
     margin: 24px 0;
     min-width: 280px;
 
+    @media (min-width: 1200px) {
+        width: 300px;
+    }
+
     @include light-theme((
         background: $dark-mode-text
     ));

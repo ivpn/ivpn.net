@@ -76,7 +76,7 @@
         "select": "Select",
         "dns": "ModDNS",
         "mailx": "Mailx",
-        "portmaster": "Portmaster/SPN",
+        "portmaster": "Portmaster",
         "chooseTimeAdded": "You can choose time added at the next step",
         "generateAccount": "Generate Account",
         "selectPlan": "Select Plan",

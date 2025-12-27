@@ -110,8 +110,8 @@ label {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin: 24px 18px 0 0;
-    border: 1px solid rgba(51, 77, 102, 0.2);
+    margin: 24px 12px 0 0;
+    border: 1.5px solid #333333;
     
     @media (max-width: 1024px) {
         min-width: 100%;
@@ -167,7 +167,7 @@ label {
         }
     }
 
-    // Price Features Footer
+      // Price Features Footer
     .price-features-footer {
         padding: 20px 0;
         margin: 0 5px 0 30px;
@@ -178,10 +178,13 @@ label {
             border-top: 1px solid #333333
         ));
         @include light-theme((
-            border-top: 1px solid black,
+            border-top: 1px solid rgba(51, 77, 102, 0.2)
         ));
         @media (prefers-color-scheme: dark) {
             border-top: 1px solid #333333;
+        }
+        @media (prefers-color-scheme: light) {
+            border-top: 1px solid rgba(51, 77, 102, 0.2);
         }
     }
 

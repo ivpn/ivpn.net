@@ -149,11 +149,17 @@ export default {
             price: "",
             more: false,
             language: "en",
-            productName: this.$store.state.auth.account.product.name,
+            productName: "",
         };
+    },
+    computed: {
+        productName() {
+            return this.account?.product?.name || '';
+        }
     },
     created() {
         this.price = this.$store.state.payments.selectedPrice;
+        console.log(this.account);
 
         if (
             this.price == null ||
@@ -162,8 +168,6 @@ export default {
             this.price = this.account.product.prices[1];
         }
         
-    },
-    beforeMount(){
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
@@ -214,20 +218,39 @@ export default {
     .plan-details {
         display: flex;
 
-        @media (max-width: $brk-mobile-xs) {
+        @media (max-width: $brk-mobile) {
             flex-direction: column;
         }
+
+        @media (max-width: $brk-mobile) {
+        max-width: 100%;
+    }
 
         .plan-name {
             font-family: $font-main-mono;
             font-weight: bold;
             font-size: 18px;
-            line-height: 120%;
+            
+            @media (max-width: $brk-mobile) {
+                width: 100%;
+                line-height: 30px;
+                display: flex;
+                flex-wrap: wrap;
+        
+                .row:first-child  {
+                    display: inline;
+                    width:100%
+                }
+            }
         }
 
         .plan-change {
             font-size: 16px;
             margin: 4px 5px 5px 15px;
+            @media (max-width: $brk-mobile) {
+                margin: 0;
+                line-height: 30px;
+            }
         }
     }
 }
@@ -236,6 +259,10 @@ export default {
     margin-bottom: 32px;
     .pay-button {
         width: 220px;
+        // if mobile 100% width
+        @media (max-width: $brk-mobile) {
+            width: 100%;
+        }
         line-height: 28px;
         margin: 20px 24px 0px 0px;
         font-size: 18px;

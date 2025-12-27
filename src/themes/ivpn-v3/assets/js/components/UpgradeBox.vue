@@ -108,7 +108,6 @@ label {
     flex-direction: column;
     border: 1px solid rgba(51, 77, 102, 0.2);
     margin: 24px 18px 0px 0px;
-    min-width: 280px;
     max-width: 350px;
     padding: 32px;
     &.current {
@@ -218,7 +217,6 @@ label {
 
 .price-option {
     position: relative;
-    border-bottom: 1px solid #334d6633;
     line-height: 42px;
     font-size: 16px;
     display: flex;    
