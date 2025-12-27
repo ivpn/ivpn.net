@@ -405,8 +405,8 @@
             "disabledDesc4": "La gestión de dispositivos es aplicable solo al servicio VPN, los servicios adicionales no se ven afectados.",
             "here": "aquí",
             "enableDeviceManagement": "Activar la gestión de dispositivos",
-            "activeDevices": "Dispositivos activos",
-            "devicesAdded": "Dispositivos añadidos",
+            "activeDevices": "Dispositivos IVPN activos",
+            "devicesAdded": "Dispositivos IVPN añadidos",
             "logoutFromAllDevices": "Cerrar sesión en todos los dispositivos",
             "enabled": "La gestión de dispositivos está habilitada.",
             "enabledDesc1": "No tienes dispositivos conectados al servicio.",
@@ -426,7 +426,10 @@
             "confirm": "Confirmar",
             "confirmDelete": "¿Estás seguro de que deseas eliminar este dispositivo?",
             "yes": "Si",
-            "renewAccount": "Por favor, renueva tu cuenta para gestionar tus dispositivos."
+            "renewAccount": "Por favor, renueva tu cuenta para gestionar tus dispositivos.",
+            "upgradeText1": "Para aumentar tu límite de dispositivos a 10,",
+            "upgradeText2": "mejora",
+            "upgradeText3": "tu plan a IVPN Plus o IVPN Pro Suite."
         },
         "accountSettingsTab": {
             "backToAccount": "Volver a la cuenta",
@@ -589,7 +592,7 @@
             "accessDNS": "Acceder",
             "accessPortmaster": "Acceder",
             "setupMail": "Configurar",
-            "setupDNS": "Configurar",
+            "setupDns": "Configurar",
             "setupPortmaster": "Configurar",
             "active": "ACTIVO",
             "available": "DISPONIBLE",

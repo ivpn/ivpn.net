@@ -47,14 +47,17 @@
                             <label>{{ $t('account.product') }}</label>
                             <div class="value" >{{ productName }}</div>
                             <div class="product-details">
-                                {{ $t('account.included') }}: [VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]
+                                <span class="row">{{ $t('account.included') }}:</span>
+                                <span class="row" >[VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]</span>
                                 <span class="row" v-if="account.product.capabilities.has_resist_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
                                 <span class="row" v-if="account.product.capabilities.has_mailx">[{{ $t('pricing.mailx') }} &#10003;]</span>
                                 <span class="row" v-if="account.product.capabilities.has_spn">[{{ $t('pricing.portmaster') }} &#10003;]</span>
                             </div>
                         </div>
                         <div v-if="!account.is_active" class="product-action">
-                            <router-link :to="'/' + this.language + '/pricing'"></router-link>
+                            <router-link :to="'/' + this.language + '/pricing'">
+                                {{ $t('account.changePlan') }}
+                            </router-link>
                         </div>
                         <div v-else class="product-action" v-if="canUpgrade">
                             <router-link :to="{ name: 'upgrade-' + this.language }">
@@ -217,6 +220,11 @@ export default {
     display: flex;
     align-items: center;
 
+    @media (max-width: $brk-mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .product-info {
         flex-grow: 1;
         font-family: $font-main-mono;
@@ -238,7 +246,30 @@ export default {
         }
     }
 
-    .product-action {
+    .product-details{
+        line-height: 32px;
+        @media (max-width: $brk-mobile) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .product-details .row{
+        @media (max-width: $brk-mobile) {
+            display:block;
+            width: 100%;
+            line-height: 25px;;
+            margin-top: 5px;
+        }
+    }
+}
+
+.product-action {
+        @media (max-width: $brk-mobile) {
+            width: 100%;
+            margin-top: 10px;
+        }
+
         a {
             width: 180px;
             font-size: 18px;
@@ -249,18 +280,5 @@ export default {
                 border: 0px;
             }
         }
-    }
-
-    .product-details{
-        line-height: 32px;
-    }
-
-    .product-details .row{
-        @media (max-width: $brk-mobile) {
-            display:block;
-            width: 100%;
-            line-height: 25px;;
-        }
-    }
 }
 </style>

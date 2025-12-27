@@ -1,0 +1,79 @@
+@import "@/styles/_vars.scss";
+
+.service {
+    margin-bottom: 1rem;
+
+    &-line {
+        display: inline-block;
+        width: 465px;
+        margin-left: 20px;
+        line-height: 25px;
+        
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        @media (max-width: $brk-mobile) {
+            margin-left: 0;
+        }
+    }
+    
+    &-description {
+        font-size: 0.75rem; // 12px
+    }
+
+    .value {
+        font-weight: bold;
+    }
+
+    .status {
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0 1rem; // 16px
+        line-height: 1.75rem; // 28px
+        font-size: 0.75rem; // 12px
+        border-radius: 0.25rem; // 4px
+        letter-spacing: 0.0625rem; // 1px
+        margin: 0 0.625rem; // 10px
+        
+        @media (max-width: $brk-mobile) {
+            margin: 0.625rem 0.625rem 0 0; // 10px 10px 0 0
+        }
+
+        &.active {
+            background: #64ad07;
+            color: #ffffff;
+            width: 6.5625rem; // 105px
+            text-align: center;
+        }
+
+        &.inactive {
+            background: #ff0000;
+            color: #ffffff;
+        }
+    }
+
+    a {
+        margin-left: 0.625rem; // 10px
+        
+        @media (max-width: $brk-mobile) {
+            margin-left: 0;
+            display: inline-block;
+            margin-top: 0.3125rem; // 5px
+        }
+    }
+
+    .inactive{
+        width: 150px;
+        text-align: center;
+    }
+}
+
+.services-footer {
+    line-height: 1.5625rem; // 25px
+}
+
+.services-title {
+    margin-bottom: 1rem;
+    display: block;
+}
