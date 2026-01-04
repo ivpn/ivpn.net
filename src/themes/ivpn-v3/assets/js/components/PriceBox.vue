@@ -233,7 +233,7 @@ label {
 
         .btn {
             width: 100%;
-            padding: 1.5rem;
+            padding: 1.1rem;
             font-family: var(--font-mono);
             font-weight: 600;
             font-size: 0.875rem;
@@ -279,25 +279,6 @@ label {
     font-weight: bold;
 }
 
-// Price Sidebar (used in parent components)
-.price-sidebar {
-    margin: 160px 0 0 -130px;
-    padding: 35px 10px 0;
-    min-width: 125px;
-    max-height: 340px;
-    font-size: 16px;
-    font-weight: bold;
-    
-    @include theme-colors(#363434, rgba(255, 255, 255, 0.8), #E7E7E7, black);
-
-    p {
-        font-size: 16px !important;
-    }
-
-    @media (max-width: 1024px) {
-        display: none;
-    }
-}
 
 // Tooltip (global utility)
 [data-tooltip] {

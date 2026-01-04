@@ -1,5 +1,5 @@
 <template>
-    <div class="upgrade-box price-box" :class="product">
+    <div class="upgrade-box price-box" :class="[current ? 'current' : '']">
         <slot></slot>
         <div class="price-options">
             <div class="price-option" v-if="redirectUrl && !disabled && !current && !inProgress">
@@ -44,7 +44,7 @@ import Spinner from "@/components/ProgressSpinner.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["price", "onselect", "disabled", "current", "inProgress","isChange","buttonText","product","redirectUrl"],
+    props: ["price", "onselect", "disabled", "current", "inProgress","isChange","buttonText","redirectUrl"],
     components: { Spinner },
     model: {
         event: "change",
@@ -178,6 +178,10 @@ label {
             }
         }
     }
+
+    .price-button {
+        padding: 0px;
+    }
 }
 
 
@@ -193,7 +197,6 @@ label {
     li {
         list-style: disc;
     }
-    padding: 0px 15px 0px 25px;
     
 }
 

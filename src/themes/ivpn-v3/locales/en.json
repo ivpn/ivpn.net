@@ -41,7 +41,7 @@
         "productFooter1": "MailX, ModDNS and Portmaster are services owned and operated by IVPN. Visit our",
         "productFooter2": "page for a detailed overview of their features and capabilities.",
         "productFooterPrice": "Pricing in USD.",
-        "productFooterReview": "Team licensing with admin options available",
+        "productFooterReview": "Team licensing for VPN-only plans available",
         "here": "here",
         "featuresTitle": "All IVPN plans come with:",
         "serviceBenefits": "Service benefits:",
@@ -90,7 +90,7 @@
             "feature2": "Multihop",
             "feature3": "Basic ads & Tracker blocker",
             "footer": "If you need a straightforward, trustworthy VPN for your toolkit.",
-            "button": "Select Standard"
+            "button": "Current plan"
         },
         "tier2":{
             "name": "IVPN Plus",
@@ -102,7 +102,7 @@
             "feature4": "Mailx email aliasing service",
             "feature4Title": "Email forwarding service that hides your real address from third parties. Developed by IVPN.",
             "footer": "Includes standalone tools for email forwarding and granular DNS control.",
-            "button": "Select Plus"
+            "button": "Upgrade to Plus"
         },
         "tier3":{
             "name": "IVPN Pro Suite",
@@ -116,7 +116,7 @@
             "feature5": "Portmaster Pro firewall (Windows, Linux)",
             "feature5Title": "Firewall & network monitoring tool operated by IVPN. Includes SPN, an onion-routed Tor alternative.",
             "footer": "Complete network controls with firewall and onion-routed SPN.",
-            "button": "Select Pro Suite"
+            "button": "Upgrade to Pro Suite"
         },
         "sidebar":{
             "feature1": "VPN",
@@ -265,7 +265,7 @@
         "changeProductTitle": "Change Product",
         "changeProductDesc": "You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.",
         "upgradeProductTitle": "Upgrade Product",
-        "upgradeProductDesc": "You can upgrade your product plan any time.",
+        "upgradeProductDesc": "Pick a plan to start the upgrade process. You will pay the difference displayed, calculated based on the remaining time on your account. On successful payment, your get instant access to the selected plan and its benefits. Expiry date will stay the same.",
         "activeUntil": "Active until:",
         "willBeActiveUntil": "Will be active until:",
         "price": "Price",

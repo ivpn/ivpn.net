@@ -24,10 +24,9 @@
                 <div class="price-header">{{ $t('pricing.tier1.name') }}</div>
                 <div class="upgrade-features">
                     <ul>
-                        <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.tier1Devices') }}</li>
-                        <li>{{ $t('pricing.antitracker') }}</li>
-                        <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.tier1.feature1') }}</li>
+                        <li>{{ $t('pricing.tier1.feature2') }}</li>
+                        <li>{{ $t('pricing.tier1.feature3') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
@@ -49,18 +48,16 @@
                 :inProgress="inProgress"
                 :isChange="true"
                 @selected="selected('IVPN Tier 2')"
-                :buttonText="$t('pricing.tier2.button')"
+                :buttonText="$t(current ? 'pricing.tier1.button' : 'pricing.tier2.button')"
                  :redirectUrl="'/account/upgrade/product/tier2'"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
                 <div class="upgrade-features">
                     <ul>
-                        <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.tier2Devices') }}</li>
-                        <li>{{ $t('pricing.antitracker') }}</li>
-                        <li>{{ $t('pricing.multihop') }}</li>
-                        <li>{{ $t('pricing.dns') }}</li>
-                        <li>{{ $t('pricing.mailx') }}</li>
+                        <li>{{ $t('pricing.tier2.feature1') }}</li>
+                        <li>{{ $t('pricing.tier2.feature2') }}</li>
+                        <li>{{ $t('pricing.tier2.feature3') }}</li>
+                        <li>{{ $t('pricing.tier2.feature4') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
@@ -77,20 +74,18 @@
                 :price="pricing.Tier3"
                 :current="account.product.id == 'IVPN Tier 3'"
                 :inProgress="inProgress"
-                :buttonText="$t('pricing.tier3.button')"
+                :buttonText="$t(current ? 'pricing.tier1.button' : 'pricing.tier3.button')"
                 @selected="selected('IVPN Tier 3')"
                 :redirectUrl="'/account/upgrade/product/tier3'"
             >
                 <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
                 <div class="upgrade-features">
                     <ul>
-                        <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.tier2Devices') }}</li>
-                        <li>{{ $t('pricing.antitracker') }}</li>
-                        <li>{{ $t('pricing.multihop') }}</li>
-                        <li>{{ $t('pricing.dns') }}</li>
-                        <li>{{ $t('pricing.mailx') }}</li>
-                        <li>{{ $t('pricing.portmaster') }}</li>
+                        <li>{{ $t('pricing.tier3.feature1') }}</li>
+                        <li>{{ $t('pricing.tier3.feature2') }}</li>
+                        <li>{{ $t('pricing.tier3.feature3') }}</li>
+                        <li>{{ $t('pricing.tier3.feature4') }}</li>
+                        <li>{{ $t('pricing.tier3.feature5') }}</li>
                     </ul>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
@@ -103,9 +98,6 @@
                 </template>
             </upgrade-box>
         </div>
-        <p>
-            <sup style="color:red" v-if="account.is_active">*</sup> {{ $t('account.thisPrice') }}
-        </p>
     </div>
 </template>
 
@@ -173,8 +165,12 @@ export default {
     display: flex;
     margin-bottom: 2em;
 
-    @media (max-width: $brk-mobile) {
-        flex-direction: column;
+    @media (max-width: $brk-tablet) {
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+         flex-direction: column;
     }
 }
 

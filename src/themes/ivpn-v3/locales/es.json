@@ -41,7 +41,7 @@
         "productFooter1": "MailX, ModDNS y Portmaster son servicios propiedad y operados por IVPN. Visita nuestra página",
         "productFooter2": "para una descripción detallada de sus características y capacidades.",
         "productFooterPrice": "Todos los precios están en dólares estadounidenses.",
-        "productFooterReview": "Consulta los precios para empresas",
+        "productFooterReview": "Consulta los precios solo VPN para empresas",
         "here": "aquí",
         "featuresTitle": "Todos los planes IVPN vienen con:",
         "serviceBenefits": "Beneficios del servicio:",
@@ -90,7 +90,7 @@
             "feature2": "Multihop",
             "feature3": "Bloqueador básico de anuncios y rastreadores",
             "footer": "Un VPN sencillo y confiable para tu kit de herramientas.",
-            "button": "Seleccionar Standard"
+            "button": "Plan actual"
         },
         "tier2":{
             "name": "IVPN Plus",
@@ -102,7 +102,7 @@
             "feature4": "Mailx, reenvío de correo electrónico",
             "feature4Title": "MailX es un servicio de alias de correo electrónico desarrollado por IVPN. Mejora tu privacidad ocultando tu dirección de correo electrónico real de cada sitio web o servicio que utilices.",
             "footer": "Protección de rastreo y privacidad del correo electrónico mejorada.",
-            "button": "Seleccionar Plus"
+            "button": "Mejora a Plus"
         },
         "tier3":{
             "name": "IVPN Pro Suite",
@@ -116,7 +116,7 @@
             "feature5": "Safing Portmaster Pro: cortafuego de red con SPN (Linux, Windows)",
             "feature5Title": "Portmaster es una herramienta de cortafuego de escritorio y monitor de red operada por IVPN. Incluye SPN, una alternativa de VPN con conexiones de múltiples saltos enrutadas por cebolla.",
             "footer": "Controles de red completos con cortafuego de aplicación incluido.",
-            "button": "Seleccionar Pro Suite"
+            "button": "Mejora a Pro Suite"
         },
         "sidebar":{
             "feature1": "VPN",
@@ -264,7 +264,7 @@
         "changeProductTitle": "Cambiar producto",
         "changeProductDesc": "Puedes cambiar tu plan de producto en cualquier momento. Si tu cuenta está activa, cambiar el tipo de producto cambiará la cantidad de tiempo restante en tu cuenta.",
         "upgradeProductTitle": "Mejorar producto",
-        "upgradeProductDesc": "Puedes mejorar tu plan de producto en cualquier momento.",
+        "upgradeProductDesc": "Elige un plan para iniciar el proceso de mejora. Pagarás la diferencia mostrada, calculada en función del tiempo restante en tu cuenta. Tras el pago exitoso, obtendrás acceso instantáneo al plan seleccionado y sus beneficios. La fecha de vencimiento permanecerá igual.",
         "activeUntil": "Activo hasta:",
         "willBeActiveUntil": "Estará activo hasta:",
         "price": "Precio",

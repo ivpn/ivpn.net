@@ -217,8 +217,8 @@
                     </div>
 
                     <div class="service-icons">
-                        <img src="/images/mailX-3.png" alt="MailX" class="service-icon">
-                        <img src="/images/mod_white.png" alt="ModDNS" class="service-icon">
+                        <img alt="MailX" class="service-icon mailx-logo">
+                        <img alt="ModDNS" class="service-icon moddns-logo">
                         <div class="portmaster-logo">
                             <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
                             <span>{{ $t('pricing.portmasterTitle') }}</span>
@@ -465,7 +465,7 @@ export default {
         async selected(product) {
             // Check legacy status once at the beginning
             if (this.auth.isAuthenticated && this.auth.isLegacy) {
-                this.$router.push({ name: 'account', params: { lang: this.language } });
+                this.$router.push({ name: "account-" + this.language  });
                 return;
             }
 
@@ -479,8 +479,8 @@ export default {
                     }
                 }
 
-                if (!this.auth.account.is_new) {
-                    this.$router.push({ name: 'account', params: { lang: this.language } });
+                if (!this.auth.account.is_new && this.auth.account.is_active) {
+                    this.$router.push({ name: "account-" + this.language  });
                     return;
                 }
             }
@@ -490,7 +490,7 @@ export default {
             if (!wasAuthenticated) {
                 matomo.recordAccountCreated();
             }
-            this.$router.push({ name: 'account', params: { lang: this.language } });
+            this.$router.push({ name: "account-" + this.language  });
         },
         scrollToPricing() {
             document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -997,5 +997,29 @@ export default {
     .container {
         padding: 0 1rem;
     }
+}
+.mailx-logo {
+    @include light-theme((
+        content: url('/images/mailx_dark.png')
+    ));
+    @include dark-theme((
+        content: url('/images/mailx_white.png')
+    ));
+
+    @media (prefers-color-scheme: light) {
+        content: url('/images/mailx_dark.png')
+    };
+}
+.moddns-logo {
+    @include light-theme((
+        content: url('/images/mod_white.png')
+    ));
+    @include dark-theme((
+        content: url('/images/mod_dark.png')
+    ));
+
+    @media (prefers-color-scheme: light) {
+        content: url('/images/mod_white.png')
+    };
 }
 </style>
