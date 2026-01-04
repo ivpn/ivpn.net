@@ -48,7 +48,7 @@
                 :inProgress="inProgress"
                 :isChange="true"
                 @selected="selected('IVPN Tier 2')"
-                :buttonText="$t(current ? 'pricing.tier1.button' : 'pricing.tier2.button')"
+                :buttonText="$t(account.product.id == 'IVPN Tier 2' ? 'pricing.tier1.button' : 'pricing.tier2.button')"
                  :redirectUrl="'/account/upgrade/product/tier2'"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
@@ -74,7 +74,7 @@
                 :price="pricing.Tier3"
                 :current="account.product.id == 'IVPN Tier 3'"
                 :inProgress="inProgress"
-                :buttonText="$t(current ? 'pricing.tier1.button' : 'pricing.tier3.button')"
+                :buttonText="$t(account.product.id == 'IVPN Tier 3' ? 'pricing.tier1.button' : 'pricing.tier3.button')"
                 @selected="selected('IVPN Tier 3')"
                 :redirectUrl="'/account/upgrade/product/tier3'"
             >

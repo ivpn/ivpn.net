@@ -10,7 +10,7 @@
             <ul class="payment-details">
                 <li>{{ currentProduct }}</li>
                 <li>{{ newProduct }}</li>
-                <li>{{ price }}</li>
+                <li>${{ price }}</li>
             </ul>
             <select-payment-method 
                 :account="account"

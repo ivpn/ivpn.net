@@ -8,7 +8,6 @@
                 </label>
                 <div class="price">
                     {{ "$" + price }}
-                    <sup>*</sup>
                 </div>
             </div>
         </div>

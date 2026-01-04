@@ -141,7 +141,6 @@ export default {
             isLight : false,
             canUpgrade: false,
             language: "en",
-            productName: "",
         };
     },
 

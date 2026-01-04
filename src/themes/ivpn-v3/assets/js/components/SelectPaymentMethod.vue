@@ -149,7 +149,6 @@ export default {
             price: "",
             more: false,
             language: "en",
-            productName: "",
         };
     },
     computed: {
@@ -159,7 +158,6 @@ export default {
     },
     created() {
         this.price = this.$store.state.payments.selectedPrice;
-        console.log(this.account);
 
         if (
             this.price == null ||
