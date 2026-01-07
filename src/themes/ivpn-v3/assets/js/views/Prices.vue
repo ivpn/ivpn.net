@@ -827,7 +827,7 @@ export default {
 
     @media (max-width: 768px) {
         width: 100vw;
-        min-height: 300px;
+         
     }
 
     .product-cli {
