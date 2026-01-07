@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-12-02 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-01-07 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 926115
-hash: 00000000000000000001c5044a132a1ba1c3bf1e046bcfe0a12b6b70d19da873
+height: 931271
+hash: 0000000000000000000123c2343b6b48963863a34de96e52d316ff5e686c7a1d
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-India demands installation of government app on all smartphones
-Privacy advocates raise concerns about potential snooping
+KKR to invest $1.5bn into European data centre business
+US private capital group’s investment into Global Technical Realty comes alongside $400mn from Oak Hill Capital
 
-Demand for Japanese bonds reassures jittery markets
-Yen and equities steady one day after hawkish comments from BoJ governor
+How Trump became just another Republican president
+His enthusiasm for big business and foreign intervention is more Reaganite than populist
 
-BoE lowers capital requirements for UK banks as they pass stress tests
-Move by Financial Policy Committee comes in first review in six years
+Reader callout: Have you tried to put crypto in your Isa?
+Tell us your views on the UK government’s decision to allow investors to hold digital ETNs in their savings accounts
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmkuqakACgkQisFrnrZH
-umkrnAf+J1rDK2PanrN1HVFzNRfTKEgBLUysG0Ldo3ahw3hUjnTDBVuaPqbe6bhU
-jBh0T/CZQCzJo7yYhj0Mfc4Cf8MGbgKe77vP1NZwbpwjKrUrIks5P47NqOvfIbcF
-yBfISdUEn13wWAeYjV6cThP3L28WPLWcEdjOX4a9FelAP0ioSuVFzvGS/l1Uendj
-IdS9Vd8ugshDvR5EE0QbFn9XX+4vIvC6Vxw6EsmfWgW4aFY67Weoefh65rTHgPv7
-Zp1QBE/DsCM4nmSb3DGJkMkjL0YGspWVOAcHuxUTogFALi14VmBRPApcWXpv7TYn
-yiMWN9P3UShXT00wePcA78OQXeO0Tw==
-=1AQZ
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmleSxIACgkQisFrnrZH
+umkrAAf/dddkU7y72sE4/ThDH3yZupWvoZTDNiKgcli1dvPI83JWFqgJFHpG7ZMD
+xJ3yOYKNoMO2CM25fTal7mGjfMfO8CpP6LV8dBYt/gxTLpAnG5iuFYOoZ9Bn5r8m
+otWZyVXZFk0k4HHNqtUvt1jLDO8OTXzEUrhariap8MEEPchB7HxyJWzibHDNkx+D
+4Y0T6EClF2WZG0OZfK7T/fO3Y+x47/v/yNYeKAGNV5Yb5pL0PgX59FyBFvqwEWHy
+pxZU6PnpLAlqePkYgK7GsbPPKhSlXW8kmKsJf83KL2CSoSokypKNSBm+7SLhb9GK
+yEMN07G11oikv8Th0/D7x+JXtW0fuA==
+=rm0L
 -----END PGP SIGNATURE-----
 
 
