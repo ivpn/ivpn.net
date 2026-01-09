@@ -135,8 +135,35 @@
         });
     }
 
+    function updateRussiaBanner(){
+        var banner = document.getElementById('ru-warning-banner');
+        if (!banner) {
+            return; // Banner doesn't exist on this page
+        }
+
+        fetch('https://api.ivpn.net/v4/geo-lookup', {
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'omit'
+        }).then(function(response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Geo-lookup request failed');
+        }).then(function(data) {
+            // Show banner for non-Russian users, hide for Russian users
+            if (data.country_code && data.country_code === 'RU') {
+                banner.style.display = 'none';
+            } else {
+                banner.style.display = '';
+            }
+        }).catch(function(error) {
+        });
+    }
+
     window.getCurrentScheme = getCurrentScheme;
     window.addSwitcherEvent = addSwitcherEvent;
+    window.updateRussiaBanner = updateRussiaBanner; 
 
     let checkboxes = document.querySelectorAll('input[type=checkbox][data-theme-switch]');
     setupHandler(checkboxes);
@@ -153,6 +180,7 @@
     let isLegacyAuth = document.cookie.indexOf("logged_in=l") != -1;
 
     updateLoginMenu(isAuth, isLegacyAuth);
+    updateRussiaBanner();
 
     window.addLanguageSwitcherEvent();
 })();
