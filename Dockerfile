@@ -1,4 +1,4 @@
-FROM nginx:1.18 AS builder
+FROM nginx:1.29 AS builder
 
 ARG ENV=production
 ARG BASE_URL=http://localhost:8010
@@ -48,7 +48,7 @@ RUN sed -E -e 's/^layout:(.*)$/layout: mobile-app/' \
 
 RUN hugo -s ./src -b ${BASE_URL} --environment $ENV -d /opt/build/public
 
-FROM nginx:1.18
+FROM nginx:1.29
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /opt/build/public /var/www/static
