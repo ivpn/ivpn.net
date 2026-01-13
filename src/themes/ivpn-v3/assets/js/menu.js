@@ -141,7 +141,7 @@
             return; // Banner doesn't exist on this page
         }
 
-        fetch('https://api.ivpn.net/v4/geo-lookup', {
+        fetch(process.env.MIX_APP_API_URL + '/v4/geo-lookup', {
             method: 'GET',
             mode: 'cors',
             credentials: 'omit'
@@ -153,9 +153,9 @@
         }).then(function(data) {
             // Show banner for non-Russian users, hide for Russian users
             if (data.country_code && data.country_code === 'RU') {
-                banner.style.display = 'none';
-            } else {
                 banner.style.display = '';
+            } else {
+                banner.style.display = 'none';
             }
         }).catch(function(error) {
         });
