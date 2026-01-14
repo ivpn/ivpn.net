@@ -1,56 +1,12 @@
 {{ if not (isset .Params "hideheaders") }}
 
-{{/*
-    <div class="header-note voucher" data-voucher="eligible">
+{{ if or (in .Params.Url "/en/pricing/") (in .Params.Url "/es/pricing/") (in .Params.Url "/en/") (in .Params.Url "/es/") }}
+    <div class="header-note" id="ru-warning-banner" style="display: none;">
         <p>
-            <a href="/{{site.Language.Lang}}/account/vouchers">{{ T "voucherStrip" }}</a>
+            Предупреждение: подключение и стабильная работа VPN в России не гарантируется из-за действующих ограничений. Рекомендуем сначала протестировать сервис с недельным тарифом.
         </p>
     </div>
-*/}}
-
-{{/*
-    <div class="header-note">
-        <p>
-            <a href="/blog/in-support-of-ukraine">Solidarity with Ukraine - free VPN access for those in Ukraine and Russia -></a>
-        </p>
-    </div>
-*/}}
-
-{{/*
-    <div class="header-note">
-        <p>
-            <a href="https://survey.ivpn.net/form/GVkRjB">Help improve our desktop apps by completing a short survey -></a>
-        </p>
-    </div>
-*/}}
-
-{{/*
-    {{ if or (in .Params.Url "/contactus/") (in .Params.Url "/knowledgebase/windows/") (in .Params.Url "/knowledgebase/linux/") (in .Params.Url "/knowledgebase/macos/") (in .Params.Url "/knowledgebase/troubleshooting/how-to-submit-vpn-diagnostic-logs-to-ivpn/") (in .Params.Url "/knowledgebase/troubleshooting/how-to-disable-enhanced-app-authentication-eaa") }}
-        <div class="header-note">
-            <p>
-                <a href="https://survey.ivpn.net/form/GVkRjB">Help improve our desktop apps by completing a short survey -></a>
-            </p>
-        </div>
-    {{ end }}
-*/}}
-
-{{/* 
-<div class="header-note">
-    <p>
-        <a href="/blog/in-support-of-ukraine">Solidarity with Ukraine - free VPN access for those in Ukraine and Russia -></a>
-    </p>
-</div>
-*/}}
-
-{{/* 
-{{ if or (in .Params.Url "/contactus/") (in .Params.Url "/knowledgebase/windows/") (in .Params.Url "/knowledgebase/linux/") (in .Params.Url "/knowledgebase/macos/") (in .Params.Url "/knowledgebase/troubleshooting/how-to-submit-vpn-diagnostic-logs-to-ivpn/") (in .Params.Url "/knowledgebase/troubleshooting/how-to-disable-enhanced-app-authentication-eaa") }}
-<div class="header-note">
-    <p>
-        <a href="https://survey.ivpn.net/form/GVkRjB">Help improve our desktop apps by completing a short survey -></a>
-    </p>
-</div>
 {{ end }}
-*/}}
 
 <nav id="header">    
     {{ if ne $.Site.Params.environment "development" }}
