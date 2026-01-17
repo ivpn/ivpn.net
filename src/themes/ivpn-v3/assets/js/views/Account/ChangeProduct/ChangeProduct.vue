@@ -1,7 +1,7 @@
 <template>
     <div v-if="!account.is_active && !isLocked">
         <div class="back-link">
-            <router-link :to="{name:'account-' + this.language}">
+            <router-link :to="{name:'account-' + language}">
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
@@ -15,7 +15,7 @@
         <div class="prices">
             <price-box
                 :prices="{}"
-                :current="account.product.id == 'IVPN Tier 1'"
+                :current="account.product.id === 'IVPN Tier 1'"
                 :inProgress="inProgress"
                 :buttonText="$t('pricing.select')"
                 :isChange="true"
@@ -33,8 +33,8 @@
             </price-box>
 
             <price-box
-                :prices='{}'
-                :current="account.product.id == 'IVPN Tier 2'"
+                :prices="{}"
+                :current="account.product.id === 'IVPN Tier 2'"
                 :inProgress="inProgress"
                 :isChange="true"
                 :buttonText="$t('pricing.select')"
@@ -55,7 +55,7 @@
 
             <price-box
                 :prices="{}"
-                :current="account.product.id == 'IVPN Tier 3'"
+                :current="account.product.id === 'IVPN Tier 3'"
                 :inProgress="inProgress"
                 :isChange="true"
                 :buttonText="$t('pricing.select')"
@@ -80,8 +80,6 @@
 
 <script>
 import PriceBox from "@/components/PriceBox.vue";
-import { add, differenceInMinutes } from "date-fns";
-import { th, tr } from "date-fns/locale";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
 
@@ -89,48 +87,42 @@ export default {
     data() {
         return {
             language: "en",
-            isLocked: false,
         };
     },
     components: {
         PriceBox
     },
 
-    
-    async beforeMount() {
+    mounted() {
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
-    mounted(){
-        useI18n().locale.value = window.location.href.split("/")[3];
-        this.language = window.location.href.split("/")[3];
-    },
-    
 
     methods: {
         async selected(newProductName) {
             
-            await this.$store.dispatch("product/change", newProductName);
-            
+            try {
+                await this.$store.dispatch("product/change", newProductName);
+            } catch (error) {
+                console.error('Failed to change product:', error);
+                return;
+            }
 
             if (this.error) {
                 return;
             }
 
-            let productLocale;
-            switch( newProductName ){
-                case "IVPN Tier 1":
-                    productLocale = this.$t('pricing.tier1.name');
-                    break;
-                case "IVPN Tier 2":
-                    productLocale = this.$t('pricing.tier2.name');
-                    break;
-                case "IVPN Tier 3":
-                    productLocale = this.$t('pricing.tier3.name');
-                    break;
-            }
+            const productMapping = {
+                'IVPN Tier 1': 'pricing.tier1.name',
+                'IVPN Tier 2': 'pricing.tier2.name',
+                'IVPN Tier 3': 'pricing.tier3.name',
+            };
+            const productLocale = this.$t(productMapping[newProductName] || 'pricing.tier1.name');
 
             this.$store.commit("setFlashMessage", {
                 type: "success",
-                message: this.$t('account.changeProductSuccess') + productLocale
+                message: `${this.$t('account.changeProductSuccess')} ${productLocale}`
             });
 
             this.$router.push({ name: "account-" + this.language })
@@ -145,6 +137,9 @@ export default {
             inProgress: state => state.product.inProgress,
             error: state => state.product.error
         }),
+        isLocked() {
+            return this.account?.product?.id === 'IVPN Tier 3';
+        },
     }
 };
 </script>

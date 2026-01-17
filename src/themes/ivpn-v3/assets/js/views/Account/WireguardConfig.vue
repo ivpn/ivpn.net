@@ -5,7 +5,7 @@
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
                 <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account-' + this.language }"
+                    :to="{ name: 'account-' + language }"
                     class="btn btn-solid"
                     style="margin-bottom: 20px"
                     >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
@@ -14,14 +14,14 @@
         </div>
         <div v-if="account.is_active">
             <div class="back-link">
-                <router-link :to="{ name: 'wireguard-' + this.language }">
+                <router-link :to="{ name: 'wireguard-' + language }">
                     <span class="icon-back"></span> {{ $t('account.wireguardTab.backToWireguard') }}
                 </router-link>
             </div>
             <section>
                 <h2>{{ $t('account.wireguardTab.configuration') }}</h2>
                 <h3>{{ $t('account.wireguardTab.configStep1Title') }}</h3>
-                <p class="note">{{ $t('account.wireguardTab.configStep1Content') }} <a href="https://github.com/ivpn/ivpn.net/blob/main/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue">GitHub</a>.</p>
+                <p class="note">{{ $t('account.wireguardTab.configStep1Content') }} <a href="https://github.com/ivpn/ivpn.net/blob/main/src/themes/ivpn-v3/assets/js/views/Account/WireguardConfig.vue" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
                 <div class="tabs">
                     <ul>
                         <li v-bind:class="{ 'is-active': isKeyGenerated }">
@@ -198,6 +198,7 @@
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
                 <div class="qrnote">
+                    <!-- QR code is internally generated and sanitized -->
                     <div class="qrcode" v-html="qrCode"></div>
                 </div>
             </section>
@@ -263,7 +264,6 @@ export default {
             qrCode: "",
             hostKey: 0,
             dns: null,
-            isLight : false,
             antitrackerBlockLists: [],
             selectedBlockList: null,
             isDnsHardcore: false,
@@ -272,24 +272,24 @@ export default {
     },
     watch: {
         query: {
-            handler: function (after, before) {
+            handler: function () {
                 this.updateQuery();
             },
             deep: true
         },
         validation: {
-            handler: function (after, before) {
+            handler: function () {
                 this.updateQuery();
             },
             deep: true
         },
         customDNS: {
-             handler: function (after, before) {
+             handler: function () {
                  this.updateQuery();
              }
          },
          selectedBlockList: {
-             handler: function (after, before) {
+             handler: function () {
                 if( this.$refs.dns_antitracker.checked){
                     if(this.isDnsHardcore){
                         this.dns = after.Hardcore;
@@ -300,7 +300,7 @@ export default {
              }
          },
          isDnsHardcore: {
-            handler: function (after, before) {
+            handler: function () {
                 if( this.$refs.dns_antitracker.checked){
                     if(this.isDnsHardcore){
                         this.dns = this.selectedBlockList.Hardcore;
@@ -315,12 +315,15 @@ export default {
         ...mapState({
             account: (state) => state.auth.account,
         }),
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
+        
     },
     mounted() {
-        if ( window.location.href.split("/")[3] == "es") {
-            useI18n().locale.value = "es";
-            this.language = "es";
-        }
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
         this.fetchServers();
         this.updateQuery();
         this.fetchBlockLists();
@@ -403,7 +406,7 @@ export default {
             this.query.city = null;
             this.query.host = null;
             this.multihop_basename = "mh-" + event.target.value.split("_")[1].toLowerCase();
-            this.validation.exitCity = value == "";
+            this.validation.exitCity = value === "";
             this.validation.exitServer = true;
             this.validation.multihop = true;
             this.exitServers = [];
@@ -594,6 +597,10 @@ export default {
             this.setKey(this.publicKeyAdd, this.keyComment);
         },
         async setKey(publicKey, keyComment) {
+            if (!publicKey) {
+                this.error.addKey = "Public key is required";
+                return;
+            }
             try {
                 let res = await Api.addWireguardKey({
                     public_key: publicKey,
@@ -632,13 +639,13 @@ export default {
             
         },
     },
-    beforeMount(){
-        if( this.$store.state.auth.account.product.id == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            }
+        });
     },
-    components: {}
 };
 </script>
 

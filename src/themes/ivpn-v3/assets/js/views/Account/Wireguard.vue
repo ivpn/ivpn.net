@@ -5,9 +5,8 @@
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
                 <p>{{ $t('account.wireguardTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account-' + this.language}"
-                    class="btn btn-solid"
-                    style="margin-bottom: 20px"
+                    :to="{ name: 'account-' + language}"
+                    class="btn btn-solid account-link-spacing"
                     >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
                 >
             </section>
@@ -19,7 +18,7 @@
                 <p>{{ $t('account.wireguardTab.description1') }}</p>
                 <p>{{ $t('account.wireguardTab.description2') }}</p>
                 <router-link
-                    :to="{ name: 'wireguard-config-' + this.language }"
+                    :to="{ name: 'wireguard-config-' + language }"
                     class="btn btn-solid btn-big"
                     >{{ $t('account.wireguardTab.configurationFileGenerator') }}</router-link
                 >
@@ -36,7 +35,7 @@
                 <spinner fill="#398fe6" width="32" height="32" />
             </section>
 
-            <section v-if="keys.length > 0 && isLoaded && !inProgress">
+            <section v-if="hasKeys">
                 <wireguard-key
                     v-for="(key, index) in keys"
                     :key="index"
@@ -47,7 +46,7 @@
                 ></wireguard-key>
             </section>
 
-            <section v-if="keys.length === 0 && isLoaded && !inProgress">
+            <section v-if="showNoKeys">
                 <p>
                     {{ $t('account.wireguardTab.noWireguardKeys') }}
                 </p>
@@ -57,7 +56,7 @@
                 <h3>{{ $t('account.wireguardTab.usefulLinks') }}</h3>
                 <ul>
                     <li>
-                        <a :href=" '/' + this.language + '/status/'">{{ $t('account.wireguardTab.serverList') }}</a>
+                        <a :href="'/' + language + '/status/'">{{ $t('account.wireguardTab.serverList') }}</a>
                     </li>
                     <li>
                         <a href="/knowledgebase/general/wireguard-faq/">{{ $t('account.wireguardTab.faq') }}</a>
@@ -82,22 +81,23 @@ export default {
     },
     data() {
         return {
-            isLight : false,
             language: "en"
         };
     },
-    beforeMount(){
-        if( this.$store.state.auth.account.product.id == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            } else {
+                vm.$store.dispatch("wireguard/load");
+            }
+        });
     },
     mounted() {
         this.$store.dispatch("wireguard/load");
-        if ( window.location.href.split("/")[3] == "es") {
-            useI18n().locale.value = "es";
-            this.language = "es";
-        }
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
     computed: {
         ...mapState({
@@ -106,6 +106,15 @@ export default {
             inProgress: (state) => state.wireguard.inProgress,
             isLoaded: (state) => state.wireguard.isLoaded,
         }),
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
+        hasKeys() {
+            return this.keys.length > 0 && this.isLoaded && !this.inProgress;
+        },
+        showNoKeys() {
+            return this.keys.length === 0 && this.isLoaded && !this.inProgress;
+        }
     },
     methods: {
         confirmDelete(data) {
@@ -143,5 +152,9 @@ ul {
     font-family: $font-main-mono;
     font-size: 16px;
     line-height: 28px;    
+}
+
+.account-link-spacing {
+    margin-bottom: 20px;
 }
 </style>

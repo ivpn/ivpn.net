@@ -14,9 +14,9 @@
 
         <div class="prices">
             <upgrade-box
-                v-if="account.product.id == 'IVPN Tier 1'"
+                v-if="account.product.id === 'IVPN Tier 1'"
                 :price="products.tier1"
-                :current="account.product.id == 'IVPN Tier 1'"
+                :current="account.product.id === 'IVPN Tier 1'"
                 :inProgress="inProgress"
                 :disabled="disabled"
                 :buttonText="$t('pricing.tier1.button')"
@@ -44,12 +44,12 @@
 
             <upgrade-box
                 :price="pricing.Tier2"
-                :current="account.product.id == 'IVPN Tier 2'"
+                :current="account.product.id === 'IVPN Tier 2'"
                 :inProgress="inProgress"
                 :isChange="true"
                 @selected="selected('IVPN Tier 2')"
-                :buttonText="$t(account.product.id == 'IVPN Tier 2' ? 'pricing.tier1.button' : 'pricing.tier2.button')"
-                 :redirectUrl="'/account/upgrade/product/tier2'"
+                :buttonText="$t(account.product.id === 'IVPN Tier 2' ? 'pricing.tier1.button' : 'pricing.tier2.button')"
+                :redirectUrl="'/account/upgrade/product/tier2'"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
                 <div class="upgrade-features">
@@ -72,9 +72,9 @@
 
             <upgrade-box
                 :price="pricing.Tier3"
-                :current="account.product.id == 'IVPN Tier 3'"
+                :current="account.product.id === 'IVPN Tier 3'"
                 :inProgress="inProgress"
-                :buttonText="$t(account.product.id == 'IVPN Tier 3' ? 'pricing.tier1.button' : 'pricing.tier3.button')"
+                :buttonText="$t(account.product.id === 'IVPN Tier 3' ? 'pricing.tier1.button' : 'pricing.tier3.button')"
                 @selected="selected('IVPN Tier 3')"
                 :redirectUrl="'/account/upgrade/product/tier3'"
             >
@@ -110,7 +110,6 @@ export default {
     data() {
         return {
             language: "en",
-            isLocked: false,
             pricing : {
                 Tier1: null,
                 Tier2: null,
@@ -123,17 +122,21 @@ export default {
     },
 
     async beforeMount() {
-        this.isLocked = this.$store.state.auth.account.product.id === "IVPN Tier 3";
-
-        const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.id);
-        this.pricing.Tier1 = pricing.tier1_upgrade_price;
-        this.pricing.Tier2 = pricing.tier2_upgrade_price;
-        this.pricing.Tier3 = pricing.tier3_upgrade_price;
+        try {
+            const pricing = await this.calculateForProduct(this.account.product.id);
+            this.pricing.Tier1 = pricing.tier1_upgrade_price;
+            this.pricing.Tier2 = pricing.tier2_upgrade_price;
+            this.pricing.Tier3 = pricing.tier3_upgrade_price;
+        } catch (error) {
+            console.error('Failed to calculate pricing:', error);
+            this.$router.push({ name: 'account-' + this.language });
+        }
     },
 
-    mounted(){
-        useI18n().locale.value = window.location.href.split("/")[3];
-        this.language = window.location.href.split("/")[3];
+    mounted() {
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
 
     computed: {
@@ -144,12 +147,18 @@ export default {
             inProgress: state => state.product.inProgress,
             error: state => state.product.error
         }),
+        isLocked() {
+            return this.account?.product?.id === 'IVPN Tier 3';
+        },
+        disabled() {
+            return this.inProgress || this.isLocked;
+        },
     },
     
 
     methods: {
-        async calculateForProduct(newProduct) {
-            return await this.$store.dispatch("product/changeDetails", {
+        calculateForProduct(newProduct) {
+            return this.$store.dispatch("product/changeDetails", {
                     product: newProduct,    
             });
         }

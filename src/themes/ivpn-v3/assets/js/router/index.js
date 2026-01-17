@@ -13,7 +13,6 @@ import AddFundsBitcoin from '@/views/Account/AddFunds/BitCoin.vue'
 import AddFundsMonero from '@/views/Account/AddFunds/Monero.vue'
 import AddFundsCash from '@/views/Account/AddFunds/Cash.vue'
 import AddFundsGiftCard from '@/views/Account/AddFunds/GiftCard.vue'
-import EmailService from '../views/Account/Services/EmailService.vue'
 
 import WireguardView from '@/views/Account/Wireguard.vue'
 import WireguardConfigView from '@/views/Account/WireguardConfig.vue'
@@ -42,18 +41,24 @@ import store from '@/store'
 
 import en from '@/../../locales/en.json'
 import es from '@/../../locales/es.json'
-import { is } from 'date-fns/locale'
 
 async function notAuthenticatedGuard(to, from, next) {
-    if (store.state.auth.isAuthenticated) {
-        if (store.state.auth.isLegacy) {
-            window.location = '/clientarea'
-            next(false)
+    try {
+        if (store.state.auth.isAuthenticated) {
+            if (store.state.auth.isLegacy) {
+                window.location.href = '/clientarea';
+                next(false);
+            } else {
+                // Extract language from route
+                const lang = to.path.startsWith('/es/') ? 'es' : 'en';
+                next({ name: `account-${lang}` });
+            }
         } else {
-            next({ name: 'account' })
+            next();
         }
-    } else {
-        next()
+    } catch (error) {
+        console.error('Authentication guard error:', error);
+        next({ name: '500' });
     }
 }
 
@@ -298,30 +303,6 @@ const routes = [
         }
     },
     {
-        path: '/account/service/email',
-        name: 'service-email',
-        component: EmailService,
-        meta: {
-            title: en.account.metaTitle.emailService,
-        }
-    },
-    {
-        path: '/en/account/service/email',
-        name: 'service-email-en',
-        component: EmailService,
-        meta: {
-            title: en.account.metaTitle.emailService,
-        }
-    },
-    {
-        path: '/es/account/service/email',
-        name: 'service-email-es',
-        component: EmailService,
-        meta: {
-            title: es.account.metaTitle.emailService,
-        }
-    },
-    {
         path: '/en/account/compare-product',
         name: 'compare-product-en',
         component: CompareProductView,
@@ -445,14 +426,6 @@ const routes = [
         path: '/account/settings',
         component: Settings,
         children: [
-            {
-                path: '',
-                name: 'settings-main',
-                component: SettingsAuthentication,
-                meta: {
-                    title: en.account.metaTitle.authentication,
-                }
-            },
             {
                 path: '',
                 name: 'settings-main-en',
@@ -915,7 +888,7 @@ router.beforeEach(async (to, from, next) => {
         suffix = "es";
     }
 
-    if ( (to.path.startsWith('/en/account') && to.name != 'login-en') || (to.path.startsWith('/es/account') && to.name != 'login-es') ){
+    if ( (to.path.startsWith('/en/account') && to.name !== 'login-en') || (to.path.startsWith('/es/account') && to.name !== 'login-es') ){
 
         if (!store.state.auth.isAuthenticated) {
             next({ name: 'login-' + suffix })
@@ -923,7 +896,7 @@ router.beforeEach(async (to, from, next) => {
         }
 
         if (store.state.auth.isLegacy) {
-            window.location = '/clientarea'
+            window.location.href = '/clientarea';
             return
         }
 
@@ -944,7 +917,7 @@ router.beforeEach(async (to, from, next) => {
 
         // Probably, all of this code have to be moved to an app initialization component
 
-        if (store.state.auth.error != null) {
+        if (store.state.auth.error !== null) {
             next({ name: '500' })
             return
         }

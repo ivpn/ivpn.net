@@ -10,7 +10,7 @@
                 :prices="products.tier1"
                 @selected="selected('IVPN Tier 1')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'tier1'"
+                :inProgress="inProgress && selectedProduct === 'tier1'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier1"
             >
@@ -51,7 +51,7 @@
                 :prices="products.tier2"
                 @selected="selected('IVPN Tier 2')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'tier2'"
+                :inProgress="inProgress && selectedProduct === 'tier2'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier2"
             >
@@ -96,7 +96,7 @@
                 :prices="products.tier3"
                 @selected="selected('IVPN Tier 3')"
                 :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'tier3'"
+                :inProgress="inProgress && selectedProduct === 'tier3'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier3"
             >
@@ -458,7 +458,11 @@ export default {
             !this.$store.state.auth.isLegacy &&
             !this.$store.state.auth.isLoaded
         ) {
-            await this.$store.dispatch("auth/load");
+            try {
+                await this.$store.dispatch("auth/load");
+            } catch (error) {
+                console.error('Failed to load auth:', error);
+            }
         }
     },
     methods: {
@@ -473,8 +477,13 @@ export default {
 
             if (this.auth.isAuthenticated) {
                 if (!this.auth.isLoaded) {
-                    await this.$store.dispatch("auth/load");
-                    if (this.auth.error) {
+                    try {
+                        await this.$store.dispatch("auth/load");
+                        if (this.auth.error) {
+                            return;
+                        }
+                    } catch (error) {
+                        console.error('Failed to load auth:', error);
                         return;
                     }
                 }
@@ -486,11 +495,15 @@ export default {
             }
         
             const wasAuthenticated = this.auth.isAuthenticated;
-            await this.$store.dispatch("auth/createAccount", { product });
-            if (!wasAuthenticated) {
-                matomo.recordAccountCreated();
+            try {
+                await this.$store.dispatch("auth/createAccount", { product });
+                if (!wasAuthenticated) {
+                    matomo.recordAccountCreated();
+                }
+                this.$router.push({ name: "account-" + this.language });
+            } catch (error) {
+                console.error('Failed to create account:', error);
             }
-            this.$router.push({ name: "account-" + this.language  });
         },
         scrollToPricing() {
             document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });

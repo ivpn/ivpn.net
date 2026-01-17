@@ -1,7 +1,7 @@
 <template>
-    <div v-if="!isLight" class='upgrade-page-header'>
+    <div v-if="!isLight" class="upgrade-page-header">
         <div class="back-link">
-            <router-link :to="{ name: 'account-' + this.language }">
+            <router-link :to="{ name: 'account-' + language }">
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
@@ -14,19 +14,17 @@
             </ul>
             <select-payment-method 
                 :account="account"
-                :monero=true
-                :cash=false
-                :voucher=false
-                :isUpgrade=true
-            >
-            </select-payment-method>
+                :monero="true"
+                :cash="false"
+                :voucher="false"
+                :isUpgrade="true"
+            ></select-payment-method>
         </div>
     </div>
 </template>
 
 <script>
 import SelectPaymentMethod from "@/components/SelectPaymentMethod.vue";
-import { add } from "date-fns";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
 import { fixProductNames } from "@/utils/ProductUtils"
@@ -38,42 +36,48 @@ export default {
     data() {
         return {
             language: 'en',
-            currentProduct: fixProductNames(this.$store.state.auth.account.product.name),
             newProduct: '',
             price: null,
-            isLight : false,
         };
     },
     computed: {
         ...mapState({
             account: (state) => state.auth.account,
         }),
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
+        currentProduct() {
+            return fixProductNames(this.account?.product?.name);
+        },
     },
-    async beforeMount(){
-        if( this.$store.state.auth.account.product.id == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
-        const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.id);
-        switch(this.$route.params.product){
-            case "tier2":
-                this.price= pricing.tier2_upgrade_price
-                break;
-            case "tier3":
-                this.price= pricing.tier3_upgrade_price
-                break;
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            }
+        });
+    },
+    async beforeMount() {
+        try {
+            const pricing = await this.calculateForProduct(this.account.product.id);
+            this.price = this.$route.params.product === "tier2" 
+                ? pricing.tier2_upgrade_price 
+                : pricing.tier3_upgrade_price;
+        } catch (error) {
+            console.error('Failed to calculate pricing:', error);
+            this.$router.push({ name: 'account-' + this.language });
         }
     },
     mounted() {
-        if ( window.location.href.split("/")[3] == "es" ) {
-            useI18n().locale.value = "es";
-            this.language = "es";
-        }
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
         this.newProduct = fixProductNames(this.$route.params.product); 
     },
     methods: {
-        async calculateForProduct(newProduct) {
-            return await this.$store.dispatch("product/changeDetails", {
+        calculateForProduct(newProduct) {
+            return this.$store.dispatch("product/changeDetails", {
                     product: newProduct,    
             });
         }
@@ -99,8 +103,6 @@ export default {
     .recurring--description {
         flex-grow: 1;
         p {
-            
-
             font-size: 13px;
             opacity: 0.5;
             margin-top: 8px;
