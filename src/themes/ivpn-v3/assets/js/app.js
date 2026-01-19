@@ -90,8 +90,6 @@ const app = createApp({
     }
 })
 
-app.use(i18n)
-
 app.mixin({
     methods: {
         emptyObject(obj) {

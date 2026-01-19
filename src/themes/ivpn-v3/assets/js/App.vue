@@ -2,7 +2,7 @@
     <div class="app">
         <pop-up></pop-up>
         <account-menu v-if="account && !account.is_new"></account-menu>
-        <div class="bottom-spacing page-centered">
+        <div class="bottom-spacing" :class="isPricingPage ? 'page-centered-pricing' : 'page-centered'">
             <div id="app" class="app-content">
                 <p
                     class="centered--progress"
@@ -30,6 +30,9 @@ export default {
             isLoaded: (state) => state.auth.isLoaded,
             account: (state) => state.auth.account,
         }),
+        isPricingPage() {
+            return this.$route.path.includes('/pricing');
+        }
     },
     mounted() {
         // Reattach the click event for theme switcher in the main navigation
@@ -91,6 +94,18 @@ export default {
     @media (min-width: $brk-mobile) {
         padding-left: 40px;
         padding-right: 40px;
+    }
+}
+
+.page-centered-pricing {
+    max-width: $pricing-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px;
+
+    @media (min-width: $brk-mobile) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 

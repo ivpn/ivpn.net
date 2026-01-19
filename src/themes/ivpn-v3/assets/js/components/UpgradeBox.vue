@@ -1,32 +1,39 @@
 <template>
-    <div class="price-box upgrade-box" :class="product">
+    <div class="upgrade-box price-box" :class="[current ? 'current' : '']">
         <slot></slot>
         <div class="price-options">
-            <div class="price-option" v-if="price">
+            <div class="price-option" v-if="redirectUrl && !disabled && !current && !inProgress">
                 <label>
                     {{ $t('account.price') }}
                 </label>
                 <div class="price">
-                    {{ "$" + (Math.trunc(price * 100) / 100).toFixed(2) }}
-                    <sup>*</sup>
+                    {{ "$" + price }}
                 </div>
             </div>
         </div>
         <slot name="footer"></slot>
         <div class="price-button">
-        <button
-            class="btn btn-solid btn-big"
+            <a :href="'/' + language  + redirectUrl" v-if="redirectUrl && !disabled && !current && !inProgress">
+            <button
+                class="btn btn-solid btn-upgrade"
+                style="margin-top: 2em"
+            >
+                {{ buttonText }}
+            </button>
+            </a>
+            <button v-else
+            class="btn btn-solid btn-upgrade"
             style="margin-top: 2em"
-            v-on:click="selected"
+            @click="selected"
             :disabled="disabled || current || inProgress"
-        >
+            >
             <spinner
                 fill="#FFFFFF"
                 width="32"
                 height="32"
                 v-if="inProgress && !current"
-            />{{ buttonText}}
-        </button>
+            />{{ buttonText }}
+            </button>
         </div>
     </div>
 </template>
@@ -36,18 +43,20 @@ import Spinner from "@/components/ProgressSpinner.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["price", "onselect", "disabled", "current", "inProgress","isChange","buttonText","product"],
+    props: ["price", "onselect", "disabled", "current", "inProgress","isChange","buttonText","redirectUrl"],
     components: { Spinner },
     model: {
         event: "change",
     },
     data() {
         return {
+            language: "en",
         };
     },
     mounted(){
         const lang = window.location.href.split("/")[3];
         useI18n().locale.value = lang;
+        this.language = window.location.href.split("/")[3];
     },
 
     methods: {
@@ -70,36 +79,8 @@ export default {
     font-size: 18px;
     line-height: 14px;
     text-align: center;
-    text-decoration: underline;
 }
 
-.price-title{
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;;
-    margin-top: 20px;
-}
-
-.price-head {
-    padding: 35px;
-    min-height: 135px;
-    @include dark-theme((
-        background-color: black,
-        color: rgba(255, 255, 255, 0.8),
-    ));
-    @include light-theme((
-            background-color: #F9F9F9,
-            color: black,
-    ));
-    @media (prefers-color-scheme: dark) {
-            background-color: black;
-            color: rgba(255, 255, 255, 0.8);
-    }
-    @media (prefers-color-scheme: light) {
-        background-color: #F9F9F9;
-        color: black;
-    }
-}
 
 .price-footer{
     text-align: center;
@@ -114,24 +95,6 @@ export default {
     padding: 0px 5px 35px 8px;
 }
 
-.price-features-footer{
-    font-style: italic;
-    font-weight: bold;
-    padding: 20px 0px 20px 0px;
-    margin: 0px 5px 0px 10px;
-    border-bottom: 0.5px solid white;
-    border-top: 0.5px solid white;
-    line-height: 24px;
-    @include dark-theme((
-        border-bottom: 0.5px solid white,
-        border-top: 0.5px solid white,
-    ));
-     @include light-theme((
-        border-bottom: 0.5px solid black,
-        border-top: 0.5px solid black,
-    ));
-}
-
 label {
     display: inline-block;
 }
@@ -144,7 +107,6 @@ label {
     flex-direction: column;
     border: 1px solid rgba(51, 77, 102, 0.2);
     margin: 24px 18px 0px 0px;
-    min-width: 280px;
     max-width: 350px;
     padding: 32px;
     &.current {
@@ -215,10 +177,14 @@ label {
             }
         }
     }
+
+    .price-button {
+        padding: 0px;
+    }
 }
 
 
-.price-features {
+.upgrade-features {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -230,19 +196,18 @@ label {
     li {
         list-style: disc;
     }
-    padding: 0px 25px 0px 25px;
     
 }
 
 
 
-.price-features ul.additional-features {
+.upgrade-features ul.additional-features {
     position: absolute;
     top: 0px;
     right: 0px;
 }
 
-.price-features ul {
+.upgrade-features ul {
     padding-left: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -254,7 +219,6 @@ label {
 
 .price-option {
     position: relative;
-    border-bottom: 1px solid #334d6633;
     line-height: 42px;
     font-size: 16px;
     display: flex;    
@@ -290,9 +254,6 @@ label {
             color: $red;
         }
     }
-}
-.price-button{
-    padding: 0px 10px 35px 10px;
 }
 
 .price-button .btn{
@@ -371,6 +332,27 @@ label {
 
 [data-tooltip]:hover:after {
     display: block;
+}
+
+.upgrade-box .price-button {
+    padding: 0px 0px 15px 10px;
+}
+
+.upgrade-box .price-box {
+    top: 0px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(51, 77, 102, 0.2);
+    margin: 24px 28px 0px 0px;
+    min-width: 290px;
+    max-width: 350px;
+}
+
+.btn.btn-upgrade {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 5px;
 }
 
 </style>

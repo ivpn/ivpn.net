@@ -20,6 +20,9 @@
                     <p>{{ $t('account.continueToPayment2') }}</p>
                     <select-payment-method
                         :account="account"
+                        :monero="true"
+                        :cash="true"
+                        :voucher="true"
                     ></select-payment-method>
                 </section>
                 <signup-section></signup-section>
@@ -35,34 +38,34 @@
                     <account-info
                         style="margin-bottom: 30px"
                         :account="account"
-                        show-qr-code="true"
+                        :show-qr-code="true"
                     ></account-info>
                 </signup-section>
                 <signup-section>
                     <div class="product">
                         <div class="product-info">
                             <label>{{ $t('account.product') }}</label>
-                            <div class="value" >{{ productName }}</div>
+                            <div class="value">{{ productName }}</div>
                             <div class="product-details">
-                                {{ $t('account.included') }}: [VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]
-                                <span class="row" v-if="account.product.capabilities.has_resist_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
-                                <span class="row" v-if="account.product.capabilities.has_mailx">[{{ $t('pricing.mailx') }} &#10003;]</span>
-                                <span class="row" v-if="account.product.capabilities.has_spn">[{{ $t('pricing.portmaster') }} &#10003;]</span>
+                                <span class="row">[VPN - {{ account.product?.max_device }} {{ $t('account.devices') }} &#10003;]</span>
+                                <span class="row" v-if="account.product?.capabilities?.has_resist_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
+                                <span class="row" v-if="account.product?.capabilities?.has_mailx">[{{ $t('pricing.mailx') }} &#10003;]</span>
+                                <span class="row" v-if="account.product?.capabilities?.has_spn">[{{ $t('pricing.portmaster') }} &#10003;]</span>
                             </div>
                         </div>
                         <div v-if="!account.is_active" class="product-action">
-                            <router-link :to="{ name: 'change-product-' + this.language }"
-                                >{{ $t('account.change') }}</router-link
-                            >
+                            <router-link :to="'/' + this.language + '/pricing'">
+                                {{ $t('account.changePlan') }}
+                            </router-link>
                         </div>
-                        <div v-else class="product-action" v-if="canUpgrade">
-                            <router-link :to="{ name: 'upgrade-product-' + this.language }"
-                                >{{ $t('account.upgrade') }}</router-link
-                            >
+                        <div v-else-if="canUpgrade" class="product-action">
+                            <router-link :to="{ name: 'upgrade-' + language }">
+                                {{ $t('account.upgrade') }}
+                            </router-link>
                         </div>
                     </div>
                     <div class="product-action" v-if="canUpgrade">
-                        <router-link :to="{ name: 'compare-product-' + this.language }"
+                        <router-link :to="{ name: 'compare-product-' + language }"
                             >{{ $t('account.comparePlans') }}</router-link
                         >
                     </div>
@@ -70,7 +73,7 @@
                 <signup-section>
                     <div class="product">
                         <div class="product-info">
-                            <label v-if="account.is_active">{{ $t('account.paidUntil') }}</label>
+                            <label v-if="account?.is_active">{{ $t('account.paidUntil') }}</label>
                             <label v-else>{{ $t('account.wasActiveUntil') }}</label>
                             <div class="value">
                                 {{ $filters.formatActiveUntil(account.active_until) }}
@@ -78,27 +81,25 @@
                         </div>
                         <div
                             class="product-action"
-                            v-if="!account.subscription"
+                            v-if="!account?.subscription"
                         >
-                            <router-link :to="{ name: 'payment-' + this.language }"
+                            <router-link :to="{ name: 'payment-' + language }"
                                 >{{ $t('account.addMoreTime') }}</router-link
                             >
                         </div>
                         <div class="product-action" v-else>
-                            <router-link :to="{ name: 'settings-billing-' + this.language }"
+                            <router-link :to="{ name: 'settings-billing-' + language }"
                                 >{{ $t('account.billingSettings') }}</router-link
                             >
                         </div>
                     </div>
                 </signup-section>
 
-                <signup-section v-if="account.is_active">
+                <signup-section v-if="account?.is_active">
                     <apps-section></apps-section>
                 </signup-section>   
                 <signup-section>
-                    <services-section>
-                        :account="account"
-                    </services-section>
+                    <services-section :account="account"></services-section>
                 </signup-section>             
                 <signup-section>
                     <account-footer :account="account"
@@ -134,10 +135,7 @@ export default {
 
     data() {
         return {
-            isLight : false,
-            canUpgrade: false,
             language: "en",
-            productName: "",
         };
     },
 
@@ -145,46 +143,32 @@ export default {
         ...mapState({
             account: (state) => state.auth.account,
         }),
-    },
-
-    
-    async beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
-        if( !this.$store.state.auth.account.is_new && (this.$store.state.auth.account.product.name == "IVPN Tier 1" || this.$store.state.auth.account.product.name == "IVPN Tier 2")  ){
-            this.canUpgrade = true;
-        }
-
-        if(this.$store.state.auth.account.has_custom_price){
-            this.canChange = false;
-        }
-        
+        productName() {
+            return this.account?.product?.name || '';
+        },
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
+        canUpgrade() {
+            if (!this.account || this.account.is_new || this.account.has_custom_price) {
+                return false;
+            }
+            const productId = this.account.product?.id;
+            return ['IVPN Tier 1', 'IVPN Tier 2'].includes(productId);
+        },  
+    },   
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            }
+        });
     },
     mounted(){
-
-        useI18n().locale.value = window.location.href.split("/")[3];
-        this.language = window.location.href.split("/")[3];
-        switch(this.$store.state.auth.account.product.name){
-            case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1.name');
-                break;
-            case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2.name');
-                break;
-            case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3.name');
-                break;
-            default:
-                this.productName = this.$store.state.auth.account.product.name;
-        }
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
-    methods:{
-        
-    }
-
-
 };
 </script>
 
@@ -226,6 +210,11 @@ export default {
     display: flex;
     align-items: center;
 
+    @media (max-width: $brk-mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .product-info {
         flex-grow: 1;
         font-family: $font-main-mono;
@@ -247,7 +236,30 @@ export default {
         }
     }
 
-    .product-action {
+    .product-details{
+        line-height: 32px;
+        @media (max-width: $brk-mobile) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .product-details .row{
+        @media (max-width: $brk-mobile) {
+            display:block;
+            width: 100%;
+            line-height: 25px;;
+            margin-top: 5px;
+        }
+    }
+}
+
+.product-action {
+        @media (max-width: $brk-mobile) {
+            width: 100%;
+            margin-top: 10px;
+        }
+
         a {
             width: 180px;
             font-size: 18px;
@@ -258,18 +270,5 @@ export default {
                 border: 0px;
             }
         }
-    }
-
-    .product-details{
-        line-height: 32px;
-    }
-
-    .product-details .row{
-        @media (max-width: $brk-mobile) {
-            display:block;
-            width: 100%;
-            line-height: 25px;;
-        }
-    }
 }
 </style>

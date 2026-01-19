@@ -1,43 +1,42 @@
 <template>
     <div v-if="!isLight" class="payment-page-header">
         <div class="back-link">
-            <router-link :to="{ name: 'account-' + this.language }" v-if="account.is_new">
-                <span class="icon-back"></span>{{ $t('account.payments.selectPaymentMethod') }}
-            </router-link>
-            <router-link :to="{ name: 'payment-' + this.language  }" v-else>
-                <span class="icon-back"></span>{{ $t('account.payments.selectPaymentMethod') }}
+             <router-link :to="{ name: (isUpgrade || account.is_new ? 'account' : 'payment') + '-' + language }">
+                <span class="icon-back"></span>{{ $t(isUpgrade ? 'account.accountSettingsTab.backToAccount' : 'account.payments.selectPaymentMethod') }}
             </router-link>
         </div>
+        
         <h1>{{ title }}</h1>
-        <ul class="payment-details" v-if="$route.name != 'add-funds-voucher-' + this.language">
+        <ul class="payment-details" v-if="$route.name != 'add-funds-voucher-' + language">
             <li>{{ productName }}</li>
-            <li>{{ price.name }}</li>
-            <li>${{ price.price }}</li>
+            <li>{{ price?.name }}</li>
+            <li>${{ price?.price }}</li>
         </ul>
         <router-view
             :account="account"
             :price="price"
-            style="margin-top: 32px"
+            class="router-view-spacing"
         />
-        <p class='tos' v-if="account.is_new">{{ $t('account.payments.byMaking') }} <a :href="'/' + this.language + '/tos'">{{ $t('account.payments.termsOfService') }}</a>.</p>
+       
+        <p class='tos' v-if="account.is_new">{{ $t('account.payments.byMaking') }} <a :href="'/' + language + '/tos'">{{ $t('account.payments.termsOfService') }}</a>.</p>
     </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
+import { fixProductNames } from "@/utils/ProductUtils"
 
 export default {
+    props: ['isUpgrade'],
     data() {
         return {
             price: null,
-            title: String,
-            isLight : false,
+            title: "",
             language: "en",
-            productName: this.$store.state.auth.account.product.name,
         };
     },
-    created() {
+    async created() {
         let title = {
             "add-funds-cc": "Add time with a credit card",
             "add-funds-bitcoin": "Add time with Bitcoin",
@@ -53,54 +52,78 @@ export default {
 
         let priceId = this.$route.params.price;
 
-        for (const price of this.account.product.prices) {
-            if (price.id == priceId) {
-                this.price = price;
-                break;
+        if (!this.isUpgrade) {
+            for (const price of this.account.product.prices) {
+                if (price.id === priceId) {
+                    this.price = price;
+                    break;
+                }
             }
+        }else{
+            let upgradePrice = null;
+            const pricing = await this.calculateForProduct(this.$store.state.auth.account.product.id);
+            switch(this.$route.params.price){
+                case "tier2":
+                    upgradePrice= pricing.tier2_upgrade_price
+                    break;
+                case "tier3":
+                    upgradePrice= pricing.tier3_upgrade_price
+                    break;
+            }
+            this.price = {
+                 id: this.$route.params.price,
+                 type: "upgrade",
+                 billing_cycle: "Monthly",
+                 discount: 0,
+                 duration: "1 month",
+                 name: fixProductNames(this.$route.params.price),
+                 price: upgradePrice,
+            };
         }
 
-        if (this.price == null) {
-            this.$router.replace("/404");
+        if (!this.price) {
+            this.$router.replace({ name: '404' });
         }
     },
     computed: {
         ...mapState({
             account: (state) => state.auth.account,
         }),
+        productName() {
+            return this.account?.product?.name || '';
+        },
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
     },
-
-    beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            }
+        });
     },
     mounted() {
-        if ( window.location.href.split("/")[3] == "es") {
-            useI18n().locale.value = "es";
-            this.language = "es";
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
+    },
+    methods: {
+        calculateForProduct(newProduct) {
+            return this.$store.dispatch("product/changeDetails", {
+                product: newProduct,    
+            });
         }
-
-        switch(this.$store.state.auth.account.product.name){
-            case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1.name');
-                break;
-            case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2.name');
-                break;
-            case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3.name');
-                break;
-            default:
-                this.productName = this.$store.state.auth.account.product.name;
-        }
-    }
+    },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/styles/_vars.scss";
+
+.router-view-spacing {
+    margin-top: 32px;
+}
 
 .payment-page-header {
     display: flex;

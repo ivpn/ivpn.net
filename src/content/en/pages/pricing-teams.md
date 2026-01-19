@@ -6,9 +6,9 @@ aliases: ['/pricing-teams/']
 ---
 # IVPN for teams
 
-IVPN is well suited for distributed team members to improve their privacy from unwanted data collection and data security on untrusted networks. We offer volume discounts, administrative tools and 2FA on demand. We cannot provide dedicated servers/IPs or facilitate access to corporate networks.
+IVPN is well suited for distributed team members to improve their privacy from unwanted data collection and data security on untrusted networks. We offer administrative tools and 2FA on demand. We cannot provide dedicated servers/IPs or facilitate access to corporate networks.
 
-IVPN Pro pricing for companies:
+IVPN Teams pricing for companies:
 
 <div class="price-box">
 <table>
@@ -51,9 +51,9 @@ IVPN Pro pricing for companies:
 
 [Email us](mailto:team-support@ivpn.net) to purchase IVPN team accounts for your company.
 
-## IVPN Pro team account benefits
+## IVPN Teams account benefits
 
-* Access on up to 7 devices per seat
+* Access on up to 10 devices per seat
 * Open-source applications for Android, iOS, macOS, Windows and Linux
 * Private DNS servers
 * Anti-tracker

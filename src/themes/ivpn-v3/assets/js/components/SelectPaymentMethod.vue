@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="billing-section">
+        <div class="billing-section" v-if="!isUpgrade">
             <div class="billing-options">
                 <div class="plan-details" v-if="account.is_new">
                     <div class="plan-name"><span class="row">{{ $t('account.selectedPlan') }}:</span>{{ productName }}</div>
@@ -27,7 +27,7 @@
             </div>
             <div class="gap"></div>
         </div>
-        <div class="pay-buttons">
+        <div v-if="!isUpgrade" class="pay-buttons">
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
@@ -54,6 +54,7 @@
             </router-link>
             
             <router-link
+                v-if="monero"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-monero-' + this.language,  params: { price: price.id } }"
@@ -63,6 +64,7 @@
             </router-link>    
                 
             <router-link
+                v-if="cash"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-cash-' + this.language, params: { price: price.id } }"
@@ -72,9 +74,51 @@
             </router-link>
 
         </div>
-        <div>
-            {{ $t('account.haveVoucher') }}
-            <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
+        <div v-else class="pay-buttons">
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-cc-' + this.language, params: { price: this.$route.params.product} }"
+            >
+                <div class="credit-card-icon"></div>
+                {{ $t('account.creditCard') }}
+            </router-link>
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-paypal-' + this.language, params: { price: this.$route.params.product } }"
+            >
+                <div class="paypal-icon"></div>
+                {{ $t('account.paypal') }}
+            </router-link>
+            <router-link
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-bitcoin-' + this.language, params: { price: this.$route.params.product } }"
+            >
+                <div class="bitcoin-icon"></div>
+                {{ $t('account.bitcoin') }}
+            </router-link>
+            
+            <router-link
+                v-if="monero"
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-monero-' + this.language,  params: { price: this.$route.params.product } }"
+            >
+                <div class="monero-icon"></div>
+                {{ $t('account.monero') }}
+            </router-link>    
+                
+            <router-link
+                v-if="cash"
+                tag="button"
+                class="btn btn-solid pay-button"
+                :to="{ name: 'upgrade-cash-' + this.language, params: { price: this.$route.params.product } }"
+            >
+                <div class="cash-icon"></div>
+                {{ $t('account.cash') }}
+            </router-link>
         </div>
         <!--
         <div class="pay-buttons">
@@ -100,14 +144,18 @@ export default {
         SelectBillingCycle,
     },
 
-    props: ["account"],
+    props: ["account","monero","cash","voucher","isUpgrade"],
     data() {
         return {
             price: "",
             more: false,
             language: "en",
-            productName: this.$store.state.auth.account.product.name,
         };
+    },
+    computed: {
+        productName() {
+            return this.account?.product?.name || '';
+        }
     },
     created() {
         this.price = this.$store.state.payments.selectedPrice;
@@ -118,21 +166,7 @@ export default {
         ) {
             this.price = this.account.product.prices[1];
         }
-    },
-    beforeMount(){
-         switch(this.$store.state.auth.account.product.name){
-            case "IVPN Tier 1":
-                this.productName = this.$t('pricing.tier1.name');
-                break;
-            case "IVPN Tier 2":
-                this.productName = this.$t('pricing.tier2.name');
-                break;
-            case "IVPN Tier 3":
-                this.productName = this.$t('pricing.tier3.name');
-                break;
-            default:
-                this.productName = this.$store.state.auth.account.product.name;
-        }
+        
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
@@ -183,20 +217,39 @@ export default {
     .plan-details {
         display: flex;
 
-        @media (max-width: $brk-mobile-xs) {
+        @media (max-width: $brk-mobile) {
             flex-direction: column;
         }
+
+        @media (max-width: $brk-mobile) {
+        max-width: 100%;
+    }
 
         .plan-name {
             font-family: $font-main-mono;
             font-weight: bold;
             font-size: 18px;
-            line-height: 120%;
+            
+            @media (max-width: $brk-mobile) {
+                width: 100%;
+                line-height: 30px;
+                display: flex;
+                flex-wrap: wrap;
+        
+                .row:first-child  {
+                    display: inline;
+                    width:100%
+                }
+            }
         }
 
         .plan-change {
             font-size: 16px;
             margin: 4px 5px 5px 15px;
+            @media (max-width: $brk-mobile) {
+                margin: 0;
+                line-height: 30px;
+            }
         }
     }
 }
@@ -205,6 +258,10 @@ export default {
     margin-bottom: 32px;
     .pay-button {
         width: 220px;
+        // if mobile 100% width
+        @media (max-width: $brk-mobile) {
+            width: 100%;
+        }
         line-height: 28px;
         margin: 20px 24px 0px 0px;
         font-size: 18px;
@@ -216,16 +273,6 @@ export default {
     text-align: right;
 }
 
-<<<<<<< HEAD
-.plan-name .row{
-    @media (max-width: $brk-mobile) {
-        display:block;
-        width: 100%;
-        line-height: 25px;;
-    }
-}
-        
-=======
 .not-available-warning {
     margin: -15px 0 15px;
     @include light-theme((
@@ -236,5 +283,4 @@ export default {
         color: $white
     ));
 }
->>>>>>> f987246a (Updated payment method issue style)
 </style>

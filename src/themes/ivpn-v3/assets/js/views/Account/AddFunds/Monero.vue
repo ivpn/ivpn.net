@@ -72,7 +72,7 @@ import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["price"],
+    props: ["price","isUpgrade"],
     data() {
         return {
             amount: 0,
@@ -93,15 +93,12 @@ export default {
         }),
     },
     async created() {
-<<<<<<< HEAD
     
-=======
-        
->>>>>>> 3e6de47a (task: update Monero payment method)
         let resp = await this.$store.dispatch(
             "payments/getMoneroPaymentDetails",
             {
                 duration: this.price.duration,
+                paymentType: this.isUpgrade ? "upgrade" : "extend",
             }
         );
 

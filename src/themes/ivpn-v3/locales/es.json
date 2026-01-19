@@ -30,8 +30,8 @@
         "meta": {
             "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
-        "title": "Selecciona un Plan IVPN",
-        "description": "Selecciona un plan para crear tu cuenta al instante. Elige el nivel adecuado de protección de privacidad para ti.",
+        "title": "Selecciona tu plan",
+        "description": "Tres niveles. Sin ventas adicionales. Elige según tus necesidades de privacidad.",
         "allProtocols": "Todos los protocolos",
         "tier1Devices": "5 dispositivos",
         "tier2Devices": "10 dispositivos",
@@ -41,7 +41,7 @@
         "productFooter1": "MailX, ModDNS y Portmaster son servicios propiedad y operados por IVPN. Visita nuestra página",
         "productFooter2": "para una descripción detallada de sus características y capacidades.",
         "productFooterPrice": "Todos los precios están en dólares estadounidenses.",
-        "productFooterReview": "Consulta los precios para empresas",
+        "productFooterReview": "Consulta los precios solo VPN para empresas",
         "here": "aquí",
         "featuresTitle": "Todos los planes IVPN vienen con:",
         "serviceBenefits": "Beneficios del servicio:",
@@ -76,20 +76,25 @@
         "select": "Seleccionar",
         "dns": "ModDNS",
         "mailx": "Mailx",
-        "portmaster": "Portmaster/SPN",
+        "portmaster": "Portmaster",
         "chooseTimeAdded": "Puedes elegir el tiempo añadido en el siguiente paso",
+        "generateAccount": "Crear cuenta",
+        "selectPlan": "Elige un plan",
+        "portmasterTitle": "Portmaster",
+        "reviewServices": "REVISAR CARACTERÍSTICAS DEL SERVICIO",
+        "paymentMethods": "Métodos de pago",
         "tier1":{
             "name": "IVPN Standard",
-            "title": "Plan de solo VPN",
+            "title": "Servicio VPN básico",
             "feature1": "5 dispositivos",
             "feature2": "Multihop",
             "feature3": "Bloqueador básico de anuncios y rastreadores",
-            "footer": "Si necesitas una VPN sencilla y confiable para tu kit de herramientas.",
-            "button": "Seleccionar Standard"
+            "footer": "Un VPN sencillo y confiable para tu kit de herramientas.",
+            "button": "Plan actual"
         },
         "tier2":{
             "name": "IVPN Plus",
-            "title": "VPN + Herramientas de privacidad",
+            "title": "Privacidad añadida de DNS y correo electrónico",
             "feature1": "10 dispositivos",
             "feature2": "Multihop",
             "feature3": "ModDNS, herramienta de filtrado DNS",
@@ -97,11 +102,11 @@
             "feature4": "Mailx, reenvío de correo electrónico",
             "feature4Title": "MailX es un servicio de alias de correo electrónico desarrollado por IVPN. Mejora tu privacidad ocultando tu dirección de correo electrónico real de cada sitio web o servicio que utilices.",
             "footer": "Protección de rastreo y privacidad del correo electrónico mejorada.",
-            "button": "Seleccionar Plus"
+            "button": "Mejora a Plus"
         },
         "tier3":{
             "name": "IVPN Pro Suite",
-            "title": "Kit de herramientas de privacidad avanzado",
+            "title": "Control total de red",
             "feature1": "10 dispositivos",
             "feature2": "Multihop",
             "feature3": "ModDNS, herramienta de filtrado DNS",
@@ -111,13 +116,59 @@
             "feature5": "Safing Portmaster Pro: cortafuego de red con SPN (Linux, Windows)",
             "feature5Title": "Portmaster es una herramienta de cortafuego de escritorio y monitor de red operada por IVPN. Incluye SPN, una alternativa de VPN con conexiones de múltiples saltos enrutadas por cebolla.",
             "footer": "Controles de red completos con cortafuego de aplicación incluido.",
-            "button": "Seleccionar Pro Suite"
+            "button": "Mejora a Pro Suite"
         },
         "sidebar":{
             "feature1": "VPN",
             "feature2": "Anuncios y rastreadores",
             "feature3": "Correo",
             "feature4": "Cortafuegos"
+        },
+        "stack":{
+            "title": "La estructura de privacidad",
+            "feature1": "Cuatro servicios de privacidad independientes operados por IVPN",
+            "feature2": "Todos los servicios son de código abierto",
+            "feature3": "Los servicios adicionales se activan por separado después de la compra",
+            "feature4": "Activa los servicios sin vincular tu ID de cuenta IVPN"
+        },
+        "features":{
+            "title": "Características de IVPN",
+            "feature1": "Clientes de código abierto (Android, iOS, macOS, Windows, Linux/CLI)",
+            "feature2": "Resolutores DNS privados (sin registro de terceros)",
+            "feature3": "AntiTracker basado en DNS con listas de bloqueo configurables",
+            "feature4": "Interruptor de corte con integración de cortafuegos de red",
+            "feature5": "Protocolos de ofuscación (v2Ray, obfsproxy)",
+            "feature6": "Servicio proxy SOCKS5",
+            "feature7": "Soporte para despliegue en routers y NAS"
+        },
+        "featuresBadges":{
+            "badge1": "No se requiere correo electrónico para el registro",
+            "badge2": "Ventana de reembolso de 30 días",
+            "badge3": "Se aceptan efectivo, Monero, Bitcoin",
+            "badge4": "Interruptor de corte",
+            "badge5": "Ofuscación",
+            "badge6": "MultiHop",
+            "badge7": "SOCKS5 Proxy",
+            "badge8": "Router & NAS"
+        },
+        "transparency":{
+            "title": "Auditado y transparente",
+            "feature1": "Sin registros de conexión ni datos de sesión retenidos",
+            "feature2": "Sin información del cliente almacenada después de la compra",
+            "feature3": "Auditorías de seguridad anuales realizadas por terceros (#7 completadas en mayo de 2025)",
+            "feature4": "Informes públicos de transparencia y canario de orden judicial",
+            "feature5": "Propiedad y equipo transparentes, con 15 años de experiencia operativa.",
+            "feature6": "Sin programa de afiliados, sin scripts de seguimiento, sin publicidad de vigilancia"
+        },
+        "limitations":{
+            "title": "Limitaciones que reconocemos",
+            "feature1": "Operamos servidores en 58 ubicaciones / 41 países.",
+            "feature2": "No ofrecemos reenvío de puertos.",
+            "feature3": "No garantizamos compatibilidad con streaming."
+        },
+        "footerBack": {
+            "item1": "Si has leído hasta aquí, sabes de qué se trata.",
+            "item2": "Elige el plan que se adapte a tu modelo de amenaza."
         }
     },
     "login": {
@@ -213,7 +264,7 @@
         "changeProductTitle": "Cambiar producto",
         "changeProductDesc": "Puedes cambiar tu plan de producto en cualquier momento. Si tu cuenta está activa, cambiar el tipo de producto cambiará la cantidad de tiempo restante en tu cuenta.",
         "upgradeProductTitle": "Mejorar producto",
-        "upgradeProductDesc": "Puedes mejorar tu plan de producto en cualquier momento.",
+        "upgradeProductDesc": "Elige un plan para iniciar el proceso de mejora. Pagarás la diferencia mostrada, calculada en función del tiempo restante en tu cuenta. Tras el pago exitoso, obtendrás acceso instantáneo al plan seleccionado y sus beneficios. La fecha de vencimiento permanecerá igual.",
         "activeUntil": "Activo hasta:",
         "willBeActiveUntil": "Estará activo hasta:",
         "price": "Precio",
@@ -354,8 +405,8 @@
             "disabledDesc4": "La gestión de dispositivos es aplicable solo al servicio VPN, los servicios adicionales no se ven afectados.",
             "here": "aquí",
             "enableDeviceManagement": "Activar la gestión de dispositivos",
-            "activeDevices": "Dispositivos activos",
-            "devicesAdded": "Dispositivos añadidos",
+            "activeDevices": "Dispositivos IVPN activos",
+            "devicesAdded": "Dispositivos IVPN añadidos",
             "logoutFromAllDevices": "Cerrar sesión en todos los dispositivos",
             "enabled": "La gestión de dispositivos está habilitada.",
             "enabledDesc1": "No tienes dispositivos conectados al servicio.",
@@ -375,7 +426,10 @@
             "confirm": "Confirmar",
             "confirmDelete": "¿Estás seguro de que deseas eliminar este dispositivo?",
             "yes": "Si",
-            "renewAccount": "Por favor, renueva tu cuenta para gestionar tus dispositivos."
+            "renewAccount": "Por favor, renueva tu cuenta para gestionar tus dispositivos.",
+            "upgradeText1": "Para aumentar tu límite de dispositivos a 10,",
+            "upgradeText2": "mejora",
+            "upgradeText3": "tu plan a IVPN Plus o IVPN Pro Suite."
         },
         "accountSettingsTab": {
             "backToAccount": "Volver a la cuenta",
@@ -400,6 +454,7 @@
             "pleaseCheck": "Por favor, revisa o actualiza tu método de pago e inténtalo de nuevo.",
             "processingPayment": "Procesando pago",
             "extendYourAccount": "Recarga tu cuenta",
+            "upgradeYourAccount": "Mejora tu cuenta",
             "deleteAccountConfirm": "¿Estás seguro de que deseas borrar tu cuenta?",
             "accountActive": "Tu cuenta está actualmente activa.",
             "deleteAccountConfirmDesc": "Para confirmar la eliminación permanente de tu cuenta, por favor, introduce los siguientes símbolos en el campo de abajo:",
@@ -408,7 +463,7 @@
             "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas.",
             "retry": "Reintentar",
             "services": "Servicios",
-            "syncMail": "Sincronizar Mailx con IVPN"
+            "syncMail": "Sincronizar"
         },
         "payments":{
             "paymentReceived": {
@@ -537,7 +592,7 @@
             "accessDNS": "Acceder",
             "accessPortmaster": "Acceder",
             "setupMail": "Configurar",
-            "setupDNS": "Configurar",
+            "setupDns": "Configurar",
             "setupPortmaster": "Configurar",
             "active": "ACTIVO",
             "available": "DISPONIBLE",

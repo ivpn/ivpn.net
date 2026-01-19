@@ -278,8 +278,6 @@ export default {
             this.selectedExitLocation.forEach((location) => {
                 this.wireguardConfigs.push(location);
             });
-            console.log("Selected exit location: ", this.selectedExitLocation);
-            console.log("submitted: ", this.validation.submit);
         },
 
     },
@@ -348,6 +346,7 @@ export default {
                 await this.$store.dispatch("auth/createAccount", {product: "IVPN Light"} );
                 
                 const URL = await this.$store.dispatch("account/createLightInvoice", {
+                    paymentType: "extend",
                     exitServer: this.selectedExitLocation,
                     entryServer: this.selectedEntryLocation,
                     publicKey: this.publicKey,

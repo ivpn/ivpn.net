@@ -1,3 +1,37 @@
+// Common theme mixins
+@mixin theme-colors($bg-dark, $color-dark, $bg-light, $color-light) {
+    @include dark-theme((
+        background-color: $bg-dark,
+        color: $color-dark,
+    ));
+    @include light-theme((
+        background-color: $bg-light,
+        color: $color-light,
+    ));
+    @media (prefers-color-scheme: dark) {
+        background-color: $bg-dark;
+        color: $color-dark;
+    }
+    @media (prefers-color-scheme: light) {
+        background-color: $bg-light;
+        color: $color-light;
+    }
+}
+
+label {
+    display: inline-block;
+}
+
+.prices .price-box {
+    @media (min-width: 1200px) {
+        width: 300px;
+    }
+}
+
+.content__text .price-box {
+    padding: 16px 32px 0;
+}
+
 .price-box {
     top: 0px;
     flex-grow: 1;

@@ -1,15 +1,19 @@
 // Helper function to fix product names
-export const fixProductNames = (account) => {
-    if (!account) return null;
-    
+export const fixProductNames = (productID) => {
+    if (!productID) return null;
+
     const productAliases = {
-        "IVPN Standard": "IVPN Tier 1",
-        "IVPN Pro": "IVPN Tier 3"
+        "IVPN Tier 1": "IVPN Standard",
+        "IVPN Tier 2": "IVPN Plus",
+        "IVPN Tier 3": "IVPN Pro Suite",
+        "tier1": "IVPN Standard",
+        "tier2": "IVPN Plus",
+        "tier3": "IVPN Pro Suite"
     };
-    
-    if (productAliases[account.product?.name]) {
-        account.type = productAliases[account.product.name];
+
+    if (productAliases[productID]) {
+        return  productAliases[productID];
     }
-    
-    return account;
+
+    return productID;
 };

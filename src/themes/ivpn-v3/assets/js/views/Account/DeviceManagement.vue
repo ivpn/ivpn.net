@@ -5,9 +5,8 @@
                 <h3>{{ $t('account.wireguardTab.expiredTitle') }}</h3>
                 <p>{{ $t('account.deviceManagementTab.renewAccount') }}</p>
                 <router-link
-                    :to="{ name: 'account-' + this.language }"
-                    class="btn btn-solid"
-                    style="margin-bottom: 20px"
+                    :to="{ name: 'account-' + language }"
+                    class="btn btn-solid account-link-spacing"
                     >{{ $t('account.wireguardTab.toYourAccount') }}</router-link
                 >
             </section>
@@ -26,14 +25,14 @@
                 <p>{{ $t('account.deviceManagementTab.disabledDesc2') }}</p>
                 <p>{{ $t('account.deviceManagementTab.disabledDesc3') }} <a href="/knowledgebase/general/device-management-faq/"> {{ $t('account.deviceManagementTab.here') }}</a>.</p>
                 <p>{{ $t('account.deviceManagementTab.disabledDesc4') }}</p>
-                <a class="btn btn-solid btn-big" href="#" @click="enableDeviceManagement">{{ $t('account.deviceManagementTab.enableDeviceManagement') }}</a>
+                <a class="btn btn-solid btn-big" @click.prevent="enableDeviceManagement">{{ $t('account.deviceManagementTab.enableDeviceManagement') }}</a>
             </section>
 
             <section v-if="account.device_management && isLoaded && !inProgress">
                 <section v-if="sessions && sessions.length > 0">
                     <h2>{{ $t('account.deviceManagementTab.activeDevices') }}</h2>
                     <p>
-                        {{ sessions.length }}/{{ account.product.max_device }} {{ $t('account.deviceManagementTab.devicesAdded') }} 
+                        {{ sessions.length }}/{{ account.product?.max_device }} {{ $t('account.deviceManagementTab.devicesAdded') }} 
                     </p>
                     <div>
                         <device
@@ -45,23 +44,27 @@
                         ></device>
                     </div>
                     <p class="logout-all">
-                        <a  href="#" @click="confirmLogoutDevices">{{ $t('account.deviceManagementTab.logoutFromAllDevices') }}</a>
+                        <a @click.prevent="confirmLogoutDevices">{{ $t('account.deviceManagementTab.logoutFromAllDevices') }}</a>
                     </p>
                 </section>
             
                 <section v-else>
                     <h3>{{ $t('account.deviceManagementTab.enabled') }}</h3>
                     <p>{{ $t('account.deviceManagementTab.enabledDesc1') }}</p>
-                    <p>{{ $t('account.deviceManagementTab.please') }} <a :href="'/' + this.language + '/account'">{{ $t('account.deviceManagementTab.login') }}</a> {{ $t('account.deviceManagementTab.enabledDesc2') }}</p>
+                    <p>{{ $t('account.deviceManagementTab.please') }} <a :href="'/' + language + '/account'">{{ $t('account.deviceManagementTab.login') }}</a> {{ $t('account.deviceManagementTab.enabledDesc2') }}</p>
                 </section>
 
-                <section v-if="account.product.max_device == 2 && sessions && sessions.length > 0">
-                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + this.language + '/account/change-product'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
+                <section v-if="account.product?.max_device == 2 && sessions && sessions.length > 0">
+                    <p>{{ $t('account.deviceManagementTab.increaseDeviceLimit') }} 7 <a :href="'/' + language + '/account/pricing'">{{ $t('account.deviceManagementTab.changeYourProduct') }}</a> {{ $t('account.deviceManagementTab.changeTo') }}</p>
                 </section>
             </section>
 
             <section v-if="account.device_management">
                 <a class="btn btn-solid btn-big" href="#" @click="confirmDisableDeviceManagement">{{ $t('account.deviceManagementTab.disableDeviceManagement') }}</a>
+            </section>
+
+            <section v-if="account.product?.id === 'IVPN Tier 1'">
+                <p>{{ $t('account.deviceManagementTab.upgradeText1') }} <a :href="'/' + language + '/account/upgrade'">{{ $t('account.deviceManagementTab.upgradeText2') }}</a> {{ $t('account.deviceManagementTab.upgradeText3') }} </p>
             </section>
         </div>
     </div>
@@ -81,22 +84,22 @@ export default {
     },
     data() {
         return {
-            isLight : false,
             language: "en"
         };
     },
-    beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
-        this.$store.dispatch("sessions/load");
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            } else {
+                vm.$store.dispatch("sessions/load");
+            }
+        });
     },
     mounted() {
-        if ( window.location.href.split("/")[3] == "es") {
-            useI18n().locale.value = "es";
-            this.language = "es";
-        }
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
     computed: {
         ...mapState({
@@ -105,6 +108,9 @@ export default {
             isLoaded: (state) => state.sessions.isLoaded,
             sessions: (state) => state.sessions.sessions,
         }),
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
     },
     methods: {
         confirmDelete(data) {
@@ -164,6 +170,10 @@ ul {
 
 section:last-child {
   margin-bottom: 10px;
+}
+
+.account-link-spacing {
+    margin-bottom: 20px;
 }
 
 </style>

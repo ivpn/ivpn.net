@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PricesView from '@/views/Prices.vue'
 import OnePageCheckoutView from '@/views/OnePageCheckout.vue'
 import ChangeProductView from '@/views/Account/ChangeProduct/ChangeProduct.vue'
-import UpgradeProductView from '@/views/Account/UpgradeProduct/UpgradeProduct.vue'
+import UpgradeView from '@/views/Account/Upgrade/Upgrade.vue'
 import AccountView from '@/views/Account/Account.vue'
 import PaymentView from '@/views/Account/Payment.vue'
 import AddFundsView from '@/views/Account/AddFunds.vue'
@@ -13,7 +13,6 @@ import AddFundsBitcoin from '@/views/Account/AddFunds/BitCoin.vue'
 import AddFundsMonero from '@/views/Account/AddFunds/Monero.vue'
 import AddFundsCash from '@/views/Account/AddFunds/Cash.vue'
 import AddFundsGiftCard from '@/views/Account/AddFunds/GiftCard.vue'
-import EmailService from '../views/Account/Services/EmailService.vue'
 
 import WireguardView from '@/views/Account/Wireguard.vue'
 import WireguardConfigView from '@/views/Account/WireguardConfig.vue'
@@ -35,6 +34,7 @@ import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
 import DeviceManagementView from '@/views/Account/DeviceManagement.vue'
 import CompareProductView from '@/views/Account/CompareProduct.vue'
+import UpgradePaymentView from '@/views/Account/UpgradePayment.vue'
 
 import InternalErrorView from '../views/500.vue'
 
@@ -44,15 +44,22 @@ import en from '@/../../locales/en.json'
 import es from '@/../../locales/es.json'
 
 async function notAuthenticatedGuard(to, from, next) {
-    if (store.state.auth.isAuthenticated) {
-        if (store.state.auth.isLegacy) {
-            window.location = '/clientarea'
-            next(false)
+    try {
+        if (store.state.auth.isAuthenticated) {
+            if (store.state.auth.isLegacy) {
+                window.location.href = '/clientarea';
+                next(false);
+            } else {
+                // Extract language from route
+                const lang = to.path.startsWith('/es/') ? 'es' : 'en';
+                next({ name: `account-${lang}` });
+            }
         } else {
-            next({ name: 'account' })
+            next();
         }
-    } else {
-        next()
+    } catch (error) {
+        console.error('Authentication guard error:', error);
+        next({ name: '500' });
     }
 }
 
@@ -273,51 +280,43 @@ const routes = [
         }
     },
     {
-        path: '/account/upgrade-product',
-        name: 'upgrade-product',
-        component: UpgradeProductView,
+        path: '/account/upgrade', 
+        name: 'upgrade',
+        component: UpgradeView,
         meta: {
             title: en.account.metaTitle.upgradeProduct,
         }
     },
     {
-        path: '/en/account/upgrade-product',
-        name: 'upgrade-product-en',
-        component: UpgradeProductView,
+        path: '/en/account/upgrade',
+        name: 'upgrade-en',
+        component: UpgradeView,
         meta: {
             title: en.account.metaTitle.upgradeProduct,
         }
     },
     {
-        path: '/es/account/upgrade-product',
-        name: 'upgrade-product-es',
-        component: UpgradeProductView,
+        path: '/es/account/upgrade',
+        name: 'upgrade-es',
+        component: UpgradeView,
         meta: {
             title: es.account.metaTitle.upgradeProduct,
         }
     },
     {
-        path: '/account/service/email',
-        name: 'service-email',
-        component: EmailService,
+        path: '/en/account/compare-product',
+        name: 'compare-product-en',
+        component: CompareProductView,
         meta: {
-            title: en.account.metaTitle.emailService,
+            title: en.account.metaTitle.changeProduct,
         }
     },
     {
-        path: '/en/account/service/email',
-        name: 'service-email-en',
-        component: EmailService,
+        path: '/es/account/compare-product',
+        name: 'compare-product-es',
+        component: CompareProductView,
         meta: {
-            title: en.account.metaTitle.emailService,
-        }
-    },
-    {
-        path: '/es/account/service/email',
-        name: 'service-email-es',
-        component: EmailService,
-        meta: {
-            title: es.account.metaTitle.emailService,
+            title: es.account.metaTitle.changeProduct,
         }
     },
     {
@@ -446,14 +445,6 @@ const routes = [
         children: [
             {
                 path: '',
-                name: 'settings-main',
-                component: SettingsAuthentication,
-                meta: {
-                    title: en.account.metaTitle.authentication,
-                }
-            },
-            {
-                path: '',
                 name: 'settings-main-en',
                 component: SettingsAuthentication,
                 meta: {
@@ -491,14 +482,6 @@ const routes = [
                 }
             },
             {
-                path: '',
-                name: 'settings-services-en',
-                component: SettingsServices,
-                meta: {
-                    title: en.account.metaTitle.services,
-                }
-            },
-            {
                 path: 'billing',
                 name: 'settings-billing-en',
                 component: SettingsBilling,
@@ -526,14 +509,6 @@ const routes = [
                 component: SettingsAuthentication,
                 meta: {
                     title: es.account.metaTitle.authentication,
-                }
-            },
-            {
-                path: '',
-                name: 'settings-services-es',
-                component: SettingsServices,
-                meta: {
-                    title: es.account.metaTitle.services,
                 }
             },
             {
@@ -726,6 +701,100 @@ const routes = [
         
     },
     {
+        path: '/en/account/upgrade/product/:product',
+        component: UpgradePaymentView,
+        name: 'upgrade-payment-en',
+        meta: {
+            title: en.account.metaTitle.upgradeProduct,
+        }
+    }, 
+    {
+        path: '/es/account/upgrade/product/:product',
+        component: UpgradePaymentView,
+        name: 'upgrade-payment-es',
+        meta: {
+            title: es.account.metaTitle.upgradeProduct,
+        }
+    }, 
+    {
+        path: '/en/account/upgrade/payment/:price',
+        component: AddFundsView,
+        props: { isUpgrade: true },
+        children: [
+            {
+                path: 'cc', name: 'upgrade-cc-en',
+                component: AddFundsCC,
+                props: { isUpgrade: true },
+                meta: {
+                    title: en.account.metaTitle.addFundsCC,
+                }
+            },
+            {
+                path: 'paypal', name: 'upgrade-paypal-en',
+                component: AddFundsPayPal,
+                props: { isUpgrade: true },
+                meta: {
+                    title: en.account.metaTitle.addFundsPaypal,
+                },
+            }, 
+            {
+                path: 'bitcoin', name: 'upgrade-bitcoin-en',
+                component: AddFundsBitcoin,
+                props: { isUpgrade: true },
+                meta: {
+                    title: en.account.metaTitle.addFundsBitcoin,
+                }
+            }, 
+            {
+                path: 'monero', name: 'upgrade-monero-en',
+                component: AddFundsMonero,
+                props: { isUpgrade: true },
+                meta: {
+                    title: en.account.metaTitle.addFundsMonero,
+                }
+            }
+        ],
+        
+    },
+    {
+        path: '/es/account/upgrade/payment/:price',
+        component: AddFundsView,
+        props: { isUpgrade: true },
+        children: [
+            {
+                path: 'cc', name: 'upgrade-cc-es',
+                component: AddFundsCC,
+                props: { isUpgrade: true },
+                meta: {
+                    title: es.account.metaTitle.addFundsCC,
+                }
+            },
+            {
+                path: 'paypal', name: 'upgrade-paypal-es',
+                component: AddFundsPayPal,
+                props: { isUpgrade: true },
+                meta: {
+                    title: es.account.metaTitle.addFundsPaypal,
+                },
+            }, {
+                path: 'bitcoin', name: 'upgrade-bitcoin-es',
+                component: AddFundsBitcoin,
+                props: { isUpgrade: true },
+                meta: {
+                    title: es.account.metaTitle.addFundsBitcoin,
+                }
+            }, {
+                path: 'monero', name: 'upgrade-monero-es',
+                component: AddFundsMonero,
+                props: { isUpgrade: true },
+                meta: {
+                    title: es.account.metaTitle.addFundsMonero,
+                }
+            },
+        ],
+        
+    },
+    {
         path: '/account/wireguard',
         name: 'wireguard',
         component: WireguardView,
@@ -817,6 +886,7 @@ const routes = [
             title: es.account.metaTitle.deviceManagement,
         }
     },
+    
 ]
 
 const router = createRouter({
@@ -835,7 +905,7 @@ router.beforeEach(async (to, from, next) => {
         suffix = "es";
     }
 
-    if ( (to.path.startsWith('/en/account') && to.name != 'login-en') || (to.path.startsWith('/es/account') && to.name != 'login-es') ){
+    if ( (to.path.startsWith('/en/account') && to.name !== 'login-en') || (to.path.startsWith('/es/account') && to.name !== 'login-es') ){
 
         if (!store.state.auth.isAuthenticated) {
             next({ name: 'login-' + suffix })
@@ -843,7 +913,7 @@ router.beforeEach(async (to, from, next) => {
         }
 
         if (store.state.auth.isLegacy) {
-            window.location = '/clientarea'
+            window.location.href = '/clientarea';
             return
         }
 
@@ -864,7 +934,7 @@ router.beforeEach(async (to, from, next) => {
 
         // Probably, all of this code have to be moved to an app initialization component
 
-        if (store.state.auth.error != null) {
+        if (store.state.auth.error !== null) {
             next({ name: '500' })
             return
         }

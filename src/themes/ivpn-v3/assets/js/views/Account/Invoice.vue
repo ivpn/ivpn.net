@@ -38,7 +38,8 @@
                     <th width="25%">{{ $t('account.payments.invoice.amount') }}</th>
                 </tr>
                 <tr>
-                    <td>{{ payment.product }}, {{ payment.duration }}</td>
+                    <td v-if="payment.duration">{{  productName }}, {{ payment.duration }}</td>
+                    <td v-else>{{  productName }}</td>
                     <td>${{ payment.amount }}</td>
                 </tr>
                 <tr>
@@ -59,6 +60,7 @@ import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
+import { fixProductNames } from "@/utils/ProductUtils"
 
 export default {
     components: { SuccessIcon, DownIcon },
@@ -66,7 +68,8 @@ export default {
         return {
             refId: "",
             payment: null,    
-            isLight : false        
+            isLight : false, 
+            productName: null,      
         };
     },
     computed: {
@@ -79,6 +82,7 @@ export default {
 
     async created() {
         this.refId = this.$route.params.refid;
+        this.productName  = fixProductNames(this.$store.state.auth.account.product.name);
 
         let payment = await this.$store.dispatch("payments/getPaymentByRefId", {
             refId: this.refId,
@@ -89,7 +93,7 @@ export default {
     },
 
     beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
+        if( this.$store.state.auth.account.product.id == "IVPN Light"){
             this.isLight = true;
             window.location = "/light";
         }

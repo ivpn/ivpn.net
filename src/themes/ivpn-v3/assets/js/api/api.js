@@ -50,7 +50,6 @@ export default {
     async Post(url = '', data = null, overrideURI = null, overrideOptions = {}) {
 
         if (process.env.MIX_APP_DELAY_APIS) {
-            console.log("Delaying API: ", url)
             await delay(process.env.MIX_APP_DELAY_APIS)
         }
 
@@ -341,12 +340,13 @@ export default {
         return account.token
     },
 
-    async addBraintreeFunds(priceID, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
+    async addBraintreeFunds(priceID, paymentType, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
 
         return await this.Post(
             '/web/accounts/braintree/add-funds',
             {
                 price_id: priceID,
+                payment_type: paymentType,
                 amount: amount,
                 payment_method: paymentMethod,
                 fraud_data: fraudData,
@@ -404,22 +404,12 @@ export default {
         return account.account
     },
 
-    async createBitcoinInvoice(priceID, paymentMethodId) {
+    async createBitcoinInvoice(priceID, paymentMethodId , paymentType) {
 
         let response = await this.Post('/web/accounts/btc/create-invoice', {
             price_id: priceID,
-            paymentMethodId: paymentMethodId
-        })
-
-        return response
-    },
-
-    async getBitcoinURL(invoice, hmac, paymentMethodId) {
-        // let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac }, process.env.MIX_APP_WEBAPI_URL, {
-        //     credentials: "omit"
-        // })
-        let response = await this.Post('/clientarea/btc-invoice/', { invoice, hmac, paymentMethodId }, "", {
-            credentials: "omit"
+            payment_method_id: paymentMethodId,
+            payment_type: paymentType
         })
 
         return response
@@ -432,6 +422,7 @@ export default {
         }
         let response = await this.Post('/web/accounts/btc/create-light-invoice', {
             price_id: priceID,
+            payment_type: "extend",
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer,
@@ -440,9 +431,10 @@ export default {
         return response
     },
 
-    async getMoneroPaymentDetails(duration) {
+    async getMoneroPaymentDetails(duration,paymentType) {
         return await this.Post('/web/accounts/monero-payment-details', {
-            duration
+            duration: duration,
+            payment_type: paymentType
         })        
     },
 
