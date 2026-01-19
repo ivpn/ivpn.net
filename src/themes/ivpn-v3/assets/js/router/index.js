@@ -270,27 +270,19 @@ const routes = [
         }
     },
     {
-        path: '/account/service/email',
-        name: 'service-email',
-        component: EmailService,
+        path: '/en/account/compare-product',
+        name: 'compare-product-en',
+        component: ChangeProductView,
         meta: {
-            title: en.account.metaTitle.emailService,
+            title: en.account.metaTitle.changeProduct,
         }
     },
     {
-        path: '/en/account/service/email',
-        name: 'service-email-en',
-        component: EmailService,
+        path: '/es/account/compare-product',
+        name: 'compare-product-es',
+        component: ChangeProductView,
         meta: {
-            title: en.account.metaTitle.emailService,
-        }
-    },
-    {
-        path: '/es/account/service/email',
-        name: 'service-email-es',
-        component: EmailService,
-        meta: {
-            title: es.account.metaTitle.emailService,
+            title: es.account.metaTitle.changeProduct,
         }
     },
     {

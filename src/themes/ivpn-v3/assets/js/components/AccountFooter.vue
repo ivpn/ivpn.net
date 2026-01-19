@@ -1,4 +1,7 @@
 <template>
+    <div class="footer-title">
+        <label>{{ $t('account.getHelp') }}</label>
+    </div>
     <div class="footer-links">
         <div style="max-width: 500px">
             <div><a href="/contactus/">{{ $t('account.contactSupport') }}</a></div>
@@ -63,5 +66,8 @@ export default {
         flex-direction: column;
         line-height: 32px;
     }
+}
+.footer-title{
+    margin-bottom: 20px;
 }
 </style>

@@ -7,11 +7,6 @@
                         >{{ $t('account.ivpnAccount') }}</router-link
                     >
                 </li>
-                <li :class="{ 'is-active': isWireGuardRoute() }">
-                    <router-link :to="{ name: 'wireguard-' + this.language }"
-                        >{{ $t('account.wireguard') }}</router-link
-                    >
-                </li>
                 <li :class="{ 'is-active': isDeviceManagementRoute() }">
                     <router-link :to="{ name: 'device-management-' + this.language }"
                         >{{ $t('account.deviceManagement') }}</router-link

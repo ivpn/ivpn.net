@@ -43,12 +43,23 @@
                         <div class="product-info">
                             <label>{{ $t('account.product') }}</label>
                             <div class="value">{{ account.product.name }}</div>
+                            <div class="product-details">
+                                {{ $t('account.included') }}: [VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]
+                                <span v-if="account.product.capabilities.has_resist_dns">[ResistDNS &#10003;]</span>
+                                <span v-if="account.product.capabilities.has_mailx">[MailX &#10003;]</span>
+                                <span v-if="account.product.capabilities.has_spn">[SPN &#10003;]</span>
+                            </div>
                         </div>
                         <div class="product-action" v-if="canChange">
                             <router-link :to="{ name: 'change-product-' + this.language }"
                                 >{{ $t('account.change') }}</router-link
                             >
                         </div>
+                    </div>
+                    <div class="product-action">
+                        <router-link :to="{ name: 'compare-product-' + this.language }"
+                            >{{ $t('account.comparePlans') }}</router-link
+                        >
                     </div>
                 </signup-section>
                 <signup-section>
@@ -78,7 +89,10 @@
 
                 <signup-section>
                     <apps-section />
-                </signup-section>                
+                </signup-section>   
+                <signup-section>
+                    <services-section />
+                </signup-section>             
                 <signup-section>
                     <account-footer :account="account"
                         :showDelete="account.is_new"
@@ -93,6 +107,7 @@
 import AccountInfo from "@/components/AccountInfo.vue";
 import SignupSection from "@/components/SignupSection.vue";
 import AppsSection from "@/components/AppsSection.vue";
+import ServicesSection from "@/components/ServicesSection.vue";
 import FlashBox from "@/components/FlashBox.vue";
 import AccountFooter from "@/components/AccountFooter.vue";
 import SelectPaymentMethod from "@/components/SelectPaymentMethod.vue";
@@ -104,6 +119,7 @@ export default {
         AccountInfo,
         SignupSection,
         AppsSection,
+        ServicesSection,
         FlashBox,
         AccountFooter,
         SelectPaymentMethod,
@@ -226,6 +242,10 @@ export default {
                 border: 0px;
             }
         }
+    }
+
+    .product-details{
+        line-height: 32px;
     }
 }
 </style>
