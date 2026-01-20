@@ -48,8 +48,8 @@
                             <div class="value">{{ productName }}</div>
                             <div class="product-details">
                                 <span class="row">[VPN - {{ account.product?.max_device }} {{ $t('account.devices') }} &#10003;]</span>
-                                <span class="row" v-if="account.product?.capabilities?.has_resist_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
-                                <span class="row" v-if="account.product?.capabilities?.has_mailx">[{{ $t('pricing.mailx') }} &#10003;]</span>
+                                <span class="row" v-if="account.product?.capabilities?.has_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
+                                <span class="row" v-if="account.product?.capabilities?.has_mail">[{{ $t('pricing.mailx') }} &#10003;]</span>
                                 <span class="row" v-if="account.product?.capabilities?.has_spn">[{{ $t('pricing.portmaster') }} &#10003;]</span>
                             </div>
                         </div>
