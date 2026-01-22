@@ -45,9 +45,6 @@
                 <div class="price-features-footer">
                     {{ $t('pricing.tier1.footer') }}
                 </div>
-                <div class="price-features-footer">
-                    {{ $t('pricing.tier1.footer') }}
-                </div>
             </price-box>
 
             <price-box
@@ -140,37 +137,6 @@
                         </svg>
                         {{ $t('pricing.tier3.feature5') }} <span :data-tooltip="$t('pricing.tier3.feature5Title')">&#9432;</span>
                     </div>
-                </div>
-                <div class="price-features-footer">
-                    {{ $t('pricing.tier3.footer') }}
-                </div>
-                <div class="price-features-footer">
-                    {{ $t('pricing.tier2.footer') }}
-                </div>
-            </price-box>
-
-            <price-box
-                :prices="products.tier3"
-                @selected="selected('IVPN Tier 3')"
-                :disabled="inProgress"
-                :inProgress="inProgress && selectedProduct == 'tier3'"
-                :buttonText="$t('pricing.tier3.button')"
-                product="tier3"
-            >
-                <div class="price-head">
-                    <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
-                    <div class="price-title">
-                        {{ $t('pricing.tier3.title') }}
-                    </div>
-                </div>
-                <div class="price-features">
-                    <ul>
-                        <li>{{ $t('pricing.tier3.feature1') }}</li>
-                        <li>{{ $t('pricing.tier3.feature2') }}</li>
-                        <li>{{ $t('pricing.tier3.feature3') }} <span :data-tooltip="$t('pricing.tier3.feature3Title')">&#9432;</span></li>
-                        <li>{{ $t('pricing.tier3.feature4') }} <span :data-tooltip="$t('pricing.tier3.feature4Title')">&#9432;</span></li>
-                        <li>{{ $t('pricing.tier3.feature5') }} <span :data-tooltip="$t('pricing.tier3.feature5Title')">&#9432;</span></li>
-                    </ul>
                 </div>
                 <div class="price-features-footer">
                     {{ $t('pricing.tier3.footer') }}
