@@ -331,6 +331,15 @@
                     "cancel": "Cancel",
                     "codeFrom": "Code from TOTP app"
                 }
+            },
+            "changeProduct": {
+                "title": "Change Product",
+                "confirm": "Are you sure you want to downgrade your plan?.",
+                "confirmDesc": "You will immediately lose access to all services not included in the selected plan.",
+                "confirmDeviceLimit": "The VPN device limit will decrease to 5.",
+                "confirmPortmaster": "Portmaster will be downgraded to Portmaster Free.",
+                "cancel": "Cancel",
+                "downgrade": "Downgrade"
             }
         },
         "wireguardTab": {

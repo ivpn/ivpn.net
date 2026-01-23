@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IconTrash from "@/components/icons/btn/Trash";
+import IconTrash from "@/components/icons/btn/Trash.vue";
 import { useI18n } from "vue-i18n";
 
 export default {

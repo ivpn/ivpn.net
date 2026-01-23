@@ -13,6 +13,7 @@
                 :inProgress="inProgress && selectedProduct === 'tier1'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier1"
+                :current="account && account.product && account.product.id === 'IVPN Tier 1'"
             >
                 <div class="price-head">
                     <div class="pricebox-header">
@@ -54,6 +55,7 @@
                 :inProgress="inProgress && selectedProduct === 'tier2'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier2"
+                :current="account && account.product && account.product.id === 'IVPN Tier 2'"
             >
                 <div class="price-head">
                     <div class="pricebox-header">{{ $t('pricing.tier2.name') }}</div>
@@ -99,6 +101,7 @@
                 :inProgress="inProgress && selectedProduct === 'tier3'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier3"
+                :current="account && account.product && account.product.id === 'IVPN Tier 3'"
             >
                 <div class="price-head">
                     <div class="pricebox-header">{{ $t('pricing.tier3.name') }}</div>
@@ -143,7 +146,9 @@
                 </div>
             </price-box>
         </div>
-        <div v-if="auth.error" class="error"><p>{{ auth.error.message }}</p></div>
+        <div v-if="auth.error" class="error">
+            <p>{{ auth.error.message }}</p>
+        </div>
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
@@ -447,6 +452,7 @@ export default {
             products: (state) => state.product.all,
             inProgress: (state) => state.auth.inProgress,
             auth: (state) => state.auth,
+            account: (state) => state.auth.account,
         }),
         language() {
             return this.$route.params.lang || window.location.href.split("/")[3] || "en";
@@ -461,7 +467,7 @@ export default {
             try {
                 await this.$store.dispatch("auth/load");
             } catch (error) {
-                console.error('Failed to load auth:', error);
+                // Error is handled by the store
             }
         }
     },
@@ -483,7 +489,7 @@ export default {
                             return;
                         }
                     } catch (error) {
-                        console.error('Failed to load auth:', error);
+                        // Error is handled by the store
                         return;
                     }
                 }
@@ -492,6 +498,19 @@ export default {
                     this.$router.push({ name: "account-" + this.language  });
                     return;
                 }
+
+                if (!this.auth.account.is_new && !this.auth.account.is_active) {
+                    // Check if this is a downgrade scenario
+                    const currentProductName = this.auth.account.product?.name || this.auth.account.product?.id;
+                    
+                    if (this.isDowngrade(currentProductName, product)) {
+                        this.$store.commit("popup/show", {
+                            type: "downgrade-account",
+                            data: { currentProduct: currentProductName, selectedProduct: product },
+                        });
+                        return;
+                    }
+                };
             }
         
             const wasAuthenticated = this.auth.isAuthenticated;
@@ -502,12 +521,32 @@ export default {
                 }
                 this.$router.push({ name: "account-" + this.language });
             } catch (error) {
-                console.error('Failed to create account:', error);
+                // Error is handled by the store and displayed via auth.error
             }
         },
         scrollToPricing() {
-            document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
-        }
+            const element = document.getElementById('pricing-section');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        },
+        isDowngrade(currentProduct, selectedProduct) {
+            // Define product hierarchy
+            const productHierarchy = {
+                'IVPN Tier 1': 1,
+                'IVPN Standard': 1,
+                'IVPN Tier 2': 2,
+                'IVPN Plus': 2,
+                'IVPN Tier 3': 3,
+                'IVPN Pro': 3,
+                'IVPN Pro Suite': 3,
+            };
+            
+            const currentLevel = productHierarchy[currentProduct] || 0;
+            const selectedLevel = productHierarchy[selectedProduct] || 0;
+            
+            return currentLevel > selectedLevel;
+        },
     },
 };
 </script>

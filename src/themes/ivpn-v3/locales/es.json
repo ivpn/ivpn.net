@@ -330,6 +330,15 @@
                     "cancel": "Cancelar",
                     "codeFrom": "Código de la aplicación TOTP"
                 }
+            },
+            "changeProduct": {
+                "title": "Cambiar producto",
+                "confirm": "¿Estás seguro de que quieres cambiar tu plan?.",
+                "confirmDesc": "Perderás inmediatamente el acceso a todos los servicios que no estén incluidos en el plan seleccionado.",
+                "confirmDeviceLimit": "El límite de dispositivos VPN se reducirá a 5.",
+                "confirmPortmaster": "Portmaster cambiará a Portmaster Free.",
+                "cancel": "Cancelar",
+                "downgrade": "Cambiar"
             }
 
         },

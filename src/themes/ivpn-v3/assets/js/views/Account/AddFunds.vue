@@ -25,7 +25,7 @@
 <script>
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
-import { fixProductNames } from "@/utils/ProductUtils"
+import { fixProductNames } from "@/utils/ProductUtils.js"
 
 export default {
     props: ['isUpgrade'],

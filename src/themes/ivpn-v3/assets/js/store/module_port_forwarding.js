@@ -1,4 +1,4 @@
-import Api from "@/api/api"
+import Api from "@/api/api.js"
 
 const StatusErrNotLoggedIn = 11003
 

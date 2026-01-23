@@ -13,7 +13,7 @@ export default {
 
     fetch(method, url, data = null, overrideURI = null, overrideOptions = {}) {
 
-        let baseURI = process.env.MIX_APP_WEBAPI_URL
+        let baseURI = import.meta.env.VITE_APP_WEBAPI_URL
 
         let options = {
             method: method,
@@ -49,8 +49,8 @@ export default {
 
     async Post(url = '', data = null, overrideURI = null, overrideOptions = {}) {
 
-        if (process.env.MIX_APP_DELAY_APIS) {
-            await delay(process.env.MIX_APP_DELAY_APIS)
+        if (import.meta.env.VITE_APP_DELAY_APIS) {
+            await delay(import.meta.env.VITE_APP_DELAY_APIS)
         }
 
         let response = await this.fetch("POST", url, data, overrideURI, overrideOptions);
@@ -65,8 +65,8 @@ export default {
 
     async Get(url = '', overrideURI = null, overrideOptions = {}) {
 
-        if (process.env.MIX_APP_DELAY_APIS) {
-            await delay(process.env.MIX_APP_DELAY_APIS)
+        if (import.meta.env.VITE_APP_DELAY_APIS) {
+            await delay(import.meta.env.VITE_APP_DELAY_APIS)
         }
 
         let response = await this.fetch("GET", url, null, overrideURI, overrideOptions);
@@ -86,7 +86,7 @@ export default {
         if (response.headers.has('Csrf-Token')) {
             CSRFToken = response.headers.get('Csrf-Token');
 
-            if (process.env.MIX_APP_DEBUG) {
+            if (import.meta.env.VITE_APP_DEBUG) {
                 console.log("CSRF Token: ", CSRFToken)
             }
         }
@@ -465,7 +465,7 @@ export default {
     async getServerStats() {
         return await this.Get(
             '/v5/servers/stats',
-            process.env.MIX_APP_API_URL,
+            import.meta.env.VITE_APP_API_URL,
             {
                 credentials: "omit"
             },
@@ -476,7 +476,7 @@ export default {
     async getWireGuardConfigurations(queryString) {
         return await this.Get(
             '/v5/config/ivpn-wireguard-config?' + queryString.toString(),
-            process.env.MIX_APP_API_URL,
+            import.meta.env.VITE_APP_API_URL,
             {
                 credentials: "omit"
             },
@@ -485,7 +485,7 @@ export default {
     async getServersDetails() {
         return await this.Get(
             '/v5/servers.json',
-            process.env.MIX_APP_API_URL,
+            import.meta.env.VITE_APP_API_URL,
             {
                 credentials: "omit"
             },

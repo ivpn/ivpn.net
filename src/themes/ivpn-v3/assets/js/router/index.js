@@ -38,7 +38,7 @@ import UpgradePaymentView from '@/views/Account/UpgradePayment.vue'
 
 import InternalErrorView from '../views/500.vue'
 
-import store from '@/store'
+import store from '@/store/index.js'
 
 import en from '@/../../locales/en.json'
 import es from '@/../../locales/es.json'

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IconEdit from "@/components/icons/btn/Edit";
+import IconEdit from "@/components/icons/btn/Edit.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
