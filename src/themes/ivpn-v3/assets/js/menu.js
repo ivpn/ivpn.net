@@ -113,7 +113,7 @@
     }
 
     function updateConnectionInfo() {
-        fetch(process.env.MIX_APP_WEBAPI_URL + '/web/status').then(function (response) {
+        fetch(import.meta.env.VITE_APP_WEBAPI_URL + '/web/status').then(function (response) {
             return response.text();
         }).then(function (html) {
             let container = document.querySelectorAll('.connection-status');

@@ -38,7 +38,7 @@ export default {
             ppSDK.setAttribute(
                 "src",
                 "https://www.paypal.com/sdk/js?client-id=" +
-                    process.env.MIX_APP_PAYPAL_CLIENT_ID +
+                    import.meta.env.VITE_APP_PAYPAL_CLIENT_ID +
                     "&vault=true&disable-funding=card"
             );
             ppSDK.addEventListener("load", onReady);

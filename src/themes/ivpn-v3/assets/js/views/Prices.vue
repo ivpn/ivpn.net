@@ -13,7 +13,7 @@
                 :inProgress="inProgress && selectedProduct === 'tier1'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier1"
-                :current="account.product.id === 'IVPN Tier 1'"
+                :current="account && account.product && account.product.id === 'IVPN Tier 1'"
             >
                 <div class="price-head">
                     <div class="pricebox-header">
@@ -55,7 +55,7 @@
                 :inProgress="inProgress && selectedProduct === 'tier2'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier2"
-                :current="account.product.id === 'IVPN Tier 2'"
+                :current="account && account.product && account.product.id === 'IVPN Tier 2'"
             >
                 <div class="price-head">
                     <div class="pricebox-header">{{ $t('pricing.tier2.name') }}</div>
@@ -101,7 +101,7 @@
                 :inProgress="inProgress && selectedProduct === 'tier3'"
                 :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
                 product="tier3"
-                :current="account.product.id === 'IVPN Tier 3'"
+                :current="account && account.product && account.product.id === 'IVPN Tier 3'"
             >
                 <div class="price-head">
                     <div class="pricebox-header">{{ $t('pricing.tier3.name') }}</div>

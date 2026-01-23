@@ -18,8 +18,8 @@
 
 <script>
 import { mapState } from "vuex";
-import AccountMenu from "@/components/AccountMenu";
-import PopUp from "@/components/PopUp";
+import AccountMenu from "@/components/AccountMenu.vue";
+import PopUp from "@/components/PopUp.vue";
 import Spinner from "@/components/ProgressSpinner.vue";
 
 export default {

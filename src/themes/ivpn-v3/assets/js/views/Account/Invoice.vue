@@ -60,7 +60,7 @@ import SuccessIcon from "@/components/icons/success.vue";
 import DownIcon from "@/components/icons/btn/Download.vue";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
-import { fixProductNames } from "@/utils/ProductUtils"
+import { fixProductNames } from "@/utils/ProductUtils.js"
 
 export default {
     components: { SuccessIcon, DownIcon },

@@ -68,21 +68,21 @@
 
 <script>
 import { mapState } from "vuex";
-import DeleteWireguardKey from "@/components/popups/DeleteWireguardKey";
-import AddWireguardKey from "@/components/popups/AddWireguardKey";
-import DeleteAccount from "@/components/popups/DeleteAccount";
-import DisableRecurring from "@/components/popups/DisableRecurring";
-import SetPaymentMethod from "@/components/popups/SetPaymentMethod";
-import ChangeBillingCycle from "@/components/popups/ChangeBillingCycle";
-import SetAuthEmail from "@/components/popups/SetAuthEmail";
-import SetAuthAccountid from "@/components/popups/SetAuthAccountID";
-import TotpEnable from "@/components/popups/TotpEnable";
-import TotpDisable from "@/components/popups/TotpDisable";
-import DeleteDevice from "@/components/popups/DeleteDevice";
-import LogoutDevices from "@/components/popups/LogoutDevices";
-import DisableDeviceManagement from "@/components/popups/DisableDeviceManagement";
-import ChangeProduct from "@/components/popups/ChangeProduct";
-import DowngradeAccount from "@/components/popups/DowngradeAccount";
+import DeleteWireguardKey from "@/components/popups/DeleteWireguardKey.vue";
+import AddWireguardKey from "@/components/popups/AddWireguardKey.vue";
+import DeleteAccount from "@/components/popups/DeleteAccount.vue";
+import DisableRecurring from "@/components/popups/DisableRecurring.vue";
+import SetPaymentMethod from "@/components/popups/SetPaymentMethod.vue";
+import ChangeBillingCycle from "@/components/popups/ChangeBillingCycle.vue";
+import SetAuthEmail from "@/components/popups/SetAuthEmail.vue";
+import SetAuthAccountid from "@/components/popups/SetAuthAccountID.vue";
+import TotpEnable from "@/components/popups/TotpEnable.vue";
+import TotpDisable from "@/components/popups/TotpDisable.vue";
+import DeleteDevice from "@/components/popups/DeleteDevice.vue";
+import LogoutDevices from "@/components/popups/LogoutDevices.vue";
+import DisableDeviceManagement from "@/components/popups/DisableDeviceManagement.vue";
+import ChangeProduct from "@/components/popups/ChangeProduct.vue";
+import DowngradeAccount from "@/components/popups/DowngradeAccount.vue";
 
 export default {
     computed: {

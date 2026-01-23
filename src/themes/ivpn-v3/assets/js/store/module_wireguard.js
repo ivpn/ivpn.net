@@ -1,5 +1,5 @@
 
-import Api from "@/api/api"
+import Api from "@/api/api.js"
 import JSCookie from "js-cookie"
 
 const StatusErrNotLoggedIn = 11003

@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import IconTrash from "@/components/icons/btn/Trash";
-import { IPv4 } from "ip-num/IPNumber";
+import IconTrash from "@/components/icons/btn/Trash.vue";
+import { IPv4 } from "ip-num";
 import { useI18n } from "vue-i18n";
 
 export default {
