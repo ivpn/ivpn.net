@@ -56,6 +56,10 @@
                     v-if="type === 'disable-device-management'"
                     :data="data"
                 ></disable-device-management>
+                <downgrade-account
+                    v-if="type === 'downgrade-account'"
+                    :data="data"
+                ></downgrade-account>
             </div>
             <div style='flex-grow:1' @click.self="close"></div>
         </div>
@@ -78,6 +82,7 @@ import DeleteDevice from "@/components/popups/DeleteDevice";
 import LogoutDevices from "@/components/popups/LogoutDevices";
 import DisableDeviceManagement from "@/components/popups/DisableDeviceManagement";
 import ChangeProduct from "@/components/popups/ChangeProduct";
+import DowngradeAccount from "@/components/popups/DowngradeAccount";
 
 export default {
     computed: {
@@ -117,6 +122,7 @@ export default {
         LogoutDevices,
         DisableDeviceManagement,
         ChangeProduct,
+        DowngradeAccount,
     },
 };
 </script>

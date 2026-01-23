@@ -23,7 +23,7 @@
             :class="product === 'tier3' ? 'btn-primary' : 'btn-outline'"
             style="margin-top: 2em"
             v-on:click="selected"
-            :disabled="isButtonDisabled"
+            :disabled="isButtonDisabled || current"
         >
             <spinner
                 fill="#FFFFFF"
