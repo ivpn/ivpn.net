@@ -56,6 +56,7 @@ export default {
             for (const price of this.account.product.prices) {
                 if (price.id === priceId) {
                     this.price = price;
+                    this.price.type = "extend";
                     break;
                 }
             }
