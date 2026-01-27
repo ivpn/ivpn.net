@@ -98,7 +98,7 @@ export default {
             "payments/getMoneroPaymentDetails",
             {
                 duration: this.price.duration,
-                paymentType: this.isUpgrade ? "upgrade" : "extend",
+                transactionType: this.isUpgrade ? "upgrade" : "extend",
             }
         );
 
