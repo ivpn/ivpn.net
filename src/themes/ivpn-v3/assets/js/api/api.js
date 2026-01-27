@@ -404,12 +404,12 @@ export default {
         return account.account
     },
 
-    async createBitcoinInvoice(priceID, paymentMethodId , paymentType) {
+    async createBitcoinInvoice(priceID, paymentMethodId , transactionType) {
 
         let response = await this.Post('/web/accounts/btc/create-invoice', {
             price_id: priceID,
             payment_method_id: paymentMethodId,
-            payment_type: paymentType
+            transaction_type: transactionType
         })
 
         return response
@@ -422,7 +422,7 @@ export default {
         }
         let response = await this.Post('/web/accounts/btc/create-light-invoice', {
             price_id: priceID,
-            payment_type: "extend",
+            transaction_type: "extend",
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer,
@@ -431,10 +431,10 @@ export default {
         return response
     },
 
-    async getMoneroPaymentDetails(duration,paymentType) {
+    async getMoneroPaymentDetails(duration,transactionType) {
         return await this.Post('/web/accounts/monero-payment-details', {
             duration: duration,
-            payment_type: paymentType
+            transaction_type: transactionType
         })        
     },
 
