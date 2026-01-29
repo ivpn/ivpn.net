@@ -17,9 +17,9 @@
     weight = 30
 
   [[main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/en/blog/"
+    identifier = "services"
+    name = "Services"
+    url = "/en/services/"
     weight = 40
 
   [[main]]
@@ -51,13 +51,19 @@
     identifier = "generate-account"
     name = "Generate Account"
     url = "/en/signup/"
+    weight = 4
+
+  [[footercolone]]
+    identifier = "services"
+    name = "Services"
+    url = "/en/services/"
     weight = 5
 
   [[footercolone]]
     identifier = "light"
     name = "IVPN Light"
     url = "/light/"
-    weight = 5
+    weight = 6
 
   [[footercolone]]
     identifier = "wireguard"
@@ -82,6 +88,18 @@
     name = "Protocol Comparison"
     url = "/en/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/"
     weight = 70
+
+  [[footercoltwo]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/en/blog/"
+    weight = 8
+
+  [[footercoltwo]]
+    identifier = "privacy-guides"
+    name = "Privacy Guides"
+    url = "/privacy-guides/"
+    weight = 9
 
   [[footercoltwo]]
     identifier = "manifesto"
