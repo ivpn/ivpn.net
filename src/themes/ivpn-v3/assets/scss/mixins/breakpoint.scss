@@ -14,8 +14,8 @@
 
     // If the key doesn't exist in the map
     @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " +
+        "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
 }
 
@@ -32,7 +32,7 @@
 
   // If the key doesn't exist in the map
   @else {
-      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-      +"Available breakpoints are: #{map-keys($breakpoints-max-width)}.";
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " +
+      "Available breakpoints are: #{map-keys($breakpoints-max-width)}.";
   }
 }

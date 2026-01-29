@@ -1,0 +1,18 @@
+<section class="heading px-8 services-features-section">
+    <p class="features-title"><strong>{{ .title }}:</strong></p>
+    <ul class="features-list">
+        {{ range .features }}
+        <li class="feature-item">
+            <span class="feature-bullet">&gt;</span>
+            {{ . }}
+        </li>
+        {{ end }}
+    </ul>
+    {{ if .links }}
+    <div class="features-links">
+        {{ range .links }}
+        <a href="{{ .url }}" class="feature-link">{{ .text }} ↗</a>
+        {{ end }}
+    </div>
+    {{ end }}
+</section>
