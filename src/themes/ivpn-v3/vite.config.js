@@ -103,7 +103,8 @@ export default defineConfig(({ mode }) => {
           menu: resolve(__dirname, 'assets/js/menu.js'),
           wireguard: resolve(__dirname, 'assets/js/wireguard.js'),
           localisation: resolve(__dirname, 'assets/js/localisation.js'),
-          pages: resolve(__dirname, 'assets/scss/pages.scss')
+          pages: resolve(__dirname, 'assets/scss/pages.scss'),
+          services: resolve(__dirname, 'assets/scss/services.scss')
         },
         external: [
           // Treat absolute paths as external (they're served by Hugo)

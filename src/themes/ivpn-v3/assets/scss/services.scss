@@ -1,0 +1,630 @@
+// Services Page Styles
+// This file contains all styles for the service section templates
+
+// =============================================================================
+// 1. HEADING WITH LOGOS TWO COLUMN SECTION
+// =============================================================================
+.services-header-section {
+    .heading-title-wrapper {
+        text-align: center;
+        margin-bottom: 3rem;
+        justify-content: center;
+        width: 100%;
+
+        h1 {
+            max-width: max-content;
+        }
+    }
+
+    .heading__content {
+        p {
+            margin: 0 0 2rem 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .heading-content-wrapper {
+        padding-top: 0;
+        align-items: center;
+        margin: 0;
+    }
+
+    .heading__image-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .logos-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .logo-with-text {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: contain;
+        }
+
+        span {
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+    }
+
+    .logo-standard {
+        height: 2rem;
+        object-fit: contain;
+    }
+
+    .logo-light-theme {
+        display: none;
+    }
+
+    @media (prefers-color-scheme: light) {
+        .logo-dark-theme {
+            display: none;
+        }
+        .logo-light-theme {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &.heading.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .heading-title-wrapper {
+            margin-bottom: 2rem !important;
+            order: 1;
+        }
+
+        .heading-content-wrapper {
+            display: contents !important;
+        }
+
+        .heading__content {
+            order: 2;
+            max-width: 100% !important;
+            text-align: left !important;
+            margin-bottom: 2rem !important;
+            flex: 0 0 100% !important;
+            display: block !important;
+
+            p {
+                width: 100% !important;
+                max-width: 100% !important;
+                text-align: left !important;
+                font-size: 1rem !important;
+                line-height: 1.6 !important;
+                display: block !important;
+                margin-bottom: 1rem !important;
+            }
+        }
+
+        .heading__image-wrapper {
+            order: 3;
+            width: 100% !important;
+            max-width: 100% !important;
+
+            img {
+                height: 1.2rem !important;
+            }
+        }
+
+        .logo-with-text {
+            img {
+                width: 1.5rem !important;
+                height: 1.5rem !important;
+            }
+
+            span {
+                font-size: 1rem !important;
+            }
+        }
+    }
+}
+
+// =============================================================================
+// 2. SERVICE CARD SECTION
+// =============================================================================
+.services-card-section {
+    display: block;
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .card-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .heading__content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        p {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+
+    .service-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .service-logo {
+        height: 3rem;
+        object-fit: contain;
+    }
+
+    .service-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .platform-note {
+        font-size: 0.875rem;
+        color: #999;
+        margin-left: 0.5rem;
+    }
+
+    .plans-container {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .plan-badge {
+        border: 1px solid #fff;
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .content-paragraph {
+        max-width: 100% !important;
+        margin: 1rem 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .logo-light-theme {
+        display: none;
+    }
+
+    @media (prefers-color-scheme: light) {
+        .logo-dark-theme {
+            display: none;
+        }
+        .logo-light-theme {
+            display: block;
+        }
+        .plan-badge {
+            border-color: #000 !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .service-header {
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+
+            > div {
+                justify-content: center !important;
+            }
+        }
+
+        p {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+    }
+}
+
+// =============================================================================
+// 3. OVERLAPPING IMAGES SECTION
+// =============================================================================
+.services-overlapping-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlapping-container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: 400px;
+        margin: 2rem auto;
+    }
+
+    .overlap-img-1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 42%;
+        height: auto;
+        border-radius: 6px;
+        z-index: 1;
+    }
+
+    .overlap-img-2 {
+        position: absolute;
+        left: 25%;
+        top: 50px;
+        max-width: 52%;
+        height: auto;
+        border-radius: 6px;
+        z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .overlapping-container {
+            height: 300px !important;
+            max-width: 100% !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .overlap-img-1 {
+            max-width: 55% !important;
+            left: 0 !important;
+            top: 0 !important;
+        }
+
+        .overlap-img-2 {
+            max-width: 65% !important;
+            left: 25% !important;
+            top: 50px !important;
+        }
+
+        &.screenshots {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+// =============================================================================
+// 4. FEATURES LIST SECTION
+// =============================================================================
+.services-features-section {
+    display: block;
+    border-bottom: 1px solid #333;
+    padding-bottom: 4rem;
+
+    .features-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .features-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    .feature-item {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .feature-bullet {
+        position: absolute;
+        left: 0;
+        color: #5cb8ff;
+    }
+
+    .features-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-start;
+    }
+
+    .feature-link {
+        color: #5cb8ff;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .features-list {
+            margin-left: 12px !important;
+        }
+    }
+}
+
+// =============================================================================
+// 5. SINGLE IMAGE SECTION
+// =============================================================================
+.services-single-image-section {
+    display: flex;
+    justify-content: center;
+
+    .dashboard-image {
+        width: 90%;
+        max-width: 900px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        &.screenshots {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+// =============================================================================
+// 6. PRICING TABLE SECTION
+// =============================================================================
+.services-pricing-section {
+    display: block;
+
+    .pricing-title {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .pricing-subtitle {
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        margin-bottom: 1rem;
+        display: block;
+        width: 100%;
+        order: 1;
+    }
+
+    .pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 600px;
+    }
+
+    .table-header-row {
+        border-bottom: 1px solid #444;
+    }
+
+    .table-header-cell {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .table-header-cell-center {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .table-row {
+        border-bottom: 1px solid #333;
+    }
+
+    .table-cell {
+        padding: 1rem;
+    }
+
+    .table-cell-center {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .table-price-row {
+        border-top: 2px solid #444;
+    }
+
+    .pricing-note {
+        text-align: center;
+        font-style: italic;
+        color: #999;
+        margin-top: 1rem;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+        width: 100%;
+        order: 2;
+    }
+
+    @media (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .table-wrapper {
+            order: 1 !important;
+        }
+
+        .pricing-note {
+            order: 2 !important;
+        }
+
+        .pricing-table {
+            min-width: 100% !important;
+
+            th,
+            td {
+                padding: 0.5rem !important;
+                font-size: 0.75rem !important;
+                white-space: nowrap;
+            }
+
+            th:first-child,
+            td:first-child {
+                white-space: normal;
+                min-width: 80px;
+            }
+        }
+    }
+}
+
+// =============================================================================
+// 7. CONTENT WITH IMAGE SECTION
+// =============================================================================
+.services-content-image-section {
+    display: block;
+
+    .content-with-border {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.02);
+        gap: 3rem;
+        align-items: center;
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .content-with-border {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .content-link {
+        color: #5cb8ff;
+        text-decoration: none;
+    }
+
+    .content-image {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .content-with-border {
+            display: flex !important;
+            flex-direction: column !important;
+            padding: 1.5rem;
+            gap: 1.5rem;
+
+            > div:first-child {
+                order: 1;
+            }
+
+            > div:last-child {
+                order: 2;
+            }
+        }
+    }
+}
+
+// =============================================================================
+// 8. TEXT CTA SECTION
+// =============================================================================
+.services-cta-section {
+    display: block;
+    text-align: center;
+
+    .cta-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-content {
+        margin-bottom: 2rem;
+        text-align: center;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background-color: #5cb8ff;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
+
+    margin-bottom: 3rem;
+}

@@ -2,8 +2,8 @@
     <div style="text-align:center;">
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>{{ $t('account.payments.bitcoin.bitcoinDescription') }}</p>
-        <p v-if="!disableOnchainBitcoin()">{{ $t('account.payments.bitcoin.bitcoinOnchain') }}</p>
-        <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress" v-if="!disableOnchainBitcoin()">
+        <p v-if="!disableOnchainBitcoin">{{ $t('account.payments.bitcoin.bitcoinOnchain') }}</p>
+        <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress" v-if="!disableOnchainBitcoin">
             <div class="bitcoin-icon"></div>
             <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithBitcoin') }}
         </button>

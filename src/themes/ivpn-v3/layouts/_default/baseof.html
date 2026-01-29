@@ -3,6 +3,7 @@
   <head>
     {{- partial "head.html" . -}}
     <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/pages.css" }}">
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/services.css" }}">
     {{ block "main-style" . }}{{ end }}
 
     {{ block "seo" . }}

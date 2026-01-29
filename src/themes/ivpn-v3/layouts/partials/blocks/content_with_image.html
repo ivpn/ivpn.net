@@ -1,0 +1,16 @@
+<section class="heading px-8 services-content-image-section">
+    <div class="content-with-border">
+        <div>
+            <h2>{{ .title }}</h2>
+            {{ range .paragraphs }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+            {{ if .link }}
+            <p><a href="{{ .link.url }}" class="content-link">{{ .link.text }} →</a></p>
+            {{ end }}
+        </div>
+        <div>
+            <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="content-image" />
+        </div>
+    </div>
+</section>

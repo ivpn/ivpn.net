@@ -1,0 +1,32 @@
+<section class="heading px-8 services-header-section">
+    <div class="heading heading-title-wrapper">
+        <h1>{{ .title }}</h1>
+    </div>
+    <div class="heading heading--text-image heading-content-wrapper">
+        <div class="heading__content">
+            {{ .content | markdownify }}
+        </div>
+        <div class="heading__image heading__image-wrapper">
+            <div class="logos-grid">
+                {{ range .logos }}
+                {{ if isset . "text" }}
+                <div class="logo-with-text">
+                    <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" />
+                    <span>{{ .text }}</span>
+                </div>
+                {{ else }}
+                {{ if eq .image "/images/mailx_white.png" }}
+                <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="logo-dark-theme logo-standard" />
+                <img src="{{ site.Params.cdnUrl }}/images/mailx_dark.png" alt="{{ .alt }}" class="logo-light-theme logo-standard" />
+                {{ else if eq .image "/images/mod_white.png" }}
+                <img src="{{ site.Params.cdnUrl }}/images/mod_dark.png" alt="{{ .alt }}" class="logo-dark-theme logo-standard" />
+                <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="logo-light-theme logo-standard" />
+                {{ else }}
+                <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="logo-standard" />
+                {{ end }}
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>

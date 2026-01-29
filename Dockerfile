@@ -18,14 +18,13 @@ RUN apt-get update \
 
 # Install dependencies (cached layer for faster rebuilds)
 COPY ./src/themes/ivpn-v3/package.json ./src/themes/ivpn-v3/yarn.lock ./src/themes/ivpn-v3/
-RUN yarn --cwd ./src/themes/ivpn-v3/ install --frozen-lockfile
+RUN yarn --cwd ./src/themes/ivpn-v3/ install 
 
 # Copy source and build assets
 COPY ./src ./src
-RUN echo "MIX_APP_WEBAPI_URL=${BASE_URL}\nMIX_APP_API_URL=${API_URL}\nMIX_APP_PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}\n" > ./src/themes/ivpn-v3/.env \
+RUN echo "VITE_APP_WEBAPI_URL=${BASE_URL}\nVITE_APP_API_URL=${API_URL}\nVITE_APP_PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}\n" > ./src/themes/ivpn-v3/.env.${ENV} \
     && echo "Environment: $ENV\nBase URL: ${BASE_URL}\nAPI URL: ${API_URL}\nPayPal Client ID: ${PAYPAL_CLIENT_ID}\n" \
-    && yarn --cwd ./src/themes/ivpn-v3/ $ENV \
-    && yarn --cwd ./src/themes/ivpn-v3/ run copy:manifest
+    && yarn --cwd ./src/themes/ivpn-v3/ $ENV
 
 # Generate mobile app pages
 RUN sed -E \

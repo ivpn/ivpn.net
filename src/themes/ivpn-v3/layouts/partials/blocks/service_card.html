@@ -1,0 +1,36 @@
+<section class="heading px-8 services-card-section">
+    {{ if .section_title }}
+    <h2 class="section-title">{{ .section_title }}</h2>
+    {{ end }}
+    <div class="heading heading--text-image card-wrapper">
+        <div class="service-header">
+            <div class="logo-container">
+                {{ if eq .logo "/images/mailx_white.png" }}
+                <img src="{{ site.Params.cdnUrl }}{{ .logo }}" alt="{{ .name }} Logo" class="service-logo logo-dark-theme" />
+                <img src="{{ site.Params.cdnUrl }}/images/mailx_dark.png" alt="{{ .name }} Logo" class="service-logo logo-light-theme" />
+                {{ else if eq .logo "/images/mod_white.png" }}
+                <img src="{{ site.Params.cdnUrl }}/images/mod_dark.png" alt="{{ .name }} Logo" class="service-logo logo-dark-theme" />
+                <img src="{{ site.Params.cdnUrl }}{{ .logo }}" alt="{{ .name }} Logo" class="service-logo logo-light-theme" />
+                {{ else }}
+                <img src="{{ site.Params.cdnUrl }}{{ .logo }}" alt="{{ .name }} Logo" class="service-logo" />
+                {{ end }}
+                {{ if eq .name "Portmaster" }}
+                <span class="service-name">{{ .name }}</span>
+                {{ end }}
+                {{ if .platform_note }}
+                <span class="platform-note">{{ .platform_note }}</span>
+                {{ end }}
+            </div>
+            <div class="plans-container">
+                {{ range .plans }}
+                <span class="plan-badge">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+        <div class="heading__content">
+            {{ range split .content "\n\n" }}
+            <p class="content-paragraph">{{ . | markdownify }}</p>
+            {{ end }}
+        </div>
+    </div>
+</section>
