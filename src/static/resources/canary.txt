@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-01-07 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 931271
-hash: 0000000000000000000123c2343b6b48963863a34de96e52d316ff5e686c7a1d
+height: 934823
+hash: 0000000000000000000095c6d93d8539c688e1f66858da8d0e1e3160ad5088b1
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-KKR to invest $1.5bn into European data centre business
-US private capital group’s investment into Global Technical Realty comes alongside $400mn from Oak Hill Capital
+Indian markets rally on Trump trade deal
+Stocks and rupee rise in first trading session after US pledges to lower country’s tariffs to 18% following oil agreement
 
-How Trump became just another Republican president
-His enthusiasm for big business and foreign intervention is more Reaganite than populist
+Irn-Bru maker buys Fentimans and Frobishers in ‘adult soft drinks’ push
+AG Barr looks to capitalise on falling consumption of alcoholic beverages
 
-Reader callout: Have you tried to put crypto in your Isa?
-Tell us your views on the UK government’s decision to allow investors to hold digital ETNs in their savings accounts
+Silver’s runaway rally becomes ‘death trap’ for Reddit’s retail crowd
+Meteoric rise — and thumping sell-off — has seen the volatile precious metal compared to a ‘meme stock’
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmleSxIACgkQisFrnrZH
-umkrAAf/dddkU7y72sE4/ThDH3yZupWvoZTDNiKgcli1dvPI83JWFqgJFHpG7ZMD
-xJ3yOYKNoMO2CM25fTal7mGjfMfO8CpP6LV8dBYt/gxTLpAnG5iuFYOoZ9Bn5r8m
-otWZyVXZFk0k4HHNqtUvt1jLDO8OTXzEUrhariap8MEEPchB7HxyJWzibHDNkx+D
-4Y0T6EClF2WZG0OZfK7T/fO3Y+x47/v/yNYeKAGNV5Yb5pL0PgX59FyBFvqwEWHy
-pxZU6PnpLAlqePkYgK7GsbPPKhSlXW8kmKsJf83KL2CSoSokypKNSBm+7SLhb9GK
-yEMN07G11oikv8Th0/D7x+JXtW0fuA==
-=rm0L
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmmBudoACgkQisFrnrZH
+umkMNQgAg3vpwv0Sqw45IkLlCi+0sV+VB2LdQ0t52YVAp4JwC97FBNao97XVvlYL
+D/Ox7ujB6od+wiY3qiRSleMDHfjUMElvweo/TsHyyUw912r1S/EJqTh4Zn3/ewdr
+Ue8J5aXBzuUBqfmv4I0nUiZpS7o8BbizdPQsIsbZNNmHW2tGpthdymqNsus36qje
+JN1bvIVqA7w2i+LicX5X3AoYdhg1EjHXIumDPVFCZ/LA0tLOig0IPuHl+SRyjFYc
+u/GVsuxse2t1maAB6/IMkTMyXsGInNaJtA66Ug8aK5pKv5pfHu0NhqN1lKr/7HTj
+8XV5imJOQEmOpLUIUXweyCtbbr9Pzw==
+=6naw
 -----END PGP SIGNATURE-----
 
 
