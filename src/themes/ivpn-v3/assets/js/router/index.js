@@ -33,7 +33,6 @@ import InvoiceView from '@/views/Account/Invoice.vue'
 import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
 import DeviceManagementView from '@/views/Account/DeviceManagement.vue'
-import CompareProductView from '@/views/Account/CompareProduct.vue'
 import UpgradePaymentView from '@/views/Account/UpgradePayment.vue'
 
 import InternalErrorView from '../views/500.vue'
@@ -301,38 +300,6 @@ const routes = [
         component: UpgradeView,
         meta: {
             title: es.account.metaTitle.upgradeProduct,
-        }
-    },
-    {
-        path: '/en/account/compare-product',
-        name: 'compare-product-en',
-        component: CompareProductView,
-        meta: {
-            title: en.account.metaTitle.changeProduct,
-        }
-    },
-    {
-        path: '/es/account/compare-product',
-        name: 'compare-product-es',
-        component: CompareProductView,
-        meta: {
-            title: es.account.metaTitle.changeProduct,
-        }
-    },
-    {
-        path: '/en/account/compare-product',
-        name: 'compare-product-en',
-        component: CompareProductView,
-        meta: {
-            title: en.account.metaTitle.changeProduct,
-        }
-    },
-    {
-        path: '/es/account/compare-product',
-        name: 'compare-product-es',
-        component: CompareProductView,
-        meta: {
-            title: es.account.metaTitle.changeProduct,
         }
     },
     {

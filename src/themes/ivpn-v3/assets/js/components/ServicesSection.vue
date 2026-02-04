@@ -22,11 +22,11 @@
             <span v-else>
                 <label>
                     {{ $t('account.additionalServicesFooter') }} 
-                    <a href="services">{{ $t('account.additionalServicesFooterLink') }}</a>
+                    <a :href="language + '/services/'" >{{ $t('account.additionalServicesFooterLink') }}</a>
                 </label>
                 <label>
                     {{ $t('account.additionalServicesFooter2') }} 
-                    <a href="services">{{ $t('account.additionalServicesFooter2Link') }}</a>
+                    <a :href="language + '/pcaas/'">{{ $t('account.additionalServicesFooter2Link') }}</a>
                 </label>
             </span>
         </div>
@@ -100,16 +100,17 @@ export default {
                     key: 'dns',
                     name: this.$t('account.servicesArea.dns'),
                     description: this.$t('account.servicesArea.dnsDescription'),
-                    setupUrl: () => '#',
-                    accessUrl: () => this.modDNSURL,
+                    setupUrl: () => `${this.modDNSURL}/signup?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.uuid}`,
+                    accessUrl: () => `${this.modDNSURL}/login`,
+                    syncUrl: () => `${this.modDNSURL}/account?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.uuid}`,
                     upgradeRequired: ['IVPN Tier 1']
                 },
                 {
                     key: 'portmaster',
                     name: this.$t('account.servicesArea.portmaster'),
                     description: this.$t('account.servicesArea.portmasterDescription'),
-                    setupUrl: () => '#',
-                    accessUrl: () => this.portmasterURL,
+                    setupUrl: () => `${this.portmasterURL}/account/sign_up?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.uuid}`,
+                    accessUrl: () => `${this.portmasterURL}/account`,
                     upgradeRequired: ['IVPN Tier 1', 'IVPN Tier 2']
                 }
             ];

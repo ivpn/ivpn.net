@@ -213,7 +213,7 @@
                           </div>
                         </div>
                         
-                        <a href="#" class="link">
+                        <a :href="'/' + language + '/services/'" class="link">
                             {{ $t('pricing.reviewServices') }}
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -953,6 +953,11 @@ export default {
             justify-content: center;
             gap: 1rem;
 
+            @media(max-width: 480px) {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
             .payment-badge {
                 display: flex;
                 align-items: center;
@@ -960,8 +965,10 @@ export default {
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem;
                 border: 0.5px solid;
+
                 @media(max-width: 480px) {
-                    
+                    width: 100%;
+                    justify-content: center;
                 }
 
                 .icon {
