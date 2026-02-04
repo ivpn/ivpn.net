@@ -7,5 +7,5 @@ baseURL = "https://ivpn.net"
     matomoUrl = "https://stats.ivpn.net"
     matomoSiteId = 1
     mailXURL = "https://app.staging.mailx.net"
-    modDNSURL = "https://app.moddns.net"
+    modDNSURL = "https://app.staging.ivpndns.net"
     portmasterURL = "https://account.safing.io"
