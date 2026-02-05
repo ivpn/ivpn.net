@@ -187,7 +187,8 @@ sections:
     note: Weekly, monthly, yearly plans available.
   - type: content_with_image
     title: Compartmentalized Stack
-    image: /images/stack-diagram.jpg
+    image: /images/stack-diagram-dark.png
+    image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:
       - Under the Plus and Pro plan, you can create an account for Mailx, modDNS and Safing Portmaster without revealing your IVPN account details.

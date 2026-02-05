@@ -1,6 +1,8 @@
 // Services Page Styles
 // This file contains all styles for the service section templates
 
+@import "mixins/theme";
+
 // =============================================================================
 // 1. HEADING WITH LOGOS TWO COLUMN SECTION
 // =============================================================================
@@ -69,22 +71,31 @@
     }
 
     .logo-light-theme {
-        display: none;
+        @include light-theme((
+            display: block
+        ));
+
+        @include dark-theme((
+            display: none
+        ));
     }
 
-    @media (prefers-color-scheme: light) {
-        .logo-dark-theme {
-            display: none;
-        }
-        .logo-light-theme {
-            display: block;
-        }
+    .logo-dark-theme {
+        @include light-theme((
+            display: none
+        ));
+
+        @include dark-theme((
+            display: block
+        ));
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         &.heading.px-8 {
-            padding-left: 10px !important;
-            padding-right: 10px !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
             display: flex !important;
             flex-direction: column !important;
         }
@@ -96,6 +107,8 @@
 
         .heading-content-wrapper {
             display: contents !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
         }
 
         .heading__content {
@@ -103,17 +116,18 @@
             max-width: 100% !important;
             text-align: left !important;
             margin-bottom: 2rem !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
             flex: 0 0 100% !important;
             display: block !important;
 
             p {
-                width: 100% !important;
                 max-width: 100% !important;
                 text-align: left !important;
-                font-size: 1rem !important;
                 line-height: 1.6 !important;
                 display: block !important;
                 margin-bottom: 1rem !important;
+                margin-left: 12px !important;
             }
         }
 
@@ -121,10 +135,17 @@
             order: 3;
             width: 100% !important;
             max-width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
 
             img {
                 height: 1.2rem !important;
             }
+        }
+
+        .heading--text-image .heading__image {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
         }
 
         .logo-with-text {
@@ -221,22 +242,32 @@
     }
 
     .logo-light-theme {
-        display: none;
+        @include light-theme((
+            display: block
+        ));
+
+        @include dark-theme((
+            display: none
+        ));
     }
 
-    @media (prefers-color-scheme: light) {
-        .logo-dark-theme {
-            display: none;
-        }
-        .logo-light-theme {
-            display: block;
-        }
-        .plan-badge {
-            border-color: #000 !important;
-        }
+    .logo-dark-theme {
+        @include light-theme((
+            display: none
+        ));
+
+        @include dark-theme((
+            display: block
+        ));
     }
 
-    @media (max-width: 768px) {
+    .plan-badge {
+        @include light-theme((
+            border-color: #000 !important
+        ));
+    }
+
+    @media (max-width: 1024px) {
         &.px-8 {
             padding-left: 10px !important;
             padding-right: 10px !important;
@@ -270,6 +301,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0px;
 
     .overlapping-container {
         position: relative;
@@ -299,14 +331,45 @@
         z-index: 2;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px){
         &.px-8 {
             padding-left: 10px !important;
             padding-right: 10px !important;
         }
 
         .overlapping-container {
-            height: 300px !important;
+            height: 200px !important;
+            max-width: 100% !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .overlap-img-1 {
+            max-width: 55% !important;
+            left: 0 !important;
+            top: 0 !important;
+        }
+
+        .overlap-img-2 {
+            max-width: 65% !important;
+            left: 25% !important;
+            top: 50px !important;
+        }
+
+        &.screenshots {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+
+    @media (min-width: 480px) and (max-width: 768px) {
+        &.px-8 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .overlapping-container {
+            height: 350px !important;
             max-width: 100% !important;
             margin-top: 0 !important;
             margin-bottom: 0 !important;
@@ -373,7 +436,7 @@
         text-decoration: none;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         &.px-8 {
             padding-left: 10px !important;
             padding-right: 10px !important;
@@ -391,6 +454,7 @@
 .services-single-image-section {
     display: flex;
     justify-content: center;
+    margin-top:0px;
 
     .dashboard-image {
         width: 90%;
@@ -398,10 +462,9 @@
         height: auto;
         border-radius: 8px;
         box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        margin: 2rem 0;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         &.px-8 {
             padding-left: 10px !important;
             padding-right: 10px !important;
@@ -491,7 +554,7 @@
         order: 2;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         &.px-8 {
             padding-left: 10px !important;
             padding-right: 10px !important;
@@ -499,6 +562,7 @@
 
         .table-wrapper {
             order: 1 !important;
+            overflow-x: auto;
         }
 
         .pricing-note {
@@ -507,18 +571,83 @@
 
         .pricing-table {
             min-width: 100% !important;
+            display: table;
 
-            th,
-            td {
-                padding: 0.5rem !important;
-                font-size: 0.75rem !important;
-                white-space: nowrap;
+            thead {
+                display: table-header-group;
             }
 
-            th:first-child,
-            td:first-child {
+            tbody {
+                display: table-row-group;
+                width: 100%;
+            }
+
+            .table-header-row {
+                display: table-row;
+                border-bottom: 2px solid #444;
+            }
+
+            .table-header-cell,
+            .table-header-cell-center {
+                display: table-cell;
+                padding: 0.5rem 0.25rem !important;
+                font-size: 0.7rem !important;
+                font-weight: 700;
+                vertical-align: middle;
+                border-right: 1px solid #333;
                 white-space: normal;
-                min-width: 80px;
+                word-wrap: break-word;
+            }
+
+            .table-header-cell {
+                text-align: left;
+                min-width: 70px;
+                max-width: 90px;
+            }
+
+            .table-header-cell-center {
+                text-align: center;
+                min-width: 60px;
+            }
+
+            .table-row,
+            .table-price-row {
+                display: table-row;
+                border-bottom: 1px solid #333;
+            }
+
+            .table-price-row {
+                border-top: 2px solid #444;
+            }
+
+            .table-cell,
+            .table-cell-center {
+                display: table-cell;
+                padding: 0.5rem 0.25rem !important;
+                font-size: 0.7rem !important;
+                vertical-align: middle;
+                border-right: 1px solid #333;
+                white-space: normal;
+                word-wrap: break-word;
+            }
+
+            .table-cell {
+                text-align: left;
+                font-weight: 600;
+                min-width: 70px;
+                max-width: 90px;
+            }
+
+            .table-cell-center {
+                text-align: center;
+                min-width: 60px;
+            }
+
+            .table-header-cell:last-child,
+            .table-header-cell-center:last-child,
+            .table-cell:last-child,
+            .table-cell-center:last-child {
+                border-right: none;
             }
         }
     }
@@ -566,7 +695,27 @@
         height: auto;
     }
 
-    @media (max-width: 768px) {
+    .content-image-light {
+        @include light-theme((
+            display: block
+        ));
+
+        @include dark-theme((
+            display: none
+        ));
+    }
+
+    .content-image-dark {
+        @include light-theme((
+            display: none
+        ));
+
+        @include dark-theme((
+            display: block
+        ));
+    }
+
+    @media (max-width: 1024px) {
         &.px-8 {
             padding-left: 10px !important;
             padding-right: 10px !important;
@@ -619,7 +768,7 @@
         margin-bottom: 3rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         &.px-8 {
             padding-left: 10px !important;
             padding-right: 10px !important;
