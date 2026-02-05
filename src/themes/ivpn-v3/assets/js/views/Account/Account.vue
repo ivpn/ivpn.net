@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="product-action" v-if="canUpgrade">
-                        <router-link :to="'/' + this.language + '/services'"
+                        <router-link :to="'/' + this.language + '/services/'"
                             >{{ $t('account.comparePlans') }}
                         </router-link>
                     </div>
