@@ -10,7 +10,10 @@
             {{ end }}
         </div>
         <div>
-            <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="content-image" />
+            <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="content-image content-image-dark" />
+            {{ if .image_light }}
+            <img src="{{ site.Params.cdnUrl }}{{ .image_light }}" alt="{{ .alt }}" class="content-image content-image-light" />
+            {{ end }}
         </div>
     </div>
 </section>
