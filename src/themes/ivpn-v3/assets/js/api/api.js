@@ -431,10 +431,11 @@ export default {
         return response
     },
 
-    async getMoneroPaymentDetails(duration,transactionType) {
+    async getMoneroPaymentDetails(duration,transactionType, priceId) {
         return await this.Post('/web/accounts/monero-payment-details', {
             duration: duration,
-            transaction_type: transactionType
+            transaction_type: transactionType,
+            price_id: priceId
         })        
     },
 
