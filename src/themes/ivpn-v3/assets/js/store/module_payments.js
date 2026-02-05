@@ -93,7 +93,7 @@ export default {
         async getMoneroPaymentDetails(context, payload) {
             context.commit('started')
             try {
-                let addr = await Api.getMoneroPaymentDetails(payload.duration,payload.paymentType)
+                let addr = await Api.getMoneroPaymentDetails(payload.duration,payload.transactionType, payload.priceId)
                 context.commit('done')
                 return addr
     

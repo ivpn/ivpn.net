@@ -93,12 +93,12 @@ export default {
         }),
     },
     async created() {
-    
         let resp = await this.$store.dispatch(
             "payments/getMoneroPaymentDetails",
             {
-                duration: this.price.duration,
+                duration: this.price?.duration,
                 transactionType: this.isUpgrade ? "upgrade" : "extend",
+                priceId: this.price?.id,
             }
         );
 

@@ -13,6 +13,7 @@
             <li>${{ price?.price }}</li>
         </ul>
         <router-view
+            v-if="price !== null"
             :account="account"
             :price="price"
             class="router-view-spacing"
@@ -76,7 +77,7 @@ export default {
                  type: "upgrade",
                  billing_cycle: "Monthly",
                  discount: 0,
-                 duration: "1 month",
+                 duration: "1 months",
                  name: fixProductNames(this.$route.params.price),
                  price: upgradePrice,
             };
