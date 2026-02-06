@@ -72,6 +72,7 @@
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
             </router-link>
+
         </div>
         <div v-else class="pay-buttons">
             <router-link

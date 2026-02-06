@@ -99,6 +99,7 @@ export default {
         }),
     },
     async created() {
+        
         let resp = await this.$store.dispatch(
             "payments/getMoneroPaymentDetails",
             {
@@ -118,14 +119,17 @@ export default {
         qr.addData(resp.payment_uri);
         qr.make();
         this.qrCode = qr.createSvgTag(2);
+        
     },
     async mounted() {
+        
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
             this.language = "es";
         }
         this.refreshTimer = setInterval(this.updateLastPayment, 10000);
         await this.updateLastPayment();
+        
     },
     beforeDestroy() {
         clearInterval(this.refreshTimer);
@@ -198,5 +202,14 @@ export default {
             }
         }
     }
+}
+.not-available-warning {
+    @include light-theme((
+            color: $black
+        ));
+
+    @include dark-theme((
+        color: $white
+    ));
 }
 </style>

@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 903775
-hash: 0000000000000000000233580519b3c0c8369cbd457ebc0ff6115e6d76a8b1ab
+height: 934823
+hash: 0000000000000000000095c6d93d8539c688e1f66858da8d0e1e3160ad5088b1
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Denmark is ‘sure’ EU will negotiate a ‘good’ US trade deal as deadline nears
-Also in this newsletter: European parliament gears up for no-confidence vote in von der Leyen
+Indian markets rally on Trump trade deal
+Stocks and rupee rise in first trading session after US pledges to lower country’s tariffs to 18% following oil agreement
 
-Are bigger AI models better stock pickers? Maybe, but probably not
-Complexity ain’t all that, wonks say
+Irn-Bru maker buys Fentimans and Frobishers in ‘adult soft drinks’ push
+AG Barr looks to capitalise on falling consumption of alcoholic beverages
 
-FTAV further reading
-Bonds; conversations; FT; Tampa pensions; crypto scams; financial repression; counting
+Silver’s runaway rally becomes ‘death trap’ for Reddit’s retail crowd
+Meteoric rise — and thumping sell-off — has seen the volatile precious metal compared to a ‘meme stock’
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmhmFQgACgkQisFrnrZH
-ummuOwf9GmjAByY3IyGK25DpxJS4nZoNL1p9tLWGPy6p+HhhCy1LKwaqWJLJJjHu
-MJQjaBX+2ZGPGKzzrza/hAzP11HijzapXoxsOqutmmAclNnG6Uce6FlCNR9qvw+R
-73pvpY37JVRvPdU45XSBwNdbJf1Rxy4HsB6HhXwszx/hzJ1MFk0Ub3bCW778OXKA
-Jtftv2U4jbQzNjiS47xuTGYKIScqbSo3KONmahioyf3fPzGy+Vy0LPVjDMT2cWWR
-QRhOF1aWzMu4OFyLUX/+D0eG/DOB0kghlxI0gIf0/RRSp5r2P4QRtjG2x3CASpaS
-/VLgzpAScS5v4PcXsZc2P90PtjhFEg==
-=wW47
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmmBudoACgkQisFrnrZH
+umkMNQgAg3vpwv0Sqw45IkLlCi+0sV+VB2LdQ0t52YVAp4JwC97FBNao97XVvlYL
+D/Ox7ujB6od+wiY3qiRSleMDHfjUMElvweo/TsHyyUw912r1S/EJqTh4Zn3/ewdr
+Ue8J5aXBzuUBqfmv4I0nUiZpS7o8BbizdPQsIsbZNNmHW2tGpthdymqNsus36qje
+JN1bvIVqA7w2i+LicX5X3AoYdhg1EjHXIumDPVFCZ/LA0tLOig0IPuHl+SRyjFYc
+u/GVsuxse2t1maAB6/IMkTMyXsGInNaJtA66Ug8aK5pKv5pfHu0NhqN1lKr/7HTj
+8XV5imJOQEmOpLUIUXweyCtbbr9Pzw==
+=6naw
 -----END PGP SIGNATURE-----
 
 
