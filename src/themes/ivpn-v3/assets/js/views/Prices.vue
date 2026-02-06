@@ -434,6 +434,7 @@
 <script>
 import PriceBox from "@/components/PriceBox.vue";
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
 import matomo from "@/api/matomo.js";
 
 export default {
@@ -459,6 +460,9 @@ export default {
         }
     },
     async created() {
+        // Set locale once during component creation
+        const locale = this.language;
+        useI18n().locale.value = locale;
         if (
             this.$store.state.auth.isAuthenticated &&
             !this.$store.state.auth.isLegacy &&

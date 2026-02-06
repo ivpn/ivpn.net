@@ -562,7 +562,9 @@
                 "information": "La información sobre el último pago reciente se mostrará aquí.",
                 "pleaseNote": "Por favor, ten en cuenta:",
                 "note1": "Tu cuenta se extenderá automáticamente después de que el pago sea confirmado. Esto puede tardar unos minutos.",
-                "note2": "La dirección especificada anteriormente es permanente para tu cuenta. Puedes usarla para recargar tu cuenta en cualquier momento en el futuro."
+                "note2": "La dirección especificada anteriormente es permanente para tu cuenta. Puedes usarla para recargar tu cuenta en cualquier momento en el futuro.",
+                "note1Upgrade": "Tu cuenta se mejorará después de que se confirme el pago. Esto puede tardar unos minutos.",
+                "note2Upgrade": "Aviso: La dirección anterior es para uso único y está activa durante 24 horas después de su generación. No envíes fondos adicionales a ella después de este pago."
             },
             "voucher":{
                 "codeFrom": "Código de un cupón emitido por IVPN:",

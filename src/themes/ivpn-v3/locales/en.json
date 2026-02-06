@@ -563,7 +563,9 @@
                 "information": "Information about the last recent payment will be displayed here.",
                 "pleaseNote": "Please note:",
                 "note1": "Your account will automatically be extended after the payment is confirmed. This may take a couple of minutes.",
-                "note2": "The address specified above is permanent for your account. You can use it to top up your account at any time in the future."
+                "note2": "The address specified above is permanent for your account. You can use it to top up your account at any time in the future.",
+                "note1Upgrade": "Your account will be upgraded after the payment is confirmed. This may take a couple of minutes.",
+                "note2Upgrade": "Warning: The address above is for one-time use only and is active for 24 hours after generation. Don't send additional funds to it after this payment."
             },
             "voucher":{
                 "codeFrom": "Code from a Voucher issued by IVPN:",

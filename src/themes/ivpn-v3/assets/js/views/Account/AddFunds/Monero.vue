@@ -52,12 +52,18 @@
                     </div>
                 </div>
                 <p class="highlight"> {{ $t('account.payments.monero.pleaseNote') }}</p>
-                <p>
+                <p v-if="!isUpgrade">
                     {{ $t('account.payments.monero.note1') }}
                 </p>
+                <p v-else>
+                    {{ $t('account.payments.monero.note1Upgrade') }}
+                </p>
 
-                <p>
+                <p v-if="!isUpgrade">
                     {{ $t('account.payments.monero.note2') }}
+                </p>
+                <p v-else>
+                    {{ $t('account.payments.monero.note2Upgrade') }}
                 </p>
             </div>
         </div>
