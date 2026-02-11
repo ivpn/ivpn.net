@@ -156,7 +156,7 @@ export default {
                 }
                 
                 try {
-                    await this.$store.dispatch("auth/load");
+                    await this.$store.dispatch("auth/reload");
                 } catch (error) {
                     // Error is handled by the store
                 }
