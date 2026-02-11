@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-10-08 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-02-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 918149
-hash: 000000000000000000011820f53505cb9f00b2b70dda4dfb0623b72c7f3fb69d
+height: 934823
+hash: 0000000000000000000095c6d93d8539c688e1f66858da8d0e1e3160ad5088b1
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-French PM floats pension climbdown to court left
-Outgoing premier Sébastien Lecornu holds last-minute talks with opposition parties after resigning on Monday
+Indian markets rally on Trump trade deal
+Stocks and rupee rise in first trading session after US pledges to lower country’s tariffs to 18% following oil agreement
 
-Verisure shares jump 12% in debut after raising €3.2bn in listing
-Stockholm-listed security company has provided boost to European IPO market
+Irn-Bru maker buys Fentimans and Frobishers in ‘adult soft drinks’ push
+AG Barr looks to capitalise on falling consumption of alcoholic beverages
 
-ONS revises down UK government borrowing by £2bn after VAT error
-Statistics agency reduces estimate for current fiscal year weeks ahead of Rachel Reeves’ Budget
+Silver’s runaway rally becomes ‘death trap’ for Reddit’s retail crowd
+Meteoric rise — and thumping sell-off — has seen the volatile precious metal compared to a ‘meme stock’
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmjmG0EACgkQisFrnrZH
-umlaJQf/TAyfS4N1KijokBHlmiSaWnINxYusrbARiagCuiGayrD882RSVu+ueneM
-A9owe00DAd938R3lwmBKxVlVNhbSjm2UHpqV2u5DHYwuCLQEoDH1A/KsAxbZqL6p
-wCjzgyefbHU2hZUGKcjP0egI3S23I+lzOdFzG+HiPrXR6J1X3nUfPxHo5F4DlkaO
-d96E+Hrj5w98b6hV3/JAzHlr8Yiyd+rWg5ToSOJmJdUS4reOmvli+0mzK2Kj5lNK
-m21JqFAsLZwflKydsjjEEnLivpJkGQI7w+ib3919PzzB6zNiLAuk6Hp9meNbJUYQ
-Wqcx+IQI3UKg4oyDW0QS8q07bn7unA==
-=uuZS
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmmBudoACgkQisFrnrZH
+umkMNQgAg3vpwv0Sqw45IkLlCi+0sV+VB2LdQ0t52YVAp4JwC97FBNao97XVvlYL
+D/Ox7ujB6od+wiY3qiRSleMDHfjUMElvweo/TsHyyUw912r1S/EJqTh4Zn3/ewdr
+Ue8J5aXBzuUBqfmv4I0nUiZpS7o8BbizdPQsIsbZNNmHW2tGpthdymqNsus36qje
+JN1bvIVqA7w2i+LicX5X3AoYdhg1EjHXIumDPVFCZ/LA0tLOig0IPuHl+SRyjFYc
+u/GVsuxse2t1maAB6/IMkTMyXsGInNaJtA66Ug8aK5pKv5pfHu0NhqN1lKr/7HTj
+8XV5imJOQEmOpLUIUXweyCtbbr9Pzw==
+=6naw
 -----END PGP SIGNATURE-----
 
 

@@ -21,6 +21,4 @@ On the most recent version of the IVPN App for iOS, disabling the 'Keep alive on
 Disabling keep-alive will not result in any data leak outside of the VPN, as the on-demand rules will automatically re-establish the VPN tunnel before any network traffic starts on the device. Keep-alive, when on, makes sure that the VPN tunnel is active even when the device is in sleep mode. By disabling it, the VPN tunnel is reconnected only when the device needs to make network requests. Disabling keep-alive will improve battery consumption when the device is in sleep mode, but the drawback is you might experience occasional slowdowns due to wake-up reconnections.
 </div>
 
-If security is not your primary concern and to preserve the battery power, consider disconnecting from the VPN connection when not in use or when your device is sleeping.
-
-Alternatively, you may try the [WireGuard VPN protocol](/knowledgebase/general/wireguard-faq/), which was proven to provide higher performance while causing less stress to the battery.
+You may try the [WireGuard VPN protocol](/knowledgebase/general/wireguard-faq/), which was proven to provide higher performance while causing less stress to the battery.

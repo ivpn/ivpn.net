@@ -107,7 +107,7 @@ export default {
                 priceId: this.price?.id,
             }
         );
-
+        
         if (this.error) return;
 
         this.address = resp.address;
@@ -129,15 +129,38 @@ export default {
         this.refreshTimer = setInterval(this.updateLastPayment, 10000);
         await this.updateLastPayment();
         
+        
     },
-    beforeDestroy() {
+     
+    beforeUnmount() {
         clearInterval(this.refreshTimer);
     },
+    
 
     methods: {
         async updateLastPayment() {
             let payments = await api.getPaymentsHistory(true, "Monero");
             this.recentPayment = payments.length > 0 ? payments[0] : null;
+            
+            if (this.recentPayment) {
+                switch (this.recentPayment.product) {
+                    case "IVPN Tier 1":
+                        this.recentPayment.product = this.$t('pricing.tier1.name');
+                        break;
+                    case "IVPN Tier 2":
+                        this.recentPayment.product = this.$t('pricing.tier2.name');
+                        break;
+                    case "IVPN Tier 3":
+                        this.recentPayment.product = this.$t('pricing.tier3.name');
+                        break;
+                }
+                
+                try {
+                    await this.$store.dispatch("auth/load");
+                } catch (error) {
+                    // Error is handled by the store
+                }
+            }
         },
     },
 };
