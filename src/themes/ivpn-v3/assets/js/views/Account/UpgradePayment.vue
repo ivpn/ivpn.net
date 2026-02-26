@@ -113,10 +113,8 @@ export default {
 .upgrade-page-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     h1 {
-        text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
         font-size: 38px;
