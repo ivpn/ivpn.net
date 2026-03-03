@@ -117,7 +117,6 @@ export default {
     h1 {
         margin-top: 20px;
         margin-bottom: 20px;
-        font-size: 38px;
     }
 
     ul.payment-details {
