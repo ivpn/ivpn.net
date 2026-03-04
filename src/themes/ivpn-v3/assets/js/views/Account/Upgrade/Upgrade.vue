@@ -15,6 +15,7 @@
         <div class="prices">
 
             <upgrade-box
+                v-if="account.product.id === 'IVPN Tier 1'"
                 :price="pricing.Tier2"
                 :current="account.product.id === 'IVPN Tier 2'"
                 :inProgress="inProgress"
@@ -56,7 +57,7 @@
                 <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
                 <div class="upgrade-features">
                     <ul>
-                        <li>{{ $t('pricing.tier2.upgradeFeature1') }}</li>
+                        <li>{{ $t('pricing.tier3.upgradeFeature1') }}</li>
                         <li>{{ $t('pricing.tier3.feature3') }}</li>
                         <li>{{ $t('pricing.tier3.feature4') }}</li>
                         <li>{{ $t('pricing.tier3.feature5') }}</li>
