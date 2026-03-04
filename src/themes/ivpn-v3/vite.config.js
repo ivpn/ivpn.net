@@ -145,7 +145,7 @@ export default defineConfig(({ mode }) => {
     css: {
       preprocessorOptions: {
         scss: {
-          // Add any global SCSS options here if needed
+          silenceDeprecations: ['import']
         }
       }
     },

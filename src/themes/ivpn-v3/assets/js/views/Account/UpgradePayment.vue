@@ -7,11 +7,25 @@
         </div>
         <div>
             <h1>{{ $t('account.accountSettingsTab.upgradeYourAccount') }}</h1>
-            <ul class="payment-details">
-                <li>{{ currentProduct }}</li>
-                <li>{{ newProduct }}</li>
-                <li>${{ price }}</li>
-            </ul>
+            <div class="payment-details">
+                <div class="payment-details-row">
+                    <span class="payment-details-label">{{ $t('account.currentPlan') }}:</span>
+                    <span class="payment-details-value">{{ currentProduct }}</span>
+                </div>
+                <div class="payment-details-row">
+                    <span class="payment-details-label">{{ $t('account.newPlan') }}:</span>
+                    <span class="payment-details-value">{{ newProduct }}</span>
+                </div>
+                <div class="payment-details-row">
+                    <span class="payment-details-label">{{ $t('account.activeUntil') }}:</span>
+                    <span class="payment-details-value">{{ $filters.formatActiveUntil(account.active_until) }}</span>
+                </div>
+                <div class="payment-details-row payment-details-row--highlight">
+                    <span class="payment-details-label">{{ $t('account.differencePaidToday') }}:</span>
+                    <span class="payment-details-value">${{ price }}</span>
+                </div>
+            </div>
+            <p class="payment-details-hint">{{ $t('account.choosePaymentMethod') }}</p>
             <select-payment-method 
                 :account="account"
                 :monero="true"
@@ -117,36 +131,75 @@ export default {
     h1 {
         margin-top: 20px;
         margin-bottom: 20px;
-        font-size: 38px;
     }
 
-    ul.payment-details {
-        margin-top: 50px;
+    .payment-details {
+        margin-top: 32px;
+        margin-bottom: 24px;
         display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(51, 77, 102, 0.2);
+        border-radius: 4px;
+        overflow: hidden;
         font-family: $font-main-mono;
-        font-size: 21px;
-        font-weight: bold;
 
-        @media (max-width: $brk-mobile) {
-            font-size: 12px;
+        @media (min-width: $brk-tablet) {
+            max-width: 712px;
         }
 
-        li {
-            display: inline-block;
-            font-family: $font-main-mono;
-            list-style: none;
-            &:before {
-                content: "";
-                background: none;
-                position: relative;
+        .payment-details-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(51, 77, 102, 0.1);
+            gap: 16px;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &--highlight {
+                font-weight: bold;
+                font-size: 18px;
+
+                @include light-theme((background-color: rgba(51, 77, 102, 0.06)));
+                @include dark-theme((background-color: rgba(255, 255, 255, 0.05)));
             }
         }
 
-        li:not(:first-child):before {
-            content: "|";
-            opacity: 0.3;
-            margin: 0em 1em;
+        .payment-details-label {
+            font-size: 14px;
+            opacity: 0.6;
+            white-space: nowrap;
+            text-align: left;
         }
+
+        .payment-details-value {
+            font-size: 15px;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        @media (max-width: $brk-mobile) {
+            .payment-details-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                padding: 12px 16px;
+            }
+
+            .payment-details-value {
+                text-align: left;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .payment-details-hint {
+        margin-bottom: 20px;
+        font-size: 15px;
+        opacity: 0.7;
     }
 }
 </style>
