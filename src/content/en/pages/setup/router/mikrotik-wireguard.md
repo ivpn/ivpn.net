@@ -58,8 +58,8 @@ WireGuard config file generator is only available for accounts that were created
 
 2. Navigate to `Routing` - `Rules`, click `+` to allow communication between devices on your LAN — including access to the router itself:
 
-    * Src. Address - the IP address of your local network, e.g., **10.0.0.0/24**
-    * Dst. Address - **10.0.0.0/24**
+    * Src. Address - the IP address of your LAN network, e.g., **192.168.88.0/24**
+    * Dst. Address - **192.168.88.0/24**
     * Action - **lookup**
     * Table - **main**
 
