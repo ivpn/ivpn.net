@@ -190,9 +190,9 @@ sections:
     alt: Stack Diagram
     paragraphs:
       - Con los planes Plus y Pro, puedes crear una cuenta para Mailx, modDNS y Safing Portmaster sin revelar los detalles de tu cuenta de IVPN.
-      - Nuestra Autenticación Privada Multiservicio, diseñada específicamente, funciona creando tokens seguros que demuestran que eres un cliente de IVPN con un plan activo, sin exponer tu ID de cuenta ni la información de pago a otros servicios. Esto significa que si Mailx, modDNS o Portmaster fueran comprometidos, los atacantes no podrían obtener ninguna información sobre tu cuenta de IVPN.
+      - Nuestro acceso sin enlace, diseñado específicamente, funciona creando tokens seguros que demuestran que eres un cliente de IVPN con un plan activo, sin exponer tu ID de cuenta ni la información de pago a otros servicios. Esto significa que si Mailx, modDNS o Portmaster fueran comprometidos, los atacantes no podrían obtener ninguna información sobre tu cuenta de IVPN.
     link:
-      text: Lee sobre la Autenticación Privada Multiservicio
+      text: Lee sobre el acceso sin enlace
       url: "#"
   - type: text_cta
     title: Resiste la vigilancia en línea
