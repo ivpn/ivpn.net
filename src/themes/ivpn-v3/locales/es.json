@@ -131,7 +131,7 @@
             "feature1": "Cuatro servicios de privacidad independientes operados por IVPN",
             "feature2": "Todos los servicios son de código abierto",
             "feature3": "Los servicios adicionales se activan por separado después de la compra",
-            "feature4": "Activa los servicios sin vincular tu ID de cuenta IVPN"
+            "feature4": "Activa los servicios sin vincular tu ID de cuenta IVPN (arquitectura de acceso sin enlace)"
         },
         "features":{
             "title": "Características de IVPN",
@@ -144,8 +144,8 @@
             "feature7": "Soporte para despliegue en routers y NAS"
         },
         "featuresBadges":{
-            "badge1": "No se requiere correo electrónico para el registro",
-            "badge2": "Ventana de reembolso de 30 días",
+            "badge1": "No se requiere correo electrónico",
+            "badge2": "Reembolso de 30 días",
             "badge3": "Se aceptan efectivo, Monero, Bitcoin",
             "badge4": "Interruptor de corte",
             "badge5": "Ofuscación",

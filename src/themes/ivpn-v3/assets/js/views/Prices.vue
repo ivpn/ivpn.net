@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1 class="app text-center">{{ $t('pricing.title') }}</h1>
-        <p class="text-center">
+        <p class="text-center" style="font-size:1.2rem">
             {{ $t('pricing.description') }}
         </p>
 
@@ -413,7 +413,7 @@
         <!-- Final Call to Action -->
         <section class="cta-section">
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content" style="font-size:1.1rem">
                     <p>{{ $t('pricing.footerBack.item1') }}</p>
                     <p>{{ $t('pricing.footerBack.item2') }}</p>
                     <button class="btn btn-primary btn-cta" @click="scrollToPricing">
@@ -601,7 +601,7 @@ export default {
             gap: 0.75rem;
             margin-bottom: 1rem;
             padding-left: 0.4rem;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             color: var(--color-gray-300);
 
@@ -624,7 +624,7 @@ export default {
         align-items: flex-start;
         gap: 0.75rem;
         margin-bottom: 1rem;
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         line-height: 1.6;
         color: var(--color-gray-300);
 
@@ -648,7 +648,7 @@ export default {
 
         p {
             margin-bottom: 0.5rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             color: var(--color-gray-300);
 
@@ -659,7 +659,7 @@ export default {
 
         .pricing-note {
             margin-top: 2rem;
-            font-size: 0.875rem;
+            font-size: 1rem;
             text-align: center;
             color: var(--color-gray-500);
         }
@@ -717,6 +717,7 @@ export default {
             .badge {
                 display: flex;
                 align-items: center;
+                font-size: 1rem;
                 gap: 0.5rem;
                 @include light-theme((
                     background-color: transparent,
@@ -816,7 +817,7 @@ export default {
             .service-icons {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
+                gap: 2rem;
                 align-items: center;
                 justify-items: center;
 
@@ -825,13 +826,12 @@ export default {
                 }
 
                 .service-icon {
-                    width: 6rem;
-                    height: 6rem;
+                    height: 2rem;
+                    width: auto;
                     object-fit: contain;
 
-                    @media (max-width: 768px) {
-                        width: 5rem;
-                        height: 5rem;
+                    @media (max-width: 1024px) {
+                        height: 1.2rem;
                     }
                 }
 
@@ -840,22 +840,15 @@ export default {
                     align-items: center;
                     justify-content: center;
                     gap: 0.5rem;
-                    width: 6rem;
-                    height: 6rem;
-
-                    @media (max-width: 768px) {
-                        width: 5rem;
-                        height: 5rem;
-                    }
 
                     span {
-                        font-weight: 700;
-                        font-size: 1.5rem;
+                        font-weight: bold;
+                        font-size: 1.6rem;
                         line-height: 1.2;
                         color: var(--color-white);
 
-                        @media (max-width: 768px) {
-                            font-size: 1.25rem;
+                        @media (max-width: 1024px) {
+                            font-size: 1rem;
                         }
                     }
                 }
@@ -866,9 +859,9 @@ export default {
                     object-fit: contain;
                     flex-shrink: 0;
 
-                    @media (max-width: 768px) {
-                        width: 2rem;
-                        height: 2rem;
+                    @media (max-width: 1024px) {
+                        width: 1.5rem;
+                        height: 1.5rem;
                     }
                 }
             }
@@ -930,7 +923,6 @@ export default {
 
 // Payment Methods Section
 .payment-methods {
-    margin-top: -40px;
     margin-bottom: 40px;
     padding: 0rem 3.125rem 0rem;
     @media(max-width: 480px) {

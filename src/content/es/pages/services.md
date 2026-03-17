@@ -85,9 +85,9 @@ sections:
       - text: Obtén más información sobre Mailx
         url: https://www.mailx.net
       - text: Mailx FAQ
-        url: https://app.mailx.net/faq
+        url: https://mailx.net/faq
       - text: Política de privacidad
-        url: https://app.mailx.net/privacy
+        url: https://mailx.net/privacy
   - type: service_card
     name: modDNS
     logo: /images/mod_white.png
@@ -116,9 +116,9 @@ sections:
       - text: Obtén más información sobre modDNS
         url: https://www.moddns.net
       - text: modDNS FAQ
-        url: https://app.moddns.net/standalone-faq
+        url: https://moddns.net/standalone-faq
       - text: Política de privacidad
-        url: https://app.moddns.net/privacy
+        url: https://moddns.net/privacy
   - type: service_card
     name: Portmaster
     logo: /images/pm_light_contrast.svg

@@ -38,8 +38,8 @@ import { mapState } from "vuex";
 import ServiceItem from "./ServiceItem.vue";
 
 const SERVICE_URLS = {
-    mail: 'https://app.mailx.net',
-    dns: 'https://app.moddns.net',
+    mail: 'https://mailx.net',
+    dns: 'https://moddns.net',
     portmaster: 'https://account.safing.io'
 };
 

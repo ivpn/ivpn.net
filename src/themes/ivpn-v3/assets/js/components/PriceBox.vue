@@ -172,7 +172,8 @@ label {
         padding: 20px 0;
         margin: 0 5px 0 30px;
         line-height: 24px;
-        font-size: 0.875rem;
+        font-size: 1rem;
+        min-height: 120px;
         
         @include dark-theme((
             border-top: 1px solid #333333
