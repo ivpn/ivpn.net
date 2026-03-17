@@ -601,7 +601,7 @@ export default {
             gap: 0.75rem;
             margin-bottom: 1rem;
             padding-left: 0.4rem;
-            font-size: 0.9rem;
+            font-size: 1rem;
             line-height: 1.6;
             color: var(--color-gray-300);
 
@@ -624,7 +624,7 @@ export default {
         align-items: flex-start;
         gap: 0.75rem;
         margin-bottom: 1rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.6;
         color: var(--color-gray-300);
 
@@ -659,7 +659,7 @@ export default {
 
         .pricing-note {
             margin-top: 2rem;
-            font-size: 0.875rem;
+            font-size: 1rem;
             text-align: center;
             color: var(--color-gray-500);
         }
@@ -717,6 +717,7 @@ export default {
             .badge {
                 display: flex;
                 align-items: center;
+                font-size: 1rem;
                 gap: 0.5rem;
                 @include light-theme((
                     background-color: transparent,

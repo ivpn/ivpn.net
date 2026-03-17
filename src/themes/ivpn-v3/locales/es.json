@@ -144,8 +144,8 @@
             "feature7": "Soporte para despliegue en routers y NAS"
         },
         "featuresBadges":{
-            "badge1": "No se requiere correo electrónico para el registro",
-            "badge2": "Ventana de reembolso de 30 días",
+            "badge1": "No se requiere correo electrónico",
+            "badge2": "Reembolso de 30 días",
             "badge3": "Se aceptan efectivo, Monero, Bitcoin",
             "badge4": "Interruptor de corte",
             "badge5": "Ofuscación",
