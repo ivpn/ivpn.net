@@ -172,15 +172,13 @@
 
 <script>
 import Api from "@/api/api";
-import { mapState, storeKey } from "vuex";
+import { mapState } from "vuex";
 import wireguard from '@/wireguard';
 import "vue-select/dist/vue-select.css";
 import "vue-multiselect/dist/vue-multiselect.css";
 import SelectLocations from "@/components/SelectLocations.vue";
 import SelectLocationsMulti from "@/components/SelectLocationsMulti.vue";
-import SuccessIcon from "@/components/icons/success.vue";
-import DownIcon from "@/components/icons/btn/Download.vue";
-import CountryFlag from 'vue-country-flag-next'
+
 
 const products = {
         prices: [
@@ -196,9 +194,6 @@ export default {
     components: {
       SelectLocations,
       SelectLocationsMulti,
-      SuccessIcon, 
-      DownIcon,
-      CountryFlag,
     },
     data() {
         return {
@@ -213,10 +208,11 @@ export default {
             selectedSats: products.prices[0].sats,
             selectedExitLocation:  [],
             selectedMultihopExitLocation:  [],
-            selectedEntryLocation: null,
+            selectedEntryLocation: [],
             multihop: false,
+            inProgress: false,
+            messageSent: false,
             validation: {
-                multihop: true,
                 submit: true,
             },
             servers: [],
@@ -235,8 +231,8 @@ export default {
         selectedEntryLocation: function(){
             if( this.selectedEntryLocation != null && this.selectedEntryLocation.length > 1){
                 this.selectedEntryLocation.shift();
-                let [entry] = this.selectedEntryLocation 
-                this.selectedEntryLocation = entry;
+                let [entry] = this.selectedEntryLocation;
+                this.selectedEntryLocation = [entry];
             }
 
             if(this.selectedEntryLocation != null && this.selectedEntryLocation.length > 0 && this.selectedMultihopExitLocation != null && this.selectedMultihopExitLocation.length > 0){
@@ -276,10 +272,6 @@ export default {
                     this.validation.submit = false;
                 }    
             }
-            this.wireguardConfigs = [];
-            this.selectedExitLocation.forEach((location) => {
-                this.wireguardConfigs.push(location);
-            });
         },
 
     },
@@ -304,13 +296,13 @@ export default {
     },
     methods: {
         isValidated(){
-            return !this.validation.submit && (this.keysAdded || this.generateKeysClicked);i
+            return !this.validation.submit && (this.keysAdded || this.generateKeysClicked);
         },
         async fetchBtcPrice(){
             try {
                 const res = await Api.getExchangeRates();
                 if (res.bitcoin) {
-                    products.prices.forEach((item, index) => {
+                    products.prices.forEach((item) => {
                         item.price = (res.bitcoin * (item.sats / 100000000)).toFixed(3);
                     });
                     this.selectedPrice = products.prices[0].price;
@@ -339,11 +331,6 @@ export default {
 
             this.sendError = null;
             this.validation.submit = true;
-            const config = {
-                    exit: this.selectedExitLocation,
-                    entry: this.selectedEntryLocation,
-                    publicKey: this.publicKey,
-            }
             try {
                 await this.$store.dispatch('auth/logout')
                 try {
@@ -353,25 +340,32 @@ export default {
                     this.validation.submit = false;
                     return;
                 }
-                
-                const URL = await this.$store.dispatch("account/createLightInvoice", {
-                    paymentType: "extend",
+                try{
+                    const URL = await this.$store.dispatch("account/createLightInvoice", {
                     exitServer: this.selectedExitLocation,
                     entryServer: this.selectedEntryLocation,
                     publicKey: this.publicKey,
                     priceID: this.selectedBillingCycle, 
-                });
-                if( URL ){
-                    window.location = URL;
+                    });
+                    if( URL ){
+                        window.location = URL;
+                        this.validation.submit = true;
+                    }else{
+                        this.sendError = "Failed to create invoice. Please try again.";
+                        this.validation.submit = false;
+                    }
+                    
+                } catch(error) {
+                    this.sendError = error.message || "Failed to create invoice. Please try again.";
+                    this.validation.submit = false;
                 }
-                this.validation.submit = true;
+
 
             } catch (error) {
                 this.sendError = error.message || "Failed to create account. Please try again.";    
                 this.validation.submit = false;
             }
 
-            this.messageSent = true;
         },
         generateKeys() {
             const keypair = wireguard.generateKeypair();
