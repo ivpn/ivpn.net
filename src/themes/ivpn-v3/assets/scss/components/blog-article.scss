@@ -86,9 +86,8 @@
         }
 
         .badge {
-            position: absolute;
-            left: 24px;
-            top: 24px;
+            display: inline-block;
+            margin-bottom: 12px;
 
             @include light-theme((
                 background-color: $dark-mode-background
