@@ -98,7 +98,6 @@ export default {
 
         h3 {
             margin: 0;
-            flex-grow: 1;
         }
     }
 
