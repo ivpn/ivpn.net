@@ -66,6 +66,12 @@
             height: 18px;
         }
 
+        &-img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
         .service-card--mail & {
             background: rgba($blue, 0.1);
             color: $blue;
@@ -112,45 +118,18 @@
         border-radius: 3px;
         align-self: flex-start;
 
-        &--active {
-            background: rgba(100, 173, 7, 0.15);
-            color: #4a8a00;
-
-            @include dark-theme((
-                background: rgba(100, 173, 7, 0.2),
-                color: #8fcc3a
-            ));
-        }
-
-        &--available {
-            background: rgba($blue, 0.1);
-            color: darken($blue, 10%);
-
-            @include dark-theme((
-                background: rgba($blue, 0.15),
-                color: lighten($blue, 15%)
-            ));
-        }
-
-        &--upgrade {
-            background: rgba(224, 142, 0, 0.12);
-            color: #b86e00;
-
-            @include dark-theme((
-                background: rgba(224, 142, 0, 0.2),
-                color: #e8a830
-            ));
-        }
-
+        &--active,
+        &--available,
+        &--upgrade,
         &--inactive {
             @include light-theme((
                 background: rgba(0, 0, 0, 0.06),
-                color: rgba(0, 0, 0, 0.4)
+                color: rgba(0, 0, 0, 0.45)
             ));
 
             @include dark-theme((
                 background: rgba(255, 255, 255, 0.08),
-                color: rgba(255, 255, 255, 0.35)
+                color: rgba(255, 255, 255, 0.4)
             ));
         }
     }

@@ -42,55 +42,61 @@
                     ></account-info>
                 </signup-section>
                 <signup-section>
-                    <div class="product">
-                        <div class="product-info">
-                            <label>{{ $t('account.product') }}</label>
-                            <div class="value">{{ productName }}</div>
-                            <div class="product-details">
-                                <span class="row">[VPN - {{ account.product?.max_device }} {{ $t('account.devices') }} &#10003;]</span>
-                                <span class="row" v-if="account.product?.capabilities?.has_dns">[{{ $t('pricing.dns') }} &#10003;]</span>
-                                <span class="row" v-if="account.product?.capabilities?.has_mail">[{{ $t('pricing.mailx') }} &#10003;]</span>
-                                <span class="row" v-if="account.product?.capabilities?.has_spn">[{{ $t('pricing.portmaster') }} &#10003;]</span>
+                    <div class="plan-card">
+                        <div class="plan-card__main">
+                            <div class="plan-card__meta">
+                                <span class="plan-card__label">{{ $t('account.product') }}</span>
+                                <span class="plan-card__name">{{ productName }}</span>
+                            </div>
+                            <div class="plan-card__caps">
+                                <span class="plan-cap">VPN &middot; {{ account.product?.max_device }} {{ $t('account.devices') }}</span>
+                                <span class="plan-cap" v-if="account.product?.capabilities?.has_dns">{{ $t('pricing.dns') }}</span>
+                                <span class="plan-cap" v-if="account.product?.capabilities?.has_mail">{{ $t('pricing.mailx') }}</span>
+                                <span class="plan-cap" v-if="account.product?.capabilities?.has_spn">{{ $t('pricing.portmaster') }}</span>
                             </div>
                         </div>
-                        <div v-if="!account.is_active" class="product-action">
-                            <router-link :to="'/' + this.language + '/pricing'">
-                                {{ $t('account.changePlan') }}
-                            </router-link>
+                        <div class="plan-card__actions">
+                            <router-link
+                                v-if="!account.is_active"
+                                :to="'/' + this.language + '/pricing'"
+                                class="plan-card__btn plan-card__btn--outline"
+                            >{{ $t('account.changePlan') }}</router-link>
+                            <router-link
+                                v-else-if="canUpgrade"
+                                :to="{ name: 'upgrade-' + language }"
+                                class="plan-card__btn plan-card__btn--primary"
+                            >{{ $t('account.upgrade') }}</router-link>
+                            <a
+                                v-if="canUpgrade"
+                                :href="'/' + this.language + '/services/'"
+                                class="plan-card__compare"
+                            >{{ $t('account.comparePlans') }}</a>
                         </div>
-                        <div v-else-if="canUpgrade" class="product-action">
-                            <router-link :to="{ name: 'upgrade-' + language }">
-                                {{ $t('account.upgrade') }}
-                            </router-link>
-                        </div>
-                    </div>
-                    <div class="product-action" v-if="canUpgrade">
-                        <a :href="'/' + this.language + '/services/'"
-                            >{{ $t('account.comparePlans') }}
-                        </a>
                     </div>
                 </signup-section>
                 <signup-section>
-                    <div class="product">
-                        <div class="product-info">
-                            <label v-if="account?.is_active">{{ $t('account.paidUntil') }}</label>
-                            <label v-else>{{ $t('account.wasActiveUntil') }}</label>
-                            <div class="value">
-                                {{ $filters.formatActiveUntil(account.active_until) }}
+                    <div class="plan-card plan-card--expiry">
+                        <div class="plan-card__main">
+                            <div class="plan-card__meta">
+                                <span class="plan-card__label">
+                                    {{ account?.is_active ? $t('account.paidUntil') : $t('account.wasActiveUntil') }}
+                                </span>
+                                <span class="plan-card__name" :class="{ 'plan-card__name--expired': !account?.is_active }">
+                                    {{ $filters.formatActiveUntil(account.active_until) }}
+                                </span>
                             </div>
                         </div>
-                        <div
-                            class="product-action"
-                            v-if="!account?.subscription"
-                        >
-                            <router-link :to="{ name: 'payment-' + language }"
-                                >{{ $t('account.addMoreTime') }}</router-link
-                            >
-                        </div>
-                        <div class="product-action" v-else>
-                            <router-link :to="{ name: 'settings-billing-' + language }"
-                                >{{ $t('account.billingSettings') }}</router-link
-                            >
+                        <div class="plan-card__actions">
+                            <router-link
+                                v-if="!account?.subscription"
+                                :to="{ name: 'payment-' + language }"
+                                class="plan-card__btn plan-card__btn--primary"
+                            >{{ $t('account.addMoreTime') }}</router-link>
+                            <router-link
+                                v-else
+                                :to="{ name: 'settings-billing-' + language }"
+                                class="plan-card__btn plan-card__btn--outline"
+                            >{{ $t('account.billingSettings') }}</router-link>
                         </div>
                     </div>
                 </signup-section>
@@ -206,69 +212,130 @@ export default {
         margin-bottom: 1em;
     }
 }
-.product {
+// ─── Plan card ────────────────────────────────────────────────────────────────
+
+.plan-card {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 
     @media (max-width: $brk-mobile) {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 16px;
     }
 
-    .product-info {
-        flex-grow: 1;
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 0;
+    }
+
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__label {
         font-family: $font-main-mono;
-        font-size: 16px;
-        label {
-            line-height: 32px;
-        }
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
 
-        .value {
-            font-weight: bold;
+        @include light-theme((color: $grey));
+        @include dark-theme((color: rgba(255,255,255,0.45)));
+    }
 
-            @include light-theme((
-                color: $dark
-            ));
+    &__name {
+        font-family: $font-main-mono;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.2;
 
-            @include dark-theme((
-                color: $white
-            ));
+        @include light-theme((color: $dark));
+        @include dark-theme((color: $white));
+
+        &--expired {
+            @include light-theme((color: $red));
+            @include dark-theme((color: lighten($red, 10%)));
         }
     }
 
-    .product-details{
-        line-height: 32px;
+    &__caps {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        flex-shrink: 0;
+
         @media (max-width: $brk-mobile) {
-            display: flex;
-            flex-wrap: wrap;
+            align-items: stretch;
         }
     }
 
-    .product-details .row{
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-main-mono;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 9px 20px;
+        border: 1px solid $blue;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: opacity 0.15s;
+
+        &:hover { opacity: 0.8; }
+
+        &--primary {
+            background: $blue;
+            color: #ffffff;
+        }
+
+        &--outline {
+            background: transparent;
+            color: $blue;
+        }
+    }
+
+    &__compare {
+        font-family: $font-main-mono;
+        font-size: 13px;
+        text-align: right;
+
         @media (max-width: $brk-mobile) {
-            display:block;
-            width: 100%;
-            line-height: 25px;;
-            margin-top: 5px;
+            text-align: center;
         }
     }
 }
 
-.product-action {
-        @media (max-width: $brk-mobile) {
-            width: 100%;
-            margin-top: 10px;
-        }
+// Capability pills
+.plan-cap {
+    font-family: $font-main-mono;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
 
-        a {
-            width: 180px;
-            font-size: 18px;
+    @include light-theme((
+        background: rgba(51, 77, 102, 0.08),
+        color: $grey
+    ));
 
-            @media (max-width: $brk-mobile-xs) {
-                padding: 0px;
-                width: 100px;
-                border: 0px;
-            }
-        }
+    @include dark-theme((
+        background: rgba(255, 255, 255, 0.08),
+        color: rgba(255, 255, 255, 0.5)
+    ));
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
     <div class="service-card" :class="'service-card--' + service.key">
         <div class="service-card__header">
-            <span class="service-card__icon" v-html="serviceIcon"></span>
+            <span class="service-card__icon">
+                <img v-if="serviceIconImg" :src="serviceIconImg" :alt="service.name" class="service-card__icon-img" />
+                <span v-else v-html="serviceIcon"></span>
+            </span>
             <div class="service-card__title-group">
                 <span class="service-card__name">{{ service.name }}</span>
                 <span class="service-card__badge" :class="badgeClass">{{ badgeLabel }}</span>
@@ -16,7 +19,7 @@
                 <a v-if="account.is_active"
                    :href="language + '/account/upgrade'"
                    class="service-card__cta service-card__cta--outline">
-                    {{ $t('account.servicesArea.upgrade') }}
+                    {{ $t('account.servicesArea.upgradeTo') }}
                 </a>
             </template>
 
@@ -55,6 +58,27 @@
 <script>
 export default {
     name: 'ServiceItem',
+
+    data() {
+        return {
+            isDark: document.documentElement.classList.contains('dark-theme') ||
+                    (!document.documentElement.classList.contains('light-theme') &&
+                     window.matchMedia('(prefers-color-scheme: dark)').matches),
+        };
+    },
+
+    mounted() {
+        this._themeObserver = new MutationObserver(() => {
+            this.isDark = document.documentElement.classList.contains('dark-theme') ||
+                          (!document.documentElement.classList.contains('light-theme') &&
+                           window.matchMedia('(prefers-color-scheme: dark)').matches);
+        });
+        this._themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    },
+
+    beforeUnmount() {
+        this._themeObserver?.disconnect();
+    },
 
     props: {
         service: {
@@ -121,10 +145,17 @@ export default {
         serviceIcon() {
             const icons = {
                 mail: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
-                dns:  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`,
-                portmaster: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
             };
             return icons[this.service.key] ?? '';
+        },
+
+        serviceIconImg() {
+            const imgs = {
+                mail: this.isDark ? '/assets/icons/mailxicondark.png' : '/assets/icons/mailxiconlight.png',
+                dns: '/assets/icons/moddns.png',
+                portmaster: '/assets/icons/portmaster.png',
+            };
+            return imgs[this.service.key] ?? null;
         },
     }
 };
