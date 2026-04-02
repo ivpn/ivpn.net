@@ -1,19 +1,17 @@
 <template>
     <div class="apps-block">
         <label class="services-title">{{ $t('account.additionalServices') }}</label>
-        <div class="services">
-            <div class="services-info">
-                <service-item
-                    v-for="service in serviceConfig"
-                    :key="service.key"
-                    :service="service"
-                    :serviceData="services[service.key]"
-                    :account="account"
-                    :preauth="preauth"
-                    :isLoaded="isLoaded"
-                    :language="language"
-                />
-            </div>
+        <div class="services-grid">
+            <service-item
+                v-for="service in serviceConfig"
+                :key="service.key"
+                :service="service"
+                :serviceData="services[service.key]"
+                :account="account"
+                :preauth="preauth"
+                :isLoaded="isLoaded"
+                :language="language"
+            />
         </div>
         <div class="services-footer">
             <span v-if="showExpiredWarning" class="red">
