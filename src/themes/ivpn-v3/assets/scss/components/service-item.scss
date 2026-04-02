@@ -66,6 +66,12 @@
             height: 18px;
         }
 
+        &-img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
         .service-card--mail & {
             background: rgba($blue, 0.1);
             color: $blue;

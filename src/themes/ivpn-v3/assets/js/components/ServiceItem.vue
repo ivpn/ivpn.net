@@ -1,7 +1,10 @@
 <template>
     <div class="service-card" :class="'service-card--' + service.key">
         <div class="service-card__header">
-            <span class="service-card__icon" v-html="serviceIcon"></span>
+            <span class="service-card__icon">
+                <img v-if="serviceIconImg" :src="serviceIconImg" :alt="service.name" class="service-card__icon-img" />
+                <span v-else v-html="serviceIcon"></span>
+            </span>
             <div class="service-card__title-group">
                 <span class="service-card__name">{{ service.name }}</span>
                 <span class="service-card__badge" :class="badgeClass">{{ badgeLabel }}</span>
@@ -56,6 +59,27 @@
 export default {
     name: 'ServiceItem',
 
+    data() {
+        return {
+            isDark: document.documentElement.classList.contains('dark-theme') ||
+                    (!document.documentElement.classList.contains('light-theme') &&
+                     window.matchMedia('(prefers-color-scheme: dark)').matches),
+        };
+    },
+
+    mounted() {
+        this._themeObserver = new MutationObserver(() => {
+            this.isDark = document.documentElement.classList.contains('dark-theme') ||
+                          (!document.documentElement.classList.contains('light-theme') &&
+                           window.matchMedia('(prefers-color-scheme: dark)').matches);
+        });
+        this._themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    },
+
+    beforeUnmount() {
+        this._themeObserver?.disconnect();
+    },
+
     props: {
         service: {
             type: Object,
@@ -96,7 +120,6 @@ export default {
         },
 
         canSetup() {
-            return true;
             return this.isLoaded && this.preauth?.mail?.sessionid;
         },
 
@@ -122,10 +145,17 @@ export default {
         serviceIcon() {
             const icons = {
                 mail: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
-                dns:  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`,
-                portmaster: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
             };
             return icons[this.service.key] ?? '';
+        },
+
+        serviceIconImg() {
+            const imgs = {
+                mail: this.isDark ? '/assets/icons/mailxicondark.png' : '/assets/icons/mailxiconlight.png',
+                dns: '/assets/icons/moddns.png',
+                portmaster: '/assets/icons/portmaster.png',
+            };
+            return imgs[this.service.key] ?? null;
         },
     }
 };
