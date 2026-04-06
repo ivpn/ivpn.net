@@ -158,6 +158,7 @@
                          <button type="button" :disabled="!isValidated()" class="btn btn-solid btn-light" @click="send()">
                               <div class="bitcoin-lightning-icon" ></div> Purchase access
                           </button>
+                          <p v-if="submitError" class="error">{{ submitError }}</p>
                           <h4>We host our own BTCPay Server to generate a Lightning invoice for payment.</h4>
                           <h4>By making a payment you are agreeing to our <a href="/en/tos">Terms of Service</a>.</h4>
                      </div>
@@ -227,6 +228,8 @@ export default {
             usedCustomKeysText: "You have added the following custom key pair:",
             generateKeysClicked: false,
             addKeysClicked: false,
+            submitError: null,
+            lightAccountCreated: false,
         };
     },
     watch: {
@@ -302,7 +305,7 @@ export default {
     },
     methods: {
         isValidated(){
-            return !this.validation.submit && (this.keysAdded || this.generateKeysClicked);i
+            return !this.validation.submit && (this.keysAdded || this.generateKeysClicked);
         },
         async fetchBtcPrice(){
             try {
@@ -331,16 +334,15 @@ export default {
         async send() {
             if (this.inProgress) return;
 
+            this.submitError = null;
             this.validation.submit = true;
-            const config = {
-                    exit: this.selectedExitLocation,
-                    entry: this.selectedEntryLocation,
-                    publicKey: this.publicKey,
-            }
             try {
-                await this.$store.dispatch('auth/logout')
-                await this.$store.dispatch("auth/createAccount", {product: "IVPN Light"} );
-                
+                if (!this.lightAccountCreated) {
+                    await this.$store.dispatch('auth/logout')
+                    await this.$store.dispatch("auth/createAccount", {product: "IVPN Light"} );
+                    this.lightAccountCreated = true;
+                }
+
                 const URL = await this.$store.dispatch("account/createLightInvoice", {
                     paymentType: "extend",
                     exitServer: this.selectedExitLocation,
@@ -355,7 +357,8 @@ export default {
 
             } catch (error) {
                 console.error("Failed to send data:", error);
-                this.validation.submit = true;
+                this.submitError = error.message || "An error occurred. Please try again.";
+                this.validation.submit = false;
             }
 
             this.messageSent = true;

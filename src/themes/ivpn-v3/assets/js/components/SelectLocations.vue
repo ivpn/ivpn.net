@@ -62,6 +62,10 @@ export default {
             if( after == null){
                 this.selectedLocation = [];
             }
+            this.$emit('change', this.selectedLocation);
+        },
+        value: function (newVal) {
+            this.selectedLocation = newVal != null ? newVal : [];
         },
     },
 
