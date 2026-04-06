@@ -34,11 +34,11 @@
         "description": "Three tiers. No upselling. Pick based on your privacy needs.",
         "allProtocols": "All protocols",
         "tier1Devices": "5 devices",
-        "tier2Devices": "10 devices",
+        "tier2Devices": "5 devices",
         "antitracker": "AntiTracker",
         "multihop": "Multi-hop",
         "services": "Services",
-        "productFooter1": "MailX, ModDNS and Portmaster are services owned and operated by IVPN. Visit our",
+        "productFooter1": "Mailx, ModDNS and Portmaster are services owned and operated by IVPN. Visit our",
         "productFooter2": "page for a detailed overview of their features and capabilities.",
         "productFooterPrice": "Pricing in USD.",
         "productFooterReview": "Team licensing for VPN-only plans available",
@@ -95,8 +95,8 @@
         "tier2":{
             "name": "IVPN Plus",
             "title": "Added DNS & email privacy",
-            "feature1": "IVPN on 10 devices",
-            "upgradeFeature1": "IVPN (10 devices, Multi-hop)",
+            "feature1": "IVPN on 5 devices",
+            "upgradeFeature1": "IVPN (5 devices, Multi-hop)",
             "feature2": "Multi-hop",
             "feature3": "modDNS with custom filtering",
             "feature3Title": "DNS filtering service with blocklist combinations and configurable rules. Developed by IVPN.",
@@ -604,7 +604,7 @@
             "markAsNotShared": "Mark as not shared"
         },
         "servicesArea": {
-            "mail": "MailX",
+            "mail": "Mailx",
             "dns": "ModDNS",
             "portmaster": "Portmaster",
             "accessMail": "Access",

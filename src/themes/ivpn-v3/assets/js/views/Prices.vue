@@ -222,7 +222,7 @@
                     </div>
 
                     <div class="service-icons">
-                        <img alt="MailX" class="service-icon mailx-logo">
+                        <img alt="Mailx" class="service-icon mailx-logo">
                         <img alt="ModDNS" class="service-icon moddns-logo">
                         <div class="portmaster-logo">
                             <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">

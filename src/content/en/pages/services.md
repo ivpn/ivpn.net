@@ -161,7 +161,7 @@ sections:
       - service: IVPN
         values:
           - 5 devices
-          - 10 devices
+          - 5 devices
           - 10 devices
       - service: Mailx
         values:
