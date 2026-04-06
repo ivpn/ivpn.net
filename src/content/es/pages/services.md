@@ -159,7 +159,7 @@ sections:
       - service: IVPN
         values:
           - 5 dispositivos
-          - 10 dispositivos
+          - 5 dispositivos
           - 10 dispositivos
       - service: Mailx
         values:
