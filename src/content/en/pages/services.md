@@ -65,7 +65,7 @@ sections:
       - Plus
       - Pro Suite
     content: >-
-      [Mailx](https://www.mailx.net) is an [open-source](https://github.com/ivpn/mailx) email aliasing and forwarding tool that helps hide your primary email address from the services you use.
+      [Mailx](https://mailx.net) is an [open-source](https://github.com/ivpn/mailx) email aliasing and forwarding tool that helps hide your primary email address from the services you use.
 
 
       Your email address is a universal identifier used to track your activity. Companies correlate your email across breaches, marketing databases, and service signups to build a profile. Mailx mitigates this issue by generating unique email addresses for each signup, forwarding mail to your real address while preventing services from tracking you across accounts.
@@ -84,7 +84,7 @@ sections:
       - text: Mailx on GitHub
         url: https://github.com/ivpn/mailx
       - text: Learn more about Mailx
-        url: https://www.mailx.net
+        url: https://mailx.net
       - text: Mailx FAQ
         url: https://mailx.net/faq
       - text: Privacy Policy
@@ -96,7 +96,7 @@ sections:
       - Plus
       - Pro Suite
     content: >-
-      [modDNS](https://www.moddns.net) is an audited, [open-source](https://github.com/ivpn/moddns) DNS service that blocks ads, trackers, and malicious domains at the DNS level.
+      [modDNS](https://moddns.net) is an audited, [open-source](https://github.com/ivpn/moddns) DNS service that blocks ads, trackers, and malicious domains at the DNS level.
 
 
       Your DNS queries are a significant vector for surveillance. ISPs use them to monitor your browsing, and websites use them to send your data to third-party ad and tracking networks. modDNS mitigates this by encrypting your DNS traffic and actively filtering requests. While using your VPN provider's DNS resolver and tracker-blocker tool can address this issue, modDNS offers more visibility and granular control over what is blocked.
@@ -115,7 +115,7 @@ sections:
       - text: modDNS on GitHub
         url: https://github.com/ivpn/moddns
       - text: Learn more about modDNS
-        url: https://www.moddns.net
+        url: https://moddns.net
       - text: modDNS FAQ
         url: https://moddns.net/standalone-faq
       - text: Privacy Policy

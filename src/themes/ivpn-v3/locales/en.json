@@ -340,13 +340,24 @@
                 }
             },
             "changeProduct": {
-                "title": "Change Product",
-                "confirm": "Are you sure you want to downgrade your plan?.",
-                "confirmDesc": "You will immediately lose access to all services not included in the selected plan.",
-                "confirmDeviceLimit": "The VPN device limit will decrease to 5.",
-                "confirmPortmaster": "Portmaster will be downgraded to Portmaster Free.",
                 "cancel": "Cancel",
-                "downgrade": "Downgrade"
+                "downgrade": "Downgrade",
+                "tier1": {
+                    "title": "Switch to IVPN Standard",
+                    "desc1": "Warning:",
+                    "desc2": "Standard plan includes 5 devices for IVPN.",
+                    "desc3": "You will lose access to all additional services in your current plan.",
+                    "desc4": "We suggest exporting Mailx and modDNS data before taking this step.",
+                    "desc5": "Confirm you still wish to downgrade:"
+                },
+                "tier2": {
+                    "title": "Switch to IVPN Plus",
+                    "desc1": "Warning:",
+                    "desc2": "Plus plan includes 5 devices for IVPN.",
+                    "desc3": "Postmaster Pro will be changed to Portmaster Free.",
+                    "desc4": "",
+                    "desc5": "Confirm you still wish to downgrade:"
+                }
             }
         },
         "wireguardTab": {

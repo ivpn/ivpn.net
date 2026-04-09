@@ -73,6 +73,11 @@
                 {{ $t('account.cash') }}
             </router-link>
 
+            <div>
+                {{ $t('account.haveVoucher') }}
+                <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
+            </div>
+
         </div>
         <div v-else class="pay-buttons">
             <router-link
@@ -120,18 +125,6 @@
                 {{ $t('account.cash') }}
             </router-link>
         </div>
-        <!--
-        <div class="pay-buttons">
-            <div class="more-methods">
-                <a @click.prevent="toggleMoreOptions()" v-if="!more" href='#'
-                    >More payment options</a
-                >
-                <a @click.prevent="toggleMoreOptions()" v-else href='#'
-                    >Hide additional payment options</a
-                >
-            </div>  
-        </div>
-        -->
     </div>
 </template>
 

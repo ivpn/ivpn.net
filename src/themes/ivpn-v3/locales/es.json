@@ -339,13 +339,24 @@
                 }
             },
             "changeProduct": {
-                "title": "Cambiar producto",
-                "confirm": "¿Estás seguro de que quieres cambiar tu plan?.",
-                "confirmDesc": "Perderás inmediatamente el acceso a todos los servicios que no estén incluidos en el plan seleccionado.",
-                "confirmDeviceLimit": "El límite de dispositivos VPN se reducirá a 5.",
-                "confirmPortmaster": "Portmaster cambiará a Portmaster Free.",
                 "cancel": "Cancelar",
-                "downgrade": "Cambiar"
+                "downgrade": "Cambiar",
+                "tier1": {
+                    "title": "Cambiar a IVPN Standard",
+                    "desc1": "Advertencia:",
+                    "desc2": "El plan Standard incluye 5 dispositivos para IVPN.",
+                    "desc3": "Perderás el acceso a todos los servicios adicionales en tu plan actual.",
+                    "desc4": "Sugerimos exportar los datos de Mailx y modDNS antes de realizar este paso.",
+                    "desc5": "Confirma que aún deseas cambiar a un plan inferior:"
+                },
+                "tier2": {
+                    "title": "Cambiar a IVPN Plus",
+                    "desc1": "Advertencia:",
+                    "desc2": "El plan Plus incluye 5 dispositivos para IVPN.",
+                    "desc3": "Postmaster Pro se cambiará a Portmaster Free.",
+                    "desc4": "",
+                    "desc5": "Confirma que aún deseas cambiar a un plan inferior:"
+                }
             }
 
         },

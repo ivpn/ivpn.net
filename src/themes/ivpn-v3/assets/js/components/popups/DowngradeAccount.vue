@@ -1,19 +1,16 @@
 <template>
     <div class="popup--content">
-        <h3>{{ $t('account.popups.changeProduct.title') }}</h3>
+        <h3>{{ $t('account.popups.changeProduct.' + targetTier + '.title') }}</h3>
         <p v-if="error" class="error-message" role="alert" aria-live="polite">{{ error.message }}</p>
         <div>
             <div class="confirm">
-                <p>{{ $t('account.popups.changeProduct.confirm') }}</p>
                 <p>
-                    {{ $t('account.popups.changeProduct.confirmDesc') }}
+                    {{ $t('account.popups.changeProduct.' + targetTier + '.desc1') }}<br>
+                    {{ $t('account.popups.changeProduct.' + targetTier + '.desc2') }}<br>
+                    {{ $t('account.popups.changeProduct.' + targetTier + '.desc3') }}<br>
+                    {{ $t('account.popups.changeProduct.' + targetTier + '.desc4') }}
                 </p>
-                <p v-if="isTier1Product(selectedProduct)">  
-                    {{ $t('account.popups.changeProduct.confirmDeviceLimit') }}
-                </p>
-                <p v-if="isTier3Product(currentProduct)">
-                    {{ $t('account.popups.changeProduct.confirmPortmaster') }}
-                </p>
+                <p>{{ $t('account.popups.changeProduct.' + targetTier + '.desc5') }}</p>
             </div>
 
             <button @click.prevent="changeAccount" class="btn btn-solid-red" :disabled="inProgress">{{ $t('account.popups.changeProduct.downgrade') }}</button>            
@@ -51,6 +48,10 @@ export default {
         }),
         currentProduct() {
             return this.data?.currentProduct || this.account?.product?.name;
+        },
+        targetTier() {
+            if (TIER_1_PRODUCTS.includes(this.selectedProduct)) return 'tier1';
+            return 'tier2';
         },
         selectedProduct() {
             return this.data?.selectedProduct || '';
