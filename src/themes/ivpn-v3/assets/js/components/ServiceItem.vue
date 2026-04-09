@@ -61,23 +61,27 @@ export default {
 
     data() {
         return {
-            isDark: document.documentElement.classList.contains('dark-theme') ||
-                    (!document.documentElement.classList.contains('light-theme') &&
+            isDark: document.body.classList.contains('dark-theme') ||
+                    (!document.body.classList.contains('light-theme') &&
                      window.matchMedia('(prefers-color-scheme: dark)').matches),
         };
     },
 
     mounted() {
-        this._themeObserver = new MutationObserver(() => {
-            this.isDark = document.documentElement.classList.contains('dark-theme') ||
-                          (!document.documentElement.classList.contains('light-theme') &&
+        this._updateTheme = () => {
+            this.isDark = document.body.classList.contains('dark-theme') ||
+                          (!document.body.classList.contains('light-theme') &&
                            window.matchMedia('(prefers-color-scheme: dark)').matches);
-        });
-        this._themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        };
+        this._themeObserver = new MutationObserver(this._updateTheme);
+        this._themeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        this._colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        this._colorSchemeQuery.addEventListener('change', this._updateTheme);
     },
 
     beforeUnmount() {
         this._themeObserver?.disconnect();
+        this._colorSchemeQuery?.removeEventListener('change', this._updateTheme);
     },
 
     props: {
@@ -152,11 +156,12 @@ export default {
         serviceIconImg() {
             const imgs = {
                 mail: this.isDark ? '/assets/icons/mailxicondark.png' : '/assets/icons/mailxiconlight.png',
-                dns: '/assets/icons/moddns.png',
-                portmaster: '/assets/icons/portmaster.png',
+                dns: this.isDark ? '/assets/icons/moddns_white.png' : '/assets/icons/moddns_dark.png',
+                portmaster: this.isDark ? '/assets/icons/portmaster-dark.svg' : '/assets/icons/portmaster.svg',
             };
             return imgs[this.service.key] ?? null;
         },
+
     }
 };
 </script>
