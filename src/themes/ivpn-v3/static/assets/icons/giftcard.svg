@@ -1,0 +1,8 @@
+<svg width="153px" height="185px" viewBox="0 0 153 185" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M72,57 L72,92 L9,92 C7.34314575,92 6,90.6568542 6,89 L6,60 C6,58.3431458 7.34314575,57 9,57 L72,57 Z M146,57 C147.656854,57 149,58.3431458 149,60 L149,89 C149,90.6568542 147.656854,92 146,92 L84,92 L84,57 L146,57 Z" id="Combined-Shape" stroke="white" fill="white"></path>
+        <path d="M72,97 L72,180 L15,180 C13.8954305,180 13,179.104569 13,178 L13,99 C13,97.8954305 13.8954305,97 15,97 L72,97 Z M140,97 C141.104569,97 142,97.8954305 142,99 L142,178 C142,179.104569 141.104569,180 140,180 L84,180 L84,97 L140,97 Z" id="Combined-Shape" stroke="white" fill="white"></path>
+        <path d="M66,47 C66,47 55.5895229,-9.93334623 30.9598857,12.0469654 C6.33024852,34.027277 66,47 66,47 Z" stroke="white" stroke-width="10"></path>
+        <path d="M131,47 C131,47 120.589523,-9.93334623 95.9598857,12.0469654 C71.3302485,34.027277 131,47 131,47 Z" stroke="white" stroke-width="10" transform="translate(110.500000, 27.000000) scale(-1, 1) translate(-110.500000, -27.000000) "></path>
+    </g>
+</svg>
