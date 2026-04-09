@@ -229,6 +229,7 @@ export default {
                 return resp.invoice
             } catch (error) {
                 context.commit('failed', { error })
+                throw error
             }
         },
 

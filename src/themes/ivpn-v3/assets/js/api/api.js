@@ -415,14 +415,14 @@ export default {
         return response
     },
     
-    async createLightInvoice(priceID, exitServer, entryServer,publicKey, address) {
+    async createLightInvoice(priceID, paymentType, exitServer, entryServer, publicKey) {
 
         if( !Array.isArray(entryServer) ) {
             entryServer = [ entryServer ]
         }
         let response = await this.Post('/web/accounts/btc/create-light-invoice', {
             price_id: priceID,
-            transaction_type: "extend",
+            transaction_type: paymentType,
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer,

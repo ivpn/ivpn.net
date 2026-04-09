@@ -64,7 +64,7 @@ sections:
       - Plus
       - Pro Suite
     content: >-
-      [Mailx](https://www.mailx.net) es una herramienta de alias de correo electrónico y reenvío de [código abierto](https://github.com/ivpn/mailx), que ayuda a ocultar tu dirección de correo principal frente a los servicios que utilizas.
+      [Mailx](https://mailx.net) es una herramienta de alias de correo electrónico y reenvío de [código abierto](https://github.com/ivpn/mailx), que ayuda a ocultar tu dirección de correo principal frente a los servicios que utilizas.
 
 
       Tu dirección de correo electrónico es un identificador universal que se utiliza para rastrear tu actividad. Las empresas correlacionan tu correo a través de filtraciones, bases de datos de marketing y registros en servicios para crear un perfil sobre ti. Mailx mitiga este problema generando direcciones de correo únicas para cada registro, reenviando los mensajes a tu dirección real y evitando que los servicios te rastreen entre cuentas.
@@ -83,7 +83,7 @@ sections:
       - text: Mailx en GitHub
         url: https://github.com/ivpn/mailx
       - text: Obtén más información sobre Mailx
-        url: https://www.mailx.net
+        url: https://mailx.net
       - text: Mailx FAQ
         url: https://mailx.net/faq
       - text: Política de privacidad
@@ -95,7 +95,7 @@ sections:
       - Plus
       - Pro Suite
     content: >-
-      [modDNS](https://www.moddns.net) es un servicio de DNS auditado y de [código abierto](https://github.com/ivpn/moddns) que bloquea anuncios, rastreadores y dominios maliciosos a nivel de DNS.
+      [modDNS](https://moddns.net) es un servicio de DNS auditado y de [código abierto](https://github.com/ivpn/moddns) que bloquea anuncios, rastreadores y dominios maliciosos a nivel de DNS.
 
 
       Tus consultas DNS son un vector importante para la vigilancia. Los proveedores de Internet las utilizan para monitorizar tu navegación, y los sitios web las emplean para enviar tus datos a redes de publicidad y rastreo de terceros. modDNS mitiga esto cifrando tu tráfico DNS y filtrando activamente las solicitudes. Aunque usar el resolutor DNS de tu proveedor de VPN y su herramienta bloqueadora de rastreadores puede abordar este problema, modDNS ofrece mayor visibilidad y un control más detallado sobre lo que se bloquea.
@@ -114,7 +114,7 @@ sections:
       - text: modDNS en GitHub
         url: https://github.com/ivpn/moddns
       - text: Obtén más información sobre modDNS
-        url: https://www.moddns.net
+        url: https://moddns.net
       - text: modDNS FAQ
         url: https://moddns.net/standalone-faq
       - text: Política de privacidad

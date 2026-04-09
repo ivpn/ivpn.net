@@ -62,6 +62,10 @@ export default {
             if( after == null){
                 this.selectedLocationMulti = [];
             }
+            this.$emit('change', this.selectedLocationMulti);
+        },
+        value: function (newVal) {
+            this.selectedLocationMulti = newVal != null ? newVal : [];
         },
     },
 
