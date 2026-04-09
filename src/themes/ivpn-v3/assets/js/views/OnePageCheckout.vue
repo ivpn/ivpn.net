@@ -360,13 +360,6 @@ export default {
                     this.validation.submit = false;
                 }
 
-
-            } catch (error) {
-                console.error("Failed to send data:", error);
-                this.submitError = error.message || "An error occurred. Please try again.";
-                this.validation.submit = false;
-            }
-
         },
         generateKeys() {
             const keypair = wireguard.generateKeypair();
