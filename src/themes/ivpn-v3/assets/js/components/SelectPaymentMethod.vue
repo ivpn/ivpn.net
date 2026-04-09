@@ -72,12 +72,6 @@
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
             </router-link>
-
-            <div>
-                {{ $t('account.haveVoucher') }}
-                <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
-            </div>
-
         </div>
         <div v-else class="pay-buttons">
             <router-link
@@ -124,6 +118,10 @@
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
             </router-link>
+        </div>
+        <div v-if="!isUpgrade && productName != 'IVPN Plus' && productName != 'IVPN Tier 2'">
+            {{ $t('account.haveVoucher') }}
+            <router-link :to="{ name: 'add-funds-voucher-' + this.language, params: { price: price.id } }">{{ $t('account.redeem') }}</router-link>.
         </div>
     </div>
 </template>

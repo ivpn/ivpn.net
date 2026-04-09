@@ -157,7 +157,7 @@ export default {
             const imgs = {
                 mail: this.isDark ? '/assets/icons/mailxicondark.png' : '/assets/icons/mailxiconlight.png',
                 dns: this.isDark ? '/assets/icons/moddns_white.png' : '/assets/icons/moddns_dark.png',
-                portmaster: this.isDark ? '/assets/icons/portmaster-dark.svg' : '/assets/icons/portmaster.svg',
+                portmaster: this.isDark ? '/assets/icons/portmaster-light.svg' : '/assets/icons/portmaster-light.svg',
             };
             return imgs[this.service.key] ?? null;
         },
