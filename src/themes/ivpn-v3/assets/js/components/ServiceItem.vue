@@ -128,8 +128,10 @@ export default {
         },
 
         shouldShowSync() {
-            return this.$route.query?.action === 'sync' &&
-                   this.preauth?.mail?.sessionid;
+            if (this.$route.query?.action !== 'sync') return false;
+            if (this.service.key === 'mail') return !!this.preauth?.mail?.sessionid;
+            if (this.service.key === 'dns') return !!this.preauth?.don?.sessionid;
+            return false;
         },
 
         badgeClass() {
