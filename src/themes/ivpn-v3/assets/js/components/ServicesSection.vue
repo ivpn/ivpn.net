@@ -98,16 +98,16 @@ export default {
                     key: 'dns',
                     name: this.$t('account.servicesArea.dns'),
                     description: this.$t('account.servicesArea.dnsDescription'),
-                    setupUrl: () => `${this.modDNSURL}/signup?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.uuid}`,
+                    setupUrl: () => `${this.modDNSURL}/signup?sessionid=${this.preauth?.dns?.sessionid}&subid=${this.preauth?.uuid}`,
                     accessUrl: () => `${this.modDNSURL}/login`,
-                    syncUrl: () => `${this.modDNSURL}/account/profile?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.uuid}`,
+                    syncUrl: () => `${this.modDNSURL}/account/profile?sessionid=${this.preauth?.dns?.sessionid}&subid=${this.preauth?.uuid}`,
                     upgradeRequired: ['IVPN Tier 1']
                 },
                 {
                     key: 'portmaster',
                     name: this.$t('account.servicesArea.portmaster'),
                     description: this.$t('account.servicesArea.portmasterDescription'),
-                    setupUrl: () => `${this.portmasterURL}/account/sign_up?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.uuid}`,
+                    setupUrl: () => `${this.portmasterURL}/account/sign_up?sessionid=${this.preauth?.portmaster?.sessionid}&subid=${this.preauth?.uuid}`,
                     accessUrl: () => `${this.portmasterURL}/account`,
                     upgradeRequired: ['IVPN Tier 1', 'IVPN Tier 2']
                 }
