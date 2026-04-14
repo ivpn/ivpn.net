@@ -129,7 +129,7 @@ export default {
 
         shouldShowSync() {
             const action = new URLSearchParams(window.location.search).get('action');
-            return action !== 'sync';
+            return action === 'sync';
         },
         badgeClass() {
             if (!this.account.is_active) return 'service-card__badge--inactive';
