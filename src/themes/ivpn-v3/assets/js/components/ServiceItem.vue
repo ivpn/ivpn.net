@@ -128,12 +128,9 @@ export default {
         },
 
         shouldShowSync() {
-            if (this.$route.query?.action !== 'sync') return false;
-            if (this.service.key === 'mail') return !!this.preauth?.mail?.sessionid;
-            if (this.service.key === 'dns') return !!this.preauth?.don?.sessionid;
-            return false;
+            const action = new URLSearchParams(window.location.search).get('action');
+            return action !== 'sync';
         },
-
         badgeClass() {
             if (!this.account.is_active) return 'service-card__badge--inactive';
             if (this.requiresUpgrade)    return 'service-card__badge--upgrade';
