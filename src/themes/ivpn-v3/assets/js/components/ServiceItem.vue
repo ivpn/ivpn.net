@@ -14,8 +14,17 @@
         <p class="service-card__description">{{ service.description }}</p>
 
         <div class="service-card__footer">
+            <!-- Sync action takes priority (except when upgrade is required) -->
+            <template v-if="shouldShowSync && !requiresUpgrade">
+                <a :href="service.syncUrl()"
+                   target="_blank"
+                   class="service-card__cta service-card__cta--primary">
+                    {{ $t('account.accountSettingsTab.syncMail') }}
+                </a>
+            </template>
+
             <!-- Requires upgrade, account active -->
-            <template v-if="requiresUpgrade">
+            <template v-else-if="requiresUpgrade">
                 <a v-if="account.is_active"
                    :href="language + '/account/upgrade'"
                    class="service-card__cta service-card__cta--outline">
@@ -28,16 +37,9 @@
                 <!-- no action -->
             </template>
 
-            <!-- Service active: sync or access -->
+            <!-- Service active: access -->
             <template v-else-if="serviceData && serviceData.is_active">
-                <a v-if="shouldShowSync"
-                   :href="service.syncUrl()"
-                   target="_blank"
-                   class="service-card__cta service-card__cta--primary">
-                    {{ $t('account.accountSettingsTab.syncMail') }}
-                </a>
-                <a v-else
-                   :href="service.accessUrl()"
+                <a :href="service.accessUrl()"
                    target="_blank"
                    class="service-card__cta service-card__cta--primary">
                     {{ $t('account.servicesArea.access' + capitalizedServiceKey) }}
