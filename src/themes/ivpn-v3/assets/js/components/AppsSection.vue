@@ -109,5 +109,9 @@ h3.devices {
     opacity: 0.7;
     margin: 10px 20px;
     line-height: 28px; 
+    label {
+        font-size: .9rem;
+    }
 }
+
 </style>

@@ -68,7 +68,7 @@
                             >{{ $t('account.upgrade') }}</router-link>
                             <a
                                 v-if="canUpgrade"
-                                :href="'/' + this.language + '/services/'"
+                                :href="'/' + this.language + '/pricing/'"
                                 class="plan-card__compare"
                             >{{ $t('account.comparePlans') }}</a>
                         </div>

@@ -109,6 +109,7 @@ export default {
                     description: this.$t('account.servicesArea.portmasterDescription'),
                     setupUrl: () => `${this.portmasterURL}/account/external_signup?sessionid=${this.preauth?.portmaster?.sessionid}&subid=${this.preauth?.uuid}`,
                     accessUrl: () => `${this.portmasterURL}/account`,
+                    syncUrl: () => `${this.portmasterURL}/account?sessionid=${this.preauth?.portmaster?.sessionid}&subid=${this.preauth?.uuid}`,
                     upgradeRequired: ['IVPN Tier 1', 'IVPN Tier 2']
                 }
             ];
