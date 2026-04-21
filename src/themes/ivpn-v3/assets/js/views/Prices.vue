@@ -223,7 +223,7 @@
 
                     <div class="service-icons">
                         <img alt="MailX" class="service-icon mailx-logo">
-                        <img alt="ModDNS" class="service-icon moddns-logo">
+                        <img alt="modDNS" class="service-icon moddns-logo">
                         <div class="portmaster-logo">
                             <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
                             <span>{{ $t('pricing.portmasterTitle') }}</span>
@@ -304,8 +304,9 @@
                         {{ $t('account.creditCard') }}
                     </span>
                     <span class="payment-badge">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12V7H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16v-5"></path>
+                            <path d="M21 12a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2z"></path>
                         </svg>
                         {{ $t('account.paypal') }}
                     </span>
@@ -601,7 +602,7 @@ export default {
             gap: 0.75rem;
             margin-bottom: 1rem;
             padding-left: 0.4rem;
-            font-size: 1.1rem;
+            font-size: 0.8rem;
             line-height: 1.6;
             color: var(--color-gray-300);
 
@@ -624,7 +625,7 @@ export default {
         align-items: flex-start;
         gap: 0.75rem;
         margin-bottom: 1rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.6;
         color: var(--color-gray-300);
 

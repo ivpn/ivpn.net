@@ -127,7 +127,6 @@ label {
     }
 
     &.tier3 {
-        border-color: #3b9eff;
         @include theme-colors(#222226, rgba(255, 255, 255, 0.8), transparent, black);
     }
 
@@ -172,7 +171,7 @@ label {
         padding: 20px 0;
         margin: 0 5px 0 30px;
         line-height: 24px;
-        font-size: 1rem;
+        font-size: 0.8rem;
         min-height: 120px;
         
         @include dark-theme((
