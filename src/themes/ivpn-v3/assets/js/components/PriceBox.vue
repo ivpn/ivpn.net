@@ -146,7 +146,6 @@ label {
         flex: 1;
         padding: 0 25px;
         font-size: 16px;
-        font-weight: bold;
         line-height: 30px;
 
         li {
