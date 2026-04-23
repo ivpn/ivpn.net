@@ -141,7 +141,7 @@ export default {
         },
 
         badgeLabel() {
-            if (!this.account.is_active) return this.$t('account.servicesArea.expired');
+            if (!this.account.is_active) return this.$t('account.servicesArea.unavailable');
             if (this.requiresUpgrade)    return this.$t('account.servicesArea.upgrade');
             if (this.serviceData?.is_active) return this.$t('account.servicesArea.active');
             return this.$t('account.servicesArea.available');

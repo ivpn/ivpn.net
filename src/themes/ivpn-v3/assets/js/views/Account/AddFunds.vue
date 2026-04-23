@@ -7,7 +7,10 @@
         </div>
         
         <h1>{{ title }}</h1>
-        <ul class="payment-details" v-if="$route.name != 'add-funds-voucher-' + language">
+        <div v-if="isUpgrade && $route.name != 'add-funds-voucher-' + language" class="payment-details">
+            {{ productName }} → {{ price?.name }} ⎸ ${{ price?.price }}
+        </div>
+        <ul v-else class="payment-details" v-if="$route.name != 'add-funds-voucher-' + language">
             <li>{{ productName }}</li>
             <li>{{ price?.name }}</li>
             <li>${{ price?.price }}</li>
@@ -137,6 +140,16 @@ export default {
         margin-top: 20px;
         margin-bottom: 20px;
         font-size: 38px;
+    }
+
+    div.payment-details {
+        margin-top: 38px;
+        font-family: $font-main-mono;
+        font-size: 20px;
+
+        @media (max-width: $brk-mobile) {
+            font-size: 12px;
+        }
     }
 
     ul.payment-details {

@@ -128,6 +128,8 @@ sections:
       - Pro Suite
     content: >-
       Portmaster is an open-source application firewall that gives you a clear view of all your network traffic. It shows which apps are connecting to the internet and lets you block connections you don't trust.
+
+
       Portmaster operates at the application layer, inspecting every connection to identify the exact software process responsible for it. This approach provides deeper context than most firewalls, enabling you to define precise filtering policies for each app. Portmaster Pro offers optional access to the Safing Privacy Network (SPN), a VPN alternative that enhances privacy by routing your traffic through a multi-hop onion-routing network.
   - type: single_image
     src: /images/portmaster-dashboard.png
@@ -187,7 +189,7 @@ sections:
     note: Weekly, monthly, yearly plans available.
   - type: content_with_image
     title: Compartmentalized Stack
-    image: /images/stack-diagram-dark.png
+    image: /images/stack-diagram-dark.jpg
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:

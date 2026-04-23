@@ -126,7 +126,10 @@ sections:
     plans:
       - Pro Suite
     content: >-
-      Portmaster es un firewall de aplicaciones de código abierto que te ofrece una visión clara de todo tu tráfico de red. Muestra qué aplicaciones se conectan a Internet y te permite bloquear las conexiones que no consideres confiables. Portmaster opera en la capa de aplicaciones, inspeccionando cada conexión para identificar el proceso de software exacto responsable. Este enfoque proporciona un contexto más profundo que la mayoría de los firewalls, permitiéndote definir políticas de filtrado precisas para cada aplicación. Portmaster Pro ofrece acceso opcional a la Safing Privacy Network (SPN), una alternativa a la VPN que mejora la privacidad al enrutar tu tráfico a través de una red de enrutamiento en cebolla multi-hop.
+      Portmaster es un firewall de aplicaciones de código abierto que te ofrece una visión clara de todo tu tráfico de red. Muestra qué aplicaciones se conectan a Internet y te permite bloquear las conexiones que no consideres confiables. 
+      
+
+      Portmaster opera en la capa de aplicaciones, inspeccionando cada conexión para identificar el proceso de software exacto responsable. Este enfoque proporciona un contexto más profundo que la mayoría de los firewalls, permitiéndote definir políticas de filtrado precisas para cada aplicación. Portmaster Pro ofrece acceso opcional a la Safing Privacy Network (SPN), una alternativa a la VPN que mejora la privacidad al enrutar tu tráfico a través de una red de enrutamiento en cebolla multi-hop.
   - type: single_image
     src: /images/portmaster-dashboard.png
     alt: Portmaster application firewall interface
@@ -185,7 +188,7 @@ sections:
     note: "Planes disponibles: semanal, mensual y anual."
   - type: content_with_image
     title: Stack compartimentalizado
-    image: /images/stack-diagram-dark.png
+    image: /images/stack-diagram-dark.jpg
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:

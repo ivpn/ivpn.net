@@ -19,12 +19,14 @@
             </span>
             <span v-else>
                 <label>
-                    {{ $t('account.additionalServicesFooter') }} 
+                    {{ $t('account.additionalServicesFooterSee') }} 
                     <a :href="language + '/services/'" >{{ $t('account.additionalServicesFooterLink') }}</a>
+                    {{  $t('account.additionalServicesFooterFor') }}
                 </label>
                 <label>
                     {{ $t('account.additionalServicesFooter2') }} 
-                    <a :href="language + '/pcaas/'">{{ $t('account.additionalServicesFooter2Link') }}</a>
+                    <a :href="language + '/zla/'">{{ $t('account.additionalServicesFooter2Link') }}</a>
+                    {{ $t('account.additionalServicesFooterForDetails') }}
                 </label>
             </span>
         </div>
