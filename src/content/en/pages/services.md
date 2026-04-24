@@ -167,18 +167,18 @@ sections:
           - 10 devices
       - service: Mailx
         values:
-          - ✗
+          - X
           - Included
           - Included
       - service: modDNS
         values:
-          - ✗
+          - X
           - Included
           - Included
       - service: Portmaster Pro
         values:
-          - ✗
-          - ✗
+          - X
+          - X
           - Included
     price_row:
       label: Price / year
@@ -189,7 +189,7 @@ sections:
     note: Weekly, monthly, yearly plans available.
   - type: content_with_image
     title: Compartmentalized Stack
-    image: /images/stack-diagram-dark.jpg
+    image: /images/stack-diagram-dark.png
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:

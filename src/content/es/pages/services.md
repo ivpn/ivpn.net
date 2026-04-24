@@ -166,18 +166,18 @@ sections:
           - 10 dispositivos
       - service: Mailx
         values:
-          - ✗
+          - X
           - Incluido
           - Incluido
       - service: modDNS
         values:
-          - ✗
+          - X
           - Incluido
           - Incluido
       - service: Portmaster Pro
         values:
-          - ✗
-          - ✗
+          - X
+          - X
           - Incluido
     price_row:
       label: Precio / año
@@ -188,7 +188,7 @@ sections:
     note: "Planes disponibles: semanal, mensual y anual."
   - type: content_with_image
     title: Stack compartimentalizado
-    image: /images/stack-diagram-dark.jpg
+    image: /images/stack-diagram-dark.png
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:
