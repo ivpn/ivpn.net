@@ -17,10 +17,10 @@
             </div>
         </div>
         <slot name="footer"></slot>
-        <div class="price-button">
+        <div class="price-button" :style="hideButton ? { visibility: 'hidden' } : {}">
         <button
             class="btn btn-big btn-generate"
-            :class="product === 'tier3' ? 'btn-primary' : 'btn-outline'"
+            :class="(upgrade || product === 'tier3') ? 'btn-primary' : 'btn-outline'"
             style="margin-top: 2em"
             v-on:click="selected"
             :disabled="isButtonDisabled || current"
@@ -51,7 +51,9 @@ export default {
         current: { type: Boolean, default: false },
         inProgress: { type: Boolean, default: false },
         buttonText: { type: String, required: true },
-        product: { type: String, required: true }
+        product: { type: String, required: true },
+        hideButton: { type: Boolean, default: false },
+        upgrade: { type: Boolean, default: false }
     },
     components: { Spinner },
     model: {

@@ -11,7 +11,9 @@
                 @selected="selected('IVPN Tier 1')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct === 'tier1'"
-                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
+                :buttonText="getButtonText('IVPN Tier 1')"
+                :hideButton="shouldHideButton('IVPN Tier 1')"
+                :upgrade="isUpgradeTier('IVPN Tier 1')"
                 product="tier1"
                 :current="account && account.product && account.product.id === 'IVPN Tier 1'"
             >
@@ -53,7 +55,9 @@
                 @selected="selected('IVPN Tier 2')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct === 'tier2'"
-                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
+                :buttonText="getButtonText('IVPN Tier 2')"
+                :hideButton="shouldHideButton('IVPN Tier 2')"
+                :upgrade="isUpgradeTier('IVPN Tier 2')"
                 product="tier2"
                 :current="account && account.product && account.product.id === 'IVPN Tier 2'"
             >
@@ -99,7 +103,9 @@
                 @selected="selected('IVPN Tier 3')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct === 'tier3'"
-                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
+                :buttonText="getButtonText('IVPN Tier 3')"
+                :hideButton="shouldHideButton('IVPN Tier 3')"
+                :upgrade="isUpgradeTier('IVPN Tier 3')"
                 product="tier3"
                 :current="account && account.product && account.product.id === 'IVPN Tier 3'"
             >
@@ -457,7 +463,28 @@ export default {
         }),
         language() {
             return this.$route.params.lang || window.location.href.split("/")[3] || "en";
-        }
+        },
+        productHierarchy() {
+            return {
+                'IVPN Tier 1': 1,
+                'IVPN Standard': 1,
+                'IVPN Tier 2': 2,
+                'IVPN Plus': 2,
+                'IVPN Tier 3': 3,
+                'IVPN Pro': 3,
+                'IVPN Pro Suite': 3,
+            };
+        },
+        currentActiveTierLevel() {
+            if (!this.auth.isAuthenticated || !this.account) {
+                return 0;
+            }
+            if (!this.account.is_active && !this.account.is_new) {
+                return 0;
+            }
+            const productId = this.account.product?.id || this.account.product?.name || '';
+            return this.productHierarchy[productId] || 0;
+        },
     },
     async created() {
         // Set locale once during component creation
@@ -499,7 +526,11 @@ export default {
                 }
 
                 if (!this.auth.account.is_new && this.auth.account.is_active) {
-                    this.$router.push({ name: "account-" + this.language  });
+                    if (this.isUpgradeTier(product)) {
+                        this.$router.push({ name: "upgrade-" + this.language });
+                    } else {
+                        this.$router.push({ name: "account-" + this.language });
+                    }
                     return;
                 }
 
@@ -550,6 +581,32 @@ export default {
             const selectedLevel = productHierarchy[selectedProduct] || 0;
             
             return currentLevel > selectedLevel;
+        },
+        getButtonText(tierProductId) {
+            if (!this.auth.isAuthenticated) {
+                return this.$t('pricing.generateAccount');
+            }
+            if (this.isUpgradeTier(tierProductId)) {
+                return this.$t('pricing.upgrade');
+            }
+            return this.$t('pricing.selectPlan');
+        },
+        shouldHideButton(tierProductId) {
+            if (this.currentActiveTierLevel === 0) return false;
+            const tierLevel = this.productHierarchy[tierProductId] || 0;
+            if (this.account && this.account.is_new) {
+                // For new accounts: only hide the exact current plan
+                return tierLevel === this.currentActiveTierLevel;
+            }
+            // For active accounts: hide current and lower tiers
+            return tierLevel <= this.currentActiveTierLevel;
+        },
+        isUpgradeTier(tierProductId) {
+            if (this.account && this.account.is_new) {
+                return false;
+            }
+            const tierLevel = this.productHierarchy[tierProductId] || 0;
+            return this.currentActiveTierLevel > 0 && tierLevel > this.currentActiveTierLevel;
         },
     },
 };
