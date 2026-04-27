@@ -82,6 +82,10 @@
         ));
     }
 
+    .portmaster-logo-light {
+        filter: invert(1);
+    }
+
     .logo-dark-theme {
         @include light-theme((
             display: none

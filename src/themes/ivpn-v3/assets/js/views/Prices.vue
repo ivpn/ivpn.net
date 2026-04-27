@@ -227,14 +227,16 @@
                         </a>
                     </div>
 
-                    <div class="service-icons">
-                        <img alt="MailX" class="service-icon mailx-logo">
-                        <img alt="modDNS" class="service-icon moddns-logo">
-                        <div class="portmaster-logo">
-                            <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
-                            <span>{{ $t('pricing.portmasterTitle') }}</span>
+                    <div class="service-icons-wrapper">
+                        <div class="service-icons">
+                            <img alt="MailX" class="service-icon mailx-logo">
+                            <img alt="modDNS" class="service-icon moddns-logo">
+                            <div class="portmaster-logo">
+                                <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
+                                <span>{{ $t('pricing.portmasterTitle') }}</span>
+                            </div>
+                            <img src="/images/ivpn.png" alt="IVPN" class="service-icon">
                         </div>
-                        <img src="/images/ivpn.png" alt="IVPN" class="service-icon">
                     </div>
                 </div>
 
@@ -814,7 +816,8 @@ export default {
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            align-items: center;
+            align-items: stretch;
+            column-gap: 2rem;
             margin-bottom: 0.5rem;
 
             &.reverse {
@@ -870,20 +873,29 @@ export default {
                 }
             }
 
-            // Service Icons
+            // Service Icons Wrapper (mirrors heading__image-wrapper from services page)
+            .service-icons-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+
             .service-icons {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 6rem;
+                gap: 2rem;
                 align-items: center;
                 justify-items: center;
+                width: 100%;
+                height: 100%;
 
                 @media (max-width: 480px) {
                     margin-top: 1.5rem;
                 }
 
                 .service-icon {
-                    height: 2rem;
+                    height: 2.5rem;
                     width: auto;
                     object-fit: contain;
 
@@ -900,7 +912,7 @@ export default {
 
                     span {
                         font-weight: bold;
-                        font-size: 1.6rem;
+                        font-size: 2.2rem;
                         line-height: 1.2;
                         color: var(--color-white);
 
@@ -911,8 +923,8 @@ export default {
                 }
 
                 .portmaster-icon {
-                    width: 2.5rem;
-                    height: 2.5rem;
+                    width: 3rem;
+                    height: 3rem;
                     object-fit: contain;
                     flex-shrink: 0;
 
@@ -1132,6 +1144,21 @@ export default {
 
     @media (prefers-color-scheme: light) {
         content: url('/images/mod_white.png')
+    };
+}
+.portmaster-icon {
+    @include light-theme((
+        content: url('/images/pm_white.svg'),
+        filter: invert(1)
+    ));
+    @include dark-theme((
+        content: url('/images/pm_white.svg'),
+        filter: none
+    ));
+
+    @media (prefers-color-scheme: light) {
+        content: url('/images/pm_white.svg');
+        filter: invert(1);
     };
 }
 </style>
