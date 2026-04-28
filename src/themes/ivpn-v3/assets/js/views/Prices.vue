@@ -235,7 +235,7 @@
                                 <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
                                 <span>{{ $t('pricing.portmasterTitle') }}</span>
                             </div>
-                            <img src="/images/ivpn.png" alt="IVPN" class="service-icon">
+                            <img src="/images/ivpn.png" alt="IVPN" class="service-icon" style="height: 3rem">
                         </div>
                     </div>
                 </div>
@@ -821,9 +821,14 @@ export default {
             margin-bottom: 0.5rem;
 
             &.reverse {
+                @media (max-width: 768px) {
+                    margin-top: 3rem;
+                }
+
                 @media (max-width: 480px) {
                     display: flex;
                     flex-direction: column-reverse;
+                    margin-top: 2rem;
                 }
             }
 
@@ -879,27 +884,39 @@ export default {
                 align-items: center;
                 justify-content: center;
                 height: 100%;
+
+                @media (max-width: 768px) {
+                    margin-top: 2rem;
+                }
             }
 
             .service-icons {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                gap: 2.5rem 3rem;
                 align-items: center;
                 justify-items: center;
                 width: 100%;
                 height: 100%;
 
+                @media (max-width: 768px) {
+                    gap: 2rem;
+                }
+
                 @media (max-width: 480px) {
-                    margin-top: 1.5rem;
+                    gap: 1.5rem 1rem;
                 }
 
                 .service-icon {
-                    height: 2.5rem;
+                    height: 2rem;
                     width: auto;
                     object-fit: contain;
 
                     @media (max-width: 1024px) {
+                        height: 1.4rem;
+                    }
+
+                    @media (max-width: 480px) {
                         height: 1.2rem;
                     }
                 }
@@ -912,11 +929,15 @@ export default {
 
                     span {
                         font-weight: bold;
-                        font-size: 2.2rem;
+                        font-size: 1.9rem;
                         line-height: 1.2;
                         color: var(--color-white);
 
                         @media (max-width: 1024px) {
+                            font-size: 1.2rem;
+                        }
+
+                        @media (max-width: 480px) {
                             font-size: 1rem;
                         }
                     }
@@ -929,6 +950,11 @@ export default {
                     flex-shrink: 0;
 
                     @media (max-width: 1024px) {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+
+                    @media (max-width: 480px) {
                         width: 1.5rem;
                         height: 1.5rem;
                     }
@@ -942,10 +968,15 @@ export default {
     align-items: center;
     justify-content: center;
     min-height: 500px;
+    overflow: hidden;
 
     @media (max-width: 768px) {
-        width: 100vw;
-         
+        min-height: 320px;
+    }
+
+    @media (max-width: 480px) {
+        min-height: 260px;
+        margin-bottom: 1.5rem;
     }
 
     .product-cli {
@@ -963,7 +994,14 @@ export default {
         }
 
         @media (max-width: 768px) {
-            left: 5%;
+            left: 0;
+            width: 70%;
+            transform: translateY(calc(-50% - 35px));
+        }
+
+        @media (max-width: 480px) {
+            width: 68%;
+            transform: translateY(calc(-50% - 25px));
         }
     }
 
@@ -982,7 +1020,15 @@ export default {
         }
 
         @media (max-width: 768px) {
-            left: calc(5% + 4rem);
+            left: 3rem;
+            width: 70%;
+            transform: translateY(calc(-40% + 15px));
+        }
+
+        @media (max-width: 480px) {
+            left: 2.5rem;
+            width: 68%;
+            transform: translateY(calc(-40% + 10px));
         }
     }
 }
@@ -1135,6 +1181,7 @@ export default {
     };
 }
 .moddns-logo {
+    height: 1.7rem !important;
     @include light-theme((
         content: url('/images/mod_white.png')
     ));
