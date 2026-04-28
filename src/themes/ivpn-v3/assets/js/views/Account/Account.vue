@@ -67,7 +67,7 @@
                                 class="plan-card__btn plan-card__btn--primary"
                             >{{ $t('account.upgrade') }}</router-link>
                             <a
-                                v-if="canUpgrade"
+                                v-if="canUpgrade && account.is_active"
                                 :href="'/' + this.language + '/pricing/'"
                                 class="plan-card__compare"
                             >{{ $t('account.comparePlans') }}</a>
@@ -323,19 +323,19 @@ export default {
 // Capability pills
 .plan-cap {
     font-family: $font-main-mono;
-    font-size: 12px;
+    font-size: 14px;
     padding: 3px 10px;
     border-radius: 3px;
     white-space: nowrap;
 
     @include light-theme((
-        background: rgba(51, 77, 102, 0.08),
-        color: $grey
+        background: rgba(51, 77, 102, 0.12),
+        color: $dark
     ));
 
     @include dark-theme((
-        background: rgba(255, 255, 255, 0.08),
-        color: rgba(255, 255, 255, 0.5)
+        background: rgba(255, 255, 255, 0.12),
+        color: $white
     ));
 }
 </style>

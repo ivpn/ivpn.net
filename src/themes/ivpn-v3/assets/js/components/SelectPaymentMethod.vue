@@ -2,22 +2,22 @@
     <div>
         <div class="billing-section" v-if="!isUpgrade">
             <div class="billing-options">
-                <div class="plan-details" v-if="account.is_new">
-                    <div class="plan-name"><span class="row">{{ $t('account.selectedPlan') }}:</span>{{ productName }}</div>
-                    <div class="plan-change">
-                        <router-link :to="{ name: 'prices-' + this.language }"
-                            >{{ $t('account.changePlan') }}</router-link
-                        >
+                <div class="plan-summary" v-if="account.is_new">
+                    <div class="plan-summary__header">
+                        <div class="plan-summary__meta">
+                            <span class="plan-summary__label">{{ $t('account.selectedPlan') }}</span>
+                            <span class="plan-summary__name">{{ productName }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="plan-details" v-if="account.is_new">
-                    <div class="plan-name">
-                        <span class="row">{{ $t('account.included') }}: </span>
-                        <span class="row">[VPN - {{ account.product.max_device }} {{ $t('account.devices') }} &#10003;]</span>
-                        <span class="row">[{{ $t('pricing.dns') }} <span v-if="account.product.capabilities.has_dns">&#10003;</span><span v-else>&#10007;</span>]</span>
-                        <span class="row">[{{ $t('pricing.mailx') }} <span v-if="account.product.capabilities.has_mail">&#10003;</span><span v-else>&#10007;</span>]</span>
-                        <span class="row">[{{ $t('pricing.portmaster') }} <span v-if="account.product.capabilities.has_spn">&#10003;</span><span v-else>&#10007;</span>]</span>
+                    <div class="plan-summary__caps">
+                        <span class="plan-summary__cap">VPN &middot; {{ account.product.max_device }} {{ $t('account.devices') }}</span>
+                        <span class="plan-summary__cap" :class="{ 'plan-summary__cap--inactive': !account.product.capabilities.has_dns }">{{ $t('pricing.dns') }}</span>
+                        <span class="plan-summary__cap" :class="{ 'plan-summary__cap--inactive': !account.product.capabilities.has_mail }">{{ $t('pricing.mailx') }}</span>
+                        <span class="plan-summary__cap" :class="{ 'plan-summary__cap--inactive': !account.product.capabilities.has_spn }">{{ $t('pricing.portmaster') }}</span>
                     </div>
+                    <router-link :to="{ name: 'prices-' + this.language }" class="plan-summary__change">
+                        {{ $t('account.changePlan') }}
+                    </router-link>
                 </div>
 
                 <select-billing-cycle
@@ -204,43 +204,84 @@ export default {
     @media (max-width: $brk-mobile-xs) {
         max-width: 280px;
     }
+}
 
-    .plan-details {
+.plan-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 8px;
+
+    &__header {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
 
         @media (max-width: $brk-mobile) {
             flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
         }
-
-        @media (max-width: $brk-mobile) {
-        max-width: 100%;
     }
 
-        .plan-name {
-            font-family: $font-main-mono;
-            font-weight: bold;
-            font-size: 18px;
-            
-            @media (max-width: $brk-mobile) {
-                width: 100%;
-                line-height: 30px;
-                display: flex;
-                flex-wrap: wrap;
-        
-                .row:first-child  {
-                    display: inline;
-                    width:100%
-                }
-            }
-        }
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
 
-        .plan-change {
-            font-size: 16px;
-            margin: 4px 5px 5px 15px;
-            @media (max-width: $brk-mobile) {
-                margin: 0;
-                line-height: 30px;
-            }
+    &__label {
+        font-family: $font-main-mono;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        @include light-theme((color: $grey));
+        @include dark-theme((color: rgba(255,255,255,0.45)));
+    }
+
+    &__name {
+        font-family: $font-main-mono;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.2;
+
+        @include light-theme((color: $dark));
+        @include dark-theme((color: $white));
+    }
+
+    &__change {
+        font-family: $font-main-mono;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    &__caps {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    &__cap {
+        font-family: $font-main-mono;
+        font-size: 14px;
+        padding: 3px 10px;
+        border-radius: 3px;
+        white-space: nowrap;
+
+        @include light-theme((
+            background: rgba(51, 77, 102, 0.12),
+            color: $dark
+        ));
+        @include dark-theme((
+            background: rgba(255, 255, 255, 0.12),
+            color: $white
+        ));
+
+        &--inactive {
+            opacity: 0.35;
         }
     }
 }

@@ -49,6 +49,7 @@ export default {
 
 .highlight {
     font-weight: bold;
+    margin-left: 6px;
 }
 
 .footer-links {

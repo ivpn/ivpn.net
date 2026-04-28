@@ -11,7 +11,9 @@
                 @selected="selected('IVPN Tier 1')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct === 'tier1'"
-                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
+                :buttonText="getButtonText('IVPN Tier 1')"
+                :hideButton="shouldHideButton('IVPN Tier 1')"
+                :upgrade="isUpgradeTier('IVPN Tier 1')"
                 product="tier1"
                 :current="account && account.product && account.product.id === 'IVPN Tier 1'"
             >
@@ -53,7 +55,9 @@
                 @selected="selected('IVPN Tier 2')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct === 'tier2'"
-                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
+                :buttonText="getButtonText('IVPN Tier 2')"
+                :hideButton="shouldHideButton('IVPN Tier 2')"
+                :upgrade="isUpgradeTier('IVPN Tier 2')"
                 product="tier2"
                 :current="account && account.product && account.product.id === 'IVPN Tier 2'"
             >
@@ -99,7 +103,9 @@
                 @selected="selected('IVPN Tier 3')"
                 :disabled="inProgress"
                 :inProgress="inProgress && selectedProduct === 'tier3'"
-                :buttonText="auth.isAuthenticated ? $t('pricing.selectPlan') : $t('pricing.generateAccount')"
+                :buttonText="getButtonText('IVPN Tier 3')"
+                :hideButton="shouldHideButton('IVPN Tier 3')"
+                :upgrade="isUpgradeTier('IVPN Tier 3')"
                 product="tier3"
                 :current="account && account.product && account.product.id === 'IVPN Tier 3'"
             >
@@ -221,14 +227,16 @@
                         </a>
                     </div>
 
-                    <div class="service-icons">
-                        <img alt="MailX" class="service-icon mailx-logo">
-                        <img alt="modDNS" class="service-icon moddns-logo">
-                        <div class="portmaster-logo">
-                            <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
-                            <span>{{ $t('pricing.portmasterTitle') }}</span>
+                    <div class="service-icons-wrapper">
+                        <div class="service-icons">
+                            <img alt="MailX" class="service-icon mailx-logo">
+                            <img alt="modDNS" class="service-icon moddns-logo">
+                            <div class="portmaster-logo">
+                                <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
+                                <span>{{ $t('pricing.portmasterTitle') }}</span>
+                            </div>
+                            <img src="/images/ivpn.png" alt="IVPN" class="service-icon" style="height: 3rem">
                         </div>
-                        <img src="/images/ivpn.png" alt="IVPN" class="service-icon">
                     </div>
                 </div>
 
@@ -304,9 +312,8 @@
                         {{ $t('account.creditCard') }}
                     </span>
                     <span class="payment-badge">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12V7H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16v-5"></path>
-                            <path d="M21 12a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2z"></path>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
                         </svg>
                         {{ $t('account.paypal') }}
                     </span>
@@ -458,7 +465,28 @@ export default {
         }),
         language() {
             return this.$route.params.lang || window.location.href.split("/")[3] || "en";
-        }
+        },
+        productHierarchy() {
+            return {
+                'IVPN Tier 1': 1,
+                'IVPN Standard': 1,
+                'IVPN Tier 2': 2,
+                'IVPN Plus': 2,
+                'IVPN Tier 3': 3,
+                'IVPN Pro': 3,
+                'IVPN Pro Suite': 3,
+            };
+        },
+        currentActiveTierLevel() {
+            if (!this.auth.isAuthenticated || !this.account) {
+                return 0;
+            }
+            if (!this.account.is_active && !this.account.is_new) {
+                return 0;
+            }
+            const productId = this.account.product?.id || this.account.product?.name || '';
+            return this.productHierarchy[productId] || 0;
+        },
     },
     async created() {
         // Set locale once during component creation
@@ -500,7 +528,11 @@ export default {
                 }
 
                 if (!this.auth.account.is_new && this.auth.account.is_active) {
-                    this.$router.push({ name: "account-" + this.language  });
+                    if (this.isUpgradeTier(product)) {
+                        this.$router.push({ name: "upgrade-" + this.language });
+                    } else {
+                        this.$router.push({ name: "account-" + this.language });
+                    }
                     return;
                 }
 
@@ -551,6 +583,32 @@ export default {
             const selectedLevel = productHierarchy[selectedProduct] || 0;
             
             return currentLevel > selectedLevel;
+        },
+        getButtonText(tierProductId) {
+            if (!this.auth.isAuthenticated) {
+                return this.$t('pricing.generateAccount');
+            }
+            if (this.isUpgradeTier(tierProductId)) {
+                return this.$t('pricing.upgrade');
+            }
+            return this.$t('pricing.selectPlan');
+        },
+        shouldHideButton(tierProductId) {
+            if (this.currentActiveTierLevel === 0) return false;
+            const tierLevel = this.productHierarchy[tierProductId] || 0;
+            if (this.account && this.account.is_new) {
+                // For new accounts: only hide the exact current plan
+                return tierLevel === this.currentActiveTierLevel;
+            }
+            // For active accounts: hide current and lower tiers
+            return tierLevel <= this.currentActiveTierLevel;
+        },
+        isUpgradeTier(tierProductId) {
+            if (this.account && this.account.is_new) {
+                return false;
+            }
+            const tierLevel = this.productHierarchy[tierProductId] || 0;
+            return this.currentActiveTierLevel > 0 && tierLevel > this.currentActiveTierLevel;
         },
     },
 };
@@ -758,13 +816,19 @@ export default {
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            align-items: center;
+            align-items: stretch;
+            column-gap: 2rem;
             margin-bottom: 0.5rem;
 
             &.reverse {
+                @media (max-width: 768px) {
+                    margin-top: 3rem;
+                }
+
                 @media (max-width: 480px) {
                     display: flex;
                     flex-direction: column-reverse;
+                    margin-top: 2rem;
                 }
             }
 
@@ -814,16 +878,33 @@ export default {
                 }
             }
 
-            // Service Icons
+            // Service Icons Wrapper (mirrors heading__image-wrapper from services page)
+            .service-icons-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+
+                @media (max-width: 768px) {
+                    margin-top: 2rem;
+                }
+            }
+
             .service-icons {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                gap: 2.5rem 3rem;
                 align-items: center;
                 justify-items: center;
+                width: 100%;
+                height: 100%;
+
+                @media (max-width: 768px) {
+                    gap: 2rem;
+                }
 
                 @media (max-width: 480px) {
-                    margin-top: 1.5rem;
+                    gap: 1.5rem 1rem;
                 }
 
                 .service-icon {
@@ -832,6 +913,10 @@ export default {
                     object-fit: contain;
 
                     @media (max-width: 1024px) {
+                        height: 1.4rem;
+                    }
+
+                    @media (max-width: 480px) {
                         height: 1.2rem;
                     }
                 }
@@ -844,23 +929,32 @@ export default {
 
                     span {
                         font-weight: bold;
-                        font-size: 1.6rem;
+                        font-size: 1.9rem;
                         line-height: 1.2;
                         color: var(--color-white);
 
                         @media (max-width: 1024px) {
+                            font-size: 1.2rem;
+                        }
+
+                        @media (max-width: 480px) {
                             font-size: 1rem;
                         }
                     }
                 }
 
                 .portmaster-icon {
-                    width: 2.5rem;
-                    height: 2.5rem;
+                    width: 3rem;
+                    height: 3rem;
                     object-fit: contain;
                     flex-shrink: 0;
 
                     @media (max-width: 1024px) {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+
+                    @media (max-width: 480px) {
                         width: 1.5rem;
                         height: 1.5rem;
                     }
@@ -874,10 +968,15 @@ export default {
     align-items: center;
     justify-content: center;
     min-height: 500px;
+    overflow: hidden;
 
     @media (max-width: 768px) {
-        width: 100vw;
-         
+        min-height: 320px;
+    }
+
+    @media (max-width: 480px) {
+        min-height: 260px;
+        margin-bottom: 1.5rem;
     }
 
     .product-cli {
@@ -895,7 +994,14 @@ export default {
         }
 
         @media (max-width: 768px) {
-            left: 5%;
+            left: 0;
+            width: 70%;
+            transform: translateY(calc(-50% - 35px));
+        }
+
+        @media (max-width: 480px) {
+            width: 68%;
+            transform: translateY(calc(-50% - 25px));
         }
     }
 
@@ -914,7 +1020,15 @@ export default {
         }
 
         @media (max-width: 768px) {
-            left: calc(5% + 4rem);
+            left: 3rem;
+            width: 70%;
+            transform: translateY(calc(-40% + 15px));
+        }
+
+        @media (max-width: 480px) {
+            left: 2.5rem;
+            width: 68%;
+            transform: translateY(calc(-40% + 10px));
         }
     }
 }
@@ -1067,6 +1181,7 @@ export default {
     };
 }
 .moddns-logo {
+    height: 1.7rem !important;
     @include light-theme((
         content: url('/images/mod_white.png')
     ));
@@ -1076,6 +1191,21 @@ export default {
 
     @media (prefers-color-scheme: light) {
         content: url('/images/mod_white.png')
+    };
+}
+.portmaster-icon {
+    @include light-theme((
+        content: url('/images/pm_white.svg'),
+        filter: invert(1)
+    ));
+    @include dark-theme((
+        content: url('/images/pm_white.svg'),
+        filter: none
+    ));
+
+    @media (prefers-color-scheme: light) {
+        content: url('/images/pm_white.svg');
+        filter: invert(1);
     };
 }
 </style>

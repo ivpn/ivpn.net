@@ -2,7 +2,7 @@
     <div class="service-card" :class="'service-card--' + service.key">
         <div class="service-card__header">
             <span class="service-card__icon">
-                <img v-if="serviceIconImg" :src="serviceIconImg" :alt="service.name" class="service-card__icon-img" />
+                <img v-if="serviceIconImg" :src="serviceIconImg" :alt="service.name" class="service-card__icon-img" :style="serviceIconStyle" />
                 <span v-else v-html="serviceIcon"></span>
             </span>
             <div class="service-card__title-group">
@@ -141,7 +141,7 @@ export default {
         },
 
         badgeLabel() {
-            if (!this.account.is_active) return this.$t('account.servicesArea.expired');
+            if (!this.account.is_active) return this.$t('account.servicesArea.unavailable');
             if (this.requiresUpgrade)    return this.$t('account.servicesArea.upgrade');
             if (this.serviceData?.is_active) return this.$t('account.servicesArea.active');
             return this.$t('account.servicesArea.available');
@@ -158,9 +158,16 @@ export default {
             const imgs = {
                 mail: this.isDark ? '/assets/icons/mailxicondark.png' : '/assets/icons/mailxiconlight.png',
                 dns: this.isDark ? '/assets/icons/moddns_white.png' : '/assets/icons/moddns_dark.png',
-                portmaster: this.isDark ? '/assets/icons/portmaster-light.svg' : '/assets/icons/portmaster-light.svg',
+                portmaster: '/images/pm_white.svg',
             };
             return imgs[this.service.key] ?? null;
+        },
+
+        serviceIconStyle() {
+            if (this.service.key === 'portmaster' && !this.isDark) {
+                return { filter: 'invert(1)' };
+            }
+            return {};
         },
 
     }

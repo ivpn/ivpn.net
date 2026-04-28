@@ -20,7 +20,7 @@
 
     .heading__content {
         p {
-            margin: 0 0 2rem 0;
+            margin: 0 0 0.5rem 0;
 
             &:last-child {
                 margin-bottom: 0;
@@ -30,13 +30,14 @@
 
     .heading-content-wrapper {
         padding-top: 0;
-        align-items: center;
+        align-items: stretch;
         margin: 0;
     }
 
     .heading__image-wrapper {
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     .logos-grid {
@@ -46,6 +47,7 @@
         align-items: center;
         justify-items: center;
         width: 100%;
+        height:100%;
     }
 
     .logo-with-text {
@@ -78,6 +80,10 @@
         @include dark-theme((
             display: none
         ));
+    }
+
+    .portmaster-logo-light {
+        filter: invert(1);
     }
 
     .logo-dark-theme {
@@ -227,10 +233,31 @@
     }
 
     .plan-badge {
-        border: 1px solid #fff;
+        border: 1px solid transparent;
         padding: 0.4rem 1rem;
         font-size: 0.9rem;
         white-space: nowrap;
+
+        @include dark-theme((
+            background-color: #444,
+            color: #fff,
+            border-color: #fff,
+        ));
+        @include light-theme((
+            background-color: #fff,
+            color: #000,
+            border-color: #000,
+        ));
+        @media (prefers-color-scheme: dark) {
+            background-color: #444;
+            color: #fff;
+            border-color: #fff;
+        }
+        @media (prefers-color-scheme: light) {
+            background-color: #fff;
+            color: #000;
+            border-color: #000;
+        }
     }
 
     .content-paragraph {
@@ -259,12 +286,6 @@
 
         @include dark-theme((
             display: block
-        ));
-    }
-
-    .plan-badge {
-        @include light-theme((
-            border-color: #000 !important
         ));
     }
 
