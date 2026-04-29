@@ -102,7 +102,7 @@ export default {
                     description: this.$t('account.servicesArea.dnsDescription'),
                     setupUrl: () => `${this.modDNSURL}/signup?sessionid=${this.preauth?.dns?.sessionid}&subid=${this.preauth?.uuid}`,
                     accessUrl: () => `${this.modDNSURL}/login`,
-                    syncUrl: () => `${this.modDNSURL}/account/profile?sessionid=${this.preauth?.dns?.sessionid}`,
+                    syncUrl: () => `${this.modDNSURL}/account-preferences?sessionid=${this.preauth?.dns?.sessionid}`,
                     upgradeRequired: ['IVPN Tier 1']
                 },
                 {
