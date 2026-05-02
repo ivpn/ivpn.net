@@ -12,11 +12,11 @@ weight: 10
 In this article you can find details about account unlinkability, compatibility between the VPN / Portmaster / modDNS, and platform availability.
 
 1. ### You claim accounts are not linked across services > how is that possible?
-    Our developers have created a privacy-preserving, cross-application authorization system called Zero Link Access.  Authorization is proven cryptographically only by what you are entitled to access, not by who you are.
+    Our developers have created a privacy-preserving, cross-application authorization system called Unlinked Access.  Authorization is proven cryptographically only by what you are entitled to access, not by who you are.
     
-    A general overview of the Zero Link Access system is available [here](/zla).
+    A general overview of the Unlinked Access system is available [here](/unlinked-access).
     
-    An article with more technical details is available [here](/knowledgebase/privacy/zero-link-access.md).
+    An article with more technical details is available [here](/blog/unlinked-access-explained.md).
 
 1. ### What's the difference between IVPN's built-in AntiTracker and modDNS > do I need both?
     The AntiTracker list selected in the IVPN App governs DNS access for the entire system.  The AntiTracker's block lists cannot be customized to block additional domains or allow exceptions.  No logging is available by design.
