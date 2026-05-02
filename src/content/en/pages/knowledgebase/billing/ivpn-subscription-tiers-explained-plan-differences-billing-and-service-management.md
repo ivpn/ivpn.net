@@ -61,7 +61,7 @@ If you had an existing IVPN Standard or Pro plan before May 2026: Standard now i
 1. ### If I lose the Mailx or modDNS credentials, what happens to my aliases and DNS config? How do I recover the accounts?
     The Mailx aliases and modDNS profiles will remain active as long as the IVPN account is active.
     
-    Account recovery using your IVPN Account ID is not possible due to the privacy-first design of [Zero Link Access](/zla). Contact support to reset access to Mailx and modDNS, which will enable you to create fresh accounts for these services.
+    Account recovery using your IVPN Account ID is not possible due to the privacy-first design of [Unlinked Access](/unlinked-access). Contact support to reset access to Mailx and modDNS, which will enable you to create fresh accounts for these services.
     
     After reset, previous Mailx and modDNS accounts will not receive expiry date synchronization updates from the active IVPN account, and will be purged from our systems.
     
