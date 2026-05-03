@@ -124,10 +124,10 @@
 }
 
 .upgrade-box__price-label {
-    @include light-theme((color: rgba(0,0,0,0.6)));
-    @include dark-theme((color: rgba(255,255,255,0.6)));
-    @media (prefers-color-scheme: light) { color: rgba(0,0,0,0.6); }
-    @media (prefers-color-scheme: dark)  { color: rgba(255,255,255,0.6); }
+    @include light-theme((color: black));
+    @include dark-theme((color: white));
+    @media (prefers-color-scheme: light) { color: black; }
+    @media (prefers-color-scheme: dark)  { color: white; }
 }
 
 .upgrade-box__price-value {
@@ -166,10 +166,10 @@
     .upgrade-box__summary-label {
         font-size: 12px;
         white-space: nowrap;
-        @include light-theme((color: rgba(0,0,0,0.6)));
-        @include dark-theme((color: rgba(255,255,255,0.6)));
-        @media (prefers-color-scheme: light) { color: rgba(0,0,0,0.6); }
-        @media (prefers-color-scheme: dark)  { color: rgba(255,255,255,0.6); }
+        @include light-theme((color: black));
+        @include dark-theme((color: white));
+        @media (prefers-color-scheme: light) { color: black; }
+        @media (prefers-color-scheme: dark)  { color: white; }
     }
 
     .upgrade-box__summary-value {

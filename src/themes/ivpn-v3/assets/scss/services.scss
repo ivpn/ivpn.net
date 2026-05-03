@@ -68,6 +68,10 @@
         align-items: center;
         gap: 0.5rem;
 
+        @media (min-width: 1025px) {
+            gap: 1rem;
+        }
+
         img {
             width: 2.5rem;
             height: 2.5rem;
@@ -223,6 +227,10 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+
+        @media (min-width: 1025px) {
+            gap: 1rem;
+        }
     }
 
     .service-logo {

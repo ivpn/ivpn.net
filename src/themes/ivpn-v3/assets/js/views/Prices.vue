@@ -14,7 +14,7 @@
                 :buttonText="getButtonText('IVPN Tier 1')"
                 :hideButton="shouldHideButton('IVPN Tier 1')"
                 :upgrade="isUpgradeTier('IVPN Tier 1')"
-                :selectedPlan="isUnpaidWithProduct && (productHierarchy['IVPN Tier 1'] === (productHierarchy[account?.product?.id] || 0))"
+                :selectedPlan="(isUnpaidWithProduct || account?.is_new) && (productHierarchy['IVPN Tier 1'] === (productHierarchy[account?.product?.id] || 0))"
                 product="tier1"
                 :current="account && account.product && account.product.id === 'IVPN Tier 1'"
             >
@@ -59,7 +59,7 @@
                 :buttonText="getButtonText('IVPN Tier 2')"
                 :hideButton="shouldHideButton('IVPN Tier 2')"
                 :upgrade="isUpgradeTier('IVPN Tier 2')"
-                :selectedPlan="isUnpaidWithProduct && (productHierarchy['IVPN Tier 2'] === (productHierarchy[account?.product?.id] || 0))"
+                :selectedPlan="(isUnpaidWithProduct || account?.is_new) && (productHierarchy['IVPN Tier 2'] === (productHierarchy[account?.product?.id] || 0))"
                 product="tier2"
                 :current="account && account.product && account.product.id === 'IVPN Tier 2'"
             >
@@ -86,13 +86,13 @@
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        {{ $t('pricing.tier2.feature3') }} <span :data-tooltip="$t('pricing.tier2.feature3Title')">&#9432;</span>
+                        <span>{{ $t('pricing.tier2.feature3') }} <span :data-tooltip="$t('pricing.tier2.feature3Title')">&#9432;</span></span>
                     </div>
                     <div class="feature-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        {{ $t('pricing.tier2.feature4') }} <span :data-tooltip="$t('pricing.tier2.feature4Title')">&#9432;</span>
+                        <span>{{ $t('pricing.tier2.feature4') }} <span :data-tooltip="$t('pricing.tier2.feature4Title')">&#9432;</span></span>
                     </div>     
                 </div>
                 <div class="price-features-footer">
@@ -108,7 +108,7 @@
                 :buttonText="getButtonText('IVPN Tier 3')"
                 :hideButton="shouldHideButton('IVPN Tier 3')"
                 :upgrade="isUpgradeTier('IVPN Tier 3')"
-                :selectedPlan="isUnpaidWithProduct && (productHierarchy['IVPN Tier 3'] === (productHierarchy[account?.product?.id] || 0))"
+                :selectedPlan="(isUnpaidWithProduct || account?.is_new) && (productHierarchy['IVPN Tier 3'] === (productHierarchy[account?.product?.id] || 0))"
                 product="tier3"
                 :current="account && account.product && account.product.id === 'IVPN Tier 3'"
             >
@@ -135,19 +135,19 @@
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        {{ $t('pricing.tier3.feature3') }} <span :data-tooltip="$t('pricing.tier3.feature3Title')">&#9432;</span>
+                        <span>{{ $t('pricing.tier3.feature3') }} <span :data-tooltip="$t('pricing.tier3.feature3Title')">&#9432;</span></span>
                     </div>
                     <div class="feature-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        {{ $t('pricing.tier3.feature4') }} <span :data-tooltip="$t('pricing.tier3.feature4Title')">&#9432;</span>
+                        <span>{{ $t('pricing.tier3.feature4') }} <span :data-tooltip="$t('pricing.tier3.feature4Title')">&#9432;</span></span>
                     </div>
                     <div class="feature-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        {{ $t('pricing.tier3.feature5') }} <span :data-tooltip="$t('pricing.tier3.feature5Title')">&#9432;</span>
+                        <span>{{ $t('pricing.tier3.feature5') }} <span :data-tooltip="$t('pricing.tier3.feature5Title')">&#9432;</span></span>
                     </div>
                 </div>
                 <div class="price-features-footer">
@@ -218,8 +218,8 @@
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                               <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
-                            {{ $t('pricing.stack.feature4') }}
-                            (<a href="/unlinked-access" class="feature-inline-link">{{ $t('pricing.stack.feature4LinkText') }}</a>)
+                            <span>{{ $t('pricing.stack.feature4') }}
+                            (<a href="/unlinked-access" class="feature-inline-link">{{ $t('pricing.stack.feature4LinkText') }}</a>)</span>
                           </div>
                         </div>
                         
@@ -233,12 +233,16 @@
 
                     <div class="service-icons-wrapper">
                         <div class="service-icons">
-                            <img alt="MailX" class="service-icon mailx-logo">
-                            <img alt="modDNS" class="service-icon moddns-logo">
-                            <div class="portmaster-logo">
+                            <a href="https://mailx.net" target="_blank" rel="noopener" class="service-icon-link">
+                                <img alt="MailX" class="service-icon mailx-logo">
+                            </a>
+                            <a href="https://moddns.net" target="_blank" rel="noopener" class="service-icon-link">
+                                <img alt="modDNS" class="service-icon moddns-logo">
+                            </a>
+                            <a href="https://safing.io" target="_blank" rel="noopener" class="service-icon-link portmaster-logo">
                                 <img src="/images/pm_white.svg" alt="Portmaster" class="portmaster-icon">
                                 <span>{{ $t('pricing.portmasterTitle') }}</span>
-                            </div>
+                            </a>
                             <img src="/images/ivpn.png" alt="IVPN" class="service-icon" style="height: 3rem">
                         </div>
                     </div>
@@ -523,7 +527,17 @@ export default {
                 return;
             }
 
-            // Unpaid user clicking their current plan → go back to account
+            // is_new account clicking their already-selected plan → go back to account
+            if (this.auth.isAuthenticated && this.account?.is_new) {
+                const tierLevel = this.productHierarchy[product] || 0;
+                const currentLevel = this.productHierarchy[this.account?.product?.id] || 0;
+                if (tierLevel === currentLevel) {
+                    this.$router.push({ name: "account-" + this.language });
+                    return;
+                }
+            }
+
+            // Expired user clicking their current plan → go back to account
             if (this.isUnpaidWithProduct) {
                 const tierLevel = this.productHierarchy[product] || 0;
                 const currentLevel = this.productHierarchy[this.account?.product?.id] || 0;
@@ -612,7 +626,15 @@ export default {
             if (this.isUpgradeTier(tierProductId)) {
                 return this.$t('pricing.upgrade');
             }
-            // Unpaid user — highlight their current plan
+            // is_new account — highlight their currently selected plan
+            if (this.account?.is_new) {
+                const tierLevel = this.productHierarchy[tierProductId] || 0;
+                const currentLevel = this.productHierarchy[this.account?.product?.id] || 0;
+                if (tierLevel === currentLevel) {
+                    return this.$t('account.selectedPlan');
+                }
+            }
+            // Expired user — highlight their last plan
             if (this.isUnpaidWithProduct) {
                 const tierLevel = this.productHierarchy[tierProductId] || 0;
                 const currentLevel = this.productHierarchy[this.account?.product?.id] || 0;
@@ -626,8 +648,9 @@ export default {
             if (this.currentActiveTierLevel === 0) return false;
             const tierLevel = this.productHierarchy[tierProductId] || 0;
             if (this.account && this.account.is_new) {
-                // For new accounts: only hide the exact current plan
-                return tierLevel === this.currentActiveTierLevel;
+                // For new accounts: never hide buttons — all tiers are selectable
+                // (the current tier shows a "Selected Plan" outline button instead)
+                return false;
             }
             // For active accounts: hide current and lower tiers
             return tierLevel <= this.currentActiveTierLevel;
@@ -934,11 +957,12 @@ export default {
             .service-icons {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2.5rem 3rem;
+                gap: 1.5rem 2rem;
                 align-items: center;
                 justify-items: center;
                 width: 100%;
                 height: 100%;
+                padding: 0 1.5rem;
 
                 @media (max-width: 768px) {
                     gap: 2rem;
@@ -962,11 +986,20 @@ export default {
                     }
                 }
 
-                .portmaster-logo {
+                .service-icon-link {
+                    display: contents;
+                    text-decoration: none;
+                    color: inherit;
+                }
+
+                .portmaster-logo,
+                a.portmaster-logo {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: 0.5rem;
+                    text-decoration: none;
+                    color: inherit;
 
                     span {
                         font-weight: bold;

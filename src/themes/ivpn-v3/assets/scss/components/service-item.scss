@@ -203,4 +203,9 @@
 .services-title {
     margin-bottom: 4px;
     display: block;
+
+    @include light-theme((color: $dark));
+    @include dark-theme((color: rgba(255, 255, 255, 0.8)));
+    @media (prefers-color-scheme: light) { color: $dark; }
+    @media (prefers-color-scheme: dark)  { color: rgba(255, 255, 255, 0.8); }
 }
