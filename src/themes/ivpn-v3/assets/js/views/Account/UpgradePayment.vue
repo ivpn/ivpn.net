@@ -170,7 +170,6 @@ export default {
 
         .payment-details-label {
             font-size: 14px;
-            opacity: 0.6;
             white-space: nowrap;
             text-align: left;
         }
@@ -199,7 +198,6 @@ export default {
     .payment-details-hint {
         margin-bottom: 20px;
         font-size: 15px;
-        opacity: 0.7;
     }
 }
 </style>

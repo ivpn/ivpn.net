@@ -252,7 +252,7 @@ label {
 
         .btn-primary {
             background-color: #3b9eff;
-            color: black;
+            color: $white;
 
             &:hover {
                 background-color: #5aafff;

@@ -123,17 +123,8 @@
     }
 }
 
-.upgrade-box__price-label {
-    @include light-theme((color: black));
-    @include dark-theme((color: white));
-    @media (prefers-color-scheme: light) { color: black; }
-    @media (prefers-color-scheme: dark)  { color: white; }
-}
 
 .upgrade-box__price-value {
-    font-weight: 700;
-    @include light-theme((color: $black));
-    @include dark-theme((color: $white));
 }
 
 // ── Upgrade summary card ──────────────────────────────────────────────────────
@@ -157,7 +148,6 @@
         &:last-child { border-bottom: none; }
 
         &--highlight {
-            font-weight: 700;
             @include light-theme((background-color: rgba(51, 77, 102, 0.06)));
             @include dark-theme((background-color: rgba(255, 255, 255, 0.05)));
         }
@@ -166,15 +156,10 @@
     .upgrade-box__summary-label {
         font-size: 12px;
         white-space: nowrap;
-        @include light-theme((color: black));
-        @include dark-theme((color: white));
-        @media (prefers-color-scheme: light) { color: black; }
-        @media (prefers-color-scheme: dark)  { color: white; }
     }
 
     .upgrade-box__summary-value {
         font-size: 13px;
-        font-weight: 600;
         text-align: right;
     }
 
