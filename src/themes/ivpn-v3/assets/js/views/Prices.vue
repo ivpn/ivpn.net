@@ -723,6 +723,22 @@ export default {
                 color: #3b9eff;
                 flex-shrink: 0;
             }
+
+            // When the feature text + tooltip are wrapped in a <span>, make that span
+            // a flex row so the tooltip icon is always pushed to the right edge,
+            // aligned with tooltip icons in the other plan columns regardless of text length.
+            > span {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex: 1;
+                gap: 0.25rem;
+
+                > span[data-tooltip] {
+                    flex-shrink: 0;
+                    margin-top: 0.15rem;
+                }
+            }
         }
     }
 }
@@ -970,6 +986,12 @@ export default {
 
                 @media (max-width: 480px) {
                     gap: 1.5rem 1rem;
+                }
+
+                @media (min-width: 1024px) {
+                    height: 50%;
+                    padding-left:4rem;
+                    margin-top:4rem;
                 }
 
                 .service-icon {
