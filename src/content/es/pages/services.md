@@ -17,7 +17,7 @@ sections:
         alt: Mailx Logo
       - image: /images/mod_white.png
         alt: modDNS Logo
-      - image: /images/pm_light_contrast.svg
+      - image: /images/pm_white.svg
         alt: Portmaster
         text: Portmaster
   - type: service_card
@@ -121,7 +121,7 @@ sections:
         url: https://moddns.net/privacy
   - type: service_card
     name: Portmaster
-    logo: /images/pm_light_contrast.svg
+    logo: /images/pm_white.svg
     platform_note: "(Disponible en Linux y Windows)"
     plans:
       - Pro Suite
@@ -187,16 +187,16 @@ sections:
         - $100
     note: "Planes disponibles: semanal, mensual y anual."
   - type: content_with_image
-    title: Stack compartimentalizado
-    image: /images/stack-diagram-dark.png
+    title: Acceso sin enlace
+    image: /images/stack-diagram-dark.jpg
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:
-      - Con los planes Plus y Pro, puedes crear una cuenta para Mailx, modDNS y Safing Portmaster sin revelar los detalles de tu cuenta de IVPN.
-      - Nuestro acceso sin enlace, diseñado específicamente, funciona creando tokens seguros que demuestran que eres un cliente de IVPN con un plan activo, sin exponer tu ID de cuenta ni la información de pago a otros servicios. Esto significa que si Mailx, modDNS o Portmaster fueran comprometidos, los atacantes no podrían obtener ninguna información sobre tu cuenta de IVPN.
+      - Bajo los planes Plus y Pro, MailX, modDNS y Portmaster autorizan el acceso sin recibir ni almacenar tu ID de cuenta de IVPN. 
+      - Cuando activas un servicio, IVPN le envía un token criptográfico derivado de tu cuenta. Cada servicio utiliza un hash de ese token para confirmar que tu suscripción está activa. Ninguno de ellos mantiene un enlace directo con tu cuenta de IVPN.
     link:
       text: Lee sobre el acceso sin enlace
-      url: "#"
+      url: /unlinked-access
   - type: text_cta
     title: Resiste la vigilancia en línea
     content: Comienza seleccionando un plan según los servicios que necesites.

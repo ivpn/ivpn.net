@@ -34,10 +34,23 @@
         margin: 0;
     }
 
+    .heading__content {
+        max-width: 55%;
+
+        @media (max-width: 1024px) {
+            max-width: 100%;
+        }
+    }
+
     .heading__image-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-left: 2.5rem;
+
+        @media (max-width: 1024px) {
+            padding-left: 0;
+        }
     }
 
     .logos-grid {
@@ -54,6 +67,10 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+
+        @media (min-width: 1025px) {
+            gap: 1rem;
+        }
 
         img {
             width: 2.5rem;
@@ -172,10 +189,12 @@
 // =============================================================================
 .services-card-section {
     display: block;
+    margin-top: 25px;
 
     .section-title {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
+        padding-bottom: 0.5rem;
     }
 
     .card-wrapper {
@@ -208,6 +227,10 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+
+        @media (min-width: 1025px) {
+            gap: 1rem;
+        }
     }
 
     .service-logo {
@@ -224,6 +247,12 @@
         font-size: 0.875rem;
         color: #999;
         margin-left: 0.5rem;
+        position: relative;
+        top: 2px;
+    }
+
+    .portmaster-service-logo-light {
+        filter: invert(1);
     }
 
     .plans-container {
@@ -539,11 +568,23 @@
     .table-header-cell {
         text-align: left;
         padding: 1rem;
+        font-size: 1.05rem;
+        font-weight: 700;
+        @include light-theme((color: #111));
+        @include dark-theme((color: rgba(255,255,255,0.9)));
+        @media (prefers-color-scheme: light) { color: #111; }
+        @media (prefers-color-scheme: dark)  { color: rgba(255,255,255,0.9); }
     }
 
     .table-header-cell-center {
         text-align: center;
         padding: 1rem;
+        font-size: 1.05rem;
+        font-weight: 700;
+        @include light-theme((color: #111));
+        @include dark-theme((color: rgba(255,255,255,0.9)));
+        @media (prefers-color-scheme: light) { color: #111; }
+        @media (prefers-color-scheme: dark)  { color: rgba(255,255,255,0.9); }
     }
 
     .table-row {
@@ -767,6 +808,7 @@
 .services-cta-section {
     display: block;
     text-align: center;
+    padding-top: 3rem;
 
     .cta-title {
         margin-bottom: 1.5rem;
@@ -789,6 +831,10 @@
         font-weight: bold;
         border-radius: 4px;
         margin-bottom: 3rem;
+    }
+
+    .cta {
+        font-size: 16px;
     }
 
     @media (max-width: 1024px) {

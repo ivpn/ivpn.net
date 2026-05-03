@@ -165,7 +165,8 @@ export default {
     margin-top: 1.5em;
 
     .label {
-        color: $grey;
+        opacity: 0.6;
+        font-size: 13px;
     }
     .value {
         font-weight: bold;

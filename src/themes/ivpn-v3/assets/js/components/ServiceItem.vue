@@ -130,8 +130,13 @@ export default {
         },
 
         shouldShowSync() {
-            const action = new URLSearchParams(window.location.search).get('action');
-            return action === 'sync';
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('action') !== 'sync') return false;
+            const serviceParam = params.get('service');
+            // No service param → show resync on all services
+            if (!serviceParam) return true;
+            // Service param present → only show on the matching service
+            return serviceParam === this.service.key;
         },
         badgeClass() {
             if (!this.account.is_active) return 'service-card__badge--inactive';

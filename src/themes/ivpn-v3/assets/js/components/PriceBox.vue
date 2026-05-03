@@ -17,13 +17,18 @@
             </div>
         </div>
         <slot name="footer"></slot>
-        <div class="price-button" :style="hideButton ? { visibility: 'hidden' } : {}">
+        <div class="price-button">
+        <div v-if="current && hideButton" class="btn btn-big btn-outline btn-current-plan" style="margin-top: 2em;">
+            {{ $t('account.currentPlanBadge') }}
+        </div>
         <button
-            class="btn btn-big btn-generate"
-            :class="(upgrade || product === 'tier3') ? 'btn-primary' : 'btn-outline'"
+            v-else
+            class="btn btn-big btn-generate btn-primary"
+            :class="{ 'btn-outline': selectedPlan }"
             style="margin-top: 2em"
+            :style="(!current && !selectedPlan && hideButton) ? { visibility: 'hidden' } : {}"
             v-on:click="selected"
-            :disabled="isButtonDisabled || current"
+            :disabled="isButtonDisabled"
         >
             <spinner
                 fill="#FFFFFF"
@@ -53,7 +58,8 @@ export default {
         buttonText: { type: String, required: true },
         product: { type: String, required: true },
         hideButton: { type: Boolean, default: false },
-        upgrade: { type: Boolean, default: false }
+        upgrade: { type: Boolean, default: false },
+        selectedPlan: { type: Boolean, default: false }
     },
     components: { Spinner },
     model: {
@@ -65,7 +71,7 @@ export default {
             return lang === "es" ? this.prices.pricesEs : this.prices.prices;
         },
         isButtonDisabled() {
-            return this.disabled || this.current || this.inProgress;
+            return this.disabled || this.inProgress;
         }
     },
 
@@ -262,6 +268,22 @@ label {
                 background-color: #3b9eff;
                 color: black;
             }
+        }
+
+        .btn-current-plan {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.1rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            background-color: transparent;
+            border: 2px solid rgba(59, 158, 255, 0.4);
+            color: rgba(59, 158, 255, 0.6);
+            cursor: default;
         }
     }
 }

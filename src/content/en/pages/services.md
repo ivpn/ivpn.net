@@ -18,7 +18,7 @@ sections:
         alt: Mailx Logo
       - image: /images/mod_white.png
         alt: modDNS Logo
-      - image: /images/pm_light_contrast.svg
+      - image: /images/pm_white.svg
         alt: Portmaster
         text: Portmaster
   - type: service_card
@@ -122,7 +122,7 @@ sections:
         url: https://moddns.net/privacy
   - type: service_card
     name: Portmaster
-    logo: /images/pm_light_contrast.svg
+    logo: /images/pm_white.svg
     platform_note: "(Available on Linux and Windows)"
     plans:
       - Pro Suite
@@ -188,16 +188,16 @@ sections:
         - $100
     note: Weekly, monthly, yearly plans available.
   - type: content_with_image
-    title: Compartmentalized Stack
-    image: /images/stack-diagram-dark.png
+    title: Unlinked Access
+    image: /images/stack-diagram-dark.jpg
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:
-      - Under the Plus and Pro plan, you can create an account for Mailx, modDNS and Safing Portmaster without revealing your IVPN account details.
-      - Our purpose-built Zero-Link Access works by creating secure tokens that prove you are an IVPN customer with an active plan, without exposing your Account ID and payment information to other services. This means if Mailx, modDNS or Portmaster were compromised, attackers would learn nothing about your IVPN account.
+      - Under the Plus and Pro plan, MailX, modDNS, and Portmaster authorise access without receiving or storing your IVPN account ID.
+      - When you activate a service, IVPN sends it a cryptographic token derived from your account. Each service uses a hash of that token to confirm your subscription is active. None of them hold a direct link back to your IVPN account.
     link:
-      text: Read about Zero-Link Access
-      url: "#"
+      text: Read about Unlinked Access
+      url: /unlinked-access
   - type: text_cta
     title: Resist online surveillance
     content: Get started by selecting a plan based on which services you need.

@@ -141,8 +141,8 @@
         margin: 0 0 20px;
         flex-grow: 1;
 
-        @include light-theme((color: rgba(0, 0, 0, 0.55)));
-        @include dark-theme((color: white, opacity: 0.7));
+        @include light-theme((color: rgba(0, 0, 0, 0.75)));
+        @include dark-theme((color: rgba(255, 255, 255, 0.7)));
     }
 
     // CTA row — pinned to bottom
@@ -187,8 +187,8 @@
     line-height: 1.6;
     margin-top: 4px;
 
-    @include light-theme((color: rgba(0, 0, 0, 0.5)));
-    @include dark-theme((color: white, opacity: 0.7));
+    @include light-theme((color: rgba(0, 0, 0, 0.75)));
+    @include dark-theme((color: rgba(255, 255, 255, 0.7)));
 
     label {
         display: block;
@@ -203,4 +203,9 @@
 .services-title {
     margin-bottom: 4px;
     display: block;
+
+    @include light-theme((color: $dark));
+    @include dark-theme((color: rgba(255, 255, 255, 0.8)));
+    @media (prefers-color-scheme: light) { color: $dark; }
+    @media (prefers-color-scheme: dark)  { color: rgba(255, 255, 255, 0.8); }
 }

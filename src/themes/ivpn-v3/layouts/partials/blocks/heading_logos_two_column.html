@@ -11,7 +11,7 @@
                 {{ range .logos }}
                 {{ if isset . "text" }}
                 <div class="logo-with-text">
-                {{ if eq .image "/images/pm_light_contrast.svg" }}
+                {{ if eq .image "/images/pm_white.svg" }}
                     <img src="{{ site.Params.cdnUrl }}/images/pm_white.svg" alt="{{ .alt }}" class="logo-dark-theme portmaster-logo-dark" />
                     <img src="{{ site.Params.cdnUrl }}/images/pm_white.svg" alt="{{ .alt }}" class="logo-light-theme portmaster-logo-light" />
                     {{ else }}
