@@ -132,7 +132,8 @@
             "feature1": "Cuatro servicios de privacidad independientes operados por IVPN",
             "feature2": "Todos los servicios son de código abierto",
             "feature3": "Los servicios adicionales se activan por separado después de la compra",
-            "feature4": "Activa los servicios sin vincular tu ID de cuenta IVPN (arquitectura de acceso sin enlace)"
+            "feature4": "Los servicios adicionales autorizan el acceso sin recibir tu ID de cuenta IVPN",
+            "feature4LinkText": "Acceso no vinculado"
         },
         "features":{
             "title": "Características de IVPN",
@@ -252,8 +253,8 @@
         "additionalServicesFooterForDetails": " para más detalles.",
         "additionalServicesFooter": "Para aprender más sobre cada servicio y sus beneficios, visita la",
         "additionalServicesFooterLink": "descripción general de servicios",
-        "additionalServicesFooter2": "Tu ID de cuenta de IVPN no se pasa ni se almacena en Mailx, modDNS o Portmaster. Revisa",
-        "additionalServicesFooter2Link": "Acceso Zero Link",
+        "additionalServicesFooter2": "Tu ID de cuenta de IVPN no se pasa ni se almacena en Mailx, modDNS o Safing Portmaster. Revisa la",
+        "additionalServicesFooter2Link": "explicación de acceso no vinculado",
         "getHelp": "Obtener ayuda",
         "creditCard": "T. Crédito",
         "paypal": "PayPal",
@@ -274,6 +275,7 @@
         "activeUntil": "Activo hasta",
         "willBeActiveUntil": "Estará activo hasta:",
         "currentPlan": "Plan actual",
+        "currentPlanBadge": "Plan actual",
         "newPlan": "Nuevo plan",
         "differencePaidToday": "Diferencia, pagada hoy",
         "upgradePaidToday": "Precio de mejora (pagado hoy)",

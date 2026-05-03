@@ -35,10 +35,10 @@
         padding: 18px 16px 14px;
     }
 
-    @include light-theme((background-color: #f5f5f5));
-    @include dark-theme((background-color: #222226));
-    @media (prefers-color-scheme: light) { background-color: #f5f5f5; }
-    @media (prefers-color-scheme: dark)  { background-color: #222226; }
+    @include light-theme((background-color: #f5f5f5, color: #111));
+    @include dark-theme((background-color: #222226, color: rgba(255,255,255,0.85)));
+    @media (prefers-color-scheme: light) { background-color: #f5f5f5; color: #111; }
+    @media (prefers-color-scheme: dark)  { background-color: #222226; color: rgba(255,255,255,0.85); }
 
     ul li:before { display: none; }
 }
@@ -124,7 +124,10 @@
 }
 
 .upgrade-box__price-label {
-    opacity: 0.65;
+    @include light-theme((color: rgba(0,0,0,0.6)));
+    @include dark-theme((color: rgba(255,255,255,0.6)));
+    @media (prefers-color-scheme: light) { color: rgba(0,0,0,0.6); }
+    @media (prefers-color-scheme: dark)  { color: rgba(255,255,255,0.6); }
 }
 
 .upgrade-box__price-value {
@@ -162,8 +165,11 @@
 
     .upgrade-box__summary-label {
         font-size: 12px;
-        opacity: 0.6;
         white-space: nowrap;
+        @include light-theme((color: rgba(0,0,0,0.6)));
+        @include dark-theme((color: rgba(255,255,255,0.6)));
+        @media (prefers-color-scheme: light) { color: rgba(0,0,0,0.6); }
+        @media (prefers-color-scheme: dark)  { color: rgba(255,255,255,0.6); }
     }
 
     .upgrade-box__summary-value {
@@ -220,7 +226,8 @@
     content: attr(data-tooltip);
     position: absolute;
     bottom: 100%;
-    @media (max-width: 1500px) { right: 50%; }
+    left: 50%;
+    transform: translateX(-50%);
     @include dark-theme((background-color: black, color: rgba(255,255,255,0.85)));
     @include light-theme((background-color: #F9F9F9, color: black));
     @media (prefers-color-scheme: dark)  { background-color: black; color: rgba(255,255,255,0.85); }

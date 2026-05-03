@@ -229,6 +229,7 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 3px;
+        padding-bottom: 5px;
     }
 
     &__label {

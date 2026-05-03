@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="app text-center">{{ $t('pricing.title') }}</h1>
+        <h1 id="plan-heading" class="app text-center">{{ $t('pricing.title') }}</h1>
         <p class="text-center" style="font-size:1.2rem">
             {{ $t('pricing.description') }}
         </p>
@@ -14,6 +14,7 @@
                 :buttonText="getButtonText('IVPN Tier 1')"
                 :hideButton="shouldHideButton('IVPN Tier 1')"
                 :upgrade="isUpgradeTier('IVPN Tier 1')"
+                :selectedPlan="isUnpaidWithProduct && (productHierarchy['IVPN Tier 1'] === (productHierarchy[account?.product?.id] || 0))"
                 product="tier1"
                 :current="account && account.product && account.product.id === 'IVPN Tier 1'"
             >
@@ -58,6 +59,7 @@
                 :buttonText="getButtonText('IVPN Tier 2')"
                 :hideButton="shouldHideButton('IVPN Tier 2')"
                 :upgrade="isUpgradeTier('IVPN Tier 2')"
+                :selectedPlan="isUnpaidWithProduct && (productHierarchy['IVPN Tier 2'] === (productHierarchy[account?.product?.id] || 0))"
                 product="tier2"
                 :current="account && account.product && account.product.id === 'IVPN Tier 2'"
             >
@@ -106,6 +108,7 @@
                 :buttonText="getButtonText('IVPN Tier 3')"
                 :hideButton="shouldHideButton('IVPN Tier 3')"
                 :upgrade="isUpgradeTier('IVPN Tier 3')"
+                :selectedPlan="isUnpaidWithProduct && (productHierarchy['IVPN Tier 3'] === (productHierarchy[account?.product?.id] || 0))"
                 product="tier3"
                 :current="account && account.product && account.product.id === 'IVPN Tier 3'"
             >
@@ -189,7 +192,7 @@
                     </div>
                 </div>
 
-                <div class="content-grid">
+                <div class="content-grid content-grid--stack">
                     <div class="content-text">
                         <h3>{{ $t('pricing.stack.title') }}</h3>
                         <div class="privacy-features">
@@ -216,6 +219,7 @@
                               <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
                             {{ $t('pricing.stack.feature4') }}
+                            (<a href="/unlinked-access" class="feature-inline-link">{{ $t('pricing.stack.feature4LinkText') }}</a>)
                           </div>
                         </div>
                         
@@ -232,7 +236,7 @@
                             <img alt="MailX" class="service-icon mailx-logo">
                             <img alt="modDNS" class="service-icon moddns-logo">
                             <div class="portmaster-logo">
-                                <img src="/images/pm_light_contrast.svg" alt="Portmaster" class="portmaster-icon">
+                                <img src="/images/pm_white.svg" alt="Portmaster" class="portmaster-icon">
                                 <span>{{ $t('pricing.portmasterTitle') }}</span>
                             </div>
                             <img src="/images/ivpn.png" alt="IVPN" class="service-icon" style="height: 3rem">
@@ -487,6 +491,13 @@ export default {
             const productId = this.account.product?.id || this.account.product?.name || '';
             return this.productHierarchy[productId] || 0;
         },
+        isUnpaidWithProduct() {
+            return !!(this.auth.isAuthenticated &&
+                this.account &&
+                !this.account.is_new &&
+                !this.account.is_active &&
+                this.account.product?.id);
+        },
     },
     async created() {
         // Set locale once during component creation
@@ -510,6 +521,16 @@ export default {
             if (this.auth.isAuthenticated && this.auth.isLegacy) {
                 this.$router.push({ name: "account-" + this.language  });
                 return;
+            }
+
+            // Unpaid user clicking their current plan → go back to account
+            if (this.isUnpaidWithProduct) {
+                const tierLevel = this.productHierarchy[product] || 0;
+                const currentLevel = this.productHierarchy[this.account?.product?.id] || 0;
+                if (tierLevel === currentLevel) {
+                    this.$router.push({ name: "account-" + this.language });
+                    return;
+                }
             }
 
             this.selectedProduct = product;
@@ -562,7 +583,7 @@ export default {
             }
         },
         scrollToPricing() {
-            const element = document.getElementById('pricing-section');
+            const element = document.getElementById('plan-heading');
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
@@ -586,10 +607,18 @@ export default {
         },
         getButtonText(tierProductId) {
             if (!this.auth.isAuthenticated) {
-                return this.$t('pricing.generateAccount');
+                return this.$t('pricing.selectPlan');
             }
             if (this.isUpgradeTier(tierProductId)) {
                 return this.$t('pricing.upgrade');
+            }
+            // Unpaid user — highlight their current plan
+            if (this.isUnpaidWithProduct) {
+                const tierLevel = this.productHierarchy[tierProductId] || 0;
+                const currentLevel = this.productHierarchy[this.account?.product?.id] || 0;
+                if (tierLevel === currentLevel) {
+                    return this.$t('account.selectedPlan');
+                }
             }
             return this.$t('pricing.selectPlan');
         },
@@ -820,6 +849,11 @@ export default {
             column-gap: 2rem;
             margin-bottom: 0.5rem;
 
+            &--stack {
+                padding-top: 10px;
+                margin-bottom: 20px;
+            }
+
             &.reverse {
                 @media (max-width: 768px) {
                     margin-top: 3rem;
@@ -840,7 +874,7 @@ export default {
             .content-text {
 
                 h3 {
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 3rem;
                     font-family: var(--font-mono);
                     font-weight: 600;
                     font-size: 1.5rem;
@@ -866,6 +900,7 @@ export default {
                     color: #3b9eff;
                     text-decoration: none;
                     transition: color 0.2s;
+                    padding-left: 1.75rem;
 
                     &:hover {
                         color: var(--color-primary-hover);
@@ -875,6 +910,12 @@ export default {
                         width: 1rem;
                         height: 1rem;
                     }
+                }
+
+                .feature-inline-link {
+                    color: #3b9eff;
+                    text-decoration: none;
+                    &:hover { text-decoration: underline; }
                 }
             }
 
@@ -1039,9 +1080,9 @@ export default {
 // Payment Methods Section
 .payment-methods {
     margin-bottom: 40px;
-    padding: 0rem 3.125rem 0rem;
+    padding: 0rem 3.125rem 10px;
     @media(max-width: 480px) {
-        padding: 0rem 1.125rem 0rem;
+        padding: 0rem 1.125rem 10px;
     }
     @media (max-width: 768px) {
         margin-top: 0px;
@@ -1050,7 +1091,7 @@ export default {
 
     .container {
         h3 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
             font-family: var(--font-mono);
             font-weight: 600;
             font-size: 1.5rem;

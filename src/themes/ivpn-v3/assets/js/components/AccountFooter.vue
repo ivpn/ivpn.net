@@ -3,7 +3,7 @@
         <label>{{ $t('account.getHelp') }}</label>
     </div>
     <div class="footer-links">
-        <div style="max-width: 500px">
+        <div>
             <div><a href="/contactus/">{{ $t('account.contactSupport') }}</a></div>
             <div style="opacity: 0.7; margin-top: 1em">
                 <p style='margin-bottom: 12px;'>

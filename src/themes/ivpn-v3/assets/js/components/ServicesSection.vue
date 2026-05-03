@@ -25,7 +25,7 @@
                 </label>
                 <label>
                     {{ $t('account.additionalServicesFooter2') }} 
-                    <a :href="language + '/zla/'">{{ $t('account.additionalServicesFooter2Link') }}</a>
+                    <a href="/unlinked-access">{{ $t('account.additionalServicesFooter2Link') }}</a>
                     {{ $t('account.additionalServicesFooterForDetails') }}
                 </label>
             </span>
