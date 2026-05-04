@@ -15,8 +15,6 @@ In this article you can find details about account unlinkability, compatibility 
     Our developers have created a privacy-preserving, cross-application authorization system called Unlinked Access.  Authorization is proven cryptographically only by what you are entitled to access, not by who you are.
     
     A general overview of the Unlinked Access system is available [here](/unlinked-access).
-    
-    An article with more technical details is available [here](/blog/unlinked-access-explained.md).
 
 1. ### What's the difference between IVPN's built-in AntiTracker and modDNS > do I need both?
     The AntiTracker list selected in the IVPN App governs DNS access for the entire system.  The AntiTracker's block lists cannot be customized to block additional domains or allow exceptions.  No logging is available by design.
