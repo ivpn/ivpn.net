@@ -1087,6 +1087,24 @@ export default {
             width: 68%;
             transform: translateY(calc(-50% - 25px));
         }
+
+        @include light-theme((
+            background-color: transparent,
+            border: none,
+            padding: 0,
+            box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5),
+        ));
+        @include dark-theme((
+            background-color: #29292E,
+            border: 2px solid rgba(255, 255, 255, 0.3),
+            padding: 2px,
+        ));
+        @media (prefers-color-scheme: light) {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5),
+        }
     }
 
     .product-gui {
@@ -1113,6 +1131,24 @@ export default {
             left: 2.5rem;
             width: 68%;
             transform: translateY(calc(-40% + 10px));
+        }
+
+        @include light-theme((
+            background-color: transparent,
+            border: none,
+            padding: 0,
+            box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5),
+        ));
+        @include dark-theme((
+            background-color: #29292E,
+            border: 2px solid rgba(255, 255, 255, 0.3),
+            padding: 2px,
+        ));
+        @media (prefers-color-scheme: light) {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5),
         }
     }
 }

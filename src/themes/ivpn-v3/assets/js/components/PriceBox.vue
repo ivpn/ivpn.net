@@ -307,7 +307,13 @@ label {
     font-size: 13px;
     line-height: 1.4;
     padding: 2px 0 18px 22px;
-    color: rgba(255, 255, 255, 0.85);
+    color: inherit;
+
+    @include light-theme((color: rgba(0, 0, 0, 0.85)));
+    @include dark-theme((color: rgba(255, 255, 255, 0.85)));
+    @media (prefers-color-scheme: light) {
+        color: rgba(0, 0, 0, 0.85);
+    }
 }
 
 .feature-item.expandable {
