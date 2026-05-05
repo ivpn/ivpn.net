@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-04-07 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-05-05 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 944024
-hash: 00000000000000000001c505bdf409013e53b6754bdb0caa0ad69c919bbfc894
+height: 948000
+hash: 00000000000000000001b01841afc366a4f999b291c8563ee0d0db956fc2db44
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Bill Ackman’s Pershing Square offers €55bn for Universal Music Group
-Proposed deal would combine world’s largest music group with a blank-cheque company
+Alphaville.Can we make a crazy huge Venn of the BDC ecosystem?
+Up to a point
 
-Taiwan opposition leader in ‘peace’ trip to China
-First trip by a Kuomintang chair in a decade comes shortly ahead of planned Beijing summit with Donald Trump
+EQT boosts Intertek takeover offer to more than £10bn
+Previous bids from Swedish private equity firm were rejected for ‘fundamentally undervaluing’ FTSE 100 company
 
-Vietnam gets its most powerful leader in decades
-Communist Party leader To Lam’s election as president cements his grip on one of the world’s fastest-growing economies
+UniCredit’s investments in other banks help lender to record profit
+Italian group pressing ahead with €35bn bid for Germany’s Commerzbank
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmnUwe0ACgkQisFrnrZH
-umm1GQgAq5fxMJOG+sWm/GNJvZ8MdsodPqOrdadz1MwwL34YVnLVryJtQC+CDyNm
-Uzbb+5Y2hJ03tCyBrOfm9jRf0TG3H3PuVHhSHYxe3s6b70DSBljwW6C8Rb/I+xpO
-/EjACu7cCZE0JLI+q5jpTWwJArcI/kO6taj4+eMY+sTw7uwcKrqLSVCTnz6H6okp
-V40v+mn3P2nZYJbySEiy4/fI8bf3vDVL0GiC3fUh/hhWWgDQWQS00eFLOKXVINpg
-BDntA4hFQgc3h/f7IshZUCdCoikWzuGj0tk6HytC7diqxNJOusPWSBcKdMJ1vDTC
-0Yq24nurkdkjFkPH5waXgI9NFa/r/A==
-=K+Hl
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmn5s4oACgkQisFrnrZH
+ummd5Qf+OJAW+yGLAUzbFNo9OlAJiRI3dfVQ5XbDUkDMW93d/+cs9dAjgzLjSM3d
+HWqSS23kcD/I2NPrGZNcNVIeIZ3Qyqf0BBWZEAasyQNVVy22FTHBlWEatSSJLM0J
+JnVdN6azzvGGZ5zCn11ioit90x3irhN0+cdaPoD3oZGOwn8lLEUPdcdPLYCiBbPo
+9ld0BBCH0tqTdCqkOr2tlaU7zO87z0V37MCaIM+ZYviuc2WuGv70EqK9MTFWMZOW
+sBnuDc7j01T7El0Vedz2eoyfyhIIlDD4zeOHZjZNBISDbpT7qLw+UyjLUQsN8v64
+zYT3KZfiyDyHaBvD5IjFaC0nk7+sbg==
+=49P2
 -----END PGP SIGNATURE-----
 
 
