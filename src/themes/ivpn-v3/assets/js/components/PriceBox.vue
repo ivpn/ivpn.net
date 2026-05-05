@@ -328,6 +328,8 @@ label {
         color: rgba(255, 255, 255, 0.55);
         flex-shrink: 0;
         align-self: center;
+        @include light-theme((color: rgba(0, 0, 0, 0.85)));
+        @include dark-theme((color: rgba(255, 255, 255, 0.85)));
     }
 
     &:hover .feature-toggle {
