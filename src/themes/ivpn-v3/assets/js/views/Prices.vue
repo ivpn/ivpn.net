@@ -700,7 +700,7 @@ export default {
         color: rgba(255, 255, 255, 0.55);
         text-align: left;
         @include light-theme((color: rgba(0, 0, 0, 0.85)));
-        @include dark-theme((color: rgba(255, 255, 255, 0.85)));
+        @include dark-theme((color: rgba(255, 255, 255, 0.55)));
     }
 
     // Price features
