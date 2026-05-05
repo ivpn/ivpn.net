@@ -1056,19 +1056,20 @@ export default {
     min-height: 500px;
     overflow: hidden;
 
-    @media (max-width: 768px) {
-        min-height: 320px;
+    @media (min-width: 480px) and (max-width: 768px) {
+        margin-left: 7rem;
     }
 
     @media (max-width: 480px) {
         min-height: 260px;
         margin-bottom: 1.5rem;
+        margin-left: 3rem;
     }
 
     .product-cli {
         position: absolute;
         left: 0;
-        top: 50%;
+        top: 43%;
         transform: translateY(calc(-50% - 70px));
         width: 74%;
         height: auto;
@@ -1113,7 +1114,7 @@ export default {
     .product-gui {
         position: absolute;
         left: 4rem;
-        top: 50%;
+        top: 43%;
         transform: translateY(-40%);
         width: 74%;
         height: auto;
