@@ -27,27 +27,22 @@
                     </div>
                 </div>
                 <div class="price-features">
-                    <div class="feature-item">
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t1f1'] }" @click="toggleFeature('t1f1')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                         {{ $t('pricing.tier1.feature1') }}
+                        <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                        {{ $t('pricing.tier1.feature2') }}
-                    </div>
-                    <div class="feature-item">
+                    <div class="feature-description" v-if="expandedFeatures['t1f1']">{{ $t('pricing.tier1.feature1Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t1f3'] }" @click="toggleFeature('t1f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                         {{ $t('pricing.tier1.feature3') }}
+                        <span class="feature-toggle">[i]</span>
                     </div>
-                </div>
-                <div class="price-features-footer">
-                    {{ $t('pricing.tier1.footer') }}
+                    <div class="feature-description" v-if="expandedFeatures['t1f3']">{{ $t('pricing.tier1.feature3Title') }}</div>
                 </div>
             </price-box>
 
@@ -70,33 +65,30 @@
                     </div>
                 </div>
                 <div class="price-features">
-                    <div class="feature-item">
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t2f1'] }" @click="toggleFeature('t2f1')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                         {{ $t('pricing.tier2.feature1') }}
+                        <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-description" v-if="expandedFeatures['t2f1']">{{ $t('pricing.tier2.feature1Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t2f3'] }" @click="toggleFeature('t2f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        {{ $t('pricing.tier2.feature2') }}
+                        {{ $t('pricing.tier2.feature3') }}
+                        <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-description" v-if="expandedFeatures['t2f3']">{{ $t('pricing.tier2.feature3Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t2f4'] }" @click="toggleFeature('t2f4')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        <span>{{ $t('pricing.tier2.feature3') }} <span :data-tooltip="$t('pricing.tier2.feature3Title')">&#9432;</span></span>
-                    </div>
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                        <span>{{ $t('pricing.tier2.feature4') }} <span :data-tooltip="$t('pricing.tier2.feature4Title')">&#9432;</span></span>
-                    </div>     
-                </div>
-                <div class="price-features-footer">
-                    {{ $t('pricing.tier2.footer') }}
+                        {{ $t('pricing.tier2.feature4') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>    
+                    <div class="feature-description" v-if="expandedFeatures['t2f4']">{{ $t('pricing.tier2.feature4Title') }}</div> 
                 </div>
             </price-box>
 
@@ -119,39 +111,37 @@
                     </div>
                 </div>
                 <div class="price-features">
-                    <div class="feature-item">
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f1'] }" @click="toggleFeature('t3f1')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                         {{ $t('pricing.tier3.feature1') }}
+                        <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-description" v-if="expandedFeatures['t3f1']">{{ $t('pricing.tier3.feature1Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f3'] }" @click="toggleFeature('t3f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        {{ $t('pricing.tier3.feature2') }}
+                        {{ $t('pricing.tier3.feature3') }}
+                        <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-description" v-if="expandedFeatures['t3f3']">{{ $t('pricing.tier3.feature3Title') }}</div>
+<div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f4'] }" @click="toggleFeature('t3f4')">                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier3.feature4') }}
+                        <span class="feature-toggle">[i]</span>                    
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['t3f4']">{{ $t('pricing.tier3.feature4Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f5'] }" @click="toggleFeature('t3f5')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                        <span>{{ $t('pricing.tier3.feature3') }} <span :data-tooltip="$t('pricing.tier3.feature3Title')">&#9432;</span></span>
+                        {{ $t('pricing.tier3.feature5') }}
+                        <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                        <span>{{ $t('pricing.tier3.feature4') }} <span :data-tooltip="$t('pricing.tier3.feature4Title')">&#9432;</span></span>
-                    </div>
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                        <span>{{ $t('pricing.tier3.feature5') }} <span :data-tooltip="$t('pricing.tier3.feature5Title')">&#9432;</span></span>
-                    </div>
-                </div>
-                <div class="price-features-footer">
-                    {{ $t('pricing.tier3.footer') }}
+                    <div class="feature-description" v-if="expandedFeatures['t3f5']">{{ $t('pricing.tier3.feature5Title') }}</div>
                 </div>
             </price-box>
         </div>
@@ -462,6 +452,7 @@ export default {
     data() {
         return {
             selectedProduct: "",
+            expandedFeatures: {},
         };
     },
     computed: {
@@ -520,6 +511,9 @@ export default {
         }
     },
     methods: {
+        toggleFeature(key) {
+            this.expandedFeatures = { ...this.expandedFeatures, [key]: !this.expandedFeatures[key] };
+        },
         async selected(product) {
             // Check legacy status once at the beginning
             if (this.auth.isAuthenticated && this.auth.isLegacy) {
@@ -601,6 +595,9 @@ export default {
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
+        },
+        toggleFeature(key) {
+            this.expandedFeatures[key] = !this.expandedFeatures[key];
         },
         isDowngrade(currentProduct, selectedProduct) {
             // Define product hierarchy
@@ -690,16 +687,17 @@ export default {
     .pricebox-header {
         font-family: "Roboto Mono", monospace;
         font-weight: bold;
-        font-size: 18px;
-        line-height: 14px;
+        font-size: 20px;
+        line-height: 16px;
         text-align: left;
         text-transform: uppercase;
     }
 
     .price-title {
         margin-top: 20px;
-        font-size: 0.875rem;
-        color: #6b6b6b;
+        margin-bottom: 12px;
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.55);
         text-align: left;
     }
 
@@ -712,7 +710,8 @@ export default {
             gap: 0.75rem;
             margin-bottom: 1rem;
             padding-left: 0.4rem;
-            font-size: 0.8rem;
+            font-size: 15px;
+            font-weight: bold;
             line-height: 1.6;
             color: var(--color-gray-300);
 
@@ -722,22 +721,11 @@ export default {
                 margin-top: 0.25rem;
                 color: #3b9eff;
                 flex-shrink: 0;
+                transition: transform 0.2s ease;
             }
 
-            // When the feature text + tooltip are wrapped in a <span>, make that span
-            // a flex row so the tooltip icon is always pushed to the right edge,
-            // aligned with tooltip icons in the other plan columns regardless of text length.
-            > span {
-                display: flex;
-                align-items: flex-start;
-                justify-content: space-between;
-                flex: 1;
-                gap: 0.25rem;
-
-                > span[data-tooltip] {
-                    flex-shrink: 0;
-                    margin-top: 0.15rem;
-                }
+            &.expanded .icon {
+                transform: rotate(90deg);
             }
         }
     }
@@ -890,7 +878,7 @@ export default {
 
             &--stack {
                 padding-top: 10px;
-                margin-bottom: 20px;
+                margin-bottom: 5rem;
             }
 
             &.reverse {
