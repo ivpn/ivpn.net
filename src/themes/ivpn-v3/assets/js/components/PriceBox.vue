@@ -197,7 +197,7 @@ label {
 
     // Price Options Section
     .price-options {
-        padding: 0 35px;
+        padding: 16px 35px 0;
 
         .price-option {
             position: relative;
@@ -300,6 +300,39 @@ label {
     padding: 0 5px 35px 8px;
     font-style: italic;
     font-weight: bold;
+}
+
+// Feature accordion
+.feature-description {
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 2px 0 18px 22px;
+    color: inherit;
+
+    @include light-theme((color: rgba(0, 0, 0, 0.85)));
+    @include dark-theme((color: rgba(255, 255, 255, 0.85)));
+    @media (prefers-color-scheme: light) {
+        color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+.feature-item.expandable {
+    cursor: pointer;
+    user-select: none;
+
+    .feature-toggle {
+        margin-left: auto;
+        margin-right: 5px;
+        font-size: 13px;
+        font-family: var(--font-mono);
+        color: rgba(255, 255, 255, 0.55);
+        flex-shrink: 0;
+        align-self: center;
+    }
+
+    &:hover .feature-toggle {
+        opacity: 0.8;
+    }
 }
 
 
