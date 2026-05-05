@@ -76,7 +76,7 @@
         "select": "Select",
         "dns": "modDNS",
         "mailx": "Mailx",
-        "portmaster": "Portmaster",
+        "portmaster": "Portmaster Pro",
         "chooseTimeAdded": "You can choose time added at the next step",
         "generateAccount": "Generate Account",
         "selectPlan": "Select Plan",
@@ -462,7 +462,7 @@
             "renewAccount": "Please renew your account to manage your devices.",
             "upgradeText1": "To increase your device limit to 10,",
             "upgradeText2": "upgrade",
-            "upgradeText3": "your plan to IVPN Plus or IVPN Pro Suite."
+            "upgradeText3": "your plan to IVPN Pro Suite."
 
         },
         "accountSettingsTab": {
