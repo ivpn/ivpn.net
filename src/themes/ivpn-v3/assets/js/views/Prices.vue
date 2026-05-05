@@ -1072,6 +1072,7 @@ export default {
         height: auto;
         object-fit: contain;
         z-index: 10;
+        border-radius: 6px;
 
         @media (max-width: 1024px) {
             transform: translateY(calc(-50% - 50px));
@@ -1116,6 +1117,7 @@ export default {
         height: auto;
         object-fit: contain;
         z-index: 20;
+        border-radius: 6px;
 
         @media (max-width: 1024px) {
             transform: translateY(calc(-40% + 20px));
