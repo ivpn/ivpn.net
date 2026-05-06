@@ -45,6 +45,7 @@
 
 // ── Header (plan title + badge) ───────────────────────────────────────────────
 .upgrade-box__header {
+    flex: 1;
     align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
@@ -189,7 +190,6 @@
 
 // ── CTA button ────────────────────────────────────────────────────────────────
 .upgrade-box__action {
-    margin-top: auto;
     padding-top: 20px;
 
     a { display: block; }
