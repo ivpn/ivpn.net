@@ -68,7 +68,8 @@ export default {
     computed: {
         pricesLocale() {
             const lang = this.$route.params.lang || window.location.href.split("/")[3];
-            return lang === "es" ? this.prices.pricesEs : this.prices.prices;
+            const all = lang === "es" ? this.prices.pricesEs : this.prices.prices;
+            return all.filter(p => !p.id.includes('-2year') && !p.id.includes('-3year'));
         },
         isButtonDisabled() {
             return this.disabled || this.inProgress;

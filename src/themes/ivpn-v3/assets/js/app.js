@@ -22,11 +22,15 @@ let products = {
             { id: 'standard-1week', name: en.pricing.oneWeek, price: 2 },
             { id: 'standard-1month', name: en.pricing.oneMonth, price: 6 },
             { id: 'standard-1year', name: en.pricing.oneYear, price: 60},
+            { id: 'standard-2year', name: en.pricing.twoYears, price: 100},
+            { id: 'standard-3year', name: en.pricing.threeYears, price: 140},
         ],
         pricesEs: [
             { id: 'standard-1week', name: es.pricing.oneWeek, price: 2 },
             { id: 'standard-1month', name: es.pricing.oneMonth, price: 6 },
             { id: 'standard-1year', name: es.pricing.oneYear, price: 60},
+            { id: 'standard-2year', name: es.pricing.twoYears, price: 100},
+            { id: 'standard-3year', name: es.pricing.threeYears, price: 140},
         ]
     },
     tier2: {
@@ -36,14 +40,18 @@ let products = {
             hasPortForwarding: false,
         },
         prices: [
-            { id: 'standard-1week', name: en.pricing.oneWeek, price: 3 },
-            { id: 'standard-1month', name: en.pricing.oneMonth, price: 8 },
-            { id: 'standard-1year', name: en.pricing.oneYear, price: 80},
+            { id: 'plus-1week', name: en.pricing.oneWeek, price: 3 },
+            { id: 'plus-1month', name: en.pricing.oneMonth, price: 8 },
+            { id: 'plus-1year', name: en.pricing.oneYear, price: 80},
+            { id: 'plus-2year', name: en.pricing.twoYears, price: 140},
+            { id: 'plus-3year', name: en.pricing.threeYears, price: 180},
         ],
         pricesEs: [
-            { id: 'standard-1week', name: es.pricing.oneWeek, price: 3 },
-            { id: 'standard-1month', name: es.pricing.oneMonth, price: 8 },
-            { id: 'standard-1year', name: es.pricing.oneYear, price: 80},
+            { id: 'plus-1week', name: es.pricing.oneWeek, price: 3 },
+            { id: 'plus-1month', name: es.pricing.oneMonth, price: 8 },
+            { id: 'plus-1year', name: es.pricing.oneYear, price: 80},
+            { id: 'plus-2year', name: es.pricing.twoYears, price: 140},
+            { id: 'plus-3year', name: es.pricing.threeYears, price: 180},
         ]
     },
     tier3: {
@@ -56,13 +64,16 @@ let products = {
             { id: 'pro-1week', name: en.pricing.oneWeek, price: 4 },
             { id: 'pro-1month', name: en.pricing.oneMonth, price: 10 },
             { id: 'pro-1year', name: en.pricing.oneYear, price: 100},
+            { id: 'pro-2year', name: en.pricing.twoYears, price: 160},
+            { id: 'pro-3year', name: en.pricing.threeYears, price: 220},
 
         ],
         pricesEs: [
             { id: 'pro-1week', name: es.pricing.oneWeek, price: 4 },
             { id: 'pro-1month', name: es.pricing.oneMonth, price: 10 },
             { id: 'pro-1year', name: es.pricing.oneYear, price: 100},
-
+            { id: 'pro-2year', name: es.pricing.twoYears, price: 160},
+            { id: 'pro-3year', name: es.pricing.threeYears, price: 220},
         ]
     }
 }

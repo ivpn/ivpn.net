@@ -27,12 +27,31 @@
                 :planName="$t('pricing.tier2.name')"
             >
                 <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
-                <div class="upgrade-features">
-                    <ul>
-                        <li>{{ $t('pricing.tier2.upgradeFeature1') }}</li>
-                        <li>{{ $t('pricing.tier2.feature3') }}</li>
-                        <li>{{ $t('pricing.tier2.feature4') }}</li>
-                    </ul>
+                <div class="price-features">
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['u2f1'] }" @click="toggleFeature('u2f1')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier2.upgradeFeature1') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['u2f1']">{{ $t('pricing.tier2.feature1Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['u2f3'] }" @click="toggleFeature('u2f3')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier2.feature3') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['u2f3']">{{ $t('pricing.tier2.feature3Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['u2f4'] }" @click="toggleFeature('u2f4')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier2.feature4') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['u2f4']">{{ $t('pricing.tier2.feature4Title') }}</div>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
                     <div class="active-until">
@@ -55,13 +74,39 @@
                 :planName="$t('pricing.tier3.name')"
             >
                 <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
-                <div class="upgrade-features">
-                    <ul>
-                        <li>{{ $t('pricing.tier3.upgradeFeature1') }}</li>
-                        <li>{{ $t('pricing.tier3.feature3') }}</li>
-                        <li>{{ $t('pricing.tier3.feature4') }}</li>
-                        <li>{{ $t('pricing.tier3.feature5') }}</li>
-                    </ul>
+                <div class="price-features">
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['u3f1'] }" @click="toggleFeature('u3f1')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier3.upgradeFeature1') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['u3f1']">{{ $t('pricing.tier3.feature1Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['u3f3'] }" @click="toggleFeature('u3f3')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier3.feature3') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['u3f3']">{{ $t('pricing.tier3.feature3Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['u3f4'] }" @click="toggleFeature('u3f4')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier3.feature4') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['u3f4']">{{ $t('pricing.tier3.feature4Title') }}</div>
+                    <div class="feature-item expandable" :class="{ expanded: expandedFeatures['u3f5'] }" @click="toggleFeature('u3f5')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        {{ $t('pricing.tier3.feature5') }}
+                        <span class="feature-toggle">[i]</span>
+                    </div>
+                    <div class="feature-description" v-if="expandedFeatures['u3f5']">{{ $t('pricing.tier3.feature5Title') }}</div>
                 </div>
                 <template v-slot:footer v-if="account.is_active">
                     <div class="active-until">
@@ -90,6 +135,7 @@ export default {
                 Tier2: null,
                 Tier3: null
             },
+            expandedFeatures: {},
         };
     },
     components: {
@@ -132,6 +178,9 @@ export default {
     
 
     methods: {
+        toggleFeature(key) {
+            this.expandedFeatures = { ...this.expandedFeatures, [key]: !this.expandedFeatures[key] };
+        },
         calculateForProduct(newProduct) {
             return this.$store.dispatch("product/changeDetails", {
                     product: newProduct,    
@@ -144,6 +193,56 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/_vars.scss";
 @import "@/styles/buttons.scss";
+
+// Price features (matches Prices.vue .price-features design)
+.price-features {
+    margin-top: 2rem;
+    min-height: 200px;
+    .feature-item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-left: 0.4rem;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1.6;
+        color: var(--color-gray-300);
+        cursor: pointer;
+        user-select: none;
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            margin-top: 0.25rem;
+            color: #3b9eff;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-toggle {
+            margin-left: auto;
+            font-size: 12px;
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        &.expanded .icon {
+            transform: rotate(90deg);
+        }
+    }
+
+    .feature-description {
+        margin-top: -0.5rem;
+        margin-bottom: 1rem;
+        padding-left: 2.15rem;
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: var(--color-gray-500);
+    }
+}
 
 .prices {
     display: flex;
