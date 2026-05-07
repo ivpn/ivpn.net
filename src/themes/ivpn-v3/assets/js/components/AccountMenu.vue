@@ -1,15 +1,10 @@
 <template>
     <div class="tabs sub-navigation" v-if="shouldDisplay">
-        <div class="page-centered">
+        <div class="page-centered-menu">
             <ul>
                 <li :class="{ 'is-active': isAccountRoute() }">
                     <router-link :to="{ name: 'account-' + this.language }"
-                        >{{ $t('account.ivpnAccount') }}</router-link
-                    >
-                </li>
-                <li :class="{ 'is-active': isWireGuardRoute() }">
-                    <router-link :to="{ name: 'wireguard-' + this.language }"
-                        >{{ $t('account.wireguard') }}</router-link
+                        >{{ $t('account.services') }}</router-link
                     >
                 </li>
                 <li :class="{ 'is-active': isDeviceManagementRoute() }">
@@ -17,12 +12,6 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
-                <li v-if="account.product.capabilities.has_mailx" :class="{ 'is-active': isServiceEmailRoute() }">
-                    <router-link :to="{ name: 'service-email-' + this.language }"
-                        >MailX Beta</router-link
-                    >
-                </li>
-                <li class="expand"></li>
                 <li>
                     <router-link
                         class="settings"
@@ -59,7 +48,7 @@ export default {
             return this.$route.path;
         },
         shouldDisplay() {
-            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es","vouchers-es","vouchers-en", "service-email", "service-email-en", "service-email-es"].includes(
+            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es","vouchers-es","vouchers-en", "service-email", "service-email-en", "service-email-es","service-dns","service-dns-en","service-dns-es"].includes(
                 this.$route.name
             );
         },
@@ -68,7 +57,7 @@ export default {
         isAccountRoute() {
             return (
                 ( this.currentRouteName.startsWith("/en/account") || this.currentRouteName.startsWith("/es/account")) &&
-                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute() && !this.isServiceEmailRoute()
+                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute() && !this.isServiceEmailRoute() && !this.isServiceDnsRoute()
             );
         },
         isWireGuardRoute() {
@@ -83,10 +72,38 @@ export default {
         isServiceEmailRoute() {
             return this.currentRouteName.startsWith("/en/account/service/email") || this.currentRouteName.startsWith("/es/account/service/email");
         },
+        isServiceDnsRoute() {
+            return this.currentRouteName.startsWith("/en/account/service/dns") || this.currentRouteName.startsWith("/es/account/service/dns");
+        },
     },
 };
 </script>
 
 <style lang="scss">
+
+@import "@/styles/base.scss";
+
+.page-centered-menu {
+    
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px;
+
+    @media (min-width: $brk-mobile) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.tabs .page-centered-menu ul li:not(:last-child) {
+    margin-right: 30px; 
+}
+
+@media (max-width: 576px) {
+    .tabs .page-centered-menu ul li:not(:last-child) {
+        margin-right: 0px;
+    }
+}
 
 </style>

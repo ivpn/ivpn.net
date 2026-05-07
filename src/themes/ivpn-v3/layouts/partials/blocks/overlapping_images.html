@@ -1,0 +1,11 @@
+<section class="heading screenshots px-8 services-overlapping-section">
+    <div class="overlapping-container">
+        {{ range $index, $image := .images }}
+        {{ if eq $index 0 }}
+        <img src="{{ site.Params.cdnUrl }}{{ $image.src }}" alt="{{ $image.alt }}" class="overlap-img-1" />
+        {{ else if eq $index 1 }}
+        <img src="{{ site.Params.cdnUrl }}{{ $image.src }}" alt="{{ $image.alt }}" class="overlap-img-2" />
+        {{ end }}
+        {{ end }}
+    </div>
+</section>

@@ -30,19 +30,21 @@
         "meta": {
             "title": "IVPN Pricing - VPN subscription with anonymous registration"
         },
-        "title": "Select IVPN Plan",
-        "description": "Select a plan to create your account instantly. You can switch between IVPN Standard and Pro any time in the future.",
-        "standard": "IVPN STANDARD",
-        "pro": "IVPN PRO",
+        "title": "Select your plan",
+        "description": "Three tiers. No upselling. Pick based on your privacy needs.",
         "allProtocols": "All protocols",
-        "standardDevices": "2 devices",
+        "tier1Devices": "5 devices",
+        "tier2Devices": "5 devices",
         "antitracker": "AntiTracker",
-        "proDevices": "7 devices",
         "multihop": "Multi-hop",
-        "productFooterPrice": "All prices are in U.S. dollars.",
-        "productFooterReview": "Review pricing for teams",
+        "services": "Services",
+        "productFooter1": "Mailx, modDNS and Portmaster are services owned and operated by IVPN. Visit our",
+        "productFooter2": "page for a detailed overview of their features and capabilities.",
+        "productFooterPrice": "Pricing in USD.",
+        "productFooterReview": "Team licensing for VPN-only plans available",
         "here": "here",
-        "featuresTitle": "All IVPN plans include:",
+        "featuresTitle": "All IVPN plans come with:",
+        "serviceBenefits": "Service benefits:",
         "feature1": "Anonymous registration - no email required",
         "feature2": "Open-source applications for Android, iOS, macOS, Windows and Linux",
         "feature3": "Cash, Monero and Bitcoin payment options for better anonymity",
@@ -52,6 +54,7 @@
         "feature7": "Killswitch/firewall and obfuscation methods where applicable",
         "feature8": "SOCKS5 proxy service",
         "feature9": "Router, NAS support",
+        "feature10": "MultiHop - route traffic through two IVPN servers",
         "paymentMethodsTitle": "Supported payment methods:",
         "paymentMethod1": "Credit Card",
         "paymentMethod2": "PayPal",
@@ -70,7 +73,109 @@
         "oneYear": "1 Year",
         "twoYears": "2 Years",
         "threeYears": "3 Years",
-        "select": "Select"
+        "select": "Select",
+        "dns": "modDNS",
+        "mailx": "Mailx",
+        "portmaster": "Portmaster Pro",
+        "chooseTimeAdded": "You can choose time added at the next step",
+        "generateAccount": "Generate Account",
+        "selectPlan": "Select Plan",
+        "upgrade": "Upgrade",
+        "portmasterTitle": "Portmaster",
+        "reviewServices": "REVIEW SERVICE FEATURES",
+        "paymentMethods": "Payment Methods",
+        "tier1":{
+            "name": "IVPN Standard",
+            "title": "Core VPN service",
+            "feature1": "IVPN / 5 Devices",
+            "feature1Title": "Includes Multi-hop, Obfuscation protocols, SOCKS5 proxy.",
+            "feature2": "Multi-hop",
+            "feature3": "AntiTracker",
+            "feature3Title": "Built-in ad and tracker blocker with preset blocklists.",
+            "footer": "If you need a straightforward, trustworthy VPN for your toolkit.",
+            "button": "Current plan"
+        },
+        "tier2":{
+            "name": "IVPN Plus",
+            "title": "Added DNS & email privacy",
+            "feature1": "IVPN / 5 Devices",
+            "feature1Title": "Includes Multi-hop, AntiTracker, Obfuscation protocols, SOCKS5 proxy.",
+            "upgradeFeature1": "IVPN / 5 devices",
+            "feature2": "Multi-hop",
+            "feature3": "modDNS",
+            "feature3Title": "Standalone DNS service with blocklist combinations and configurable rules. Upgrades AntiTracker.",
+            "feature4": "Mailx",
+            "feature4Title": "Private email aliases that forward to your inbox without revealing your real address.",
+            "button": "Upgrade to Plus"
+        },
+        "tier3":{
+            "name": "IVPN Pro Suite",
+            "title": "Complete network stack",
+            "feature1": "IVPN / 10 Devices",
+            "feature1Title": "Includes Multi-hop, AntiTracker, Obfuscation protocols, SOCKS5 proxy.",
+            "upgradeFeature1": "IVPN / 10 devices",
+            "feature2": "Multi-hop",
+            "feature3": "modDNS",
+            "feature3Title": "Standalone DNS service with blocklist combinations and configurable rules. Upgrades AntiTracker.",
+            "feature4": "Mailx",
+            "feature4Title": "Private email aliases that forward to your inbox without revealing your real address.",
+            "feature5": "Portmaster Pro (Linux, Windows)",
+            "feature5Title": "Firewall & network monitoring tool operated by IVPN. Includes SPN, an onion-routed Tor alternative. Available on Linux and Windows.",
+            "button": "Upgrade to Pro Suite"
+        },
+        "sidebar":{
+            "feature1": "VPN",
+            "feature2": "Ads & Trackers",
+            "feature3": "Email",
+            "feature4": "Firewall"
+        },
+        "stack":{
+            "title": "The privacy stack",
+            "feature1": "Four standalone privacy services operated by IVPN",
+            "feature2": "All services are open-source",
+            "feature3": "Additional services are activated separately after purchase",
+            "feature4": "Additional services authorise access without receiving your IVPN account ID",
+            "feature4LinkText": "Unlinked Access"
+        },
+        "features":{
+            "title": "IVPN features",
+            "feature1": "Open-source clients (Android, iOS, macOS, Windows, Linux/CLI)",
+            "feature2": "Private DNS resolvers (no third-party logging)",
+            "feature3": "DNS-based AntiTracker with configurable blocklists",
+            "feature4": "Kill switch with network firewall integration",
+            "feature5": "Obfuscation protocols (v2Ray, obfsproxy)",
+            "feature6": "SOCKS5 proxy service",
+            "feature7": "Router and NAS deployment support"
+        },
+        "featuresBadges":{
+            "badge1": "No email required for signup",
+            "badge2": "30-day refund window",
+            "badge3": "Cash, Monero, Bitcoin accepted",
+            "badge4": "Killswitch",
+            "badge5": "Obfuscation",
+            "badge6": "MultiHop",
+            "badge7": "SOCKS5 Proxy",
+            "badge8": "Router & NAS"
+        },
+        "transparency":{
+            "title": "Audited & transparent",
+            "feature1": "No connection logs or session data retained",
+            "feature2": "No customer information stored post-purchase",
+            "feature3": "Annual third-party security audits (#7 completed May 2025)",
+            "feature4": "Public transparency reports and warrant canary",
+            "feature5": "Disclosed ownership and team with 15-year operating history",
+            "feature6": "No affiliate program, no tracking scripts, no surveillance advertising"
+        },
+        "limitations":{
+            "title": "Limitations we acknowledge",
+            "feature1": "We operate servers in 58 locations / 41 countries.",
+            "feature2": "We don't offer port forwarding.",
+            "feature3": "No streaming compatibility guarantees."
+        },
+        "footerBack": {
+            "item1": "If you've read this far, you know what we're about.",
+            "item2": "Choose the plan that matches your threat model."
+        }
     },
     "login": {
         "meta": {
@@ -94,7 +199,7 @@
             "recover": "Recover Password",
             "account": "IVPN Account",
             "changeProduct": "IVPN Account - Change Product",
-            "emailService": "IVPN Account - MailX",
+            "emailService": "IVPN Account - Mailx",
             "thankYou": "IVPN Account - Thank You",
             "paymentReceived": "IVPN Account - Payment has been received",
             "invoicePayment": "IVPN Account - Invoice for payment",
@@ -113,7 +218,8 @@
             "wireguard": "IVPN Account - WireGuard",
             "wireguardConfig": "IVPN Account - WireGuard Configuration",
             "deviceManagement": "IVPN Account - Device management",
-            "vouchers": "IVPN Account - Vouchers"
+            "vouchers": "IVPN Account - Vouchers",
+            "services": "IVPN Account - Services"
         },
         "greetings": "Your account has been created!",
         "greetingsText": "Please make sure you save your Account ID in a safe place, you will use it to connect to the VPN. You don't need to enter your email to use our service.",
@@ -124,33 +230,62 @@
         "continueToPayment2": "To start using IVPN add funds to your account.",
         "product": "Product",
         "change": "Change",
+        "upgrade": "Upgrade",
         "paidUntil": "Paid Until",
         "wasActiveUntil": "Was Active Until",
         "addMoreTime": "Add More Time",
         "billingSettings": "Billing Settings",
         "copied": "Copied",
-        "qrScan": "Scan from our mobile apps for quick setup.",
+        "qrScan": "Scan from our mobile apps for quick VPN setup.",
         "contactSupport": "Contact Support",
-        "safeReferenceTitle": "Account safe reference ID:",
-        "safeReferenceDescription": "Safe reference ID can be used when communicating with support engineers by email.",
+        "safeReferenceTitle": "Account safe reference:",
+        "safeReferenceDescription": "Safe reference can be used when communicating with support engineers by email.",
         "deleteAccount": "Delete Account",
         "changePlan": "Change plan",
+        "selectedPlan": "Selected Plan",
+        "included": "Included",
+        "devices": "devices",
+        "comparePlans": "Compare Plans",
+        "configureWireguard": "For configuring WireGuard connection manually, visit our",
+        "configureWireguardLink": "WireGuard setup page",
+        "ivpnSetup": "IVPN Setup",
+        "additionalServices": "Additional Services",
+        "additionalServicesFooterSee": "See",
+        "additionalServicesFooterFor": " for what each service does.",
+        "additionalServicesFooterForDetails": " for details.",
+        "additionalServicesFooter": "To learn more about each service and their benefits, visit the",
+        "additionalServicesFooterLink": "Service Overview",
+        "additionalServicesFooter2": "Your IVPN account ID is not passed to or stored by Mailx, modDNS, or Safing Portmaster. Review the",
+        "additionalServicesFooter2Link": "Unlinked Access explainer",
+        "getHelp": "Get Help",
         "creditCard": "Credit Card",
         "paypal": "PayPal",
         "bitcoin": "Bitcoin",
+        "lightning": "BTC Lightning",
         "monero": "Monero",
         "cash": "Cash",
         "haveVoucher": "Have a voucher code?",
         "redeem": "Redeem it here",
         "ivpnAccount": "IVPN Account",
+        "services": "Services",
         "wireguard": "Wireguard",
         "deviceManagement": "Devices",
-        "accountSettings": "Account Settings",
+        "accountSettings": "Settings",
         "changeProductTitle": "Change Product",
         "changeProductDesc": "You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.",
-        "activeUntil": "Active until:",
+        "upgradeProductTitle": "Upgrade Product",
+        "upgradeProductDesc": "Pick a plan to start the upgrade process. You will pay the difference displayed, calculated based on the remaining time on your account. On successful payment, your get instant access to the selected plan and its benefits. Expiry date will stay the same.",
+        "activeUntil": "Active until",
         "willBeActiveUntil": "Will be active until:",
+        "currentPlan": "Current plan",
+        "newPlan": "New plan",
+        "differencePaidToday": "Difference, paid today",
+        "upgradePaidToday": "Upgrade price (paid today)",
+        "currentPlanBadge": "Current Plan",
+        "choosePaymentMethod": "Choose a payment method to proceed:",
+        "price": "Price",
         "thisDate": "This date is calculated based on the current time left on your account, and the price difference between product types. Long-term discounts are not applicable. No additional payment is required.",
+        "thisPrice": "This price is calculated based on the current time left on your account, and the price difference between product types. Long-term discounts are not applicable. An additional payment is required.",
         "changeProductSuccess": "Product has been successfully changed to ",
         "changeBillingCycle": "Change Billing Cycle",
         "newBillingCycle": "New billing cycle will be applied at the end of the current billing period",
@@ -210,6 +345,26 @@
                     "enable": "Enable",
                     "cancel": "Cancel",
                     "codeFrom": "Code from TOTP app"
+                }
+            },
+            "changeProduct": {
+                "cancel": "Cancel",
+                "downgrade": "Downgrade",
+                "tier1": {
+                    "title": "Switch to IVPN Standard",
+                    "desc1": "Warning:",
+                    "desc2": "Standard plan includes 5 devices for IVPN.",
+                    "desc3": "You will lose access to all additional services in your current plan.",
+                    "desc4": "We suggest exporting Mailx and modDNS data before taking this step.",
+                    "desc5": "Confirm you still wish to downgrade:"
+                },
+                "tier2": {
+                    "title": "Switch to IVPN Plus",
+                    "desc1": "Warning:",
+                    "desc2": "Plus plan includes 5 devices for IVPN.",
+                    "desc3": "Postmaster Pro will be changed to Portmaster Free.",
+                    "desc4": "",
+                    "desc5": "Confirm you still wish to downgrade:"
                 }
             }
         },
@@ -282,10 +437,11 @@
             "disabledDesc1": "When enabled, you can review devices logged into the service and remotely log them out as needed.",
             "disabledDesc2": "We recommend securely storing device identifiers with encryption to identify and disconnect devices when you don't have access to them.",
             "disabledDesc3": "Learn more about this feature and its potential privacy implications",
+            "disabledDesc4": "Device management is applicable to the VPN service only, additional services are not affected.",
             "here": "here",
             "enableDeviceManagement": "Enable device management",
-            "activeDevices": "Active devices",
-            "devicesAdded": "Devices added",
+            "activeDevices": "Active IVPN devices",
+            "devicesAdded": "IVPN devices added",
             "logoutFromAllDevices": "Logout from all devices",
             "enabled": "Device management is enabled.",
             "enabledDesc1": "You are currently not logged in to the service on any device.",
@@ -305,7 +461,10 @@
             "confirm": "Confirm",
             "confirmDelete": "Are you sure you want to delete this device?",
             "yes": "Yes",
-            "renewAccount": "Please renew your account to manage your devices."
+            "renewAccount": "Please renew your account to manage your devices.",
+            "upgradeText1": "To increase your device limit to 10,",
+            "upgradeText2": "upgrade",
+            "upgradeText3": "your plan to IVPN Pro Suite."
 
         },
         "accountSettingsTab": {
@@ -331,13 +490,16 @@
             "pleaseCheck": "Please check or update your payment method and try again.",
             "processingPayment": "Processing payment",
             "extendYourAccount": "Extend your account",
+            "upgradeYourAccount": "Upgrade your account",
             "deleteAccountConfirm": "Are you sure you want to delete your account?",
             "accountActive": "Your account is currently active.",
             "deleteAccountConfirmDesc": "To confirm permanent deletion of your account, please enter the following symbols in the field below:",
             "cancel": "Cancel",
             "warning": "Warning:",
             "warningDesc": "this operation cannot be undone. Deleting your account will permanently remove data from our systems.",
-            "retry": "Retry"
+            "retry": "Retry",
+            "services": "Services",
+            "syncMail": "Synchronize"
         },
         "payments":{
             "paymentReceived": {
@@ -375,7 +537,8 @@
                 "bitcoinDescription": "We run our own Bitcoin and Lightning Network nodes using a self-hosted BTCPay server instance. Payments are processed by IVPN and no 3rd parties are involved.",
                 "bitcoinOnchain": "On-chain Bitcoin payments are not available for IVPN 1 Week top-ups. We suggest using BTC Lightning or switching to a different payment method.",
                 "payWithBitcoin": "Pay with Bitcoin",
-                "payWithLightning": "Pay with Lightning"
+                "payWithLightning": "Pay with Lightning",
+                "unavailable": "Temporarily Unavailable"
             },
             "paypal": {
                 "processingYourPayment": "Processing your payment...",
@@ -426,7 +589,9 @@
                 "information": "Information about the last recent payment will be displayed here.",
                 "pleaseNote": "Please note:",
                 "note1": "Your account will automatically be extended after the payment is confirmed. This may take a couple of minutes.",
-                "note2": "The address specified above is permanent for your account. You can use it to top up your account at any time in thefuture."
+                "note2": "The address specified above is permanent for your account. You can use it to top up your account at any time in the future.",
+                "note1Upgrade": "Your account will be upgraded after the payment is confirmed. This may take a couple of minutes.",
+                "note2Upgrade": "Warning: The address above is for one-time use only and is active for 24 hours after generation. Don't send additional funds to it after this payment."
             },
             "voucher":{
                 "codeFrom": "Code from a Voucher issued by IVPN:",
@@ -456,6 +621,28 @@
             "voucherCodes": "Voucher codes",
             "markAsShared": "Mark as shared",
             "markAsNotShared": "Mark as not shared"
+        },
+        "servicesArea": {
+            "mail": "Mailx",
+            "dns": "modDNS",
+            "portmaster": "Portmaster Pro",
+            "accessMail": "Access",
+            "accessDns": "Access",
+            "accessPortmaster": "Access",
+            "setupMail": "Set up",
+            "setupDns": "Set up",
+            "setupPortmaster": "Set up",
+            "active": "ACTIVE",
+            "available": "AVAILABLE",
+            "unavailable": "UNAVAILABLE",
+            "expired": "EXPIRED",
+            "upgrade": "Upgrade",
+            "upgradeTo": "Upgrade to access",
+            "mailDescription": "Email forwarding / Available for all platforms",
+            "dnsDescription": "DNS filtering / Available for all platforms",
+            "portmasterDescription": "Network firewall / Windows and Linux",
+            "limitedAccess": "Note: Your IVPN account has expired. Additional services have limited functionality and are not available for registration. To regain full access to additional services, please add time to your IVPN account as soon as possible.",
+            "pendingDeletion": "Note: Your IVPN account has expired. Additional services are not available. To avoid loss of settings and data on existing services, please top up your IVPN account."
         }
     },
     "resetPassword": {
@@ -502,5 +689,9 @@
         "enterValidIp": "Please enter a valid IPv4 address.",
         "step3Title": "3. Download",
         "downloadZip": "Download zip archive"
+    },
+    "compare": {
+        "title": "Compare",
+        "description": "Compare different IVPN plans and features."
     }
 }

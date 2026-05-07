@@ -1,25 +1,39 @@
 <template>
     <div>
-        <h2>MailX Beta</h2>
+        <h2>{{ $t('account.services.dns.betaTitle') }}</h2>
 
         <div v-if="!subIdDeletedAt && loaded">
-            <p>MailX is an e-mail aliasing service developed by IVPN. Email aliasing enables generating a new email alias for every website or service you sign up to. Email sent to aliases are forwarded to your actual email address, concealing both your main email and email provider.</p>
-            <p>MailX is currently in beta and available for registration to selected IVPN customers for free. MailX will stay free for beta participants after launch as long as they have an active IVPN subscription.</p>
-            <p>After successful registration MailX specific identifiers are deleted from IVPN systems, so your accounts are not linked together.</p>
-            <p v-if="subId">
-                Please follow the unique registration link below to start testing the MailX service:<br>
-                <a target="_blank" :href="'https://staging.mailx.net/signup/' + subId">https://staging.mailx.net/signup/{{ subId }}</a>
+            <p>{{ $t('account.services.dns.betaDescription1') }}</p>
+            <p>{{ $t('account.services.dns.betaDescription2') }}</p>
+            <p>{{ $t('account.services.dns.betaDescription3') }}</p>
+            <p>{{ $t('account.services.dns.betaDescription4') }}</p>
+            <p>{{ $t('account.services.dns.betaDescription5') }}</p>
+            <p v-if="!generated">
+                <p>
+                {{ $t('account.services.dns.follow') }}
+                </p>
+                <a class="btn btn-solid btn-big" @click="add">{{ $t('account.services.dns.generate') }}</a>
             </p>
-            <p>We welcome your feedback about the service via <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>.</p>
+            <p v-else>
+                <p>
+                {{ $t('account.services.dns.follow') }}<br>
+                </p>
+                <p>
+                    {{ $t('account.services.dns.signup') }} <a target="_blank" :href="'https://app.moddns.net/signup/' + subId">https://app.moddns.net/signup/{{ subId }}</a><br>
+                    {{ $t('account.services.dns.expireNote') }}
+                </p>
+            </p>
+            <p>{{ $t('account.services.dns.feedback') }} <a href="mailto:moddns@ivpn.net">moddns@ivpn.net</a>.</p>
         </div>
 
         <div v-if="subIdDeletedAt && loaded">
-            <p>You have signed up to MailX, an e-mail aliasing service developed by IVPN.</p>
-            <p>Access the MailX service dashboard <a target="_blank" href="https://staging.mailx.net">here</a>.</p>
+            <p>{{ $t('account.services.dns.signed') }}</p>
+            <p>{{ $t('account.services.dns.access') }} <a target="_blank" href="https://app.moddns.net">{{ $t('account.services.dns.here') }}</a>.</p>
+            <p>{{ $t('account.services.dns.betaDescription5') }}</p>
             <p>
-                Please submit your feedback, requests and any issues you encounter through one of the following channels:<br>
-                GitHub - <a target="_blank" href="https://github.com/ivpn/email">https://github.com/ivpn/email</a><br>
-                Email - <a href="mailto:mailx@ivpn.net">mailx@ivpn.net</a>
+                {{ $t('account.services.dns.submit') }}<br>
+                GitHub - <a target="_blank" href="https://github.com/ivpn/moddns">https://github.com/ivpn/moddns</a><br>
+                Email - <a href="mailto:moddns@ivpn.net">moddns@ivpn.net</a>
             </p>
         </div>
 
@@ -43,6 +57,7 @@ export default {
             subIdDeletedAt: "",
             store: false,
             success: "",
+            generated: false,
         };
     },
     computed: {
@@ -53,20 +68,16 @@ export default {
         }),
     },
     async beforeMount() {
-        if (!this.account.product.capabilities.has_mailx) {
+        if (!this.account.product.capabilities.has_dns) {
             window.location.href = "/" + this.language + "/account/";
             return;
         }
 
         await this.$store.dispatch("auth/reload");
 
-        this.subId = this.account["email_service_id"];
-        this.subIdDeletedAt = this.account["email_service_deleted_at"];
+        this.subId = this.account["dns_service_id"];
+        this.subIdDeletedAt = this.account["dns_service_deleted_at"];
         this.loaded = true;
-
-        if (!this.subIdDeletedAt) {
-            this.add();
-        }
     },
     mounted() {
         useI18n().locale.value = window.location.href.split("/")[3];
@@ -74,9 +85,10 @@ export default {
     },
     methods: {
         async add() {
-            let res = await this.$store.dispatch("account/addEmailSubscription");
-            if (res && !this.subId) {
+            let res = await this.$store.dispatch("account/addDnsSubscription");
+            if (res ) {
                 this.subId = res.id;
+                this.generated = true;
             }
         },
     },

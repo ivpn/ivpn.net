@@ -1,7 +1,7 @@
 <template>
     <div v-if="!isLight">
         <div class="back-link">
-            <router-link :to="{ name: 'account-' + this.language }">
+            <router-link :to="{ name: 'account-' + language }">
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
@@ -11,26 +11,26 @@
                 <ul>
                     <li
                         :class="{
-                            'is-active': this.$route.name == 'settings-main-' + this.language,
+                            'is-active': this.$route.name == 'settings-main-' + language,
                         }"
                     >
-                        <router-link :to="{ name: 'settings-main-' + this.language}">
+                        <router-link :to="{ name: 'settings-main-' + language}">
                             {{ $t('account.accountSettingsTab.authentication') }}
                         </router-link>
                     </li>
                     <li
                         :class="{
-                            'is-active': this.$route.name == 'settings-billing-' + this.language,
+                            'is-active': this.$route.name == 'settings-billing-' + language,
                         }"
                     >
-                        <router-link :to="{ name: 'settings-billing-' + this.language}">
+                        <router-link :to="{ name: 'settings-billing-' + language}">
                             {{ $t('account.accountSettingsTab.billing') }}
                         </router-link>
                     </li>
                     <li class="expand"></li>
                     <li
                         :class="{
-                            'is-active': this.$route.name == 'settings-delete-' + this.language,
+                            'is-active': this.$route.name == 'settings-delete-' + language,
                         }"
                     >
                         <a
@@ -73,21 +73,18 @@ export default {
             });
         },
     },
-    beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            }
+        });
     },
     mounted() {
-        if ( window.location.href.split("/")[3] == "es") {
-            useI18n().locale.value = "es";
-            this.language = "es";
-        }
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
-
-
-    
 };
 </script>
 

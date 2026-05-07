@@ -30,19 +30,21 @@
         "meta": {
             "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
-        "title": "Selecciona un Plan IVPN",
-        "description": "Selecciona un plan para crear tu cuenta al instante. Puedes cambiar entre IVPN Standard y Pro en cualquier momento en el futuro.",
-        "standard": "IVPN STANDARD",
-        "pro": "IVPN PRO",
+        "title": "Selecciona tu plan",
+        "description": "Tres niveles. Sin ventas adicionales. Elige según tus necesidades de privacidad.",
         "allProtocols": "Todos los protocolos",
-        "standardDevices": "2 dispositivos",
+        "tier1Devices": "5 dispositivos",
+        "tier2Devices": "5 dispositivos",
         "antitracker": "AntiTracker",
-        "proDevices": "7 dispositivos",
         "multihop": "Multi-hop",
+        "services": "Servicios",
+        "productFooter1": "Mailx, modDNS y Portmaster son servicios propiedad y operados por IVPN. Visita nuestra página",
+        "productFooter2": "para una descripción detallada de sus características y capacidades.",
         "productFooterPrice": "Todos los precios están en dólares estadounidenses.",
-        "productFooterReview": "Consulta los precios para empresas",
+        "productFooterReview": "Consulta los precios solo VPN para empresas",
         "here": "aquí",
-        "featuresTitle": "Todos los planes IVPN incluyen:",
+        "featuresTitle": "Todos los planes IVPN vienen con:",
+        "serviceBenefits": "Beneficios del servicio:",
         "feature1": "Inscripción anónima - no se requiere correo electrónico",
         "feature2": "Aplicaciones de código abierto para Android, iOS, macOS, Windows y Linux",
         "feature3": "Opciones de pago en efectivo, Monero y Bitcoin para un mejor anonimato",
@@ -52,6 +54,7 @@
         "feature7": "Killswitch/firewall y métodos de ofuscación cuando corresponda",
         "feature8": "Servicio de proxy SOCKS5",
         "feature9": "Soporte para router y NAS",
+        "feature10": "MultiHop - enruta el tráfico a través de dos servidores IVPN",
         "paymentMethodsTitle": "Métodos de pago admitidos:",
         "paymentMethod1": "Tarjeta de crédito",
         "paymentMethod2": "PayPal",
@@ -70,7 +73,110 @@
         "oneYear": "1 Año",
         "twoYears": "2 Años",
         "threeYears": "3 Años",
-        "select": "Seleccionar"
+        "select": "Seleccionar",
+        "dns": "modDNS",
+        "mailx": "Mailx",
+        "portmaster": "Portmaster Pro",
+        "chooseTimeAdded": "Puedes elegir el tiempo añadido en el siguiente paso",
+        "generateAccount": "Crear cuenta",
+        "selectPlan": "Elige un plan",
+        "upgrade": "Actualizar",
+        "portmasterTitle": "Portmaster",
+        "reviewServices": "REVISAR CARACTERÍSTICAS DEL SERVICIO",
+        "paymentMethods": "Métodos de pago",
+        "tier1":{
+            "name": "IVPN Standard",
+            "title": "Servicio VPN básico",
+            "feature1": "IVPN / 5 dispositivos",
+            "feature1Title": "Incluye Multi-hop, protocolos de ofuscación, proxy SOCKS5.",
+            "feature2": "Multihop",
+            "feature3": "AntiTracker",
+            "feature3Title": "Bloqueador de anuncios y rastreadores integrado con listas de bloqueo predefinidas.",
+            "footer": "Un VPN sencillo y confiable para tu kit de herramientas.",
+            "button": "Plan actual"
+        },
+        "tier2":{
+            "name": "IVPN Plus",
+            "feature1": "IVPN / 5 dispositivos",
+            "feature1Title": "Incluye Multi-hop, AntiTracker, protocolos de ofuscación, proxy SOCKS5.",
+            "upgradeFeature1": "IVPN / 5 dispositivos",
+            "feature2": "Multi-hop",
+            "feature3": "modDNS",
+            "feature3Title": "Servicio DNS independiente con combinaciones de listas de bloqueo y reglas configurables. Mejora AntiTracker.",
+            "feature4": "Mailx",
+            "feature4Title": "Alias de correo electrónico privados que reenvían a tu bandeja de entrada sin revelar tu dirección real.",
+            "footer": "Protección de rastreo y privacidad del correo electrónico mejorada.",
+            "button": "Mejora a Plus"
+        },
+        "tier3":{
+            "name": "IVPN Pro Suite",
+            "title": "Control total de red",
+            "feature1": "IVPN / 10 Dispositivos",
+            "feature1Title": "Incluye Multi-hop, AntiTracker, protocolos de ofuscación, proxy SOCKS5.",
+            "upgradeFeature1": "IVPN / 10 dispositivos",
+            "feature2": "Multi-hop",
+            "feature3": "modDNS",
+            "feature3Title": "Servicio DNS independiente con combinaciones de listas de bloqueo y reglas configurables. Mejora AntiTracker.",
+            "feature4": "Mailx",
+            "feature4Title": "Alias de correo electrónico privados que reenvían a tu bandeja de entrada sin revelar tu dirección real.",
+            "feature5": "Portmaster Pro (Linux, Windows)",
+            "feature5Title": "Herramienta de cortafuego y monitorización de red operada por IVPN. Incluye SPN, una alternativa de Tor enrutada por cebolla. Disponible en Linux y Windows.",
+            "footer": "Controles de red completos con cortafuego de aplicación incluido.",
+            "button": "Mejora a Pro Suite"
+        },
+        "sidebar":{
+            "feature1": "VPN",
+            "feature2": "Anuncios y rastreadores",
+            "feature3": "Correo",
+            "feature4": "Cortafuegos"
+        },
+        "stack":{
+            "title": "La estructura de privacidad",
+            "feature1": "Cuatro servicios de privacidad independientes operados por IVPN",
+            "feature2": "Todos los servicios son de código abierto",
+            "feature3": "Los servicios adicionales se activan por separado después de la compra",
+            "feature4": "Los servicios adicionales autorizan el acceso sin recibir tu ID de cuenta IVPN",
+            "feature4LinkText": "Acceso no vinculado"
+        },
+        "features":{
+            "title": "Características de IVPN",
+            "feature1": "Clientes de código abierto (Android, iOS, macOS, Windows, Linux/CLI)",
+            "feature2": "Resolutores DNS privados (sin registro de terceros)",
+            "feature3": "AntiTracker basado en DNS con listas de bloqueo configurables",
+            "feature4": "Interruptor de corte con integración de cortafuegos de red",
+            "feature5": "Protocolos de ofuscación (v2Ray, obfsproxy)",
+            "feature6": "Servicio proxy SOCKS5",
+            "feature7": "Soporte para despliegue en routers y NAS"
+        },
+        "featuresBadges":{
+            "badge1": "No se requiere correo electrónico",
+            "badge2": "Reembolso de 30 días",
+            "badge3": "Se aceptan efectivo, Monero, Bitcoin",
+            "badge4": "Interruptor de corte",
+            "badge5": "Ofuscación",
+            "badge6": "MultiHop",
+            "badge7": "SOCKS5 Proxy",
+            "badge8": "Router & NAS"
+        },
+        "transparency":{
+            "title": "Auditado y transparente",
+            "feature1": "Sin registros de conexión ni datos de sesión retenidos",
+            "feature2": "Sin información del cliente almacenada después de la compra",
+            "feature3": "Auditorías de seguridad anuales realizadas por terceros (#7 completadas en mayo de 2025)",
+            "feature4": "Informes públicos de transparencia y canario de orden judicial",
+            "feature5": "Propiedad y equipo transparentes, con 15 años de experiencia operativa.",
+            "feature6": "Sin programa de afiliados, sin scripts de seguimiento, sin publicidad de vigilancia"
+        },
+        "limitations":{
+            "title": "Limitaciones que reconocemos",
+            "feature1": "Operamos servidores en 58 ubicaciones / 41 países.",
+            "feature2": "No ofrecemos reenvío de puertos.",
+            "feature3": "No garantizamos compatibilidad con streaming."
+        },
+        "footerBack": {
+            "item1": "Si has leído hasta aquí, sabes de qué se trata.",
+            "item2": "Elige el plan que se adapte a tu modelo de amenaza."
+        }
     },
     "login": {
         "meta": {
@@ -94,7 +200,7 @@
             "recover": "Recuperar contraseña",
             "account": "Cuenta IVPN",
             "changeProduct": "Cuenta IVPN - Cambiar producto",
-            "emailService": "Cuenta IVPN - MailX",
+            "emailService": "Cuenta IVPN - Mailx",
             "thankYou": "Cuenta IVPN - Gracias",
             "paymentReceived": "Cuenta IVPN - Pago recibido",
             "invoicePayment": "Cuenta IVPN - factura para el pago",
@@ -113,7 +219,8 @@
             "wireguard": "Cuenta IVPN - WireGuard",
             "wireguardConfig": "Cuenta IVPN - Configuración de WireGuard",
             "deviceManagement": "Cuenta IVPN - Gestión de dispositivos",
-            "vouchers": "Cuenta IVPN - Cupones"
+            "vouchers": "Cuenta IVPN - Cupones",
+            "services": "Cuenta IVPN - Servicios"
         },
         "greetings": "¡Tu cuenta ha sido creada!",
         "greetingsText": "Por favor, asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
@@ -124,17 +231,34 @@
         "continueToPayment2": "Para empezar a usar IVPN, añade saldo a tu cuenta.",
         "product": "Producto",
         "change": "Cambiar",
+        "upgrade": "Mejorar",
         "paidUntil": "Pagado hasta",
         "wasActiveUntil": "Estuvo activo hasta",
         "addMoreTime": "Añadir más tiempo",
         "billingSettings": "Facturación",
         "copied": "Copiado",
-        "qrScan": "Escanea desde nuestras aplicaciones móviles para una configuración rápida.",
+        "qrScan": "Escanea desde nuestras aplicaciones móviles para una configuración VPN rápida.",
         "contactSupport": "Contactar con soporte",
-        "safeReferenceTitle": "ID de referencia segura de la cuenta:",
+        "safeReferenceTitle": "Referencia segura de la cuenta:",
         "safeReferenceDescription": "La ID de referencia segura se puede utilizar al comunicarse con los ingenieros de soporte técnico por correo electrónico.",
         "deleteAccount": "Borrar cuenta",
         "changePlan": "Cambiar plan",
+        "selectedPlan": "Plan seleccionado",
+        "included": "Incluido",
+        "devices": "dispositivos",
+        "comparePlans": "Comparar planes",
+        "configureWireguard": "Para configurar la conexión de WireGuard manualmente, visita nuestra página",
+        "configureWireguardLink": "página de configuración de WireGuard",
+        "ivpnSetup": "Configuración de IVPN",
+        "additionalServices": "Servicios adicionales",
+        "additionalServicesFooterSee": "Ver",
+        "additionalServicesFooterFor": " para lo que hace cada servicio.",
+        "additionalServicesFooterForDetails": " para más detalles.",
+        "additionalServicesFooter": "Para aprender más sobre cada servicio y sus beneficios, visita la",
+        "additionalServicesFooterLink": "descripción general de servicios",
+        "additionalServicesFooter2": "Tu ID de cuenta de IVPN no se pasa ni se almacena en Mailx, modDNS o Safing Portmaster. Revisa la",
+        "additionalServicesFooter2Link": "explicación de acceso no vinculado",
+        "getHelp": "Obtener ayuda",
         "creditCard": "T. Crédito",
         "paypal": "PayPal",
         "bitcoin": "Bitcoin",
@@ -143,14 +267,25 @@
         "haveVoucher": "¿Tienes un cupón?",
         "redeem": "Canjéalo aquí",
         "ivpnAccount": "Cuenta IVPN",
+        "services": "Servicios",
         "wireguard": "Wireguard",
         "deviceManagement": "Dispositivos",
         "accountSettings": "Configuración",
         "changeProductTitle": "Cambiar producto",
         "changeProductDesc": "Puedes cambiar tu plan de producto en cualquier momento. Si tu cuenta está activa, cambiar el tipo de producto cambiará la cantidad de tiempo restante en tu cuenta.",
-        "activeUntil": "Activo hasta:",
+        "upgradeProductTitle": "Mejorar producto",
+        "upgradeProductDesc": "Elige un plan para iniciar el proceso de mejora. Pagarás la diferencia mostrada, calculada en función del tiempo restante en tu cuenta. Tras el pago exitoso, obtendrás acceso instantáneo al plan seleccionado y sus beneficios. La fecha de vencimiento permanecerá igual.",
+        "activeUntil": "Activo hasta",
         "willBeActiveUntil": "Estará activo hasta:",
+        "currentPlan": "Plan actual",
+        "currentPlanBadge": "Plan actual",
+        "newPlan": "Nuevo plan",
+        "differencePaidToday": "Diferencia, pagada hoy",
+        "upgradePaidToday": "Precio de mejora (pagado hoy)",
+        "choosePaymentMethod": "Elige un método de pago para continuar:",
+        "price": "Precio",
         "thisDate": "Esta fecha se calcula en función del tiempo restante en tu cuenta y la diferencia de precio entre los tipos de producto. Los descuentos a largo plazo no son aplicables. No se requiere un pago adicional.",
+        "thisPrice": "Este precio se calcula en función del tiempo restante en tu cuenta y la diferencia de precio entre los tipos de producto. Los descuentos a largo plazo no son aplicables. Se require un pago adicional.",
         "changeProductSuccess": "El producto se ha cambiado correctamente a ",
         "changeBillingCycle": "Cambiar ciclo de facturación",
         "newBillingCycle": "El nuevo ciclo de facturación se aplicará al final del período de facturación actual",
@@ -210,6 +345,26 @@
                     "enable": "Activar",
                     "cancel": "Cancelar",
                     "codeFrom": "Código de la aplicación TOTP"
+                }
+            },
+            "changeProduct": {
+                "cancel": "Cancelar",
+                "downgrade": "Cambiar",
+                "tier1": {
+                    "title": "Cambiar a IVPN Standard",
+                    "desc1": "Advertencia:",
+                    "desc2": "El plan Standard incluye 5 dispositivos para IVPN.",
+                    "desc3": "Perderás el acceso a todos los servicios adicionales en tu plan actual.",
+                    "desc4": "Sugerimos exportar los datos de Mailx y modDNS antes de realizar este paso.",
+                    "desc5": "Confirma que aún deseas cambiar a un plan inferior:"
+                },
+                "tier2": {
+                    "title": "Cambiar a IVPN Plus",
+                    "desc1": "Advertencia:",
+                    "desc2": "El plan Plus incluye 5 dispositivos para IVPN.",
+                    "desc3": "Postmaster Pro se cambiará a Portmaster Free.",
+                    "desc4": "",
+                    "desc5": "Confirma que aún deseas cambiar a un plan inferior:"
                 }
             }
 
@@ -283,10 +438,11 @@
             "disabledDesc1": "Cuando está función está habilitada, puedes revisar los dispositivos conectados al servicio y cerrar su sesión de forma remota según sea necesario.",
             "disabledDesc2": "Recomendamos guardar de forma segura los identificadores de dispositivos con cifrado para identificar y desconectar dispositivos cuando no tengas acceso a ellos.",
             "disabledDesc3": "Aprende más sobre esta función y sus posibles implicaciones de privacidad" ,
+            "disabledDesc4": "La gestión de dispositivos es aplicable solo al servicio VPN, los servicios adicionales no se ven afectados.",
             "here": "aquí",
             "enableDeviceManagement": "Activar la gestión de dispositivos",
-            "activeDevices": "Dispositivos activos",
-            "devicesAdded": "Dispositivos añadidos",
+            "activeDevices": "Dispositivos IVPN activos",
+            "devicesAdded": "Dispositivos IVPN añadidos",
             "logoutFromAllDevices": "Cerrar sesión en todos los dispositivos",
             "enabled": "La gestión de dispositivos está habilitada.",
             "enabledDesc1": "No tienes dispositivos conectados al servicio.",
@@ -306,7 +462,10 @@
             "confirm": "Confirmar",
             "confirmDelete": "¿Estás seguro de que deseas eliminar este dispositivo?",
             "yes": "Si",
-            "renewAccount": "Por favor, renueva tu cuenta para gestionar tus dispositivos."
+            "renewAccount": "Por favor, renueva tu cuenta para gestionar tus dispositivos.",
+            "upgradeText1": "Para aumentar tu límite de dispositivos a 10,",
+            "upgradeText2": "mejora",
+            "upgradeText3": "tu plan a IVPN Pro Suite."
         },
         "accountSettingsTab": {
             "backToAccount": "Volver a la cuenta",
@@ -331,13 +490,16 @@
             "pleaseCheck": "Por favor, revisa o actualiza tu método de pago e inténtalo de nuevo.",
             "processingPayment": "Procesando pago",
             "extendYourAccount": "Recarga tu cuenta",
+            "upgradeYourAccount": "Mejora tu cuenta",
             "deleteAccountConfirm": "¿Estás seguro de que deseas borrar tu cuenta?",
             "accountActive": "Tu cuenta está actualmente activa.",
             "deleteAccountConfirmDesc": "Para confirmar la eliminación permanente de tu cuenta, por favor, introduce los siguientes símbolos en el campo de abajo:",
             "cancel": "Cancelar",
             "warning": "Aviso:",
             "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas.",
-            "retry": "Reintentar"
+            "retry": "Reintentar",
+            "services": "Servicios",
+            "syncMail": "Sincronizar"
         },
         "payments":{
             "paymentReceived": {
@@ -375,7 +537,8 @@
                 "bitcoinDescription": "Ejecutamos nuestros propios nodos de Bitcoin y Lightning Network utilizando una instancia de servidor BTCPay auto-alojada. Los pagos son procesados por IVPN y no hay terceros involucrados.",
                 "bitcoinOnchain": "Los pagos de Bitcoin On-chain no están disponibles para recargas de 1 semana de IVPN. Sugerimos usar BTC Lightning o cambiar a un método de pago diferente.",
                 "payWithBitcoin": "Paga con Bitcoin",
-                "payWithLightning": "Paga con Lightning"
+                "payWithLightning": "Paga con Lightning",
+                "unavailable": "No disponible temporalmente"
             },
             "paypal": {
                 "processingYourPayment": "Procesando tu pago...",
@@ -426,7 +589,9 @@
                 "information": "La información sobre el último pago reciente se mostrará aquí.",
                 "pleaseNote": "Por favor, ten en cuenta:",
                 "note1": "Tu cuenta se extenderá automáticamente después de que el pago sea confirmado. Esto puede tardar unos minutos.",
-                "note2": "La dirección especificada anteriormente es permanente para tu cuenta. Puedes usarla para recargar tu cuenta en cualquier momento en el futuro."
+                "note2": "La dirección especificada anteriormente es permanente para tu cuenta. Puedes usarla para recargar tu cuenta en cualquier momento en el futuro.",
+                "note1Upgrade": "Tu cuenta se mejorará después de que se confirme el pago. Esto puede tardar unos minutos.",
+                "note2Upgrade": "Aviso: La dirección anterior es para uso único y está activa durante 24 horas después de su generación. No envíes fondos adicionales a ella después de este pago."
             },
             "voucher":{
                 "codeFrom": "Código de un cupón emitido por IVPN:",
@@ -456,6 +621,28 @@
             "voucherCodes": "Códigos de cupón",
             "markAsShared": "Marcar como compartido",
             "markAsNotShared": "Marcar como no compartido"
+        },
+        "servicesArea": {
+            "mail": "MailX",
+            "dns": "modDNS",
+            "portmaster": "Portmaster Pro",
+            "accessMail": "Acceder",
+            "accessDns": "Acceder",
+            "accessPortmaster": "Acceder",
+            "setupMail": "Configurar",
+            "setupDns": "Configurar",
+            "setupPortmaster": "Configurar",
+            "active": "ACTIVO",
+            "available": "DISPONIBLE",
+            "unavailable": "NO DISPONIBLE",
+            "expired": "CADUCADO",
+            "upgrade": "Mejorar",
+            "upgradeTo": "Mejorar para acceder",
+            "mailDescription": "Reenvío de correo / todas las plataformas",
+            "dnsDescription": "Filtrado DNS / todas las plataformas",
+            "portmasterDescription": "Cortafuegos / Windows y Linux",
+            "limitedAccess": "Nota: Tu cuenta de IVPN ha caducado. Los servicios adicionales tienen funcionalidad limitada y no están disponibles para su registro. Para recuperar el acceso completo a los servicios adicionales, agrega tiempo a tu cuenta de IVPN lo antes posible.",
+            "pendingDeletion": "Nota: Tu cuenta de IVPN ha caducado. Los servicios adicionales no están disponibles. Para evitar la pérdida de configuraciones y datos en los servicios existentes, por favor recarga tu cuenta de IVPN."
         }
     },
     "resetPassword": {
@@ -502,5 +689,9 @@
         "enterValidIp": "Por favor, introduce una dirección IPv4 válida.",
         "step3Title": "3. Descargar",
         "downloadZip": "Descargar archivo zip"
+    },
+    "compare": {
+        "title": "Compara",
+        "description": "Compara diferentes planes y características de IVPN."
     }
 }

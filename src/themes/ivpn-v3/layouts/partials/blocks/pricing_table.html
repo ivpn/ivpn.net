@@ -1,0 +1,33 @@
+<section class="heading px-8 services-pricing-section">
+    <h2 class="pricing-title">{{ .title }}</h2>
+    <p class="pricing-subtitle">{{ .subtitle }}</p>
+    <div class="table-wrapper">
+        <table class="pricing-table">
+            <thead>
+                <tr class="table-header-row">
+                    <th class="table-header-cell">{{ .header.services }}</th>
+                    {{ range .header.plans }}
+                    <th class="table-header-cell-center">{{ . }}</th>
+                    {{ end }}
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .rows }}
+                <tr class="table-row">
+                    <td class="table-cell">{{ .service }}</td>
+                    {{ range .values }}
+                    <td class="table-cell-center">{{ . }}</td>
+                    {{ end }}
+                </tr>
+                {{ end }}
+                <tr class="table-price-row">
+                    <td class="table-cell"><strong>{{ .price_row.label }}</strong></td>
+                    {{ range .price_row.values }}
+                    <td class="table-cell-center"><strong>{{ . }}</strong></td>
+                    {{ end }}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="pricing-note">{{ .note }}</p>
+</section>

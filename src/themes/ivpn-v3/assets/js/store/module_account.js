@@ -1,4 +1,4 @@
-import Api from "@/api/api"
+import Api from "@/api/api.js"
 
 function validateEmail(email) {
     let re = /\S+@\S+\.\S+/
@@ -207,11 +207,11 @@ export default {
             }
         },
 
-        async createBitcoinInvoice(context, { priceID, paymentMethodId }) {
+        async createBitcoinInvoice(context, { priceID, paymentMethodId, paymentType }) {
             
             context.commit('started')
             try {
-                let resp= await Api.createBitcoinInvoice(priceID, paymentMethodId)
+                let resp= await Api.createBitcoinInvoice(priceID, paymentMethodId, paymentType)
 
                 context.commit('done')
                 return resp.invoice
@@ -220,15 +220,16 @@ export default {
             }
         },
 
-        async createLightInvoice(context, { priceID, exitServer, entryServer, publicKey }) {
+        async createLightInvoice(context, { priceID, paymentType, exitServer, entryServer, publicKey }) {
             context.commit('started')
             try {
-                let resp= await Api.createLightInvoice(priceID, exitServer, entryServer, publicKey)
+                let resp= await Api.createLightInvoice(priceID, paymentType, exitServer, entryServer, publicKey)
 
                 context.commit('done')
                 return resp.invoice
             } catch (error) {
                 context.commit('failed', { error })
+                throw error
             }
         },
 
@@ -283,19 +284,6 @@ export default {
                 context.commit('failed', { error })
             }
         },
-
-        async addEmailSubscription(context) {
-            console.log('addEmailSubscription', context)
-            context.commit('started')
-            try {
-                let res = await Api.addEmailSubscription()
-                context.commit('done')
-                return res
-            } catch (error) {
-                context.commit('failed', { error })
-            }
-        },
-
         clear(context) {
             context.commit('clear')
         },

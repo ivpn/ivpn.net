@@ -5,9 +5,9 @@ URL: /es/pricing-teams/
 ---
 # IVPN para equipos
 
-IVPN es ideal para que miembros de equipos distribuidos mejoren su privacidad frente a la recopilación no deseada de datos personales y datos de seguridad en redes poco fiables. Ofrecemos descuentos por volumen, herramientas administrativas y 2FA bajo demanda. No podemos proporcionar servidores/IP dedicados ni facilitar el acceso a redes corporativas.
+IVPN es ideal para que miembros de equipos distribuidos mejoren su privacidad frente a la recopilación no deseada de datos personales y datos de seguridad en redes poco fiables. Ofrecemos herramientas administrativas y 2FA bajo demanda. No podemos proporcionar servidores/IP dedicados ni facilitar el acceso a redes corporativas.
 
-Precios IVPN Pro para empresas:
+Precios IVPN Teams para empresas:
 
 <div class="price-box">
 <table>
@@ -50,9 +50,9 @@ Precios IVPN Pro para empresas:
 
 [Envíanos un correo electrónico](mailto:team-support@ivpn.net) para adquirir cuentas IVPN de equipo para tu empresa.
 
-## Beneficios de la cuenta IVPN Pro para equipos
+## Beneficios de la cuenta IVPN Teams
 
-* Acceso en hasta 7 dispositivos por usuario
+* Acceso en hasta 10 dispositivos por usuario
 * Aplicaciones de código abierto para Android, iOS, macOS, Windows y Linux
 * Servidores DNS privados
 * Función AntiTracker (anti-rastreador)

@@ -11,7 +11,8 @@ Para obtener más información sobre cómo se procesan las solicitudes, consulta
 
 |   | # Solicitudes recibidas| # Solicitudes válidas recibidas | # Solicitudes válidas recibidas donde se proporcionaron datos |
 |---|---|---|---|
-| 2025 | 6 | 0 | 0 |
+| 2026 | 1 | 0 | 0 |
+| 2025 | 12 | 0 | 0 |
 | 2024 | 12 | 1 | 0 |
 | 2023 | 2 | 0 | 0 |
 | 2022 | 0 | 0 | 0 |

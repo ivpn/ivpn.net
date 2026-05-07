@@ -1,6 +1,6 @@
 
 import BraintreeApi from "@/api/braintree";
-import Api from "@/api/api"
+import Api from "@/api/api.js"
 
 export default {
 
@@ -88,6 +88,7 @@ export default {
             try {
                 let result = await Api.addBraintreeFunds(
                     data.priceId,
+                    data.transactionType,
                     data.price,
                     data.paymentMethod,
                     context.state.instance.fraudData,

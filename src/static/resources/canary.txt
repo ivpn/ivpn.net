@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2025-07-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-05-05 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 903775
-hash: 0000000000000000000233580519b3c0c8369cbd457ebc0ff6115e6d76a8b1ab
+height: 948000
+hash: 00000000000000000001b01841afc366a4f999b291c8563ee0d0db956fc2db44
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Denmark is ‘sure’ EU will negotiate a ‘good’ US trade deal as deadline nears
-Also in this newsletter: European parliament gears up for no-confidence vote in von der Leyen
+Alphaville.Can we make a crazy huge Venn of the BDC ecosystem?
+Up to a point
 
-Are bigger AI models better stock pickers? Maybe, but probably not
-Complexity ain’t all that, wonks say
+EQT boosts Intertek takeover offer to more than £10bn
+Previous bids from Swedish private equity firm were rejected for ‘fundamentally undervaluing’ FTSE 100 company
 
-FTAV further reading
-Bonds; conversations; FT; Tampa pensions; crypto scams; financial repression; counting
+UniCredit’s investments in other banks help lender to record profit
+Italian group pressing ahead with €35bn bid for Germany’s Commerzbank
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmhmFQgACgkQisFrnrZH
-ummuOwf9GmjAByY3IyGK25DpxJS4nZoNL1p9tLWGPy6p+HhhCy1LKwaqWJLJJjHu
-MJQjaBX+2ZGPGKzzrza/hAzP11HijzapXoxsOqutmmAclNnG6Uce6FlCNR9qvw+R
-73pvpY37JVRvPdU45XSBwNdbJf1Rxy4HsB6HhXwszx/hzJ1MFk0Ub3bCW778OXKA
-Jtftv2U4jbQzNjiS47xuTGYKIScqbSo3KONmahioyf3fPzGy+Vy0LPVjDMT2cWWR
-QRhOF1aWzMu4OFyLUX/+D0eG/DOB0kghlxI0gIf0/RRSp5r2P4QRtjG2x3CASpaS
-/VLgzpAScS5v4PcXsZc2P90PtjhFEg==
-=wW47
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmn5s4oACgkQisFrnrZH
+ummd5Qf+OJAW+yGLAUzbFNo9OlAJiRI3dfVQ5XbDUkDMW93d/+cs9dAjgzLjSM3d
+HWqSS23kcD/I2NPrGZNcNVIeIZ3Qyqf0BBWZEAasyQNVVy22FTHBlWEatSSJLM0J
+JnVdN6azzvGGZ5zCn11ioit90x3irhN0+cdaPoD3oZGOwn8lLEUPdcdPLYCiBbPo
+9ld0BBCH0tqTdCqkOr2tlaU7zO87z0V37MCaIM+ZYviuc2WuGv70EqK9MTFWMZOW
+sBnuDc7j01T7El0Vedz2eoyfyhIIlDD4zeOHZjZNBISDbpT7qLw+UyjLUQsN8v64
+zYT3KZfiyDyHaBvD5IjFaC0nk7+sbg==
+=49P2
 -----END PGP SIGNATURE-----
 
 

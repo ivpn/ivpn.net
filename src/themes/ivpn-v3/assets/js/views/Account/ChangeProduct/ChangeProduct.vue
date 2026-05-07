@@ -1,7 +1,7 @@
 <template>
-    <div v-if="!isLocked">
+    <div v-if="!account.is_active && !isLocked">
         <div class="back-link">
-            <router-link :to="{name:'account-' + this.language}">
+            <router-link :to="{name:'account-' + language}">
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
@@ -15,143 +15,119 @@
         <div class="prices">
             <price-box
                 :prices="{}"
-                :current="account.product.name == 'IVPN Standard'"
+                :current="account.product.id === 'IVPN Tier 1'"
                 :inProgress="inProgress"
-                @selected="selected('IVPN Standard')"
+                :buttonText="$t('pricing.select')"
+                :isChange="true"
+                @selected="selected('IVPN Tier 1')"
             >
-                <div class="price-header">IVPN Standard</div>
+                <div class="price-header">{{ $t('pricing.tier1.name') }}</div>
                 <div class="price-features">
                     <ul>
                         <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.standardDevices') }}</li>
-                        <li>{{ $t('pricing.antitracker') }}</li>
-                    </ul>
-                </div>
-                <template v-slot:footer v-if="account.is_active">
-                    <div class="active-until">
-                        <div
-                            class="label"
-                            v-if="account.product.name == 'IVPN Standard'"
-                        >{{ $t('account.activeUntil') }}</div>
-                        <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
-
-                        <div class="value">
-                            {{ standardActiveUntil }}
-                            <sup
-                                v-if="account.product.name != 'IVPN Standard'"
-                            >*</sup>
-                        </div>
-                    </div>
-                </template>
-            </price-box>
-
-            <price-box
-                :prices="{}"
-                :current="account.product.name == 'IVPN Pro'"
-                :inProgress="inProgress"
-                @selected="selected('IVPN Pro')"
-            >
-                <div class="price-header">IVPN Pro</div>
-                <div class="price-features">
-                    <ul>
-                        <li>{{ $t('pricing.allProtocols') }}</li>
-                        <li>{{ $t('pricing.proDevices') }}</li>
+                        <li>{{ $t('pricing.tier1Devices') }}</li>
                         <li>{{ $t('pricing.antitracker') }}</li>
                         <li>{{ $t('pricing.multihop') }}</li>
                     </ul>
                 </div>
-                <template v-slot:footer v-if="account.is_active">
-                    <div class="active-until">
-                        <div class="label" v-if="account.product.name == 'IVPN Pro'">{{ $t('account.activeUntil') }}</div>
-                        <div class="label" v-else>{{ $t('account.willBeActiveUntil') }}</div>
+            </price-box>
 
-                        <div class="value">
-                            {{ proActiveUntil }}
-                            <sup
-                                v-if="account.product.name != 'IVPN Pro'"
-                            >*</sup>
-                        </div>
-                    </div>
-                </template>
+            <price-box
+                :prices="{}"
+                :current="account.product.id === 'IVPN Tier 2'"
+                :inProgress="inProgress"
+                :isChange="true"
+                :buttonText="$t('pricing.select')"
+                @selected="selected('IVPN Tier 2')"
+            >
+                <div class="price-header">{{ $t('pricing.tier2.name') }}</div>
+                <div class="price-features">
+                    <ul>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.tier2Devices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.dns') }}</li>
+                        <li>{{ $t('pricing.mailx') }}</li>
+                    </ul>
+                </div>
+            </price-box>
+
+            <price-box
+                :prices="{}"
+                :current="account.product.id === 'IVPN Tier 3'"
+                :inProgress="inProgress"
+                :isChange="true"
+                :buttonText="$t('pricing.select')"
+                @selected="selected('IVPN Tier 3')"
+            >
+                <div class="price-header">{{ $t('pricing.tier3.name') }}</div>
+                <div class="price-features">
+                    <ul>
+                        <li>{{ $t('pricing.allProtocols') }}</li>
+                        <li>{{ $t('pricing.tier2Devices') }}</li>
+                        <li>{{ $t('pricing.antitracker') }}</li>
+                        <li>{{ $t('pricing.multihop') }}</li>
+                        <li>{{ $t('pricing.dns') }}</li>
+                        <li>{{ $t('pricing.mailx') }}</li>
+                        <li>{{ $t('pricing.portmaster') }}</li>
+                    </ul>
+                </div>
             </price-box>
         </div>
-        <p>
-            <sup style="color:red" v-if="account.is_active">*</sup> {{ $t('account.thisDate') }}
-        </p>
     </div>
 </template>
 
 <script>
-// import SignupSection from "@/components/SignupSection.vue";
 import PriceBox from "@/components/PriceBox.vue";
-import { add, differenceInMinutes } from "date-fns";
-import { th } from "date-fns/locale";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
 
 export default {
     data() {
         return {
-            standardActiveUntil: null,
-            proActiveUntil: null,
-            isLocked: true,
-            language: "en"
+            language: "en",
         };
     },
     components: {
-        // SignupSection,
         PriceBox
     },
 
-    
-    async beforeMount() {
-        let standardActiveUntil = await this.calculateForProduct("IVPN Standard").then(response => response.active_until);
-        let proPlan = await this.calculateForProduct("IVPN Pro").then(response => response);
-        this.standardActiveUntil =this.$filters.formatActiveUntil(standardActiveUntil);
-        this.proActiveUntil = this.$filters.formatActiveUntil(proPlan.active_until);
-        this.isLocked = proPlan.is_locked;
-        if( proPlan.is_locked ){
-            window.location = "/" + this.language + "/account";
-        }
-        this.$store.dispatch("sessions/load");
+    mounted() {
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
-    mounted(){
-        useI18n().locale.value = window.location.href.split("/")[3];
-        this.language = window.location.href.split("/")[3];
-    },
-    
 
     methods: {
         async selected(newProductName) {
-            if( newProductName == "IVPN Standard" && this.$store.state.sessions.sessions && this.$store.state.sessions.sessions.length > 2){
-                
-                this.$store.commit("popup/show", {
-                    type: "change-product",
-                    data: newProductName,  
-                });
+            
+            try {
+                await this.$store.dispatch("product/change", newProductName);
+            } catch (error) {
+                console.error('Failed to change product:', error);
                 return;
             }
-            
-            await this.$store.dispatch("product/change", newProductName);
-            
 
             if (this.error) {
                 return;
             }
 
+            const productMapping = {
+                'IVPN Tier 1': 'pricing.tier1.name',
+                'IVPN Tier 2': 'pricing.tier2.name',
+                'IVPN Tier 3': 'pricing.tier3.name',
+            };
+            const productLocale = this.$t(productMapping[newProductName] || 'pricing.tier1.name');
+
             this.$store.commit("setFlashMessage", {
                 type: "success",
-                message: this.$t('account.changeProductSuccess') + newProductName
+                message: `${this.$t('account.changeProductSuccess')} ${productLocale}`
             });
 
             this.$router.push({ name: "account-" + this.language })
         },
 
-        async calculateForProduct(newProduct) {
-            return  await this.$store.dispatch("product/changeDetails", {
-                    product: newProduct,    
-            });
-        }
     },
     computed: {
     
@@ -161,6 +137,9 @@ export default {
             inProgress: state => state.product.inProgress,
             error: state => state.product.error
         }),
+        isLocked() {
+            return this.account?.product?.id === 'IVPN Tier 3';
+        },
     }
 };
 </script>

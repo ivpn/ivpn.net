@@ -1,5 +1,5 @@
 
-import Api from "@/api/api"
+import Api from "@/api/api.js"
 
 export default {
 
