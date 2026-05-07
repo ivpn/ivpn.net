@@ -274,10 +274,6 @@ export default {
                     this.validation.submit = false;
                 }    
             }
-            this.wireguardConfigs = [];
-            this.selectedExitLocation.forEach((location) => {
-                this.wireguardConfigs.push(location);
-            });
         },
 
     },
@@ -319,11 +315,15 @@ export default {
         },
         async fetchServers() {
             try {
-                let res = await Api.getServerStats();
-                if (res.servers) {
-                    this.servers = res.servers.filter((server) => server.hostnames.wireguard != null)
-                    this.filteredServers = this.sortBy(this.servers.filter((v,i,a) => a.findIndex(t => (t.city === v.city)) === i), 'country', false);
-                } 
+                const res = await Api.getServersDetails();
+                if (res.wireguard) {
+                    this.servers = res.wireguard.filter(server => server.gateway != null);
+                    this.filteredServers = this.sortBy(
+                        this.servers.filter((v, i, a) => a.findIndex(t => t.city === v.city) === i),
+                        'country',
+                        false
+                    );
+                }
             } catch (error) {
                 console.error("Failed to fetch servers:", error);
             } 
@@ -359,13 +359,6 @@ export default {
                     this.sendError = error.message || "Failed to create invoice. Please try again.";
                     this.validation.submit = false;
                 }
-
-
-            } catch (error) {
-                console.error("Failed to send data:", error);
-                this.submitError = error.message || "An error occurred. Please try again.";
-                this.validation.submit = false;
-            }
 
         },
         generateKeys() {
