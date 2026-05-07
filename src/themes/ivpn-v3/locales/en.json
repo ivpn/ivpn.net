@@ -270,7 +270,7 @@
         "services": "Services",
         "wireguard": "Wireguard",
         "deviceManagement": "Devices",
-        "accountSettings": "Account Settings",
+        "accountSettings": "Settings",
         "changeProductTitle": "Change Product",
         "changeProductDesc": "You can change your product plan any time. If your account is active, changing the product type will change the amount of time left on your account.",
         "upgradeProductTitle": "Upgrade Product",
