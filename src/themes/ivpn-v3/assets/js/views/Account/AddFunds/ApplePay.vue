@@ -85,6 +85,7 @@ export default {
                 // checkout page to eliminate any possible display errors
                 let account = await Api.addBraintreeFunds(
                     this.account.id,
+                    "extend",
                     this.price.id,
                     this.price.price,
                     "cc",

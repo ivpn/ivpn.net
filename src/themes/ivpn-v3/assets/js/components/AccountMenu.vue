@@ -4,12 +4,7 @@
             <ul>
                 <li :class="{ 'is-active': isAccountRoute() }">
                     <router-link :to="{ name: 'account-' + this.language }"
-                        >{{ $t('account.ivpnAccount') }}</router-link
-                    >
-                </li>
-                <li :class="{ 'is-active': isWireGuardRoute() }">
-                    <router-link :to="{ name: 'wireguard-' + this.language }"
-                        >{{ $t('account.wireguard') }}</router-link
+                        >{{ $t('account.services') }}</router-link
                     >
                 </li>
                 <li :class="{ 'is-active': isDeviceManagementRoute() }">
@@ -17,17 +12,6 @@
                         >{{ $t('account.deviceManagement') }}</router-link
                     >
                 </li>
-                <li v-if="account.product.capabilities.has_mail" :class="{ 'is-active': isServiceEmailRoute() }">
-                    <router-link :to="{ name: 'service-email-' + this.language }"
-                        >{{ $t('account.services.mail.betaTitle') }}</router-link
-                    >
-                </li>
-                <li v-if="account.product.capabilities.has_dns" :class="{ 'is-active': isServiceDnsRoute() }">
-                    <router-link :to="{ name: 'service-dns-' + this.language }"
-                        >{{ $t('account.services.dns.betaTitle') }}</router-link
-                    >
-                </li>
-                <li class="expand"></li>
                 <li>
                     <router-link
                         class="settings"

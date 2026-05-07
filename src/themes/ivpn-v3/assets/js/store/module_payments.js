@@ -1,4 +1,4 @@
-import Api from "@/api/api"
+import Api from "@/api/api.js"
 
 export default {
     namespaced: true,
@@ -93,7 +93,7 @@ export default {
         async getMoneroPaymentDetails(context, payload) {
             context.commit('started')
             try {
-                let addr = await Api.getMoneroPaymentDetails(payload.duration)
+                let addr = await Api.getMoneroPaymentDetails(payload.duration,payload.transactionType, payload.priceId)
                 context.commit('done')
                 return addr
     

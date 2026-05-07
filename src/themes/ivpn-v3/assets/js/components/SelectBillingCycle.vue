@@ -14,9 +14,6 @@
                     {{ option.billing_cycle }}
                 </div>
                 <div class="price-item-name" v-else>{{ option.name }}</div>
-                <div class="discount" v-show="option.ref">
-                    ${{ option.ref }}
-                </div>
                 <div class="price-item-price">${{ option.price }}</div>
             </div>
         </template>
@@ -33,7 +30,6 @@
                 <div class="price-item-name" style="flex-grow: 1" v-else>
                     {{ name }}
                 </div>
-                <div class="discount" v-if="ref">$ {{ ref }}</div>
                 <div class="price-item-price">${{ price }}</div>
             </div>
         </template>

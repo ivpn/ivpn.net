@@ -1,5 +1,5 @@
 <template>
-    <div class="price-box" :class="{ current }">
+    <div class="price-box" :class="product">
         <slot></slot>
         <div class="price-options">
             <div
@@ -10,30 +10,34 @@
                 <label>
                     {{ price.name }}
                 </label>
-                
-                <span class="discount" v-if="price.ref">
-                        ${{ price.ref }}</span
-                    >
-                <div class="price">
-                    
+
+                 <div class="price">
                     {{ "$" + price.price }}
                 </div>
             </div>
         </div>
         <slot name="footer"></slot>
+        <div class="price-button">
+        <div v-if="current && hideButton" class="btn btn-big btn-outline btn-current-plan" style="margin-top: 2em;">
+            {{ $t('account.currentPlanBadge') }}
+        </div>
         <button
-            class="btn btn-solid btn-big"
+            v-else
+            class="btn btn-big btn-generate btn-primary"
+            :class="{ 'btn-outline': selectedPlan }"
             style="margin-top: 2em"
+            :style="(!current && !selectedPlan && hideButton) ? { visibility: 'hidden' } : {}"
             v-on:click="selected"
-            :disabled="disabled || current || inProgress"
+            :disabled="isButtonDisabled"
         >
             <spinner
                 fill="#FFFFFF"
                 width="32"
                 height="32"
-                v-if="inProgress && !current"
-            />{{ $t('pricing.select') }}
+                v-show="inProgress && !current"
+            />{{ buttonText}}
         </button>
+        </div>
     </div>
 </template>
 
@@ -42,23 +46,33 @@ import Spinner from "@/components/ProgressSpinner.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["prices", "onselect", "disabled", "current", "inProgress"],
+    setup() {
+        const { locale } = useI18n();
+        return { locale };
+    },
+    props: {
+        prices: { type: Object, required: true },
+        disabled: { type: Boolean, default: false },
+        current: { type: Boolean, default: false },
+        inProgress: { type: Boolean, default: false },
+        buttonText: { type: String, required: true },
+        product: { type: String, required: true },
+        hideButton: { type: Boolean, default: false },
+        upgrade: { type: Boolean, default: false },
+        selectedPlan: { type: Boolean, default: false }
+    },
     components: { Spinner },
     model: {
         event: "change",
     },
-    data() {
-        return {
-            pricesLocale: [],
-        };
-    },
-    mounted(){
-        let lang = window.location.href.split("/")[3];
-        useI18n().locale.value = lang;
-        if( lang  === "es"){
-            this.pricesLocale = this.prices.pricesEs;
-        } else {
-            this.pricesLocale = this.prices.prices;
+    computed: {
+        pricesLocale() {
+            const lang = this.$route.params.lang || window.location.href.split("/")[3];
+            const all = lang === "es" ? this.prices.pricesEs : this.prices.prices;
+            return all.filter(p => !p.id.includes('-2year') && !p.id.includes('-3year'));
+        },
+        isButtonDisabled() {
+            return this.disabled || this.inProgress;
         }
     },
 
@@ -74,109 +88,282 @@ export default {
 @import "@/styles/_vars.scss";
 @import "@/styles/base.scss";
 
-.price-header {
-    text-transform: uppercase;
-    font-family: "Roboto Mono", monospace;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 14px;
+// Common theme mixins
+@mixin theme-colors($bg-dark, $color-dark, $bg-light, $color-light) {
+    @include dark-theme((
+        background-color: $bg-dark,
+        color: $color-dark,
+    ));
+    @include light-theme((
+        background-color: $bg-light,
+        color: $color-light,
+    ));
+    @media (prefers-color-scheme: dark) {
+        background-color: $bg-dark;
+        color: $color-dark;
+    }
+    @media (prefers-color-scheme: light) {
+        background-color: $bg-light;
+        color: $color-light;
+    }
 }
 
 label {
     display: inline-block;
 }
 
+// Price Box Component
 .price-box,
 .app-content .price-box {
-    top: 0px;
-    flex-grow: 1;
+    top: 0;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(51, 77, 102, 0.2);
-    padding: 32px;
-    margin: 24px 48px 0px 0px;
-    min-width: 280px;
-    max-width: 350px;
+    flex-grow: 1;
+    margin: 24px 12px 0 0;
+    border: 1.5px solid #333333;
+    
+    @media (max-width: 1024px) {
+        min-width: 100%;
+    }
+
     &.current {
         border-color: $blue;
     }
 
-    @include light-theme((
-        background: $white
-    ));
+    &.tier1,
+    &.tier2 {
+        @include theme-colors(#222226, rgba(255, 255, 255, 0.8), transparent, black);
+    }
 
-    @include dark-theme((
-        background: $dark
-    ));
+    &.tier3 {
+        @include theme-colors(#222226, rgba(255, 255, 255, 0.8), transparent, black);
+    }
 
-    ul {
+    ul li::before {
+        display: none;
+    }
+
+    // Price Head Section
+    .price-head {
+        padding: 50px 0 20px 35px;
+        @include theme-colors(transparent, rgba(255, 255, 255, 0.8), transparent, black);
+    }
+
+    // Price Features Section
+    .price-features {
+        position: relative;
+        flex: 1;
+        padding: 0 25px;
+        font-size: 16px;
+        line-height: 30px;
+
         li {
-            &:before {
-                display: none;
+            list-style: disc;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 30px 0 20px;
+
+            &.additional-features {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 0;
             }
+        }
+    }
+
+      // Price Features Footer
+    .price-features-footer {
+        padding: 20px 0;
+        margin: 0 5px 0 30px;
+        line-height: 24px;
+        font-size: 0.8rem;
+        min-height: 120px;
+        
+        @include dark-theme((
+            border-top: 1px solid #333333
+        ));
+        @include light-theme((
+            border-top: 1px solid rgba(51, 77, 102, 0.2)
+        ));
+        @media (prefers-color-scheme: dark) {
+            border-top: 1px solid #333333;
+        }
+        @media (prefers-color-scheme: light) {
+            border-top: 1px solid rgba(51, 77, 102, 0.2);
+        }
+    }
+
+    // Price Options Section
+    .price-options {
+        padding: 16px 35px 0;
+
+        .price-option {
+            position: relative;
+            display: flex;
+            font-size: 16px;
+            line-height: 42px;
+
+            label {
+                flex-grow: 1;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .discount {
+                padding: 2px 4px 4px;
+                text-decoration: line-through;
+                opacity: 0.6;
+            }
+
+            .price {
+                min-width: 70px;
+                font-weight: 600;
+                text-align: right;
+
+                @include light-theme((color: $black));
+                @include dark-theme((color: $white));
+
+                sup {
+                    color: $red;
+                }
+            }
+        }
+    }
+
+    // Price Button Section
+    .price-button {
+        padding: 0 35px 35px;
+
+        .btn {
+            width: 100%;
+            padding: 1.1rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #3b9eff;
+            color: $white;
+
+            &:hover {
+                background-color: #5aafff;
+            }
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #3b9eff;
+            color: #3b9eff;
+
+            &:hover {
+                background-color: #3b9eff;
+                color: black;
+            }
+        }
+
+        .btn-current-plan {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.1rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            background-color: transparent;
+            border: 2px solid rgba(59, 158, 255, 0.4);
+            color: rgba(59, 158, 255, 0.6);
+            cursor: default;
         }
     }
 }
 
-.price-features {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 30px;
+// Price Footer & Legend (used outside price-box)
+.price-footer {
+    padding: 0 35px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+.price-legend {
+    padding: 0 5px 35px 8px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+// Feature accordion
+.feature-description {
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 2px 0 18px 22px;
+    color: inherit;
+
+    @include light-theme((color: rgba(0, 0, 0, 0.85)));
+    @include dark-theme((color: rgba(255, 255, 255, 0.85)));
+    @media (prefers-color-scheme: light) {
+        color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+.feature-item.expandable {
+    cursor: pointer;
+    user-select: none;
+
+    .feature-toggle {
+        margin-left: auto;
+        margin-right: 5px;
+        font-size: 13px;
+        font-family: var(--font-mono);
+        color: rgba(255, 255, 255, 0.55);
+        flex-shrink: 0;
+        align-self: center;
+        @include light-theme((color: rgba(0, 0, 0, 0.85)));
+        @include dark-theme((color: rgba(255, 255, 255, 0.55)));
+    }
+
+    &:hover .feature-toggle {
+        opacity: 0.8;
+    }
+}
+
+
+// Tooltip (global utility)
+[data-tooltip] {
     position: relative;
-    flex: 1;
+    margin-left: 15px;
 
-    li {
-        list-style: disc;
-    }
-}
+    &::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%;
+        display: none;
+        z-index: 999;
+        width: 300px;
+        padding: 5px;
+        font-size: 80%;
+        line-height: 15px;
+        
+        @include theme-colors(black, rgba(255, 255, 255, 0.8), #F9F9F9, black);
 
-.price-features ul.additional-features {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-.price-features ul {
-    padding-left: 20px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.price-option {
-    position: relative;
-    border-bottom: 1px solid #334d6633;
-    line-height: 42px;
-    font-size: 16px;
-    display: flex;    
-
-    label {
-        flex-grow: 1;
+        @media (max-width: 1500px) {
+            right: 50%;
+        }
     }
 
-    &:last-child {
-        border-bottom: none;
-    }
-
-    .discount {        
-        text-decoration: line-through;
-        padding: 2px 4px 4px 4px;
-        opacity: 0.6;
-    }
-
-    .price {        
-        font-weight: 600;
-        min-width: 70px;
-        text-align: right;
-
-        @include light-theme((
-            color: $black
-        ));
-
-        @include dark-theme((
-            color: $white
-        ));
+    &:hover::after {
+        display: block;
     }
 }
 </style>

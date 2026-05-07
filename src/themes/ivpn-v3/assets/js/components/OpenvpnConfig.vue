@@ -176,7 +176,7 @@ export default {
             dnsType: "standard",
             customDNS: null,
             queryString: new URLSearchParams(),
-            apiURL: process.env.MIX_APP_API_URL,
+            apiURL: import.meta.env.VITE_APP_API_URL,
         };
     },
     watch: {

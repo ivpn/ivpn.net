@@ -1,0 +1,211 @@
+@import "@/styles/_vars.scss";
+@import "@/styles/mixins/theme.scss";
+
+// ─── Service card grid ────────────────────────────────────────────────────────
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 16px 0 24px;
+}
+
+// ─── Individual card ──────────────────────────────────────────────────────────
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px;
+    border: 1px solid;
+    
+    @include light-theme((
+        background: #ffffff,
+        border-color: $greyBorder
+    ));
+
+    @include dark-theme((
+        background: #2a2a2e,
+        border-color: rgba(255, 255, 255, 0.1)
+    ));
+
+    // Coloured top accent bar per service
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+    }
+
+    &--mail::before       { background: $blue; }
+    &--dns::before        { background: #2c9f6e; }
+    &--portmaster::before { background: #7c5cbf; }
+
+    // Header: icon + name/badge
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    // Rounded icon container
+    &__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        &-img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .service-card--mail & {
+            background: rgba($blue, 0.1);
+            color: $blue;
+        }
+        .service-card--dns & {
+            background: rgba(44, 159, 110, 0.1);
+            color: #2c9f6e;
+        }
+        .service-card--portmaster & {
+            background: rgba(124, 92, 191, 0.1);
+            color: #7c5cbf;
+        }
+    }
+
+    &__title-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 0;
+    }
+
+    &__name {
+        font-family: $font-main-mono;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include light-theme((color: #1a1a1e));
+        @include dark-theme((color: #f0f0f4));
+    }
+
+    // Status badge
+    &__badge {
+        display: inline-block;
+        font-family: $font-main-mono;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 2px 8px;
+        border-radius: 3px;
+        align-self: flex-start;
+
+        &--active,
+        &--available,
+        &--upgrade,
+        &--inactive {
+            @include light-theme((
+                background: rgba(0, 0, 0, 0.06),
+                color: rgba(0, 0, 0, 0.45)
+            ));
+
+            @include dark-theme((
+                background: rgba(255, 255, 255, 0.08),
+                color: rgba(255, 255, 255, 0.4)
+            ));
+        }
+    }
+
+    // Description text
+    &__description {
+        font-size: 13px;
+        line-height: 1.55;
+        margin: 0 0 20px;
+        flex-grow: 1;
+
+        @include light-theme((color: rgba(0, 0, 0, 0.75)));
+        @include dark-theme((color: rgba(255, 255, 255, 0.7)));
+    }
+
+    // CTA row — pinned to bottom
+    &__footer {
+        margin-top: auto;
+    }
+
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        font-family: $font-main-mono;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 7px 16px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        cursor: pointer;
+        transition: opacity 0.15s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &--primary {
+            background: $blue;
+            border-color: $blue;
+            color: #ffffff;
+        }
+
+        &--outline {
+            background: transparent;
+            border-color: $blue;
+            color: $blue;
+        }
+    }
+}
+
+// ─── Section footer ───────────────────────────────────────────────────────────
+
+.services-footer {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 4px;
+
+    @include light-theme((color: rgba(0, 0, 0, 0.75)));
+    @include dark-theme((color: rgba(255, 255, 255, 0.7)));
+
+    label {
+        display: block;
+        font-size: 13px;
+    }
+
+    a {
+        color: $blue;
+    }
+}
+
+.services-title {
+    margin-bottom: 4px;
+    display: block;
+
+    @include light-theme((color: $dark));
+    @include dark-theme((color: rgba(255, 255, 255, 0.8)));
+    @media (prefers-color-scheme: light) { color: $dark; }
+    @media (prefers-color-scheme: dark)  { color: rgba(255, 255, 255, 0.8); }
+}

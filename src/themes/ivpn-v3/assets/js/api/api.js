@@ -13,7 +13,7 @@ export default {
 
     fetch(method, url, data = null, overrideURI = null, overrideOptions = {}) {
 
-        let baseURI = process.env.MIX_APP_WEBAPI_URL
+        let baseURI = import.meta.env.VITE_APP_WEBAPI_URL
 
         let options = {
             method: method,
@@ -49,9 +49,8 @@ export default {
 
     async Post(url = '', data = null, overrideURI = null, overrideOptions = {}) {
 
-        if (process.env.MIX_APP_DELAY_APIS) {
-            console.log("Delaying API: ", url)
-            await delay(process.env.MIX_APP_DELAY_APIS)
+        if (import.meta.env.VITE_APP_DELAY_APIS) {
+            await delay(import.meta.env.VITE_APP_DELAY_APIS)
         }
 
         let response = await this.fetch("POST", url, data, overrideURI, overrideOptions);
@@ -66,8 +65,8 @@ export default {
 
     async Get(url = '', overrideURI = null, overrideOptions = {}) {
 
-        if (process.env.MIX_APP_DELAY_APIS) {
-            await delay(process.env.MIX_APP_DELAY_APIS)
+        if (import.meta.env.VITE_APP_DELAY_APIS) {
+            await delay(import.meta.env.VITE_APP_DELAY_APIS)
         }
 
         let response = await this.fetch("GET", url, null, overrideURI, overrideOptions);
@@ -87,7 +86,7 @@ export default {
         if (response.headers.has('Csrf-Token')) {
             CSRFToken = response.headers.get('Csrf-Token');
 
-            if (process.env.MIX_APP_DEBUG) {
+            if (import.meta.env.VITE_APP_DEBUG) {
                 console.log("CSRF Token: ", CSRFToken)
             }
         }
@@ -298,14 +297,6 @@ export default {
         )
     },
 
-    async addEmailSubscription() {
-        return await this.Post( '/web/accounts/add-email-subscription', {})
-    },
-
-    async addDnsSubscription() {
-        return await this.Post( '/web/accounts/add-dns-subscription', {})
-    },
-
     //
     // Google Authenticator TOTP
     //
@@ -345,12 +336,13 @@ export default {
         return account.token
     },
 
-    async addBraintreeFunds(priceID, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
+    async addBraintreeFunds(priceID, transactionType, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
 
         return await this.Post(
             '/web/accounts/braintree/add-funds',
             {
                 price_id: priceID,
+                transaction_type: transactionType,
                 amount: amount,
                 payment_method: paymentMethod,
                 fraud_data: fraudData,
@@ -408,23 +400,25 @@ export default {
         return account.account
     },
 
-    async createBitcoinInvoice(priceID, paymentMethodId) {
+    async createBitcoinInvoice(priceID, paymentMethodId , transactionType) {
 
         let response = await this.Post('/web/accounts/btc/create-invoice', {
             price_id: priceID,
-            paymentMethodId: paymentMethodId
+            payment_method_id: paymentMethodId,
+            transaction_type: transactionType
         })
 
         return response
     },
-
-    async createLightInvoice(priceID, exitServer, entryServer,publicKey) {
+    
+    async createLightInvoice(priceID, paymentType, exitServer, entryServer, publicKey) {
 
         if( !Array.isArray(entryServer) ) {
             entryServer = [ entryServer ]
         }
         let response = await this.Post('/web/accounts/btc/create-light-invoice', {
             price_id: priceID,
+            transaction_type: paymentType,
             public_key: publicKey,
             exit_server: exitServer,
             entry_server: entryServer,
@@ -434,9 +428,11 @@ export default {
         return response
     },
 
-    async getMoneroPaymentDetails(duration) {
+    async getMoneroPaymentDetails(duration,transactionType, priceId) {
         return await this.Post('/web/accounts/monero-payment-details', {
-            duration
+            duration: duration,
+            transaction_type: transactionType,
+            price_id: priceId
         })        
     },
 
@@ -467,7 +463,7 @@ export default {
     async getServerStats() {
         return await this.Get(
             '/v5/servers/stats',
-            process.env.MIX_APP_API_URL,
+            import.meta.env.VITE_APP_API_URL,
             {
                 credentials: "omit"
             },
@@ -478,7 +474,7 @@ export default {
     async getWireGuardConfigurations(queryString) {
         return await this.Get(
             '/v5/config/ivpn-wireguard-config?' + queryString.toString(),
-            process.env.MIX_APP_API_URL,
+            import.meta.env.VITE_APP_API_URL,
             {
                 credentials: "omit"
             },
@@ -487,7 +483,7 @@ export default {
     async getServersDetails() {
         return await this.Get(
             '/v5/servers.json',
-            process.env.MIX_APP_API_URL,
+            import.meta.env.VITE_APP_API_URL,
             {
                 credentials: "omit"
             },
@@ -548,5 +544,19 @@ export default {
     async updateVoucher(payload) {
         return await this.Post('/web/vouchers/update', { card: payload.card})
     },
+
+    //Services
+    async preauthService(payload) {
+        return await this.Post(
+            '/web/auth/preauth'
+        );
+    },
+
+    async getServices(payload) {
+        return await this.Post(
+            '/web/services'
+        );
+    },
+
 
 }

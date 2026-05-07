@@ -22,7 +22,7 @@
             </a>
         </li>
         {{ range .Site.Menus.main }}
-            {{ if eq .Identifier "prices" }} 
+            {{ if eq .Identifier "services" }} 
                 <li class="navigation__seperator">|</li>
             {{ end }}
             {{ if or (eq (urlize .Name) "my-account") (eq (urlize .Name) "mi-cuenta") }}

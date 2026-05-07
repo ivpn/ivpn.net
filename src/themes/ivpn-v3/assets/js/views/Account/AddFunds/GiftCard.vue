@@ -106,6 +106,10 @@ form {
     }
 }
 
+p{
+    text-align:center;
+}
+
 input#gift-card-code{
     width: 240px;
 }

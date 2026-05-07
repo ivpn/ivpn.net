@@ -1,8 +1,8 @@
 import { createApp, h } from 'vue'
 import App from './App.vue'
 
-import router from './router'
-import store from './store'
+import router from './router/index.js'
+import store from './store/index.js'
 
 import { format } from 'date-fns'
 import { mapState } from 'vuex'
@@ -12,8 +12,8 @@ import es from '../../locales/es.json'
 
 
 let products = {
-    standard: {
-        name: 'IVPN Standard',
+    tier1: {
+        name: 'Tier 1',
         capabilities: {
             hasWireGuard: true,
             hasPortForwarding: false,
@@ -21,20 +21,41 @@ let products = {
         prices: [
             { id: 'standard-1week', name: en.pricing.oneWeek, price: 2 },
             { id: 'standard-1month', name: en.pricing.oneMonth, price: 6 },
-            { id: 'standard-1year', name: en.pricing.oneYear, price: 60, ref: 72 },
-            { id: 'standard-2year', name: en.pricing.twoYears, price: 100, ref: 144 },
-            { id: 'standard-3year', name: en.pricing.threeYears, price: 140, ref: 216 },
+            { id: 'standard-1year', name: en.pricing.oneYear, price: 60},
+            { id: 'standard-2year', name: en.pricing.twoYears, price: 100},
+            { id: 'standard-3year', name: en.pricing.threeYears, price: 140},
         ],
         pricesEs: [
             { id: 'standard-1week', name: es.pricing.oneWeek, price: 2 },
             { id: 'standard-1month', name: es.pricing.oneMonth, price: 6 },
-            { id: 'standard-1year', name: es.pricing.oneYear, price: 60, ref: 72 },
-            { id: 'standard-2year', name: es.pricing.twoYears, price: 100, ref: 144 },
-            { id: 'standard-3year', name: es.pricing.threeYears, price: 140, ref: 216 },
+            { id: 'standard-1year', name: es.pricing.oneYear, price: 60},
+            { id: 'standard-2year', name: es.pricing.twoYears, price: 100},
+            { id: 'standard-3year', name: es.pricing.threeYears, price: 140},
         ]
     },
-    pro: {
-        name: 'IVPN Pro',
+    tier2: {
+        name: 'Tier 2',
+        capabilities: {
+            hasWireGuard: true,
+            hasPortForwarding: false,
+        },
+        prices: [
+            { id: 'plus-1week', name: en.pricing.oneWeek, price: 3 },
+            { id: 'plus-1month', name: en.pricing.oneMonth, price: 8 },
+            { id: 'plus-1year', name: en.pricing.oneYear, price: 80},
+            { id: 'plus-2year', name: en.pricing.twoYears, price: 140},
+            { id: 'plus-3year', name: en.pricing.threeYears, price: 180},
+        ],
+        pricesEs: [
+            { id: 'plus-1week', name: es.pricing.oneWeek, price: 3 },
+            { id: 'plus-1month', name: es.pricing.oneMonth, price: 8 },
+            { id: 'plus-1year', name: es.pricing.oneYear, price: 80},
+            { id: 'plus-2year', name: es.pricing.twoYears, price: 140},
+            { id: 'plus-3year', name: es.pricing.threeYears, price: 180},
+        ]
+    },
+    tier3: {
+        name: 'Tier 3',
         capabilities: {
             hasWireGuard: true,
             hasPortForwarding: false,
@@ -42,18 +63,17 @@ let products = {
         prices: [
             { id: 'pro-1week', name: en.pricing.oneWeek, price: 4 },
             { id: 'pro-1month', name: en.pricing.oneMonth, price: 10 },
-            { id: 'pro-1year', name: en.pricing.oneYear, price: 100, ref: 120 },
-            { id: 'pro-2year', name: en.pricing.twoYears, price: 160, ref: 240 },
-            { id: 'pro-3year', name: en.pricing.threeYears, price: 220, ref: 360 },
+            { id: 'pro-1year', name: en.pricing.oneYear, price: 100},
+            { id: 'pro-2year', name: en.pricing.twoYears, price: 160},
+            { id: 'pro-3year', name: en.pricing.threeYears, price: 220},
 
         ],
         pricesEs: [
             { id: 'pro-1week', name: es.pricing.oneWeek, price: 4 },
             { id: 'pro-1month', name: es.pricing.oneMonth, price: 10 },
-            { id: 'pro-1year', name: es.pricing.oneYear, price: 100, ref: 120 },
-            { id: 'pro-2year', name: es.pricing.twoYears, price: 160, ref: 240 },
-            { id: 'pro-3year', name: es.pricing.threeYears, price: 220, ref: 360 },
-
+            { id: 'pro-1year', name: es.pricing.oneYear, price: 100},
+            { id: 'pro-2year', name: es.pricing.twoYears, price: 160},
+            { id: 'pro-3year', name: es.pricing.threeYears, price: 220},
         ]
     }
 }
@@ -80,8 +100,6 @@ const app = createApp({
         })
     }
 })
-
-app.use(i18n)
 
 app.mixin({
     methods: {

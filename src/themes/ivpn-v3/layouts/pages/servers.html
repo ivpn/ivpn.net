@@ -7,5 +7,5 @@
 {{ end }}
 
 {{ define "main-script" }}
-    <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/servers.js" }}"></script>
+    <script type="module" src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/servers.js" }}"></script>
 {{ end }}

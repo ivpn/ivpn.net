@@ -2,6 +2,21 @@
     <div id="application"></div>
 {{ end }}
 
+{{ define "main-style" }}
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/app.css" }}">
+{{ end }}
+
 {{ define "main-script" }}
-    <script src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/app.js" }}"></script>
+    <script type="module" src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/app.js" }}"></script>
+{{ end }}
+
+
+{{ define "apps-script" }}
+    <script>
+        window.siteConfig = {
+            mailXURL: "{{ .Site.Params.mailXURL }}",
+            modDNSURL: "{{ .Site.Params.modDNSURL }}",
+            portmasterURL: "{{ .Site.Params.portmasterURL }}",
+        };
+    </script>
 {{ end }}
