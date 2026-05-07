@@ -1,22 +1,25 @@
 <template>
-    <div v-if="!isLight" class='payment-page'>
+    <div v-if="!isLight" class="payment-page">
         <div class="back-link">
-            <router-link :to="{ name: 'account-' + this.language }">
+            <router-link :to="{ name: 'account-' + language }">
                 <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
             </router-link>
         </div>
 
         <div>
             <h1>{{ $t('account.accountSettingsTab.extendYourAccount') }}</h1>
-            <select-payment-method :account="account"></select-payment-method>
+            <select-payment-method 
+                :account="account"
+                :monero="true"
+                :cash="true"
+                :voucher="true"
+            ></select-payment-method>
         </div>
     </div>
 </template>
 
 <script>
 import SelectPaymentMethod from "@/components/SelectPaymentMethod.vue";
-
-import { add } from "date-fns";
 
 import { mapState } from "vuex";
 
@@ -28,7 +31,6 @@ export default {
     },
     data() {
         return {
-            isLight : false,
             language: 'en'
         };
     },
@@ -36,18 +38,21 @@ export default {
         ...mapState({
             account: (state) => state.auth.account,
         }),
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
     },
-    beforeMount(){
-        if( this.$store.state.auth.account.product.name == "IVPN Light"){
-            this.isLight = true;
-            window.location = "/light";
-        }
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            }
+        });
     },
     mounted() {
-        if ( window.location.href.split("/")[3] == "es") {
-            useI18n().locale.value = "es";
-            this.language = "es";
-        }
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
     },
 };
 </script>
@@ -70,8 +75,6 @@ export default {
     .recurring--description {
         flex-grow: 1;
         p {
-            
-
             font-size: 13px;
             opacity: 0.5;
             margin-top: 8px;

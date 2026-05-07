@@ -32,6 +32,11 @@
                             {{ recentPayment.product }},  {{ $t('account.payments.monero.extendedUntil') }}
                             {{ $filters.formatActiveUntil(recentPayment.applied_to) }}
                         </div>
+                        <div class="back-link">
+                            <router-link :to="{ name: 'account-' + this.language }">
+                                <span class="icon-back"></span>{{ $t('account.accountSettingsTab.backToAccount') }}
+                            </router-link>
+                        </div>
                     </div>
                     <div v-else>
                         <p class="highlight">
@@ -47,12 +52,18 @@
                     </div>
                 </div>
                 <p class="highlight"> {{ $t('account.payments.monero.pleaseNote') }}</p>
-                <p>
+                <p v-if="!isUpgrade">
                     {{ $t('account.payments.monero.note1') }}
                 </p>
+                <p v-else>
+                    {{ $t('account.payments.monero.note1Upgrade') }}
+                </p>
 
-                <p>
+                <p v-if="!isUpgrade">
                     {{ $t('account.payments.monero.note2') }}
+                </p>
+                <p v-else>
+                    {{ $t('account.payments.monero.note2Upgrade') }}
                 </p>
             </div>
         </div>
@@ -67,7 +78,7 @@ import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
 
 export default {
-    props: ["price"],
+    props: ["price","isUpgrade"],
     data() {
         return {
             amount: 0,
@@ -75,6 +86,7 @@ export default {
             address: "",
             qrCode: "",
             recentPayment: null,
+            language : "en",
         };
     },
     components: {
@@ -87,14 +99,15 @@ export default {
         }),
     },
     async created() {
-        
         let resp = await this.$store.dispatch(
             "payments/getMoneroPaymentDetails",
             {
-                duration: this.price.duration,
+                duration: this.price?.duration,
+                transactionType: this.isUpgrade ? "upgrade" : "extend",
+                priceId: this.price?.id,
             }
         );
-
+        
         if (this.error) return;
 
         this.address = resp.address;
@@ -108,22 +121,45 @@ export default {
         
     },
     async mounted() {
-        
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
+            this.language = "es";
         }
         this.refreshTimer = setInterval(this.updateLastPayment, 10000);
         await this.updateLastPayment();
         
+        
     },
-    beforeDestroy() {
+     
+    beforeUnmount() {
         clearInterval(this.refreshTimer);
     },
+    
 
     methods: {
         async updateLastPayment() {
             let payments = await api.getPaymentsHistory(true, "Monero");
             this.recentPayment = payments.length > 0 ? payments[0] : null;
+            
+            if (this.recentPayment) {
+                switch (this.recentPayment.product) {
+                    case "IVPN Tier 1":
+                        this.recentPayment.product = this.$t('pricing.tier1.name');
+                        break;
+                    case "IVPN Tier 2":
+                        this.recentPayment.product = this.$t('pricing.tier2.name');
+                        break;
+                    case "IVPN Tier 3":
+                        this.recentPayment.product = this.$t('pricing.tier3.name');
+                        break;
+                }
+                
+                try {
+                    await this.$store.dispatch("auth/reload");
+                } catch (error) {
+                    // Error is handled by the store
+                }
+            }
         },
     },
 };

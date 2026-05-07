@@ -1,0 +1,264 @@
+@import "../../js/styles/vars";
+
+// ── Upgrade Box Card ──────────────────────────────────────────────────────────
+.upgrade-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(51, 77, 102, 0.2);
+    margin: 24px 18px 0px 0px;
+    padding: 28px 28px 20px;
+    max-width: 350px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover:not(.current):not(.disabled) {
+        border-color: rgba(51, 77, 102, 0.45);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    &.current {
+        border-color: $blue;
+        box-shadow: 0 0 0 1px $blue;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+        margin: 16px 0px 0px 0px;
+        padding: 24px 20px 16px;
+    }
+
+    @media (max-width: $brk-mobile) {
+        padding: 18px 16px 14px;
+    }
+
+    @include light-theme((background-color: #f5f5f5, color: #111));
+    @include dark-theme((background-color: #222226, color: rgba(255,255,255,0.85)));
+    @media (prefers-color-scheme: light) { background-color: #f5f5f5; color: #111; }
+    @media (prefers-color-scheme: dark)  { background-color: #222226; color: rgba(255,255,255,0.85); }
+
+    ul li:before { display: none; }
+}
+
+// ── Header (plan title + badge) ───────────────────────────────────────────────
+.upgrade-box__header {
+    flex: 1;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.upgrade-box__badge {
+    display: inline-block;
+    font-family: $font-main-mono;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $blue;
+    border: 1px solid $blue;
+    border-radius: 3px;
+    padding: 2px 7px;
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+// ── Plan name / header text ───────────────────────────────────────────────────
+.price-header {
+    font-family: $font-main-mono;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+// ── Features list ─────────────────────────────────────────────────────────────
+.upgrade-features {
+    font-size: 15px;
+    line-height: 1.7;
+    flex: 1;
+    text-align: left;
+    min-height: 290px;
+
+    ul {
+        padding-left: 18px;
+        margin: 20px 0 16px;
+        li {
+            list-style: disc;
+        }
+    }
+
+    ul.additional-features {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+// ── Pricing rows (billing durations) ─────────────────────────────────────────
+.upgrade-box__pricing {
+    margin: 12px 0 0;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.upgrade-box__price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-family: $font-main-mono;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(51, 77, 102, 0.1);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+
+.upgrade-box__price-value {
+}
+
+// ── Upgrade summary card ──────────────────────────────────────────────────────
+.upgrade-box__summary {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(51, 77, 102, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 20px 0 4px;
+    font-family: $font-main-mono;
+
+    .upgrade-box__summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 14px;
+        border-bottom: 1px solid rgba(51, 77, 102, 0.1);
+        gap: 12px;
+
+        &:last-child { border-bottom: none; }
+
+        &--highlight {
+            @include light-theme((background-color: rgba(51, 77, 102, 0.06)));
+            @include dark-theme((background-color: rgba(255, 255, 255, 0.05)));
+        }
+    }
+
+    .upgrade-box__summary-label {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .upgrade-box__summary-value {
+        font-size: 13px;
+        text-align: right;
+    }
+
+    @media (max-width: 1024px) {
+        .upgrade-box__summary-row {
+            align-items: flex-start;
+            gap: 2px;
+            padding: 8px 12px;
+        }
+        .upgrade-box__summary-value { text-align: left; }
+    }
+}
+
+// ── Footer slot (active-until etc.) ──────────────────────────────────────────
+.upgrade-box__footer {
+    margin-top: 4px;
+}
+
+.active-until {
+    font-family: $font-main-mono;
+    text-align: center;
+    line-height: 22px;
+    margin-top: 12px;
+    .label { opacity: 0.6; font-size: 13px; }
+    .value { font-weight: 700; sup { color: $red; } }
+}
+
+// ── CTA button ────────────────────────────────────────────────────────────────
+.upgrade-box__action {
+    padding-top: 20px;
+
+    a { display: block; }
+
+    .btn.btn-upgrade {
+        width: 100%;
+        font-family: $font-main-mono;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.03em;
+        padding: 13px 10px;
+    }
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+[data-tooltip] { position: relative; }
+
+[data-tooltip]:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include dark-theme((background-color: black, color: rgba(255,255,255,0.85)));
+    @include light-theme((background-color: #F9F9F9, color: black));
+    @media (prefers-color-scheme: dark)  { background-color: black; color: rgba(255,255,255,0.85); }
+    @media (prefers-color-scheme: light) { background-color: #F9F9F9; color: black; }
+    padding: 6px 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    border-radius: 3px;
+    display: none;
+    z-index: 999;
+    width: 280px;
+}
+
+[data-tooltip]:hover:after { display: block; }
+
+// ── Price sidebar ─────────────────────────────────────────────────────────────
+.price-sidebar {
+    font-weight: 700;
+    font-size: 15px;
+    margin: 160px 0px 0px -130px;
+    padding: 30px 10px 0px;
+    max-height: 340px;
+    min-width: 125px;
+    border-radius: 4px;
+    @include dark-theme((background-color: #363434, color: rgba(255,255,255,0.85)));
+    @include light-theme((background-color: #E7E7E7, color: black));
+    @media (prefers-color-scheme: dark)  { background-color: #363434; color: rgba(255,255,255,0.85); }
+    @media (prefers-color-scheme: light) { background-color: #E7E7E7; color: black; }
+    p { font-size: 15px !important; }
+    @media (max-width: 1024px) { display: none; }
+}
+
+// ── Legend & footer text ──────────────────────────────────────────────────────
+.price-footer {
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0 20px;
+    @media (max-width: 1024px) { padding: 0 8px; }
+    @media (max-width: $brk-mobile) { padding: 0; }
+}
+
+.price-legend {
+    font-style: italic;
+    font-weight: 600;
+    padding: 0px 5px 28px 8px;
+    font-size: 14px;
+}

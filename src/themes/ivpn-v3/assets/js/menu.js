@@ -113,7 +113,7 @@
     }
 
     function updateConnectionInfo() {
-        fetch('/web/status').then(function (response) {
+        fetch(import.meta.env.VITE_APP_WEBAPI_URL + '/web/status').then(function (response) {
             return response.text();
         }).then(function (html) {
             let container = document.querySelectorAll('.connection-status');
@@ -135,13 +135,12 @@
         });
     }
 
-    function updateRussiaBanner(){
+    function updateRussiaBanner(){     
         var banner = document.getElementById('ru-warning-banner');
         if (!banner) {
             return; // Banner doesn't exist on this page
         }
-
-        fetch(process.env.MIX_APP_API_URL + '/v4/geo-lookup', {
+        fetch(import.meta.env.VITE_APP_API_URL + '/v4/geo-lookup', { 
             method: 'GET',
             mode: 'cors',
             credentials: 'omit'

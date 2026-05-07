@@ -2,8 +2,8 @@
     <div style="text-align:center;">
         <p v-if="error" class="error-message">{{ error.message }}</p>
         <p>{{ $t('account.payments.bitcoin.bitcoinDescription') }}</p>
-        <p v-if="this.price.billing_cycle == 'Weekly'">{{ $t('account.payments.bitcoin.bitcoinOnchain') }}</p>
-        <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress" v-if="this.price.billing_cycle != 'Weekly'">
+        <p v-if="!disableOnchainBitcoin">{{ $t('account.payments.bitcoin.bitcoinOnchain') }}</p>
+        <button class="btn btn-solid" @click.prevent="submit()" :disabled="inProgress" v-if="!disableOnchainBitcoin">
             <div class="bitcoin-icon"></div>
             <progress-spinner v-if="inProgress" width="32" height="32" fill="#FFFFFF" />{{ $t('account.payments.bitcoin.payWithBitcoin') }}
         </button>
@@ -34,6 +34,9 @@ export default {
         ...mapState({            
             error: (state) => state.account.error,
         }),
+        disableOnchainBitcoin() {
+            return this.price?.billing_cycle == "Weekly" || this.price?.price < 6;
+        },
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
@@ -48,7 +51,8 @@ export default {
 
             let URL = await this.$store.dispatch("account/createBitcoinInvoice", {
                 priceID: this.price.id,
-                paymentMethodId: "BTC"              
+                paymentMethodId: "BTC",  
+                paymentType: this.price.type,            
             });
 
             if (!URL) {                
@@ -63,7 +67,8 @@ export default {
 
             let URL = await this.$store.dispatch("account/createBitcoinInvoice", {
                 priceID: this.price.id,
-                paymentMethodId: "BTC_LightningLike"              
+                paymentMethodId: "BTC_LightningLike",
+                paymentType: this.price.type,            
             });
 
             if (!URL) {                

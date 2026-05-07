@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IconTrash from "@/components/icons/btn/Trash";
+import IconTrash from "@/components/icons/btn/Trash.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -98,7 +98,6 @@ export default {
 
         h3 {
             margin: 0;
-            flex-grow: 1;
         }
     }
 
