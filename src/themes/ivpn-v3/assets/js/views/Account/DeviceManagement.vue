@@ -63,7 +63,7 @@
                 <a class="btn btn-solid btn-big" href="#" @click="confirmDisableDeviceManagement">{{ $t('account.deviceManagementTab.disableDeviceManagement') }}</a>
             </section>
 
-            <section v-if="account.product?.id === 'IVPN Tier 1'">
+            <section v-if="account.product?.id === 'IVPN Tier 1' || account.product?.id === 'IVPN Tier 2'">
                 <p>{{ $t('account.deviceManagementTab.upgradeText1') }} <a :href="'/' + language + '/account/upgrade'">{{ $t('account.deviceManagementTab.upgradeText2') }}</a> {{ $t('account.deviceManagementTab.upgradeText3') }} </p>
             </section>
         </div>
