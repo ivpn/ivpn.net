@@ -13,7 +13,7 @@ IVPN subscriptions are available in three tiers: Standard, Plus, and Pro Suite.
 
 Standard includes the VPN service with Multi-hop, AntiTracker, and up to five devices. Plus features everything in Standard and adds [Mailx](https://www.mailx.net) and [modDNS](https://www.moddns.net/). Pro Suite includes everything in Plus and adds [Portmaster Pro](https://safing.io/pricing/), with VPN device limit increased to 10. A full comparison is available on the [Services Overview](/services) page.
 
-If you had an existing IVPN Standard or Pro plan before May 2026: Standard now includes Multi-hop and a five-device limit, up from two. Pro is now the Pro Suite with access to [additional services](/services) and a ten-device limit, up from seven. Pricing is unchanged and no action is required on your part. Details of these changes are covered in the [announcement blog post](INSERT_LINK).
+If you had an existing IVPN Standard or Pro plan before May 2026: Standard now includes Multi-hop and a five-device limit, up from two. Pro is now the Pro Suite with access to [additional services](/services) and a ten-device limit, up from seven. Pricing is unchanged and no action is required on your part. Details of these changes are covered in the [announcement blog post](/blog/ivpn-plan-changes-new-plus-tier-increased-device-limits-additional-privacy-services/).
 
 
 1. ### How do I get access to Additional Services after purchase?
