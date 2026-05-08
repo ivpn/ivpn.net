@@ -85,6 +85,8 @@ modDNS is in active development. You may encounter occasional downtime or unexpe
 
 Visit your [IVPN My Account page][3] and look for the modDNS tab. IVPN Pro customers with at least one year remaining on their accounts can sign up for the service via a unique registration link.
 
+**Update, April 2026:** modDNS beta is now available to IVPN Pro customers with at least one month remaining on their account (previously one year). Access is only available for accounts [created after](https://www.ivpn.net/blog/new-open-source-ivpn-website-subscribe-without-email/) November 2020. If your account predates this, the modDNS tab will not appear in your dashboard. Email [moddns@ivpn.net](mailto:moddns@ivpn.net) if you want to test modDNS and this applies to you.
+
 After registration, modDNS-related identifiers are removed from IVPN systems to prevent association between accounts. modDNS will remain free for beta participants after launch as long as they maintain an active IVPN subscription.
 
 

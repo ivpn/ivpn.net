@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-03-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-05-05 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 939111
-hash: 00000000000000000000043dbe58e074d6bce5e07b6d24ec2803091fb01923a0
+height: 948000
+hash: 00000000000000000001b01841afc366a4f999b291c8563ee0d0db956fc2db44
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Middle Eastern airlines start to fly stranded passengers out of Gulf
-France and Italy are preparing to evacuate citizens but many have yet to launch flights due to closed airspace
+Alphaville.Can we make a crazy huge Venn of the BDC ecosystem?
+Up to a point
 
-Stocks and bonds sell off as widening Middle East war rattles markets
-European indices and US futures down as conflict escalates across region
+EQT boosts Intertek takeover offer to more than £10bn
+Previous bids from Swedish private equity firm were rejected for ‘fundamentally undervaluing’ FTSE 100 company
 
-GB News takes fresh funding from investors despite narrowing losses
-Revenues for right-leaning broadcaster rise following bigger TV and online audiences
+UniCredit’s investments in other banks help lender to record profit
+Italian group pressing ahead with €35bn bid for Germany’s Commerzbank
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmmmpPYACgkQisFrnrZH
-umlOdgf6A9b6La3xhPadd0xBbImY7fk+gxQ08yl46d3VMDt4iO8KgYREXLljfygF
-hDL1C/CPyDgH1VhITJCjFMGjWmv3Hs2RagRcj+x9qHcabSQOUputMoOht/UM1aIk
-oi9iEs5IhQFSuOtWX2ZlNHYkLW3VPtQQhsWjhoayUcvK2yV0yKd/SCT4mXKYdPp0
-DMiKp0GvI8rzcre24IAOazFpPjN+mGCT9m48KiTKIqH5ruEPe3QOVhdXrKOS2xa0
-r7kwuXQe4YpMvoJEMxuCXTZM/qLwu8t2S2oU5HBjyK7Gw1nY11B/7rJZ4ICx86QK
-YkbRNoHzWLThogfJ4IukgasqG6TjnA==
-=Q9uU
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmn5s4oACgkQisFrnrZH
+ummd5Qf+OJAW+yGLAUzbFNo9OlAJiRI3dfVQ5XbDUkDMW93d/+cs9dAjgzLjSM3d
+HWqSS23kcD/I2NPrGZNcNVIeIZ3Qyqf0BBWZEAasyQNVVy22FTHBlWEatSSJLM0J
+JnVdN6azzvGGZ5zCn11ioit90x3irhN0+cdaPoD3oZGOwn8lLEUPdcdPLYCiBbPo
+9ld0BBCH0tqTdCqkOr2tlaU7zO87z0V37MCaIM+ZYviuc2WuGv70EqK9MTFWMZOW
+sBnuDc7j01T7El0Vedz2eoyfyhIIlDD4zeOHZjZNBISDbpT7qLw+UyjLUQsN8v64
+zYT3KZfiyDyHaBvD5IjFaC0nk7+sbg==
+=49P2
 -----END PGP SIGNATURE-----
 
 

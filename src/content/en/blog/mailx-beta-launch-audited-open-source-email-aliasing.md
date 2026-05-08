@@ -69,6 +69,8 @@ Excerpts from the audit report:
 
 Mailx is first available for testing for IVPN Pro customers with at least one year remaining on their account.
 
+**Update, April 2026:** Mailx beta is now available to IVPN Pro customers with at least one month remaining on their account (previously one year). Access is only available for accounts [created after](https://www.ivpn.net/blog/new-open-source-ivpn-website-subscribe-without-email/) November 2020. If your account predates this, the Mailx beta tab will not appear in your dashboard. Email [mailx@ivpn.net](mailto:mailx@ivpn.net) if you want to test Mailx and this applies to you.
+
 To get started:
 
 - Log in to your [IVPN account][5]
