@@ -22,7 +22,7 @@ date: 2026-05-08T08:00:00.000Z
 
 ## New plans overview
 
-IVPN now offers three distinct plans:
+IVPN now offers [three distinct plans](/pricing):
 
 | | Standard | Plus | Pro Suite |
 |---|---|---|---|
