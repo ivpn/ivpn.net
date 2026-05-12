@@ -25,7 +25,7 @@
     "jszip": "^3.10.1",
     "lunr": "^2.3.9",
     "paypal-checkout": "^4.0.336",
-    "postcss": "^8.4.31",
+    "postcss": "^8.5.14",
     "qrcode-generator": "^1.4.4",
     "sass": "^1.54.9",
     "vite": "^5.1.0",
