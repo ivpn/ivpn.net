@@ -97,12 +97,12 @@
                                 <img src="{{ site.Params.cdnUrl }}{{ .Params.thumbnailImage }}" alt="{{ .Title }}">
                             </a>
                         {{ end }}
-                        {{ range .Params.categories }}
-                            {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
-                                <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
-                            {{ end }}
-                        {{ end }}
                     </div>
+                    {{ range .Params.categories }}
+                        {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}
+                            <a href="{{ .Permalink }}" class="badge">{{ .Title }}</a>
+                        {{ end }}
+                    {{ end }}
                     <h4><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h4>
                     <p class="blog-article__related-meta">
                         Posted on {{ .Date.Format "January 2, 2006"}} by
