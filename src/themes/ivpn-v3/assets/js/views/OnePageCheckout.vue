@@ -342,8 +342,8 @@ export default {
 
                 const URL = await this.$store.dispatch("account/createLightInvoice", {
                     paymentType: "extend",
-                    exitServer: this.selectedExitLocation,
-                    entryServer: this.selectedEntryLocation,
+                    exitServer: this.selectedExitLocation.map(s => s.hosts?.[0]?.dns_name|| s.hosts?.[1]?.dns_name || s.gateway),
+                    entryServer: this.selectedEntryLocation.map(s => s.hosts?.[0]?.dns_name || s.hosts?.[1]?.dns_name || s.gateway),
                     publicKey: this.publicKey,
                     priceID: this.selectedBillingCycle, 
                     });
@@ -351,12 +351,12 @@ export default {
                         window.location = URL;
                         this.validation.submit = true;
                     }else{
-                        this.sendError = "Failed to create invoice. Please try again.";
+                        this.submitError = "Failed to create invoice. Please try again.";
                         this.validation.submit = false;
                     }
                     
                 } catch(error) {
-                    this.sendError = error.message || "Failed to create invoice. Please try again.";
+                    this.submitError = error.message || "Failed to create invoice. Please try again.";
                     this.validation.submit = false;
                 }
 
