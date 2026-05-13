@@ -126,7 +126,7 @@ export default {
         },
 
         canSetup() {
-            return this.isLoaded && this.preauth?.mail?.sessionid;
+            return this.isLoaded && this.preauth?.[this.service.key]?.sessionid;
         },
 
         shouldShowSync() {
