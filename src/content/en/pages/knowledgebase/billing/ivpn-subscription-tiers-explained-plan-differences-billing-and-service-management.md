@@ -50,13 +50,13 @@ If you had an existing IVPN Standard or Pro plan before May 2026: Standard now i
     Portmaster Pro will revert to Portmaster Free.
 
 1. ### What happens to my Additional Services if my IVPN account expires?
-    Limited access will be available to give time to restore access with a payment.
-    
-    Mailx will continue to forward mail, and modDNS will continue to resolve queries during the limited access period.  No changes to either service will be accepted, like creating new mail aliases or modifying custom DNS entries.
-    
-    After the limited access period for the Mailx and modDNS services, only the export option will be available.  Accounts inactive after the limited access period will be automatically deleted.
-    
-    Portmaster Pro reverts to Portmaster Free when the account expires. SPN access and detailed bandwidth history are not available on the Free tier.
+    Mailx: Your account enters limited access mode.  Existing aliases continue to forward email with no time limit.  You cannot create new aliases, wildcard aliases, or recipients.  To restore full access, add time to your IVPN account.
+
+    modDNS: DNS resolution continues during a 14-day limited access period.  No changes to custom entries or blocklists are accepted.  After 14 days, resolution stops.  Restore your account within this period to avoid service interruption.
+
+    Portmaster Pro: Reverts to Portmaster Free when the account expires.  SPN access and detailed bandwidth history are not available on the Free tier.
+
+    You can delete your additional service accounts at any time, regardless of your IVPN subscription status.  Deletion permanently removes all account data.
 
 1. ### If I lose the Mailx or modDNS credentials, what happens to my aliases and DNS config? How do I recover the accounts?
     The Mailx aliases and modDNS profiles will remain active as long as the IVPN account is active.
