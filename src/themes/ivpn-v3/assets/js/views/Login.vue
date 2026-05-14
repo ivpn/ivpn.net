@@ -196,7 +196,14 @@ export default {
                 return;
             }
 
-            this.$router.push({ name: "account-" + this.language })
+            const redirect = this.$route.query.redirect
+            const isAllowedRedirect = typeof redirect === "string" &&
+                (redirect.startsWith("/en/account") || redirect.startsWith("/es/account"))
+            if (isAllowedRedirect) {
+                this.$router.push(redirect)
+            } else {
+                this.$router.push({ name: "account-" + this.language })
+            }
         },
         processError(error) {
             this.totpRequired =
