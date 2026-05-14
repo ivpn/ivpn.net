@@ -93,7 +93,7 @@ export default {
                     description: this.$t('account.servicesArea.mailDescription'),
                     setupUrl: () => `${this.mailXURL}/signup?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.mail?.uuid}`,
                     accessUrl: () => `${this.mailXURL}/login`,
-                    syncUrl: () => `${this.mailXURL}/account/profile?sessionid=${this.preauth?.mail?.sessionid}`,
+                    syncUrl: () => `${this.mailXURL}/account/profile?sessionid=${this.preauth?.mail?.sessionid}&subid=${this.preauth?.mail?.uuid}`,
                     upgradeRequired: ['IVPN Tier 1']
                 },
                 {
@@ -102,7 +102,7 @@ export default {
                     description: this.$t('account.servicesArea.dnsDescription'),
                     setupUrl: () => `${this.modDNSURL}/signup?sessionid=${this.preauth?.dns?.sessionid}&subid=${this.preauth?.dns?.uuid}`,
                     accessUrl: () => `${this.modDNSURL}/login`,
-                    syncUrl: () => `${this.modDNSURL}/account-preferences?sessionid=${this.preauth?.dns?.sessionid}`,
+                    syncUrl: () => `${this.modDNSURL}/account-preferences?sessionid=${this.preauth?.dns?.sessionid}&subid=${this.preauth?.dns?.uuid}`,
                     upgradeRequired: ['IVPN Tier 1']
                 },
                 {
@@ -111,7 +111,7 @@ export default {
                     description: this.$t('account.servicesArea.portmasterDescription'),
                     setupUrl: () => `${this.portmasterURL}/account/external_signup?sessionid=${this.preauth?.portmaster?.sessionid}&subid=${this.preauth?.portmaster?.uuid}`,
                     accessUrl: () => `${this.portmasterURL}/account`,
-                    syncUrl: () => `${this.portmasterURL}/account?sessionid=${this.preauth?.portmaster?.sessionid}`,
+                    syncUrl: () => `${this.portmasterURL}/account?sessionid=${this.preauth?.portmaster?.sessionid}&subid=${this.preauth?.portmaster?.uuid}`,
                     upgradeRequired: ['IVPN Tier 1', 'IVPN Tier 2']
                 }
             ];
