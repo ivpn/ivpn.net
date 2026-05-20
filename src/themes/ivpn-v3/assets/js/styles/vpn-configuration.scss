@@ -1,6 +1,6 @@
-@import "@/styles/_vars.scss";
-@import "@/styles/base.scss";
-@import "@/styles/buttons.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/base.scss" as *;
+@use "@/styles/buttons.scss" as *;
 
 .vpn-configuration {
 

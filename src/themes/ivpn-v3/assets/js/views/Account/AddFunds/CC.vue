@@ -283,8 +283,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/base.scss";
-@import "@/styles/_vars.scss";
+@use "@/styles/base.scss" as *;
+@use "@/styles/_vars.scss" as *;
 
 .payment-form {
     max-width: 580px;

@@ -44,9 +44,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/buttons.scss";
-@import "../styles/_vars.scss";
-@import "@/styles/base.scss";
+@use "@/styles/buttons.scss" as *;
+@use "../styles/_vars.scss" as *;
+@use "@/styles/base.scss" as *;
 
 .highlight {
     font-weight: bold;

@@ -180,9 +180,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/base.scss";
-@import "@/styles/_vars.scss";
-@import "@/styles/buttons.scss";
+@use "@/styles/base.scss" as *;
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/buttons.scss" as *;
 
 .failed_payment {
     display: flex;

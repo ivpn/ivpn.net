@@ -1,4 +1,5 @@
-@import "@/styles/_vars.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/mixins/theme.scss" as *;
 
 .tabs ul {
     align-items: center;

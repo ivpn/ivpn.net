@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/buttons.scss";
+@use "@/styles/buttons.scss" as *;
 
 .confirm {    
     margin-bottom: 2em;

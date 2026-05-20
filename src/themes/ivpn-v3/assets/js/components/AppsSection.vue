@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
+@use "@/styles/_vars.scss" as *;
 
 h3.devices {
     font-family: $font-main-mono;

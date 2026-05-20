@@ -124,7 +124,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
+@use "@/styles/_vars.scss" as *;
 
 .router-view-spacing {
     margin-top: 32px;

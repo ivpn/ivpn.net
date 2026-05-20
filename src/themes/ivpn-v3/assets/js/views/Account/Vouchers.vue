@@ -118,7 +118,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/buttons.scss";
+@use "@/styles/buttons.scss" as *;
 
 section {
     position: relative;

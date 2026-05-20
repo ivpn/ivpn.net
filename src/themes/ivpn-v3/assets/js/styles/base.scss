@@ -1,6 +1,6 @@
 
-@import "@/styles/_vars.scss";
-@import "@/styles/mixins/theme.scss";
+@forward "@/styles/_vars.scss";
+@forward "@/styles/mixins/theme.scss";
 
 .paragraph {
     font-size: 16px;    

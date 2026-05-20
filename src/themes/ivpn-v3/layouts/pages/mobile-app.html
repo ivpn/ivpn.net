@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ $.Site.LanguageCode | default "en" }}" dir="ltr">  
+<html lang="{{ $.Site.Language.Lang | default "en" }}" dir="ltr">  
   <head>
     {{- partial "head.html" . -}}
-    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/css/pages.css" }}">
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/css/pages.css" }}">
     
     {{ block "seo" . }}
     <link rel="canonical" href="{{ .Site.BaseURL }}{{ .Params.Canonical }}">
