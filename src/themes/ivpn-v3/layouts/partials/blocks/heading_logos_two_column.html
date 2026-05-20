@@ -23,8 +23,8 @@
                 {{ if eq .image "/images/mailx_white.png" }}
                 <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="logo-dark-theme logo-standard" />
                 <img src="{{ site.Params.cdnUrl }}/images/mailx_dark.png" alt="{{ .alt }}" class="logo-light-theme logo-standard" />
-                {{ else if eq .image "/images/mod_white.png" }}
-                <img src="{{ site.Params.cdnUrl }}/images/mod_dark.png" alt="{{ .alt }}" class="logo-dark-theme logo-standard" />
+                {{ else if eq .image "/images/moddns-light.svg" }}
+                <img src="{{ site.Params.cdnUrl }}/images/moddns-dark.svg" alt="{{ .alt }}" class="logo-dark-theme logo-standard" />
                 <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="logo-light-theme logo-standard" />
                 {{ else }}
                 <img src="{{ site.Params.cdnUrl }}{{ .image }}" alt="{{ .alt }}" class="logo-standard" />
