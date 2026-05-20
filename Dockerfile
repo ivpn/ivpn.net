@@ -1,4 +1,4 @@
-FROM node:22-slim AS builder
+FROM node:22.12-slim AS builder
 
 ARG ENV=production
 ARG BASE_URL=http://localhost:8010
