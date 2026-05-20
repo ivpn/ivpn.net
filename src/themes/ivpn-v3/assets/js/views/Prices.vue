@@ -1308,14 +1308,14 @@ export default {
 .moddns-logo {
     height: 1.7rem !important;
     @include light-theme((
-        content: url('/images/mod_white.png')
+        content: url('/images/moddns-light.svg')
     ));
     @include dark-theme((
-        content: url('/images/mod_dark.png')
+        content: url('/images/moddns-dark.svg')
     ));
 
     @media (prefers-color-scheme: light) {
-        content: url('/images/mod_white.png')
+        content: url('/images/moddns-light.svg')
     };
 }
 .portmaster-icon {

@@ -16,7 +16,7 @@ sections:
         alt: IVPN Logo
       - image: /images/mailx_white.png
         alt: Mailx Logo
-      - image: /images/mod_white.png
+      - image: /images/moddns-light.svg
         alt: modDNS Logo
       - image: /images/pm_white.svg
         alt: Portmaster
@@ -91,7 +91,7 @@ sections:
         url: https://mailx.net/privacy
   - type: service_card
     name: modDNS
-    logo: /images/mod_white.png
+    logo: /images/moddns-light.svg
     plans:
       - Plus
       - Pro Suite
