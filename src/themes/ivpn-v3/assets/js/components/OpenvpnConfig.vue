@@ -386,7 +386,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/base.scss";
-@import "@/styles/tabs.scss";
-@import "@/styles/vpn-configuration.scss";
+@use "@/styles/base.scss" as *;
+@use "@/styles/tabs.scss" as *;
+@use "@/styles/vpn-configuration.scss" as *;
 </style>

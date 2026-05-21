@@ -1,7 +1,7 @@
 // Services Page Styles
 // This file contains all styles for the service section templates
 
-@import "mixins/theme";
+@use "_tokens" as *;
 
 // =============================================================================
 // 1. HEADING WITH LOGOS TWO COLUMN SECTION
