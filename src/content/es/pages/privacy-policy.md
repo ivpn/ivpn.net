@@ -54,7 +54,7 @@ Cuando se crea una nueva cuenta, almacenamos los siguientes datos: (ten en cuent
 
 | ID | Creado en | Producto | Dispositivos máx |
 |---|---|---|---|
-| i-XXXX-XXXX-XXXX | 2020-09-21 05:03:13 | IVPN Pro | 7 |
+| i-XXXX-XXXX-XXXX | 2026-04-21 05:03:13 | IVPN Plus | 5 |
 
 </div>
 
