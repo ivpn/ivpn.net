@@ -21,7 +21,7 @@
     "file-saver": "^2.0.5",
     "flexbox-grid-mixins": "^0.3.4",
     "ip-num": "^1.5.1",
-    "js-cookie": "^3.0.1",
+    "js-cookie": "^3.0.7",
     "jszip": "^3.10.1",
     "lunr": "^2.3.9",
     "paypal-checkout": "^4.0.336",
