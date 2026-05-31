@@ -7,7 +7,7 @@ weight: 10
 articles: [
   {
     title: "18 Questions to ask your VPN Service provider",
-    url: "privacy-guides/18-questions-to-ask-your-vpn-service-provider/"
+    url: "/privacy-guides/18-questions-to-ask-your-vpn-service-provider/"
   },
   {
     title: "Advanced Privacy and Anonymity Using VMs, VPN’s, Tor – Part 1",

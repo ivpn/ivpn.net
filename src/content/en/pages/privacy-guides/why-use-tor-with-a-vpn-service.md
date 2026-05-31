@@ -11,7 +11,7 @@ articles: [
   },
   {
     title: "An Introduction to Privacy & Anonymity",
-    url: "privacy-guides/an-introduction-to-privacy-anonymity/"
+    url: "/privacy-guides/an-introduction-to-privacy-anonymity/"
   },
 ]
 date: 2018-10-25T13:55:43+00:00
