@@ -10,8 +10,8 @@ articles: [
     url: "/privacy-guides/applying-risk-management-to-privacy/"
   },
   {
-    title: "Creating a VM within a hidden truecrypt partition",
-    url: "/privacy-guides/creating-a-vm-within-a-hidden-truecrypt-partition/"
+    title: "Creating a VM within a hidden veracrypt partition",
+    url: "/privacy-guides/creating-a-vm-within-a-hidden-veracrypt-partition/"
   },
   {
     title: "How to perform a VPN leak test",
