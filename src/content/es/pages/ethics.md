@@ -88,7 +88,7 @@ sections:
         </tr>
         <tr>
           <td><strong>Proyectos educativos</strong><br>Asignamos tiempo y recursos a proyectos que difunden información sobre privacidad y VPN de confianza.</td>
-          <td><a href="https://www.ivpn.net/privacy-guides/">Guías de privacidad</a><br><a href="https://www.ivpn.net/en/blog/categories/industry-insights/">Blogs educativos</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a><br><a href="https://theprivacyissue.com">The Privacy Issue</a></td> 
+          <td><a href="https://www.ivpn.net/privacy-guides/">Guías de privacidad</a><br><a href="https://www.ivpn.net/en/blog/categories/industry-insights/">Blogs educativos</a><br><a href="https://www.doineedavpn.com">Do I need a VPN?</a></td> 
         </tr>
         <tr>
           <td><strong>Canales sociales y comunidad</strong><br>Compartimos información sobre nuestro progreso en comunidades de IVPN.</td>
