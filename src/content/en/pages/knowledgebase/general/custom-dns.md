@@ -51,7 +51,7 @@ Supported address types: IPv4. DNS-over-TLS via Android native Private DNS featu
 Supported address types: IPv4, DNS-over-HTTPS, DNS-over-TLS, DNS-over-QUIC
 </div>
 
-- On the Customr DNS Settings screen or via the CLI, use the modDNS profile's DNS-over-HTTPS URI string `https://dns.moddns.net/dns-query/abc123` plus the IP address `89.124.253.5` replacing the `abc123` with the actual profile ID.
+- On the **Custom DNS** Settings screen or via the **CLI**, use the modDNS profile's DNS-over-HTTPS URI string `https://dns.moddns.net/dns-query/abc123` plus the IP address `89.124.253.5` replacing the `abc123` with the actual profile ID.
 
 - The [modDNS account area](https://app.moddns.net/setup) also offers a configuration profile (`.mobileconfig` and QR code) for Apple devices.
 
