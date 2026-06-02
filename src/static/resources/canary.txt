@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-05-05 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-06-02 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 948000
-hash: 00000000000000000001b01841afc366a4f999b291c8563ee0d0db956fc2db44
+height: 952088
+hash: 00000000000000000001b23ca58d36cfd24c55aa9ac3dbb4ad7d16f9d479c2ad
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Alphaville.Can we make a crazy huge Venn of the BDC ecosystem?
-Up to a point
+Gold replaces US Treasuries as world’s top reserve asset, ECB says
+Historic bullion rally boosts metal’s share of reserves to 27% while central banks diversify away from dollar
 
-EQT boosts Intertek takeover offer to more than £10bn
-Previous bids from Swedish private equity firm were rejected for ‘fundamentally undervaluing’ FTSE 100 company
+Scottish EV start-up plans new UK plant in 2027
+Munro is to build a new facility for industrial-use electric vehicles
 
-UniCredit’s investments in other banks help lender to record profit
-Italian group pressing ahead with €35bn bid for Germany’s Commerzbank
+British Land picks Canadian pension fund executive as next boss
+Joanne McNamara will become one of a select group of women running FTSE 100 groups
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmn5s4oACgkQisFrnrZH
-ummd5Qf+OJAW+yGLAUzbFNo9OlAJiRI3dfVQ5XbDUkDMW93d/+cs9dAjgzLjSM3d
-HWqSS23kcD/I2NPrGZNcNVIeIZ3Qyqf0BBWZEAasyQNVVy22FTHBlWEatSSJLM0J
-JnVdN6azzvGGZ5zCn11ioit90x3irhN0+cdaPoD3oZGOwn8lLEUPdcdPLYCiBbPo
-9ld0BBCH0tqTdCqkOr2tlaU7zO87z0V37MCaIM+ZYviuc2WuGv70EqK9MTFWMZOW
-sBnuDc7j01T7El0Vedz2eoyfyhIIlDD4zeOHZjZNBISDbpT7qLw+UyjLUQsN8v64
-zYT3KZfiyDyHaBvD5IjFaC0nk7+sbg==
-=49P2
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmoekL8ACgkQisFrnrZH
+umlPEQf/Vlc7buYXego7Ba3ScgM+e/f8vyT+YRBBtckXuXbYtukEcn6nRBd374tr
+CgFhS3UtkecPWWRYuvnit7wnpKqK4NeeKdD6ghr2QhymlNl1493vfYO0rTbE0NU4
+U7e+JxE1Fye7NzBWI4NjofV0HmYcLe3VUskBItv4WFfd5IsCRK3npauMYkoMVQ8j
++EV/HA8CH8mYm1az9eorSl2jCoaugg2Mz+Uk24TxDYvOgza2LjL7YZdokBsImfdA
+Pyw1jGcoH5Cc2EdfALpMUuSIqzfxIVF681LXxZUc7vsPShqP+EPfAToq0b33yFyG
+JJ4jVOij66ekNnFAiw4iWBTiN9SSdA==
+=GiIn
 -----END PGP SIGNATURE-----
 
 
