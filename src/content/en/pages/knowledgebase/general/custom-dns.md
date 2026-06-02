@@ -45,13 +45,13 @@ Supported address types: IPv4. DNS-over-TLS via Android native Private DNS featu
 
 - DNS-over-TLS can be set using the Android OS native Private DNS feature. On your device, navigate to `Settings` - `More connections` - `Private DNS`. Select `Configure Private DNS` and enter the preferred DoT address.
 
-### modDNS
+### modDNS with the IVPN App
 
 <div markdown="1" class="notice notice--info">
 Supported address types: IPv4, DNS-over-HTTPS, DNS-over-TLS, DNS-over-QUIC
 </div>
 
-- Use the modDNS profile's DNS-over-HTTPS URI string `https://dns.moddns.net/dns-query/abc123` plus the IP address `89.124.253.5` replacing the `abc123` with the actual profile ID.
+- On the Customr DNS Settings screen or via the CLI, use the modDNS profile's DNS-over-HTTPS URI string `https://dns.moddns.net/dns-query/abc123` plus the IP address `89.124.253.5` replacing the `abc123` with the actual profile ID.
 
 - The [modDNS account area](https://app.moddns.net/setup) also offers a configuration profile (`.mobileconfig` and QR code) for Apple devices.
 
