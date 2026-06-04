@@ -30,7 +30,7 @@ To enable the feature, log in to the [Account](/account/login#id) area - `Device
 
 ### How does the device naming assignment work?
 
-Once enabled, the feature makes use of predefined phrases below (first two on IVPN Standard and all seven on IVPN Pro plan) that are assigned to existing and new devices in a specific order:
+Once enabled, the feature makes use of predefined phrases below (first five on IVPN Standard and Plus and all ten  on IVPN Pro Suite plan) that are assigned to existing and new devices in a specific order:
 
 ```
 Silent Circuit
@@ -42,7 +42,7 @@ Zenith Core
 Onyx Eclipse
 ```
 
-Following the list order above, the first device that is logged in to the IVPN app will be named “**Silent Circuit**”, the second “**Infinite Cipher**” up until adding the seventh device assigned as “**Onyx Eclipse**”.
+Following the list order above, the first device that is logged in to the IVPN app will be named “**Silent Circuit**”, the second “**Infinite Cipher**”, the fifth “**Onyx Eclipse**”, and so on.
 
 Devices that were already logged in to the IVPN app prior to the activation of Device Management will be assigned the names in the order you have authenticated them in the past, e.g. the very first device you have logged in to the IVPN app on will be named “**Silent Circuit**”, the second “**Infinite Cipher**” and so on.
 
