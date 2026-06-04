@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "^6.0.0",
+    "altcha": "^2.0.0",
     "vue-country-flag-next": "^2.3.2",
     "vue-i18n": "^11.0.0",
     "vue-multiselect": "^3.0.0-beta.1"

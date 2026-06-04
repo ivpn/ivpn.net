@@ -4,47 +4,7 @@
             <p class="error">{{ $t('account.payments.creditCard.cardIssue') }}</p>
         </div>
         <div v-if="braintree != null">
-            <div
-                v-if="captchaImage"
-                style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                "
-            >
-                <p>{{ $t('account.payments.paypal.solveCaptcha') }}</p>
-                <p v-if="error && !hideError(error)" class="error">
-                    {{ error.message }}
-                </p>
-                <form @submit.prevent="makePayment()">
-                    <div class="captcha" v-if="captchaImage">
-                        <div class="image-block">
-                            <img :src="captchaImage" />
-                        </div>
-                        <label for="login-captch"
-                            >{{ $t('account.payments.paypal.enterNumbers') }}</label
-                        >
-                        <input
-                            type="text"
-                            id="login-captch"
-                            v-model="captchaValue"
-                        />
-                        <button
-                            class="btn btn-solid btn-big make-payment"
-                            :disabled="!paymentAllowed"
-                        >
-                            <progress-spinner
-                                v-if="inProgress"
-                                width="32"
-                                height="32"
-                                fill="#FFFFFF"
-                            />Continue
-                        </button>
-                    
-                    </div>
-                </form>
-            </div>
-            <form v-else v-if="!this.cardFailedVerification" @submit.prevent="makePayment()">
+            <form v-if="!this.cardFailedVerification" @submit.prevent="makePayment()">
                 <braintree-cc
                     :braintree="braintree"
                     v-bind:amount="price.price"
@@ -72,6 +32,13 @@
                     </div>
                 </div>
 
+                <altcha-widget
+                    ref="altchaWidget"
+                    :challengeurl="altchaChallengeUrl"
+                    hidefooter
+                    @statechange="onAltchaStateChange"
+                ></altcha-widget>
+
                 <div style="display: flex; align-items: center">
                     <button
                         class="btn btn-solid btn-big make-payment"
@@ -95,45 +62,7 @@
                 height="48"
             />
             <div v-if="error">
-                <div v-if="captchaImage"
-                style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                ">
-                   
-                <p>Please solve the following captcha to continue.</p>
-                <p v-if="error && !hideError(error)" class="error">
-                    {{ error.message }}
-                </p>
-                <form @submit.prevent="createClientToken()">
-                    <div class="captcha" v-if="captchaImage">
-                        <div class="image-block">
-                            <img :src="captchaImage" />
-                        </div>
-                        <label for="login-captch"
-                            >Please enter the numbers you see above:</label
-                        >
-                        <input
-                            type="text"
-                            id="login-captch"
-                            v-model="captchaValue"
-                        />
-                        <button
-                            class="btn btn-solid btn-big make-payment"
-                        >
-                            <progress-spinner
-                                v-if="inProgress"
-                                width="32"
-                                height="32"
-                                fill="#FFFFFF"
-                            />Continue
-                        </button>
-                    
-                    </div>
-                </form>
-                </div>
-                <div v-else class="error-message">
+                <div class="error-message">
                     {{ error.message }}
                 </div>
             </div>
@@ -144,6 +73,7 @@
 <script>
 import BraintreeCc from "@/components/BraintreeCc.vue";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
+import 'altcha';
 import { mapState } from "vuex";
 import matomo from "@/api/matomo.js";
 import { useI18n } from "vue-i18n";
@@ -154,11 +84,7 @@ export default {
         return {
             formValid: false,
             isRecurring: false,
-
-            captchaID: null,
-            captchaImage: null,            
-            captchaPaymentMethod: null,
-            captchaValue: "",
+            altchaToken: "",
             cardFailedVerification: false,
             language: "en",
         };
@@ -187,21 +113,20 @@ export default {
         paymentAllowed: function () {
             if (this.inProgress) return false;
             if (!this.formValid) return false;
+            if (!this.altchaToken) return false;
 
             return true;
+        },
+        altchaChallengeUrl() {
+            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
         },
     },
     methods: {
         async makePayment() {
-            let paymentMethod = null;
-            if (this.captchaPaymentMethod != null) {
-                paymentMethod = this.captchaPaymentMethod;
-            } else {
-                paymentMethod = await this.$store.dispatch(
-                    "braintree/tokenizeCC",
-                    this.$refs.braintree
-                );
-            }
+            const paymentMethod = await this.$store.dispatch(
+                "braintree/tokenizeCC",
+                this.$refs.braintree
+            );
 
             if (!paymentMethod) {
                 this.cardFailedVerification = true;
@@ -217,21 +142,12 @@ export default {
                 transactionType: transactionType,
                 paymentMethod: "cc",
                 isRecurring: this.isRecurring,
-                captchaID: this.captchaID,
-                captchaValue: this.captchaValue,
+                altchaToken: this.altchaToken,
             });
 
             if (this.error) {
-                if (this.error.status == 70001 || this.error.status == 70002) {
-                    this.captchaID = this.error.captcha_id;
-                    this.captchaImage = this.error.captcha_image;
-                    this.captchaPaymentMethod = paymentMethod;
-                } else {
-                    this.captchaID = null;
-                    this.captchaImage = null;
-                    this.captchaPaymentMethod = null;
-                }
-                this.captchaValue = "";
+                // Reset Altcha widget so user can solve a new challenge
+                this.altchaToken = "";
                 return;
             }
 
@@ -242,41 +158,18 @@ export default {
             }});
         },
 
-        hideError(error) {            
-            return error.status == 70001;
-        },
-        async cancelCaptcha() {
-            this.captchaID = null;
-            this.captchaImage = null;
-            this.captchaPaymentMethod = null;
-            this.captchaValue = "";
-            await this.$store.dispatch("braintree/clear");            
+        onAltchaStateChange(ev) {
+            if (ev.detail && ev.detail.state === 'verified') {
+                this.altchaToken = ev.detail.payload || "";
+            } else {
+                this.altchaToken = "";
+            }
         },
 
         async createClientToken(){
             await this.$store.dispatch("braintree/init",{
-                captchaID: this.captchaID,
-                captchaValue: this.captchaValue,
+                altchaToken: this.altchaToken,
             });
-            if (this.error) {
-                if (this.error.status == 70001 || this.error.status == 70002) {
-                    this.captchaID = this.error.captcha_id;
-                    this.captchaImage = this.error.captcha_image;
-                    this.captchaPaymentMethod = null;
-                } else {
-                    this.captchaID = null;
-                    this.captchaImage = null;
-                    this.captchaPaymentMethod = null;
-                }
-                this.captchaValue = "";
-                return;
-            }else{
-                this.captchaID = null;
-                this.captchaImage = null;
-                this.captchaPaymentMethod = null;
-                this.captchaValue = "";
-            }
-            
         }
     },
 };

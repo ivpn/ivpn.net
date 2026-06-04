@@ -23,13 +23,12 @@
                                 <input type="text" id="login-totp-2" v-model="totpValue" />
                             </div>
 
-                            <div class="captcha" v-if="captchaImage">
-                                <div class="image-block">
-                                    <img :src="captchaImage" />
-                                </div>
-                                <label for="login-captcha-2">{{ $t('login.enterCaptcha') }}</label>
-                                <input type="text" id="login-captcha-2" v-model="captchaValue" />
-                            </div>
+                            <altcha-widget
+                                ref="altchaWidgetID"
+                                :challengeurl="altchaChallengeUrl"
+                                hidefooter
+                                @statechange="onAltchaStateChange"
+                            ></altcha-widget>
                             <!-- <div class="forgot">
                                 <a href="/forgot?">Forgot Your Account ID?</a>
                             </div>-->
@@ -49,13 +48,12 @@
                                 <input type="text" id="login-totp-2" v-model="totpValue" />
                             </div>
 
-                            <div class="captcha" v-if="captchaImage">
-                                <div class="image-block">
-                                    <img :src="captchaImage" />
-                                </div>
-                                <label for="login-captch">{{ $t('login.enterCaptcha') }}</label>
-                                <input type="text" id="login-captch" v-model="captchaValue" />
-                            </div>
+                            <altcha-widget
+                                ref="altchaWidgetEmail"
+                                :challengeurl="altchaChallengeUrl"
+                                hidefooter
+                                @statechange="onAltchaStateChange"
+                            ></altcha-widget>
 
                             <div class="forgot">
                                 <router-link :to="{name:'recover-password-' + this.language }">{{ $t('login.forgotPassword') }}</router-link>
@@ -63,7 +61,7 @@
                         </div>
                     </tab>
                 </tabs>
-                <button class="btn btn-big btn-solid login-btn" :disabled="inProgress || !formValid">
+                <button class="btn btn-big btn-solid login-btn" :disabled="inProgress || !formValid || !altchaToken">
                     <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>{{ $t('login.title') }}
                 </button>
             </form>
@@ -78,6 +76,7 @@
 
 <script>
 import Api from "@/api/api";
+import 'altcha';
 import Tabs from "@/components/Tabs.vue";
 import Tab from "@/components/Tab.vue";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
@@ -86,7 +85,6 @@ import { mapState } from "vuex";
 
 import { useI18n } from "vue-i18n";
 
-const StatusCaptchaRequired = 70001;
 const StatusTotpRequired = 70011;
 const StatusTotpInvalid = 100010;
 
@@ -101,9 +99,7 @@ export default {
             email: "",
             password: "",
 
-            captchaID: "",
-            captchaImage: "",
-            captchaValue: "",
+            altchaToken: "",
             loginType: "",
 
             totpValue: "",
@@ -138,6 +134,9 @@ export default {
 
             return false;
         },
+        altchaChallengeUrl() {
+            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
+        },
     },
     watch: {
         loginType: function () {
@@ -148,14 +147,12 @@ export default {
         resetForm() {
             this.$store.dispatch("auth/resetErrors");
             this.password = "";
-            this.captchaValue = "";
-            this.captchaImage = "";
+            this.altchaToken = "";
             this.totpValue = "";
             this.totpRequired = false;
         },
         hideError(error) {            
             return (
-                error.status == StatusCaptchaRequired ||
                 error.status == StatusTotpRequired
             );
         },
@@ -176,10 +173,8 @@ export default {
             }
 
             data.totpValue = this.totpValue;
-            data.captchaID = this.captchaID;
-            data.captchaValue = this.captchaValue;
+            data.altchaToken = this.altchaToken;
 
-            this.captchaImage = "";
 
             try {
                 await this.$store.dispatch("auth/login", data);
@@ -209,22 +204,14 @@ export default {
             this.totpRequired =
                 error.status == StatusTotpRequired ||
                 error.status == StatusTotpInvalid;
-
-            if (error.captcha_id) {
-                this.captchaID = error.captcha_id;
-                this.captchaImage = error.captcha_image;
-                this.captchaValue = "";
-            } else {
-                this.captchaID = "";
-                this.captchaImage = "";
-                return;
-            }
+            // Reset Altcha widget so user can solve a new challenge
+            this.altchaToken = "";
         },
-        async playCaptcha() {
-            let wave = await Api.getCaptchaWave(this.captchaID);
-            if (wave) {
-                var snd = new Audio(wave);
-                snd.play();
+        onAltchaStateChange(ev) {
+            if (ev.detail && ev.detail.state === 'verified') {
+                this.altchaToken = ev.detail.payload || "";
+            } else {
+                this.altchaToken = "";
             }
         },
         updateLoginType(value) {
