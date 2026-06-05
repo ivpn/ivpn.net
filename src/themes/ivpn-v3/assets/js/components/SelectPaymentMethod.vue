@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="billing-section" v-if="!isUpgrade">
+        <div class="billing-section" v-if="!isUpgrade && !isMigrated && !hasCustomPrice">
             <div class="billing-options">
                 <div class="plan-summary" v-if="account.is_new">
                     <div class="plan-summary__header">
@@ -146,6 +146,12 @@ export default {
     computed: {
         productName() {
             return this.account?.product?.name || '';
+        },
+        isMigrated(){
+            return this.account?.is_migrated;
+        },
+        hasCustomPrice(){
+            return this.account?.has_custom_price;
         }
     },
     created() {
