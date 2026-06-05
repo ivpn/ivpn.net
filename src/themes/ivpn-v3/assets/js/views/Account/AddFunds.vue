@@ -62,8 +62,8 @@ export default {
                     if (price.id === priceId) {
                         this.price = price;
                         this.price.type = "extend";
+                        break;
                     }
-                    break;
                 }
             }else{
                 let billingCycle = this.account.custom_price <= 30 ? "Monthly" : "Yearly";
