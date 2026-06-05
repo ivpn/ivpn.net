@@ -155,7 +155,7 @@ export default {
         },
         customPriceId() {
             const tier = this.price?.id?.split('.')[0] ?? '';
-            return tier + (this.account?.custom_price <= 30 ? '1month' : '1year');
+            return tier + (this.account?.custom_price <= 30 ? '.1month' : '.1year');
         }
     },
     created() {
