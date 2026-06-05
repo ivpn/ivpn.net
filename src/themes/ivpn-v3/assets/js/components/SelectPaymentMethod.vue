@@ -31,7 +31,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cc-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-cc-' + this.language, params: { price: (isMigrated || hasCustomPrice) ? customPriceId : price.id } }"
             >
                 <div class="credit-card-icon"></div>
                 {{ $t('account.creditCard') }}
@@ -39,7 +39,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-paypal-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-paypal-' + this.language, params: { price: (isMigrated || hasCustomPrice) ? customPriceId : price.id } }"
             >
                 <div class="paypal-icon"></div>
                 {{ $t('account.paypal') }}
@@ -47,7 +47,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-bitcoin-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-bitcoin-' + this.language, params: { price: (isMigrated || hasCustomPrice) ? customPriceId : price.id } }"
             >
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
@@ -57,7 +57,7 @@
                 v-if="monero"
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-monero-' + this.language,  params: { price: price.id } }"
+                :to="{ name: 'add-funds-monero-' + this.language,  params: { price: (isMigrated || hasCustomPrice) ? customPriceId : price.id } }"
             >
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
@@ -67,7 +67,7 @@
                 v-if="cash"
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cash-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-cash-' + this.language, params: { price: (isMigrated || hasCustomPrice) ? customPriceId : price.id } }"
             >
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
@@ -152,6 +152,10 @@ export default {
         },
         hasCustomPrice(){
             return this.account?.has_custom_price;
+        },
+        customPriceId() {
+            const tier = this.price?.id?.split('.')[0] ?? '';
+            return tier + (this.account?.custom_price <= 30 ? '1month' : '1year');
         }
     },
     created() {
