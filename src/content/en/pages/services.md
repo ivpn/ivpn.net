@@ -1,5 +1,5 @@
 ---
-title: IVPN Pricing - Select Your Plan
+title: IVPN Privacy Stack - Services Overview
 description: Three tiers. No upselling. Pick based on your threat model and network requirements.
 url: /en/services/
 aliases: ['/services/']
