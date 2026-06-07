@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="price.price >= 60">
+        <div v-if="price.price >= 30">
             <div class="print">
                 <p class="address">
                     IVPN Limited<br>
