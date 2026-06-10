@@ -1,3 +1,4 @@
+@use "../_tokens" as *;
 .navigation {
     display: none;
     @include respond-to('large') {

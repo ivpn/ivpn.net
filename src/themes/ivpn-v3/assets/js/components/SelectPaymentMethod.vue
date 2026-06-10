@@ -179,8 +179,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
-@import "@/styles/base.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/base.scss" as *;
 
 .billing-section {
     display: flex;

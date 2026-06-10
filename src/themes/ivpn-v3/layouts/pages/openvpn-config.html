@@ -12,5 +12,5 @@
 {{ end }}
 
 {{ define "main-script" }}
-    <script type="module" src="{{ site.Params.cdnUrl }}{{ index $.Site.Data.manifest "/js/openvpn-config.js" }}"></script>
+    <script type="module" src="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/js/openvpn-config.js" }}"></script>
 {{ end }}

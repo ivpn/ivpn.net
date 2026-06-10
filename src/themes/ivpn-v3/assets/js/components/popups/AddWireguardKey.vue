@@ -88,7 +88,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "@/styles/buttons.scss";
+@use "@/styles/buttons.scss" as *;
 
 .form {
     display: flex;

@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
+@use "@/styles/_vars.scss" as *;
 
 .accountid {
     text-align: center;

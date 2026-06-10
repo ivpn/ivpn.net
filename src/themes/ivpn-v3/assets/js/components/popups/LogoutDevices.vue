@@ -60,7 +60,7 @@
   </script>
   
   <style lang="scss" scoped>
-    @import "@/styles/buttons.scss";
+    @use "@/styles/buttons.scss" as *;
   
     p {
       margin-bottom: 24px;

@@ -191,8 +191,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
-@import "@/styles/buttons.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/buttons.scss" as *;
 
 // Price features (matches Prices.vue .price-features design)
 .price-features {

@@ -14,17 +14,17 @@ defaultContentLanguageInSubdir = true
 
 [languages]
   [languages.en]
-    languageCode = "en"
+    locale = "en"
     contentDir = 'content/en'
-    languageName = 'English'
-    languageDirection = 'ltr'
+    label = 'English'
+    direction = 'ltr'
     weight = 1
   [languages.es]
-    languageCode = "es"
+    locale = "es"
     contentDir = 'content/es'
-    languageName = 'Español'
+    label = 'Español'
 
-    languageDirection = 'ltr'
+    direction = 'ltr'
     weight = 2
 
 [markup.goldmark.renderer]

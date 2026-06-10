@@ -166,7 +166,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/base.scss";
+@use "@/styles/base.scss" as *;
 
 .payment-page {
     max-width: 720px;
