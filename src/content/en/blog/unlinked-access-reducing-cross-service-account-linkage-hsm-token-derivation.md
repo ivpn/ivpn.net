@@ -11,7 +11,7 @@ tags:
   - Open Source
   - Privacy
   - Security
-date: 2026-07-10T09:00:00.000Z
+date: 2026-06-10T09:00:00.000Z
 ---
 
 IVPN subscriptions now include access to [additional services](/services/) such as Mailx for email aliasing, modDNS for DNS filtering, and Portmaster for application firewall control.
