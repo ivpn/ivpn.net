@@ -44,7 +44,7 @@ It does not address every possible correlation risk, such as:
 
 Those are separate threat-model considerations outside the direct scope of Unlinked Access.
 
-The implementation is open source. Review the source code [on GitHub](https://github.com/ivpn/unlinked-access).
+The implementation is open source. Review the source code on GitHub (https://github.com/ivpn/unlinked-access) or read the technical deep-dive (/blog/unlinked-access-reducing-cross-service-account-linkage-hsm-token-derivation/) for a detailed walkthrough of the cryptographic design and threat model.
 
 ## Frequently asked questions
 
