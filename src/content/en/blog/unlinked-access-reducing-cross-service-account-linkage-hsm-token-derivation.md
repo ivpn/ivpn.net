@@ -144,5 +144,5 @@ We decided how much cross-service correlation we were willing to create, and the
 - Unlinked Access overview: [ivpn.net/en/unlinked-access/](/unlinked-access/)
 - Unlinked Access repository: [github.com/ivpn/unlinked-access](https://github.com/ivpn/unlinked-access)
 - Fortanix DSM architecture: [support.fortanix.com/docs/fortanix-data-security-manager-architecture](https://support.fortanix.com/docs/fortanix-data-security-manager-architecture)
-- Fortanix DSM: message authentication codes: [support.fortanix.com/docs/message-authentication-codes](https://support.fortanix.com/docs/message-authentication-codes)
-- Fortanix DSM API: MAC compute operation: [support.fortanix.com/apidocs/compute-a-message-authentication-code](https://support.fortanix.com/apidocs/compute-a-message-authentication-code)
+- Fortanix DSM: message authentication codes: [support.fortanix.com/docs/dsm-message-authentication-codes](https://support.fortanix.com/docs/dsm-message-authentication-codes)
+- Fortanix DSM API: MAC compute operation: [support.fortanix.com/apidocs/compute-a-message-authentication-code-hmac-or-cmac](https://support.fortanix.com/apidocs/compute-a-message-authentication-code-hmac-or-cmac)
