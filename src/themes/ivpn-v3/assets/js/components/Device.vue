@@ -47,8 +47,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/buttons.scss";
-@import "@/styles/base.scss";
+@use "@/styles/buttons.scss" as *;
+@use "@/styles/base.scss" as *;
 
 .wireguard-key {
     display: flex;

@@ -1,4 +1,5 @@
-@import "../../js/styles/vars";
+@use "../_tokens" as *;
+@use "../../js/styles/vars" as *;
 
 // ── Upgrade Box Card ──────────────────────────────────────────────────────────
 .upgrade-box {

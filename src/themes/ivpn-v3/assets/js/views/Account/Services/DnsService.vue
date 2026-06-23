@@ -96,8 +96,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/styles/_vars.scss";
-@import "@/styles/base.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/base.scss" as *;
 
 .status {
     margin-top: 8px;

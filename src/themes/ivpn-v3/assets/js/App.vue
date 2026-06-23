@@ -51,8 +51,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/styles/buttons.scss";
-@import "@/styles/base.scss";
+@use "@/styles/buttons.scss" as *;
+@use "@/styles/base.scss" as *;
 .app {
     h1,
     h2,
