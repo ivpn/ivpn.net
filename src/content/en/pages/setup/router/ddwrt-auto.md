@@ -11,7 +11,7 @@ weight: 11
 
 1.  Navigate to the home page of your router - By default `192.168.1.1`. If required enter your username and password, by default username is 'root' and password is 'admin'. Click on the `Administration` tab and then the `Commands` tab.
 
-2.  Navigate to the [DD-WRT auto installer script](/clientarea/ddwrt/) (You may need to login to the client area if you are not logged in).
+2.  Navigate to the [DD-WRT auto installer script](/ddwrt/) (You may need to login to the client area if you are not logged in).
 
 3.  Enter your account ID that begins with letters 'ivpnXXXXXXXX' or 'i-XXXX-XXXX-XXXX', any password and select a server to connect to. Click `Download script`.
 
