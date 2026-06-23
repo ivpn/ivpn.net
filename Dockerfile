@@ -10,7 +10,7 @@ WORKDIR /opt/build
 # Install Hugo and cleanup
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl ca-certificates \
-    && curl -L https://github.com/gohugoio/hugo/releases/download/v0.161.1/hugo_0.161.1_linux-amd64.deb -o /tmp/hugo.deb \
+    && curl -L https://github.com/gohugoio/hugo/releases/download/v0.154.0/hugo_0.154.0_linux-amd64.deb -o /tmp/hugo.deb \
     && dpkg -i /tmp/hugo.deb \
     && rm /tmp/hugo.deb \
     && apt-get clean \

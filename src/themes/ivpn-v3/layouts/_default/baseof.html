@@ -2,8 +2,8 @@
 <html lang="{{ $.Site.Language.Lang | default "en" }}" dir="ltr">  
   <head>
     {{- partial "head.html" . -}}
-    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index site.Data.manifest "/css/pages.css" }}">
-    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index site.Data.manifest "/css/services.css" }}">
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/css/pages.css" }}">
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/css/services.css" }}">
     {{ block "main-style" . }}{{ end }}
 
     {{ block "seo" . }}
@@ -13,7 +13,7 @@
     {{ end }}
     {{ end }}
 
-    <script type="module" src="{{ site.Params.cdnUrl }}{{ index site.Data.manifest "/js/localisation.js" }}"></script>
+    <script type="module" src="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/js/localisation.js" }}"></script>
 
     {{ if and (.IsTranslated) (ne .Title "404 Page not found") }}
         {{/* Redirect to the browser or localstorage language */}}
