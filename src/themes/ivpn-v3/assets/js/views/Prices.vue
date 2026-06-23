@@ -209,7 +209,7 @@
                               <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
                             <span>{{ $t('pricing.stack.feature4') }}
-                            (<a href="/unlinked-access" class="feature-inline-link">{{ $t('pricing.stack.feature4LinkText') }}</a>)</span>
+                            (<a :href="'/' + language + '/unlinked-access'" class="feature-inline-link">{{ $t('pricing.stack.feature4LinkText') }}</a>)</span>
                           </div>
                         </div>
                         

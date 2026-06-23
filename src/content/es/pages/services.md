@@ -196,7 +196,7 @@ sections:
       - Cuando activas un servicio, IVPN le envía un token criptográfico derivado de tu cuenta. Cada servicio utiliza un hash de ese token para confirmar que tu suscripción está activa. Ninguno de ellos mantiene un enlace directo con tu cuenta de IVPN.
     link:
       text: Lee sobre el acceso sin enlace
-      url: /unlinked-access
+      url: /es/unlinked-access
   - type: text_cta
     title: Resiste la vigilancia en línea
     content: Comienza seleccionando un plan según los servicios que necesites.
