@@ -45,6 +45,6 @@
         </div>
     </div>
 </section>
-<script type="module" src="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/js/search.js" }}"></script>
+<script type="module" src="{{ site.Params.cdnUrl }}{{ index site.Data.manifest "/js/search.js" }}"></script>
 {{- partial "suggest-an-edit.html" . -}}
 {{ end }}

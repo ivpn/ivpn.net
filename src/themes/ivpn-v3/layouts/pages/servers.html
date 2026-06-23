@@ -7,9 +7,9 @@
 {{ end }}
 
 {{ define "main-style" }}
-    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/css/servers.css" }}">
+    <link rel="stylesheet" href="{{ site.Params.cdnUrl }}{{ index site.Data.manifest "/css/servers.css" }}">
 {{ end }}
 
 {{ define "main-script" }}
-    <script type="module" src="{{ site.Params.cdnUrl }}{{ index hugo.Data.manifest "/js/servers.js" }}"></script>
+    <script type="module" src="{{ site.Params.cdnUrl }}{{ index site.Data.manifest "/js/servers.js" }}"></script>
 {{ end }}
