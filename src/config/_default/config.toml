@@ -1,33 +1,30 @@
 title = "IVPN"
 theme = "ivpn-v3"
+paginate = 8
 summaryLength = 35
 disableKinds = ["sitemap", "taxonomy"]
-
-[pagination]
-  pagerSize = 8
-
-[markup.highlight]
-  noClasses = false
-  codeFences = true
-  guessSyntax = true
-  style = "monokai"
+pygmentsUseClasses=true
+pygmentsCodefencesGuessSyntax=true
+pygmentsCodefences=true
+pygmentsStyle="monokai"
+pygmentsOptions="noclasses=false"
 
 DefaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true 
 
 [languages]
   [languages.en]
-    locale = "en"
+    languageCode = "en"
     contentDir = 'content/en'
-    label = 'English'
-    direction = 'ltr'
+    languageName = 'English'
+    languageDirection = 'ltr'
     weight = 1
   [languages.es]
-    locale = "es"
+    languageCode = "es"
     contentDir = 'content/es'
-    label = 'Español'
+    languageName = 'Español'
 
-    direction = 'ltr'
+    languageDirection = 'ltr'
     weight = 2
 
 [markup.goldmark.renderer]
