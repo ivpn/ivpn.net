@@ -42,5 +42,5 @@ In preparation for this event, we have created a new CA and root certificate. We
 If you have any questions please contact <support@ivpn.net>
 
  [1]: /releases/config/ivpn-openvpn-config.zip
- [2]: /ddwrt
+ [2]: /clientarea/ddwrt
  [3]: /releases/config/ca.crt
