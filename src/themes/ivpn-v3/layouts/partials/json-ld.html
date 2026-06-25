@@ -1,0 +1,77 @@
+{{- /* json-ld.html — Structured data for LLM crawlers and search engines */ -}}
+{{- $base := .Site.BaseURL -}}
+{{- $orgID := printf "%s#organization" $base -}}
+{{- $siteID := printf "%s#website" $base -}}
+
+{{- /* ── Home page: Organization + WebSite ── */ -}}
+{{- if .IsHome -}}
+{{- $org := dict
+  "@type" "Organization"
+  "@id" $orgID
+  "name" "IVPN"
+  "url" $base
+  "logo" (dict
+    "@type" "ImageObject"
+    "url" (printf "%simages-static/uploads/og_1200-627.png" $base)
+  )
+  "description" "Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup, 30-day money-back guarantee."
+  "sameAs" (slice
+    "https://twitter.com/ivpnnet"
+    "https://github.com/ivpn"
+    "https://www.reddit.com/r/IVPN/"
+  )
+-}}
+{{- $website := dict
+  "@type" "WebSite"
+  "@id" $siteID
+  "url" $base
+  "name" "IVPN"
+  "publisher" (dict "@id" $orgID)
+-}}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@graph" (slice $org $website) | jsonify (dict "indent" "  ") }}
+</script>
+{{- end -}}
+
+{{- /* ── Blog posts: BlogPosting ── */ -}}
+{{- if eq .Type "blog" -}}
+{{- $authorList := slice -}}
+{{- range .Params.authors -}}
+  {{- $authorList = $authorList | append (dict "@type" "Person" "name" .) -}}
+{{- end -}}
+{{- if not $authorList -}}
+  {{- $authorList = slice (dict "@type" "Organization" "name" "IVPN") -}}
+{{- end -}}
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "url" .Permalink
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "author" $authorList
+  "publisher" (dict "@type" "Organization" "@id" $orgID "name" "IVPN")
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+-}}
+{{- with .Description -}}{{- $schema = merge $schema (dict "description" .) -}}{{- end -}}
+{{- with .Params.images -}}{{- $schema = merge $schema (dict "image" (index . 0)) -}}{{- end -}}
+<script type="application/ld+json">
+{{ $schema | jsonify (dict "indent" "  ") }}
+</script>
+{{- end -}}
+
+{{- /* ── All other pages: WebPage ── */ -}}
+{{- if and (not .IsHome) (ne .Type "blog") -}}
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "WebPage"
+  "name" .Title
+  "url" .Permalink
+  "isPartOf" (dict "@id" $siteID)
+  "publisher" (dict "@id" $orgID)
+-}}
+{{- with .Description -}}{{- $schema = merge $schema (dict "description" .) -}}{{- end -}}
+<script type="application/ld+json">
+{{ $schema | jsonify (dict "indent" "  ") }}
+</script>
+{{- end -}}

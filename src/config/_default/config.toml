@@ -19,6 +19,8 @@ defaultContentLanguageInSubdir = true
     languageName = 'English'
     languageDirection = 'ltr'
     weight = 1
+    [languages.en.outputs]
+      home = ["HTML", "LLMS"]
   [languages.es]
     languageCode = "es"
     contentDir = 'content/es'
@@ -29,6 +31,14 @@ defaultContentLanguageInSubdir = true
 
 [markup.goldmark.renderer]
     unsafe= true
+
+[outputFormats.LLMS]
+  name = "LLMS"
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+  rel = "alternate"
 
 [outputs]
     home = ["HTML"]
