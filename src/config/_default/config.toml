@@ -2,7 +2,8 @@ title = "IVPN"
 theme = "ivpn-v3"
 paginate = 8
 summaryLength = 35
-disableKinds = ["sitemap", "taxonomy"]
+disableKinds = ["taxonomy"]
+
 pygmentsUseClasses=true
 pygmentsCodefencesGuessSyntax=true
 pygmentsCodefences=true

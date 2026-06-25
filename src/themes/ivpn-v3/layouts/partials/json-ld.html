@@ -28,9 +28,7 @@
   "name" "IVPN"
   "publisher" (dict "@id" $orgID)
 -}}
-<script type="application/ld+json">
-{{ dict "@context" "https://schema.org" "@graph" (slice $org $website) | jsonify (dict "indent" "  ") }}
-</script>
+{{- dict "@context" "https://schema.org" "@graph" (slice $org $website) | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
 {{- end -}}
 
 {{- /* ── Blog posts: BlogPosting ── */ -}}
@@ -55,9 +53,7 @@
 -}}
 {{- with .Description -}}{{- $schema = merge $schema (dict "description" .) -}}{{- end -}}
 {{- with .Params.images -}}{{- $schema = merge $schema (dict "image" (index . 0)) -}}{{- end -}}
-<script type="application/ld+json">
-{{ $schema | jsonify (dict "indent" "  ") }}
-</script>
+{{- $schema | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
 {{- end -}}
 
 {{- /* ── All other pages: WebPage ── */ -}}
@@ -71,7 +67,5 @@
   "publisher" (dict "@id" $orgID)
 -}}
 {{- with .Description -}}{{- $schema = merge $schema (dict "description" .) -}}{{- end -}}
-<script type="application/ld+json">
-{{ $schema | jsonify (dict "indent" "  ") }}
-</script>
+{{- $schema | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
 {{- end -}}
