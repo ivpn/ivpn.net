@@ -1,4 +1,4 @@
-import { createApp, h } from 'vue'
+import { createSSRApp as createApp, h } from 'vue'
 import App from './App.vue'
 
 import router from './router/index.js'
@@ -79,7 +79,9 @@ let products = {
 }
 
 store.commit('product/setAll', { products })
-store.dispatch('auth/init')
+// auth/init is dispatched AFTER mount so Vue hydrates over SSR HTML with the
+// same initial state (isAuthenticated: false). Auth state then updates
+// reactively without triggering a hydration mismatch.
 
 const i18n = createI18n({
     legacy: false,
@@ -148,4 +150,10 @@ app.config.productionTip = false
 app.use(store)
 app.use(router)
 app.use(i18n)
-app.mount('#application')
+
+// Await router resolution before mounting so $route is correct during SSR hydration.
+router.isReady().then(() => {
+    app.mount('#application')
+    // Initialise auth state after hydration so it never mismatches the SSR output.
+    store.dispatch('auth/init')
+})

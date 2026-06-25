@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <slot name="footer"></slot>
+        <template v-if="$slots.footer"><slot name="footer"></slot></template>
         <div class="price-button">
         <div v-if="current && hideButton" class="btn btn-big btn-outline btn-current-plan" style="margin-top: 2em;">
             {{ $t('account.currentPlanBadge') }}
