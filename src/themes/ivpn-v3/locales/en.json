@@ -31,7 +31,7 @@
             "title": "IVPN Pricing - VPN subscription with anonymous registration"
         },
         "title": "Select your plan",
-        "description": "Three tiers. No upselling. Pick based on your privacy needs.",
+        "description": "Three tiers. Pick based on your privacy needs.",
         "allProtocols": "All protocols",
         "tier1Devices": "5 devices",
         "tier2Devices": "5 devices",
