@@ -1,5 +1,5 @@
 ---
-title: Infrastructure Engineer / Sysadmin at IVPN
+title: Infrastructure Engineer at IVPN
 description: IVPN is hiring a remote infrastructure engineer / sysadmin to help run our bare-metal VPN and DNS server fleet. B2B, long-term, timezones UTC-1 to UTC+3.
 url: /en/infrastructure-engineer-sysadmin/
 date: 2026-07-07
@@ -9,7 +9,7 @@ layout: full-width
 <section class="blog-article">
     <div class="breadcrumb">IVPN Open Positions</div>
     <div class="blog-article__heading">
-        <h1>Infrastructure Engineer / Sysadmin at IVPN</h1>
+        <h1>Infrastructure Engineer at IVPN</h1>
         <p>Posted on July 7, 2026</p>
     </div>
 </section>
@@ -24,7 +24,7 @@ layout: full-width
 
 <h2>What you will work on</h2>
 
-<p>You will work alongside our senior infrastructure engineer, with primary day-to-day responsibility for IVPN and modDNS. You will share knowledge and support each other on shared infrastructure work, but you will own your areas and take on projects independently.</p>
+<p>You will work alongside our senior infrastructure engineer / sysadmin, with primary day-to-day responsibility for IVPN and modDNS. You will share knowledge and support each other on shared infrastructure work, but you will own your areas and take on projects independently.</p>
 
 <p>You will:</p>
 
@@ -47,6 +47,8 @@ layout: full-width
 <p>As you grow into the role, there's room to share your work publicly — writing about the infrastructure choices we make, or discussing them with the wider privacy community.</p>
 
 <p>We offer 25 days of vacation per year, the hardware of your choice to do your job, plus ample budget for learning and research projects.</p>
+
+<p>Budget for this role is €48–58K/year (B2B), depending on skills and experience. Mission-driven work, autonomy and flexibility come with the package.</p>
 
 <p>Engagement is on a B2B contract basis, we can't employ across all jurisdictions. In practice this is a long-term role — most of our colleagues have been with us 5+ years.</p>
 
@@ -84,7 +86,7 @@ layout: full-width
 
 <h2>How to apply</h2>
 
-<p>Send an email with your CV and any relevant information added to: <a href="mailto:apply@ivpn.net">apply@ivpn.net</a> (subject: Infra Engineer application / IVPN)</p>
+<p>Send an email with your CV and any relevant information added to: <a href="mailto:apply@ivpn.net">apply@ivpn.net</a> (subject: Infrastructure Engineer application / IVPN)</p>
 
 <p>To qualify for the next steps, your message must also include answers to the following questions:</p>
 
