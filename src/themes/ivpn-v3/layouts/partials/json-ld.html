@@ -26,10 +26,9 @@
     "contentUrl" (printf "%simages-static/uploads/og_1200-627.png" $base)
     "width"      1200
     "height"     627
-    "caption"    "IVPN"
   )
   "description"  "Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup, 30-day money-back guarantee."
-  "email"        "support@ivpn.net"
+  "areaServed"   "Worldwide"
   "contactPoint" (dict
     "@type"             "ContactPoint"
     "email"             "support@ivpn.net"
@@ -85,11 +84,13 @@
 {{- else -}}
   {{- /* Everything else → WebPage (section list pages, knowledgebase, guides…) */ -}}
   {{- $pageNode = dict
-    "@type"     "WebPage"
-    "name"      .Title
-    "url"       .Permalink
-    "isPartOf"  (dict "@id" $siteID)
-    "publisher" (dict "@id" $orgID)
+    "@type"      "WebPage"
+    "@id"        (printf "%s#webpage" .Permalink)
+    "name"       .Title
+    "url"        .Permalink
+    "inLanguage" .Site.Language.Lang
+    "isPartOf"   (dict "@id" $siteID)
+    "publisher"  (dict "@id" $orgID)
   -}}
   {{- with .Description -}}
     {{- $pageNode = merge $pageNode (dict "description" .) -}}
@@ -115,7 +116,7 @@
     {{- end -}}
   {{- end -}}
   {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
-  {{- $crumbNode = dict "@type" "BreadcrumbList" "itemListElement" $crumbs -}}
+  {{- $crumbNode = dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" .Permalink) "itemListElement" $crumbs -}}
 {{- end -}}
 
 {{- /* ── Assemble single @graph and emit ── */ -}}
