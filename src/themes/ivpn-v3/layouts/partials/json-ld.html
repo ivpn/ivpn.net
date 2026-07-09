@@ -2,23 +2,41 @@
 {{- $base := .Site.BaseURL -}}
 {{- $orgID := printf "%s#organization" $base -}}
 {{- $siteID := printf "%s#website" $base -}}
+{{- /* Treat the language landing page (/en/, /es/) the same as the Hugo home page */ -}}
+{{- $isLanding := or .IsHome (eq .Permalink .Site.Home.Permalink) -}}
 
-{{- /* ── Home page: Organization + WebSite ── */ -}}
-{{- if .IsHome -}}
+{{- /* ── Home/landing page: Organization + WebSite ── */ -}}
+{{- if $isLanding -}}
+{{- $logo := dict
+  "@type" "ImageObject"
+  "@id" (printf "%s#logo" $base)
+  "url" (printf "%simages-static/uploads/og_1200-627.png" $base)
+  "contentUrl" (printf "%simages-static/uploads/og_1200-627.png" $base)
+  "width" 1200
+  "height" 627
+  "caption" "IVPN"
+-}}
+{{- $contactPoint := dict
+  "@type" "ContactPoint"
+  "email" "support@ivpn.net"
+  "contactType" "customer support"
+  "availableLanguage" (slice "English" "Spanish")
+-}}
 {{- $org := dict
   "@type" "Organization"
   "@id" $orgID
   "name" "IVPN"
+  "legalName" "IVPN Limited"
   "url" $base
-  "logo" (dict
-    "@type" "ImageObject"
-    "url" (printf "%simages-static/uploads/og_1200-627.png" $base)
-  )
+  "logo" $logo
+  "email" "support@ivpn.net"
   "description" "Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup, 30-day money-back guarantee."
+  "contactPoint" $contactPoint
   "sameAs" (slice
     "https://twitter.com/ivpnnet"
     "https://github.com/ivpn"
     "https://www.reddit.com/r/IVPN/"
+    "https://mastodon.social/@ivpn"
   )
 -}}
 {{- $website := dict
@@ -57,7 +75,7 @@
 {{- end -}}
 
 {{- /* ── All other pages: WebPage ── */ -}}
-{{- if and (not .IsHome) (ne .Type "blog") -}}
+{{- if and (not $isLanding) (ne .Type "blog") -}}
 {{- $schema := dict
   "@context" "https://schema.org"
   "@type" "WebPage"
@@ -68,4 +86,19 @@
 -}}
 {{- with .Description -}}{{- $schema = merge $schema (dict "description" .) -}}{{- end -}}
 {{- $schema | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
+{{- end -}}
+
+{{- /* ── BreadcrumbList for all non-landing pages ── */ -}}
+{{- if not $isLanding -}}
+{{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.Home.Permalink) -}}
+{{- $pos := 2 -}}
+{{- range collections.Reverse .Ancestors -}}
+  {{- /* Skip the Hugo home page and the generic "pages" catch-all section */ -}}
+  {{- if and (not .IsHome) (not (and (eq .Kind "section") (eq .Section "pages"))) -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+    {{- $pos = add $pos 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+{{- dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbs | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
 {{- end -}}
