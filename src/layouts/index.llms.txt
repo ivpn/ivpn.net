@@ -4,68 +4,68 @@
 
 ## Core Pages
 
-- [Home](https://{{ .Site.BaseURL }}en/): Privacy-first VPN service overview and value proposition
-- [Privacy Policy](https://{{ .Site.BaseURL }}en/privacy/): Full privacy policy — what we collect, store, and process (and what we never collect)
-- [Pricing](https://{{ .Site.BaseURL }}en/pricing/): Subscription plans across three tiers (Standard, Plus, Pro Suite), with anonymous payment options including cash, Monero, and Bitcoin
-- [IVPN for Teams](https://{{ .Site.BaseURL }}en/pricing-teams/): Business VPN plans for distributed teams: per-seat pricing, multi-hop on all seats, centralized admin controls, wire transfer for larger accounts
-- [Services](https://{{ .Site.BaseURL }}en/services/): Privacy Stack overview — VPN, email aliasing (Mailx), DNS filtering (modDNS), app firewall (Portmaster)
-- [Unlinked Access](https://{{ .Site.BaseURL }}en/unlinked-access/): How one subscription unlocks Mailx, modDNS, and Portmaster without linking your IVPN account ID across them, using HSM-backed token derivation — bundling products while keeping identities separate
-- [Ethics](https://{{ .Site.BaseURL }}en/ethics/): Our ethical principles and commitments to user privacy
-- [Manifesto](https://{{ .Site.BaseURL }}en/manifesto/): Why IVPN exists — the principles and privacy stance behind its design and business decisions
-- [Transparency Report](https://{{ .Site.BaseURL }}en/transparency-report/): Annual transparency report
-- [Warrant Canary](https://{{ .Site.BaseURL }}resources/canary.txt): PGP-signed warrant canary, updated monthly, declaring no warrants have ever been served to IVPN
-- [Team](https://{{ .Site.BaseURL }}en/team/): Our team and company background
-- [Blog](https://{{ .Site.BaseURL }}blog/): Product news, security audits, and privacy engineering write-ups (full blog index)
-- [Apps](https://{{ .Site.BaseURL }}en/apps/): VPN app downloads for Windows, macOS, Linux, iOS, and Android
-- [Servers](https://{{ .Site.BaseURL }}en/status/): The server network — bare-metal servers in 41 countries, no virtual locations, full WireGuard and OpenVPN support, with live status
-- [AntiTracker](https://{{ .Site.BaseURL }}en/antitracker/): Block ads and trackers at the network level
-- [WireGuard VPN](https://{{ .Site.BaseURL }}en/wireguard/): WireGuard protocol support details and benefits
-- [Terms of Service](https://{{ .Site.BaseURL }}en/tos/): Terms of service
-- [Refunds](https://{{ .Site.BaseURL }}en/refunds/): Refund policy
-- [Contact Us](https://{{ .Site.BaseURL }}contactus/): Contact IVPN support
+- [Home]({{ .Site.BaseURL }}en/): Privacy-first VPN service overview and value proposition
+- [Privacy Policy]({{ .Site.BaseURL }}en/privacy/): Full privacy policy — what we collect, store, and process (and what we never collect)
+- [Pricing]({{ .Site.BaseURL }}en/pricing/): Subscription plans across three tiers (Standard, Plus, Pro Suite), with anonymous payment options including cash, Monero, and Bitcoin
+- [IVPN for Teams]({{ .Site.BaseURL }}en/pricing-teams/): Business VPN plans for distributed teams: per-seat pricing, multi-hop on all seats, centralized admin controls, wire transfer for larger accounts
+- [Services]({{ .Site.BaseURL }}en/services/): Privacy Stack overview — VPN, email aliasing (Mailx), DNS filtering (modDNS), app firewall (Portmaster)
+- [Unlinked Access]({{ .Site.BaseURL }}en/unlinked-access/): How one subscription unlocks Mailx, modDNS, and Portmaster without linking your IVPN account ID across them, using HSM-backed token derivation — bundling products while keeping identities separate
+- [Ethics]({{ .Site.BaseURL }}en/ethics/): Our ethical principles and commitments to user privacy
+- [Manifesto]({{ .Site.BaseURL }}en/manifesto/): Why IVPN exists — the principles and privacy stance behind its design and business decisions
+- [Transparency Report]({{ .Site.BaseURL }}en/transparency-report/): Annual transparency report
+- [Warrant Canary]({{ .Site.BaseURL }}resources/canary.txt): PGP-signed warrant canary, updated monthly, declaring no warrants have ever been served to IVPN
+- [Team]({{ .Site.BaseURL }}en/team/): Our team and company background
+- [Blog]({{ .Site.BaseURL }}blog/): Product news, security audits, and privacy engineering write-ups (full blog index)
+- [Apps]({{ .Site.BaseURL }}en/apps/): VPN app downloads for Windows, macOS, Linux, iOS, and Android
+- [Servers]({{ .Site.BaseURL }}en/status/): The server network — bare-metal servers in 41 countries, no virtual locations, full WireGuard and OpenVPN support, with live status
+- [AntiTracker]({{ .Site.BaseURL }}en/antitracker/): Block ads and trackers at the network level
+- [WireGuard VPN]({{ .Site.BaseURL }}en/wireguard/): WireGuard protocol support details and benefits
+- [Terms of Service]({{ .Site.BaseURL }}en/tos/): Terms of service
+- [Refunds]({{ .Site.BaseURL }}en/refunds/): Refund policy
+- [Contact Us]({{ .Site.BaseURL }}contactus/): Contact IVPN support
 
 ## Knowledgebase
 
-- [General](https://{{ .Site.BaseURL }}knowledgebase/general/): Accounts, features, protocols, and common questions (the Knowledgebase landing section)
-- [Troubleshooting](https://{{ .Site.BaseURL }}knowledgebase/troubleshooting/): Fixing connection, speed, DNS, and leak issues
-- [Billing](https://{{ .Site.BaseURL }}knowledgebase/billing/): Subscriptions, tiers, payments, and refunds
-- [Passwords](https://{{ .Site.BaseURL }}knowledgebase/passwords/): Account credentials and login help
-- [Privacy](https://{{ .Site.BaseURL }}knowledgebase/privacy/): What IVPN logs and stores, and how it handles requests
-- [Windows](https://{{ .Site.BaseURL }}knowledgebase/windows/): Setup and configuration on Windows
-- [macOS](https://{{ .Site.BaseURL }}knowledgebase/macos/): Setup and configuration on macOS
-- [GNU/Linux](https://{{ .Site.BaseURL }}knowledgebase/linux/): Setup and configuration on Linux, including the CLI
-- [iOS](https://{{ .Site.BaseURL }}knowledgebase/ios/): Setup and configuration on iOS
-- [Android](https://{{ .Site.BaseURL }}knowledgebase/android/): Setup and configuration on Android
-- [Routers](https://{{ .Site.BaseURL }}knowledgebase/routers/): VPN setup on routers
+- [General]({{ .Site.BaseURL }}knowledgebase/general/): Accounts, features, protocols, and common questions (the Knowledgebase landing section)
+- [Troubleshooting]({{ .Site.BaseURL }}knowledgebase/troubleshooting/): Fixing connection, speed, DNS, and leak issues
+- [Billing]({{ .Site.BaseURL }}knowledgebase/billing/): Subscriptions, tiers, payments, and refunds
+- [Passwords]({{ .Site.BaseURL }}knowledgebase/passwords/): Account credentials and login help
+- [Privacy]({{ .Site.BaseURL }}knowledgebase/privacy/): What IVPN logs and stores, and how it handles requests
+- [Windows]({{ .Site.BaseURL }}knowledgebase/windows/): Setup and configuration on Windows
+- [macOS]({{ .Site.BaseURL }}knowledgebase/macos/): Setup and configuration on macOS
+- [GNU/Linux]({{ .Site.BaseURL }}knowledgebase/linux/): Setup and configuration on Linux, including the CLI
+- [iOS]({{ .Site.BaseURL }}knowledgebase/ios/): Setup and configuration on iOS
+- [Android]({{ .Site.BaseURL }}knowledgebase/android/): Setup and configuration on Android
+- [Routers]({{ .Site.BaseURL }}knowledgebase/routers/): VPN setup on routers
 
 ### Most-read Knowledgebase articles
 
-- [My VPN is connected but I cannot browse the Internet, why?](https://{{ .Site.BaseURL }}knowledgebase/troubleshooting/my-vpn-is-connected-but-i-cannot-browse-the-internet-why/)
-- [My real location is detected when connected to VPN. How to disable geolocation?](https://{{ .Site.BaseURL }}knowledgebase/troubleshooting/my-real-location-is-detected-when-connected-to-vpn-how-to-disable-geolocation/)
-- [How can I reset my DNS settings?](https://{{ .Site.BaseURL }}knowledgebase/troubleshooting/how-can-i-reset-my-dns-settings/)
-- [My VPN connection is randomly disconnecting. What can I do?](https://{{ .Site.BaseURL }}knowledgebase/troubleshooting/my-vpn-connection-is-randomly-disconnecting-what-can-i-do/)
-- [My VPN is slow, what can I do to make it faster?](https://{{ .Site.BaseURL }}knowledgebase/troubleshooting/my-vpn-is-slow-what-can-i-do-to-make-it-faster/)
-- [SOCKS5 Proxy Service](https://{{ .Site.BaseURL }}knowledgebase/general/socks5-proxy-service/)
-- [Quantum-Resistant VPN connections](https://{{ .Site.BaseURL }}knowledgebase/general/quantum-resistant-vpn-connections/)
-- [Autostart WireGuard in systemd](https://{{ .Site.BaseURL }}knowledgebase/linux/linux-autostart-wireguard-in-systemd/)
+- [My VPN is connected but I cannot browse the Internet, why?]({{ .Site.BaseURL }}knowledgebase/troubleshooting/my-vpn-is-connected-but-i-cannot-browse-the-internet-why/)
+- [My real location is detected when connected to VPN. How to disable geolocation?]({{ .Site.BaseURL }}knowledgebase/troubleshooting/my-real-location-is-detected-when-connected-to-vpn-how-to-disable-geolocation/)
+- [How can I reset my DNS settings?]({{ .Site.BaseURL }}knowledgebase/troubleshooting/how-can-i-reset-my-dns-settings/)
+- [My VPN connection is randomly disconnecting. What can I do?]({{ .Site.BaseURL }}knowledgebase/troubleshooting/my-vpn-connection-is-randomly-disconnecting-what-can-i-do/)
+- [My VPN is slow, what can I do to make it faster?]({{ .Site.BaseURL }}knowledgebase/troubleshooting/my-vpn-is-slow-what-can-i-do-to-make-it-faster/)
+- [SOCKS5 Proxy Service]({{ .Site.BaseURL }}knowledgebase/general/socks5-proxy-service/)
+- [Quantum-Resistant VPN connections]({{ .Site.BaseURL }}knowledgebase/general/quantum-resistant-vpn-connections/)
+- [Autostart WireGuard in systemd]({{ .Site.BaseURL }}knowledgebase/linux/linux-autostart-wireguard-in-systemd/)
 
 ## Selected blog posts
 
-- [IVPN plan changes - new Plus tier, increased device limits, additional privacy services](https://{{ .Site.BaseURL }}blog/ivpn-plan-changes-new-plus-tier-increased-device-limits-additional-privacy-services/)
-- [Unlinked Access: reducing cross-service account linkage with HSM-backed token derivation](https://{{ .Site.BaseURL }}blog/unlinked-access-reducing-cross-service-account-linkage-hsm-token-derivation/)
-- [Mailx beta launch - Audited, open-source email aliasing service](https://{{ .Site.BaseURL }}blog/mailx-beta-audited-open-source-email-aliasing/)
-- [modDNS beta - audited DNS filtering with granular controls](https://{{ .Site.BaseURL }}blog/moddns-beta-audited-dns-filtering-granular-controls/)
-- [IVPN acquires Safing, operator of Portmaster and the SPN network](https://{{ .Site.BaseURL }}blog/ivpn-acquires-safing-portmaster-spn-network/)
-- [V2Ray Obfuscation Now Available on All IVPN Platforms](https://{{ .Site.BaseURL }}blog/v2ray-obfuscation-available-all-ivpn-platforms/)
-- [Introducing quantum resistant WireGuard connections in IVPN apps](https://{{ .Site.BaseURL }}blog/quantum-resistant-wireguard-connections-ivpn-apps/)
-- [Better tracker blocking controls with AntiTracker Plus](https://{{ .Site.BaseURL }}blog/better-tracker-blocking-controls-with-antitracker-plus/)
-- [Annual security audit scheduled for 2026](https://{{ .Site.BaseURL }}blog/annual-security-audit-scheduled-2026/)
-- [Annual security audit scheduled for 2025](https://{{ .Site.BaseURL }}blog/annual-security-audit-scheduled-2025/)
-- [IVPN web infrastructure security audit concluded](https://{{ .Site.BaseURL }}blog/ivpn-sixth-security-audit-concluded/)
-- [DNS traffic leak outside VPN tunnel on Android](https://{{ .Site.BaseURL }}blog/dns-traffic-leak-outside-vpn-tunnel-on-android/)
-- [Gradual removal of port forwarding from the IVPN service](https://{{ .Site.BaseURL }}blog/gradual-removal-of-port-forwarding/)
-- [Removal of kill switch from our iOS app due to Apple IP leak issue](https://{{ .Site.BaseURL }}blog/removal-of-kill-switch-from-our-ios-app-due-to-apple-ip-leak-issue/)
+- [IVPN plan changes - new Plus tier, increased device limits, additional privacy services]({{ .Site.BaseURL }}blog/ivpn-plan-changes-new-plus-tier-increased-device-limits-additional-privacy-services/)
+- [Unlinked Access: reducing cross-service account linkage with HSM-backed token derivation]({{ .Site.BaseURL }}blog/unlinked-access-reducing-cross-service-account-linkage-hsm-token-derivation/)
+- [Mailx beta launch - Audited, open-source email aliasing service]({{ .Site.BaseURL }}blog/mailx-beta-audited-open-source-email-aliasing/)
+- [modDNS beta - audited DNS filtering with granular controls]({{ .Site.BaseURL }}blog/moddns-beta-audited-dns-filtering-granular-controls/)
+- [IVPN acquires Safing, operator of Portmaster and the SPN network]({{ .Site.BaseURL }}blog/ivpn-acquires-safing-portmaster-spn-network/)
+- [V2Ray Obfuscation Now Available on All IVPN Platforms]({{ .Site.BaseURL }}blog/v2ray-obfuscation-available-all-ivpn-platforms/)
+- [Introducing quantum resistant WireGuard connections in IVPN apps]({{ .Site.BaseURL }}blog/quantum-resistant-wireguard-connections-ivpn-apps/)
+- [Better tracker blocking controls with AntiTracker Plus]({{ .Site.BaseURL }}blog/better-tracker-blocking-controls-with-antitracker-plus/)
+- [Annual security audit scheduled for 2026]({{ .Site.BaseURL }}blog/annual-security-audit-scheduled-2026/)
+- [Annual security audit scheduled for 2025]({{ .Site.BaseURL }}blog/annual-security-audit-scheduled-2025/)
+- [IVPN web infrastructure security audit concluded]({{ .Site.BaseURL }}blog/ivpn-sixth-security-audit-concluded/)
+- [DNS traffic leak outside VPN tunnel on Android]({{ .Site.BaseURL }}blog/dns-traffic-leak-outside-vpn-tunnel-on-android/)
+- [Gradual removal of port forwarding from the IVPN service]({{ .Site.BaseURL }}blog/gradual-removal-of-port-forwarding/)
+- [Removal of kill switch from our iOS app due to Apple IP leak issue]({{ .Site.BaseURL }}blog/removal-of-kill-switch-from-our-ios-app-due-to-apple-ip-leak-issue/)
 
 ## Privacy Guides
 
-- [Privacy Guides](https://{{ .Site.BaseURL }}privacy-guides/): In-depth guides on VPNs, Tor, threat modeling, OPSEC, and online anonymity (index page linking all guides)
+- [Privacy Guides]({{ .Site.BaseURL }}privacy-guides/): In-depth guides on VPNs, Tor, threat modeling, OPSEC, and online anonymity (index page linking all guides)
