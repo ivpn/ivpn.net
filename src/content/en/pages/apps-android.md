@@ -65,6 +65,6 @@ If you prefer not to use the IVPN app please follow the relevant setup guide bel
 
 ## Disclaimer
 
-IVPN for Android is published on Google Play by Privatus GmbH, a company registered in Switzerland. This separation was required as Gibraltar companies cannot publish paid apps in Google's app store. 
-Privatus GmbH is 100% owned by Nicholas Pestell, the founder of IVPN. Our [legal guidelines](/en/legal-process-guidelines/) and [privacy guarantees](/en/privacy/) fully apply to any information related to usage of Android app released via Google Play. If you are concerned about this we suggest installing IVPN for Android via Accrescent or direct .apk download.
+IVPN for Android is published on Google Play by Privatus GmbH, a company registered in Switzerland. This separation was required as Gibraltar companies cannot publish paid apps in Google's app store.  
+Privatus GmbH is 100% owned by Nicholas Pestell, the founder of IVPN. Our [legal guidelines](/en/legal-process-guidelines/) and [privacy guarantees](/en/privacy/) fully apply to any information related to usage of Android app released via Google Play. If you are concerned about this we suggest installing IVPN for Android via Accrescent or direct .apk download.  
 
