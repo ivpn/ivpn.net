@@ -235,6 +235,14 @@ SHA256: b22e0eae6ed88229aee3493d9ec939700de8b44b1e22a692a9e624ed4147160f
 [Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.13_amd64.deb)  
 SHA256: 4cf591cb6a390bf8b0a6b8b59af65dbb83d0cd5928831a13fe066392990204e8  
 
+### .DEB arm64
+
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.15.13_arm64.deb)  
+SHA256:   
+
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.13_arm64.deb)  
+SHA256:  
+
 ### .RPM
 
 [Paquete base](https://repo.ivpn.net/stable/pool/ivpn-3.15.13-1.x86_64.rpm)  
@@ -242,6 +250,14 @@ SHA256: e375db89cbdd5953e553505c30cd6f88bdc51fd391e0647202bdadca5c013e1e
 
 [Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.13-1.x86_64.rpm)  
 SHA256: ec296f9dff5bc7800eff5dd0c3f83dd93a9fadcc62704a0c36b13523d212349d  
+
+### .RPM arm64
+
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.15.13-1.aarch64.rpm)  
+SHA256:  
+
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.13-1.aarch64.rpm)  
+SHA256:  
 
 ## Instalar desde el código fuente {#source}
 
