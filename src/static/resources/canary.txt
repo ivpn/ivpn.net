@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-06-02 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-07-07 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 952088
-hash: 00000000000000000001b23ca58d36cfd24c55aa9ac3dbb4ad7d16f9d479c2ad
+height: 957036
+hash: 00000000000000000001d80b388a6cd63cbf162a06c87b6f81a531d719e22c6a
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Gold replaces US Treasuries as world’s top reserve asset, ECB says
-Historic bullion rally boosts metal’s share of reserves to 27% while central banks diversify away from dollar
+French far-right leader Le Pen cleared to stand for president
+Appeals court upholds her conviction for embezzlement but shortens her sentence
 
-Scottish EV start-up plans new UK plant in 2027
-Munro is to build a new facility for industrial-use electric vehicles
+Monaco bombing suspect shot dead in Kyiv
+Ukrainian authorities say intelligence officer confessed to paying and killing Anastasia Berezovska
 
-British Land picks Canadian pension fund executive as next boss
-Joanne McNamara will become one of a select group of women running FTSE 100 groups
+Rise of non-compete clauses blamed for harming productivity
+Increase recorded by OECD, with restrictions extending to lower-paid roles despite moves to curb clauses in some countries
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmoekL8ACgkQisFrnrZH
-umlPEQf/Vlc7buYXego7Ba3ScgM+e/f8vyT+YRBBtckXuXbYtukEcn6nRBd374tr
-CgFhS3UtkecPWWRYuvnit7wnpKqK4NeeKdD6ghr2QhymlNl1493vfYO0rTbE0NU4
-U7e+JxE1Fye7NzBWI4NjofV0HmYcLe3VUskBItv4WFfd5IsCRK3npauMYkoMVQ8j
-+EV/HA8CH8mYm1az9eorSl2jCoaugg2Mz+Uk24TxDYvOgza2LjL7YZdokBsImfdA
-Pyw1jGcoH5Cc2EdfALpMUuSIqzfxIVF681LXxZUc7vsPShqP+EPfAToq0b33yFyG
-JJ4jVOij66ekNnFAiw4iWBTiN9SSdA==
-=GiIn
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmpM7u0ACgkQisFrnrZH
+ummG4wf/cY8Jnn3FMvv706wq5QxycGKd8F/rGWjrRdszDkfgyuLhTMQfbJ36dGki
+mRZhVfWcGy7pmIo7jW+ouQ7VSc5blEMB2/8LFZ3OgSoD+bz3SC30cfRluQ5zposj
+dwh/DIhfsEs11t2zIS+M3Z2wprRL+9tVTWb2Hy87ZOFCjnsDaXDXUkW66mzJ8Nr9
+a1DJT44ZXvHKFMXifQFXUVZdV4zUrNwqzK3Y92w7pyh+L6qn0Z4rfAyVRCB1AqHg
+6x3EO3YN8mHPmSgy+nqLR1j3tdQ9geHRAlKUtq9yOc4Zd5jEMN4hPtQRO/9Ou0uH
+8qqRFx/4Jz3kzcn2Xbi4FjfLZ4zaQw==
+=Q001
 -----END PGP SIGNATURE-----
 
 
