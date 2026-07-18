@@ -2,7 +2,7 @@
 title: IVPN for macOS - Open-source VPN app for your Mac
 description: IVPN for macOS offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for macOS
-subtitle: Supports macOS 10.14+
+subtitle: Supports macOS 12+
 url: /en/apps-macos/
 aliases: ['/apps-macos/']
 
@@ -60,6 +60,9 @@ If you prefer not to use the IVPN app please follow the relevant setup guide bel
 - [IPSec with IKEv2](/setup/macos-ipsec-with-ikev2/)   
 
 ## Download legacy version
+
+Download [IVPN-3.15.3.dmg]("https://repo.ivpn.net/macos/bin/IVPN-3.15.3.dmg) for macOS 10.15
+SHA256: f192af338b79ffb79eb108724ef175639d966c46f9c7b4a1cf19e431372631ae  
 
 Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
 SHA256: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22  
