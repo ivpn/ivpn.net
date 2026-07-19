@@ -1,6 +1,6 @@
 ---
 title: Precios de IVPN – Selecciona tu plan
-description: Tres niveles. Sin ventas adicionales. Elige según tu modelo de amenazas y tus necesidades de red.
+description: Tres niveles. Elige según tu modelo de amenazas y tus necesidades de red.
 url: /es/services/
 sections:
   - type: heading_logos_two_column
