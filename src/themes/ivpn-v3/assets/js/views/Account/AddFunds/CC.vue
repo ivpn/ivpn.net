@@ -4,7 +4,20 @@
             <p class="error">{{ $t('account.payments.creditCard.cardIssue') }}</p>
         </div>
         <div v-if="braintree != null">
-            <form v-if="!this.cardFailedVerification" @submit.prevent="makePayment()">
+
+            <!-- Gate: shown for new accounts before the CC form is revealed -->
+            <div v-if="requiresAltchaGate" class="altcha-gate">
+                <p>{{ $t('account.payments.creditCard.verifyCaptcha') }}</p>
+                <altcha-widget
+                    ref="altchaGateWidget"
+                    :challenge="altchaChallengeUrl"
+                    configuration='{"hideFooter":true}'
+                    @statechange="onAltchaStateChange"
+                ></altcha-widget>
+            </div>
+
+            <!-- CC form: hidden while the gate is active or card verification failed -->
+            <form v-if="!requiresAltchaGate && !this.cardFailedVerification" @submit.prevent="makePayment()">
                 <braintree-cc
                     :braintree="braintree"
                     v-bind:amount="price.price"
@@ -32,14 +45,17 @@
                     </div>
                 </div>
 
+                <!-- In-form altcha: shown after any payment failure so the user
+                     can re-verify before retrying -->
                 <altcha-widget
-                    ref="altchaWidget"
-                    :challengeurl="altchaChallengeUrl"
-                    hidefooter
+                    v-if="showAltchaInForm"
+                    ref="altchaFormWidget"
+                    :challenge="altchaChallengeUrl"
+                    configuration='{"hideFooter":true}'
                     @statechange="onAltchaStateChange"
                 ></altcha-widget>
 
-                <div style="display: flex; align-items: center">
+                <div style="display: flex; justify-content: center; margin-top: 0.5rem;">
                     <button
                         class="btn btn-solid btn-big make-payment"
                         :disabled="!paymentAllowed"
@@ -87,6 +103,10 @@ export default {
             altchaToken: "",
             cardFailedVerification: false,
             language: "en",
+            // True once the new-account altcha gate has been passed
+            captchaGatePassed: false,
+            // True after a payment attempt fails; triggers in-form altcha
+            paymentFailed: false,
         };
     },
     async created() {
@@ -113,9 +133,19 @@ export default {
         paymentAllowed: function () {
             if (this.inProgress) return false;
             if (!this.formValid) return false;
-            if (!this.altchaToken) return false;
+            // New accounts always require altcha; active accounts require it
+            // only after a payment has failed at least once.
+            if ((this.account?.is_new || this.paymentFailed) && !this.altchaToken) return false;
 
             return true;
+        },
+        // True while the new-account altcha gate must be solved before the CC form
+        requiresAltchaGate() {
+            return this.account?.is_new && !this.captchaGatePassed;
+        },
+        // True after the first payment failure; shows the in-form altcha widget
+        showAltchaInForm() {
+            return this.paymentFailed;
         },
         altchaChallengeUrl() {
             return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
@@ -146,8 +176,16 @@ export default {
             });
 
             if (this.error) {
-                // Reset Altcha widget so user can solve a new challenge
+                // Mark that a payment attempt has failed so the in-form altcha
+                // widget is shown and the button stays disabled until re-solved.
                 this.altchaToken = "";
+                if (this.paymentFailed) {
+                    // Widget already rendered — reset it for a fresh challenge
+                    this.$refs.altchaFormWidget?.reset();
+                } else {
+                    // First failure — the widget will mount fresh in UNVERIFIED state
+                    this.paymentFailed = true;
+                }
                 return;
             }
 
@@ -161,6 +199,10 @@ export default {
         onAltchaStateChange(ev) {
             if (ev.detail && ev.detail.state === 'verified') {
                 this.altchaToken = ev.detail.payload || "";
+                // Mark the gate as passed when the new-account gate widget solves
+                if (this.account?.is_new && !this.captchaGatePassed) {
+                    this.captchaGatePassed = true;
+                }
             } else {
                 this.altchaToken = "";
             }
@@ -176,8 +218,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/base.scss";
-@import "@/styles/_vars.scss";
+@use "@/styles/base.scss" as *;
+@use "@/styles/_vars.scss" as *;
 
 .payment-form {
     max-width: 580px;
@@ -187,6 +229,32 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        altcha-widget {
+            display: block;
+            width: 300px;
+            --altcha-max-width: 300px;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .altcha-gate {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+
+        p {
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        altcha-widget {
+            display: block;
+            width: 300px;
+            --altcha-max-width: 300px;
+        }
     }
 
     .make-payment {

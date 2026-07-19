@@ -57,7 +57,7 @@ weight: 480
     The full list of our WireGuard servers can be viewed on the [server status](/status/) page.
 
 8.  #### How many devices can I connect with WireGuard?
-    Two on the Standard and seven on the Pro plan.
+    5 on the Standard and Plus plans, and 10 on the Pro Suite plan.
 
 9.  #### Do I need to manually create and add public key in the Client Area when adding a new device?
     No, when using the IVPN app keys are automatically generated and the public key is uploaded to our server the moment you select the WireGuard protocol in the app.

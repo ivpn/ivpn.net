@@ -1,0 +1,1 @@
+[{{ range $idx, $page := .Pages }}{{ if $idx }},{{ end }}{"title":{{ $page.Title | jsonify }},"url":{{ $page.Permalink | jsonify }}}{{ end }}]

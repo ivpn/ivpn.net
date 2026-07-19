@@ -107,8 +107,6 @@ weight: 610
     Entry and exit servers must be in different countries.
     </div>
 
-    Multi-hop is available with IVPN Pro plans. [Upgrade](/signup/) today.
-
 12. ### How do I enable obfsproxy?
 
     ```

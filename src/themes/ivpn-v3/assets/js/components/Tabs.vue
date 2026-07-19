@@ -38,6 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/base.scss";
-@import "@/styles/tabs.scss";
+@use "@/styles/base.scss" as *;
+@use "@/styles/tabs.scss" as *;
 </style>

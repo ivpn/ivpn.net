@@ -85,16 +85,26 @@ export default defineConfig(({ mode }) => {
         '@fonts': resolve(__dirname, 'assets/scss/fonts')
       }
     },
-    
+
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,
+          silenceDeprecations: ['global-builtin', 'slash-div', 'color-functions']
+        }
+      }
+    },
+
     build: {
       outDir: 'static',
       emptyOutDir: false, // Don't empty the directory (Hugo might have other static files)
       manifest: false, // We're using our custom manifest
       assetsInlineLimit: 0, // Don't inline any assets
       assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/*.otf'],
+      chunkSizeWarningLimit: 1600,
       modulePreload: false, // Disable module preloading for external assets
       sourcemap: true, // Enable source maps for debugging
-      rollupOptions: {
+      rolldownOptions: {
         input: {
           app: resolve(__dirname, 'assets/js/app.js'),
           servers: resolve(__dirname, 'assets/js/servers.js'),
@@ -123,11 +133,12 @@ export default defineConfig(({ mode }) => {
           },
           chunkFileNames: 'js/[name].[hash].js',
           assetFileNames: (assetInfo) => {
-            if (assetInfo.name.endsWith('.css')) {
+            const name = assetInfo.names?.[0] ?? assetInfo.name ?? '';
+            if (name.endsWith('.css')) {
               return 'css/[name].[hash][extname]';
             }
             // Put font files in a fonts directory
-            if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
+            if (/\.(woff2?|eot|ttf|otf)$/i.test(name)) {
               return 'fonts/[name].[hash][extname]';
             }
             return 'assets/[name].[hash][extname]';
@@ -141,15 +152,7 @@ export default defineConfig(({ mode }) => {
         }
       }
     },
-    
-    css: {
-      preprocessorOptions: {
-        scss: {
-          silenceDeprecations: ['import']
-        }
-      }
-    },
-    
+
     server: {
       port: 3000,
       strictPort: false,

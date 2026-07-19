@@ -1,7 +1,7 @@
 <template>
     <div class="login-form-container">                
         <div class="login-box">
-            <form @submit.prevent="login()">
+            <form @submit.prevent="login()" novalidate>
                 <h1>{{ $t('login.title') }}</h1>  
                 <tabs @onTabChanged="updateLoginType">
                     <tab :selected="loginType == 'id'" :tabid="'id'" :name="$t('login.withAccountId')" class="login-tab">
@@ -24,9 +24,10 @@
                             </div>
 
                             <altcha-widget
+                                v-if="loginFailed"
                                 ref="altchaWidgetID"
-                                :challengeurl="altchaChallengeUrl"
-                                hidefooter
+                                :challenge="altchaChallengeUrl"
+                                configuration='{"hideFooter":true}'
                                 @statechange="onAltchaStateChange"
                             ></altcha-widget>
                             <!-- <div class="forgot">
@@ -41,7 +42,7 @@
                             <label for="login-email">{{ $t('login.email') }}</label>
                             <input type="text" id="login-email" v-model="email" autofocus />
                             <label for="login-password">{{ $t('login.password') }}</label>
-                            <input type="password" id="login-password" v-model="password" />
+                            <input type="password" id="login-password" v-model="password" autocomplete="current-password" />
 
                             <div class="totp" v-if="totpRequired">
                                 <label for="login-totp-2">{{ $t('login.2faToken') }}</label>
@@ -49,9 +50,10 @@
                             </div>
 
                             <altcha-widget
+                                v-if="loginFailed"
                                 ref="altchaWidgetEmail"
-                                :challengeurl="altchaChallengeUrl"
-                                hidefooter
+                                :challenge="altchaChallengeUrl"
+                                configuration='{"hideFooter":true}'
                                 @statechange="onAltchaStateChange"
                             ></altcha-widget>
 
@@ -61,7 +63,7 @@
                         </div>
                     </tab>
                 </tabs>
-                <button class="btn btn-big btn-solid login-btn" :disabled="inProgress || !formValid || !altchaToken">
+                <button class="btn btn-big btn-solid login-btn" :disabled="inProgress || !formValid || (loginFailed && !altchaToken)">
                     <progress-spinner v-if="inProgress" id="btn-progress" width="32" height="32" fill="#FFFFFF"/>{{ $t('login.title') }}
                 </button>
             </form>
@@ -101,6 +103,7 @@ export default {
 
             altchaToken: "",
             loginType: "",
+            loginFailed: false,
 
             totpValue: "",
             language: "en"
@@ -150,6 +153,8 @@ export default {
             this.altchaToken = "";
             this.totpValue = "";
             this.totpRequired = false;
+            this.$refs.altchaWidgetID?.reset();
+            this.$refs.altchaWidgetEmail?.reset();
         },
         hideError(error) {            
             return (
@@ -158,6 +163,7 @@ export default {
         },
         async login() {
             if (this.inProgress) return;
+            if (this.loginFailed && !this.altchaToken) return;
 
             let data;
 
@@ -204,8 +210,21 @@ export default {
             this.totpRequired =
                 error.status == StatusTotpRequired ||
                 error.status == StatusTotpInvalid;
-            // Reset Altcha widget so user can solve a new challenge
-            this.altchaToken = "";
+
+            if (this.loginFailed) {
+                // Captcha is already showing — clear the used token and reset
+                // the widget so the user gets a fresh challenge for the next attempt.
+                this.altchaToken = "";
+                const ref = this.loginType === 'id'
+                    ? this.$refs.altchaWidgetID
+                    : this.$refs.altchaWidgetEmail;
+                ref?.reset();
+            } else if (error.status === Api.StatusAltchaInvalid) {
+                // Server signals the captcha rate-limit has been reached:
+                // show the altcha widget for the first time.
+                this.altchaToken = "";
+                this.loginFailed = true;
+            }
         },
         onAltchaStateChange(ev) {
             if (ev.detail && ev.detail.state === 'verified') {
@@ -222,7 +241,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
+@use "@/styles/_vars.scss" as *;
 
 .login-form-container {
     
@@ -273,6 +292,13 @@ export default {
         .login-fields {
             display: flex;
             flex-direction: column;
+
+            altcha-widget {
+                display: block;
+                width: 100%;
+                --altcha-max-width: 100%;
+                margin-bottom: 16px;
+            }
 
             .forgot {
                 text-align: center;

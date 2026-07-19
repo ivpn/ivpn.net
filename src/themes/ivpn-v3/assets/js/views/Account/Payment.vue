@@ -58,10 +58,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/styles/_vars.scss";
-@import "@/styles/icons.scss";
-@import "@/styles/buttons.scss";
-@import "@/styles/base.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/icons.scss" as *;
+@use "@/styles/buttons.scss" as *;
+@use "@/styles/base.scss" as *;
 
 .payment-page {
     min-height: 450px;

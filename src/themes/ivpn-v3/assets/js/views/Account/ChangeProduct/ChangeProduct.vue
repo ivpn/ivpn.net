@@ -145,8 +145,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/styles/_vars.scss";
-@import "@/styles/buttons.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/buttons.scss" as *;
 
 .prices {
     display: flex;

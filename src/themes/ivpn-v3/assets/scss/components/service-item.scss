@@ -1,5 +1,5 @@
-@import "@/styles/_vars.scss";
-@import "@/styles/mixins/theme.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/mixins/theme.scss" as *;
 
 // ─── Service card grid ────────────────────────────────────────────────────────
 

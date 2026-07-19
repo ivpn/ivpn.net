@@ -229,19 +229,35 @@ El cliente IVPN se puede instalar en [Fedora Silverblue](/knowledgebase/linux/fe
 
 ### .DEB
 
-[Paquete base](https://repo.ivpn.net/stable/pool/ivpn_3.15.6_amd64.deb)  
-SHA256: 78c6b8a0c86b434d6ad9d7e734730dbb352cb77ae07c47a7f1ab77bb88db1125  
+[Paquete base](https://repo.ivpn.net/stable/pool/ivpn_3.15.13_amd64.deb)  
+SHA256: b22e0eae6ed88229aee3493d9ec939700de8b44b1e22a692a9e624ed4147160f  
 
-[Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.6_amd64.deb)  
-SHA256: 00c5efce1afbd00baccf388a4a6eb37e3f3d54037dcebe5768577402befbf977  
+[Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.13_amd64.deb)  
+SHA256: 4cf591cb6a390bf8b0a6b8b59af65dbb83d0cd5928831a13fe066392990204e8  
+
+### .DEB arm64
+
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.15.13_arm64.deb)  
+SHA256: 4e3ad741fed94a4c2aab2a7ec5ddc29e9b879199e6c5e32829b96ab132b9c590  
+
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.13_arm64.deb)  
+SHA256: da5ad7e74c995e8a5dc9a6625ffed2fab6ef0193223545ead0557ec0f2f4b6fa  
 
 ### .RPM
 
-[Paquete base](https://repo.ivpn.net/stable/pool/ivpn-3.15.6-1.x86_64.rpm)  
-SHA256: 3d0c420a5b64bac018bf334aaef48dee1b1b8026d82dc457134ef24e68b030db  
+[Paquete base](https://repo.ivpn.net/stable/pool/ivpn-3.15.13-1.x86_64.rpm)  
+SHA256: e375db89cbdd5953e553505c30cd6f88bdc51fd391e0647202bdadca5c013e1e  
 
-[Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.6-1.x86_64.rpm)  
-SHA256: ca6ed9d497adab22731b1e26ba9912cc99d9a85c71566052e00df5a5f47b9f9c  
+[Paquete UI](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.13-1.x86_64.rpm)  
+SHA256: ec296f9dff5bc7800eff5dd0c3f83dd93a9fadcc62704a0c36b13523d212349d  
+
+### .RPM arm64
+
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.15.13-1.aarch64.rpm)  
+SHA256: 500683bb10a246f205656bdc8b045828cb5abf26efd8b3761c196670961770fd  
+
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.13-1.aarch64.rpm)  
+SHA256: 5026d2e6aa64b24dbdcc308ce53b22514cc258d74002071b89c2cad18d08ba50  
 
 ## Instalar desde el código fuente {#source}
 

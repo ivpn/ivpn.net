@@ -1,0 +1,11 @@
+// Forwards all design-token files (variables and mixins only, no CSS output).
+// Used by element/component partials so they get variables and mixins without
+// relying on cascade from parent files (required by the Sass modern API).
+@forward "config/colors";
+@forward "config/text";
+@forward "config/grid";
+@forward "../../node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins";
+@forward "mixins/container";
+@forward "mixins/breakpoint";
+@forward "mixins/theme";
+@forward "mixins/blink-me";

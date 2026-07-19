@@ -19,4 +19,4 @@ Multi-hop increases privacy by sending the encrypted traffic through two countri
 
 Switch back to a single-hop connection by toggling the `Multi-hop` option **OFF**.
 
-The Multi-hop feature is available in our Pro plan.
+The Multi-hop feature is available in all [plans](/pricing).

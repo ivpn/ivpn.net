@@ -31,7 +31,7 @@
             "title": "IVPN Pricing - VPN subscription with anonymous registration"
         },
         "title": "Select your plan",
-        "description": "Three tiers. No upselling. Pick based on your privacy needs.",
+        "description": "Three tiers. Pick based on your privacy needs.",
         "allProtocols": "All protocols",
         "tier1Devices": "5 devices",
         "tier2Devices": "5 devices",
@@ -555,6 +555,7 @@
                 "automaticRenewal": "Automatic renewal",
                 "ccAutomaticRenewalInfo": "Automatic renewals are always off by default. You may enable this if it is more convenient for you. Your card data will be stored by Braintree however you can cancel automatic renewal at any time from your account page.",
                 "makePayment": "Make payment",
+                "verifyCaptcha": "Please verify you're not a robot to continue with your payment.",
                 "cardNumber": "Card number",
                 "errorAbove": "The above error message comes directly from Braintree, our credit card payment processor. You may update your card details and/or add additional information and try again.",
                 "additionalCardInformation": "Additional card information",

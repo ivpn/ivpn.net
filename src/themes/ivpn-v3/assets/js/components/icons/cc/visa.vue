@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@/styles/base.scss";
+@use "@/styles/base.scss" as *;
 
 .g {
     @include light-theme((

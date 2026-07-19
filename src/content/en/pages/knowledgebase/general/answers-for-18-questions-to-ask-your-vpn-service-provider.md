@@ -17,10 +17,10 @@ weight: 160
     No.
 
 3.  #### How many devices are allowed per account?
-    2 on the Standard and 7 on the Pro plan. See our [Pricing Page](/pricing/).
+    5 on the Standard and Plus plans, and 10 on the Pro Suite plan. See our [Pricing Page](/pricing/).
 
 4.  #### How many hops are there in your VPN connections?
-    We have a choice of both single and multi-hop connections. The Multi-hop feature is available in our Pro plan.
+    We have a choice of both single and multi-hop connections. The Multi-hop feature is available in all plans.
 
 5.  #### What type(s) of VPN encryption do you use? Why?
     We use the highest AES-256 with 4096-bit RSA keys.

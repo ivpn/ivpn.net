@@ -1,13 +1,17 @@
+@use "../config/grid" as *;
+@use "sass:map";
+@use "sass:meta";
+
 /// Mixin to manage responsive breakpoints
 /// @param {String} $breakpoint - Breakpoint name
 /// @require $breakpoints
 @mixin respond-to($breakpoint) {
 
     // If the key exists in the map
-    @if map-has-key($breakpoints, $breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
 
         // Prints a media query based on the value
-        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+        @media #{meta.inspect(map.get($breakpoints, $breakpoint))} {
             @content;
         }
     }
@@ -15,17 +19,17 @@
     // If the key doesn't exist in the map
     @else {
         @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " +
-        "Available breakpoints are: #{map-keys($breakpoints)}.";
+        "Available breakpoints are: #{map.keys($breakpoints)}.";
     }
 }
 
 @mixin max-width($breakpoint) {
 
   // If the key exists in the map
-  @if map-has-key($breakpoints-max-width, $breakpoint) {
+  @if map.has-key($breakpoints-max-width, $breakpoint) {
 
       // Prints a media query based on the value
-      @media #{inspect(map-get($breakpoints-max-width, $breakpoint))} {
+      @media #{meta.inspect(map.get($breakpoints-max-width, $breakpoint))} {
           @content;
       }
   }
@@ -33,6 +37,6 @@
   // If the key doesn't exist in the map
   @else {
       @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " +
-      "Available breakpoints are: #{map-keys($breakpoints-max-width)}.";
+      "Available breakpoints are: #{map.keys($breakpoints-max-width)}.";
   }
 }

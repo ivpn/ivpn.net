@@ -324,7 +324,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "scss/base";
+@use "scss/base" as *;
 
 .status {
     width: 10px;

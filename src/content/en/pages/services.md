@@ -1,6 +1,6 @@
 ---
-title: IVPN Pricing - Select Your Plan
-description: Three tiers. No upselling. Pick based on your threat model and network requirements.
+title: IVPN Privacy Stack - Services Overview
+description: Three tiers. Pick based on your threat model and network requirements.
 url: /en/services/
 aliases: ['/services/']
 sections:
@@ -197,7 +197,7 @@ sections:
       - When you activate a service, IVPN sends it a cryptographic token derived from your account. Each service uses a hash of that token to confirm your subscription is active. None of them hold a direct link back to your IVPN account.
     link:
       text: Read about Unlinked Access
-      url: /unlinked-access
+      url: /en/unlinked-access/
   - type: text_cta
     title: Resist online surveillance
     content: Get started by selecting a plan based on which services you need.

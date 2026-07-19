@@ -8,5 +8,7 @@ menu:
   - main
 isMenuCta: true
 hasSeperator: false
+sitemap:
+  disable: true
 ---
 # Application

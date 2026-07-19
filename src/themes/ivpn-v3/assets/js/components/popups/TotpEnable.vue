@@ -139,8 +139,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
-@import "@/styles/base.scss";
+@use "@/styles/_vars.scss" as *;
+@use "@/styles/base.scss" as *;
 
 .backup-codes {    
     padding: 1em 1.4em;
