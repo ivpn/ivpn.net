@@ -5,7 +5,6 @@ h1: IVPN for macOS
 subtitle: Supports macOS 12+
 url: /en/apps-macos/
 aliases: ['/apps-macos/']
-
 platform: macos
 layout: apps
 image: apps/macos-app
@@ -61,8 +60,11 @@ If you prefer not to use the IVPN app please follow the relevant setup guide bel
 
 ## Download legacy version
 
-Download [IVPN-3.15.3.dmg]("https://repo.ivpn.net/macos/bin/IVPN-3.15.3.dmg) for macOS 10.15
+Download IVPN Client for macOS (Intel) [IVPN-3.15.6.dmg](https://repo.ivpn.net/macos/bin/IVPN-3.15.6.dmg) for macOS 10.15
 SHA256: f192af338b79ffb79eb108724ef175639d966c46f9c7b4a1cf19e431372631ae  
 
-Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
-SHA256: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22  
+Download IVPN Client for macOS (M1) [IVPN-3.15.6-arm64.dmg](https://repo.ivpn.net/macos/bin/IVPN-3.15.6-arm64.dmg) for macOS 10.15
+SHA256: f608cd576ea6d307862566c5380bfe39233bb52d481338d294debb86e4bc59ad  
+
+<!-- Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
+SHA256: 0fd09967482f53c801dc55eaf23a88ad341da37f58d70d9c9e24c2e5aeb36c22   -->
