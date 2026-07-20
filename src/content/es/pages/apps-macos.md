@@ -59,10 +59,10 @@ Si prefieres no utilizar la aplicación IVPN, sigue la guía de configuración c
 
 ## Descarga una versión anterior
 
-Download IVPN Client para macOS (Intel) [IVPN-3.15.6.dmg](https://repo.ivpn.net/macos/bin/IVPN-3.15.6.dmg) para macOS 10.15
+Download IVPN Client para macOS (Intel) [IVPN-3.15.6.dmg](https://repo.ivpn.net/macos/bin/IVPN-3.15.6.dmg) para macOS 10.15  
 SHA256: f192af338b79ffb79eb108724ef175639d966c46f9c7b4a1cf19e431372631ae  
 
-Download IVPN Client para macOS (M1) [IVPN-3.15.6-arm64.dmg](https://repo.ivpn.net/macos/bin/IVPN-3.15.6-arm64.dmg) para macOS 10.15
+Download IVPN Client para macOS (M1) [IVPN-3.15.6-arm64.dmg](https://repo.ivpn.net/macos/bin/IVPN-3.15.6-arm64.dmg) para macOS 10.15  
 SHA256: f608cd576ea6d307862566c5380bfe39233bb52d481338d294debb86e4bc59ad  
 
 <!-- Download [IVPN-2.12.17.dmg](https://cdn.ivpn.net/releases/osx/IVPN-2.12.17.dmg)  
