@@ -79,9 +79,6 @@ let products = {
 }
 
 store.commit('product/setAll', { products })
-// auth/init is dispatched AFTER mount so Vue hydrates over SSR HTML with the
-// same initial state (isAuthenticated: false). Auth state then updates
-// reactively without triggering a hydration mismatch.
 
 const i18n = createI18n({
     legacy: false,
@@ -151,9 +148,12 @@ app.use(store)
 app.use(router)
 app.use(i18n)
 
+// auth/init reads the loggedIn cookie synchronously. It must run before
+// router.isReady() so that router.beforeEach sees the correct isAuthenticated
+// state during the initial navigation (e.g. a page refresh on /account).
+store.dispatch('auth/init')
+
 // Await router resolution before mounting so $route is correct during SSR hydration.
 router.isReady().then(() => {
     app.mount('#application')
-    // Initialise auth state after hydration so it never mismatches the SSR output.
-    store.dispatch('auth/init')
 })
