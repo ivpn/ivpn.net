@@ -1,71 +1,126 @@
-{{- /* json-ld.html — Structured data for LLM crawlers and search engines */ -}}
-{{- $base := .Site.BaseURL -}}
-{{- $orgID := printf "%s#organization" $base -}}
-{{- $siteID := printf "%s#website" $base -}}
+{{- /* json-ld.html — Structured data for search engines and LLM crawlers
+     Every page emits a single @graph containing:
+       1. Organization  – always present, resolves all publisher/@id references
+       2. WebSite       – always present, resolves all isPartOf/@id references
+       3. page node     – BlogPosting (blog posts only) or WebPage (all others)
+       4. BreadcrumbList – hierarchical pages only, no language or catch-all sections
+*/ -}}
+{{- $base    := .Site.BaseURL -}}
+{{- $orgID   := printf "%s#organization" $base -}}
+{{- $siteID  := printf "%s#website"      $base -}}
+{{- /* The English/Spanish landing pages (Kind=page, URL=/en/ or /es/) act as home */ -}}
+{{- $isLanding := or .IsHome (eq .Permalink .Site.Home.Permalink) -}}
 
-{{- /* ── Home page: Organization + WebSite ── */ -}}
-{{- if .IsHome -}}
+{{- /* ── 1. Organization (same on every page) ── */ -}}
 {{- $org := dict
-  "@type" "Organization"
-  "@id" $orgID
-  "name" "IVPN"
-  "url" $base
+  "@type"        "Organization"
+  "@id"          $orgID
+  "name"         "IVPN"
+  "legalName"    "IVPN Limited"
+  "url"          $base
+  "foundingDate" "2009"
   "logo" (dict
-    "@type" "ImageObject"
-    "url" (printf "%simages-static/uploads/og_1200-627.png" $base)
+    "@type"      "ImageObject"
+    "@id"        (printf "%s#logo" $base)
+    "url"        (printf "%simages-static/uploads/og_1200-627.png" $base)
+    "contentUrl" (printf "%simages-static/uploads/og_1200-627.png" $base)
+    "width"      1200
+    "height"     627
   )
-  "description" "Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup, 30-day money-back guarantee."
+  "description"  "Audited, open-source VPN service with WireGuard, killswitch and tracker blocker. No logs, no false promises. Anonymous signup, 30-day money-back guarantee."
+  "areaServed"   "Worldwide"
+  "contactPoint" (dict
+    "@type"             "ContactPoint"
+    "email"             "support@ivpn.net"
+    "contactType"       "customer support"
+    "availableLanguage" (slice "English" "Spanish")
+  )
   "sameAs" (slice
     "https://twitter.com/ivpnnet"
     "https://github.com/ivpn"
     "https://www.reddit.com/r/IVPN/"
+    "https://mastodon.social/@ivpn"
   )
 -}}
+
+{{- /* ── 2. WebSite (same on every page) ── */ -}}
 {{- $website := dict
-  "@type" "WebSite"
-  "@id" $siteID
-  "url" $base
-  "name" "IVPN"
+  "@type"     "WebSite"
+  "@id"       $siteID
+  "url"       $base
+  "name"      "IVPN"
   "publisher" (dict "@id" $orgID)
 -}}
-{{- dict "@context" "https://schema.org" "@graph" (slice $org $website) | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
+
+{{- /* ── 3. Page-specific node ── */ -}}
+{{- $pageNode := dict -}}
+{{- if $isLanding -}}
+  {{- /* Landing page: Organization + WebSite are the content; no extra page node */ -}}
+{{- else if and (eq .Type "blog") (eq .Kind "page") -}}
+  {{- /* Individual blog post → BlogPosting */ -}}
+  {{- $authorList := slice -}}
+  {{- range .Params.authors -}}
+    {{- $authorList = $authorList | append (dict "@type" "Person" "name" .) -}}
+  {{- end -}}
+  {{- if not $authorList -}}
+    {{- $authorList = slice (dict "@type" "Organization" "name" "IVPN") -}}
+  {{- end -}}
+  {{- $pageNode = dict
+    "@type"            "BlogPosting"
+    "headline"         .Title
+    "url"              .Permalink
+    "datePublished"    (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified"     (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "author"           $authorList
+    "publisher"        (dict "@type" "Organization" "@id" $orgID "name" "IVPN")
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  -}}
+  {{- with .Description -}}
+    {{- $pageNode = merge $pageNode (dict "description" .) -}}
+  {{- end -}}
+  {{- with .Params.images -}}
+    {{- $pageNode = merge $pageNode (dict "image" (index . 0)) -}}
+  {{- end -}}
+{{- else -}}
+  {{- /* Everything else → WebPage (section list pages, knowledgebase, guides…) */ -}}
+  {{- $pageNode = dict
+    "@type"      "WebPage"
+    "@id"        (printf "%s#webpage" .Permalink)
+    "name"       .Title
+    "url"        .Permalink
+    "inLanguage" .Site.Language.Lang
+    "isPartOf"   (dict "@id" $siteID)
+    "publisher"  (dict "@id" $orgID)
+  -}}
+  {{- with .Description -}}
+    {{- $pageNode = merge $pageNode (dict "description" .) -}}
+  {{- end -}}
 {{- end -}}
 
-{{- /* ── Blog posts: BlogPosting ── */ -}}
-{{- if eq .Type "blog" -}}
-{{- $authorList := slice -}}
-{{- range .Params.authors -}}
-  {{- $authorList = $authorList | append (dict "@type" "Person" "name" .) -}}
-{{- end -}}
-{{- if not $authorList -}}
-  {{- $authorList = slice (dict "@type" "Organization" "name" "IVPN") -}}
-{{- end -}}
-{{- $schema := dict
-  "@context" "https://schema.org"
-  "@type" "BlogPosting"
-  "headline" .Title
-  "url" .Permalink
-  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
-  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
-  "author" $authorList
-  "publisher" (dict "@type" "Organization" "@id" $orgID "name" "IVPN")
-  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
--}}
-{{- with .Description -}}{{- $schema = merge $schema (dict "description" .) -}}{{- end -}}
-{{- with .Params.images -}}{{- $schema = merge $schema (dict "image" (index . 0)) -}}{{- end -}}
-{{- $schema | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
+{{- /* ── 4. BreadcrumbList ── */ -}}
+{{- /* Skip: landing pages, and pages with no title (e.g. headless app pages) */ -}}
+{{- $crumbNode := dict -}}
+{{- if and (not $isLanding) .Title -}}
+  {{- /* The catch-all content-organisation folder (/en/pages/, /es/pages/)
+       must not appear as a trail item. Sub-sections with URL overrides
+       (knowledgebase/billing/, privacy-guides/, …) have different Permalinks
+       so they are kept. */ -}}
+  {{- $langPagesPath := printf "/%s/pages/" $.Site.Language.Lang -}}
+  {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.Home.Permalink) -}}
+  {{- $pos := 2 -}}
+  {{- range collections.Reverse .Ancestors -}}
+    {{- $skipAncestor := or .IsHome (eq .RelPermalink $langPagesPath) -}}
+    {{- if and (not $skipAncestor) .Title -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+      {{- $pos = add $pos 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+  {{- $crumbNode = dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" .Permalink) "itemListElement" $crumbs -}}
 {{- end -}}
 
-{{- /* ── All other pages: WebPage ── */ -}}
-{{- if and (not .IsHome) (ne .Type "blog") -}}
-{{- $schema := dict
-  "@context" "https://schema.org"
-  "@type" "WebPage"
-  "name" .Title
-  "url" .Permalink
-  "isPartOf" (dict "@id" $siteID)
-  "publisher" (dict "@id" $orgID)
--}}
-{{- with .Description -}}{{- $schema = merge $schema (dict "description" .) -}}{{- end -}}
-{{- $schema | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML }}
-{{- end -}}
+{{- /* ── Assemble single @graph and emit ── */ -}}
+{{- $graph := slice $org $website -}}
+{{- if $pageNode  -}}{{- $graph = $graph | append $pageNode  -}}{{- end -}}
+{{- if $crumbNode -}}{{- $graph = $graph | append $crumbNode -}}{{- end -}}
+{{- dict "@context" "https://schema.org" "@graph" $graph | jsonify (dict "indent" "  " "escapeHTML" false) | printf "<script type=\"application/ld+json\">\n%s\n</script>" | safeHTML -}}
