@@ -25,6 +25,7 @@
 
                             <altcha-widget
                                 v-if="loginFailed"
+                                :key="loginAttemptKey"
                                 ref="altchaWidgetID"
                                 :challenge="altchaChallengeUrl"
                                 configuration='{"hideFooter":true}'
@@ -51,6 +52,7 @@
 
                             <altcha-widget
                                 v-if="loginFailed"
+                                :key="loginAttemptKey"
                                 ref="altchaWidgetEmail"
                                 :challenge="altchaChallengeUrl"
                                 configuration='{"hideFooter":true}'
@@ -104,6 +106,7 @@ export default {
             altchaToken: "",
             loginType: "",
             loginFailed: false,
+            loginAttemptKey: 0,
 
             totpValue: "",
             language: "en"
@@ -212,13 +215,10 @@ export default {
                 error.status == StatusTotpInvalid;
 
             if (this.loginFailed) {
-                // Captcha is already showing — clear the used token and reset
-                // the widget so the user gets a fresh challenge for the next attempt.
+                // Captcha is already showing — increment the key to force a
+                // fresh widget mount so it fetches a new challenge (not reused).
                 this.altchaToken = "";
-                const ref = this.loginType === 'id'
-                    ? this.$refs.altchaWidgetID
-                    : this.$refs.altchaWidgetEmail;
-                ref?.reset();
+                this.loginAttemptKey++;
             } else if (error.status === Api.StatusAltchaInvalid) {
                 // Server signals the captcha rate-limit has been reached:
                 // show the altcha widget for the first time.

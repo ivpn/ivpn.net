@@ -9,6 +9,7 @@
             <div v-if="requiresAltchaGate" class="altcha-gate">
                 <p>{{ $t('account.payments.creditCard.verifyCaptcha') }}</p>
                 <altcha-widget
+                    :key="altchaAttemptKey"
                     ref="altchaGateWidget"
                     :challenge="altchaChallengeUrl"
                     configuration='{"hideFooter":true}'
@@ -49,6 +50,7 @@
                      can re-verify before retrying -->
                 <altcha-widget
                     v-if="showAltchaInForm"
+                    :key="altchaAttemptKey"
                     ref="altchaFormWidget"
                     :challenge="altchaChallengeUrl"
                     configuration='{"hideFooter":true}'
@@ -107,6 +109,8 @@ export default {
             captchaGatePassed: false,
             // True after a payment attempt fails; triggers in-form altcha
             paymentFailed: false,
+            // Incremented on every attempt to force a fresh widget mount
+            altchaAttemptKey: 0,
         };
     },
     async created() {
@@ -179,13 +183,8 @@ export default {
                 // Mark that a payment attempt has failed so the in-form altcha
                 // widget is shown and the button stays disabled until re-solved.
                 this.altchaToken = "";
-                if (this.paymentFailed) {
-                    // Widget already rendered — reset it for a fresh challenge
-                    this.$refs.altchaFormWidget?.reset();
-                } else {
-                    // First failure — the widget will mount fresh in UNVERIFIED state
-                    this.paymentFailed = true;
-                }
+                this.altchaAttemptKey++;
+                this.paymentFailed = true;
                 return;
             }
 
