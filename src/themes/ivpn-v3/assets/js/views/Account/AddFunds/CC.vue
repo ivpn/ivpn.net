@@ -5,20 +5,24 @@
         </div>
         <div v-if="braintree != null">
 
+            <!-- Rate-limited: hide form and captcha, only show the error -->
+            <p v-if="isRateLimited" class="error">{{ error.message }}</p>
+
             <!-- Gate: shown for new accounts before the CC form is revealed -->
-            <div v-if="requiresAltchaGate" class="altcha-gate">
+            <div v-if="requiresAltchaGate && !isRateLimited" class="altcha-gate">
                 <p>{{ $t('account.payments.creditCard.verifyCaptcha') }}</p>
                 <altcha-widget
                     :key="altchaAttemptKey"
                     ref="altchaGateWidget"
                     :challenge="altchaChallengeUrl"
                     configuration='{"hideFooter":true}'
+                    data-altcha-theme="business"
                     @statechange="onAltchaStateChange"
                 ></altcha-widget>
             </div>
 
-            <!-- CC form: hidden while the gate is active or card verification failed -->
-            <form v-if="!requiresAltchaGate && !this.cardFailedVerification" @submit.prevent="makePayment()">
+            <!-- CC form: hidden while the gate is active or card verification failed or rate-limited -->
+            <form v-if="!requiresAltchaGate && !this.cardFailedVerification && !isRateLimited" @submit.prevent="makePayment()">
                 <braintree-cc
                     :braintree="braintree"
                     v-bind:amount="price.price"
@@ -54,6 +58,7 @@
                     ref="altchaFormWidget"
                     :challenge="altchaChallengeUrl"
                     configuration='{"hideFooter":true}'
+                    data-altcha-theme="business"
                     @statechange="onAltchaStateChange"
                 ></altcha-widget>
 
@@ -92,6 +97,7 @@
 import BraintreeCc from "@/components/BraintreeCc.vue";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import 'altcha';
+import 'altcha/themes/business.css';
 import { mapState } from "vuex";
 import matomo from "@/api/matomo.js";
 import { useI18n } from "vue-i18n";
@@ -107,7 +113,7 @@ export default {
             language: "en",
             // True once the new-account altcha gate has been passed
             captchaGatePassed: false,
-            // True after a payment attempt fails; triggers in-form altcha
+            // True after the first payment failure; triggers in-form altcha
             paymentFailed: false,
             // Incremented on every attempt to force a fresh widget mount
             altchaAttemptKey: 0,
@@ -147,9 +153,12 @@ export default {
         requiresAltchaGate() {
             return this.account?.is_new && !this.captchaGatePassed;
         },
-        // True after the first payment failure; shows the in-form altcha widget
+        // True after the first payment failure; triggers in-form altcha
         showAltchaInForm() {
             return this.paymentFailed;
+        },
+        isRateLimited() {
+            return this.error && this.error.status === 429;
         },
         altchaChallengeUrl() {
             return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
@@ -182,9 +191,13 @@ export default {
             if (this.error) {
                 // Mark that a payment attempt has failed so the in-form altcha
                 // widget is shown and the button stays disabled until re-solved.
+                // For 429 (rate-limited) do NOT show the altcha widget — just
+                // surface the error message and leave the form hidden.
                 this.altchaToken = "";
-                this.altchaAttemptKey++;
-                this.paymentFailed = true;
+                if (!this.isRateLimited) {
+                    this.altchaAttemptKey++;
+                    this.paymentFailed = true;
+                }
                 return;
             }
 

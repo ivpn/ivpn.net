@@ -2,7 +2,8 @@
     <div class="login-form-container">                
         <div class="login-box">
             <form @submit.prevent="login()" novalidate>
-                <h1>{{ $t('login.title') }}</h1>  
+                <h1>{{ $t('login.title') }}</h1>
+
                 <tabs @onTabChanged="updateLoginType">
                     <tab :selected="loginType == 'id'" :tabid="'id'" :name="$t('login.withAccountId')" class="login-tab">
                         <div class="login-fields">
@@ -29,11 +30,9 @@
                                 ref="altchaWidgetID"
                                 :challenge="altchaChallengeUrl"
                                 configuration='{"hideFooter":true}'
+                                data-altcha-theme="business"
                                 @statechange="onAltchaStateChange"
                             ></altcha-widget>
-                            <!-- <div class="forgot">
-                                <a href="/forgot?">Forgot Your Account ID?</a>
-                            </div>-->
                         </div>
                     </tab>
                     <tab :selected="loginType == 'email'" :tabid="'email'" :name="$t('login.withEmailAndPassword')" class="login-tab">
@@ -56,6 +55,7 @@
                                 ref="altchaWidgetEmail"
                                 :challenge="altchaChallengeUrl"
                                 configuration='{"hideFooter":true}'
+                                data-altcha-theme="business"
                                 @statechange="onAltchaStateChange"
                             ></altcha-widget>
 
@@ -84,10 +84,9 @@ import 'altcha';
 import Tabs from "@/components/Tabs.vue";
 import Tab from "@/components/Tab.vue";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
-
 import { mapState } from "vuex";
-
 import { useI18n } from "vue-i18n";
+import "altcha/themes/business.css";
 
 const StatusTotpRequired = 70011;
 const StatusTotpInvalid = 100010;
@@ -142,6 +141,9 @@ export default {
         },
         altchaChallengeUrl() {
             return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
+        },
+        isRateLimited() {
+            return this.error && this.error.status === 429;
         },
     },
     watch: {
@@ -213,6 +215,14 @@ export default {
             this.totpRequired =
                 error.status == StatusTotpRequired ||
                 error.status == StatusTotpInvalid;
+
+            // On 429 (rate-limit hard block) always hide the captcha widget,
+            // regardless of whether it was already visible.
+            if (error.status === 429) {
+                this.altchaToken = "";
+                this.loginFailed = false;
+                return;
+            }
 
             if (this.loginFailed) {
                 // Captcha is already showing — increment the key to force a
