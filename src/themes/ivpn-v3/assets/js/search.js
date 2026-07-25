@@ -26,7 +26,9 @@ const app = createApp({
         fetchAndSearch(query) {
             // Derive locale from the current URL path (/en/..., /es/..., etc.)
             // so the correct per-locale index is fetched. Fall back to 'en'.
-            const locale = window.location.pathname.split('/').filter(Boolean)[0] || 'en';
+            const knownLocales = ['en', 'es'];
+            const firstSegment = window.location.pathname.split('/').filter(Boolean)[0] || '';
+            const locale = knownLocales.includes(firstSegment) ? firstSegment : 'en';
             fetch(`/${locale}/pages/index.json`)
                 .then(response => {
                     if (!response.ok) {
