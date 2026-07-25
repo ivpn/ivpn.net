@@ -24,11 +24,24 @@ const app = createApp({
             }
         },
         fetchAndSearch(query) {
-            fetch('/en/pages/index.json')
-                .then(response => response.json())
+            // Derive locale from the current URL path (/en/..., /es/..., etc.)
+            // so the correct per-locale index is fetched. Fall back to 'en'.
+            const locale = window.location.pathname.split('/').filter(Boolean)[0] || 'en';
+            fetch(`/${locale}/pages/index.json`)
+                .then(response => {
+                    if (!response.ok) {
+                        // Try the English index as a fallback
+                        return fetch('/en/pages/index.json').then(r => r.json());
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     this.collection = data
                     this.search(data, query)
+                })
+                .catch(() => {
+                    this.renderTitle([], query)
+                    this.renderList([])
                 });
         },
         search(data, query) {
