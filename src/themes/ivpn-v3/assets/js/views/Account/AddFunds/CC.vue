@@ -3,26 +3,30 @@
         <div v-if="this.cardFailedVerification">
             <p class="error">{{ $t('account.payments.creditCard.cardIssue') }}</p>
         </div>
-        <div v-if="braintree != null">
+        <div v-if="requiresAltchaGate" class="altcha-gate">
+            <p>{{ $t('account.payments.creditCard.verifyCaptcha') }}</p>
+            <altcha-widget
+                :key="altchaAttemptKey"
+                ref="altchaGateWidget"
+                :challenge="altchaChallengeUrl"
+                configuration='{"hideFooter":true}'
+                data-altcha-theme="business"
+                @statechange="onAltchaStateChange"
+            ></altcha-widget>
+            <div v-if="altchaGateSolved" style="display: flex; justify-content: center; margin-top: 1rem;">
+                <button class="btn btn-solid btn-big" @click="proceedToPayment">
+                    {{ $t('account.payments.creditCard.continueToPayment') }}
+                </button>
+            </div>
+        </div>
+
+        <div v-else-if="braintree != null">
 
             <!-- Rate-limited: hide form and captcha, only show the error -->
             <p v-if="isRateLimited" class="error">{{ error.message }}</p>
 
-            <!-- Gate: shown for new accounts before the CC form is revealed -->
-            <div v-if="requiresAltchaGate && !isRateLimited" class="altcha-gate">
-                <p>{{ $t('account.payments.creditCard.verifyCaptcha') }}</p>
-                <altcha-widget
-                    :key="altchaAttemptKey"
-                    ref="altchaGateWidget"
-                    :challenge="altchaChallengeUrl"
-                    configuration='{"hideFooter":true}'
-                    data-altcha-theme="business"
-                    @statechange="onAltchaStateChange"
-                ></altcha-widget>
-            </div>
-
-            <!-- CC form: hidden while the gate is active or card verification failed or rate-limited -->
-            <form v-if="!requiresAltchaGate && !this.cardFailedVerification && !isRateLimited" @submit.prevent="makePayment()">
+            <!-- CC form: hidden while card verification failed or rate-limited -->
+            <form v-if="!this.cardFailedVerification && !isRateLimited" @submit.prevent="makePayment()">
                 <braintree-cc
                     :braintree="braintree"
                     v-bind:amount="price.price"
@@ -84,7 +88,19 @@
                 width="48"
                 height="48"
             />
-            <div v-if="error">
+            <!-- Reactive altcha: shown when client-token request returned captcha required -->
+            <div v-if="requiresAltchaForToken" class="altcha-gate">
+                <p>{{ $t('account.payments.creditCard.verifyCaptcha') }}</p>
+                <altcha-widget
+                    :key="altchaAttemptKey"
+                    ref="altchaTokenWidget"
+                    :challenge="altchaChallengeUrl"
+                    configuration='{"hideFooter":true}'
+                    data-altcha-theme="business"
+                    @statechange="onAltchaStateChange"
+                ></altcha-widget>
+            </div>
+            <div v-if="error && !requiresAltchaForToken">
                 <div class="error-message">
                     {{ error.message }}
                 </div>
@@ -113,6 +129,8 @@ export default {
             language: "en",
             // True once the new-account altcha gate has been passed
             captchaGatePassed: false,
+            // True once the gate captcha is solved; shows the "Continue" button
+            altchaGateSolved: false,
             // True after the first payment failure; triggers in-form altcha
             paymentFailed: false,
             // Incremented on every attempt to force a fresh widget mount
@@ -120,7 +138,12 @@ export default {
         };
     },
     async created() {
-        this.createClientToken();
+        // For existing accounts, initialise Braintree immediately.
+        // For new accounts it is deferred to proceedToPayment() so the
+        // client-token request is only made after the altcha gate is solved.
+        if (!this.account?.is_new) {
+            this.createClientToken();
+        }
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
@@ -143,9 +166,8 @@ export default {
         paymentAllowed: function () {
             if (this.inProgress) return false;
             if (!this.formValid) return false;
-            // New accounts always require altcha; active accounts require it
-            // only after a payment has failed at least once.
-            if ((this.account?.is_new || this.paymentFailed) && !this.altchaToken) return false;
+            // After a payment failure, a fresh altcha token is required before retrying.
+            if (this.paymentFailed && !this.altchaToken) return false;
 
             return true;
         },
@@ -160,8 +182,21 @@ export default {
         isRateLimited() {
             return this.error && this.error.status === 429;
         },
+        // True when client-token failed with captcha required (status 70001);
+        // shows a reactive altcha widget that auto-retries the request on solve.
+        requiresAltchaForToken() {
+            return !this.requiresAltchaGate && this.error?.status === 70001;
+        },
         altchaChallengeUrl() {
             return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
+        },
+    },
+    watch: {
+        // Force a fresh widget each time a token request fails with captcha required.
+        error(newError) {
+            if (newError?.status === 70001) {
+                this.altchaAttemptKey++;
+            }
         },
     },
     methods: {
@@ -211,11 +246,26 @@ export default {
         onAltchaStateChange(ev) {
             if (ev.detail && ev.detail.state === 'verified') {
                 this.altchaToken = ev.detail.payload || "";
-                // Mark the gate as passed when the new-account gate widget solves
+                // Gate: show "Continue to payment" button (new-account pre-emptive flow).
                 if (this.account?.is_new && !this.captchaGatePassed) {
-                    this.captchaGatePassed = true;
+                    this.altchaGateSolved = true;
+                // Reactive flow: client-token previously failed with captcha required;
+                // automatically retry the request now that a valid token is available.
+                } else if (this.requiresAltchaForToken) {
+                    this.createClientToken();
                 }
             } else {
+                this.altchaToken = "";
+                this.altchaGateSolved = false;
+            }
+        },
+
+        async proceedToPayment() {
+            this.captchaGatePassed = true;
+            await this.createClientToken();
+            // The gate token has been consumed by client-token; clear it so it
+            // is never sent to add-funds (a consumed token would be rejected).
+            if (!this.error) {
                 this.altchaToken = "";
             }
         },

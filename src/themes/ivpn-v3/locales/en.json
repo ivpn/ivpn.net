@@ -555,6 +555,7 @@
                 "automaticRenewal": "Automatic renewal",
                 "ccAutomaticRenewalInfo": "Automatic renewals are always off by default. You may enable this if it is more convenient for you. Your card data will be stored by Braintree however you can cancel automatic renewal at any time from your account page.",
                 "makePayment": "Make payment",
+                "continueToPayment": "Continue to payment",
                 "verifyCaptcha": "Please verify you're not a robot to continue with your payment.",
                 "cardNumber": "Card number",
                 "errorAbove": "The above error message comes directly from Braintree, our credit card payment processor. You may update your card details and/or add additional information and try again.",
