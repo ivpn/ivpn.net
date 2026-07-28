@@ -138,10 +138,12 @@ export default {
         };
     },
     async created() {
-        // For existing accounts, initialise Braintree immediately.
+        // For existing (non-new) accounts, initialise Braintree immediately.
         // For new accounts it is deferred to proceedToPayment() so the
         // client-token request is only made after the altcha gate is solved.
-        if (!this.account?.is_new) {
+        // Guard: if account is not yet loaded (null) do nothing — it will be
+        // handled reactively once the store populates it.
+        if (this.account && !this.account.is_new) {
             this.createClientToken();
         }
     },
@@ -196,6 +198,14 @@ export default {
         error(newError) {
             if (newError?.status === 70001) {
                 this.altchaAttemptKey++;
+            }
+        },
+        // Handle the case where account loads after the component is created.
+        // Only initialise Braintree for existing (non-new) accounts here;
+        // new accounts go through the altcha gate via proceedToPayment().
+        account(newAccount) {
+            if (newAccount && !newAccount.is_new && !this.braintree && !this.inProgress) {
+                this.createClientToken();
             }
         },
     },
