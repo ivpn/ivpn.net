@@ -135,6 +135,9 @@ export default {
             paymentFailed: false,
             // Incremented on every attempt to force a fresh widget mount
             altchaAttemptKey: 0,
+            // Unique per component instance — appended to the challenge URL to
+            // prevent any proxy/browser from serving a cached challenge.
+            instanceId: Math.random().toString(36).slice(2),
         };
     },
     async created() {
@@ -190,7 +193,7 @@ export default {
             return !this.requiresAltchaGate && this.error?.status === 70001;
         },
         altchaChallengeUrl() {
-            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
+            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?v=' + this.instanceId + this.altchaAttemptKey;
         },
     },
     watch: {
