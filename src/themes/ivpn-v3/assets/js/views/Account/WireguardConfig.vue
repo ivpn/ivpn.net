@@ -194,6 +194,47 @@
                         <p v-if="dnsType == 'custom'" class="note note--input">{{ $t('account.wireguardTab.pleaseEnter') }}</p>
                     </div>
                 </div>
+
+                <!-- Quantum Resistance -->
+                <div class="quantum-config">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="quantum_enabled" v-model="showQuantum" @change="onQuantumToggle">
+                        <label for="quantum_enabled">{{ $t('account.wireguardTab.quantumResistanceEnable') }}</label>
+                    </label>
+                    <div v-if="showQuantum" class="quantum-section">
+                        <p class="note">{{ $t('account.wireguardTab.quantumResistanceDesc') }}</p>
+
+                        <div style="margin-top:12px">
+                            <label for="wgcfg_pq_pub1">{{ $t('account.wireguardTab.quantumPublicKey1') }}</label>
+                            <textarea
+                                id="wgcfg_pq_pub1"
+                                v-model="pqPublicKey1"
+                                @input="pqPrivKey1 = null"
+                                class="key-display"
+                                style="margin-top:6px"
+                                :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder1')"
+                            ></textarea>
+                        </div>
+
+                        <div style="margin-top:12px">
+                            <label for="wgcfg_pq_pub2">{{ $t('account.wireguardTab.quantumPublicKey2') }}</label>
+                            <textarea
+                                id="wgcfg_pq_pub2"
+                                v-model="pqPublicKey2"
+                                @input="pqPrivKey2 = null"
+                                class="key-display"
+                                style="margin-top:6px"
+                                :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder2')"
+                            ></textarea>
+                        </div>
+
+                        <a class="btn btn-border" href="" @click.prevent="generateQuantumKey" :class="{ disabled: isGeneratingPq }" style="margin-top:12px;display:inline-block">
+                            <span v-if="isGeneratingPq">{{ $t('account.wireguardTab.quantumGenerating') }}</span>
+                            <span v-else>{{ $t('account.wireguardTab.quantumGenerate') }}</span>
+                        </a>
+                        <p v-if="pqError" class="error" style="margin-top:8px">{{ pqError }}</p>
+                    </div>
+                </div>
                 <h3>{{ $t('account.wireguardTab.configStep4Title') }}</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
@@ -268,6 +309,14 @@ export default {
             selectedBlockList: null,
             isDnsHardcore: false,
             language: "en",
+            showQuantum: true,
+            isGeneratingPq: false,
+            pqPublicKey1: "",
+            pqPublicKey2: "",
+            pqPrivKey1: null,
+            pqPrivKey2: null,
+            pqPresharedKey: "",
+            pqError: null,
         };
     },
     watch: {
@@ -388,6 +437,7 @@ export default {
             "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
+            (this.showQuantum && this.pqPresharedKey ? "\nPresharedKey = " + this.pqPresharedKey : "") +
             "\nAllowedIPs = " + config.peer.allowed_ips +
             "\nEndpoint = " + config.peer.endpoint;
         },
@@ -601,14 +651,28 @@ export default {
                 this.error.addKey = "Public key is required";
                 return;
             }
+
+            // Auto-generate quantum preshared key if enabled and not yet generated
+            if (this.showQuantum && !this.pqPresharedKey) {
+                await this.generateQuantumKey();
+            }
+
             try {
                 let res = await Api.addWireguardKey({
                     public_key: publicKey,
                     comment: keyComment,
+                    kem_public_key1: this.showQuantum ? this.pqPublicKey1 : "",
+                    kem_public_key2: this.showQuantum ? this.pqPublicKey2 : "",
                 });
                 this.ipAddress = res.ip_address;
                 this.publicKey = publicKey;
                 this.error.addKey = null;
+
+                // Derive preshared key from ciphers returned by server
+                if (this.showQuantum && res.kem_cipher1 && res.kem_cipher2 && this.pqPrivKey1 && this.pqPrivKey2) {
+                    await this.derivePresharedKey(res.kem_cipher1, res.kem_cipher2);
+                }
+
                 this.updateQuery();
             } catch (error) {
                 this.error.addKey = error.message;
@@ -623,7 +687,74 @@ export default {
                 this.validation.download = false;
             }
         },
-        isValidIP(ip) {
+        onQuantumToggle() {
+            if (!this.showQuantum) {
+                this.pqPublicKey1 = "";
+                this.pqPublicKey2 = "";
+                this.pqPrivKey1 = null;
+                this.pqPrivKey2 = null;
+                this.pqPresharedKey = "";
+                this.pqError = null;
+            }
+        },
+        async generateQuantumKey() {
+            this.isGeneratingPq = true;
+            this.pqPublicKey1 = "";
+            this.pqPublicKey2 = "";
+            this.pqPrivKey1 = null;
+            this.pqPrivKey2 = null;
+            this.pqPresharedKey = "";
+            this.pqError = null;
+            try {
+                const { createKyber1024 } = await import("@oqs/liboqs-js");
+                const kem1 = await createKyber1024();
+                try {
+                    const { publicKey, secretKey } = kem1.generateKeyPair();
+                    this.pqPublicKey1 = btoa(String.fromCharCode(...publicKey));
+                    this.pqPrivKey1 = Uint8Array.from(secretKey);
+                } finally { kem1.destroy(); }
+
+                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
+                const kem2 = await createClassicMcEliece348864();
+                try {
+                    const { publicKey, secretKey } = kem2.generateKeyPair();
+                    // chunk-encode the large McEliece public key
+                    let bin = ""; const chunk = 8192;
+                    for (let i = 0; i < publicKey.length; i += chunk)
+                        bin += String.fromCharCode(...publicKey.subarray(i, i + chunk));
+                    this.pqPublicKey2 = btoa(bin);
+                    this.pqPrivKey2 = Uint8Array.from(secretKey);
+                } finally { kem2.destroy(); }
+            } catch (err) {
+                this.pqError = err && err.message ? err.message : String(err);
+            } finally {
+                this.isGeneratingPq = false;
+            }
+        },
+        async derivePresharedKey(cipher1B64, cipher2B64) {
+            try {
+                const c1 = Uint8Array.from(atob(cipher1B64), ch => ch.charCodeAt(0));
+                const c2 = Uint8Array.from(atob(cipher2B64), ch => ch.charCodeAt(0));
+
+                const { createKyber1024 } = await import("@oqs/liboqs-js");
+                const kem1 = await createKyber1024();
+                let ss1;
+                try { ss1 = kem1.decapsulate(c1, this.pqPrivKey1); } finally { kem1.destroy(); }
+
+                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
+                const kem2 = await createClassicMcEliece348864();
+                let ss2;
+                try { ss2 = kem2.decapsulate(c2, this.pqPrivKey2); } finally { kem2.destroy(); }
+
+                const combined = new Uint8Array([...ss1, ...ss2]);
+                const hash = await crypto.subtle.digest("SHA-256", combined);
+                this.pqPresharedKey = btoa(String.fromCharCode(...new Uint8Array(hash)));
+            } finally {
+                this.pqPrivKey1 = null;
+                this.pqPrivKey2 = null;
+            }
+        },
+        async fetchBlockLists() {
             let ipv46_regex = /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/gm;
 
             return ipv46_regex.test(ip);
@@ -653,4 +784,16 @@ export default {
 @use "@/styles/base.scss" as *;
 @use "@/styles/tabs.scss" as *;
 @use "@/styles/vpn-configuration.scss" as *;
+
+.key-display {
+    width: 100%;
+    min-height: 72px;
+    font-family: monospace;
+    font-size: 11px;
+    padding: 6px 8px;
+    resize: vertical;
+    box-sizing: border-box;
+    word-break: break-all;
+    display: block;
+}
 </style>
