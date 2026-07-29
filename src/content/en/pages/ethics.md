@@ -85,7 +85,7 @@ sections:
         </tr>
         <tr>
           <td><strong>Improving our service</strong> <br>Consistent improvements to our service lead to customers recommend us to others.</td>
-          <td><a href="/en/blog/quantum-resistant-wireguard-connections-ivpn-apps/">Quantum-resistant connections</a><br><a href="/en/blog/v2ray-obfuscation-available-all-ivpn-platforms/">V2Ray obfuscation</a><br><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Early WireGuard support</a></td> 
+          <td><a href="/blog/quantum-resistant-wireguard-connections-ivpn-apps/">Quantum-resistant connections</a><br><a href="/blog/v2ray-obfuscation-available-all-ivpn-platforms/">V2Ray obfuscation</a><br><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Early WireGuard support</a></td> 
         </tr>
         <tr>
           <td><strong>Educational projects</strong><br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.</td>
