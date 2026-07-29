@@ -97,7 +97,7 @@ sections:
       - image: /images-static/uploads/team-viktor.png
         image_retina: /images-static/uploads/team-viktor-2x.png
         name: Viktor Vecsei
-        description: Viktor leads operations at IVPN and wears many hats: product management, keeping the day-to-day running smoothly, communications, and representing IVPN publicly.
+        description: "Viktor leads operations at IVPN and wears many hats: product management, keeping the day-to-day running smoothly, communications, and representing IVPN publicly."
         linkedin: https://www.linkedin.com/in/viktorvecsei/
         github: https://github.com/johnnyburnaway
 ---
