@@ -1,5 +1,6 @@
 ---
 title: Manifesto
+description: "IVPN's manifesto: why we resist the surveillance economy and build tools to help people reclaim control over their personal data."
 url: /en/manifesto/
 aliases: ['/manifesto/']
 ---

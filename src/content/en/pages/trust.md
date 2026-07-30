@@ -1,8 +1,11 @@
 ---
 title: Signals of Trustworthiness
+description: "Historic 2018 document: IVPN's answers to CDT's Signals of a Trustworthy VPN questionnaire, preserved unedited."
 url: /trust/
 ---
 # Signals of Trustworthiness
+
+> *Historic document (2018).* This page reproduces the answers IVPN submitted to the Center for Democracy & Technology (CDT) Signals of a Trustworthy VPN project, [published by CDT](https://cdt.org/insights/unedited-answers-signals-of-trustworthy-vpns/). Some answers are no longer accurate. We keep it unedited because this is how it was submitted and published.
 
 ## Part I. Corporate Accountability & Business Model
 
