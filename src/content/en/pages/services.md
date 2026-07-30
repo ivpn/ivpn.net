@@ -46,9 +46,11 @@ sections:
       - Open-source apps for iOS, Android, macOS, Windows, Linux plus config generator for custom setups
       - Bare metal servers in 58 locations in 41 countries
       - Choice of WireGuard, OpenVPN, and IPSec (iOS) with automatic key rotation and perfect forward secrecy
+      - Quantum-resistant WireGuard enabled by default in our apps, with no speed cost
+      - V2Ray obfuscation (VMess over QUIC or TCP) on every platform, to connect from networks that block VPNs
       - Built-in firewall/killswitch and DNS leak protection
       - Multi-hop routing through servers in separate jurisdictions for stronger privacy
-      - AntiTracker to block ads and tracking domains (single predefined list)
+      - AntiTracker to block ads and tracking domains (predefined list)
     links:
       - text: IVPN on GitHub
         url: https://github.com/ivpn/
@@ -193,7 +195,7 @@ sections:
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:
-      - Under the Plus and Pro plan, MailX, modDNS, and Portmaster authorise access without receiving or storing your IVPN account ID.
+      - Under the Plus and Pro Suite plans, Mailx, modDNS, and Portmaster authorise access without receiving or storing your IVPN account ID.
       - When you activate a service, IVPN sends it a cryptographic token derived from your account. Each service uses a hash of that token to confirm your subscription is active. None of them hold a direct link back to your IVPN account.
     link:
       text: Read about Unlinked Access

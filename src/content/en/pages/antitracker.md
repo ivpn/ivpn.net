@@ -1,6 +1,6 @@
 ---
 title: VPN with Ad block and Anti-Tracking
-description: Increase your privacy protection by using IVPN with built-in tracking protection. We block requests from advertising and data harvesting companies to make your browsing experience lighter and more private.
+description: AntiTracker blocks ads, trackers, adware, and malware in every IVPN app, with a selectable blocklist and an optional Hardcore mode for Google and Facebook.
 url: /en/antitracker/
 aliases: ['/antitracker/']
 ---
@@ -20,6 +20,6 @@ For stronger protection against the leaders of the surveillance economy, you can
 {{< figure class="features__image--light" src="/images-static/uploads/what-is-a-vpn-antitracker.svg" alt="What is a VPN - Antitracker" >}}
 {{< figure class="features__image--dark" src="/images-static/uploads/what-is-a-vpn-antitracker-dark.svg" alt="What is a VPN - Antitracker" >}}
 
-Each IVPN plan includes AntiTracker, it works on every device supported by our service and uses a selection of continuously updated [block lists](/knowledgebase/general/antitracker-plus-lists-explained/).
+Each IVPN plan includes AntiTracker, it works on every device supported by our service and uses a selection of continuously updated [blocklists](/knowledgebase/general/antitracker-plus-lists-explained/).
 
 To learn more about IVPN’s AntiTracker visit our dedicated [FAQ](/knowledgebase/general/antitracker-faq/). 

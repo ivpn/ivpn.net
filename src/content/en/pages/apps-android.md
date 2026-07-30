@@ -1,6 +1,6 @@
 ---
 title: IVPN for Android - Open-source VPN app for your Android
-description: The IVPN app for Android offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
+description: The IVPN app for Android, with AntiTracker, split tunnelling, automatic connection on insecure Wi-Fi, and Multi-hop.
 h1: IVPN for Android
 subtitle: Supports Android 7.1+
 url: /en/apps-android/
@@ -46,12 +46,14 @@ releases: [{
 ## Features
 
 - WireGuard and OpenVPN protocols.
+- Quantum-resistant WireGuard connections.
 - WireGuard privacy controls - Define automatic key and IP address rotation schedule.
 - AntiTracker that blocks ads, adware, malicious websites and data harvesting trackers.
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 - Split tunnel to allow some apps to bypass the VPN.
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Custom DNS servers, DoT via Android native Private DNS.
+- V2Ray obfuscation to circumvent censorship.
 - Mock location for GPS.
 - Tapjacking protection.
 

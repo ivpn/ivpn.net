@@ -1,6 +1,6 @@
 ---
 title: IVPN for Linux - Open-source VPN app for Linux
-description: IVPN for Linux offers you comprehensive privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
+description: IVPN for Linux offers privacy leak protection with the IVPN firewall, automatic connection on insecure Wi-Fi and Multi-hop.
 h1: IVPN for Linux
 subtitle: Supports 64-bit Linux 3.10+
 url: /en/apps-linux/
@@ -58,15 +58,16 @@ contents:
 ## Features {#features}
 
 * WireGuard or OpenVPN protocols.
+* Quantum-resistant WireGuard connections.
 * GUI or CLI (command-line interface).
 * WireGuard privacy controls - Define automatic key and IP address rotation schedule.
 * AntiTracker that blocks ads, adware, malicious websites and data harvesting trackers.
-* Firewall / kill switch - Ability to configure as on-demand or always-on. Offers comprehensive protection against DNS, IPv6, disconnection and WebRTC leaks.
+* Firewall / kill switch - Ability to configure as on-demand or always-on. Protects against DNS, IPv6 and disconnection leaks.
 * Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection.
 * Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 * Allow LAN traffic when connected to VPN.
 * Pause VPN for when disabling VPN connection temporarily is required.
-* Obfsproxy option to circumvent censorship.
+* V2Ray and obfs4 options to circumvent censorship.
 * Custom DNS servers, with DoH.
 * Split Tunnel to allow designated apps to bypass the VPN tunnel.
 
