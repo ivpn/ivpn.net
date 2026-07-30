@@ -46,7 +46,7 @@ releases: [{
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Allow LAN traffic when connected to VPN.
 - Pause VPN for when disabling VPN connection temporarily is required.
-- V2Ray and obfsproxy options to circumvent censorship.
+- V2Ray and obfs4 options to circumvent censorship.
 - Custom DNS servers, with DoH.
 - Split tunneling.
 - Auto-update.
