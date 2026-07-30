@@ -197,10 +197,12 @@
 
                 <!-- Quantum Resistance -->
                 <div class="quantum-config">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="quantum_enabled" v-model="showQuantum" @change="onQuantumToggle">
-                        <label for="quantum_enabled">{{ $t('account.wireguardTab.quantumResistanceEnable') }}</label>
-                    </label>
+                    <div class="quantum-header">
+                        <h4 class="quantum-title">{{ $t('account.wireguardTab.quantumResistanceEnable') }}</h4>
+                        <label class="quantum-toggle-label" for="quantum_enabled">
+                            <input type="checkbox" id="quantum_enabled" v-model="showQuantum" @change="onQuantumToggle">
+                        </label>
+                    </div>
                     <div v-if="showQuantum" class="quantum-section">
                         <p class="note">{{ $t('account.wireguardTab.quantumResistanceDesc') }}</p>
 
@@ -795,5 +797,28 @@ export default {
     box-sizing: border-box;
     word-break: break-all;
     display: block;
+}
+
+.quantum-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.quantum-title {
+    margin: 0;
+}
+
+.quantum-toggle-label {
+    flex-shrink: 0;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        display: block;
+    }
 }
 </style>

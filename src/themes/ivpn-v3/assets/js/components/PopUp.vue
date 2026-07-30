@@ -135,6 +135,12 @@ export default {
 .popup--small {
     min-width: 320px;    
     max-width: 550px;
+
+    @media (max-width: $brk-mobile) {
+        min-width: 0;
+        width: calc(100vw - 16px);
+        max-width: calc(100vw - 16px);
+    }
 }
 
 .overlay {
@@ -167,6 +173,8 @@ export default {
 
         @media (max-width: $brk-mobile) {
             padding: 8px 4px;
+            width: calc(100vw - 16px);
+            max-width: calc(100vw - 16px);
         }
 
         @include light-theme((

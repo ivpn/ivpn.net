@@ -135,6 +135,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "@/styles/buttons.scss" as *;
+@use "@/styles/_vars.scss" as *;
 
 section {
     position: relative;
@@ -156,5 +157,13 @@ ul {
 
 .account-link-spacing {
     margin-bottom: 20px;
+}
+
+.btn {
+    @media (max-width: $brk-mobile) {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }
 </style>

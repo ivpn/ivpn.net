@@ -303,6 +303,11 @@ export default {
     width: 100%;
     max-width: 550px;
     box-sizing: border-box;
+
+    @media (max-width: $brk-mobile) {
+        max-width: 100%;
+        padding: 8px;
+    }
 }
 
 input[type="text"],
@@ -335,11 +340,10 @@ select {
 }
 
 .quantum-section {
-    border-left: 3px solid #398fe6;
-    padding-left: 16px;
+    padding-left: 0;
 
     @media (max-width: $brk-mobile) {
-        padding-left: 10px;
+        padding-left: 0;
     }
 }
 
