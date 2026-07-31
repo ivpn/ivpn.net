@@ -315,6 +315,7 @@ export default {
             isGeneratingPq: false,
             pqPublicKey1: "",
             pqPublicKey2: "",
+            pqPresharedKey: "",
             pqError: null,
         };
     },
@@ -436,6 +437,7 @@ export default {
             "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
+            (this.pqPresharedKey ? "\nPresharedKey = " + this.pqPresharedKey : "") +
             "\nAllowedIPs = " + config.peer.allowed_ips +
             "\nEndpoint = " + config.peer.endpoint;
         },
@@ -650,8 +652,8 @@ export default {
                 return;
             }
 
-            // Auto-generate quantum preshared key if enabled and not yet generated
-            if (this.showQuantum && !this.pqPresharedKey) {
+            // Auto-generate quantum keys if enabled and not yet done
+            if (this.showQuantum && (!this.pqPublicKey1 || !this.pqPublicKey2)) {
                 await this.generateQuantumKey();
             }
 
@@ -665,6 +667,11 @@ export default {
                 this.ipAddress = res.ip_address;
                 this.publicKey = publicKey;
                 this.error.addKey = null;
+
+                // Store the server-derived preshared key for the config file
+                if (this.showQuantum && res.preshared_key) {
+                    this.pqPresharedKey = res.preshared_key;
+                }
 
                 this.updateQuery();
             } catch (error) {
@@ -684,6 +691,7 @@ export default {
             if (!this.showQuantum) {
                 this.pqPublicKey1 = "";
                 this.pqPublicKey2 = "";
+                this.pqPresharedKey = "";
                 this.pqError = null;
             }
         },
