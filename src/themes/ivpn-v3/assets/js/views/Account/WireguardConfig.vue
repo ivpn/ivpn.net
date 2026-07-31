@@ -315,9 +315,6 @@ export default {
             isGeneratingPq: false,
             pqPublicKey1: "",
             pqPublicKey2: "",
-            pqPrivKey1: null,
-            pqPrivKey2: null,
-            pqPresharedKey: "",
             pqError: null,
         };
     },
@@ -439,7 +436,6 @@ export default {
             "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
-            (this.showQuantum && this.pqPresharedKey ? "\nPresharedKey = " + this.pqPresharedKey : "") +
             "\nAllowedIPs = " + config.peer.allowed_ips +
             "\nEndpoint = " + config.peer.endpoint;
         },
@@ -670,11 +666,6 @@ export default {
                 this.publicKey = publicKey;
                 this.error.addKey = null;
 
-                // Derive preshared key from ciphers returned by server
-                if (this.showQuantum && res.kem_cipher1 && res.kem_cipher2 && this.pqPrivKey1 && this.pqPrivKey2) {
-                    await this.derivePresharedKey(res.kem_cipher1, res.kem_cipher2);
-                }
-
                 this.updateQuery();
             } catch (error) {
                 this.error.addKey = error.message;
@@ -693,9 +684,6 @@ export default {
             if (!this.showQuantum) {
                 this.pqPublicKey1 = "";
                 this.pqPublicKey2 = "";
-                this.pqPrivKey1 = null;
-                this.pqPrivKey2 = null;
-                this.pqPresharedKey = "";
                 this.pqError = null;
             }
         },
@@ -703,29 +691,23 @@ export default {
             this.isGeneratingPq = true;
             this.pqPublicKey1 = "";
             this.pqPublicKey2 = "";
-            this.pqPrivKey1 = null;
-            this.pqPrivKey2 = null;
-            this.pqPresharedKey = "";
             this.pqError = null;
             try {
                 const { createKyber1024 } = await import("@oqs/liboqs-js");
                 const kem1 = await createKyber1024();
                 try {
-                    const { publicKey, secretKey } = kem1.generateKeyPair();
+                    const { publicKey } = kem1.generateKeyPair();
                     this.pqPublicKey1 = btoa(String.fromCharCode(...publicKey));
-                    this.pqPrivKey1 = Uint8Array.from(secretKey);
                 } finally { kem1.destroy(); }
 
                 const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
                 const kem2 = await createClassicMcEliece348864();
                 try {
-                    const { publicKey, secretKey } = kem2.generateKeyPair();
-                    // chunk-encode the large McEliece public key
+                    const { publicKey } = kem2.generateKeyPair();
                     let bin = ""; const chunk = 8192;
                     for (let i = 0; i < publicKey.length; i += chunk)
                         bin += String.fromCharCode(...publicKey.subarray(i, i + chunk));
                     this.pqPublicKey2 = btoa(bin);
-                    this.pqPrivKey2 = Uint8Array.from(secretKey);
                 } finally { kem2.destroy(); }
             } catch (err) {
                 this.pqError = err && err.message ? err.message : String(err);
@@ -733,29 +715,7 @@ export default {
                 this.isGeneratingPq = false;
             }
         },
-        async derivePresharedKey(cipher1B64, cipher2B64) {
-            try {
-                const c1 = Uint8Array.from(atob(cipher1B64), ch => ch.charCodeAt(0));
-                const c2 = Uint8Array.from(atob(cipher2B64), ch => ch.charCodeAt(0));
-
-                const { createKyber1024 } = await import("@oqs/liboqs-js");
-                const kem1 = await createKyber1024();
-                let ss1;
-                try { ss1 = kem1.decapsulate(c1, this.pqPrivKey1); } finally { kem1.destroy(); }
-
-                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
-                const kem2 = await createClassicMcEliece348864();
-                let ss2;
-                try { ss2 = kem2.decapsulate(c2, this.pqPrivKey2); } finally { kem2.destroy(); }
-
-                const combined = new Uint8Array([...ss1, ...ss2]);
-                const hash = await crypto.subtle.digest("SHA-256", combined);
-                this.pqPresharedKey = btoa(String.fromCharCode(...new Uint8Array(hash)));
-            } finally {
-                this.pqPrivKey1 = null;
-                this.pqPrivKey2 = null;
-            }
-        },
+        async derivePresharedKey(cipher1B64, cipher2B64) {},
         async fetchBlockLists() {
             let ipv46_regex = /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/gm;
 

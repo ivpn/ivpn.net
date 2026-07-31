@@ -57,12 +57,6 @@
             </div>
 
             <!-- Derived PSK shown after successful add -->
-            <div v-if="derivedPresharedKey" class="psk-result mt-1">
-                <label>{{ $t('account.wireguardTab.quantumDerivedPsk') }}</label>
-                <p class="note mt-1">{{ $t('account.wireguardTab.quantumDerivedPskNote') }}</p>
-                <input type="text" readonly :value="derivedPresharedKey" class="psk-display mt-1" />
-                <button @click.prevent="copyPresharedKey" class="btn btn-icon mt-1">{{ $t('account.wireguardTab.quantumDerivedPskCopy') }}</button>
-            </div>
 
             <button @click.prevent="generatePqKey" :disabled="isGeneratingPq" class="btn btn-solid mt-1">
                 <span v-if="isGeneratingPq">{{ $t('account.wireguardTab.quantumGenerating') }}</span>
@@ -72,9 +66,8 @@
             <p class="error mt-1" v-if="pqError">{{ pqError }}</p>
         </div>
 
-        <button v-if="!derivedPresharedKey" :disabled="inProgress" class="btn btn-big btn-solid mt-2">{{ $t('account.wireguardTab.add') }}</button>
-        <button v-if="derivedPresharedKey" @click.prevent="closeDialog" class="btn btn-big btn-solid mt-2">{{ $t('account.wireguardTab.quantumDerivedPskDone') }}</button>
-        <button v-if="!derivedPresharedKey" @click.prevent="closeDialog" class="btn btn-icon btn-icon-red mt-1">{{ $t('account.wireguardTab.cancel') }}</button>
+        <button :disabled="inProgress" class="btn btn-big btn-solid mt-2">{{ $t('account.wireguardTab.add') }}</button>
+        <button @click.prevent="closeDialog" class="btn btn-icon btn-icon-red mt-1">{{ $t('account.wireguardTab.cancel') }}</button>
         </form>
     </div>
 </template>
@@ -85,28 +78,17 @@ import { useI18n } from "vue-i18n";
 
 const PQ_CODE = `import { createKyber1024, createClassicMcEliece348864 } from '@oqs/liboqs-js';
 
-// 1. Generate KEM keypairs and submit public keys to server
+// Generate KEM keypairs and submit public keys to server
 const kem1 = await createKyber1024();
-const { publicKey: pub1, secretKey: priv1 } = kem1.generateKeyPair();
+const { publicKey: pub1 } = kem1.generateKeyPair();
 kem1.destroy();
 
 const kem2 = await createClassicMcEliece348864();
-const { publicKey: pub2, secretKey: priv2 } = kem2.generateKeyPair();
+const { publicKey: pub2 } = kem2.generateKeyPair();
 kem2.destroy();
 
-// 2. Server encapsulates (kem-helper), returns kem_cipher1 & kem_cipher2
-// 3. Decapsulate ciphers to derive same preshared key as server
-const kem1d = await createKyber1024();
-const ss1 = kem1d.decapsulate(cipher1, priv1);
-kem1d.destroy();
-
-const kem2d = await createClassicMcEliece348864();
-const ss2 = kem2d.decapsulate(cipher2, priv2);
-kem2d.destroy();
-
-// SHA-256(ss1 || ss2) — mirrors CalculatePresharedKey on the server
-const hash = await crypto.subtle.digest('SHA-256', new Uint8Array([...ss1, ...ss2]));
-const presharedKey = btoa(String.fromCharCode(...new Uint8Array(hash)));`;
+// Server encapsulates (kem-helper) and stores the preshared key
+// Submit pub1 and pub2 as kem_public_key1 / kem_public_key2`;
 
 function uint8ToBase64(bytes) {
     let binary = "";
@@ -135,9 +117,6 @@ export default {
             isGeneratingPq: false,
             pqPublicKey1: "",
             pqPublicKey2: "",
-            pqPrivKey1: null,
-            pqPrivKey2: null,
-            derivedPresharedKey: "",
             pqError: null,
         };
     },
@@ -179,9 +158,6 @@ export default {
         resetPqKeys() {
             this.pqPublicKey1 = "";
             this.pqPublicKey2 = "";
-            this.pqPrivKey1 = null;
-            this.pqPrivKey2 = null;
-            this.derivedPresharedKey = "";
             this.pqError = null;
         },
 
@@ -198,17 +174,15 @@ export default {
                 const { createKyber1024 } = await import("@oqs/liboqs-js");
                 const kem1 = await createKyber1024();
                 try {
-                    const { publicKey, secretKey } = kem1.generateKeyPair();
+                    const { publicKey } = kem1.generateKeyPair();
                     this.pqPublicKey1 = uint8ToBase64(publicKey);
-                    this.pqPrivKey1 = Uint8Array.from(secretKey);
                 } finally { kem1.destroy(); }
 
                 const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
                 const kem2 = await createClassicMcEliece348864();
                 try {
-                    const { publicKey, secretKey } = kem2.generateKeyPair();
+                    const { publicKey } = kem2.generateKeyPair();
                     this.pqPublicKey2 = uint8ToBase64(publicKey);
-                    this.pqPrivKey2 = Uint8Array.from(secretKey);
                 } finally { kem2.destroy(); }
             } catch (err) {
                 this.pqError = err && err.message ? err.message : String(err);
@@ -217,35 +191,9 @@ export default {
             }
         },
 
-        async derivePresharedKey(cipher1B64, cipher2B64) {
-            try {
-                const c1 = Uint8Array.from(atob(cipher1B64), ch => ch.charCodeAt(0));
-                const c2 = Uint8Array.from(atob(cipher2B64), ch => ch.charCodeAt(0));
+        async derivePresharedKey(cipher1B64, cipher2B64) {}, // no-op: PSK is stored server-side only
 
-                const { createKyber1024 } = await import("@oqs/liboqs-js");
-                const kem1 = await createKyber1024();
-                let ss1;
-                try { ss1 = kem1.decapsulate(c1, this.pqPrivKey1); } finally { kem1.destroy(); }
-
-                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
-                const kem2 = await createClassicMcEliece348864();
-                let ss2;
-                try { ss2 = kem2.decapsulate(c2, this.pqPrivKey2); } finally { kem2.destroy(); }
-
-                const combined = new Uint8Array([...ss1, ...ss2]);
-                const hash = await crypto.subtle.digest("SHA-256", combined);
-                this.derivedPresharedKey = btoa(String.fromCharCode(...new Uint8Array(hash)));
-            } finally {
-                this.pqPrivKey1 = null;
-                this.pqPrivKey2 = null;
-            }
-        },
-
-        copyPresharedKey() {
-            if (this.derivedPresharedKey) {
-                navigator.clipboard.writeText(this.derivedPresharedKey).catch(() => {});
-            }
-        },
+        copyPresharedKey() {},
 
         async add() {
             this.isInvalid = false;
@@ -268,20 +216,13 @@ export default {
                 kem_public_key2: this.showQuantum ? this.pqPublicKey2 : "",
             };
 
-            const res = await this.$store.dispatch("wireguard/add", payload);
+            await this.$store.dispatch("wireguard/add", payload);
 
             if (!this.error) {
                 this.publicKey = "";
                 this.comment = "";
-
-                // Derive and display preshared key if ciphers returned
-                if (this.showQuantum && res && res.kem_cipher1 && res.kem_cipher2 && this.pqPrivKey1 && this.pqPrivKey2) {
-                    await this.derivePresharedKey(res.kem_cipher1, res.kem_cipher2);
-                    // Dialog stays open to show the preshared key
-                } else {
-                    this.resetPqKeys();
-                    this.closeDialog();
-                }
+                this.resetPqKeys();
+                this.closeDialog();
             }
         },
 

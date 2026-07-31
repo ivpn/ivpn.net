@@ -145,123 +145,13 @@ export class Kyber1024 {
       }
 
       const publicKey = new Uint8Array(KYBER1024_INFO.keySize.publicKey);
-      const secretKey = new Uint8Array(KYBER1024_INFO.keySize.secretKey);
-
       publicKey.set(this.#wasmModule.HEAPU8.subarray(publicKeyPtr, publicKeyPtr + KYBER1024_INFO.keySize.publicKey));
-      secretKey.set(this.#wasmModule.HEAPU8.subarray(secretKeyPtr, secretKeyPtr + KYBER1024_INFO.keySize.secretKey));
 
-      return { publicKey, secretKey };
+      return { publicKey };
 
     } finally {
       this.#wasmModule._free(publicKeyPtr);
       this.#wasmModule._free(secretKeyPtr);
-    }
-  }
-
-  /**
-   * Encapsulate a shared secret using a public key
-   *
-   * Generates a random shared secret and encapsulates it using the
-   * provided public key. The shared secret can be used for symmetric
-   * encryption.
-   *
-   * @param {Uint8Array} publicKey - Recipient's public key (1568 bytes)
-   * @returns {{ciphertext: Uint8Array, sharedSecret: Uint8Array}}
-   * @throws {LibOQSValidationError} If public key is invalid
-   * @throws {LibOQSOperationError} If encapsulation fails
-   * @throws {LibOQSError} If instance has been destroyed
-   * @example
-   * const { ciphertext, sharedSecret } = kem.encapsulate(recipientPublicKey);
-   * // ciphertext: 1568 bytes (send to recipient)
-   * // sharedSecret: 32 bytes (use for symmetric encryption)
-   */
-  encapsulate(publicKey) {
-    this.#checkDestroyed();
-    this.#validatePublicKey(publicKey);
-
-    const publicKeyPtr = this.#wasmModule._malloc(KYBER1024_INFO.keySize.publicKey);
-    const ciphertextPtr = this.#wasmModule._malloc(KYBER1024_INFO.keySize.ciphertext);
-    const sharedSecretPtr = this.#wasmModule._malloc(KYBER1024_INFO.keySize.sharedSecret);
-
-    try {
-      this.#wasmModule.HEAPU8.set(publicKey, publicKeyPtr);
-
-      const result = this.#wasmModule._OQS_KEM_encaps(
-        this.#kemPtr,
-        ciphertextPtr,
-        sharedSecretPtr,
-        publicKeyPtr
-      );
-
-      if (result !== 0) {
-        throw new LibOQSOperationError('encaps', 'Kyber1024', `Error code: ${result}`);
-      }
-
-      const ciphertext = new Uint8Array(KYBER1024_INFO.keySize.ciphertext);
-      const sharedSecret = new Uint8Array(KYBER1024_INFO.keySize.sharedSecret);
-
-      ciphertext.set(this.#wasmModule.HEAPU8.subarray(ciphertextPtr, ciphertextPtr + KYBER1024_INFO.keySize.ciphertext));
-      sharedSecret.set(this.#wasmModule.HEAPU8.subarray(sharedSecretPtr, sharedSecretPtr + KYBER1024_INFO.keySize.sharedSecret));
-
-      return { ciphertext, sharedSecret };
-
-    } finally {
-      this.#wasmModule._free(publicKeyPtr);
-      this.#wasmModule._free(ciphertextPtr);
-      this.#wasmModule._free(sharedSecretPtr);
-    }
-  }
-
-  /**
-   * Decapsulate a shared secret using a secret key
-   *
-   * Recovers the shared secret from a ciphertext using the secret key.
-   * The recovered shared secret will match the one generated during
-   * encapsulation.
-   *
-   * @param {Uint8Array} ciphertext - Ciphertext received (1568 bytes)
-   * @param {Uint8Array} secretKey - Recipient's secret key (3168 bytes)
-   * @returns {Uint8Array} Recovered shared secret (32 bytes)
-   * @throws {LibOQSValidationError} If inputs are invalid
-   * @throws {LibOQSOperationError} If decapsulation fails
-   * @throws {LibOQSError} If instance has been destroyed
-   * @example
-   * const sharedSecret = kem.decapsulate(ciphertext, mySecretKey);
-   * // sharedSecret: 32 bytes (matches sender's shared secret)
-   */
-  decapsulate(ciphertext, secretKey) {
-    this.#checkDestroyed();
-    this.#validateCiphertext(ciphertext);
-    this.#validateSecretKey(secretKey);
-
-    const ciphertextPtr = this.#wasmModule._malloc(KYBER1024_INFO.keySize.ciphertext);
-    const secretKeyPtr = this.#wasmModule._malloc(KYBER1024_INFO.keySize.secretKey);
-    const sharedSecretPtr = this.#wasmModule._malloc(KYBER1024_INFO.keySize.sharedSecret);
-
-    try {
-      this.#wasmModule.HEAPU8.set(ciphertext, ciphertextPtr);
-      this.#wasmModule.HEAPU8.set(secretKey, secretKeyPtr);
-
-      const result = this.#wasmModule._OQS_KEM_decaps(
-        this.#kemPtr,
-        sharedSecretPtr,
-        ciphertextPtr,
-        secretKeyPtr
-      );
-
-      if (result !== 0) {
-        throw new LibOQSOperationError('decaps', 'Kyber1024', `Error code: ${result}`);
-      }
-
-      const sharedSecret = new Uint8Array(KYBER1024_INFO.keySize.sharedSecret);
-      sharedSecret.set(this.#wasmModule.HEAPU8.subarray(sharedSecretPtr, sharedSecretPtr + KYBER1024_INFO.keySize.sharedSecret));
-
-      return sharedSecret;
-
-    } finally {
-      this.#wasmModule._free(ciphertextPtr);
-      this.#wasmModule._free(secretKeyPtr);
-      this.#wasmModule._free(sharedSecretPtr);
     }
   }
 
