@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-07-07 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-08-04 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 957036
-hash: 00000000000000000001d80b388a6cd63cbf162a06c87b6f81a531d719e22c6a
+height: 961006
+hash: 00000000000000000001a8bba585594e834ffb486866c92e1560b7824b9f8151
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-French far-right leader Le Pen cleared to stand for president
-Appeals court upholds her conviction for embezzlement but shortens her sentence
+The Fed goes Wacko
+Warsh’s Awful Communications: Knowingly Opaque. Also in this newsletter, the BoE shows how it’s done
 
-Monaco bombing suspect shot dead in Kyiv
-Ukrainian authorities say intelligence officer confessed to paying and killing Anastasia Berezovska
+Fifa executive criticises Infantino’s ‘reproachable’ stake sale plan
+Comments from secretary-general Mattias Grafström add to pressure on Fifa president
 
-Rise of non-compete clauses blamed for harming productivity
-Increase recorded by OECD, with restrictions extending to lower-paid roles despite moves to curb clauses in some countries
+Japan’s fusion industry seeks state backing amid Middle East energy strain
+Also in today’s newsletter, oil bosses draw Trump’s ire after blockbuster earnings
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmpM7u0ACgkQisFrnrZH
-ummG4wf/cY8Jnn3FMvv706wq5QxycGKd8F/rGWjrRdszDkfgyuLhTMQfbJ36dGki
-mRZhVfWcGy7pmIo7jW+ouQ7VSc5blEMB2/8LFZ3OgSoD+bz3SC30cfRluQ5zposj
-dwh/DIhfsEs11t2zIS+M3Z2wprRL+9tVTWb2Hy87ZOFCjnsDaXDXUkW66mzJ8Nr9
-a1DJT44ZXvHKFMXifQFXUVZdV4zUrNwqzK3Y92w7pyh+L6qn0Z4rfAyVRCB1AqHg
-6x3EO3YN8mHPmSgy+nqLR1j3tdQ9geHRAlKUtq9yOc4Zd5jEMN4hPtQRO/9Ou0uH
-8qqRFx/4Jz3kzcn2Xbi4FjfLZ4zaQw==
-=Q001
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmpx0mYACgkQisFrnrZH
+umk9twf9GSKQAVeQj+J0uJaw0AGHXi9k/W/ZZ6Jt9ILllX1HV/Az6/dVQMh+k4oO
+WXIEE6ql6P+2iKIAcHBx32LAjDgAAFf8hdeJHFSc+WyMS7ZbtGO2v3gcX/KIce+J
+54nyeNvcV/iCWDqNL5J6lFWAoleJXOLxBC/TcX79bQIYOLFL4EiFcWIpf3T/bOb2
+gm3oGvN4YpNbrFtfUKzoIdOthehdunPDMzZz5T6V3KLpCX0DldXZWSxCFXItJ004
+jLZkM6MElQpQtV0xpBe2lDGTyJm7H8BWsLoJxVH9wAY9Rl3mwq+B6hnahmPtRbhM
+McOGLJmxtMsDlYcaWaIfiS4+JNNebQ==
+=vncT
 -----END PGP SIGNATURE-----
 
 
