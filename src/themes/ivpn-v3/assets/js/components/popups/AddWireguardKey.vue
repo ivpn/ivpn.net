@@ -4,13 +4,13 @@
         <h3>{{ $t('account.wireguardTab.addWireguardKey') }}</h3>
 
         <p class="error" v-if="isInvalid && !error">{{ $t('account.wireguardTab.publicKeyRequired') }}</p>
-        <p class="error" v-if="!isInvalid && hasError" v-html="errorMessage"></p>
+        <p class="error" v-if="!isInvalid && hasError">{{ errorMessage }}</p>
 
         <label for="inp_key">{{ $t('account.wireguardTab.publicKey') }}</label>
         <input id="inp_key" v-model="publicKey" type="text" autofocus />
 
         <label for="inp_comment" class='mt-1'>{{ $t('account.wireguardTab.comment') }}</label>
-        <input id="comment" v-model="comment" type="text" />
+        <input id="comment" v-model="comment" type="text" maxlength="255" />
 
         <!-- Quantum Resistance Section -->
         <div class="quantum-toggle mt-2">
@@ -125,10 +125,6 @@ export default {
     },
     methods: {
 
-        created() {
-            this.$store.dispatch("wireguard/clear")
-        },
-
         onQuantumToggle() {
             if (!this.showQuantum) {
                 this.resetPqKeys();
@@ -173,8 +169,6 @@ export default {
 
         async derivePresharedKey(cipher1B64, cipher2B64) {}, // no-op: PSK is stored server-side only
 
-        copyPresharedKey() {},
-
         async add() {
             this.isInvalid = false;
 
@@ -190,7 +184,7 @@ export default {
             }
 
             const payload = {
-                public_key: this.publicKey,
+                public_key: this.publicKey.trim(),
                 comment: this.comment,
                 kem_public_key1: this.showQuantum ? this.pqPublicKey1 : "",
                 kem_public_key2: this.showQuantum ? this.pqPublicKey2 : "",
