@@ -10,7 +10,7 @@ weight: 40
 ---
 # Is IVPN compatible with AppleTV?
 
-No AppleTV app is currently available.
+No AppleTV app is currently unavailable.
 
 IVPN is a privacy-focused VPN service and access to streaming services is [never guaranteed](/knowledgebase/general/can-i-access-hulu-or-netflix-or-bbc-iplayer-using-ivpn/).
 
