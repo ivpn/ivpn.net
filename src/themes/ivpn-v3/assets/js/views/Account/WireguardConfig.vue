@@ -37,6 +37,12 @@
                         <label for="key_comment_generated">{{ $t('account.wireguardTab.keyComment') }}</label>
                         <input id="key_comment_generated" v-model="keyComment" type="text">
                     </p>
+                    <p v-if="!publicKey" class="quantum-checkbox-row">
+                        <label>
+                            <input type="checkbox" v-model="quantumEnabledGenerate">
+                            {{ $t('account.wireguardTab.quantumResistanceGenerate') }}
+                        </label>
+                    </p>
                     <p v-if="!publicKey">
                         <a class="btn btn-border" href="" @click.prevent="generateKey()">{{ $t('account.wireguardTab.generateKey') }}</a>
                     </p>
@@ -57,7 +63,51 @@
                         <input id="private_key" v-model="privateKeyAdd" type="text">
                         <label for="key_comment">{{ $t('account.wireguardTab.keyComment') }}</label>
                         <input id="key_comment" v-model="keyComment" type="text">
-                        <p>
+
+                        <div class="quantum-checkbox-row" style="margin-top:12px">
+                            <label>
+                                <input type="checkbox" v-model="quantumEnabledAdd">
+                                {{ $t('account.wireguardTab.quantumResistanceEnable') }}
+                            </label>
+                        </div>
+
+                        <div v-if="quantumEnabledAdd" class="quantum-section" style="margin-top:12px">
+                            <p class="note">
+                                {{ $t('account.wireguardTab.quantumManualGuideNote') }}
+                                <a href="/privacy-guides/quantum-resistant-wireguard-config/" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumManualGuideLinkText') }}</a>{{ $t('account.wireguardTab.quantumManualGuideSuffix') }}
+                            </p>
+                            <div style="margin-top:12px">
+                                <label for="wgcfg_pq_pub1">{{ $t('account.wireguardTab.quantumPublicKey1') }}</label>
+                                <textarea
+                                    id="wgcfg_pq_pub1"
+                                    v-model="pqPublicKey1"
+                                    @input="pqPrivKey1 = null"
+                                    class="key-display"
+                                    style="margin-top:6px"
+                                    :required="quantumEnabledAdd"
+                                    :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder1')"
+                                ></textarea>
+                            </div>
+                            <div style="margin-top:12px">
+                                <label for="wgcfg_pq_pub2">{{ $t('account.wireguardTab.quantumPublicKey2') }}</label>
+                                <textarea
+                                    id="wgcfg_pq_pub2"
+                                    v-model="pqPublicKey2"
+                                    @input="pqPrivKey2 = null"
+                                    class="key-display"
+                                    style="margin-top:6px"
+                                    :required="quantumEnabledAdd"
+                                    :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder2')"
+                                ></textarea>
+                            </div>
+                            <a class="btn btn-border" href="" @click.prevent="generateQuantumKey" :class="{ disabled: isGeneratingPq }" style="margin-top:12px;display:inline-block">
+                                <span v-if="isGeneratingPq">{{ $t('account.wireguardTab.quantumGenerating') }}</span>
+                                <span v-else>{{ $t('account.wireguardTab.quantumGenerate') }}</span>
+                            </a>
+                            <p v-if="pqError" class="error" style="margin-top:8px">{{ pqError }}</p>
+                        </div>
+
+                        <p style="margin-top:12px">
                             <button class="btn btn-border">{{ $t('account.wireguardTab.addKey') }}</button>
                         </p>
                     </form>
@@ -195,48 +245,7 @@
                     </div>
                 </div>
 
-                <!-- Quantum Resistance -->
-                <div class="quantum-config">
-                    <div class="quantum-header">
-                        <h4 class="quantum-title">{{ $t('account.wireguardTab.quantumResistanceEnable') }}</h4>
-                        <label class="quantum-toggle-label" for="quantum_enabled">
-                            <input type="checkbox" id="quantum_enabled" v-model="showQuantum" @change="onQuantumToggle">
-                        </label>
-                    </div>
-                    <div v-if="showQuantum" class="quantum-section">
-                        <p class="note">{{ $t('account.wireguardTab.quantumResistanceDesc') }}</p>
 
-                        <div style="margin-top:12px">
-                            <label for="wgcfg_pq_pub1">{{ $t('account.wireguardTab.quantumPublicKey1') }}</label>
-                            <textarea
-                                id="wgcfg_pq_pub1"
-                                v-model="pqPublicKey1"
-                                @input="pqPrivKey1 = null"
-                                class="key-display"
-                                style="margin-top:6px"
-                                :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder1')"
-                            ></textarea>
-                        </div>
-
-                        <div style="margin-top:12px">
-                            <label for="wgcfg_pq_pub2">{{ $t('account.wireguardTab.quantumPublicKey2') }}</label>
-                            <textarea
-                                id="wgcfg_pq_pub2"
-                                v-model="pqPublicKey2"
-                                @input="pqPrivKey2 = null"
-                                class="key-display"
-                                style="margin-top:6px"
-                                :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder2')"
-                            ></textarea>
-                        </div>
-
-                        <a class="btn btn-border" href="" @click.prevent="generateQuantumKey" :class="{ disabled: isGeneratingPq }" style="margin-top:12px;display:inline-block">
-                            <span v-if="isGeneratingPq">{{ $t('account.wireguardTab.quantumGenerating') }}</span>
-                            <span v-else>{{ $t('account.wireguardTab.quantumGenerate') }}</span>
-                        </a>
-                        <p v-if="pqError" class="error" style="margin-top:8px">{{ pqError }}</p>
-                    </div>
-                </div>
                 <h3>{{ $t('account.wireguardTab.configStep4Title') }}</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
@@ -311,7 +320,8 @@ export default {
             selectedBlockList: null,
             isDnsHardcore: false,
             language: "en",
-            showQuantum: true,
+            quantumEnabledGenerate: true,
+            quantumEnabledAdd: true,
             isGeneratingPq: false,
             pqPublicKey1: "",
             pqPublicKey2: "",
@@ -358,7 +368,13 @@ export default {
                     }
                 }
              }
-         }
+         },
+         quantumEnabledGenerate(val) {
+             if (!val) { this.pqPublicKey1 = ""; this.pqPublicKey2 = ""; this.pqPresharedKey = ""; this.pqError = null; }
+         },
+         quantumEnabledAdd(val) {
+             if (!val) { this.pqPublicKey1 = ""; this.pqPublicKey2 = ""; this.pqError = null; }
+         },
     },
     computed: {
         ...mapState({
@@ -367,7 +383,9 @@ export default {
         isLight() {
             return this.account?.product?.id === 'IVPN Light';
         },
-        
+        showQuantum() {
+            return this.isKeyGenerated ? this.quantumEnabledGenerate : this.quantumEnabledAdd;
+        },
     },
     mounted() {
         const locale = window.location.href.split("/")[3] || "en";
@@ -687,14 +705,7 @@ export default {
                 this.validation.download = false;
             }
         },
-        onQuantumToggle() {
-            if (!this.showQuantum) {
-                this.pqPublicKey1 = "";
-                this.pqPublicKey2 = "";
-                this.pqPresharedKey = "";
-                this.pqError = null;
-            }
-        },
+
         async generateQuantumKey() {
             this.isGeneratingPq = true;
             this.pqPublicKey1 = "";

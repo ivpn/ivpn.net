@@ -23,15 +23,10 @@
         <div v-if="showQuantum" class="quantum-section mt-1">
             <p class="quantum-desc">{{ $t('account.wireguardTab.quantumResistanceDesc') }}</p>
 
-            <div class="quantum-steps mt-1">
-                <p class="steps-title">{{ $t('account.wireguardTab.quantumStepsTitle') }}</p>
-                <ol class="steps-list">
-                    <li>{{ $t('account.wireguardTab.quantumStep1') }}</li>
-                    <li>{{ $t('account.wireguardTab.quantumStep2') }}</li>
-                    <li>{{ $t('account.wireguardTab.quantumStep3') }}</li>
-                </ol>
-                <pre class="code-block">{{ pqCodeExample }}</pre>
-            </div>
+            <p class="quantum-desc mt-1">
+                To generate the KEM public keys offline using open-source tools, follow the
+                <a href="/privacy-guides/quantum-resistant-wireguard-config/" target="_blank" rel="noopener noreferrer">quantum-resistant WireGuard configuration guide</a>.
+            </p>
 
             <!-- KEM public key inputs -->
             <div class="mt-1">
@@ -41,6 +36,7 @@
                     v-model="pqPublicKey1"
                     @input="pqPrivKey1 = null"
                     class="key-display mt-1"
+                    :required="showQuantum"
                     :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder1')"
                 ></textarea>
             </div>
@@ -52,6 +48,7 @@
                     v-model="pqPublicKey2"
                     @input="pqPrivKey2 = null"
                     class="key-display mt-1"
+                    :required="showQuantum"
                     :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder2')"
                 ></textarea>
             </div>
@@ -75,20 +72,6 @@
 <script>
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
-
-const PQ_CODE = `import { createKyber1024, createClassicMcEliece348864 } from '@oqs/liboqs-js';
-
-// Generate KEM keypairs and submit public keys to server
-const kem1 = await createKyber1024();
-const { publicKey: pub1 } = kem1.generateKeyPair();
-kem1.destroy();
-
-const kem2 = await createClassicMcEliece348864();
-const { publicKey: pub2 } = kem2.generateKeyPair();
-kem2.destroy();
-
-// Server encapsulates (kem-helper) and stores the preshared key
-// Submit pub1 and pub2 as kem_public_key1 / kem_public_key2`;
 
 function uint8ToBase64(bytes) {
     let binary = "";
@@ -138,9 +121,6 @@ export default {
             return typeof this.error === "object" && this.error !== null
                 ? this.error.message
                 : this.error;
-        },
-        pqCodeExample() {
-            return PQ_CODE;
         },
     },
     methods: {
