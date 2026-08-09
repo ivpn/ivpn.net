@@ -140,6 +140,7 @@
         "features":{
             "title": "IVPN features",
             "feature1": "Open-source clients (Android, iOS, macOS, Windows, Linux/CLI)",
+            "feature8": "Quantum-resistant WireGuard connections",
             "feature2": "Private DNS resolvers (no third-party logging)",
             "feature3": "DNS-based AntiTracker with configurable blocklists",
             "feature4": "Kill switch with network firewall integration",

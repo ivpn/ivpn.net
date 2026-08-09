@@ -141,6 +141,7 @@
         "features":{
             "title": "Características de IVPN",
             "feature1": "Clientes de código abierto (Android, iOS, macOS, Windows, Linux/CLI)",
+            "feature8": "Conexiones WireGuard resistentes a ataques cuánticos",
             "feature2": "Resolutores DNS privados (sin registro de terceros)",
             "feature3": "AntiTracker basado en DNS con listas de bloqueo configurables",
             "feature4": "Interruptor de corte con integración de cortafuegos de red",

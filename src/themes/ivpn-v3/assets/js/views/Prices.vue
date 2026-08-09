@@ -224,7 +224,7 @@
                     <div class="service-icons-wrapper">
                         <div class="service-icons">
                             <a href="https://mailx.net" target="_blank" rel="noopener" class="service-icon-link">
-                                <img alt="MailX" class="service-icon mailx-logo">
+                                <img alt="Mailx" class="service-icon mailx-logo">
                             </a>
                             <a href="https://moddns.net" target="_blank" rel="noopener" class="service-icon-link">
                                 <img alt="modDNS" class="service-icon moddns-logo">
@@ -252,6 +252,12 @@
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
                                 {{ $t('pricing.features.feature1') }}
+                          </div>
+                          <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.features.feature8') }}
                           </div>
                           <div class="feature-item">
                                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1114,7 +1120,7 @@ export default {
     .product-gui {
         position: absolute;
         left: 4rem;
-        top: 43%;
+        top: 50%;
         transform: translateY(-40%);
         width: 74%;
         height: auto;
