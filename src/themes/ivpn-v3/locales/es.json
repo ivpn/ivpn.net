@@ -23,8 +23,20 @@
             "obfs4multi": "Puerto OBFS4 MultiHop",
             "obfs4key": "Clave pública OBFS4",
             "socks5": "SOCKS5",
-            "socks5port": "Puerto SOCKS5"
-        }
+            "socks5port": "Puerto SOCKS5"        },
+        "summary": "Servidores bare-metal en 41 pa\u00edses. IVPN opera <strong>89 gateways</strong> en <strong>58 ubicaciones</strong>, alojados con <strong>17 socios de centros de datos</strong>. Cada servidor es una m\u00e1quina f\u00edsica, sin ubicaciones virtuales. WireGuard y OpenVPN est\u00e1n disponibles en todos los servidores.",
+        "discoveryLine": "La lista de servidores en vivo en formato JSON est\u00e1 disponible <a href=\"https://api.ivpn.net/v5/servers/stats\">aqu\u00ed</a>.",
+        "faq": {
+            "streamingQ": "\u00bfPuedo usar los servidores de IVPN para acceder a servicios de streaming?",
+            "streamingA": "IVPN no opera servidores dedicados al streaming y no optimiza la red para desbloquear plataformas de streaming. Algunos servicios funcionan a trav\u00e9s de la VPN y otros no, y los resultados cambian a medida que las plataformas actualizan sus bloqueos. Consulta <a href=\"/knowledgebase/general/can-i-access-hulu-or-netflix-or-bbc-iplayer-using-ivpn/\">Can I access Netflix, Hulu or BBC iPlayer using IVPN?</a>",
+            "blockedQ": "\u00bfPuedo conectarme desde una red que bloquea las VPN?",
+            "blockedA": "S\u00ed. Las aplicaciones de IVPN incluyen ofuscaci\u00f3n V2Ray (VMess sobre QUIC o TCP) en todas las plataformas, m\u00e1s obfs4 para OpenVPN en escritorio. Estos disfrazan el tr\u00e1fico VPN para que pueda pasar por redes que bloquean las VPN. No podemos garantizar la conectividad en todas las redes. Consulta <a href=\"/blog/v2ray-obfuscation-available-all-ivpn-platforms/\">V2Ray obfuscation on all IVPN platforms</a> y <a href=\"/knowledgebase/troubleshooting/i-cannot-connect-from-china-or-vietnam-or-iran-or-russia-etc-what-can-i-do/\">connecting from China, Iran, Russia and similar networks</a>.",
+            "socksQ": "\u00bfAdmite IVPN SOCKS5?",
+            "socksA": "S\u00ed. IVPN ofrece un proxy SOCKS5 para la tunelizaci\u00f3n basada en aplicaciones. Consulta <a href=\"/blog/socks5-proxies-app-based-vpn-tunnels/\">SOCKS5 proxies and app-based VPN tunnels</a> y la <a href=\"/knowledgebase/general/socks5-proxy-service/\">gu\u00eda del servicio proxy SOCKS5</a>.",
+            "protocolsQ": "\u00bfQu\u00e9 protocolos est\u00e1n disponibles en los servidores de IVPN?",
+            "protocolsA": "WireGuard y OpenVPN, disponibles en todos los servidores. Las conexiones WireGuard son resistentes a la computaci\u00f3n cu\u00e1ntica por defecto en las aplicaciones de IVPN, usando un intercambio de claves post-cu\u00e1ntico. Consulta <a href=\"/blog/quantum-resistant-wireguard-connections-ivpn-apps/\">quantum-resistant WireGuard connections</a>.",
+            "bareMetalQ": "\u00bfQu\u00e9 es bare-metal y c\u00f3mo est\u00e1n configurados los servidores de IVPN?",
+            "bareMetalA": "Cada gateway de IVPN es un servidor bare-metal: hardware f\u00edsico dedicado alquilado a un socio de centro de datos, no una instancia virtualizada ni una ubicaci\u00f3n virtual. Los servidores utilizan cifrado de disco completo LUKS, controles de acceso obligatorios e IPMI protegido por firewall. Un peque\u00f1o n\u00famero de gateways piloto tambi\u00e9n ejecuta una arquitectura solo en RAM (sin disco), y extenderla a toda la red es un proyecto en curso."        }
     },
     "pricing":{
         "meta": {

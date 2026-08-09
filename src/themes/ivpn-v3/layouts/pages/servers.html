@@ -1,8 +1,6 @@
 {{ define "main" }}
     <div class="content__text">
-        <section id="servers">
-            <server-list></server-list>
-        </section>
+        <div id="servers"></div>
     </div>
 {{ end }}
 
@@ -13,3 +11,4 @@
 {{ define "main-script" }}
     <script type="module" src="{{ site.Params.cdnUrl }}{{ index site.Data.manifest "/js/servers.js" }}"></script>
 {{ end }}
+
