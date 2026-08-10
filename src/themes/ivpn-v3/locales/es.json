@@ -391,7 +391,7 @@
             "cancel": "Cancelar",
             "quantumResistanceEnable": "Añadir claves públicas post-cuánticas (opcional)",
             "quantumResistanceGenerate": "Activar conexión resistente a la computación cuántica",
-            "quantumResistanceDesc": "Genera dos pares de claves post-cuánticas (Kyber-1024 y Classic-McEliece-348864) en tu navegador. Ambas claves públicas se envían; el servidor deriva la clave precompartida de WireGuard a partir de ambos secretos compartidos.",
+            "quantumResistanceDesc": "Ambas claves públicas se envían; el servidor deriva la clave precompartida de WireGuard a partir de ambos secretos compartidos.",
             "quantumManualGuideNote": "Mejora tu conexión WireGuard manual con un PresharedKey resistente a la computación cuántica generando pares de claves KEM localmente con herramientas de código abierto. Sigue la",
             "quantumManualGuideLinkText": "guía de configuración WireGuard resistente a la computación cuántica",
             "quantumManualGuideSuffix": " para instrucciones paso a paso.",

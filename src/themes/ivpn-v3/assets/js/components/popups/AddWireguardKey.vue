@@ -53,13 +53,6 @@
                 ></textarea>
             </div>
 
-            <!-- Derived PSK shown after successful add -->
-
-            <button @click.prevent="generatePqKey" :disabled="isGeneratingPq" class="btn btn-solid mt-1">
-                <span v-if="isGeneratingPq">{{ $t('account.wireguardTab.quantumGenerating') }}</span>
-                <span v-else>{{ $t('account.wireguardTab.quantumGenerate') }}</span>
-            </button>
-
             <p class="error mt-1" v-if="pqError">{{ pqError }}</p>
         </div>
 
@@ -96,7 +89,7 @@ export default {
             publicKey: "",
             comment: "",
 
-            showQuantum: true,
+            showQuantum: false,
             isGeneratingPq: false,
             pqPublicKey1: "",
             pqPublicKey2: "",

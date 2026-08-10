@@ -390,7 +390,7 @@
             "cancel": "Cancel",
             "quantumResistanceEnable": "Add post-quantum public keys (optional)",
             "quantumResistanceGenerate": "Enable quantum-resistant connection",
-            "quantumResistanceDesc": "Generate two post-quantum keypairs (Kyber-1024 and Classic-McEliece-348864) in your browser. Both public keys are submitted; the server derives the WireGuard preshared key from both shared secrets.",
+            "quantumResistanceDesc": "Both public keys are submitted; the server derives the WireGuard preshared key from both shared secrets.",
             "quantumManualGuideNote": "Enhance your manual WireGuard connection with a quantum-resistant PresharedKey by generating KEM keypairs locally using open-source tools. Follow the",
             "quantumManualGuideLinkText": "quantum-resistant WireGuard configuration guide",
             "quantumManualGuideSuffix": " for step-by-step instructions.",

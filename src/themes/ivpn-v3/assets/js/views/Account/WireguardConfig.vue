@@ -100,10 +100,6 @@
                                     :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder2')"
                                 ></textarea>
                             </div>
-                            <a class="btn btn-border" href="" @click.prevent="generateQuantumKey" :class="{ disabled: isGeneratingPq }" style="margin-top:12px;display:inline-block">
-                                <span v-if="isGeneratingPq">{{ $t('account.wireguardTab.quantumGenerating') }}</span>
-                                <span v-else>{{ $t('account.wireguardTab.quantumGenerate') }}</span>
-                            </a>
                             <p v-if="pqError" class="error" style="margin-top:8px">{{ pqError }}</p>
                         </div>
 
@@ -320,7 +316,7 @@ export default {
             selectedBlockList: null,
             isDnsHardcore: false,
             language: "en",
-            quantumEnabledGenerate: true,
+            quantumEnabledGenerate: false,
             quantumEnabledAdd: true,
             isGeneratingPq: false,
             pqPublicKey1: "",
@@ -670,11 +666,6 @@ export default {
                 return;
             }
 
-            // Auto-generate quantum keys if enabled and not yet done
-            if (this.showQuantum && (!this.pqPublicKey1 || !this.pqPublicKey2)) {
-                await this.generateQuantumKey();
-            }
-
             try {
                 let res = await Api.addWireguardKey({
                     public_key: publicKey,
@@ -706,39 +697,6 @@ export default {
             }
         },
 
-        async generateQuantumKey() {
-            this.isGeneratingPq = true;
-            this.pqPublicKey1 = "";
-            this.pqPublicKey2 = "";
-            this.pqError = null;
-            try {
-                const { createKyber1024 } = await import("@oqs/liboqs-js");
-                const kem1 = await createKyber1024();
-                try {
-                    const { publicKey } = kem1.generateKeyPair();
-                    this.pqPublicKey1 = btoa(String.fromCharCode(...publicKey));
-                } finally { kem1.destroy(); }
-
-                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
-                const kem2 = await createClassicMcEliece348864();
-                try {
-                    const { publicKey } = kem2.generateKeyPair();
-                    let bin = ""; const chunk = 8192;
-                    for (let i = 0; i < publicKey.length; i += chunk)
-                        bin += String.fromCharCode(...publicKey.subarray(i, i + chunk));
-                    this.pqPublicKey2 = btoa(bin);
-                } finally { kem2.destroy(); }
-            } catch (err) {
-                this.pqError = err && err.message ? err.message : String(err);
-            } finally {
-                this.isGeneratingPq = false;
-            }
-        },
-        async derivePresharedKey(cipher1B64, cipher2B64) {},
-        isValidIP(ip) {
-            const ipv46_regex = /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/m;
-            return ipv46_regex.test(ip);
-        },
         async fetchBlockLists() {
             
             let res =  await Api.getServersDetails();
