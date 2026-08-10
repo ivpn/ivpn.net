@@ -1,5 +1,6 @@
 ---
 title: IVPN Team
+description: The IVPN team consists of information security experts and privacy activists who have run IVPN since 2009. We are a distributed team of 10 people across six countries.
 url: /en/team/
 aliases: ['/team/']
 sections:
@@ -39,7 +40,7 @@ sections:
 
       We need tools enabled by strong encryption to protect ourselves against hostile adversaries. With the right set of protections we can once again control what we share with those we don’t know and can’t trust.
   - type: lead_text_one_column
-    content: Our current team is fully distributed, with 10 people from 7 countries.
+    content: Our current team is fully distributed, with 10 people from 6 countries.
   - type: team_three_column
     members:
       - image: /images-static/uploads/team-nick.png
@@ -56,9 +57,9 @@ sections:
         github: 
       - image: /images-static/uploads/team-avatar.png
         image_retina: /images-static/uploads/team-avatar.png
-        name: Iain Douglas
-        description: With over 20 years' experience working with Unix and Linux, Iain knows a thing or two. He manages the team responsible for ensuring the security and availability of our public VPN infrastructure.
-        github: https://github.com/Iain-ivpn
+        name: Ante Maretic
+        description: Ante has over 10 years' experience working with Linux-based infrastructure. He is responsible for ensuring the security and availability of our public VPN infrastructure.
+        github: https://github.com/ante-ivpn
       - image: /images-static/uploads/team-gorka.png
         image_retina: /images-static/uploads/team-gorka-2x.png
         name: Gorka Pernas
@@ -96,7 +97,7 @@ sections:
       - image: /images-static/uploads/team-viktor.png
         image_retina: /images-static/uploads/team-viktor-2x.png
         name: Viktor Vecsei
-        description: A reformed marketing professional, Viktor has become a fervent privacy advocate since joining IVPN. He is responsible for all communication and outreach efforts that spread the word about IVPN’s mission.
+        description: "Viktor leads operations at IVPN and wears many hats: product management, keeping the day-to-day running smoothly, communications, and representing IVPN publicly."
         linkedin: https://www.linkedin.com/in/viktorvecsei/
         github: https://github.com/johnnyburnaway
 ---

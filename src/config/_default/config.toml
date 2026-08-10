@@ -22,6 +22,7 @@ defaultContentLanguageInSubdir = true
     weight = 1
     [languages.en.outputs]
       home = ["HTML", "LLMS"]
+      section = ["JSON", "HTML", "RSS"]
   [languages.es]
     languageCode = "es"
     contentDir = 'content/es'

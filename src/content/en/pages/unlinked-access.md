@@ -1,6 +1,6 @@
 ---
 title: Unlinked Access by IVPN
-description: Unlinked Access is a system developed by IVPN that lets Mailx, modDNS, and Portmaster grant and synchronise subscription access without receiving or storing your IVPN account ID.
+description: How IVPN's Unlinked Access lets Mailx, modDNS, and Portmaster confirm your subscription without receiving or storing your IVPN account ID.
 url: /en/unlinked-access/
 aliases: ['/unlinked-access/']
 ---
@@ -63,7 +63,7 @@ What Unlinked Access prevents most directly is a straightforward lookup from a M
 
 ### If Mailx, modDNS, or Portmaster is compromised, does my IVPN account get exposed?
 
-A compromise of one service database does not by itself reveal your IVPN account ID. A compromise would typically expose the data that service stores for its own operation, along with token-derived data used for subscription synchronisation
+A compromise of one service database does not by itself reveal your IVPN account ID. A compromise would typically expose the data that service stores for its own operation, along with token-derived data used for subscription synchronisation.
 
 Unlinked Access is designed so that subscription synchronisation does not require your IVPN account ID to be present in additional service databases.
 
