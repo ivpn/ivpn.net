@@ -155,7 +155,7 @@
                         <h3><span>Pay with Lightning:</span><br>{{ getSelectedSats }} sats (≈ {{ getSelectedPrice }} USD)</h3>
                      </div>
                      <div class="main-buttons">
-                         <button v-if="false" type="button" :disabled="!isValidated()" class="btn btn-solid btn-light" @click="send()">
+                         <button type="button" :disabled="!isValidated()" class="btn btn-solid btn-light" @click="send()">
                               <div class="bitcoin-lightning-icon" ></div> Purchase access
                           </button>
                           <p v-if="submitError" class="error">{{ submitError }}</p>
