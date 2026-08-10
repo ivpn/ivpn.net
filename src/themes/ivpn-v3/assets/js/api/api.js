@@ -9,7 +9,7 @@ function isDarkMode() {
 
 export default {
 
-    StatusCaptchaRequired: 70001,
+    StatusAltchaInvalid: 70001,
 
     fetch(method, url, data = null, overrideURI = null, overrideOptions = {}) {
 
@@ -105,27 +105,25 @@ export default {
         }
     },
 
-    async login(accountID, totpValue, captchaID, captchaValue) {
+    async login(accountID, totpValue, altchaToken) {
                 
         return await this.Post(
             '/web/accounts/login',
             {
                 account_id: accountID,
                 confirmation: totpValue,
-                captcha_id: captchaID,
-                captcha: captchaValue
+                altcha_token: altchaToken,
             })
     },
 
-    async loginEmail(email, password, totpValue, captchaID, captchaValue) {
+    async loginEmail(email, password, totpValue, altchaToken) {
         let response = await this.Post(
             '/web/accounts/login',
             {
                 email: email,
                 password: password,
                 confirmation: totpValue,
-                captcha_id: captchaID,
-                captcha: captchaValue
+                altcha_token: altchaToken,
             }
         )
 
@@ -148,15 +146,8 @@ export default {
         )
     },
 
-    async getCaptchaWave(captchaID) {
-        let r = await this.Post(
-            '/web/accounts/captcha-wave',
-            {
-                captcha_id: captchaID
-            }
-        )
-
-        return r.captcha_wave
+    async getAltchaChallenge() {
+        return await this.Get('/web/accounts/altcha/challenge')
     },
 
     //
@@ -327,16 +318,15 @@ export default {
         )
     },
 
-    async getBraintreeToken(captchaID, captchaValue) {
+    async getBraintreeToken(altchaToken) {
         let account = await this.Post('/web/accounts/braintree/client-token',
         {
-            captcha_id: captchaID,
-            captcha: captchaValue
+            altcha_token: altchaToken,
         })
         return account.token
     },
 
-    async addBraintreeFunds(priceID, transactionType, amount, paymentMethod, fraudData, nonce, isRecurring, captchaID, captchaValue) {
+    async addBraintreeFunds(priceID, transactionType, amount, paymentMethod, fraudData, nonce, isRecurring, altchaToken) {
 
         return await this.Post(
             '/web/accounts/braintree/add-funds',
@@ -348,8 +338,7 @@ export default {
                 fraud_data: fraudData,
                 nonce: nonce,
                 is_recurring: isRecurring,
-                captcha_id: captchaID,
-                captcha: captchaValue
+                altcha_token: altchaToken,
             }
         )
         
