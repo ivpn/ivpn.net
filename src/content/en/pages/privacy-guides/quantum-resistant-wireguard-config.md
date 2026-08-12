@@ -98,12 +98,7 @@ def kem_exchange(alg_name):
 
     assert ss_server == ss_client, f"Shared secrets do not match for {alg_name}"
 
-    # Encode public key in 8192-byte chunks to handle McEliece's large key safely
-    raw = bytes(pub_bytes)
-    pub_b64 = "".join(
-        base64.b64encode(raw[i : i + 8192]).decode()
-        for i in range(0, len(raw), 8192)
-    )
+    pub_b64 = base64.b64encode(bytes(pub_bytes)).decode()
 
     return pub_b64, bytes(ciphertext), bytes(sec_bytes)
 
