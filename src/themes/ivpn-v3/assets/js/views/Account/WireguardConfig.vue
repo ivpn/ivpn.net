@@ -44,8 +44,11 @@
                         </label>
                     </p>
                     <p v-if="!publicKey">
-                        <a class="btn btn-border" href="" @click.prevent="generateKey()">{{ $t('account.wireguardTab.generateKey') }}</a>
+                        <a class="btn btn-border" href="" @click.prevent="generateKey()" :class="{ disabled: isGeneratingPq }">
+                            {{ isGeneratingPq ? $t('account.wireguardTab.quantumGenerating') : $t('account.wireguardTab.generateKey') }}
+                        </a>
                     </p>
+                    <p v-if="pqError && isKeyGenerated" class="error">{{ pqError }}</p>
                     <p class="key" v-if="publicKey">
                         <strong>{{ $t('account.wireguardTab.publicKey') }}</strong><br>
                         {{ publicKey }}
@@ -81,7 +84,6 @@
                                 <textarea
                                     id="wgcfg_pq_pub1"
                                     v-model="pqPublicKey1"
-                                    @input="pqPrivKey1 = null"
                                     class="key-display"
                                     style="margin-top:6px"
                                     :required="quantumEnabledAdd"
@@ -93,7 +95,6 @@
                                 <textarea
                                     id="wgcfg_pq_pub2"
                                     v-model="pqPublicKey2"
-                                    @input="pqPrivKey2 = null"
                                     class="key-display"
                                     style="margin-top:6px"
                                     :required="quantumEnabledAdd"
@@ -220,12 +221,12 @@
                         <label for="dns_standard">{{ $t('account.wireguardTab.standard') }} </label>
                     </div>
                     <div>
-                        <input type="radio" name="dns" id="dns_antitracker" ref="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                        <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
                         <label for="dns_antitracker">{{ $t('account.wireguardTab.antitracker') }}  </label>
                         <i></i>
                         <div class="select">
                         <select v-model="selectedBlockList">
-                            <option v-for="(item, key) in antitrackerBlockLists" :value="item" :selected="true">{{item.Name}}</option>
+                            <option v-for="(item, index) in antitrackerBlockLists" :value="item" :key="index">{{item.Name}}</option>
                         </select>
                         <i></i>
                     </div>
@@ -257,6 +258,15 @@
 <script>
 import Api from "@/api/api";
 import wireguard from '@/wireguard';
+
+function uint8ToBase64(bytes) {
+    let binary = "";
+    const chunk = 8192;
+    for (let i = 0; i < bytes.length; i += chunk) {
+        binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+    }
+    return btoa(binary);
+}
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import qrcode from "qrcode-generator";
@@ -316,8 +326,8 @@ export default {
             selectedBlockList: null,
             isDnsHardcore: false,
             language: "en",
-            quantumEnabledGenerate: false,
-            quantumEnabledAdd: true,
+            quantumEnabledGenerate: true,
+            quantumEnabledAdd: false,
             isGeneratingPq: false,
             pqPublicKey1: "",
             pqPublicKey2: "",
@@ -345,7 +355,7 @@ export default {
          },
          selectedBlockList: {
              handler: function () {
-                if( this.$refs.dns_antitracker.checked){
+                if (this.dnsType === 'antitracker') {
                     if(this.isDnsHardcore){
                         this.dns = this.selectedBlockList.Hardcore;
                     }else{
@@ -356,7 +366,7 @@ export default {
          },
          isDnsHardcore: {
             handler: function () {
-                if( this.$refs.dns_antitracker.checked){
+                if (this.dnsType === 'antitracker') {
                     if(this.isDnsHardcore){
                         this.dns = this.selectedBlockList.Hardcore;
                     }else{
@@ -595,6 +605,7 @@ export default {
             this.dnsType = event.target.value;
             switch(this.dnsType){
                 case "standard":
+                case "custom":
                     this.dns = null;
                     break;
                 case "antitracker":
@@ -631,7 +642,9 @@ export default {
                 this.validation.download = this.publicKey == null || this.privateKey == null;
             }
 
-            this.query.address = this.ipAddress;
+            if (this.ipAddress) {
+                query.address = this.ipAddress;
+            }
             this.queryString = new URLSearchParams(query);
             this.validation.downloadQR = this.validation.download || !this.query.host;
         },
@@ -651,10 +664,40 @@ export default {
             let res = await Api.getWireGuardConfigurations(this.queryString);
             this.generateQRCode(res);
         },
-        generateKey() {
+        async generateKey() {
+            if (this.isGeneratingPq) return;
+            if (this.quantumEnabledGenerate) {
+                await this.generatePqKeys();
+                if (this.pqError) return;
+            }
             let keypair = wireguard.generateKeypair();
             this.privateKey = keypair.privateKey;
             this.setKey(keypair.publicKey, this.keyComment);
+        },
+        async generatePqKeys() {
+            this.isGeneratingPq = true;
+            this.pqError = null;
+            this.pqPublicKey1 = "";
+            this.pqPublicKey2 = "";
+            try {
+                const { createKyber1024 } = await import("@oqs/liboqs-js");
+                const kem1 = await createKyber1024();
+                try {
+                    const { publicKey } = kem1.generateKeyPair();
+                    this.pqPublicKey1 = uint8ToBase64(publicKey);
+                } finally { kem1.destroy(); }
+
+                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
+                const kem2 = await createClassicMcEliece348864();
+                try {
+                    const { publicKey } = kem2.generateKeyPair();
+                    this.pqPublicKey2 = uint8ToBase64(publicKey);
+                } finally { kem2.destroy(); }
+            } catch (err) {
+                this.pqError = err && err.message ? err.message : String(err);
+            } finally {
+                this.isGeneratingPq = false;
+            }
         },
         addKey() {
             this.privateKey = this.privateKeyAdd;
@@ -698,14 +741,16 @@ export default {
         },
 
         async fetchBlockLists() {
-            
-            let res =  await Api.getServersDetails();
-            
+            let res = await Api.getServersDetails();
             if (res.config) {
-                this.antitrackerBlockLists = res.config.antitracker_plus.DnsServers
+                this.antitrackerBlockLists = res.config.antitracker_plus.DnsServers;
                 this.selectedBlockList = this.antitrackerBlockLists[0];
             }
-            
+        },
+        isValidIP(ip) {
+            const ipv4 = /^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$/;
+            const ipv6 = /^(([\da-fA-F]{1,4}:){7}[\da-fA-F]{1,4}|(([\da-fA-F]{1,4}:)*)?::(([\da-fA-F]{1,4}:)*)?)$/;
+            return ipv4.test(ip) || ipv6.test(ip);
         },
     },
     beforeRouteEnter(to, from, next) {
