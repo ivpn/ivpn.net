@@ -417,6 +417,8 @@
             "quantumPublicKeyPlaceholder": "Pega tu clave pública Kyber-1024 (Base64) o genérala a continuación",
             "quantumDownloadSecretKey": "Descargar clave privada (.bin)",
             "quantumSecretKeyWarning": "⚠ Guarda tu clave privada ahora. Es necesaria para descifrar el secreto compartido más adelante y no se puede recuperar.",
+            "quantumKeyInvalidKyber": "Clave pública Kyber-1024 no válida (se esperan 2092 caracteres base64).",
+            "quantumKeyInvalidMcEliece": "Clave pública Classic-McEliece-348864 no válida (se esperan 348160 caracteres base64).",
             "backToWireguard": "Volver a WireGuard",
             "configuration": "Configuración de WireGuard",
             "configStep1Title": "1: Generar clave WireGuard",

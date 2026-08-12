@@ -416,6 +416,8 @@
             "quantumPublicKeyPlaceholder": "Paste your Kyber-1024 public key (Base64) or generate one below",
             "quantumDownloadSecretKey": "Download private key (.bin)",
             "quantumSecretKeyWarning": "⚠ Save your private key now. It is needed to decapsulate the shared secret later and cannot be recovered.",
+            "quantumKeyInvalidKyber": "Invalid Kyber-1024 public key (expected 2092 base64 characters).",
+            "quantumKeyInvalidMcEliece": "Invalid Classic-McEliece-348864 public key (expected 348160 base64 characters).",
             "backToWireguard": "Back to WireGuard",
             "configuration": "WireGuard Configuration",
             "configStep1Title": "1: Generate WireGuard key",

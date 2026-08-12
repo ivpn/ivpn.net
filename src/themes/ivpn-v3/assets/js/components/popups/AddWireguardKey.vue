@@ -162,6 +162,24 @@ export default {
 
         async derivePresharedKey(cipher1B64, cipher2B64) {}, // no-op: PSK is stored server-side only
 
+        validatePqKeys() {
+            const strip = (s) => s.replace(/\s/g, "");
+            const isBase64 = (s) => /^[A-Za-z0-9+/]+=*$/.test(s);
+            const k1 = strip(this.pqPublicKey1);
+            const k2 = strip(this.pqPublicKey2);
+            // Kyber-1024: 1568 bytes → 2092 base64 chars; Classic-McEliece-348864: 261120 bytes → 348160 base64 chars
+            if (!isBase64(k1) || k1.length !== 2092) {
+                this.pqError = this.$t('account.wireguardTab.quantumKeyInvalidKyber');
+                return false;
+            }
+            if (!isBase64(k2) || k2.length !== 348160) {
+                this.pqError = this.$t('account.wireguardTab.quantumKeyInvalidMcEliece');
+                return false;
+            }
+            this.pqError = null;
+            return true;
+        },
+
         async add() {
             this.isInvalid = false;
 
@@ -170,10 +188,13 @@ export default {
                 return;
             }
 
-            // Auto-generate quantum keypairs if not yet done
-            if (this.showQuantum && (!this.pqPublicKey1 || !this.pqPublicKey2)) {
-                await this.generatePqKey();
-                if (this.pqError) return;
+            // Auto-generate quantum keypairs if not yet done, then validate
+            if (this.showQuantum) {
+                if (!this.pqPublicKey1 || !this.pqPublicKey2) {
+                    await this.generatePqKey();
+                    if (this.pqError) return;
+                }
+                if (!this.validatePqKeys()) return;
             }
 
             const payload = {
