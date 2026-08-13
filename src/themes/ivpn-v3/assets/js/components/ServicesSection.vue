@@ -96,7 +96,7 @@ export default {
                     syncUrl: () => {
                         const sid = this.preauth?.mail?.sessionid;
                         const uuid = this.preauth?.mail?.uuid;
-                        return `${this.mailXURL}/account/profile?sessionid=${sid}&subid=${this.preauth?.mail?.uuid}}`;
+                        return `${this.mailXURL}/account/profile?sessionid=${sid}&subid=${this.preauth?.mail?.uuid}`;
                     },
                     upgradeRequired: ['IVPN Tier 1']
                 },
