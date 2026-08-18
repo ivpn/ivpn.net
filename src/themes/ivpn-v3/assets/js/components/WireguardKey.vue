@@ -24,7 +24,6 @@
                 <div class="wireguard-key__psk-value">
                     <small>{{ pskVisible ? presharedKey : '••••••••••••••••••••••••••••••••••••••••••••' }}</small>
                     <button class="btn btn-icon btn-icon-small" @click.prevent="pskVisible = !pskVisible">{{ pskVisible ? $t('account.wireguardTab.hide') : $t('account.wireguardTab.show') }}</button>
-                    <button class="btn btn-icon btn-icon-small" @click.prevent="copyPsk">{{ pskCopied ? $t('account.wireguardTab.copied') : $t('account.wireguardTab.copy') }}</button>
                 </div>
             </div>
         </div>
