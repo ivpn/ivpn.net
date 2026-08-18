@@ -84,7 +84,7 @@
         "portmasterTitle": "Portmaster",
         "reviewServices": "REVIEW SERVICE FEATURES",
         "paymentMethods": "Payment Methods",
-        "tier1":{
+        "tier1": {
             "name": "IVPN Standard",
             "title": "Core VPN service",
             "feature1": "IVPN / 5 Devices",
@@ -95,7 +95,7 @@
             "footer": "If you need a straightforward, trustworthy VPN for your toolkit.",
             "button": "Current plan"
         },
-        "tier2":{
+        "tier2": {
             "name": "IVPN Plus",
             "title": "Added DNS & email privacy",
             "feature1": "IVPN / 5 Devices",
@@ -108,7 +108,7 @@
             "feature4Title": "Private email aliases that forward to your inbox without revealing your real address.",
             "button": "Upgrade to Plus"
         },
-        "tier3":{
+        "tier3": {
             "name": "IVPN Pro Suite",
             "title": "Complete network stack",
             "feature1": "IVPN / 10 Devices",
@@ -123,13 +123,13 @@
             "feature5Title": "Firewall & network monitoring tool operated by IVPN. Includes SPN, an onion-routed Tor alternative. Available on Linux and Windows.",
             "button": "Upgrade to Pro Suite"
         },
-        "sidebar":{
+        "sidebar": {
             "feature1": "VPN",
             "feature2": "Ads & Trackers",
             "feature3": "Email",
             "feature4": "Firewall"
         },
-        "stack":{
+        "stack": {
             "title": "The privacy stack",
             "feature1": "Four standalone privacy services operated by IVPN",
             "feature2": "All services are open-source",
@@ -137,7 +137,7 @@
             "feature4": "Additional services authorise access without receiving your IVPN account ID",
             "feature4LinkText": "Unlinked Access"
         },
-        "features":{
+        "features": {
             "title": "IVPN features",
             "feature1": "Open-source clients (Android, iOS, macOS, Windows, Linux/CLI)",
             "feature2": "Private DNS resolvers (no third-party logging)",
@@ -147,7 +147,7 @@
             "feature6": "SOCKS5 proxy service",
             "feature7": "Router and NAS deployment support"
         },
-        "featuresBadges":{
+        "featuresBadges": {
             "badge1": "No email required for signup",
             "badge2": "30-day refund window",
             "badge3": "Cash, Monero, Bitcoin accepted",
@@ -157,7 +157,7 @@
             "badge7": "SOCKS5 Proxy",
             "badge8": "Router & NAS"
         },
-        "transparency":{
+        "transparency": {
             "title": "Audited & transparent",
             "feature1": "No connection logs or session data retained",
             "feature2": "No customer information stored post-purchase",
@@ -166,7 +166,7 @@
             "feature5": "Disclosed ownership and team with 15-year operating history",
             "feature6": "No affiliate program, no tracking scripts, no surveillance advertising"
         },
-        "limitations":{
+        "limitations": {
             "title": "Limitations we acknowledge",
             "feature1": "We operate servers in 58 locations / 41 countries.",
             "feature2": "We don't offer port forwarding.",
@@ -193,8 +193,8 @@
         "withAccountId": "With Account ID",
         "withEmailAndPassword": "With Email & Password"
     },
-    "account":{
-        "metaTitle":{
+    "account": {
+        "metaTitle": {
             "login": "IVPN Login",
             "recover": "Recover Password",
             "account": "IVPN Account",
@@ -223,7 +223,7 @@
         },
         "greetings": "Your account has been created!",
         "greetingsText": "Please make sure you save your Account ID in a safe place, you will use it to connect to the VPN. You don't need to enter your email to use our service.",
-        "accountId":"Account ID",
+        "accountId": "Account ID",
         "inactive": "INACTIVE",
         "active": "ACTIVE",
         "continueToPayment1": "Continue to payment",
@@ -294,7 +294,7 @@
         "confirm": "Confirm",
         "confirmChangeProduct": "IVPN Standard allows VPN access on 2 devices. Initiating a plan change will log you out from all active devices. You can log in to new devices afterwards. Please confirm to proceed.",
         "disableRecurring": "Disable recurring payments",
-        "disableRecurringDesc" : "Disabling recurring payments will remove stored payment information from our system and disable automatic renewal of the service.",
+        "disableRecurringDesc": "Disabling recurring payments will remove stored payment information from our system and disable automatic renewal of the service.",
         "disableRecurringPayments": "Disable recurring payments",
         "vouchers": "Vouchers",
         "popups": {
@@ -324,7 +324,7 @@
                 "setPaymentMethod": "Set Payment Method",
                 "cancel": "Cancel"
             },
-            "totp":{
+            "totp": {
                 "disable": {
                     "title": "Disable 2-Factor Authentication",
                     "desc": "To disable two-factor authentication, please enter code from TOTP app or a backup code.",
@@ -459,6 +459,11 @@
             "delete": "Delete",
             "ipv4Address": "IPv4 address",
             "ipv6Address": "IPv6 address",
+            "presharedKey": "Pre-shared key",
+            "show": "Show",
+            "hide": "Hide",
+            "copy": "Copy",
+            "copied": "Copied!",
             "deleteKeyConfirm": "Are you sure you want to delete this key?",
             "yes": "Yes"
         },
@@ -495,7 +500,6 @@
             "upgradeText1": "To increase your device limit to 10,",
             "upgradeText2": "upgrade",
             "upgradeText3": "your plan to IVPN Pro Suite."
-
         },
         "accountSettingsTab": {
             "backToAccount": "Back to account",
@@ -504,7 +508,7 @@
             "billing": "Billing",
             "deleteAccount": "Delete account",
             "logInto": "Log into client area using",
-            "accountId":"Account ID",
+            "accountId": "Account ID",
             "emailPassword": "Email & Password",
             "email": "Email:",
             "password": "Password:",
@@ -513,7 +517,7 @@
             "recurringPayments": "Recurring payments",
             "billingCycle": "Billing cycle",
             "paymentMethod": "Payment method",
-            "paidUntil":"Paid until",
+            "paidUntil": "Paid until",
             "wasActiveUntil": "Was active until",
             "lastPayment": "Last payment",
             "recurringFailedOn": "Automatic recurring payment failed on ",
@@ -531,7 +535,7 @@
             "services": "Services",
             "syncMail": "Synchronize"
         },
-        "payments":{
+        "payments": {
             "paymentReceived": {
                 "title": "Your payment has been received",
                 "accountExtended": "Your account has been extended to",
@@ -623,7 +627,7 @@
                 "note1Upgrade": "Your account will be upgraded after the payment is confirmed. This may take a couple of minutes.",
                 "note2Upgrade": "Warning: The address above is for one-time use only and is active for 24 hours after generation. Don't send additional funds to it after this payment."
             },
-            "voucher":{
+            "voucher": {
                 "codeFrom": "Code from a Voucher issued by IVPN:",
                 "addTime": "Add Time",
                 "pleaseNote": "Please note: Voucher codes are stored in our system for 30 days after use to help resolve activation issues. Account recovery is not possible after this period.",
@@ -698,8 +702,8 @@
         "allServers": "All servers",
         "selectEntryServerLocation": "Select entry server location",
         "selectCountry": "Select country",
-        "selectCity":"Select city",
-        "selectServer":"Select server",
+        "selectCity": "Select city",
+        "selectServer": "Select server",
         "step2Title": "2. Configuration",
         "protocol": "Protocol",
         "protocolPort": "Protocol / Port",
@@ -715,7 +719,7 @@
         "aboutHow": "about how IVPN AntiTracker is implemented.",
         "dnsSettingsNote2": "Hardcore mode blocks the leading companies with business models relying on user surveillance (currently: Google and Facebook).",
         "hardcoreMode": "Hardcore mode",
-        "customDns":"Custom DNS",
+        "customDns": "Custom DNS",
         "enterValidIp": "Please enter a valid IPv4 address.",
         "step3Title": "3. Download",
         "downloadZip": "Download zip archive"

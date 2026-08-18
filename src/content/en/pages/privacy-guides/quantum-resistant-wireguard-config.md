@@ -17,9 +17,9 @@ articles: [
 ]
 ---
 
-IVPN apps generate quantum-resistant WireGuard keys automatically. If you are configuring WireGuard manually on a router, with a native WireGuard client, or from a script,  you can generate the full set of keys yourself using the same open-source tools and derive the `PresharedKey` (PSK) entirely offline.
+IVPN apps generate quantum-resistant WireGuard keys automatically. If you are configuring WireGuard manually — on a router, with a native WireGuard client, or from a script — you can generate the KEM keypairs yourself using open-source tools and register them with IVPN to obtain the `PresharedKey` (PSK).
 
-This guide uses [liboqs](https://github.com/open-quantum-safe/liboqs) via its Python bindings. Every step runs locally; no network connection is required.
+This guide uses [liboqs](https://github.com/open-quantum-safe/liboqs) via its Python bindings.
 
 ## Background
 
@@ -30,14 +30,14 @@ IVPN uses a **hybrid** quantum-resistance scheme: the standard WireGuard key exc
 | KEM 1 | **Kyber-1024** | 5 | 1 568 bytes |
 | KEM 2 | **Classic-McEliece-348864** | 1 | 261 120 bytes |
 
-The PSK derivation works as follows:
+The PSK derivation is a **two-party** process and requires both sides:
 
-1. A KEM keypair is generated for each algorithm; the private keys stay local.
-2. KEM encapsulation is run against each public key, producing one ciphertext per algorithm.
-3. KEM decapsulation is run against each ciphertext with the matching private key, recovering the same shared secrets as encapsulation.
-4. The PSK is derived as `SHA-256(ciphertext_1 ‖ ciphertext_2)`.
+1. The client generates a KEM keypair for each algorithm and keeps the private keys secret.
+2. The client sends both public keys to the IVPN server.
+3. The server runs KEM encapsulation against each public key, producing one **ciphertext** and one **shared secret** per algorithm.
+4. The server derives `PSK = SHA-256(shared_secret_1 ‖ shared_secret_2)`, stores it alongside the WireGuard public key, and returns it to the client.
 
-Both the encapsulation and decapsulation steps run locally in the script below.
+Because step 3 uses cryptographically random nonces, the PSK **cannot** be derived locally before the server has performed its encapsulation — each run produces different ciphertexts and therefore different shared secrets.
 
 ---
 
@@ -73,77 +73,53 @@ chmod 600 wg_private.key
 
 ---
 
-## Step 2 — Generate the KEM keypairs and derive the PSK
+## Step 2 — Generate the KEM keypairs
 
-Save the following script as `gen_psk.py` and run it once per WireGuard key rotation. The script generates both KEM keypairs, runs the full encapsulation/decapsulation round, and derives the PSK — all locally.
+Save the following script as `gen_kem_keys.py` and run it once per WireGuard key rotation.
 
 ```python
 #!/usr/bin/env python3
-import base64, hashlib, oqs
+import base64, oqs
 
 
-def kem_exchange(alg_name):
-    """Generate a keypair, encapsulate, decapsulate, return (pub_b64, ciphertext, secret_key)."""
+def generate_keypair(alg_name):
     with oqs.KeyEncapsulation(alg_name) as kem:
         pub_bytes = kem.generate_keypair()
         sec_bytes = kem.export_secret_key()
-
-    # Encapsulation (server role): produces ciphertext + shared secret
-    with oqs.KeyEncapsulation(alg_name) as encap:
-        ciphertext, ss_server = encap.encap_secret(pub_bytes)
-
-    # Decapsulation (client role): recovers the same shared secret from the ciphertext
-    with oqs.KeyEncapsulation(alg_name, sec_bytes) as decap:
-        ss_client = decap.decap_secret(ciphertext)
-
-    assert ss_server == ss_client, f"Shared secrets do not match for {alg_name}"
-
-    pub_b64 = base64.b64encode(bytes(pub_bytes)).decode()
-
-    return pub_b64, bytes(ciphertext), bytes(sec_bytes)
+    return base64.b64encode(bytes(pub_bytes)).decode(), base64.b64encode(bytes(sec_bytes)).decode()
 
 
-# --- Kyber-1024 ---
-pub1_b64, ct1, sk1 = kem_exchange("Kyber1024")
+pub1_b64, sk1_b64 = generate_keypair("Kyber1024")
+pub2_b64, sk2_b64 = generate_keypair("Classic-McEliece-348864")
 
-# --- Classic-McEliece-348864 ---
-pub2_b64, ct2, sk2 = kem_exchange("Classic-McEliece-348864")
-
-# --- Derive PSK = SHA-256(ciphertext_1 || ciphertext_2) ---
-psk_b64 = base64.b64encode(hashlib.sha256(ct1 + ct2).digest()).decode()
-
-# --- Persist all keys ---
 with open("kyber1024_public.b64",      "w") as f: f.write(pub1_b64)
 with open("mceliece348864_public.b64", "w") as f: f.write(pub2_b64)
-with open("kyber1024_secret.b64",      "w") as f: f.write(base64.b64encode(sk1).decode())
-with open("mceliece348864_secret.b64", "w") as f: f.write(base64.b64encode(sk2).decode())
-with open("preshared.key",             "w") as f: f.write(psk_b64)
+with open("kyber1024_secret.b64",      "w") as f: f.write(sk1_b64)
+with open("mceliece348864_secret.b64", "w") as f: f.write(sk2_b64)
 
-print("Kyber-1024 public key saved to:        kyber1024_public.b64")
-print("Classic-McEliece public key saved to:  mceliece348864_public.b64")
-print()
-print("PresharedKey:", psk_b64)
+print("Kyber-1024 public key saved:          kyber1024_public.b64")
+print("Classic-McEliece public key saved:    mceliece348864_public.b64")
 ```
 
 Run it:
 
 ```
-python gen_psk.py
+python gen_kem_keys.py
 ```
 
-Protect the private key files and the PSK:
+Protect the private key files:
 
 ```bash
-chmod 600 kyber1024_secret.b64 mceliece348864_secret.b64 preshared.key
+chmod 600 kyber1024_secret.b64 mceliece348864_secret.b64
 ```
 
 <div class="notice notice--warning" markdown="1">
-The private key files (`*_secret.b64`) are required to re-run decapsulation if you ever need to reproduce the PSK from existing ciphertexts. Treat them with the same care as your WireGuard private key.
+Keep the private key files (`*_secret.b64`). They are needed in the optional verification step and for any future key re-registration.
 </div>
 
 ---
 
-## Step 3 — Supply the public keys to the IVPN config generator
+## Step 3 — Register with the IVPN config generator and obtain the PSK
 
 Open the IVPN [WireGuard Config Generator](/account/#wireguard-config) and log in. In the **Quantum Resistance** section, paste:
 
@@ -154,29 +130,31 @@ Open the IVPN [WireGuard Config Generator](/account/#wireguard-config) and log i
 Classic McEliece public keys are large (~348 000 base64 characters). Copy the **entire** contents of `mceliece348864_public.b64` without truncation. The generator will reject a key with an incorrect length.
 </div>
 
-Proceed through the generator to download the configuration file. The server and port values for the `Endpoint` field are shown in the downloaded `.conf`.
+Complete the remaining configuration options and download the `.conf` file. The server registers your public keys, performs KEM encapsulation, and embeds the derived `PresharedKey` directly in the downloaded config.
 
 ---
 
-## Step 4 — Build the WireGuard config
+## Step 4 — Use the downloaded config
 
-Insert the locally derived PSK into the `[Peer]` section:
+The downloaded `.conf` already contains the correct `PresharedKey`:
 
 ```ini
 [Interface]
-PrivateKey = <content of wg_private.key>
+PrivateKey = <your WireGuard private key>
 Address    = <assigned IP>/32
 DNS        = 172.16.0.1
 
 [Peer]
 PublicKey    = <IVPN server WireGuard public key>
-PresharedKey = <content of preshared.key>
+PresharedKey = <server-derived PSK — already set in the downloaded file>
 AllowedIPs   = 0.0.0.0/0, ::/0
 Endpoint     = <server>:<port>
 ```
+
+Use the file as downloaded without modifying the `PresharedKey` line.
 
 ---
 
 ## Key rotation
 
-When you generate a new WireGuard keypair, run `gen_psk.py` again to produce fresh KEM keypairs and a new PSK, then register the new public keys in the config generator and update your config file.
+When you generate a new WireGuard keypair, run `gen_kem_keys.py` again to produce fresh KEM keypairs, re-register the new public keys in the config generator, and replace the old `.conf` file.

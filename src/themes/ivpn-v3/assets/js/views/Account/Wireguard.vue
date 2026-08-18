@@ -43,6 +43,7 @@
                     :name="key.comment"
                     :public-key="key.public_key"
                     :ip="key.ip_address"
+                    :preshared-key="key.preshared_key || ''"
                 ></wireguard-key>
             </section>
 

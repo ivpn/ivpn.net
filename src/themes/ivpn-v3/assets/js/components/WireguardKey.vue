@@ -18,6 +18,16 @@
                 <div><small>{{ ipv6Address }}</small></div>
             </div>
         </div>
+        <div v-if="presharedKey" class="wireguard-key__row wireguard-key__psk-row">
+            <div class="wireguard-key__psk">
+                <label>{{ $t('account.wireguardTab.presharedKey') }}</label>
+                <div class="wireguard-key__psk-value">
+                    <small>{{ pskVisible ? presharedKey : '••••••••••••••••••••••••••••••••••••••••••••' }}</small>
+                    <button class="btn btn-icon btn-icon-small" @click.prevent="pskVisible = !pskVisible">{{ pskVisible ? $t('account.wireguardTab.hide') : $t('account.wireguardTab.show') }}</button>
+                    <button class="btn btn-icon btn-icon-small" @click.prevent="copyPsk">{{ pskCopied ? $t('account.wireguardTab.copied') : $t('account.wireguardTab.copy') }}</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -40,11 +50,18 @@ export default {
             required: true,
             type: String,
         },
+        presharedKey: {
+            required: false,
+            type: String,
+            default: "",
+        },
     },
     data() {
         return {
             API_GATEWAYS_WG_LOCAL_IPV6: "fd00:4956:504e:ffff::",
             ipv6Address: "",
+            pskVisible: false,
+            pskCopied: false,
         };
     },
     created() {
@@ -59,6 +76,11 @@ export default {
     methods: {
         deleteKey() {
             this.$emit("deleteKey", { publicKey: this.publicKey });
+        },
+        async copyPsk() {
+            await navigator.clipboard.writeText(this.presharedKey);
+            this.pskCopied = true;
+            setTimeout(() => { this.pskCopied = false; }, 2000);
         },
     },
     components: {
