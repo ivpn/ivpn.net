@@ -290,23 +290,15 @@ export default {
          },
          selectedBlockList: {
              handler: function () {
-                if( this.$refs.dns_antitracker.checked){
-                    if(this.isDnsHardcore){
-                        this.dns = after.Hardcore;
-                    }else{
-                        this.dns= after.Normal;
-                    }
+                if (this.dnsType === 'antitracker') {
+                    this.dns = this.isDnsHardcore ? this.selectedBlockList.Hardcore : this.selectedBlockList.Normal;
                 }
              }
          },
          isDnsHardcore: {
             handler: function () {
-                if( this.$refs.dns_antitracker.checked){
-                    if(this.isDnsHardcore){
-                        this.dns = this.selectedBlockList.Hardcore;
-                    }else{
-                        this.dns = this.selectedBlockList.Normal;
-                    }
+                if (this.dnsType === 'antitracker') {
+                    this.dns = this.isDnsHardcore ? this.selectedBlockList.Hardcore : this.selectedBlockList.Normal;
                 }
              }
          }
