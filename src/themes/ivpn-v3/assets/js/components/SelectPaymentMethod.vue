@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="billing-section" v-if="!isUpgrade">
+        <div class="billing-section" v-if="!isUpgrade && !hasCustomPrice">
             <div class="billing-options">
                 <div class="plan-summary" v-if="account.is_new">
                     <div class="plan-summary__header">
@@ -31,7 +31,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cc-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-cc-' + this.language, params: { price: hasCustomPrice ? customPriceId : price.id } }"
             >
                 <div class="credit-card-icon"></div>
                 {{ $t('account.creditCard') }}
@@ -39,7 +39,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-paypal-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-paypal-' + this.language, params: { price: hasCustomPrice ? customPriceId : price.id } }"
             >
                 <div class="paypal-icon"></div>
                 {{ $t('account.paypal') }}
@@ -47,7 +47,7 @@
             <router-link
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-bitcoin-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-bitcoin-' + this.language, params: { price: hasCustomPrice ? customPriceId : price.id } }"
             >
                 <div class="bitcoin-icon"></div>
                 {{ $t('account.bitcoin') }}
@@ -57,7 +57,7 @@
                 v-if="monero"
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-monero-' + this.language,  params: { price: price.id } }"
+                :to="{ name: 'add-funds-monero-' + this.language,  params: { price: hasCustomPrice ? customPriceId : price.id } }"
             >
                 <div class="monero-icon"></div>
                 {{ $t('account.monero') }}
@@ -67,7 +67,7 @@
                 v-if="cash"
                 tag="button"
                 class="btn btn-solid pay-button"
-                :to="{ name: 'add-funds-cash-' + this.language, params: { price: price.id } }"
+                :to="{ name: 'add-funds-cash-' + this.language, params: { price: hasCustomPrice ? customPriceId : price.id } }"
             >
                 <div class="cash-icon"></div>
                 {{ $t('account.cash') }}
@@ -146,7 +146,19 @@ export default {
     computed: {
         productName() {
             return this.account?.product?.name || '';
-        }
+        },
+        hasCustomPrice() {
+            return this.account?.has_custom_price;
+        },
+        customPriceId() {
+            const tier = this.price?.id?.split('.')[0] ?? '';
+            // For subscribed accounts use the subscription's billing cycle directly;
+            // for non-subscribed migrated accounts infer from the custom price amount.
+            const isMonthly = this.account?.subscription?.billing_cycle
+                ? this.account.subscription.billing_cycle === 'Monthly'
+                : this.account?.custom_price <= 30;
+            return tier + (isMonthly ? '.1month' : '.1year');
+        },
     },
     created() {
         this.price = this.$store.state.payments.selectedPrice;
