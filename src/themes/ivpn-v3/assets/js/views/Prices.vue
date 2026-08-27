@@ -394,8 +394,9 @@
                                 {{ $t('pricing.transparency.feature6') }}
                             </div>
                         </div>
+                    </div>
 
-
+                    <div class="limitations-column">
                         <div class="limitations-box">
                             <div class="grid-pattern"></div>
                             <div class="limitations-content">
@@ -413,10 +414,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="server-image">
-                        <img src="/images/02blue.png" alt="Pixel art server rack infrastructure with blue accents showing internal components">
                     </div>
                 </div>
             </div>
@@ -1238,18 +1235,17 @@ export default {
                 grid-template-columns: 1fr;
             }
 
-            .trust-content {
-                h2 {
-                    margin-bottom: 3rem;
-                    font-family: var(--font-mono);
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                    color: var(--color-white);
+            .limitations-column {
+                align-self: center;
+                margin-top: 5rem;
+
+                @media (max-width: 768px) {
+                    margin-top: 2rem;
                 }
 
                 .limitations-box {
                     position: relative;
-                    padding: 2rem;
+                    padding: 1.3rem;
                     border: 1px solid;
                     overflow: hidden;
 
@@ -1276,17 +1272,13 @@ export default {
                 }
             }
 
-            .server-image {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-
-                img {
-                    width: 100%;
-                    max-width: 600px;
-                    height: 100% !important;
-                    object-fit: contain;
+            .trust-content {
+                h2 {
+                    margin-bottom: 3rem;
+                    font-family: var(--font-mono);
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    color: var(--color-white);
                 }
             }
         }

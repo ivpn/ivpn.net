@@ -24,7 +24,7 @@
             "obfs4key": "Clave pública OBFS4",
             "socks5": "SOCKS5",
             "socks5port": "Puerto SOCKS5"        },
-        "summary": "Servidores bare-metal en 41 pa\u00edses. IVPN opera <strong>89 gateways</strong> en <strong>58 ubicaciones</strong>, alojados con <strong>17 socios de centros de datos</strong>. Cada servidor es una m\u00e1quina f\u00edsica, sin ubicaciones virtuales. WireGuard y OpenVPN est\u00e1n disponibles en todos los servidores.",
+        "summary": "Servidores bare-metal en 41 pa\u00edses. IVPN opera 89 gateways en 58 ubicaciones, alojados con 17 socios de centros de datos. Cada servidor es una m\u00e1quina f\u00edsica, sin ubicaciones virtuales. WireGuard y OpenVPN est\u00e1n disponibles en todos los servidores.",
         "discoveryLine": "La lista de servidores en vivo en formato JSON est\u00e1 disponible <a href=\"https://api.ivpn.net/v5/servers/stats\">aqu\u00ed</a>.",
         "faq": {
             "streamingQ": "\u00bfPuedo usar los servidores de IVPN para acceder a servicios de streaming?",
@@ -175,9 +175,9 @@
             "title": "Auditado y transparente",
             "feature1": "Sin registros de conexión ni datos de sesión retenidos",
             "feature2": "Sin información del cliente almacenada después de la compra",
-            "feature3": "Auditorías de seguridad anuales realizadas por terceros (#7 completadas en mayo de 2025)",
+            "feature3": "Auditorías de seguridad anuales por terceros desde 2019",
             "feature4": "Informes públicos de transparencia y canario de orden judicial",
-            "feature5": "Propiedad y equipo transparentes, con 15 años de experiencia operativa.",
+            "feature5": "Propiedad y equipo transparentes, operando desde 2009.",
             "feature6": "Sin programa de afiliados, sin scripts de seguimiento, sin publicidad de vigilancia"
         },
         "limitations":{

@@ -11,7 +11,7 @@
         font-size: 1rem;
         line-height: 1.6;
         max-width: 44rem;
-        margin: 0 auto 2.5rem;
+        margin: 0 auto calc(2.5rem + 15px);
 
         p {
             font-size: 1rem;
@@ -27,6 +27,7 @@
 
         @include respond-to('medium') {
             grid-template-columns: repeat(3, 1fr);
+            gap: calc(2rem + 20px);
         }
     }
 
@@ -76,11 +77,10 @@
     }
 
     .ps-disclaimer {
-        font-style: italic;
         text-align: center;
         max-width: 60rem;
         margin: 3rem auto 0;
-        padding-bottom: 1rem;
+        padding-bottom: calc(1rem + 10px);
         font-size: $text-size;
 
         p {

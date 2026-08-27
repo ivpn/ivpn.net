@@ -12,6 +12,7 @@
 
 .servers-faq {
     margin-top: 3rem;
+    padding-bottom: 50px;
 
     dl {
         margin: 0;
@@ -39,11 +40,15 @@
     flex-wrap: wrap;
     display: block;
 
+    &__heading {
+        padding-top: 48px;
+    }
+
     &__summary {
         font-size: $text-size;
         line-height: 1.6;
         margin-top: 0.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: calc(1.5rem + 20px);
         max-width:100%;
     }
 

@@ -25,7 +25,7 @@
             "socks5": "SOCKS5",
             "socks5port": "SOCKS5 Port"
         },
-        "summary": "Bare-metal servers in 41 countries. IVPN runs <strong>89 gateways</strong> across <strong>58 locations</strong>, hosted with <strong>17 datacenter partners</strong>. Every server is a physical machine, with no virtual locations. WireGuard and OpenVPN are available on every server.",
+        "summary": "Bare-metal servers in 41 countries. IVPN runs 89 gateways across 58 locations, hosted with 17 datacenter partners. Every server is a physical machine, with no virtual locations. WireGuard and OpenVPN are available on every server.",
         "discoveryLine": "Live server list as JSON is available <a href=\"https://api.ivpn.net/v5/servers/stats\">here</a>.",
         "faq": {
             "streamingQ": "Can I use IVPN servers for accessing streaming services?",
@@ -176,9 +176,9 @@
             "title": "Audited & transparent",
             "feature1": "No connection logs or session data retained",
             "feature2": "No customer information stored post-purchase",
-            "feature3": "Annual third-party security audits (#7 completed May 2025)",
+            "feature3": "Annual third-party security audits since 2019",
             "feature4": "Public transparency reports and warrant canary",
-            "feature5": "Disclosed ownership and team with 15-year operating history",
+            "feature5": "Disclosed ownership and team, operating since 2009.",
             "feature6": "No affiliate program, no tracking scripts, no surveillance advertising"
         },
         "limitations":{
