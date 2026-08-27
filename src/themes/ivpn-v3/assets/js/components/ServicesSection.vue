@@ -96,7 +96,7 @@ export default {
                     syncUrl: () => {
                         const sid = this.preauth?.mail?.sessionid;
                         const uuid = this.preauth?.mail?.uuid;
-                        return `${this.mailXURL}/account/profile?sessionid=${sid}` + (uuid ? `&subid=${uuid}` : '');
+                        return `${this.mailXURL}/account/profile?sessionid=${sid}&subid=${this.preauth?.mail?.uuid}`;
                     },
                     upgradeRequired: ['IVPN Tier 1']
                 },
@@ -109,7 +109,7 @@ export default {
                     syncUrl: () => {
                         const sid = this.preauth?.dns?.sessionid;
                         const uuid = this.preauth?.dns?.uuid;
-                        return `${this.modDNSURL}/account-preferences?sessionid=${sid}` + (uuid ? `&subid=${uuid}` : '');
+                        return `${this.modDNSURL}/account-preferences?sessionid=${sid}&subid=${this.preauth?.dns?.uuid}`;
                     },
                     upgradeRequired: ['IVPN Tier 1']
                 },
@@ -122,7 +122,7 @@ export default {
                     syncUrl: () => {
                         const sid = this.preauth?.portmaster?.sessionid;
                         const uuid = this.preauth?.portmaster?.uuid;
-                        return `${this.portmasterURL}/account?sessionid=${sid}` + (uuid ? `&subid=${uuid}` : '');
+                        return `${this.portmasterURL}/account?sessionid=${sid}&subid=${this.preauth?.portmaster?.uuid}`;
                     },
                     upgradeRequired: ['IVPN Tier 1', 'IVPN Tier 2']
                 }
