@@ -18,6 +18,7 @@
                 <div><small>{{ ipv6Address }}</small></div>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -39,6 +40,11 @@ export default {
         publicKey: {
             required: true,
             type: String,
+        },
+        presharedKey: {
+            required: false,
+            type: String,
+            default: "",
         },
     },
     data() {

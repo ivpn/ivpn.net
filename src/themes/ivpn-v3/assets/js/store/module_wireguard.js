@@ -123,6 +123,8 @@ export default {
                 key: key,
             })
 
+            return key
+
         } catch (error) {
 
             if (error.status == StatusErrNotLoggedIn) {

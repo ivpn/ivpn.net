@@ -37,9 +37,18 @@
                         <label for="key_comment_generated">{{ $t('account.wireguardTab.keyComment') }}</label>
                         <input id="key_comment_generated" v-model="keyComment" type="text">
                     </p>
-                    <p v-if="!publicKey">
-                        <a class="btn btn-border" href="" @click.prevent="generateKey()">{{ $t('account.wireguardTab.generateKey') }}</a>
+                    <p v-if="!publicKey" class="quantum-checkbox-row">
+                        <label>
+                            <input type="checkbox" v-model="quantumEnabledGenerate">
+                            {{ $t('account.wireguardTab.quantumResistanceGenerate') }}
+                        </label>
                     </p>
+                    <p v-if="!publicKey">
+                        <a class="btn btn-border" href="" @click.prevent="generateKey()" :class="{ disabled: isGeneratingPq }">
+                            {{ isGeneratingPq ? $t('account.wireguardTab.quantumGenerating') : $t('account.wireguardTab.generateKey') }}
+                        </a>
+                    </p>
+                    <p v-if="pqError && isKeyGenerated" class="error">{{ pqError }}</p>
                     <p class="key" v-if="publicKey">
                         <strong>{{ $t('account.wireguardTab.publicKey') }}</strong><br>
                         {{ publicKey }}
@@ -57,7 +66,45 @@
                         <input id="private_key" v-model="privateKeyAdd" type="text">
                         <label for="key_comment">{{ $t('account.wireguardTab.keyComment') }}</label>
                         <input id="key_comment" v-model="keyComment" type="text">
-                        <p>
+
+                        <div class="quantum-checkbox-row" style="margin-top:12px">
+                            <label>
+                                <input type="checkbox" v-model="quantumEnabledAdd">
+                                {{ $t('account.wireguardTab.quantumResistanceEnable') }}
+                            </label>
+                        </div>
+
+                        <div v-if="quantumEnabledAdd" class="quantum-section" style="margin-top:12px">
+                            <p class="note">
+                                {{ $t('account.wireguardTab.quantumManualGuideNote') }}
+                                <a href="/privacy-guides/quantum-resistant-wireguard-config/" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumManualGuideLinkText') }}</a>{{ $t('account.wireguardTab.quantumManualGuideSuffix') }}
+                            </p>
+                            <div style="margin-top:12px">
+                                <label for="wgcfg_pq_pub1">{{ $t('account.wireguardTab.quantumPublicKey1') }}</label>
+                                <textarea
+                                    id="wgcfg_pq_pub1"
+                                    v-model="pqPublicKey1"
+                                    class="key-display"
+                                    style="margin-top:6px"
+                                    :required="quantumEnabledAdd"
+                                    :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder1')"
+                                ></textarea>
+                            </div>
+                            <div style="margin-top:12px">
+                                <label for="wgcfg_pq_pub2">{{ $t('account.wireguardTab.quantumPublicKey2') }}</label>
+                                <textarea
+                                    id="wgcfg_pq_pub2"
+                                    v-model="pqPublicKey2"
+                                    class="key-display"
+                                    style="margin-top:6px"
+                                    :required="quantumEnabledAdd"
+                                    :placeholder="$t('account.wireguardTab.quantumPublicKeyPlaceholder2')"
+                                ></textarea>
+                            </div>
+                            <p v-if="pqError" class="error" style="margin-top:8px">{{ pqError }}</p>
+                        </div>
+
+                        <p style="margin-top:12px">
                             <button class="btn btn-border">{{ $t('account.wireguardTab.addKey') }}</button>
                         </p>
                     </form>
@@ -71,6 +118,18 @@
                     </p>
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
+                <div v-if="showQuantum && pqCipher1 && publicKey" style="margin-top:16px">
+                    <h4>{{ $t('account.wireguardTab.quantumCiphersTitle') }}</h4>
+                    <p class="note">
+                        {{ $t('account.wireguardTab.quantumCiphersNote') }}
+                        <a href="/privacy-guides/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.
+                    </p>
+                    <p v-if="pqPresharedKey" class="note">{{ $t('account.wireguardTab.quantumCiphersBrowserDerived') }}</p>
+                    <label>{{ $t('account.wireguardTab.quantumCipher1Label') }}</label>
+                    <textarea class="key-display" style="margin-top:6px" readonly :value="pqCipher1"></textarea>
+                    <label style="margin-top:8px; display:block">{{ $t('account.wireguardTab.quantumCipher2Label') }}</label>
+                    <textarea class="key-display" style="margin-top:6px" readonly :value="pqCipher2"></textarea>
+                </div>
                 <h3>{{ $t('account.wireguardTab.configStep2Title') }}</h3>
                 <p class="note">{{ $t('account.wireguardTab.configStep2Content') }}</p>
                 <div class="tabs">
@@ -174,12 +233,12 @@
                         <label for="dns_standard">{{ $t('account.wireguardTab.standard') }} </label>
                     </div>
                     <div>
-                        <input type="radio" name="dns" id="dns_antitracker" ref="dns_antitracker" value="antitracker" @change="selectDNS($event)">
+                        <input type="radio" name="dns" id="dns_antitracker" value="antitracker" @change="selectDNS($event)">
                         <label for="dns_antitracker">{{ $t('account.wireguardTab.antitracker') }}  </label>
                         <i></i>
                         <div class="select">
                         <select v-model="selectedBlockList">
-                            <option v-for="(item, key) in antitrackerBlockLists" :value="item" :selected="true">{{item.Name}}</option>
+                            <option v-for="(item, index) in antitrackerBlockLists" :value="item" :key="index">{{item.Name}}</option>
                         </select>
                         <i></i>
                     </div>
@@ -194,6 +253,8 @@
                         <p v-if="dnsType == 'custom'" class="note note--input">{{ $t('account.wireguardTab.pleaseEnter') }}</p>
                     </div>
                 </div>
+
+
                 <h3>{{ $t('account.wireguardTab.configStep4Title') }}</h3>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
                 <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
@@ -209,6 +270,15 @@
 <script>
 import Api from "@/api/api";
 import wireguard from '@/wireguard';
+
+function uint8ToBase64(bytes) {
+    let binary = "";
+    const chunk = 8192;
+    for (let i = 0; i < bytes.length; i += chunk) {
+        binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+    }
+    return btoa(binary);
+}
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import qrcode from "qrcode-generator";
@@ -268,6 +338,17 @@ export default {
             selectedBlockList: null,
             isDnsHardcore: false,
             language: "en",
+            quantumEnabledGenerate: true,
+            quantumEnabledAdd: false,
+            isGeneratingPq: false,
+            pqPublicKey1: "",
+            pqPublicKey2: "",
+            pqPresharedKey: "",
+            pqCipher1: "",
+            pqCipher2: "",
+            pqSecretKey1: null,
+            pqSecretKey2: null,
+            pqError: null,
         };
     },
     watch: {
@@ -290,18 +371,7 @@ export default {
          },
          selectedBlockList: {
              handler: function () {
-                if( this.$refs.dns_antitracker.checked){
-                    if(this.isDnsHardcore){
-                        this.dns = after.Hardcore;
-                    }else{
-                        this.dns= after.Normal;
-                    }
-                }
-             }
-         },
-         isDnsHardcore: {
-            handler: function () {
-                if( this.$refs.dns_antitracker.checked){
+                if (this.dnsType === 'antitracker') {
                     if(this.isDnsHardcore){
                         this.dns = this.selectedBlockList.Hardcore;
                     }else{
@@ -309,7 +379,34 @@ export default {
                     }
                 }
              }
-         }
+         },
+         isDnsHardcore: {
+            handler: function () {
+                if (this.dnsType === 'antitracker') {
+                    if(this.isDnsHardcore){
+                        this.dns = this.selectedBlockList.Hardcore;
+                    }else{
+                        this.dns = this.selectedBlockList.Normal;
+                    }
+                }
+             }
+         },
+         quantumEnabledGenerate(val) {
+             if (!val) {
+                 this.pqPublicKey1 = ""; this.pqPublicKey2 = "";
+                 this.pqPresharedKey = ""; this.pqCipher1 = ""; this.pqCipher2 = "";
+                 if (this.pqSecretKey1) { this.pqSecretKey1.fill(0); this.pqSecretKey1 = null; }
+                 if (this.pqSecretKey2) { this.pqSecretKey2.fill(0); this.pqSecretKey2 = null; }
+                 this.pqError = null;
+             }
+         },
+         quantumEnabledAdd(val) {
+             if (!val) {
+                 this.pqPublicKey1 = ""; this.pqPublicKey2 = "";
+                 this.pqCipher1 = ""; this.pqCipher2 = "";
+                 this.pqError = null;
+             }
+         },
     },
     computed: {
         ...mapState({
@@ -318,7 +415,9 @@ export default {
         isLight() {
             return this.account?.product?.id === 'IVPN Light';
         },
-        
+        showQuantum() {
+            return this.isKeyGenerated ? this.quantumEnabledGenerate : this.quantumEnabledAdd;
+        },
     },
     mounted() {
         const locale = window.location.href.split("/")[3] || "en";
@@ -388,6 +487,8 @@ export default {
             "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
+            (this.pqPresharedKey ? "\nPresharedKey = " + this.pqPresharedKey :
+             this.pqCipher1      ? "\n# PresharedKey = <derive from cipher keys — see guide>" : "") +
             "\nAllowedIPs = " + config.peer.allowed_ips +
             "\nEndpoint = " + config.peer.endpoint;
         },
@@ -531,6 +632,7 @@ export default {
             this.dnsType = event.target.value;
             switch(this.dnsType){
                 case "standard":
+                case "custom":
                     this.dns = null;
                     break;
                 case "antitracker":
@@ -567,7 +669,9 @@ export default {
                 this.validation.download = this.publicKey == null || this.privateKey == null;
             }
 
-            this.query.address = this.ipAddress;
+            if (this.ipAddress) {
+                query.address = this.ipAddress;
+            }
             this.queryString = new URLSearchParams(query);
             this.validation.downloadQR = this.validation.download || !this.query.host;
         },
@@ -587,28 +691,131 @@ export default {
             let res = await Api.getWireGuardConfigurations(this.queryString);
             this.generateQRCode(res);
         },
-        generateKey() {
+        async generateKey() {
+            if (this.isGeneratingPq) return;
+            if (this.quantumEnabledGenerate) {
+                await this.generatePqKeys();
+                if (this.pqError) return;
+            }
             let keypair = wireguard.generateKeypair();
             this.privateKey = keypair.privateKey;
             this.setKey(keypair.publicKey, this.keyComment);
         },
+        async generatePqKeys() {
+            this.isGeneratingPq = true;
+            this.pqError = null;
+            this.pqPublicKey1 = "";
+            this.pqPublicKey2 = "";
+            if (this.pqSecretKey1) { this.pqSecretKey1.fill(0); this.pqSecretKey1 = null; }
+            if (this.pqSecretKey2) { this.pqSecretKey2.fill(0); this.pqSecretKey2 = null; }
+            try {
+                const { createKyber1024 } = await import("@oqs/liboqs-js");
+                const kem1 = await createKyber1024();
+                try {
+                    const { publicKey, secretKey } = kem1.generateKeyPair();
+                    this.pqPublicKey1 = uint8ToBase64(publicKey);
+                    this.pqSecretKey1 = secretKey;
+                } finally { kem1.destroy(); }
+
+                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
+                const kem2 = await createClassicMcEliece348864();
+                try {
+                    const { publicKey, secretKey } = kem2.generateKeyPair();
+                    this.pqPublicKey2 = uint8ToBase64(publicKey);
+                    this.pqSecretKey2 = secretKey;
+                } finally { kem2.destroy(); }
+            } catch (err) {
+                this.pqError = err && err.message ? err.message : String(err);
+            } finally {
+                this.isGeneratingPq = false;
+            }
+        },
+        // Derive PSK in-browser by decapsulating server ciphers with locally-generated secret keys.
+        async deriveBrowserPsk(cipher1B64, cipher2B64) {
+            const b64ToBytes = (b64) => {
+                const bin = atob(b64);
+                const out = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+                return out;
+            };
+            try {
+                const cipher1 = b64ToBytes(cipher1B64);
+                const cipher2 = b64ToBytes(cipher2B64);
+
+                const { createKyber1024 } = await import("@oqs/liboqs-js");
+                const kem1 = await createKyber1024();
+                let ss1;
+                try { ss1 = kem1.decapsulate(cipher1, this.pqSecretKey1).sharedSecret; }
+                finally { kem1.destroy(); }
+
+                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
+                const kem2 = await createClassicMcEliece348864();
+                let ss2;
+                try { ss2 = kem2.decapsulate(cipher2, this.pqSecretKey2).sharedSecret; }
+                finally { kem2.destroy(); }
+
+                const combined = new Uint8Array(ss1.length + ss2.length);
+                combined.set(ss1, 0);
+                combined.set(ss2, ss1.length);
+                const digest = await crypto.subtle.digest('SHA-256', combined);
+                return uint8ToBase64(new Uint8Array(digest));
+            } finally {
+                if (this.pqSecretKey1) { this.pqSecretKey1.fill(0); this.pqSecretKey1 = null; }
+                if (this.pqSecretKey2) { this.pqSecretKey2.fill(0); this.pqSecretKey2 = null; }
+            }
+        },
         addKey() {
             this.privateKey = this.privateKeyAdd;
-            this.setKey(this.publicKeyAdd, this.keyComment);
+            if (this.quantumEnabledAdd && !this.validatePqKeys()) return;
+            this.setKey(this.publicKeyAdd.trim(), this.keyComment);
+        },
+        validatePqKeys() {
+            const strip = (s) => s.replace(/\s/g, "");
+            const isBase64 = (s) => /^[A-Za-z0-9+/]+=*$/.test(s);
+            const k1 = strip(this.pqPublicKey1);
+            const k2 = strip(this.pqPublicKey2);
+            // Kyber-1024: 1568 bytes → 2092 base64 chars; Classic-McEliece-348864: 261120 bytes → 348160 base64 chars
+            if (!isBase64(k1) || k1.length !== 2092) {
+                this.pqError = this.$t('account.wireguardTab.quantumKeyInvalidKyber');
+                return false;
+            }
+            if (!isBase64(k2) || k2.length !== 348160) {
+                this.pqError = this.$t('account.wireguardTab.quantumKeyInvalidMcEliece');
+                return false;
+            }
+            this.pqError = null;
+            return true;
         },
         async setKey(publicKey, keyComment) {
             if (!publicKey) {
                 this.error.addKey = "Public key is required";
                 return;
             }
+
             try {
                 let res = await Api.addWireguardKey({
                     public_key: publicKey,
                     comment: keyComment,
+                    kem_public_key1: this.showQuantum ? this.pqPublicKey1 : "",
+                    kem_public_key2: this.showQuantum ? this.pqPublicKey2 : "",
                 });
                 this.ipAddress = res.ip_address;
                 this.publicKey = publicKey;
                 this.error.addKey = null;
+
+                if (this.showQuantum && res.kem_cipher1 && res.kem_cipher2) {
+                    this.pqCipher1 = res.kem_cipher1;
+                    this.pqCipher2 = res.kem_cipher2;
+                    // For the generate tab: secret keys are available — derive PSK in the browser.
+                    if (this.isKeyGenerated && this.pqSecretKey1 && this.pqSecretKey2) {
+                        try {
+                            this.pqPresharedKey = await this.deriveBrowserPsk(res.kem_cipher1, res.kem_cipher2);
+                        } catch (err) {
+                            this.pqError = err && err.message ? err.message : String(err);
+                        }
+                    }
+                }
+
                 this.updateQuery();
             } catch (error) {
                 this.error.addKey = error.message;
@@ -623,20 +830,18 @@ export default {
                 this.validation.download = false;
             }
         },
-        isValidIP(ip) {
-            let ipv46_regex = /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/gm;
 
-            return ipv46_regex.test(ip);
-        },
         async fetchBlockLists() {
-            
-            let res =  await Api.getServersDetails();
-            
+            let res = await Api.getServersDetails();
             if (res.config) {
-                this.antitrackerBlockLists = res.config.antitracker_plus.DnsServers
+                this.antitrackerBlockLists = res.config.antitracker_plus.DnsServers;
                 this.selectedBlockList = this.antitrackerBlockLists[0];
             }
-            
+        },
+        isValidIP(ip) {
+            const ipv4 = /^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$/;
+            const ipv6 = /^(([\da-fA-F]{1,4}:){7}[\da-fA-F]{1,4}|(([\da-fA-F]{1,4}:)*)?::(([\da-fA-F]{1,4}:)*)?)$/;
+            return ipv4.test(ip) || ipv6.test(ip);
         },
     },
     beforeRouteEnter(to, from, next) {
@@ -653,4 +858,39 @@ export default {
 @use "@/styles/base.scss" as *;
 @use "@/styles/tabs.scss" as *;
 @use "@/styles/vpn-configuration.scss" as *;
+
+.key-display {
+    width: 100%;
+    min-height: 72px;
+    font-family: monospace;
+    font-size: 11px;
+    padding: 6px 8px;
+    resize: vertical;
+    box-sizing: border-box;
+    word-break: break-all;
+    display: block;
+}
+
+.quantum-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.quantum-title {
+    margin: 0;
+}
+
+.quantum-toggle-label {
+    flex-shrink: 0;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        display: block;
+    }
+}
 </style>

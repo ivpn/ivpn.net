@@ -38,7 +38,7 @@
             "bareMetalQ": "\u00bfQu\u00e9 es bare-metal y c\u00f3mo est\u00e1n configurados los servidores de IVPN?",
             "bareMetalA": "Cada gateway de IVPN es un servidor bare-metal: hardware f\u00edsico dedicado alquilado a un socio de centro de datos, no una instancia virtualizada ni una ubicaci\u00f3n virtual. Los servidores utilizan cifrado de disco completo LUKS, controles de acceso obligatorios e IPMI protegido por firewall. Un peque\u00f1o n\u00famero de gateways piloto tambi\u00e9n ejecuta una arquitectura solo en RAM (sin disco), y extenderla a toda la red es un proyecto en curso."        }
     },
-    "pricing":{
+    "pricing": {
         "meta": {
             "title": "Precios de IVPN - suscripción VPN con inscripción anónima"
         },
@@ -96,7 +96,7 @@
         "portmasterTitle": "Portmaster",
         "reviewServices": "REVISAR CARACTERÍSTICAS DEL SERVICIO",
         "paymentMethods": "Métodos de pago",
-        "tier1":{
+        "tier1": {
             "name": "IVPN Standard",
             "title": "Servicio VPN básico",
             "feature1": "IVPN / 5 dispositivos",
@@ -107,7 +107,7 @@
             "footer": "Un VPN sencillo y confiable para tu kit de herramientas.",
             "button": "Plan actual"
         },
-        "tier2":{
+        "tier2": {
             "name": "IVPN Plus",
             "feature1": "IVPN / 5 dispositivos",
             "feature1Title": "Incluye Multi-hop, AntiTracker, protocolos de ofuscación, proxy SOCKS5.",
@@ -120,7 +120,7 @@
             "footer": "Protección de rastreo y privacidad del correo electrónico mejorada.",
             "button": "Mejora a Plus"
         },
-        "tier3":{
+        "tier3": {
             "name": "IVPN Pro Suite",
             "title": "Control total de red",
             "feature1": "IVPN / 10 Dispositivos",
@@ -136,13 +136,13 @@
             "footer": "Controles de red completos con cortafuego de aplicación incluido.",
             "button": "Mejora a Pro Suite"
         },
-        "sidebar":{
+        "sidebar": {
             "feature1": "VPN",
             "feature2": "Anuncios y rastreadores",
             "feature3": "Correo",
             "feature4": "Cortafuegos"
         },
-        "stack":{
+        "stack": {
             "title": "La estructura de privacidad",
             "feature1": "Cuatro servicios de privacidad independientes operados por IVPN",
             "feature2": "Todos los servicios son de código abierto",
@@ -150,7 +150,7 @@
             "feature4": "Los servicios adicionales autorizan el acceso sin recibir tu ID de cuenta IVPN",
             "feature4LinkText": "Acceso no vinculado"
         },
-        "features":{
+        "features": {
             "title": "Características de IVPN",
             "feature1": "Clientes de código abierto (Android, iOS, macOS, Windows, Linux/CLI)",
             "feature8": "Conexiones WireGuard resistentes a ataques cuánticos",
@@ -161,7 +161,7 @@
             "feature6": "Servicio proxy SOCKS5",
             "feature7": "Soporte para despliegue en routers y NAS"
         },
-        "featuresBadges":{
+        "featuresBadges": {
             "badge1": "No se requiere correo electrónico",
             "badge2": "Reembolso de 30 días",
             "badge3": "Se aceptan efectivo, Monero, Bitcoin",
@@ -171,7 +171,7 @@
             "badge7": "SOCKS5 Proxy",
             "badge8": "Router & NAS"
         },
-        "transparency":{
+        "transparency": {
             "title": "Auditado y transparente",
             "feature1": "Sin registros de conexión ni datos de sesión retenidos",
             "feature2": "Sin información del cliente almacenada después de la compra",
@@ -180,7 +180,7 @@
             "feature5": "Propiedad y equipo transparentes, operando desde 2009.",
             "feature6": "Sin programa de afiliados, sin scripts de seguimiento, sin publicidad de vigilancia"
         },
-        "limitations":{
+        "limitations": {
             "title": "Limitaciones que reconocemos",
             "feature1": "Operamos servidores en 58 ubicaciones / 41 países.",
             "feature2": "No ofrecemos reenvío de puertos.",
@@ -207,8 +207,8 @@
         "withAccountId": "Con ID de cuenta",
         "withEmailAndPassword": "Con email y contraseña"
     },
-    "account":{
-        "metaTitle":{
+    "account": {
+        "metaTitle": {
             "login": "IVPN Iniciar sesión",
             "recover": "Recuperar contraseña",
             "account": "Cuenta IVPN",
@@ -237,7 +237,7 @@
         },
         "greetings": "¡Tu cuenta ha sido creada!",
         "greetingsText": "Por favor, asegúrate de guardar tu ID de cuenta en un lugar seguro, la usarás para conectarte a la VPN. No necesitas tu correo electrónico para usar nuestro servicio.",
-        "accountId":"ID de cuenta",
+        "accountId": "ID de cuenta",
         "inactive": "INACTIVO",
         "active": "ACTIVO",
         "continueToPayment1": "Continuar con el pago",
@@ -307,7 +307,7 @@
         "confirm": "Confirmar",
         "confirmChangeProduct": "IVPN Standard permite el acceso VPN en 2 dispositivos. Iniciar un cambio de plan te desconectará de todos los dispositivos activos. Puedes iniciar sesión en nuevos dispositivos después. Por favor, confirma para proceder.",
         "disableRecurring": "Desactivar pagos recurrentes",
-        "disableRecurringDesc" : "Al desactivar los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
+        "disableRecurringDesc": "Al desactivar los pagos recurrentes, se eliminará la información de pago almacenada de nuestro sistema y se desactivará la renovación automática del servicio.",
         "disableRecurringPayments": "Desactivar pagos recurrentes",
         "vouchers": "Cupones",
         "popups": {
@@ -337,7 +337,7 @@
                 "setPaymentMethod": "Configurar método de pago",
                 "cancel": "Cancelar"
             },
-            "totp":{
+            "totp": {
                 "disable": {
                     "title": "Desactivar autenticación de dos factores",
                     "desc": "Para desactivar la autenticación de dos factores, introduce el código de la aplicación TOTP o un código de respaldo.",
@@ -380,7 +380,6 @@
                     "desc5": "Confirma que aún deseas cambiar a un plan inferior:"
                 }
             }
-
         },
         "wireguardTab": {
             "title": "WireGuard",
@@ -401,7 +400,44 @@
             "publicKey": "Clave pública:",
             "comment": "Comentario (opcional):",
             "add": "Añadir clave",
+            "close": "Cerrar",
             "cancel": "Cancelar",
+            "quantumResistanceEnable": "Añadir claves públicas post-cuánticas (opcional)",
+            "quantumResistanceGenerate": "Activar conexión resistente a la computación cuántica",
+            "quantumResistanceDesc": "Ambas claves públicas se envían; el servidor deriva la clave precompartida de WireGuard a partir de ambos secretos compartidos.",
+            "quantumManualGuideNote": "Mejora tu conexión WireGuard manual con un PresharedKey resistente a la computación cuántica generando pares de claves KEM localmente con herramientas de código abierto. Sigue la",
+            "quantumManualGuideLinkText": "guía de configuración WireGuard resistente a la computación cuántica",
+            "quantumManualGuideSuffix": " para instrucciones paso a paso.",
+            "quantumAlgorithm": "Algoritmos: Kyber-1024 + Classic-McEliece-348864",
+            "quantumStepsTitle": "Cómo generar usando {'@'}oqs/liboqs-js (ambos algoritmos):",
+            "quantumStep1": "Instala la biblioteca: npm install {'@'}oqs/liboqs-js",
+            "quantumStep2": "Llama a la función de fábrica para cada algoritmo y usa generateKeyPair() (ver código más abajo).",
+            "quantumStep3": "Envía ambas claves públicas; el servidor encapsula cada una y deriva la clave precompartida combinada.",
+            "quantumGenerate": "Generar ambos pares de claves en el navegador",
+            "quantumGenerating": "Generando…",
+            "quantumPresharedKey": "Clave precompartida post-cuántica:",
+            "quantumPresharedKeyGenerated": "Clave precompartida generada (Kyber-1024 + Classic-McEliece-348864)",
+            "quantumPresharedKeyNotGenerated": "Aún no generada — haz clic en el botón de abajo",
+            "quantumDerivedPsk": "Clave precompartida post-cuántica:",
+            "quantumDerivedPskNote": "Cópiala en tu config WireGuard bajo [Peer] como: PresharedKey = ...",
+            "quantumDerivedPskCopy": "Copiar",
+            "quantumDerivedPskDone": "Listo",
+            "quantumPublicKey1": "Clave pública Kyber-1024 (Base64):",
+            "quantumPublicKeyPlaceholder1": "Pega tu clave pública Kyber-1024 (Base64) o genéralas a continuación",
+            "quantumPublicKey2": "Clave pública Classic-McEliece-348864 (Base64):",
+            "quantumPublicKeyPlaceholder2": "Pega tu clave pública Classic-McEliece-348864 (Base64) o genéralas a continuación",
+            "quantumPublicKey": "Clave pública Kyber-1024 (Base64):",
+            "quantumPublicKeyPlaceholder": "Pega tu clave pública Kyber-1024 (Base64) o genérala a continuación",
+            "quantumDownloadSecretKey": "Descargar clave privada (.bin)",
+            "quantumSecretKeyWarning": "⚠ Guarda tu clave privada ahora. Es necesaria para descifrar el secreto compartido más adelante y no se puede recuperar.",
+            "quantumKeyInvalidKyber": "Clave pública Kyber-1024 no válida (se esperan 2092 caracteres base64).",
+            "quantumKeyInvalidMcEliece": "Clave pública Classic-McEliece-348864 no válida (se esperan 348160 caracteres base64).",
+            "quantumCiphersTitle": "Claves de cifrado cuántico",
+            "quantumCipher1Label": "Cifrado Kyber-1024 (KEM 1):",
+            "quantumCipher2Label": "Cifrado Classic-McEliece-348864 (KEM 2):",
+            "quantumCiphersNote": "El servidor encapsuló tus claves públicas. Desencapsula estos cifrados con tus claves privadas para derivar la PresharedKey — sigue la",
+            "quantumCiphersGuide": "guía paso a paso",
+            "quantumCiphersBrowserDerived": "PresharedKey derivada en el navegador a partir de estos cifrados e incluida en tu configuración.",
             "backToWireguard": "Volver a WireGuard",
             "configuration": "Configuración de WireGuard",
             "configStep1Title": "1: Generar clave WireGuard",
@@ -443,6 +479,11 @@
             "delete": "Eliminar",
             "ipv4Address": "Dirección IPv4",
             "ipv6Address": "Dirección IPv6",
+            "presharedKey": "Clave precompartida",
+            "show": "Mostrar",
+            "hide": "Ocultar",
+            "copy": "Copiar",
+            "copied": "¡Copiado!",
             "deleteKeyConfirm": "¿Estás seguro de que deseas eliminar esta clave?",
             "yes": "Sí"
         },
@@ -450,7 +491,7 @@
             "disabled": "La gestión de dispositivos está deshabilitada.",
             "disabledDesc1": "Cuando está función está habilitada, puedes revisar los dispositivos conectados al servicio y cerrar su sesión de forma remota según sea necesario.",
             "disabledDesc2": "Recomendamos guardar de forma segura los identificadores de dispositivos con cifrado para identificar y desconectar dispositivos cuando no tengas acceso a ellos.",
-            "disabledDesc3": "Aprende más sobre esta función y sus posibles implicaciones de privacidad" ,
+            "disabledDesc3": "Aprende más sobre esta función y sus posibles implicaciones de privacidad",
             "disabledDesc4": "La gestión de dispositivos es aplicable solo al servicio VPN, los servicios adicionales no se ven afectados.",
             "here": "aquí",
             "enableDeviceManagement": "Activar la gestión de dispositivos",
@@ -487,7 +528,7 @@
             "billing": "Facturación",
             "deleteAccount": "Borrar cuenta",
             "logInto": "Inicia sesión en el área de cliente utilizando",
-            "accountId":"ID de cuenta",
+            "accountId": "ID de cuenta",
             "emailPassword": "Email y Contraseña",
             "email": "Email:",
             "password": "Contraseña:",
@@ -496,7 +537,7 @@
             "recurringPayments": "Pagos recurrentes",
             "billingCycle": "Ciclo de facturación",
             "paymentMethod": "Método de pago",
-            "paidUntil":"Pagado hasta",
+            "paidUntil": "Pagado hasta",
             "wasActiveUntil": " Estaba activo hasta",
             "lastPayment": "Último pago",
             "recurringFailedOn": "El pago automático recurrente falló el ",
@@ -514,7 +555,7 @@
             "services": "Servicios",
             "syncMail": "Sincronizar"
         },
-        "payments":{
+        "payments": {
             "paymentReceived": {
                 "title": "Tu pago ha sido recibido",
                 "accountExtended": "Tu cuenta se ha extendido hasta ",
@@ -606,7 +647,7 @@
                 "note1Upgrade": "Tu cuenta se mejorará después de que se confirme el pago. Esto puede tardar unos minutos.",
                 "note2Upgrade": "Aviso: La dirección anterior es para uso único y está activa durante 24 horas después de su generación. No envíes fondos adicionales a ella después de este pago."
             },
-            "voucher":{
+            "voucher": {
                 "codeFrom": "Código de un cupón emitido por IVPN:",
                 "addTime": "Añadir tiempo",
                 "pleaseNote": "Por favor, ten en cuenta que los códigos de cupón se almacenan en nuestro sistema durante 30 días después de su uso para ayudar a resolver problemas de activación. La recuperación de la cuenta no es posible después de este período.",
@@ -681,8 +722,8 @@
         "allServers": "Todos los servidores",
         "selectEntryServerLocation": "Elige la ubicación del servidor de entrada",
         "selectCountry": "Elige el país",
-        "selectCity":"Elige la ciudad",
-        "selectServer":"Elige el servidor",
+        "selectCity": "Elige la ciudad",
+        "selectServer": "Elige el servidor",
         "step2Title": "2. Configuración",
         "protocol": "Protocolo",
         "protocolPort": "Protocolo / Puerto",
@@ -698,7 +739,7 @@
         "aboutHow": "sobre cómo se implementa IVPN AntiTracker.",
         "dnsSettingsNote2": "El modo Hardcore bloquea las principales empresas con modelos de negocio que dependen de la vigilancia del usuario (actualmente: Google y Facebook).",
         "hardcoreMode": "Modo Hardcore",
-        "customDns":"DNS personalizado",
+        "customDns": "DNS personalizado",
         "enterValidIp": "Por favor, introduce una dirección IPv4 válida.",
         "step3Title": "3. Descargar",
         "downloadZip": "Descargar archivo zip"
