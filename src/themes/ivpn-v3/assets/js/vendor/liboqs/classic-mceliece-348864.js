@@ -135,10 +135,51 @@ export class ClassicMcEliece348864 {
       const publicKey = new Uint8Array(CLASSIC_MCELIECE_348864_INFO.keySize.publicKey);
       publicKey.set(this.#wasmModule.HEAPU8.subarray(publicKeyPtr, publicKeyPtr + CLASSIC_MCELIECE_348864_INFO.keySize.publicKey));
 
-      return { publicKey };
+      const secretKey = new Uint8Array(CLASSIC_MCELIECE_348864_INFO.keySize.secretKey);
+      secretKey.set(this.#wasmModule.HEAPU8.subarray(secretKeyPtr, secretKeyPtr + CLASSIC_MCELIECE_348864_INFO.keySize.secretKey));
+
+      return { publicKey, secretKey };
 
     } finally {
       this.#wasmModule._free(publicKeyPtr);
+      this.#wasmModule._free(secretKeyPtr);
+    }
+  }
+
+  /**
+   * Decapsulate a ciphertext to recover the shared secret
+   * @param {Uint8Array} ciphertext - 96-byte KEM ciphertext from the server
+   * @param {Uint8Array} secretKey - Secret key returned by generateKeyPair
+   * @returns {{sharedSecret: Uint8Array}} 32-byte shared secret
+   */
+  decapsulate(ciphertext, secretKey) {
+    this.#checkDestroyed();
+    this.#validateCiphertext(ciphertext);
+    this.#validateSecretKey(secretKey);
+
+    const sharedSecretPtr = this.#wasmModule._malloc(CLASSIC_MCELIECE_348864_INFO.keySize.sharedSecret);
+    const ciphertextPtr   = this.#wasmModule._malloc(CLASSIC_MCELIECE_348864_INFO.keySize.ciphertext);
+    const secretKeyPtr    = this.#wasmModule._malloc(CLASSIC_MCELIECE_348864_INFO.keySize.secretKey);
+
+    try {
+      this.#wasmModule.HEAPU8.set(ciphertext, ciphertextPtr);
+      this.#wasmModule.HEAPU8.set(secretKey,  secretKeyPtr);
+
+      const result = this.#wasmModule._OQS_KEM_decaps(
+        this.#kemPtr, sharedSecretPtr, ciphertextPtr, secretKeyPtr
+      );
+
+      if (result !== 0) {
+        throw new LibOQSOperationError('decapsulate', 'Classic-McEliece-348864', `Error code: ${result}`);
+      }
+
+      const sharedSecret = new Uint8Array(CLASSIC_MCELIECE_348864_INFO.keySize.sharedSecret);
+      sharedSecret.set(this.#wasmModule.HEAPU8.subarray(sharedSecretPtr, sharedSecretPtr + CLASSIC_MCELIECE_348864_INFO.keySize.sharedSecret));
+
+      return { sharedSecret };
+    } finally {
+      this.#wasmModule._free(sharedSecretPtr);
+      this.#wasmModule._free(ciphertextPtr);
       this.#wasmModule._free(secretKeyPtr);
     }
   }

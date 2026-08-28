@@ -118,6 +118,18 @@
                     </p>
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
+                <div v-if="showQuantum && pqCipher1 && publicKey" style="margin-top:16px">
+                    <h4>{{ $t('account.wireguardTab.quantumCiphersTitle') }}</h4>
+                    <p class="note">
+                        {{ $t('account.wireguardTab.quantumCiphersNote') }}
+                        <a href="/privacy-guides/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.
+                    </p>
+                    <p v-if="pqPresharedKey" class="note">{{ $t('account.wireguardTab.quantumCiphersBrowserDerived') }}</p>
+                    <label>{{ $t('account.wireguardTab.quantumCipher1Label') }}</label>
+                    <textarea class="key-display" style="margin-top:6px" readonly :value="pqCipher1"></textarea>
+                    <label style="margin-top:8px; display:block">{{ $t('account.wireguardTab.quantumCipher2Label') }}</label>
+                    <textarea class="key-display" style="margin-top:6px" readonly :value="pqCipher2"></textarea>
+                </div>
                 <h3>{{ $t('account.wireguardTab.configStep2Title') }}</h3>
                 <p class="note">{{ $t('account.wireguardTab.configStep2Content') }}</p>
                 <div class="tabs">
@@ -332,6 +344,10 @@ export default {
             pqPublicKey1: "",
             pqPublicKey2: "",
             pqPresharedKey: "",
+            pqCipher1: "",
+            pqCipher2: "",
+            pqSecretKey1: null,
+            pqSecretKey2: null,
             pqError: null,
         };
     },
@@ -376,10 +392,20 @@ export default {
              }
          },
          quantumEnabledGenerate(val) {
-             if (!val) { this.pqPublicKey1 = ""; this.pqPublicKey2 = ""; this.pqPresharedKey = ""; this.pqError = null; }
+             if (!val) {
+                 this.pqPublicKey1 = ""; this.pqPublicKey2 = "";
+                 this.pqPresharedKey = ""; this.pqCipher1 = ""; this.pqCipher2 = "";
+                 if (this.pqSecretKey1) { this.pqSecretKey1.fill(0); this.pqSecretKey1 = null; }
+                 if (this.pqSecretKey2) { this.pqSecretKey2.fill(0); this.pqSecretKey2 = null; }
+                 this.pqError = null;
+             }
          },
          quantumEnabledAdd(val) {
-             if (!val) { this.pqPublicKey1 = ""; this.pqPublicKey2 = ""; this.pqError = null; }
+             if (!val) {
+                 this.pqPublicKey1 = ""; this.pqPublicKey2 = "";
+                 this.pqCipher1 = ""; this.pqCipher2 = "";
+                 this.pqError = null;
+             }
          },
     },
     computed: {
@@ -461,7 +487,8 @@ export default {
             "\nDNS = " + dns +
             "\n\n[Peer]" +
             "\nPublicKey = " + publicKey +
-            (this.pqPresharedKey ? "\nPresharedKey = " + this.pqPresharedKey : "") +
+            (this.pqPresharedKey ? "\nPresharedKey = " + this.pqPresharedKey :
+             this.pqCipher1      ? "\n# PresharedKey = <derive from cipher keys — see guide>" : "") +
             "\nAllowedIPs = " + config.peer.allowed_ips +
             "\nEndpoint = " + config.peer.endpoint;
         },
@@ -679,24 +706,62 @@ export default {
             this.pqError = null;
             this.pqPublicKey1 = "";
             this.pqPublicKey2 = "";
+            if (this.pqSecretKey1) { this.pqSecretKey1.fill(0); this.pqSecretKey1 = null; }
+            if (this.pqSecretKey2) { this.pqSecretKey2.fill(0); this.pqSecretKey2 = null; }
             try {
                 const { createKyber1024 } = await import("@oqs/liboqs-js");
                 const kem1 = await createKyber1024();
                 try {
-                    const { publicKey } = kem1.generateKeyPair();
+                    const { publicKey, secretKey } = kem1.generateKeyPair();
                     this.pqPublicKey1 = uint8ToBase64(publicKey);
+                    this.pqSecretKey1 = secretKey;
                 } finally { kem1.destroy(); }
 
                 const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
                 const kem2 = await createClassicMcEliece348864();
                 try {
-                    const { publicKey } = kem2.generateKeyPair();
+                    const { publicKey, secretKey } = kem2.generateKeyPair();
                     this.pqPublicKey2 = uint8ToBase64(publicKey);
+                    this.pqSecretKey2 = secretKey;
                 } finally { kem2.destroy(); }
             } catch (err) {
                 this.pqError = err && err.message ? err.message : String(err);
             } finally {
                 this.isGeneratingPq = false;
+            }
+        },
+        // Derive PSK in-browser by decapsulating server ciphers with locally-generated secret keys.
+        async deriveBrowserPsk(cipher1B64, cipher2B64) {
+            const b64ToBytes = (b64) => {
+                const bin = atob(b64);
+                const out = new Uint8Array(bin.length);
+                for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+                return out;
+            };
+            try {
+                const cipher1 = b64ToBytes(cipher1B64);
+                const cipher2 = b64ToBytes(cipher2B64);
+
+                const { createKyber1024 } = await import("@oqs/liboqs-js");
+                const kem1 = await createKyber1024();
+                let ss1;
+                try { ss1 = kem1.decapsulate(cipher1, this.pqSecretKey1).sharedSecret; }
+                finally { kem1.destroy(); }
+
+                const { createClassicMcEliece348864 } = await import("@oqs/liboqs-js");
+                const kem2 = await createClassicMcEliece348864();
+                let ss2;
+                try { ss2 = kem2.decapsulate(cipher2, this.pqSecretKey2).sharedSecret; }
+                finally { kem2.destroy(); }
+
+                const combined = new Uint8Array(ss1.length + ss2.length);
+                combined.set(ss1, 0);
+                combined.set(ss2, ss1.length);
+                const digest = await crypto.subtle.digest('SHA-256', combined);
+                return uint8ToBase64(new Uint8Array(digest));
+            } finally {
+                if (this.pqSecretKey1) { this.pqSecretKey1.fill(0); this.pqSecretKey1 = null; }
+                if (this.pqSecretKey2) { this.pqSecretKey2.fill(0); this.pqSecretKey2 = null; }
             }
         },
         addKey() {
@@ -738,9 +803,17 @@ export default {
                 this.publicKey = publicKey;
                 this.error.addKey = null;
 
-                // Store the server-derived preshared key for the config file
-                if (this.showQuantum && res.preshared_key) {
-                    this.pqPresharedKey = res.preshared_key;
+                if (this.showQuantum && res.kem_cipher1 && res.kem_cipher2) {
+                    this.pqCipher1 = res.kem_cipher1;
+                    this.pqCipher2 = res.kem_cipher2;
+                    // For the generate tab: secret keys are available — derive PSK in the browser.
+                    if (this.isKeyGenerated && this.pqSecretKey1 && this.pqSecretKey2) {
+                        try {
+                            this.pqPresharedKey = await this.deriveBrowserPsk(res.kem_cipher1, res.kem_cipher2);
+                        } catch (err) {
+                            this.pqError = err && err.message ? err.message : String(err);
+                        }
+                    }
                 }
 
                 this.updateQuery();

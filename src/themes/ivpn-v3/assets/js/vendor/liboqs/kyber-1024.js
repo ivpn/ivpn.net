@@ -147,10 +147,51 @@ export class Kyber1024 {
       const publicKey = new Uint8Array(KYBER1024_INFO.keySize.publicKey);
       publicKey.set(this.#wasmModule.HEAPU8.subarray(publicKeyPtr, publicKeyPtr + KYBER1024_INFO.keySize.publicKey));
 
-      return { publicKey };
+      const secretKey = new Uint8Array(KYBER1024_INFO.keySize.secretKey);
+      secretKey.set(this.#wasmModule.HEAPU8.subarray(secretKeyPtr, secretKeyPtr + KYBER1024_INFO.keySize.secretKey));
+
+      return { publicKey, secretKey };
 
     } finally {
       this.#wasmModule._free(publicKeyPtr);
+      this.#wasmModule._free(secretKeyPtr);
+    }
+  }
+
+  /**
+   * Decapsulate a ciphertext to recover the shared secret
+   * @param {Uint8Array} ciphertext - 1568-byte KEM ciphertext from the server
+   * @param {Uint8Array} secretKey - Secret key returned by generateKeyPair
+   * @returns {{sharedSecret: Uint8Array}} 32-byte shared secret
+   */
+  decapsulate(ciphertext, secretKey) {
+    this.#checkDestroyed();
+    this.#validateCiphertext(ciphertext);
+    this.#validateSecretKey(secretKey);
+
+    const sharedSecretPtr = this.#wasmModule._malloc(KYBER1024_INFO.keySize.sharedSecret);
+    const ciphertextPtr   = this.#wasmModule._malloc(KYBER1024_INFO.keySize.ciphertext);
+    const secretKeyPtr    = this.#wasmModule._malloc(KYBER1024_INFO.keySize.secretKey);
+
+    try {
+      this.#wasmModule.HEAPU8.set(ciphertext, ciphertextPtr);
+      this.#wasmModule.HEAPU8.set(secretKey,  secretKeyPtr);
+
+      const result = this.#wasmModule._OQS_KEM_decaps(
+        this.#kemPtr, sharedSecretPtr, ciphertextPtr, secretKeyPtr
+      );
+
+      if (result !== 0) {
+        throw new LibOQSOperationError('decapsulate', 'Kyber1024', `Error code: ${result}`);
+      }
+
+      const sharedSecret = new Uint8Array(KYBER1024_INFO.keySize.sharedSecret);
+      sharedSecret.set(this.#wasmModule.HEAPU8.subarray(sharedSecretPtr, sharedSecretPtr + KYBER1024_INFO.keySize.sharedSecret));
+
+      return { sharedSecret };
+    } finally {
+      this.#wasmModule._free(sharedSecretPtr);
+      this.#wasmModule._free(ciphertextPtr);
       this.#wasmModule._free(secretKeyPtr);
     }
   }
