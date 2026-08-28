@@ -1,4 +1,4 @@
-import { createApp, h } from 'vue'
+import { createSSRApp as createApp, h } from 'vue'
 import App from './App.vue'
 
 import router from './router/index.js'
@@ -79,7 +79,6 @@ let products = {
 }
 
 store.commit('product/setAll', { products })
-store.dispatch('auth/init')
 
 const i18n = createI18n({
     legacy: false,
@@ -148,4 +147,13 @@ app.config.productionTip = false
 app.use(store)
 app.use(router)
 app.use(i18n)
-app.mount('#application')
+
+// auth/init reads the loggedIn cookie synchronously. It must run before
+// router.isReady() so that router.beforeEach sees the correct isAuthenticated
+// state during the initial navigation (e.g. a page refresh on /account).
+store.dispatch('auth/init')
+
+// Await router resolution before mounting so $route is correct during SSR hydration.
+router.isReady().then(() => {
+    app.mount('#application')
+})
