@@ -118,6 +118,18 @@
                     </p>
                 </div>
                 <p v-if="error.addKey != null" class="error">{{ error.addKey }}</p>
+                <div v-if="showQuantum && pqCipher1 && publicKey" style="margin-top:16px">
+                    <h4>{{ $t('account.wireguardTab.quantumCiphersTitle') }}</h4>
+                    <p class="note">
+                        {{ $t('account.wireguardTab.quantumCiphersNote') }}
+                        <a href="/privacy-guides/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.
+                    </p>
+                    <p v-if="pqPresharedKey" class="note">{{ $t('account.wireguardTab.quantumCiphersBrowserDerived') }}</p>
+                    <label>{{ $t('account.wireguardTab.quantumCipher1Label') }}</label>
+                    <textarea class="key-display" style="margin-top:6px" readonly :value="pqCipher1"></textarea>
+                    <label style="margin-top:8px; display:block">{{ $t('account.wireguardTab.quantumCipher2Label') }}</label>
+                    <textarea class="key-display" style="margin-top:6px" readonly :value="pqCipher2"></textarea>
+                </div>
                 <h3>{{ $t('account.wireguardTab.configStep2Title') }}</h3>
                 <p class="note">{{ $t('account.wireguardTab.configStep2Content') }}</p>
                 <div class="tabs">
