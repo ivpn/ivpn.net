@@ -6,6 +6,7 @@
         <p class="error" v-if="isInvalid && !error">{{ $t('account.wireguardTab.publicKeyRequired') }}</p>
         <p class="error" v-if="!isInvalid && hasError">{{ errorMessage }}</p>
 
+        <template v-if="!pqCipher1">
         <label for="inp_key">{{ $t('account.wireguardTab.publicKey') }}</label>
         <input id="inp_key" v-model="publicKey" type="text" autofocus />
 
@@ -58,6 +59,18 @@
 
         <button :disabled="inProgress" class="btn btn-big btn-solid mt-2">{{ $t('account.wireguardTab.add') }}</button>
         <button @click.prevent="closeDialog" class="btn btn-icon btn-icon-red mt-1">{{ $t('account.wireguardTab.cancel') }}</button>
+        </template>
+
+        <template v-else>
+            <div class="mt-1">
+                <p class="quantum-desc">{{ $t('account.wireguardTab.quantumCiphersNote') }} <a href="/privacy-guides/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.</p>
+                <label class="mt-1" style="display:block">{{ $t('account.wireguardTab.quantumCipher1Label') }}</label>
+                <textarea class="key-display mt-1" readonly :value="pqCipher1"></textarea>
+                <label class="mt-1" style="display:block">{{ $t('account.wireguardTab.quantumCipher2Label') }}</label>
+                <textarea class="key-display mt-1" readonly :value="pqCipher2"></textarea>
+            </div>
+            <button @click.prevent="closeDialog" class="btn btn-big btn-solid mt-2">{{ $t('account.wireguardTab.close') }}</button>
+        </template>
         </form>
     </div>
 </template>
@@ -93,6 +106,8 @@ export default {
             isGeneratingPq: false,
             pqPublicKey1: "",
             pqPublicKey2: "",
+            pqCipher1: "",
+            pqCipher2: "",
             pqError: null,
         };
     },
@@ -127,6 +142,8 @@ export default {
         resetPqKeys() {
             this.pqPublicKey1 = "";
             this.pqPublicKey2 = "";
+            this.pqCipher1 = "";
+            this.pqCipher2 = "";
             this.pqError = null;
         },
 
@@ -204,13 +221,21 @@ export default {
                 kem_public_key2: this.showQuantum ? this.pqPublicKey2 : "",
             };
 
-            await this.$store.dispatch("wireguard/add", payload);
+            const result = await this.$store.dispatch("wireguard/add", payload);
 
             if (!this.error) {
                 this.publicKey = "";
                 this.comment = "";
-                this.resetPqKeys();
-                this.closeDialog();
+                this.pqPublicKey1 = "";
+                this.pqPublicKey2 = "";
+                this.pqError = null;
+                if (this.showQuantum && result && result.kem_cipher1) {
+                    this.pqCipher1 = result.kem_cipher1;
+                    this.pqCipher2 = result.kem_cipher2;
+                    // Stay open to show cipher keys — user closes manually
+                } else {
+                    this.closeDialog();
+                }
             }
         },
 
