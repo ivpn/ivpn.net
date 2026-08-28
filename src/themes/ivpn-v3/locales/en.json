@@ -387,6 +387,7 @@
             "publicKey": "Public Key:",
             "comment": "Comment (optional):",
             "add": "Add",
+            "close": "Close",
             "cancel": "Cancel",
             "quantumResistanceEnable": "Add post-quantum public keys (optional)",
             "quantumResistanceGenerate": "Enable quantum-resistant connection",

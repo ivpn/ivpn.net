@@ -387,6 +387,7 @@
             "publicKey": "Clave pública:",
             "comment": "Comentario (opcional):",
             "add": "Añadir clave",
+            "close": "Cerrar",
             "cancel": "Cancelar",
             "quantumResistanceEnable": "Añadir claves públicas post-cuánticas (opcional)",
             "quantumResistanceGenerate": "Activar conexión resistente a la computación cuántica",
