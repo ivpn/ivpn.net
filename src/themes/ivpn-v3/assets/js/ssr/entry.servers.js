@@ -1,6 +1,6 @@
 /**
- * SSR entry – Server Status page
- * Pre-renders ServerList.vue structural shell (empty server list).
+ * SSR entry – Servers page
+ * Pre-renders ServersPage.vue (ServerList shell + discovery line + FAQ).
  * Server data is fetched client-side from the API after hydration.
  */
 
@@ -27,7 +27,7 @@ if (typeof globalThis.window === 'undefined') {
 import { createSSRApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 import { renderToString } from '@vue/server-renderer'
-import ServerList from '@/components/ServerList.vue'
+import ServersPage from '@/components/ServersPage.vue'
 import en from '@/../../locales/en.json'
 import es from '@/../../locales/es.json'
 
@@ -41,7 +41,7 @@ export async function render(lang = 'en', baseURL = 'http://localhost') {
     messages: { en, es },
   })
 
-  const app = createSSRApp(ServerList)
+  const app = createSSRApp(ServersPage)
   app.use(i18n)
 
   return renderToString(app)

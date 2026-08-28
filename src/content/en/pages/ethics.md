@@ -8,7 +8,7 @@ sections:
     content: >-
       # Ethical Guidelines
 
-      We consider the effects of our choices with regarding to running our service. We follow a privacy-first mindset that goes beyond the basics.
+      We consider the effects of our choices with regard to running our service. We follow a privacy-first mindset that goes beyond the basics.
 
 
       Every decision matters: how and what we communicate to new customers, what information we collect and what tools we use to improve our service.
@@ -21,7 +21,7 @@ sections:
 
       #### No trackers
 
-      Trackers by ad companies and social networks monitor your actions and aid in profiling you. You won’t find them on ivpn.net - we are a tracking free provider.
+      Trackers by ad companies and social networks monitor your actions and aid in profiling you. You won’t find them on ivpn.net: we are a tracking free provider.
 
       #### No third-party tools
 
@@ -85,7 +85,7 @@ sections:
         </tr>
         <tr>
           <td><strong>Improving our service</strong> <br>Consistent improvements to our service lead to customers recommend us to others.</td>
-          <td>WireGuard support<br>Linux CLI and GUI<br>IPv6 support</td> 
+          <td><a href="/blog/quantum-resistant-wireguard-connections-ivpn-apps/">Quantum-resistant connections</a><br><a href="/blog/v2ray-obfuscation-available-all-ivpn-platforms/">V2Ray obfuscation</a><br><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Early WireGuard support</a></td> 
         </tr>
         <tr>
           <td><strong>Educational projects</strong><br>We allocate time and resources to projects that spread information about privacy and trustworthy VPNs.</td>
@@ -97,11 +97,11 @@ sections:
         </tr>
         <tr>
           <td><strong>Journalists and reviewer cooperation</strong><br>We share progress updates and demo accounts with journalists and ethical VPN reviewers. No compensation is offered.</td>
-          <td><a href="https://arstechnica.com/gadgets/2018/12/testing-wireguard-with-an-early-adopter-vpn-service/">Ars Technica</a><br><a href="https://themarkup.org/the-breakdown/2021/08/12/how-private-is-my-vpn">The Markup</a><br>Techlore<br>Privacy Guides</td> 
+          <td>The Wirecutter<br>Techlore<br>Privacy Guides</td> 
         </tr>
         <tr>
           <td><strong>Sponsorships</strong><br>We sponsor non-profit organisations and development projects that focus on privacy.</td>
-          <td><a href="https://www.eff.org">EFF</a><br><a href="https://www.torproject.org">Tor Project</a><br><a href="https://www.wireguard.com">WireGuard</a></td> 
+          <td><a href="https://www.eff.org">EFF</a><br><a href="https://btcpayserver.org">BTCPay Server</a><br><a href="https://www.wireguard.com">WireGuard</a></td> 
         </tr>
           <tr>
           <td><strong>Supporting privacy educators</strong><br>We financially support ethical content creators, who possess the necessary background to evaluate and endorse VPNs.</td>

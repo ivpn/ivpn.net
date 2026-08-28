@@ -1,0 +1,102 @@
+@use "../_tokens" as *;
+
+.privacy-stack-section {
+    @include container();
+    margin-top: 3rem;
+    padding-left: $default-grid-gutter / 2;
+    padding-right: $default-grid-gutter / 2;
+
+    .ps-intro {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 44rem;
+        margin: 0 auto calc(2.5rem + 15px);
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+
+    .ps-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @include respond-to('medium') {
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc(2rem + 20px);
+        }
+    }
+
+    .ps-logo-box {
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.85rem;
+
+        img {
+            height: 1.5rem;
+            width: auto;
+        }
+
+        &--portmaster {
+            gap: 0.4rem;
+
+            img {
+                height: 1.7rem;
+            }
+        }
+    }
+
+    .ps-pm-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 0.01em;
+    }
+
+    .ps-pm-icon-invert {
+        filter: invert(1);
+    }
+
+    .ps-plans {
+        font-weight: bold;
+        margin: 0 0 0.5rem;
+        font-size: $text-size;
+    }
+
+    .ps-desc {
+        font-size: $text-size;
+        line-height: 1.6;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .ps-disclaimer {
+        text-align: center;
+        max-width: 60rem;
+        margin: 3rem auto 0;
+        padding-bottom: calc(1rem + 10px);
+        font-size: $text-size;
+        line-height: 1.6;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    // Theme-aware logo visibility
+    .logo-light-theme {
+        @include light-theme((display: block));
+        @include dark-theme((display: none));
+    }
+
+    .logo-dark-theme {
+        @include light-theme((display: none));
+        @include dark-theme((display: block));
+    }
+}

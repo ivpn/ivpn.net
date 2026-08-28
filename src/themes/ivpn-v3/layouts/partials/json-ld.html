@@ -110,7 +110,7 @@
   {{- $pos := 2 -}}
   {{- range collections.Reverse .Ancestors -}}
     {{- $skipAncestor := or .IsHome (eq .RelPermalink $langPagesPath) -}}
-    {{- if and (not $skipAncestor) .Title -}}
+    {{- if and (not $skipAncestor) .Title .Permalink -}}
       {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
       {{- $pos = add $pos 1 -}}
     {{- end -}}

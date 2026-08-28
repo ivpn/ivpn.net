@@ -192,7 +192,7 @@ sections:
     image_light: /images/stack-diagram-white.png
     alt: Stack Diagram
     paragraphs:
-      - Bajo los planes Plus y Pro, MailX, modDNS y Portmaster autorizan el acceso sin recibir ni almacenar tu ID de cuenta de IVPN. 
+      - Bajo los planes Plus y Pro, Mailx, modDNS y Portmaster autorizan el acceso sin recibir ni almacenar tu ID de cuenta de IVPN. 
       - Cuando activas un servicio, IVPN le envía un token criptográfico derivado de tu cuenta. Cada servicio utiliza un hash de ese token para confirmar que tu suscripción está activa. Ninguno de ellos mantiene un enlace directo con tu cuenta de IVPN.
     link:
       text: Lee sobre el acceso sin enlace

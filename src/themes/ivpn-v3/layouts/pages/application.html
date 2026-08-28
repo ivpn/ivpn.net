@@ -9,8 +9,6 @@
             {{- else -}}
                 {{- with index site.Data.ssr "pricing" -}}{{- $ssrHtml = .html -}}{{- end -}}
             {{- end -}}
-        {{- else if in .RelPermalink "light" -}}
-            {{- with index site.Data.ssr "light" -}}{{- $ssrHtml = .html -}}{{- end -}}
         {{- end -}}
     {{- end -}}
     {{- /*

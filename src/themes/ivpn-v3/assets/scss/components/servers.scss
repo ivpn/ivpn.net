@@ -1,9 +1,56 @@
 @use "../_tokens" as *;
+
+.servers-discovery,
+.servers-faq {
+    @include container();
+}
+
+.servers-discovery {
+    margin-top: 1rem;
+    font-size: $text-size;
+}
+
+.servers-faq {
+    margin-top: 3rem;
+    padding-bottom: 50px;
+
+    dl {
+        margin: 0;
+    }
+
+    dt {
+        font-weight: bold;
+        margin-top: 1.5rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    dd {
+        margin: 0.4rem 0 0;
+        font-size: $text-size;
+        line-height: 1.6;
+    }
+}
+
 .servers {
     @include grid($gutter: $default-grid-gutter);
     @include container();
     flex-wrap: wrap;
     display: block;
+
+    &__heading {
+        padding-top: 48px;
+    }
+
+    &__summary {
+        font-size: $text-size;
+        line-height: 1.6;
+        margin-top: 0.5rem;
+        margin-bottom: calc(1.5rem + 20px);
+        max-width:100%;
+    }
 
     &__list {
 

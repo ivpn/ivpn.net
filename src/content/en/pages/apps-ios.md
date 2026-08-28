@@ -1,6 +1,6 @@
 ---
 title: IVPN for iOS - Open-source VPN app for your iPhone and iPad
-description: The IVPN app for iOS is designed for iPhone and iPad and offers you comprehensive privacy leak protection, automatic connection on insecure Wi-Fi and Multi-hop.
+description: The IVPN app for iOS is designed for iPhone and iPad, with AntiTracker, automatic connection on insecure Wi-Fi, and Multi-hop.
 h1: IVPN for iOS
 subtitle: Supports iOS/iPadOS 15.0+
 url: /en/apps-ios/
@@ -19,11 +19,13 @@ releases: [{
 ## Features
 
 - WireGuard, OpenVPN or IPSec protocols.
+- Quantum-resistant WireGuard connections.
 - WireGuard privacy controls - Define automatic key and IP address rotation schedule.
 - AntiTracker that blocks ads, adware, malicious websites and data harvesting trackers.
 - Ability to define trusted Wi-Fi networks and create rules for automatic VPN connection/disconnection
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Custom DNS servers, with DoH or DoT.
+- V2Ray obfuscation to circumvent censorship.
 
 ## Manual configuration
 
