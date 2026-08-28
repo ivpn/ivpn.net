@@ -636,7 +636,7 @@
             "markAsNotShared": "Marcar como no compartido"
         },
         "servicesArea": {
-            "mail": "MailX",
+            "mail": "Mailx",
             "dns": "modDNS",
             "portmaster": "Portmaster Pro",
             "accessMail": "Acceder",
