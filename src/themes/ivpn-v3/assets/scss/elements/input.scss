@@ -74,3 +74,21 @@ input[type="checkbox"]:focus {
     outline: 0 none;
     box-shadow: none;
 }
+
+// Required for the altcha widget's light-dark() CSS function to resolve.
+// The site switches dark/light mode via @media queries and never sets
+// color-scheme on :root, which would otherwise leave light-dark() unresolved.
+altcha-widget {
+    color-scheme: light dark;
+
+    // IVPN's input[type="checkbox"]:checked rule (specificity 0,2,1) adds a
+    // background-image SVG checkmark. Altcha's own :checked rule only sets
+    // background-color/border-color, leaving the IVPN image intact and causing
+    // a double checkmark. This rule has specificity (0,2,2) and beats IVPN's
+    // (0,2,1) while leaving altcha's own background-color/border untouched.
+    input[type="checkbox"]:checked {
+        background-image: none;
+        background-position: initial;
+        background-repeat: initial;
+    }
+}

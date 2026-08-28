@@ -372,22 +372,14 @@ export default {
          selectedBlockList: {
              handler: function () {
                 if (this.dnsType === 'antitracker') {
-                    if(this.isDnsHardcore){
-                        this.dns = this.selectedBlockList.Hardcore;
-                    }else{
-                        this.dns = this.selectedBlockList.Normal;
-                    }
+                    this.dns = this.isDnsHardcore ? this.selectedBlockList.Hardcore : this.selectedBlockList.Normal;
                 }
              }
          },
          isDnsHardcore: {
             handler: function () {
                 if (this.dnsType === 'antitracker') {
-                    if(this.isDnsHardcore){
-                        this.dns = this.selectedBlockList.Hardcore;
-                    }else{
-                        this.dns = this.selectedBlockList.Normal;
-                    }
+                    this.dns = this.isDnsHardcore ? this.selectedBlockList.Hardcore : this.selectedBlockList.Normal;
                 }
              }
          },
