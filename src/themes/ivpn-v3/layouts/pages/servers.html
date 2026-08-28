@@ -1,6 +1,10 @@
 {{ define "main" }}
     <div class="content__text">
-        <div id="servers"></div>
+        {{- $ssrHtml := "" -}}
+        {{- if site.Data.ssr -}}
+            {{- with index site.Data.ssr "servers" -}}{{- $ssrHtml = .html -}}{{- end -}}
+        {{- end -}}
+        <div id="servers">{{ $ssrHtml | safeHTML }}</div>
     </div>
 {{ end }}
 
