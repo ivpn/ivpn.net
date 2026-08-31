@@ -568,6 +568,8 @@
                 "automaticRenewal": "Renovación automática",
                 "ccAutomaticRenewalInfo": "Las renovaciones automáticas están siempre desactivadas de forma predeterminada. Puedes habilitar esto si es más conveniente para ti. Tus datos de tarjeta serán almacenados por Braintree, sin embargo, puedes cancelar la renovación automática en cualquier momento desde tu página de cuenta.",
                 "makePayment": "Pagar",
+                "continueToPayment": "Continuar al pago",
+                "verifyCaptcha": "Por favor, verifica que no eres un robot para continuar con tu pago.",
                 "cardNumber": "Número de tarjeta",
                 "errorAbove": "El error anterior proviene directamente de Braintree, nuestro procesador de pagos con tarjeta de crédito. Puedes actualizar los detalles de tu tarjeta y/o añadir información adicional e intentarlo de nuevo.",
                 "additionalCardInformation": "Información adicional de la tarjeta",

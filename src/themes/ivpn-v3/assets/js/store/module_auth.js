@@ -111,16 +111,14 @@ export default {
                     response = await Api.login(
                         payload.accountID,
                         payload.totpValue,
-                        payload.captchaID,
-                        payload.captchaValue,
+                        payload.altchaToken,
                     );
                 } else {
                     response = await Api.loginEmail(
                         payload.email,
                         payload.password,
                         payload.totpValue,
-                        payload.captchaID,
-                        payload.captchaValue
+                        payload.altchaToken,
                     );
                 }
 
