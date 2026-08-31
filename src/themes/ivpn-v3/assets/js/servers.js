@@ -1,5 +1,5 @@
-import { createSSRApp as createApp } from 'vue'
-import ServerList from './components/ServerList.vue'
+import { createApp } from 'vue'
+import ServersPage from './components/ServersPage.vue'
 import { createI18n } from 'vue-i18n'
 import en from '../../locales/en.json'
 import es from '../../locales/es.json'
@@ -14,6 +14,6 @@ const i18n = createI18n({
     }
 })
 
-const app = createApp(ServerList)
+const app = createApp(ServersPage)
 app.use(i18n)
 app.mount('#servers')
