@@ -1,5 +1,38 @@
 {{ define "main" }}
-    <div id="application"></div>
+    {{- /* Embed SSR pre-rendered HTML when available for pricing/light pages.
+         Vue's createSSRApp will hydrate over it; other pages get an empty div. */ -}}
+    {{- $ssrHtml := "" -}}
+    {{- if site.Data.ssr -}}
+        {{- if in .RelPermalink "pricing" -}}
+            {{- if eq .Page.Language.Lang "es" -}}
+                {{- with index site.Data.ssr "pricing_es" -}}{{- $ssrHtml = .html -}}{{- end -}}
+            {{- else -}}
+                {{- with index site.Data.ssr "pricing" -}}{{- $ssrHtml = .html -}}{{- end -}}
+            {{- end -}}
+        {{- else if in .RelPermalink "light" -}}
+            {{- with index site.Data.ssr "light" -}}{{- $ssrHtml = .html -}}{{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- /*
+        Wrap SSR HTML in the same structure App.vue renders for unauthenticated users:
+          div.app
+            <!--v-if-->   ← PopUp component (v-if=false, no popup active)
+            <!--v-if-->   ← AccountMenu (v-if="account && !account.is_new", null → false)
+            div.bottom-spacing.page-centered-pricing
+              div#app.app-content
+                [Prices.vue SSR HTML]
+        This matches exactly what createSSRApp(App) expects to find in #application,
+        preventing hydration mismatches that corrupt the CSS layout.
+        For non-SSR pages ($ssrHtml empty), the wrapper is still correct for hydration.
+    */ -}}
+    <div id="application">
+        {{- if $ssrHtml -}}
+        {{- /* SSR output from renderToString(App) already includes the full
+             div.app > div.bottom-spacing > div#app.app-content > [page] structure
+             with correct Vue comment anchors, so inject it directly. */ -}}
+        {{ $ssrHtml | safeHTML }}
+        {{- end -}}
+    </div>
 {{ end }}
 
 {{ define "main-style" }}

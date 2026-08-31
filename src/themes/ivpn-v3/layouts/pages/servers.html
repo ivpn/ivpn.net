@@ -1,8 +1,12 @@
 {{ define "main" }}
     <div class="content__text">
-        <section id="servers">
-            <server-list></server-list>
-        </section>
+        {{- /* Embed SSR pre-rendered HTML for the server list structural shell.
+             ServerList.vue fetches live data from the API after hydration. */ -}}
+        {{- $ssrHtml := "" -}}
+        {{- if site.Data.ssr -}}
+            {{- with index site.Data.ssr "servers" -}}{{- $ssrHtml = .html -}}{{- end -}}
+        {{- end -}}
+        <section id="servers">{{ $ssrHtml | safeHTML }}</section>
     </div>
 {{ end }}
 

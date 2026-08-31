@@ -34,7 +34,7 @@
                         {{ $t('pricing.tier1.feature1') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t1f1']">{{ $t('pricing.tier1.feature1Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t1f1']">{{ $t('pricing.tier1.feature1Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t1f3'] }" @click="toggleFeature('t1f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -42,7 +42,7 @@
                         {{ $t('pricing.tier1.feature3') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t1f3']">{{ $t('pricing.tier1.feature3Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t1f3']">{{ $t('pricing.tier1.feature3Title') }}</div>
                 </div>
             </price-box>
 
@@ -72,7 +72,7 @@
                         {{ $t('pricing.tier2.feature1') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t2f1']">{{ $t('pricing.tier2.feature1Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t2f1']">{{ $t('pricing.tier2.feature1Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t2f3'] }" @click="toggleFeature('t2f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -80,7 +80,7 @@
                         {{ $t('pricing.tier2.feature3') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t2f3']">{{ $t('pricing.tier2.feature3Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t2f3']">{{ $t('pricing.tier2.feature3Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t2f4'] }" @click="toggleFeature('t2f4')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -88,7 +88,7 @@
                         {{ $t('pricing.tier2.feature4') }}
                         <span class="feature-toggle">[i]</span>
                     </div>    
-                    <div class="feature-description" v-if="expandedFeatures['t2f4']">{{ $t('pricing.tier2.feature4Title') }}</div> 
+                    <div class="feature-description" v-show="expandedFeatures['t2f4']">{{ $t('pricing.tier2.feature4Title') }}</div> 
                 </div>
             </price-box>
 
@@ -118,7 +118,7 @@
                         {{ $t('pricing.tier3.feature1') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f1']">{{ $t('pricing.tier3.feature1Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f1']">{{ $t('pricing.tier3.feature1Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f3'] }" @click="toggleFeature('t3f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -126,14 +126,14 @@
                         {{ $t('pricing.tier3.feature3') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f3']">{{ $t('pricing.tier3.feature3Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f3']">{{ $t('pricing.tier3.feature3Title') }}</div>
 <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f4'] }" @click="toggleFeature('t3f4')">                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                         {{ $t('pricing.tier3.feature4') }}
                         <span class="feature-toggle">[i]</span>                    
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f4']">{{ $t('pricing.tier3.feature4Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f4']">{{ $t('pricing.tier3.feature4Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f5'] }" @click="toggleFeature('t3f5')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -141,7 +141,7 @@
                         {{ $t('pricing.tier3.feature5') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f5']">{{ $t('pricing.tier3.feature5Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f5']">{{ $t('pricing.tier3.feature5Title') }}</div>
                 </div>
             </price-box>
         </div>

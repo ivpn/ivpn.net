@@ -1,6 +1,7 @@
 {
   "name": "ivpn-v3",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -8,14 +9,16 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "development": "vite build --mode development",
-    "staging": "vite build --mode staging",
-    "production": "vite build --mode production"
+    "ssr": "vite build --config vite.config.ssr.js && node scripts/ssr-render.mjs",
+    "development": "npm run ssr && vite build --mode development",
+    "staging": "npm run ssr && vite build --mode staging",
+    "production": "npm run ssr && vite build --mode production"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.7",
     "@vue/compat": "^3.2.47",
     "@vue/compiler-sfc": "^3.2.47",
+    "@vue/server-renderer": "^3.2.47",
     "braintree-web": "^3.101.0",
     "date-fns": "^2.29.3",
     "file-saver": "^2.0.5",
