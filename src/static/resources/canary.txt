@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-08-04 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-09-01 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 961006
-hash: 00000000000000000001a8bba585594e834ffb486866c92e1560b7824b9f8151
+height: 965005
+hash: 0000000000000000000176c1e042b4f8712d984f559e4db6ddb9b46a538611a0
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-The Fed goes Wacko
-Warsh’s Awful Communications: Knowingly Opaque. Also in this newsletter, the BoE shows how it’s done
+Global bond sell-off deepens amid inflation fears
+UK borrowing costs rise to highest since 2008 while Japan yields hit levels not seen since 1990s
 
-Fifa executive criticises Infantino’s ‘reproachable’ stake sale plan
-Comments from secretary-general Mattias Grafström add to pressure on Fifa president
+How Aston Martin’s latest financing sparked a bondholder revolt
+Luxury car maker’s controversial deal with BlackRock-owned credit firm HPS set up high-stakes legal battle
 
-Japan’s fusion industry seeks state backing amid Middle East energy strain
-Also in today’s newsletter, oil bosses draw Trump’s ire after blockbuster earnings
+Ikea cuts prices in Europe by €1.2bn to counter cost of living crisis
+About 1,500 products in 20 European countries will be cheaper as consumer confidence continues to remain depressed.
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmpx0mYACgkQisFrnrZH
-umk9twf9GSKQAVeQj+J0uJaw0AGHXi9k/W/ZZ6Jt9ILllX1HV/Az6/dVQMh+k4oO
-WXIEE6ql6P+2iKIAcHBx32LAjDgAAFf8hdeJHFSc+WyMS7ZbtGO2v3gcX/KIce+J
-54nyeNvcV/iCWDqNL5J6lFWAoleJXOLxBC/TcX79bQIYOLFL4EiFcWIpf3T/bOb2
-gm3oGvN4YpNbrFtfUKzoIdOthehdunPDMzZz5T6V3KLpCX0DldXZWSxCFXItJ004
-jLZkM6MElQpQtV0xpBe2lDGTyJm7H8BWsLoJxVH9wAY9Rl3mwq+B6hnahmPtRbhM
-McOGLJmxtMsDlYcaWaIfiS4+JNNebQ==
-=vncT
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmqWjDsACgkQisFrnrZH
+umlP5QgAml3xVMjoAwfkhEYO/jYgHrbcJtxWixTTQJp+SyVPrJBI39o8DZ8aWSjH
+OAHlyPYLROAYEBCQUzkXPbf2XnsGrkRaDIFP4fIEjrcmX3S3p38fX4oGMB1IYv0P
+Gwv2LcPIx8CBX2ArSWkFRBnEaz4a+6UEZzaWx1Ic4k0pb06JS1njwQavOCebwK3n
+rGjTpciP/cTV+kUzArPtsEOnVGpI7W/JfiMvJcGZXZTFypoI5nYAL1jHWuDgp/AP
+nJFDBjk3b3W7RPabEDHhDwtgnjgCM9tzdyK/I+8GI4ctYFYfLD/hbxBgAq7E0gLR
+YbA2nfirUMphTQhGdFA0TICzDdrhGg==
+=OteW
 -----END PGP SIGNATURE-----
 
 
