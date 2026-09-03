@@ -231,35 +231,35 @@ IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-
 
 ### .DEB
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.15.13_amd64.deb)  
-SHA256: b22e0eae6ed88229aee3493d9ec939700de8b44b1e22a692a9e624ed4147160f  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.15.15_amd64.deb)  
+SHA256: 5f6bfe9ecaef20667abd3621293e9cda124277cc6b6797a101819f87509fa55e  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.13_amd64.deb)  
-SHA256: 4cf591cb6a390bf8b0a6b8b59af65dbb83d0cd5928831a13fe066392990204e8  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.15_amd64.deb)  
+SHA256: a70303ddb5bd0365862b6b49a7b82c7e90388ea01fd10cd19d08a017e3729045  
 
 ### .DEB arm64
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.15.13_arm64.deb)  
-SHA256: 4e3ad741fed94a4c2aab2a7ec5ddc29e9b879199e6c5e32829b96ab132b9c590  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn_3.15.15_arm64.deb)  
+SHA256: 78242de3c3ef4128eb107bc5c10254f0df97bbc3e04d43cc1b62c5c05409bb7d  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.13_arm64.deb)  
-SHA256: da5ad7e74c995e8a5dc9a6625ffed2fab6ef0193223545ead0557ec0f2f4b6fa  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui_3.15.15_arm64.deb)  
+SHA256: 3d88dd0d87860828c21c41a55f49ea05f638609ee3772179ca32d9de171bc04d  
 
 ### .RPM
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.15.13-1.x86_64.rpm)  
-SHA256: e375db89cbdd5953e553505c30cd6f88bdc51fd391e0647202bdadca5c013e1e 
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.15.15-1.x86_64.rpm)  
+SHA256: 4a325bb51955b2834c4c6d095b9aa00b5a3093d17e0aba4b4698245bab47e260 
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.13-1.x86_64.rpm)  
-SHA256: ec296f9dff5bc7800eff5dd0c3f83dd93a9fadcc62704a0c36b13523d212349d 
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.15-1.x86_64.rpm)  
+SHA256: 6da7dfdb94f33fd5e93b5a24a9fc13bf22fdc4674ec1124d94e2b986bc52949f 
 
 ### .RPM arm64
 
-[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.15.13-1.aarch64.rpm)  
-SHA256: 500683bb10a246f205656bdc8b045828cb5abf26efd8b3761c196670961770fd  
+[Base package](https://repo.ivpn.net/stable/pool/ivpn-3.15.15-1.aarch64.rpm)  
+SHA256: c7813f82b1cfd6dc27dad545584fafce20293dd4f6a4c01c11603cdd4ca3a043  
 
-[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.13-1.aarch64.rpm)  
-SHA256: 5026d2e6aa64b24dbdcc308ce53b22514cc258d74002071b89c2cad18d08ba50  
+[UI package](https://repo.ivpn.net/stable/pool/ivpn-ui-3.15.15-1.aarch64.rpm)  
+SHA256: 0e19d29d804a0d469a9f091a9fb10e0e2a3afe9ce34ab525467364a11408ba83  
 
 ## Install from Source Code {#source}
 
