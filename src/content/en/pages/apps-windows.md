@@ -13,11 +13,11 @@ releases: [{
     downloads: [
         {
             cta: Windows x86_64,
-            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.13.exe
+            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.15.exe
         },
         {
             cta: Windows arm64,
-            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.13-arm64.exe
+            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.15-arm64.exe
         }
     ],
     github: https://github.com/ivpn/desktop-app,
