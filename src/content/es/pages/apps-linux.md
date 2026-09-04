@@ -167,6 +167,9 @@ sudo apt install ivpn
 ### Fedora {#fedora}
 
 ```pkgconfig
+# [Info] Repository GPG signing key fingerprint:
+#        F526 91AB 05F2 FCDF 67CD  6516 D437 F3E1 50DB 096C
+
 # [Fedora 40 y versiones anteriores] Agregar el repositorio IVPN
 sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
 
@@ -186,6 +189,9 @@ sudo dnf install ivpn
 ### CentOS/Alma/Rocky {#centos}
 
 ```pkgconfig
+# [Info] Repository GPG signing key fingerprint:
+#        F526 91AB 05F2 FCDF 67CD  6516 D437 F3E1 50DB 096C
+
 # Instalar epel-release
 sudo dnf install epel-release
 
