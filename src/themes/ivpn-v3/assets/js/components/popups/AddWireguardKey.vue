@@ -26,7 +26,7 @@
 
             <p class="quantum-desc mt-1">
                 To generate the KEM public keys offline using open-source tools, follow the
-                <a href="/privacy-guides/quantum-resistant-wireguard-config/" target="_blank" rel="noopener noreferrer">quantum-resistant WireGuard configuration guide</a>.
+                <a href="/knowledgebase/general/quantum-resistant-wireguard-config/" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumManualGuideLinkText') }}</a>.
             </p>
 
             <!-- KEM public key inputs -->
@@ -63,7 +63,7 @@
 
         <template v-else>
             <div class="mt-1">
-                <p class="quantum-desc">{{ $t('account.wireguardTab.quantumCiphersNote') }} <a href="/privacy-guides/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.</p>
+                <p class="quantum-desc">{{ $t('account.wireguardTab.quantumCiphersNote') }} <a href="/knowledgebase/general/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.</p>
                 <label class="mt-1" style="display:block">{{ $t('account.wireguardTab.quantumCipher1Label') }}</label>
                 <textarea class="key-display mt-1" readonly :value="pqCipher1"></textarea>
                 <label class="mt-1" style="display:block">{{ $t('account.wireguardTab.quantumCipher2Label') }}</label>

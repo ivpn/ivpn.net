@@ -77,7 +77,7 @@
                         <div v-if="quantumEnabledAdd" class="quantum-section" style="margin-top:12px">
                             <p class="note">
                                 {{ $t('account.wireguardTab.quantumManualGuideNote') }}
-                                <a href="/privacy-guides/quantum-resistant-wireguard-config/" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumManualGuideLinkText') }}</a>{{ $t('account.wireguardTab.quantumManualGuideSuffix') }}
+                                <a href="/knowledgebase/general/quantum-resistant-wireguard-config/" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumManualGuideLinkText') }}</a>{{ $t('account.wireguardTab.quantumManualGuideSuffix') }}
                             </p>
                             <div style="margin-top:12px">
                                 <label for="wgcfg_pq_pub1">{{ $t('account.wireguardTab.quantumPublicKey1') }}</label>
@@ -122,7 +122,7 @@
                     <h4>{{ $t('account.wireguardTab.quantumCiphersTitle') }}</h4>
                     <p class="note">
                         {{ $t('account.wireguardTab.quantumCiphersNote') }}
-                        <a href="/privacy-guides/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.
+                        <a href="/knowledgebase/general/quantum-resistant-wireguard-config/#step-4" target="_blank" rel="noopener noreferrer">{{ $t('account.wireguardTab.quantumCiphersGuide') }}</a>.
                     </p>
                     <label>{{ $t('account.wireguardTab.quantumCipher1Label') }}</label>
                     <textarea class="key-display" style="margin-top:6px" readonly :value="pqCipher1"></textarea>
