@@ -1,6 +1,6 @@
 ---
 title: Generating quantum-resistant WireGuard keys manually
-url: /privacy-guides/quantum-resistant-wireguard-config/
+url: /knowledgebase/general/quantum-resistant-wireguard-config/
 section: Misc
 weight: 10
 date: 2026-08-06T00:00:00+00:00
