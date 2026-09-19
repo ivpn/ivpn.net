@@ -7,6 +7,8 @@ export default {
         inProgress: false,
         selectedPrice: null,
         error: null,
+        invoices: [],
+        invoicesLoaded: false,
     }),
 
     mutations: {
@@ -32,7 +34,12 @@ export default {
 
         setSelectedPrice(state, payload) {
             state.selectedPrice = payload
-        }
+        },
+
+        setInvoices(state, payload) {
+            state.invoices = payload.invoices
+            state.invoicesLoaded = true
+        },
     },
     
     actions: {
@@ -113,6 +120,31 @@ export default {
             } catch (error) {
                 context.commit('failed', { error })                
             }                        
+        },
+
+        async getInvoices(context) {
+            context.commit('started')
+            try {
+                let invoices = await Api.getInvoices()
+                context.commit('setInvoices', { invoices })
+                context.commit('done')
+                return invoices
+
+            } catch (error) {
+                context.commit('failed', { error })
+            }
+        },
+
+        async downloadInvoicePDF(context, payload) {
+            context.commit('started')
+            try {
+                let blob = await Api.getInvoicePDF(payload.refId)
+                context.commit('done')
+                return blob
+
+            } catch (error) {
+                context.commit('failed', { error })
+            }
         },
 
         async applyGiftCard(context, payload) {

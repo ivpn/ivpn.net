@@ -382,6 +382,24 @@ export default {
         }) 
     },
 
+    async getInvoices() {
+        let resp = await this.Post('/web/accounts/invoices')
+        return resp.invoices
+    },
+
+    async getInvoicePDF(refId) {
+        let response = await this.fetch("POST", '/web/accounts/invoice/pdf', {
+            ref_id: refId,
+        })
+
+        if (response.ok !== true)
+            await this.processErrorResponse(response)
+
+        this.processCSRFToken(response)
+
+        return await response.blob()
+    },
+
     async applyGiftCard(code) {
         let account = await this.Post('/web/accounts/apply-gift-card', {
             card: code

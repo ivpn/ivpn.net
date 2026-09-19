@@ -221,6 +221,7 @@
             "payment": "IVPN Account - Payment",
             "authentication": "Account settings - Authentication",
             "billing": "Account settings - Billing",
+            "invoices": "Account settings - Invoices",
             "delete": "Account settings - Delete account",
             "addFundsCC": "IVPN Add Funds - Credit Card",
             "addFundsPaypal": "IVPN Add Funds - PayPal",
@@ -514,7 +515,16 @@
             "warningDesc": "this operation cannot be undone. Deleting your account will permanently remove data from our systems.",
             "retry": "Retry",
             "services": "Services",
-            "syncMail": "Synchronize"
+            "syncMail": "Synchronize",
+            "invoices": "Invoices"
+        },
+        "invoicesTab": {
+            "date": "Date",
+            "paymentMethod": "Payment method",
+            "amount": "Amount",
+            "view": "View",
+            "download": "Download",
+            "empty": "You don't have any invoices yet."
         },
         "payments":{
             "paymentReceived": {

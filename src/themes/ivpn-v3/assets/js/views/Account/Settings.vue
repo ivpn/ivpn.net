@@ -27,6 +27,15 @@
                             {{ $t('account.accountSettingsTab.billing') }}
                         </router-link>
                     </li>
+                    <li
+                        :class="{
+                            'is-active': this.$route.name == 'settings-invoices-' + language,
+                        }"
+                    >
+                        <router-link :to="{ name: 'settings-invoices-' + language}">
+                            {{ $t('account.accountSettingsTab.invoices') }}
+                        </router-link>
+                    </li>
                     <li class="expand"></li>
                     <li
                         :class="{
