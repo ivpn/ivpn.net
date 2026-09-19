@@ -220,6 +220,7 @@
             "payment": "Cuenta IVPN - Pago",
             "authentication": "Configuración de la cuenta - Autenticación",
             "billing": "Configuración de la cuenta - Facturación",
+            "invoices": "Configuración de la cuenta - Facturas",
             "delete": "Configuración de la cuenta - Borrar cuenta",
             "addFundsCC": "IVPN Añadir fondos - Tarjeta de crédito",
             "addFundsPaypal": "IVPN Añadir fondos - PayPal",
@@ -553,7 +554,16 @@
             "warningDesc": "Esta operación no se puede deshacer. Borrar tu cuenta eliminará permanentemente los datos de nuestros sistemas.",
             "retry": "Reintentar",
             "services": "Servicios",
-            "syncMail": "Sincronizar"
+            "syncMail": "Sincronizar",
+            "invoices": "Facturas"
+        },
+        "invoicesTab": {
+            "date": "Fecha",
+            "paymentMethod": "Método de pago",
+            "amount": "Cantidad",
+            "view": "Ver",
+            "download": "Descargar",
+            "empty": "Todavía no tienes ninguna factura."
         },
         "payments": {
             "paymentReceived": {

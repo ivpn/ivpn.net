@@ -19,6 +19,7 @@ import WireguardConfigView from '@/views/Account/WireguardConfig.vue'
 import Settings from '@/views/Account/Settings.vue'
 import SettingsAuthentication from '@/views/Account/Settings/Authentication.vue'
 import SettingsBilling from '@/views/Account/Settings/Billing.vue'
+import SettingsInvoices from '@/views/Account/Settings/Invoices.vue'
 import SettingsDelete from '@/views/Account/Settings/Delete.vue'
 import SettingsServices from '@/views/Account/Settings/Services.vue'
 import LoginView from '@/views/Login.vue'
@@ -427,6 +428,14 @@ const routes = [
                 }
             },
             {
+                path: 'invoices',
+                name: 'settings-invoices',
+                component: SettingsInvoices,
+                meta: {
+                    title: en.account.metaTitle.invoices,
+                }
+            },
+            {
                 path: 'delete',
                 name: 'settings-delete',
                 component: SettingsDelete,
@@ -457,6 +466,14 @@ const routes = [
                 }
             },
             {
+                path: 'invoices',
+                name: 'settings-invoices-en',
+                component: SettingsInvoices,
+                meta: {
+                    title: en.account.metaTitle.invoices,
+                }
+            },
+            {
                 path: 'delete',
                 name: 'settings-delete-en',
                 component: SettingsDelete,
@@ -484,6 +501,14 @@ const routes = [
                 component: SettingsBilling,
                 meta: {
                     title: es.account.metaTitle.billing,
+                }
+            },
+            {
+                path: 'invoices',
+                name: 'settings-invoices-es',
+                component: SettingsInvoices,
+                meta: {
+                    title: es.account.metaTitle.invoices,
                 }
             },
             {
