@@ -255,8 +255,11 @@
 
 
                 <h3>{{ $t('account.wireguardTab.configStep4Title') }}</h3>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.download }" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
-                <a class="btn btn-big btn-border" v-bind:class="{ disabled: validation.downloadQR }" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
+                <a class="btn btn-big btn-border" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
+                <a class="btn btn-big btn-border" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
+                <p v-if="attemptedSubmit && missingFields.length" class="note note--input">
+                    {{ $t('account.wireguardTab.missingFieldsPrefix') }} {{ missingFields.join(', ') }}.
+                </p>
                 <div class="qrnote">
                     <!-- QR code is internally generated and sanitized -->
                     <div class="qrcode" v-html="qrCode"></div>
@@ -348,6 +351,7 @@ export default {
             pqSecretKey1: null,
             pqSecretKey2: null,
             pqError: null,
+            attemptedSubmit: false,
         };
     },
     watch: {
@@ -408,6 +412,19 @@ export default {
         },
         showQuantum() {
             return this.isKeyGenerated ? this.quantumEnabledGenerate : this.quantumEnabledAdd;
+        },
+        missingFields() {
+            const missing = [];
+            if (!this.publicKey) {
+                missing.push(this.$t('account.wireguardTab.missingKey'));
+            }
+            if (!this.query.host) {
+                missing.push(this.$t('account.wireguardTab.missingServerLocation'));
+            }
+            if (this.multihop && !this.entry_host) {
+                missing.push(this.$t('account.wireguardTab.missingEntryServerLocation'));
+            }
+            return missing;
         },
     },
     mounted() {
@@ -667,7 +684,8 @@ export default {
             this.validation.downloadQR = this.validation.download || !this.query.host;
         },
         async handleDownload() {
-            if (this.validation.download) {
+            this.attemptedSubmit = true;
+            if (this.missingFields.length) {
                 return;
             }
 
@@ -675,7 +693,8 @@ export default {
             this.downloadArchive(res);
         },
         async handleGenerateQRCode() {
-            if (this.validation.downloadQR) {
+            this.attemptedSubmit = true;
+            if (this.missingFields.length) {
                 return;
             }
 
