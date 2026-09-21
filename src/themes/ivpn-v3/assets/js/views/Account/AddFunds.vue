@@ -1,40 +1,46 @@
 <template>
-    <div class="payment-page-header">
+    <div v-if="!isLight" class="payment-page-header">
         <div class="back-link">
-            <router-link :to="{ name: 'account' }" v-if="account.is_new">
-                <span class="icon-back"></span>Select payment method
-            </router-link>
-            <router-link :to="{ name: 'payment' }" v-else>
-                <span class="icon-back"></span>Select payment method
+             <router-link :to="{ name: (isUpgrade || account.is_new ? 'account' : 'payment') + '-' + language }">
+                <span class="icon-back"></span>{{ $t(isUpgrade ? 'account.accountSettingsTab.backToAccount' : 'account.payments.selectPaymentMethod') }}
             </router-link>
         </div>
+        
         <h1>{{ title }}</h1>
-        <ul class="payment-details" v-if="$route.name != 'add-funds-giftcard'">
-            <li>{{ account.product.name }}</li>
-            <li>{{ price.name }}</li>
-            <li>${{ price.price }}</li>
+        <div v-if="isUpgrade && $route.name != 'add-funds-voucher-' + language" class="payment-details">
+            {{ productName }} → {{ price?.name }} ⎸ ${{ price?.price }}
+        </div>
+        <ul v-else class="payment-details" v-if="$route.name != 'add-funds-voucher-' + language">
+            <li>{{ productName }}</li>
+            <li>{{ price?.name }}</li>
+            <li>${{ price?.price }}</li>
         </ul>
         <router-view
+            v-if="price !== null"
             :account="account"
             :price="price"
-            style="margin-top: 32px"
+            class="router-view-spacing"
         />
-
-        <p class='tos' v-if="account.is_new">By making a payment you are agreeing to our <a href='/tos'>Terms of Service</a>.</p>
+       
+        <p class='tos' v-if="account.is_new">{{ $t('account.payments.byMaking') }} <a :href="'/' + language + '/tos'">{{ $t('account.payments.termsOfService') }}</a>.</p>
     </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import { useI18n } from "vue-i18n";
+import { fixProductNames } from "@/utils/ProductUtils.js"
 
 export default {
+    props: ['isUpgrade'],
     data() {
         return {
             price: null,
-            title: String,
+            title: "",
+            language: "en",
         };
     },
-    created() {
+    async created() {
         let title = {
             "add-funds-cc": "Add time with a credit card",
             "add-funds-bitcoin": "Add time with Bitcoin",
@@ -43,7 +49,7 @@ export default {
             "add-funds-paypal": "Add time with PayPal",
             "add-funds-apple": "Add time with ApplePay",
             "add-funds-google": "Add time with GooglePay",
-            "add-funds-giftcard": "Add time with a Gift Card",            
+            "add-funds-voucher": "Add time with a Voucher",            
         };
 
         this.title = title[this.$route.name];
@@ -51,7 +57,7 @@ export default {
         let priceId = this.$route.params.price;
 
         if (!this.isUpgrade) {
-            if (!this.account?.is_migrated && !this.account?.has_custom_price) {
+            if (!this.account?.has_custom_price) {
                 for (const price of this.account.product.prices) {
                     if (price.id === priceId) {
                         this.price = price;
@@ -59,8 +65,15 @@ export default {
                         break;
                     }
                 }
-            }else{
-                let billingCycle = this.account.custom_price <= 30 ? "Monthly" : "Yearly";
+            } else {
+                // For subscribed migrated accounts use the subscription billing cycle;
+                // for non-subscribed ones infer from the custom price amount.
+                let billingCycle;
+                if (this.account?.subscription?.billing_cycle) {
+                    billingCycle = this.account.subscription.billing_cycle === 'Monthly' ? "Monthly" : "Yearly";
+                } else {
+                    billingCycle = this.account.custom_price <= 30 ? "Monthly" : "Yearly";
+                }
                 this.price = {
                     id: this.$route.params.price,
                     type: "extend",
@@ -82,22 +95,60 @@ export default {
                     upgradePrice= pricing.tier3_upgrade_price
                     break;
             }
+            this.price = {
+                 id: this.$route.params.price,
+                 type: "upgrade",
+                 billing_cycle: "Monthly",
+                 discount: 0,
+                 duration: "1 months",
+                 name: fixProductNames(this.$route.params.price),
+                 price: upgradePrice,
+            };
         }
 
-        if (this.price == null) {
-            this.$router.replace("/404");
+        if (!this.price) {
+            this.$router.replace({ name: '404' });
         }
     },
     computed: {
         ...mapState({
             account: (state) => state.auth.account,
         }),
+        productName() {
+            return this.account?.product?.name || '';
+        },
+        isLight() {
+            return this.account?.product?.id === 'IVPN Light';
+        },
+    },
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            if (vm.isLight) {
+                vm.$router.push('/light');
+            }
+        });
+    },
+    mounted() {
+        const locale = window.location.href.split("/")[3] || "en";
+        useI18n().locale.value = locale;
+        this.language = locale;
+    },
+    methods: {
+        calculateForProduct(newProduct) {
+            return this.$store.dispatch("product/changeDetails", {
+                product: newProduct,    
+            });
+        }
     },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_vars.scss";
+@use "@/styles/_vars.scss" as *;
+
+.router-view-spacing {
+    margin-top: 32px;
+}
 
 .payment-page-header {
     display: flex;
@@ -111,13 +162,22 @@ export default {
         font-size: 38px;
     }
 
+    div.payment-details {
+        margin-top: 38px;
+        font-family: $font-main-mono;
+        font-size: 20px;
+
+        @media (max-width: $brk-mobile) {
+            font-size: 12px;
+        }
+    }
+
     ul.payment-details {
         margin-top: 38px;
         display: flex;
         padding: 0px;
         font-family: $font-main-mono;
-        font-size: 21px;
-        font-weight: bold;
+        font-size: 20px;
 
         @media (max-width: $brk-mobile) {
             font-size: 12px;
