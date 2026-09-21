@@ -46,10 +46,23 @@ Because step 3 uses cryptographically random nonces, the PSK **cannot** be deriv
 **Python 3.8+** and the official liboqs Python bindings:
 
 ```
-pip install liboqs-python
+python3 -m pip install liboqs-python
 ```
 
-If `pip install liboqs-python` fails on your platform, follow the [manual build instructions](https://github.com/open-quantum-safe/liboqs-python#installation).
+<div class="notice notice--info" markdown="1">
+On macOS, the system and Homebrew Python installations are typically "externally managed" (PEP 668) and refuse direct `pip install` calls. Create a virtual environment first, then install into it:
+
+```bash
+python3 -m venv ~/ivpn-pq
+source ~/ivpn-pq/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install liboqs-python
+```
+
+Activate the same virtual environment (`source ~/ivpn-pq/bin/activate`) in any new terminal session before running the scripts below.
+</div>
+
+If `python3 -m pip install liboqs-python` fails on your platform, follow the [manual build instructions](https://github.com/open-quantum-safe/liboqs-python#installation).
 
 Verify the installation and confirm both algorithms are present:
 
@@ -104,7 +117,7 @@ print("Classic-McEliece public key saved:    mceliece348864_public.b64")
 Run it:
 
 ```
-python gen_kem_keys.py
+python3 gen_kem_keys.py
 ```
 
 Protect the private key files:
@@ -187,7 +200,7 @@ print("PresharedKey:", psk_b64)
 Run it:
 
 ```
-python derive_psk.py
+python3 derive_psk.py
 ```
 
 <div class="notice notice--warning" markdown="1">
