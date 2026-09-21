@@ -162,8 +162,11 @@ export default {
     },
 
     beforeMount() {
+        if (this.account?.product?.id === "IVPN Tier 1") {
+            return;
+        }
         this.$store.dispatch("services/load");
-        if (this.account?.is_active && this.account?.product?.id !== "IVPN Tier 1") {
+        if (this.account?.is_active) {
             this.$store.dispatch("services/auth");
         }
     },
