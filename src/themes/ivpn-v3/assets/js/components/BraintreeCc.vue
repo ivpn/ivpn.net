@@ -246,10 +246,9 @@ export default {
 
                     return this.threeDSecure.verifyCard(threeDSecureParameters);
                 }).then((payload) => {
-                    console.log("verifyCard.payload", payload);
                     if (!payload.liabilityShifted) {
                         // "lookup_bypassed"
-                        if (!payload.liabilityShiftPossible && (payload.threeDSecureInfo.enrolled == 'B')) {
+                        if (!payload.liabilityShiftPossible && payload.threeDSecureInfo.enrolled == 'B') {
                             resolutionFunc(payload);
                             return;
                         }
@@ -278,8 +277,6 @@ export default {
                     }
                     resolutionFunc(payload);
                 }).catch((err) => {
-                    console.log(err);
-                    console.log(err.code);
                     console.error(err);
                     // "authenticate_error"
                     if (err.code == "THREEDS_CARDINAL_SDK_ERROR") {

@@ -121,7 +121,6 @@ export default {
         
     },
     async mounted() {
-        
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
             this.language = "es";

@@ -1,6 +1,6 @@
 <template>
     <div class="tabs sub-navigation" v-if="shouldDisplay">
-        <div class="page-centered">
+        <div class="page-centered-menu">
             <ul>
                 <li :class="{ 'is-active': isAccountRoute() }">
                     <router-link :to="{ name: 'account-' + this.language }"
@@ -48,7 +48,7 @@ export default {
             return this.$route.path;
         },
         shouldDisplay() {
-            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es","vouchers-es","vouchers-en", "service-email", "service-email-en", "service-email-es"].includes(
+            return ["account","account-en","account-es", "wireguard-en","wireguard-es", "wireguard-config","wireguard-config-es","wireguard-config-en","device-management-en","device-management-es","vouchers-es","vouchers-en", "service-email", "service-email-en", "service-email-es","service-dns","service-dns-en","service-dns-es"].includes(
                 this.$route.name
             );
         },
@@ -57,7 +57,7 @@ export default {
         isAccountRoute() {
             return (
                 ( this.currentRouteName.startsWith("/en/account") || this.currentRouteName.startsWith("/es/account")) &&
-                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute() && !this.isServiceEmailRoute()
+                !this.isWireGuardRoute() && !this.isDeviceManagementRoute() && !this.isVouchersRoute() && !this.isServiceEmailRoute() && !this.isServiceDnsRoute()
             );
         },
         isWireGuardRoute() {
@@ -71,6 +71,9 @@ export default {
         },
         isServiceEmailRoute() {
             return this.currentRouteName.startsWith("/en/account/service/email") || this.currentRouteName.startsWith("/es/account/service/email");
+        },
+        isServiceDnsRoute() {
+            return this.currentRouteName.startsWith("/en/account/service/dns") || this.currentRouteName.startsWith("/es/account/service/dns");
         },
     },
 };
