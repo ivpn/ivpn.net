@@ -154,13 +154,11 @@ export class ClassicMcEliece348864 {
    */
   decapsulate(ciphertext, secretKey) {
     this.#checkDestroyed();
-    if (!isUint8Array(ciphertext) || ciphertext.length === 0) {
-      throw new LibOQSValidationError('Invalid ciphertext: must be a non-empty Uint8Array', 'Classic-McEliece-348864');
-    }
+    this.#validateCiphertext(ciphertext);
     this.#validateSecretKey(secretKey);
 
     const sharedSecretPtr = this.#wasmModule._malloc(CLASSIC_MCELIECE_348864_INFO.keySize.sharedSecret);
-    const ciphertextPtr   = this.#wasmModule._malloc(ciphertext.length);
+    const ciphertextPtr   = this.#wasmModule._malloc(CLASSIC_MCELIECE_348864_INFO.keySize.ciphertext);
     const secretKeyPtr    = this.#wasmModule._malloc(CLASSIC_MCELIECE_348864_INFO.keySize.secretKey);
 
     try {

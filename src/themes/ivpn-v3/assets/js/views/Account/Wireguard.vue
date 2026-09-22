@@ -43,6 +43,7 @@
                     :name="key.comment"
                     :public-key="key.public_key"
                     :ip="key.ip_address"
+                    :preshared-key="key.preshared_key || ''"
                 ></wireguard-key>
             </section>
 
@@ -135,6 +136,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "@/styles/buttons.scss" as *;
+@use "@/styles/_vars.scss" as *;
 
 section {
     position: relative;
@@ -156,5 +158,13 @@ ul {
 
 .account-link-spacing {
     margin-bottom: 20px;
+}
+
+.btn {
+    @media (max-width: $brk-mobile) {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }
 </style>

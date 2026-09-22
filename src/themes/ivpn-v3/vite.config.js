@@ -72,7 +72,7 @@ export default defineConfig(({ mode }) => {
         }
       }),
       VueI18nPlugin({}),
-      hugoManifestPlugin()
+      hugoManifestPlugin(),
     ],
     
     resolve: {
@@ -81,8 +81,8 @@ export default defineConfig(({ mode }) => {
         '@': resolve(__dirname, 'assets/js'),
         'scss': resolve(__dirname, 'assets/scss'),
         'vue': '@vue/compat',
-        // Add alias for fonts to help Vite resolve them
-        '@fonts': resolve(__dirname, 'assets/scss/fonts')
+        '@fonts': resolve(__dirname, 'assets/scss/fonts'),
+        '@oqs/liboqs-js': resolve(__dirname, 'assets/js/vendor/liboqs/index.js'),
       }
     },
 
