@@ -170,7 +170,8 @@ export default {
                 "date   amount"
                 "method method"
                 "action action";
-            gap: 10px 16px;
+            gap: 12px 16px;
+            padding: 18px 10px;
 
             &--header {
                 display: none;
@@ -180,7 +181,8 @@ export default {
 
     &__cell {
         &--date,
-        &--method {
+        &--method,
+        &--amount {
             font-weight: 600;
 
             @include light-theme((
@@ -209,6 +211,7 @@ export default {
 
             &--amount {
                 grid-area: amount;
+                font-size: 16px;
                 text-align: right;
             }
 
@@ -220,6 +223,7 @@ export default {
                 grid-area: action;
                 justify-content: flex-start;
                 flex-wrap: wrap;
+                margin-top: 4px;
             }
         }
     }
