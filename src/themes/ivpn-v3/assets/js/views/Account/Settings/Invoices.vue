@@ -21,17 +21,17 @@
                 v-for="invoice in invoices"
                 :key="invoice.ref_id"
             >
-                <div class="invoices__cell invoices__cell--date" :data-label="$t('account.invoicesTab.date')">
+                <div class="invoices__cell invoices__cell--date">
                     {{ $filters.formatDate(invoice.date) }}
                 </div>
-                <div class="invoices__cell invoices__cell--method" :data-label="$t('account.invoicesTab.paymentMethod')">
+                <div class="invoices__cell invoices__cell--method">
                     <span
                         class="invoices__badge"
                         v-if="invoice.payment_method == invoice.payment_method_info || !invoice.payment_method_info"
                     >{{ invoice.payment_method }}</span>
                     <span class="invoices__badge" v-else>{{ invoice.payment_method }} / {{ invoice.payment_method_info }}</span>
                 </div>
-                <div class="invoices__cell invoices__cell--amount" :data-label="$t('account.invoicesTab.amount')">
+                <div class="invoices__cell invoices__cell--amount">
                     ${{ invoice.amount }}
                 </div>
                 <div class="invoices__cell invoices__cell--action">
@@ -165,9 +165,12 @@ export default {
         }
 
         @media (max-width: $brk-tablet) {
-            grid-template-columns: 1fr;
-            gap: 14px;
-            padding: 18px 14px;
+            grid-template-columns: 1fr auto;
+            grid-template-areas:
+                "date   amount"
+                "method method"
+                "action action";
+            gap: 10px 16px;
 
             &--header {
                 display: none;
@@ -200,26 +203,23 @@ export default {
         }
 
         @media (max-width: $brk-tablet) {
-            &::before {
-                content: attr(data-label);
-                display: block;
-                font-size: 12px;
-                text-transform: uppercase;
-                opacity: 0.5;
-                margin-bottom: 4px;
+            &--date {
+                grid-area: date;
+            }
+
+            &--amount {
+                grid-area: amount;
+                text-align: right;
+            }
+
+            &--method {
+                grid-area: method;
             }
 
             &--action {
+                grid-area: action;
                 justify-content: flex-start;
                 flex-wrap: wrap;
-
-                &::before {
-                    content: none;
-                }
-
-                .btn {
-                    padding: 8px 0px;
-                }
             }
         }
     }
