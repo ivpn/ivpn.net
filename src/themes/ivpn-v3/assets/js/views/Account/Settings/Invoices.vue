@@ -166,7 +166,8 @@ export default {
 
         @media (max-width: $brk-tablet) {
             grid-template-columns: 1fr;
-            gap: 2px;
+            gap: 14px;
+            padding: 18px 14px;
 
             &--header {
                 display: none;
@@ -191,7 +192,7 @@ export default {
         &--action {
             display: flex;
             justify-content: flex-end;
-            gap: 8px;
+            gap: 20px;
 
             .btn {
                 white-space: nowrap;
@@ -215,16 +216,9 @@ export default {
                 &::before {
                     content: none;
                 }
-            }
-        }
-
-        @media (max-width: $brk-mobile) {
-            &--action {
-                flex-direction: column;
-                align-items: stretch;
 
                 .btn {
-                    width: 100%;
+                    padding: 8px 0px;
                 }
             }
         }
