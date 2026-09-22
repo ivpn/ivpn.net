@@ -335,7 +335,8 @@
                 "paypalAccount": "Cuenta PayPal:",
                 "pleaseLog": "Por favor, inicia sesión en tu cuenta de PayPal utilizando el botón de abajo.",
                 "setPaymentMethod": "Configurar método de pago",
-                "cancel": "Cancelar"
+                "cancel": "Cancelar",
+                "notAvailableOnion": "Los pagos con tarjeta de crédito y PayPal no están disponibles al conectarse a través de la dirección onion."
             },
             "totp": {
                 "disable": {

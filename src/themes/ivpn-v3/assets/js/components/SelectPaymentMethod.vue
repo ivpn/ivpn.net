@@ -29,6 +29,7 @@
         </div>
         <div v-if="!isUpgrade" class="pay-buttons">
             <router-link
+                v-if="!isOnion"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-cc-' + this.language, params: { price: hasCustomPrice ? customPriceId : price.id } }"
@@ -37,6 +38,7 @@
                 {{ $t('account.creditCard') }}
             </router-link>
             <router-link
+                v-if="!isOnion"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'add-funds-paypal-' + this.language, params: { price: hasCustomPrice ? customPriceId : price.id } }"
@@ -75,6 +77,7 @@
         </div>
         <div v-else class="pay-buttons">
             <router-link
+                v-if="!isOnion"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'upgrade-cc-' + this.language, params: { price: this.$route.params.product} }"
@@ -83,6 +86,7 @@
                 {{ $t('account.creditCard') }}
             </router-link>
             <router-link
+                v-if="!isOnion"
                 tag="button"
                 class="btn btn-solid pay-button"
                 :to="{ name: 'upgrade-paypal-' + this.language, params: { price: this.$route.params.product } }"
@@ -129,6 +133,7 @@
 <script>
 import SelectBillingCycle from "@/components/SelectBillingCycle.vue";
 import { useI18n } from "vue-i18n";
+import { isOnionAddress } from "@/utils/NetworkUtils.js";
 
 export default {
     components: {
@@ -144,6 +149,9 @@ export default {
         };
     },
     computed: {
+        isOnion() {
+            return isOnionAddress();
+        },
         productName() {
             return this.account?.product?.name || '';
         },

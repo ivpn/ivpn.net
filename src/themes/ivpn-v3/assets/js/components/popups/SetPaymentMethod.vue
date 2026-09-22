@@ -1,7 +1,13 @@
 <template>
     <div class="update-pm">
-        <h3>{{ $t('account.popups.paymentMethod.title') }}</h3> 
-        <div v-if="braintree == null">
+        <h3>{{ $t('account.popups.paymentMethod.title') }}</h3>
+        <div v-if="isOnion">
+            <p class="error-message">{{ $t('account.popups.paymentMethod.notAvailableOnion') }}</p>
+            <div class="popup-buttons">
+                <a @click.prevent="closeDialog()" class="btn btn-icon btn-icon-red">{{ $t('account.popups.paymentMethod.cancel') }}</a>
+            </div>
+        </div>
+        <div v-else-if="braintree == null">
             <div v-if="error">
                 <div v-if="captchaImage"
                 style="
@@ -127,6 +133,7 @@ import Tabs from '@/components/Tabs.vue'
 import Tab from '@/components/Tab.vue'
 import { mapState } from 'vuex'
 import { useI18n } from "vue-i18n";
+import { isOnionAddress } from "@/utils/NetworkUtils.js";
 
 export default {
     components: {
@@ -162,6 +169,9 @@ export default {
             error: (state) => state.braintree.error,
             inProgress: (state) => state.braintree.inProgress,
         }),
+        isOnion() {
+            return isOnionAddress();
+        },
         isReady: function () {
             if (this.inProgress) {
                 return false
@@ -179,7 +189,9 @@ export default {
         }
     },
     async created() {
-        this.createClientToken();
+        if (!this.isOnion) {
+            this.createClientToken();
+        }
     },
     mounted() {
         if ( window.location.href.split("/")[3] == "es") {
