@@ -210,9 +210,21 @@ export default {
 
             &--action {
                 justify-content: flex-start;
+                flex-wrap: wrap;
 
                 &::before {
                     content: none;
+                }
+            }
+        }
+
+        @media (max-width: $brk-mobile) {
+            &--action {
+                flex-direction: column;
+                align-items: stretch;
+
+                .btn {
+                    width: 100%;
                 }
             }
         }
