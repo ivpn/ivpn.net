@@ -338,7 +338,8 @@
                 "paypalAccount": "PayPal Account:",
                 "pleaseLog": "Please log into your paypal account using the button below.",
                 "setPaymentMethod": "Set Payment Method",
-                "cancel": "Cancel"
+                "cancel": "Cancel",
+                "notAvailableOnion": "Credit card and PayPal payments are not available when connecting via the onion address."
             },
             "totp": {
                 "disable": {
