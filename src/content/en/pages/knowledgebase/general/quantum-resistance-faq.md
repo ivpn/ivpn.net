@@ -61,5 +61,5 @@ No, it does not affect the latency or the speed of the connection.
 
 ### Can I enable quantum resistance for manual connections using a native WireGuard client or router?
 
-Quantum resistant connections are available only with IVPN apps at this time.
+Yes. This [article](/knowledgebase/general/quantum-resistant-wireguard-config/) has the steps involved to obtaining the PresharedKey (PSK) using a quantum-resistant process.
 
