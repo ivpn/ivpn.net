@@ -1,16 +1,17 @@
-FROM node:22.12-slim AS builder
+FROM node:22-slim AS builder
 
 ARG ENV=production
-ARG BASE_URL=http://localhost:8010
+ARG BASE_URL=https://www.ivpn.net
 ARG API_URL=https://api.ivpn.net
 ARG PAYPAL_CLIENT_ID=Ae94bviH2d45LcrM1nnnUcIDuJNb2NZgR_-3GKoJS1krkkNiInSl9V-SHMLvpPd1V8P9-yDRNoWBWK44
 
 WORKDIR /opt/build
 
-# Install Hugo and cleanup
-RUN apt-get update \
+# Install Hugo and cleanup (detect arch for arm64/amd64 compatibility)
+RUN ARCH=$(dpkg --print-architecture) \
+    && apt-get update \
     && apt-get install -y --no-install-recommends curl ca-certificates \
-    && curl -L https://github.com/gohugoio/hugo/releases/download/v0.125.3/hugo_0.125.3_linux-amd64.deb -o /tmp/hugo.deb \
+    && curl -L https://github.com/gohugoio/hugo/releases/download/v0.125.3/hugo_0.125.3_linux-${ARCH}.deb -o /tmp/hugo.deb \
     && dpkg -i /tmp/hugo.deb \
     && rm /tmp/hugo.deb \
     && apt-get clean \

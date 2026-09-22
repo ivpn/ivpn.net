@@ -1,0 +1,30 @@
+<section class="privacy-stack-section">
+    {{ if .intro }}
+    <div class="ps-intro">
+        {{ .intro | markdownify }}
+    </div>
+    {{ end }}
+    <div class="ps-cards">
+        {{ range .services }}
+        <div class="ps-card">
+            <div class="ps-logo-box{{ if .logo_is_portmaster }} ps-logo-box--portmaster{{ end }}">
+                {{ if .logo_is_portmaster }}
+                <img class="logo-dark-theme" src="{{ site.Params.cdnUrl }}/images/pm_white.svg" alt="{{ .name }}" />
+                <img class="logo-light-theme ps-pm-icon-invert" src="{{ site.Params.cdnUrl }}/images/pm_white.svg" alt="{{ .name }}" />
+                <span class="ps-pm-name">{{ .name }}</span>
+                {{ else }}
+                <img class="logo-light-theme" src="{{ site.Params.cdnUrl }}{{ .logo_light }}" alt="{{ .name }}" />
+                <img class="logo-dark-theme" src="{{ site.Params.cdnUrl }}{{ .logo_dark }}" alt="{{ .name }}" />
+                {{ end }}
+            </div>
+            <p class="ps-plans">{{ .plans }}</p>
+            <div class="ps-desc">{{ .description | markdownify }}</div>
+        </div>
+        {{ end }}
+    </div>
+    {{ if .disclaimer }}
+    <div class="ps-disclaimer">
+        {{ .disclaimer | markdownify }}
+    </div>
+    {{ end }}
+</section>

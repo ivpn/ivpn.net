@@ -2,6 +2,7 @@
     <div class="servers">
         <div class="servers__heading">
             <h1>{{ $t('servers.title') }}</h1>
+            <p class="servers__summary" v-html="$t('servers.summary')"></p>
         </div>
         <div class="servers__list">
             <div class="row row__filter">

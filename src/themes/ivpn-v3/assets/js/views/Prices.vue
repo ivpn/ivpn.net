@@ -34,7 +34,7 @@
                         {{ $t('pricing.tier1.feature1') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t1f1']">{{ $t('pricing.tier1.feature1Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t1f1']">{{ $t('pricing.tier1.feature1Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t1f3'] }" @click="toggleFeature('t1f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -42,7 +42,7 @@
                         {{ $t('pricing.tier1.feature3') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t1f3']">{{ $t('pricing.tier1.feature3Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t1f3']">{{ $t('pricing.tier1.feature3Title') }}</div>
                 </div>
             </price-box>
 
@@ -72,7 +72,7 @@
                         {{ $t('pricing.tier2.feature1') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t2f1']">{{ $t('pricing.tier2.feature1Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t2f1']">{{ $t('pricing.tier2.feature1Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t2f3'] }" @click="toggleFeature('t2f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -80,7 +80,7 @@
                         {{ $t('pricing.tier2.feature3') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t2f3']">{{ $t('pricing.tier2.feature3Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t2f3']">{{ $t('pricing.tier2.feature3Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t2f4'] }" @click="toggleFeature('t2f4')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -88,7 +88,7 @@
                         {{ $t('pricing.tier2.feature4') }}
                         <span class="feature-toggle">[i]</span>
                     </div>    
-                    <div class="feature-description" v-if="expandedFeatures['t2f4']">{{ $t('pricing.tier2.feature4Title') }}</div> 
+                    <div class="feature-description" v-show="expandedFeatures['t2f4']">{{ $t('pricing.tier2.feature4Title') }}</div> 
                 </div>
             </price-box>
 
@@ -118,7 +118,7 @@
                         {{ $t('pricing.tier3.feature1') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f1']">{{ $t('pricing.tier3.feature1Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f1']">{{ $t('pricing.tier3.feature1Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f3'] }" @click="toggleFeature('t3f3')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -126,14 +126,14 @@
                         {{ $t('pricing.tier3.feature3') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f3']">{{ $t('pricing.tier3.feature3Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f3']">{{ $t('pricing.tier3.feature3Title') }}</div>
 <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f4'] }" @click="toggleFeature('t3f4')">                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                         {{ $t('pricing.tier3.feature4') }}
                         <span class="feature-toggle">[i]</span>                    
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f4']">{{ $t('pricing.tier3.feature4Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f4']">{{ $t('pricing.tier3.feature4Title') }}</div>
                     <div class="feature-item expandable" :class="{ expanded: expandedFeatures['t3f5'] }" @click="toggleFeature('t3f5')">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
@@ -141,7 +141,7 @@
                         {{ $t('pricing.tier3.feature5') }}
                         <span class="feature-toggle">[i]</span>
                     </div>
-                    <div class="feature-description" v-if="expandedFeatures['t3f5']">{{ $t('pricing.tier3.feature5Title') }}</div>
+                    <div class="feature-description" v-show="expandedFeatures['t3f5']">{{ $t('pricing.tier3.feature5Title') }}</div>
                 </div>
             </price-box>
         </div>
@@ -224,7 +224,7 @@
                     <div class="service-icons-wrapper">
                         <div class="service-icons">
                             <a href="https://mailx.net" target="_blank" rel="noopener" class="service-icon-link">
-                                <img alt="MailX" class="service-icon mailx-logo">
+                                <img alt="Mailx" class="service-icon mailx-logo">
                             </a>
                             <a href="https://moddns.net" target="_blank" rel="noopener" class="service-icon-link">
                                 <img alt="modDNS" class="service-icon moddns-logo">
@@ -252,6 +252,12 @@
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
                                 {{ $t('pricing.features.feature1') }}
+                          </div>
+                          <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.features.feature8') }}
                           </div>
                           <div class="feature-item">
                                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -291,6 +297,75 @@
                           </div>
                           
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Indicators -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-content">
+                        <h2>{{ $t('pricing.transparency.title') }}</h2>
+                        <div class="privacy-features">
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.transparency.feature1') }}
+                            </div>
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.transparency.feature2') }}
+                            </div>
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.transparency.feature3') }}
+                            </div>
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.transparency.feature4') }}
+                            </div>
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.transparency.feature5') }}
+                            </div>
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                {{ $t('pricing.transparency.feature6') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="limitations-column">
+                        <div class="limitations-box">
+                            <div class="grid-pattern"></div>
+                            <div class="limitations-content">
+                                <p class="limitations-title">{{ $t('pricing.limitations.title') }}</p>
+                                <div class="privacy-features">
+                                    <div class="feature-item">
+                                        {{ $t('pricing.limitations.feature1') }}
+                                    </div>
+                                    <div class="feature-item">
+                                        {{ $t('pricing.limitations.feature2') }}
+                                    </div>
+                                    <div class="feature-item">
+                                        {{ $t('pricing.limitations.feature3') }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -340,78 +415,6 @@
                         </svg>
                         {{ $t('account.cash') }}
                     </span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trust Indicators -->
-        <section class="trust-section">
-            <div class="container">
-                <div class="trust-grid">
-                    <div class="trust-content">
-                        <h2>{{ $t('pricing.transparency.title') }}</h2>
-                        <div class="privacy-features">
-                            <div class="feature-item">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                                {{ $t('pricing.transparency.feature1') }}
-                            </div>
-                            <div class="feature-item">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                                {{ $t('pricing.transparency.feature2') }}
-                            </div>
-                            <div class="feature-item">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                                {{ $t('pricing.transparency.feature3') }}
-                            </div>
-                            <div class="feature-item">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                                {{ $t('pricing.transparency.feature4') }}
-                            </div>
-                            <div class="feature-item">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                                {{ $t('pricing.transparency.feature5') }}
-                            </div>
-                            <div class="feature-item">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                                {{ $t('pricing.transparency.feature6') }}
-                            </div>
-                        </div>
-
-
-                        <div class="limitations-box">
-                            <div class="grid-pattern"></div>
-                            <div class="limitations-content">
-                                <p class="limitations-title">{{ $t('pricing.limitations.title') }}</p>
-                                <div class="privacy-features">
-                                    <div class="feature-item">
-                                        {{ $t('pricing.limitations.feature1') }}
-                                    </div>
-                                    <div class="feature-item">
-                                        {{ $t('pricing.limitations.feature2') }}
-                                    </div>
-                                    <div class="feature-item">
-                                        {{ $t('pricing.limitations.feature3') }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="server-image">
-                        <img src="/images/02blue.png" alt="Pixel art server rack infrastructure with blue accents showing internal components">
-                    </div>
                 </div>
             </div>
         </section>
@@ -1114,7 +1117,7 @@ export default {
     .product-gui {
         position: absolute;
         left: 4rem;
-        top: 43%;
+        top: 50%;
         transform: translateY(-40%);
         width: 74%;
         height: auto;
@@ -1232,18 +1235,17 @@ export default {
                 grid-template-columns: 1fr;
             }
 
-            .trust-content {
-                h2 {
-                    margin-bottom: 3rem;
-                    font-family: var(--font-mono);
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                    color: var(--color-white);
+            .limitations-column {
+                align-self: center;
+                margin-top: 5rem;
+
+                @media (max-width: 768px) {
+                    margin-top: 2rem;
                 }
 
                 .limitations-box {
                     position: relative;
-                    padding: 2rem;
+                    padding: 1.3rem;
                     border: 1px solid;
                     overflow: hidden;
 
@@ -1270,17 +1272,13 @@ export default {
                 }
             }
 
-            .server-image {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-
-                img {
-                    width: 100%;
-                    max-width: 600px;
-                    height: 100% !important;
-                    object-fit: contain;
+            .trust-content {
+                h2 {
+                    margin-bottom: 3rem;
+                    font-family: var(--font-mono);
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    color: var(--color-white);
                 }
             }
         }

@@ -64,7 +64,7 @@
     <section class="blog-article">
         <p class="sidebar-header">Featured posts</p>
         <div class="blog-article__highlighted-wrapper">
-            {{ range first 3 (where .Site.Pages ".Params.highlighted" true).ByLastmod }}
+            {{ range first 3 (where .Site.Pages ".Params.highlighted" true).ByLastmod.Reverse }}
                 <div class="blog-article__highlighted">
                     {{ range .Params.categories }}
                         {{ with ($.Site.GetPage (printf "/categories/%s" (. | urlize))) }}

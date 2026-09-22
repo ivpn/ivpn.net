@@ -12,11 +12,11 @@ releases: [{
     downloads: [
         {
             cta: Windows x86_64,
-            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.13.exe
+            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.15.exe
         },
         {
             cta: Windows arm64,
-            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.13-arm64.exe
+            url: https://repo.ivpn.net/windows/bin/IVPN-Client-v3.15.15-arm64.exe
         }
     ],
     github: https://github.com/ivpn/desktop-app,
@@ -24,11 +24,11 @@ releases: [{
     checksum: [
         {
             title: SHA256 x86_64,
-            value: 0b0d8c53069a021f647a822a4a9dbb1e8ae4bd4d4464834972fb26882db85269
+            value: 3937206b2b6e0541a298aa3d0bae66745e48f5b2c91d4ff5cde239b09254106b
         },
         {
             title: SHA256 arm64,
-            value: 7fffbba42200841f4e5ee9533b114b530f7e78cb6c774982fc83ea6184ee5e7a
+            value: b187202d530cef5579d438d7bef868cb92ab4300292ab2e01d7901e4af0a05a2
         }
     ]
 }]

@@ -79,4 +79,10 @@ IVPN publishes updated authorisation data on a regular schedule. When subscripti
 
 Any service-specific behaviour after expiry is handled by the service itself.
 
-There is a 14-day limited-access window after expiry for additional services. Mailx continues to forward mail, modDNS continues to resolve queries. Changes to aliases and profiles are not accepted during this window. Portmaster reverts to Portmaster Free immediately after the account expires.
+Mailx: Your account enters limited access mode. Existing aliases continue to forward email with no time limit. You cannot create new aliases, wildcard aliases, or recipients. To restore full access, add time to your IVPN account.
+
+modDNS: DNS resolution continues during a 14-day limited access period. No changes to custom entries or blocklists are accepted. After 14 days, resolution stops. Restore your account within this period to avoid service interruption.
+
+Portmaster Pro: Reverts to Portmaster Free when the account expires. SPN access and detailed bandwidth history are not available on the Free tier.
+
+You can delete your additional service accounts at any time, regardless of your IVPN subscription status. Deletion permanently removes all account data.

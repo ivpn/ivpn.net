@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-07-07 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-09-01 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 957036
-hash: 00000000000000000001d80b388a6cd63cbf162a06c87b6f81a531d719e22c6a
+height: 965005
+hash: 0000000000000000000176c1e042b4f8712d984f559e4db6ddb9b46a538611a0
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-French far-right leader Le Pen cleared to stand for president
-Appeals court upholds her conviction for embezzlement but shortens her sentence
+Global bond sell-off deepens amid inflation fears
+UK borrowing costs rise to highest since 2008 while Japan yields hit levels not seen since 1990s
 
-Monaco bombing suspect shot dead in Kyiv
-Ukrainian authorities say intelligence officer confessed to paying and killing Anastasia Berezovska
+How Aston Martin’s latest financing sparked a bondholder revolt
+Luxury car maker’s controversial deal with BlackRock-owned credit firm HPS set up high-stakes legal battle
 
-Rise of non-compete clauses blamed for harming productivity
-Increase recorded by OECD, with restrictions extending to lower-paid roles despite moves to curb clauses in some countries
+Ikea cuts prices in Europe by €1.2bn to counter cost of living crisis
+About 1,500 products in 20 European countries will be cheaper as consumer confidence continues to remain depressed.
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmpM7u0ACgkQisFrnrZH
-ummG4wf/cY8Jnn3FMvv706wq5QxycGKd8F/rGWjrRdszDkfgyuLhTMQfbJ36dGki
-mRZhVfWcGy7pmIo7jW+ouQ7VSc5blEMB2/8LFZ3OgSoD+bz3SC30cfRluQ5zposj
-dwh/DIhfsEs11t2zIS+M3Z2wprRL+9tVTWb2Hy87ZOFCjnsDaXDXUkW66mzJ8Nr9
-a1DJT44ZXvHKFMXifQFXUVZdV4zUrNwqzK3Y92w7pyh+L6qn0Z4rfAyVRCB1AqHg
-6x3EO3YN8mHPmSgy+nqLR1j3tdQ9geHRAlKUtq9yOc4Zd5jEMN4hPtQRO/9Ou0uH
-8qqRFx/4Jz3kzcn2Xbi4FjfLZ4zaQw==
-=Q001
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmqWjDsACgkQisFrnrZH
+umlP5QgAml3xVMjoAwfkhEYO/jYgHrbcJtxWixTTQJp+SyVPrJBI39o8DZ8aWSjH
+OAHlyPYLROAYEBCQUzkXPbf2XnsGrkRaDIFP4fIEjrcmX3S3p38fX4oGMB1IYv0P
+Gwv2LcPIx8CBX2ArSWkFRBnEaz4a+6UEZzaWx1Ic4k0pb06JS1njwQavOCebwK3n
+rGjTpciP/cTV+kUzArPtsEOnVGpI7W/JfiMvJcGZXZTFypoI5nYAL1jHWuDgp/AP
+nJFDBjk3b3W7RPabEDHhDwtgnjgCM9tzdyK/I+8GI4ctYFYfLD/hbxBgAq7E0gLR
+YbA2nfirUMphTQhGdFA0TICzDdrhGg==
+=OteW
 -----END PGP SIGNATURE-----
 
 

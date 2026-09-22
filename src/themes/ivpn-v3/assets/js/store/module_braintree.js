@@ -53,17 +53,12 @@ export default {
             context.commit('started')
             try {
                 let token = await Api.getBraintreeToken(
-                    data.captchaID,
-                    data.captchaValue,
+                    data.altchaToken,
                 );
                 let braintree = await BraintreeApi.init(token);
                 context.commit('initialized', { braintree })
             } catch (error) {
-                if( error.status == 70001 || error.status == 70002 ) {
-                    console.log("Error, captcha required");
-                } else {
-                    console.error("Error initializing BrainTree", error);  
-                }              
+                console.error("Error initializing BrainTree", error);
                 context.commit('failed', { error })
             }
         },
@@ -94,8 +89,7 @@ export default {
                     context.state.instance.fraudData,
                     data.nonce,
                     data.isRecurring,
-                    data.captchaID,
-                    data.captchaValue,
+                    data.altchaToken,
                 );
                 
                 context.commit('auth/updateAccount', { account: result.account }, { root: true })

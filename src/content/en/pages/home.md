@@ -66,6 +66,28 @@ sections:
       - description: "**Pause VPN** for when you need to disable the VPN temporarily after which connection is automatically restored (except iOS)."
       - description: "**V2Ray obfuscation** (VMess over QUIC or TCP) on every platform, plus obfs4 for OpenVPN on desktop, to connect from networks that block VPNs."
   - type: heading_text_one_column
+    content: "## Beyond the VPN"
+  - type: privacy_stack_three_column
+    intro: "Beyond the Standard VPN plan, Plus and Pro Suite add [privacy tools](/en/services/) that help you resist surveillance at the email, DNS and application layers."
+    services:
+      - name: Mailx
+        logo_light: /images/mailx_dark.png
+        logo_dark: /images/mailx_white.png
+        logo_is_portmaster: false
+        plans: Plus & Pro Suite
+        description: Email aliasing that hides your real address. A unique address per service stops profiling, spam and breach exposure.
+      - name: modDNS
+        logo_light: /images/moddns-light.svg
+        logo_dark: /images/moddns-dark.svg
+        logo_is_portmaster: false
+        plans: Plus & Pro Suite
+        description: Encrypted, filtered DNS. modDNS blocks ads, trackers and malicious domains, with granular control over what's blocked.
+      - name: Portmaster
+        logo_is_portmaster: true
+        plans: "Pro Suite · Linux & Windows"
+        description: An application firewall with per-app rules to monitor and block untrusted connections. Includes SPN, a multi-hop onion network.
+    disclaimer: "Mailx, modDNS and Portmaster are services operated by IVPN, and all three authorise access without ever receiving or storing your IVPN account ID. Learn how in our [Unlinked Access explainer](/en/unlinked-access/)."
+  - type: heading_text_one_column
     content: "## Do you really need a VPN?"
   - type: text_two_column
     content_column_1: |-

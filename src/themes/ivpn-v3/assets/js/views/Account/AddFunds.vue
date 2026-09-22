@@ -57,12 +57,32 @@ export default {
         let priceId = this.$route.params.price;
 
         if (!this.isUpgrade) {
-            for (const price of this.account.product.prices) {
-                if (price.id === priceId) {
-                    this.price = price;
-                    this.price.type = "extend";
-                    break;
+            if (!this.account?.has_custom_price) {
+                for (const price of this.account.product.prices) {
+                    if (price.id === priceId) {
+                        this.price = price;
+                        this.price.type = "extend";
+                        break;
+                    }
                 }
+            } else {
+                // For subscribed migrated accounts use the subscription billing cycle;
+                // for non-subscribed ones infer from the custom price amount.
+                let billingCycle;
+                if (this.account?.subscription?.billing_cycle) {
+                    billingCycle = this.account.subscription.billing_cycle === 'Monthly' ? "Monthly" : "Yearly";
+                } else {
+                    billingCycle = this.account.custom_price <= 30 ? "Monthly" : "Yearly";
+                }
+                this.price = {
+                    id: this.$route.params.price,
+                    type: "extend",
+                    billing_cycle: billingCycle,
+                    discount: 0,
+                    duration: billingCycle === "Monthly" ? "1 months" : "1 years",
+                    name: billingCycle,
+                    price: this.account.custom_price,
+                };
             }
         }else{
             let upgradePrice = null;

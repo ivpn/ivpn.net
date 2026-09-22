@@ -84,7 +84,7 @@ layout: full-width
     <li>You enjoy sharing your work — through writing, talks, or other public formats.</li>
 </ul>
 
-<h2>How to apply</h2>
+<h2 id="how-to-apply">How to apply</h2>
 
 <p>Send an email with your CV and any relevant information added to: <a href="mailto:apply@ivpn.net">apply@ivpn.net</a> (subject: Infrastructure Engineer application / IVPN)</p>
 
