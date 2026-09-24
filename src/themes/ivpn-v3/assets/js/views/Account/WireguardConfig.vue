@@ -257,8 +257,8 @@
                 <h3>{{ $t('account.wireguardTab.configStep4Title') }}</h3>
                 <a class="btn btn-big btn-border" href="" @click.prevent="handleDownload()">{{ $t('account.wireguardTab.downloadZipArchive') }}</a>
                 <a class="btn btn-big btn-border" href="" @click.prevent="handleGenerateQRCode()">{{ $t('account.wireguardTab.generateQrCode') }}</a>
-                <p v-if="attemptedSubmit && missingFields.length" class="note note--input">
-                    {{ $t('account.wireguardTab.missingFieldsPrefix') }} {{ missingFields.join(', ') }}.
+                <p v-if="attemptedSubmit && displayedMissingFields.length" class="note note--input">
+                    {{ $t('account.wireguardTab.missingFieldsPrefix') }} {{ displayedMissingFields.join(', ') }}.
                 </p>
                 <div class="qrnote">
                     <!-- QR code is internally generated and sanitized -->
@@ -352,6 +352,7 @@ export default {
             pqSecretKey2: null,
             pqError: null,
             attemptedSubmit: false,
+            lastSubmitType: null,
         };
     },
     watch: {
@@ -414,17 +415,26 @@ export default {
             return this.isKeyGenerated ? this.quantumEnabledGenerate : this.quantumEnabledAdd;
         },
         missingFields() {
+            // A zip archive can bundle configs for every server matching the selected country/city, so no single host is required.
             const missing = [];
             if (!this.publicKey) {
                 missing.push(this.$t('account.wireguardTab.missingKey'));
-            }
-            if (!this.query.host) {
-                missing.push(this.$t('account.wireguardTab.missingServerLocation'));
             }
             if (this.multihop && !this.entry_host) {
                 missing.push(this.$t('account.wireguardTab.missingEntryServerLocation'));
             }
             return missing;
+        },
+        missingFieldsQR() {
+            // A QR code can only encode a single config, so a specific server is required.
+            const missing = this.missingFields.slice();
+            if (!this.query.host) {
+                missing.push(this.$t('account.wireguardTab.missingServerLocation'));
+            }
+            return missing;
+        },
+        displayedMissingFields() {
+            return this.lastSubmitType === 'qr' ? this.missingFieldsQR : this.missingFields;
         },
     },
     mounted() {
@@ -685,6 +695,7 @@ export default {
         },
         async handleDownload() {
             this.attemptedSubmit = true;
+            this.lastSubmitType = 'download';
             if (this.missingFields.length) {
                 return;
             }
@@ -694,7 +705,8 @@ export default {
         },
         async handleGenerateQRCode() {
             this.attemptedSubmit = true;
-            if (this.missingFields.length) {
+            this.lastSubmitType = 'qr';
+            if (this.missingFieldsQR.length) {
                 return;
             }
 
