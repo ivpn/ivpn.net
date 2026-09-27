@@ -229,6 +229,15 @@ yay -S ivpn-ui
 
 Note: Other AUR helper/Pacman wrapper utilities are available.
 
+### Solus {#solus}
+
+This is a full install including required dependencies.
+
+```pkgconfig
+sudo eopkg it ivpn
+```
+Note: Also available in Discover and Gnome Software
+
 ### Fedora Silverblue {#silverblue}
 
 IVPN client can be installed on [Fedora Silverblue](/knowledgebase/linux/fedora-silverblue/).
