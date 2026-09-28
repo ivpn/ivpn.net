@@ -536,6 +536,10 @@ export default {
         );
     },
 
+    async setCashPending() {
+        await this.Post('/web/accounts/payments/cash-pending');
+    },
+
     async deleteSession(payload) {
         return await this.Post('/web/session/delete', { session_token: payload.token})
     },
