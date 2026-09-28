@@ -53,6 +53,7 @@
 <script>
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
+import Api from "@/api/api";
 
 export default {
     props: ["price"],
@@ -70,6 +71,10 @@ export default {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
         }
+
+        // Flag the account so the new-account cleanup job doesn't remove it
+        // while the (slow) cash payment is in transit.
+        Api.setCashPending().catch(() => {});
     },
 };
 </script>
