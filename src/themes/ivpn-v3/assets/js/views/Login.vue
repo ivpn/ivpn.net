@@ -106,6 +106,10 @@ export default {
             loginType: "",
             loginFailed: false,
             loginAttemptKey: 0,
+            // Unique per component instance — appended to the challenge URL to
+            // prevent any proxy/browser from serving a cached (and possibly
+            // already expired) challenge.
+            instanceId: Math.random().toString(36).slice(2),
 
             totpValue: "",
             language: "en"
@@ -140,7 +144,7 @@ export default {
             return false;
         },
         altchaChallengeUrl() {
-            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge';
+            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?v=' + this.instanceId + this.loginAttemptKey;
         },
         isRateLimited() {
             return this.error && this.error.status === 429;
