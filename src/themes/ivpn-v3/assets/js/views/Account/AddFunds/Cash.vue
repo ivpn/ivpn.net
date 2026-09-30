@@ -71,9 +71,7 @@ export default {
         if ( window.location.href.split("/")[3] == "es") {
             useI18n().locale.value = "es";
         }
-
-        // Flag the account so the new-account cleanup job doesn't remove it
-        // while the (slow) cash payment is in transit.
+        
         Api.setCashPending().catch(() => {});
     },
 };
