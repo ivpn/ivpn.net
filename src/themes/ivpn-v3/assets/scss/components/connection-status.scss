@@ -46,6 +46,11 @@
         background-color: $dark-mode-alternative-background
     ));
 
+    // Hides the status text/IP on .onion addresses without shifting the theme switch
+    body.is-onion &__content {
+        visibility: hidden;
+    }
+
     &__content {
         @include container();
         display: flex;
