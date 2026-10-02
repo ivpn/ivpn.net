@@ -28,7 +28,7 @@
 
   </head>
     <body onclick="">{{/* onclick="" fixes iOS Safari :hover touch events */}}
-        <script>let t = localStorage.getItem('theme');if (t) {document.body.className=t + '-theme';}</script>         
+        <script>let t = localStorage.getItem('theme');if (t) {document.body.classList.add(t + '-theme');}</script>         
         <script>if (location.hostname.toLowerCase().endsWith('.onion')) { document.body.classList.add('is-onion'); }</script>
         {{- partial "header.html" . -}}
         <main>

@@ -1,3 +1,4 @@
+import { isOnionAddress } from "@/utils/NetworkUtils.js";
 
 (function () {
 
@@ -77,7 +78,8 @@
 
     function setScheme(schemeName) {
         localStorage.setItem('theme', schemeName);
-        document.body.className = schemeName + '-theme';
+        document.body.classList.remove('light-theme', 'dark-theme');
+        document.body.classList.add(schemeName + '-theme');
     }
 
     function addSwitcherEvent(checkbox) {
@@ -136,6 +138,9 @@
     }
 
     function updateRussiaBanner(){     
+        if (isOnionAddress()) {
+            return; // No outbound geo-lookup requests from onion addresses
+        }
         var banner = document.getElementById('ru-warning-banner');
         if (!banner) {
             return; // Banner doesn't exist on this page
