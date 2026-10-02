@@ -10,11 +10,13 @@ export default {
         inProgress: false,
         error: null,
         instance: null,
+        captchaRequired: false,
     }),
 
     mutations: {
         resetInstance(state) {
             state.instance = null
+            state.captchaRequired = false
         },
 
         clear(state) {
@@ -31,6 +33,7 @@ export default {
             state.inProgress = false
             state.error = null
             state.instance = payload.braintree
+            state.captchaRequired = !!payload.captchaRequired
         },
 
         failed(state, payload) {
@@ -52,11 +55,11 @@ export default {
             context.commit('resetInstance')
             context.commit('started')
             try {
-                let token = await Api.getBraintreeToken(
+                let response = await Api.getBraintreeClientToken(
                     data.altchaToken,
                 );
-                let braintree = await BraintreeApi.init(token);
-                context.commit('initialized', { braintree })
+                let braintree = await BraintreeApi.init(response.token);
+                context.commit('initialized', { braintree, captchaRequired: response.captcha_required })
             } catch (error) {
                 console.error("Error initializing BrainTree", error);
                 context.commit('failed', { error })

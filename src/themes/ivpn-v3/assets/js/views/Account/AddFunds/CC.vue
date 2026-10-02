@@ -166,13 +166,14 @@ export default {
             error: (state) => state.braintree.error,
             inProgress: (state) => state.braintree.inProgress,
             braintree: (state) => state.braintree.instance,
+            captchaRequired: (state) => state.braintree.captchaRequired,
         }),
 
         paymentAllowed: function () {
             if (this.inProgress) return false;
             if (!this.formValid) return false;
             // After a payment failure, a fresh altcha token is required before retrying.
-            if (this.paymentFailed && !this.altchaToken) return false;
+            if (this.showAltchaInForm && !this.altchaToken) return false;
 
             return true;
         },
@@ -180,9 +181,9 @@ export default {
         requiresAltchaGate() {
             return this.account?.is_new && !this.captchaGatePassed;
         },
-        // True after the first payment failure; triggers in-form altcha
+        // True after a payment failure, or when the backend flagged the last payment as failed.
         showAltchaInForm() {
-            return this.paymentFailed;
+            return this.paymentFailed || this.captchaRequired;
         },
         isRateLimited() {
             return this.error && this.error.status === 429;
@@ -190,7 +191,7 @@ export default {
         // True when client-token failed with captcha required (status 70001);
         // shows a reactive altcha widget that auto-retries the request on solve.
         requiresAltchaForToken() {
-            return !this.requiresAltchaGate && this.error?.status === 70001;
+            return !this.requiresAltchaGate && !this.braintree && this.error?.status === 70001;
         },
         altchaChallengeUrl() {
             return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?v=' + this.instanceId + this.altchaAttemptKey;
