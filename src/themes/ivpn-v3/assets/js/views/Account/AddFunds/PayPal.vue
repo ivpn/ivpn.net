@@ -166,14 +166,15 @@ export default {
             error: (state) => state.braintree.error,
             inProgress: (state) => state.braintree.inProgress,
             braintree: (state) => state.braintree.instance,
+            captchaRequired: (state) => state.braintree.captchaRequired,
         }),
         // True while the new-account altcha gate must be solved before the PayPal form
         requiresAltchaGate() {
             return this.account?.is_new && !this.captchaGatePassed;
         },
-        // True after payment failure until a fresh altcha token is solved
+        // True after payment failure (or when the backend flagged the last payment as failed) until a fresh altcha token is solved
         showAltchaInForm() {
-            return this.paymentFailed && !this.altchaToken;
+            return (this.paymentFailed || this.captchaRequired) && !this.altchaToken;
         },
         isRateLimited() {
             return this.error && this.error.status === 429;
@@ -181,7 +182,7 @@ export default {
         // True when client-token failed with captcha required (status 70001);
         // shows a reactive altcha widget that auto-retries the request on solve.
         requiresAltchaForToken() {
-            return !this.requiresAltchaGate && this.error?.status === 70001;
+            return !this.requiresAltchaGate && !this.braintree && this.error?.status === 70001;
         },
         altchaChallengeUrl() {
             return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?v=' + this.instanceId + this.altchaAttemptKey;

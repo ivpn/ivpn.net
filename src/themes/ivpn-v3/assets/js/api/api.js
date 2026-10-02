@@ -318,12 +318,11 @@ export default {
         )
     },
 
-    async getBraintreeToken(altchaToken) {
-        let account = await this.Post('/web/accounts/braintree/client-token',
+    async getBraintreeClientToken(altchaToken) {
+        return await this.Post('/web/accounts/braintree/client-token',
         {
             altcha_token: altchaToken,
         })
-        return account.token
     },
 
     async addBraintreeFunds(priceID, transactionType, amount, paymentMethod, fraudData, nonce, isRecurring, altchaToken) {

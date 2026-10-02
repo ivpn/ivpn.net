@@ -29,7 +29,6 @@ import ThankYouBTCView from '@/views/Account/ThankYouBTC.vue'
 import ThankYouView from '@/views/Account/ThankYou.vue'
 import ThankYouLightView from '@/views/Account/ThankYouLight.vue'
 import InvoiceView from '@/views/Account/Invoice.vue'
-import ApplePayView from '@/views/Account/AddFunds/ApplePay.vue'
 import GooglePayView from '@/views/Account/AddFunds/GooglePay.vue'
 import DeviceManagementView from '@/views/Account/DeviceManagement.vue'
 import UpgradePaymentView from '@/views/Account/UpgradePayment.vue'
@@ -531,12 +530,6 @@ const routes = [
                     title: en.account.metaTitle.addFundsVoucher,
                 }
             }, {
-                path: 'applepay', name: 'add-funds-apple',
-                component: ApplePayView,
-                meta: {
-                    title: en.account.metaTitle.addFundsApplePay,
-                }
-            }, {
                 path: 'googlepay', name: 'add-funds-google',
                 component: GooglePayView,
                 meta: {
@@ -588,12 +581,6 @@ const routes = [
                     title: en.account.metaTitle.addFundsVoucher,
                 }
             }, {
-                path: 'applepay', name: 'add-funds-apple-en',
-                component: ApplePayView,
-                meta: {
-                    title: en.account.metaTitle.addFundsApplePay,
-                }
-            }, {
                 path: 'googlepay', name: 'add-funds-google-en',
                 component: GooglePayView,
                 meta: {
@@ -643,12 +630,6 @@ const routes = [
                 component: AddFundsGiftCard,
                 meta: {
                     title: es.account.metaTitle.addFundsVoucher,
-                }
-            }, {
-                path: 'applepay', name: 'add-funds-apple-es',
-                component: ApplePayView,
-                meta: {
-                    title: es.account.metaTitle.addFundsApplePay,
                 }
             }, {
                 path: 'googlepay', name: 'add-funds-google-es',

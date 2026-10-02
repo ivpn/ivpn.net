@@ -47,7 +47,6 @@ export default {
             "add-funds-monero": "Add time with Monero",
             "add-funds-cash": "Add time with Cash",
             "add-funds-paypal": "Add time with PayPal",
-            "add-funds-apple": "Add time with ApplePay",
             "add-funds-google": "Add time with GooglePay",
             "add-funds-voucher": "Add time with a Voucher",            
         };
