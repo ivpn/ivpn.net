@@ -134,7 +134,7 @@ Keep the private key files (`*_secret.b64`). They are needed in the optional ver
 
 ## Step 3 — Register with the IVPN config generator and save the cipher keys
 
-Open the IVPN [WireGuard Config Generator](/account/#wireguard-config) and log in. In the **Quantum Resistance** section, paste:
+Open the IVPN [WireGuard Config Generator](/account/wireguard) and log in. In the **Quantum Resistance** section, paste:
 
 - The content of `kyber1024_public.b64` into **Quantum public key 1**.
 - The content of `mceliece348864_public.b64` into **Quantum public key 2**.
