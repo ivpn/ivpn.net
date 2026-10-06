@@ -3,6 +3,7 @@ title: IVPN for Android - Open-source VPN app for your Android
 description: The IVPN app for Android, with AntiTracker, split tunnelling, automatic connection on insecure Wi-Fi, and Multi-hop.
 h1: IVPN for Android
 subtitle: Supports Android 7.1+
+noticeLabel: "Note:"
 notice: IVPN for Android is temporarily unavailable on Google Play. Existing installs keep working. Download the .APK or use Accrescent instead.
 url: /en/apps-android/
 aliases: ['/apps-android/']
