@@ -3,6 +3,7 @@ title: IVPN para Android - Aplicación VPN de código abierto para Android
 description: La aplicación IVPN para Android te ofrece una protección integral contra filtraciones de privacidad con el firewall IVPN, conexión automática en redes de Wi-Fi inseguras y Multi-hop.
 h1: IVPN para Android
 subtitle: Compatible con Android 7.1+
+notice: IVPN para Android no está disponible temporalmente en Google Play. Las instalaciones existentes siguen funcionando. Descarga el .APK o usa Accrescent en su lugar.
 url: /es/apps-android/
 platform: android
 layout: apps
@@ -11,21 +12,21 @@ releases: [{
     cta: Download,
     downloads: [
         {
-            cta: Google Play,
-            url: "https://play.google.com/store/apps/details?id=net.ivpn.client"
+            cta: .APK file,
+            url: https://www.ivpn.net/releases/android/IVPNv2.13.1site.apk
         },
-        {
-            cta: F-Droid,
-            url: https://f-droid.org/en/packages/net.ivpn.client/
-        },
+        # {
+        #     cta: Google Play,
+        #     url: "https://play.google.com/store/apps/details?id=net.ivpn.client"
+        # },
         {
             cta: Accrescent,
             url: https://accrescent.app/app/net.ivpn.client
         },
         {
-            cta: .APK file,
-            url: https://www.ivpn.net/releases/android/IVPNv2.13.1site.apk
-        }
+            cta: F-Droid,
+            url: https://f-droid.org/en/packages/net.ivpn.client/
+        },
     ],
     github: https://github.com/ivpn/android-app,
     changelog: https://github.com/ivpn/android-app/blob/main/CHANGELOG.md,
