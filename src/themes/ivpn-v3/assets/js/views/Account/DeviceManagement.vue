@@ -40,7 +40,7 @@
                             :key="index"
                             v-on:deleteDevice="confirmDelete"
                             :name="device.device_name"
-                            :token="device.token"
+                            :id="device.id"
                         ></device>
                     </div>
                     <p class="logout-all">
