@@ -7,7 +7,7 @@
             <div class="heading--text-image">
                 <div class="heading__content">
                     <p>{{ .Params.subtitle }}</p>
-                    {{ with .Params.notice }}<p>{{ . }}</p>{{ end }}
+                    {{ with .Params.notice }}<p>{{ with $.Params.noticeLabel }}<span class="notice-label">{{ . }}</span> {{ end }}{{ . }}</p>{{ end }}
                 </div>
                 {{ range .Params.releases }}
                     {{ if isset . "title" }}
