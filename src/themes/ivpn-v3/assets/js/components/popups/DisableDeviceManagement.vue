@@ -41,7 +41,7 @@
       methods: {
         async deleteDevice() {
           await this.$store.dispatch("sessions/deleteSession", {
-            "token": this.data.token,
+            "id": this.data.id,
           })
   
           if (!this.error) {

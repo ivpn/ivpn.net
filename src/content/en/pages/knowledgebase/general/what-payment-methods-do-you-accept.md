@@ -16,7 +16,7 @@ IVPN accepts the following payment methods via our website:
 * Monero (self-hosted)
 * PayPal
 * Credit/Debit Cards (except American Express and any types of Prepaid/Gift Cards)
-* In-app payments for IVPN Standard via our mobile apps for [iOS](/apps-ios/) and [Android](/apps-android/) (Play Store version only)
+* In-app payments for IVPN Standard via our mobile apps for [iOS](/apps-ios/) and [Android](/apps-android/). Note: Android in-app payments are temporarily unavailable while the app is [not on Google Play](/apps-android/). Add time via My account on ivpn.net instead.
 * [Physical voucher cards and digital voucher codes](/knowledgebase/billing/voucher-cards-faq/)
 * [Cash](/knowledgebase/billing/how-can-i-pay-with-cash/)
 

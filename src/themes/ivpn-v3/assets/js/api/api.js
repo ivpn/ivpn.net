@@ -540,7 +540,7 @@ export default {
     },
 
     async deleteSession(payload) {
-        return await this.Post('/web/session/delete', { session_token: payload.token})
+        return await this.Post('/web/session/delete', { session_id: payload.id})
     },
 
     async deleteSessions(payload) {

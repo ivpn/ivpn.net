@@ -19,7 +19,7 @@ export default {
             required: true,
             type: String,
         },
-        token: {
+        id: {
             required: true,
             type: String,
         },
@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         deleteDevice() {
-            this.$emit("deleteDevice", { token: this.token });
+            this.$emit("deleteDevice", { id: this.id });
         },
     },
     components: {
