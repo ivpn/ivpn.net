@@ -26,6 +26,6 @@ As we remarked [last year](https://www.ivpn.net/blog/ivpn-infrastructure-fifth-a
 
 The audit will be undertaken by 3 security auditors. We expect a conclusion for the audit and publication of results to happen within the next two months. 
 
-Nick Pestell
-CEO
+Nick Pestell<br>
+CEO<br>
 IVPN
