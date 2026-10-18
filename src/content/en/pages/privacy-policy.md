@@ -167,7 +167,7 @@ When a VPN account is terminated on our network due to the subscription ending, 
 
 | Date of payment | Amount | Payment method | Transaction ID | Subscription ID |
 |---|---|---|---|---|
-| 2020-01-24 | $100 | Paypal | XXX | XXX |
+| 2020-01-24 | $100 | PayPal | XXX | XXX |
 
 </div>
 
