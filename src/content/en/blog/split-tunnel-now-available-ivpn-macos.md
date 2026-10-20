@@ -13,7 +13,7 @@ tags:
 date: 2026-10-20T08:00:00.000Z
 ---
 
-IVPN for macOS v3.16.1 adds Split Tunnel: you can now choose applications whose traffic bypasses the VPN, while everything else on your Mac stays in the tunnel.
+IVPN for macOS v3.16.1 adds Split Tunnel: you can now exclude selected applications from the VPN, while everything else on your Mac stays in the tunnel.
 
 Split Tunnel has been available in our [Windows][1], Linux and Android apps for some time, and macOS was the remaining gap. This release brings our macOS app in line with the rest.
 
