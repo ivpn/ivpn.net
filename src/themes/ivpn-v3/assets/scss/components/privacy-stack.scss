@@ -29,6 +29,16 @@
             grid-template-columns: repeat(3, 1fr);
             gap: calc(2rem + 20px);
         }
+
+        // Opt-in 2-column layout (block param `columns: 2`), e.g. /en/resist/ with 4 cards
+        &--two {
+            @include respond-to('medium') {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 56rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     }
 
     .ps-logo-box {
@@ -86,6 +96,15 @@
 
         p {
             margin: 0;
+        }
+    }
+
+    // Opt-in larger text (block param `text_size: large`), e.g. /en/resist/: +10% (16px -> 17.6px)
+    &--large {
+        .ps-desc,
+        .ps-disclaimer {
+            font-size: 17.6px;
+            line-height: 28.16px;
         }
     }
 

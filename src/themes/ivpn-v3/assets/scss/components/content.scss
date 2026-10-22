@@ -150,3 +150,18 @@ main {
         }
     }
 }
+
+// A narrow text block right under a heading block (e.g. /en/resist/ "What we can do"):
+// 80% of the usual section gap (24px + 46px instead of 24px + 64px from `section + section`).
+.heading--text + .content--narrow {
+    margin-top: 46px;
+}
+
+// Opt-in larger body text (block param `text_size: large`), e.g. /en/resist/: +10% (16px -> 17.6px)
+.content--large .content__text {
+    p,
+    li {
+        font-size: 17.6px;
+        line-height: 30.8px;
+    }
+}
