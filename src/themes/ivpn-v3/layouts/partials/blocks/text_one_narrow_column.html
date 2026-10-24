@@ -1,4 +1,4 @@
-<section class="content content--narrow">
+<section class="content content--narrow{{ with .text_size }}{{ if eq . "large" }} content--large{{ end }}{{ end }}">
     <div class="content__text">
         {{ .content | markdownify }}
     </div>

@@ -1,10 +1,10 @@
-<section class="privacy-stack-section">
+<section class="privacy-stack-section{{ with .text_size }}{{ if eq . "large" }} privacy-stack-section--large{{ end }}{{ end }}">
     {{ if .intro }}
     <div class="ps-intro">
         {{ .intro | markdownify }}
     </div>
     {{ end }}
-    <div class="ps-cards">
+    <div class="ps-cards{{ with .columns }}{{ if eq . 2 }} ps-cards--two{{ end }}{{ end }}">
         {{ range .services }}
         <div class="ps-card">
             <div class="ps-logo-box{{ if .logo_is_portmaster }} ps-logo-box--portmaster{{ end }}">
@@ -17,7 +17,7 @@
                 <img class="logo-dark-theme" src="{{ site.Params.cdnUrl }}{{ .logo_dark }}" alt="{{ .name }}" />
                 {{ end }}
             </div>
-            <p class="ps-plans">{{ .plans }}</p>
+            {{ with .plans }}<p class="ps-plans">{{ . }}</p>{{ end }}
             <div class="ps-desc">{{ .description | markdownify }}</div>
         </div>
         {{ end }}

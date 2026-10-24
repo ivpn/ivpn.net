@@ -58,7 +58,7 @@ sections:
       - description: "**WireGuard privacy controls** - Define a custom schedule for automatic key and IP address rotation."
       - description: "**AntiTracker** that blocks ads, adware, malicious websites and data harvesting trackers."
       - description: "Private non-logging **DNS servers** accessible through our VPN."
-      - description: "**Split tunneling** to route selected apps outside the VPN (Windows, Linux and Android)."
+      - description: "**Split tunneling** to route selected apps outside the VPN."
     features_col_two:
       - description: "**Multi-hop VPN routes**. Connect through multiple servers in separate jurisdictions for enhanced privacy."
       - description: "**Killswitch / Firewall** option on macOS, Windows, Linux and Android. Offers protection against DNS, IPv6 and disconnection leaks."

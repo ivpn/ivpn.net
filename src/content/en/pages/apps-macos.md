@@ -13,11 +13,11 @@ releases: [{
     downloads: [
         {
             cta: Intel,
-            url: "https://repo.ivpn.net/macos/bin/IVPN-3.15.15.dmg"
+            url: "https://repo.ivpn.net/macos/bin/IVPN-3.16.1.dmg"
         },
         {
             cta: Apple Silicon,
-            url: https://repo.ivpn.net/macos/bin/IVPN-3.15.15-arm64.dmg
+            url: https://repo.ivpn.net/macos/bin/IVPN-3.16.1-arm64.dmg
         }
     ],
     github: https://github.com/ivpn/desktop-app,
@@ -25,11 +25,11 @@ releases: [{
     checksum: [
         {
             title: SHA256 Intel,
-            value: 6692fac6196a8c7b801a9a05a9d6324e52701bf5c52a2d8eda024ad82b9551bf
+            value: f392087d0835592d5d9e62bdda68e905cc3f99b473f1fcc2b7abb4f286789dd7
         },
         {
             title: SHA256 Apple Silicon,
-            value: 8212b21653c665faef41f2234ed535bf3e29c678d9cee768c8f26bd0c1f7b438
+            value: 27a1c4c13e2db82e8b9eec29fd0a4b88daefcd08023add16431ab6c4956e2938
         }
     ]
 }]
@@ -46,6 +46,7 @@ releases: [{
 - Multi-hop VPN routes. Connect through multiple servers in separate jurisdictions for enhanced privacy.
 - Allow LAN traffic when connected to VPN.
 - Pause VPN for when disabling VPN connection temporarily is required.
+- Split Tunnel to allow designated apps to bypass the VPN tunnel.
 - V2Ray and obfs4 options to circumvent censorship.
 - Custom DNS servers, with DoH.
 - Auto-update.

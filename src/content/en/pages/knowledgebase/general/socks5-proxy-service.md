@@ -71,7 +71,7 @@ The Firefox Multi-Account Containers add-on allows you to associate tabs with a 
 
 1. Edit the browser shortcut properties by clicking the desktop icon and pressing `Alt + Enter`
 
-1. At the end of the the `Target:` field, add a space plus `--proxy-server=socks5://` plus the proxy server IP address or hostname:
+1. At the end of the `Target:` field, add a space plus `--proxy-server=socks5://` plus the proxy server IP address or hostname:
 
     ` --proxy-server=socks5://10.1.0.1` (proxy on connected VPN server)
 
