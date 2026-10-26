@@ -15,7 +15,7 @@ sections:
 
       The 21st century has been shaped by the silent infrastructure of the surveillance economy, which sweeps up every last trace of data our daily lives leave behind. These data points are collected and pieced together to create individual profiles of us. Profiles that can be leased to advertisers hungry for our attention, shared with governments for investigative purposes, and sold on to shady data brokers.
 
-      Our digital products and services have stopped working for us. Instead, we’re unwittingly working for them. We’re ranked, rated, profiled. Programmed to act in ways we otherwise wouldn’t. And now we tell AI systems what we used to keep to ourselves. The ranking and profiling keeps getting more complete, and more efficient.
+      Digital products and services have stopped working for us. Instead, we’re unwittingly working for them. We’re ranked, rated, profiled. Programmed to act in ways we otherwise wouldn’t. And now we tell AI systems what we used to keep to ourselves. The ranking and profiling keeps getting more complete, and more efficient.
 
       Forget having nothing to hide. Our data is used against us either way. To capture our attention, our money, and our votes. To predict what we’ll do next, and to influence our behavior.
 
