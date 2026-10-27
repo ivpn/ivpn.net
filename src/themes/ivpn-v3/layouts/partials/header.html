@@ -9,11 +9,8 @@
 {{ end }}
 
 <nav id="header">    
-    {{ if ne $.Site.Params.environment "development" }}
-        <esi:include src="/web/status" />
-    {{ else }}
-         {{ safeHTML "<!--#include file=\"/web/status\" -->" }}
-    {{ end }}
+    {{/* Populated client-side by updateConnectionInfo() in menu.js */}}
+    <div class="connection-status"></div>
 
     <ul class="navigation">
         <li class="navigation__item navigation__item--contains-logo">
