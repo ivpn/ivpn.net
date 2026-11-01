@@ -115,8 +115,7 @@
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import BraintreePaypal from "@/components/BraintreePaypal.vue";
 import { mapState } from "vuex";
-import 'altcha';
-import 'altcha/themes/business.css';
+import '@/utils/altcha';
 import matomo from "@/api/matomo.js";
 import { useI18n } from "vue-i18n";
 
@@ -185,7 +184,7 @@ export default {
             return !this.requiresAltchaGate && !this.braintree && this.error?.status === 70001;
         },
         altchaChallengeUrl() {
-            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?v=' + this.instanceId + this.altchaAttemptKey;
+            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?purpose=payment&v=' + this.instanceId + this.altchaAttemptKey;
         },
     },
 

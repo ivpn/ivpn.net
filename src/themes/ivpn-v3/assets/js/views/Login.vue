@@ -80,13 +80,12 @@
 
 <script>
 import Api from "@/api/api";
-import 'altcha';
+import "@/utils/altcha";
 import Tabs from "@/components/Tabs.vue";
 import Tab from "@/components/Tab.vue";
 import ProgressSpinner from "@/components/ProgressSpinner.vue";
 import { mapState } from "vuex";
 import { useI18n } from "vue-i18n";
-import "altcha/themes/business.css";
 
 const StatusTotpRequired = 70011;
 const StatusTotpInvalid = 100010;
@@ -144,7 +143,7 @@ export default {
             return false;
         },
         altchaChallengeUrl() {
-            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?v=' + this.instanceId + this.loginAttemptKey;
+            return (import.meta.env.VITE_APP_WEBAPI_URL || '') + '/web/accounts/altcha/challenge?purpose=login&v=' + this.instanceId + this.loginAttemptKey;
         },
         isRateLimited() {
             return this.error && this.error.status === 429;
