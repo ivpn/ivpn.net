@@ -13,35 +13,35 @@ The current message is here:
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-As of 2026-10-06 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
+As of 2026-11-03 no warrants have ever been served to IVPN or IVPN employees. No searches or seizures of any kind have ever been performed on IVPN assets. IVPN has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and IVPN has not received any requests to implement a backdoor. IVPN has never disclosed any user communications to any third party.
 
 Source: mempool.space (https://mempool.space/blocks)
 
-height: 970151
-hash: 000000000000000000015e515ec3954f7cc847560f39417e10ee252ba0f3eec9
+height: 974378
+hash: 000000000000000000013e093bd4d46e4976431cde8b77d985184f1650992051
 
 
 Source: FT (https://www.ft.com/news-feed)
 
-Tories pledge ‘Britannia Shield’ to protect UK from drone attacks
-A planned network of radar, command and control systems and interceptor missiles would strengthen defences against aerial threats
+German car parts giant Schaeffler axes 3,500 jobs
+Automotive supplier to close four sites in Germany as crisis engulfing country’s flagship industry deepens
 
-Warnings of possible Iranian drone attack led US to pull bombers from RAF Fairford
-Abrupt withdrawal of aircraft from the vital foreign US military installation followed arrest of five men near the base
+Burnham takes immigration politics beyond fear of Farage
+Widely expected compromise on immigration crackdown signals shift towards a regime focused on labour market gaps and economic opportunity
 
-A plausible theory for reviving the Conservatives
-Tories could attract swing voters on economic grounds who might otherwise, on constitutional and cultural grounds, agree with Labour
+Asian Cup football tournament in Saudi Arabia postponed
+Middle East conflict forces cancellation or delay of several high-profile events in the kingdom this year
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmrEtDoACgkQisFrnrZH
-umloLgf8CvXxbi39qWasQEG+jK1Ps800XPAk9EOxpsV02SFTKX62Sy0vCPxDtVGv
-dGxVuJ3Q99jgPJJYwZa/oIG5vn6Q4/1w6+OgAe9HVIOLW/RKNzznx7ojwLYOnmDl
-I83qq2F00H6Il/UmMdzVeQWkmJCN5TqUwZQqc8NG5+gyZm5mL5zdLA9dzdyO6Al5
-BuXTmeDPNMLBrczYwxXSytr/VqJjPPV5+uPpwWUvXKZeMgjArRjta51ucouRJx6G
-hnzY2gO/9nj2FEEQ9i3/cx2/bsyIYiTfPAHZ2JMWduaYJr47BibUjld9XgjnOGrB
-hZKXOXrscx+i07c3Mwpabi5Igaf1gQ==
-=e/ve
+iQEzBAEBCgAdFiEEXxDK46RlUWr/x/EkisFrnrZHumkFAmrprM8ACgkQisFrnrZH
+umkiNAf/X5Warfc4VW9FF9sXon25sWhFHGwbP8uUSc1YdM+Ps7q1oflRNOdzcOXG
+lONVWmLe6ofNAFMRUnuQN7Tmh8qV7HQNhLgu5y/tkVFXeuFE2VZVM8C62zZWyjEc
+mh26v0KAQLOGY5R9EYCD6J7pwOi6g2mMT7T68GvllQRT0T2B6A/Vn1Rq8m7dDN0F
+bvXiN8tyMDHbWfPxdEhf+6LhrVmRzYS6X7SvYTknsuEaEM1tLMmOpD3VkzbJyPqY
+4+97mXcFa18hjAcc8MNAsLNY5NN+CneLM7c58iERwM+qakzReGatIp98BHmTlbgP
+YicWyA4zkkLSTmTj1URaSWZo2L3mfA==
+=3cqw
 -----END PGP SIGNATURE-----
 
 
