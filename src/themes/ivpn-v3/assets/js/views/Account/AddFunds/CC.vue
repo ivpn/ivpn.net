@@ -9,7 +9,7 @@
                 :key="altchaAttemptKey"
                 ref="altchaGateWidget"
                 :challenge="altchaChallengeUrl"
-                configuration='{"hideFooter":true}'
+                configuration='{"hideFooter":true,"codeChallengeDisplay":"overlay"}'
                 data-altcha-theme="business"
                 @statechange="onAltchaStateChange"
             ></altcha-widget>
@@ -61,7 +61,7 @@
                     :key="altchaAttemptKey"
                     ref="altchaFormWidget"
                     :challenge="altchaChallengeUrl"
-                    configuration='{"hideFooter":true}'
+                    configuration='{"hideFooter":true,"codeChallengeDisplay":"overlay"}'
                     data-altcha-theme="business"
                     @statechange="onAltchaStateChange"
                 ></altcha-widget>
@@ -95,7 +95,7 @@
                     :key="altchaAttemptKey"
                     ref="altchaTokenWidget"
                     :challenge="altchaChallengeUrl"
-                    configuration='{"hideFooter":true}'
+                    configuration='{"hideFooter":true,"codeChallengeDisplay":"overlay"}'
                     data-altcha-theme="business"
                     @statechange="onAltchaStateChange"
                 ></altcha-widget>
