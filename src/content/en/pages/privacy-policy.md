@@ -1,6 +1,6 @@
 ---
 title: IVPN Privacy Policy
-description: Its important our customers fully understand what private information we collect, store and process. Read our clear and simple policy to get the facts you need.
+description: It's important that our customers fully understand what private information we collect, store and process. Read our clear and simple policy to get the facts you need.
 url: /en/privacy/
 aliases: ['/privacy/','/privacy-mobile-app/']
 layout:
@@ -11,7 +11,7 @@ canonical:
 We're built for privacy. Internally, we know what exactly that means; we use privacy as a filter for decision-making. If a choice needs to be made between one practice that deepens a user's privacy, and another that would diminish it but accelerate our growth, we'll always take the slower, more private option. If you'd like to know more about our principles and beliefs that drive our choices, please see our [team](/team/) and [ethics](/ethics/) pages.
 
 We realize how important it is that our customers fully understand what we
-mean by privacy. This policy gives you an overview of;
+mean by privacy. This policy gives you an overview of:
 
 * What we mean by "logless"
 
@@ -45,7 +45,7 @@ We do not log any data relating to a user's VPN activity (while connected or con
 
 * No logging of customer IP addresses
 
-* No logging of any account activity except active total simultaneous connections (explained below) 
+* No logging of any account activity except the total number of active simultaneous connections (explained below) 
 
 ### What data do you log on sign-up?
 
@@ -67,7 +67,7 @@ When you add time to your account, the following information is stored:
 
 | Payment ID | Account ID | Amount | Currency | Timestamp | Transaction ID |
 |---|---|---|---|---|---|
-| xxx | xxx | 100 | USD | 2020-10-2 14:01:11 | xxx |
+| xxx | xxx | 100 | USD | 2020-10-02 14:01:11 | xxx |
 
 </div>
 
@@ -80,8 +80,8 @@ This is the data we store for a credit card payment:
 <div class="table-container-mobile">
 
 | Payment ID | Account ID | Amount | Currency | Timestamp |
-|---|---|---|---|---|---|
-| xxx | xxx | 100 | USD | 2018-10-2 14:01:11 |
+|---|---|---|---|---|
+| xxx | xxx | 100 | USD | 2018-10-02 14:01:11 |
 
 </div>
 
@@ -97,11 +97,11 @@ To be able to process refunds for our 30-day money-back guarantee and resolve ot
 
 ### What information is logged when I visit the IVPN website?
 
-IVPN have selected [Matomo](https://matomo.org) as their web analytics platform. Web analytics allow us to understand our users engagement with our site to understand where it delivers value, and where it can be improved in terms of usability, simplicity and speed. It also helps us to understand where our site visitors originate, and audit those referring sites to ensure they aren't making unfounded or exaggerated claims.
+IVPN has selected [Matomo](https://matomo.org) as its web analytics platform. Web analytics allow us to understand our users' engagement with our site, where it delivers value, and where it can be improved in terms of usability, simplicity and speed. It also helps us to understand where our site visitors originate, and audit those referring sites to ensure they aren't making unfounded or exaggerated claims.
 
-Matomo is open source software that is hosted on our own server infrastructure to ensure your privacy (unlike platforms such as Google Analytics). For example, the Center for Data Privacy Protection in France (CNIL) recommended Matomo as the only tool that can easily ensure full compliance with privacy regulations. Matomo is used to analyse in aggregate information about our website visitors.
+Matomo is open source software that is hosted on our own server infrastructure to ensure your privacy (unlike platforms such as Google Analytics). For example, the French data protection authority (CNIL) recommended Matomo as the only tool that can easily ensure full compliance with privacy regulations. Matomo is used to analyse aggregate information about our website visitors.
 
-When your web browser loads a page on our site, a small snippet of JavaScript code is executed within your browser which submits information such as;
+When your web browser loads a page on our site, a small snippet of JavaScript code is executed within your browser, which submits information such as:
 
 * your browser user-agent,
 
@@ -115,7 +115,7 @@ When your web browser loads a page on our site, a small snippet of JavaScript co
 
 To ensure your privacy, IVPN discards the last two octets of the IP address. Matomo may also set a web cookie to facilitate the identification of users who revisit the site.
 
-To improve customer experience we utilise the ‘local storage’ JavaScript functionality to save non-identifying information about your visit. This information is saved locally in your browser and is not communicated to our servers. Data held in local storage may include information about;
+To improve customer experience we utilise the ‘local storage’ JavaScript functionality to save non-identifying information about your visit. This information is saved locally in your browser and is not communicated to our servers. Data held in local storage may include information about:
 
 * visual theme selection
 
@@ -128,7 +128,7 @@ To improve customer experience we utilise the ‘local storage’ JavaScript fun
 
 IVPN is subject to EU law and is in compliance with the EU Data Protection Directive (Directive 95/46/EC), which prohibits companies transferring data to overseas jurisdictions with weaker privacy laws. IVPN will not locate servers in countries where it's forced to break this compliance. Due to the nature of our logging practices, VPN servers do not contain any personally identifiable information and thus, if seized, could not be used to identify users.
 
-No third-parties have access to any of your data. We always use first or third-party tools we can host on our own servers in a protected and secure environment.
+No third parties have access to any of your data. We always use first or third-party tools we can host on our own servers in a protected and secure environment.
 
 ### How do you limit the number of connected devices?
 
@@ -139,14 +139,14 @@ When a customer logs into the IVPN app, an entry is added to the device session 
 
 * the corresponding account ID 
 
-When a customer attempts to log in to an IVPN app, a request is sent to our authentication servers to verify that the specified account ID is valid and has an active plan associated with it. As a next step, we check whether the number of tokens associated with customer’s account ID exceeds the permitted number of devices as per their purchased plan. If the number of tokens equal the number permitted by their plan, the authentication attempt is denied.
+When a customer attempts to log in to an IVPN app, a request is sent to our authentication servers to verify that the specified account ID is valid and has an active plan associated with it. As a next step, we check whether the number of tokens associated with the customer's account ID exceeds the permitted number of devices as per their purchased plan. If the number of tokens equal the number permitted by their plan, the authentication attempt is denied.
 
-We do not store timestamps, or any device related information that could be used to identify a device, such as product make, model, IMEI number, MAC address, etc. Entries from the device sessions database are permanently deleted when the customer logs out of the IVPN app, or when their account is terminated or deleted. If an adversary was able to gain access to this data, they could only determine which account IDs had been used to sign into at least one device at that time, and the number of devices logged in. This data does not, however, provide any useful information on past or present VPN connections initiated by the user of the account. 
+We do not store timestamps, or any device related information that could be used to identify a device, such as product make, model, IMEI number, MAC address, etc. Entries from the device session database are permanently deleted when the customer logs out of the IVPN app, or when their account is terminated or deleted. If an adversary was able to gain access to this data, they could only determine which account IDs had been used to sign into at least one device at that time, and the number of devices logged in. This data does not, however, provide any useful information on past or present VPN connections initiated by the user of the account. 
 
 
 ### How do you limit simultaneous connections?
 
-To authenticate customers, our VPN servers send a request to a central authentication server, containing the customers account ID. The authentication server holds a temporary record of all connected customer ID's. When a customer connects to a VPN gateway, the authentication server checks how many active authentication records are already in the table for the account ID, if it exceeds the allowed number of simultaneous connections, then authentication is denied. When a user disconnects, the relevant record is permanently deleted. If an adversary was able to gain access to this data, they could only determine which account ID's were logged into the VPN network at that exact moment in time.
+To authenticate customers, our VPN servers send a request to a central authentication server, containing the customer's account ID. The authentication server holds a temporary record of all connected account IDs. When a customer connects to a VPN gateway, the authentication server checks how many active authentication records are already in the table for the account ID, if it exceeds the allowed number of simultaneous connections, then authentication is denied. When a user disconnects, the relevant record is permanently deleted. If an adversary was able to gain access to this data, they could only determine which account IDs were logged into the VPN network at that exact moment in time.
 
 As this data is only stored for the duration of the VPN session, if you or anyone requests to know how many connections you had at a specific time in the past, we couldn't tell you because we don't store it.
 
@@ -155,7 +155,7 @@ As this data is only stored for the duration of the VPN session, if you or anyon
 Device management is an opt-in (disabled by default) feature that helps customers review and remove devices that are authenticated to use the IVPN service.
 
 When device management is activated, an extra field for the device name is added to the temporary record table which helps limit the number of connected devices.
-IVPN assigns device names in a specific sequence (A-B-C-D-E-F-G) from a predefined list of seven names. If a device is logged out, its name becomes available as a next option for future assignment. For instance, if a customer with seven devices authenticated removes device F, D and then C, the new sequence becomes A-B-E-G-F-D-C, making the last three names available for new devices.
+IVPN assigns device names in a specific sequence (A-B-C-D-E-F-G) from a predefined list of seven names. If a device is logged out, its name becomes available as a next option for future assignment. For instance, if a customer with seven authenticated devices removes device F, D and then C, the new sequence becomes A-B-E-G-F-D-C, making the last three names available for new devices.
 
 This naming convention ensures device names cannot be used to identify your account in case an adversary was able to gain access to this specific data. 
 
@@ -179,7 +179,7 @@ We reserve the right to refuse or charge for requests that are manifestly unfoun
 
 Subject access requests should be made in writing to sar@ivpn.net
 
-### Where is the regulatory authority that oversees the jurisdiction in which IVPN operates under GDPR?
+### Which regulatory authority oversees IVPN under GDPR?
 
 IVPN is registered in Gibraltar, and as such the GDPR regulatory body is the [Gibraltar Regulatory Authority](http://www.gra.gi/).
 
@@ -193,7 +193,7 @@ The company is incorporated in Gibraltar. If a court order is received from a re
 
 ### What happens if laws change?
 
-IVPN is committed to keeping its customers informed of any serious legislative threats to our service. If the laws in our jurisdiction change in way that prevents us from upholding our privacy policy, we will always inform our customers before those laws are enacted. We will also allow customers to cancel their subscription and will refund any fees that cover the remainder of their subscription period.
+IVPN is committed to keeping its customers informed of any serious legislative threats to our service. If the laws in our jurisdiction change in a way that prevents us from upholding our privacy policy, we will always inform our customers before those laws are enacted. We will also allow customers to cancel their subscription and will refund any fees that cover the remainder of their subscription period.
 
 ### Crash Logs
 
@@ -205,7 +205,7 @@ Crash logs are sent to a server hosted and managed by IVPN and no third-party ve
 
 ### Device permissions for Personal Data access
 
-IVPN Android and iOS apps may request certain permissions that allow it to access the user's device data as described below.
+IVPN Android and iOS apps may request certain permissions that allow them to access the user's device data as described below.
 
 These permissions must be granted by the user before the respective information can be accessed. Once the permission has been given, it can be revoked by the user at any time in device settings.
 
