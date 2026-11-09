@@ -12,7 +12,7 @@ tags:
   - Audit
   - Transparency
   - Security
-date: 2026-11-06T10:00:00.000Z
+date: 2026-11-09T10:00:00.000Z
 thumbnailImage: /images-static/uploads/audit.png
 ---
 We're pleased to announce that our eighth annual independent security audit has concluded. The assessment focused on [Unlinked Access][1], the system that lets IVPN Plus and Pro Suite accounts access Mailx, modDNS and Portmaster without passing IVPN account identifiers to those services.
