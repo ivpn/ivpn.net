@@ -37,10 +37,10 @@
                     <div>
                         <device
                             v-for="(device, index) in sessions"
-                            :key="index"
+                            :key="device.id"
                             v-on:deleteDevice="confirmDelete"
                             :name="device.device_name"
-                            :token="device.token"
+                            :id="device.id"
                         ></device>
                     </div>
                     <p class="logout-all">
