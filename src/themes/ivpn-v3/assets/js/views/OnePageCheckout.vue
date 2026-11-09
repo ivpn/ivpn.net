@@ -14,7 +14,7 @@
                             <li class="error">Copy your private key</li>
                             <li>Select servers & duration</li>
                             <li>Pay with Lightning</li>
-                            <li>Paste you private key</li>
+                            <li>Paste your private key</li>
                            </ol>
                            <h3>Up to 5 exit points or one Multi-hop setup. </h3>
                            <h3>Works with <a href="https://www.wireguard.com/" target="_blank" rel="noreferrer">Wireguard</a> app on mobile or desktop.</h3>
