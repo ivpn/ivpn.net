@@ -79,12 +79,12 @@ export default {
         }
     },
 
-    async deleteSession(context,token) {
+    async deleteSession(context, payload) {
 
       context.commit('started')
       
       try {
-          await Api.deleteSession(token);
+          await Api.deleteSession(payload);
           let sessions = await Api.getSessions(context)
           context.commit('done', {
               sessions: sessions.sessions,
