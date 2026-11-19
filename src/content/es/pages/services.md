@@ -116,7 +116,7 @@ sections:
       - text: Obtén más información sobre modDNS
         url: https://moddns.net
       - text: modDNS FAQ
-        url: https://moddns.net/standalone-faq
+        url: https://moddns.net/faq
       - text: Política de privacidad
         url: https://moddns.net/privacy
   - type: service_card

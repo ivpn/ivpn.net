@@ -119,7 +119,7 @@ sections:
       - text: Learn more about modDNS
         url: https://moddns.net
       - text: modDNS FAQ
-        url: https://moddns.net/standalone-faq
+        url: https://moddns.net/faq
       - text: Privacy Policy
         url: https://moddns.net/privacy
   - type: service_card
