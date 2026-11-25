@@ -1,7 +1,7 @@
 <template>
     <div class="popup--content">
         <h3>{{ $t('account.accountSettingsTab.deleteAccount') }}</h3>
-        <p v-if="error" style="color: red;" v-html="error.message"></p>
+        <p v-if="error" style="color: red;">{{ error.message }}</p>
         <div v-if="confirmation">
             <div class="confirm" v-if="!account.is_active">
                 <p>{{ $t('account.accountSettingsTab.deleteAccountConfirm') }}</p>

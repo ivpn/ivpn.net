@@ -1,7 +1,7 @@
 <template>
     <div>
       <p>{{ $t('account.confirmChangeProduct') }}</p>
-      <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
+      <p v-if="hasError" style="color: red;">{{ errorMessage }}</p>
       <button @click.prevent="deleteSessions" class="btn btn-solid">{{ $t('account.confirm') }}</button>
       <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.cancel') }}</button>
     </div>

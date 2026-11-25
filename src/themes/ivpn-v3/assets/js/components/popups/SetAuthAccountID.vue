@@ -3,7 +3,7 @@
 
         <h3>{{ $t('account.popups.authentication.title') }}</h3>
 
-        <p v-if="error" style="color: red;" v-html="error.message"></p>
+        <p v-if="error" style="color: red;">{{ error.message }}</p>
 
         <p>
             {{ $t('account.popups.authentication.desc') }}

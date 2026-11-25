@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ $t('account.wireguardTab.deleteKeyConfirm') }}</p>
-    <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
+    <p v-if="hasError" style="color: red;">{{ errorMessage }}</p>
     <button @click.prevent="deleteKey" class="btn btn-solid">{{ $t('account.wireguardTab.yes') }}</button>
     <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.wireguardTab.cancel') }}</button>
   </div>

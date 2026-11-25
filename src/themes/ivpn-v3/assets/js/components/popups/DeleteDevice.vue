@@ -1,7 +1,7 @@
 <template>
     <div>
       <p>{{ $t('account.deviceManagementTab.confirmDelete') }}</p>
-      <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
+      <p v-if="hasError" style="color: red;">{{ errorMessage }}</p>
       <button @click.prevent="deleteDevice" class="btn btn-solid">{{ $t('account.deviceManagementTab.yes') }}</button>
       <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.deviceManagementTab.cancel') }}</button>
     </div>

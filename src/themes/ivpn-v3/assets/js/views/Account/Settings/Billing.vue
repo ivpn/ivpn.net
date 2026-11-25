@@ -65,7 +65,7 @@
                 >
                     <div class="msg">
                         <div v-if="!inProgress">
-                            <p v-if="error" style="color: red;" v-html="error.message"></p>
+                            <p v-if="error" style="color: red;">{{ error.message }}</p>
                             <p>
                                 {{ $t('account.accountSettingsTab.recurringFailedOn') }}
                                 <b>{{ $filters.formatDate(account.subscription.last_payment.date) }}</b>

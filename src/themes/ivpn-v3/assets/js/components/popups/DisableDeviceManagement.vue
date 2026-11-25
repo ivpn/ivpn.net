@@ -4,7 +4,7 @@
       <p>{{ $t('account.deviceManagementTab.disablePopupDesc2') }}</p>
       <p>{{ $t('account.deviceManagementTab.disablePopupDesc3') }}</p>
       
-      <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
+      <p v-if="hasError" style="color: red;">{{ errorMessage }}</p>
       <button @click.prevent="disableDeviceManagement" class="btn btn-solid">{{ $t('account.deviceManagementTab.proceed') }}</button>
       <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.deviceManagementTab.cancel') }}</button>
     </div>
