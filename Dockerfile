@@ -1,4 +1,4 @@
-FROM node:22-slim AS builder
+FROM node:22-slim@sha256:be979e5523c76fa4d5ca4ebd3099078f220aa47ec39c48ad5b5df9314debd6eb AS builder
 
 ARG ENV=production
 ARG BASE_URL=https://www.ivpn.net
@@ -19,7 +19,7 @@ RUN ARCH=$(dpkg --print-architecture) \
 
 # Install dependencies (cached layer for faster rebuilds)
 COPY ./src/themes/ivpn-v3/package.json ./src/themes/ivpn-v3/package-lock.json ./src/themes/ivpn-v3/
-RUN cd ./src/themes/ivpn-v3/ && npm install
+RUN cd ./src/themes/ivpn-v3/ && npm ci
 
 # Copy source and build assets
 COPY ./src ./src
@@ -52,7 +52,7 @@ RUN sed -E \
 # Build Hugo site
 RUN hugo -s ./src -b ${BASE_URL} --environment $ENV -d /opt/build/public
 
-FROM nginx:1.27-alpine
+FROM nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /opt/build/public /var/www/static
