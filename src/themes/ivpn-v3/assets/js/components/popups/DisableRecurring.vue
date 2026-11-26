@@ -3,7 +3,7 @@
 
         <h3>{{ $t('account.disableRecurring') }}</h3>
 
-        <p v-if="error" style="color: red;" v-html="error.message"></p>
+        <p v-if="error" style="color: red;">{{ error.message }}</p>
 
         <p>
             {{ $t('account.disableRecurringDesc') }}

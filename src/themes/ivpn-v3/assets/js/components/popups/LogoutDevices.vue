@@ -2,7 +2,7 @@
     <div>
       <p>{{ $t('account.deviceManagementTab.confirmLogoutAll') }}</p>
       
-      <p v-if="hasError" style="color: red;" v-html="errorMessage"></p>
+      <p v-if="hasError" style="color: red;">{{ errorMessage }}</p>
       <button @click.prevent="logoutDevices" class="btn btn-solid">{{ $t('account.deviceManagementTab.confirm') }}</button>
       <button @click.prevent="closeDialog" class="btn btn-border">{{ $t('account.deviceManagementTab.cancel') }}</button>
     </div>

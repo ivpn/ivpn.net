@@ -3,7 +3,7 @@
         <div class="scrollable" @click.self="close">
             <div style='flex-grow:1' @click.self="close"></div>
             <div class="popup" @keydown.esc="close">
-                <div v-if="type === 'text'" v-html="data.text"></div>
+                <div v-if="type === 'text'">{{ data.text }}</div>
                 <delete-wireguard-key
                     v-if="type === 'delete-wireguard-key'"
                     :data="data"

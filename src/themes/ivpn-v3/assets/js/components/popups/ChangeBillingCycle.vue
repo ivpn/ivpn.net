@@ -2,7 +2,7 @@
     <div class="update-billing-cycle">
         <h3>{{ $t('account.changeBillingCycle') }}</h3>
 
-        <p v-if="error" style="color: red;" v-html="error.message"></p>
+        <p v-if="error" style="color: red;">{{ error.message }}</p>
 
         <table class="options" style="margin-top: 1em;" width="100%" border="0">
             <tr v-for="option in account.product.prices" :key="option.billing_cycle" class="option">
