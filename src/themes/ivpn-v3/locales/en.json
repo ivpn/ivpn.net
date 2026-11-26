@@ -25,7 +25,7 @@
             "socks5": "SOCKS5",
             "socks5port": "SOCKS5 Port"
         },
-        "summary": "Bare-metal servers in 41 countries. IVPN runs 89 gateways across 58 locations, hosted with 17 datacenter partners. Every server is a physical machine, with no virtual locations. WireGuard and OpenVPN are available on every server.",
+        "summary": "Bare-metal servers in 42 countries. IVPN runs 89 gateways across 59 locations, hosted with 18 datacenter partners. Every server is a physical machine, with no virtual locations. WireGuard and OpenVPN are available on every server.",
         "discoveryLine": "Live server list as JSON is available <a href=\"https://api.ivpn.net/v5/servers/stats\">here</a>.",
         "faq": {
             "streamingQ": "Can I use IVPN servers for accessing streaming services?",
