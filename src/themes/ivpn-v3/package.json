@@ -20,7 +20,7 @@
     "@vue/compiler-sfc": "3.5.45",
     "@vue/server-renderer": "3.5.45",
     "braintree-web": "^3.101.0",
-    "date-fns": "^2.29.3",
+    "date-fns": "^4.4.0",
     "file-saver": "^2.0.5",
     "flexbox-grid-mixins": "^0.3.4",
     "ip-num": "^1.5.1",
