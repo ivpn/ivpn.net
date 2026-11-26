@@ -52,7 +52,7 @@ RUN sed -E \
 # Build Hugo site
 RUN hugo -s ./src -b ${BASE_URL} --environment $ENV -d /opt/build/public
 
-FROM nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+FROM nginx:1.29-alpine@sha256:5616878291a2eed594aee8db4dade5878cf7edcb475e59193904b198d9b830de
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /opt/build/public /var/www/static
